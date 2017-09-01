@@ -1,0 +1,637 @@
+[
+  {
+    "version": "v1",
+    "name": "AcceleratedMobilePageUrl",
+    "url": "https://acceleratedmobilepageurl.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v1.4",
+    "name": "AdExchangeBuyer",
+    "url": "https://www.googleapis.com/discovery/v1/apis/adexchangebuyer/v1.4/rest"
+  },
+  {
+    "version": "v2beta1",
+    "name": "AdExchangeBuyer2",
+    "url": "https://adexchangebuyer.googleapis.com/$discovery/rest?version=v2beta1"
+  },
+  {
+    "version": "v2.0",
+    "name": "AdExchangeSeller",
+    "url": "https://www.googleapis.com/discovery/v1/apis/adexchangeseller/v2.0/rest"
+  },
+  {
+    "version": "v1",
+    "name": "AdExperienceReport",
+    "url": "https://adexperiencereport.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "reports_v1",
+    "name": "Admin",
+    "url": "https://www.googleapis.com/discovery/v1/apis/admin/reports_v1/rest"
+  },
+  {
+    "version": "v1.4",
+    "name": "AdSense",
+    "url": "https://www.googleapis.com/discovery/v1/apis/adsense/v1.4/rest"
+  },
+  {
+    "version": "v4.1",
+    "name": "AdSenseHost",
+    "url": "https://www.googleapis.com/discovery/v1/apis/adsensehost/v4.1/rest"
+  },
+  {
+    "version": "v3",
+    "name": "Analytics",
+    "url": "https://www.googleapis.com/discovery/v1/apis/analytics/v3/rest"
+  },
+  {
+    "version": "v4",
+    "name": "AnalyticsReporting",
+    "url": "https://analyticsreporting.googleapis.com/$discovery/rest?version=v4"
+  },
+  {
+    "version": "v1",
+    "name": "AndroidDeviceProvisioning",
+    "url": "https://androiddeviceprovisioning.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v1",
+    "name": "AndroidEnterprise",
+    "url": "https://www.googleapis.com/discovery/v1/apis/androidenterprise/v1/rest"
+  },
+  {
+    "version": "v1",
+    "name": "AndroidManagement",
+    "url": "https://androidmanagement.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v2",
+    "name": "AndroidPublisher",
+    "url": "https://www.googleapis.com/discovery/v1/apis/androidpublisher/v2/rest"
+  },
+  {
+    "version": "v1",
+    "name": "AppEngine",
+    "url": "https://appengine.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v1",
+    "name": "AppsActivity",
+    "url": "https://www.googleapis.com/discovery/v1/apis/appsactivity/v1/rest"
+  },
+  {
+    "version": "v1",
+    "name": "AppState",
+    "url": "https://www.googleapis.com/discovery/v1/apis/appstate/v1/rest"
+  },
+  {
+    "version": "v2",
+    "name": "BigQuery",
+    "url": "https://www.googleapis.com/discovery/v1/apis/bigquery/v2/rest"
+  },
+  {
+    "version": "v1",
+    "name": "BigQueryDataTransfer",
+    "url": "https://bigquerydatatransfer.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v3",
+    "name": "Blogger",
+    "url": "https://www.googleapis.com/discovery/v1/apis/blogger/v3/rest"
+  },
+  {
+    "version": "v1",
+    "name": "Books",
+    "url": "https://www.googleapis.com/discovery/v1/apis/books/v1/rest"
+  },
+  {
+    "version": "v3",
+    "name": "Calendar",
+    "url": "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"
+  },
+  {
+    "version": "v1.1",
+    "name": "ChromeWebStore",
+    "url": "https://www.googleapis.com/discovery/v1/apis/chromewebstore/v1.1/rest"
+  },
+  {
+    "version": "v3",
+    "name": "CustomerInteractionHistory",
+    "url": "https://www.googleapis.com/discovery/v1/apis/cih/v3/rest"
+  },
+  {
+    "version": "v2",
+    "name": "CivicInfo",
+    "url": "https://www.googleapis.com/discovery/v1/apis/civicinfo/v2/rest"
+  },
+  {
+    "version": "v1",
+    "name": "Classroom",
+    "url": "https://classroom.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v1",
+    "name": "CloudBilling",
+    "url": "https://cloudbilling.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v1",
+    "name": "CloudBuild",
+    "url": "https://cloudbuild.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v2",
+    "name": "CloudDebugger",
+    "url": "https://clouddebugger.googleapis.com/$discovery/rest?version=v2"
+  },
+  {
+    "version": "v1beta1",
+    "name": "CloudErrorReporting",
+    "url": "https://clouderrorreporting.googleapis.com/$discovery/rest?version=v1beta1"
+  },
+  {
+    "version": "v1",
+    "name": "CloudFunctions",
+    "url": "https://cloudfunctions.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v1",
+    "name": "CloudKMS",
+    "url": "https://cloudkms.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v2beta2",
+    "name": "CloudMonitoring",
+    "url": "https://www.googleapis.com/discovery/v1/apis/cloudmonitoring/v2beta2/rest"
+  },
+  {
+    "version": "v1",
+    "name": "CloudResourceManager",
+    "url": "https://cloudresourcemanager.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v1",
+    "name": "CloudTrace",
+    "url": "https://cloudtrace.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v2",
+    "name": "CloudTrace",
+    "url": "https://cloudtrace.googleapis.com/$discovery/rest?version=v2"
+  },
+  {
+    "version": "vm_alpha",
+    "name": "CloudUserAccounts",
+    "url": "https://www.googleapis.com/discovery/v1/apis/clouduseraccounts/vm_alpha/rest"
+  },
+  {
+    "version": "v1",
+    "name": "Compute",
+    "url": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest"
+  },
+  {
+    "version": "v2",
+    "name": "ConsumerSurveys",
+    "url": "https://www.googleapis.com/discovery/v1/apis/consumersurveys/v2/rest"
+  },
+  {
+    "version": "v1",
+    "name": "Container",
+    "url": "https://container.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v2",
+    "name": "Content",
+    "url": "https://www.googleapis.com/discovery/v1/apis/content/v2/rest"
+  },
+  {
+    "version": "v1",
+    "name": "CustomSearch",
+    "url": "https://www.googleapis.com/discovery/v1/apis/customsearch/v1/rest"
+  },
+  {
+    "version": "v1b3",
+    "name": "Dataflow",
+    "url": "https://dataflow.googleapis.com/$discovery/rest?version=v1b3"
+  },
+  {
+    "version": "v1",
+    "name": "Dataproc",
+    "url": "https://dataproc.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v1",
+    "name": "Datastore",
+    "url": "https://datastore.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v2",
+    "name": "DeploymentManager",
+    "url": "https://www.googleapis.com/discovery/v1/apis/deploymentmanager/v2/rest"
+  },
+  {
+    "version": "v1",
+    "name": "DevProjects",
+    "url": "https://www.googleapis.com/discovery/v1/apis/devprojects/v1/rest"
+  },
+  {
+    "version": "v2.8",
+    "name": "DFAReporting",
+    "url": "https://www.googleapis.com/discovery/v1/apis/dfareporting/v2.8/rest"
+  },
+  {
+    "version": "v1",
+    "name": "Discovery",
+    "url": "https://www.googleapis.com/discovery/v1/apis/discovery/v1/rest"
+  },
+  {
+    "version": "v2beta1",
+    "name": "DLP",
+    "url": "https://dlp.googleapis.com/$discovery/rest?version=v2beta1"
+  },
+  {
+    "version": "v1",
+    "name": "DNS",
+    "url": "https://www.googleapis.com/discovery/v1/apis/dns/v1/rest"
+  },
+  {
+    "version": "v1",
+    "name": "DoubleClickBidManager",
+    "url": "https://www.googleapis.com/discovery/v1/apis/doubleclickbidmanager/v1/rest"
+  },
+  {
+    "version": "v2",
+    "name": "DoubleClickSearch",
+    "url": "https://www.googleapis.com/discovery/v1/apis/doubleclicksearch/v2/rest"
+  },
+  {
+    "version": "v3",
+    "name": "Drive",
+    "url": "https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"
+  },
+  {
+    "version": "v1",
+    "name": "FirebaseDynamicLinks",
+    "url": "https://firebasedynamiclinks.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v1",
+    "name": "FirebaseRules",
+    "url": "https://firebaserules.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v1",
+    "name": "Fitness",
+    "url": "https://www.googleapis.com/discovery/v1/apis/fitness/v1/rest"
+  },
+  {
+    "version": "v0dogfood",
+    "name": "FitnessInternal",
+    "url": "https://www.googleapis.com/discovery/v1/apis/fitness_internal/v0dogfood/rest"
+  },
+  {
+    "version": "v2",
+    "name": "FusionTables",
+    "url": "https://www.googleapis.com/discovery/v1/apis/fusiontables/v2/rest"
+  },
+  {
+    "version": "v1",
+    "name": "Games",
+    "url": "https://www.googleapis.com/discovery/v1/apis/games/v1/rest"
+  },
+  {
+    "version": "v1configuration",
+    "name": "GamesConfiguration",
+    "url": "https://www.googleapis.com/discovery/v1/apis/gamesConfiguration/v1configuration/rest"
+  },
+  {
+    "version": "v1management",
+    "name": "GamesManagement",
+    "url": "https://www.googleapis.com/discovery/v1/apis/gamesManagement/v1management/rest"
+  },
+  {
+    "version": "v1",
+    "name": "Genomics",
+    "url": "https://genomics.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v1",
+    "name": "Gmail",
+    "url": "https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest"
+  },
+  {
+    "version": "v1",
+    "name": "GroupsMigration",
+    "url": "https://www.googleapis.com/discovery/v1/apis/groupsmigration/v1/rest"
+  },
+  {
+    "version": "v1",
+    "name": "GroupsSettings",
+    "url": "https://www.googleapis.com/discovery/v1/apis/groupssettings/v1/rest"
+  },
+  {
+    "version": "v1",
+    "name": "IAM",
+    "url": "https://iam.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v3",
+    "name": "IdentityToolkit",
+    "url": "https://www.googleapis.com/discovery/v1/apis/identitytoolkit/v3/rest"
+  },
+  {
+    "version": "v1",
+    "name": "KnowledgeGraphSearch",
+    "url": "https://kgsearch.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v1",
+    "name": "Language",
+    "url": "https://language.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v1",
+    "name": "Licensing",
+    "url": "https://www.googleapis.com/discovery/v1/apis/licensing/v1/rest"
+  },
+  {
+    "version": "v2",
+    "name": "Logging",
+    "url": "https://logging.googleapis.com/$discovery/rest?version=v2"
+  },
+  {
+    "version": "v1",
+    "name": "Manufacturers",
+    "url": "https://manufacturers.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v1",
+    "name": "Mirror",
+    "url": "https://www.googleapis.com/discovery/v1/apis/mirror/v1/rest"
+  },
+  {
+    "version": "v1",
+    "name": "MachineLearning",
+    "url": "https://ml.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v3",
+    "name": "Monitoring",
+    "url": "https://monitoring.googleapis.com/$discovery/rest?version=v3"
+  },
+  {
+    "version": "v2",
+    "name": "OAuth2",
+    "url": "https://www.googleapis.com/discovery/v1/apis/oauth2/v2/rest"
+  },
+  {
+    "version": "v1alpha",
+    "name": "OSLogin",
+    "url": "https://oslogin.googleapis.com/$discovery/rest?version=v1alpha"
+  },
+  {
+    "version": "v2",
+    "name": "PageSpeedOnline",
+    "url": "https://www.googleapis.com/discovery/v1/apis/pagespeedonline/v2/rest"
+  },
+  {
+    "version": "v2",
+    "name": "Partners",
+    "url": "https://partners.googleapis.com/$discovery/rest?version=v2"
+  },
+  {
+    "version": "v1",
+    "name": "People",
+    "url": "https://people.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v1",
+    "name": "PlayCustomApp",
+    "url": "https://www.googleapis.com/discovery/v1/apis/playcustomapp/v1/rest"
+  },
+  {
+    "version": "v1",
+    "name": "PlayMoviesPartner",
+    "url": "https://playmoviespartner.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v1",
+    "name": "Plus",
+    "url": "https://www.googleapis.com/discovery/v1/apis/plus/v1/rest"
+  },
+  {
+    "version": "v1",
+    "name": "PlusDomains",
+    "url": "https://www.googleapis.com/discovery/v1/apis/plusDomains/v1/rest"
+  },
+  {
+    "version": "v1.6",
+    "name": "Prediction",
+    "url": "https://www.googleapis.com/discovery/v1/apis/prediction/v1.6/rest"
+  },
+  {
+    "version": "v1beta1",
+    "name": "ProximityBeacon",
+    "url": "https://proximitybeacon.googleapis.com/$discovery/rest?version=v1beta1"
+  },
+  {
+    "version": "v1",
+    "name": "PubSub",
+    "url": "https://pubsub.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v1",
+    "name": "QPXExpress",
+    "url": "https://www.googleapis.com/discovery/v1/apis/qpxExpress/v1/rest"
+  },
+  {
+    "version": "v1beta2",
+    "name": "ReplicaPool",
+    "url": "https://www.googleapis.com/discovery/v1/apis/replicapool/v1beta2/rest"
+  },
+  {
+    "version": "v1beta1",
+    "name": "ReplicaPoolUpdater",
+    "url": "https://www.googleapis.com/discovery/v1/apis/replicapoolupdater/v1beta1/rest"
+  },
+  {
+    "version": "v1",
+    "name": "ReportCard",
+    "url": "https://www.googleapis.com/discovery/v1/apis/reportcard/v1/rest"
+  },
+  {
+    "version": "v1",
+    "name": "Reseller",
+    "url": "https://www.googleapis.com/discovery/v1/apis/reseller/v1/rest"
+  },
+  {
+    "version": "v1beta2",
+    "name": "ResourceViews",
+    "url": "https://www.googleapis.com/discovery/v1/apis/resourceviews/v1beta2/rest"
+  },
+  {
+    "version": "v1",
+    "name": "RuntimeConfig",
+    "url": "https://runtimeconfig.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v4",
+    "name": "SafeBrowsing",
+    "url": "https://safebrowsing.googleapis.com/$discovery/rest?version=v4"
+  },
+  {
+    "version": "v1",
+    "name": "Script",
+    "url": "https://script.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v1",
+    "name": "SearchConsole",
+    "url": "https://searchconsole.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v1",
+    "name": "ServiceControl",
+    "url": "https://servicecontrol.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v1",
+    "name": "ServiceManagement",
+    "url": "https://servicemanagement.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v1",
+    "name": "ServiceUser",
+    "url": "https://serviceuser.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v4",
+    "name": "Sheets",
+    "url": "https://sheets.googleapis.com/$discovery/rest?version=v4"
+  },
+  {
+    "version": "v1",
+    "name": "SiteVerification",
+    "url": "https://www.googleapis.com/discovery/v1/apis/siteVerification/v1/rest"
+  },
+  {
+    "version": "v1",
+    "name": "Slides",
+    "url": "https://slides.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v1",
+    "name": "SourceRepo",
+    "url": "https://sourcerepo.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v1",
+    "name": "Spanner",
+    "url": "https://spanner.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v1explorer",
+    "name": "Spectrum",
+    "url": "https://www.googleapis.com/discovery/v1/apis/spectrum/v1explorer/rest"
+  },
+  {
+    "version": "v1",
+    "name": "Speech",
+    "url": "https://speech.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v1beta4",
+    "name": "SQLAdmin",
+    "url": "https://www.googleapis.com/discovery/v1/apis/sqladmin/v1beta4/rest"
+  },
+  {
+    "version": "v1",
+    "name": "Storage",
+    "url": "https://www.googleapis.com/discovery/v1/apis/storage/v1/rest"
+  },
+  {
+    "version": "v1",
+    "name": "StorageTransfer",
+    "url": "https://storagetransfer.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v1",
+    "name": "StreetViewPublish",
+    "url": "https://streetviewpublish.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v2",
+    "name": "Surveys",
+    "url": "https://www.googleapis.com/discovery/v1/apis/surveys/v2/rest"
+  },
+  {
+    "version": "v2",
+    "name": "TagManager",
+    "url": "https://www.googleapis.com/discovery/v1/apis/tagmanager/v2/rest"
+  },
+  {
+    "version": "v1beta2",
+    "name": "TaskQueue",
+    "url": "https://www.googleapis.com/discovery/v1/apis/taskqueue/v1beta2/rest"
+  },
+  {
+    "version": "v1",
+    "name": "Tasks",
+    "url": "https://www.googleapis.com/discovery/v1/apis/tasks/v1/rest"
+  },
+  {
+    "version": "v1beta3",
+    "name": "ToolResults",
+    "url": "https://www.googleapis.com/discovery/v1/apis/toolresults/v1beta3/rest"
+  },
+  {
+    "version": "v2",
+    "name": "Translate",
+    "url": "https://translation.googleapis.com/$discovery/rest?version=v2"
+  },
+  {
+    "version": "v1",
+    "name": "UrlShortener",
+    "url": "https://www.googleapis.com/discovery/v1/apis/urlshortener/v1/rest"
+  },
+  {
+    "version": "v1",
+    "name": "Vault",
+    "url": "https://vault.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v1beta1",
+    "name": "VideoIntelligence",
+    "url": "https://videointelligence.googleapis.com/$discovery/rest?version=v1beta1"
+  },
+  {
+    "version": "v1",
+    "name": "Vision",
+    "url": "https://vision.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v1",
+    "name": "Fonts",
+    "url": "https://www.googleapis.com/discovery/v1/apis/webfonts/v1/rest"
+  },
+  {
+    "version": "v3",
+    "name": "Webmaster",
+    "url": "https://www.googleapis.com/discovery/v1/apis/webmasters/v3/rest"
+  },
+  {
+    "version": "v3",
+    "name": "YouTube",
+    "url": "https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest"
+  },
+  {
+    "version": "v1",
+    "name": "YouTubeAnalytics",
+    "url": "https://www.googleapis.com/discovery/v1/apis/youtubeAnalytics/v1/rest"
+  },
+  {
+    "version": "v1",
+    "name": "YouTubeReporting",
+    "url": "https://youtubereporting.googleapis.com/$discovery/rest?version=v1"
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "repository": {},
+  "dependencies": {
+    "api-spec-converter": "^2.5.0"
+  }
+}
