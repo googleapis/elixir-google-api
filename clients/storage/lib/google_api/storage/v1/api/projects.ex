@@ -60,7 +60,7 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/projects/#{project_id}/serviceAccount")
+    |> url("/storage/v1/projects/#{project_id}/serviceAccount")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

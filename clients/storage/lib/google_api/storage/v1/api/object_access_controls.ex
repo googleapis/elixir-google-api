@@ -66,7 +66,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
     }
     %{}
     |> method(:delete)
-    |> url("/b/#{bucket}/o/#{object}/acl/#{entity}")
+    |> url("/storage/v1/b/#{bucket}/o/#{object}/acl/#{entity}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -113,7 +113,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
     }
     %{}
     |> method(:get)
-    |> url("/b/#{bucket}/o/#{object}/acl/#{entity}")
+    |> url("/storage/v1/b/#{bucket}/o/#{object}/acl/#{entity}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -161,7 +161,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
     }
     %{}
     |> method(:post)
-    |> url("/b/#{bucket}/o/#{object}/acl")
+    |> url("/storage/v1/b/#{bucket}/o/#{object}/acl")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -207,7 +207,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
     }
     %{}
     |> method(:get)
-    |> url("/b/#{bucket}/o/#{object}/acl")
+    |> url("/storage/v1/b/#{bucket}/o/#{object}/acl")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -256,7 +256,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
     }
     %{}
     |> method(:patch)
-    |> url("/b/#{bucket}/o/#{object}/acl/#{entity}")
+    |> url("/storage/v1/b/#{bucket}/o/#{object}/acl/#{entity}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -305,7 +305,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
     }
     %{}
     |> method(:put)
-    |> url("/b/#{bucket}/o/#{object}/acl/#{entity}")
+    |> url("/storage/v1/b/#{bucket}/o/#{object}/acl/#{entity}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

@@ -61,7 +61,7 @@ defmodule GoogleApi.Storage.V1.Api.Channels do
     }
     %{}
     |> method(:post)
-    |> url("/channels/stop")
+    |> url("/storage/v1/channels/stop")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

@@ -63,7 +63,7 @@ defmodule GoogleApi.Storage.V1.Api.Notifications do
     }
     %{}
     |> method(:delete)
-    |> url("/b/#{bucket}/notificationConfigs/#{notification}")
+    |> url("/storage/v1/b/#{bucket}/notificationConfigs/#{notification}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -107,7 +107,7 @@ defmodule GoogleApi.Storage.V1.Api.Notifications do
     }
     %{}
     |> method(:get)
-    |> url("/b/#{bucket}/notificationConfigs/#{notification}")
+    |> url("/storage/v1/b/#{bucket}/notificationConfigs/#{notification}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -152,7 +152,7 @@ defmodule GoogleApi.Storage.V1.Api.Notifications do
     }
     %{}
     |> method(:post)
-    |> url("/b/#{bucket}/notificationConfigs")
+    |> url("/storage/v1/b/#{bucket}/notificationConfigs")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -195,7 +195,7 @@ defmodule GoogleApi.Storage.V1.Api.Notifications do
     }
     %{}
     |> method(:get)
-    |> url("/b/#{bucket}/notificationConfigs")
+    |> url("/storage/v1/b/#{bucket}/notificationConfigs")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

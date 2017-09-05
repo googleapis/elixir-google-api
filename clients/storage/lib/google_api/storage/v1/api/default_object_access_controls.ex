@@ -63,7 +63,7 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
     }
     %{}
     |> method(:delete)
-    |> url("/b/#{bucket}/defaultObjectAcl/#{entity}")
+    |> url("/storage/v1/b/#{bucket}/defaultObjectAcl/#{entity}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -107,7 +107,7 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
     }
     %{}
     |> method(:get)
-    |> url("/b/#{bucket}/defaultObjectAcl/#{entity}")
+    |> url("/storage/v1/b/#{bucket}/defaultObjectAcl/#{entity}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -152,7 +152,7 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
     }
     %{}
     |> method(:post)
-    |> url("/b/#{bucket}/defaultObjectAcl")
+    |> url("/storage/v1/b/#{bucket}/defaultObjectAcl")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -199,7 +199,7 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
     }
     %{}
     |> method(:get)
-    |> url("/b/#{bucket}/defaultObjectAcl")
+    |> url("/storage/v1/b/#{bucket}/defaultObjectAcl")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -245,7 +245,7 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
     }
     %{}
     |> method(:patch)
-    |> url("/b/#{bucket}/defaultObjectAcl/#{entity}")
+    |> url("/storage/v1/b/#{bucket}/defaultObjectAcl/#{entity}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -291,7 +291,7 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
     }
     %{}
     |> method(:put)
-    |> url("/b/#{bucket}/defaultObjectAcl/#{entity}")
+    |> url("/storage/v1/b/#{bucket}/defaultObjectAcl/#{entity}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

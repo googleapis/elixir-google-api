@@ -63,7 +63,7 @@ defmodule GoogleApi.Storage.V1.Api.BucketAccessControls do
     }
     %{}
     |> method(:delete)
-    |> url("/b/#{bucket}/acl/#{entity}")
+    |> url("/storage/v1/b/#{bucket}/acl/#{entity}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -107,7 +107,7 @@ defmodule GoogleApi.Storage.V1.Api.BucketAccessControls do
     }
     %{}
     |> method(:get)
-    |> url("/b/#{bucket}/acl/#{entity}")
+    |> url("/storage/v1/b/#{bucket}/acl/#{entity}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -152,7 +152,7 @@ defmodule GoogleApi.Storage.V1.Api.BucketAccessControls do
     }
     %{}
     |> method(:post)
-    |> url("/b/#{bucket}/acl")
+    |> url("/storage/v1/b/#{bucket}/acl")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -195,7 +195,7 @@ defmodule GoogleApi.Storage.V1.Api.BucketAccessControls do
     }
     %{}
     |> method(:get)
-    |> url("/b/#{bucket}/acl")
+    |> url("/storage/v1/b/#{bucket}/acl")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -241,7 +241,7 @@ defmodule GoogleApi.Storage.V1.Api.BucketAccessControls do
     }
     %{}
     |> method(:patch)
-    |> url("/b/#{bucket}/acl/#{entity}")
+    |> url("/storage/v1/b/#{bucket}/acl/#{entity}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -287,7 +287,7 @@ defmodule GoogleApi.Storage.V1.Api.BucketAccessControls do
     }
     %{}
     |> method(:put)
-    |> url("/b/#{bucket}/acl/#{entity}")
+    |> url("/storage/v1/b/#{bucket}/acl/#{entity}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

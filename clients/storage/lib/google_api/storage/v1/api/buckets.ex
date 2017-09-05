@@ -66,7 +66,7 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
     }
     %{}
     |> method(:delete)
-    |> url("/b/#{bucket}")
+    |> url("/storage/v1/b/#{bucket}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -115,7 +115,7 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
     }
     %{}
     |> method(:get)
-    |> url("/b/#{bucket}")
+    |> url("/storage/v1/b/#{bucket}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -158,7 +158,7 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
     }
     %{}
     |> method(:get)
-    |> url("/b/#{bucket}/iam")
+    |> url("/storage/v1/b/#{bucket}/iam")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -313,7 +313,7 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
     }
     %{}
     |> method(:patch)
-    |> url("/b/#{bucket}")
+    |> url("/storage/v1/b/#{bucket}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -358,7 +358,7 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
     }
     %{}
     |> method(:put)
-    |> url("/b/#{bucket}/iam")
+    |> url("/storage/v1/b/#{bucket}/iam")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -402,7 +402,7 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
     }
     %{}
     |> method(:get)
-    |> url("/b/#{bucket}/iam/testPermissions")
+    |> url("/storage/v1/b/#{bucket}/iam/testPermissions")
     |> add_param(:query, :"permissions", permissions)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -458,7 +458,7 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
     }
     %{}
     |> method(:put)
-    |> url("/b/#{bucket}")
+    |> url("/storage/v1/b/#{bucket}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

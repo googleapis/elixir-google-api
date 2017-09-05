@@ -73,7 +73,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     }
     %{}
     |> method(:post)
-    |> url("/b/#{destination_bucket}/o/#{destination_object}/compose")
+    |> url("/storage/v1/b/#{destination_bucket}/o/#{destination_object}/compose")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -143,7 +143,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     }
     %{}
     |> method(:post)
-    |> url("/b/#{source_bucket}/o/#{source_object}/copyTo/b/#{destination_bucket}/o/#{destination_object}")
+    |> url("/storage/v1/b/#{source_bucket}/o/#{source_object}/copyTo/b/#{destination_bucket}/o/#{destination_object}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -197,7 +197,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     }
     %{}
     |> method(:delete)
-    |> url("/b/#{bucket}/o/#{object}")
+    |> url("/storage/v1/b/#{bucket}/o/#{object}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -253,7 +253,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     }
     %{}
     |> method(:get)
-    |> url("/b/#{bucket}/o/#{object}")
+    |> url("/storage/v1/b/#{bucket}/o/#{object}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -299,7 +299,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     }
     %{}
     |> method(:get)
-    |> url("/b/#{bucket}/o/#{object}/iam")
+    |> url("/storage/v1/b/#{bucket}/o/#{object}/iam")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -362,7 +362,137 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     }
     %{}
     |> method(:post)
-    |> url("/b/#{bucket}/o")
+    |> url("/storage/v1/b/#{bucket}/o")
+    |> add_optional_params(optional_params, opts)
+    |> Enum.into([])
+    |> (&Connection.request(connection, &1)).()
+    |> decode(%GoogleApi.Storage.V1.Model.Object{})
+  end
+
+  @doc """
+  Stores a new object and metadata.
+
+  ## Parameters
+
+  - connection (GoogleApi.Storage.V1.Connection): Connection to server
+  - bucket (String): Name of the bucket in which to store the new object. Overrides the provided object metadata&#39;s bucket value, if any.
+  - upload_type (String): Upload type
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
+    - :fields (String): Selector specifying which fields to include in a partial response.
+    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String): OAuth 2.0 token for the current user.
+    - :pretty_print (Boolean): Returns response with indentations and line breaks.
+    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :content_encoding (String): If set, sets the contentEncoding property of the final object to this value. Setting this parameter is equivalent to setting the contentEncoding metadata property. This can be useful when uploading an object with uploadType&#x3D;media to indicate the encoding of the content being uploaded.
+    - :if_generation_match (String): Makes the operation conditional on whether the object&#39;s current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
+    - :if_generation_not_match (String): Makes the operation conditional on whether the object&#39;s current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object.
+    - :if_metageneration_match (String): Makes the operation conditional on whether the object&#39;s current metageneration matches the given value.
+    - :if_metageneration_not_match (String): Makes the operation conditional on whether the object&#39;s current metageneration does not match the given value.
+    - :kms_key_name (String): Resource name of the Cloud KMS key, of the form projects/my-project/locations/global/keyRings/my-kr/cryptoKeys/my-key, that will be used to encrypt the object. Overrides the object metadata&#39;s kms_key_name value, if any.
+    - :name (String): Name of the object. Required when the object metadata is not otherwise provided. Overrides the object metadata&#39;s name value, if any. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
+    - :predefined_acl (String): Apply a predefined set of access controls to this object.
+    - :projection (String): Set of properties to return. Defaults to noAcl, unless the object resource specifies the acl property, when it defaults to full.
+    - :user_project (String): The project to be billed for this request, for Requester Pays buckets.
+    - :body (Object): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Storage.V1.Model.Object{}} on success
+  {:error, info} on failure
+  """
+  @spec storage_objects_insert_resumable(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.Storage.V1.Model.Object.t} | {:error, Tesla.Env.t}
+  def storage_objects_insert_resumable(connection, bucket, upload_type, opts \\ []) do
+    optional_params = %{
+      :"alt" => :query,
+      :"fields" => :query,
+      :"key" => :query,
+      :"oauth_token" => :query,
+      :"prettyPrint" => :query,
+      :"quotaUser" => :query,
+      :"userIp" => :query,
+      :"contentEncoding" => :query,
+      :"ifGenerationMatch" => :query,
+      :"ifGenerationNotMatch" => :query,
+      :"ifMetagenerationMatch" => :query,
+      :"ifMetagenerationNotMatch" => :query,
+      :"kmsKeyName" => :query,
+      :"name" => :query,
+      :"predefinedAcl" => :query,
+      :"projection" => :query,
+      :"userProject" => :query,
+      :"body" => :body
+    }
+    %{}
+    |> method(:post)
+    |> url("/resumable/upload/storage/v1/b/#{bucket}/o")
+    |> add_param(:query, :"uploadType", upload_type)
+    |> add_optional_params(optional_params, opts)
+    |> Enum.into([])
+    |> (&Connection.request(connection, &1)).()
+    |> decode(%GoogleApi.Storage.V1.Model.Object{})
+  end
+
+  @doc """
+  Stores a new object and metadata.
+
+  ## Parameters
+
+  - connection (GoogleApi.Storage.V1.Connection): Connection to server
+  - bucket (String): Name of the bucket in which to store the new object. Overrides the provided object metadata&#39;s bucket value, if any.
+  - upload_type (String): Upload type
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
+    - :fields (String): Selector specifying which fields to include in a partial response.
+    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String): OAuth 2.0 token for the current user.
+    - :pretty_print (Boolean): Returns response with indentations and line breaks.
+    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :content_encoding (String): If set, sets the contentEncoding property of the final object to this value. Setting this parameter is equivalent to setting the contentEncoding metadata property. This can be useful when uploading an object with uploadType&#x3D;media to indicate the encoding of the content being uploaded.
+    - :if_generation_match (String): Makes the operation conditional on whether the object&#39;s current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
+    - :if_generation_not_match (String): Makes the operation conditional on whether the object&#39;s current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object.
+    - :if_metageneration_match (String): Makes the operation conditional on whether the object&#39;s current metageneration matches the given value.
+    - :if_metageneration_not_match (String): Makes the operation conditional on whether the object&#39;s current metageneration does not match the given value.
+    - :kms_key_name (String): Resource name of the Cloud KMS key, of the form projects/my-project/locations/global/keyRings/my-kr/cryptoKeys/my-key, that will be used to encrypt the object. Overrides the object metadata&#39;s kms_key_name value, if any.
+    - :name (String): Name of the object. Required when the object metadata is not otherwise provided. Overrides the object metadata&#39;s name value, if any. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
+    - :predefined_acl (String): Apply a predefined set of access controls to this object.
+    - :projection (String): Set of properties to return. Defaults to noAcl, unless the object resource specifies the acl property, when it defaults to full.
+    - :user_project (String): The project to be billed for this request, for Requester Pays buckets.
+    - :body (Object): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Storage.V1.Model.Object{}} on success
+  {:error, info} on failure
+  """
+  @spec storage_objects_insert_simple(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.Storage.V1.Model.Object.t} | {:error, Tesla.Env.t}
+  def storage_objects_insert_simple(connection, bucket, upload_type, opts \\ []) do
+    optional_params = %{
+      :"alt" => :query,
+      :"fields" => :query,
+      :"key" => :query,
+      :"oauth_token" => :query,
+      :"prettyPrint" => :query,
+      :"quotaUser" => :query,
+      :"userIp" => :query,
+      :"contentEncoding" => :query,
+      :"ifGenerationMatch" => :query,
+      :"ifGenerationNotMatch" => :query,
+      :"ifMetagenerationMatch" => :query,
+      :"ifMetagenerationNotMatch" => :query,
+      :"kmsKeyName" => :query,
+      :"name" => :query,
+      :"predefinedAcl" => :query,
+      :"projection" => :query,
+      :"userProject" => :query,
+      :"body" => :body
+    }
+    %{}
+    |> method(:post)
+    |> url("/upload/storage/v1/b/#{bucket}/o")
+    |> add_param(:query, :"uploadType", upload_type)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -417,7 +547,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     }
     %{}
     |> method(:get)
-    |> url("/b/#{bucket}/o")
+    |> url("/storage/v1/b/#{bucket}/o")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -477,7 +607,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     }
     %{}
     |> method(:patch)
-    |> url("/b/#{bucket}/o/#{object}")
+    |> url("/storage/v1/b/#{bucket}/o/#{object}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -553,7 +683,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     }
     %{}
     |> method(:post)
-    |> url("/b/#{source_bucket}/o/#{source_object}/rewriteTo/b/#{destination_bucket}/o/#{destination_object}")
+    |> url("/storage/v1/b/#{source_bucket}/o/#{source_object}/rewriteTo/b/#{destination_bucket}/o/#{destination_object}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -601,7 +731,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     }
     %{}
     |> method(:put)
-    |> url("/b/#{bucket}/o/#{object}/iam")
+    |> url("/storage/v1/b/#{bucket}/o/#{object}/iam")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -648,7 +778,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     }
     %{}
     |> method(:get)
-    |> url("/b/#{bucket}/o/#{object}/iam/testPermissions")
+    |> url("/storage/v1/b/#{bucket}/o/#{object}/iam/testPermissions")
     |> add_param(:query, :"permissions", permissions)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -709,7 +839,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     }
     %{}
     |> method(:put)
-    |> url("/b/#{bucket}/o/#{object}")
+    |> url("/storage/v1/b/#{bucket}/o/#{object}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -766,7 +896,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     }
     %{}
     |> method(:post)
-    |> url("/b/#{bucket}/o/watch")
+    |> url("/storage/v1/b/#{bucket}/o/watch")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
