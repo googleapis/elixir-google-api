@@ -1,6 +1,6 @@
 # GoogleApi.Books.V1
 
-**TODO: Add description**
+Searches for books and manages your Google Books library.
 
 ## Installation
 

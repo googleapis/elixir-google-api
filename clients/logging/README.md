@@ -1,6 +1,6 @@
 # GoogleApi.Logging.V2
 
-**TODO: Add description**
+Writes log entries and manages your Stackdriver Logging configuration.
 
 ## Installation
 
