@@ -1,6 +1,6 @@
-# GoogleApi.VideoIntelligence.V1BETA1
+# GoogleApi.VideoIntelligence.V1beta1
 
-**TODO: Add description**
+Google Cloud Video Intelligence API.
 
 ## Installation
 
