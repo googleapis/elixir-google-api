@@ -1,6 +1,7 @@
 # GoogleApi.Vision.V1
 
-**TODO: Add description**
+Integrates Google Vision features, including image labeling, face, logo, and landmark detection,
+optical character recognition (OCR), and detection of explicit content, into applications.
 
 ## Installation
 
