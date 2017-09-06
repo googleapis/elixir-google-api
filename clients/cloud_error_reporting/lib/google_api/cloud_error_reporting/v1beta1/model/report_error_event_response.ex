@@ -17,19 +17,19 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudErrorReporting.V1BETA1.Model.TrackingIssue do
+defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.ReportErrorEventResponse do
   @moduledoc """
-  Information related to tracking the progress on resolving the error.
+  Response for reporting an individual error event. Data may be added to this message in the future.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"url"
+    
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudErrorReporting.V1BETA1.Model.TrackingIssue do
-  import GoogleApi.CloudErrorReporting.V1BETA1.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.CloudErrorReporting.V1beta1.Model.ReportErrorEventResponse do
+  import GoogleApi.CloudErrorReporting.V1beta1.Deserializer
   def decode(value, options) do
     value
   end

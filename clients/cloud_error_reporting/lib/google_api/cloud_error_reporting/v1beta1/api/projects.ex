@@ -17,13 +17,13 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudErrorReporting.V1BETA1.Api.Projects do
+defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
   @moduledoc """
   API calls for all endpoints tagged `Projects`.
   """
 
-  alias GoogleApi.CloudErrorReporting.V1BETA1.Connection
-  import GoogleApi.CloudErrorReporting.V1BETA1.RequestBuilder
+  alias GoogleApi.CloudErrorReporting.V1beta1.Connection
+  import GoogleApi.CloudErrorReporting.V1beta1.RequestBuilder
 
 
   @doc """
@@ -31,7 +31,7 @@ defmodule GoogleApi.CloudErrorReporting.V1BETA1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudErrorReporting.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.CloudErrorReporting.V1beta1.Connection): Connection to server
   - projects_id (String): Part of &#x60;projectName&#x60;. [Required] The resource name of the Google Cloud Platform project. Written as &#x60;projects/&#x60; plus the [Google Cloud Platform project ID](https://support.google.com/cloud/answer/6158840). Example: &#x60;projects/my-project-123&#x60;.
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
@@ -50,10 +50,10 @@ defmodule GoogleApi.CloudErrorReporting.V1BETA1.Api.Projects do
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudErrorReporting.V1BETA1.Model.DeleteEventsResponse{}} on success
+  {:ok, %GoogleApi.CloudErrorReporting.V1beta1.Model.DeleteEventsResponse{}} on success
   {:error, info} on failure
   """
-  @spec clouderrorreporting_projects_delete_events(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.CloudErrorReporting.V1BETA1.Model.DeleteEventsResponse.t} | {:error, Tesla.Env.t}
+  @spec clouderrorreporting_projects_delete_events(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.CloudErrorReporting.V1beta1.Model.DeleteEventsResponse.t} | {:error, Tesla.Env.t}
   def clouderrorreporting_projects_delete_events(connection, projects_id, opts \\ []) do
     optional_params = %{
       :"upload_protocol" => :query,
@@ -76,7 +76,7 @@ defmodule GoogleApi.CloudErrorReporting.V1BETA1.Api.Projects do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.CloudErrorReporting.V1BETA1.Model.DeleteEventsResponse{})
+    |> decode(%GoogleApi.CloudErrorReporting.V1beta1.Model.DeleteEventsResponse{})
   end
 
   @doc """
@@ -84,7 +84,7 @@ defmodule GoogleApi.CloudErrorReporting.V1BETA1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudErrorReporting.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.CloudErrorReporting.V1beta1.Connection): Connection to server
   - projects_id (String): Part of &#x60;projectName&#x60;. [Required] The resource name of the Google Cloud Platform project. Written as &#x60;projects/&#x60; plus the [Google Cloud Platform project ID](https://support.google.com/cloud/answer/6158840). Example: &#x60;projects/my-project-123&#x60;.
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
@@ -110,10 +110,10 @@ defmodule GoogleApi.CloudErrorReporting.V1BETA1.Api.Projects do
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudErrorReporting.V1BETA1.Model.ListEventsResponse{}} on success
+  {:ok, %GoogleApi.CloudErrorReporting.V1beta1.Model.ListEventsResponse{}} on success
   {:error, info} on failure
   """
-  @spec clouderrorreporting_projects_events_list(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.CloudErrorReporting.V1BETA1.Model.ListEventsResponse.t} | {:error, Tesla.Env.t}
+  @spec clouderrorreporting_projects_events_list(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.CloudErrorReporting.V1beta1.Model.ListEventsResponse.t} | {:error, Tesla.Env.t}
   def clouderrorreporting_projects_events_list(connection, projects_id, opts \\ []) do
     optional_params = %{
       :"upload_protocol" => :query,
@@ -143,7 +143,7 @@ defmodule GoogleApi.CloudErrorReporting.V1BETA1.Api.Projects do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.CloudErrorReporting.V1BETA1.Model.ListEventsResponse{})
+    |> decode(%GoogleApi.CloudErrorReporting.V1beta1.Model.ListEventsResponse{})
   end
 
   @doc """
@@ -151,7 +151,7 @@ defmodule GoogleApi.CloudErrorReporting.V1BETA1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudErrorReporting.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.CloudErrorReporting.V1beta1.Connection): Connection to server
   - projects_id (String): Part of &#x60;projectName&#x60;. [Required] The resource name of the Google Cloud Platform project. Written as &#x60;projects/&#x60; plus the [Google Cloud Platform project ID](https://support.google.com/cloud/answer/6158840). Example: &#x60;projects/my-project-123&#x60;.
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
@@ -171,10 +171,10 @@ defmodule GoogleApi.CloudErrorReporting.V1BETA1.Api.Projects do
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudErrorReporting.V1BETA1.Model.ReportErrorEventResponse{}} on success
+  {:ok, %GoogleApi.CloudErrorReporting.V1beta1.Model.ReportErrorEventResponse{}} on success
   {:error, info} on failure
   """
-  @spec clouderrorreporting_projects_events_report(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.CloudErrorReporting.V1BETA1.Model.ReportErrorEventResponse.t} | {:error, Tesla.Env.t}
+  @spec clouderrorreporting_projects_events_report(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.CloudErrorReporting.V1beta1.Model.ReportErrorEventResponse.t} | {:error, Tesla.Env.t}
   def clouderrorreporting_projects_events_report(connection, projects_id, opts \\ []) do
     optional_params = %{
       :"upload_protocol" => :query,
@@ -198,7 +198,7 @@ defmodule GoogleApi.CloudErrorReporting.V1BETA1.Api.Projects do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.CloudErrorReporting.V1BETA1.Model.ReportErrorEventResponse{})
+    |> decode(%GoogleApi.CloudErrorReporting.V1beta1.Model.ReportErrorEventResponse{})
   end
 
   @doc """
@@ -206,7 +206,7 @@ defmodule GoogleApi.CloudErrorReporting.V1BETA1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudErrorReporting.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.CloudErrorReporting.V1beta1.Connection): Connection to server
   - projects_id (String): Part of &#x60;projectName&#x60;. [Required] The resource name of the Google Cloud Platform project. Written as &lt;code&gt;projects/&lt;/code&gt; plus the &lt;a href&#x3D;\&quot;https://support.google.com/cloud/answer/6158840\&quot;&gt;Google Cloud Platform project ID&lt;/a&gt;.  Example: &lt;code&gt;projects/my-project-123&lt;/code&gt;.
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
@@ -236,10 +236,10 @@ defmodule GoogleApi.CloudErrorReporting.V1BETA1.Api.Projects do
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudErrorReporting.V1BETA1.Model.ListGroupStatsResponse{}} on success
+  {:ok, %GoogleApi.CloudErrorReporting.V1beta1.Model.ListGroupStatsResponse{}} on success
   {:error, info} on failure
   """
-  @spec clouderrorreporting_projects_group_stats_list(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.CloudErrorReporting.V1BETA1.Model.ListGroupStatsResponse.t} | {:error, Tesla.Env.t}
+  @spec clouderrorreporting_projects_group_stats_list(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.CloudErrorReporting.V1beta1.Model.ListGroupStatsResponse.t} | {:error, Tesla.Env.t}
   def clouderrorreporting_projects_group_stats_list(connection, projects_id, opts \\ []) do
     optional_params = %{
       :"upload_protocol" => :query,
@@ -273,7 +273,7 @@ defmodule GoogleApi.CloudErrorReporting.V1BETA1.Api.Projects do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.CloudErrorReporting.V1BETA1.Model.ListGroupStatsResponse{})
+    |> decode(%GoogleApi.CloudErrorReporting.V1beta1.Model.ListGroupStatsResponse{})
   end
 
   @doc """
@@ -281,7 +281,7 @@ defmodule GoogleApi.CloudErrorReporting.V1BETA1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudErrorReporting.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.CloudErrorReporting.V1beta1.Connection): Connection to server
   - projects_id (String): Part of &#x60;groupName&#x60;. [Required] The group resource name. Written as &lt;code&gt;projects/&lt;var&gt;projectID&lt;/var&gt;/groups/&lt;var&gt;group_name&lt;/var&gt;&lt;/code&gt;. Call &lt;a href&#x3D;\&quot;/error-reporting/reference/rest/v1beta1/projects.groupStats/list\&quot;&gt; &lt;code&gt;groupStats.list&lt;/code&gt;&lt;/a&gt; to return a list of groups belonging to this project.  Example: &lt;code&gt;projects/my-project-123/groups/my-group&lt;/code&gt;
   - groups_id (String): Part of &#x60;groupName&#x60;. See documentation of &#x60;projectsId&#x60;.
   - opts (KeywordList): [optional] Optional parameters
@@ -301,10 +301,10 @@ defmodule GoogleApi.CloudErrorReporting.V1BETA1.Api.Projects do
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudErrorReporting.V1BETA1.Model.ErrorGroup{}} on success
+  {:ok, %GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup{}} on success
   {:error, info} on failure
   """
-  @spec clouderrorreporting_projects_groups_get(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.CloudErrorReporting.V1BETA1.Model.ErrorGroup.t} | {:error, Tesla.Env.t}
+  @spec clouderrorreporting_projects_groups_get(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup.t} | {:error, Tesla.Env.t}
   def clouderrorreporting_projects_groups_get(connection, projects_id, groups_id, opts \\ []) do
     optional_params = %{
       :"upload_protocol" => :query,
@@ -327,7 +327,7 @@ defmodule GoogleApi.CloudErrorReporting.V1BETA1.Api.Projects do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.CloudErrorReporting.V1BETA1.Model.ErrorGroup{})
+    |> decode(%GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup{})
   end
 
   @doc """
@@ -335,7 +335,7 @@ defmodule GoogleApi.CloudErrorReporting.V1BETA1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudErrorReporting.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.CloudErrorReporting.V1beta1.Connection): Connection to server
   - projects_id (String): Part of &#x60;group.name&#x60;. The group resource name. Example: &lt;code&gt;projects/my-project-123/groups/my-groupid&lt;/code&gt;
   - groups_id (String): Part of &#x60;group.name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - opts (KeywordList): [optional] Optional parameters
@@ -356,10 +356,10 @@ defmodule GoogleApi.CloudErrorReporting.V1BETA1.Api.Projects do
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudErrorReporting.V1BETA1.Model.ErrorGroup{}} on success
+  {:ok, %GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup{}} on success
   {:error, info} on failure
   """
-  @spec clouderrorreporting_projects_groups_update(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.CloudErrorReporting.V1BETA1.Model.ErrorGroup.t} | {:error, Tesla.Env.t}
+  @spec clouderrorreporting_projects_groups_update(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup.t} | {:error, Tesla.Env.t}
   def clouderrorreporting_projects_groups_update(connection, projects_id, groups_id, opts \\ []) do
     optional_params = %{
       :"upload_protocol" => :query,
@@ -383,6 +383,6 @@ defmodule GoogleApi.CloudErrorReporting.V1BETA1.Api.Projects do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.CloudErrorReporting.V1BETA1.Model.ErrorGroup{})
+    |> decode(%GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup{})
   end
 end

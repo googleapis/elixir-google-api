@@ -17,27 +17,21 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudErrorReporting.V1BETA1.Model.ErrorContext do
+defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.TrackingIssue do
   @moduledoc """
-  A description of the context in which an error occurred. This data should be provided by the application when reporting an error, unless the error report has been generated automatically from Google App Engine logs.
+  Information related to tracking the progress on resolving the error.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"httpRequest",
-    :"reportLocation",
-    :"sourceReferences",
-    :"user"
+    :"url"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudErrorReporting.V1BETA1.Model.ErrorContext do
-  import GoogleApi.CloudErrorReporting.V1BETA1.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.CloudErrorReporting.V1beta1.Model.TrackingIssue do
+  import GoogleApi.CloudErrorReporting.V1beta1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"httpRequest", :struct, GoogleApi.CloudErrorReporting.V1BETA1.Model.HttpRequestContext, options)
-    |> deserialize(:"reportLocation", :struct, GoogleApi.CloudErrorReporting.V1BETA1.Model.SourceLocation, options)
-    |> deserialize(:"sourceReferences", :list, GoogleApi.CloudErrorReporting.V1BETA1.Model.SourceReference, options)
   end
 end
 

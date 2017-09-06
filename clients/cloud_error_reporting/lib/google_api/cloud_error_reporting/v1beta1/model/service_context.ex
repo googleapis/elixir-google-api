@@ -17,24 +17,23 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudErrorReporting.V1BETA1.Model.ListGroupStatsResponse do
+defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.ServiceContext do
   @moduledoc """
-  Contains a set of requested error group stats.
+  Describes a running service that sends errors. Its version changes over time and multiple versions can run in parallel.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"errorGroupStats",
-    :"nextPageToken",
-    :"timeRangeBegin"
+    :"resourceType",
+    :"service",
+    :"version"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudErrorReporting.V1BETA1.Model.ListGroupStatsResponse do
-  import GoogleApi.CloudErrorReporting.V1BETA1.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.CloudErrorReporting.V1beta1.Model.ServiceContext do
+  import GoogleApi.CloudErrorReporting.V1beta1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"errorGroupStats", :list, GoogleApi.CloudErrorReporting.V1BETA1.Model.ErrorGroupStats, options)
   end
 end
 

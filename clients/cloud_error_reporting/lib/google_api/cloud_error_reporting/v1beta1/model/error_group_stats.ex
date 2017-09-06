@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudErrorReporting.V1BETA1.Model.ErrorGroupStats do
+defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroupStats do
   @moduledoc """
   Data extracted for a specific group based on certain filter criteria, such as a given time period and/or service filter.
   """
@@ -36,14 +36,14 @@ defmodule GoogleApi.CloudErrorReporting.V1BETA1.Model.ErrorGroupStats do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudErrorReporting.V1BETA1.Model.ErrorGroupStats do
-  import GoogleApi.CloudErrorReporting.V1BETA1.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroupStats do
+  import GoogleApi.CloudErrorReporting.V1beta1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"affectedServices", :list, GoogleApi.CloudErrorReporting.V1BETA1.Model.ServiceContext, options)
-    |> deserialize(:"group", :struct, GoogleApi.CloudErrorReporting.V1BETA1.Model.ErrorGroup, options)
-    |> deserialize(:"representative", :struct, GoogleApi.CloudErrorReporting.V1BETA1.Model.ErrorEvent, options)
-    |> deserialize(:"timedCounts", :list, GoogleApi.CloudErrorReporting.V1BETA1.Model.TimedCount, options)
+    |> deserialize(:"affectedServices", :list, GoogleApi.CloudErrorReporting.V1beta1.Model.ServiceContext, options)
+    |> deserialize(:"group", :struct, GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup, options)
+    |> deserialize(:"representative", :struct, GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorEvent, options)
+    |> deserialize(:"timedCounts", :list, GoogleApi.CloudErrorReporting.V1beta1.Model.TimedCount, options)
   end
 end
 

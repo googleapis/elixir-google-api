@@ -17,26 +17,24 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudErrorReporting.V1BETA1.Model.ErrorEvent do
+defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup do
   @moduledoc """
-  An error event which is returned by the Error Reporting system.
+  Description of a group of similar error events.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"context",
-    :"eventTime",
-    :"message",
-    :"serviceContext"
+    :"groupId",
+    :"name",
+    :"trackingIssues"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudErrorReporting.V1BETA1.Model.ErrorEvent do
-  import GoogleApi.CloudErrorReporting.V1BETA1.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup do
+  import GoogleApi.CloudErrorReporting.V1beta1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"context", :struct, GoogleApi.CloudErrorReporting.V1BETA1.Model.ErrorContext, options)
-    |> deserialize(:"serviceContext", :struct, GoogleApi.CloudErrorReporting.V1BETA1.Model.ServiceContext, options)
+    |> deserialize(:"trackingIssues", :list, GoogleApi.CloudErrorReporting.V1beta1.Model.TrackingIssue, options)
   end
 end
 

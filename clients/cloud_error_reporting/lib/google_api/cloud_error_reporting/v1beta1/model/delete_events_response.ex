@@ -17,9 +17,9 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudErrorReporting.V1BETA1.Model.ReportErrorEventResponse do
+defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.DeleteEventsResponse do
   @moduledoc """
-  Response for reporting an individual error event. Data may be added to this message in the future.
+  Response message for deleting error events.
   """
 
   @derive [Poison.Encoder]
@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudErrorReporting.V1BETA1.Model.ReportErrorEventResponse d
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudErrorReporting.V1BETA1.Model.ReportErrorEventResponse do
-  import GoogleApi.CloudErrorReporting.V1BETA1.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.CloudErrorReporting.V1beta1.Model.DeleteEventsResponse do
+  import GoogleApi.CloudErrorReporting.V1beta1.Deserializer
   def decode(value, options) do
     value
   end

@@ -17,9 +17,9 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudErrorReporting.V1BETA1.Connection do
+defmodule GoogleApi.CloudErrorReporting.V1beta1.Connection do
   @moduledoc """
-  Handle Tesla connections for GoogleApi.CloudErrorReporting.V1BETA1.
+  Handle Tesla connections for GoogleApi.CloudErrorReporting.V1beta1.
   """
 
   use Tesla

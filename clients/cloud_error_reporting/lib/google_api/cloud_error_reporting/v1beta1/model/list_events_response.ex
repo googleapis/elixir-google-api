@@ -17,23 +17,24 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudErrorReporting.V1BETA1.Model.SourceLocation do
+defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.ListEventsResponse do
   @moduledoc """
-  Indicates a location in the source code of the service for which errors are reported. &#x60;functionName&#x60; must be provided by the application when reporting an error, unless the error report contains a &#x60;message&#x60; with a supported exception stack trace. All fields are optional for the later case.
+  Contains a set of requested error events.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"filePath",
-    :"functionName",
-    :"lineNumber"
+    :"errorEvents",
+    :"nextPageToken",
+    :"timeRangeBegin"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudErrorReporting.V1BETA1.Model.SourceLocation do
-  import GoogleApi.CloudErrorReporting.V1BETA1.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.CloudErrorReporting.V1beta1.Model.ListEventsResponse do
+  import GoogleApi.CloudErrorReporting.V1beta1.Deserializer
   def decode(value, options) do
     value
+    |> deserialize(:"errorEvents", :list, GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorEvent, options)
   end
 end
 

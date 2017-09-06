@@ -17,24 +17,21 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudErrorReporting.V1BETA1.Model.HttpRequestContext do
+defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.TimedCount do
   @moduledoc """
-  HTTP request data that is related to a reported error. This data should be provided by the application when reporting an error, unless the error report has been generated automatically from Google App Engine logs.
+  The number of errors in a given time period. All numbers are approximate since the error events are sampled before counting them.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"method",
-    :"referrer",
-    :"remoteIp",
-    :"responseStatusCode",
-    :"url",
-    :"userAgent"
+    :"count",
+    :"endTime",
+    :"startTime"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudErrorReporting.V1BETA1.Model.HttpRequestContext do
-  import GoogleApi.CloudErrorReporting.V1BETA1.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.CloudErrorReporting.V1beta1.Model.TimedCount do
+  import GoogleApi.CloudErrorReporting.V1beta1.Deserializer
   def decode(value, options) do
     value
   end
