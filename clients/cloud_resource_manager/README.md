@@ -1,6 +1,6 @@
 # GoogleApi.CloudResourceManager.V1
 
-**TODO: Add description**
+The Google Cloud Resource Manager API provides methods for creating, reading, and updating project metadata.
 
 ## Installation
 
