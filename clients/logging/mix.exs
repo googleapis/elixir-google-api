@@ -40,7 +40,10 @@ defmodule GoogleApi.Logging.V2.Mixfile do
       files: ["lib", "mix.exs", "README*", "LICENSE"],
       maintainers: ["Jeff Ching"],
       licenses: ["Apache 2.0"],
-      links: %{"GitHub" => "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/logging"}
+      links: %{
+        "GitHub" => "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/logging",
+        "Homepage" => "https://cloud.google.com/logging/"
+      }
     ]
   end
 end

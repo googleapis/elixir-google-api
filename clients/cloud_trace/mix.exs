@@ -42,7 +42,10 @@ defmodule GoogleApi.CloudTrace.V2.Mixfile do
       files: ["lib", "mix.exs", "README*", "LICENSE"],
       maintainers: ["Jeff Ching"],
       licenses: ["Apache 2.0"],
-      links: %{"GitHub" => "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/cloud_trace"}
+      links: %{
+        "GitHub" => "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/cloud_trace",
+        "Homepage" => "https://cloud.google.com/trace/"
+      }
     ]
   end
 end

@@ -40,7 +40,10 @@ defmodule GoogleApi.PubSub.V1.Mixfile do
       files: ["lib", "mix.exs", "README*", "LICENSE"],
       maintainers: ["Jeff Ching"],
       licenses: ["Apache 2.0"],
-      links: %{"GitHub" => "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/pub_sub"}
+      links: %{
+        "GitHub" => "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/pub_sub",
+        "Homepage" => "https://cloud.google.com/pubsub/"
+      }
     ]
   end
 end
