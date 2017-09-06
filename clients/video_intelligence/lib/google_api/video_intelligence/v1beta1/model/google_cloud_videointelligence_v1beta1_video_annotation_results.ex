@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.VideoIntelligence.V1BETA1.Model.GoogleCloudVideointelligenceV1beta1_VideoAnnotationResults do
+defmodule GoogleApi.VideoIntelligence.V1beta1.Model.GoogleCloudVideointelligenceV1beta1_VideoAnnotationResults do
   @moduledoc """
   Annotation results for a single video.
   """
@@ -32,14 +32,14 @@ defmodule GoogleApi.VideoIntelligence.V1BETA1.Model.GoogleCloudVideointelligence
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.VideoIntelligence.V1BETA1.Model.GoogleCloudVideointelligenceV1beta1_VideoAnnotationResults do
-  import GoogleApi.VideoIntelligence.V1BETA1.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.VideoIntelligence.V1beta1.Model.GoogleCloudVideointelligenceV1beta1_VideoAnnotationResults do
+  import GoogleApi.VideoIntelligence.V1beta1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"error", :struct, GoogleApi.VideoIntelligence.V1BETA1.Model.GoogleRpc_Status, options)
-    |> deserialize(:"labelAnnotations", :list, GoogleApi.VideoIntelligence.V1BETA1.Model.GoogleCloudVideointelligenceV1beta1_LabelAnnotation, options)
-    |> deserialize(:"safeSearchAnnotations", :list, GoogleApi.VideoIntelligence.V1BETA1.Model.GoogleCloudVideointelligenceV1beta1_SafeSearchAnnotation, options)
-    |> deserialize(:"shotAnnotations", :list, GoogleApi.VideoIntelligence.V1BETA1.Model.GoogleCloudVideointelligenceV1beta1_VideoSegment, options)
+    |> deserialize(:"error", :struct, GoogleApi.VideoIntelligence.V1beta1.Model.GoogleRpc_Status, options)
+    |> deserialize(:"labelAnnotations", :list, GoogleApi.VideoIntelligence.V1beta1.Model.GoogleCloudVideointelligenceV1beta1_LabelAnnotation, options)
+    |> deserialize(:"safeSearchAnnotations", :list, GoogleApi.VideoIntelligence.V1beta1.Model.GoogleCloudVideointelligenceV1beta1_SafeSearchAnnotation, options)
+    |> deserialize(:"shotAnnotations", :list, GoogleApi.VideoIntelligence.V1beta1.Model.GoogleCloudVideointelligenceV1beta1_VideoSegment, options)
   end
 end
 

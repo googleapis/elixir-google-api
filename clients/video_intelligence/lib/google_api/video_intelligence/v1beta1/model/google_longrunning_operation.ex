@@ -17,22 +17,28 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.VideoIntelligence.V1BETA1.Model.GoogleCloudVideointelligenceV1_AnnotateVideoProgress do
+defmodule GoogleApi.VideoIntelligence.V1beta1.Model.GoogleLongrunning_Operation do
   @moduledoc """
-  Video annotation progress. Included in the &#x60;metadata&#x60; field of the &#x60;Operation&#x60; returned by the &#x60;GetOperation&#x60; call of the &#x60;google::longrunning::Operations&#x60; service.
+  This resource represents a long-running operation that is the result of a network API call.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"annotationProgress"
+    :"done",
+    :"error",
+    :"metadata",
+    :"name",
+    :"response"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.VideoIntelligence.V1BETA1.Model.GoogleCloudVideointelligenceV1_AnnotateVideoProgress do
-  import GoogleApi.VideoIntelligence.V1BETA1.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.VideoIntelligence.V1beta1.Model.GoogleLongrunning_Operation do
+  import GoogleApi.VideoIntelligence.V1beta1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"annotationProgress", :list, GoogleApi.VideoIntelligence.V1BETA1.Model.GoogleCloudVideointelligenceV1_VideoAnnotationProgress, options)
+    |> deserialize(:"error", :struct, GoogleApi.VideoIntelligence.V1beta1.Model.GoogleRpc_Status, options)
+    |> deserialize(:"metadata", :struct, GoogleApi.VideoIntelligence.V1beta1.Model.Object, options)
+    |> deserialize(:"response", :struct, GoogleApi.VideoIntelligence.V1beta1.Model.Object, options)
   end
 end
 

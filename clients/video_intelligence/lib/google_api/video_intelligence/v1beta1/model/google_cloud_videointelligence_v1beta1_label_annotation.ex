@@ -17,22 +17,24 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.VideoIntelligence.V1BETA1.Model.GoogleCloudVideointelligenceV1_SafeSearchAnnotation do
+defmodule GoogleApi.VideoIntelligence.V1beta1.Model.GoogleCloudVideointelligenceV1beta1_LabelAnnotation do
   @moduledoc """
-  Safe search annotation (based on per-frame visual signals only). If no unsafe content has been detected in a frame, no annotations are present for that frame.
+  Label annotation.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"adult",
-    :"time"
+    :"description",
+    :"languageCode",
+    :"locations"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.VideoIntelligence.V1BETA1.Model.GoogleCloudVideointelligenceV1_SafeSearchAnnotation do
-  import GoogleApi.VideoIntelligence.V1BETA1.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.VideoIntelligence.V1beta1.Model.GoogleCloudVideointelligenceV1beta1_LabelAnnotation do
+  import GoogleApi.VideoIntelligence.V1beta1.Deserializer
   def decode(value, options) do
     value
+    |> deserialize(:"locations", :list, GoogleApi.VideoIntelligence.V1beta1.Model.GoogleCloudVideointelligenceV1beta1_LabelLocation, options)
   end
 end
 

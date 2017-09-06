@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.VideoIntelligence.V1BETA1.RequestBuilder do
+defmodule GoogleApi.VideoIntelligence.V1beta1.RequestBuilder do
   @moduledoc """
   Helper functions for building Tesla requests
   """

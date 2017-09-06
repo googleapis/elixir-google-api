@@ -17,27 +17,27 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.VideoIntelligence.V1BETA1.Model.GoogleCloudVideointelligenceV1beta1_AnnotateVideoRequest do
+defmodule GoogleApi.VideoIntelligence.V1beta1.Model.GoogleCloudVideointelligenceV1beta1_VideoContext do
   @moduledoc """
-  Video annotation request.
+  Video context and/or feature-specific parameters.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"features",
-    :"inputContent",
-    :"inputUri",
-    :"locationId",
-    :"outputUri",
-    :"videoContext"
+    :"labelDetectionMode",
+    :"labelDetectionModel",
+    :"safeSearchDetectionModel",
+    :"segments",
+    :"shotChangeDetectionModel",
+    :"stationaryCamera"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.VideoIntelligence.V1BETA1.Model.GoogleCloudVideointelligenceV1beta1_AnnotateVideoRequest do
-  import GoogleApi.VideoIntelligence.V1BETA1.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.VideoIntelligence.V1beta1.Model.GoogleCloudVideointelligenceV1beta1_VideoContext do
+  import GoogleApi.VideoIntelligence.V1beta1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"videoContext", :struct, GoogleApi.VideoIntelligence.V1BETA1.Model.GoogleCloudVideointelligenceV1beta1_VideoContext, options)
+    |> deserialize(:"segments", :list, GoogleApi.VideoIntelligence.V1beta1.Model.GoogleCloudVideointelligenceV1beta1_VideoSegment, options)
   end
 end
 

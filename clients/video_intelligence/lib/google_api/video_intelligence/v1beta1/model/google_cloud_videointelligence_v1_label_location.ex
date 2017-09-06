@@ -17,24 +17,24 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.VideoIntelligence.V1BETA1.Model.GoogleCloudVideointelligenceV1beta1_VideoAnnotationProgress do
+defmodule GoogleApi.VideoIntelligence.V1beta1.Model.GoogleCloudVideointelligenceV1_LabelLocation do
   @moduledoc """
-  Annotation progress for a single video.
+  Label location.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"inputUri",
-    :"progressPercent",
-    :"startTime",
-    :"updateTime"
+    :"confidence",
+    :"level",
+    :"segment"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.VideoIntelligence.V1BETA1.Model.GoogleCloudVideointelligenceV1beta1_VideoAnnotationProgress do
-  import GoogleApi.VideoIntelligence.V1BETA1.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.VideoIntelligence.V1beta1.Model.GoogleCloudVideointelligenceV1_LabelLocation do
+  import GoogleApi.VideoIntelligence.V1beta1.Deserializer
   def decode(value, options) do
     value
+    |> deserialize(:"segment", :struct, GoogleApi.VideoIntelligence.V1beta1.Model.GoogleCloudVideointelligenceV1_VideoSegment, options)
   end
 end
 

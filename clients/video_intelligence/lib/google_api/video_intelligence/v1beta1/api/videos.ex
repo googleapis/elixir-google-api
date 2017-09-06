@@ -17,13 +17,13 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.VideoIntelligence.V1BETA1.Api.Videos do
+defmodule GoogleApi.VideoIntelligence.V1beta1.Api.Videos do
   @moduledoc """
   API calls for all endpoints tagged `Videos`.
   """
 
-  alias GoogleApi.VideoIntelligence.V1BETA1.Connection
-  import GoogleApi.VideoIntelligence.V1BETA1.RequestBuilder
+  alias GoogleApi.VideoIntelligence.V1beta1.Connection
+  import GoogleApi.VideoIntelligence.V1beta1.RequestBuilder
 
 
   @doc """
@@ -31,7 +31,7 @@ defmodule GoogleApi.VideoIntelligence.V1BETA1.Api.Videos do
 
   ## Parameters
 
-  - connection (GoogleApi.VideoIntelligence.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.VideoIntelligence.V1beta1.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :bearer_token (String): OAuth bearer token.
     - :oauth_token (String): OAuth 2.0 token for the current user.
@@ -50,10 +50,10 @@ defmodule GoogleApi.VideoIntelligence.V1BETA1.Api.Videos do
 
   ## Returns
 
-  {:ok, %GoogleApi.VideoIntelligence.V1BETA1.Model.GoogleLongrunning_Operation{}} on success
+  {:ok, %GoogleApi.VideoIntelligence.V1beta1.Model.GoogleLongrunning_Operation{}} on success
   {:error, info} on failure
   """
-  @spec videointelligence_videos_annotate(Tesla.Env.client, keyword()) :: {:ok, GoogleApi.VideoIntelligence.V1BETA1.Model.GoogleLongrunning_Operation.t} | {:error, Tesla.Env.t}
+  @spec videointelligence_videos_annotate(Tesla.Env.client, keyword()) :: {:ok, GoogleApi.VideoIntelligence.V1beta1.Model.GoogleLongrunning_Operation.t} | {:error, Tesla.Env.t}
   def videointelligence_videos_annotate(connection, opts \\ []) do
     optional_params = %{
       :"bearer_token" => :query,
@@ -77,6 +77,6 @@ defmodule GoogleApi.VideoIntelligence.V1BETA1.Api.Videos do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.VideoIntelligence.V1BETA1.Model.GoogleLongrunning_Operation{})
+    |> decode(%GoogleApi.VideoIntelligence.V1beta1.Model.GoogleLongrunning_Operation{})
   end
 end
