@@ -13,7 +13,7 @@ defmodule GoogleApi.Books.V1.Mixfile do
       description: description(),
       package: package(),
       deps: deps(),
-      source_url: "https://github.com/GoogleCloudPlatform/elixir-google-api/clients/books"
+      source_url: "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/books"
     ]
   end
 
@@ -38,7 +38,7 @@ defmodule GoogleApi.Books.V1.Mixfile do
       files: ["lib", "mix.exs", "README*", "LICENSE"],
       maintainers: ["Jeff Ching"],
       licenses: ["Apache 2.0"],
-      links: %{"GitHub" => "https://github.com/GoogleCloudPlatform/elixir-google-api/clients/books"}
+      links: %{"GitHub" => "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/books"}
     ]
   end
 end
