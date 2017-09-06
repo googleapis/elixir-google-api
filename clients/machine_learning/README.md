@@ -1,6 +1,6 @@
 # GoogleApi.MachineLearning.V1
 
-**TODO: Add description**
+An API to enable creating and using machine learning models.
 
 ## Installation
 
