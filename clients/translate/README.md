@@ -1,6 +1,7 @@
 # GoogleApi.Translate.V2
 
-**TODO: Add description**
+The Google Cloud Translation API lets websites and programs integrate with
+Google Translate programmatically.
 
 ## Installation
 
