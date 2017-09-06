@@ -17,21 +17,24 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudMonitoring.V2BETA2.Model.ListTimeseriesDescriptorsRequest do
+defmodule GoogleApi.CloudMonitoring.V2beta2.Model.Timeseries do
   @moduledoc """
-  The request of cloudmonitoring.timeseriesDescriptors.list
+  The monitoring data is organized as metrics and stored as data points that are recorded over time. Each data point represents information like the CPU utilization of your virtual machine. A historical record of these data points is called a time series.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"kind"
+    :"points",
+    :"timeseriesDesc"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudMonitoring.V2BETA2.Model.ListTimeseriesDescriptorsRequest do
-  import GoogleApi.CloudMonitoring.V2BETA2.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.CloudMonitoring.V2beta2.Model.Timeseries do
+  import GoogleApi.CloudMonitoring.V2beta2.Deserializer
   def decode(value, options) do
     value
+    |> deserialize(:"points", :list, GoogleApi.CloudMonitoring.V2beta2.Model.Point, options)
+    |> deserialize(:"timeseriesDesc", :struct, GoogleApi.CloudMonitoring.V2beta2.Model.TimeseriesDescriptor, options)
   end
 end
 

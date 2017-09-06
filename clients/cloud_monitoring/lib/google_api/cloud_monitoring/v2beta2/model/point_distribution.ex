@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudMonitoring.V2BETA2.Model.PointDistribution do
+defmodule GoogleApi.CloudMonitoring.V2beta2.Model.PointDistribution do
   @moduledoc """
   Distribution data point value type. When writing distribution points, try to be consistent with the boundaries of your buckets. If you must modify the bucket boundaries, then do so by merging, partitioning, or appending rather than skewing them.
   """
@@ -30,13 +30,13 @@ defmodule GoogleApi.CloudMonitoring.V2BETA2.Model.PointDistribution do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudMonitoring.V2BETA2.Model.PointDistribution do
-  import GoogleApi.CloudMonitoring.V2BETA2.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.CloudMonitoring.V2beta2.Model.PointDistribution do
+  import GoogleApi.CloudMonitoring.V2beta2.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"buckets", :list, GoogleApi.CloudMonitoring.V2BETA2.Model.PointDistributionBucket, options)
-    |> deserialize(:"overflowBucket", :struct, GoogleApi.CloudMonitoring.V2BETA2.Model.PointDistributionOverflowBucket, options)
-    |> deserialize(:"underflowBucket", :struct, GoogleApi.CloudMonitoring.V2BETA2.Model.PointDistributionUnderflowBucket, options)
+    |> deserialize(:"buckets", :list, GoogleApi.CloudMonitoring.V2beta2.Model.PointDistributionBucket, options)
+    |> deserialize(:"overflowBucket", :struct, GoogleApi.CloudMonitoring.V2beta2.Model.PointDistributionOverflowBucket, options)
+    |> deserialize(:"underflowBucket", :struct, GoogleApi.CloudMonitoring.V2beta2.Model.PointDistributionUnderflowBucket, options)
   end
 end
 

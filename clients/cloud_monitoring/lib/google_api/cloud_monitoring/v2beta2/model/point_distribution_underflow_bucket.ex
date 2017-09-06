@@ -17,20 +17,20 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudMonitoring.V2BETA2.Model.MetricDescriptorTypeDescriptor do
+defmodule GoogleApi.CloudMonitoring.V2beta2.Model.PointDistributionUnderflowBucket do
   @moduledoc """
-  A type in a metric contains information about how the metric is collected and what its data points look like.
+  The underflow bucket is a special bucket that does not have the lowerBound field; it includes all of the events that are less than its upper bound.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"metricType",
-    :"valueType"
+    :"count",
+    :"upperBound"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudMonitoring.V2BETA2.Model.MetricDescriptorTypeDescriptor do
-  import GoogleApi.CloudMonitoring.V2BETA2.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.CloudMonitoring.V2beta2.Model.PointDistributionUnderflowBucket do
+  import GoogleApi.CloudMonitoring.V2beta2.Deserializer
   def decode(value, options) do
     value
   end

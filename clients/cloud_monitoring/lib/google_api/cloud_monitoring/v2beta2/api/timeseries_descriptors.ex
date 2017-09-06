@@ -17,13 +17,13 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudMonitoring.V2BETA2.Api.TimeseriesDescriptors do
+defmodule GoogleApi.CloudMonitoring.V2beta2.Api.TimeseriesDescriptors do
   @moduledoc """
   API calls for all endpoints tagged `TimeseriesDescriptors`.
   """
 
-  alias GoogleApi.CloudMonitoring.V2BETA2.Connection
-  import GoogleApi.CloudMonitoring.V2BETA2.RequestBuilder
+  alias GoogleApi.CloudMonitoring.V2beta2.Connection
+  import GoogleApi.CloudMonitoring.V2beta2.RequestBuilder
 
 
   @doc """
@@ -31,7 +31,7 @@ defmodule GoogleApi.CloudMonitoring.V2BETA2.Api.TimeseriesDescriptors do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudMonitoring.V2BETA2.Connection): Connection to server
+  - connection (GoogleApi.CloudMonitoring.V2beta2.Connection): Connection to server
   - project (String): The project ID to which this time series belongs. The value can be the numeric project ID or string-based project name.
   - metric (String): Metric names are protocol-free URLs as listed in the Supported Metrics page. For example, compute.googleapis.com/instance/disk/read_ops_count.
   - youngest (String): End of the time interval (inclusive), which is expressed as an RFC 3339 timestamp.
@@ -54,10 +54,10 @@ defmodule GoogleApi.CloudMonitoring.V2BETA2.Api.TimeseriesDescriptors do
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudMonitoring.V2BETA2.Model.ListTimeseriesDescriptorsResponse{}} on success
+  {:ok, %GoogleApi.CloudMonitoring.V2beta2.Model.ListTimeseriesDescriptorsResponse{}} on success
   {:error, info} on failure
   """
-  @spec cloudmonitoring_timeseries_descriptors_list(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.CloudMonitoring.V2BETA2.Model.ListTimeseriesDescriptorsResponse.t} | {:error, Tesla.Env.t}
+  @spec cloudmonitoring_timeseries_descriptors_list(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.CloudMonitoring.V2beta2.Model.ListTimeseriesDescriptorsResponse.t} | {:error, Tesla.Env.t}
   def cloudmonitoring_timeseries_descriptors_list(connection, project, metric, youngest, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -83,6 +83,6 @@ defmodule GoogleApi.CloudMonitoring.V2BETA2.Api.TimeseriesDescriptors do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.CloudMonitoring.V2BETA2.Model.ListTimeseriesDescriptorsResponse{})
+    |> decode(%GoogleApi.CloudMonitoring.V2beta2.Model.ListTimeseriesDescriptorsResponse{})
   end
 end

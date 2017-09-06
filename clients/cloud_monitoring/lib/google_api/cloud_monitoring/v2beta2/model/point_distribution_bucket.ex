@@ -17,19 +17,21 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudMonitoring.V2BETA2.Model.ListTimeseriesRequest do
+defmodule GoogleApi.CloudMonitoring.V2beta2.Model.PointDistributionBucket do
   @moduledoc """
-  The request of cloudmonitoring.timeseries.list
+  The histogram&#39;s bucket. Buckets that form the histogram of a distribution value. If the upper bound of a bucket, say U1, does not equal the lower bound of the next bucket, say L2, this means that there is no event in [U1, L2).
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"kind"
+    :"count",
+    :"lowerBound",
+    :"upperBound"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudMonitoring.V2BETA2.Model.ListTimeseriesRequest do
-  import GoogleApi.CloudMonitoring.V2BETA2.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.CloudMonitoring.V2beta2.Model.PointDistributionBucket do
+  import GoogleApi.CloudMonitoring.V2beta2.Deserializer
   def decode(value, options) do
     value
   end

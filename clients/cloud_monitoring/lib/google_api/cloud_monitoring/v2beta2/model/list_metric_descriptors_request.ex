@@ -17,27 +17,21 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudMonitoring.V2BETA2.Model.MetricDescriptor do
+defmodule GoogleApi.CloudMonitoring.V2beta2.Model.ListMetricDescriptorsRequest do
   @moduledoc """
-  A metricDescriptor defines the name, label keys, and data type of a particular metric.
+  The request of cloudmonitoring.metricDescriptors.list.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"description",
-    :"labels",
-    :"name",
-    :"project",
-    :"typeDescriptor"
+    :"kind"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudMonitoring.V2BETA2.Model.MetricDescriptor do
-  import GoogleApi.CloudMonitoring.V2BETA2.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.CloudMonitoring.V2beta2.Model.ListMetricDescriptorsRequest do
+  import GoogleApi.CloudMonitoring.V2beta2.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"labels", :list, GoogleApi.CloudMonitoring.V2BETA2.Model.MetricDescriptorLabelDescriptor, options)
-    |> deserialize(:"typeDescriptor", :struct, GoogleApi.CloudMonitoring.V2BETA2.Model.MetricDescriptorTypeDescriptor, options)
   end
 end
 

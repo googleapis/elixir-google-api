@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudMonitoring.V2BETA2.Model.Point do
+defmodule GoogleApi.CloudMonitoring.V2beta2.Model.Point do
   @moduledoc """
   Point is a single point in a time series. It consists of a start time, an end time, and a value.
   """
@@ -34,11 +34,11 @@ defmodule GoogleApi.CloudMonitoring.V2BETA2.Model.Point do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudMonitoring.V2BETA2.Model.Point do
-  import GoogleApi.CloudMonitoring.V2BETA2.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.CloudMonitoring.V2beta2.Model.Point do
+  import GoogleApi.CloudMonitoring.V2beta2.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"distributionValue", :struct, GoogleApi.CloudMonitoring.V2BETA2.Model.PointDistribution, options)
+    |> deserialize(:"distributionValue", :struct, GoogleApi.CloudMonitoring.V2beta2.Model.PointDistribution, options)
   end
 end
 

@@ -17,23 +17,24 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudMonitoring.V2BETA2.Model.TimeseriesDescriptor do
+defmodule GoogleApi.CloudMonitoring.V2beta2.Model.TimeseriesPoint do
   @moduledoc """
-  TimeseriesDescriptor identifies a single time series.
+  When writing time series, TimeseriesPoint should be used instead of Timeseries, to enforce single point for each time series in the timeseries.write request.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"labels",
-    :"metric",
-    :"project"
+    :"point",
+    :"timeseriesDesc"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudMonitoring.V2BETA2.Model.TimeseriesDescriptor do
-  import GoogleApi.CloudMonitoring.V2BETA2.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.CloudMonitoring.V2beta2.Model.TimeseriesPoint do
+  import GoogleApi.CloudMonitoring.V2beta2.Deserializer
   def decode(value, options) do
     value
+    |> deserialize(:"point", :struct, GoogleApi.CloudMonitoring.V2beta2.Model.Point, options)
+    |> deserialize(:"timeseriesDesc", :struct, GoogleApi.CloudMonitoring.V2beta2.Model.TimeseriesDescriptor, options)
   end
 end
 

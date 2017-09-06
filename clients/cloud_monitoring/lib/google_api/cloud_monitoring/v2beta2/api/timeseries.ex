@@ -17,13 +17,13 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudMonitoring.V2BETA2.Api.Timeseries do
+defmodule GoogleApi.CloudMonitoring.V2beta2.Api.Timeseries do
   @moduledoc """
   API calls for all endpoints tagged `Timeseries`.
   """
 
-  alias GoogleApi.CloudMonitoring.V2BETA2.Connection
-  import GoogleApi.CloudMonitoring.V2BETA2.RequestBuilder
+  alias GoogleApi.CloudMonitoring.V2beta2.Connection
+  import GoogleApi.CloudMonitoring.V2beta2.RequestBuilder
 
 
   @doc """
@@ -31,7 +31,7 @@ defmodule GoogleApi.CloudMonitoring.V2BETA2.Api.Timeseries do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudMonitoring.V2BETA2.Connection): Connection to server
+  - connection (GoogleApi.CloudMonitoring.V2beta2.Connection): Connection to server
   - project (String): The project ID to which this time series belongs. The value can be the numeric project ID or string-based project name.
   - metric (String): Metric names are protocol-free URLs as listed in the Supported Metrics page. For example, compute.googleapis.com/instance/disk/read_ops_count.
   - youngest (String): End of the time interval (inclusive), which is expressed as an RFC 3339 timestamp.
@@ -54,10 +54,10 @@ defmodule GoogleApi.CloudMonitoring.V2BETA2.Api.Timeseries do
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudMonitoring.V2BETA2.Model.ListTimeseriesResponse{}} on success
+  {:ok, %GoogleApi.CloudMonitoring.V2beta2.Model.ListTimeseriesResponse{}} on success
   {:error, info} on failure
   """
-  @spec cloudmonitoring_timeseries_list(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.CloudMonitoring.V2BETA2.Model.ListTimeseriesResponse.t} | {:error, Tesla.Env.t}
+  @spec cloudmonitoring_timeseries_list(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.CloudMonitoring.V2beta2.Model.ListTimeseriesResponse.t} | {:error, Tesla.Env.t}
   def cloudmonitoring_timeseries_list(connection, project, metric, youngest, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -83,7 +83,7 @@ defmodule GoogleApi.CloudMonitoring.V2BETA2.Api.Timeseries do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.CloudMonitoring.V2BETA2.Model.ListTimeseriesResponse{})
+    |> decode(%GoogleApi.CloudMonitoring.V2beta2.Model.ListTimeseriesResponse{})
   end
 
   @doc """
@@ -91,7 +91,7 @@ defmodule GoogleApi.CloudMonitoring.V2BETA2.Api.Timeseries do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudMonitoring.V2BETA2.Connection): Connection to server
+  - connection (GoogleApi.CloudMonitoring.V2beta2.Connection): Connection to server
   - project (String): The project ID. The value can be the numeric project ID or string-based project name.
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
@@ -105,10 +105,10 @@ defmodule GoogleApi.CloudMonitoring.V2BETA2.Api.Timeseries do
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudMonitoring.V2BETA2.Model.WriteTimeseriesResponse{}} on success
+  {:ok, %GoogleApi.CloudMonitoring.V2beta2.Model.WriteTimeseriesResponse{}} on success
   {:error, info} on failure
   """
-  @spec cloudmonitoring_timeseries_write(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.CloudMonitoring.V2BETA2.Model.WriteTimeseriesResponse.t} | {:error, Tesla.Env.t}
+  @spec cloudmonitoring_timeseries_write(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.CloudMonitoring.V2beta2.Model.WriteTimeseriesResponse.t} | {:error, Tesla.Env.t}
   def cloudmonitoring_timeseries_write(connection, project, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -126,6 +126,6 @@ defmodule GoogleApi.CloudMonitoring.V2BETA2.Api.Timeseries do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.CloudMonitoring.V2BETA2.Model.WriteTimeseriesResponse{})
+    |> decode(%GoogleApi.CloudMonitoring.V2beta2.Model.WriteTimeseriesResponse{})
   end
 end

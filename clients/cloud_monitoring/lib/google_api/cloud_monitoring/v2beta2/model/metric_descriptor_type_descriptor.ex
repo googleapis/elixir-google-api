@@ -17,26 +17,22 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudMonitoring.V2BETA2.Model.ListTimeseriesDescriptorsResponse do
+defmodule GoogleApi.CloudMonitoring.V2beta2.Model.MetricDescriptorTypeDescriptor do
   @moduledoc """
-  The response of cloudmonitoring.timeseriesDescriptors.list
+  A type in a metric contains information about how the metric is collected and what its data points look like.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"kind",
-    :"nextPageToken",
-    :"oldest",
-    :"timeseries",
-    :"youngest"
+    :"metricType",
+    :"valueType"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudMonitoring.V2BETA2.Model.ListTimeseriesDescriptorsResponse do
-  import GoogleApi.CloudMonitoring.V2BETA2.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.CloudMonitoring.V2beta2.Model.MetricDescriptorTypeDescriptor do
+  import GoogleApi.CloudMonitoring.V2beta2.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"timeseries", :list, GoogleApi.CloudMonitoring.V2BETA2.Model.TimeseriesDescriptor, options)
   end
 end
 

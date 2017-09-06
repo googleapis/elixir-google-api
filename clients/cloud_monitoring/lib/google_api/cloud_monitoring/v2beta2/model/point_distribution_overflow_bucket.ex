@@ -17,24 +17,22 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudMonitoring.V2BETA2.Model.TimeseriesPoint do
+defmodule GoogleApi.CloudMonitoring.V2beta2.Model.PointDistributionOverflowBucket do
   @moduledoc """
-  When writing time series, TimeseriesPoint should be used instead of Timeseries, to enforce single point for each time series in the timeseries.write request.
+  The overflow bucket is a special bucket that does not have the upperBound field; it includes all of the events that are no less than its lower bound.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"point",
-    :"timeseriesDesc"
+    :"count",
+    :"lowerBound"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudMonitoring.V2BETA2.Model.TimeseriesPoint do
-  import GoogleApi.CloudMonitoring.V2BETA2.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.CloudMonitoring.V2beta2.Model.PointDistributionOverflowBucket do
+  import GoogleApi.CloudMonitoring.V2beta2.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"point", :struct, GoogleApi.CloudMonitoring.V2BETA2.Model.Point, options)
-    |> deserialize(:"timeseriesDesc", :struct, GoogleApi.CloudMonitoring.V2BETA2.Model.TimeseriesDescriptor, options)
   end
 end
 

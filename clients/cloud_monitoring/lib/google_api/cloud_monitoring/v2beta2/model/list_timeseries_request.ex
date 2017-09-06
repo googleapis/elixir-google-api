@@ -17,20 +17,19 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudMonitoring.V2BETA2.Model.TimeseriesDescriptorLabel do
+defmodule GoogleApi.CloudMonitoring.V2beta2.Model.ListTimeseriesRequest do
   @moduledoc """
-  
+  The request of cloudmonitoring.timeseries.list
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"key",
-    :"value"
+    :"kind"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudMonitoring.V2BETA2.Model.TimeseriesDescriptorLabel do
-  import GoogleApi.CloudMonitoring.V2BETA2.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.CloudMonitoring.V2beta2.Model.ListTimeseriesRequest do
+  import GoogleApi.CloudMonitoring.V2beta2.Deserializer
   def decode(value, options) do
     value
   end

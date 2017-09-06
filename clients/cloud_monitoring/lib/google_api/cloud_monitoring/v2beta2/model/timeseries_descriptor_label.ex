@@ -17,20 +17,20 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudMonitoring.V2BETA2.Model.PointDistributionOverflowBucket do
+defmodule GoogleApi.CloudMonitoring.V2beta2.Model.TimeseriesDescriptorLabel do
   @moduledoc """
-  The overflow bucket is a special bucket that does not have the upperBound field; it includes all of the events that are no less than its lower bound.
+  
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"count",
-    :"lowerBound"
+    :"key",
+    :"value"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudMonitoring.V2BETA2.Model.PointDistributionOverflowBucket do
-  import GoogleApi.CloudMonitoring.V2BETA2.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.CloudMonitoring.V2beta2.Model.TimeseriesDescriptorLabel do
+  import GoogleApi.CloudMonitoring.V2beta2.Deserializer
   def decode(value, options) do
     value
   end

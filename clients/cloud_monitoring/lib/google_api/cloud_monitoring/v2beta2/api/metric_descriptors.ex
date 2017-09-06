@@ -17,13 +17,13 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudMonitoring.V2BETA2.Api.MetricDescriptors do
+defmodule GoogleApi.CloudMonitoring.V2beta2.Api.MetricDescriptors do
   @moduledoc """
   API calls for all endpoints tagged `MetricDescriptors`.
   """
 
-  alias GoogleApi.CloudMonitoring.V2BETA2.Connection
-  import GoogleApi.CloudMonitoring.V2BETA2.RequestBuilder
+  alias GoogleApi.CloudMonitoring.V2beta2.Connection
+  import GoogleApi.CloudMonitoring.V2beta2.RequestBuilder
 
 
   @doc """
@@ -31,7 +31,7 @@ defmodule GoogleApi.CloudMonitoring.V2BETA2.Api.MetricDescriptors do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudMonitoring.V2BETA2.Connection): Connection to server
+  - connection (GoogleApi.CloudMonitoring.V2beta2.Connection): Connection to server
   - project (String): The project id. The value can be the numeric project ID or string-based project name.
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
@@ -45,10 +45,10 @@ defmodule GoogleApi.CloudMonitoring.V2BETA2.Api.MetricDescriptors do
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudMonitoring.V2BETA2.Model.MetricDescriptor{}} on success
+  {:ok, %GoogleApi.CloudMonitoring.V2beta2.Model.MetricDescriptor{}} on success
   {:error, info} on failure
   """
-  @spec cloudmonitoring_metric_descriptors_create(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.CloudMonitoring.V2BETA2.Model.MetricDescriptor.t} | {:error, Tesla.Env.t}
+  @spec cloudmonitoring_metric_descriptors_create(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.CloudMonitoring.V2beta2.Model.MetricDescriptor.t} | {:error, Tesla.Env.t}
   def cloudmonitoring_metric_descriptors_create(connection, project, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -66,7 +66,7 @@ defmodule GoogleApi.CloudMonitoring.V2BETA2.Api.MetricDescriptors do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.CloudMonitoring.V2BETA2.Model.MetricDescriptor{})
+    |> decode(%GoogleApi.CloudMonitoring.V2beta2.Model.MetricDescriptor{})
   end
 
   @doc """
@@ -74,7 +74,7 @@ defmodule GoogleApi.CloudMonitoring.V2BETA2.Api.MetricDescriptors do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudMonitoring.V2BETA2.Connection): Connection to server
+  - connection (GoogleApi.CloudMonitoring.V2beta2.Connection): Connection to server
   - project (String): The project ID to which the metric belongs.
   - metric (String): Name of the metric.
   - opts (KeywordList): [optional] Optional parameters
@@ -88,10 +88,10 @@ defmodule GoogleApi.CloudMonitoring.V2BETA2.Api.MetricDescriptors do
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudMonitoring.V2BETA2.Model.DeleteMetricDescriptorResponse{}} on success
+  {:ok, %GoogleApi.CloudMonitoring.V2beta2.Model.DeleteMetricDescriptorResponse{}} on success
   {:error, info} on failure
   """
-  @spec cloudmonitoring_metric_descriptors_delete(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.CloudMonitoring.V2BETA2.Model.DeleteMetricDescriptorResponse.t} | {:error, Tesla.Env.t}
+  @spec cloudmonitoring_metric_descriptors_delete(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.CloudMonitoring.V2beta2.Model.DeleteMetricDescriptorResponse.t} | {:error, Tesla.Env.t}
   def cloudmonitoring_metric_descriptors_delete(connection, project, metric, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -108,7 +108,7 @@ defmodule GoogleApi.CloudMonitoring.V2BETA2.Api.MetricDescriptors do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.CloudMonitoring.V2BETA2.Model.DeleteMetricDescriptorResponse{})
+    |> decode(%GoogleApi.CloudMonitoring.V2beta2.Model.DeleteMetricDescriptorResponse{})
   end
 
   @doc """
@@ -116,7 +116,7 @@ defmodule GoogleApi.CloudMonitoring.V2BETA2.Api.MetricDescriptors do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudMonitoring.V2BETA2.Connection): Connection to server
+  - connection (GoogleApi.CloudMonitoring.V2beta2.Connection): Connection to server
   - project (String): The project id. The value can be the numeric project ID or string-based project name.
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
@@ -133,10 +133,10 @@ defmodule GoogleApi.CloudMonitoring.V2BETA2.Api.MetricDescriptors do
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudMonitoring.V2BETA2.Model.ListMetricDescriptorsResponse{}} on success
+  {:ok, %GoogleApi.CloudMonitoring.V2beta2.Model.ListMetricDescriptorsResponse{}} on success
   {:error, info} on failure
   """
-  @spec cloudmonitoring_metric_descriptors_list(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.CloudMonitoring.V2BETA2.Model.ListMetricDescriptorsResponse.t} | {:error, Tesla.Env.t}
+  @spec cloudmonitoring_metric_descriptors_list(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.CloudMonitoring.V2beta2.Model.ListMetricDescriptorsResponse.t} | {:error, Tesla.Env.t}
   def cloudmonitoring_metric_descriptors_list(connection, project, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -157,6 +157,6 @@ defmodule GoogleApi.CloudMonitoring.V2BETA2.Api.MetricDescriptors do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.CloudMonitoring.V2BETA2.Model.ListMetricDescriptorsResponse{})
+    |> decode(%GoogleApi.CloudMonitoring.V2beta2.Model.ListMetricDescriptorsResponse{})
   end
 end

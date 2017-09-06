@@ -17,9 +17,9 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudMonitoring.V2BETA2.Connection do
+defmodule GoogleApi.CloudMonitoring.V2beta2.Connection do
   @moduledoc """
-  Handle Tesla connections for GoogleApi.CloudMonitoring.V2BETA2.
+  Handle Tesla connections for GoogleApi.CloudMonitoring.V2beta2.
   """
 
   use Tesla

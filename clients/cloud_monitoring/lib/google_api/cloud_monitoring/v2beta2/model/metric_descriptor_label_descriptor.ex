@@ -17,23 +17,22 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudMonitoring.V2BETA2.Model.WriteTimeseriesRequest do
+defmodule GoogleApi.CloudMonitoring.V2beta2.Model.MetricDescriptorLabelDescriptor do
   @moduledoc """
-  The request of cloudmonitoring.timeseries.write
+  A label in a metric is a description of this metric, including the key of this description (what the description is), and the value for this description.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"commonLabels",
-    :"timeseries"
+    :"description",
+    :"key"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudMonitoring.V2BETA2.Model.WriteTimeseriesRequest do
-  import GoogleApi.CloudMonitoring.V2BETA2.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.CloudMonitoring.V2beta2.Model.MetricDescriptorLabelDescriptor do
+  import GoogleApi.CloudMonitoring.V2beta2.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"timeseries", :list, GoogleApi.CloudMonitoring.V2BETA2.Model.TimeseriesPoint, options)
   end
 end
 

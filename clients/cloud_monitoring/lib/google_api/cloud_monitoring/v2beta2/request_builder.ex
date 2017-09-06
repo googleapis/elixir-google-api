@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudMonitoring.V2BETA2.RequestBuilder do
+defmodule GoogleApi.CloudMonitoring.V2beta2.RequestBuilder do
   @moduledoc """
   Helper functions for building Tesla requests
   """
