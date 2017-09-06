@@ -1,6 +1,6 @@
-# GoogleApi.CloudMonitoring.V2BETA2
+# GoogleApi.CloudMonitoring.V2beta2
 
-**TODO: Add description**
+Accesses Google Cloud Monitoring data.
 
 ## Installation
 
