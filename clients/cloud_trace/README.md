@@ -1,6 +1,8 @@
-# GoogleApi.CloudTrace.V2
+# GoogleApi.CloudTrace.V1
 
-**TODO: Add description**
+Send and retrieve trace data from Stackdriver Trace. Data is generated and available by default
+for all App Engine applications. Data from other applications can be written to Stackdriver Trace
+for display, reporting, and analysis.
 
 ## Installation
 

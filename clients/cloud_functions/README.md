@@ -1,6 +1,6 @@
 # GoogleApi.CloudFunctions.V1
 
-**TODO: Add description**
+API for managing lightweight user-provided functions executed in response to events.
 
 ## Installation
 

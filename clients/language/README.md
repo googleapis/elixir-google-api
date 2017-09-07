@@ -1,6 +1,7 @@
 # GoogleApi.Language.V1
 
-**TODO: Add description**
+Provides natural language understanding technologies to developers.
+Examples include sentiment analysis, entity recognition, entity sentiment analysis, and text annotations
 
 ## Installation
 

@@ -1,6 +1,6 @@
 # GoogleApi.DeploymentManager.V2
 
-**TODO: Add description**
+Declares, configures, and deploys complex solutions on Google Cloud Platform.
 
 ## Installation
 

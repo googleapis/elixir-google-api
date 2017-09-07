@@ -25,3 +25,4 @@ specifications/**/*.json
 
 clients/*/deps
 clients/*/_build
+clients/*/mix.lock

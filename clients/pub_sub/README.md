@@ -1,6 +1,6 @@
 # GoogleApi.PubSub.V1
 
-**TODO: Add description**
+Provides reliable, many-to-many, asynchronous messaging between applications.
 
 ## Installation
 

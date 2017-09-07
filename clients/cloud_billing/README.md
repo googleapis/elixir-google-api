@@ -1,6 +1,7 @@
 # GoogleApi.CloudBilling.V1
 
-**TODO: Add description**
+Allows developers to manage billing for their Google Cloud Platform projects
+programmatically.
 
 ## Installation
 

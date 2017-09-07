@@ -1,6 +1,6 @@
 # GoogleApi.DNS.V1
 
-**TODO: Add description**
+Configures and serves authoritative DNS records.
 
 ## Installation
 

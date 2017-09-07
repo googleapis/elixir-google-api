@@ -1,6 +1,6 @@
 # GoogleApi.CloudDebugger.V2
 
-**TODO: Add description**
+Examines the call stack and variables of a running application without stopping or slowing it down.
 
 ## Installation
 

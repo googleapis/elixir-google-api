@@ -1,6 +1,6 @@
 # GoogleApi.People.V1
 
-**TODO: Add description**
+Provides access to information about profiles and contacts.
 
 ## Installation
 

@@ -45,7 +45,7 @@ defmodule GoogleApis.ApiConfig do
   def module_version(%{version: version}) do
     version
     |> String.replace(".", "")
-    |> String.upcase
+    |> String.capitalize
   end
 
   def load_all() do

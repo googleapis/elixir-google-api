@@ -57,4 +57,8 @@ defmodule GoogleApis.ApiConfigTest do
   test "module_version should handle point versions" do
     assert "V14" == ApiConfig.module_version(%ApiConfig{version: "v1.4"})
   end
+
+  test "module_version should handle beta versions" do
+    assert "V2beta2" == ApiConfig.module_version(%ApiConfig{version: "v2beta2"})
+  end
 end

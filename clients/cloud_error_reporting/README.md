@@ -1,6 +1,7 @@
-# GoogleApi.CloudErrorReporting.V1BETA1
+# GoogleApi.CloudErrorReporting.V1beta1
 
-**TODO: Add description**
+Groups and counts similar errors from cloud services and applications,
+reports new errors, and provides access to error groups and their associated errors.
 
 ## Installation
 
