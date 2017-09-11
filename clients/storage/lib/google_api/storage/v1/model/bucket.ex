@@ -66,4 +66,3 @@ defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.Bucket do
   end
 end
 
-

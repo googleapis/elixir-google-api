@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.ObjectAccessControls do
   end
 end
 
-

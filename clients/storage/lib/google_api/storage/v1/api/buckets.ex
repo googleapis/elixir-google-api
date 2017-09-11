@@ -207,7 +207,7 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
     }
     %{}
     |> method(:post)
-    |> url("/b")
+    |> url("/storage/v1/b")
     |> add_param(:query, :"project", project)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -257,7 +257,7 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
     }
     %{}
     |> method(:get)
-    |> url("/b")
+    |> url("/storage/v1/b")
     |> add_param(:query, :"project", project)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
