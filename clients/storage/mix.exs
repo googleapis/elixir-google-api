@@ -42,7 +42,7 @@ defmodule GoogleApi.Storage.V1.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/storage",
-        "Homepage" => "https://cloud.google.comstorage/"
+        "Homepage" => "https://cloud.google.com/storage/"
       }
     ]
   end
