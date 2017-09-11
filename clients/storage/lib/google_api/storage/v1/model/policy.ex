@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.Policy do
   end
 end
 
-

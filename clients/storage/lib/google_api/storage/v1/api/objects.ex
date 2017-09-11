@@ -441,7 +441,9 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
 
   - connection (GoogleApi.Storage.V1.Connection): Connection to server
   - bucket (String): Name of the bucket in which to store the new object. Overrides the provided object metadata&#39;s bucket value, if any.
-  - upload_type (String): Upload type
+  - upload_type (String): Upload type. Must be \&quot;multipart\&quot;.
+  - metadata (Object): Object metadata
+  - data (String): The file to upload
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
     - :fields (String): Selector specifying which fields to include in a partial response.
@@ -460,15 +462,14 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :predefined_acl (String): Apply a predefined set of access controls to this object.
     - :projection (String): Set of properties to return. Defaults to noAcl, unless the object resource specifies the acl property, when it defaults to full.
     - :user_project (String): The project to be billed for this request, for Requester Pays buckets.
-    - :body (Object): 
 
   ## Returns
 
   {:ok, %GoogleApi.Storage.V1.Model.Object{}} on success
   {:error, info} on failure
   """
-  @spec storage_objects_insert_simple(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.Storage.V1.Model.Object.t} | {:error, Tesla.Env.t}
-  def storage_objects_insert_simple(connection, bucket, upload_type, opts \\ []) do
+  @spec storage_objects_insert_simple(Tesla.Env.client, String.t, String.t, GoogleApi.Storage.V1.Model.Object.t, String.t, keyword()) :: {:ok, GoogleApi.Storage.V1.Model.Object.t} | {:error, Tesla.Env.t}
+  def storage_objects_insert_simple(connection, bucket, upload_type, metadata, data, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
       :"fields" => :query,
@@ -486,13 +487,14 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :"name" => :query,
       :"predefinedAcl" => :query,
       :"projection" => :query,
-      :"userProject" => :query,
-      :"body" => :body
+      :"userProject" => :query
     }
     %{}
     |> method(:post)
     |> url("/upload/storage/v1/b/#{bucket}/o")
     |> add_param(:query, :"uploadType", upload_type)
+    |> add_param(:body, :"metadata", metadata)
+    |> add_param(:file, :"data", data)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.Bucket_lifecycle_conditi
   end
 end
 
-

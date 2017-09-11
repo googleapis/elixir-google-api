@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.ComposeRequest_sourceObj
   end
 end
 
-

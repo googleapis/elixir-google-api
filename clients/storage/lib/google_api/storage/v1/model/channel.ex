@@ -38,10 +38,8 @@ defmodule GoogleApi.Storage.V1.Model.Channel do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.Channel do
-  import GoogleApi.Storage.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

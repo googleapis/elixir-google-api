@@ -1,6 +1,6 @@
 # GoogleApi.Storage.V1
 
-**TODO: Add description**
+Stores and retrieves potentially large, immutable data objects.
 
 ## Installation
 
