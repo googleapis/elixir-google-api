@@ -17,13 +17,13 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.TaskQueue.V1BETA2.Api.Tasks do
+defmodule GoogleApi.TaskQueue.V1beta2.Api.Tasks do
   @moduledoc """
   API calls for all endpoints tagged `Tasks`.
   """
 
-  alias GoogleApi.TaskQueue.V1BETA2.Connection
-  import GoogleApi.TaskQueue.V1BETA2.RequestBuilder
+  alias GoogleApi.TaskQueue.V1beta2.Connection
+  import GoogleApi.TaskQueue.V1beta2.RequestBuilder
 
 
   @doc """
@@ -31,7 +31,7 @@ defmodule GoogleApi.TaskQueue.V1BETA2.Api.Tasks do
 
   ## Parameters
 
-  - connection (GoogleApi.TaskQueue.V1BETA2.Connection): Connection to server
+  - connection (GoogleApi.TaskQueue.V1beta2.Connection): Connection to server
   - project (String): The project under which the queue lies.
   - taskqueue (String): The taskqueue to delete a task from.
   - task (String): The id of the task to delete.
@@ -74,7 +74,7 @@ defmodule GoogleApi.TaskQueue.V1BETA2.Api.Tasks do
 
   ## Parameters
 
-  - connection (GoogleApi.TaskQueue.V1BETA2.Connection): Connection to server
+  - connection (GoogleApi.TaskQueue.V1beta2.Connection): Connection to server
   - project (String): The project under which the queue lies.
   - taskqueue (String): The taskqueue in which the task belongs.
   - task (String): The task to get properties of.
@@ -89,10 +89,10 @@ defmodule GoogleApi.TaskQueue.V1BETA2.Api.Tasks do
 
   ## Returns
 
-  {:ok, %GoogleApi.TaskQueue.V1BETA2.Model.Task{}} on success
+  {:ok, %GoogleApi.TaskQueue.V1beta2.Model.Task{}} on success
   {:error, info} on failure
   """
-  @spec taskqueue_tasks_get(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.TaskQueue.V1BETA2.Model.Task.t} | {:error, Tesla.Env.t}
+  @spec taskqueue_tasks_get(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.TaskQueue.V1beta2.Model.Task.t} | {:error, Tesla.Env.t}
   def taskqueue_tasks_get(connection, project, taskqueue, task, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -109,7 +109,7 @@ defmodule GoogleApi.TaskQueue.V1BETA2.Api.Tasks do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.TaskQueue.V1BETA2.Model.Task{})
+    |> decode(%GoogleApi.TaskQueue.V1beta2.Model.Task{})
   end
 
   @doc """
@@ -117,7 +117,7 @@ defmodule GoogleApi.TaskQueue.V1BETA2.Api.Tasks do
 
   ## Parameters
 
-  - connection (GoogleApi.TaskQueue.V1BETA2.Connection): Connection to server
+  - connection (GoogleApi.TaskQueue.V1beta2.Connection): Connection to server
   - project (String): The project under which the queue lies
   - taskqueue (String): The taskqueue to insert the task into
   - opts (KeywordList): [optional] Optional parameters
@@ -132,10 +132,10 @@ defmodule GoogleApi.TaskQueue.V1BETA2.Api.Tasks do
 
   ## Returns
 
-  {:ok, %GoogleApi.TaskQueue.V1BETA2.Model.Task{}} on success
+  {:ok, %GoogleApi.TaskQueue.V1beta2.Model.Task{}} on success
   {:error, info} on failure
   """
-  @spec taskqueue_tasks_insert(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.TaskQueue.V1BETA2.Model.Task.t} | {:error, Tesla.Env.t}
+  @spec taskqueue_tasks_insert(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.TaskQueue.V1beta2.Model.Task.t} | {:error, Tesla.Env.t}
   def taskqueue_tasks_insert(connection, project, taskqueue, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -153,7 +153,7 @@ defmodule GoogleApi.TaskQueue.V1BETA2.Api.Tasks do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.TaskQueue.V1BETA2.Model.Task{})
+    |> decode(%GoogleApi.TaskQueue.V1beta2.Model.Task{})
   end
 
   @doc """
@@ -161,7 +161,7 @@ defmodule GoogleApi.TaskQueue.V1BETA2.Api.Tasks do
 
   ## Parameters
 
-  - connection (GoogleApi.TaskQueue.V1BETA2.Connection): Connection to server
+  - connection (GoogleApi.TaskQueue.V1beta2.Connection): Connection to server
   - project (String): The project under which the queue lies.
   - taskqueue (String): The taskqueue to lease a task from.
   - num_tasks (Integer): The number of tasks to lease.
@@ -179,10 +179,10 @@ defmodule GoogleApi.TaskQueue.V1BETA2.Api.Tasks do
 
   ## Returns
 
-  {:ok, %GoogleApi.TaskQueue.V1BETA2.Model.Tasks{}} on success
+  {:ok, %GoogleApi.TaskQueue.V1beta2.Model.Tasks{}} on success
   {:error, info} on failure
   """
-  @spec taskqueue_tasks_lease(Tesla.Env.client, String.t, String.t, Integer.t, Integer.t, keyword()) :: {:ok, GoogleApi.TaskQueue.V1BETA2.Model.Tasks.t} | {:error, Tesla.Env.t}
+  @spec taskqueue_tasks_lease(Tesla.Env.client, String.t, String.t, Integer.t, Integer.t, keyword()) :: {:ok, GoogleApi.TaskQueue.V1beta2.Model.Tasks.t} | {:error, Tesla.Env.t}
   def taskqueue_tasks_lease(connection, project, taskqueue, num_tasks, lease_secs, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -203,7 +203,7 @@ defmodule GoogleApi.TaskQueue.V1BETA2.Api.Tasks do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.TaskQueue.V1BETA2.Model.Tasks{})
+    |> decode(%GoogleApi.TaskQueue.V1beta2.Model.Tasks{})
   end
 
   @doc """
@@ -211,7 +211,7 @@ defmodule GoogleApi.TaskQueue.V1BETA2.Api.Tasks do
 
   ## Parameters
 
-  - connection (GoogleApi.TaskQueue.V1BETA2.Connection): Connection to server
+  - connection (GoogleApi.TaskQueue.V1beta2.Connection): Connection to server
   - project (String): The project under which the queue lies.
   - taskqueue (String): The id of the taskqueue to list tasks from.
   - opts (KeywordList): [optional] Optional parameters
@@ -225,10 +225,10 @@ defmodule GoogleApi.TaskQueue.V1BETA2.Api.Tasks do
 
   ## Returns
 
-  {:ok, %GoogleApi.TaskQueue.V1BETA2.Model.Tasks2{}} on success
+  {:ok, %GoogleApi.TaskQueue.V1beta2.Model.Tasks2{}} on success
   {:error, info} on failure
   """
-  @spec taskqueue_tasks_list(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.TaskQueue.V1BETA2.Model.Tasks2.t} | {:error, Tesla.Env.t}
+  @spec taskqueue_tasks_list(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.TaskQueue.V1beta2.Model.Tasks2.t} | {:error, Tesla.Env.t}
   def taskqueue_tasks_list(connection, project, taskqueue, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -245,7 +245,7 @@ defmodule GoogleApi.TaskQueue.V1BETA2.Api.Tasks do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.TaskQueue.V1BETA2.Model.Tasks2{})
+    |> decode(%GoogleApi.TaskQueue.V1beta2.Model.Tasks2{})
   end
 
   @doc """
@@ -253,7 +253,7 @@ defmodule GoogleApi.TaskQueue.V1BETA2.Api.Tasks do
 
   ## Parameters
 
-  - connection (GoogleApi.TaskQueue.V1BETA2.Connection): Connection to server
+  - connection (GoogleApi.TaskQueue.V1beta2.Connection): Connection to server
   - project (String): The project under which the queue lies.
   - taskqueue (String): 
   - task (String): 
@@ -270,10 +270,10 @@ defmodule GoogleApi.TaskQueue.V1BETA2.Api.Tasks do
 
   ## Returns
 
-  {:ok, %GoogleApi.TaskQueue.V1BETA2.Model.Task{}} on success
+  {:ok, %GoogleApi.TaskQueue.V1beta2.Model.Task{}} on success
   {:error, info} on failure
   """
-  @spec taskqueue_tasks_patch(Tesla.Env.client, String.t, String.t, String.t, Integer.t, keyword()) :: {:ok, GoogleApi.TaskQueue.V1BETA2.Model.Task.t} | {:error, Tesla.Env.t}
+  @spec taskqueue_tasks_patch(Tesla.Env.client, String.t, String.t, String.t, Integer.t, keyword()) :: {:ok, GoogleApi.TaskQueue.V1beta2.Model.Task.t} | {:error, Tesla.Env.t}
   def taskqueue_tasks_patch(connection, project, taskqueue, task, new_lease_seconds, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -292,7 +292,7 @@ defmodule GoogleApi.TaskQueue.V1BETA2.Api.Tasks do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.TaskQueue.V1BETA2.Model.Task{})
+    |> decode(%GoogleApi.TaskQueue.V1beta2.Model.Task{})
   end
 
   @doc """
@@ -300,7 +300,7 @@ defmodule GoogleApi.TaskQueue.V1BETA2.Api.Tasks do
 
   ## Parameters
 
-  - connection (GoogleApi.TaskQueue.V1BETA2.Connection): Connection to server
+  - connection (GoogleApi.TaskQueue.V1beta2.Connection): Connection to server
   - project (String): The project under which the queue lies.
   - taskqueue (String): 
   - task (String): 
@@ -317,10 +317,10 @@ defmodule GoogleApi.TaskQueue.V1BETA2.Api.Tasks do
 
   ## Returns
 
-  {:ok, %GoogleApi.TaskQueue.V1BETA2.Model.Task{}} on success
+  {:ok, %GoogleApi.TaskQueue.V1beta2.Model.Task{}} on success
   {:error, info} on failure
   """
-  @spec taskqueue_tasks_update(Tesla.Env.client, String.t, String.t, String.t, Integer.t, keyword()) :: {:ok, GoogleApi.TaskQueue.V1BETA2.Model.Task.t} | {:error, Tesla.Env.t}
+  @spec taskqueue_tasks_update(Tesla.Env.client, String.t, String.t, String.t, Integer.t, keyword()) :: {:ok, GoogleApi.TaskQueue.V1beta2.Model.Task.t} | {:error, Tesla.Env.t}
   def taskqueue_tasks_update(connection, project, taskqueue, task, new_lease_seconds, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -339,6 +339,6 @@ defmodule GoogleApi.TaskQueue.V1BETA2.Api.Tasks do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.TaskQueue.V1BETA2.Model.Task{})
+    |> decode(%GoogleApi.TaskQueue.V1beta2.Model.Task{})
   end
 end

@@ -17,24 +17,27 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.TaskQueue.V1BETA2.Model.Tasks do
+defmodule GoogleApi.TaskQueue.V1beta2.Model.Task do
   @moduledoc """
   
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"items",
-    :"kind"
+    :"enqueueTimestamp",
+    :"id",
+    :"kind",
+    :"leaseTimestamp",
+    :"payloadBase64",
+    :"queueName",
+    :"retry_count",
+    :"tag"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.TaskQueue.V1BETA2.Model.Tasks do
-  import GoogleApi.TaskQueue.V1BETA2.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.TaskQueue.V1beta2.Model.Task do
+  def decode(value, _options) do
     value
-    |> deserialize(:"items", :list, GoogleApi.TaskQueue.V1BETA2.Model.Task, options)
   end
 end
-
 

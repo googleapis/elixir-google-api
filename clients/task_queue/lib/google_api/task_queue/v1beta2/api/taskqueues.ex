@@ -17,13 +17,13 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.TaskQueue.V1BETA2.Api.Taskqueues do
+defmodule GoogleApi.TaskQueue.V1beta2.Api.Taskqueues do
   @moduledoc """
   API calls for all endpoints tagged `Taskqueues`.
   """
 
-  alias GoogleApi.TaskQueue.V1BETA2.Connection
-  import GoogleApi.TaskQueue.V1BETA2.RequestBuilder
+  alias GoogleApi.TaskQueue.V1beta2.Connection
+  import GoogleApi.TaskQueue.V1beta2.RequestBuilder
 
 
   @doc """
@@ -31,7 +31,7 @@ defmodule GoogleApi.TaskQueue.V1BETA2.Api.Taskqueues do
 
   ## Parameters
 
-  - connection (GoogleApi.TaskQueue.V1BETA2.Connection): Connection to server
+  - connection (GoogleApi.TaskQueue.V1beta2.Connection): Connection to server
   - project (String): The project under which the queue lies.
   - taskqueue (String): The id of the taskqueue to get the properties of.
   - opts (KeywordList): [optional] Optional parameters
@@ -46,10 +46,10 @@ defmodule GoogleApi.TaskQueue.V1BETA2.Api.Taskqueues do
 
   ## Returns
 
-  {:ok, %GoogleApi.TaskQueue.V1BETA2.Model.TaskQueue{}} on success
+  {:ok, %GoogleApi.TaskQueue.V1beta2.Model.TaskQueue{}} on success
   {:error, info} on failure
   """
-  @spec taskqueue_taskqueues_get(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.TaskQueue.V1BETA2.Model.TaskQueue.t} | {:error, Tesla.Env.t}
+  @spec taskqueue_taskqueues_get(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.TaskQueue.V1beta2.Model.TaskQueue.t} | {:error, Tesla.Env.t}
   def taskqueue_taskqueues_get(connection, project, taskqueue, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -67,6 +67,6 @@ defmodule GoogleApi.TaskQueue.V1BETA2.Api.Taskqueues do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.TaskQueue.V1BETA2.Model.TaskQueue{})
+    |> decode(%GoogleApi.TaskQueue.V1beta2.Model.TaskQueue{})
   end
 end

@@ -17,24 +17,23 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.TaskQueue.V1BETA2.Model.TaskQueue_acl do
+defmodule GoogleApi.TaskQueue.V1beta2.Model.Tasks2 do
   @moduledoc """
-  ACLs that are applicable to this TaskQueue object.
+  
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"adminEmails",
-    :"consumerEmails",
-    :"producerEmails"
+    :"items",
+    :"kind"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.TaskQueue.V1BETA2.Model.TaskQueue_acl do
-  import GoogleApi.TaskQueue.V1BETA2.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.TaskQueue.V1beta2.Model.Tasks2 do
+  import GoogleApi.TaskQueue.V1beta2.Deserializer
   def decode(value, options) do
     value
+    |> deserialize(:"items", :list, GoogleApi.TaskQueue.V1beta2.Model.Task, options)
   end
 end
-
 

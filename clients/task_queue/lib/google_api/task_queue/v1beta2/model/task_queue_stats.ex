@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.TaskQueue.V1BETA2.Model.TaskQueue_stats do
+defmodule GoogleApi.TaskQueue.V1beta2.Model.TaskQueue_stats do
   @moduledoc """
   Statistics for the TaskQueue object in question.
   """
@@ -31,11 +31,9 @@ defmodule GoogleApi.TaskQueue.V1BETA2.Model.TaskQueue_stats do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.TaskQueue.V1BETA2.Model.TaskQueue_stats do
-  import GoogleApi.TaskQueue.V1BETA2.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.TaskQueue.V1beta2.Model.TaskQueue_stats do
+  def decode(value, _options) do
     value
   end
 end
-
 

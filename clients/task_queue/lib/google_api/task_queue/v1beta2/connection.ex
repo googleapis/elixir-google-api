@@ -17,9 +17,9 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.TaskQueue.V1BETA2.Connection do
+defmodule GoogleApi.TaskQueue.V1beta2.Connection do
   @moduledoc """
-  Handle Tesla connections for GoogleApi.TaskQueue.V1BETA2.
+  Handle Tesla connections for GoogleApi.TaskQueue.V1beta2.
   """
 
   use Tesla

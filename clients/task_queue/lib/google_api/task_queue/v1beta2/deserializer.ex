@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.TaskQueue.V1BETA2.Deserializer do
+defmodule GoogleApi.TaskQueue.V1beta2.Deserializer do
   @moduledoc """
   Helper functions for deserializing responses into models
   """
