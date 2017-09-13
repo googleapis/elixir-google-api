@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.OSLogin.V1ALPHA.Deserializer do
+defmodule GoogleApi.OSLogin.V1alpha.Deserializer do
   @moduledoc """
   Helper functions for deserializing responses into models
   """

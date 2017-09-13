@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.OSLogin.V1ALPHA.Model.LoginProfile do
+defmodule GoogleApi.OSLogin.V1alpha.Model.LoginProfile do
   @moduledoc """
   The Directory API profile information used for logging in to a virtual machine on Google Compute Engine.
   """
@@ -31,13 +31,12 @@ defmodule GoogleApi.OSLogin.V1ALPHA.Model.LoginProfile do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.OSLogin.V1ALPHA.Model.LoginProfile do
-  import GoogleApi.OSLogin.V1ALPHA.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.OSLogin.V1alpha.Model.LoginProfile do
+  import GoogleApi.OSLogin.V1alpha.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"posixAccounts", :list, GoogleApi.OSLogin.V1ALPHA.Model.PosixAccount, options)
-    |> deserialize(:"sshPublicKeys", :map, GoogleApi.OSLogin.V1ALPHA.Model.SshPublicKey, options)
+    |> deserialize(:"posixAccounts", :list, GoogleApi.OSLogin.V1alpha.Model.PosixAccount, options)
+    |> deserialize(:"sshPublicKeys", :map, GoogleApi.OSLogin.V1alpha.Model.SshPublicKey, options)
   end
 end
-
 

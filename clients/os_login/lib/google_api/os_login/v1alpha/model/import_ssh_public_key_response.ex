@@ -17,22 +17,22 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.OSLogin.V1ALPHA.Model.Empty do
+defmodule GoogleApi.OSLogin.V1alpha.Model.ImportSshPublicKeyResponse do
   @moduledoc """
-  A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance:      service Foo {       rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);     }  The JSON representation for &#x60;Empty&#x60; is empty JSON object &#x60;{}&#x60;.
+  A response message for importing an SSH public key.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    
+    :"loginProfile"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.OSLogin.V1ALPHA.Model.Empty do
-  import GoogleApi.OSLogin.V1ALPHA.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.OSLogin.V1alpha.Model.ImportSshPublicKeyResponse do
+  import GoogleApi.OSLogin.V1alpha.Deserializer
   def decode(value, options) do
     value
+    |> deserialize(:"loginProfile", :struct, GoogleApi.OSLogin.V1alpha.Model.LoginProfile, options)
   end
 end
-
 

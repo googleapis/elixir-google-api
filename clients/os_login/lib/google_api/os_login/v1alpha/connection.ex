@@ -17,9 +17,9 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.OSLogin.V1ALPHA.Connection do
+defmodule GoogleApi.OSLogin.V1alpha.Connection do
   @moduledoc """
-  Handle Tesla connections for GoogleApi.OSLogin.V1ALPHA.
+  Handle Tesla connections for GoogleApi.OSLogin.V1alpha.
   """
 
   use Tesla

@@ -17,13 +17,13 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.OSLogin.V1ALPHA.Api.Users do
+defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
   @moduledoc """
   API calls for all endpoints tagged `Users`.
   """
 
-  alias GoogleApi.OSLogin.V1ALPHA.Connection
-  import GoogleApi.OSLogin.V1ALPHA.RequestBuilder
+  alias GoogleApi.OSLogin.V1alpha.Connection
+  import GoogleApi.OSLogin.V1alpha.RequestBuilder
 
 
   @doc """
@@ -31,7 +31,7 @@ defmodule GoogleApi.OSLogin.V1ALPHA.Api.Users do
 
   ## Parameters
 
-  - connection (GoogleApi.OSLogin.V1ALPHA.Connection): Connection to server
+  - connection (GoogleApi.OSLogin.V1alpha.Connection): Connection to server
   - name (String): The unique ID for the user in format &#x60;users/{user}&#x60;.
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
@@ -50,10 +50,10 @@ defmodule GoogleApi.OSLogin.V1ALPHA.Api.Users do
 
   ## Returns
 
-  {:ok, %GoogleApi.OSLogin.V1ALPHA.Model.LoginProfile{}} on success
+  {:ok, %GoogleApi.OSLogin.V1alpha.Model.LoginProfile{}} on success
   {:error, info} on failure
   """
-  @spec oslogin_users_get_login_profile(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.OSLogin.V1ALPHA.Model.LoginProfile.t} | {:error, Tesla.Env.t}
+  @spec oslogin_users_get_login_profile(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.OSLogin.V1alpha.Model.LoginProfile.t} | {:error, Tesla.Env.t}
   def oslogin_users_get_login_profile(connection, name, opts \\ []) do
     optional_params = %{
       :"upload_protocol" => :query,
@@ -72,11 +72,11 @@ defmodule GoogleApi.OSLogin.V1ALPHA.Api.Users do
     }
     %{}
     |> method(:get)
-    |> url("/v1alpha/#{+name}/loginProfile")
+    |> url("/v1alpha/#{name}/loginProfile")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.OSLogin.V1ALPHA.Model.LoginProfile{})
+    |> decode(%GoogleApi.OSLogin.V1alpha.Model.LoginProfile{})
   end
 
   @doc """
@@ -84,7 +84,7 @@ defmodule GoogleApi.OSLogin.V1ALPHA.Api.Users do
 
   ## Parameters
 
-  - connection (GoogleApi.OSLogin.V1ALPHA.Connection): Connection to server
+  - connection (GoogleApi.OSLogin.V1alpha.Connection): Connection to server
   - parent (String): The unique ID for the user in format &#x60;users/{user}&#x60;.
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
@@ -104,10 +104,10 @@ defmodule GoogleApi.OSLogin.V1ALPHA.Api.Users do
 
   ## Returns
 
-  {:ok, %GoogleApi.OSLogin.V1ALPHA.Model.ImportSshPublicKeyResponse{}} on success
+  {:ok, %GoogleApi.OSLogin.V1alpha.Model.ImportSshPublicKeyResponse{}} on success
   {:error, info} on failure
   """
-  @spec oslogin_users_import_ssh_public_key(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.OSLogin.V1ALPHA.Model.ImportSshPublicKeyResponse.t} | {:error, Tesla.Env.t}
+  @spec oslogin_users_import_ssh_public_key(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.OSLogin.V1alpha.Model.ImportSshPublicKeyResponse.t} | {:error, Tesla.Env.t}
   def oslogin_users_import_ssh_public_key(connection, parent, opts \\ []) do
     optional_params = %{
       :"upload_protocol" => :query,
@@ -127,11 +127,11 @@ defmodule GoogleApi.OSLogin.V1ALPHA.Api.Users do
     }
     %{}
     |> method(:post)
-    |> url("/v1alpha/#{+parent}:importSshPublicKey")
+    |> url("/v1alpha/#{parent}:importSshPublicKey")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.OSLogin.V1ALPHA.Model.ImportSshPublicKeyResponse{})
+    |> decode(%GoogleApi.OSLogin.V1alpha.Model.ImportSshPublicKeyResponse{})
   end
 
   @doc """
@@ -139,7 +139,7 @@ defmodule GoogleApi.OSLogin.V1ALPHA.Api.Users do
 
   ## Parameters
 
-  - connection (GoogleApi.OSLogin.V1ALPHA.Connection): Connection to server
+  - connection (GoogleApi.OSLogin.V1alpha.Connection): Connection to server
   - name (String): The fingerprint of the public key to update. Public keys are identified by their SHA-256 fingerprint. The fingerprint of the public key is in format &#x60;users/{user}/sshPublicKeys/{fingerprint}&#x60;.
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
@@ -158,10 +158,10 @@ defmodule GoogleApi.OSLogin.V1ALPHA.Api.Users do
 
   ## Returns
 
-  {:ok, %GoogleApi.OSLogin.V1ALPHA.Model.Empty{}} on success
+  {:ok, %GoogleApi.OSLogin.V1alpha.Model.Empty{}} on success
   {:error, info} on failure
   """
-  @spec oslogin_users_ssh_public_keys_delete(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.OSLogin.V1ALPHA.Model.Empty.t} | {:error, Tesla.Env.t}
+  @spec oslogin_users_ssh_public_keys_delete(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.OSLogin.V1alpha.Model.Empty.t} | {:error, Tesla.Env.t}
   def oslogin_users_ssh_public_keys_delete(connection, name, opts \\ []) do
     optional_params = %{
       :"upload_protocol" => :query,
@@ -180,11 +180,11 @@ defmodule GoogleApi.OSLogin.V1ALPHA.Api.Users do
     }
     %{}
     |> method(:delete)
-    |> url("/v1alpha/#{+name}")
+    |> url("/v1alpha/#{name}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.OSLogin.V1ALPHA.Model.Empty{})
+    |> decode(%GoogleApi.OSLogin.V1alpha.Model.Empty{})
   end
 
   @doc """
@@ -192,7 +192,7 @@ defmodule GoogleApi.OSLogin.V1ALPHA.Api.Users do
 
   ## Parameters
 
-  - connection (GoogleApi.OSLogin.V1ALPHA.Connection): Connection to server
+  - connection (GoogleApi.OSLogin.V1alpha.Connection): Connection to server
   - name (String): The fingerprint of the public key to retrieve. Public keys are identified by their SHA-256 fingerprint. The fingerprint of the public key is in format &#x60;users/{user}/sshPublicKeys/{fingerprint}&#x60;.
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
@@ -211,10 +211,10 @@ defmodule GoogleApi.OSLogin.V1ALPHA.Api.Users do
 
   ## Returns
 
-  {:ok, %GoogleApi.OSLogin.V1ALPHA.Model.SshPublicKey{}} on success
+  {:ok, %GoogleApi.OSLogin.V1alpha.Model.SshPublicKey{}} on success
   {:error, info} on failure
   """
-  @spec oslogin_users_ssh_public_keys_get(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.OSLogin.V1ALPHA.Model.SshPublicKey.t} | {:error, Tesla.Env.t}
+  @spec oslogin_users_ssh_public_keys_get(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.OSLogin.V1alpha.Model.SshPublicKey.t} | {:error, Tesla.Env.t}
   def oslogin_users_ssh_public_keys_get(connection, name, opts \\ []) do
     optional_params = %{
       :"upload_protocol" => :query,
@@ -233,11 +233,11 @@ defmodule GoogleApi.OSLogin.V1ALPHA.Api.Users do
     }
     %{}
     |> method(:get)
-    |> url("/v1alpha/#{+name}")
+    |> url("/v1alpha/#{name}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.OSLogin.V1ALPHA.Model.SshPublicKey{})
+    |> decode(%GoogleApi.OSLogin.V1alpha.Model.SshPublicKey{})
   end
 
   @doc """
@@ -245,7 +245,7 @@ defmodule GoogleApi.OSLogin.V1ALPHA.Api.Users do
 
   ## Parameters
 
-  - connection (GoogleApi.OSLogin.V1ALPHA.Connection): Connection to server
+  - connection (GoogleApi.OSLogin.V1alpha.Connection): Connection to server
   - name (String): The fingerprint of the public key to update. Public keys are identified by their SHA-256 fingerprint. The fingerprint of the public key is in format &#x60;users/{user}/sshPublicKeys/{fingerprint}&#x60;.
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
@@ -266,10 +266,10 @@ defmodule GoogleApi.OSLogin.V1ALPHA.Api.Users do
 
   ## Returns
 
-  {:ok, %GoogleApi.OSLogin.V1ALPHA.Model.SshPublicKey{}} on success
+  {:ok, %GoogleApi.OSLogin.V1alpha.Model.SshPublicKey{}} on success
   {:error, info} on failure
   """
-  @spec oslogin_users_ssh_public_keys_patch(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.OSLogin.V1ALPHA.Model.SshPublicKey.t} | {:error, Tesla.Env.t}
+  @spec oslogin_users_ssh_public_keys_patch(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.OSLogin.V1alpha.Model.SshPublicKey.t} | {:error, Tesla.Env.t}
   def oslogin_users_ssh_public_keys_patch(connection, name, opts \\ []) do
     optional_params = %{
       :"upload_protocol" => :query,
@@ -290,10 +290,10 @@ defmodule GoogleApi.OSLogin.V1ALPHA.Api.Users do
     }
     %{}
     |> method(:patch)
-    |> url("/v1alpha/#{+name}")
+    |> url("/v1alpha/#{name}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.OSLogin.V1ALPHA.Model.SshPublicKey{})
+    |> decode(%GoogleApi.OSLogin.V1alpha.Model.SshPublicKey{})
   end
 end

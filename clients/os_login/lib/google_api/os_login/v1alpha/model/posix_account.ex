@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.OSLogin.V1ALPHA.Model.PosixAccount do
+defmodule GoogleApi.OSLogin.V1alpha.Model.PosixAccount do
   @moduledoc """
   The POSIX account information associated with a Directory API User.
   """
@@ -35,11 +35,9 @@ defmodule GoogleApi.OSLogin.V1ALPHA.Model.PosixAccount do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.OSLogin.V1ALPHA.Model.PosixAccount do
-  import GoogleApi.OSLogin.V1ALPHA.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.OSLogin.V1alpha.Model.PosixAccount do
+  def decode(value, _options) do
     value
   end
 end
-
 
