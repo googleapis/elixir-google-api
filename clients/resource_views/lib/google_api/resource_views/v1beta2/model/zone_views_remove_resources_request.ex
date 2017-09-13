@@ -17,9 +17,9 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ResourceViews.V1BETA2.Model.ZoneViewsAddResourcesRequest do
+defmodule GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsRemoveResourcesRequest do
   @moduledoc """
-  The request to add resources to the resource view.
+  The request to remove resources from the resource view.
   """
 
   @derive [Poison.Encoder]
@@ -28,11 +28,9 @@ defmodule GoogleApi.ResourceViews.V1BETA2.Model.ZoneViewsAddResourcesRequest do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ResourceViews.V1BETA2.Model.ZoneViewsAddResourcesRequest do
-  import GoogleApi.ResourceViews.V1BETA2.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsRemoveResourcesRequest do
+  def decode(value, _options) do
     value
   end
 end
-
 

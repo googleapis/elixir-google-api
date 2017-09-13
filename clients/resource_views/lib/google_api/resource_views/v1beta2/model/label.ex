@@ -17,26 +17,21 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ResourceViews.V1BETA2.Model.ZoneViewsList do
+defmodule GoogleApi.ResourceViews.V1beta2.Model.Label do
   @moduledoc """
-  The response to a list request.
+  The Label to be applied to the resource views.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"items",
-    :"kind",
-    :"nextPageToken",
-    :"selfLink"
+    :"key",
+    :"value"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ResourceViews.V1BETA2.Model.ZoneViewsList do
-  import GoogleApi.ResourceViews.V1BETA2.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.ResourceViews.V1beta2.Model.Label do
+  def decode(value, _options) do
     value
-    |> deserialize(:"items", :list, GoogleApi.ResourceViews.V1BETA2.Model.ResourceView, options)
   end
 end
-
 

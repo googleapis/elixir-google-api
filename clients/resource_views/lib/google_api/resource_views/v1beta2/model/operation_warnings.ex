@@ -17,23 +17,24 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ResourceViews.V1BETA2.Model.Operation_data do
+defmodule GoogleApi.ResourceViews.V1beta2.Model.Operation_warnings do
   @moduledoc """
   
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"key",
-    :"value"
+    :"code",
+    :"data",
+    :"message"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ResourceViews.V1BETA2.Model.Operation_data do
-  import GoogleApi.ResourceViews.V1BETA2.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.ResourceViews.V1beta2.Model.Operation_warnings do
+  import GoogleApi.ResourceViews.V1beta2.Deserializer
   def decode(value, options) do
     value
+    |> deserialize(:"data", :list, GoogleApi.ResourceViews.V1beta2.Model.Operation_data, options)
   end
 end
-
 

@@ -17,9 +17,9 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ResourceViews.V1BETA2.Connection do
+defmodule GoogleApi.ResourceViews.V1beta2.Connection do
   @moduledoc """
-  Handle Tesla connections for GoogleApi.ResourceViews.V1BETA2.
+  Handle Tesla connections for GoogleApi.ResourceViews.V1beta2.
   """
 
   use Tesla

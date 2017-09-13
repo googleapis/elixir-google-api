@@ -17,13 +17,13 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ResourceViews.V1BETA2.Api.ZoneViews do
+defmodule GoogleApi.ResourceViews.V1beta2.Api.ZoneViews do
   @moduledoc """
   API calls for all endpoints tagged `ZoneViews`.
   """
 
-  alias GoogleApi.ResourceViews.V1BETA2.Connection
-  import GoogleApi.ResourceViews.V1BETA2.RequestBuilder
+  alias GoogleApi.ResourceViews.V1beta2.Connection
+  import GoogleApi.ResourceViews.V1beta2.RequestBuilder
 
 
   @doc """
@@ -31,7 +31,7 @@ defmodule GoogleApi.ResourceViews.V1BETA2.Api.ZoneViews do
 
   ## Parameters
 
-  - connection (GoogleApi.ResourceViews.V1BETA2.Connection): Connection to server
+  - connection (GoogleApi.ResourceViews.V1beta2.Connection): Connection to server
   - project (String): The project name of the resource view.
   - zone (String): The zone name of the resource view.
   - resource_view (String): The name of the resource view.
@@ -47,10 +47,10 @@ defmodule GoogleApi.ResourceViews.V1BETA2.Api.ZoneViews do
 
   ## Returns
 
-  {:ok, %GoogleApi.ResourceViews.V1BETA2.Model.Operation{}} on success
+  {:ok, %GoogleApi.ResourceViews.V1beta2.Model.Operation{}} on success
   {:error, info} on failure
   """
-  @spec resourceviews_zone_views_add_resources(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ResourceViews.V1BETA2.Model.Operation.t} | {:error, Tesla.Env.t}
+  @spec resourceviews_zone_views_add_resources(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ResourceViews.V1beta2.Model.Operation.t} | {:error, Tesla.Env.t}
   def resourceviews_zone_views_add_resources(connection, project, zone, resource_view, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -68,7 +68,7 @@ defmodule GoogleApi.ResourceViews.V1BETA2.Api.ZoneViews do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ResourceViews.V1BETA2.Model.Operation{})
+    |> decode(%GoogleApi.ResourceViews.V1beta2.Model.Operation{})
   end
 
   @doc """
@@ -76,7 +76,7 @@ defmodule GoogleApi.ResourceViews.V1BETA2.Api.ZoneViews do
 
   ## Parameters
 
-  - connection (GoogleApi.ResourceViews.V1BETA2.Connection): Connection to server
+  - connection (GoogleApi.ResourceViews.V1beta2.Connection): Connection to server
   - project (String): The project name of the resource view.
   - zone (String): The zone name of the resource view.
   - resource_view (String): The name of the resource view.
@@ -91,10 +91,10 @@ defmodule GoogleApi.ResourceViews.V1BETA2.Api.ZoneViews do
 
   ## Returns
 
-  {:ok, %GoogleApi.ResourceViews.V1BETA2.Model.Operation{}} on success
+  {:ok, %GoogleApi.ResourceViews.V1beta2.Model.Operation{}} on success
   {:error, info} on failure
   """
-  @spec resourceviews_zone_views_delete(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ResourceViews.V1BETA2.Model.Operation.t} | {:error, Tesla.Env.t}
+  @spec resourceviews_zone_views_delete(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ResourceViews.V1beta2.Model.Operation.t} | {:error, Tesla.Env.t}
   def resourceviews_zone_views_delete(connection, project, zone, resource_view, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -111,7 +111,7 @@ defmodule GoogleApi.ResourceViews.V1BETA2.Api.ZoneViews do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ResourceViews.V1BETA2.Model.Operation{})
+    |> decode(%GoogleApi.ResourceViews.V1beta2.Model.Operation{})
   end
 
   @doc """
@@ -119,7 +119,7 @@ defmodule GoogleApi.ResourceViews.V1BETA2.Api.ZoneViews do
 
   ## Parameters
 
-  - connection (GoogleApi.ResourceViews.V1BETA2.Connection): Connection to server
+  - connection (GoogleApi.ResourceViews.V1beta2.Connection): Connection to server
   - project (String): The project name of the resource view.
   - zone (String): The zone name of the resource view.
   - resource_view (String): The name of the resource view.
@@ -134,10 +134,10 @@ defmodule GoogleApi.ResourceViews.V1BETA2.Api.ZoneViews do
 
   ## Returns
 
-  {:ok, %GoogleApi.ResourceViews.V1BETA2.Model.ResourceView{}} on success
+  {:ok, %GoogleApi.ResourceViews.V1beta2.Model.ResourceView{}} on success
   {:error, info} on failure
   """
-  @spec resourceviews_zone_views_get(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ResourceViews.V1BETA2.Model.ResourceView.t} | {:error, Tesla.Env.t}
+  @spec resourceviews_zone_views_get(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ResourceViews.V1beta2.Model.ResourceView.t} | {:error, Tesla.Env.t}
   def resourceviews_zone_views_get(connection, project, zone, resource_view, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -154,7 +154,7 @@ defmodule GoogleApi.ResourceViews.V1BETA2.Api.ZoneViews do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ResourceViews.V1BETA2.Model.ResourceView{})
+    |> decode(%GoogleApi.ResourceViews.V1beta2.Model.ResourceView{})
   end
 
   @doc """
@@ -162,7 +162,7 @@ defmodule GoogleApi.ResourceViews.V1BETA2.Api.ZoneViews do
 
   ## Parameters
 
-  - connection (GoogleApi.ResourceViews.V1BETA2.Connection): Connection to server
+  - connection (GoogleApi.ResourceViews.V1beta2.Connection): Connection to server
   - project (String): The project name of the resource view.
   - zone (String): The zone name of the resource view.
   - resource_view (String): The name of the resource view.
@@ -178,10 +178,10 @@ defmodule GoogleApi.ResourceViews.V1BETA2.Api.ZoneViews do
 
   ## Returns
 
-  {:ok, %GoogleApi.ResourceViews.V1BETA2.Model.ZoneViewsGetServiceResponse{}} on success
+  {:ok, %GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsGetServiceResponse{}} on success
   {:error, info} on failure
   """
-  @spec resourceviews_zone_views_get_service(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ResourceViews.V1BETA2.Model.ZoneViewsGetServiceResponse.t} | {:error, Tesla.Env.t}
+  @spec resourceviews_zone_views_get_service(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsGetServiceResponse.t} | {:error, Tesla.Env.t}
   def resourceviews_zone_views_get_service(connection, project, zone, resource_view, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -199,7 +199,7 @@ defmodule GoogleApi.ResourceViews.V1BETA2.Api.ZoneViews do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ResourceViews.V1BETA2.Model.ZoneViewsGetServiceResponse{})
+    |> decode(%GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsGetServiceResponse{})
   end
 
   @doc """
@@ -207,7 +207,7 @@ defmodule GoogleApi.ResourceViews.V1BETA2.Api.ZoneViews do
 
   ## Parameters
 
-  - connection (GoogleApi.ResourceViews.V1BETA2.Connection): Connection to server
+  - connection (GoogleApi.ResourceViews.V1beta2.Connection): Connection to server
   - project (String): The project name of the resource view.
   - zone (String): The zone name of the resource view.
   - opts (KeywordList): [optional] Optional parameters
@@ -222,10 +222,10 @@ defmodule GoogleApi.ResourceViews.V1BETA2.Api.ZoneViews do
 
   ## Returns
 
-  {:ok, %GoogleApi.ResourceViews.V1BETA2.Model.Operation{}} on success
+  {:ok, %GoogleApi.ResourceViews.V1beta2.Model.Operation{}} on success
   {:error, info} on failure
   """
-  @spec resourceviews_zone_views_insert(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.ResourceViews.V1BETA2.Model.Operation.t} | {:error, Tesla.Env.t}
+  @spec resourceviews_zone_views_insert(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.ResourceViews.V1beta2.Model.Operation.t} | {:error, Tesla.Env.t}
   def resourceviews_zone_views_insert(connection, project, zone, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -243,7 +243,7 @@ defmodule GoogleApi.ResourceViews.V1BETA2.Api.ZoneViews do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ResourceViews.V1BETA2.Model.Operation{})
+    |> decode(%GoogleApi.ResourceViews.V1beta2.Model.Operation{})
   end
 
   @doc """
@@ -251,7 +251,7 @@ defmodule GoogleApi.ResourceViews.V1BETA2.Api.ZoneViews do
 
   ## Parameters
 
-  - connection (GoogleApi.ResourceViews.V1BETA2.Connection): Connection to server
+  - connection (GoogleApi.ResourceViews.V1beta2.Connection): Connection to server
   - project (String): The project name of the resource view.
   - zone (String): The zone name of the resource view.
   - opts (KeywordList): [optional] Optional parameters
@@ -267,10 +267,10 @@ defmodule GoogleApi.ResourceViews.V1BETA2.Api.ZoneViews do
 
   ## Returns
 
-  {:ok, %GoogleApi.ResourceViews.V1BETA2.Model.ZoneViewsList{}} on success
+  {:ok, %GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsList{}} on success
   {:error, info} on failure
   """
-  @spec resourceviews_zone_views_list(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.ResourceViews.V1BETA2.Model.ZoneViewsList.t} | {:error, Tesla.Env.t}
+  @spec resourceviews_zone_views_list(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsList.t} | {:error, Tesla.Env.t}
   def resourceviews_zone_views_list(connection, project, zone, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -289,7 +289,7 @@ defmodule GoogleApi.ResourceViews.V1BETA2.Api.ZoneViews do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ResourceViews.V1BETA2.Model.ZoneViewsList{})
+    |> decode(%GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsList{})
   end
 
   @doc """
@@ -297,7 +297,7 @@ defmodule GoogleApi.ResourceViews.V1BETA2.Api.ZoneViews do
 
   ## Parameters
 
-  - connection (GoogleApi.ResourceViews.V1BETA2.Connection): Connection to server
+  - connection (GoogleApi.ResourceViews.V1beta2.Connection): Connection to server
   - project (String): The project name of the resource view.
   - zone (String): The zone name of the resource view.
   - resource_view (String): The name of the resource view.
@@ -317,10 +317,10 @@ defmodule GoogleApi.ResourceViews.V1BETA2.Api.ZoneViews do
 
   ## Returns
 
-  {:ok, %GoogleApi.ResourceViews.V1BETA2.Model.ZoneViewsListResourcesResponse{}} on success
+  {:ok, %GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsListResourcesResponse{}} on success
   {:error, info} on failure
   """
-  @spec resourceviews_zone_views_list_resources(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ResourceViews.V1BETA2.Model.ZoneViewsListResourcesResponse.t} | {:error, Tesla.Env.t}
+  @spec resourceviews_zone_views_list_resources(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsListResourcesResponse.t} | {:error, Tesla.Env.t}
   def resourceviews_zone_views_list_resources(connection, project, zone, resource_view, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -342,7 +342,7 @@ defmodule GoogleApi.ResourceViews.V1BETA2.Api.ZoneViews do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ResourceViews.V1BETA2.Model.ZoneViewsListResourcesResponse{})
+    |> decode(%GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsListResourcesResponse{})
   end
 
   @doc """
@@ -350,7 +350,7 @@ defmodule GoogleApi.ResourceViews.V1BETA2.Api.ZoneViews do
 
   ## Parameters
 
-  - connection (GoogleApi.ResourceViews.V1BETA2.Connection): Connection to server
+  - connection (GoogleApi.ResourceViews.V1beta2.Connection): Connection to server
   - project (String): The project name of the resource view.
   - zone (String): The zone name of the resource view.
   - resource_view (String): The name of the resource view.
@@ -366,10 +366,10 @@ defmodule GoogleApi.ResourceViews.V1BETA2.Api.ZoneViews do
 
   ## Returns
 
-  {:ok, %GoogleApi.ResourceViews.V1BETA2.Model.Operation{}} on success
+  {:ok, %GoogleApi.ResourceViews.V1beta2.Model.Operation{}} on success
   {:error, info} on failure
   """
-  @spec resourceviews_zone_views_remove_resources(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ResourceViews.V1BETA2.Model.Operation.t} | {:error, Tesla.Env.t}
+  @spec resourceviews_zone_views_remove_resources(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ResourceViews.V1beta2.Model.Operation.t} | {:error, Tesla.Env.t}
   def resourceviews_zone_views_remove_resources(connection, project, zone, resource_view, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -387,7 +387,7 @@ defmodule GoogleApi.ResourceViews.V1BETA2.Api.ZoneViews do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ResourceViews.V1BETA2.Model.Operation{})
+    |> decode(%GoogleApi.ResourceViews.V1beta2.Model.Operation{})
   end
 
   @doc """
@@ -395,7 +395,7 @@ defmodule GoogleApi.ResourceViews.V1BETA2.Api.ZoneViews do
 
   ## Parameters
 
-  - connection (GoogleApi.ResourceViews.V1BETA2.Connection): Connection to server
+  - connection (GoogleApi.ResourceViews.V1beta2.Connection): Connection to server
   - project (String): The project name of the resource view.
   - zone (String): The zone name of the resource view.
   - resource_view (String): The name of the resource view.
@@ -411,10 +411,10 @@ defmodule GoogleApi.ResourceViews.V1BETA2.Api.ZoneViews do
 
   ## Returns
 
-  {:ok, %GoogleApi.ResourceViews.V1BETA2.Model.Operation{}} on success
+  {:ok, %GoogleApi.ResourceViews.V1beta2.Model.Operation{}} on success
   {:error, info} on failure
   """
-  @spec resourceviews_zone_views_set_service(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ResourceViews.V1BETA2.Model.Operation.t} | {:error, Tesla.Env.t}
+  @spec resourceviews_zone_views_set_service(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ResourceViews.V1beta2.Model.Operation.t} | {:error, Tesla.Env.t}
   def resourceviews_zone_views_set_service(connection, project, zone, resource_view, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -432,6 +432,6 @@ defmodule GoogleApi.ResourceViews.V1BETA2.Api.ZoneViews do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ResourceViews.V1BETA2.Model.Operation{})
+    |> decode(%GoogleApi.ResourceViews.V1beta2.Model.Operation{})
   end
 end

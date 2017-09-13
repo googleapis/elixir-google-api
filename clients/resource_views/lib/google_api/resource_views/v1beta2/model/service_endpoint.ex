@@ -17,24 +17,21 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ResourceViews.V1BETA2.Model.ZoneViewsGetServiceResponse do
+defmodule GoogleApi.ResourceViews.V1beta2.Model.ServiceEndpoint do
   @moduledoc """
-  
+  The service endpoint that may be started in a VM.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"endpoints",
-    :"fingerprint"
+    :"name",
+    :"port"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ResourceViews.V1BETA2.Model.ZoneViewsGetServiceResponse do
-  import GoogleApi.ResourceViews.V1BETA2.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.ResourceViews.V1beta2.Model.ServiceEndpoint do
+  def decode(value, _options) do
     value
-    |> deserialize(:"endpoints", :list, GoogleApi.ResourceViews.V1BETA2.Model.ServiceEndpoint, options)
   end
 end
-
 

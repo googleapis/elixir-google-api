@@ -17,25 +17,44 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ResourceViews.V1BETA2.Model.ZoneViewsListResourcesResponse do
+defmodule GoogleApi.ResourceViews.V1beta2.Model.Operation do
   @moduledoc """
-  The response to a list resource request.
+  An operation resource, used to manage asynchronous API requests.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"items",
-    :"network",
-    :"nextPageToken"
+    :"clientOperationId",
+    :"creationTimestamp",
+    :"endTime",
+    :"error",
+    :"httpErrorMessage",
+    :"httpErrorStatusCode",
+    :"id",
+    :"insertTime",
+    :"kind",
+    :"name",
+    :"operationType",
+    :"progress",
+    :"region",
+    :"selfLink",
+    :"startTime",
+    :"status",
+    :"statusMessage",
+    :"targetId",
+    :"targetLink",
+    :"user",
+    :"warnings",
+    :"zone"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ResourceViews.V1BETA2.Model.ZoneViewsListResourcesResponse do
-  import GoogleApi.ResourceViews.V1BETA2.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.ResourceViews.V1beta2.Model.Operation do
+  import GoogleApi.ResourceViews.V1beta2.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"items", :list, GoogleApi.ResourceViews.V1BETA2.Model.ListResourceResponseItem, options)
+    |> deserialize(:"error", :struct, GoogleApi.ResourceViews.V1beta2.Model.Operation_error, options)
+    |> deserialize(:"warnings", :list, GoogleApi.ResourceViews.V1beta2.Model.Operation_warnings, options)
   end
 end
-
 

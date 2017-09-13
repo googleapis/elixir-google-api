@@ -17,23 +17,26 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ResourceViews.V1BETA2.Model.Operation_error do
+defmodule GoogleApi.ResourceViews.V1beta2.Model.OperationList do
   @moduledoc """
-  [Output Only] If errors occurred during processing of this operation, this field will be populated.
+  
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"errors"
+    :"id",
+    :"items",
+    :"kind",
+    :"nextPageToken",
+    :"selfLink"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ResourceViews.V1BETA2.Model.Operation_error do
-  import GoogleApi.ResourceViews.V1BETA2.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.ResourceViews.V1beta2.Model.OperationList do
+  import GoogleApi.ResourceViews.V1beta2.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"errors", :list, GoogleApi.ResourceViews.V1BETA2.Model.Operation_error_errors, options)
+    |> deserialize(:"items", :list, GoogleApi.ResourceViews.V1beta2.Model.Operation, options)
   end
 end
-
 

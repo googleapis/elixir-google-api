@@ -17,23 +17,24 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ResourceViews.V1BETA2.Model.ListResourceResponseItem do
+defmodule GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsListResourcesResponse do
   @moduledoc """
-  The list response item that contains the resource and end points information.
+  The response to a list resource request.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"endpoints",
-    :"resource"
+    :"items",
+    :"network",
+    :"nextPageToken"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ResourceViews.V1BETA2.Model.ListResourceResponseItem do
-  import GoogleApi.ResourceViews.V1BETA2.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsListResourcesResponse do
+  import GoogleApi.ResourceViews.V1beta2.Deserializer
   def decode(value, options) do
     value
+    |> deserialize(:"items", :list, GoogleApi.ResourceViews.V1beta2.Model.ListResourceResponseItem, options)
   end
 end
-
 
