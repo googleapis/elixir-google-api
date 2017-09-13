@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveStreamHealthStatus d
   end
 end
 
-

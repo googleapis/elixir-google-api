@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.SparkSqlJob do
   end
 end
 
-

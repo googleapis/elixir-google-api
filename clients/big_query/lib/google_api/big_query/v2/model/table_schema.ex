@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.TableSchema do
   end
 end
 
-

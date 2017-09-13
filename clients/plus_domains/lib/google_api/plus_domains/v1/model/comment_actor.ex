@@ -43,4 +43,3 @@ defimpl Poison.Decoder, for: GoogleApi.PlusDomains.V1.Model.Comment_actor do
   end
 end
 
-

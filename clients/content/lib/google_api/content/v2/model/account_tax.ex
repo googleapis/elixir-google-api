@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.AccountTax do
   end
 end
 
-

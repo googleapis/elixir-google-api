@@ -63,7 +63,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Reviews do
     }
     %{}
     |> method(:get)
-    |> url("/#{package_name}/reviews/#{review_id}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/reviews/#{review_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -112,7 +112,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Reviews do
     }
     %{}
     |> method(:get)
-    |> url("/#{package_name}/reviews")
+    |> url("/androidpublisher/v2/applications/#{package_name}/reviews")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -156,7 +156,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Reviews do
     }
     %{}
     |> method(:post)
-    |> url("/#{package_name}/reviews/#{review_id}:reply")
+    |> url("/androidpublisher/v2/applications/#{package_name}/reviews/#{review_id}:reply")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

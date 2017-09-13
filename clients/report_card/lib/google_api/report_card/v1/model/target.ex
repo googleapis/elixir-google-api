@@ -35,10 +35,8 @@ defmodule GoogleApi.ReportCard.V1.Model.Target do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ReportCard.V1.Model.Target do
-  import GoogleApi.ReportCard.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

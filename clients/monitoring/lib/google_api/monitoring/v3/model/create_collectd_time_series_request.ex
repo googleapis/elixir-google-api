@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.CreateCollectdTimeSer
   end
 end
 
-

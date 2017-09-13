@@ -49,4 +49,3 @@ defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.Dataset do
   end
 end
 
-

@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.VideoIntelligence.V1beta1.Model.GoogleClo
   end
 end
 
-

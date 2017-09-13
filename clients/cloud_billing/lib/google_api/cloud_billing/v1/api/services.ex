@@ -138,7 +138,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.Services do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{+parent}/skus")
+    |> url("/v1/#{parent}/skus")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

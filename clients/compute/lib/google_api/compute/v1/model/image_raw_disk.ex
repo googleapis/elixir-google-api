@@ -31,10 +31,8 @@ defmodule GoogleApi.Compute.V1.Model.Image_rawDisk do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.Image_rawDisk do
-  import GoogleApi.Compute.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

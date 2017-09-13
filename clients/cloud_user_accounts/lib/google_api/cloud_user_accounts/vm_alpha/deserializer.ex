@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Deserializer do
+defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer do
   @moduledoc """
   Helper functions for deserializing responses into models
   """

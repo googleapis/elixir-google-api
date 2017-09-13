@@ -43,4 +43,3 @@ defimpl Poison.Decoder, for: GoogleApi.Fonts.V1.Model.Webfont do
   end
 end
 
-

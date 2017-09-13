@@ -61,10 +61,8 @@ defmodule GoogleApi.PlayMoviesPartner.V1.Model.Avail do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.PlayMoviesPartner.V1.Model.Avail do
-  import GoogleApi.PlayMoviesPartner.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

@@ -51,4 +51,3 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.Variable do
   end
 end
 
-

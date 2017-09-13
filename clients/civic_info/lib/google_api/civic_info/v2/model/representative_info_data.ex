@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.RepresentativeInfoData
   end
 end
 
-

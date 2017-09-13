@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudBilling.V1.Model.PricingExpression d
   end
 end
 
-

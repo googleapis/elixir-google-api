@@ -60,7 +60,7 @@ defmodule GoogleApi.PlusDomains.V1.Api.Comments do
     }
     %{}
     |> method(:get)
-    |> url("/comments/#{comment_id}")
+    |> url("/plusDomains/v1/comments/#{comment_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -103,7 +103,7 @@ defmodule GoogleApi.PlusDomains.V1.Api.Comments do
     }
     %{}
     |> method(:post)
-    |> url("/activities/#{activity_id}/comments")
+    |> url("/plusDomains/v1/activities/#{activity_id}/comments")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -150,7 +150,7 @@ defmodule GoogleApi.PlusDomains.V1.Api.Comments do
     }
     %{}
     |> method(:get)
-    |> url("/activities/#{activity_id}/comments")
+    |> url("/plusDomains/v1/activities/#{activity_id}/comments")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

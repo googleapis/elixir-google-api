@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Model.LinuxGroupView do
+defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxGroupView do
   @moduledoc """
   A detailed view of a Linux group.
   """
@@ -30,11 +30,9 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Model.LinuxGroupView do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.VM_ALPHA.Model.LinuxGroupView do
-  import GoogleApi.CloudUserAccounts.VM_ALPHA.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxGroupView do
+  def decode(value, _options) do
     value
   end
 end
-
 

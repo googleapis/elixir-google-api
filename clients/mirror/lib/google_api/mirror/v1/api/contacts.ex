@@ -60,7 +60,7 @@ defmodule GoogleApi.Mirror.V1.Api.Contacts do
     }
     %{}
     |> method(:delete)
-    |> url("/contacts/#{id}")
+    |> url("/mirror/v1/contacts/#{id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -101,7 +101,7 @@ defmodule GoogleApi.Mirror.V1.Api.Contacts do
     }
     %{}
     |> method(:get)
-    |> url("/contacts/#{id}")
+    |> url("/mirror/v1/contacts/#{id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -143,7 +143,7 @@ defmodule GoogleApi.Mirror.V1.Api.Contacts do
     }
     %{}
     |> method(:post)
-    |> url("/contacts")
+    |> url("/mirror/v1/contacts")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -183,7 +183,7 @@ defmodule GoogleApi.Mirror.V1.Api.Contacts do
     }
     %{}
     |> method(:get)
-    |> url("/contacts")
+    |> url("/mirror/v1/contacts")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -226,7 +226,7 @@ defmodule GoogleApi.Mirror.V1.Api.Contacts do
     }
     %{}
     |> method(:patch)
-    |> url("/contacts/#{id}")
+    |> url("/mirror/v1/contacts/#{id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -269,7 +269,7 @@ defmodule GoogleApi.Mirror.V1.Api.Contacts do
     }
     %{}
     |> method(:put)
-    |> url("/contacts/#{id}")
+    |> url("/mirror/v1/contacts/#{id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

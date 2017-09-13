@@ -56,4 +56,3 @@ defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.CourseWork do
   end
 end
 
-

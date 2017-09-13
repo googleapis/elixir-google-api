@@ -50,4 +50,3 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidPublisher.V2.Model.ExternallyHoste
   end
 end
 
-

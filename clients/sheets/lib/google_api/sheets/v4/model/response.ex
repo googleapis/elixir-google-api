@@ -58,4 +58,3 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.Response do
   end
 end
 
-

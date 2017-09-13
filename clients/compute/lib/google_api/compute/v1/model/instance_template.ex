@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.InstanceTemplate do
   end
 end
 
-

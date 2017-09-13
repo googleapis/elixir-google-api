@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.StorePage do
   end
 end
 
-

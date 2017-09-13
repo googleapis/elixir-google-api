@@ -33,10 +33,8 @@ defmodule GoogleApi.AdSenseHost.V41.Model.AdStyle_colors do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AdSenseHost.V41.Model.AdStyle_colors do
-  import GoogleApi.AdSenseHost.V41.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

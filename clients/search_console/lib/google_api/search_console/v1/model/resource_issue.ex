@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.SearchConsole.V1.Model.ResourceIssue do
   end
 end
 
-

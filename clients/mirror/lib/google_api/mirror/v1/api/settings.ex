@@ -60,7 +60,7 @@ defmodule GoogleApi.Mirror.V1.Api.Settings do
     }
     %{}
     |> method(:get)
-    |> url("/settings/#{id}")
+    |> url("/mirror/v1/settings/#{id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

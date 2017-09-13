@@ -48,4 +48,3 @@ defimpl Poison.Decoder, for: GoogleApi.FusionTables.V2.Model.Table do
   end
 end
 
-

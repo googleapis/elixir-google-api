@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.Webmaster.V3.Model.SitemapsListResponse d
   end
 end
 
-

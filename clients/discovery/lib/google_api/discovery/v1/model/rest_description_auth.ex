@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.Discovery.V1.Model.RestDescription_auth d
   end
 end
 
-

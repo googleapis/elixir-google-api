@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.ListTagsResponse do
   end
 end
 
-

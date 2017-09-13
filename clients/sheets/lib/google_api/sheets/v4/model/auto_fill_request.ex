@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.AutoFillRequest do
   end
 end
 
-

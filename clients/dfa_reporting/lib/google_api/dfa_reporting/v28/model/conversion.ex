@@ -49,4 +49,3 @@ defimpl Poison.Decoder, for: GoogleApi.DFAReporting.V28.Model.Conversion do
   end
 end
 
-

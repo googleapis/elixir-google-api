@@ -52,4 +52,3 @@ defimpl Poison.Decoder, for: GoogleApi.Analytics.V3.Model.McfData do
   end
 end
 
-

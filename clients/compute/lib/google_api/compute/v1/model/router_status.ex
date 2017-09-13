@@ -41,4 +41,3 @@ defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.RouterStatus do
   end
 end
 
-

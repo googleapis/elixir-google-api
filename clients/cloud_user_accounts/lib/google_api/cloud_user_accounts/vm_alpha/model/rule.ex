@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Rule do
+defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.Rule do
   @moduledoc """
   A rule to be applied in a Policy.
   """
@@ -34,13 +34,12 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Rule do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Rule do
-  import GoogleApi.CloudUserAccounts.VM_ALPHA.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.Rule do
+  import GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"conditions", :list, GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Condition, options)
-    |> deserialize(:"logConfigs", :list, GoogleApi.CloudUserAccounts.VM_ALPHA.Model.LogConfig, options)
+    |> deserialize(:"conditions", :list, GoogleApi.CloudUserAccounts.Vm_alpha.Model.Condition, options)
+    |> deserialize(:"logConfigs", :list, GoogleApi.CloudUserAccounts.Vm_alpha.Model.LogConfig, options)
   end
 end
-
 

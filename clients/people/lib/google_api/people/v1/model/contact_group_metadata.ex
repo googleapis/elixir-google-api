@@ -30,10 +30,8 @@ defmodule GoogleApi.People.V1.Model.ContactGroupMetadata do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.People.V1.Model.ContactGroupMetadata do
-  import GoogleApi.People.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

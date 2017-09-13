@@ -61,7 +61,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Task do
     }
     %{}
     |> method(:delete)
-    |> url("/tables/#{table_id}/tasks/#{task_id}")
+    |> url("/fusiontables/v2/tables/#{table_id}/tasks/#{task_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -103,7 +103,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Task do
     }
     %{}
     |> method(:get)
-    |> url("/tables/#{table_id}/tasks/#{task_id}")
+    |> url("/fusiontables/v2/tables/#{table_id}/tasks/#{task_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -150,7 +150,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Task do
     }
     %{}
     |> method(:get)
-    |> url("/tables/#{table_id}/tasks")
+    |> url("/fusiontables/v2/tables/#{table_id}/tasks")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

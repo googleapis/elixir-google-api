@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.Fitness.V1.Model.AggregateBucket do
   end
 end
 
-

@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.Books.V1.Model.Dictlayerdata_dict_derivat
   end
 end
 
-

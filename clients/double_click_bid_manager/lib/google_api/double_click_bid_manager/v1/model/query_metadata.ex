@@ -39,10 +39,8 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Model.QueryMetadata do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DoubleClickBidManager.V1.Model.QueryMetadata do
-  import GoogleApi.DoubleClickBidManager.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

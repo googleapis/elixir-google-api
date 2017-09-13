@@ -34,10 +34,8 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.Availability do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DoubleClickSearch.V2.Model.Availability do
-  import GoogleApi.DoubleClickSearch.V2.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

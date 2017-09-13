@@ -41,4 +41,3 @@ defimpl Poison.Decoder, for: GoogleApi.Books.V1.Model.Volumeannotation_contentRa
   end
 end
 
-

@@ -43,4 +43,3 @@ defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.AutoscalingPolicy do
   end
 end
 
-

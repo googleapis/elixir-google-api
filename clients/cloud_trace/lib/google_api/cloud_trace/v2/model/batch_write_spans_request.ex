@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudTrace.V2.Model.BatchWriteSpansReques
   end
 end
 
-

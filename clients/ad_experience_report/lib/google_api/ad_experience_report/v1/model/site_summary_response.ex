@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.AdExperienceReport.V1.Model.SiteSummaryRe
   end
 end
 
-

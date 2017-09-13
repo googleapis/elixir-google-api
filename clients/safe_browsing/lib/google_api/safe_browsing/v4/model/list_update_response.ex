@@ -45,4 +45,3 @@ defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.ListUpdateResponse 
   end
 end
 
-

@@ -31,10 +31,8 @@ defmodule GoogleApi.Classroom.V1.Model.Link do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.Link do
-  import GoogleApi.Classroom.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

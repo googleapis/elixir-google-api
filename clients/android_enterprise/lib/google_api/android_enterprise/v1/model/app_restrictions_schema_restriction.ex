@@ -44,4 +44,3 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.AppRestriction
   end
 end
 
-

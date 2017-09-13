@@ -31,10 +31,8 @@ defmodule GoogleApi.Translate.V2.Model.TranslationsResource do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Translate.V2.Model.TranslationsResource do
-  import GoogleApi.Translate.V2.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.Gmail.V1.Model.ListThreadsResponse do
   end
 end
 
-

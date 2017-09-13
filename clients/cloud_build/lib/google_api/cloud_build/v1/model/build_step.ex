@@ -44,4 +44,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudBuild.V1.Model.BuildStep do
   end
 end
 
-

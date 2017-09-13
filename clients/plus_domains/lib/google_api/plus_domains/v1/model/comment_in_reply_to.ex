@@ -30,10 +30,8 @@ defmodule GoogleApi.PlusDomains.V1.Model.Comment_inReplyTo do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.PlusDomains.V1.Model.Comment_inReplyTo do
-  import GoogleApi.PlusDomains.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

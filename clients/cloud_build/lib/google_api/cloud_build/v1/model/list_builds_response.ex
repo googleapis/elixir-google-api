@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudBuild.V1.Model.ListBuildsResponse do
   end
 end
 
-

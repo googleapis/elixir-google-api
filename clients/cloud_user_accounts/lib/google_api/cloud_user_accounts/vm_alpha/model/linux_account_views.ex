@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Model.LinuxAccountViews do
+defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxAccountViews do
   @moduledoc """
   A list of all Linux accounts for this project. This API is only used by Compute Engine virtual machines to get information about user accounts for a project or instance. Linux resources are read-only views into users and groups managed by the Compute Engine Accounts API.
   """
@@ -30,13 +30,12 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Model.LinuxAccountViews do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.VM_ALPHA.Model.LinuxAccountViews do
-  import GoogleApi.CloudUserAccounts.VM_ALPHA.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxAccountViews do
+  import GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"groupViews", :list, GoogleApi.CloudUserAccounts.VM_ALPHA.Model.LinuxGroupView, options)
-    |> deserialize(:"userViews", :list, GoogleApi.CloudUserAccounts.VM_ALPHA.Model.LinuxUserView, options)
+    |> deserialize(:"groupViews", :list, GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxGroupView, options)
+    |> deserialize(:"userViews", :list, GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxUserView, options)
   end
 end
-
 

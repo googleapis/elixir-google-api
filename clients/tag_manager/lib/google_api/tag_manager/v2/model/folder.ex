@@ -37,10 +37,8 @@ defmodule GoogleApi.TagManager.V2.Model.Folder do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.Folder do
-  import GoogleApi.TagManager.V2.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

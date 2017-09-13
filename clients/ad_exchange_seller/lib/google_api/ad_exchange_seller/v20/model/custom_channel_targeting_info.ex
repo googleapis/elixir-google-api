@@ -32,10 +32,8 @@ defmodule GoogleApi.AdExchangeSeller.V20.Model.CustomChannel_targetingInfo do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AdExchangeSeller.V20.Model.CustomChannel_targetingInfo do
-  import GoogleApi.AdExchangeSeller.V20.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

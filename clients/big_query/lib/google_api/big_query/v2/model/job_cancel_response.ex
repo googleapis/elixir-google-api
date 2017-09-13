@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.JobCancelResponse do
   end
 end
 
-

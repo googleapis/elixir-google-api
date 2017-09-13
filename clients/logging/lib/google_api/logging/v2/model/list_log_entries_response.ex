@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.Logging.V2.Model.ListLogEntriesResponse d
   end
 end
 
-

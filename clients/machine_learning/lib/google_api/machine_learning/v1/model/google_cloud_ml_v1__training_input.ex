@@ -48,4 +48,3 @@ defimpl Poison.Decoder, for: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_
   end
 end
 
-

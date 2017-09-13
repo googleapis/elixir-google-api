@@ -62,7 +62,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{+parent}/containers")
+    |> url("/#{parent}/containers")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -105,7 +105,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{+parent}/environments")
+    |> url("/#{parent}/environments")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -148,7 +148,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/#{+parent}/environments")
+    |> url("/#{parent}/environments")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -193,7 +193,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:patch)
-    |> url("/#{+path}")
+    |> url("/#{path}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -236,7 +236,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{+path}:reauthorize")
+    |> url("/#{path}:reauthorize")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -279,7 +279,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/#{+parent}/containers")
+    |> url("/#{parent}/containers")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -320,7 +320,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/#{+parent}/version_headers:latest")
+    |> url("/#{parent}/version_headers:latest")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -365,7 +365,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/#{+parent}/version_headers")
+    |> url("/#{parent}/version_headers")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -406,7 +406,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/#{+parent}/versions:live")
+    |> url("/#{parent}/versions:live")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -449,7 +449,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{+path}:publish")
+    |> url("/#{path}:publish")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -490,7 +490,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{+path}:set_latest")
+    |> url("/#{path}:set_latest")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -531,7 +531,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{+path}:undelete")
+    |> url("/#{path}:undelete")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -574,7 +574,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{+parent}/built_in_variables")
+    |> url("/#{parent}/built_in_variables")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -617,7 +617,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/#{+parent}/built_in_variables")
+    |> url("/#{parent}/built_in_variables")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -660,7 +660,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{+path}/built_in_variables:revert")
+    |> url("/#{path}/built_in_variables:revert")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -703,7 +703,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{+parent}/workspaces")
+    |> url("/#{parent}/workspaces")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -746,7 +746,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{+path}:create_version")
+    |> url("/#{path}:create_version")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -789,7 +789,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{+parent}/folders")
+    |> url("/#{parent}/folders")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -832,7 +832,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{+path}:entities")
+    |> url("/#{path}:entities")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -875,7 +875,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/#{+parent}/folders")
+    |> url("/#{parent}/folders")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -924,7 +924,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{+path}:move_entities_to_folder")
+    |> url("/#{path}:move_entities_to_folder")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -965,7 +965,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/#{+path}/status")
+    |> url("/#{path}/status")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1008,7 +1008,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/#{+parent}/workspaces")
+    |> url("/#{parent}/workspaces")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1051,7 +1051,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{+parent}/proposal")
+    |> url("/#{parent}/proposal")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1092,7 +1092,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{+path}:quick_preview")
+    |> url("/#{path}:quick_preview")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1137,7 +1137,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{+path}:resolve_conflict")
+    |> url("/#{path}:resolve_conflict")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1178,7 +1178,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{+path}:sync")
+    |> url("/#{path}:sync")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1221,7 +1221,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{+parent}/tags")
+    |> url("/#{parent}/tags")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1264,7 +1264,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/#{+parent}/tags")
+    |> url("/#{parent}/tags")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1307,7 +1307,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{+parent}/triggers")
+    |> url("/#{parent}/triggers")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1350,7 +1350,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/#{+parent}/triggers")
+    |> url("/#{parent}/triggers")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1393,7 +1393,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{+parent}/variables")
+    |> url("/#{parent}/variables")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1436,7 +1436,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/#{+parent}/variables")
+    |> url("/#{parent}/variables")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1479,7 +1479,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{+path}:revert")
+    |> url("/#{path}:revert")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1564,7 +1564,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{+parent}/user_permissions")
+    |> url("/#{parent}/user_permissions")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1607,7 +1607,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:delete)
-    |> url("/#{+path}")
+    |> url("/#{path}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1650,7 +1650,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/#{+path}")
+    |> url("/#{path}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1693,7 +1693,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/#{+parent}/user_permissions")
+    |> url("/#{parent}/user_permissions")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1738,7 +1738,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:put)
-    |> url("/#{+path}")
+    |> url("/#{path}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

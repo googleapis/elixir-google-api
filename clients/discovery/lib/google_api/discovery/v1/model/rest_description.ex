@@ -70,4 +70,3 @@ defimpl Poison.Decoder, for: GoogleApi.Discovery.V1.Model.RestDescription do
   end
 end
 
-

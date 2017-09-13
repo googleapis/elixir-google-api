@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.AchievementDefinitionsList
   end
 end
 
-

@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.AccountsCustomBatchReque
   end
 end
 
-

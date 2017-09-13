@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudResourceManager.V1.Model.Ancestor do
   end
 end
 
-

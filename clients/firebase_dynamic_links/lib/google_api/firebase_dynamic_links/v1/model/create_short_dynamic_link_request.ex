@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.CreateShort
   end
 end
 
-

@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.CustomerInteractionHistory.V3.Model.UserI
   end
 end
 
-

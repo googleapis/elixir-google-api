@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.RegionInstanceGroupList 
   end
 end
 
-

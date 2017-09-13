@@ -41,4 +41,3 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.ProductsListRe
   end
 end
 
-

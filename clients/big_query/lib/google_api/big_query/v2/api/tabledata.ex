@@ -64,7 +64,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Tabledata do
     }
     %{}
     |> method(:post)
-    |> url("/projects/#{project_id}/datasets/#{dataset_id}/tables/#{table_id}/insertAll")
+    |> url("/bigquery/v2/projects/#{project_id}/datasets/#{dataset_id}/tables/#{table_id}/insertAll")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -115,7 +115,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Tabledata do
     }
     %{}
     |> method(:get)
-    |> url("/projects/#{project_id}/datasets/#{dataset_id}/tables/#{table_id}/data")
+    |> url("/bigquery/v2/projects/#{project_id}/datasets/#{dataset_id}/tables/#{table_id}/data")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

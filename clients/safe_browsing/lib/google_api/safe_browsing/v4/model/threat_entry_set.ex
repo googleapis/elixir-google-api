@@ -43,4 +43,3 @@ defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.ThreatEntrySet do
   end
 end
 
-

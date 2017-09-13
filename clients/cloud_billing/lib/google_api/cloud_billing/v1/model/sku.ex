@@ -43,4 +43,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudBilling.V1.Model.Sku do
   end
 end
 
-

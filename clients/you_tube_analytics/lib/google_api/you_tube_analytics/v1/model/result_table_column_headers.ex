@@ -31,10 +31,8 @@ defmodule GoogleApi.YouTubeAnalytics.V1.Model.ResultTable_columnHeaders do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTubeAnalytics.V1.Model.ResultTable_columnHeaders do
-  import GoogleApi.YouTubeAnalytics.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

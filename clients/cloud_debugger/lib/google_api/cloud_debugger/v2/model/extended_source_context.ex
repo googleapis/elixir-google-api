@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudDebugger.V2.Model.ExtendedSourceCont
   end
 end
 
-

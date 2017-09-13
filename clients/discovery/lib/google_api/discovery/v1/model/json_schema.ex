@@ -59,4 +59,3 @@ defimpl Poison.Decoder, for: GoogleApi.Discovery.V1.Model.JsonSchema do
   end
 end
 
-

@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.GuideCategory do
   end
 end
 
-

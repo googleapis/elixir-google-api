@@ -51,4 +51,3 @@ defimpl Poison.Decoder, for: GoogleApi.PlusDomains.V1.Model.Activity_object do
   end
 end
 
-

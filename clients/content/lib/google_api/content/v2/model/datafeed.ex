@@ -47,4 +47,3 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.Datafeed do
   end
 end
 
-

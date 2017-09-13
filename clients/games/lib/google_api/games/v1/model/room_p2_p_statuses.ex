@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.RoomP2PStatuses do
   end
 end
 
-

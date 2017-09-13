@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.ListUserStatesResponse 
   end
 end
 
-

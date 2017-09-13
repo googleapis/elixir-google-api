@@ -32,10 +32,8 @@ defmodule GoogleApi.Calendar.V3.Model.Event_creator do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.Event_creator do
-  import GoogleApi.Calendar.V3.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

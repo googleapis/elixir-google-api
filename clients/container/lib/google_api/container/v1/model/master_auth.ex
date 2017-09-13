@@ -41,4 +41,3 @@ defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.MasterAuth do
   end
 end
 
-

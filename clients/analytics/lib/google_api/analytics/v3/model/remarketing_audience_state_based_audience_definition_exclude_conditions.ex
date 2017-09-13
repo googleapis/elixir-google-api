@@ -30,10 +30,8 @@ defmodule GoogleApi.Analytics.V3.Model.RemarketingAudience_stateBasedAudienceDef
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Analytics.V3.Model.RemarketingAudience_stateBasedAudienceDefinition_excludeConditions do
-  import GoogleApi.Analytics.V3.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

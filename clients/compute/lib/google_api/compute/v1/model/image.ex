@@ -60,4 +60,3 @@ defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.Image do
   end
 end
 
-

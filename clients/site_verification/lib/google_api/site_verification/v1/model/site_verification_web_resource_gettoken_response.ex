@@ -30,10 +30,8 @@ defmodule GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceGettoke
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceGettokenResponse do
-  import GoogleApi.SiteVerification.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

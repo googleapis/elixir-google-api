@@ -72,7 +72,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{+name}/billingInfo")
+    |> url("/v1/#{name}/billingInfo")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -127,7 +127,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.Projects do
     }
     %{}
     |> method(:put)
-    |> url("/v1/#{+name}/billingInfo")
+    |> url("/v1/#{name}/billingInfo")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

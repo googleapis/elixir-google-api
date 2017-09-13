@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.ServiceAccount
   end
 end
 
-

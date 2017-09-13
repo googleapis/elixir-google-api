@@ -33,10 +33,8 @@ defmodule GoogleApi.Webmaster.V3.Model.ApiDataRow do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Webmaster.V3.Model.ApiDataRow do
-  import GoogleApi.Webmaster.V3.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

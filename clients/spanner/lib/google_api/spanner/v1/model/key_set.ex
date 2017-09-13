@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.KeySet do
   end
 end
 
-

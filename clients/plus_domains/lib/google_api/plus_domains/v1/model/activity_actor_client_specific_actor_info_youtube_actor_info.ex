@@ -29,10 +29,8 @@ defmodule GoogleApi.PlusDomains.V1.Model.Activity_actor_clientSpecificActorInfo_
 end
 
 defimpl Poison.Decoder, for: GoogleApi.PlusDomains.V1.Model.Activity_actor_clientSpecificActorInfo_youtubeActorInfo do
-  import GoogleApi.PlusDomains.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.FilterCriteria do
   end
 end
 
-

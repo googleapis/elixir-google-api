@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.DFAReporting.V28.Model.DimensionValueList
   end
 end
 
-

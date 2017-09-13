@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrdersListResponse do
   end
 end
 
-

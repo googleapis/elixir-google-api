@@ -30,10 +30,8 @@ defmodule GoogleApi.PlayCustomApp.V1.Model.CustomApp do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.PlayCustomApp.V1.Model.CustomApp do
-  import GoogleApi.PlayCustomApp.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

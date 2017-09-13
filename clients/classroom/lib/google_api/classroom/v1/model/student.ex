@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.Student do
   end
 end
 
-

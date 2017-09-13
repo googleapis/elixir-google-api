@@ -30,10 +30,8 @@ defmodule GoogleApi.GroupsMigration.V1.Model.Groups do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.GroupsMigration.V1.Model.Groups do
-  import GoogleApi.GroupsMigration.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

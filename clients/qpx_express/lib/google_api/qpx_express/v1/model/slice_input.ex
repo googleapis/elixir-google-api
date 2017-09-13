@@ -46,4 +46,3 @@ defimpl Poison.Decoder, for: GoogleApi.QPXExpress.V1.Model.SliceInput do
   end
 end
 
-

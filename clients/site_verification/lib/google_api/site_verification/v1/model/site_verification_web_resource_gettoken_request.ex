@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.SiteVerification.V1.Model.SiteVerificatio
   end
 end
 
-

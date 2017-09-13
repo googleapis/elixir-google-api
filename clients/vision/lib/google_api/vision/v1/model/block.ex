@@ -41,4 +41,3 @@ defimpl Poison.Decoder, for: GoogleApi.Vision.V1.Model.Block do
   end
 end
 
-

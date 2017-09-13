@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.BatchCreateAnnotationsR
   end
 end
 
-

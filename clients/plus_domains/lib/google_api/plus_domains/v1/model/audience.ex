@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.PlusDomains.V1.Model.Audience do
   end
 end
 
-

@@ -32,10 +32,8 @@ defmodule GoogleApi.Compute.V1.Model.TestFailure do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.TestFailure do
-  import GoogleApi.Compute.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

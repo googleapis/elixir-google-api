@@ -36,10 +36,8 @@ defmodule GoogleApi.DFAReporting.V28.Model.UserProfile do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DFAReporting.V28.Model.UserProfile do
-  import GoogleApi.DFAReporting.V28.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

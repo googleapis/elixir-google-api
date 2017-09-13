@@ -31,10 +31,8 @@ defmodule GoogleApi.Drive.V3.Model.File_imageMediaMetadata_location do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Drive.V3.Model.File_imageMediaMetadata_location do
-  import GoogleApi.Drive.V3.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

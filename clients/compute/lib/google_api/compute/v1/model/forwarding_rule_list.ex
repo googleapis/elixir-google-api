@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.ForwardingRuleList do
   end
 end
 
-

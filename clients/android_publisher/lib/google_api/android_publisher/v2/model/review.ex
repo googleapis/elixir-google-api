@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidPublisher.V2.Model.Review do
   end
 end
 
-

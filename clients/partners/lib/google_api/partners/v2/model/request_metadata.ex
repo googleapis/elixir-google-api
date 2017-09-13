@@ -41,4 +41,3 @@ defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.RequestMetadata do
   end
 end
 
-

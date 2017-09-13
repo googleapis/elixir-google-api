@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.Discovery.V1.Model.DirectoryList do
   end
 end
 
-

@@ -30,10 +30,8 @@ defmodule GoogleApi.Speech.V1.Model.RecognitionAudio do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1.Model.RecognitionAudio do
-  import GoogleApi.Speech.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

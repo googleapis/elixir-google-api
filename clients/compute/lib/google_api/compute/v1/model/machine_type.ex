@@ -51,4 +51,3 @@ defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.MachineType do
   end
 end
 
-

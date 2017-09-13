@@ -30,10 +30,8 @@ defmodule GoogleApi.Vault.V1.Model.HeldOrgUnit do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Vault.V1.Model.HeldOrgUnit do
-  import GoogleApi.Vault.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

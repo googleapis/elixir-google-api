@@ -30,10 +30,8 @@ defmodule GoogleApi.Vision.V1.Model.ImageSource do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Vision.V1.Model.ImageSource do
-  import GoogleApi.Vision.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

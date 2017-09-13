@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidPublisher.V2.Model.ExpansionFilesU
   end
 end
 
-

@@ -29,10 +29,8 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.BatchDeletePhotosRequest do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.StreetViewPublish.V1.Model.BatchDeletePhotosRequest do
-  import GoogleApi.StreetViewPublish.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

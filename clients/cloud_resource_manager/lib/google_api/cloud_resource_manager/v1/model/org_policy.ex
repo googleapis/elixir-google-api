@@ -44,4 +44,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudResourceManager.V1.Model.OrgPolicy d
   end
 end
 
-

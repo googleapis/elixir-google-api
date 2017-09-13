@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.JobConfigurationExtract
   end
 end
 
-

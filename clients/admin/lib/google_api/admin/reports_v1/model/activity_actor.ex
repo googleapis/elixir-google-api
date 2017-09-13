@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Admin.REPORTS_V1.Model.Activity_actor do
+defmodule GoogleApi.Admin.Reports_v1.Model.Activity_actor do
   @moduledoc """
   User doing the action.
   """
@@ -31,11 +31,9 @@ defmodule GoogleApi.Admin.REPORTS_V1.Model.Activity_actor do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Admin.REPORTS_V1.Model.Activity_actor do
-  import GoogleApi.Admin.REPORTS_V1.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.Admin.Reports_v1.Model.Activity_actor do
+  def decode(value, _options) do
     value
   end
 end
-
 

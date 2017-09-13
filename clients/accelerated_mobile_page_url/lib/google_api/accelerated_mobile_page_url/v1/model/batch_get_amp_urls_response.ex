@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.AcceleratedMobilePageUrl.V1.Model.BatchGe
   end
 end
 
-

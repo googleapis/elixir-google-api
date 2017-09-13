@@ -70,4 +70,3 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.Device do
   end
 end
 
-

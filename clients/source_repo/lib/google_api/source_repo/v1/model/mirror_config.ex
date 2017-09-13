@@ -31,10 +31,8 @@ defmodule GoogleApi.SourceRepo.V1.Model.MirrorConfig do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SourceRepo.V1.Model.MirrorConfig do
-  import GoogleApi.SourceRepo.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

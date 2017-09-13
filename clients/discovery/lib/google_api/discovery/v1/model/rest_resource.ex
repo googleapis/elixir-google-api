@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.Discovery.V1.Model.RestResource do
   end
 end
 
-

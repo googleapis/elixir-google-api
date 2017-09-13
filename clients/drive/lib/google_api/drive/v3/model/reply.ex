@@ -44,4 +44,3 @@ defimpl Poison.Decoder, for: GoogleApi.Drive.V3.Model.Reply do
   end
 end
 
-

@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.Gmail.V1.Model.HistoryLabelAdded do
   end
 end
 
-

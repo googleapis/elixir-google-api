@@ -29,10 +29,8 @@ defmodule GoogleApi.Sheets.V4.Model.DeleteFilterViewRequest do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DeleteFilterViewRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

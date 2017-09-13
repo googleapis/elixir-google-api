@@ -60,7 +60,7 @@ defmodule GoogleApi.PlusDomains.V1.Api.Activities do
     }
     %{}
     |> method(:get)
-    |> url("/activities/#{activity_id}")
+    |> url("/plusDomains/v1/activities/#{activity_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -105,7 +105,7 @@ defmodule GoogleApi.PlusDomains.V1.Api.Activities do
     }
     %{}
     |> method(:post)
-    |> url("/people/#{user_id}/activities")
+    |> url("/plusDomains/v1/people/#{user_id}/activities")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -151,7 +151,7 @@ defmodule GoogleApi.PlusDomains.V1.Api.Activities do
     }
     %{}
     |> method(:get)
-    |> url("/people/#{user_id}/activities/#{collection}")
+    |> url("/plusDomains/v1/people/#{user_id}/activities/#{collection}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

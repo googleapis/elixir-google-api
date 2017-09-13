@@ -62,7 +62,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Table do
     }
     %{}
     |> method(:post)
-    |> url("/tables/#{table_id}/copy")
+    |> url("/fusiontables/v2/tables/#{table_id}/copy")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -103,7 +103,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Table do
     }
     %{}
     |> method(:delete)
-    |> url("/tables/#{table_id}")
+    |> url("/fusiontables/v2/tables/#{table_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -144,7 +144,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Table do
     }
     %{}
     |> method(:get)
-    |> url("/tables/#{table_id}")
+    |> url("/fusiontables/v2/tables/#{table_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -195,7 +195,109 @@ defmodule GoogleApi.FusionTables.V2.Api.Table do
     }
     %{}
     |> method(:post)
-    |> url("/tables/#{table_id}/import")
+    |> url("/fusiontables/v2/tables/#{table_id}/import")
+    |> add_optional_params(optional_params, opts)
+    |> Enum.into([])
+    |> (&Connection.request(connection, &1)).()
+    |> decode(%GoogleApi.FusionTables.V2.Model.Import{})
+  end
+
+  @doc """
+  Imports more rows into a table.
+
+  ## Parameters
+
+  - connection (GoogleApi.FusionTables.V2.Connection): Connection to server
+  - table_id (String): The table into which new rows are being imported.
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
+    - :fields (String): Selector specifying which fields to include in a partial response.
+    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String): OAuth 2.0 token for the current user.
+    - :pretty_print (Boolean): Returns response with indentations and line breaks.
+    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :delimiter (String): The delimiter used to separate cell values. This can only consist of a single character. Default is ,.
+    - :encoding (String): The encoding of the content. Default is UTF-8. Use auto-detect if you are unsure of the encoding.
+    - :end_line (Integer): The index of the line up to which data will be imported. Default is to import the entire file. If endLine is negative, it is an offset from the end of the file; the imported content will exclude the last endLine lines.
+    - :is_strict (Boolean): Whether the imported CSV must have the same number of values for each row. If false, rows with fewer values will be padded with empty values. Default is true.
+    - :start_line (Integer): The index of the first line from which to start importing, inclusive. Default is 0.
+
+  ## Returns
+
+  {:ok, %{}} on success
+  {:error, info} on failure
+  """
+  @spec fusiontables_table_import_rows_resumable(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
+  def fusiontables_table_import_rows_resumable(connection, table_id, opts \\ []) do
+    optional_params = %{
+      :"alt" => :query,
+      :"fields" => :query,
+      :"key" => :query,
+      :"oauth_token" => :query,
+      :"prettyPrint" => :query,
+      :"quotaUser" => :query,
+      :"userIp" => :query,
+      :"delimiter" => :query,
+      :"encoding" => :query,
+      :"endLine" => :query,
+      :"isStrict" => :query,
+      :"startLine" => :query
+    }
+    %{}
+    |> method(:post)
+    |> url("/resumable/upload/fusiontables/v2/tables/#{table_id}/import")
+    |> add_optional_params(optional_params, opts)
+    |> Enum.into([])
+    |> (&Connection.request(connection, &1)).()
+    |> decode(false)
+  end
+
+  @doc """
+  Imports more rows into a table.
+
+  ## Parameters
+
+  - connection (GoogleApi.FusionTables.V2.Connection): Connection to server
+  - table_id (String): The table into which new rows are being imported.
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
+    - :fields (String): Selector specifying which fields to include in a partial response.
+    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String): OAuth 2.0 token for the current user.
+    - :pretty_print (Boolean): Returns response with indentations and line breaks.
+    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :delimiter (String): The delimiter used to separate cell values. This can only consist of a single character. Default is ,.
+    - :encoding (String): The encoding of the content. Default is UTF-8. Use auto-detect if you are unsure of the encoding.
+    - :end_line (Integer): The index of the line up to which data will be imported. Default is to import the entire file. If endLine is negative, it is an offset from the end of the file; the imported content will exclude the last endLine lines.
+    - :is_strict (Boolean): Whether the imported CSV must have the same number of values for each row. If false, rows with fewer values will be padded with empty values. Default is true.
+    - :start_line (Integer): The index of the first line from which to start importing, inclusive. Default is 0.
+
+  ## Returns
+
+  {:ok, %GoogleApi.FusionTables.V2.Model.Import{}} on success
+  {:error, info} on failure
+  """
+  @spec fusiontables_table_import_rows_simple(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.FusionTables.V2.Model.Import.t} | {:error, Tesla.Env.t}
+  def fusiontables_table_import_rows_simple(connection, table_id, opts \\ []) do
+    optional_params = %{
+      :"alt" => :query,
+      :"fields" => :query,
+      :"key" => :query,
+      :"oauth_token" => :query,
+      :"prettyPrint" => :query,
+      :"quotaUser" => :query,
+      :"userIp" => :query,
+      :"delimiter" => :query,
+      :"encoding" => :query,
+      :"endLine" => :query,
+      :"isStrict" => :query,
+      :"startLine" => :query
+    }
+    %{}
+    |> method(:post)
+    |> url("/upload/fusiontables/v2/tables/#{table_id}/import")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -240,7 +342,99 @@ defmodule GoogleApi.FusionTables.V2.Api.Table do
     }
     %{}
     |> method(:post)
-    |> url("/tables/import")
+    |> url("/fusiontables/v2/tables/import")
+    |> add_param(:query, :"name", name)
+    |> add_optional_params(optional_params, opts)
+    |> Enum.into([])
+    |> (&Connection.request(connection, &1)).()
+    |> decode(%GoogleApi.FusionTables.V2.Model.Table{})
+  end
+
+  @doc """
+  Imports a new table.
+
+  ## Parameters
+
+  - connection (GoogleApi.FusionTables.V2.Connection): Connection to server
+  - name (String): The name to be assigned to the new table.
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
+    - :fields (String): Selector specifying which fields to include in a partial response.
+    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String): OAuth 2.0 token for the current user.
+    - :pretty_print (Boolean): Returns response with indentations and line breaks.
+    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :delimiter (String): The delimiter used to separate cell values. This can only consist of a single character. Default is ,.
+    - :encoding (String): The encoding of the content. Default is UTF-8. Use auto-detect if you are unsure of the encoding.
+
+  ## Returns
+
+  {:ok, %{}} on success
+  {:error, info} on failure
+  """
+  @spec fusiontables_table_import_table_resumable(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
+  def fusiontables_table_import_table_resumable(connection, name, opts \\ []) do
+    optional_params = %{
+      :"alt" => :query,
+      :"fields" => :query,
+      :"key" => :query,
+      :"oauth_token" => :query,
+      :"prettyPrint" => :query,
+      :"quotaUser" => :query,
+      :"userIp" => :query,
+      :"delimiter" => :query,
+      :"encoding" => :query
+    }
+    %{}
+    |> method(:post)
+    |> url("/resumable/upload/fusiontables/v2/tables/import")
+    |> add_param(:query, :"name", name)
+    |> add_optional_params(optional_params, opts)
+    |> Enum.into([])
+    |> (&Connection.request(connection, &1)).()
+    |> decode(false)
+  end
+
+  @doc """
+  Imports a new table.
+
+  ## Parameters
+
+  - connection (GoogleApi.FusionTables.V2.Connection): Connection to server
+  - name (String): The name to be assigned to the new table.
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
+    - :fields (String): Selector specifying which fields to include in a partial response.
+    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String): OAuth 2.0 token for the current user.
+    - :pretty_print (Boolean): Returns response with indentations and line breaks.
+    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :delimiter (String): The delimiter used to separate cell values. This can only consist of a single character. Default is ,.
+    - :encoding (String): The encoding of the content. Default is UTF-8. Use auto-detect if you are unsure of the encoding.
+
+  ## Returns
+
+  {:ok, %GoogleApi.FusionTables.V2.Model.Table{}} on success
+  {:error, info} on failure
+  """
+  @spec fusiontables_table_import_table_simple(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.FusionTables.V2.Model.Table.t} | {:error, Tesla.Env.t}
+  def fusiontables_table_import_table_simple(connection, name, opts \\ []) do
+    optional_params = %{
+      :"alt" => :query,
+      :"fields" => :query,
+      :"key" => :query,
+      :"oauth_token" => :query,
+      :"prettyPrint" => :query,
+      :"quotaUser" => :query,
+      :"userIp" => :query,
+      :"delimiter" => :query,
+      :"encoding" => :query
+    }
+    %{}
+    |> method(:post)
+    |> url("/upload/fusiontables/v2/tables/import")
     |> add_param(:query, :"name", name)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -283,7 +477,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Table do
     }
     %{}
     |> method(:post)
-    |> url("/tables")
+    |> url("/fusiontables/v2/tables")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -327,7 +521,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Table do
     }
     %{}
     |> method(:get)
-    |> url("/tables")
+    |> url("/fusiontables/v2/tables")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -372,7 +566,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Table do
     }
     %{}
     |> method(:patch)
-    |> url("/tables/#{table_id}")
+    |> url("/fusiontables/v2/tables/#{table_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -423,7 +617,109 @@ defmodule GoogleApi.FusionTables.V2.Api.Table do
     }
     %{}
     |> method(:post)
-    |> url("/tables/#{table_id}/replace")
+    |> url("/fusiontables/v2/tables/#{table_id}/replace")
+    |> add_optional_params(optional_params, opts)
+    |> Enum.into([])
+    |> (&Connection.request(connection, &1)).()
+    |> decode(%GoogleApi.FusionTables.V2.Model.Task{})
+  end
+
+  @doc """
+  Replaces rows of an existing table. Current rows remain visible until all replacement rows are ready.
+
+  ## Parameters
+
+  - connection (GoogleApi.FusionTables.V2.Connection): Connection to server
+  - table_id (String): Table whose rows will be replaced.
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
+    - :fields (String): Selector specifying which fields to include in a partial response.
+    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String): OAuth 2.0 token for the current user.
+    - :pretty_print (Boolean): Returns response with indentations and line breaks.
+    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :delimiter (String): The delimiter used to separate cell values. This can only consist of a single character. Default is ,.
+    - :encoding (String): The encoding of the content. Default is UTF-8. Use &#39;auto-detect&#39; if you are unsure of the encoding.
+    - :end_line (Integer): The index of the line up to which data will be imported. Default is to import the entire file. If endLine is negative, it is an offset from the end of the file; the imported content will exclude the last endLine lines.
+    - :is_strict (Boolean): Whether the imported CSV must have the same number of column values for each row. If true, throws an exception if the CSV does not have the same number of columns. If false, rows with fewer column values will be padded with empty values. Default is true.
+    - :start_line (Integer): The index of the first line from which to start importing, inclusive. Default is 0.
+
+  ## Returns
+
+  {:ok, %{}} on success
+  {:error, info} on failure
+  """
+  @spec fusiontables_table_replace_rows_resumable(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
+  def fusiontables_table_replace_rows_resumable(connection, table_id, opts \\ []) do
+    optional_params = %{
+      :"alt" => :query,
+      :"fields" => :query,
+      :"key" => :query,
+      :"oauth_token" => :query,
+      :"prettyPrint" => :query,
+      :"quotaUser" => :query,
+      :"userIp" => :query,
+      :"delimiter" => :query,
+      :"encoding" => :query,
+      :"endLine" => :query,
+      :"isStrict" => :query,
+      :"startLine" => :query
+    }
+    %{}
+    |> method(:post)
+    |> url("/resumable/upload/fusiontables/v2/tables/#{table_id}/replace")
+    |> add_optional_params(optional_params, opts)
+    |> Enum.into([])
+    |> (&Connection.request(connection, &1)).()
+    |> decode(false)
+  end
+
+  @doc """
+  Replaces rows of an existing table. Current rows remain visible until all replacement rows are ready.
+
+  ## Parameters
+
+  - connection (GoogleApi.FusionTables.V2.Connection): Connection to server
+  - table_id (String): Table whose rows will be replaced.
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
+    - :fields (String): Selector specifying which fields to include in a partial response.
+    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String): OAuth 2.0 token for the current user.
+    - :pretty_print (Boolean): Returns response with indentations and line breaks.
+    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :delimiter (String): The delimiter used to separate cell values. This can only consist of a single character. Default is ,.
+    - :encoding (String): The encoding of the content. Default is UTF-8. Use &#39;auto-detect&#39; if you are unsure of the encoding.
+    - :end_line (Integer): The index of the line up to which data will be imported. Default is to import the entire file. If endLine is negative, it is an offset from the end of the file; the imported content will exclude the last endLine lines.
+    - :is_strict (Boolean): Whether the imported CSV must have the same number of column values for each row. If true, throws an exception if the CSV does not have the same number of columns. If false, rows with fewer column values will be padded with empty values. Default is true.
+    - :start_line (Integer): The index of the first line from which to start importing, inclusive. Default is 0.
+
+  ## Returns
+
+  {:ok, %GoogleApi.FusionTables.V2.Model.Task{}} on success
+  {:error, info} on failure
+  """
+  @spec fusiontables_table_replace_rows_simple(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.FusionTables.V2.Model.Task.t} | {:error, Tesla.Env.t}
+  def fusiontables_table_replace_rows_simple(connection, table_id, opts \\ []) do
+    optional_params = %{
+      :"alt" => :query,
+      :"fields" => :query,
+      :"key" => :query,
+      :"oauth_token" => :query,
+      :"prettyPrint" => :query,
+      :"quotaUser" => :query,
+      :"userIp" => :query,
+      :"delimiter" => :query,
+      :"encoding" => :query,
+      :"endLine" => :query,
+      :"isStrict" => :query,
+      :"startLine" => :query
+    }
+    %{}
+    |> method(:post)
+    |> url("/upload/fusiontables/v2/tables/#{table_id}/replace")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -468,7 +764,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Table do
     }
     %{}
     |> method(:put)
-    |> url("/tables/#{table_id}")
+    |> url("/fusiontables/v2/tables/#{table_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

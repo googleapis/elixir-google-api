@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.DevProjects.V1.Model.ActivationLinksColle
   end
 end
 
-

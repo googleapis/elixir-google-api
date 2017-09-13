@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.GetOrdersRespon
   end
 end
 
-

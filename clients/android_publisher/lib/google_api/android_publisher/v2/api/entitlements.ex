@@ -68,7 +68,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Entitlements do
     }
     %{}
     |> method(:get)
-    |> url("/#{package_name}/entitlements")
+    |> url("/androidpublisher/v2/applications/#{package_name}/entitlements")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

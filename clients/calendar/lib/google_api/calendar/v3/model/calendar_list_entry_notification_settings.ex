@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.CalendarListEntry_notif
   end
 end
 
-

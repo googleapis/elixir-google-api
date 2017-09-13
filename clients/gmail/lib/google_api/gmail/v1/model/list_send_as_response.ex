@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.Gmail.V1.Model.ListSendAsResponse do
   end
 end
 
-

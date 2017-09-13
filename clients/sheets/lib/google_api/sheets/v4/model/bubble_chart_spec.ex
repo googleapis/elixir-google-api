@@ -52,4 +52,3 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BubbleChartSpec do
   end
 end
 
-

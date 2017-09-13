@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.Fitness.V1.Model.AggregateResponse do
   end
 end
 
-

@@ -46,4 +46,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudTrace.V2.Model.StackFrame do
   end
 end
 
-

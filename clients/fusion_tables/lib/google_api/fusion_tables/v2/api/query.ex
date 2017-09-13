@@ -64,7 +64,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Query do
     }
     %{}
     |> method(:post)
-    |> url("/query")
+    |> url("/fusiontables/v2/query")
     |> add_param(:query, :"sql", sql)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -110,7 +110,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Query do
     }
     %{}
     |> method(:get)
-    |> url("/query")
+    |> url("/fusiontables/v2/query")
     |> add_param(:query, :"sql", sql)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])

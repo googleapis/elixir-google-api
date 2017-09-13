@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.Recolor do
   end
 end
 
-

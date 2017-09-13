@@ -49,4 +49,3 @@ defimpl Poison.Decoder, for: GoogleApi.People.V1.Model.Organization do
   end
 end
 
-

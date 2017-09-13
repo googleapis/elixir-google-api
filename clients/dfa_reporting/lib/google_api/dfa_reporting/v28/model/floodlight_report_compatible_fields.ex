@@ -41,4 +41,3 @@ defimpl Poison.Decoder, for: GoogleApi.DFAReporting.V28.Model.FloodlightReportCo
   end
 end
 
-

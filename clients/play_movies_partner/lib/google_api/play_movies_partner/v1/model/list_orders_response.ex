@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.PlayMoviesPartner.V1.Model.ListOrdersResp
   end
 end
 
-

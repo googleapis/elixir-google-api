@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.SheetsChartProperties do
   end
 end
 
-

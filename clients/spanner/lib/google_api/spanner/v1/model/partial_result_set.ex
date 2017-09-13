@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.PartialResultSet do
   end
 end
 
-

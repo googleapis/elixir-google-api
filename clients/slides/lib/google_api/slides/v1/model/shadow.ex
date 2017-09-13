@@ -45,4 +45,3 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.Shadow do
   end
 end
 
-

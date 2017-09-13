@@ -41,4 +41,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudMonitoring.V2beta2.Model.MetricDescr
   end
 end
 
-

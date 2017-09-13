@@ -46,4 +46,3 @@ defimpl Poison.Decoder, for: GoogleApi.Vision.V1.Model.EntityAnnotation do
   end
 end
 
-

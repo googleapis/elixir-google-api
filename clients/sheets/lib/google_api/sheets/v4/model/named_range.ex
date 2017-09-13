@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.NamedRange do
   end
 end
 
-

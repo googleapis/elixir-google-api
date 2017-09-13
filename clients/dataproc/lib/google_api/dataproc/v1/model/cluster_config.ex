@@ -47,4 +47,3 @@ defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.ClusterConfig do
   end
 end
 
-

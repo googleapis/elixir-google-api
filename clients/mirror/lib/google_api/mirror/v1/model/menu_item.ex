@@ -41,4 +41,3 @@ defimpl Poison.Decoder, for: GoogleApi.Mirror.V1.Model.MenuItem do
   end
 end
 
-

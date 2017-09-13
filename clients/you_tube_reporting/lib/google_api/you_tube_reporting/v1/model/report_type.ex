@@ -32,10 +32,8 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.ReportType do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTubeReporting.V1.Model.ReportType do
-  import GoogleApi.YouTubeReporting.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

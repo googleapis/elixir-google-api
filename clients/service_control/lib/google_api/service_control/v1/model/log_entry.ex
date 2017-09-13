@@ -44,4 +44,3 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.LogEntry do
   end
 end
 
-

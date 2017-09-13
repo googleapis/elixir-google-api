@@ -34,10 +34,8 @@ defmodule GoogleApi.YouTube.V3.Model.VideoLiveStreamingDetails do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoLiveStreamingDetails do
-  import GoogleApi.YouTube.V3.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

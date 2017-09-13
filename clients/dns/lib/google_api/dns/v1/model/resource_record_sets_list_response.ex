@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.DNS.V1.Model.ResourceRecordSetsListRespon
   end
 end
 
-

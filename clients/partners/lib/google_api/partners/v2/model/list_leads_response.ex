@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.ListLeadsResponse do
   end
 end
 
-

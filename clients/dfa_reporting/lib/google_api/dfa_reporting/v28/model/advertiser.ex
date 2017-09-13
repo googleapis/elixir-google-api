@@ -51,4 +51,3 @@ defimpl Poison.Decoder, for: GoogleApi.DFAReporting.V28.Model.Advertiser do
   end
 end
 
-

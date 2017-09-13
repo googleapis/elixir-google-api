@@ -44,4 +44,3 @@ defimpl Poison.Decoder, for: GoogleApi.Gmail.V1.Model.Message do
   end
 end
 
-

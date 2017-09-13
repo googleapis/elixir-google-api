@@ -55,4 +55,3 @@ defimpl Poison.Decoder, for: GoogleApi.PlusDomains.V1.Model.Media do
   end
 end
 
-

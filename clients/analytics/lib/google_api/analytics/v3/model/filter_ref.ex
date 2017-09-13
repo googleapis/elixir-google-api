@@ -33,10 +33,8 @@ defmodule GoogleApi.Analytics.V3.Model.FilterRef do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Analytics.V3.Model.FilterRef do
-  import GoogleApi.Analytics.V3.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

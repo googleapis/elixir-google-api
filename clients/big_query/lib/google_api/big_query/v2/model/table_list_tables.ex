@@ -45,4 +45,3 @@ defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.TableList_tables do
   end
 end
 
-

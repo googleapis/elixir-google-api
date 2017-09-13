@@ -74,7 +74,7 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{+name}/releases")
+    |> url("/v1/#{name}/releases")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -127,7 +127,7 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/#{+name}")
+    |> url("/v1/#{name}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -180,7 +180,7 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{+name}")
+    |> url("/v1/#{name}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -239,7 +239,7 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{+name}/releases")
+    |> url("/v1/#{name}/releases")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -294,7 +294,7 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
     }
     %{}
     |> method(:put)
-    |> url("/v1/#{+name}")
+    |> url("/v1/#{name}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -349,7 +349,7 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{+name}/rulesets")
+    |> url("/v1/#{name}/rulesets")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -408,7 +408,7 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{+name}/rulesets")
+    |> url("/v1/#{name}/rulesets")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -463,7 +463,7 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{+name}:test")
+    |> url("/v1/#{name}:test")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

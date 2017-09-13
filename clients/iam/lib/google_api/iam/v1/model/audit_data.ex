@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.IAM.V1.Model.AuditData do
   end
 end
 
-

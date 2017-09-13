@@ -376,7 +376,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
 
   - connection (GoogleApi.Storage.V1.Connection): Connection to server
   - bucket (String): Name of the bucket in which to store the new object. Overrides the provided object metadata&#39;s bucket value, if any.
-  - upload_type (String): Upload type
+  - upload_type (String): Upload type. Must be \&quot;resumable\&quot;.
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
     - :fields (String): Selector specifying which fields to include in a partial response.
@@ -399,10 +399,10 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
 
   ## Returns
 
-  {:ok, %GoogleApi.Storage.V1.Model.Object{}} on success
+  {:ok, %{}} on success
   {:error, info} on failure
   """
-  @spec storage_objects_insert_resumable(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.Storage.V1.Model.Object.t} | {:error, Tesla.Env.t}
+  @spec storage_objects_insert_resumable(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
   def storage_objects_insert_resumable(connection, bucket, upload_type, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -431,7 +431,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Storage.V1.Model.Object{})
+    |> decode(false)
   end
 
   @doc """
@@ -442,8 +442,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
   - connection (GoogleApi.Storage.V1.Connection): Connection to server
   - bucket (String): Name of the bucket in which to store the new object. Overrides the provided object metadata&#39;s bucket value, if any.
   - upload_type (String): Upload type. Must be \&quot;multipart\&quot;.
-  - metadata (Object): Object metadata
-  - data (String): The file to upload
+  - metadata (Object): Object metadata.
+  - data (String): The file to upload.
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
     - :fields (String): Selector specifying which fields to include in a partial response.

@@ -45,4 +45,3 @@ defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.InstanceGroupConfig do
   end
 end
 
-

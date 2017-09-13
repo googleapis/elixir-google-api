@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.DoubleClickBidManager.V1.Model.Report do
   end
 end
 
-

@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.KnowledgeGraphSearch.V1.Model.SearchRespo
   end
 end
 
-

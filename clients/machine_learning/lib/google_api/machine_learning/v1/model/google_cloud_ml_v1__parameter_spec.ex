@@ -35,10 +35,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ParameterSpec do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ParameterSpec do
-  import GoogleApi.MachineLearning.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudResourceManager.V1.Model.Project do
   end
 end
 
-

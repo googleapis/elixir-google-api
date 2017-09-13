@@ -46,4 +46,3 @@ defimpl Poison.Decoder, for: GoogleApi.Analytics.V3.Model.RealtimeData do
   end
 end
 
-

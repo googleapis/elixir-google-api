@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Model.LogConfigCounterOptions do
+defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.LogConfigCounterOptions do
   @moduledoc """
   Options for counters
   """
@@ -29,11 +29,9 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Model.LogConfigCounterOptions do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.VM_ALPHA.Model.LogConfigCounterOptions do
-  import GoogleApi.CloudUserAccounts.VM_ALPHA.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.LogConfigCounterOptions do
+  def decode(value, _options) do
     value
   end
 end
-
 

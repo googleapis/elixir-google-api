@@ -61,7 +61,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Subaccounts do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/subaccounts/#{id}")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/subaccounts/#{id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -104,7 +104,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Subaccounts do
     }
     %{}
     |> method(:post)
-    |> url("/userprofiles/#{profile_id}/subaccounts")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/subaccounts")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -157,7 +157,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Subaccounts do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/subaccounts")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/subaccounts")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -201,7 +201,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Subaccounts do
     }
     %{}
     |> method(:patch)
-    |> url("/userprofiles/#{profile_id}/subaccounts")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/subaccounts")
     |> add_param(:query, :"id", id)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -245,7 +245,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Subaccounts do
     }
     %{}
     |> method(:put)
-    |> url("/userprofiles/#{profile_id}/subaccounts")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/subaccounts")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

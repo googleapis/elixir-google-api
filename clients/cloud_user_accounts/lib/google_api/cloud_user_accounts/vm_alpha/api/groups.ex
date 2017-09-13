@@ -17,13 +17,13 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Groups do
+defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Api.Groups do
   @moduledoc """
   API calls for all endpoints tagged `Groups`.
   """
 
-  alias GoogleApi.CloudUserAccounts.VM_ALPHA.Connection
-  import GoogleApi.CloudUserAccounts.VM_ALPHA.RequestBuilder
+  alias GoogleApi.CloudUserAccounts.Vm_alpha.Connection
+  import GoogleApi.CloudUserAccounts.Vm_alpha.RequestBuilder
 
 
   @doc """
@@ -31,7 +31,7 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Groups do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudUserAccounts.VM_ALPHA.Connection): Connection to server
+  - connection (GoogleApi.CloudUserAccounts.Vm_alpha.Connection): Connection to server
   - project (String): Project ID for this request.
   - group_name (String): Name of the group for this request.
   - opts (KeywordList): [optional] Optional parameters
@@ -46,10 +46,10 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Groups do
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Operation{}} on success
+  {:ok, %GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation{}} on success
   {:error, info} on failure
   """
-  @spec clouduseraccounts_groups_add_member(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Operation.t} | {:error, Tesla.Env.t}
+  @spec clouduseraccounts_groups_add_member(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation.t} | {:error, Tesla.Env.t}
   def clouduseraccounts_groups_add_member(connection, project, group_name, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -67,7 +67,7 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Groups do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Operation{})
+    |> decode(%GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation{})
   end
 
   @doc """
@@ -75,7 +75,7 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Groups do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudUserAccounts.VM_ALPHA.Connection): Connection to server
+  - connection (GoogleApi.CloudUserAccounts.Vm_alpha.Connection): Connection to server
   - project (String): Project ID for this request.
   - group_name (String): Name of the Group resource to delete.
   - opts (KeywordList): [optional] Optional parameters
@@ -89,10 +89,10 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Groups do
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Operation{}} on success
+  {:ok, %GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation{}} on success
   {:error, info} on failure
   """
-  @spec clouduseraccounts_groups_delete(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Operation.t} | {:error, Tesla.Env.t}
+  @spec clouduseraccounts_groups_delete(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation.t} | {:error, Tesla.Env.t}
   def clouduseraccounts_groups_delete(connection, project, group_name, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -109,7 +109,7 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Groups do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Operation{})
+    |> decode(%GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation{})
   end
 
   @doc """
@@ -117,7 +117,7 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Groups do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudUserAccounts.VM_ALPHA.Connection): Connection to server
+  - connection (GoogleApi.CloudUserAccounts.Vm_alpha.Connection): Connection to server
   - project (String): Project ID for this request.
   - group_name (String): Name of the Group resource to return.
   - opts (KeywordList): [optional] Optional parameters
@@ -131,10 +131,10 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Groups do
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Group{}} on success
+  {:ok, %GoogleApi.CloudUserAccounts.Vm_alpha.Model.Group{}} on success
   {:error, info} on failure
   """
-  @spec clouduseraccounts_groups_get(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Group.t} | {:error, Tesla.Env.t}
+  @spec clouduseraccounts_groups_get(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.CloudUserAccounts.Vm_alpha.Model.Group.t} | {:error, Tesla.Env.t}
   def clouduseraccounts_groups_get(connection, project, group_name, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -151,7 +151,7 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Groups do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Group{})
+    |> decode(%GoogleApi.CloudUserAccounts.Vm_alpha.Model.Group{})
   end
 
   @doc """
@@ -159,7 +159,7 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Groups do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudUserAccounts.VM_ALPHA.Connection): Connection to server
+  - connection (GoogleApi.CloudUserAccounts.Vm_alpha.Connection): Connection to server
   - project (String): Project ID for this request.
   - resource (String): Name of the resource for this request.
   - opts (KeywordList): [optional] Optional parameters
@@ -173,10 +173,10 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Groups do
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Policy{}} on success
+  {:ok, %GoogleApi.CloudUserAccounts.Vm_alpha.Model.Policy{}} on success
   {:error, info} on failure
   """
-  @spec clouduseraccounts_groups_get_iam_policy(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Policy.t} | {:error, Tesla.Env.t}
+  @spec clouduseraccounts_groups_get_iam_policy(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.CloudUserAccounts.Vm_alpha.Model.Policy.t} | {:error, Tesla.Env.t}
   def clouduseraccounts_groups_get_iam_policy(connection, project, resource, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -193,7 +193,7 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Groups do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Policy{})
+    |> decode(%GoogleApi.CloudUserAccounts.Vm_alpha.Model.Policy{})
   end
 
   @doc """
@@ -201,7 +201,7 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Groups do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudUserAccounts.VM_ALPHA.Connection): Connection to server
+  - connection (GoogleApi.CloudUserAccounts.Vm_alpha.Connection): Connection to server
   - project (String): Project ID for this request.
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
@@ -215,10 +215,10 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Groups do
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Operation{}} on success
+  {:ok, %GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation{}} on success
   {:error, info} on failure
   """
-  @spec clouduseraccounts_groups_insert(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Operation.t} | {:error, Tesla.Env.t}
+  @spec clouduseraccounts_groups_insert(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation.t} | {:error, Tesla.Env.t}
   def clouduseraccounts_groups_insert(connection, project, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -236,7 +236,7 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Groups do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Operation{})
+    |> decode(%GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation{})
   end
 
   @doc """
@@ -244,7 +244,7 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Groups do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudUserAccounts.VM_ALPHA.Connection): Connection to server
+  - connection (GoogleApi.CloudUserAccounts.Vm_alpha.Connection): Connection to server
   - project (String): Project ID for this request.
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
@@ -261,10 +261,10 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Groups do
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudUserAccounts.VM_ALPHA.Model.GroupList{}} on success
+  {:ok, %GoogleApi.CloudUserAccounts.Vm_alpha.Model.GroupList{}} on success
   {:error, info} on failure
   """
-  @spec clouduseraccounts_groups_list(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.CloudUserAccounts.VM_ALPHA.Model.GroupList.t} | {:error, Tesla.Env.t}
+  @spec clouduseraccounts_groups_list(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.CloudUserAccounts.Vm_alpha.Model.GroupList.t} | {:error, Tesla.Env.t}
   def clouduseraccounts_groups_list(connection, project, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -285,7 +285,7 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Groups do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.CloudUserAccounts.VM_ALPHA.Model.GroupList{})
+    |> decode(%GoogleApi.CloudUserAccounts.Vm_alpha.Model.GroupList{})
   end
 
   @doc """
@@ -293,7 +293,7 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Groups do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudUserAccounts.VM_ALPHA.Connection): Connection to server
+  - connection (GoogleApi.CloudUserAccounts.Vm_alpha.Connection): Connection to server
   - project (String): Project ID for this request.
   - group_name (String): Name of the group for this request.
   - opts (KeywordList): [optional] Optional parameters
@@ -308,10 +308,10 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Groups do
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Operation{}} on success
+  {:ok, %GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation{}} on success
   {:error, info} on failure
   """
-  @spec clouduseraccounts_groups_remove_member(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Operation.t} | {:error, Tesla.Env.t}
+  @spec clouduseraccounts_groups_remove_member(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation.t} | {:error, Tesla.Env.t}
   def clouduseraccounts_groups_remove_member(connection, project, group_name, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -329,7 +329,7 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Groups do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Operation{})
+    |> decode(%GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation{})
   end
 
   @doc """
@@ -337,7 +337,7 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Groups do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudUserAccounts.VM_ALPHA.Connection): Connection to server
+  - connection (GoogleApi.CloudUserAccounts.Vm_alpha.Connection): Connection to server
   - project (String): Project ID for this request.
   - resource (String): Name of the resource for this request.
   - opts (KeywordList): [optional] Optional parameters
@@ -352,10 +352,10 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Groups do
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Policy{}} on success
+  {:ok, %GoogleApi.CloudUserAccounts.Vm_alpha.Model.Policy{}} on success
   {:error, info} on failure
   """
-  @spec clouduseraccounts_groups_set_iam_policy(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Policy.t} | {:error, Tesla.Env.t}
+  @spec clouduseraccounts_groups_set_iam_policy(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.CloudUserAccounts.Vm_alpha.Model.Policy.t} | {:error, Tesla.Env.t}
   def clouduseraccounts_groups_set_iam_policy(connection, project, resource, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -373,7 +373,7 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Groups do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Policy{})
+    |> decode(%GoogleApi.CloudUserAccounts.Vm_alpha.Model.Policy{})
   end
 
   @doc """
@@ -381,7 +381,7 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Groups do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudUserAccounts.VM_ALPHA.Connection): Connection to server
+  - connection (GoogleApi.CloudUserAccounts.Vm_alpha.Connection): Connection to server
   - project (String): Project ID for this request.
   - resource (String): Name of the resource for this request.
   - opts (KeywordList): [optional] Optional parameters
@@ -396,10 +396,10 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Groups do
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudUserAccounts.VM_ALPHA.Model.TestPermissionsResponse{}} on success
+  {:ok, %GoogleApi.CloudUserAccounts.Vm_alpha.Model.TestPermissionsResponse{}} on success
   {:error, info} on failure
   """
-  @spec clouduseraccounts_groups_test_iam_permissions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.CloudUserAccounts.VM_ALPHA.Model.TestPermissionsResponse.t} | {:error, Tesla.Env.t}
+  @spec clouduseraccounts_groups_test_iam_permissions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.CloudUserAccounts.Vm_alpha.Model.TestPermissionsResponse.t} | {:error, Tesla.Env.t}
   def clouduseraccounts_groups_test_iam_permissions(connection, project, resource, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -417,6 +417,6 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Groups do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.CloudUserAccounts.VM_ALPHA.Model.TestPermissionsResponse{})
+    |> decode(%GoogleApi.CloudUserAccounts.Vm_alpha.Model.TestPermissionsResponse{})
   end
 end

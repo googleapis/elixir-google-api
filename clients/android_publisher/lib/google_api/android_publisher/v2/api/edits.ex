@@ -63,7 +63,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:delete)
-    |> url("/#{package_name}/edits/#{edit_id}/apks/#{apk_version_code}/listings/#{language}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/apks/#{apk_version_code}/listings/#{language}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -106,7 +106,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:delete)
-    |> url("/#{package_name}/edits/#{edit_id}/apks/#{apk_version_code}/listings")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/apks/#{apk_version_code}/listings")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -150,7 +150,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:get)
-    |> url("/#{package_name}/edits/#{edit_id}/apks/#{apk_version_code}/listings/#{language}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/apks/#{apk_version_code}/listings/#{language}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -193,7 +193,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:get)
-    |> url("/#{package_name}/edits/#{edit_id}/apks/#{apk_version_code}/listings")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/apks/#{apk_version_code}/listings")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -239,7 +239,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:patch)
-    |> url("/#{package_name}/edits/#{edit_id}/apks/#{apk_version_code}/listings/#{language}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/apks/#{apk_version_code}/listings/#{language}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -285,7 +285,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:put)
-    |> url("/#{package_name}/edits/#{edit_id}/apks/#{apk_version_code}/listings/#{language}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/apks/#{apk_version_code}/listings/#{language}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -329,7 +329,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:post)
-    |> url("/#{package_name}/edits/#{edit_id}/apks/externallyHosted")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/apks/externallyHosted")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -370,7 +370,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:get)
-    |> url("/#{package_name}/edits/#{edit_id}/apks")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/apks")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -411,7 +411,89 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:post)
-    |> url("/#{package_name}/edits/#{edit_id}/apks")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/apks")
+    |> add_optional_params(optional_params, opts)
+    |> Enum.into([])
+    |> (&Connection.request(connection, &1)).()
+    |> decode(%GoogleApi.AndroidPublisher.V2.Model.Apk{})
+  end
+
+  @doc """
+
+  ## Parameters
+
+  - connection (GoogleApi.AndroidPublisher.V2.Connection): Connection to server
+  - package_name (String): Unique identifier for the Android app that is being updated; for example, \&quot;com.spiffygame\&quot;.
+  - edit_id (String): Unique identifier for this edit.
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
+    - :fields (String): Selector specifying which fields to include in a partial response.
+    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String): OAuth 2.0 token for the current user.
+    - :pretty_print (Boolean): Returns response with indentations and line breaks.
+    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+
+  ## Returns
+
+  {:ok, %{}} on success
+  {:error, info} on failure
+  """
+  @spec androidpublisher_edits_apks_upload_resumable(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
+  def androidpublisher_edits_apks_upload_resumable(connection, package_name, edit_id, opts \\ []) do
+    optional_params = %{
+      :"alt" => :query,
+      :"fields" => :query,
+      :"key" => :query,
+      :"oauth_token" => :query,
+      :"prettyPrint" => :query,
+      :"quotaUser" => :query,
+      :"userIp" => :query
+    }
+    %{}
+    |> method(:post)
+    |> url("/resumable/upload/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/apks")
+    |> add_optional_params(optional_params, opts)
+    |> Enum.into([])
+    |> (&Connection.request(connection, &1)).()
+    |> decode(false)
+  end
+
+  @doc """
+
+  ## Parameters
+
+  - connection (GoogleApi.AndroidPublisher.V2.Connection): Connection to server
+  - package_name (String): Unique identifier for the Android app that is being updated; for example, \&quot;com.spiffygame\&quot;.
+  - edit_id (String): Unique identifier for this edit.
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
+    - :fields (String): Selector specifying which fields to include in a partial response.
+    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String): OAuth 2.0 token for the current user.
+    - :pretty_print (Boolean): Returns response with indentations and line breaks.
+    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+
+  ## Returns
+
+  {:ok, %GoogleApi.AndroidPublisher.V2.Model.Apk{}} on success
+  {:error, info} on failure
+  """
+  @spec androidpublisher_edits_apks_upload_simple(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.AndroidPublisher.V2.Model.Apk.t} | {:error, Tesla.Env.t}
+  def androidpublisher_edits_apks_upload_simple(connection, package_name, edit_id, opts \\ []) do
+    optional_params = %{
+      :"alt" => :query,
+      :"fields" => :query,
+      :"key" => :query,
+      :"oauth_token" => :query,
+      :"prettyPrint" => :query,
+      :"quotaUser" => :query,
+      :"userIp" => :query
+    }
+    %{}
+    |> method(:post)
+    |> url("/upload/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/apks")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -453,7 +535,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:post)
-    |> url("/#{package_name}/edits/#{edit_id}:commit")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}:commit")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -495,7 +577,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:delete)
-    |> url("/#{package_name}/edits/#{edit_id}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -539,7 +621,95 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:post)
-    |> url("/#{package_name}/edits/#{edit_id}/apks/#{apk_version_code}/deobfuscationFiles/#{deobfuscation_file_type}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/apks/#{apk_version_code}/deobfuscationFiles/#{deobfuscation_file_type}")
+    |> add_optional_params(optional_params, opts)
+    |> Enum.into([])
+    |> (&Connection.request(connection, &1)).()
+    |> decode(%GoogleApi.AndroidPublisher.V2.Model.DeobfuscationFilesUploadResponse{})
+  end
+
+  @doc """
+  Uploads the deobfuscation file of the specified APK. If a deobfuscation file already exists, it will be replaced.
+
+  ## Parameters
+
+  - connection (GoogleApi.AndroidPublisher.V2.Connection): Connection to server
+  - package_name (String): Unique identifier of the Android app for which the deobfuscatiuon files are being uploaded; for example, \&quot;com.spiffygame\&quot;.
+  - edit_id (String): Unique identifier for this edit.
+  - apk_version_code (Integer): The version code of the APK whose deobfuscation file is being uploaded.
+  - deobfuscation_file_type (String): 
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
+    - :fields (String): Selector specifying which fields to include in a partial response.
+    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String): OAuth 2.0 token for the current user.
+    - :pretty_print (Boolean): Returns response with indentations and line breaks.
+    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+
+  ## Returns
+
+  {:ok, %{}} on success
+  {:error, info} on failure
+  """
+  @spec androidpublisher_edits_deobfuscationfiles_upload_resumable(Tesla.Env.client, String.t, String.t, Integer.t, String.t, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
+  def androidpublisher_edits_deobfuscationfiles_upload_resumable(connection, package_name, edit_id, apk_version_code, deobfuscation_file_type, opts \\ []) do
+    optional_params = %{
+      :"alt" => :query,
+      :"fields" => :query,
+      :"key" => :query,
+      :"oauth_token" => :query,
+      :"prettyPrint" => :query,
+      :"quotaUser" => :query,
+      :"userIp" => :query
+    }
+    %{}
+    |> method(:post)
+    |> url("/resumable/upload/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/apks/#{apk_version_code}/deobfuscationFiles/#{deobfuscation_file_type}")
+    |> add_optional_params(optional_params, opts)
+    |> Enum.into([])
+    |> (&Connection.request(connection, &1)).()
+    |> decode(false)
+  end
+
+  @doc """
+  Uploads the deobfuscation file of the specified APK. If a deobfuscation file already exists, it will be replaced.
+
+  ## Parameters
+
+  - connection (GoogleApi.AndroidPublisher.V2.Connection): Connection to server
+  - package_name (String): Unique identifier of the Android app for which the deobfuscatiuon files are being uploaded; for example, \&quot;com.spiffygame\&quot;.
+  - edit_id (String): Unique identifier for this edit.
+  - apk_version_code (Integer): The version code of the APK whose deobfuscation file is being uploaded.
+  - deobfuscation_file_type (String): 
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
+    - :fields (String): Selector specifying which fields to include in a partial response.
+    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String): OAuth 2.0 token for the current user.
+    - :pretty_print (Boolean): Returns response with indentations and line breaks.
+    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+
+  ## Returns
+
+  {:ok, %GoogleApi.AndroidPublisher.V2.Model.DeobfuscationFilesUploadResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec androidpublisher_edits_deobfuscationfiles_upload_simple(Tesla.Env.client, String.t, String.t, Integer.t, String.t, keyword()) :: {:ok, GoogleApi.AndroidPublisher.V2.Model.DeobfuscationFilesUploadResponse.t} | {:error, Tesla.Env.t}
+  def androidpublisher_edits_deobfuscationfiles_upload_simple(connection, package_name, edit_id, apk_version_code, deobfuscation_file_type, opts \\ []) do
+    optional_params = %{
+      :"alt" => :query,
+      :"fields" => :query,
+      :"key" => :query,
+      :"oauth_token" => :query,
+      :"prettyPrint" => :query,
+      :"quotaUser" => :query,
+      :"userIp" => :query
+    }
+    %{}
+    |> method(:post)
+    |> url("/upload/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/apks/#{apk_version_code}/deobfuscationFiles/#{deobfuscation_file_type}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -581,7 +751,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:get)
-    |> url("/#{package_name}/edits/#{edit_id}/details")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/details")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -625,7 +795,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:patch)
-    |> url("/#{package_name}/edits/#{edit_id}/details")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/details")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -669,7 +839,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:put)
-    |> url("/#{package_name}/edits/#{edit_id}/details")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/details")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -713,7 +883,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:get)
-    |> url("/#{package_name}/edits/#{edit_id}/apks/#{apk_version_code}/expansionFiles/#{expansion_file_type}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/apks/#{apk_version_code}/expansionFiles/#{expansion_file_type}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -759,7 +929,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:patch)
-    |> url("/#{package_name}/edits/#{edit_id}/apks/#{apk_version_code}/expansionFiles/#{expansion_file_type}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/apks/#{apk_version_code}/expansionFiles/#{expansion_file_type}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -805,7 +975,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:put)
-    |> url("/#{package_name}/edits/#{edit_id}/apks/#{apk_version_code}/expansionFiles/#{expansion_file_type}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/apks/#{apk_version_code}/expansionFiles/#{expansion_file_type}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -849,7 +1019,95 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:post)
-    |> url("/#{package_name}/edits/#{edit_id}/apks/#{apk_version_code}/expansionFiles/#{expansion_file_type}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/apks/#{apk_version_code}/expansionFiles/#{expansion_file_type}")
+    |> add_optional_params(optional_params, opts)
+    |> Enum.into([])
+    |> (&Connection.request(connection, &1)).()
+    |> decode(%GoogleApi.AndroidPublisher.V2.Model.ExpansionFilesUploadResponse{})
+  end
+
+  @doc """
+  Uploads and attaches a new Expansion File to the APK specified.
+
+  ## Parameters
+
+  - connection (GoogleApi.AndroidPublisher.V2.Connection): Connection to server
+  - package_name (String): Unique identifier for the Android app that is being updated; for example, \&quot;com.spiffygame\&quot;.
+  - edit_id (String): Unique identifier for this edit.
+  - apk_version_code (Integer): The version code of the APK whose Expansion File configuration is being read or modified.
+  - expansion_file_type (String): 
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
+    - :fields (String): Selector specifying which fields to include in a partial response.
+    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String): OAuth 2.0 token for the current user.
+    - :pretty_print (Boolean): Returns response with indentations and line breaks.
+    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+
+  ## Returns
+
+  {:ok, %{}} on success
+  {:error, info} on failure
+  """
+  @spec androidpublisher_edits_expansionfiles_upload_resumable(Tesla.Env.client, String.t, String.t, Integer.t, String.t, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
+  def androidpublisher_edits_expansionfiles_upload_resumable(connection, package_name, edit_id, apk_version_code, expansion_file_type, opts \\ []) do
+    optional_params = %{
+      :"alt" => :query,
+      :"fields" => :query,
+      :"key" => :query,
+      :"oauth_token" => :query,
+      :"prettyPrint" => :query,
+      :"quotaUser" => :query,
+      :"userIp" => :query
+    }
+    %{}
+    |> method(:post)
+    |> url("/resumable/upload/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/apks/#{apk_version_code}/expansionFiles/#{expansion_file_type}")
+    |> add_optional_params(optional_params, opts)
+    |> Enum.into([])
+    |> (&Connection.request(connection, &1)).()
+    |> decode(false)
+  end
+
+  @doc """
+  Uploads and attaches a new Expansion File to the APK specified.
+
+  ## Parameters
+
+  - connection (GoogleApi.AndroidPublisher.V2.Connection): Connection to server
+  - package_name (String): Unique identifier for the Android app that is being updated; for example, \&quot;com.spiffygame\&quot;.
+  - edit_id (String): Unique identifier for this edit.
+  - apk_version_code (Integer): The version code of the APK whose Expansion File configuration is being read or modified.
+  - expansion_file_type (String): 
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
+    - :fields (String): Selector specifying which fields to include in a partial response.
+    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String): OAuth 2.0 token for the current user.
+    - :pretty_print (Boolean): Returns response with indentations and line breaks.
+    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+
+  ## Returns
+
+  {:ok, %GoogleApi.AndroidPublisher.V2.Model.ExpansionFilesUploadResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec androidpublisher_edits_expansionfiles_upload_simple(Tesla.Env.client, String.t, String.t, Integer.t, String.t, keyword()) :: {:ok, GoogleApi.AndroidPublisher.V2.Model.ExpansionFilesUploadResponse.t} | {:error, Tesla.Env.t}
+  def androidpublisher_edits_expansionfiles_upload_simple(connection, package_name, edit_id, apk_version_code, expansion_file_type, opts \\ []) do
+    optional_params = %{
+      :"alt" => :query,
+      :"fields" => :query,
+      :"key" => :query,
+      :"oauth_token" => :query,
+      :"prettyPrint" => :query,
+      :"quotaUser" => :query,
+      :"userIp" => :query
+    }
+    %{}
+    |> method(:post)
+    |> url("/upload/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/apks/#{apk_version_code}/expansionFiles/#{expansion_file_type}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -891,7 +1149,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:get)
-    |> url("/#{package_name}/edits/#{edit_id}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -936,7 +1194,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:delete)
-    |> url("/#{package_name}/edits/#{edit_id}/listings/#{language}/#{image_type}/#{image_id}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/listings/#{language}/#{image_type}/#{image_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -980,7 +1238,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:delete)
-    |> url("/#{package_name}/edits/#{edit_id}/listings/#{language}/#{image_type}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/listings/#{language}/#{image_type}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1024,7 +1282,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:get)
-    |> url("/#{package_name}/edits/#{edit_id}/listings/#{language}/#{image_type}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/listings/#{language}/#{image_type}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1068,7 +1326,95 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:post)
-    |> url("/#{package_name}/edits/#{edit_id}/listings/#{language}/#{image_type}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/listings/#{language}/#{image_type}")
+    |> add_optional_params(optional_params, opts)
+    |> Enum.into([])
+    |> (&Connection.request(connection, &1)).()
+    |> decode(%GoogleApi.AndroidPublisher.V2.Model.ImagesUploadResponse{})
+  end
+
+  @doc """
+  Uploads a new image and adds it to the list of images for the specified language and image type.
+
+  ## Parameters
+
+  - connection (GoogleApi.AndroidPublisher.V2.Connection): Connection to server
+  - package_name (String): Unique identifier for the Android app that is being updated; for example, \&quot;com.spiffygame\&quot;.
+  - edit_id (String): Unique identifier for this edit.
+  - language (String): The language code (a BCP-47 language tag) of the localized listing whose images are to read or modified. For example, to select Austrian German, pass \&quot;de-AT\&quot;.
+  - image_type (String): 
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
+    - :fields (String): Selector specifying which fields to include in a partial response.
+    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String): OAuth 2.0 token for the current user.
+    - :pretty_print (Boolean): Returns response with indentations and line breaks.
+    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+
+  ## Returns
+
+  {:ok, %{}} on success
+  {:error, info} on failure
+  """
+  @spec androidpublisher_edits_images_upload_resumable(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
+  def androidpublisher_edits_images_upload_resumable(connection, package_name, edit_id, language, image_type, opts \\ []) do
+    optional_params = %{
+      :"alt" => :query,
+      :"fields" => :query,
+      :"key" => :query,
+      :"oauth_token" => :query,
+      :"prettyPrint" => :query,
+      :"quotaUser" => :query,
+      :"userIp" => :query
+    }
+    %{}
+    |> method(:post)
+    |> url("/resumable/upload/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/listings/#{language}/#{image_type}")
+    |> add_optional_params(optional_params, opts)
+    |> Enum.into([])
+    |> (&Connection.request(connection, &1)).()
+    |> decode(false)
+  end
+
+  @doc """
+  Uploads a new image and adds it to the list of images for the specified language and image type.
+
+  ## Parameters
+
+  - connection (GoogleApi.AndroidPublisher.V2.Connection): Connection to server
+  - package_name (String): Unique identifier for the Android app that is being updated; for example, \&quot;com.spiffygame\&quot;.
+  - edit_id (String): Unique identifier for this edit.
+  - language (String): The language code (a BCP-47 language tag) of the localized listing whose images are to read or modified. For example, to select Austrian German, pass \&quot;de-AT\&quot;.
+  - image_type (String): 
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
+    - :fields (String): Selector specifying which fields to include in a partial response.
+    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String): OAuth 2.0 token for the current user.
+    - :pretty_print (Boolean): Returns response with indentations and line breaks.
+    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+
+  ## Returns
+
+  {:ok, %GoogleApi.AndroidPublisher.V2.Model.ImagesUploadResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec androidpublisher_edits_images_upload_simple(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.AndroidPublisher.V2.Model.ImagesUploadResponse.t} | {:error, Tesla.Env.t}
+  def androidpublisher_edits_images_upload_simple(connection, package_name, edit_id, language, image_type, opts \\ []) do
+    optional_params = %{
+      :"alt" => :query,
+      :"fields" => :query,
+      :"key" => :query,
+      :"oauth_token" => :query,
+      :"prettyPrint" => :query,
+      :"quotaUser" => :query,
+      :"userIp" => :query
+    }
+    %{}
+    |> method(:post)
+    |> url("/upload/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/listings/#{language}/#{image_type}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1111,7 +1457,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:post)
-    |> url("/#{package_name}/edits")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1154,7 +1500,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:delete)
-    |> url("/#{package_name}/edits/#{edit_id}/listings/#{language}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/listings/#{language}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1196,7 +1542,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:delete)
-    |> url("/#{package_name}/edits/#{edit_id}/listings")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/listings")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1239,7 +1585,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:get)
-    |> url("/#{package_name}/edits/#{edit_id}/listings/#{language}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/listings/#{language}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1281,7 +1627,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:get)
-    |> url("/#{package_name}/edits/#{edit_id}/listings")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/listings")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1326,7 +1672,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:patch)
-    |> url("/#{package_name}/edits/#{edit_id}/listings/#{language}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/listings/#{language}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1371,7 +1717,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:put)
-    |> url("/#{package_name}/edits/#{edit_id}/listings/#{language}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/listings/#{language}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1413,7 +1759,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:get)
-    |> url("/#{package_name}/edits/#{edit_id}/testers/#{track}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/testers/#{track}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1457,7 +1803,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:patch)
-    |> url("/#{package_name}/edits/#{edit_id}/testers/#{track}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/testers/#{track}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1501,7 +1847,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:put)
-    |> url("/#{package_name}/edits/#{edit_id}/testers/#{track}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/testers/#{track}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1544,7 +1890,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:get)
-    |> url("/#{package_name}/edits/#{edit_id}/tracks/#{track}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/tracks/#{track}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1586,7 +1932,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:get)
-    |> url("/#{package_name}/edits/#{edit_id}/tracks")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/tracks")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1631,7 +1977,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:patch)
-    |> url("/#{package_name}/edits/#{edit_id}/tracks/#{track}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/tracks/#{track}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1676,7 +2022,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:put)
-    |> url("/#{package_name}/edits/#{edit_id}/tracks/#{track}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}/tracks/#{track}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1718,7 +2064,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     }
     %{}
     |> method(:post)
-    |> url("/#{package_name}/edits/#{edit_id}:validate")
+    |> url("/androidpublisher/v2/applications/#{package_name}/edits/#{edit_id}:validate")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

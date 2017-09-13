@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.StructType do
   end
 end
 
-

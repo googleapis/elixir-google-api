@@ -55,4 +55,3 @@ defimpl Poison.Decoder, for: GoogleApi.ReportCard.V1.Model.Notice do
   end
 end
 
-

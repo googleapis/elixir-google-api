@@ -31,10 +31,8 @@ defmodule GoogleApi.Datastore.V1.Model.PathElement do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.PathElement do
-  import GoogleApi.Datastore.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

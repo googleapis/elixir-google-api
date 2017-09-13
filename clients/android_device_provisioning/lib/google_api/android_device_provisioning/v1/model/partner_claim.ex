@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.Partne
   end
 end
 
-

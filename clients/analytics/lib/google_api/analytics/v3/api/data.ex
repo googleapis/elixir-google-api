@@ -81,7 +81,7 @@ defmodule GoogleApi.Analytics.V3.Api.Data do
     }
     %{}
     |> method(:get)
-    |> url("/data/ga")
+    |> url("/analytics/v3/data/ga")
     |> add_param(:query, :"ids", ids)
     |> add_param(:query, :"start-date", start_date)
     |> add_param(:query, :"end-date", end_date)
@@ -141,7 +141,7 @@ defmodule GoogleApi.Analytics.V3.Api.Data do
     }
     %{}
     |> method(:get)
-    |> url("/data/mcf")
+    |> url("/analytics/v3/data/mcf")
     |> add_param(:query, :"ids", ids)
     |> add_param(:query, :"start-date", start_date)
     |> add_param(:query, :"end-date", end_date)
@@ -195,7 +195,7 @@ defmodule GoogleApi.Analytics.V3.Api.Data do
     }
     %{}
     |> method(:get)
-    |> url("/data/realtime")
+    |> url("/analytics/v3/data/realtime")
     |> add_param(:query, :"ids", ids)
     |> add_param(:query, :"metrics", metrics)
     |> add_optional_params(optional_params, opts)

@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.Headers do
   end
 end
 
-

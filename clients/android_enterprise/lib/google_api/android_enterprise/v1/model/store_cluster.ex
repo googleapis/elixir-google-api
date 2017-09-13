@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.StoreCluster d
   end
 end
 
-

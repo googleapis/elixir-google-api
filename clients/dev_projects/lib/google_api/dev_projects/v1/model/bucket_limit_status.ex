@@ -50,4 +50,3 @@ defimpl Poison.Decoder, for: GoogleApi.DevProjects.V1.Model.BucketLimitStatus do
   end
 end
 
-

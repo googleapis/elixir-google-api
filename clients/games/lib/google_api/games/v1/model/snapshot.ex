@@ -46,4 +46,3 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.Snapshot do
   end
 end
 
-

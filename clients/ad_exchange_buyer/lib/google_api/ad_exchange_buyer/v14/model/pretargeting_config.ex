@@ -64,4 +64,3 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.PretargetingCon
   end
 end
 
-

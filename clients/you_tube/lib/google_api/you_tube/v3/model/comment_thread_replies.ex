@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.CommentThreadReplies do
   end
 end
 
-

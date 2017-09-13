@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.Line do
   end
 end
 
-

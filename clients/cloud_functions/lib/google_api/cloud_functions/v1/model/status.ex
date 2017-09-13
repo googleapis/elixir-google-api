@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudFunctions.V1.Model.Status do
   end
 end
 
-

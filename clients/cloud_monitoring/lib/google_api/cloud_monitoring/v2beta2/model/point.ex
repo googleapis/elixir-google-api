@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudMonitoring.V2beta2.Model.Point do
   end
 end
 
-

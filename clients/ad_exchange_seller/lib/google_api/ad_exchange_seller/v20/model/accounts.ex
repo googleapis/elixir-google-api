@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeSeller.V20.Model.Accounts do
   end
 end
 
-

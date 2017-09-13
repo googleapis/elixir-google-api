@@ -52,4 +52,3 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.AuditLog do
   end
 end
 
-

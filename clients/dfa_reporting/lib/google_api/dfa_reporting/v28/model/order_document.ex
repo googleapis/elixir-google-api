@@ -53,4 +53,3 @@ defimpl Poison.Decoder, for: GoogleApi.DFAReporting.V28.Model.OrderDocument do
   end
 end
 
-

@@ -30,10 +30,8 @@ defmodule GoogleApi.CustomSearch.V1.Model.Search_url do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CustomSearch.V1.Model.Search_url do
-  import GoogleApi.CustomSearch.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

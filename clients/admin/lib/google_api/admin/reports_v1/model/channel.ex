@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Admin.REPORTS_V1.Model.Channel do
+defmodule GoogleApi.Admin.Reports_v1.Model.Channel do
   @moduledoc """
   An notification channel used to watch for resource changes.
   """
@@ -37,11 +37,9 @@ defmodule GoogleApi.Admin.REPORTS_V1.Model.Channel do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Admin.REPORTS_V1.Model.Channel do
-  import GoogleApi.Admin.REPORTS_V1.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.Admin.Reports_v1.Model.Channel do
+  def decode(value, _options) do
     value
   end
 end
-
 

@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.YouTubeReporting.V1.Model.ListJobsRespons
   end
 end
 
-

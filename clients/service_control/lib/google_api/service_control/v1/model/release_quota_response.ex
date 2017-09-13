@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.ReleaseQuotaRespo
   end
 end
 
-

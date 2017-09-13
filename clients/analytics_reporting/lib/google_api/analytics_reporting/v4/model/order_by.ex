@@ -31,10 +31,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.OrderBy do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AnalyticsReporting.V4.Model.OrderBy do
-  import GoogleApi.AnalyticsReporting.V4.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

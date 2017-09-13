@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.AccountstatusesCustomBat
   end
 end
 
-

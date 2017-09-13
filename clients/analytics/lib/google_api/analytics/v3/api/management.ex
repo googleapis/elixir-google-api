@@ -63,7 +63,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/accountSummaries")
+    |> url("/analytics/v3/management/accountSummaries")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -105,7 +105,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:delete)
-    |> url("/management/accounts/#{account_id}/entityUserLinks/#{link_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/entityUserLinks/#{link_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -148,7 +148,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:post)
-    |> url("/management/accounts/#{account_id}/entityUserLinks")
+    |> url("/analytics/v3/management/accounts/#{account_id}/entityUserLinks")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -193,7 +193,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/accounts/#{account_id}/entityUserLinks")
+    |> url("/analytics/v3/management/accounts/#{account_id}/entityUserLinks")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -237,7 +237,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:put)
-    |> url("/management/accounts/#{account_id}/entityUserLinks/#{link_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/entityUserLinks/#{link_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -281,7 +281,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/accounts")
+    |> url("/analytics/v3/management/accounts")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -327,7 +327,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/customDataSources")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/customDataSources")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -370,7 +370,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/customDimensions/#{custom_dimension_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/customDimensions/#{custom_dimension_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -414,7 +414,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:post)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/customDimensions")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/customDimensions")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -460,7 +460,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/customDimensions")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/customDimensions")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -507,7 +507,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:patch)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/customDimensions/#{custom_dimension_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/customDimensions/#{custom_dimension_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -554,7 +554,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:put)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/customDimensions/#{custom_dimension_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/customDimensions/#{custom_dimension_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -597,7 +597,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/customMetrics/#{custom_metric_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/customMetrics/#{custom_metric_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -641,7 +641,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:post)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/customMetrics")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/customMetrics")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -687,7 +687,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/customMetrics")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/customMetrics")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -734,7 +734,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:patch)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/customMetrics/#{custom_metric_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/customMetrics/#{custom_metric_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -781,7 +781,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:put)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/customMetrics/#{custom_metric_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/customMetrics/#{custom_metric_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -825,7 +825,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:delete)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/experiments/#{experiment_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/experiments/#{experiment_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -869,7 +869,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/experiments/#{experiment_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/experiments/#{experiment_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -914,7 +914,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:post)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/experiments")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/experiments")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -961,7 +961,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/experiments")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/experiments")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1007,7 +1007,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:patch)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/experiments/#{experiment_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/experiments/#{experiment_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1053,7 +1053,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:put)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/experiments/#{experiment_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/experiments/#{experiment_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1095,7 +1095,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:delete)
-    |> url("/management/accounts/#{account_id}/filters/#{filter_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/filters/#{filter_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1137,7 +1137,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/accounts/#{account_id}/filters/#{filter_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/filters/#{filter_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1180,7 +1180,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:post)
-    |> url("/management/accounts/#{account_id}/filters")
+    |> url("/analytics/v3/management/accounts/#{account_id}/filters")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1225,7 +1225,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/accounts/#{account_id}/filters")
+    |> url("/analytics/v3/management/accounts/#{account_id}/filters")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1269,7 +1269,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:patch)
-    |> url("/management/accounts/#{account_id}/filters/#{filter_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/filters/#{filter_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1313,7 +1313,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:put)
-    |> url("/management/accounts/#{account_id}/filters/#{filter_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/filters/#{filter_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1357,7 +1357,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/goals/#{goal_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/goals/#{goal_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1402,7 +1402,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:post)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/goals")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/goals")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1449,7 +1449,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/goals")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/goals")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1495,7 +1495,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:patch)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/goals/#{goal_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/goals/#{goal_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1541,7 +1541,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:put)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/goals/#{goal_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/goals/#{goal_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1585,7 +1585,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:delete)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/profileFilterLinks/#{link_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/profileFilterLinks/#{link_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1629,7 +1629,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/profileFilterLinks/#{link_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/profileFilterLinks/#{link_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1674,7 +1674,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:post)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/profileFilterLinks")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/profileFilterLinks")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1721,7 +1721,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/profileFilterLinks")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/profileFilterLinks")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1767,7 +1767,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:patch)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/profileFilterLinks/#{link_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/profileFilterLinks/#{link_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1813,7 +1813,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:put)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/profileFilterLinks/#{link_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/profileFilterLinks/#{link_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1857,7 +1857,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:delete)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/entityUserLinks/#{link_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/entityUserLinks/#{link_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1902,7 +1902,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:post)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/entityUserLinks")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/entityUserLinks")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1949,7 +1949,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/entityUserLinks")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/entityUserLinks")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1995,7 +1995,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:put)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/entityUserLinks/#{link_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/entityUserLinks/#{link_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -2038,7 +2038,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:delete)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -2081,7 +2081,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -2125,7 +2125,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:post)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -2171,7 +2171,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -2216,7 +2216,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:patch)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -2261,7 +2261,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:put)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -2304,7 +2304,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:delete)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/remarketingAudiences/#{remarketing_audience_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/remarketingAudiences/#{remarketing_audience_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -2347,7 +2347,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/remarketingAudiences/#{remarketing_audience_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/remarketingAudiences/#{remarketing_audience_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -2391,7 +2391,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:post)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/remarketingAudiences")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/remarketingAudiences")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -2439,7 +2439,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/remarketingAudiences")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/remarketingAudiences")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -2484,7 +2484,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:patch)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/remarketingAudiences/#{remarketing_audience_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/remarketingAudiences/#{remarketing_audience_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -2529,7 +2529,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:put)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/remarketingAudiences/#{remarketing_audience_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/remarketingAudiences/#{remarketing_audience_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -2573,7 +2573,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/segments")
+    |> url("/analytics/v3/management/segments")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -2617,7 +2617,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:delete)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/unsampledReports/#{unsampled_report_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/unsampledReports/#{unsampled_report_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -2661,7 +2661,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/unsampledReports/#{unsampled_report_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/unsampledReports/#{unsampled_report_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -2706,7 +2706,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:post)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/unsampledReports")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/unsampledReports")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -2753,7 +2753,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/unsampledReports")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/profiles/#{profile_id}/unsampledReports")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -2798,7 +2798,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:post)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/customDataSources/#{custom_data_source_id}/deleteUploadData")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/customDataSources/#{custom_data_source_id}/deleteUploadData")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -2842,7 +2842,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/customDataSources/#{custom_data_source_id}/uploads/#{upload_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/customDataSources/#{custom_data_source_id}/uploads/#{upload_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -2889,7 +2889,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/customDataSources/#{custom_data_source_id}/uploads")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/customDataSources/#{custom_data_source_id}/uploads")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -2932,7 +2932,93 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:post)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/customDataSources/#{custom_data_source_id}/uploads")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/customDataSources/#{custom_data_source_id}/uploads")
+    |> add_optional_params(optional_params, opts)
+    |> Enum.into([])
+    |> (&Connection.request(connection, &1)).()
+    |> decode(%GoogleApi.Analytics.V3.Model.Upload{})
+  end
+
+  @doc """
+  Upload data for a custom data source.
+
+  ## Parameters
+
+  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
+  - account_id (String): Account Id associated with the upload.
+  - web_property_id (String): Web property UA-string associated with the upload.
+  - custom_data_source_id (String): Custom data source Id to which the data being uploaded belongs.
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
+    - :fields (String): Selector specifying which fields to include in a partial response.
+    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String): OAuth 2.0 token for the current user.
+    - :pretty_print (Boolean): Returns response with indentations and line breaks.
+    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+
+  ## Returns
+
+  {:ok, %{}} on success
+  {:error, info} on failure
+  """
+  @spec analytics_management_uploads_upload_data_resumable(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
+  def analytics_management_uploads_upload_data_resumable(connection, account_id, web_property_id, custom_data_source_id, opts \\ []) do
+    optional_params = %{
+      :"alt" => :query,
+      :"fields" => :query,
+      :"key" => :query,
+      :"oauth_token" => :query,
+      :"prettyPrint" => :query,
+      :"quotaUser" => :query,
+      :"userIp" => :query
+    }
+    %{}
+    |> method(:post)
+    |> url("/resumable/upload/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/customDataSources/#{custom_data_source_id}/uploads")
+    |> add_optional_params(optional_params, opts)
+    |> Enum.into([])
+    |> (&Connection.request(connection, &1)).()
+    |> decode(false)
+  end
+
+  @doc """
+  Upload data for a custom data source.
+
+  ## Parameters
+
+  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
+  - account_id (String): Account Id associated with the upload.
+  - web_property_id (String): Web property UA-string associated with the upload.
+  - custom_data_source_id (String): Custom data source Id to which the data being uploaded belongs.
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
+    - :fields (String): Selector specifying which fields to include in a partial response.
+    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String): OAuth 2.0 token for the current user.
+    - :pretty_print (Boolean): Returns response with indentations and line breaks.
+    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Analytics.V3.Model.Upload{}} on success
+  {:error, info} on failure
+  """
+  @spec analytics_management_uploads_upload_data_simple(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.Analytics.V3.Model.Upload.t} | {:error, Tesla.Env.t}
+  def analytics_management_uploads_upload_data_simple(connection, account_id, web_property_id, custom_data_source_id, opts \\ []) do
+    optional_params = %{
+      :"alt" => :query,
+      :"fields" => :query,
+      :"key" => :query,
+      :"oauth_token" => :query,
+      :"prettyPrint" => :query,
+      :"quotaUser" => :query,
+      :"userIp" => :query
+    }
+    %{}
+    |> method(:post)
+    |> url("/upload/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/customDataSources/#{custom_data_source_id}/uploads")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -2975,7 +3061,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:delete)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/entityAdWordsLinks/#{web_property_ad_words_link_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/entityAdWordsLinks/#{web_property_ad_words_link_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -3018,7 +3104,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/entityAdWordsLinks/#{web_property_ad_words_link_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/entityAdWordsLinks/#{web_property_ad_words_link_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -3062,7 +3148,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:post)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/entityAdWordsLinks")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/entityAdWordsLinks")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -3108,7 +3194,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/entityAdWordsLinks")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/entityAdWordsLinks")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -3153,7 +3239,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:patch)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/entityAdWordsLinks/#{web_property_ad_words_link_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/entityAdWordsLinks/#{web_property_ad_words_link_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -3198,7 +3284,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:put)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/entityAdWordsLinks/#{web_property_ad_words_link_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/entityAdWordsLinks/#{web_property_ad_words_link_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -3240,7 +3326,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -3283,7 +3369,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:post)
-    |> url("/management/accounts/#{account_id}/webproperties")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -3328,7 +3414,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/accounts/#{account_id}/webproperties")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -3372,7 +3458,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:patch)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -3416,7 +3502,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:put)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -3459,7 +3545,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:delete)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/entityUserLinks/#{link_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/entityUserLinks/#{link_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -3503,7 +3589,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:post)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/entityUserLinks")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/entityUserLinks")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -3549,7 +3635,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:get)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/entityUserLinks")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/entityUserLinks")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -3594,7 +3680,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     }
     %{}
     |> method(:put)
-    |> url("/management/accounts/#{account_id}/webproperties/#{web_property_id}/entityUserLinks/#{link_id}")
+    |> url("/analytics/v3/management/accounts/#{account_id}/webproperties/#{web_property_id}/entityUserLinks/#{link_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

@@ -30,10 +30,8 @@ defmodule GoogleApi.Language.V1.Model.TextSpan do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Language.V1.Model.TextSpan do
-  import GoogleApi.Language.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

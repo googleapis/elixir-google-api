@@ -45,4 +45,3 @@ defimpl Poison.Decoder, for: GoogleApi.Analytics.V3.Model.Account do
   end
 end
 
-

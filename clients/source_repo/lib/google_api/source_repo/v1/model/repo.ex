@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.SourceRepo.V1.Model.Repo do
   end
 end
 
-

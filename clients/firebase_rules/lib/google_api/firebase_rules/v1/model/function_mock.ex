@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.FirebaseRules.V1.Model.FunctionMock do
   end
 end
 
-

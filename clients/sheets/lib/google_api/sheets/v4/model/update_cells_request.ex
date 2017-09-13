@@ -41,4 +41,3 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UpdateCellsRequest do
   end
 end
 
-

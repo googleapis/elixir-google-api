@@ -25,7 +25,7 @@ defmodule GoogleApi.Mirror.V1.Connection do
   use Tesla
 
   # Add any middleware here (authentication)
-  plug Tesla.Middleware.BaseUrl, "https://www.googleapis.com/mirror/v1"
+  plug Tesla.Middleware.BaseUrl, "https://www.googleapis.com"
   plug Tesla.Middleware.Headers, %{"User-Agent" => "Elixir"}
   plug Tesla.Middleware.EncodeJson
 

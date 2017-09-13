@@ -61,7 +61,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.CreativeGroups do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/creativeGroups/#{id}")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/creativeGroups/#{id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -104,7 +104,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.CreativeGroups do
     }
     %{}
     |> method(:post)
-    |> url("/userprofiles/#{profile_id}/creativeGroups")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/creativeGroups")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -161,7 +161,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.CreativeGroups do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/creativeGroups")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/creativeGroups")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -205,7 +205,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.CreativeGroups do
     }
     %{}
     |> method(:patch)
-    |> url("/userprofiles/#{profile_id}/creativeGroups")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/creativeGroups")
     |> add_param(:query, :"id", id)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -249,7 +249,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.CreativeGroups do
     }
     %{}
     |> method(:put)
-    |> url("/userprofiles/#{profile_id}/creativeGroups")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/creativeGroups")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

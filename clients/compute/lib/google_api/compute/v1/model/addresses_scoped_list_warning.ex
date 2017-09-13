@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.AddressesScopedList_warn
   end
 end
 
-

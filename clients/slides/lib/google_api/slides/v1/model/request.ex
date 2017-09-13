@@ -96,4 +96,3 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.Request do
   end
 end
 
-

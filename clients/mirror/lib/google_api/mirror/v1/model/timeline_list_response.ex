@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.Mirror.V1.Model.TimelineListResponse do
   end
 end
 
-

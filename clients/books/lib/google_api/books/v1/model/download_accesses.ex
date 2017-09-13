@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.Books.V1.Model.DownloadAccesses do
   end
 end
 
-

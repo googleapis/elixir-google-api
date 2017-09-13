@@ -62,7 +62,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Orders do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/projects/#{project_id}/orders/#{id}")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/projects/#{project_id}/orders/#{id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -118,7 +118,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Orders do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/projects/#{project_id}/orders")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/projects/#{project_id}/orders")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

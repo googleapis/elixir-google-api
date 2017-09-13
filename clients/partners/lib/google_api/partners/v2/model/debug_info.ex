@@ -31,10 +31,8 @@ defmodule GoogleApi.Partners.V2.Model.DebugInfo do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.DebugInfo do
-  import GoogleApi.Partners.V2.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

@@ -61,7 +61,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Creatives do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/creatives/#{id}")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/creatives/#{id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -104,7 +104,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Creatives do
     }
     %{}
     |> method(:post)
-    |> url("/userprofiles/#{profile_id}/creatives")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/creatives")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -177,7 +177,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Creatives do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/creatives")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/creatives")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -221,7 +221,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Creatives do
     }
     %{}
     |> method(:patch)
-    |> url("/userprofiles/#{profile_id}/creatives")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/creatives")
     |> add_param(:query, :"id", id)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -265,7 +265,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Creatives do
     }
     %{}
     |> method(:put)
-    |> url("/userprofiles/#{profile_id}/creatives")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/creatives")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

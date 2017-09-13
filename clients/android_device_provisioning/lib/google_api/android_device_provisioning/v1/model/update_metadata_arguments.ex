@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.Update
   end
 end
 
-

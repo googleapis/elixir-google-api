@@ -47,4 +47,3 @@ defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.Subnetwork do
   end
 end
 
-

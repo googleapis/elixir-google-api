@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Activity_actor_clientSpecif
   end
 end
 
-

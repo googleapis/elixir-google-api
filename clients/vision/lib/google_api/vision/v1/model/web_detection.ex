@@ -44,4 +44,3 @@ defimpl Poison.Decoder, for: GoogleApi.Vision.V1.Model.WebDetection do
   end
 end
 
-

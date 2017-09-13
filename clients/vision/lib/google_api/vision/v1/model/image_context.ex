@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.Vision.V1.Model.ImageContext do
   end
 end
 
-

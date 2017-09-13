@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Model.LinuxGetLinuxAccountViewsResponse do
+defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxGetLinuxAccountViewsResponse do
   @moduledoc """
   
   """
@@ -28,12 +28,11 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Model.LinuxGetLinuxAccountViewsRe
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.VM_ALPHA.Model.LinuxGetLinuxAccountViewsResponse do
-  import GoogleApi.CloudUserAccounts.VM_ALPHA.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxGetLinuxAccountViewsResponse do
+  import GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"resource", :struct, GoogleApi.CloudUserAccounts.VM_ALPHA.Model.LinuxAccountViews, options)
+    |> deserialize(:"resource", :struct, GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxAccountViews, options)
   end
 end
-
 

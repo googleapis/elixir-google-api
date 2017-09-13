@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Operation do
+defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation do
   @moduledoc """
   An Operation resource, used to manage asynchronous API requests.
   """
@@ -50,13 +50,12 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Operation do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Operation do
-  import GoogleApi.CloudUserAccounts.VM_ALPHA.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation do
+  import GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"error", :struct, GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Operation_error, options)
-    |> deserialize(:"warnings", :list, GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Operation_warnings, options)
+    |> deserialize(:"error", :struct, GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation_error, options)
+    |> deserialize(:"warnings", :list, GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation_warnings, options)
   end
 end
-
 

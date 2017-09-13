@@ -17,9 +17,9 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Admin.REPORTS_V1.Connection do
+defmodule GoogleApi.Admin.Reports_v1.Connection do
   @moduledoc """
-  Handle Tesla connections for GoogleApi.Admin.REPORTS_V1.
+  Handle Tesla connections for GoogleApi.Admin.Reports_v1.
   """
 
   use Tesla

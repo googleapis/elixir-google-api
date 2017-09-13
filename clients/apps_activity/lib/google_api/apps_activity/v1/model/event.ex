@@ -48,4 +48,3 @@ defimpl Poison.Decoder, for: GoogleApi.AppsActivity.V1.Model.Event do
   end
 end
 
-

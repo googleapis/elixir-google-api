@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceUser.V1.Model.MonitoredResourceDes
   end
 end
 
-

@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.DealTermsRubico
   end
 end
 
-

@@ -30,10 +30,8 @@ defmodule GoogleApi.Language.V1.Model.DependencyEdge do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Language.V1.Model.DependencyEdge do
-  import GoogleApi.Language.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Model.AuditConfig do
+defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.AuditConfig do
   @moduledoc """
   Enables \&quot;data access\&quot; audit logging for a service and specifies a list of members that are log-exempted.
   """
@@ -29,11 +29,9 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Model.AuditConfig do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.VM_ALPHA.Model.AuditConfig do
-  import GoogleApi.CloudUserAccounts.VM_ALPHA.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.AuditConfig do
+  def decode(value, _options) do
     value
   end
 end
-
 

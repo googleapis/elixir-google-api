@@ -35,10 +35,8 @@ defmodule GoogleApi.QPXExpress.V1.Model.FareInfo do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.QPXExpress.V1.Model.FareInfo do
-  import GoogleApi.QPXExpress.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

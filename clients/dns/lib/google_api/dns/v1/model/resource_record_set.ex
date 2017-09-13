@@ -33,10 +33,8 @@ defmodule GoogleApi.DNS.V1.Model.ResourceRecordSet do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DNS.V1.Model.ResourceRecordSet do
-  import GoogleApi.DNS.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

@@ -41,4 +41,3 @@ defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.HiveJob do
   end
 end
 
-

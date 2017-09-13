@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.QuestCriterion do
   end
 end
 
-

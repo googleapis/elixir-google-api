@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.Drive.V3.Model.RevisionList do
   end
 end
 
-

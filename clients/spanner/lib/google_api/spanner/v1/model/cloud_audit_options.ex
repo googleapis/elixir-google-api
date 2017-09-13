@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.CloudAuditOptions do
   end
 end
 
-

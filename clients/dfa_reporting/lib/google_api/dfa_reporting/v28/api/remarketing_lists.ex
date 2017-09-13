@@ -61,7 +61,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.RemarketingLists do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/remarketingLists/#{id}")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/remarketingLists/#{id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -104,7 +104,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.RemarketingLists do
     }
     %{}
     |> method(:post)
-    |> url("/userprofiles/#{profile_id}/remarketingLists")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/remarketingLists")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -160,7 +160,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.RemarketingLists do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/remarketingLists")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/remarketingLists")
     |> add_param(:query, :"advertiserId", advertiser_id)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -205,7 +205,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.RemarketingLists do
     }
     %{}
     |> method(:patch)
-    |> url("/userprofiles/#{profile_id}/remarketingLists")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/remarketingLists")
     |> add_param(:query, :"id", id)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -249,7 +249,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.RemarketingLists do
     }
     %{}
     |> method(:put)
-    |> url("/userprofiles/#{profile_id}/remarketingLists")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/remarketingLists")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

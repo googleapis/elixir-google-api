@@ -72,7 +72,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     }
     %{}
     |> method(:get)
-    |> url("/v1/partners/#{+partner_id}/customers")
+    |> url("/v1/partners/#{partner_id}/customers")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -127,7 +127,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     }
     %{}
     |> method(:post)
-    |> url("/v1/partners/#{+partner_id}/devices:claim")
+    |> url("/v1/partners/#{partner_id}/devices:claim")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -182,7 +182,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     }
     %{}
     |> method(:post)
-    |> url("/v1/partners/#{+partner_id}/devices:claimAsync")
+    |> url("/v1/partners/#{partner_id}/devices:claimAsync")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -237,7 +237,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     }
     %{}
     |> method(:post)
-    |> url("/v1/partners/#{+partner_id}/devices:findByIdentifier")
+    |> url("/v1/partners/#{partner_id}/devices:findByIdentifier")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -292,7 +292,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     }
     %{}
     |> method(:post)
-    |> url("/v1/partners/#{+partner_id}/devices:findByOwner")
+    |> url("/v1/partners/#{partner_id}/devices:findByOwner")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -348,7 +348,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     }
     %{}
     |> method(:post)
-    |> url("/v1/partners/#{+metadata_owner_id}/devices/#{+device_id}/metadata")
+    |> url("/v1/partners/#{metadata_owner_id}/devices/#{device_id}/metadata")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -403,7 +403,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     }
     %{}
     |> method(:post)
-    |> url("/v1/partners/#{+partner_id}/devices:unclaim")
+    |> url("/v1/partners/#{partner_id}/devices:unclaim")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -458,7 +458,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     }
     %{}
     |> method(:post)
-    |> url("/v1/partners/#{+partner_id}/devices:unclaimAsync")
+    |> url("/v1/partners/#{partner_id}/devices:unclaimAsync")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -513,7 +513,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     }
     %{}
     |> method(:post)
-    |> url("/v1/partners/#{+partner_id}/devices:updateMetadataAsync")
+    |> url("/v1/partners/#{partner_id}/devices:updateMetadataAsync")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.SearchReadGroupSetsResp
   end
 end
 
-

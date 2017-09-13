@@ -29,10 +29,8 @@ defmodule GoogleApi.PubSub.V1.Model.Empty do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.PubSub.V1.Model.Empty do
-  import GoogleApi.PubSub.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

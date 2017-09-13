@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.Vision.V1.Model.Landmark do
   end
 end
 
-

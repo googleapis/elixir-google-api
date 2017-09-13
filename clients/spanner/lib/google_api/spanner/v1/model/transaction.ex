@@ -30,10 +30,8 @@ defmodule GoogleApi.Spanner.V1.Model.Transaction do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.Transaction do
-  import GoogleApi.Spanner.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

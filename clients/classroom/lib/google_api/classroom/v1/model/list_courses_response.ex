@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.ListCoursesResponse do
   end
 end
 
-

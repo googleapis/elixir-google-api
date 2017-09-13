@@ -31,10 +31,8 @@ defmodule GoogleApi.Games.V1.Model.TurnBasedMatchModification do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.TurnBasedMatchModification do
-  import GoogleApi.Games.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

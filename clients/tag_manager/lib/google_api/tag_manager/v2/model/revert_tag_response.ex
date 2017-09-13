@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.RevertTagResponse do
   end
 end
 
-

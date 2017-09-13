@@ -30,10 +30,8 @@ defmodule GoogleApi.Prediction.V16.Model.Output_outputMulti do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.Output_outputMulti do
-  import GoogleApi.Prediction.V16.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.DFAReporting.V28.Model.VideoFormat do
   end
 end
 
-

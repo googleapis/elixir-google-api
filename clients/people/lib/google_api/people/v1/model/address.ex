@@ -47,4 +47,3 @@ defimpl Poison.Decoder, for: GoogleApi.People.V1.Model.Address do
   end
 end
 
-

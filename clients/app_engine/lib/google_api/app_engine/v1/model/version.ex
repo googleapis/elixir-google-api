@@ -80,4 +80,3 @@ defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.Version do
   end
 end
 
-

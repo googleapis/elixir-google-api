@@ -59,4 +59,3 @@ defimpl Poison.Decoder, for: GoogleApi.Books.V1.Model.Volume_userInfo do
   end
 end
 
-

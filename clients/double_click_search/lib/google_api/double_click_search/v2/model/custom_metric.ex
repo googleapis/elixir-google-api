@@ -30,10 +30,8 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.CustomMetric do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DoubleClickSearch.V2.Model.CustomMetric do
-  import GoogleApi.DoubleClickSearch.V2.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

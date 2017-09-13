@@ -66,7 +66,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Placements do
     }
     %{}
     |> method(:post)
-    |> url("/userprofiles/#{profile_id}/placements/generatetags")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/placements/generatetags")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -108,7 +108,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Placements do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/placements/#{id}")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/placements/#{id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -151,7 +151,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Placements do
     }
     %{}
     |> method(:post)
-    |> url("/userprofiles/#{profile_id}/placements")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/placements")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -236,7 +236,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Placements do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/placements")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/placements")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -280,7 +280,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Placements do
     }
     %{}
     |> method(:patch)
-    |> url("/userprofiles/#{profile_id}/placements")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/placements")
     |> add_param(:query, :"id", id)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -324,7 +324,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Placements do
     }
     %{}
     |> method(:put)
-    |> url("/userprofiles/#{profile_id}/placements")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/placements")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

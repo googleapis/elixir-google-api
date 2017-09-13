@@ -30,10 +30,8 @@ defmodule GoogleApi.Drive.V3.Model.StartPageToken do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Drive.V3.Model.StartPageToken do
-  import GoogleApi.Drive.V3.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.InstanceGroupsRemoveInst
   end
 end
 
-

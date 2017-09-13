@@ -50,4 +50,3 @@ defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.UserProfile do
   end
 end
 
-

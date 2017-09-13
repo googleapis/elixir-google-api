@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.Books.V1.Model.Usersettings do
   end
 end
 
-

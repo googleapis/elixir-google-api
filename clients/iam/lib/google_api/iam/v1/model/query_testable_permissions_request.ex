@@ -31,10 +31,8 @@ defmodule GoogleApi.IAM.V1.Model.QueryTestablePermissionsRequest do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.IAM.V1.Model.QueryTestablePermissionsRequest do
-  import GoogleApi.IAM.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

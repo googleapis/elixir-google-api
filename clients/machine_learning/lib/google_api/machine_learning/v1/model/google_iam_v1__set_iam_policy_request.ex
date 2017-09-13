@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.MachineLearning.V1.Model.GoogleIamV1__Set
   end
 end
 
-

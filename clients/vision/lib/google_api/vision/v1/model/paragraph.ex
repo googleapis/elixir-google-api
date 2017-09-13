@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.Vision.V1.Model.Paragraph do
   end
 end
 
-

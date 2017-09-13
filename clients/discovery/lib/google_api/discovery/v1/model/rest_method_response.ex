@@ -29,10 +29,8 @@ defmodule GoogleApi.Discovery.V1.Model.RestMethod_response do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Discovery.V1.Model.RestMethod_response do
-  import GoogleApi.Discovery.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

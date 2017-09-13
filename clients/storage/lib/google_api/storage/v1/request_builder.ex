@@ -135,7 +135,7 @@ defmodule GoogleApi.Storage.V1.RequestBuilder do
     {:error, response}
   end
   @spec decode(Tesla.Env.t, struct()) :: {:ok, struct()} | {:error, Tesla.Env.t}
-  def decode(%Tesla.Env{status: 200, body: body}, false), do: {:ok, body}
+  def decode(%Tesla.Env{status: 200} = env, false), do: {:ok, env}
   def decode(%Tesla.Env{status: 200, body: body}, struct) do
     Poison.decode(body, as: struct)
   end

@@ -31,10 +31,8 @@ defmodule GoogleApi.Books.V1.Model.Volume_accessInfo_pdf do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Books.V1.Model.Volume_accessInfo_pdf do
-  import GoogleApi.Books.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

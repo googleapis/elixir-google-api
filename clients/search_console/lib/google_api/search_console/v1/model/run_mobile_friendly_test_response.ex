@@ -43,4 +43,3 @@ defimpl Poison.Decoder, for: GoogleApi.SearchConsole.V1.Model.RunMobileFriendlyT
   end
 end
 
-

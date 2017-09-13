@@ -31,10 +31,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.SearchOrganizationsRequest do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudResourceManager.V1.Model.SearchOrganizationsRequest do
-  import GoogleApi.CloudResourceManager.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

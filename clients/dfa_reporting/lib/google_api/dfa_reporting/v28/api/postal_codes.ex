@@ -61,7 +61,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.PostalCodes do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/postalCodes/#{code}")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/postalCodes/#{code}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -102,7 +102,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.PostalCodes do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/postalCodes")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/postalCodes")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

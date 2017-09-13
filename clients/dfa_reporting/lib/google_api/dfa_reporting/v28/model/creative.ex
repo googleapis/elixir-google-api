@@ -114,4 +114,3 @@ defimpl Poison.Decoder, for: GoogleApi.DFAReporting.V28.Model.Creative do
   end
 end
 
-

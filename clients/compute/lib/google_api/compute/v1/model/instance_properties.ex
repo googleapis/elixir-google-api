@@ -52,4 +52,3 @@ defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.InstanceProperties do
   end
 end
 
-

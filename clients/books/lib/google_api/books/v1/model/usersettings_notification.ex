@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.Books.V1.Model.Usersettings_notification 
   end
 end
 
-

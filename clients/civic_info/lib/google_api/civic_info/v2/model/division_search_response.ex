@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.DivisionSearchResponse
   end
 end
 
-

@@ -45,4 +45,3 @@ defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.DiskType do
   end
 end
 
-

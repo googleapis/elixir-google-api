@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.LeaderboardScores do
   end
 end
 
-

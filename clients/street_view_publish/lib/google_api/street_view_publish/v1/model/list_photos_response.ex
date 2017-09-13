@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.StreetViewPublish.V1.Model.ListPhotosResp
   end
 end
 
-

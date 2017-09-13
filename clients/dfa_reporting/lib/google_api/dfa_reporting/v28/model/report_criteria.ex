@@ -45,4 +45,3 @@ defimpl Poison.Decoder, for: GoogleApi.DFAReporting.V28.Model.Report_criteria do
   end
 end
 
-

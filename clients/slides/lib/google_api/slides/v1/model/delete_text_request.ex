@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.DeleteTextRequest do
   end
 end
 
-

@@ -43,4 +43,3 @@ defimpl Poison.Decoder, for: GoogleApi.Analytics.V3.Model.Segments do
   end
 end
 
-

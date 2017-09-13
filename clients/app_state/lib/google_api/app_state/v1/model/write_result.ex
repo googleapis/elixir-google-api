@@ -31,10 +31,8 @@ defmodule GoogleApi.AppState.V1.Model.WriteResult do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AppState.V1.Model.WriteResult do
-  import GoogleApi.AppState.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

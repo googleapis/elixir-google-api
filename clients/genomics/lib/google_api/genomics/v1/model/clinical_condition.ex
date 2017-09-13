@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.ClinicalCondition do
   end
 end
 
-

@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.Blog_posts do
   end
 end
 
-

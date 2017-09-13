@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.ConfigChange d
   end
 end
 
-

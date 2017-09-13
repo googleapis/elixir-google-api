@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudFunctions.V1.Model.Location do
   end
 end
 
-

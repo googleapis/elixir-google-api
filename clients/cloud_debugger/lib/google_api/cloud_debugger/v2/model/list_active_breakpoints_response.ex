@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudDebugger.V2.Model.ListActiveBreakpoi
   end
 end
 
-

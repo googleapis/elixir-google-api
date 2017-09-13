@@ -63,7 +63,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.CampaignCreativeAssociations do
     }
     %{}
     |> method(:post)
-    |> url("/userprofiles/#{profile_id}/campaigns/#{campaign_id}/campaignCreativeAssociations")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/campaigns/#{campaign_id}/campaignCreativeAssociations")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -111,7 +111,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.CampaignCreativeAssociations do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/campaigns/#{campaign_id}/campaignCreativeAssociations")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/campaigns/#{campaign_id}/campaignCreativeAssociations")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

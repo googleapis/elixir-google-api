@@ -25,7 +25,7 @@ defmodule GoogleApi.DFAReporting.V28.Connection do
   use Tesla
 
   # Add any middleware here (authentication)
-  plug Tesla.Middleware.BaseUrl, "https://www.googleapis.com/dfareporting/v2.8"
+  plug Tesla.Middleware.BaseUrl, "https://www.googleapis.com"
   plug Tesla.Middleware.Headers, %{"User-Agent" => "Elixir"}
   plug Tesla.Middleware.EncodeJson
 

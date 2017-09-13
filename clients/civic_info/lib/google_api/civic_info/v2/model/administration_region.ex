@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.AdministrationRegion d
   end
 end
 
-

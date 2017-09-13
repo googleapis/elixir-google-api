@@ -292,7 +292,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{+name}:cancel")
+    |> url("/v1/#{name}:cancel")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -345,7 +345,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/#{+name}")
+    |> url("/v1/#{name}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -398,7 +398,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{+name}")
+    |> url("/v1/#{name}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -457,7 +457,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{+name}/operations")
+    |> url("/v1/#{name}/operations")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

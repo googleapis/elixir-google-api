@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.Insert_trainingInsta
   end
 end
 
-

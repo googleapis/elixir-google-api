@@ -29,10 +29,8 @@ defmodule GoogleApi.Blogger.V3.Model.User_blogs do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.User_blogs do
-  import GoogleApi.Blogger.V3.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

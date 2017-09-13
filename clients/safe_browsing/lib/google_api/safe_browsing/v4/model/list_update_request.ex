@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.ListUpdateRequest d
   end
 end
 
-

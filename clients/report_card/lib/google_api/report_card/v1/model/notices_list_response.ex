@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.ReportCard.V1.Model.NoticesListResponse d
   end
 end
 
-

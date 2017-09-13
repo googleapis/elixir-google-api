@@ -59,4 +59,3 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.PublisherProfil
   end
 end
 
-

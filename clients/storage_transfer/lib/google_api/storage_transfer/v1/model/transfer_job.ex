@@ -45,4 +45,3 @@ defimpl Poison.Decoder, for: GoogleApi.StorageTransfer.V1.Model.TransferJob do
   end
 end
 
-

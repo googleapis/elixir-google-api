@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.UpdateInstanceMetadata d
   end
 end
 
-

@@ -35,10 +35,8 @@ defmodule GoogleApi.IAM.V1.Model.ServiceAccountKey do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.IAM.V1.Model.ServiceAccountKey do
-  import GoogleApi.IAM.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

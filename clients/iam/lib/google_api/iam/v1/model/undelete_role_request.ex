@@ -29,10 +29,8 @@ defmodule GoogleApi.IAM.V1.Model.UndeleteRoleRequest do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.IAM.V1.Model.UndeleteRoleRequest do
-  import GoogleApi.IAM.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

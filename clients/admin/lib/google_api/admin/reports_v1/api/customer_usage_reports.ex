@@ -17,13 +17,13 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Admin.REPORTS_V1.Api.CustomerUsageReports do
+defmodule GoogleApi.Admin.Reports_v1.Api.CustomerUsageReports do
   @moduledoc """
   API calls for all endpoints tagged `CustomerUsageReports`.
   """
 
-  alias GoogleApi.Admin.REPORTS_V1.Connection
-  import GoogleApi.Admin.REPORTS_V1.RequestBuilder
+  alias GoogleApi.Admin.Reports_v1.Connection
+  import GoogleApi.Admin.Reports_v1.RequestBuilder
 
 
   @doc """
@@ -31,7 +31,7 @@ defmodule GoogleApi.Admin.REPORTS_V1.Api.CustomerUsageReports do
 
   ## Parameters
 
-  - connection (GoogleApi.Admin.REPORTS_V1.Connection): Connection to server
+  - connection (GoogleApi.Admin.Reports_v1.Connection): Connection to server
   - date (String): Represents the date in yyyy-mm-dd format for which the data is to be fetched.
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
@@ -47,10 +47,10 @@ defmodule GoogleApi.Admin.REPORTS_V1.Api.CustomerUsageReports do
 
   ## Returns
 
-  {:ok, %GoogleApi.Admin.REPORTS_V1.Model.UsageReports{}} on success
+  {:ok, %GoogleApi.Admin.Reports_v1.Model.UsageReports{}} on success
   {:error, info} on failure
   """
-  @spec reports_customer_usage_reports_get(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.Admin.REPORTS_V1.Model.UsageReports.t} | {:error, Tesla.Env.t}
+  @spec reports_customer_usage_reports_get(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.Admin.Reports_v1.Model.UsageReports.t} | {:error, Tesla.Env.t}
   def reports_customer_usage_reports_get(connection, date, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -70,6 +70,6 @@ defmodule GoogleApi.Admin.REPORTS_V1.Api.CustomerUsageReports do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Admin.REPORTS_V1.Model.UsageReports{})
+    |> decode(%GoogleApi.Admin.Reports_v1.Model.UsageReports{})
   end
 end

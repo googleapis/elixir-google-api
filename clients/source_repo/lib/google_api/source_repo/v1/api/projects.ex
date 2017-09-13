@@ -74,7 +74,7 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{+parent}/repos")
+    |> url("/v1/#{parent}/repos")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -127,7 +127,7 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/#{+name}")
+    |> url("/v1/#{name}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -180,7 +180,7 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{+name}")
+    |> url("/v1/#{name}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -233,7 +233,7 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{+resource}:getIamPolicy")
+    |> url("/v1/#{resource}:getIamPolicy")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -290,7 +290,7 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{+name}/repos")
+    |> url("/v1/#{name}/repos")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -345,7 +345,7 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{+resource}:setIamPolicy")
+    |> url("/v1/#{resource}:setIamPolicy")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -400,7 +400,7 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{+resource}:testIamPermissions")
+    |> url("/v1/#{resource}:testIamPermissions")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

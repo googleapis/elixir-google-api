@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.MachineLearning.V1.Model.GoogleApi__HttpB
   end
 end
 
-

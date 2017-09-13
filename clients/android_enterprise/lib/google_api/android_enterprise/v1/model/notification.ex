@@ -51,4 +51,3 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.Notification d
   end
 end
 
-

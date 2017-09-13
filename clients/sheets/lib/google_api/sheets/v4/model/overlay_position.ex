@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.OverlayPosition do
   end
 end
 
-

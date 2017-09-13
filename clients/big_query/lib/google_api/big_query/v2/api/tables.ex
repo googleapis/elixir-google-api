@@ -62,7 +62,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
     }
     %{}
     |> method(:delete)
-    |> url("/projects/#{project_id}/datasets/#{dataset_id}/tables/#{table_id}")
+    |> url("/bigquery/v2/projects/#{project_id}/datasets/#{dataset_id}/tables/#{table_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -107,7 +107,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
     }
     %{}
     |> method(:get)
-    |> url("/projects/#{project_id}/datasets/#{dataset_id}/tables/#{table_id}")
+    |> url("/bigquery/v2/projects/#{project_id}/datasets/#{dataset_id}/tables/#{table_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -151,7 +151,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
     }
     %{}
     |> method(:post)
-    |> url("/projects/#{project_id}/datasets/#{dataset_id}/tables")
+    |> url("/bigquery/v2/projects/#{project_id}/datasets/#{dataset_id}/tables")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -197,7 +197,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
     }
     %{}
     |> method(:get)
-    |> url("/projects/#{project_id}/datasets/#{dataset_id}/tables")
+    |> url("/bigquery/v2/projects/#{project_id}/datasets/#{dataset_id}/tables")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -242,7 +242,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
     }
     %{}
     |> method(:patch)
-    |> url("/projects/#{project_id}/datasets/#{dataset_id}/tables/#{table_id}")
+    |> url("/bigquery/v2/projects/#{project_id}/datasets/#{dataset_id}/tables/#{table_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -287,7 +287,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
     }
     %{}
     |> method(:put)
-    |> url("/projects/#{project_id}/datasets/#{dataset_id}/tables/#{table_id}")
+    |> url("/bigquery/v2/projects/#{project_id}/datasets/#{dataset_id}/tables/#{table_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

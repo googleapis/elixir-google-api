@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.Speech.V1.Model.SpeechRecognitionResult d
   end
 end
 
-
