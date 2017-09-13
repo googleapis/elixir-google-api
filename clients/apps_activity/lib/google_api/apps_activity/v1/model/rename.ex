@@ -30,10 +30,8 @@ defmodule GoogleApi.AppsActivity.V1.Model.Rename do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AppsActivity.V1.Model.Rename do
-  import GoogleApi.AppsActivity.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

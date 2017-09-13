@@ -43,4 +43,3 @@ defimpl Poison.Decoder, for: GoogleApi.Books.V1.Model.Geolayerdata_geo do
   end
 end
 
-

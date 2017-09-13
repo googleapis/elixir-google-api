@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.Vault.V1.Model.CorpusQuery do
   end
 end
 
-

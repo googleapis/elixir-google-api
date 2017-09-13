@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.Discovery.V1.Model.JsonSchema_variant do
   end
 end
 
-

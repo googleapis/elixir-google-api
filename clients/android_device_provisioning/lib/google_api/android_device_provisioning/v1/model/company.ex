@@ -33,10 +33,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.Company do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.Company do
-  import GoogleApi.AndroidDeviceProvisioning.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

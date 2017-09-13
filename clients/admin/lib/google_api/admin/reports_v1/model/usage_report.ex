@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Admin.REPORTS_V1.Model.UsageReport do
+defmodule GoogleApi.Admin.Reports_v1.Model.UsageReport do
   @moduledoc """
   JSON template for a usage report.
   """
@@ -32,13 +32,12 @@ defmodule GoogleApi.Admin.REPORTS_V1.Model.UsageReport do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Admin.REPORTS_V1.Model.UsageReport do
-  import GoogleApi.Admin.REPORTS_V1.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.Admin.Reports_v1.Model.UsageReport do
+  import GoogleApi.Admin.Reports_v1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"parameters", :list, GoogleApi.Admin.REPORTS_V1.Model.UsageReport_parameters, options)
-    |> deserialize(:"entity", :struct, GoogleApi.Admin.REPORTS_V1.Model.UsageReport_entity, options)
+    |> deserialize(:"parameters", :list, GoogleApi.Admin.Reports_v1.Model.UsageReport_parameters, options)
+    |> deserialize(:"entity", :struct, GoogleApi.Admin.Reports_v1.Model.UsageReport_entity, options)
   end
 end
-
 

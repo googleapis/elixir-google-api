@@ -31,10 +31,8 @@ defmodule GoogleApi.ServiceManagement.V1.Model.ConfigFile do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.ConfigFile do
-  import GoogleApi.ServiceManagement.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

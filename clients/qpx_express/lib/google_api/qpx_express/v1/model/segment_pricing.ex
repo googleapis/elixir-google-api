@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.QPXExpress.V1.Model.SegmentPricing do
   end
 end
 
-

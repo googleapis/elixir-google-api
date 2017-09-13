@@ -45,4 +45,3 @@ defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.Location do
   end
 end
 
-

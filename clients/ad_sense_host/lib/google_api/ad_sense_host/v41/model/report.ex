@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.AdSenseHost.V41.Model.Report do
   end
 end
 
-

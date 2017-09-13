@@ -63,7 +63,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/projects")
+    |> url("/bigquery/v2/projects")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

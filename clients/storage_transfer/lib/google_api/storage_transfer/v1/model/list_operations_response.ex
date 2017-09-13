@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.StorageTransfer.V1.Model.ListOperationsRe
   end
 end
 
-

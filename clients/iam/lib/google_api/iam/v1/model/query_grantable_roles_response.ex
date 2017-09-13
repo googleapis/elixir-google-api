@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.IAM.V1.Model.QueryGrantableRolesResponse 
   end
 end
 
-

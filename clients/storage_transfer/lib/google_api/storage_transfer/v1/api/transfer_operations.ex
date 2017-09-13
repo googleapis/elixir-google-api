@@ -72,7 +72,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{+name}:cancel")
+    |> url("/v1/#{name}:cancel")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -125,7 +125,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/#{+name}")
+    |> url("/v1/#{name}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -178,7 +178,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{+name}")
+    |> url("/v1/#{name}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -233,7 +233,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{+name}:pause")
+    |> url("/v1/#{name}:pause")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -288,7 +288,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{+name}:resume")
+    |> url("/v1/#{name}:resume")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

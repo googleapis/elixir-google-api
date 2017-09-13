@@ -61,7 +61,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.FloodlightActivities do
     }
     %{}
     |> method(:delete)
-    |> url("/userprofiles/#{profile_id}/floodlightActivities/#{id}")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/floodlightActivities/#{id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -104,7 +104,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.FloodlightActivities do
     }
     %{}
     |> method(:post)
-    |> url("/userprofiles/#{profile_id}/floodlightActivities/generatetag")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/floodlightActivities/generatetag")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -146,7 +146,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.FloodlightActivities do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/floodlightActivities/#{id}")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/floodlightActivities/#{id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -189,7 +189,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.FloodlightActivities do
     }
     %{}
     |> method(:post)
-    |> url("/userprofiles/#{profile_id}/floodlightActivities")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/floodlightActivities")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -256,7 +256,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.FloodlightActivities do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/floodlightActivities")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/floodlightActivities")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -300,7 +300,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.FloodlightActivities do
     }
     %{}
     |> method(:patch)
-    |> url("/userprofiles/#{profile_id}/floodlightActivities")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/floodlightActivities")
     |> add_param(:query, :"id", id)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -344,7 +344,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.FloodlightActivities do
     }
     %{}
     |> method(:put)
-    |> url("/userprofiles/#{profile_id}/floodlightActivities")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/floodlightActivities")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

@@ -61,7 +61,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Style do
     }
     %{}
     |> method(:delete)
-    |> url("/tables/#{table_id}/styles/#{style_id}")
+    |> url("/fusiontables/v2/tables/#{table_id}/styles/#{style_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -103,7 +103,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Style do
     }
     %{}
     |> method(:get)
-    |> url("/tables/#{table_id}/styles/#{style_id}")
+    |> url("/fusiontables/v2/tables/#{table_id}/styles/#{style_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -146,7 +146,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Style do
     }
     %{}
     |> method(:post)
-    |> url("/tables/#{table_id}/styles")
+    |> url("/fusiontables/v2/tables/#{table_id}/styles")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -191,7 +191,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Style do
     }
     %{}
     |> method(:get)
-    |> url("/tables/#{table_id}/styles")
+    |> url("/fusiontables/v2/tables/#{table_id}/styles")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -235,7 +235,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Style do
     }
     %{}
     |> method(:patch)
-    |> url("/tables/#{table_id}/styles/#{style_id}")
+    |> url("/fusiontables/v2/tables/#{table_id}/styles/#{style_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -279,7 +279,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Style do
     }
     %{}
     |> method(:put)
-    |> url("/tables/#{table_id}/styles/#{style_id}")
+    |> url("/fusiontables/v2/tables/#{table_id}/styles/#{style_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

@@ -72,7 +72,7 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Media do
     }
     %{}
     |> method(:get)
-    |> url("/v1/media/#{+resource_name}")
+    |> url("/v1/media/#{resource_name}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

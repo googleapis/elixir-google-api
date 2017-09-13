@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.DFAReporting.V28.Model.CreativeField do
   end
 end
 
-

@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.Translate.V2.Model.DetectionsListResponse
   end
 end
 
-

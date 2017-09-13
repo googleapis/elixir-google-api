@@ -60,7 +60,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Inappproducts do
     }
     %{}
     |> method(:post)
-    |> url("/inappproducts/batch")
+    |> url("/androidpublisher/v2/applications/inappproducts/batch")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -102,7 +102,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Inappproducts do
     }
     %{}
     |> method(:delete)
-    |> url("/#{package_name}/inappproducts/#{sku}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/inappproducts/#{sku}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -144,7 +144,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Inappproducts do
     }
     %{}
     |> method(:get)
-    |> url("/#{package_name}/inappproducts/#{sku}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/inappproducts/#{sku}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -189,7 +189,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Inappproducts do
     }
     %{}
     |> method(:post)
-    |> url("/#{package_name}/inappproducts")
+    |> url("/androidpublisher/v2/applications/#{package_name}/inappproducts")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -236,7 +236,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Inappproducts do
     }
     %{}
     |> method(:get)
-    |> url("/#{package_name}/inappproducts")
+    |> url("/androidpublisher/v2/applications/#{package_name}/inappproducts")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -282,7 +282,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Inappproducts do
     }
     %{}
     |> method(:patch)
-    |> url("/#{package_name}/inappproducts/#{sku}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/inappproducts/#{sku}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -328,7 +328,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Inappproducts do
     }
     %{}
     |> method(:put)
-    |> url("/#{package_name}/inappproducts/#{sku}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/inappproducts/#{sku}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

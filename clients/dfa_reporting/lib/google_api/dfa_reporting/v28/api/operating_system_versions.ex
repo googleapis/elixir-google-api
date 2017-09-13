@@ -61,7 +61,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.OperatingSystemVersions do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/operatingSystemVersions/#{id}")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/operatingSystemVersions/#{id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -102,7 +102,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.OperatingSystemVersions do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/operatingSystemVersions")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/operatingSystemVersions")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

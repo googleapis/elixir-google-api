@@ -41,4 +41,3 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.AccountStatus do
   end
 end
 
-

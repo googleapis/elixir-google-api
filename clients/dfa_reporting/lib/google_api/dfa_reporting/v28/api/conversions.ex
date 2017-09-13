@@ -62,7 +62,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Conversions do
     }
     %{}
     |> method(:post)
-    |> url("/userprofiles/#{profile_id}/conversions/batchinsert")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/conversions/batchinsert")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -105,7 +105,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Conversions do
     }
     %{}
     |> method(:post)
-    |> url("/userprofiles/#{profile_id}/conversions/batchupdate")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/conversions/batchupdate")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

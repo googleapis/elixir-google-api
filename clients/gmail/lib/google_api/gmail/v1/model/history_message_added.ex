@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.Gmail.V1.Model.HistoryMessageAdded do
   end
 end
 
-

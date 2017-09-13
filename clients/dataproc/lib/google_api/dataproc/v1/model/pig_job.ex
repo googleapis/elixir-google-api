@@ -43,4 +43,3 @@ defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.PigJob do
   end
 end
 
-

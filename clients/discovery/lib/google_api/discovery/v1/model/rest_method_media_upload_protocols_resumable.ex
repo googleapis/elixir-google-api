@@ -30,10 +30,8 @@ defmodule GoogleApi.Discovery.V1.Model.RestMethod_mediaUpload_protocols_resumabl
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Discovery.V1.Model.RestMethod_mediaUpload_protocols_resumable do
-  import GoogleApi.Discovery.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

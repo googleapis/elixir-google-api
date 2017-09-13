@@ -41,4 +41,3 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.CarrierRate do
   end
 end
 
-

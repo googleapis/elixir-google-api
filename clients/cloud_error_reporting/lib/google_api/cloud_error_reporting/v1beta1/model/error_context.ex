@@ -41,4 +41,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorCo
   end
 end
 
-

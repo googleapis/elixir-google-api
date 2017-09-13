@@ -29,10 +29,8 @@ defmodule GoogleApi.PageSpeedOnline.V2.Model.Result_ruleGroups do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.Result_ruleGroups do
-  import GoogleApi.PageSpeedOnline.V2.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

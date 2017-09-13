@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.AppsActivity.V1.Model.User do
   end
 end
 
-

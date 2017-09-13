@@ -61,7 +61,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Sizes do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/sizes/#{id}")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/sizes/#{id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -104,7 +104,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Sizes do
     }
     %{}
     |> method(:post)
-    |> url("/userprofiles/#{profile_id}/sizes")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/sizes")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -153,7 +153,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Sizes do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/sizes")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/sizes")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

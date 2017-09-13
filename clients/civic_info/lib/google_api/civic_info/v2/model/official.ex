@@ -44,4 +44,3 @@ defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.Official do
   end
 end
 
-

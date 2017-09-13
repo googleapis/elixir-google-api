@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.People.V1.Model.RelationshipStatus do
   end
 end
 
-

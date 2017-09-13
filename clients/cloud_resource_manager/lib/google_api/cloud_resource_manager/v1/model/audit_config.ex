@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudResourceManager.V1.Model.AuditConfig
   end
 end
 
-

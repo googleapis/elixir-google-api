@@ -51,4 +51,3 @@ defimpl Poison.Decoder, for: GoogleApi.QPXExpress.V1.Model.PricingInfo do
   end
 end
 
-

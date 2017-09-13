@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.QuestMilestone do
   end
 end
 
-

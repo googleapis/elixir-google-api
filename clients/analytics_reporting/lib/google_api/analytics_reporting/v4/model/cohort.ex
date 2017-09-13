@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.AnalyticsReporting.V4.Model.Cohort do
   end
 end
 
-

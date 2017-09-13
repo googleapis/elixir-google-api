@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.ListGroupMembersRespo
   end
 end
 
-

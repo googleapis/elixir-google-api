@@ -43,4 +43,3 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.LineProperties do
   end
 end
 
-

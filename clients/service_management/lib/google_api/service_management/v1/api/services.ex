@@ -297,7 +297,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{+resource}:getIamPolicy")
+    |> url("/v1/#{resource}:getIamPolicy")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -352,7 +352,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{+resource}:setIamPolicy")
+    |> url("/v1/#{resource}:setIamPolicy")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -407,7 +407,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{+resource}:testIamPermissions")
+    |> url("/v1/#{resource}:testIamPermissions")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

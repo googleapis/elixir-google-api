@@ -34,10 +34,8 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.HttpRequestContext do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudErrorReporting.V1beta1.Model.HttpRequestContext do
-  import GoogleApi.CloudErrorReporting.V1beta1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

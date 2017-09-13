@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.DNS.V1.Model.Change do
   end
 end
 
-

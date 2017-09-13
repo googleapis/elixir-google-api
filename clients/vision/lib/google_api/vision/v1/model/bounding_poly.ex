@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.Vision.V1.Model.BoundingPoly do
   end
 end
 
-

@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.People.V1.Model.Interest do
   end
 end
 
-

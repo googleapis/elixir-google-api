@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelConversionPings d
   end
 end
 
-

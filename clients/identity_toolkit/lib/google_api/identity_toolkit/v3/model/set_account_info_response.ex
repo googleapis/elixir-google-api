@@ -47,4 +47,3 @@ defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.SetAccountInfoRe
   end
 end
 
-

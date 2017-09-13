@@ -44,4 +44,3 @@ defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.Zone do
   end
 end
 
-

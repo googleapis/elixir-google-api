@@ -30,10 +30,8 @@ defmodule GoogleApi.StorageTransfer.V1.Model.ErrorLogEntry do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.StorageTransfer.V1.Model.ErrorLogEntry do
-  import GoogleApi.StorageTransfer.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

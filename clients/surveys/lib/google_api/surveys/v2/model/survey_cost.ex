@@ -32,10 +32,8 @@ defmodule GoogleApi.Surveys.V2.Model.SurveyCost do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Surveys.V2.Model.SurveyCost do
-  import GoogleApi.Surveys.V2.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

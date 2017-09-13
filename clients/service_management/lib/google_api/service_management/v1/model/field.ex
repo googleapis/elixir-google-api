@@ -45,4 +45,3 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.Field do
   end
 end
 
-

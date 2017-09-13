@@ -64,7 +64,7 @@ defmodule GoogleApi.Mirror.V1.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/accounts/#{user_token}/#{account_type}/#{account_name}")
+    |> url("/mirror/v1/accounts/#{user_token}/#{account_type}/#{account_name}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

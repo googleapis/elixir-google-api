@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.Attachment do
   end
 end
 
-

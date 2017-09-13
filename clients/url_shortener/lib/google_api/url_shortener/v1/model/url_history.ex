@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.UrlShortener.V1.Model.UrlHistory do
   end
 end
 
-

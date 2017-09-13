@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.QPXExpress.V1.Model.TripOptionsResponse d
   end
 end
 
-

@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.Speech.V1.Model.Status do
   end
 end
 
-

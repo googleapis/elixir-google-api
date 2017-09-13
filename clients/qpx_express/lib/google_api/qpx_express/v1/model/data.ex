@@ -45,4 +45,3 @@ defimpl Poison.Decoder, for: GoogleApi.QPXExpress.V1.Model.Data do
   end
 end
 
-

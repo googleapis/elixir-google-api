@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.BigQueryDataTransfer.V1.Model.ListDataSou
   end
 end
 
-

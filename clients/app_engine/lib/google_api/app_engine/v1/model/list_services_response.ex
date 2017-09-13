@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.ListServicesResponse d
   end
 end
 
-

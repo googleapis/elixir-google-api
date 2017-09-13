@@ -41,4 +41,3 @@ defimpl Poison.Decoder, for: GoogleApi.UrlShortener.V1.Model.Url do
   end
 end
 
-

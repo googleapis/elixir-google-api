@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.CustomerInteractionHistory.V3.Model.Incen
   end
 end
 
-

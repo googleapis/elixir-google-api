@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.EventDateTime do
   end
 end
 
-

@@ -61,4 +61,3 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ImageSettings do
   end
 end
 
-

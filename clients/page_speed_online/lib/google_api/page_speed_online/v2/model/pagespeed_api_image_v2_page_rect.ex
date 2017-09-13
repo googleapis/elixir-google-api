@@ -32,10 +32,8 @@ defmodule GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiImageV2_page_rect do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiImageV2_page_rect do
-  import GoogleApi.PageSpeedOnline.V2.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

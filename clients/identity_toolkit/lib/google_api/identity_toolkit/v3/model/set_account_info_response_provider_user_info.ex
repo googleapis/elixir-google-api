@@ -32,10 +32,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.SetAccountInfoResponse_providerUser
 end
 
 defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.SetAccountInfoResponse_providerUserInfo do
-  import GoogleApi.IdentityToolkit.V3.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

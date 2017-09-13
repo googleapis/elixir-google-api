@@ -29,10 +29,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.CancelOperationRequest do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudBuild.V1.Model.CancelOperationRequest do
-  import GoogleApi.CloudBuild.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

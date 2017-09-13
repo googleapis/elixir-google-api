@@ -69,4 +69,3 @@ defimpl Poison.Decoder, for: GoogleApi.DFAReporting.V28.Model.PlacementGroup do
   end
 end
 
-

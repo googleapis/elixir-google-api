@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.I18nLanguage do
   end
 end
 
-

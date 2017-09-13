@@ -61,7 +61,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.RemarketingListShares do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/remarketingListShares/#{remarketing_list_id}")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/remarketingListShares/#{remarketing_list_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -105,7 +105,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.RemarketingListShares do
     }
     %{}
     |> method(:patch)
-    |> url("/userprofiles/#{profile_id}/remarketingListShares")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/remarketingListShares")
     |> add_param(:query, :"remarketingListId", remarketing_list_id)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -149,7 +149,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.RemarketingListShares do
     }
     %{}
     |> method(:put)
-    |> url("/userprofiles/#{profile_id}/remarketingListShares")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/remarketingListShares")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

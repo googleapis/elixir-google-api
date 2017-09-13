@@ -32,10 +32,8 @@ defmodule GoogleApi.CloudBilling.V1.Model.ProjectBillingInfo do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudBilling.V1.Model.ProjectBillingInfo do
-  import GoogleApi.CloudBilling.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

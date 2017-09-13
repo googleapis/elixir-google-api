@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BooleanRule do
   end
 end
 
-

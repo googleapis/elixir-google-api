@@ -29,10 +29,8 @@ defmodule GoogleApi.Reseller.V1.Model.ResellernotifyResource do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Reseller.V1.Model.ResellernotifyResource do
-  import GoogleApi.Reseller.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

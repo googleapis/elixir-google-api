@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.ListInstancesResponse do
   end
 end
 
-

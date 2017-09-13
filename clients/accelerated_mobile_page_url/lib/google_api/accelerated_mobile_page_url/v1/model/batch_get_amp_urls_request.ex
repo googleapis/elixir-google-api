@@ -30,10 +30,8 @@ defmodule GoogleApi.AcceleratedMobilePageUrl.V1.Model.BatchGetAmpUrlsRequest do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AcceleratedMobilePageUrl.V1.Model.BatchGetAmpUrlsRequest do
-  import GoogleApi.AcceleratedMobilePageUrl.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

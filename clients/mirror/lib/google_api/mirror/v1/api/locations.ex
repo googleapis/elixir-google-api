@@ -60,7 +60,7 @@ defmodule GoogleApi.Mirror.V1.Api.Locations do
     }
     %{}
     |> method(:get)
-    |> url("/locations/#{id}")
+    |> url("/mirror/v1/locations/#{id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -100,7 +100,7 @@ defmodule GoogleApi.Mirror.V1.Api.Locations do
     }
     %{}
     |> method(:get)
-    |> url("/locations")
+    |> url("/mirror/v1/locations")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

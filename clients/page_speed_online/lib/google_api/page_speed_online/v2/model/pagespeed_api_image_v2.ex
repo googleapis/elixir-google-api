@@ -41,4 +41,3 @@ defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiImag
   end
 end
 
-

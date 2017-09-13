@@ -36,10 +36,8 @@ defmodule GoogleApi.Container.V1.Model.Operation do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.Operation do
-  import GoogleApi.Container.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

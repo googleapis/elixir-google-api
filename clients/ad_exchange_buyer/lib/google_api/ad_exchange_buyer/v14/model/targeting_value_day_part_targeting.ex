@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueD
   end
 end
 
-

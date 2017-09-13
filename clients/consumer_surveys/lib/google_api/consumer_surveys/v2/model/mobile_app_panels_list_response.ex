@@ -41,4 +41,3 @@ defimpl Poison.Decoder, for: GoogleApi.ConsumerSurveys.V2.Model.MobileAppPanelsL
   end
 end
 
-

@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.StorageTransfer.V1.Model.Operation do
   end
 end
 
-

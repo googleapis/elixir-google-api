@@ -61,7 +61,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.AdvertiserGroups do
     }
     %{}
     |> method(:delete)
-    |> url("/userprofiles/#{profile_id}/advertiserGroups/#{id}")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/advertiserGroups/#{id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -103,7 +103,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.AdvertiserGroups do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/advertiserGroups/#{id}")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/advertiserGroups/#{id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -146,7 +146,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.AdvertiserGroups do
     }
     %{}
     |> method(:post)
-    |> url("/userprofiles/#{profile_id}/advertiserGroups")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/advertiserGroups")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -199,7 +199,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.AdvertiserGroups do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/advertiserGroups")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/advertiserGroups")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -243,7 +243,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.AdvertiserGroups do
     }
     %{}
     |> method(:patch)
-    |> url("/userprofiles/#{profile_id}/advertiserGroups")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/advertiserGroups")
     |> add_param(:query, :"id", id)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -287,7 +287,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.AdvertiserGroups do
     }
     %{}
     |> method(:put)
-    |> url("/userprofiles/#{profile_id}/advertiserGroups")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/advertiserGroups")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

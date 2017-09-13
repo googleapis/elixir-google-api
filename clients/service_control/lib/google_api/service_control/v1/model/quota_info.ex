@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.QuotaInfo do
   end
 end
 
-

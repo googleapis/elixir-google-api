@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.MachineLearning.V1.Model.GoogleLongrunnin
   end
 end
 
-

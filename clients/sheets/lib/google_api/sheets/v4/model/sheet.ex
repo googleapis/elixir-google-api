@@ -52,4 +52,3 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.Sheet do
   end
 end
 
-

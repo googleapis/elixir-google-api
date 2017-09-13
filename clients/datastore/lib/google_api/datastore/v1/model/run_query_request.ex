@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.RunQueryRequest do
   end
 end
 
-

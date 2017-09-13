@@ -30,10 +30,8 @@ defmodule GoogleApi.Plus.V1.Model.Person_placesLived do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Person_placesLived do
-  import GoogleApi.Plus.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.Condition do
   end
 end
 
-

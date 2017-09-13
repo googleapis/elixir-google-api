@@ -41,10 +41,8 @@ defmodule GoogleApi.PageSpeedOnline.V2.Model.Result_pageStats do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.Result_pageStats do
-  import GoogleApi.PageSpeedOnline.V2.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

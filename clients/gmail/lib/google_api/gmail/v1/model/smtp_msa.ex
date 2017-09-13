@@ -33,10 +33,8 @@ defmodule GoogleApi.Gmail.V1.Model.SmtpMsa do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Gmail.V1.Model.SmtpMsa do
-  import GoogleApi.Gmail.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

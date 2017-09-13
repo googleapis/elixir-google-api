@@ -29,10 +29,8 @@ defmodule GoogleApi.Monitoring.V3.Model.Explicit do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.Explicit do
-  import GoogleApi.Monitoring.V3.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

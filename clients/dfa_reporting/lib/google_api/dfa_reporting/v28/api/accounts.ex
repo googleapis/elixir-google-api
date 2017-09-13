@@ -61,7 +61,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/accounts/#{id}")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/accounts/#{id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -116,7 +116,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/accounts")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/accounts")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -160,7 +160,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Accounts do
     }
     %{}
     |> method(:patch)
-    |> url("/userprofiles/#{profile_id}/accounts")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/accounts")
     |> add_param(:query, :"id", id)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -204,7 +204,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Accounts do
     }
     %{}
     |> method(:put)
-    |> url("/userprofiles/#{profile_id}/accounts")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/accounts")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

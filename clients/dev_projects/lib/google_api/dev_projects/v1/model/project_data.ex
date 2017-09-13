@@ -81,4 +81,3 @@ defimpl Poison.Decoder, for: GoogleApi.DevProjects.V1.Model.ProjectData do
   end
 end
 
-

@@ -29,10 +29,8 @@ defmodule GoogleApi.CloudDebugger.V2.Model.Empty do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudDebugger.V2.Model.Empty do
-  import GoogleApi.CloudDebugger.V2.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

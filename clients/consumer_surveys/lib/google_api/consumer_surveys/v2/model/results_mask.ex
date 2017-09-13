@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.ConsumerSurveys.V2.Model.ResultsMask do
   end
 end
 
-

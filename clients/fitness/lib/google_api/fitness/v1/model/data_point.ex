@@ -43,4 +43,3 @@ defimpl Poison.Decoder, for: GoogleApi.Fitness.V1.Model.DataPoint do
   end
 end
 
-

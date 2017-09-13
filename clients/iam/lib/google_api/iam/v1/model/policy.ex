@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.IAM.V1.Model.Policy do
   end
 end
 
-

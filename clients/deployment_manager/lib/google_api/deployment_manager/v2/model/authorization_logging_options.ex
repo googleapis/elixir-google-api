@@ -29,10 +29,8 @@ defmodule GoogleApi.DeploymentManager.V2.Model.AuthorizationLoggingOptions do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DeploymentManager.V2.Model.AuthorizationLoggingOptions do
-  import GoogleApi.DeploymentManager.V2.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

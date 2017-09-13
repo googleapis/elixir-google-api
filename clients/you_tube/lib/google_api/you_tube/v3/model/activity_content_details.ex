@@ -56,4 +56,3 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ActivityContentDetails d
   end
 end
 
-

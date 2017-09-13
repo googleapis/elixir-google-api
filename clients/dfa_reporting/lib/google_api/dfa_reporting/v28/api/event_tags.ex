@@ -61,7 +61,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.EventTags do
     }
     %{}
     |> method(:delete)
-    |> url("/userprofiles/#{profile_id}/eventTags/#{id}")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/eventTags/#{id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -103,7 +103,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.EventTags do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/eventTags/#{id}")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/eventTags/#{id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -146,7 +146,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.EventTags do
     }
     %{}
     |> method(:post)
-    |> url("/userprofiles/#{profile_id}/eventTags")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/eventTags")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -207,7 +207,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.EventTags do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/eventTags")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/eventTags")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -251,7 +251,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.EventTags do
     }
     %{}
     |> method(:patch)
-    |> url("/userprofiles/#{profile_id}/eventTags")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/eventTags")
     |> add_param(:query, :"id", id)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -295,7 +295,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.EventTags do
     }
     %{}
     |> method(:put)
-    |> url("/userprofiles/#{profile_id}/eventTags")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/eventTags")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

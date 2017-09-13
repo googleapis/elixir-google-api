@@ -55,4 +55,3 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.ChartSpec do
   end
 end
 
-

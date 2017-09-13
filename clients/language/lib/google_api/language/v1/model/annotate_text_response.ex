@@ -43,4 +43,3 @@ defimpl Poison.Decoder, for: GoogleApi.Language.V1.Model.AnnotateTextResponse do
   end
 end
 
-

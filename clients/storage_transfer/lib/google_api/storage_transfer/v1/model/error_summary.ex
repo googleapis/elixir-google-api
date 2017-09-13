@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.StorageTransfer.V1.Model.ErrorSummary do
   end
 end
 
-

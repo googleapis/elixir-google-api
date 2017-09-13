@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.LogUserEventResponse do
   end
 end
 
-

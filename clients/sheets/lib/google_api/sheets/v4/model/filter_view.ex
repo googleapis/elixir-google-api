@@ -43,4 +43,3 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.FilterView do
   end
 end
 
-

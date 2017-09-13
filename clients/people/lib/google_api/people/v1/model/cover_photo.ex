@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.People.V1.Model.CoverPhoto do
   end
 end
 
-

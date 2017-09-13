@@ -60,7 +60,89 @@ defmodule GoogleApi.GroupsMigration.V1.Api.Archive do
     }
     %{}
     |> method(:post)
-    |> url("/#{group_id}/archive")
+    |> url("/groups/v1/groups/#{group_id}/archive")
+    |> add_optional_params(optional_params, opts)
+    |> Enum.into([])
+    |> (&Connection.request(connection, &1)).()
+    |> decode(%GoogleApi.GroupsMigration.V1.Model.Groups{})
+  end
+
+  @doc """
+  Inserts a new mail into the archive of the Google group.
+
+  ## Parameters
+
+  - connection (GoogleApi.GroupsMigration.V1.Connection): Connection to server
+  - group_id (String): The group ID
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
+    - :fields (String): Selector specifying which fields to include in a partial response.
+    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String): OAuth 2.0 token for the current user.
+    - :pretty_print (Boolean): Returns response with indentations and line breaks.
+    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+
+  ## Returns
+
+  {:ok, %GoogleApi.GroupsMigration.V1.Model.Groups{}} on success
+  {:error, info} on failure
+  """
+  @spec groupsmigration_archive_insert_resumable(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.GroupsMigration.V1.Model.Groups.t} | {:error, Tesla.Env.t}
+  def groupsmigration_archive_insert_resumable(connection, group_id, opts \\ []) do
+    optional_params = %{
+      :"alt" => :query,
+      :"fields" => :query,
+      :"key" => :query,
+      :"oauth_token" => :query,
+      :"prettyPrint" => :query,
+      :"quotaUser" => :query,
+      :"userIp" => :query
+    }
+    %{}
+    |> method(:post)
+    |> url("/resumable/upload/groups/v1/groups/#{group_id}/archive")
+    |> add_optional_params(optional_params, opts)
+    |> Enum.into([])
+    |> (&Connection.request(connection, &1)).()
+    |> decode(%GoogleApi.GroupsMigration.V1.Model.Groups{})
+  end
+
+  @doc """
+  Inserts a new mail into the archive of the Google group.
+
+  ## Parameters
+
+  - connection (GoogleApi.GroupsMigration.V1.Connection): Connection to server
+  - group_id (String): The group ID
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
+    - :fields (String): Selector specifying which fields to include in a partial response.
+    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String): OAuth 2.0 token for the current user.
+    - :pretty_print (Boolean): Returns response with indentations and line breaks.
+    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+
+  ## Returns
+
+  {:ok, %GoogleApi.GroupsMigration.V1.Model.Groups{}} on success
+  {:error, info} on failure
+  """
+  @spec groupsmigration_archive_insert_simple(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.GroupsMigration.V1.Model.Groups.t} | {:error, Tesla.Env.t}
+  def groupsmigration_archive_insert_simple(connection, group_id, opts \\ []) do
+    optional_params = %{
+      :"alt" => :query,
+      :"fields" => :query,
+      :"key" => :query,
+      :"oauth_token" => :query,
+      :"prettyPrint" => :query,
+      :"quotaUser" => :query,
+      :"userIp" => :query
+    }
+    %{}
+    |> method(:post)
+    |> url("/upload/groups/v1/groups/#{group_id}/archive")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

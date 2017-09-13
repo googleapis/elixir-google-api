@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.DeploymentManager.V2.Model.LogConfig do
   end
 end
 
-

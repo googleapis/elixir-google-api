@@ -48,4 +48,3 @@ defimpl Poison.Decoder, for: GoogleApi.Manufacturers.V1.Model.Product do
   end
 end
 
-

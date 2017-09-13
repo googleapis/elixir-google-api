@@ -45,4 +45,3 @@ defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.PlanNode do
   end
 end
 
-

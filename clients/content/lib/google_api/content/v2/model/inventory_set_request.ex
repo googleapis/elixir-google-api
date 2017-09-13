@@ -48,4 +48,3 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.InventorySetRequest do
   end
 end
 
-

@@ -44,4 +44,3 @@ defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.AcceleratorType do
   end
 end
 
-

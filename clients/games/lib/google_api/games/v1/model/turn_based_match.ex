@@ -61,4 +61,3 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.TurnBasedMatch do
   end
 end
 
-

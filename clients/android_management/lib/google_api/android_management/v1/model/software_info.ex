@@ -34,10 +34,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.SoftwareInfo do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.SoftwareInfo do
-  import GoogleApi.AndroidManagement.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

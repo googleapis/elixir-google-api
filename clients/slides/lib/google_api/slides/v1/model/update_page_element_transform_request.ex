@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.UpdatePageElementTransfor
   end
 end
 
-

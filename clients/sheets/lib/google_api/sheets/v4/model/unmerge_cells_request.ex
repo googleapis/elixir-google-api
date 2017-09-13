@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UnmergeCellsRequest do
   end
 end
 
-

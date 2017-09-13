@@ -48,4 +48,3 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidPublisher.V2.Model.UserComment do
   end
 end
 
-

@@ -62,7 +62,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.InventoryItems do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/projects/#{project_id}/inventoryItems/#{id}")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/projects/#{project_id}/inventoryItems/#{id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -122,7 +122,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.InventoryItems do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/projects/#{project_id}/inventoryItems")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/projects/#{project_id}/inventoryItems")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

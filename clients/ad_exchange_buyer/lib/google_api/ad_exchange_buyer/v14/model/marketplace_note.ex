@@ -36,10 +36,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceNote do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceNote do
-  import GoogleApi.AdExchangeBuyer.V14.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

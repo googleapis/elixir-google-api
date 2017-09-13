@@ -45,4 +45,3 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.MetricValue do
   end
 end
 
-

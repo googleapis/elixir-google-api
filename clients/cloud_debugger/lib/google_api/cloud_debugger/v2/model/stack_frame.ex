@@ -41,4 +41,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudDebugger.V2.Model.StackFrame do
   end
 end
 
-

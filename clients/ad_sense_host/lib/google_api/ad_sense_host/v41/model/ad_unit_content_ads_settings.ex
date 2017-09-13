@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.AdSenseHost.V41.Model.AdUnit_contentAdsSe
   end
 end
 
-

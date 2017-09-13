@@ -30,10 +30,8 @@ defmodule GoogleApi.SearchConsole.V1.Model.RunMobileFriendlyTestRequest do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SearchConsole.V1.Model.RunMobileFriendlyTestRequest do
-  import GoogleApi.SearchConsole.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

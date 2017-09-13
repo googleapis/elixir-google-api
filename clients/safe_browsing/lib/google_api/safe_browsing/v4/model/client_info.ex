@@ -30,10 +30,8 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.ClientInfo do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.ClientInfo do
-  import GoogleApi.SafeBrowsing.V4.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

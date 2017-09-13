@@ -50,4 +50,3 @@ defimpl Poison.Decoder, for: GoogleApi.Analytics.V3.Model.CustomMetric do
   end
 end
 
-

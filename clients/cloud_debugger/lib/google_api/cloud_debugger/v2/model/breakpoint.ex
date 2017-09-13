@@ -55,4 +55,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudDebugger.V2.Model.Breakpoint do
   end
 end
 
-

@@ -29,10 +29,8 @@ defmodule GoogleApi.Dataproc.V1.Model.JobScheduling do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.JobScheduling do
-  import GoogleApi.Dataproc.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

@@ -61,7 +61,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.AccountPermissionGroups do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/accountPermissionGroups/#{id}")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/accountPermissionGroups/#{id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -102,7 +102,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.AccountPermissionGroups do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/accountPermissionGroups")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/accountPermissionGroups")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

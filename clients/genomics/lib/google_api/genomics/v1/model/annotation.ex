@@ -48,4 +48,3 @@ defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.Annotation do
   end
 end
 
-

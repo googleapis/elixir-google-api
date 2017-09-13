@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.Vision.V1.Model.TextProperty do
   end
 end
 
-

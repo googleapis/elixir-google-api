@@ -44,4 +44,3 @@ defimpl Poison.Decoder, for: GoogleApi.UrlShortener.V1.Model.AnalyticsSnapshot d
   end
 end
 
-

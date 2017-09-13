@@ -47,4 +47,3 @@ defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.QueryRequest do
   end
 end
 
-

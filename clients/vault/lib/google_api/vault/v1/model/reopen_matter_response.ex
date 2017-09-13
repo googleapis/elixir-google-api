@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.Vault.V1.Model.ReopenMatterResponse do
   end
 end
 
-

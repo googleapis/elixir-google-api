@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudTrace.V1.Model.ListTracesResponse do
   end
 end
 
-

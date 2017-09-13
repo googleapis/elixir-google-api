@@ -74,7 +74,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{+name}:checkValidCreds")
+    |> url("/v1/#{name}:checkValidCreds")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -127,7 +127,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{+name}")
+    |> url("/v1/#{name}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -184,7 +184,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{+parent}/dataSources")
+    |> url("/v1/#{parent}/dataSources")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -239,7 +239,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{+name}:isEnabled")
+    |> url("/v1/#{name}:isEnabled")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -298,7 +298,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{+name}/locations")
+    |> url("/v1/#{name}/locations")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -353,7 +353,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{+name}:setEnabled")
+    |> url("/v1/#{name}:setEnabled")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -410,7 +410,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{+parent}/transferConfigs")
+    |> url("/v1/#{parent}/transferConfigs")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -469,7 +469,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{+parent}/transferConfigs")
+    |> url("/v1/#{parent}/transferConfigs")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -528,7 +528,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     }
     %{}
     |> method(:patch)
-    |> url("/v1/#{+name}")
+    |> url("/v1/#{name}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -581,7 +581,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/#{+name}")
+    |> url("/v1/#{name}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -642,7 +642,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{+parent}/runs")
+    |> url("/v1/#{parent}/runs")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -701,7 +701,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{+parent}/transferLogs")
+    |> url("/v1/#{parent}/transferLogs")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -756,7 +756,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{+parent}:scheduleRuns")
+    |> url("/v1/#{parent}:scheduleRuns")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

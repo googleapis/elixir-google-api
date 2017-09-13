@@ -34,10 +34,8 @@ defmodule GoogleApi.Prediction.V16.Model.Insert2_modelInfo do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.Insert2_modelInfo do
-  import GoogleApi.Prediction.V16.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

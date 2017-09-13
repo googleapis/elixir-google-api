@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.Analytics.V3.Model.EntityAdWordsLink_enti
   end
 end
 
-

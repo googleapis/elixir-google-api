@@ -41,4 +41,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudBilling.V1.Model.PricingInfo do
   end
 end
 
-

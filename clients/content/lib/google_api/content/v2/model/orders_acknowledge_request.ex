@@ -29,10 +29,8 @@ defmodule GoogleApi.Content.V2.Model.OrdersAcknowledgeRequest do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrdersAcknowledgeRequest do
-  import GoogleApi.Content.V2.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

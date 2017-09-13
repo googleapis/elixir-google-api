@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.AppState.V1.Model.ListResponse do
   end
 end
 
-

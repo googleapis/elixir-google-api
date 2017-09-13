@@ -30,10 +30,8 @@ defmodule GoogleApi.Content.V2.Model.ProductShippingDimension do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.ProductShippingDimension do
-  import GoogleApi.Content.V2.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

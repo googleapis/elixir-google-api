@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Binding do
+defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.Binding do
   @moduledoc """
   Associates &#x60;members&#x60; with a &#x60;role&#x60;.
   """
@@ -29,11 +29,9 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Binding do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Binding do
-  import GoogleApi.CloudUserAccounts.VM_ALPHA.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.Binding do
+  def decode(value, _options) do
     value
   end
 end
-
 

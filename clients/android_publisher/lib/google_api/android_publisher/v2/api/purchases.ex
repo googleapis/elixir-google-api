@@ -62,7 +62,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Purchases do
     }
     %{}
     |> method(:get)
-    |> url("/#{package_name}/purchases/products/#{product_id}/tokens/#{token}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/purchases/products/#{product_id}/tokens/#{token}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -105,7 +105,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Purchases do
     }
     %{}
     |> method(:post)
-    |> url("/#{package_name}/purchases/subscriptions/#{subscription_id}/tokens/#{token}:cancel")
+    |> url("/androidpublisher/v2/applications/#{package_name}/purchases/subscriptions/#{subscription_id}/tokens/#{token}:cancel")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -150,7 +150,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Purchases do
     }
     %{}
     |> method(:post)
-    |> url("/#{package_name}/purchases/subscriptions/#{subscription_id}/tokens/#{token}:defer")
+    |> url("/androidpublisher/v2/applications/#{package_name}/purchases/subscriptions/#{subscription_id}/tokens/#{token}:defer")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -193,7 +193,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Purchases do
     }
     %{}
     |> method(:get)
-    |> url("/#{package_name}/purchases/subscriptions/#{subscription_id}/tokens/#{token}")
+    |> url("/androidpublisher/v2/applications/#{package_name}/purchases/subscriptions/#{subscription_id}/tokens/#{token}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -236,7 +236,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Purchases do
     }
     %{}
     |> method(:post)
-    |> url("/#{package_name}/purchases/subscriptions/#{subscription_id}/tokens/#{token}:refund")
+    |> url("/androidpublisher/v2/applications/#{package_name}/purchases/subscriptions/#{subscription_id}/tokens/#{token}:refund")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -279,7 +279,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Purchases do
     }
     %{}
     |> method(:post)
-    |> url("/#{package_name}/purchases/subscriptions/#{subscription_id}/tokens/#{token}:revoke")
+    |> url("/androidpublisher/v2/applications/#{package_name}/purchases/subscriptions/#{subscription_id}/tokens/#{token}:revoke")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -330,7 +330,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Purchases do
     }
     %{}
     |> method(:get)
-    |> url("/#{package_name}/purchases/voidedpurchases")
+    |> url("/androidpublisher/v2/applications/#{package_name}/purchases/voidedpurchases")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

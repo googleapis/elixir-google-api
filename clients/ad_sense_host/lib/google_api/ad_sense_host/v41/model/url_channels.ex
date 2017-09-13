@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.AdSenseHost.V41.Model.UrlChannels do
   end
 end
 
-

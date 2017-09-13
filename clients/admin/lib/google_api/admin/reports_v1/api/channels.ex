@@ -17,13 +17,13 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Admin.REPORTS_V1.Api.Channels do
+defmodule GoogleApi.Admin.Reports_v1.Api.Channels do
   @moduledoc """
   API calls for all endpoints tagged `Channels`.
   """
 
-  alias GoogleApi.Admin.REPORTS_V1.Connection
-  import GoogleApi.Admin.REPORTS_V1.RequestBuilder
+  alias GoogleApi.Admin.Reports_v1.Connection
+  import GoogleApi.Admin.Reports_v1.RequestBuilder
 
 
   @doc """
@@ -31,7 +31,7 @@ defmodule GoogleApi.Admin.REPORTS_V1.Api.Channels do
 
   ## Parameters
 
-  - connection (GoogleApi.Admin.REPORTS_V1.Connection): Connection to server
+  - connection (GoogleApi.Admin.Reports_v1.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
     - :fields (String): Selector specifying which fields to include in a partial response.

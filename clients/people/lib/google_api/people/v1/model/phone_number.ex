@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.People.V1.Model.PhoneNumber do
   end
 end
 
-

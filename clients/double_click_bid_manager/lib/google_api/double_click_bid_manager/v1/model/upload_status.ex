@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.DoubleClickBidManager.V1.Model.UploadStat
   end
 end
 
-

@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.EventRecordRequest do
   end
 end
 
-

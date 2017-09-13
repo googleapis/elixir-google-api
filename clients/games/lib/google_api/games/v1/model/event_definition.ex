@@ -43,4 +43,3 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.EventDefinition do
   end
 end
 
-

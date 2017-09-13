@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceUser.V1.Model.OperationMetadata do
   end
 end
 
-

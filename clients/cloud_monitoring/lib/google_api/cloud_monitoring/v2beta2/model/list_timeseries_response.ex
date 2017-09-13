@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudMonitoring.V2beta2.Model.ListTimeser
   end
 end
 
-

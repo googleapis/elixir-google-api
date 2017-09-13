@@ -63,7 +63,97 @@ defmodule GoogleApi.PlusDomains.V1.Api.Media do
     }
     %{}
     |> method(:post)
-    |> url("/people/#{user_id}/media/#{collection}")
+    |> url("/plusDomains/v1/people/#{user_id}/media/#{collection}")
+    |> add_optional_params(optional_params, opts)
+    |> Enum.into([])
+    |> (&Connection.request(connection, &1)).()
+    |> decode(%GoogleApi.PlusDomains.V1.Model.Media{})
+  end
+
+  @doc """
+  Add a new media item to an album. The current upload size limitations are 36MB for a photo and 1GB for a video. Uploads do not count against quota if photos are less than 2048 pixels on their longest side or videos are less than 15 minutes in length.
+
+  ## Parameters
+
+  - connection (GoogleApi.PlusDomains.V1.Connection): Connection to server
+  - user_id (String): The ID of the user to create the activity on behalf of.
+  - collection (String): 
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
+    - :fields (String): Selector specifying which fields to include in a partial response.
+    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String): OAuth 2.0 token for the current user.
+    - :pretty_print (Boolean): Returns response with indentations and line breaks.
+    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+
+  ## Returns
+
+  {:ok, %GoogleApi.PlusDomains.V1.Model.Media{}} on success
+  {:error, info} on failure
+  """
+  @spec plus_domains_media_insert_resumable(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.PlusDomains.V1.Model.Media.t} | {:error, Tesla.Env.t}
+  def plus_domains_media_insert_resumable(connection, user_id, collection, opts \\ []) do
+    optional_params = %{
+      :"alt" => :query,
+      :"fields" => :query,
+      :"key" => :query,
+      :"oauth_token" => :query,
+      :"prettyPrint" => :query,
+      :"quotaUser" => :query,
+      :"userIp" => :query
+    }
+    %{}
+    |> method(:post)
+    |> url("/resumable/upload/plusDomains/v1/people/#{user_id}/media/#{collection}")
+    |> add_optional_params(optional_params, opts)
+    |> Enum.into([])
+    |> (&Connection.request(connection, &1)).()
+    |> decode(%GoogleApi.PlusDomains.V1.Model.Media{})
+  end
+
+  @doc """
+  Add a new media item to an album. The current upload size limitations are 36MB for a photo and 1GB for a video. Uploads do not count against quota if photos are less than 2048 pixels on their longest side or videos are less than 15 minutes in length.
+
+  ## Parameters
+
+  - connection (GoogleApi.PlusDomains.V1.Connection): Connection to server
+  - user_id (String): The ID of the user to create the activity on behalf of.
+  - collection (String): 
+  - upload_type (String): Upload type. Must be \&quot;multipart\&quot;
+  - metatdata (Media): 
+  - data (String): 
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
+    - :fields (String): Selector specifying which fields to include in a partial response.
+    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String): OAuth 2.0 token for the current user.
+    - :pretty_print (Boolean): Returns response with indentations and line breaks.
+    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+
+  ## Returns
+
+  {:ok, %GoogleApi.PlusDomains.V1.Model.Media{}} on success
+  {:error, info} on failure
+  """
+  @spec plus_domains_media_insert_simple(Tesla.Env.client, String.t, String.t, String.t, GoogleApi.PlusDomains.V1.Model.Media.t, String.t, keyword()) :: {:ok, GoogleApi.PlusDomains.V1.Model.Media.t} | {:error, Tesla.Env.t}
+  def plus_domains_media_insert_simple(connection, user_id, collection, upload_type, metatdata, data, opts \\ []) do
+    optional_params = %{
+      :"alt" => :query,
+      :"fields" => :query,
+      :"key" => :query,
+      :"oauth_token" => :query,
+      :"prettyPrint" => :query,
+      :"quotaUser" => :query,
+      :"userIp" => :query
+    }
+    %{}
+    |> method(:post)
+    |> url("/upload/plusDomains/v1/people/#{user_id}/media/#{collection}")
+    |> add_param(:query, :"uploadType", upload_type)
+    |> add_param(:body, :"metatdata", metatdata)
+    |> add_param(:file, :"data", data)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

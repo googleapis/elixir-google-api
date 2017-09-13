@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudKMS.V1.Model.Location do
   end
 end
 
-

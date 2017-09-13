@@ -60,7 +60,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Regions do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/regions")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/regions")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

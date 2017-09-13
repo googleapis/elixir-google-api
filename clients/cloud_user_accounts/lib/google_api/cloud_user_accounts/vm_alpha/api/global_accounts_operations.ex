@@ -17,13 +17,13 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.GlobalAccountsOperations do
+defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Api.GlobalAccountsOperations do
   @moduledoc """
   API calls for all endpoints tagged `GlobalAccountsOperations`.
   """
 
-  alias GoogleApi.CloudUserAccounts.VM_ALPHA.Connection
-  import GoogleApi.CloudUserAccounts.VM_ALPHA.RequestBuilder
+  alias GoogleApi.CloudUserAccounts.Vm_alpha.Connection
+  import GoogleApi.CloudUserAccounts.Vm_alpha.RequestBuilder
 
 
   @doc """
@@ -31,7 +31,7 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.GlobalAccountsOperations do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudUserAccounts.VM_ALPHA.Connection): Connection to server
+  - connection (GoogleApi.CloudUserAccounts.Vm_alpha.Connection): Connection to server
   - project (String): Project ID for this request.
   - operation (String): Name of the Operations resource to delete.
   - opts (KeywordList): [optional] Optional parameters
@@ -73,7 +73,7 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.GlobalAccountsOperations do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudUserAccounts.VM_ALPHA.Connection): Connection to server
+  - connection (GoogleApi.CloudUserAccounts.Vm_alpha.Connection): Connection to server
   - project (String): Project ID for this request.
   - operation (String): Name of the Operations resource to return.
   - opts (KeywordList): [optional] Optional parameters
@@ -87,10 +87,10 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.GlobalAccountsOperations do
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Operation{}} on success
+  {:ok, %GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation{}} on success
   {:error, info} on failure
   """
-  @spec clouduseraccounts_global_accounts_operations_get(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Operation.t} | {:error, Tesla.Env.t}
+  @spec clouduseraccounts_global_accounts_operations_get(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation.t} | {:error, Tesla.Env.t}
   def clouduseraccounts_global_accounts_operations_get(connection, project, operation, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -107,7 +107,7 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.GlobalAccountsOperations do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Operation{})
+    |> decode(%GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation{})
   end
 
   @doc """
@@ -115,7 +115,7 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.GlobalAccountsOperations do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudUserAccounts.VM_ALPHA.Connection): Connection to server
+  - connection (GoogleApi.CloudUserAccounts.Vm_alpha.Connection): Connection to server
   - project (String): Project ID for this request.
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
@@ -132,10 +132,10 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.GlobalAccountsOperations do
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudUserAccounts.VM_ALPHA.Model.OperationList{}} on success
+  {:ok, %GoogleApi.CloudUserAccounts.Vm_alpha.Model.OperationList{}} on success
   {:error, info} on failure
   """
-  @spec clouduseraccounts_global_accounts_operations_list(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.CloudUserAccounts.VM_ALPHA.Model.OperationList.t} | {:error, Tesla.Env.t}
+  @spec clouduseraccounts_global_accounts_operations_list(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.CloudUserAccounts.Vm_alpha.Model.OperationList.t} | {:error, Tesla.Env.t}
   def clouduseraccounts_global_accounts_operations_list(connection, project, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -156,6 +156,6 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.GlobalAccountsOperations do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.CloudUserAccounts.VM_ALPHA.Model.OperationList{})
+    |> decode(%GoogleApi.CloudUserAccounts.Vm_alpha.Model.OperationList{})
   end
 end

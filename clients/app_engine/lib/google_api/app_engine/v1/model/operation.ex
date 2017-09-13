@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.Operation do
   end
 end
 
-

@@ -31,10 +31,8 @@ defmodule GoogleApi.Vision.V1.Model.Position do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Vision.V1.Model.Position do
-  import GoogleApi.Vision.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

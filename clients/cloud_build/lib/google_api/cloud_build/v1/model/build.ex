@@ -60,4 +60,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudBuild.V1.Model.Build do
   end
 end
 
-

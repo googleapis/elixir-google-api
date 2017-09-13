@@ -29,10 +29,8 @@ defmodule GoogleApi.ServiceControl.V1.Model.ConsumerInfo do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.ConsumerInfo do
-  import GoogleApi.ServiceControl.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

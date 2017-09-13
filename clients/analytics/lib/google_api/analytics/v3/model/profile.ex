@@ -63,4 +63,3 @@ defimpl Poison.Decoder, for: GoogleApi.Analytics.V3.Model.Profile do
   end
 end
 
-

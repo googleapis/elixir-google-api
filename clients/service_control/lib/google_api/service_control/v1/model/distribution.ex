@@ -46,4 +46,3 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.Distribution do
   end
 end
 
-

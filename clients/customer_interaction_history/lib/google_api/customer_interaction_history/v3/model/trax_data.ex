@@ -43,4 +43,3 @@ defimpl Poison.Decoder, for: GoogleApi.CustomerInteractionHistory.V3.Model.TraxD
   end
 end
 
-

@@ -61,7 +61,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Files do
     }
     %{}
     |> method(:get)
-    |> url("/reports/#{report_id}/files/#{file_id}")
+    |> url("/dfareporting/v2.8/reports/#{report_id}/files/#{file_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -112,7 +112,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Files do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/files")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/files")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

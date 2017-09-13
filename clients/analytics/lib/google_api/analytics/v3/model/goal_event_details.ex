@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.Analytics.V3.Model.Goal_eventDetails do
   end
 end
 
-

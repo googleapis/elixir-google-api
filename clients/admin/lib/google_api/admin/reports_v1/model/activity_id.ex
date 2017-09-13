@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Admin.REPORTS_V1.Model.Activity_id do
+defmodule GoogleApi.Admin.Reports_v1.Model.Activity_id do
   @moduledoc """
   Unique identifier for each activity record.
   """
@@ -31,11 +31,9 @@ defmodule GoogleApi.Admin.REPORTS_V1.Model.Activity_id do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Admin.REPORTS_V1.Model.Activity_id do
-  import GoogleApi.Admin.REPORTS_V1.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.Admin.Reports_v1.Model.Activity_id do
+  def decode(value, _options) do
     value
   end
 end
-
 

@@ -51,4 +51,3 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.TextStyle do
   end
 end
 
-

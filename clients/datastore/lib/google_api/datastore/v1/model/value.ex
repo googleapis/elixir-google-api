@@ -51,4 +51,3 @@ defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.Value do
   end
 end
 
-

@@ -45,4 +45,3 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.ProtectedRange do
   end
 end
 
-

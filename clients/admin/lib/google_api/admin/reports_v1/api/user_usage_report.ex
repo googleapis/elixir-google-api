@@ -17,13 +17,13 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Admin.REPORTS_V1.Api.UserUsageReport do
+defmodule GoogleApi.Admin.Reports_v1.Api.UserUsageReport do
   @moduledoc """
   API calls for all endpoints tagged `UserUsageReport`.
   """
 
-  alias GoogleApi.Admin.REPORTS_V1.Connection
-  import GoogleApi.Admin.REPORTS_V1.RequestBuilder
+  alias GoogleApi.Admin.Reports_v1.Connection
+  import GoogleApi.Admin.Reports_v1.RequestBuilder
 
 
   @doc """
@@ -31,7 +31,7 @@ defmodule GoogleApi.Admin.REPORTS_V1.Api.UserUsageReport do
 
   ## Parameters
 
-  - connection (GoogleApi.Admin.REPORTS_V1.Connection): Connection to server
+  - connection (GoogleApi.Admin.Reports_v1.Connection): Connection to server
   - user_key (String): Represents the profile id or the user email for which the data should be filtered.
   - date (String): Represents the date in yyyy-mm-dd format for which the data is to be fetched.
   - opts (KeywordList): [optional] Optional parameters
@@ -50,10 +50,10 @@ defmodule GoogleApi.Admin.REPORTS_V1.Api.UserUsageReport do
 
   ## Returns
 
-  {:ok, %GoogleApi.Admin.REPORTS_V1.Model.UsageReports{}} on success
+  {:ok, %GoogleApi.Admin.Reports_v1.Model.UsageReports{}} on success
   {:error, info} on failure
   """
-  @spec reports_user_usage_report_get(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.Admin.REPORTS_V1.Model.UsageReports.t} | {:error, Tesla.Env.t}
+  @spec reports_user_usage_report_get(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.Admin.Reports_v1.Model.UsageReports.t} | {:error, Tesla.Env.t}
   def reports_user_usage_report_get(connection, user_key, date, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -75,6 +75,6 @@ defmodule GoogleApi.Admin.REPORTS_V1.Api.UserUsageReport do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Admin.REPORTS_V1.Model.UsageReports{})
+    |> decode(%GoogleApi.Admin.Reports_v1.Model.UsageReports{})
   end
 end

@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.FusionTables.V2.Model.PointStyle do
   end
 end
 
-

@@ -64,4 +64,3 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.Order do
   end
 end
 
-

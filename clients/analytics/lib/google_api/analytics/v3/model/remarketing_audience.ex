@@ -51,4 +51,3 @@ defimpl Poison.Decoder, for: GoogleApi.Analytics.V3.Model.RemarketingAudience do
   end
 end
 
-

@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.ViewDefinition do
   end
 end
 
-

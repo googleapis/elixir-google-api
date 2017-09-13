@@ -50,4 +50,3 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.Operation do
   end
 end
 
-

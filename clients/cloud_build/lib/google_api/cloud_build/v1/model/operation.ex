@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudBuild.V1.Model.Operation do
   end
 end
 
-

@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.Books.V1.Model.Discoveryclusters_clusters
   end
 end
 
-

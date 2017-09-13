@@ -30,10 +30,8 @@ defmodule GoogleApi.Gmail.V1.Model.WatchResponse do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Gmail.V1.Model.WatchResponse do
-  import GoogleApi.Gmail.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

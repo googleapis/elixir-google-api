@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudTrace.V2.Model.TimeEvents do
   end
 end
 
-

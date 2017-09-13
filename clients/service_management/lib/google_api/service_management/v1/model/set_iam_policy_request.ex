@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.SetIamPolicyRe
   end
 end
 
-

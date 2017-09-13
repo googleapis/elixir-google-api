@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.Analytics.V3.Model.Uploads do
   end
 end
 
-

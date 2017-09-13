@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.DoubleClickSearch.V2.Model.UpdateAvailabi
   end
 end
 
-

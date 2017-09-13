@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.TableCell do
   end
 end
 
-

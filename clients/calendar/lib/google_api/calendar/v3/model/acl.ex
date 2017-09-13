@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.Acl do
   end
 end
 
-

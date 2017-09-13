@@ -41,4 +41,3 @@ defimpl Poison.Decoder, for: GoogleApi.QPXExpress.V1.Model.FreeBaggageAllowance 
   end
 end
 
-

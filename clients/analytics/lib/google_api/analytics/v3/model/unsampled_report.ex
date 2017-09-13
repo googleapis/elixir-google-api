@@ -55,4 +55,3 @@ defimpl Poison.Decoder, for: GoogleApi.Analytics.V3.Model.UnsampledReport do
   end
 end
 
-

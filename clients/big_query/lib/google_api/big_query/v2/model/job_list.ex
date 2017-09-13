@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.JobList do
   end
 end
 
-

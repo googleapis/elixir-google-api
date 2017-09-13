@@ -31,10 +31,8 @@ defmodule GoogleApi.AdExchangeSeller.V20.Model.Account do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AdExchangeSeller.V20.Model.Account do
-  import GoogleApi.AdExchangeSeller.V20.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

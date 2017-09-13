@@ -68,7 +68,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Cities do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/cities")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/cities")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

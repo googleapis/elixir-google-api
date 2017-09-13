@@ -41,4 +41,3 @@ defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.FindFullHashesReque
   end
 end
 
-

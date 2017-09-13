@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.Input_input do
   end
 end
 
-

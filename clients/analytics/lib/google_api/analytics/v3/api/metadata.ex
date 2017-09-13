@@ -60,7 +60,7 @@ defmodule GoogleApi.Analytics.V3.Api.Metadata do
     }
     %{}
     |> method(:get)
-    |> url("/metadata/#{report_type}/columns")
+    |> url("/analytics/v3/metadata/#{report_type}/columns")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

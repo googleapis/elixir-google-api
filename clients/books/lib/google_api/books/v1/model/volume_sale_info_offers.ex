@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.Books.V1.Model.Volume_saleInfo_offers do
   end
 end
 
-

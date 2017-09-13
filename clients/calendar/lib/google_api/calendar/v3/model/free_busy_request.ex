@@ -41,4 +41,3 @@ defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.FreeBusyRequest do
   end
 end
 
-

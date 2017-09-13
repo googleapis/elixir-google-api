@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudDebugger.V2.Model.SourceContext do
   end
 end
 
-

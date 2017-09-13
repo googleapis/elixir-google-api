@@ -33,10 +33,8 @@ defmodule GoogleApi.AppEngine.V1.Model.OperationMetadataExperimental do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.OperationMetadataExperimental do
-  import GoogleApi.AppEngine.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

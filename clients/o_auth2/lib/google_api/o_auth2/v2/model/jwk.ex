@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.OAuth2.V2.Model.Jwk do
   end
 end
 
-

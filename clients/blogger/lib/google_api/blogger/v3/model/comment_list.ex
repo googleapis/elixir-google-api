@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.CommentList do
   end
 end
 
-

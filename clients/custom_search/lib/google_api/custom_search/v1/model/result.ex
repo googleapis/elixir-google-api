@@ -51,4 +51,3 @@ defimpl Poison.Decoder, for: GoogleApi.CustomSearch.V1.Model.Result do
   end
 end
 
-

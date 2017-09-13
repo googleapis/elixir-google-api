@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.FirebaseRules.V1.Model.TestSuite do
   end
 end
 
-

@@ -61,7 +61,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
     }
     %{}
     |> method(:delete)
-    |> url("/timeline/#{item_id}/attachments/#{attachment_id}")
+    |> url("/mirror/v1/timeline/#{item_id}/attachments/#{attachment_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -103,7 +103,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
     }
     %{}
     |> method(:get)
-    |> url("/timeline/#{item_id}/attachments/#{attachment_id}")
+    |> url("/mirror/v1/timeline/#{item_id}/attachments/#{attachment_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -144,7 +144,89 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
     }
     %{}
     |> method(:post)
-    |> url("/timeline/#{item_id}/attachments")
+    |> url("/mirror/v1/timeline/#{item_id}/attachments")
+    |> add_optional_params(optional_params, opts)
+    |> Enum.into([])
+    |> (&Connection.request(connection, &1)).()
+    |> decode(%GoogleApi.Mirror.V1.Model.Attachment{})
+  end
+
+  @doc """
+  Adds a new attachment to a timeline item.
+
+  ## Parameters
+
+  - connection (GoogleApi.Mirror.V1.Connection): Connection to server
+  - item_id (String): The ID of the timeline item the attachment belongs to.
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
+    - :fields (String): Selector specifying which fields to include in a partial response.
+    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String): OAuth 2.0 token for the current user.
+    - :pretty_print (Boolean): Returns response with indentations and line breaks.
+    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Mirror.V1.Model.Attachment{}} on success
+  {:error, info} on failure
+  """
+  @spec mirror_timeline_attachments_insert_resumable(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.Mirror.V1.Model.Attachment.t} | {:error, Tesla.Env.t}
+  def mirror_timeline_attachments_insert_resumable(connection, item_id, opts \\ []) do
+    optional_params = %{
+      :"alt" => :query,
+      :"fields" => :query,
+      :"key" => :query,
+      :"oauth_token" => :query,
+      :"prettyPrint" => :query,
+      :"quotaUser" => :query,
+      :"userIp" => :query
+    }
+    %{}
+    |> method(:post)
+    |> url("/resumable/upload/mirror/v1/timeline/#{item_id}/attachments")
+    |> add_optional_params(optional_params, opts)
+    |> Enum.into([])
+    |> (&Connection.request(connection, &1)).()
+    |> decode(%GoogleApi.Mirror.V1.Model.Attachment{})
+  end
+
+  @doc """
+  Adds a new attachment to a timeline item.
+
+  ## Parameters
+
+  - connection (GoogleApi.Mirror.V1.Connection): Connection to server
+  - item_id (String): The ID of the timeline item the attachment belongs to.
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
+    - :fields (String): Selector specifying which fields to include in a partial response.
+    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String): OAuth 2.0 token for the current user.
+    - :pretty_print (Boolean): Returns response with indentations and line breaks.
+    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Mirror.V1.Model.Attachment{}} on success
+  {:error, info} on failure
+  """
+  @spec mirror_timeline_attachments_insert_simple(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.Mirror.V1.Model.Attachment.t} | {:error, Tesla.Env.t}
+  def mirror_timeline_attachments_insert_simple(connection, item_id, opts \\ []) do
+    optional_params = %{
+      :"alt" => :query,
+      :"fields" => :query,
+      :"key" => :query,
+      :"oauth_token" => :query,
+      :"prettyPrint" => :query,
+      :"quotaUser" => :query,
+      :"userIp" => :query
+    }
+    %{}
+    |> method(:post)
+    |> url("/upload/mirror/v1/timeline/#{item_id}/attachments")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -185,7 +267,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
     }
     %{}
     |> method(:get)
-    |> url("/timeline/#{item_id}/attachments")
+    |> url("/mirror/v1/timeline/#{item_id}/attachments")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -226,7 +308,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
     }
     %{}
     |> method(:delete)
-    |> url("/timeline/#{id}")
+    |> url("/mirror/v1/timeline/#{id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -267,7 +349,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
     }
     %{}
     |> method(:get)
-    |> url("/timeline/#{id}")
+    |> url("/mirror/v1/timeline/#{id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -309,7 +391,93 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
     }
     %{}
     |> method(:post)
-    |> url("/timeline")
+    |> url("/mirror/v1/timeline")
+    |> add_optional_params(optional_params, opts)
+    |> Enum.into([])
+    |> (&Connection.request(connection, &1)).()
+    |> decode(%GoogleApi.Mirror.V1.Model.TimelineItem{})
+  end
+
+  @doc """
+  Inserts a new item into the timeline.
+
+  ## Parameters
+
+  - connection (GoogleApi.Mirror.V1.Connection): Connection to server
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
+    - :fields (String): Selector specifying which fields to include in a partial response.
+    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String): OAuth 2.0 token for the current user.
+    - :pretty_print (Boolean): Returns response with indentations and line breaks.
+    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Mirror.V1.Model.TimelineItem{}} on success
+  {:error, info} on failure
+  """
+  @spec mirror_timeline_insert_resumable(Tesla.Env.client, keyword()) :: {:ok, GoogleApi.Mirror.V1.Model.TimelineItem.t} | {:error, Tesla.Env.t}
+  def mirror_timeline_insert_resumable(connection, opts \\ []) do
+    optional_params = %{
+      :"alt" => :query,
+      :"fields" => :query,
+      :"key" => :query,
+      :"oauth_token" => :query,
+      :"prettyPrint" => :query,
+      :"quotaUser" => :query,
+      :"userIp" => :query
+    }
+    %{}
+    |> method(:post)
+    |> url("/resumable/upload/mirror/v1/timeline")
+    |> add_optional_params(optional_params, opts)
+    |> Enum.into([])
+    |> (&Connection.request(connection, &1)).()
+    |> decode(%GoogleApi.Mirror.V1.Model.TimelineItem{})
+  end
+
+  @doc """
+  Inserts a new item into the timeline.
+
+  ## Parameters
+
+  - connection (GoogleApi.Mirror.V1.Connection): Connection to server
+  - upload_type (String): Upload type. Must be \&quot;multipart\&quot;
+  - metatdata (TimelineItem): 
+  - data (String): 
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
+    - :fields (String): Selector specifying which fields to include in a partial response.
+    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String): OAuth 2.0 token for the current user.
+    - :pretty_print (Boolean): Returns response with indentations and line breaks.
+    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Mirror.V1.Model.TimelineItem{}} on success
+  {:error, info} on failure
+  """
+  @spec mirror_timeline_insert_simple(Tesla.Env.client, String.t, GoogleApi.Mirror.V1.Model.TimelineItem.t, String.t, keyword()) :: {:ok, GoogleApi.Mirror.V1.Model.TimelineItem.t} | {:error, Tesla.Env.t}
+  def mirror_timeline_insert_simple(connection, upload_type, metatdata, data, opts \\ []) do
+    optional_params = %{
+      :"alt" => :query,
+      :"fields" => :query,
+      :"key" => :query,
+      :"oauth_token" => :query,
+      :"prettyPrint" => :query,
+      :"quotaUser" => :query,
+      :"userIp" => :query
+    }
+    %{}
+    |> method(:post)
+    |> url("/upload/mirror/v1/timeline")
+    |> add_param(:query, :"uploadType", upload_type)
+    |> add_param(:body, :"metatdata", metatdata)
+    |> add_param(:file, :"data", data)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -363,7 +531,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
     }
     %{}
     |> method(:get)
-    |> url("/timeline")
+    |> url("/mirror/v1/timeline")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -406,7 +574,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
     }
     %{}
     |> method(:patch)
-    |> url("/timeline/#{id}")
+    |> url("/mirror/v1/timeline/#{id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -449,7 +617,95 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
     }
     %{}
     |> method(:put)
-    |> url("/timeline/#{id}")
+    |> url("/mirror/v1/timeline/#{id}")
+    |> add_optional_params(optional_params, opts)
+    |> Enum.into([])
+    |> (&Connection.request(connection, &1)).()
+    |> decode(%GoogleApi.Mirror.V1.Model.TimelineItem{})
+  end
+
+  @doc """
+  Updates a timeline item in place.
+
+  ## Parameters
+
+  - connection (GoogleApi.Mirror.V1.Connection): Connection to server
+  - id (String): The ID of the timeline item.
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
+    - :fields (String): Selector specifying which fields to include in a partial response.
+    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String): OAuth 2.0 token for the current user.
+    - :pretty_print (Boolean): Returns response with indentations and line breaks.
+    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Mirror.V1.Model.TimelineItem{}} on success
+  {:error, info} on failure
+  """
+  @spec mirror_timeline_update_resumable(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.Mirror.V1.Model.TimelineItem.t} | {:error, Tesla.Env.t}
+  def mirror_timeline_update_resumable(connection, id, opts \\ []) do
+    optional_params = %{
+      :"alt" => :query,
+      :"fields" => :query,
+      :"key" => :query,
+      :"oauth_token" => :query,
+      :"prettyPrint" => :query,
+      :"quotaUser" => :query,
+      :"userIp" => :query
+    }
+    %{}
+    |> method(:post)
+    |> url("/resumable/upload/mirror/v1/timeline/#{id}")
+    |> add_optional_params(optional_params, opts)
+    |> Enum.into([])
+    |> (&Connection.request(connection, &1)).()
+    |> decode(%GoogleApi.Mirror.V1.Model.TimelineItem{})
+  end
+
+  @doc """
+  Updates a timeline item in place.
+
+  ## Parameters
+
+  - connection (GoogleApi.Mirror.V1.Connection): Connection to server
+  - id (String): The ID of the timeline item.
+  - upload_type (String): Upload type. Must be \&quot;multipart\&quot;
+  - metatdata (TimelineItem): 
+  - data (String): 
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
+    - :fields (String): Selector specifying which fields to include in a partial response.
+    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String): OAuth 2.0 token for the current user.
+    - :pretty_print (Boolean): Returns response with indentations and line breaks.
+    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Mirror.V1.Model.TimelineItem{}} on success
+  {:error, info} on failure
+  """
+  @spec mirror_timeline_update_simple(Tesla.Env.client, String.t, String.t, GoogleApi.Mirror.V1.Model.TimelineItem.t, String.t, keyword()) :: {:ok, GoogleApi.Mirror.V1.Model.TimelineItem.t} | {:error, Tesla.Env.t}
+  def mirror_timeline_update_simple(connection, id, upload_type, metatdata, data, opts \\ []) do
+    optional_params = %{
+      :"alt" => :query,
+      :"fields" => :query,
+      :"key" => :query,
+      :"oauth_token" => :query,
+      :"prettyPrint" => :query,
+      :"quotaUser" => :query,
+      :"userIp" => :query
+    }
+    %{}
+    |> method(:post)
+    |> url("/upload/mirror/v1/timeline/#{id}")
+    |> add_param(:query, :"uploadType", upload_type)
+    |> add_param(:body, :"metatdata", metatdata)
+    |> add_param(:file, :"data", data)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

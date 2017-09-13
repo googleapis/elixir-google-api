@@ -48,4 +48,3 @@ defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.Query do
   end
 end
 
-

@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.MasterAuthorizedNetwor
   end
 end
 
-

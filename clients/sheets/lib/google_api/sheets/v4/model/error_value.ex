@@ -30,10 +30,8 @@ defmodule GoogleApi.Sheets.V4.Model.ErrorValue do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.ErrorValue do
-  import GoogleApi.Sheets.V4.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Admin.REPORTS_V1.Deserializer do
+defmodule GoogleApi.Admin.Reports_v1.Deserializer do
   @moduledoc """
   Helper functions for deserializing responses into models
   """

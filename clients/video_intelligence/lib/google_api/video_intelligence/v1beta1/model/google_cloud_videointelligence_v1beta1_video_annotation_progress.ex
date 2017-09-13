@@ -32,10 +32,8 @@ defmodule GoogleApi.VideoIntelligence.V1beta1.Model.GoogleCloudVideointelligence
 end
 
 defimpl Poison.Decoder, for: GoogleApi.VideoIntelligence.V1beta1.Model.GoogleCloudVideointelligenceV1beta1_VideoAnnotationProgress do
-  import GoogleApi.VideoIntelligence.V1beta1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

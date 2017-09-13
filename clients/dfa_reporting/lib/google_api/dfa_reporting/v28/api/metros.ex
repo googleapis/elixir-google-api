@@ -60,7 +60,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Metros do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/metros")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/metros")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

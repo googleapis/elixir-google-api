@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Model.LogConfig do
+defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.LogConfig do
   @moduledoc """
   Specifies what kind of log the caller must write
   """
@@ -28,12 +28,11 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Model.LogConfig do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.VM_ALPHA.Model.LogConfig do
-  import GoogleApi.CloudUserAccounts.VM_ALPHA.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.LogConfig do
+  import GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"counter", :struct, GoogleApi.CloudUserAccounts.VM_ALPHA.Model.LogConfigCounterOptions, options)
+    |> deserialize(:"counter", :struct, GoogleApi.CloudUserAccounts.Vm_alpha.Model.LogConfigCounterOptions, options)
   end
 end
-
 

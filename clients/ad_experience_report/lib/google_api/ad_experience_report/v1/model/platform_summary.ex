@@ -36,10 +36,8 @@ defmodule GoogleApi.AdExperienceReport.V1.Model.PlatformSummary do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AdExperienceReport.V1.Model.PlatformSummary do
-  import GoogleApi.AdExperienceReport.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

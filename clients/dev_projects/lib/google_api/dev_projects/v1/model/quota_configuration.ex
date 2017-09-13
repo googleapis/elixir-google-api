@@ -57,4 +57,3 @@ defimpl Poison.Decoder, for: GoogleApi.DevProjects.V1.Model.QuotaConfiguration d
   end
 end
 
-

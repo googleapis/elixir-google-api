@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.CompositeFilter do
   end
 end
 
-

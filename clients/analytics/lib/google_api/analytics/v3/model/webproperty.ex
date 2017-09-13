@@ -54,4 +54,3 @@ defimpl Poison.Decoder, for: GoogleApi.Analytics.V3.Model.Webproperty do
   end
 end
 
-

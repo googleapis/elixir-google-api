@@ -74,7 +74,7 @@ defmodule GoogleApi.Speech.V1.Api.Operations do
     }
     %{}
     |> method(:post)
-    |> url("/v1/operations/#{+name}:cancel")
+    |> url("/v1/operations/#{name}:cancel")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -127,7 +127,7 @@ defmodule GoogleApi.Speech.V1.Api.Operations do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/operations/#{+name}")
+    |> url("/v1/operations/#{name}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -180,7 +180,7 @@ defmodule GoogleApi.Speech.V1.Api.Operations do
     }
     %{}
     |> method(:get)
-    |> url("/v1/operations/#{+name}")
+    |> url("/v1/operations/#{name}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

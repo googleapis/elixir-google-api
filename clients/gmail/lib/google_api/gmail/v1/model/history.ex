@@ -45,4 +45,3 @@ defimpl Poison.Decoder, for: GoogleApi.Gmail.V1.Model.History do
   end
 end
 
-

@@ -30,10 +30,8 @@ defmodule GoogleApi.UrlShortener.V1.Model.StringCount do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.UrlShortener.V1.Model.StringCount do
-  import GoogleApi.UrlShortener.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

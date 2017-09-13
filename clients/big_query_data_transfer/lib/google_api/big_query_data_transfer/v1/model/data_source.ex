@@ -52,4 +52,3 @@ defimpl Poison.Decoder, for: GoogleApi.BigQueryDataTransfer.V1.Model.DataSource 
   end
 end
 
-

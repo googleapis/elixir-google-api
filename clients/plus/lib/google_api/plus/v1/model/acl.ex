@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Acl do
   end
 end
 
-

@@ -61,7 +61,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Campaigns do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/campaigns/#{id}")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/campaigns/#{id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -106,7 +106,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Campaigns do
     }
     %{}
     |> method(:post)
-    |> url("/userprofiles/#{profile_id}/campaigns")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/campaigns")
     |> add_param(:query, :"defaultLandingPageName", default_landing_page_name)
     |> add_param(:query, :"defaultLandingPageUrl", default_landing_page_url)
     |> add_optional_params(optional_params, opts)
@@ -175,7 +175,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Campaigns do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/campaigns")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/campaigns")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -219,7 +219,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Campaigns do
     }
     %{}
     |> method(:patch)
-    |> url("/userprofiles/#{profile_id}/campaigns")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/campaigns")
     |> add_param(:query, :"id", id)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -263,7 +263,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Campaigns do
     }
     %{}
     |> method(:put)
-    |> url("/userprofiles/#{profile_id}/campaigns")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/campaigns")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

@@ -53,4 +53,3 @@ defimpl Poison.Decoder, for: GoogleApi.Discovery.V1.Model.RestMethod do
   end
 end
 
-

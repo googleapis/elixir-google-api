@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.Drive.V3.Model.FileList do
   end
 end
 
-

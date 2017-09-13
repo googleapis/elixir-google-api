@@ -47,4 +47,3 @@ defimpl Poison.Decoder, for: GoogleApi.DevProjects.V1.Model.AuthSection do
   end
 end
 
-

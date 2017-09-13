@@ -31,10 +31,8 @@ defmodule GoogleApi.CustomerInteractionHistory.V3.Model.TraxAgent do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CustomerInteractionHistory.V3.Model.TraxAgent do
-  import GoogleApi.CustomerInteractionHistory.V3.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

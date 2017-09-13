@@ -29,10 +29,8 @@ defmodule GoogleApi.Manufacturers.V1.Model.Empty do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Manufacturers.V1.Model.Empty do
-  import GoogleApi.Manufacturers.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

@@ -55,4 +55,3 @@ defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.CompanyRelation do
   end
 end
 
-

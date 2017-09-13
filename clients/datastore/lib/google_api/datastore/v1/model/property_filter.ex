@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.PropertyFilter do
   end
 end
 
-

@@ -29,10 +29,8 @@ defmodule GoogleApi.Container.V1.Model.ClientCertificateConfig do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.ClientCertificateConfig do
-  import GoogleApi.Container.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

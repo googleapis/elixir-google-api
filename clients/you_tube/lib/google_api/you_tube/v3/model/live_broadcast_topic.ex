@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveBroadcastTopic do
   end
 end
 
-

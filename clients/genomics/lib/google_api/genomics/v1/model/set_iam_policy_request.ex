@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.SetIamPolicyRequest do
   end
 end
 
-

@@ -33,10 +33,8 @@ defmodule GoogleApi.FusionTables.V2.Model.Task do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.FusionTables.V2.Model.Task do
-  import GoogleApi.FusionTables.V2.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

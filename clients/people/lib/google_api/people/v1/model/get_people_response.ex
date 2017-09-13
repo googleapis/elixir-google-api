@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.People.V1.Model.GetPeopleResponse do
   end
 end
 
-

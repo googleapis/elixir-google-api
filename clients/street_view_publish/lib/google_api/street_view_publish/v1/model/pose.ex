@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.StreetViewPublish.V1.Model.Pose do
   end
 end
 
-

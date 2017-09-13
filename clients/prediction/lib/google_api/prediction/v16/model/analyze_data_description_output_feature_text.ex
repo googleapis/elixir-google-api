@@ -30,10 +30,8 @@ defmodule GoogleApi.Prediction.V16.Model.Analyze_dataDescription_outputFeature_t
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.Analyze_dataDescription_outputFeature_text do
-  import GoogleApi.Prediction.V16.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

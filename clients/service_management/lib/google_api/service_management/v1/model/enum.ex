@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.Enum do
   end
 end
 
-

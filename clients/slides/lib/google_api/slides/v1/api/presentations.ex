@@ -181,7 +181,7 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
     }
     %{}
     |> method(:get)
-    |> url("/v1/presentations/#{+presentation_id}")
+    |> url("/v1/presentations/#{presentation_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

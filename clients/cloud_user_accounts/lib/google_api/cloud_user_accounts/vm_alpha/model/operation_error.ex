@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Operation_error do
+defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation_error do
   @moduledoc """
   [Output Only] If errors are generated during processing of the operation, this field will be populated.
   """
@@ -28,12 +28,11 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Operation_error do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Operation_error do
-  import GoogleApi.CloudUserAccounts.VM_ALPHA.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation_error do
+  import GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"errors", :list, GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Operation_error_errors, options)
+    |> deserialize(:"errors", :list, GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation_error_errors, options)
   end
 end
-
 

@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidPublisher.V2.Model.ApkListingsList
   end
 end
 
-

@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.ReportResponse do
   end
 end
 
-

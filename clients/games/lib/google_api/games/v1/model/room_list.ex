@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.RoomList do
   end
 end
 
-

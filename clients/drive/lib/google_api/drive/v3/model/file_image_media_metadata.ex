@@ -56,4 +56,3 @@ defimpl Poison.Decoder, for: GoogleApi.Drive.V3.Model.File_imageMediaMetadata do
   end
 end
 
-

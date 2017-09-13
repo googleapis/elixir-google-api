@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.Tasks.V1.Model.Tasks do
   end
 end
 
-

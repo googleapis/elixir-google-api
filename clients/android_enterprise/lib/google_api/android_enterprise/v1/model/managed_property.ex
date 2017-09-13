@@ -43,4 +43,3 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.ManagedPropert
   end
 end
 
-

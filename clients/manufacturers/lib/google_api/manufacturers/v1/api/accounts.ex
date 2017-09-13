@@ -73,7 +73,7 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/#{+parent}/products/#{+name}")
+    |> url("/v1/#{parent}/products/#{name}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -127,7 +127,7 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{+parent}/products/#{+name}")
+    |> url("/v1/#{parent}/products/#{name}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -184,7 +184,7 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{+parent}/products")
+    |> url("/v1/#{parent}/products")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -240,7 +240,7 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
     }
     %{}
     |> method(:put)
-    |> url("/v1/#{+parent}/products/#{+name}")
+    |> url("/v1/#{parent}/products/#{name}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

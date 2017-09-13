@@ -49,4 +49,3 @@ defimpl Poison.Decoder, for: GoogleApi.DeploymentManager.V2.Model.Resource do
   end
 end
 
-

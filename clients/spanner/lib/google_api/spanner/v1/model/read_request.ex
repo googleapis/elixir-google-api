@@ -43,4 +43,3 @@ defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.ReadRequest do
   end
 end
 
-

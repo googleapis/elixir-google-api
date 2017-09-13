@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.AnalyticsReporting.V4.Model.SegmentFilter
   end
 end
 
-

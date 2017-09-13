@@ -61,7 +61,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Countries do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/countries/#{dart_id}")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/countries/#{dart_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -102,7 +102,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.Countries do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/countries")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/countries")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

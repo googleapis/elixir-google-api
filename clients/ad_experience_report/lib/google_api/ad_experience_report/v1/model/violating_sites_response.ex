@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.AdExperienceReport.V1.Model.ViolatingSite
   end
 end
 
-

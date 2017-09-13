@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudKMS.V1.Model.ListCryptoKeysResponse 
   end
 end
 
-

@@ -37,10 +37,8 @@ defmodule GoogleApi.Compute.V1.Model.Backend do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.Backend do
-  import GoogleApi.Compute.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

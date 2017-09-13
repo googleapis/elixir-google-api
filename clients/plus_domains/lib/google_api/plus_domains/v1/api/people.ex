@@ -60,7 +60,7 @@ defmodule GoogleApi.PlusDomains.V1.Api.People do
     }
     %{}
     |> method(:get)
-    |> url("/people/#{user_id}")
+    |> url("/plusDomains/v1/people/#{user_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -108,7 +108,7 @@ defmodule GoogleApi.PlusDomains.V1.Api.People do
     }
     %{}
     |> method(:get)
-    |> url("/people/#{user_id}/people/#{collection}")
+    |> url("/plusDomains/v1/people/#{user_id}/people/#{collection}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -154,7 +154,7 @@ defmodule GoogleApi.PlusDomains.V1.Api.People do
     }
     %{}
     |> method(:get)
-    |> url("/activities/#{activity_id}/people/#{collection}")
+    |> url("/plusDomains/v1/activities/#{activity_id}/people/#{collection}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -199,7 +199,7 @@ defmodule GoogleApi.PlusDomains.V1.Api.People do
     }
     %{}
     |> method(:get)
-    |> url("/circles/#{circle_id}/people")
+    |> url("/plusDomains/v1/circles/#{circle_id}/people")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

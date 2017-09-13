@@ -64,7 +64,7 @@ defmodule GoogleApi.PlusDomains.V1.Api.Audiences do
     }
     %{}
     |> method(:get)
-    |> url("/people/#{user_id}/audiences")
+    |> url("/plusDomains/v1/people/#{user_id}/audiences")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

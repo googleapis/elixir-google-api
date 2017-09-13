@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.Service do
   end
 end
 
-

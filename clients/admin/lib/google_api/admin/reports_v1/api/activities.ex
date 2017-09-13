@@ -17,13 +17,13 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Admin.REPORTS_V1.Api.Activities do
+defmodule GoogleApi.Admin.Reports_v1.Api.Activities do
   @moduledoc """
   API calls for all endpoints tagged `Activities`.
   """
 
-  alias GoogleApi.Admin.REPORTS_V1.Connection
-  import GoogleApi.Admin.REPORTS_V1.RequestBuilder
+  alias GoogleApi.Admin.Reports_v1.Connection
+  import GoogleApi.Admin.Reports_v1.RequestBuilder
 
 
   @doc """
@@ -31,7 +31,7 @@ defmodule GoogleApi.Admin.REPORTS_V1.Api.Activities do
 
   ## Parameters
 
-  - connection (GoogleApi.Admin.REPORTS_V1.Connection): Connection to server
+  - connection (GoogleApi.Admin.Reports_v1.Connection): Connection to server
   - user_key (String): Represents the profile id or the user email for which the data should be filtered. When &#39;all&#39; is specified as the userKey, it returns usageReports for all users.
   - application_name (String): Application name for which the events are to be retrieved.
   - opts (KeywordList): [optional] Optional parameters
@@ -53,10 +53,10 @@ defmodule GoogleApi.Admin.REPORTS_V1.Api.Activities do
 
   ## Returns
 
-  {:ok, %GoogleApi.Admin.REPORTS_V1.Model.Activities{}} on success
+  {:ok, %GoogleApi.Admin.Reports_v1.Model.Activities{}} on success
   {:error, info} on failure
   """
-  @spec reports_activities_list(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.Admin.REPORTS_V1.Model.Activities.t} | {:error, Tesla.Env.t}
+  @spec reports_activities_list(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.Admin.Reports_v1.Model.Activities.t} | {:error, Tesla.Env.t}
   def reports_activities_list(connection, user_key, application_name, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -81,7 +81,7 @@ defmodule GoogleApi.Admin.REPORTS_V1.Api.Activities do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Admin.REPORTS_V1.Model.Activities{})
+    |> decode(%GoogleApi.Admin.Reports_v1.Model.Activities{})
   end
 
   @doc """
@@ -89,7 +89,7 @@ defmodule GoogleApi.Admin.REPORTS_V1.Api.Activities do
 
   ## Parameters
 
-  - connection (GoogleApi.Admin.REPORTS_V1.Connection): Connection to server
+  - connection (GoogleApi.Admin.Reports_v1.Connection): Connection to server
   - user_key (String): Represents the profile id or the user email for which the data should be filtered. When &#39;all&#39; is specified as the userKey, it returns usageReports for all users.
   - application_name (String): Application name for which the events are to be retrieved.
   - opts (KeywordList): [optional] Optional parameters
@@ -112,10 +112,10 @@ defmodule GoogleApi.Admin.REPORTS_V1.Api.Activities do
 
   ## Returns
 
-  {:ok, %GoogleApi.Admin.REPORTS_V1.Model.Channel{}} on success
+  {:ok, %GoogleApi.Admin.Reports_v1.Model.Channel{}} on success
   {:error, info} on failure
   """
-  @spec reports_activities_watch(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.Admin.REPORTS_V1.Model.Channel.t} | {:error, Tesla.Env.t}
+  @spec reports_activities_watch(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.Admin.Reports_v1.Model.Channel.t} | {:error, Tesla.Env.t}
   def reports_activities_watch(connection, user_key, application_name, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -141,6 +141,6 @@ defmodule GoogleApi.Admin.REPORTS_V1.Api.Activities do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Admin.REPORTS_V1.Model.Channel{})
+    |> decode(%GoogleApi.Admin.Reports_v1.Model.Channel{})
   end
 end

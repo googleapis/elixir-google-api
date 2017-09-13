@@ -63,7 +63,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.DynamicTargetingKeys do
     }
     %{}
     |> method(:delete)
-    |> url("/userprofiles/#{profile_id}/dynamicTargetingKeys/#{object_id}")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/dynamicTargetingKeys/#{object_id}")
     |> add_param(:query, :"name", name)
     |> add_param(:query, :"objectType", object_type)
     |> add_optional_params(optional_params, opts)
@@ -108,7 +108,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.DynamicTargetingKeys do
     }
     %{}
     |> method(:post)
-    |> url("/userprofiles/#{profile_id}/dynamicTargetingKeys")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/dynamicTargetingKeys")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -157,7 +157,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.DynamicTargetingKeys do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/dynamicTargetingKeys")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/dynamicTargetingKeys")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

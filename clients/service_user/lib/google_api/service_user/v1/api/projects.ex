@@ -74,7 +74,7 @@ defmodule GoogleApi.ServiceUser.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{+name}:disable")
+    |> url("/v1/#{name}:disable")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -129,7 +129,7 @@ defmodule GoogleApi.ServiceUser.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{+name}:enable")
+    |> url("/v1/#{name}:enable")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -186,7 +186,7 @@ defmodule GoogleApi.ServiceUser.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{+parent}/services")
+    |> url("/v1/#{parent}/services")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

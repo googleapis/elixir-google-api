@@ -29,10 +29,8 @@ defmodule GoogleApi.Slides.V1.Model.CreateImageResponse do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.CreateImageResponse do
-  import GoogleApi.Slides.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

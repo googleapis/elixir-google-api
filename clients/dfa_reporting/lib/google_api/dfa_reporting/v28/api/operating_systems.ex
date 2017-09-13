@@ -61,7 +61,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.OperatingSystems do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/operatingSystems/#{dart_id}")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/operatingSystems/#{dart_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -102,7 +102,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.OperatingSystems do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/operatingSystems")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/operatingSystems")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

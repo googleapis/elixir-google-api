@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.CreateContainerVersio
   end
 end
 
-

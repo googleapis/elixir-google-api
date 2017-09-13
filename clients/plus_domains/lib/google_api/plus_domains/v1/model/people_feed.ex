@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.PlusDomains.V1.Model.PeopleFeed do
   end
 end
 
-

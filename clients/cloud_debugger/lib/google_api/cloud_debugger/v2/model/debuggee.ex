@@ -48,4 +48,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudDebugger.V2.Model.Debuggee do
   end
 end
 
-

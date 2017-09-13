@@ -31,10 +31,8 @@ defmodule GoogleApi.Analytics.V3.Model.McfData_columnHeaders do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Analytics.V3.Model.McfData_columnHeaders do
-  import GoogleApi.Analytics.V3.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

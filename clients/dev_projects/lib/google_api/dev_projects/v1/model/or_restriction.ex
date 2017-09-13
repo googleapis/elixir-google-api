@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.DevProjects.V1.Model.OrRestriction do
   end
 end
 
-

@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.ApplicationPol
   end
 end
 
-

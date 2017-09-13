@@ -36,10 +36,8 @@ defmodule GoogleApi.Dataproc.V1.Model.GceClusterConfig do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.GceClusterConfig do
-  import GoogleApi.Dataproc.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

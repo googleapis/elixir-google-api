@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.DeploymentManager.V2.Model.AuditConfig do
   end
 end
 
-

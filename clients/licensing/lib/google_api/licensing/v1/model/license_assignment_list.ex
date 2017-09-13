@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.Licensing.V1.Model.LicenseAssignmentList 
   end
 end
 
-

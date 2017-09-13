@@ -29,10 +29,8 @@ defmodule GoogleApi.Licensing.V1.Model.LicenseAssignmentInsert do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Licensing.V1.Model.LicenseAssignmentInsert do
-  import GoogleApi.Licensing.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

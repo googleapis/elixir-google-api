@@ -46,4 +46,3 @@ defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.ClusterUpdate do
   end
 end
 
-

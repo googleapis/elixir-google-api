@@ -45,4 +45,3 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.RoomCreateRequest do
   end
 end
 
-

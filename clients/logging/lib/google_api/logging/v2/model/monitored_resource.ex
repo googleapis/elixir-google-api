@@ -30,10 +30,8 @@ defmodule GoogleApi.Logging.V2.Model.MonitoredResource do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Logging.V2.Model.MonitoredResource do
-  import GoogleApi.Logging.V2.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

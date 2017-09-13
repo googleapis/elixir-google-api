@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.ProjectList do
   end
 end
 
-

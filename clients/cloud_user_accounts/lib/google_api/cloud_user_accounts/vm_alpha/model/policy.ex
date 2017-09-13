@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Policy do
+defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.Policy do
   @moduledoc """
   Defines an Identity and Access Management (IAM) policy. It is used to specify access control policies for Cloud Platform resources.    A &#x60;Policy&#x60; consists of a list of &#x60;bindings&#x60;. A &#x60;Binding&#x60; binds a list of &#x60;members&#x60; to a &#x60;role&#x60;, where the members can be user accounts, Google groups, Google domains, and service accounts. A &#x60;role&#x60; is a named list of permissions defined by IAM.  **Example**  { \&quot;bindings\&quot;: [ { \&quot;role\&quot;: \&quot;roles/owner\&quot;, \&quot;members\&quot;: [ \&quot;user:mike@example.com\&quot;, \&quot;group:admins@example.com\&quot;, \&quot;domain:google.com\&quot;, \&quot;serviceAccount:my-other-app@appspot.gserviceaccount.com\&quot;, ] }, { \&quot;role\&quot;: \&quot;roles/viewer\&quot;, \&quot;members\&quot;: [\&quot;user:sean@example.com\&quot;] } ] }  For a description of IAM and its features, see the [IAM developer&#39;s guide](https://cloud.google.com/iam).
   """
@@ -33,14 +33,13 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Policy do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Policy do
-  import GoogleApi.CloudUserAccounts.VM_ALPHA.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.Policy do
+  import GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"auditConfigs", :list, GoogleApi.CloudUserAccounts.VM_ALPHA.Model.AuditConfig, options)
-    |> deserialize(:"bindings", :list, GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Binding, options)
-    |> deserialize(:"rules", :list, GoogleApi.CloudUserAccounts.VM_ALPHA.Model.Rule, options)
+    |> deserialize(:"auditConfigs", :list, GoogleApi.CloudUserAccounts.Vm_alpha.Model.AuditConfig, options)
+    |> deserialize(:"bindings", :list, GoogleApi.CloudUserAccounts.Vm_alpha.Model.Binding, options)
+    |> deserialize(:"rules", :list, GoogleApi.CloudUserAccounts.Vm_alpha.Model.Rule, options)
   end
 end
-
 

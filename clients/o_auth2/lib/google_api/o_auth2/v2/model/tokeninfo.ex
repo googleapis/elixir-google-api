@@ -37,10 +37,8 @@ defmodule GoogleApi.OAuth2.V2.Model.Tokeninfo do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.OAuth2.V2.Model.Tokeninfo do
-  import GoogleApi.OAuth2.V2.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

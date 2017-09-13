@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.Drive.V3.Model.TeamDriveList do
   end
 end
 
-

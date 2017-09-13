@@ -43,4 +43,3 @@ defimpl Poison.Decoder, for: GoogleApi.Webmaster.V3.Model.SearchAnalyticsQueryRe
   end
 end
 
-

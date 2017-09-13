@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.AutoscalersScopedList_wa
   end
 end
 
-

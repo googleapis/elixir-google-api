@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.Webmaster.V3.Model.ApiDimensionFilterGrou
   end
 end
 
-

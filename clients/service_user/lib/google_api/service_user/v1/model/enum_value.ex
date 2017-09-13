@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceUser.V1.Model.EnumValue do
   end
 end
 
-

@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrdersCustomBatchRequest
   end
 end
 
-

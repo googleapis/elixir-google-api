@@ -25,7 +25,7 @@ defmodule GoogleApi.PlayCustomApp.V1.Connection do
   use Tesla
 
   # Add any middleware here (authentication)
-  plug Tesla.Middleware.BaseUrl, "https://www.googleapis.com/playcustomapp/v1/accounts"
+  plug Tesla.Middleware.BaseUrl, "https://www.googleapis.com"
   plug Tesla.Middleware.Headers, %{"User-Agent" => "Elixir"}
   plug Tesla.Middleware.EncodeJson
 

@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.PlusDomains.V1.Model.Circle do
   end
 end
 
-

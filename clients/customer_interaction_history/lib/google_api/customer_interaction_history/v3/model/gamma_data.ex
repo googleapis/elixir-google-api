@@ -41,4 +41,3 @@ defimpl Poison.Decoder, for: GoogleApi.CustomerInteractionHistory.V3.Model.Gamma
   end
 end
 
-

@@ -47,4 +47,3 @@ defimpl Poison.Decoder, for: GoogleApi.Analytics.V3.Model.CustomDimension do
   end
 end
 
-

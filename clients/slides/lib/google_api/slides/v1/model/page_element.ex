@@ -57,4 +57,3 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.PageElement do
   end
 end
 
-

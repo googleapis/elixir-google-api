@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.Teacher do
   end
 end
 
-

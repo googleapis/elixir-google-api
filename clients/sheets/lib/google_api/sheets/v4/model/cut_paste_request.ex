@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.CutPasteRequest do
   end
 end
 
-

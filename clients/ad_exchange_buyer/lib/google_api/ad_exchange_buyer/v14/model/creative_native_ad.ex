@@ -51,4 +51,3 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.Creative_native
   end
 end
 
-

@@ -47,4 +47,3 @@ defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.NodePool do
   end
 end
 
-

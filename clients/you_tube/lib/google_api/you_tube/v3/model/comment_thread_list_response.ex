@@ -45,4 +45,3 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.CommentThreadListRespons
   end
 end
 
-

@@ -29,10 +29,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.SetEnabledRequest do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQueryDataTransfer.V1.Model.SetEnabledRequest do
-  import GoogleApi.BigQueryDataTransfer.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

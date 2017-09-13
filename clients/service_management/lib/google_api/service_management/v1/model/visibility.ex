@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.Visibility do
   end
 end
 
-

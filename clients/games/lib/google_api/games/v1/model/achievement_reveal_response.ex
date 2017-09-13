@@ -30,10 +30,8 @@ defmodule GoogleApi.Games.V1.Model.AchievementRevealResponse do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.AchievementRevealResponse do
-  import GoogleApi.Games.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

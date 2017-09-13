@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: GoogleApi.FusionTables.V2.Model.TemplateList do
   end
 end
 
-

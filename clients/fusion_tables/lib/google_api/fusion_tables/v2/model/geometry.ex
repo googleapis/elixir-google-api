@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.FusionTables.V2.Model.Geometry do
   end
 end
 
-

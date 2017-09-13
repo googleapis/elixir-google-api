@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.Analyze do
   end
 end
 
-

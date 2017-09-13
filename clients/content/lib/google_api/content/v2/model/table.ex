@@ -41,4 +41,3 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.Table do
   end
 end
 
-

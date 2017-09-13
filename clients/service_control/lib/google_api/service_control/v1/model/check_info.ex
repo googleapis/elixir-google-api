@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.CheckInfo do
   end
 end
 
-

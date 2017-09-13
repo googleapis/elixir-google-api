@@ -17,13 +17,13 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Linux do
+defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Api.Linux do
   @moduledoc """
   API calls for all endpoints tagged `Linux`.
   """
 
-  alias GoogleApi.CloudUserAccounts.VM_ALPHA.Connection
-  import GoogleApi.CloudUserAccounts.VM_ALPHA.RequestBuilder
+  alias GoogleApi.CloudUserAccounts.Vm_alpha.Connection
+  import GoogleApi.CloudUserAccounts.Vm_alpha.RequestBuilder
 
 
   @doc """
@@ -31,7 +31,7 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Linux do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudUserAccounts.VM_ALPHA.Connection): Connection to server
+  - connection (GoogleApi.CloudUserAccounts.Vm_alpha.Connection): Connection to server
   - project (String): Project ID for this request.
   - zone (String): Name of the zone for this request.
   - user (String): The user account for which you want to get a list of authorized public keys.
@@ -48,10 +48,10 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Linux do
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudUserAccounts.VM_ALPHA.Model.LinuxGetAuthorizedKeysViewResponse{}} on success
+  {:ok, %GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxGetAuthorizedKeysViewResponse{}} on success
   {:error, info} on failure
   """
-  @spec clouduseraccounts_linux_get_authorized_keys_view(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.CloudUserAccounts.VM_ALPHA.Model.LinuxGetAuthorizedKeysViewResponse.t} | {:error, Tesla.Env.t}
+  @spec clouduseraccounts_linux_get_authorized_keys_view(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxGetAuthorizedKeysViewResponse.t} | {:error, Tesla.Env.t}
   def clouduseraccounts_linux_get_authorized_keys_view(connection, project, zone, user, instance, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -70,7 +70,7 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Linux do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.CloudUserAccounts.VM_ALPHA.Model.LinuxGetAuthorizedKeysViewResponse{})
+    |> decode(%GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxGetAuthorizedKeysViewResponse{})
   end
 
   @doc """
@@ -78,7 +78,7 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Linux do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudUserAccounts.VM_ALPHA.Connection): Connection to server
+  - connection (GoogleApi.CloudUserAccounts.Vm_alpha.Connection): Connection to server
   - project (String): Project ID for this request.
   - zone (String): Name of the zone for this request.
   - instance (String): The fully-qualified URL of the virtual machine requesting the views.
@@ -97,10 +97,10 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Linux do
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudUserAccounts.VM_ALPHA.Model.LinuxGetLinuxAccountViewsResponse{}} on success
+  {:ok, %GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxGetLinuxAccountViewsResponse{}} on success
   {:error, info} on failure
   """
-  @spec clouduseraccounts_linux_get_linux_account_views(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.CloudUserAccounts.VM_ALPHA.Model.LinuxGetLinuxAccountViewsResponse.t} | {:error, Tesla.Env.t}
+  @spec clouduseraccounts_linux_get_linux_account_views(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxGetLinuxAccountViewsResponse.t} | {:error, Tesla.Env.t}
   def clouduseraccounts_linux_get_linux_account_views(connection, project, zone, instance, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -122,6 +122,6 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Api.Linux do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.CloudUserAccounts.VM_ALPHA.Model.LinuxGetLinuxAccountViewsResponse{})
+    |> decode(%GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxGetLinuxAccountViewsResponse{})
   end
 end

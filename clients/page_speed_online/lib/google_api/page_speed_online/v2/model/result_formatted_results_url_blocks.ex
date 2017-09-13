@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.Result_formatted
   end
 end
 
-

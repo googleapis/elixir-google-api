@@ -49,4 +49,3 @@ defimpl Poison.Decoder, for: GoogleApi.DevProjects.V1.Model.ApiLimitStatus do
   end
 end
 
-

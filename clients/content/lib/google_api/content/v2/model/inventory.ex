@@ -49,4 +49,3 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.Inventory do
   end
 end
 
-

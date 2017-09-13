@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudKMS.V1.Model.SetIamPolicyRequest do
   end
 end
 
-

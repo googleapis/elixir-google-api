@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeSeller.V20.Model.CustomChannel 
   end
 end
 
-

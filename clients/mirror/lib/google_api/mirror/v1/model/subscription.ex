@@ -44,4 +44,3 @@ defimpl Poison.Decoder, for: GoogleApi.Mirror.V1.Model.Subscription do
   end
 end
 
-

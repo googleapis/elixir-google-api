@@ -44,4 +44,3 @@ defimpl Poison.Decoder, for: GoogleApi.Fitness.V1.Model.Session do
   end
 end
 
-

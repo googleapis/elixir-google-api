@@ -61,7 +61,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.TargetingTemplates do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/targetingTemplates/#{id}")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/targetingTemplates/#{id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -104,7 +104,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.TargetingTemplates do
     }
     %{}
     |> method(:post)
-    |> url("/userprofiles/#{profile_id}/targetingTemplates")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/targetingTemplates")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -159,7 +159,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.TargetingTemplates do
     }
     %{}
     |> method(:get)
-    |> url("/userprofiles/#{profile_id}/targetingTemplates")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/targetingTemplates")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -203,7 +203,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.TargetingTemplates do
     }
     %{}
     |> method(:patch)
-    |> url("/userprofiles/#{profile_id}/targetingTemplates")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/targetingTemplates")
     |> add_param(:query, :"id", id)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -247,7 +247,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.TargetingTemplates do
     }
     %{}
     |> method(:put)
-    |> url("/userprofiles/#{profile_id}/targetingTemplates")
+    |> url("/dfareporting/v2.8/userprofiles/#{profile_id}/targetingTemplates")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

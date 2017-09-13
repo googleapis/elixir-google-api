@@ -40,4 +40,3 @@ defimpl Poison.Decoder, for: GoogleApi.FusionTables.V2.Model.StyleFunction do
   end
 end
 
-

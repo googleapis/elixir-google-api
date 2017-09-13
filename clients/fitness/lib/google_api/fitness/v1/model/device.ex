@@ -33,10 +33,8 @@ defmodule GoogleApi.Fitness.V1.Model.Device do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Fitness.V1.Model.Device do
-  import GoogleApi.Fitness.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

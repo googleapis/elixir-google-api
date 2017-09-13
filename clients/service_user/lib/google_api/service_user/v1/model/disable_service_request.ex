@@ -29,10 +29,8 @@ defmodule GoogleApi.ServiceUser.V1.Model.DisableServiceRequest do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceUser.V1.Model.DisableServiceRequest do
-  import GoogleApi.ServiceUser.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

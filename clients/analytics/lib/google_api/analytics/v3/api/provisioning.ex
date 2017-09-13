@@ -61,7 +61,7 @@ defmodule GoogleApi.Analytics.V3.Api.Provisioning do
     }
     %{}
     |> method(:post)
-    |> url("/provisioning/createAccountTicket")
+    |> url("/analytics/v3/provisioning/createAccountTicket")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

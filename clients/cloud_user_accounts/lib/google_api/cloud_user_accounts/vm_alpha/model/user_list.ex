@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Model.UserList do
+defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.UserList do
   @moduledoc """
   
   """
@@ -32,12 +32,11 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Model.UserList do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.VM_ALPHA.Model.UserList do
-  import GoogleApi.CloudUserAccounts.VM_ALPHA.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.UserList do
+  import GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"items", :list, GoogleApi.CloudUserAccounts.VM_ALPHA.Model.User, options)
+    |> deserialize(:"items", :list, GoogleApi.CloudUserAccounts.Vm_alpha.Model.User, options)
   end
 end
-
 

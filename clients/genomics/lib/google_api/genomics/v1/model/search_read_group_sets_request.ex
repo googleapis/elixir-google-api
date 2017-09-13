@@ -32,10 +32,8 @@ defmodule GoogleApi.Genomics.V1.Model.SearchReadGroupSetsRequest do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.SearchReadGroupSetsRequest do
-  import GoogleApi.Genomics.V1.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudMonitoring.V2beta2.Model.TimeseriesP
   end
 end
 
-

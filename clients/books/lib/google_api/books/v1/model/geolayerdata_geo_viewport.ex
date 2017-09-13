@@ -38,4 +38,3 @@ defimpl Poison.Decoder, for: GoogleApi.Books.V1.Model.Geolayerdata_geo_viewport 
   end
 end
 
-

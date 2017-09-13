@@ -60,7 +60,7 @@ defmodule GoogleApi.Mirror.V1.Api.Subscriptions do
     }
     %{}
     |> method(:delete)
-    |> url("/subscriptions/#{id}")
+    |> url("/mirror/v1/subscriptions/#{id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -102,7 +102,7 @@ defmodule GoogleApi.Mirror.V1.Api.Subscriptions do
     }
     %{}
     |> method(:post)
-    |> url("/subscriptions")
+    |> url("/mirror/v1/subscriptions")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -142,7 +142,7 @@ defmodule GoogleApi.Mirror.V1.Api.Subscriptions do
     }
     %{}
     |> method(:get)
-    |> url("/subscriptions")
+    |> url("/mirror/v1/subscriptions")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -185,7 +185,7 @@ defmodule GoogleApi.Mirror.V1.Api.Subscriptions do
     }
     %{}
     |> method(:put)
-    |> url("/subscriptions/#{id}")
+    |> url("/mirror/v1/subscriptions/#{id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

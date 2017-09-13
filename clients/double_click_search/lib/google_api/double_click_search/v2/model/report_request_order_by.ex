@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.DoubleClickSearch.V2.Model.ReportRequest_
   end
 end
 
-

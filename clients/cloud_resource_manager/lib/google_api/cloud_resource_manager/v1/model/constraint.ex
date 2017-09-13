@@ -43,4 +43,3 @@ defimpl Poison.Decoder, for: GoogleApi.CloudResourceManager.V1.Model.Constraint 
   end
 end
 
-

@@ -36,4 +36,3 @@ defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.AssignmentSubmission d
   end
 end
 
-

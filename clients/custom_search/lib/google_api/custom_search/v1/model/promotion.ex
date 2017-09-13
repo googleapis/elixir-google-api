@@ -42,4 +42,3 @@ defimpl Poison.Decoder, for: GoogleApi.CustomSearch.V1.Model.Promotion do
   end
 end
 
-

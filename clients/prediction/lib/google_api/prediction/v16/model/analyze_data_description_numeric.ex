@@ -31,10 +31,8 @@ defmodule GoogleApi.Prediction.V16.Model.Analyze_dataDescription_numeric do
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.Analyze_dataDescription_numeric do
-  import GoogleApi.Prediction.V16.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

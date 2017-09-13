@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Model.GroupsRemoveMemberRequest do
+defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.GroupsRemoveMemberRequest do
   @moduledoc """
   
   """
@@ -28,11 +28,9 @@ defmodule GoogleApi.CloudUserAccounts.VM_ALPHA.Model.GroupsRemoveMemberRequest d
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.VM_ALPHA.Model.GroupsRemoveMemberRequest do
-  import GoogleApi.CloudUserAccounts.VM_ALPHA.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.GroupsRemoveMemberRequest do
+  def decode(value, _options) do
     value
   end
 end
-
 

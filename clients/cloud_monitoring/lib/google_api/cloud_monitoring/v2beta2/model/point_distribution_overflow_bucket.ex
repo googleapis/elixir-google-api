@@ -30,10 +30,8 @@ defmodule GoogleApi.CloudMonitoring.V2beta2.Model.PointDistributionOverflowBucke
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudMonitoring.V2beta2.Model.PointDistributionOverflowBucket do
-  import GoogleApi.CloudMonitoring.V2beta2.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 

@@ -37,4 +37,3 @@ defimpl Poison.Decoder, for: GoogleApi.Mirror.V1.Model.AttachmentsListResponse d
   end
 end
 
-

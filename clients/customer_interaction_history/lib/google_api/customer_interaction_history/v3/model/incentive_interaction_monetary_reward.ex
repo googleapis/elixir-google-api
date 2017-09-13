@@ -30,10 +30,8 @@ defmodule GoogleApi.CustomerInteractionHistory.V3.Model.IncentiveInteraction_mon
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CustomerInteractionHistory.V3.Model.IncentiveInteraction_monetaryReward do
-  import GoogleApi.CustomerInteractionHistory.V3.Deserializer
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
-
 
