@@ -17,13 +17,13 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beaconinfo do
+defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beaconinfo do
   @moduledoc """
   API calls for all endpoints tagged `Beaconinfo`.
   """
 
-  alias GoogleApi.ProximityBeacon.V1BETA1.Connection
-  import GoogleApi.ProximityBeacon.V1BETA1.RequestBuilder
+  alias GoogleApi.ProximityBeacon.V1beta1.Connection
+  import GoogleApi.ProximityBeacon.V1beta1.RequestBuilder
 
 
   @doc """
@@ -31,7 +31,7 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beaconinfo do
 
   ## Parameters
 
-  - connection (GoogleApi.ProximityBeacon.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.ProximityBeacon.V1beta1.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :pretty_print (Boolean): Returns response with indentations and line breaks.
@@ -50,10 +50,10 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beaconinfo do
 
   ## Returns
 
-  {:ok, %GoogleApi.ProximityBeacon.V1BETA1.Model.GetInfoForObservedBeaconsResponse{}} on success
+  {:ok, %GoogleApi.ProximityBeacon.V1beta1.Model.GetInfoForObservedBeaconsResponse{}} on success
   {:error, info} on failure
   """
-  @spec proximitybeacon_beaconinfo_getforobserved(Tesla.Env.client, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1BETA1.Model.GetInfoForObservedBeaconsResponse.t} | {:error, Tesla.Env.t}
+  @spec proximitybeacon_beaconinfo_getforobserved(Tesla.Env.client, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.GetInfoForObservedBeaconsResponse.t} | {:error, Tesla.Env.t}
   def proximitybeacon_beaconinfo_getforobserved(connection, opts \\ []) do
     optional_params = %{
       :"upload_protocol" => :query,
@@ -77,6 +77,6 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beaconinfo do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ProximityBeacon.V1BETA1.Model.GetInfoForObservedBeaconsResponse{})
+    |> decode(%GoogleApi.ProximityBeacon.V1beta1.Model.GetInfoForObservedBeaconsResponse{})
   end
 end

@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ProximityBeacon.V1BETA1.Model.ListDiagnosticsResponse do
+defmodule GoogleApi.ProximityBeacon.V1beta1.Model.ListDiagnosticsResponse do
   @moduledoc """
   Response that contains the requested diagnostics.
   """
@@ -29,12 +29,11 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Model.ListDiagnosticsResponse do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1BETA1.Model.ListDiagnosticsResponse do
-  import GoogleApi.ProximityBeacon.V1BETA1.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.ListDiagnosticsResponse do
+  import GoogleApi.ProximityBeacon.V1beta1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"diagnostics", :list, GoogleApi.ProximityBeacon.V1BETA1.Model.Diagnostics, options)
+    |> deserialize(:"diagnostics", :list, GoogleApi.ProximityBeacon.V1beta1.Model.Diagnostics, options)
   end
 end
-
 

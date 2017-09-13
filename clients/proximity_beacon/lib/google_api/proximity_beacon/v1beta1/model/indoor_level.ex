@@ -17,26 +17,20 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ProximityBeacon.V1BETA1.Model.BeaconInfo do
+defmodule GoogleApi.ProximityBeacon.V1beta1.Model.IndoorLevel do
   @moduledoc """
-  A subset of beacon information served via the &#x60;beaconinfo.getforobserved&#x60; method, which you call when users of your app encounter your beacons.
+  Indoor level, a human-readable string as returned by Google Maps APIs, useful to indicate which floor of a building a beacon is located on.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"advertisedId",
-    :"attachments",
-    :"beaconName"
+    :"name"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1BETA1.Model.BeaconInfo do
-  import GoogleApi.ProximityBeacon.V1BETA1.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.IndoorLevel do
+  def decode(value, _options) do
     value
-    |> deserialize(:"advertisedId", :struct, GoogleApi.ProximityBeacon.V1BETA1.Model.AdvertisedId, options)
-    |> deserialize(:"attachments", :list, GoogleApi.ProximityBeacon.V1BETA1.Model.AttachmentInfo, options)
   end
 end
-
 

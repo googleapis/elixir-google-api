@@ -17,24 +17,21 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ProximityBeacon.V1BETA1.Model.GetInfoForObservedBeaconsRequest do
+defmodule GoogleApi.ProximityBeacon.V1beta1.Model.AttachmentInfo do
   @moduledoc """
-  Request for beacon and attachment information about beacons that a mobile client has encountered \&quot;in the wild\&quot;.
+  A subset of attachment information served via the &#x60;beaconinfo.getforobserved&#x60; method, used when your users encounter your beacons.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"namespacedTypes",
-    :"observations"
+    :"data",
+    :"namespacedType"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1BETA1.Model.GetInfoForObservedBeaconsRequest do
-  import GoogleApi.ProximityBeacon.V1BETA1.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.AttachmentInfo do
+  def decode(value, _options) do
     value
-    |> deserialize(:"observations", :list, GoogleApi.ProximityBeacon.V1BETA1.Model.Observation, options)
   end
 end
-
 

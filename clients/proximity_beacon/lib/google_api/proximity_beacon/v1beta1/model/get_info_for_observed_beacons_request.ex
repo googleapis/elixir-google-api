@@ -17,23 +17,23 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ProximityBeacon.V1BETA1.Model.ListNamespacesResponse do
+defmodule GoogleApi.ProximityBeacon.V1beta1.Model.GetInfoForObservedBeaconsRequest do
   @moduledoc """
-  Response to ListNamespacesRequest that contains all the project&#39;s namespaces.
+  Request for beacon and attachment information about beacons that a mobile client has encountered \&quot;in the wild\&quot;.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"namespaces"
+    :"namespacedTypes",
+    :"observations"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1BETA1.Model.ListNamespacesResponse do
-  import GoogleApi.ProximityBeacon.V1BETA1.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.GetInfoForObservedBeaconsRequest do
+  import GoogleApi.ProximityBeacon.V1beta1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"namespaces", :list, GoogleApi.ProximityBeacon.V1BETA1.Model.Namespace, options)
+    |> deserialize(:"observations", :list, GoogleApi.ProximityBeacon.V1beta1.Model.Observation, options)
   end
 end
-
 

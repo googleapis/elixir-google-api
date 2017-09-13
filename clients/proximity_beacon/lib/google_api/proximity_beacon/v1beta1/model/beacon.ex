@@ -17,25 +17,35 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ProximityBeacon.V1BETA1.Model.Observation do
+defmodule GoogleApi.ProximityBeacon.V1beta1.Model.Beacon do
   @moduledoc """
-  Represents one beacon observed once.
+  Details of a beacon device.
   """
 
   @derive [Poison.Encoder]
   defstruct [
     :"advertisedId",
-    :"telemetry",
-    :"timestampMs"
+    :"beaconName",
+    :"description",
+    :"ephemeralIdRegistration",
+    :"expectedStability",
+    :"indoorLevel",
+    :"latLng",
+    :"placeId",
+    :"properties",
+    :"provisioningKey",
+    :"status"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1BETA1.Model.Observation do
-  import GoogleApi.ProximityBeacon.V1BETA1.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.Beacon do
+  import GoogleApi.ProximityBeacon.V1beta1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"advertisedId", :struct, GoogleApi.ProximityBeacon.V1BETA1.Model.AdvertisedId, options)
+    |> deserialize(:"advertisedId", :struct, GoogleApi.ProximityBeacon.V1beta1.Model.AdvertisedId, options)
+    |> deserialize(:"ephemeralIdRegistration", :struct, GoogleApi.ProximityBeacon.V1beta1.Model.EphemeralIdRegistration, options)
+    |> deserialize(:"indoorLevel", :struct, GoogleApi.ProximityBeacon.V1beta1.Model.IndoorLevel, options)
+    |> deserialize(:"latLng", :struct, GoogleApi.ProximityBeacon.V1beta1.Model.LatLng, options)
   end
 end
-
 

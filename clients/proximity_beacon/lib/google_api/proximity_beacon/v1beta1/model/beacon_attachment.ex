@@ -17,23 +17,23 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ProximityBeacon.V1BETA1.Model.AdvertisedId do
+defmodule GoogleApi.ProximityBeacon.V1beta1.Model.BeaconAttachment do
   @moduledoc """
-  Defines a unique identifier of a beacon as broadcast by the device.
+  Project-specific data associated with a beacon.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"id",
-    :"type"
+    :"attachmentName",
+    :"creationTimeMs",
+    :"data",
+    :"namespacedType"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1BETA1.Model.AdvertisedId do
-  import GoogleApi.ProximityBeacon.V1BETA1.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.BeaconAttachment do
+  def decode(value, _options) do
     value
   end
 end
-
 

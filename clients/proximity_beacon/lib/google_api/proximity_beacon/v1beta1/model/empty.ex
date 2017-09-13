@@ -17,23 +17,20 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ProximityBeacon.V1BETA1.Model.Namespace do
+defmodule GoogleApi.ProximityBeacon.V1beta1.Model.Empty do
   @moduledoc """
-  An attachment namespace defines read and write access for all the attachments created under it. Each namespace is globally unique, and owned by one project which is the only project that can create attachments under it.
+  A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance:      service Foo {       rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);     }  The JSON representation for &#x60;Empty&#x60; is empty JSON object &#x60;{}&#x60;.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"namespaceName",
-    :"servingVisibility"
+    
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1BETA1.Model.Namespace do
-  import GoogleApi.ProximityBeacon.V1BETA1.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.Empty do
+  def decode(value, _options) do
     value
   end
 end
-
 

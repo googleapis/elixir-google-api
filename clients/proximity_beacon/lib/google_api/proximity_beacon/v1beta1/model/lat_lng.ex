@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ProximityBeacon.V1BETA1.Model.LatLng do
+defmodule GoogleApi.ProximityBeacon.V1beta1.Model.LatLng do
   @moduledoc """
   An object representing a latitude/longitude pair. This is expressed as a pair of doubles representing degrees latitude and degrees longitude. Unless specified otherwise, this must conform to the &lt;a href&#x3D;\&quot;http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf\&quot;&gt;WGS84 standard&lt;/a&gt;. Values must be within normalized ranges.  Example of normalization code in Python:      def NormalizeLongitude(longitude):       \&quot;\&quot;\&quot;Wraps decimal degrees longitude to [-180.0, 180.0].\&quot;\&quot;\&quot;       q, r &#x3D; divmod(longitude, 360.0)       if r &gt; 180.0 or (r &#x3D;&#x3D; 180.0 and q &lt;&#x3D; -1.0):         return r - 360.0       return r      def NormalizeLatLng(latitude, longitude):       \&quot;\&quot;\&quot;Wraps decimal degrees latitude and longitude to       [-90.0, 90.0] and [-180.0, 180.0], respectively.\&quot;\&quot;\&quot;       r &#x3D; latitude % 360.0       if r &lt;&#x3D; 90.0:         return r, NormalizeLongitude(longitude)       elif r &gt;&#x3D; 270.0:         return r - 360, NormalizeLongitude(longitude)       else:         return 180 - r, NormalizeLongitude(longitude + 180.0)      assert 180.0 &#x3D;&#x3D; NormalizeLongitude(180.0)     assert -180.0 &#x3D;&#x3D; NormalizeLongitude(-180.0)     assert -179.0 &#x3D;&#x3D; NormalizeLongitude(181.0)     assert (0.0, 0.0) &#x3D;&#x3D; NormalizeLatLng(360.0, 0.0)     assert (0.0, 0.0) &#x3D;&#x3D; NormalizeLatLng(-360.0, 0.0)     assert (85.0, 180.0) &#x3D;&#x3D; NormalizeLatLng(95.0, 0.0)     assert (-85.0, -170.0) &#x3D;&#x3D; NormalizeLatLng(-95.0, 10.0)     assert (90.0, 10.0) &#x3D;&#x3D; NormalizeLatLng(90.0, 10.0)     assert (-90.0, -10.0) &#x3D;&#x3D; NormalizeLatLng(-90.0, -10.0)     assert (0.0, -170.0) &#x3D;&#x3D; NormalizeLatLng(-180.0, 10.0)     assert (0.0, -170.0) &#x3D;&#x3D; NormalizeLatLng(180.0, 10.0)     assert (-90.0, 10.0) &#x3D;&#x3D; NormalizeLatLng(270.0, 10.0)     assert (90.0, 10.0) &#x3D;&#x3D; NormalizeLatLng(-270.0, 10.0)
   """
@@ -29,11 +29,9 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Model.LatLng do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1BETA1.Model.LatLng do
-  import GoogleApi.ProximityBeacon.V1BETA1.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.LatLng do
+  def decode(value, _options) do
     value
   end
 end
-
 

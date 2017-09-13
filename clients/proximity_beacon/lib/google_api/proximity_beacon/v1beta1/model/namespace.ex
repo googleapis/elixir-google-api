@@ -17,25 +17,21 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ProximityBeacon.V1BETA1.Model.BeaconAttachment do
+defmodule GoogleApi.ProximityBeacon.V1beta1.Model.Namespace do
   @moduledoc """
-  Project-specific data associated with a beacon.
+  An attachment namespace defines read and write access for all the attachments created under it. Each namespace is globally unique, and owned by one project which is the only project that can create attachments under it.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"attachmentName",
-    :"creationTimeMs",
-    :"data",
-    :"namespacedType"
+    :"namespaceName",
+    :"servingVisibility"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1BETA1.Model.BeaconAttachment do
-  import GoogleApi.ProximityBeacon.V1BETA1.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.Namespace do
+  def decode(value, _options) do
     value
   end
 end
-
 

@@ -17,13 +17,13 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
+defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
   @moduledoc """
   API calls for all endpoints tagged `Beacons`.
   """
 
-  alias GoogleApi.ProximityBeacon.V1BETA1.Connection
-  import GoogleApi.ProximityBeacon.V1BETA1.RequestBuilder
+  alias GoogleApi.ProximityBeacon.V1beta1.Connection
+  import GoogleApi.ProximityBeacon.V1beta1.RequestBuilder
 
 
   @doc """
@@ -31,7 +31,7 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
 
   ## Parameters
 
-  - connection (GoogleApi.ProximityBeacon.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.ProximityBeacon.V1beta1.Connection): Connection to server
   - beacon_name (String): Beacon that should be activated. A beacon name has the format \&quot;beacons/N!beaconId\&quot; where the beaconId is the base16 ID broadcast by the beacon and N is a code for the beacon&#39;s type. Possible values are &#x60;3&#x60; for Eddystone-UID, &#x60;4&#x60; for Eddystone-EID, &#x60;1&#x60; for iBeacon, or &#x60;5&#x60; for AltBeacon. For Eddystone-EID beacons, you may use either the current EID or the beacon&#39;s \&quot;stable\&quot; UID. Required.
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
@@ -51,10 +51,10 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
 
   ## Returns
 
-  {:ok, %GoogleApi.ProximityBeacon.V1BETA1.Model.Empty{}} on success
+  {:ok, %GoogleApi.ProximityBeacon.V1beta1.Model.Empty{}} on success
   {:error, info} on failure
   """
-  @spec proximitybeacon_beacons_activate(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1BETA1.Model.Empty.t} | {:error, Tesla.Env.t}
+  @spec proximitybeacon_beacons_activate(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.Empty.t} | {:error, Tesla.Env.t}
   def proximitybeacon_beacons_activate(connection, beacon_name, opts \\ []) do
     optional_params = %{
       :"upload_protocol" => :query,
@@ -74,11 +74,11 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
     }
     %{}
     |> method(:post)
-    |> url("/v1beta1/#{+beacon_name}:activate")
+    |> url("/v1beta1/#{beacon_name}:activate")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ProximityBeacon.V1BETA1.Model.Empty{})
+    |> decode(%GoogleApi.ProximityBeacon.V1beta1.Model.Empty{})
   end
 
   @doc """
@@ -86,7 +86,7 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
 
   ## Parameters
 
-  - connection (GoogleApi.ProximityBeacon.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.ProximityBeacon.V1beta1.Connection): Connection to server
   - beacon_name (String): The beacon whose attachments should be deleted. A beacon name has the format \&quot;beacons/N!beaconId\&quot; where the beaconId is the base16 ID broadcast by the beacon and N is a code for the beacon&#39;s type. Possible values are &#x60;3&#x60; for Eddystone-UID, &#x60;4&#x60; for Eddystone-EID, &#x60;1&#x60; for iBeacon, or &#x60;5&#x60; for AltBeacon. For Eddystone-EID beacons, you may use either the current EID or the beacon&#39;s \&quot;stable\&quot; UID. Required.
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
@@ -107,10 +107,10 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
 
   ## Returns
 
-  {:ok, %GoogleApi.ProximityBeacon.V1BETA1.Model.DeleteAttachmentsResponse{}} on success
+  {:ok, %GoogleApi.ProximityBeacon.V1beta1.Model.DeleteAttachmentsResponse{}} on success
   {:error, info} on failure
   """
-  @spec proximitybeacon_beacons_attachments_batch_delete(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1BETA1.Model.DeleteAttachmentsResponse.t} | {:error, Tesla.Env.t}
+  @spec proximitybeacon_beacons_attachments_batch_delete(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.DeleteAttachmentsResponse.t} | {:error, Tesla.Env.t}
   def proximitybeacon_beacons_attachments_batch_delete(connection, beacon_name, opts \\ []) do
     optional_params = %{
       :"upload_protocol" => :query,
@@ -131,11 +131,11 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
     }
     %{}
     |> method(:post)
-    |> url("/v1beta1/#{+beacon_name}/attachments:batchDelete")
+    |> url("/v1beta1/#{beacon_name}/attachments:batchDelete")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ProximityBeacon.V1BETA1.Model.DeleteAttachmentsResponse{})
+    |> decode(%GoogleApi.ProximityBeacon.V1beta1.Model.DeleteAttachmentsResponse{})
   end
 
   @doc """
@@ -143,7 +143,7 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
 
   ## Parameters
 
-  - connection (GoogleApi.ProximityBeacon.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.ProximityBeacon.V1beta1.Connection): Connection to server
   - beacon_name (String): Beacon on which the attachment should be created. A beacon name has the format \&quot;beacons/N!beaconId\&quot; where the beaconId is the base16 ID broadcast by the beacon and N is a code for the beacon&#39;s type. Possible values are &#x60;3&#x60; for Eddystone-UID, &#x60;4&#x60; for Eddystone-EID, &#x60;1&#x60; for iBeacon, or &#x60;5&#x60; for AltBeacon. For Eddystone-EID beacons, you may use either the current EID or the beacon&#39;s \&quot;stable\&quot; UID. Required.
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
@@ -164,10 +164,10 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
 
   ## Returns
 
-  {:ok, %GoogleApi.ProximityBeacon.V1BETA1.Model.BeaconAttachment{}} on success
+  {:ok, %GoogleApi.ProximityBeacon.V1beta1.Model.BeaconAttachment{}} on success
   {:error, info} on failure
   """
-  @spec proximitybeacon_beacons_attachments_create(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1BETA1.Model.BeaconAttachment.t} | {:error, Tesla.Env.t}
+  @spec proximitybeacon_beacons_attachments_create(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.BeaconAttachment.t} | {:error, Tesla.Env.t}
   def proximitybeacon_beacons_attachments_create(connection, beacon_name, opts \\ []) do
     optional_params = %{
       :"upload_protocol" => :query,
@@ -188,11 +188,11 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
     }
     %{}
     |> method(:post)
-    |> url("/v1beta1/#{+beacon_name}/attachments")
+    |> url("/v1beta1/#{beacon_name}/attachments")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ProximityBeacon.V1BETA1.Model.BeaconAttachment{})
+    |> decode(%GoogleApi.ProximityBeacon.V1beta1.Model.BeaconAttachment{})
   end
 
   @doc """
@@ -200,7 +200,7 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
 
   ## Parameters
 
-  - connection (GoogleApi.ProximityBeacon.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.ProximityBeacon.V1beta1.Connection): Connection to server
   - attachment_name (String): The attachment name (&#x60;attachmentName&#x60;) of the attachment to remove. For example: &#x60;beacons/3!893737abc9/attachments/c5e937-af0-494-959-ec49d12738&#x60;. For Eddystone-EID beacons, the beacon ID portion (&#x60;3!893737abc9&#x60;) may be the beacon&#39;s current EID, or its \&quot;stable\&quot; Eddystone-UID. Required.
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
@@ -220,10 +220,10 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
 
   ## Returns
 
-  {:ok, %GoogleApi.ProximityBeacon.V1BETA1.Model.Empty{}} on success
+  {:ok, %GoogleApi.ProximityBeacon.V1beta1.Model.Empty{}} on success
   {:error, info} on failure
   """
-  @spec proximitybeacon_beacons_attachments_delete(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1BETA1.Model.Empty.t} | {:error, Tesla.Env.t}
+  @spec proximitybeacon_beacons_attachments_delete(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.Empty.t} | {:error, Tesla.Env.t}
   def proximitybeacon_beacons_attachments_delete(connection, attachment_name, opts \\ []) do
     optional_params = %{
       :"upload_protocol" => :query,
@@ -243,11 +243,11 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
     }
     %{}
     |> method(:delete)
-    |> url("/v1beta1/#{+attachment_name}")
+    |> url("/v1beta1/#{attachment_name}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ProximityBeacon.V1BETA1.Model.Empty{})
+    |> decode(%GoogleApi.ProximityBeacon.V1beta1.Model.Empty{})
   end
 
   @doc """
@@ -255,7 +255,7 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
 
   ## Parameters
 
-  - connection (GoogleApi.ProximityBeacon.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.ProximityBeacon.V1beta1.Connection): Connection to server
   - beacon_name (String): Beacon whose attachments should be fetched. A beacon name has the format \&quot;beacons/N!beaconId\&quot; where the beaconId is the base16 ID broadcast by the beacon and N is a code for the beacon&#39;s type. Possible values are &#x60;3&#x60; for Eddystone-UID, &#x60;4&#x60; for Eddystone-EID, &#x60;1&#x60; for iBeacon, or &#x60;5&#x60; for AltBeacon. For Eddystone-EID beacons, you may use either the current EID or the beacon&#39;s \&quot;stable\&quot; UID. Required.
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
@@ -276,10 +276,10 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
 
   ## Returns
 
-  {:ok, %GoogleApi.ProximityBeacon.V1BETA1.Model.ListBeaconAttachmentsResponse{}} on success
+  {:ok, %GoogleApi.ProximityBeacon.V1beta1.Model.ListBeaconAttachmentsResponse{}} on success
   {:error, info} on failure
   """
-  @spec proximitybeacon_beacons_attachments_list(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1BETA1.Model.ListBeaconAttachmentsResponse.t} | {:error, Tesla.Env.t}
+  @spec proximitybeacon_beacons_attachments_list(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.ListBeaconAttachmentsResponse.t} | {:error, Tesla.Env.t}
   def proximitybeacon_beacons_attachments_list(connection, beacon_name, opts \\ []) do
     optional_params = %{
       :"upload_protocol" => :query,
@@ -300,11 +300,11 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
     }
     %{}
     |> method(:get)
-    |> url("/v1beta1/#{+beacon_name}/attachments")
+    |> url("/v1beta1/#{beacon_name}/attachments")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ProximityBeacon.V1BETA1.Model.ListBeaconAttachmentsResponse{})
+    |> decode(%GoogleApi.ProximityBeacon.V1beta1.Model.ListBeaconAttachmentsResponse{})
   end
 
   @doc """
@@ -312,7 +312,7 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
 
   ## Parameters
 
-  - connection (GoogleApi.ProximityBeacon.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.ProximityBeacon.V1beta1.Connection): Connection to server
   - beacon_name (String): Beacon that should be deactivated. A beacon name has the format \&quot;beacons/N!beaconId\&quot; where the beaconId is the base16 ID broadcast by the beacon and N is a code for the beacon&#39;s type. Possible values are &#x60;3&#x60; for Eddystone-UID, &#x60;4&#x60; for Eddystone-EID, &#x60;1&#x60; for iBeacon, or &#x60;5&#x60; for AltBeacon. For Eddystone-EID beacons, you may use either the current EID or the beacon&#39;s \&quot;stable\&quot; UID. Required.
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
@@ -332,10 +332,10 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
 
   ## Returns
 
-  {:ok, %GoogleApi.ProximityBeacon.V1BETA1.Model.Empty{}} on success
+  {:ok, %GoogleApi.ProximityBeacon.V1beta1.Model.Empty{}} on success
   {:error, info} on failure
   """
-  @spec proximitybeacon_beacons_deactivate(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1BETA1.Model.Empty.t} | {:error, Tesla.Env.t}
+  @spec proximitybeacon_beacons_deactivate(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.Empty.t} | {:error, Tesla.Env.t}
   def proximitybeacon_beacons_deactivate(connection, beacon_name, opts \\ []) do
     optional_params = %{
       :"upload_protocol" => :query,
@@ -355,11 +355,11 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
     }
     %{}
     |> method(:post)
-    |> url("/v1beta1/#{+beacon_name}:deactivate")
+    |> url("/v1beta1/#{beacon_name}:deactivate")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ProximityBeacon.V1BETA1.Model.Empty{})
+    |> decode(%GoogleApi.ProximityBeacon.V1beta1.Model.Empty{})
   end
 
   @doc """
@@ -367,7 +367,7 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
 
   ## Parameters
 
-  - connection (GoogleApi.ProximityBeacon.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.ProximityBeacon.V1beta1.Connection): Connection to server
   - beacon_name (String): Beacon that should be decommissioned. A beacon name has the format \&quot;beacons/N!beaconId\&quot; where the beaconId is the base16 ID broadcast by the beacon and N is a code for the beacon&#39;s type. Possible values are &#x60;3&#x60; for Eddystone-UID, &#x60;4&#x60; for Eddystone-EID, &#x60;1&#x60; for iBeacon, or &#x60;5&#x60; for AltBeacon. For Eddystone-EID beacons, you may use either the current EID of the beacon&#39;s \&quot;stable\&quot; UID. Required.
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
@@ -387,10 +387,10 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
 
   ## Returns
 
-  {:ok, %GoogleApi.ProximityBeacon.V1BETA1.Model.Empty{}} on success
+  {:ok, %GoogleApi.ProximityBeacon.V1beta1.Model.Empty{}} on success
   {:error, info} on failure
   """
-  @spec proximitybeacon_beacons_decommission(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1BETA1.Model.Empty.t} | {:error, Tesla.Env.t}
+  @spec proximitybeacon_beacons_decommission(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.Empty.t} | {:error, Tesla.Env.t}
   def proximitybeacon_beacons_decommission(connection, beacon_name, opts \\ []) do
     optional_params = %{
       :"upload_protocol" => :query,
@@ -410,11 +410,11 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
     }
     %{}
     |> method(:post)
-    |> url("/v1beta1/#{+beacon_name}:decommission")
+    |> url("/v1beta1/#{beacon_name}:decommission")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ProximityBeacon.V1BETA1.Model.Empty{})
+    |> decode(%GoogleApi.ProximityBeacon.V1beta1.Model.Empty{})
   end
 
   @doc """
@@ -422,7 +422,7 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
 
   ## Parameters
 
-  - connection (GoogleApi.ProximityBeacon.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.ProximityBeacon.V1beta1.Connection): Connection to server
   - beacon_name (String): Beacon that should be deleted. A beacon name has the format \&quot;beacons/N!beaconId\&quot; where the beaconId is the base16 ID broadcast by the beacon and N is a code for the beacon&#39;s type. Possible values are &#x60;3&#x60; for Eddystone-UID, &#x60;4&#x60; for Eddystone-EID, &#x60;1&#x60; for iBeacon, or &#x60;5&#x60; for AltBeacon. For Eddystone-EID beacons, you may use either the current EID or the beacon&#39;s \&quot;stable\&quot; UID. Required.
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
@@ -442,10 +442,10 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
 
   ## Returns
 
-  {:ok, %GoogleApi.ProximityBeacon.V1BETA1.Model.Empty{}} on success
+  {:ok, %GoogleApi.ProximityBeacon.V1beta1.Model.Empty{}} on success
   {:error, info} on failure
   """
-  @spec proximitybeacon_beacons_delete(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1BETA1.Model.Empty.t} | {:error, Tesla.Env.t}
+  @spec proximitybeacon_beacons_delete(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.Empty.t} | {:error, Tesla.Env.t}
   def proximitybeacon_beacons_delete(connection, beacon_name, opts \\ []) do
     optional_params = %{
       :"upload_protocol" => :query,
@@ -465,11 +465,11 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
     }
     %{}
     |> method(:delete)
-    |> url("/v1beta1/#{+beacon_name}")
+    |> url("/v1beta1/#{beacon_name}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ProximityBeacon.V1BETA1.Model.Empty{})
+    |> decode(%GoogleApi.ProximityBeacon.V1beta1.Model.Empty{})
   end
 
   @doc """
@@ -477,7 +477,7 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
 
   ## Parameters
 
-  - connection (GoogleApi.ProximityBeacon.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.ProximityBeacon.V1beta1.Connection): Connection to server
   - beacon_name (String): Beacon that the diagnostics are for.
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
@@ -500,10 +500,10 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
 
   ## Returns
 
-  {:ok, %GoogleApi.ProximityBeacon.V1BETA1.Model.ListDiagnosticsResponse{}} on success
+  {:ok, %GoogleApi.ProximityBeacon.V1beta1.Model.ListDiagnosticsResponse{}} on success
   {:error, info} on failure
   """
-  @spec proximitybeacon_beacons_diagnostics_list(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1BETA1.Model.ListDiagnosticsResponse.t} | {:error, Tesla.Env.t}
+  @spec proximitybeacon_beacons_diagnostics_list(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.ListDiagnosticsResponse.t} | {:error, Tesla.Env.t}
   def proximitybeacon_beacons_diagnostics_list(connection, beacon_name, opts \\ []) do
     optional_params = %{
       :"upload_protocol" => :query,
@@ -526,11 +526,11 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
     }
     %{}
     |> method(:get)
-    |> url("/v1beta1/#{+beacon_name}/diagnostics")
+    |> url("/v1beta1/#{beacon_name}/diagnostics")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ProximityBeacon.V1BETA1.Model.ListDiagnosticsResponse{})
+    |> decode(%GoogleApi.ProximityBeacon.V1beta1.Model.ListDiagnosticsResponse{})
   end
 
   @doc """
@@ -538,7 +538,7 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
 
   ## Parameters
 
-  - connection (GoogleApi.ProximityBeacon.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.ProximityBeacon.V1beta1.Connection): Connection to server
   - beacon_name (String): Resource name of this beacon. A beacon name has the format \&quot;beacons/N!beaconId\&quot; where the beaconId is the base16 ID broadcast by the beacon and N is a code for the beacon&#39;s type. Possible values are &#x60;3&#x60; for Eddystone-UID, &#x60;4&#x60; for Eddystone-EID, &#x60;1&#x60; for iBeacon, or &#x60;5&#x60; for AltBeacon. For Eddystone-EID beacons, you may use either the current EID or the beacon&#39;s \&quot;stable\&quot; UID. Required.
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
@@ -558,10 +558,10 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
 
   ## Returns
 
-  {:ok, %GoogleApi.ProximityBeacon.V1BETA1.Model.Beacon{}} on success
+  {:ok, %GoogleApi.ProximityBeacon.V1beta1.Model.Beacon{}} on success
   {:error, info} on failure
   """
-  @spec proximitybeacon_beacons_get(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1BETA1.Model.Beacon.t} | {:error, Tesla.Env.t}
+  @spec proximitybeacon_beacons_get(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.Beacon.t} | {:error, Tesla.Env.t}
   def proximitybeacon_beacons_get(connection, beacon_name, opts \\ []) do
     optional_params = %{
       :"upload_protocol" => :query,
@@ -581,11 +581,11 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
     }
     %{}
     |> method(:get)
-    |> url("/v1beta1/#{+beacon_name}")
+    |> url("/v1beta1/#{beacon_name}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ProximityBeacon.V1BETA1.Model.Beacon{})
+    |> decode(%GoogleApi.ProximityBeacon.V1beta1.Model.Beacon{})
   end
 
   @doc """
@@ -593,7 +593,7 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
 
   ## Parameters
 
-  - connection (GoogleApi.ProximityBeacon.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.ProximityBeacon.V1beta1.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :pretty_print (Boolean): Returns response with indentations and line breaks.
@@ -615,10 +615,10 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
 
   ## Returns
 
-  {:ok, %GoogleApi.ProximityBeacon.V1BETA1.Model.ListBeaconsResponse{}} on success
+  {:ok, %GoogleApi.ProximityBeacon.V1beta1.Model.ListBeaconsResponse{}} on success
   {:error, info} on failure
   """
-  @spec proximitybeacon_beacons_list(Tesla.Env.client, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1BETA1.Model.ListBeaconsResponse.t} | {:error, Tesla.Env.t}
+  @spec proximitybeacon_beacons_list(Tesla.Env.client, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.ListBeaconsResponse.t} | {:error, Tesla.Env.t}
   def proximitybeacon_beacons_list(connection, opts \\ []) do
     optional_params = %{
       :"upload_protocol" => :query,
@@ -645,7 +645,7 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ProximityBeacon.V1BETA1.Model.ListBeaconsResponse{})
+    |> decode(%GoogleApi.ProximityBeacon.V1beta1.Model.ListBeaconsResponse{})
   end
 
   @doc """
@@ -653,7 +653,7 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
 
   ## Parameters
 
-  - connection (GoogleApi.ProximityBeacon.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.ProximityBeacon.V1beta1.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :pretty_print (Boolean): Returns response with indentations and line breaks.
@@ -673,10 +673,10 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
 
   ## Returns
 
-  {:ok, %GoogleApi.ProximityBeacon.V1BETA1.Model.Beacon{}} on success
+  {:ok, %GoogleApi.ProximityBeacon.V1beta1.Model.Beacon{}} on success
   {:error, info} on failure
   """
-  @spec proximitybeacon_beacons_register(Tesla.Env.client, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1BETA1.Model.Beacon.t} | {:error, Tesla.Env.t}
+  @spec proximitybeacon_beacons_register(Tesla.Env.client, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.Beacon.t} | {:error, Tesla.Env.t}
   def proximitybeacon_beacons_register(connection, opts \\ []) do
     optional_params = %{
       :"upload_protocol" => :query,
@@ -701,7 +701,7 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ProximityBeacon.V1BETA1.Model.Beacon{})
+    |> decode(%GoogleApi.ProximityBeacon.V1beta1.Model.Beacon{})
   end
 
   @doc """
@@ -709,7 +709,7 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
 
   ## Parameters
 
-  - connection (GoogleApi.ProximityBeacon.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.ProximityBeacon.V1beta1.Connection): Connection to server
   - beacon_name (String): Resource name of this beacon. A beacon name has the format \&quot;beacons/N!beaconId\&quot; where the beaconId is the base16 ID broadcast by the beacon and N is a code for the beacon&#39;s type. Possible values are &#x60;3&#x60; for Eddystone, &#x60;1&#x60; for iBeacon, or &#x60;5&#x60; for AltBeacon.  This field must be left empty when registering. After reading a beacon, clients can use the name for future operations.
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
@@ -730,10 +730,10 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
 
   ## Returns
 
-  {:ok, %GoogleApi.ProximityBeacon.V1BETA1.Model.Beacon{}} on success
+  {:ok, %GoogleApi.ProximityBeacon.V1beta1.Model.Beacon{}} on success
   {:error, info} on failure
   """
-  @spec proximitybeacon_beacons_update(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1BETA1.Model.Beacon.t} | {:error, Tesla.Env.t}
+  @spec proximitybeacon_beacons_update(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.Beacon.t} | {:error, Tesla.Env.t}
   def proximitybeacon_beacons_update(connection, beacon_name, opts \\ []) do
     optional_params = %{
       :"upload_protocol" => :query,
@@ -754,10 +754,10 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Beacons do
     }
     %{}
     |> method(:put)
-    |> url("/v1beta1/#{+beacon_name}")
+    |> url("/v1beta1/#{beacon_name}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ProximityBeacon.V1BETA1.Model.Beacon{})
+    |> decode(%GoogleApi.ProximityBeacon.V1beta1.Model.Beacon{})
   end
 end

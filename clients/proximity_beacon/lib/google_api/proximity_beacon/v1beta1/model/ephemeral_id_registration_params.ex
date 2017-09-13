@@ -17,23 +17,22 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ProximityBeacon.V1BETA1.Model.GetInfoForObservedBeaconsResponse do
+defmodule GoogleApi.ProximityBeacon.V1beta1.Model.EphemeralIdRegistrationParams do
   @moduledoc """
-  Information about the requested beacons, optionally including attachment data.
+  Information a client needs to provision and register beacons that broadcast Eddystone-EID format beacon IDs, using Elliptic curve Diffie-Hellman key exchange. See [the Eddystone specification](https://github.com/google/eddystone/tree/master/eddystone-eid) at GitHub.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"beacons"
+    :"maxRotationPeriodExponent",
+    :"minRotationPeriodExponent",
+    :"serviceEcdhPublicKey"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1BETA1.Model.GetInfoForObservedBeaconsResponse do
-  import GoogleApi.ProximityBeacon.V1BETA1.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.EphemeralIdRegistrationParams do
+  def decode(value, _options) do
     value
-    |> deserialize(:"beacons", :list, GoogleApi.ProximityBeacon.V1BETA1.Model.BeaconInfo, options)
   end
 end
-
 

@@ -17,13 +17,13 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.V1beta1 do
+defmodule GoogleApi.ProximityBeacon.V1beta1.Api.V1beta1 do
   @moduledoc """
   API calls for all endpoints tagged `V1beta1`.
   """
 
-  alias GoogleApi.ProximityBeacon.V1BETA1.Connection
-  import GoogleApi.ProximityBeacon.V1BETA1.RequestBuilder
+  alias GoogleApi.ProximityBeacon.V1beta1.Connection
+  import GoogleApi.ProximityBeacon.V1beta1.RequestBuilder
 
 
   @doc """
@@ -31,7 +31,7 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.V1beta1 do
 
   ## Parameters
 
-  - connection (GoogleApi.ProximityBeacon.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.ProximityBeacon.V1beta1.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :pretty_print (Boolean): Returns response with indentations and line breaks.
@@ -49,10 +49,10 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.V1beta1 do
 
   ## Returns
 
-  {:ok, %GoogleApi.ProximityBeacon.V1BETA1.Model.EphemeralIdRegistrationParams{}} on success
+  {:ok, %GoogleApi.ProximityBeacon.V1beta1.Model.EphemeralIdRegistrationParams{}} on success
   {:error, info} on failure
   """
-  @spec proximitybeacon_get_eidparams(Tesla.Env.client, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1BETA1.Model.EphemeralIdRegistrationParams.t} | {:error, Tesla.Env.t}
+  @spec proximitybeacon_get_eidparams(Tesla.Env.client, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.EphemeralIdRegistrationParams.t} | {:error, Tesla.Env.t}
   def proximitybeacon_get_eidparams(connection, opts \\ []) do
     optional_params = %{
       :"upload_protocol" => :query,
@@ -75,6 +75,6 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.V1beta1 do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ProximityBeacon.V1BETA1.Model.EphemeralIdRegistrationParams{})
+    |> decode(%GoogleApi.ProximityBeacon.V1beta1.Model.EphemeralIdRegistrationParams{})
   end
 end

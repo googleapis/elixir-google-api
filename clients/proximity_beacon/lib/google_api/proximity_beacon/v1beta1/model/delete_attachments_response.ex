@@ -17,23 +17,20 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ProximityBeacon.V1BETA1.Model.ListBeaconAttachmentsResponse do
+defmodule GoogleApi.ProximityBeacon.V1beta1.Model.DeleteAttachmentsResponse do
   @moduledoc """
-  Response to &#x60;ListBeaconAttachments&#x60; that contains the requested attachments.
+  Response for a request to delete attachments.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"attachments"
+    :"numDeleted"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1BETA1.Model.ListBeaconAttachmentsResponse do
-  import GoogleApi.ProximityBeacon.V1BETA1.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.DeleteAttachmentsResponse do
+  def decode(value, _options) do
     value
-    |> deserialize(:"attachments", :list, GoogleApi.ProximityBeacon.V1BETA1.Model.BeaconAttachment, options)
   end
 end
-
 

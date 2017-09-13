@@ -17,22 +17,22 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ProximityBeacon.V1BETA1.Model.DeleteAttachmentsResponse do
+defmodule GoogleApi.ProximityBeacon.V1beta1.Model.ListNamespacesResponse do
   @moduledoc """
-  Response for a request to delete attachments.
+  Response to ListNamespacesRequest that contains all the project&#39;s namespaces.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"numDeleted"
+    :"namespaces"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1BETA1.Model.DeleteAttachmentsResponse do
-  import GoogleApi.ProximityBeacon.V1BETA1.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.ListNamespacesResponse do
+  import GoogleApi.ProximityBeacon.V1beta1.Deserializer
   def decode(value, options) do
     value
+    |> deserialize(:"namespaces", :list, GoogleApi.ProximityBeacon.V1beta1.Model.Namespace, options)
   end
 end
-
 

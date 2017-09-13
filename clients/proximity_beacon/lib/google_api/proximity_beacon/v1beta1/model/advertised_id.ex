@@ -17,22 +17,21 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ProximityBeacon.V1BETA1.Model.Empty do
+defmodule GoogleApi.ProximityBeacon.V1beta1.Model.AdvertisedId do
   @moduledoc """
-  A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance:      service Foo {       rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);     }  The JSON representation for &#x60;Empty&#x60; is empty JSON object &#x60;{}&#x60;.
+  Defines a unique identifier of a beacon as broadcast by the device.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    
+    :"id",
+    :"type"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1BETA1.Model.Empty do
-  import GoogleApi.ProximityBeacon.V1BETA1.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.AdvertisedId do
+  def decode(value, _options) do
     value
   end
 end
-
 

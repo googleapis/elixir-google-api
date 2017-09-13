@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ProximityBeacon.V1BETA1.Model.ListBeaconsResponse do
+defmodule GoogleApi.ProximityBeacon.V1beta1.Model.ListBeaconsResponse do
   @moduledoc """
   Response that contains list beacon results and pagination help.
   """
@@ -30,12 +30,11 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Model.ListBeaconsResponse do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1BETA1.Model.ListBeaconsResponse do
-  import GoogleApi.ProximityBeacon.V1BETA1.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.ListBeaconsResponse do
+  import GoogleApi.ProximityBeacon.V1beta1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"beacons", :list, GoogleApi.ProximityBeacon.V1BETA1.Model.Beacon, options)
+    |> deserialize(:"beacons", :list, GoogleApi.ProximityBeacon.V1beta1.Model.Beacon, options)
   end
 end
-
 

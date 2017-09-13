@@ -17,13 +17,13 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Namespaces do
+defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Namespaces do
   @moduledoc """
   API calls for all endpoints tagged `Namespaces`.
   """
 
-  alias GoogleApi.ProximityBeacon.V1BETA1.Connection
-  import GoogleApi.ProximityBeacon.V1BETA1.RequestBuilder
+  alias GoogleApi.ProximityBeacon.V1beta1.Connection
+  import GoogleApi.ProximityBeacon.V1beta1.RequestBuilder
 
 
   @doc """
@@ -31,7 +31,7 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Namespaces do
 
   ## Parameters
 
-  - connection (GoogleApi.ProximityBeacon.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.ProximityBeacon.V1beta1.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :pretty_print (Boolean): Returns response with indentations and line breaks.
@@ -50,10 +50,10 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Namespaces do
 
   ## Returns
 
-  {:ok, %GoogleApi.ProximityBeacon.V1BETA1.Model.ListNamespacesResponse{}} on success
+  {:ok, %GoogleApi.ProximityBeacon.V1beta1.Model.ListNamespacesResponse{}} on success
   {:error, info} on failure
   """
-  @spec proximitybeacon_namespaces_list(Tesla.Env.client, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1BETA1.Model.ListNamespacesResponse.t} | {:error, Tesla.Env.t}
+  @spec proximitybeacon_namespaces_list(Tesla.Env.client, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.ListNamespacesResponse.t} | {:error, Tesla.Env.t}
   def proximitybeacon_namespaces_list(connection, opts \\ []) do
     optional_params = %{
       :"upload_protocol" => :query,
@@ -77,7 +77,7 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Namespaces do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ProximityBeacon.V1BETA1.Model.ListNamespacesResponse{})
+    |> decode(%GoogleApi.ProximityBeacon.V1beta1.Model.ListNamespacesResponse{})
   end
 
   @doc """
@@ -85,7 +85,7 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Namespaces do
 
   ## Parameters
 
-  - connection (GoogleApi.ProximityBeacon.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.ProximityBeacon.V1beta1.Connection): Connection to server
   - namespace_name (String): Resource name of this namespace. Namespaces names have the format: &lt;code&gt;namespaces/&lt;var&gt;namespace&lt;/var&gt;&lt;/code&gt;.
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
@@ -106,10 +106,10 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Namespaces do
 
   ## Returns
 
-  {:ok, %GoogleApi.ProximityBeacon.V1BETA1.Model.Namespace{}} on success
+  {:ok, %GoogleApi.ProximityBeacon.V1beta1.Model.Namespace{}} on success
   {:error, info} on failure
   """
-  @spec proximitybeacon_namespaces_update(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1BETA1.Model.Namespace.t} | {:error, Tesla.Env.t}
+  @spec proximitybeacon_namespaces_update(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.Namespace.t} | {:error, Tesla.Env.t}
   def proximitybeacon_namespaces_update(connection, namespace_name, opts \\ []) do
     optional_params = %{
       :"upload_protocol" => :query,
@@ -130,10 +130,10 @@ defmodule GoogleApi.ProximityBeacon.V1BETA1.Api.Namespaces do
     }
     %{}
     |> method(:put)
-    |> url("/v1beta1/#{+namespace_name}")
+    |> url("/v1beta1/#{namespace_name}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ProximityBeacon.V1BETA1.Model.Namespace{})
+    |> decode(%GoogleApi.ProximityBeacon.V1beta1.Model.Namespace{})
   end
 end
