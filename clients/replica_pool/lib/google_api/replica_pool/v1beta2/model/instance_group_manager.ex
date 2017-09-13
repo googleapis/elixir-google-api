@@ -17,45 +17,35 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ReplicaPool.V1BETA2.Model.Operation do
+defmodule GoogleApi.ReplicaPool.V1beta2.Model.InstanceGroupManager do
   @moduledoc """
-  An operation resource, used to manage asynchronous API requests.
+  An Instance Group Manager resource.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"clientOperationId",
+    :"autoHealingPolicies",
+    :"baseInstanceName",
     :"creationTimestamp",
-    :"endTime",
-    :"error",
-    :"httpErrorMessage",
-    :"httpErrorStatusCode",
+    :"currentSize",
+    :"description",
+    :"fingerprint",
+    :"group",
     :"id",
-    :"insertTime",
+    :"instanceTemplate",
     :"kind",
     :"name",
-    :"operationType",
-    :"progress",
-    :"region",
     :"selfLink",
-    :"startTime",
-    :"status",
-    :"statusMessage",
-    :"targetId",
-    :"targetLink",
-    :"user",
-    :"warnings",
-    :"zone"
+    :"targetPools",
+    :"targetSize"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ReplicaPool.V1BETA2.Model.Operation do
-  import GoogleApi.ReplicaPool.V1BETA2.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.ReplicaPool.V1beta2.Model.InstanceGroupManager do
+  import GoogleApi.ReplicaPool.V1beta2.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"error", :struct, GoogleApi.ReplicaPool.V1BETA2.Model.Operation_error, options)
-    |> deserialize(:"warnings", :list, GoogleApi.ReplicaPool.V1BETA2.Model.Operation_warnings, options)
+    |> deserialize(:"autoHealingPolicies", :list, GoogleApi.ReplicaPool.V1beta2.Model.ReplicaPoolAutoHealingPolicy, options)
   end
 end
-
 

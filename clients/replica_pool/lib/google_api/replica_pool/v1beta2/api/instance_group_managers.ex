@@ -17,13 +17,13 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
+defmodule GoogleApi.ReplicaPool.V1beta2.Api.InstanceGroupManagers do
   @moduledoc """
   API calls for all endpoints tagged `InstanceGroupManagers`.
   """
 
-  alias GoogleApi.ReplicaPool.V1BETA2.Connection
-  import GoogleApi.ReplicaPool.V1BETA2.RequestBuilder
+  alias GoogleApi.ReplicaPool.V1beta2.Connection
+  import GoogleApi.ReplicaPool.V1beta2.RequestBuilder
 
 
   @doc """
@@ -31,7 +31,7 @@ defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
 
   ## Parameters
 
-  - connection (GoogleApi.ReplicaPool.V1BETA2.Connection): Connection to server
+  - connection (GoogleApi.ReplicaPool.V1beta2.Connection): Connection to server
   - project (String): The Google Developers Console project name.
   - zone (String): The name of the zone in which the instance group manager resides.
   - instance_group_manager (String): The name of the instance group manager.
@@ -47,10 +47,10 @@ defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
 
   ## Returns
 
-  {:ok, %GoogleApi.ReplicaPool.V1BETA2.Model.Operation{}} on success
+  {:ok, %GoogleApi.ReplicaPool.V1beta2.Model.Operation{}} on success
   {:error, info} on failure
   """
-  @spec replicapool_instance_group_managers_abandon_instances(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPool.V1BETA2.Model.Operation.t} | {:error, Tesla.Env.t}
+  @spec replicapool_instance_group_managers_abandon_instances(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPool.V1beta2.Model.Operation.t} | {:error, Tesla.Env.t}
   def replicapool_instance_group_managers_abandon_instances(connection, project, zone, instance_group_manager, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -68,7 +68,7 @@ defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ReplicaPool.V1BETA2.Model.Operation{})
+    |> decode(%GoogleApi.ReplicaPool.V1beta2.Model.Operation{})
   end
 
   @doc """
@@ -76,7 +76,7 @@ defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
 
   ## Parameters
 
-  - connection (GoogleApi.ReplicaPool.V1BETA2.Connection): Connection to server
+  - connection (GoogleApi.ReplicaPool.V1beta2.Connection): Connection to server
   - project (String): The Google Developers Console project name.
   - zone (String): The name of the zone in which the instance group manager resides.
   - instance_group_manager (String): Name of the Instance Group Manager resource to delete.
@@ -91,10 +91,10 @@ defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
 
   ## Returns
 
-  {:ok, %GoogleApi.ReplicaPool.V1BETA2.Model.Operation{}} on success
+  {:ok, %GoogleApi.ReplicaPool.V1beta2.Model.Operation{}} on success
   {:error, info} on failure
   """
-  @spec replicapool_instance_group_managers_delete(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPool.V1BETA2.Model.Operation.t} | {:error, Tesla.Env.t}
+  @spec replicapool_instance_group_managers_delete(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPool.V1beta2.Model.Operation.t} | {:error, Tesla.Env.t}
   def replicapool_instance_group_managers_delete(connection, project, zone, instance_group_manager, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -111,7 +111,7 @@ defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ReplicaPool.V1BETA2.Model.Operation{})
+    |> decode(%GoogleApi.ReplicaPool.V1beta2.Model.Operation{})
   end
 
   @doc """
@@ -119,7 +119,7 @@ defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
 
   ## Parameters
 
-  - connection (GoogleApi.ReplicaPool.V1BETA2.Connection): Connection to server
+  - connection (GoogleApi.ReplicaPool.V1beta2.Connection): Connection to server
   - project (String): The Google Developers Console project name.
   - zone (String): The name of the zone in which the instance group manager resides.
   - instance_group_manager (String): The name of the instance group manager.
@@ -135,10 +135,10 @@ defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
 
   ## Returns
 
-  {:ok, %GoogleApi.ReplicaPool.V1BETA2.Model.Operation{}} on success
+  {:ok, %GoogleApi.ReplicaPool.V1beta2.Model.Operation{}} on success
   {:error, info} on failure
   """
-  @spec replicapool_instance_group_managers_delete_instances(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPool.V1BETA2.Model.Operation.t} | {:error, Tesla.Env.t}
+  @spec replicapool_instance_group_managers_delete_instances(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPool.V1beta2.Model.Operation.t} | {:error, Tesla.Env.t}
   def replicapool_instance_group_managers_delete_instances(connection, project, zone, instance_group_manager, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -156,7 +156,7 @@ defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ReplicaPool.V1BETA2.Model.Operation{})
+    |> decode(%GoogleApi.ReplicaPool.V1beta2.Model.Operation{})
   end
 
   @doc """
@@ -164,7 +164,7 @@ defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
 
   ## Parameters
 
-  - connection (GoogleApi.ReplicaPool.V1BETA2.Connection): Connection to server
+  - connection (GoogleApi.ReplicaPool.V1beta2.Connection): Connection to server
   - project (String): The Google Developers Console project name.
   - zone (String): The name of the zone in which the instance group manager resides.
   - instance_group_manager (String): Name of the instance resource to return.
@@ -179,10 +179,10 @@ defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
 
   ## Returns
 
-  {:ok, %GoogleApi.ReplicaPool.V1BETA2.Model.InstanceGroupManager{}} on success
+  {:ok, %GoogleApi.ReplicaPool.V1beta2.Model.InstanceGroupManager{}} on success
   {:error, info} on failure
   """
-  @spec replicapool_instance_group_managers_get(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPool.V1BETA2.Model.InstanceGroupManager.t} | {:error, Tesla.Env.t}
+  @spec replicapool_instance_group_managers_get(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPool.V1beta2.Model.InstanceGroupManager.t} | {:error, Tesla.Env.t}
   def replicapool_instance_group_managers_get(connection, project, zone, instance_group_manager, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -199,7 +199,7 @@ defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ReplicaPool.V1BETA2.Model.InstanceGroupManager{})
+    |> decode(%GoogleApi.ReplicaPool.V1beta2.Model.InstanceGroupManager{})
   end
 
   @doc """
@@ -207,7 +207,7 @@ defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
 
   ## Parameters
 
-  - connection (GoogleApi.ReplicaPool.V1BETA2.Connection): Connection to server
+  - connection (GoogleApi.ReplicaPool.V1beta2.Connection): Connection to server
   - project (String): The Google Developers Console project name.
   - zone (String): The name of the zone in which the instance group manager resides.
   - size (Integer): Number of instances that should exist.
@@ -223,10 +223,10 @@ defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
 
   ## Returns
 
-  {:ok, %GoogleApi.ReplicaPool.V1BETA2.Model.Operation{}} on success
+  {:ok, %GoogleApi.ReplicaPool.V1beta2.Model.Operation{}} on success
   {:error, info} on failure
   """
-  @spec replicapool_instance_group_managers_insert(Tesla.Env.client, String.t, String.t, Integer.t, keyword()) :: {:ok, GoogleApi.ReplicaPool.V1BETA2.Model.Operation.t} | {:error, Tesla.Env.t}
+  @spec replicapool_instance_group_managers_insert(Tesla.Env.client, String.t, String.t, Integer.t, keyword()) :: {:ok, GoogleApi.ReplicaPool.V1beta2.Model.Operation.t} | {:error, Tesla.Env.t}
   def replicapool_instance_group_managers_insert(connection, project, zone, size, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -245,7 +245,7 @@ defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ReplicaPool.V1BETA2.Model.Operation{})
+    |> decode(%GoogleApi.ReplicaPool.V1beta2.Model.Operation{})
   end
 
   @doc """
@@ -253,7 +253,7 @@ defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
 
   ## Parameters
 
-  - connection (GoogleApi.ReplicaPool.V1BETA2.Connection): Connection to server
+  - connection (GoogleApi.ReplicaPool.V1beta2.Connection): Connection to server
   - project (String): The Google Developers Console project name.
   - zone (String): The name of the zone in which the instance group manager resides.
   - opts (KeywordList): [optional] Optional parameters
@@ -270,10 +270,10 @@ defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
 
   ## Returns
 
-  {:ok, %GoogleApi.ReplicaPool.V1BETA2.Model.InstanceGroupManagerList{}} on success
+  {:ok, %GoogleApi.ReplicaPool.V1beta2.Model.InstanceGroupManagerList{}} on success
   {:error, info} on failure
   """
-  @spec replicapool_instance_group_managers_list(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPool.V1BETA2.Model.InstanceGroupManagerList.t} | {:error, Tesla.Env.t}
+  @spec replicapool_instance_group_managers_list(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPool.V1beta2.Model.InstanceGroupManagerList.t} | {:error, Tesla.Env.t}
   def replicapool_instance_group_managers_list(connection, project, zone, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -293,7 +293,7 @@ defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ReplicaPool.V1BETA2.Model.InstanceGroupManagerList{})
+    |> decode(%GoogleApi.ReplicaPool.V1beta2.Model.InstanceGroupManagerList{})
   end
 
   @doc """
@@ -301,7 +301,7 @@ defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
 
   ## Parameters
 
-  - connection (GoogleApi.ReplicaPool.V1BETA2.Connection): Connection to server
+  - connection (GoogleApi.ReplicaPool.V1beta2.Connection): Connection to server
   - project (String): The Google Developers Console project name.
   - zone (String): The name of the zone in which the instance group manager resides.
   - instance_group_manager (String): The name of the instance group manager.
@@ -317,10 +317,10 @@ defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
 
   ## Returns
 
-  {:ok, %GoogleApi.ReplicaPool.V1BETA2.Model.Operation{}} on success
+  {:ok, %GoogleApi.ReplicaPool.V1beta2.Model.Operation{}} on success
   {:error, info} on failure
   """
-  @spec replicapool_instance_group_managers_recreate_instances(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPool.V1BETA2.Model.Operation.t} | {:error, Tesla.Env.t}
+  @spec replicapool_instance_group_managers_recreate_instances(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPool.V1beta2.Model.Operation.t} | {:error, Tesla.Env.t}
   def replicapool_instance_group_managers_recreate_instances(connection, project, zone, instance_group_manager, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -338,7 +338,7 @@ defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ReplicaPool.V1BETA2.Model.Operation{})
+    |> decode(%GoogleApi.ReplicaPool.V1beta2.Model.Operation{})
   end
 
   @doc """
@@ -346,7 +346,7 @@ defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
 
   ## Parameters
 
-  - connection (GoogleApi.ReplicaPool.V1BETA2.Connection): Connection to server
+  - connection (GoogleApi.ReplicaPool.V1beta2.Connection): Connection to server
   - project (String): The Google Developers Console project name.
   - zone (String): The name of the zone in which the instance group manager resides.
   - instance_group_manager (String): The name of the instance group manager.
@@ -362,10 +362,10 @@ defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
 
   ## Returns
 
-  {:ok, %GoogleApi.ReplicaPool.V1BETA2.Model.Operation{}} on success
+  {:ok, %GoogleApi.ReplicaPool.V1beta2.Model.Operation{}} on success
   {:error, info} on failure
   """
-  @spec replicapool_instance_group_managers_resize(Tesla.Env.client, String.t, String.t, String.t, Integer.t, keyword()) :: {:ok, GoogleApi.ReplicaPool.V1BETA2.Model.Operation.t} | {:error, Tesla.Env.t}
+  @spec replicapool_instance_group_managers_resize(Tesla.Env.client, String.t, String.t, String.t, Integer.t, keyword()) :: {:ok, GoogleApi.ReplicaPool.V1beta2.Model.Operation.t} | {:error, Tesla.Env.t}
   def replicapool_instance_group_managers_resize(connection, project, zone, instance_group_manager, size, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -383,7 +383,7 @@ defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ReplicaPool.V1BETA2.Model.Operation{})
+    |> decode(%GoogleApi.ReplicaPool.V1beta2.Model.Operation{})
   end
 
   @doc """
@@ -391,7 +391,7 @@ defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
 
   ## Parameters
 
-  - connection (GoogleApi.ReplicaPool.V1BETA2.Connection): Connection to server
+  - connection (GoogleApi.ReplicaPool.V1beta2.Connection): Connection to server
   - project (String): The Google Developers Console project name.
   - zone (String): The name of the zone in which the instance group manager resides.
   - instance_group_manager (String): The name of the instance group manager.
@@ -407,10 +407,10 @@ defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
 
   ## Returns
 
-  {:ok, %GoogleApi.ReplicaPool.V1BETA2.Model.Operation{}} on success
+  {:ok, %GoogleApi.ReplicaPool.V1beta2.Model.Operation{}} on success
   {:error, info} on failure
   """
-  @spec replicapool_instance_group_managers_set_instance_template(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPool.V1BETA2.Model.Operation.t} | {:error, Tesla.Env.t}
+  @spec replicapool_instance_group_managers_set_instance_template(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPool.V1beta2.Model.Operation.t} | {:error, Tesla.Env.t}
   def replicapool_instance_group_managers_set_instance_template(connection, project, zone, instance_group_manager, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -428,7 +428,7 @@ defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ReplicaPool.V1BETA2.Model.Operation{})
+    |> decode(%GoogleApi.ReplicaPool.V1beta2.Model.Operation{})
   end
 
   @doc """
@@ -436,7 +436,7 @@ defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
 
   ## Parameters
 
-  - connection (GoogleApi.ReplicaPool.V1BETA2.Connection): Connection to server
+  - connection (GoogleApi.ReplicaPool.V1beta2.Connection): Connection to server
   - project (String): The Google Developers Console project name.
   - zone (String): The name of the zone in which the instance group manager resides.
   - instance_group_manager (String): The name of the instance group manager.
@@ -452,10 +452,10 @@ defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
 
   ## Returns
 
-  {:ok, %GoogleApi.ReplicaPool.V1BETA2.Model.Operation{}} on success
+  {:ok, %GoogleApi.ReplicaPool.V1beta2.Model.Operation{}} on success
   {:error, info} on failure
   """
-  @spec replicapool_instance_group_managers_set_target_pools(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPool.V1BETA2.Model.Operation.t} | {:error, Tesla.Env.t}
+  @spec replicapool_instance_group_managers_set_target_pools(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPool.V1beta2.Model.Operation.t} | {:error, Tesla.Env.t}
   def replicapool_instance_group_managers_set_target_pools(connection, project, zone, instance_group_manager, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -473,6 +473,6 @@ defmodule GoogleApi.ReplicaPool.V1BETA2.Api.InstanceGroupManagers do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ReplicaPool.V1BETA2.Model.Operation{})
+    |> decode(%GoogleApi.ReplicaPool.V1beta2.Model.Operation{})
   end
 end

@@ -17,27 +17,22 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ReplicaPool.V1BETA2.Model.InstanceGroupManagerList do
+defmodule GoogleApi.ReplicaPool.V1beta2.Model.Operation_error_errors do
   @moduledoc """
   
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"id",
-    :"items",
-    :"kind",
-    :"nextPageToken",
-    :"selfLink"
+    :"code",
+    :"location",
+    :"message"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ReplicaPool.V1BETA2.Model.InstanceGroupManagerList do
-  import GoogleApi.ReplicaPool.V1BETA2.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.ReplicaPool.V1beta2.Model.Operation_error_errors do
+  def decode(value, _options) do
     value
-    |> deserialize(:"items", :list, GoogleApi.ReplicaPool.V1BETA2.Model.InstanceGroupManager, options)
   end
 end
-
 

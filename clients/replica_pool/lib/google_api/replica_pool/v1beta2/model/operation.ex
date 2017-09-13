@@ -17,22 +17,44 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ReplicaPool.V1BETA2.Model.InstanceGroupManagersDeleteInstancesRequest do
+defmodule GoogleApi.ReplicaPool.V1beta2.Model.Operation do
   @moduledoc """
-  
+  An operation resource, used to manage asynchronous API requests.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"instances"
+    :"clientOperationId",
+    :"creationTimestamp",
+    :"endTime",
+    :"error",
+    :"httpErrorMessage",
+    :"httpErrorStatusCode",
+    :"id",
+    :"insertTime",
+    :"kind",
+    :"name",
+    :"operationType",
+    :"progress",
+    :"region",
+    :"selfLink",
+    :"startTime",
+    :"status",
+    :"statusMessage",
+    :"targetId",
+    :"targetLink",
+    :"user",
+    :"warnings",
+    :"zone"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ReplicaPool.V1BETA2.Model.InstanceGroupManagersDeleteInstancesRequest do
-  import GoogleApi.ReplicaPool.V1BETA2.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.ReplicaPool.V1beta2.Model.Operation do
+  import GoogleApi.ReplicaPool.V1beta2.Deserializer
   def decode(value, options) do
     value
+    |> deserialize(:"error", :struct, GoogleApi.ReplicaPool.V1beta2.Model.Operation_error, options)
+    |> deserialize(:"warnings", :list, GoogleApi.ReplicaPool.V1beta2.Model.Operation_warnings, options)
   end
 end
-
 

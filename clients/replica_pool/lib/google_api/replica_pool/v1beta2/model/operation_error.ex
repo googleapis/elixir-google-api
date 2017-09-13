@@ -17,36 +17,22 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ReplicaPool.V1BETA2.Model.InstanceGroupManager do
+defmodule GoogleApi.ReplicaPool.V1beta2.Model.Operation_error do
   @moduledoc """
-  An Instance Group Manager resource.
+  [Output Only] If errors occurred during processing of this operation, this field will be populated.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"autoHealingPolicies",
-    :"baseInstanceName",
-    :"creationTimestamp",
-    :"currentSize",
-    :"description",
-    :"fingerprint",
-    :"group",
-    :"id",
-    :"instanceTemplate",
-    :"kind",
-    :"name",
-    :"selfLink",
-    :"targetPools",
-    :"targetSize"
+    :"errors"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ReplicaPool.V1BETA2.Model.InstanceGroupManager do
-  import GoogleApi.ReplicaPool.V1BETA2.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.ReplicaPool.V1beta2.Model.Operation_error do
+  import GoogleApi.ReplicaPool.V1beta2.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"autoHealingPolicies", :list, GoogleApi.ReplicaPool.V1BETA2.Model.ReplicaPoolAutoHealingPolicy, options)
+    |> deserialize(:"errors", :list, GoogleApi.ReplicaPool.V1beta2.Model.Operation_error_errors, options)
   end
 end
-
 

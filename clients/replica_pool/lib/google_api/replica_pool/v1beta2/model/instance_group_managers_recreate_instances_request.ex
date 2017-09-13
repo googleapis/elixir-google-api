@@ -17,23 +17,20 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ReplicaPool.V1BETA2.Model.Operation_data do
+defmodule GoogleApi.ReplicaPool.V1beta2.Model.InstanceGroupManagersRecreateInstancesRequest do
   @moduledoc """
   
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"key",
-    :"value"
+    :"instances"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ReplicaPool.V1BETA2.Model.Operation_data do
-  import GoogleApi.ReplicaPool.V1BETA2.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.ReplicaPool.V1beta2.Model.InstanceGroupManagersRecreateInstancesRequest do
+  def decode(value, _options) do
     value
   end
 end
-
 
