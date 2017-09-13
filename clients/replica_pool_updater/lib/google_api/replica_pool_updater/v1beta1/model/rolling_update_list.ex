@@ -17,25 +17,25 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.InstanceUpdate do
+defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Model.RollingUpdateList do
   @moduledoc """
-  Update of a single instance.
+  Response returned by List method.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"error",
-    :"instance",
-    :"status"
+    :"items",
+    :"kind",
+    :"nextPageToken",
+    :"selfLink"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.InstanceUpdate do
-  import GoogleApi.ReplicaPoolUpdater.V1BETA1.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.ReplicaPoolUpdater.V1beta1.Model.RollingUpdateList do
+  import GoogleApi.ReplicaPoolUpdater.V1beta1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"error", :struct, GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.InstanceUpdate_error, options)
+    |> deserialize(:"items", :list, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.RollingUpdate, options)
   end
 end
-
 

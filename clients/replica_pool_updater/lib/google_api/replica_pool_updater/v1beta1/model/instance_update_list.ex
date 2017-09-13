@@ -17,45 +17,25 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.Operation do
+defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Model.InstanceUpdateList do
   @moduledoc """
-  An operation resource, used to manage asynchronous API requests.
+  Response returned by ListInstanceUpdates method.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"clientOperationId",
-    :"creationTimestamp",
-    :"endTime",
-    :"error",
-    :"httpErrorMessage",
-    :"httpErrorStatusCode",
-    :"id",
-    :"insertTime",
+    :"items",
     :"kind",
-    :"name",
-    :"operationType",
-    :"progress",
-    :"region",
-    :"selfLink",
-    :"startTime",
-    :"status",
-    :"statusMessage",
-    :"targetId",
-    :"targetLink",
-    :"user",
-    :"warnings",
-    :"zone"
+    :"nextPageToken",
+    :"selfLink"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.Operation do
-  import GoogleApi.ReplicaPoolUpdater.V1BETA1.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.ReplicaPoolUpdater.V1beta1.Model.InstanceUpdateList do
+  import GoogleApi.ReplicaPoolUpdater.V1beta1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"error", :struct, GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.Operation_error, options)
-    |> deserialize(:"warnings", :list, GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.Operation_warnings, options)
+    |> deserialize(:"items", :list, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.InstanceUpdate, options)
   end
 end
-
 

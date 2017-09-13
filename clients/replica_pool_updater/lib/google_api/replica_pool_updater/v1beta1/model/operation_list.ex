@@ -17,26 +17,26 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.RollingUpdate_policy do
+defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Model.OperationList do
   @moduledoc """
-  Parameters of the update process.
+  Contains a list of Operation resources.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"autoPauseAfterInstances",
-    :"instanceStartupTimeoutSec",
-    :"maxNumConcurrentInstances",
-    :"maxNumFailedInstances",
-    :"minInstanceUpdateTimeSec"
+    :"id",
+    :"items",
+    :"kind",
+    :"nextPageToken",
+    :"selfLink"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.RollingUpdate_policy do
-  import GoogleApi.ReplicaPoolUpdater.V1BETA1.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.ReplicaPoolUpdater.V1beta1.Model.OperationList do
+  import GoogleApi.ReplicaPoolUpdater.V1beta1.Deserializer
   def decode(value, options) do
     value
+    |> deserialize(:"items", :list, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation, options)
   end
 end
-
 

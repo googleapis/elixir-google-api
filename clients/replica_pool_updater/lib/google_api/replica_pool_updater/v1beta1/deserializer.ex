@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Deserializer do
+defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Deserializer do
   @moduledoc """
   Helper functions for deserializing responses into models
   """

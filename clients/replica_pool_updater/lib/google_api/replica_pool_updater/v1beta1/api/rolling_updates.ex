@@ -17,13 +17,13 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.RollingUpdates do
+defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Api.RollingUpdates do
   @moduledoc """
   API calls for all endpoints tagged `RollingUpdates`.
   """
 
-  alias GoogleApi.ReplicaPoolUpdater.V1BETA1.Connection
-  import GoogleApi.ReplicaPoolUpdater.V1BETA1.RequestBuilder
+  alias GoogleApi.ReplicaPoolUpdater.V1beta1.Connection
+  import GoogleApi.ReplicaPoolUpdater.V1beta1.RequestBuilder
 
 
   @doc """
@@ -31,7 +31,7 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.RollingUpdates do
 
   ## Parameters
 
-  - connection (GoogleApi.ReplicaPoolUpdater.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.ReplicaPoolUpdater.V1beta1.Connection): Connection to server
   - project (String): The Google Developers Console project name.
   - zone (String): The name of the zone in which the update&#39;s target resides.
   - rolling_update (String): The name of the update.
@@ -46,10 +46,10 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.RollingUpdates do
 
   ## Returns
 
-  {:ok, %GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.Operation{}} on success
+  {:ok, %GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation{}} on success
   {:error, info} on failure
   """
-  @spec replicapoolupdater_rolling_updates_cancel(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.Operation.t} | {:error, Tesla.Env.t}
+  @spec replicapoolupdater_rolling_updates_cancel(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation.t} | {:error, Tesla.Env.t}
   def replicapoolupdater_rolling_updates_cancel(connection, project, zone, rolling_update, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -66,7 +66,7 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.RollingUpdates do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.Operation{})
+    |> decode(%GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation{})
   end
 
   @doc """
@@ -74,7 +74,7 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.RollingUpdates do
 
   ## Parameters
 
-  - connection (GoogleApi.ReplicaPoolUpdater.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.ReplicaPoolUpdater.V1beta1.Connection): Connection to server
   - project (String): The Google Developers Console project name.
   - zone (String): The name of the zone in which the update&#39;s target resides.
   - rolling_update (String): The name of the update.
@@ -89,10 +89,10 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.RollingUpdates do
 
   ## Returns
 
-  {:ok, %GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.RollingUpdate{}} on success
+  {:ok, %GoogleApi.ReplicaPoolUpdater.V1beta1.Model.RollingUpdate{}} on success
   {:error, info} on failure
   """
-  @spec replicapoolupdater_rolling_updates_get(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.RollingUpdate.t} | {:error, Tesla.Env.t}
+  @spec replicapoolupdater_rolling_updates_get(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.RollingUpdate.t} | {:error, Tesla.Env.t}
   def replicapoolupdater_rolling_updates_get(connection, project, zone, rolling_update, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -109,7 +109,7 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.RollingUpdates do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.RollingUpdate{})
+    |> decode(%GoogleApi.ReplicaPoolUpdater.V1beta1.Model.RollingUpdate{})
   end
 
   @doc """
@@ -117,7 +117,7 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.RollingUpdates do
 
   ## Parameters
 
-  - connection (GoogleApi.ReplicaPoolUpdater.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.ReplicaPoolUpdater.V1beta1.Connection): Connection to server
   - project (String): The Google Developers Console project name.
   - zone (String): The name of the zone in which the update&#39;s target resides.
   - opts (KeywordList): [optional] Optional parameters
@@ -132,10 +132,10 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.RollingUpdates do
 
   ## Returns
 
-  {:ok, %GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.Operation{}} on success
+  {:ok, %GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation{}} on success
   {:error, info} on failure
   """
-  @spec replicapoolupdater_rolling_updates_insert(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.Operation.t} | {:error, Tesla.Env.t}
+  @spec replicapoolupdater_rolling_updates_insert(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation.t} | {:error, Tesla.Env.t}
   def replicapoolupdater_rolling_updates_insert(connection, project, zone, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -153,7 +153,7 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.RollingUpdates do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.Operation{})
+    |> decode(%GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation{})
   end
 
   @doc """
@@ -161,7 +161,7 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.RollingUpdates do
 
   ## Parameters
 
-  - connection (GoogleApi.ReplicaPoolUpdater.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.ReplicaPoolUpdater.V1beta1.Connection): Connection to server
   - project (String): The Google Developers Console project name.
   - zone (String): The name of the zone in which the update&#39;s target resides.
   - opts (KeywordList): [optional] Optional parameters
@@ -178,10 +178,10 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.RollingUpdates do
 
   ## Returns
 
-  {:ok, %GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.RollingUpdateList{}} on success
+  {:ok, %GoogleApi.ReplicaPoolUpdater.V1beta1.Model.RollingUpdateList{}} on success
   {:error, info} on failure
   """
-  @spec replicapoolupdater_rolling_updates_list(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.RollingUpdateList.t} | {:error, Tesla.Env.t}
+  @spec replicapoolupdater_rolling_updates_list(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.RollingUpdateList.t} | {:error, Tesla.Env.t}
   def replicapoolupdater_rolling_updates_list(connection, project, zone, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -201,7 +201,7 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.RollingUpdates do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.RollingUpdateList{})
+    |> decode(%GoogleApi.ReplicaPoolUpdater.V1beta1.Model.RollingUpdateList{})
   end
 
   @doc """
@@ -209,7 +209,7 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.RollingUpdates do
 
   ## Parameters
 
-  - connection (GoogleApi.ReplicaPoolUpdater.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.ReplicaPoolUpdater.V1beta1.Connection): Connection to server
   - project (String): The Google Developers Console project name.
   - zone (String): The name of the zone in which the update&#39;s target resides.
   - rolling_update (String): The name of the update.
@@ -227,10 +227,10 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.RollingUpdates do
 
   ## Returns
 
-  {:ok, %GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.InstanceUpdateList{}} on success
+  {:ok, %GoogleApi.ReplicaPoolUpdater.V1beta1.Model.InstanceUpdateList{}} on success
   {:error, info} on failure
   """
-  @spec replicapoolupdater_rolling_updates_list_instance_updates(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.InstanceUpdateList.t} | {:error, Tesla.Env.t}
+  @spec replicapoolupdater_rolling_updates_list_instance_updates(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.InstanceUpdateList.t} | {:error, Tesla.Env.t}
   def replicapoolupdater_rolling_updates_list_instance_updates(connection, project, zone, rolling_update, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -250,7 +250,7 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.RollingUpdates do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.InstanceUpdateList{})
+    |> decode(%GoogleApi.ReplicaPoolUpdater.V1beta1.Model.InstanceUpdateList{})
   end
 
   @doc """
@@ -258,7 +258,7 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.RollingUpdates do
 
   ## Parameters
 
-  - connection (GoogleApi.ReplicaPoolUpdater.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.ReplicaPoolUpdater.V1beta1.Connection): Connection to server
   - project (String): The Google Developers Console project name.
   - zone (String): The name of the zone in which the update&#39;s target resides.
   - rolling_update (String): The name of the update.
@@ -273,10 +273,10 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.RollingUpdates do
 
   ## Returns
 
-  {:ok, %GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.Operation{}} on success
+  {:ok, %GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation{}} on success
   {:error, info} on failure
   """
-  @spec replicapoolupdater_rolling_updates_pause(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.Operation.t} | {:error, Tesla.Env.t}
+  @spec replicapoolupdater_rolling_updates_pause(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation.t} | {:error, Tesla.Env.t}
   def replicapoolupdater_rolling_updates_pause(connection, project, zone, rolling_update, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -293,7 +293,7 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.RollingUpdates do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.Operation{})
+    |> decode(%GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation{})
   end
 
   @doc """
@@ -301,7 +301,7 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.RollingUpdates do
 
   ## Parameters
 
-  - connection (GoogleApi.ReplicaPoolUpdater.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.ReplicaPoolUpdater.V1beta1.Connection): Connection to server
   - project (String): The Google Developers Console project name.
   - zone (String): The name of the zone in which the update&#39;s target resides.
   - rolling_update (String): The name of the update.
@@ -316,10 +316,10 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.RollingUpdates do
 
   ## Returns
 
-  {:ok, %GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.Operation{}} on success
+  {:ok, %GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation{}} on success
   {:error, info} on failure
   """
-  @spec replicapoolupdater_rolling_updates_resume(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.Operation.t} | {:error, Tesla.Env.t}
+  @spec replicapoolupdater_rolling_updates_resume(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation.t} | {:error, Tesla.Env.t}
   def replicapoolupdater_rolling_updates_resume(connection, project, zone, rolling_update, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -336,7 +336,7 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.RollingUpdates do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.Operation{})
+    |> decode(%GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation{})
   end
 
   @doc """
@@ -344,7 +344,7 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.RollingUpdates do
 
   ## Parameters
 
-  - connection (GoogleApi.ReplicaPoolUpdater.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.ReplicaPoolUpdater.V1beta1.Connection): Connection to server
   - project (String): The Google Developers Console project name.
   - zone (String): The name of the zone in which the update&#39;s target resides.
   - rolling_update (String): The name of the update.
@@ -359,10 +359,10 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.RollingUpdates do
 
   ## Returns
 
-  {:ok, %GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.Operation{}} on success
+  {:ok, %GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation{}} on success
   {:error, info} on failure
   """
-  @spec replicapoolupdater_rolling_updates_rollback(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.Operation.t} | {:error, Tesla.Env.t}
+  @spec replicapoolupdater_rolling_updates_rollback(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation.t} | {:error, Tesla.Env.t}
   def replicapoolupdater_rolling_updates_rollback(connection, project, zone, rolling_update, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -379,6 +379,6 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.RollingUpdates do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.Operation{})
+    |> decode(%GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation{})
   end
 end

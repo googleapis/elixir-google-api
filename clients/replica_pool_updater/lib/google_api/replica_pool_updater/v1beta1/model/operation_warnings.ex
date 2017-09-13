@@ -17,23 +17,24 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.RollingUpdate_error do
+defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation_warnings do
   @moduledoc """
-  [Output Only] Errors that occurred during the rolling update.
+  
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"errors"
+    :"code",
+    :"data",
+    :"message"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.RollingUpdate_error do
-  import GoogleApi.ReplicaPoolUpdater.V1BETA1.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation_warnings do
+  import GoogleApi.ReplicaPoolUpdater.V1beta1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"errors", :list, GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.InstanceUpdate_error_errors, options)
+    |> deserialize(:"data", :list, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation_data, options)
   end
 end
-
 

@@ -17,13 +17,13 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.ZoneOperations do
+defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Api.ZoneOperations do
   @moduledoc """
   API calls for all endpoints tagged `ZoneOperations`.
   """
 
-  alias GoogleApi.ReplicaPoolUpdater.V1BETA1.Connection
-  import GoogleApi.ReplicaPoolUpdater.V1BETA1.RequestBuilder
+  alias GoogleApi.ReplicaPoolUpdater.V1beta1.Connection
+  import GoogleApi.ReplicaPoolUpdater.V1beta1.RequestBuilder
 
 
   @doc """
@@ -31,7 +31,7 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.ZoneOperations do
 
   ## Parameters
 
-  - connection (GoogleApi.ReplicaPoolUpdater.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.ReplicaPoolUpdater.V1beta1.Connection): Connection to server
   - project (String): Name of the project scoping this request.
   - zone (String): Name of the zone scoping this request.
   - operation (String): Name of the operation resource to return.
@@ -46,10 +46,10 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.ZoneOperations do
 
   ## Returns
 
-  {:ok, %GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.Operation{}} on success
+  {:ok, %GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation{}} on success
   {:error, info} on failure
   """
-  @spec replicapoolupdater_zone_operations_get(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.Operation.t} | {:error, Tesla.Env.t}
+  @spec replicapoolupdater_zone_operations_get(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation.t} | {:error, Tesla.Env.t}
   def replicapoolupdater_zone_operations_get(connection, project, zone, operation, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -66,7 +66,7 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.ZoneOperations do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.Operation{})
+    |> decode(%GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation{})
   end
 
   @doc """
@@ -74,7 +74,7 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.ZoneOperations do
 
   ## Parameters
 
-  - connection (GoogleApi.ReplicaPoolUpdater.V1BETA1.Connection): Connection to server
+  - connection (GoogleApi.ReplicaPoolUpdater.V1beta1.Connection): Connection to server
   - project (String): Name of the project scoping this request.
   - zone (String): Name of the zone scoping this request.
   - opts (KeywordList): [optional] Optional parameters
@@ -91,10 +91,10 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.ZoneOperations do
 
   ## Returns
 
-  {:ok, %GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.OperationList{}} on success
+  {:ok, %GoogleApi.ReplicaPoolUpdater.V1beta1.Model.OperationList{}} on success
   {:error, info} on failure
   """
-  @spec replicapoolupdater_zone_operations_list(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.OperationList.t} | {:error, Tesla.Env.t}
+  @spec replicapoolupdater_zone_operations_list(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.OperationList.t} | {:error, Tesla.Env.t}
   def replicapoolupdater_zone_operations_list(connection, project, zone, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -114,6 +114,6 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Api.ZoneOperations do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.OperationList{})
+    |> decode(%GoogleApi.ReplicaPoolUpdater.V1beta1.Model.OperationList{})
   end
 end

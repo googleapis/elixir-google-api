@@ -17,39 +17,44 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.RollingUpdate do
+defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation do
   @moduledoc """
-  The following represents a resource describing a single update (rollout) of a group of instances to the given template.
+  An operation resource, used to manage asynchronous API requests.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"actionType",
+    :"clientOperationId",
     :"creationTimestamp",
-    :"description",
+    :"endTime",
     :"error",
+    :"httpErrorMessage",
+    :"httpErrorStatusCode",
     :"id",
-    :"instanceGroup",
-    :"instanceGroupManager",
-    :"instanceTemplate",
+    :"insertTime",
     :"kind",
-    :"oldInstanceTemplate",
-    :"policy",
+    :"name",
+    :"operationType",
     :"progress",
+    :"region",
     :"selfLink",
+    :"startTime",
     :"status",
     :"statusMessage",
-    :"user"
+    :"targetId",
+    :"targetLink",
+    :"user",
+    :"warnings",
+    :"zone"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.RollingUpdate do
-  import GoogleApi.ReplicaPoolUpdater.V1BETA1.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation do
+  import GoogleApi.ReplicaPoolUpdater.V1beta1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"error", :struct, GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.RollingUpdate_error, options)
-    |> deserialize(:"policy", :struct, GoogleApi.ReplicaPoolUpdater.V1BETA1.Model.RollingUpdate_policy, options)
+    |> deserialize(:"error", :struct, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation_error, options)
+    |> deserialize(:"warnings", :list, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation_warnings, options)
   end
 end
-
 
