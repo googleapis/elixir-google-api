@@ -17,24 +17,21 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Model.GamesPlayerLevelResource do
+defmodule GoogleApi.GamesManagement.V1management.Model.ProfileSettings do
   @moduledoc """
-  This is a JSON template for 1P/3P metadata about a user&#39;s level.
+  This is a JSON template for profile settings
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"level",
-    :"maxExperiencePoints",
-    :"minExperiencePoints"
+    :"kind",
+    :"profileVisible"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1MANAGEMENT.Model.GamesPlayerLevelResource do
-  import GoogleApi.GamesManagement.V1MANAGEMENT.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1management.Model.ProfileSettings do
+  def decode(value, _options) do
     value
   end
 end
-
 

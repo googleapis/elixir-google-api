@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Model.GamesPlayerExperienceInfoResource do
+defmodule GoogleApi.GamesManagement.V1management.Model.GamesPlayerExperienceInfoResource do
   @moduledoc """
   This is a JSON template for 1P/3P metadata about the player&#39;s experience.
   """
@@ -31,13 +31,12 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Model.GamesPlayerExperienceInfo
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1MANAGEMENT.Model.GamesPlayerExperienceInfoResource do
-  import GoogleApi.GamesManagement.V1MANAGEMENT.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1management.Model.GamesPlayerExperienceInfoResource do
+  import GoogleApi.GamesManagement.V1management.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"currentLevel", :struct, GoogleApi.GamesManagement.V1MANAGEMENT.Model.GamesPlayerLevelResource, options)
-    |> deserialize(:"nextLevel", :struct, GoogleApi.GamesManagement.V1MANAGEMENT.Model.GamesPlayerLevelResource, options)
+    |> deserialize(:"currentLevel", :struct, GoogleApi.GamesManagement.V1management.Model.GamesPlayerLevelResource, options)
+    |> deserialize(:"nextLevel", :struct, GoogleApi.GamesManagement.V1management.Model.GamesPlayerLevelResource, options)
   end
 end
-
 

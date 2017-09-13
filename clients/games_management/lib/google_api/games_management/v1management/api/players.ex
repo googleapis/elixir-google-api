@@ -17,13 +17,13 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.Players do
+defmodule GoogleApi.GamesManagement.V1management.Api.Players do
   @moduledoc """
   API calls for all endpoints tagged `Players`.
   """
 
-  alias GoogleApi.GamesManagement.V1MANAGEMENT.Connection
-  import GoogleApi.GamesManagement.V1MANAGEMENT.RequestBuilder
+  alias GoogleApi.GamesManagement.V1management.Connection
+  import GoogleApi.GamesManagement.V1management.RequestBuilder
 
 
   @doc """
@@ -31,7 +31,7 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.Players do
 
   ## Parameters
 
-  - connection (GoogleApi.GamesManagement.V1MANAGEMENT.Connection): Connection to server
+  - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
   - application_id (String): The application ID from the Google Play developer console.
   - player_id (String): A player ID. A value of me may be used in place of the authenticated player&#39;s ID.
   - opts (KeywordList): [optional] Optional parameters
@@ -73,7 +73,7 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.Players do
 
   ## Parameters
 
-  - connection (GoogleApi.GamesManagement.V1MANAGEMENT.Connection): Connection to server
+  - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
   - application_id (String): The application ID from the Google Play developer console.
   - player_id (String): A player ID. A value of me may be used in place of the authenticated player&#39;s ID.
   - opts (KeywordList): [optional] Optional parameters

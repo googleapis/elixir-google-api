@@ -17,21 +17,21 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.TurnBasedMatches do
+defmodule GoogleApi.GamesManagement.V1management.Api.Rooms do
   @moduledoc """
-  API calls for all endpoints tagged `TurnBasedMatches`.
+  API calls for all endpoints tagged `Rooms`.
   """
 
-  alias GoogleApi.GamesManagement.V1MANAGEMENT.Connection
-  import GoogleApi.GamesManagement.V1MANAGEMENT.RequestBuilder
+  alias GoogleApi.GamesManagement.V1management.Connection
+  import GoogleApi.GamesManagement.V1management.RequestBuilder
 
 
   @doc """
-  Reset all turn-based match data for a user. This method is only accessible to whitelisted tester accounts for your application.
+  Reset all rooms for the currently authenticated player for your application. This method is only accessible to whitelisted tester accounts for your application.
 
   ## Parameters
 
-  - connection (GoogleApi.GamesManagement.V1MANAGEMENT.Connection): Connection to server
+  - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
     - :fields (String): Selector specifying which fields to include in a partial response.
@@ -46,8 +46,8 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.TurnBasedMatches do
   {:ok, %{}} on success
   {:error, info} on failure
   """
-  @spec games_management_turn_based_matches_reset(Tesla.Env.client, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
-  def games_management_turn_based_matches_reset(connection, opts \\ []) do
+  @spec games_management_rooms_reset(Tesla.Env.client, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
+  def games_management_rooms_reset(connection, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
       :"fields" => :query,
@@ -59,7 +59,7 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.TurnBasedMatches do
     }
     %{}
     |> method(:post)
-    |> url("/turnbasedmatches/reset")
+    |> url("/rooms/reset")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -67,11 +67,11 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.TurnBasedMatches do
   end
 
   @doc """
-  Deletes turn-based matches where the only match participants are from whitelisted tester accounts for your application. This method is only available to user accounts for your developer console.
+  Deletes rooms where the only room participants are from whitelisted tester accounts for your application. This method is only available to user accounts for your developer console.
 
   ## Parameters
 
-  - connection (GoogleApi.GamesManagement.V1MANAGEMENT.Connection): Connection to server
+  - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
     - :fields (String): Selector specifying which fields to include in a partial response.
@@ -86,8 +86,8 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.TurnBasedMatches do
   {:ok, %{}} on success
   {:error, info} on failure
   """
-  @spec games_management_turn_based_matches_reset_for_all_players(Tesla.Env.client, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
-  def games_management_turn_based_matches_reset_for_all_players(connection, opts \\ []) do
+  @spec games_management_rooms_reset_for_all_players(Tesla.Env.client, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
+  def games_management_rooms_reset_for_all_players(connection, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
       :"fields" => :query,
@@ -99,7 +99,7 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.TurnBasedMatches do
     }
     %{}
     |> method(:post)
-    |> url("/turnbasedmatches/resetForAllPlayers")
+    |> url("/rooms/resetForAllPlayers")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

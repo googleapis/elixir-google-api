@@ -17,23 +17,21 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Model.ScoresResetMultipleForAllRequest do
+defmodule GoogleApi.GamesManagement.V1management.Model.AchievementResetMultipleForAllRequest do
   @moduledoc """
-  This is a JSON template for multiple scores reset all request.
+  This is a JSON template for multiple achievements reset all request.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"kind",
-    :"leaderboard_ids"
+    :"achievement_ids",
+    :"kind"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1MANAGEMENT.Model.ScoresResetMultipleForAllRequest do
-  import GoogleApi.GamesManagement.V1MANAGEMENT.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1management.Model.AchievementResetMultipleForAllRequest do
+  def decode(value, _options) do
     value
   end
 end
-
 

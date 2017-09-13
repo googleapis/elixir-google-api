@@ -17,22 +17,22 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.Events do
+defmodule GoogleApi.GamesManagement.V1management.Api.Achievements do
   @moduledoc """
-  API calls for all endpoints tagged `Events`.
+  API calls for all endpoints tagged `Achievements`.
   """
 
-  alias GoogleApi.GamesManagement.V1MANAGEMENT.Connection
-  import GoogleApi.GamesManagement.V1MANAGEMENT.RequestBuilder
+  alias GoogleApi.GamesManagement.V1management.Connection
+  import GoogleApi.GamesManagement.V1management.RequestBuilder
 
 
   @doc """
-  Resets all player progress on the event with the given ID for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application. All quests for this player that use the event will also be reset.
+  Resets the achievement with the given ID for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application.
 
   ## Parameters
 
-  - connection (GoogleApi.GamesManagement.V1MANAGEMENT.Connection): Connection to server
-  - event_id (String): The ID of the event.
+  - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
+  - achievement_id (String): The ID of the achievement used by this method.
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
     - :fields (String): Selector specifying which fields to include in a partial response.
@@ -44,11 +44,11 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.Events do
 
   ## Returns
 
-  {:ok, %{}} on success
+  {:ok, %GoogleApi.GamesManagement.V1management.Model.AchievementResetResponse{}} on success
   {:error, info} on failure
   """
-  @spec games_management_events_reset(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
-  def games_management_events_reset(connection, event_id, opts \\ []) do
+  @spec games_management_achievements_reset(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.GamesManagement.V1management.Model.AchievementResetResponse.t} | {:error, Tesla.Env.t}
+  def games_management_achievements_reset(connection, achievement_id, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
       :"fields" => :query,
@@ -60,19 +60,19 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.Events do
     }
     %{}
     |> method(:post)
-    |> url("/events/#{event_id}/reset")
+    |> url("/achievements/#{achievement_id}/reset")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(false)
+    |> decode(%GoogleApi.GamesManagement.V1management.Model.AchievementResetResponse{})
   end
 
   @doc """
-  Resets all player progress on all events for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application. All quests for this player will also be reset.
+  Resets all achievements for the currently authenticated player for your application. This method is only accessible to whitelisted tester accounts for your application.
 
   ## Parameters
 
-  - connection (GoogleApi.GamesManagement.V1MANAGEMENT.Connection): Connection to server
+  - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
     - :fields (String): Selector specifying which fields to include in a partial response.
@@ -84,11 +84,11 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.Events do
 
   ## Returns
 
-  {:ok, %{}} on success
+  {:ok, %GoogleApi.GamesManagement.V1management.Model.AchievementResetAllResponse{}} on success
   {:error, info} on failure
   """
-  @spec games_management_events_reset_all(Tesla.Env.client, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
-  def games_management_events_reset_all(connection, opts \\ []) do
+  @spec games_management_achievements_reset_all(Tesla.Env.client, keyword()) :: {:ok, GoogleApi.GamesManagement.V1management.Model.AchievementResetAllResponse.t} | {:error, Tesla.Env.t}
+  def games_management_achievements_reset_all(connection, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
       :"fields" => :query,
@@ -100,19 +100,19 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.Events do
     }
     %{}
     |> method(:post)
-    |> url("/events/reset")
+    |> url("/achievements/reset")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(false)
+    |> decode(%GoogleApi.GamesManagement.V1management.Model.AchievementResetAllResponse{})
   end
 
   @doc """
-  Resets all draft events for all players. This method is only available to user accounts for your developer console. All quests that use any of these events will also be reset.
+  Resets all draft achievements for all players. This method is only available to user accounts for your developer console.
 
   ## Parameters
 
-  - connection (GoogleApi.GamesManagement.V1MANAGEMENT.Connection): Connection to server
+  - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
     - :fields (String): Selector specifying which fields to include in a partial response.
@@ -127,8 +127,8 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.Events do
   {:ok, %{}} on success
   {:error, info} on failure
   """
-  @spec games_management_events_reset_all_for_all_players(Tesla.Env.client, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
-  def games_management_events_reset_all_for_all_players(connection, opts \\ []) do
+  @spec games_management_achievements_reset_all_for_all_players(Tesla.Env.client, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
+  def games_management_achievements_reset_all_for_all_players(connection, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
       :"fields" => :query,
@@ -140,7 +140,7 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.Events do
     }
     %{}
     |> method(:post)
-    |> url("/events/resetAllForAllPlayers")
+    |> url("/achievements/resetAllForAllPlayers")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -148,12 +148,12 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.Events do
   end
 
   @doc """
-  Resets the event with the given ID for all players. This method is only available to user accounts for your developer console. Only draft events can be reset. All quests that use the event will also be reset.
+  Resets the achievement with the given ID for all players. This method is only available to user accounts for your developer console. Only draft achievements can be reset.
 
   ## Parameters
 
-  - connection (GoogleApi.GamesManagement.V1MANAGEMENT.Connection): Connection to server
-  - event_id (String): The ID of the event.
+  - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
+  - achievement_id (String): The ID of the achievement used by this method.
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
     - :fields (String): Selector specifying which fields to include in a partial response.
@@ -168,8 +168,8 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.Events do
   {:ok, %{}} on success
   {:error, info} on failure
   """
-  @spec games_management_events_reset_for_all_players(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
-  def games_management_events_reset_for_all_players(connection, event_id, opts \\ []) do
+  @spec games_management_achievements_reset_for_all_players(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
+  def games_management_achievements_reset_for_all_players(connection, achievement_id, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
       :"fields" => :query,
@@ -181,7 +181,7 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.Events do
     }
     %{}
     |> method(:post)
-    |> url("/events/#{event_id}/resetForAllPlayers")
+    |> url("/achievements/#{achievement_id}/resetForAllPlayers")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -189,11 +189,11 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.Events do
   end
 
   @doc """
-  Resets events with the given IDs for all players. This method is only available to user accounts for your developer console. Only draft events may be reset. All quests that use any of the events will also be reset.
+  Resets achievements with the given IDs for all players. This method is only available to user accounts for your developer console. Only draft achievements may be reset.
 
   ## Parameters
 
-  - connection (GoogleApi.GamesManagement.V1MANAGEMENT.Connection): Connection to server
+  - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
     - :fields (String): Selector specifying which fields to include in a partial response.
@@ -202,15 +202,15 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.Events do
     - :pretty_print (Boolean): Returns response with indentations and line breaks.
     - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
     - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
-    - :body (EventsResetMultipleForAllRequest): 
+    - :body (AchievementResetMultipleForAllRequest): 
 
   ## Returns
 
   {:ok, %{}} on success
   {:error, info} on failure
   """
-  @spec games_management_events_reset_multiple_for_all_players(Tesla.Env.client, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
-  def games_management_events_reset_multiple_for_all_players(connection, opts \\ []) do
+  @spec games_management_achievements_reset_multiple_for_all_players(Tesla.Env.client, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
+  def games_management_achievements_reset_multiple_for_all_players(connection, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
       :"fields" => :query,
@@ -223,7 +223,7 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.Events do
     }
     %{}
     |> method(:post)
-    |> url("/events/resetMultipleForAllPlayers")
+    |> url("/achievements/resetMultipleForAllPlayers")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

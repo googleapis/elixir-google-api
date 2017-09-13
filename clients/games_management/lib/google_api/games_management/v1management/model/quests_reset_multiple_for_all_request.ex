@@ -17,23 +17,21 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Model.GamesPlayedResource do
+defmodule GoogleApi.GamesManagement.V1management.Model.QuestsResetMultipleForAllRequest do
   @moduledoc """
-  This is a JSON template for metadata about a player playing a game with the currently authenticated user.
+  This is a JSON template for multiple quests reset all request.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"autoMatched",
-    :"timeMillis"
+    :"kind",
+    :"quest_ids"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1MANAGEMENT.Model.GamesPlayedResource do
-  import GoogleApi.GamesManagement.V1MANAGEMENT.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1management.Model.QuestsResetMultipleForAllRequest do
+  def decode(value, _options) do
     value
   end
 end
-
 

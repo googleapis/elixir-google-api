@@ -17,102 +17,22 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.Scores do
+defmodule GoogleApi.GamesManagement.V1management.Api.Quests do
   @moduledoc """
-  API calls for all endpoints tagged `Scores`.
+  API calls for all endpoints tagged `Quests`.
   """
 
-  alias GoogleApi.GamesManagement.V1MANAGEMENT.Connection
-  import GoogleApi.GamesManagement.V1MANAGEMENT.RequestBuilder
+  alias GoogleApi.GamesManagement.V1management.Connection
+  import GoogleApi.GamesManagement.V1management.RequestBuilder
 
 
   @doc """
-  Resets scores for the leaderboard with the given ID for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application.
+  Resets all player progress on the quest with the given ID for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application.
 
   ## Parameters
 
-  - connection (GoogleApi.GamesManagement.V1MANAGEMENT.Connection): Connection to server
-  - leaderboard_id (String): The ID of the leaderboard.
-  - opts (KeywordList): [optional] Optional parameters
-    - :alt (String): Data format for the response.
-    - :fields (String): Selector specifying which fields to include in a partial response.
-    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String): OAuth 2.0 token for the current user.
-    - :pretty_print (Boolean): Returns response with indentations and line breaks.
-    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
-
-  ## Returns
-
-  {:ok, %GoogleApi.GamesManagement.V1MANAGEMENT.Model.PlayerScoreResetResponse{}} on success
-  {:error, info} on failure
-  """
-  @spec games_management_scores_reset(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.GamesManagement.V1MANAGEMENT.Model.PlayerScoreResetResponse.t} | {:error, Tesla.Env.t}
-  def games_management_scores_reset(connection, leaderboard_id, opts \\ []) do
-    optional_params = %{
-      :"alt" => :query,
-      :"fields" => :query,
-      :"key" => :query,
-      :"oauth_token" => :query,
-      :"prettyPrint" => :query,
-      :"quotaUser" => :query,
-      :"userIp" => :query
-    }
-    %{}
-    |> method(:post)
-    |> url("/leaderboards/#{leaderboard_id}/scores/reset")
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.GamesManagement.V1MANAGEMENT.Model.PlayerScoreResetResponse{})
-  end
-
-  @doc """
-  Resets all scores for all leaderboards for the currently authenticated players. This method is only accessible to whitelisted tester accounts for your application.
-
-  ## Parameters
-
-  - connection (GoogleApi.GamesManagement.V1MANAGEMENT.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :alt (String): Data format for the response.
-    - :fields (String): Selector specifying which fields to include in a partial response.
-    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String): OAuth 2.0 token for the current user.
-    - :pretty_print (Boolean): Returns response with indentations and line breaks.
-    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
-
-  ## Returns
-
-  {:ok, %GoogleApi.GamesManagement.V1MANAGEMENT.Model.PlayerScoreResetAllResponse{}} on success
-  {:error, info} on failure
-  """
-  @spec games_management_scores_reset_all(Tesla.Env.client, keyword()) :: {:ok, GoogleApi.GamesManagement.V1MANAGEMENT.Model.PlayerScoreResetAllResponse.t} | {:error, Tesla.Env.t}
-  def games_management_scores_reset_all(connection, opts \\ []) do
-    optional_params = %{
-      :"alt" => :query,
-      :"fields" => :query,
-      :"key" => :query,
-      :"oauth_token" => :query,
-      :"prettyPrint" => :query,
-      :"quotaUser" => :query,
-      :"userIp" => :query
-    }
-    %{}
-    |> method(:post)
-    |> url("/scores/reset")
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.GamesManagement.V1MANAGEMENT.Model.PlayerScoreResetAllResponse{})
-  end
-
-  @doc """
-  Resets scores for all draft leaderboards for all players. This method is only available to user accounts for your developer console.
-
-  ## Parameters
-
-  - connection (GoogleApi.GamesManagement.V1MANAGEMENT.Connection): Connection to server
+  - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
+  - quest_id (String): The ID of the quest.
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
     - :fields (String): Selector specifying which fields to include in a partial response.
@@ -127,8 +47,8 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.Scores do
   {:ok, %{}} on success
   {:error, info} on failure
   """
-  @spec games_management_scores_reset_all_for_all_players(Tesla.Env.client, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
-  def games_management_scores_reset_all_for_all_players(connection, opts \\ []) do
+  @spec games_management_quests_reset(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
+  def games_management_quests_reset(connection, quest_id, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
       :"fields" => :query,
@@ -140,7 +60,7 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.Scores do
     }
     %{}
     |> method(:post)
-    |> url("/scores/resetAllForAllPlayers")
+    |> url("/quests/#{quest_id}/reset")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -148,12 +68,11 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.Scores do
   end
 
   @doc """
-  Resets scores for the leaderboard with the given ID for all players. This method is only available to user accounts for your developer console. Only draft leaderboards can be reset.
+  Resets all player progress on all quests for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application.
 
   ## Parameters
 
-  - connection (GoogleApi.GamesManagement.V1MANAGEMENT.Connection): Connection to server
-  - leaderboard_id (String): The ID of the leaderboard.
+  - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
     - :fields (String): Selector specifying which fields to include in a partial response.
@@ -168,8 +87,8 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.Scores do
   {:ok, %{}} on success
   {:error, info} on failure
   """
-  @spec games_management_scores_reset_for_all_players(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
-  def games_management_scores_reset_for_all_players(connection, leaderboard_id, opts \\ []) do
+  @spec games_management_quests_reset_all(Tesla.Env.client, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
+  def games_management_quests_reset_all(connection, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
       :"fields" => :query,
@@ -181,7 +100,7 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.Scores do
     }
     %{}
     |> method(:post)
-    |> url("/leaderboards/#{leaderboard_id}/scores/resetForAllPlayers")
+    |> url("/quests/reset")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -189,11 +108,11 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.Scores do
   end
 
   @doc """
-  Resets scores for the leaderboards with the given IDs for all players. This method is only available to user accounts for your developer console. Only draft leaderboards may be reset.
+  Resets all draft quests for all players. This method is only available to user accounts for your developer console.
 
   ## Parameters
 
-  - connection (GoogleApi.GamesManagement.V1MANAGEMENT.Connection): Connection to server
+  - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
     - :fields (String): Selector specifying which fields to include in a partial response.
@@ -202,15 +121,96 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.Scores do
     - :pretty_print (Boolean): Returns response with indentations and line breaks.
     - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
     - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
-    - :body (ScoresResetMultipleForAllRequest): 
 
   ## Returns
 
   {:ok, %{}} on success
   {:error, info} on failure
   """
-  @spec games_management_scores_reset_multiple_for_all_players(Tesla.Env.client, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
-  def games_management_scores_reset_multiple_for_all_players(connection, opts \\ []) do
+  @spec games_management_quests_reset_all_for_all_players(Tesla.Env.client, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
+  def games_management_quests_reset_all_for_all_players(connection, opts \\ []) do
+    optional_params = %{
+      :"alt" => :query,
+      :"fields" => :query,
+      :"key" => :query,
+      :"oauth_token" => :query,
+      :"prettyPrint" => :query,
+      :"quotaUser" => :query,
+      :"userIp" => :query
+    }
+    %{}
+    |> method(:post)
+    |> url("/quests/resetAllForAllPlayers")
+    |> add_optional_params(optional_params, opts)
+    |> Enum.into([])
+    |> (&Connection.request(connection, &1)).()
+    |> decode(false)
+  end
+
+  @doc """
+  Resets all player progress on the quest with the given ID for all players. This method is only available to user accounts for your developer console. Only draft quests can be reset.
+
+  ## Parameters
+
+  - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
+  - quest_id (String): The ID of the quest.
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
+    - :fields (String): Selector specifying which fields to include in a partial response.
+    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String): OAuth 2.0 token for the current user.
+    - :pretty_print (Boolean): Returns response with indentations and line breaks.
+    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+
+  ## Returns
+
+  {:ok, %{}} on success
+  {:error, info} on failure
+  """
+  @spec games_management_quests_reset_for_all_players(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
+  def games_management_quests_reset_for_all_players(connection, quest_id, opts \\ []) do
+    optional_params = %{
+      :"alt" => :query,
+      :"fields" => :query,
+      :"key" => :query,
+      :"oauth_token" => :query,
+      :"prettyPrint" => :query,
+      :"quotaUser" => :query,
+      :"userIp" => :query
+    }
+    %{}
+    |> method(:post)
+    |> url("/quests/#{quest_id}/resetForAllPlayers")
+    |> add_optional_params(optional_params, opts)
+    |> Enum.into([])
+    |> (&Connection.request(connection, &1)).()
+    |> decode(false)
+  end
+
+  @doc """
+  Resets quests with the given IDs for all players. This method is only available to user accounts for your developer console. Only draft quests may be reset.
+
+  ## Parameters
+
+  - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
+    - :fields (String): Selector specifying which fields to include in a partial response.
+    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String): OAuth 2.0 token for the current user.
+    - :pretty_print (Boolean): Returns response with indentations and line breaks.
+    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :body (QuestsResetMultipleForAllRequest): 
+
+  ## Returns
+
+  {:ok, %{}} on success
+  {:error, info} on failure
+  """
+  @spec games_management_quests_reset_multiple_for_all_players(Tesla.Env.client, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
+  def games_management_quests_reset_multiple_for_all_players(connection, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
       :"fields" => :query,
@@ -223,7 +223,7 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.Scores do
     }
     %{}
     |> method(:post)
-    |> url("/scores/resetMultipleForAllPlayers")
+    |> url("/quests/resetMultipleForAllPlayers")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

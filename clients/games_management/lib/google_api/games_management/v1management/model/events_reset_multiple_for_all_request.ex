@@ -17,24 +17,21 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Model.PlayerScoreResetResponse do
+defmodule GoogleApi.GamesManagement.V1management.Model.EventsResetMultipleForAllRequest do
   @moduledoc """
-  This is a JSON template for a list of reset leaderboard entry resources.
+  This is a JSON template for multiple events reset all request.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"definitionId",
-    :"kind",
-    :"resetScoreTimeSpans"
+    :"event_ids",
+    :"kind"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1MANAGEMENT.Model.PlayerScoreResetResponse do
-  import GoogleApi.GamesManagement.V1MANAGEMENT.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1management.Model.EventsResetMultipleForAllRequest do
+  def decode(value, _options) do
     value
   end
 end
-
 

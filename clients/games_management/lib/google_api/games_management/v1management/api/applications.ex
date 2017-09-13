@@ -17,13 +17,13 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.Applications do
+defmodule GoogleApi.GamesManagement.V1management.Api.Applications do
   @moduledoc """
   API calls for all endpoints tagged `Applications`.
   """
 
-  alias GoogleApi.GamesManagement.V1MANAGEMENT.Connection
-  import GoogleApi.GamesManagement.V1MANAGEMENT.RequestBuilder
+  alias GoogleApi.GamesManagement.V1management.Connection
+  import GoogleApi.GamesManagement.V1management.RequestBuilder
 
 
   @doc """
@@ -31,7 +31,7 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.Applications do
 
   ## Parameters
 
-  - connection (GoogleApi.GamesManagement.V1MANAGEMENT.Connection): Connection to server
+  - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
   - application_id (String): The application ID from the Google Play developer console.
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
@@ -46,10 +46,10 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.Applications do
 
   ## Returns
 
-  {:ok, %GoogleApi.GamesManagement.V1MANAGEMENT.Model.HiddenPlayerList{}} on success
+  {:ok, %GoogleApi.GamesManagement.V1management.Model.HiddenPlayerList{}} on success
   {:error, info} on failure
   """
-  @spec games_management_applications_list_hidden(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.GamesManagement.V1MANAGEMENT.Model.HiddenPlayerList.t} | {:error, Tesla.Env.t}
+  @spec games_management_applications_list_hidden(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.GamesManagement.V1management.Model.HiddenPlayerList.t} | {:error, Tesla.Env.t}
   def games_management_applications_list_hidden(connection, application_id, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -68,6 +68,6 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Api.Applications do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.GamesManagement.V1MANAGEMENT.Model.HiddenPlayerList{})
+    |> decode(%GoogleApi.GamesManagement.V1management.Model.HiddenPlayerList{})
   end
 end

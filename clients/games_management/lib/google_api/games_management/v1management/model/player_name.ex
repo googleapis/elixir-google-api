@@ -17,23 +17,21 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Model.ProfileSettings do
+defmodule GoogleApi.GamesManagement.V1management.Model.Player_name do
   @moduledoc """
-  This is a JSON template for profile settings
+  An object representation of the individual components of the player&#39;s name. For some players, these fields may not be present.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"kind",
-    :"profileVisible"
+    :"familyName",
+    :"givenName"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1MANAGEMENT.Model.ProfileSettings do
-  import GoogleApi.GamesManagement.V1MANAGEMENT.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1management.Model.Player_name do
+  def decode(value, _options) do
     value
   end
 end
-
 

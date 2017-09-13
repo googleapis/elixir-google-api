@@ -17,25 +17,23 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Model.AchievementResetResponse do
+defmodule GoogleApi.GamesManagement.V1management.Model.AchievementResetAllResponse do
   @moduledoc """
-  This is a JSON template for an achievement reset response.
+  This is a JSON template for achievement reset all response.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"currentState",
-    :"definitionId",
     :"kind",
-    :"updateOccurred"
+    :"results"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1MANAGEMENT.Model.AchievementResetResponse do
-  import GoogleApi.GamesManagement.V1MANAGEMENT.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1management.Model.AchievementResetAllResponse do
+  import GoogleApi.GamesManagement.V1management.Deserializer
   def decode(value, options) do
     value
+    |> deserialize(:"results", :list, GoogleApi.GamesManagement.V1management.Model.AchievementResetResponse, options)
   end
 end
-
 

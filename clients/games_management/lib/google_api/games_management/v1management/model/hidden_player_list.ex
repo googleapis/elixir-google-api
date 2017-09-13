@@ -17,23 +17,24 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Model.Player_name do
+defmodule GoogleApi.GamesManagement.V1management.Model.HiddenPlayerList do
   @moduledoc """
-  An object representation of the individual components of the player&#39;s name. For some players, these fields may not be present.
+  This is a JSON template for a list of hidden players.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"familyName",
-    :"givenName"
+    :"items",
+    :"kind",
+    :"nextPageToken"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1MANAGEMENT.Model.Player_name do
-  import GoogleApi.GamesManagement.V1MANAGEMENT.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1management.Model.HiddenPlayerList do
+  import GoogleApi.GamesManagement.V1management.Deserializer
   def decode(value, options) do
     value
+    |> deserialize(:"items", :list, GoogleApi.GamesManagement.V1management.Model.HiddenPlayer, options)
   end
 end
-
 

@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Model.Player do
+defmodule GoogleApi.GamesManagement.V1management.Model.Player do
   @moduledoc """
   This is a JSON template for a Player resource.
   """
@@ -39,15 +39,14 @@ defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Model.Player do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1MANAGEMENT.Model.Player do
-  import GoogleApi.GamesManagement.V1MANAGEMENT.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1management.Model.Player do
+  import GoogleApi.GamesManagement.V1management.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"experienceInfo", :struct, GoogleApi.GamesManagement.V1MANAGEMENT.Model.GamesPlayerExperienceInfoResource, options)
-    |> deserialize(:"lastPlayedWith", :struct, GoogleApi.GamesManagement.V1MANAGEMENT.Model.GamesPlayedResource, options)
-    |> deserialize(:"name", :struct, GoogleApi.GamesManagement.V1MANAGEMENT.Model.Player_name, options)
-    |> deserialize(:"profileSettings", :struct, GoogleApi.GamesManagement.V1MANAGEMENT.Model.ProfileSettings, options)
+    |> deserialize(:"experienceInfo", :struct, GoogleApi.GamesManagement.V1management.Model.GamesPlayerExperienceInfoResource, options)
+    |> deserialize(:"lastPlayedWith", :struct, GoogleApi.GamesManagement.V1management.Model.GamesPlayedResource, options)
+    |> deserialize(:"name", :struct, GoogleApi.GamesManagement.V1management.Model.Player_name, options)
+    |> deserialize(:"profileSettings", :struct, GoogleApi.GamesManagement.V1management.Model.ProfileSettings, options)
   end
 end
-
 

@@ -17,25 +17,23 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Model.HiddenPlayerList do
+defmodule GoogleApi.GamesManagement.V1management.Model.AchievementResetResponse do
   @moduledoc """
-  This is a JSON template for a list of hidden players.
+  This is a JSON template for an achievement reset response.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"items",
+    :"currentState",
+    :"definitionId",
     :"kind",
-    :"nextPageToken"
+    :"updateOccurred"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1MANAGEMENT.Model.HiddenPlayerList do
-  import GoogleApi.GamesManagement.V1MANAGEMENT.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1management.Model.AchievementResetResponse do
+  def decode(value, _options) do
     value
-    |> deserialize(:"items", :list, GoogleApi.GamesManagement.V1MANAGEMENT.Model.HiddenPlayer, options)
   end
 end
-
 

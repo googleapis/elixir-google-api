@@ -17,24 +17,22 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Model.PlayerScoreResetAllResponse do
+defmodule GoogleApi.GamesManagement.V1management.Model.GamesPlayerLevelResource do
   @moduledoc """
-  This is a JSON template for a list of leaderboard reset resources.
+  This is a JSON template for 1P/3P metadata about a user&#39;s level.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"kind",
-    :"results"
+    :"level",
+    :"maxExperiencePoints",
+    :"minExperiencePoints"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1MANAGEMENT.Model.PlayerScoreResetAllResponse do
-  import GoogleApi.GamesManagement.V1MANAGEMENT.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1management.Model.GamesPlayerLevelResource do
+  def decode(value, _options) do
     value
-    |> deserialize(:"results", :list, GoogleApi.GamesManagement.V1MANAGEMENT.Model.PlayerScoreResetResponse, options)
   end
 end
-
 

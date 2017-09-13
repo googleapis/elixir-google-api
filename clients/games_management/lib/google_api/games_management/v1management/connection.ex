@@ -17,9 +17,9 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.GamesManagement.V1MANAGEMENT.Connection do
+defmodule GoogleApi.GamesManagement.V1management.Connection do
   @moduledoc """
-  Handle Tesla connections for GoogleApi.GamesManagement.V1MANAGEMENT.
+  Handle Tesla connections for GoogleApi.GamesManagement.V1management.
   """
 
   use Tesla
