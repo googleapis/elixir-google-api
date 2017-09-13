@@ -436,10 +436,10 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V2.Model.Apk{}} on success
+  {:ok, %{}} on success
   {:error, info} on failure
   """
-  @spec androidpublisher_edits_apks_upload_resumable(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.AndroidPublisher.V2.Model.Apk.t} | {:error, Tesla.Env.t}
+  @spec androidpublisher_edits_apks_upload_resumable(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
   def androidpublisher_edits_apks_upload_resumable(connection, package_name, edit_id, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -456,7 +456,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.AndroidPublisher.V2.Model.Apk{})
+    |> decode(false)
   end
 
   @doc """
@@ -649,10 +649,10 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V2.Model.DeobfuscationFilesUploadResponse{}} on success
+  {:ok, %{}} on success
   {:error, info} on failure
   """
-  @spec androidpublisher_edits_deobfuscationfiles_upload_resumable(Tesla.Env.client, String.t, String.t, Integer.t, String.t, keyword()) :: {:ok, GoogleApi.AndroidPublisher.V2.Model.DeobfuscationFilesUploadResponse.t} | {:error, Tesla.Env.t}
+  @spec androidpublisher_edits_deobfuscationfiles_upload_resumable(Tesla.Env.client, String.t, String.t, Integer.t, String.t, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
   def androidpublisher_edits_deobfuscationfiles_upload_resumable(connection, package_name, edit_id, apk_version_code, deobfuscation_file_type, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -669,7 +669,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.AndroidPublisher.V2.Model.DeobfuscationFilesUploadResponse{})
+    |> decode(false)
   end
 
   @doc """
@@ -1047,10 +1047,10 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V2.Model.ExpansionFilesUploadResponse{}} on success
+  {:ok, %{}} on success
   {:error, info} on failure
   """
-  @spec androidpublisher_edits_expansionfiles_upload_resumable(Tesla.Env.client, String.t, String.t, Integer.t, String.t, keyword()) :: {:ok, GoogleApi.AndroidPublisher.V2.Model.ExpansionFilesUploadResponse.t} | {:error, Tesla.Env.t}
+  @spec androidpublisher_edits_expansionfiles_upload_resumable(Tesla.Env.client, String.t, String.t, Integer.t, String.t, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
   def androidpublisher_edits_expansionfiles_upload_resumable(connection, package_name, edit_id, apk_version_code, expansion_file_type, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -1067,7 +1067,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.AndroidPublisher.V2.Model.ExpansionFilesUploadResponse{})
+    |> decode(false)
   end
 
   @doc """
@@ -1354,10 +1354,10 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V2.Model.ImagesUploadResponse{}} on success
+  {:ok, %{}} on success
   {:error, info} on failure
   """
-  @spec androidpublisher_edits_images_upload_resumable(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.AndroidPublisher.V2.Model.ImagesUploadResponse.t} | {:error, Tesla.Env.t}
+  @spec androidpublisher_edits_images_upload_resumable(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
   def androidpublisher_edits_images_upload_resumable(connection, package_name, edit_id, language, image_type, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -1374,7 +1374,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.AndroidPublisher.V2.Model.ImagesUploadResponse{})
+    |> decode(false)
   end
 
   @doc """

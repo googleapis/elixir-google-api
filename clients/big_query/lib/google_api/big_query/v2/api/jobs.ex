@@ -210,6 +210,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
 
   - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
   - project_id (String): Project ID of the project that will be billed for the job
+  - upload_type (String): Upload type. Must be \&quot;resumable\&quot;.
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
     - :fields (String): Selector specifying which fields to include in a partial response.
@@ -218,14 +219,15 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
     - :pretty_print (Boolean): Returns response with indentations and line breaks.
     - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
     - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :body (Job): 
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQuery.V2.Model.Job{}} on success
+  {:ok, %{}} on success
   {:error, info} on failure
   """
-  @spec bigquery_jobs_insert_resumable(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.BigQuery.V2.Model.Job.t} | {:error, Tesla.Env.t}
-  def bigquery_jobs_insert_resumable(connection, project_id, opts \\ []) do
+  @spec bigquery_jobs_insert_resumable(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
+  def bigquery_jobs_insert_resumable(connection, project_id, upload_type, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
       :"fields" => :query,
@@ -233,15 +235,17 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
       :"oauth_token" => :query,
       :"prettyPrint" => :query,
       :"quotaUser" => :query,
-      :"userIp" => :query
+      :"userIp" => :query,
+      :"body" => :body
     }
     %{}
     |> method(:post)
     |> url("/resumable/upload/bigquery/v2/projects/#{project_id}/jobs")
+    |> add_param(:query, :"uploadType", upload_type)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.BigQuery.V2.Model.Job{})
+    |> decode(false)
   end
 
   @doc """
@@ -251,9 +255,9 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
 
   - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
   - project_id (String): Project ID of the project that will be billed for the job
-  - upload_type (String): Upload type. Must be \&quot;multipart\&quot;
-  - metatdata (Job): 
-  - data (String): 
+  - upload_type (String): Upload type. Must be \&quot;multipart\&quot;.
+  - metadata (Job): Job metadata.
+  - data (String): The file to upload.
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
     - :fields (String): Selector specifying which fields to include in a partial response.
@@ -269,7 +273,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   {:error, info} on failure
   """
   @spec bigquery_jobs_insert_simple(Tesla.Env.client, String.t, String.t, GoogleApi.BigQuery.V2.Model.Job.t, String.t, keyword()) :: {:ok, GoogleApi.BigQuery.V2.Model.Job.t} | {:error, Tesla.Env.t}
-  def bigquery_jobs_insert_simple(connection, project_id, upload_type, metatdata, data, opts \\ []) do
+  def bigquery_jobs_insert_simple(connection, project_id, upload_type, metadata, data, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
       :"fields" => :query,
@@ -283,7 +287,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
     |> method(:post)
     |> url("/upload/bigquery/v2/projects/#{project_id}/jobs")
     |> add_param(:query, :"uploadType", upload_type)
-    |> add_param(:body, :"metatdata", metatdata)
+    |> add_param(:body, :"metadata", metadata)
     |> add_param(:file, :"data", data)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])

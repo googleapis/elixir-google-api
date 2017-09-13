@@ -78,6 +78,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.CreativeAssets do
   - connection (GoogleApi.DFAReporting.V28.Connection): Connection to server
   - profile_id (String): User profile ID associated with this request.
   - advertiser_id (String): Advertiser ID of this creative. This is a required field.
+  - upload_type (String): Upload type. Must be \&quot;resumable\&quot;.
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
     - :fields (String): Selector specifying which fields to include in a partial response.
@@ -86,14 +87,15 @@ defmodule GoogleApi.DFAReporting.V28.Api.CreativeAssets do
     - :pretty_print (Boolean): Returns response with indentations and line breaks.
     - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
     - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :body (CreativeAssetMetadata): 
 
   ## Returns
 
-  {:ok, %GoogleApi.DFAReporting.V28.Model.CreativeAssetMetadata{}} on success
+  {:ok, %{}} on success
   {:error, info} on failure
   """
-  @spec dfareporting_creative_assets_insert_resumable(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, GoogleApi.DFAReporting.V28.Model.CreativeAssetMetadata.t} | {:error, Tesla.Env.t}
-  def dfareporting_creative_assets_insert_resumable(connection, profile_id, advertiser_id, opts \\ []) do
+  @spec dfareporting_creative_assets_insert_resumable(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
+  def dfareporting_creative_assets_insert_resumable(connection, profile_id, advertiser_id, upload_type, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
       :"fields" => :query,
@@ -101,15 +103,17 @@ defmodule GoogleApi.DFAReporting.V28.Api.CreativeAssets do
       :"oauth_token" => :query,
       :"prettyPrint" => :query,
       :"quotaUser" => :query,
-      :"userIp" => :query
+      :"userIp" => :query,
+      :"body" => :body
     }
     %{}
     |> method(:post)
     |> url("/resumable/upload/dfareporting/v2.8/userprofiles/#{profile_id}/creativeAssets/#{advertiser_id}/creativeAssets")
+    |> add_param(:query, :"uploadType", upload_type)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.DFAReporting.V28.Model.CreativeAssetMetadata{})
+    |> decode(false)
   end
 
   @doc """
@@ -120,9 +124,9 @@ defmodule GoogleApi.DFAReporting.V28.Api.CreativeAssets do
   - connection (GoogleApi.DFAReporting.V28.Connection): Connection to server
   - profile_id (String): User profile ID associated with this request.
   - advertiser_id (String): Advertiser ID of this creative. This is a required field.
-  - upload_type (String): Upload type. Must be \&quot;multipart\&quot;
-  - metatdata (CreativeAssetMetadata): 
-  - data (String): 
+  - upload_type (String): Upload type. Must be \&quot;multipart\&quot;.
+  - metadata (CreativeAssetMetadata): CreativeAssetMetadata metadata.
+  - data (String): The file to upload.
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
     - :fields (String): Selector specifying which fields to include in a partial response.
@@ -138,7 +142,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.CreativeAssets do
   {:error, info} on failure
   """
   @spec dfareporting_creative_assets_insert_simple(Tesla.Env.client, String.t, String.t, String.t, GoogleApi.DFAReporting.V28.Model.CreativeAssetMetadata.t, String.t, keyword()) :: {:ok, GoogleApi.DFAReporting.V28.Model.CreativeAssetMetadata.t} | {:error, Tesla.Env.t}
-  def dfareporting_creative_assets_insert_simple(connection, profile_id, advertiser_id, upload_type, metatdata, data, opts \\ []) do
+  def dfareporting_creative_assets_insert_simple(connection, profile_id, advertiser_id, upload_type, metadata, data, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
       :"fields" => :query,
@@ -152,7 +156,7 @@ defmodule GoogleApi.DFAReporting.V28.Api.CreativeAssets do
     |> method(:post)
     |> url("/upload/dfareporting/v2.8/userprofiles/#{profile_id}/creativeAssets/#{advertiser_id}/creativeAssets")
     |> add_param(:query, :"uploadType", upload_type)
-    |> add_param(:body, :"metatdata", metatdata)
+    |> add_param(:body, :"metadata", metadata)
     |> add_param(:file, :"data", data)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])

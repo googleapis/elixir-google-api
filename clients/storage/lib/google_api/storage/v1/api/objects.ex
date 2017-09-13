@@ -376,7 +376,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
 
   - connection (GoogleApi.Storage.V1.Connection): Connection to server
   - bucket (String): Name of the bucket in which to store the new object. Overrides the provided object metadata&#39;s bucket value, if any.
-  - upload_type (String): Upload type. Must be \&quot;resumable\&quot;
+  - upload_type (String): Upload type. Must be \&quot;resumable\&quot;.
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
     - :fields (String): Selector specifying which fields to include in a partial response.
@@ -441,9 +441,9 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
 
   - connection (GoogleApi.Storage.V1.Connection): Connection to server
   - bucket (String): Name of the bucket in which to store the new object. Overrides the provided object metadata&#39;s bucket value, if any.
-  - upload_type (String): Upload type. Must be \&quot;multipart\&quot;
-  - metadata (Object): 
-  - data (String): 
+  - upload_type (String): Upload type. Must be \&quot;multipart\&quot;.
+  - metadata (Object): Object metadata.
+  - data (String): The file to upload.
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
     - :fields (String): Selector specifying which fields to include in a partial response.

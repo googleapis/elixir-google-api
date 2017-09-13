@@ -2959,10 +2959,10 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Upload{}} on success
+  {:ok, %{}} on success
   {:error, info} on failure
   """
-  @spec analytics_management_uploads_upload_data_resumable(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.Analytics.V3.Model.Upload.t} | {:error, Tesla.Env.t}
+  @spec analytics_management_uploads_upload_data_resumable(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
   def analytics_management_uploads_upload_data_resumable(connection, account_id, web_property_id, custom_data_source_id, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -2979,7 +2979,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Analytics.V3.Model.Upload{})
+    |> decode(false)
   end
 
   @doc """

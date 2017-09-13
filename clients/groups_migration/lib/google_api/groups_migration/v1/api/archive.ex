@@ -85,10 +85,10 @@ defmodule GoogleApi.GroupsMigration.V1.Api.Archive do
 
   ## Returns
 
-  {:ok, %GoogleApi.GroupsMigration.V1.Model.Groups{}} on success
+  {:ok, %{}} on success
   {:error, info} on failure
   """
-  @spec groupsmigration_archive_insert_resumable(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.GroupsMigration.V1.Model.Groups.t} | {:error, Tesla.Env.t}
+  @spec groupsmigration_archive_insert_resumable(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
   def groupsmigration_archive_insert_resumable(connection, group_id, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -105,7 +105,7 @@ defmodule GoogleApi.GroupsMigration.V1.Api.Archive do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.GroupsMigration.V1.Model.Groups{})
+    |> decode(false)
   end
 
   @doc """

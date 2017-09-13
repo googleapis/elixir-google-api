@@ -76,6 +76,7 @@ defmodule GoogleApi.PlayCustomApp.V1.Api.Accounts do
 
   - connection (GoogleApi.PlayCustomApp.V1.Connection): Connection to server
   - account (String): Developer account ID.
+  - upload_type (String): Upload type. Must be \&quot;resumable\&quot;.
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
     - :fields (String): Selector specifying which fields to include in a partial response.
@@ -84,14 +85,15 @@ defmodule GoogleApi.PlayCustomApp.V1.Api.Accounts do
     - :pretty_print (Boolean): Returns response with indentations and line breaks.
     - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
     - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :body (CustomApp): 
 
   ## Returns
 
-  {:ok, %GoogleApi.PlayCustomApp.V1.Model.CustomApp{}} on success
+  {:ok, %{}} on success
   {:error, info} on failure
   """
-  @spec playcustomapp_accounts_custom_apps_create_resumable(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.PlayCustomApp.V1.Model.CustomApp.t} | {:error, Tesla.Env.t}
-  def playcustomapp_accounts_custom_apps_create_resumable(connection, account, opts \\ []) do
+  @spec playcustomapp_accounts_custom_apps_create_resumable(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
+  def playcustomapp_accounts_custom_apps_create_resumable(connection, account, upload_type, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
       :"fields" => :query,
@@ -99,15 +101,17 @@ defmodule GoogleApi.PlayCustomApp.V1.Api.Accounts do
       :"oauth_token" => :query,
       :"prettyPrint" => :query,
       :"quotaUser" => :query,
-      :"userIp" => :query
+      :"userIp" => :query,
+      :"body" => :body
     }
     %{}
     |> method(:post)
     |> url("/resumable/upload/playcustomapp/v1/accounts/#{account}/customApps")
+    |> add_param(:query, :"uploadType", upload_type)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.PlayCustomApp.V1.Model.CustomApp{})
+    |> decode(false)
   end
 
   @doc """
@@ -117,9 +121,9 @@ defmodule GoogleApi.PlayCustomApp.V1.Api.Accounts do
 
   - connection (GoogleApi.PlayCustomApp.V1.Connection): Connection to server
   - account (String): Developer account ID.
-  - upload_type (String): Upload type. Must be \&quot;multipart\&quot;
-  - metatdata (CustomApp): 
-  - data (String): 
+  - upload_type (String): Upload type. Must be \&quot;multipart\&quot;.
+  - metadata (CustomApp): CustomApp metadata.
+  - data (String): The file to upload.
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
     - :fields (String): Selector specifying which fields to include in a partial response.
@@ -135,7 +139,7 @@ defmodule GoogleApi.PlayCustomApp.V1.Api.Accounts do
   {:error, info} on failure
   """
   @spec playcustomapp_accounts_custom_apps_create_simple(Tesla.Env.client, String.t, String.t, GoogleApi.PlayCustomApp.V1.Model.CustomApp.t, String.t, keyword()) :: {:ok, GoogleApi.PlayCustomApp.V1.Model.CustomApp.t} | {:error, Tesla.Env.t}
-  def playcustomapp_accounts_custom_apps_create_simple(connection, account, upload_type, metatdata, data, opts \\ []) do
+  def playcustomapp_accounts_custom_apps_create_simple(connection, account, upload_type, metadata, data, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
       :"fields" => :query,
@@ -149,7 +153,7 @@ defmodule GoogleApi.PlayCustomApp.V1.Api.Accounts do
     |> method(:post)
     |> url("/upload/playcustomapp/v1/accounts/#{account}/customApps")
     |> add_param(:query, :"uploadType", upload_type)
-    |> add_param(:body, :"metatdata", metatdata)
+    |> add_param(:body, :"metadata", metadata)
     |> add_param(:file, :"data", data)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])

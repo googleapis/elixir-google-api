@@ -225,10 +225,10 @@ defmodule GoogleApi.FusionTables.V2.Api.Table do
 
   ## Returns
 
-  {:ok, %GoogleApi.FusionTables.V2.Model.Import{}} on success
+  {:ok, %{}} on success
   {:error, info} on failure
   """
-  @spec fusiontables_table_import_rows_resumable(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.FusionTables.V2.Model.Import.t} | {:error, Tesla.Env.t}
+  @spec fusiontables_table_import_rows_resumable(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
   def fusiontables_table_import_rows_resumable(connection, table_id, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -250,7 +250,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Table do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.FusionTables.V2.Model.Import{})
+    |> decode(false)
   end
 
   @doc """
@@ -370,10 +370,10 @@ defmodule GoogleApi.FusionTables.V2.Api.Table do
 
   ## Returns
 
-  {:ok, %GoogleApi.FusionTables.V2.Model.Table{}} on success
+  {:ok, %{}} on success
   {:error, info} on failure
   """
-  @spec fusiontables_table_import_table_resumable(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.FusionTables.V2.Model.Table.t} | {:error, Tesla.Env.t}
+  @spec fusiontables_table_import_table_resumable(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
   def fusiontables_table_import_table_resumable(connection, name, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -393,7 +393,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Table do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.FusionTables.V2.Model.Table{})
+    |> decode(false)
   end
 
   @doc """
@@ -647,10 +647,10 @@ defmodule GoogleApi.FusionTables.V2.Api.Table do
 
   ## Returns
 
-  {:ok, %GoogleApi.FusionTables.V2.Model.Task{}} on success
+  {:ok, %{}} on success
   {:error, info} on failure
   """
-  @spec fusiontables_table_replace_rows_resumable(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.FusionTables.V2.Model.Task.t} | {:error, Tesla.Env.t}
+  @spec fusiontables_table_replace_rows_resumable(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
   def fusiontables_table_replace_rows_resumable(connection, table_id, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
@@ -672,7 +672,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Table do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.FusionTables.V2.Model.Task{})
+    |> decode(false)
   end
 
   @doc """
