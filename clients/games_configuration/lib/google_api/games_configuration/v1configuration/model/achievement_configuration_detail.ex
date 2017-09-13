@@ -17,31 +17,28 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.AchievementConfiguration do
+defmodule GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfigurationDetail do
   @moduledoc """
-  This is a JSON template for an achievement configuration resource.
+  This is a JSON template for an achievement configuration detail.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"achievementType",
-    :"draft",
-    :"id",
-    :"initialState",
+    :"description",
+    :"iconUrl",
     :"kind",
-    :"published",
-    :"stepsToUnlock",
-    :"token"
+    :"name",
+    :"pointValue",
+    :"sortRank"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.AchievementConfiguration do
-  import GoogleApi.GamesConfiguration.V1CONFIGURATION.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfigurationDetail do
+  import GoogleApi.GamesConfiguration.V1configuration.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"draft", :struct, GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.AchievementConfigurationDetail, options)
-    |> deserialize(:"published", :struct, GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.AchievementConfigurationDetail, options)
+    |> deserialize(:"description", :struct, GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle, options)
+    |> deserialize(:"name", :struct, GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle, options)
   end
 end
-
 

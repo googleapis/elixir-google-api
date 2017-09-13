@@ -17,22 +17,22 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.GamesConfiguration.V1CONFIGURATION.Api.AchievementConfigurations do
+defmodule GoogleApi.GamesConfiguration.V1configuration.Api.LeaderboardConfigurations do
   @moduledoc """
-  API calls for all endpoints tagged `AchievementConfigurations`.
+  API calls for all endpoints tagged `LeaderboardConfigurations`.
   """
 
-  alias GoogleApi.GamesConfiguration.V1CONFIGURATION.Connection
-  import GoogleApi.GamesConfiguration.V1CONFIGURATION.RequestBuilder
+  alias GoogleApi.GamesConfiguration.V1configuration.Connection
+  import GoogleApi.GamesConfiguration.V1configuration.RequestBuilder
 
 
   @doc """
-  Delete the achievement configuration with the given ID.
+  Delete the leaderboard configuration with the given ID.
 
   ## Parameters
 
-  - connection (GoogleApi.GamesConfiguration.V1CONFIGURATION.Connection): Connection to server
-  - achievement_id (String): The ID of the achievement used by this method.
+  - connection (GoogleApi.GamesConfiguration.V1configuration.Connection): Connection to server
+  - leaderboard_id (String): The ID of the leaderboard.
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
     - :fields (String): Selector specifying which fields to include in a partial response.
@@ -47,8 +47,8 @@ defmodule GoogleApi.GamesConfiguration.V1CONFIGURATION.Api.AchievementConfigurat
   {:ok, %{}} on success
   {:error, info} on failure
   """
-  @spec games_configuration_achievement_configurations_delete(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
-  def games_configuration_achievement_configurations_delete(connection, achievement_id, opts \\ []) do
+  @spec games_configuration_leaderboard_configurations_delete(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
+  def games_configuration_leaderboard_configurations_delete(connection, leaderboard_id, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
       :"fields" => :query,
@@ -60,7 +60,7 @@ defmodule GoogleApi.GamesConfiguration.V1CONFIGURATION.Api.AchievementConfigurat
     }
     %{}
     |> method(:delete)
-    |> url("/achievements/#{achievement_id}")
+    |> url("/games/v1configuration/leaderboards/#{leaderboard_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -68,12 +68,12 @@ defmodule GoogleApi.GamesConfiguration.V1CONFIGURATION.Api.AchievementConfigurat
   end
 
   @doc """
-  Retrieves the metadata of the achievement configuration with the given ID.
+  Retrieves the metadata of the leaderboard configuration with the given ID.
 
   ## Parameters
 
-  - connection (GoogleApi.GamesConfiguration.V1CONFIGURATION.Connection): Connection to server
-  - achievement_id (String): The ID of the achievement used by this method.
+  - connection (GoogleApi.GamesConfiguration.V1configuration.Connection): Connection to server
+  - leaderboard_id (String): The ID of the leaderboard.
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
     - :fields (String): Selector specifying which fields to include in a partial response.
@@ -85,11 +85,11 @@ defmodule GoogleApi.GamesConfiguration.V1CONFIGURATION.Api.AchievementConfigurat
 
   ## Returns
 
-  {:ok, %GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.AchievementConfiguration{}} on success
+  {:ok, %GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfiguration{}} on success
   {:error, info} on failure
   """
-  @spec games_configuration_achievement_configurations_get(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.AchievementConfiguration.t} | {:error, Tesla.Env.t}
-  def games_configuration_achievement_configurations_get(connection, achievement_id, opts \\ []) do
+  @spec games_configuration_leaderboard_configurations_get(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfiguration.t} | {:error, Tesla.Env.t}
+  def games_configuration_leaderboard_configurations_get(connection, leaderboard_id, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
       :"fields" => :query,
@@ -101,19 +101,19 @@ defmodule GoogleApi.GamesConfiguration.V1CONFIGURATION.Api.AchievementConfigurat
     }
     %{}
     |> method(:get)
-    |> url("/achievements/#{achievement_id}")
+    |> url("/games/v1configuration/leaderboards/#{leaderboard_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.AchievementConfiguration{})
+    |> decode(%GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfiguration{})
   end
 
   @doc """
-  Insert a new achievement configuration in this application.
+  Insert a new leaderboard configuration in this application.
 
   ## Parameters
 
-  - connection (GoogleApi.GamesConfiguration.V1CONFIGURATION.Connection): Connection to server
+  - connection (GoogleApi.GamesConfiguration.V1configuration.Connection): Connection to server
   - application_id (String): The application ID from the Google Play developer console.
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
@@ -123,15 +123,15 @@ defmodule GoogleApi.GamesConfiguration.V1CONFIGURATION.Api.AchievementConfigurat
     - :pretty_print (Boolean): Returns response with indentations and line breaks.
     - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
     - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
-    - :body (AchievementConfiguration): 
+    - :body (LeaderboardConfiguration): 
 
   ## Returns
 
-  {:ok, %GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.AchievementConfiguration{}} on success
+  {:ok, %GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfiguration{}} on success
   {:error, info} on failure
   """
-  @spec games_configuration_achievement_configurations_insert(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.AchievementConfiguration.t} | {:error, Tesla.Env.t}
-  def games_configuration_achievement_configurations_insert(connection, application_id, opts \\ []) do
+  @spec games_configuration_leaderboard_configurations_insert(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfiguration.t} | {:error, Tesla.Env.t}
+  def games_configuration_leaderboard_configurations_insert(connection, application_id, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
       :"fields" => :query,
@@ -144,19 +144,19 @@ defmodule GoogleApi.GamesConfiguration.V1CONFIGURATION.Api.AchievementConfigurat
     }
     %{}
     |> method(:post)
-    |> url("/applications/#{application_id}/achievements")
+    |> url("/games/v1configuration/applications/#{application_id}/leaderboards")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.AchievementConfiguration{})
+    |> decode(%GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfiguration{})
   end
 
   @doc """
-  Returns a list of the achievement configurations in this application.
+  Returns a list of the leaderboard configurations in this application.
 
   ## Parameters
 
-  - connection (GoogleApi.GamesConfiguration.V1CONFIGURATION.Connection): Connection to server
+  - connection (GoogleApi.GamesConfiguration.V1configuration.Connection): Connection to server
   - application_id (String): The application ID from the Google Play developer console.
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
@@ -171,11 +171,11 @@ defmodule GoogleApi.GamesConfiguration.V1CONFIGURATION.Api.AchievementConfigurat
 
   ## Returns
 
-  {:ok, %GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.AchievementConfigurationListResponse{}} on success
+  {:ok, %GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfigurationListResponse{}} on success
   {:error, info} on failure
   """
-  @spec games_configuration_achievement_configurations_list(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.AchievementConfigurationListResponse.t} | {:error, Tesla.Env.t}
-  def games_configuration_achievement_configurations_list(connection, application_id, opts \\ []) do
+  @spec games_configuration_leaderboard_configurations_list(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfigurationListResponse.t} | {:error, Tesla.Env.t}
+  def games_configuration_leaderboard_configurations_list(connection, application_id, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
       :"fields" => :query,
@@ -189,20 +189,20 @@ defmodule GoogleApi.GamesConfiguration.V1CONFIGURATION.Api.AchievementConfigurat
     }
     %{}
     |> method(:get)
-    |> url("/applications/#{application_id}/achievements")
+    |> url("/games/v1configuration/applications/#{application_id}/leaderboards")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.AchievementConfigurationListResponse{})
+    |> decode(%GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfigurationListResponse{})
   end
 
   @doc """
-  Update the metadata of the achievement configuration with the given ID. This method supports patch semantics.
+  Update the metadata of the leaderboard configuration with the given ID. This method supports patch semantics.
 
   ## Parameters
 
-  - connection (GoogleApi.GamesConfiguration.V1CONFIGURATION.Connection): Connection to server
-  - achievement_id (String): The ID of the achievement used by this method.
+  - connection (GoogleApi.GamesConfiguration.V1configuration.Connection): Connection to server
+  - leaderboard_id (String): The ID of the leaderboard.
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
     - :fields (String): Selector specifying which fields to include in a partial response.
@@ -211,15 +211,15 @@ defmodule GoogleApi.GamesConfiguration.V1CONFIGURATION.Api.AchievementConfigurat
     - :pretty_print (Boolean): Returns response with indentations and line breaks.
     - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
     - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
-    - :body (AchievementConfiguration): 
+    - :body (LeaderboardConfiguration): 
 
   ## Returns
 
-  {:ok, %GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.AchievementConfiguration{}} on success
+  {:ok, %GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfiguration{}} on success
   {:error, info} on failure
   """
-  @spec games_configuration_achievement_configurations_patch(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.AchievementConfiguration.t} | {:error, Tesla.Env.t}
-  def games_configuration_achievement_configurations_patch(connection, achievement_id, opts \\ []) do
+  @spec games_configuration_leaderboard_configurations_patch(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfiguration.t} | {:error, Tesla.Env.t}
+  def games_configuration_leaderboard_configurations_patch(connection, leaderboard_id, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
       :"fields" => :query,
@@ -232,20 +232,20 @@ defmodule GoogleApi.GamesConfiguration.V1CONFIGURATION.Api.AchievementConfigurat
     }
     %{}
     |> method(:patch)
-    |> url("/achievements/#{achievement_id}")
+    |> url("/games/v1configuration/leaderboards/#{leaderboard_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.AchievementConfiguration{})
+    |> decode(%GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfiguration{})
   end
 
   @doc """
-  Update the metadata of the achievement configuration with the given ID.
+  Update the metadata of the leaderboard configuration with the given ID.
 
   ## Parameters
 
-  - connection (GoogleApi.GamesConfiguration.V1CONFIGURATION.Connection): Connection to server
-  - achievement_id (String): The ID of the achievement used by this method.
+  - connection (GoogleApi.GamesConfiguration.V1configuration.Connection): Connection to server
+  - leaderboard_id (String): The ID of the leaderboard.
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String): Data format for the response.
     - :fields (String): Selector specifying which fields to include in a partial response.
@@ -254,15 +254,15 @@ defmodule GoogleApi.GamesConfiguration.V1CONFIGURATION.Api.AchievementConfigurat
     - :pretty_print (Boolean): Returns response with indentations and line breaks.
     - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
     - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
-    - :body (AchievementConfiguration): 
+    - :body (LeaderboardConfiguration): 
 
   ## Returns
 
-  {:ok, %GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.AchievementConfiguration{}} on success
+  {:ok, %GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfiguration{}} on success
   {:error, info} on failure
   """
-  @spec games_configuration_achievement_configurations_update(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.AchievementConfiguration.t} | {:error, Tesla.Env.t}
-  def games_configuration_achievement_configurations_update(connection, achievement_id, opts \\ []) do
+  @spec games_configuration_leaderboard_configurations_update(Tesla.Env.client, String.t, keyword()) :: {:ok, GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfiguration.t} | {:error, Tesla.Env.t}
+  def games_configuration_leaderboard_configurations_update(connection, leaderboard_id, opts \\ []) do
     optional_params = %{
       :"alt" => :query,
       :"fields" => :query,
@@ -275,10 +275,10 @@ defmodule GoogleApi.GamesConfiguration.V1CONFIGURATION.Api.AchievementConfigurat
     }
     %{}
     |> method(:put)
-    |> url("/achievements/#{achievement_id}")
+    |> url("/games/v1configuration/leaderboards/#{leaderboard_id}")
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.AchievementConfiguration{})
+    |> decode(%GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfiguration{})
   end
 end

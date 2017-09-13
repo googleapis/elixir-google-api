@@ -17,25 +17,23 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.ImageConfiguration do
+defmodule GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle do
   @moduledoc """
-  This is a JSON template for an image configuration resource.
+  This is a JSON template for a localized string bundle resource.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"imageType",
     :"kind",
-    :"resourceId",
-    :"url"
+    :"translations"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.ImageConfiguration do
-  import GoogleApi.GamesConfiguration.V1CONFIGURATION.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle do
+  import GoogleApi.GamesConfiguration.V1configuration.Deserializer
   def decode(value, options) do
     value
+    |> deserialize(:"translations", :list, GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedString, options)
   end
 end
-
 

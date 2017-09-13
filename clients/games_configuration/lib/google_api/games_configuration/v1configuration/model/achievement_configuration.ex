@@ -17,25 +17,30 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.AchievementConfigurationListResponse do
+defmodule GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfiguration do
   @moduledoc """
-  This is a JSON template for a ListConfigurations response.
+  This is a JSON template for an achievement configuration resource.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"items",
+    :"achievementType",
+    :"draft",
+    :"id",
+    :"initialState",
     :"kind",
-    :"nextPageToken"
+    :"published",
+    :"stepsToUnlock",
+    :"token"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.AchievementConfigurationListResponse do
-  import GoogleApi.GamesConfiguration.V1CONFIGURATION.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfiguration do
+  import GoogleApi.GamesConfiguration.V1configuration.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"items", :list, GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.AchievementConfiguration, options)
+    |> deserialize(:"draft", :struct, GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfigurationDetail, options)
+    |> deserialize(:"published", :struct, GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfigurationDetail, options)
   end
 end
-
 

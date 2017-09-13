@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.GamesNumberAffixConfiguration do
+defmodule GoogleApi.GamesConfiguration.V1configuration.Model.GamesNumberAffixConfiguration do
   @moduledoc """
   This is a JSON template for a number affix resource.
   """
@@ -33,17 +33,16 @@ defmodule GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.GamesNumberAffixCon
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.GamesNumberAffixConfiguration do
-  import GoogleApi.GamesConfiguration.V1CONFIGURATION.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.GamesConfiguration.V1configuration.Model.GamesNumberAffixConfiguration do
+  import GoogleApi.GamesConfiguration.V1configuration.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"few", :struct, GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.LocalizedStringBundle, options)
-    |> deserialize(:"many", :struct, GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.LocalizedStringBundle, options)
-    |> deserialize(:"one", :struct, GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.LocalizedStringBundle, options)
-    |> deserialize(:"other", :struct, GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.LocalizedStringBundle, options)
-    |> deserialize(:"two", :struct, GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.LocalizedStringBundle, options)
-    |> deserialize(:"zero", :struct, GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.LocalizedStringBundle, options)
+    |> deserialize(:"few", :struct, GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle, options)
+    |> deserialize(:"many", :struct, GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle, options)
+    |> deserialize(:"one", :struct, GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle, options)
+    |> deserialize(:"other", :struct, GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle, options)
+    |> deserialize(:"two", :struct, GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle, options)
+    |> deserialize(:"zero", :struct, GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle, options)
   end
 end
-
 

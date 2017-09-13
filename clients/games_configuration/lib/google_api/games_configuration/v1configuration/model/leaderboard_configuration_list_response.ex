@@ -17,24 +17,24 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.LocalizedStringBundle do
+defmodule GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfigurationListResponse do
   @moduledoc """
-  This is a JSON template for a localized string bundle resource.
+  This is a JSON template for a ListConfigurations response.
   """
 
   @derive [Poison.Encoder]
   defstruct [
+    :"items",
     :"kind",
-    :"translations"
+    :"nextPageToken"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.LocalizedStringBundle do
-  import GoogleApi.GamesConfiguration.V1CONFIGURATION.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfigurationListResponse do
+  import GoogleApi.GamesConfiguration.V1configuration.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"translations", :list, GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.LocalizedString, options)
+    |> deserialize(:"items", :list, GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfiguration, options)
   end
 end
-
 

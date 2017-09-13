@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.GamesConfiguration.V1CONFIGURATION.Deserializer do
+defmodule GoogleApi.GamesConfiguration.V1configuration.Deserializer do
   @moduledoc """
   Helper functions for deserializing responses into models
   """

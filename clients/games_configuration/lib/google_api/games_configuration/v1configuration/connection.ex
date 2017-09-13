@@ -17,15 +17,15 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.GamesConfiguration.V1CONFIGURATION.Connection do
+defmodule GoogleApi.GamesConfiguration.V1configuration.Connection do
   @moduledoc """
-  Handle Tesla connections for GoogleApi.GamesConfiguration.V1CONFIGURATION.
+  Handle Tesla connections for GoogleApi.GamesConfiguration.V1configuration.
   """
 
   use Tesla
 
   # Add any middleware here (authentication)
-  plug Tesla.Middleware.BaseUrl, "https://www.googleapis.com/games/v1configuration"
+  plug Tesla.Middleware.BaseUrl, "https://www.googleapis.com"
   plug Tesla.Middleware.Headers, %{"User-Agent" => "Elixir"}
   plug Tesla.Middleware.EncodeJson
 

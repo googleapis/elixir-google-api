@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.GamesNumberFormatConfiguration do
+defmodule GoogleApi.GamesConfiguration.V1configuration.Model.GamesNumberFormatConfiguration do
   @moduledoc """
   This is a JSON template for a number format resource.
   """
@@ -31,12 +31,11 @@ defmodule GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.GamesNumberFormatCo
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.GamesNumberFormatConfiguration do
-  import GoogleApi.GamesConfiguration.V1CONFIGURATION.Deserializer
+defimpl Poison.Decoder, for: GoogleApi.GamesConfiguration.V1configuration.Model.GamesNumberFormatConfiguration do
+  import GoogleApi.GamesConfiguration.V1configuration.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"suffix", :struct, GoogleApi.GamesConfiguration.V1CONFIGURATION.Model.GamesNumberAffixConfiguration, options)
+    |> deserialize(:"suffix", :struct, GoogleApi.GamesConfiguration.V1configuration.Model.GamesNumberAffixConfiguration, options)
   end
 end
-
 
