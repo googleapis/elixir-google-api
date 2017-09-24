@@ -23,13 +23,23 @@ defmodule GoogleApis.Converter.ApiSpecConverter do
     output = ApiConfig.openapi_spec_file(api_config)
     Logger.info("Converting #{file} to #{output}")
 
-    with {swagger, 0} <- System.cmd("npm", ["run", "-s", "api-spec-converter", "--", file, "-f", "google", "-t", "swagger_2"]),
-         :ok <- File.write(output, swagger)
-    do
-      {:ok, output}
-    else
-      {"", exit_code} -> {:error, "convert failed. exit code #{exit_code}"}
-      {:error, reason} -> {:error, reason}
+    case System.cmd("npm", ["run", "-s", "api-spec-converter", "--", file, "-f", "google", "-t", "swagger_2"]) do
+      {swagger, 0} ->
+        case File.mkdir_p(Path.dirname(output)) do
+          :ok ->
+            case File.write(output, swagger) do
+              :ok ->
+                {:ok, output}
+              {:error, posix} ->
+                msg = "Cannot write file. Error: #{posix}"
+                Logger.warn msg
+                {:error, msg}
+            end
+          {:error, posix} ->
+            msg = "Cannot make dir #{Path.dirname(output)}. Error: #{posix}"
+            Logger.warn msg
+            {:error, msg}
+        end
     end
   end
 
