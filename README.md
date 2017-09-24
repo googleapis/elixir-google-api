@@ -92,13 +92,19 @@ The default generator uses Docker and an image based off the [swagger-codegen pr
 You can further configure this converter by modifying the `config/config.exs` setting:
 
 ```elixir
-config :google_apis, swagger_cli_image: "swagger-cli"
+config :google_apis, swagger_cli_image: "swaggerapi/swagger-codegen-cli"
+```
+
+To get the current version of swagger cli:
+
+```bash
+docker pull swaggerapi/swagger-codegen-cli
 ```
 
 You can also limit which APIs to generate by providing an API name argument to the mix task:
 
 ```bash
-$> mix google_apis.generate CloudTrace
+$> mix google_apis.build CloudTrace
 ```
 
 ## Contributing
