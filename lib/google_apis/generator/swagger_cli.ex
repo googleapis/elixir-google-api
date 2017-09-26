@@ -23,6 +23,7 @@ defmodule GoogleApis.Generator.SwaggerCli do
                           "-l", "elixir",
                           "-i", "/local/specifications/openapi/#{filename}",
                           "-c", "/local/specifications/config/#{filename}",
+                          "-t", "/local/template",
                           "-o", "/local/clients/#{ApiConfig.library_name(api_config)}"])
     {:ok, ""}
   end
