@@ -110,16 +110,6 @@
     "url": "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"
   },
   {
-    "version": "v1.1",
-    "name": "ChromeWebStore",
-    "url": "https://www.googleapis.com/discovery/v1/apis/chromewebstore/v1.1/rest"
-  },
-  {
-    "version": "v3",
-    "name": "CustomerInteractionHistory",
-    "url": "https://www.googleapis.com/discovery/v1/apis/cih/v3/rest"
-  },
-  {
     "version": "v2",
     "name": "CivicInfo",
     "url": "https://www.googleapis.com/discovery/v1/apis/civicinfo/v2/rest"
@@ -230,11 +220,6 @@
     "url": "https://www.googleapis.com/discovery/v1/apis/deploymentmanager/v2/rest"
   },
   {
-    "version": "v1",
-    "name": "DevProjects",
-    "url": "https://www.googleapis.com/discovery/v1/apis/devprojects/v1/rest"
-  },
-  {
     "version": "v2.8",
     "name": "DFAReporting",
     "url": "https://www.googleapis.com/discovery/v1/apis/dfareporting/v2.8/rest"
@@ -283,11 +268,6 @@
     "version": "v1",
     "name": "Fitness",
     "url": "https://www.googleapis.com/discovery/v1/apis/fitness/v1/rest"
-  },
-  {
-    "version": "v0dogfood",
-    "name": "FitnessInternal",
-    "url": "https://www.googleapis.com/discovery/v1/apis/fitness_internal/v0dogfood/rest"
   },
   {
     "version": "v2",
@@ -453,11 +433,6 @@
     "version": "v1beta1",
     "name": "ReplicaPoolUpdater",
     "url": "https://www.googleapis.com/discovery/v1/apis/replicapoolupdater/v1beta1/rest"
-  },
-  {
-    "version": "v1",
-    "name": "ReportCard",
-    "url": "https://www.googleapis.com/discovery/v1/apis/reportcard/v1/rest"
   },
   {
     "version": "v1",
