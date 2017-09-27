@@ -73,7 +73,7 @@ defmodule GoogleApi.AcceleratedMobilePageUrl.V1.Api.AmpUrls do
     }
     %{}
     |> method(:post)
-    |> url("/v1/ampUrls:batchGet")
+    |> url("/v1/ampUrls:batchGet", %{})
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

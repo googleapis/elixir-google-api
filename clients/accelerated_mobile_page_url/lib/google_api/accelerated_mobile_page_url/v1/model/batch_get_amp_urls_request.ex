@@ -20,9 +20,14 @@
 defmodule GoogleApi.AcceleratedMobilePageUrl.V1.Model.BatchGetAmpUrlsRequest do
   @moduledoc """
   AMP URL request for a batch of URLs.
+
+  ## Attributes
+
+  - lookupStrategy (String): The lookup_strategy being requested. Defaults to: `null`.
+    - Enum - one of [FETCH_LIVE_DOC, IN_INDEX_DOC]
+  - urls (List[String]): List of URLs to look up for the paired AMP URLs. The URLs are case-sensitive. Up to 50 URLs per lookup (see [Usage Limits](/amp/cache/reference/limits)). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"lookupStrategy",
     :"urls"
@@ -32,6 +37,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AcceleratedMobilePageUrl.V1.Model.BatchGetAmpUrlsRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AcceleratedMobilePageUrl.V1.Model.BatchGetAmpUrlsRequest do
+  def encode(value, options) do
+    GoogleApi.AcceleratedMobilePageUrl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
