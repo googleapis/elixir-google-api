@@ -1,6 +1,6 @@
 # GoogleApi.Datastore.V1
 
-**TODO: Add description**
+Accesses the schemaless NoSQL database to provide fully managed, robust, scalable storage for your application.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_datastore` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_datastore, "~> 0.1.0"}]
+  [{:google_api_datastore, "~> 0.0.1"}]
 end
 ```
 
