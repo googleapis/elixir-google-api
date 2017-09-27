@@ -20,9 +20,12 @@
 defmodule GoogleApi.Datastore.V1.Model.BeginTransactionRequest do
   @moduledoc """
   The request for Datastore.BeginTransaction.
+
+  ## Attributes
+
+  - transactionOptions (TransactionOptions): Options for a new transaction. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"transactionOptions"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.BeginTransactionReques
   def decode(value, options) do
     value
     |> deserialize(:"transactionOptions", :struct, GoogleApi.Datastore.V1.Model.TransactionOptions, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.BeginTransactionRequest do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

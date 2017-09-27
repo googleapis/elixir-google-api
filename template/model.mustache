@@ -2,9 +2,17 @@
 {{#models}}{{#model}}defmodule {{moduleName}}.Model.{{classname}} do
   @moduledoc """
   {{description}}
+
+  ## Attributes
+
+  {{#vars}}
+  - {{baseName}} ({{datatype}}): {{description}}{{#defaultValue}} Defaults to: `{{defaultValue}}`.{{/defaultValue}}
+{{#isEnum}}
+    - Enum - one of {{_enum}}
+{{/isEnum}}
+  {{/vars}}
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     {{#vars}}:"{{baseName}}"{{#hasMore}},
     {{/hasMore}}{{/vars}}
@@ -27,6 +35,12 @@ defimpl Poison.Decoder, for: {{moduleName}}.Model.{{classname}} do
   def decode(value, _options) do
     value
 {{/hasComplexVars}}
+  end
+end
+
+defimpl Poison.Encoder, for: {{moduleName}}.Model.{{classname}} do
+  def encode(value, options) do
+    {{moduleName}}.Deserializer.serialize_non_nil(value, options)
   end
 end
 {{/model}}{{/models}}

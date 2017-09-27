@@ -20,9 +20,11 @@
 defmodule GoogleApi.Datastore.V1.Model.ReadOnly do
   @moduledoc """
   Options specific to read-only transactions.
+
+  ## Attributes
+
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     
   ]
@@ -31,6 +33,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.ReadOnly do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.ReadOnly do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

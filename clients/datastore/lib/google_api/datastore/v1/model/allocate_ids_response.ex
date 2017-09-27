@@ -20,9 +20,12 @@
 defmodule GoogleApi.Datastore.V1.Model.AllocateIdsResponse do
   @moduledoc """
   The response for Datastore.AllocateIds.
+
+  ## Attributes
+
+  - keys (List[Key]): The keys specified in the request (in the same order), each with its key path completed with a newly allocated ID. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"keys"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.AllocateIdsResponse do
   def decode(value, options) do
     value
     |> deserialize(:"keys", :list, GoogleApi.Datastore.V1.Model.Key, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.AllocateIdsResponse do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

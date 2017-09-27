@@ -20,9 +20,13 @@
 defmodule GoogleApi.Datastore.V1.Model.RunQueryResponse do
   @moduledoc """
   The response for Datastore.RunQuery.
+
+  ## Attributes
+
+  - batch (QueryResultBatch): A batch of query results (always present). Defaults to: `null`.
+  - query (Query): The parsed form of the &#x60;GqlQuery&#x60; from the request, if it was set. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"batch",
     :"query"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.RunQueryResponse do
     value
     |> deserialize(:"batch", :struct, GoogleApi.Datastore.V1.Model.QueryResultBatch, options)
     |> deserialize(:"query", :struct, GoogleApi.Datastore.V1.Model.Query, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.RunQueryResponse do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

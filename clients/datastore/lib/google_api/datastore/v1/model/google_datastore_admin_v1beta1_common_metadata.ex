@@ -20,9 +20,18 @@
 defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1CommonMetadata do
   @moduledoc """
   Metadata common to all Datastore Admin operations.
+
+  ## Attributes
+
+  - endTime (String): The time the operation ended, either successfully or otherwise. Defaults to: `null`.
+  - labels (Map[String, String]): The client-assigned labels which were provided when the operation was created.  May also include additional labels. Defaults to: `null`.
+  - operationType (String): The type of the operation.  Can be used as a filter in ListOperationsRequest. Defaults to: `null`.
+    - Enum - one of [OPERATION_TYPE_UNSPECIFIED, EXPORT_ENTITIES, IMPORT_ENTITIES, BUILD_INDEX, CLEAR_INDEX]
+  - startTime (String): The time that work began on the operation. Defaults to: `null`.
+  - state (String): The current state of the Operation. Defaults to: `null`.
+    - Enum - one of [STATE_UNSPECIFIED, INITIALIZING, PROCESSING, CANCELLING, FINALIZING, SUCCESSFUL, FAILED, CANCELLED]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"endTime",
     :"labels",
@@ -35,6 +44,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1CommonMetadata do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1CommonMetadata do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

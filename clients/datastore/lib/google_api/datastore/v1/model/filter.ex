@@ -20,9 +20,13 @@
 defmodule GoogleApi.Datastore.V1.Model.Filter do
   @moduledoc """
   A holder for any type of filter.
+
+  ## Attributes
+
+  - compositeFilter (CompositeFilter): A composite filter. Defaults to: `null`.
+  - propertyFilter (PropertyFilter): A filter on a property. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"compositeFilter",
     :"propertyFilter"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.Filter do
     value
     |> deserialize(:"compositeFilter", :struct, GoogleApi.Datastore.V1.Model.CompositeFilter, options)
     |> deserialize(:"propertyFilter", :struct, GoogleApi.Datastore.V1.Model.PropertyFilter, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.Filter do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

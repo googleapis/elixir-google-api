@@ -20,9 +20,16 @@
 defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1ExportEntitiesMetadata do
   @moduledoc """
   Metadata for ExportEntities operations.
+
+  ## Attributes
+
+  - common (GoogleDatastoreAdminV1beta1CommonMetadata): Metadata common to all Datastore Admin operations. Defaults to: `null`.
+  - entityFilter (GoogleDatastoreAdminV1beta1EntityFilter): Description of which entities are being exported. Defaults to: `null`.
+  - outputUrlPrefix (String): Location for the export metadata and data files. This will be the same value as the google.datastore.admin.v1beta1.ExportEntitiesRequest.output_url_prefix field. The final output location is provided in google.datastore.admin.v1beta1.ExportEntitiesResponse.output_url. Defaults to: `null`.
+  - progressBytes (GoogleDatastoreAdminV1beta1Progress): An estimate of the number of bytes processed. Defaults to: `null`.
+  - progressEntities (GoogleDatastoreAdminV1beta1Progress): An estimate of the number of entities processed. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"common",
     :"entityFilter",
@@ -40,6 +47,12 @@ defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1
     |> deserialize(:"entityFilter", :struct, GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1EntityFilter, options)
     |> deserialize(:"progressBytes", :struct, GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1Progress, options)
     |> deserialize(:"progressEntities", :struct, GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1Progress, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1ExportEntitiesMetadata do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.Datastore.V1.Model.CommitResponse do
   @moduledoc """
   The response for Datastore.Commit.
+
+  ## Attributes
+
+  - indexUpdates (Integer): The number of index entries updated during the commit, or zero if none were updated. Defaults to: `null`.
+  - mutationResults (List[MutationResult]): The result of performing the mutations. The i-th mutation result corresponds to the i-th mutation in the request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"indexUpdates",
     :"mutationResults"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.CommitResponse do
   def decode(value, options) do
     value
     |> deserialize(:"mutationResults", :list, GoogleApi.Datastore.V1.Model.MutationResult, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.CommitResponse do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.Datastore.V1.Model.MutationResult do
   @moduledoc """
   The result of applying a mutation.
+
+  ## Attributes
+
+  - conflictDetected (Boolean): Whether a conflict was detected for this mutation. Always false when a conflict detection strategy field is not set in the mutation. Defaults to: `null`.
+  - key (Key): The automatically allocated key. Set only when the mutation allocated a key. Defaults to: `null`.
+  - version (String): The version of the entity on the server after processing the mutation. If the mutation doesn&#39;t change anything on the server, then the version will be the version of the current entity or, if no entity is present, a version that is strictly greater than the version of any previous entity and less than the version of any possible future entity. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"conflictDetected",
     :"key",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.MutationResult do
   def decode(value, options) do
     value
     |> deserialize(:"key", :struct, GoogleApi.Datastore.V1.Model.Key, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.MutationResult do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

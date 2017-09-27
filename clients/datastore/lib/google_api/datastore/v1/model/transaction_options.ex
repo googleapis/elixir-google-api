@@ -20,9 +20,13 @@
 defmodule GoogleApi.Datastore.V1.Model.TransactionOptions do
   @moduledoc """
   Options for beginning a new transaction.  Transactions can be created explicitly with calls to Datastore.BeginTransaction or implicitly by setting ReadOptions.new_transaction in read requests.
+
+  ## Attributes
+
+  - readOnly (ReadOnly): The transaction should only allow reads. Defaults to: `null`.
+  - readWrite (ReadWrite): The transaction should allow both reads and writes. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"readOnly",
     :"readWrite"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.TransactionOptions do
     value
     |> deserialize(:"readOnly", :struct, GoogleApi.Datastore.V1.Model.ReadOnly, options)
     |> deserialize(:"readWrite", :struct, GoogleApi.Datastore.V1.Model.ReadWrite, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.TransactionOptions do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

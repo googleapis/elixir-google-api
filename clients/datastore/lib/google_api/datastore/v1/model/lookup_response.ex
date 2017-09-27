@@ -20,9 +20,14 @@
 defmodule GoogleApi.Datastore.V1.Model.LookupResponse do
   @moduledoc """
   The response for Datastore.Lookup.
+
+  ## Attributes
+
+  - deferred (List[Key]): A list of keys that were not looked up due to resource constraints. The order of results in this field is undefined and has no relation to the order of the keys in the input. Defaults to: `null`.
+  - found (List[EntityResult]): Entities found as &#x60;ResultType.FULL&#x60; entities. The order of results in this field is undefined and has no relation to the order of the keys in the input. Defaults to: `null`.
+  - missing (List[EntityResult]): Entities not found as &#x60;ResultType.KEY_ONLY&#x60; entities. The order of results in this field is undefined and has no relation to the order of the keys in the input. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"deferred",
     :"found",
@@ -37,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.LookupResponse do
     |> deserialize(:"deferred", :list, GoogleApi.Datastore.V1.Model.Key, options)
     |> deserialize(:"found", :list, GoogleApi.Datastore.V1.Model.EntityResult, options)
     |> deserialize(:"missing", :list, GoogleApi.Datastore.V1.Model.EntityResult, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.LookupResponse do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

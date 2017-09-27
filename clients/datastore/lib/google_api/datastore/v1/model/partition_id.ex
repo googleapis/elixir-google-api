@@ -20,9 +20,13 @@
 defmodule GoogleApi.Datastore.V1.Model.PartitionId do
   @moduledoc """
   A partition ID identifies a grouping of entities. The grouping is always by project and namespace, however the namespace ID may be empty.  A partition ID contains several dimensions: project ID and namespace ID.  Partition dimensions:  - May be &#x60;\&quot;\&quot;&#x60;. - Must be valid UTF-8 bytes. - Must have values that match regex &#x60;[A-Za-z\\d\\.\\-_]{1,100}&#x60; If the value of any dimension matches regex &#x60;__.*__&#x60;, the partition is reserved/read-only. A reserved/read-only partition ID is forbidden in certain documented contexts.  Foreign partition IDs (in which the project ID does not match the context project ID ) are discouraged. Reads and writes of foreign partition IDs may fail if the project is not in an active state.
+
+  ## Attributes
+
+  - namespaceId (String): If not empty, the ID of the namespace to which the entities belong. Defaults to: `null`.
+  - projectId (String): The ID of the project to which the entities belong. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"namespaceId",
     :"projectId"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.PartitionId do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.PartitionId do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

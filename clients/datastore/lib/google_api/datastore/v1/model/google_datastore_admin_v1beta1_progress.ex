@@ -20,9 +20,13 @@
 defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1Progress do
   @moduledoc """
   Measures the progress of a particular metric.
+
+  ## Attributes
+
+  - workCompleted (String): Note that this may be greater than work_estimated. Defaults to: `null`.
+  - workEstimated (String): An estimate of how much work needs to be performed.  May be zero if the work estimate is unavailable. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"workCompleted",
     :"workEstimated"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1Progress do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1Progress do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

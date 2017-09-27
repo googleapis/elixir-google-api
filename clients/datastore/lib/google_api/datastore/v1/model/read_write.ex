@@ -20,9 +20,12 @@
 defmodule GoogleApi.Datastore.V1.Model.ReadWrite do
   @moduledoc """
   Options specific to read / write transactions.
+
+  ## Attributes
+
+  - previousTransaction (String): The transaction identifier of the transaction being retried. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"previousTransaction"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.ReadWrite do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.ReadWrite do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

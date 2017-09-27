@@ -20,9 +20,25 @@
 defmodule GoogleApi.Datastore.V1.Model.Value do
   @moduledoc """
   A message that can hold any of the supported value types and associated metadata.
+
+  ## Attributes
+
+  - arrayValue (ArrayValue): An array value. Cannot contain another array value. A &#x60;Value&#x60; instance that sets field &#x60;array_value&#x60; must not set fields &#x60;meaning&#x60; or &#x60;exclude_from_indexes&#x60;. Defaults to: `null`.
+  - blobValue (String): A blob value. May have at most 1,000,000 bytes. When &#x60;exclude_from_indexes&#x60; is false, may have at most 1500 bytes. In JSON requests, must be base64-encoded. Defaults to: `null`.
+  - booleanValue (Boolean): A boolean value. Defaults to: `null`.
+  - doubleValue (Float): A double value. Defaults to: `null`.
+  - entityValue (Entity): An entity value.  - May have no key. - May have a key with an incomplete key path. - May have a reserved/read-only key. Defaults to: `null`.
+  - excludeFromIndexes (Boolean): If the value should be excluded from all indexes including those defined explicitly. Defaults to: `null`.
+  - geoPointValue (LatLng): A geo point value representing a point on the surface of Earth. Defaults to: `null`.
+  - integerValue (String): An integer value. Defaults to: `null`.
+  - keyValue (Key): A key value. Defaults to: `null`.
+  - meaning (Integer): The &#x60;meaning&#x60; field should only be populated for backwards compatibility. Defaults to: `null`.
+  - nullValue (String): A null value. Defaults to: `null`.
+    - Enum - one of [NULL_VALUE]
+  - stringValue (String): A UTF-8 encoded string value. When &#x60;exclude_from_indexes&#x60; is false (it is indexed) , may have at most 1500 bytes. Otherwise, may be set to at least 1,000,000 bytes. Defaults to: `null`.
+  - timestampValue (String): A timestamp value. When stored in the Datastore, precise only to microseconds; any additional precision is rounded down. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"arrayValue",
     :"blobValue",
@@ -48,6 +64,12 @@ defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.Value do
     |> deserialize(:"entityValue", :struct, GoogleApi.Datastore.V1.Model.Entity, options)
     |> deserialize(:"geoPointValue", :struct, GoogleApi.Datastore.V1.Model.LatLng, options)
     |> deserialize(:"keyValue", :struct, GoogleApi.Datastore.V1.Model.Key, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.Value do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

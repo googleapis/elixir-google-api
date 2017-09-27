@@ -20,9 +20,15 @@
 defmodule GoogleApi.Datastore.V1.Model.CommitRequest do
   @moduledoc """
   The request for Datastore.Commit.
+
+  ## Attributes
+
+  - mode (String): The type of commit to perform. Defaults to &#x60;TRANSACTIONAL&#x60;. Defaults to: `null`.
+    - Enum - one of [MODE_UNSPECIFIED, TRANSACTIONAL, NON_TRANSACTIONAL]
+  - mutations (List[Mutation]): The mutations to perform.  When mode is &#x60;TRANSACTIONAL&#x60;, mutations affecting a single entity are applied in order. The following sequences of mutations affecting a single entity are not permitted in a single &#x60;Commit&#x60; request:  - &#x60;insert&#x60; followed by &#x60;insert&#x60; - &#x60;update&#x60; followed by &#x60;insert&#x60; - &#x60;upsert&#x60; followed by &#x60;insert&#x60; - &#x60;delete&#x60; followed by &#x60;update&#x60;  When mode is &#x60;NON_TRANSACTIONAL&#x60;, no two mutations may affect a single entity. Defaults to: `null`.
+  - transaction (String): The identifier of the transaction associated with the commit. A transaction identifier is returned by a call to Datastore.BeginTransaction. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"mode",
     :"mutations",
@@ -35,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.CommitRequest do
   def decode(value, options) do
     value
     |> deserialize(:"mutations", :list, GoogleApi.Datastore.V1.Model.Mutation, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.CommitRequest do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

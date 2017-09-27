@@ -20,9 +20,14 @@
 defmodule GoogleApi.Datastore.V1.Model.PathElement do
   @moduledoc """
   A (kind, ID/name) pair used to construct a key path.  If either name or ID is set, the element is complete. If neither is set, the element is incomplete.
+
+  ## Attributes
+
+  - id (String): The auto-allocated ID of the entity. Never equal to zero. Values less than zero are discouraged and may not be supported in the future. Defaults to: `null`.
+  - kind (String): The kind of the entity. A kind matching regex &#x60;__.*__&#x60; is reserved/read-only. A kind must not contain more than 1500 bytes when UTF-8 encoded. Cannot be &#x60;\&quot;\&quot;&#x60;. Defaults to: `null`.
+  - name (String): The name of the entity. A name matching regex &#x60;__.*__&#x60; is reserved/read-only. A name must not be more than 1500 bytes when UTF-8 encoded. Cannot be &#x60;\&quot;\&quot;&#x60;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"kind",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.PathElement do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.PathElement do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
