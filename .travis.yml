@@ -7,3 +7,4 @@ otp_release:
   - 20.0
 script:
   - mix test --include external
+  - cd clients/test_client && mix deps.get && mix test
