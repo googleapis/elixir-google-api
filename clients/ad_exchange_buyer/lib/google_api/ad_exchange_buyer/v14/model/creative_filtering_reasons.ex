@@ -17,23 +17,33 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AdExchangeBuyer.V14.Model.Creative_filteringReasons do
+defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeFilteringReasons do
   @moduledoc """
   The filtering reasons for the creative. Read-only. This field should not be set in requests.
+
+  ## Attributes
+
+  - date (String): The date in ISO 8601 format for the data. The data is collected from 00:00:00 to 23:59:59 in PST. Defaults to: `null`.
+  - reasons (List[CreativeFilteringReasonsReasons]): The filtering reasons. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"date",
     :"reasons"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.Creative_filteringReasons do
+defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.CreativeFilteringReasons do
   import GoogleApi.AdExchangeBuyer.V14.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"reasons", :list, GoogleApi.AdExchangeBuyer.V14.Model.Creative_filteringReasons_reasons, options)
+    |> deserialize(:"reasons", :list, GoogleApi.AdExchangeBuyer.V14.Model.CreativeFilteringReasonsReasons, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.CreativeFilteringReasons do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

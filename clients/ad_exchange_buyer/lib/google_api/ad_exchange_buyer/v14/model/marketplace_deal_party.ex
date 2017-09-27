@@ -20,9 +20,13 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDealParty do
   @moduledoc """
   
+
+  ## Attributes
+
+  - buyer (Buyer): The buyer/seller associated with the deal. One of buyer/seller is specified for a deal-party. Defaults to: `null`.
+  - seller (Seller): The buyer/seller associated with the deal. One of buyer/seller is specified for a deal party. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"buyer",
     :"seller"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDeal
     value
     |> deserialize(:"buyer", :struct, GoogleApi.AdExchangeBuyer.V14.Model.Buyer, options)
     |> deserialize(:"seller", :struct, GoogleApi.AdExchangeBuyer.V14.Model.Seller, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDealParty do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

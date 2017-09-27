@@ -17,12 +17,18 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AdExchangeBuyer.V14.Model.Creative_contexts do
+defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeContexts do
   @moduledoc """
   
+
+  ## Attributes
+
+  - auctionType (List[String]): Only set when contextType&#x3D;AUCTION_TYPE. Represents the auction types this correction applies to. Defaults to: `null`.
+  - contextType (String): The type of context (e.g., location, platform, auction type, SSL-ness). Defaults to: `null`.
+  - geoCriteriaId (List[Integer]): Only set when contextType&#x3D;LOCATION. Represents the geo criterias this correction applies to. Defaults to: `null`.
+  - platform (List[String]): Only set when contextType&#x3D;PLATFORM. Represents the platforms this correction applies to. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"auctionType",
     :"contextType",
@@ -31,9 +37,15 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Creative_contexts do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.Creative_contexts do
+defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.CreativeContexts do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.CreativeContexts do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

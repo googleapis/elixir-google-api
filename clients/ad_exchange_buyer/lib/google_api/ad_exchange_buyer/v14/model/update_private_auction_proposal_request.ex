@@ -20,9 +20,15 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.UpdatePrivateAuctionProposalRequest do
   @moduledoc """
   
+
+  ## Attributes
+
+  - externalDealId (String): The externalDealId of the deal to be updated. Defaults to: `null`.
+  - note (MarketplaceNote): Optional note to be added. Defaults to: `null`.
+  - proposalRevisionNumber (String): The current revision number of the proposal to be updated. Defaults to: `null`.
+  - updateAction (String): The proposed action on the private auction proposal. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"externalDealId",
     :"note",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.UpdatePrivateAu
   def decode(value, options) do
     value
     |> deserialize(:"note", :struct, GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceNote, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.UpdatePrivateAuctionProposalRequest do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.GetOrderNotesResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - notes (List[MarketplaceNote]): The list of matching notes. The notes for a proposal are ordered from oldest to newest. If the notes span multiple proposals, they will be grouped by proposal, with the notes for the most recently modified proposal appearing first. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"notes"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.GetOrderNotesRe
   def decode(value, options) do
     value
     |> deserialize(:"notes", :list, GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceNote, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.GetOrderNotesResponse do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

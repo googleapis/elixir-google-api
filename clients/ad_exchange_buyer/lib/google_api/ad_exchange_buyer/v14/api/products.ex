@@ -60,7 +60,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Products do
     }
     %{}
     |> method(:get)
-    |> url("/products/#{product_id}")
+    |> url("/products/{productId}", %{
+         "productId" => URI.encode_www_form(product_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

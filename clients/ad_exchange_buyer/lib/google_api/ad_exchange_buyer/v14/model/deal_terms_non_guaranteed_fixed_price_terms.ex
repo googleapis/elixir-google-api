@@ -20,9 +20,12 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.DealTermsNonGuaranteedFixedPriceTerms do
   @moduledoc """
   
+
+  ## Attributes
+
+  - fixedPrices (List[PricePerBuyer]): Fixed price for the specified buyer. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fixedPrices"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.DealTermsNonGua
   def decode(value, options) do
     value
     |> deserialize(:"fixedPrices", :list, GoogleApi.AdExchangeBuyer.V14.Model.PricePerBuyer, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.DealTermsNonGuaranteedFixedPriceTerms do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

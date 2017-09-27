@@ -20,9 +20,19 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceNote do
   @moduledoc """
   A proposal is associated with a bunch of notes which may optionally be associated with a deal and/or revision number.
+
+  ## Attributes
+
+  - creatorRole (String): The role of the person (buyer/seller) creating the note. (readonly) Defaults to: `null`.
+  - dealId (String): Notes can optionally be associated with a deal. (readonly, except on create) Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;adexchangebuyer#marketplaceNote\&quot;. Defaults to: `null`.
+  - note (String): The actual note to attach. (readonly, except on create) Defaults to: `null`.
+  - noteId (String): The unique id for the note. (readonly) Defaults to: `null`.
+  - proposalId (String): The proposalId that a note is attached to. (readonly) Defaults to: `null`.
+  - proposalRevisionNumber (String): If the note is associated with a proposal revision number, then store that here. (readonly, except on create) Defaults to: `null`.
+  - timestampMs (String): The timestamp (ms since epoch) that this note was created. (readonly) Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"creatorRole",
     :"dealId",
@@ -38,6 +48,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceNote do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceNote do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

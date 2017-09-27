@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AdExchangeBuyer.V14.Model.Creative_corrections do
+defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeCorrections do
   @moduledoc """
   
+
+  ## Attributes
+
+  - contexts (List[CreativeContexts]): All known serving contexts containing serving status information. Defaults to: `null`.
+  - details (List[String]): Additional details about the correction. Defaults to: `null`.
+  - reason (String): The type of correction that was applied to the creative. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"contexts",
     :"details",
@@ -30,11 +35,17 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Creative_corrections do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.Creative_corrections do
+defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.CreativeCorrections do
   import GoogleApi.AdExchangeBuyer.V14.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"contexts", :list, GoogleApi.AdExchangeBuyer.V14.Model.Creative_contexts, options)
+    |> deserialize(:"contexts", :list, GoogleApi.AdExchangeBuyer.V14.Model.CreativeContexts, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.CreativeCorrections do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

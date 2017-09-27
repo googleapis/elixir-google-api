@@ -20,9 +20,16 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDayPartTargetingDayPart do
   @moduledoc """
   
+
+  ## Attributes
+
+  - dayOfWeek (String):  Defaults to: `null`.
+  - endHour (Integer):  Defaults to: `null`.
+  - endMinute (Integer):  Defaults to: `null`.
+  - startHour (Integer):  Defaults to: `null`.
+  - startMinute (Integer):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dayOfWeek",
     :"endHour",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDayPartTargetingDayPart do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDayPartTargetingDayPart do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

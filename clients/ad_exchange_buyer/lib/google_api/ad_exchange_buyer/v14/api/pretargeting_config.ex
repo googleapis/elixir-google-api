@@ -61,7 +61,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
     }
     %{}
     |> method(:delete)
-    |> url("/pretargetingconfigs/#{account_id}/#{config_id}")
+    |> url("/pretargetingconfigs/{accountId}/{configId}", %{
+         "accountId" => URI.encode_www_form(account_id),
+         "configId" => URI.encode_www_form(config_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -103,7 +106,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
     }
     %{}
     |> method(:get)
-    |> url("/pretargetingconfigs/#{account_id}/#{config_id}")
+    |> url("/pretargetingconfigs/{accountId}/{configId}", %{
+         "accountId" => URI.encode_www_form(account_id),
+         "configId" => URI.encode_www_form(config_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -146,7 +152,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
     }
     %{}
     |> method(:post)
-    |> url("/pretargetingconfigs/#{account_id}")
+    |> url("/pretargetingconfigs/{accountId}", %{
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -187,7 +195,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
     }
     %{}
     |> method(:get)
-    |> url("/pretargetingconfigs/#{account_id}")
+    |> url("/pretargetingconfigs/{accountId}", %{
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -231,7 +241,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
     }
     %{}
     |> method(:patch)
-    |> url("/pretargetingconfigs/#{account_id}/#{config_id}")
+    |> url("/pretargetingconfigs/{accountId}/{configId}", %{
+         "accountId" => URI.encode_www_form(account_id),
+         "configId" => URI.encode_www_form(config_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -275,7 +288,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
     }
     %{}
     |> method(:put)
-    |> url("/pretargetingconfigs/#{account_id}/#{config_id}")
+    |> url("/pretargetingconfigs/{accountId}/{configId}", %{
+         "accountId" => URI.encode_www_form(account_id),
+         "configId" => URI.encode_www_form(config_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

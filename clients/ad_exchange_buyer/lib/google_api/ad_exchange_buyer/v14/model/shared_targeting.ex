@@ -20,9 +20,14 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.SharedTargeting do
   @moduledoc """
   
+
+  ## Attributes
+
+  - exclusions (List[TargetingValue]): The list of values to exclude from targeting. Each value is AND&#39;d together. Defaults to: `null`.
+  - inclusions (List[TargetingValue]): The list of value to include as part of the targeting. Each value is OR&#39;d together. Defaults to: `null`.
+  - key (String): The key representing the shared targeting criterion. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"exclusions",
     :"inclusions",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.SharedTargeting
     value
     |> deserialize(:"exclusions", :list, GoogleApi.AdExchangeBuyer.V14.Model.TargetingValue, options)
     |> deserialize(:"inclusions", :list, GoogleApi.AdExchangeBuyer.V14.Model.TargetingValue, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.SharedTargeting do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

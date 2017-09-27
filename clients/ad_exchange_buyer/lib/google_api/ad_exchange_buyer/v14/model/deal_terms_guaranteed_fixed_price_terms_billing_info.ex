@@ -20,9 +20,15 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.DealTermsGuaranteedFixedPriceTermsBillingInfo do
   @moduledoc """
   
+
+  ## Attributes
+
+  - currencyConversionTimeMs (String): The timestamp (in ms since epoch) when the original reservation price for the deal was first converted to DFP currency. This is used to convert the contracted price into buyer&#39;s currency without discrepancy. Defaults to: `null`.
+  - dfpLineItemId (String): The DFP line item id associated with this deal. For features like CPD, buyers can retrieve the DFP line item for billing reconciliation. Defaults to: `null`.
+  - originalContractedQuantity (String): The original contracted quantity (# impressions) for this deal. To ensure delivery, sometimes the publisher will book the deal with a impression buffer, such that guaranteed_looks is greater than the contracted quantity. However clients are billed using the original contracted quantity. Defaults to: `null`.
+  - price (Price): The original reservation price for the deal, if the currency code is different from the one used in negotiation. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"currencyConversionTimeMs",
     :"dfpLineItemId",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.DealTermsGuaran
   def decode(value, options) do
     value
     |> deserialize(:"price", :struct, GoogleApi.AdExchangeBuyer.V14.Model.Price, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.DealTermsGuaranteedFixedPriceTermsBillingInfo do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

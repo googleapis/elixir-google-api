@@ -10,11 +10,11 @@ use Mix.Config
 
 # You can configure for your application as:
 #
-#     config :ad_exchange_buyer_api, key: :value
+#     config :ad_exchange_buyer_api_ii, key: :value
 #
 # And access this configuration in your application as:
 #
-#     Application.get_env(:ad_exchange_buyer_api, :key)
+#     Application.get_env(:ad_exchange_buyer_api_ii, :key)
 #
 # Or configure a 3rd-party app:
 #

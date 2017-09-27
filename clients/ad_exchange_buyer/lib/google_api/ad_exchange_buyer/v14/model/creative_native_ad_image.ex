@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AdExchangeBuyer.V14.Model.Creative_nativeAd_image do
+defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAdImage do
   @moduledoc """
   A large image.
+
+  ## Attributes
+
+  - height (Integer):  Defaults to: `null`.
+  - url (String):  Defaults to: `null`.
+  - width (Integer):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"height",
     :"url",
@@ -30,9 +35,15 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Creative_nativeAd_image do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.Creative_nativeAd_image do
+defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAdImage do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAdImage do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.DealServingMetadata do
   @moduledoc """
   
+
+  ## Attributes
+
+  - alcoholAdsAllowed (Boolean): True if alcohol ads are allowed for this deal (read-only). This field is only populated when querying for finalized orders using the method GetFinalizedOrderDeals Defaults to: `null`.
+  - dealPauseStatus (DealServingMetadataDealPauseStatus): Tracks which parties (if any) have paused a deal. (readonly, except via PauseResumeOrderDeals action) Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"alcoholAdsAllowed",
     :"dealPauseStatus"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.DealServingMeta
   def decode(value, options) do
     value
     |> deserialize(:"dealPauseStatus", :struct, GoogleApi.AdExchangeBuyer.V14.Model.DealServingMetadataDealPauseStatus, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.DealServingMetadata do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

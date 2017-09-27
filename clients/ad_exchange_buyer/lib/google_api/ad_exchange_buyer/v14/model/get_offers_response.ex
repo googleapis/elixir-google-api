@@ -20,9 +20,12 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.GetOffersResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - products (List[Product]): The returned list of products. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"products"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.GetOffersRespon
   def decode(value, options) do
     value
     |> deserialize(:"products", :list, GoogleApi.AdExchangeBuyer.V14.Model.Product, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.GetOffersResponse do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

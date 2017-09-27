@@ -20,9 +20,21 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.DealTerms do
   @moduledoc """
   
+
+  ## Attributes
+
+  - brandingType (String): Visibilty of the URL in bid requests. Defaults to: `null`.
+  - crossListedExternalDealIdType (String): Indicates that this ExternalDealId exists under at least two different AdxInventoryDeals. Currently, the only case that the same ExternalDealId will exist is programmatic cross sell case. Defaults to: `null`.
+  - description (String): Description for the proposed terms of the deal. Defaults to: `null`.
+  - estimatedGrossSpend (Price): Non-binding estimate of the estimated gross spend for this deal Can be set by buyer or seller. Defaults to: `null`.
+  - estimatedImpressionsPerDay (String): Non-binding estimate of the impressions served per day Can be set by buyer or seller. Defaults to: `null`.
+  - guaranteedFixedPriceTerms (DealTermsGuaranteedFixedPriceTerms): The terms for guaranteed fixed price deals. Defaults to: `null`.
+  - nonGuaranteedAuctionTerms (DealTermsNonGuaranteedAuctionTerms): The terms for non-guaranteed auction deals. Defaults to: `null`.
+  - nonGuaranteedFixedPriceTerms (DealTermsNonGuaranteedFixedPriceTerms): The terms for non-guaranteed fixed price deals. Defaults to: `null`.
+  - rubiconNonGuaranteedTerms (DealTermsRubiconNonGuaranteedTerms): The terms for rubicon non-guaranteed deals. Defaults to: `null`.
+  - sellerTimeZone (String): For deals with Cost Per Day billing, defines the timezone used to mark the boundaries of a day (buyer-readonly) Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"brandingType",
     :"crossListedExternalDealIdType",
@@ -46,6 +58,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.DealTerms do
     |> deserialize(:"nonGuaranteedAuctionTerms", :struct, GoogleApi.AdExchangeBuyer.V14.Model.DealTermsNonGuaranteedAuctionTerms, options)
     |> deserialize(:"nonGuaranteedFixedPriceTerms", :struct, GoogleApi.AdExchangeBuyer.V14.Model.DealTermsNonGuaranteedFixedPriceTerms, options)
     |> deserialize(:"rubiconNonGuaranteedTerms", :struct, GoogleApi.AdExchangeBuyer.V14.Model.DealTermsRubiconNonGuaranteedTerms, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.DealTerms do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -17,12 +17,18 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AdExchangeBuyer.V14.Model.Account_bidderLocation do
+defmodule GoogleApi.AdExchangeBuyer.V14.Model.AccountBidderLocation do
   @moduledoc """
   
+
+  ## Attributes
+
+  - bidProtocol (String): The protocol that the bidder endpoint is using. OpenRTB protocols with prefix PROTOCOL_OPENRTB_PROTOBUF use proto buffer, otherwise use JSON.  Allowed values:   - PROTOCOL_ADX  - PROTOCOL_OPENRTB_2_2  - PROTOCOL_OPENRTB_2_3  - PROTOCOL_OPENRTB_2_4  - PROTOCOL_OPENRTB_2_5  - PROTOCOL_OPENRTB_PROTOBUF_2_3  - PROTOCOL_OPENRTB_PROTOBUF_2_4  - PROTOCOL_OPENRTB_PROTOBUF_2_5 Defaults to: `null`.
+  - maximumQps (Integer): The maximum queries per second the Ad Exchange will send. Defaults to: `null`.
+  - region (String): The geographical region the Ad Exchange should send requests from. Only used by some quota systems, but always setting the value is recommended. Allowed values:   - ASIA  - EUROPE  - US_EAST  - US_WEST Defaults to: `null`.
+  - url (String): The URL to which the Ad Exchange will send bid requests. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bidProtocol",
     :"maximumQps",
@@ -31,9 +37,15 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Account_bidderLocation do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.Account_bidderLocation do
+defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.AccountBidderLocation do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.AccountBidderLocation do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

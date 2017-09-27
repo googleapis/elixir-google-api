@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeDealIds_dealStatuses do
+defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeDealIdsDealStatuses do
   @moduledoc """
   
+
+  ## Attributes
+
+  - arcStatus (String): ARC approval status. Defaults to: `null`.
+  - dealId (String): External deal ID. Defaults to: `null`.
+  - webPropertyId (Integer): Publisher ID. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"arcStatus",
     :"dealId",
@@ -30,9 +35,15 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeDealIds_dealStatuses do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.CreativeDealIds_dealStatuses do
+defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.CreativeDealIdsDealStatuses do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.CreativeDealIdsDealStatuses do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

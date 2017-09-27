@@ -20,9 +20,15 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.Price do
   @moduledoc """
   
+
+  ## Attributes
+
+  - amountMicros (Float): The price value in micros. Defaults to: `null`.
+  - currencyCode (String): The currency code for the price. Defaults to: `null`.
+  - expectedCpmMicros (Float): In case of CPD deals, the expected CPM in micros. Defaults to: `null`.
+  - pricingType (String): The pricing type for the deal/product. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"amountMicros",
     :"currencyCode",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.Price do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.Price do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

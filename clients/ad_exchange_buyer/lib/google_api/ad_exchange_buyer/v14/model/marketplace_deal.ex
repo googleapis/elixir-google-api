@@ -20,9 +20,36 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDeal do
   @moduledoc """
   A proposal can contain multiple deals. A deal contains the terms and targeting information that is used for serving.
+
+  ## Attributes
+
+  - buyerPrivateData (PrivateData): Buyer private data (hidden from seller). Defaults to: `null`.
+  - creationTimeMs (String): The time (ms since epoch) of the deal creation. (readonly) Defaults to: `null`.
+  - creativePreApprovalPolicy (String): Specifies the creative pre-approval policy (buyer-readonly) Defaults to: `null`.
+  - creativeSafeFrameCompatibility (String): Specifies whether the creative is safeFrame compatible (buyer-readonly) Defaults to: `null`.
+  - dealId (String): A unique deal-id for the deal (readonly). Defaults to: `null`.
+  - dealServingMetadata (DealServingMetadata): Metadata about the serving status of this deal (readonly, writes via custom actions) Defaults to: `null`.
+  - deliveryControl (DeliveryControl): The set of fields around delivery control that are interesting for a buyer to see but are non-negotiable. These are set by the publisher. This message is assigned an id of 100 since some day we would want to model this as a protobuf extension. Defaults to: `null`.
+  - externalDealId (String): The external deal id assigned to this deal once the deal is finalized. This is the deal-id that shows up in serving/reporting etc. (readonly) Defaults to: `null`.
+  - flightEndTimeMs (String): Proposed flight end time of the deal (ms since epoch) This will generally be stored in a granularity of a second. (updatable) Defaults to: `null`.
+  - flightStartTimeMs (String): Proposed flight start time of the deal (ms since epoch) This will generally be stored in a granularity of a second. (updatable) Defaults to: `null`.
+  - inventoryDescription (String): Description for the deal terms. (buyer-readonly) Defaults to: `null`.
+  - isRfpTemplate (Boolean): Indicates whether the current deal is a RFP template. RFP template is created by buyer and not based on seller created products. Defaults to: `null`.
+  - isSetupComplete (Boolean): True, if the buyside inventory setup is complete for this deal. (readonly, except via OrderSetupCompleted action) Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;adexchangebuyer#marketplaceDeal\&quot;. Defaults to: `null`.
+  - lastUpdateTimeMs (String): The time (ms since epoch) when the deal was last updated. (readonly) Defaults to: `null`.
+  - name (String): The name of the deal. (updatable) Defaults to: `null`.
+  - productId (String): The product-id from which this deal was created. (readonly, except on create) Defaults to: `null`.
+  - productRevisionNumber (String): The revision number of the product that the deal was created from (readonly, except on create) Defaults to: `null`.
+  - programmaticCreativeSource (String): Specifies the creative source for programmatic deals, PUBLISHER means creative is provided by seller and ADVERTISR means creative is provided by buyer. (buyer-readonly) Defaults to: `null`.
+  - proposalId (String):  Defaults to: `null`.
+  - sellerContacts (List[ContactInformation]): Optional Seller contact information for the deal (buyer-readonly) Defaults to: `null`.
+  - sharedTargetings (List[SharedTargeting]): The shared targeting visible to buyers and sellers. Each shared targeting entity is AND&#39;d together. (updatable) Defaults to: `null`.
+  - syndicationProduct (String): The syndication product associated with the deal. (readonly, except on create) Defaults to: `null`.
+  - terms (DealTerms): The negotiable terms of the deal. (updatable) Defaults to: `null`.
+  - webPropertyCode (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"buyerPrivateData",
     :"creationTimeMs",
@@ -62,6 +89,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDeal
     |> deserialize(:"sellerContacts", :list, GoogleApi.AdExchangeBuyer.V14.Model.ContactInformation, options)
     |> deserialize(:"sharedTargetings", :list, GoogleApi.AdExchangeBuyer.V14.Model.SharedTargeting, options)
     |> deserialize(:"terms", :struct, GoogleApi.AdExchangeBuyer.V14.Model.DealTerms, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDeal do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

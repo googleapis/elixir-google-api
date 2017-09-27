@@ -20,9 +20,16 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.DealServingMetadataDealPauseStatus do
   @moduledoc """
   Tracks which parties (if any) have paused a deal. The deal is considered paused if has_buyer_paused || has_seller_paused. Each of the has_buyer_paused or the has_seller_paused bits can be set independently.
+
+  ## Attributes
+
+  - buyerPauseReason (String):  Defaults to: `null`.
+  - firstPausedBy (String): If the deal is paused, records which party paused the deal first. Defaults to: `null`.
+  - hasBuyerPaused (Boolean):  Defaults to: `null`.
+  - hasSellerPaused (Boolean):  Defaults to: `null`.
+  - sellerPauseReason (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"buyerPauseReason",
     :"firstPausedBy",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.DealServingMetadataDealPauseStatus do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.DealServingMetadataDealPauseStatus do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

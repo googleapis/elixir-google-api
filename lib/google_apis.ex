@@ -51,7 +51,7 @@ defmodule GoogleApis do
   def fetch(api_config) do
     file = ApiConfig.google_spec_file(api_config)
 
-    with {:ok, body} = GoogleApis.Discovery.fetch(api_config.url),
+    with {:ok, {body, _format}} = GoogleApis.Discovery.fetch(api_config.url),
          :ok <- File.mkdir_p(Path.dirname(file)),
          :ok <- File.write(file, body)
     do

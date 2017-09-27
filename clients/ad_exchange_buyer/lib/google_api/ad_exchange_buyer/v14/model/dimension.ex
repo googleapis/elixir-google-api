@@ -20,9 +20,13 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.Dimension do
   @moduledoc """
   This message carries publisher provided breakdown. E.g. {dimension_type: &#39;COUNTRY&#39;, [{dimension_value: {id: 1, name: &#39;US&#39;}}, {dimension_value: {id: 2, name: &#39;UK&#39;}}]}
+
+  ## Attributes
+
+  - dimensionType (String):  Defaults to: `null`.
+  - dimensionValues (List[DimensionDimensionValue]):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dimensionType",
     :"dimensionValues"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.Dimension do
   def decode(value, options) do
     value
     |> deserialize(:"dimensionValues", :list, GoogleApi.AdExchangeBuyer.V14.Model.DimensionDimensionValue, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.Dimension do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

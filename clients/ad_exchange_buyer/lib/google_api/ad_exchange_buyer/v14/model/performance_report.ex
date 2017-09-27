@@ -20,9 +20,33 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.PerformanceReport do
   @moduledoc """
   The configuration data for an Ad Exchange performance report list.
+
+  ## Attributes
+
+  - bidRate (Float): The number of bid responses with an ad. Defaults to: `null`.
+  - bidRequestRate (Float): The number of bid requests sent to your bidder. Defaults to: `null`.
+  - calloutStatusRate (List[ErrorUnknown]): Rate of various prefiltering statuses per match. Please refer to the callout-status-codes.txt file for different statuses. Defaults to: `null`.
+  - cookieMatcherStatusRate (List[ErrorUnknown]): Average QPS for cookie matcher operations. Defaults to: `null`.
+  - creativeStatusRate (List[ErrorUnknown]): Rate of ads with a given status. Please refer to the creative-status-codes.txt file for different statuses. Defaults to: `null`.
+  - filteredBidRate (Float): The number of bid responses that were filtered due to a policy violation or other errors. Defaults to: `null`.
+  - hostedMatchStatusRate (List[ErrorUnknown]): Average QPS for hosted match operations. Defaults to: `null`.
+  - inventoryMatchRate (Float): The number of potential queries based on your pretargeting settings. Defaults to: `null`.
+  - kind (String): Resource type. Defaults to: `null`.
+  - latency50thPercentile (Float): The 50th percentile round trip latency(ms) as perceived from Google servers for the duration period covered by the report. Defaults to: `null`.
+  - latency85thPercentile (Float): The 85th percentile round trip latency(ms) as perceived from Google servers for the duration period covered by the report. Defaults to: `null`.
+  - latency95thPercentile (Float): The 95th percentile round trip latency(ms) as perceived from Google servers for the duration period covered by the report. Defaults to: `null`.
+  - noQuotaInRegion (Float): Rate of various quota account statuses per quota check. Defaults to: `null`.
+  - outOfQuota (Float): Rate of various quota account statuses per quota check. Defaults to: `null`.
+  - pixelMatchRequests (Float): Average QPS for pixel match requests from clients. Defaults to: `null`.
+  - pixelMatchResponses (Float): Average QPS for pixel match responses from clients. Defaults to: `null`.
+  - quotaConfiguredLimit (Float): The configured quota limits for this account. Defaults to: `null`.
+  - quotaThrottledLimit (Float): The throttled quota limits for this account. Defaults to: `null`.
+  - region (String): The trading location of this data. Defaults to: `null`.
+  - successfulRequestRate (Float): The number of properly formed bid responses received by our servers within the deadline. Defaults to: `null`.
+  - timestamp (String): The unix timestamp of the starting time of this performance data. Defaults to: `null`.
+  - unsuccessfulRequestRate (Float): The number of bid responses that were unsuccessful due to timeouts, incorrect formatting, etc. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bidRate",
     :"bidRequestRate",
@@ -53,10 +77,16 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.PerformanceRepo
   import GoogleApi.AdExchangeBuyer.V14.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"calloutStatusRate", :list, GoogleApi.AdExchangeBuyer.V14.Model., options)
-    |> deserialize(:"cookieMatcherStatusRate", :list, GoogleApi.AdExchangeBuyer.V14.Model., options)
-    |> deserialize(:"creativeStatusRate", :list, GoogleApi.AdExchangeBuyer.V14.Model., options)
-    |> deserialize(:"hostedMatchStatusRate", :list, GoogleApi.AdExchangeBuyer.V14.Model., options)
+    |> deserialize(:"calloutStatusRate", :list, nil, options)
+    |> deserialize(:"cookieMatcherStatusRate", :list, nil, options)
+    |> deserialize(:"creativeStatusRate", :list, nil, options)
+    |> deserialize(:"hostedMatchStatusRate", :list, nil, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.PerformanceReport do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

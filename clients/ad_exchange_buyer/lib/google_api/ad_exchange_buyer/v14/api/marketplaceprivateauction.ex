@@ -62,7 +62,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Marketplaceprivateauction do
     }
     %{}
     |> method(:post)
-    |> url("/privateauction/#{private_auction_id}/updateproposal")
+    |> url("/privateauction/{privateAuctionId}/updateproposal", %{
+         "privateAuctionId" => URI.encode_www_form(private_auction_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

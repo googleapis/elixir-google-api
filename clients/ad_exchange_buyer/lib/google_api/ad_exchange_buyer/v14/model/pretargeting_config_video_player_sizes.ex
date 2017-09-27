@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig_videoPlayerSizes do
+defmodule GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigVideoPlayerSizes do
   @moduledoc """
   
+
+  ## Attributes
+
+  - aspectRatio (String): The type of aspect ratio. Leave this field blank to match all aspect ratios. Defaults to: `null`.
+  - minHeight (String): The minimum player height in pixels. Leave this field blank to match any player height. Defaults to: `null`.
+  - minWidth (String): The minimum player width in pixels. Leave this field blank to match any player width. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"aspectRatio",
     :"minHeight",
@@ -30,9 +35,15 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig_videoPlayerSize
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig_videoPlayerSizes do
+defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigVideoPlayerSizes do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigVideoPlayerSizes do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

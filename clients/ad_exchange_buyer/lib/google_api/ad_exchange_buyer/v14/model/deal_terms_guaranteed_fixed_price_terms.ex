@@ -20,9 +20,16 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.DealTermsGuaranteedFixedPriceTerms do
   @moduledoc """
   
+
+  ## Attributes
+
+  - billingInfo (DealTermsGuaranteedFixedPriceTermsBillingInfo): External billing info for this Deal. This field is relevant when external billing info such as price has a different currency code than DFP/AdX. Defaults to: `null`.
+  - fixedPrices (List[PricePerBuyer]): Fixed price for the specified buyer. Defaults to: `null`.
+  - guaranteedImpressions (String): Guaranteed impressions as a percentage. This is the percentage of guaranteed looks that the buyer is guaranteeing to buy. Defaults to: `null`.
+  - guaranteedLooks (String): Count of guaranteed looks. Required for deal, optional for product. For CPD deals, buyer changes to guaranteed_looks will be ignored. Defaults to: `null`.
+  - minimumDailyLooks (String): Count of minimum daily looks for a CPD deal. For CPD deals, buyer should negotiate on this field instead of guaranteed_looks. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"billingInfo",
     :"fixedPrices",
@@ -38,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.DealTermsGuaran
     value
     |> deserialize(:"billingInfo", :struct, GoogleApi.AdExchangeBuyer.V14.Model.DealTermsGuaranteedFixedPriceTermsBillingInfo, options)
     |> deserialize(:"fixedPrices", :list, GoogleApi.AdExchangeBuyer.V14.Model.PricePerBuyer, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.DealTermsGuaranteedFixedPriceTerms do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

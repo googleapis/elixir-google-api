@@ -20,9 +20,12 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.AddOrderNotesResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - notes (List[MarketplaceNote]):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"notes"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.AddOrderNotesRe
   def decode(value, options) do
     value
     |> deserialize(:"notes", :list, GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceNote, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.AddOrderNotesResponse do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

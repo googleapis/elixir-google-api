@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig_dimensions do
+defmodule GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigDimensions do
   @moduledoc """
   
+
+  ## Attributes
+
+  - height (String): Height in pixels. Defaults to: `null`.
+  - width (String): Width in pixels. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"height",
     :"width"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig_dimensions do
+defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigDimensions do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigDimensions do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

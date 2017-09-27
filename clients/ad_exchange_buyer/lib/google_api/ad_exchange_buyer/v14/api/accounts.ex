@@ -60,7 +60,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{id}")
+    |> url("/accounts/{id}", %{
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -145,7 +147,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Accounts do
     }
     %{}
     |> method(:patch)
-    |> url("/accounts/#{id}")
+    |> url("/accounts/{id}", %{
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -190,7 +194,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Accounts do
     }
     %{}
     |> method(:put)
-    |> url("/accounts/#{id}")
+    |> url("/accounts/{id}", %{
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

@@ -20,9 +20,14 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.DeliveryControl do
   @moduledoc """
   
+
+  ## Attributes
+
+  - creativeBlockingLevel (String):  Defaults to: `null`.
+  - deliveryRateType (String):  Defaults to: `null`.
+  - frequencyCaps (List[DeliveryControlFrequencyCap]):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"creativeBlockingLevel",
     :"deliveryRateType",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.DeliveryControl
   def decode(value, options) do
     value
     |> deserialize(:"frequencyCaps", :list, GoogleApi.AdExchangeBuyer.V14.Model.DeliveryControlFrequencyCap, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.DeliveryControl do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

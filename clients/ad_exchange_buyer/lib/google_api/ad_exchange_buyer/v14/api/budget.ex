@@ -61,7 +61,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Budget do
     }
     %{}
     |> method(:get)
-    |> url("/billinginfo/#{account_id}/#{billing_id}")
+    |> url("/billinginfo/{accountId}/{billingId}", %{
+         "accountId" => URI.encode_www_form(account_id),
+         "billingId" => URI.encode_www_form(billing_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -105,7 +108,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Budget do
     }
     %{}
     |> method(:patch)
-    |> url("/billinginfo/#{account_id}/#{billing_id}")
+    |> url("/billinginfo/{accountId}/{billingId}", %{
+         "accountId" => URI.encode_www_form(account_id),
+         "billingId" => URI.encode_www_form(billing_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -149,7 +155,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Budget do
     }
     %{}
     |> method(:put)
-    |> url("/billinginfo/#{account_id}/#{billing_id}")
+    |> url("/billinginfo/{accountId}/{billingId}", %{
+         "accountId" => URI.encode_www_form(account_id),
+         "billingId" => URI.encode_www_form(billing_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

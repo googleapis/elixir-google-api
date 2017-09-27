@@ -20,9 +20,13 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.ContactInformation do
   @moduledoc """
   
+
+  ## Attributes
+
+  - email (String): Email address of the contact. Defaults to: `null`.
+  - name (String): The name of the contact. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"email",
     :"name"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.ContactInformation do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.ContactInformation do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

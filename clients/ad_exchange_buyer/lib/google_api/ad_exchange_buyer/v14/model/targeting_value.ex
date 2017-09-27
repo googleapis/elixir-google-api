@@ -20,9 +20,15 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.TargetingValue do
   @moduledoc """
   
+
+  ## Attributes
+
+  - creativeSizeValue (TargetingValueCreativeSize): The creative size value to exclude/include. Defaults to: `null`.
+  - dayPartTargetingValue (TargetingValueDayPartTargeting): The daypart targeting to include / exclude. Filled in when the key is GOOG_DAYPART_TARGETING. Defaults to: `null`.
+  - longValue (String): The long value to exclude/include. Defaults to: `null`.
+  - stringValue (String): The string value to exclude/include. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"creativeSizeValue",
     :"dayPartTargetingValue",
@@ -37,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.TargetingValue 
     value
     |> deserialize(:"creativeSizeValue", :struct, GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueCreativeSize, options)
     |> deserialize(:"dayPartTargetingValue", :struct, GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDayPartTargeting, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.TargetingValue do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

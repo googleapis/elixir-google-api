@@ -60,7 +60,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
     }
     %{}
     |> method(:get)
-    |> url("/proposals/#{proposal_id}")
+    |> url("/proposals/{proposalId}", %{
+         "proposalId" => URI.encode_www_form(proposal_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -147,7 +149,11 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
     }
     %{}
     |> method(:patch)
-    |> url("/proposals/#{proposal_id}/#{revision_number}/#{update_action}")
+    |> url("/proposals/{proposalId}/{revisionNumber}/{updateAction}", %{
+         "proposalId" => URI.encode_www_form(proposal_id),
+         "revisionNumber" => URI.encode_www_form(revision_number),
+         "updateAction" => URI.encode_www_form(update_action)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -230,7 +236,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
     }
     %{}
     |> method(:post)
-    |> url("/proposals/#{proposal_id}/setupcomplete")
+    |> url("/proposals/{proposalId}/setupcomplete", %{
+         "proposalId" => URI.encode_www_form(proposal_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -275,7 +283,11 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
     }
     %{}
     |> method(:put)
-    |> url("/proposals/#{proposal_id}/#{revision_number}/#{update_action}")
+    |> url("/proposals/{proposalId}/{revisionNumber}/{updateAction}", %{
+         "proposalId" => URI.encode_www_form(proposal_id),
+         "revisionNumber" => URI.encode_www_form(revision_number),
+         "updateAction" => URI.encode_www_form(update_action)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

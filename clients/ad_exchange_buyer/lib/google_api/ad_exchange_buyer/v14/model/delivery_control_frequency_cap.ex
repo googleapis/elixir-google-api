@@ -20,9 +20,14 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.DeliveryControlFrequencyCap do
   @moduledoc """
   
+
+  ## Attributes
+
+  - maxImpressions (Integer):  Defaults to: `null`.
+  - numTimeUnits (Integer):  Defaults to: `null`.
+  - timeUnitType (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"maxImpressions",
     :"numTimeUnits",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.DeliveryControlFrequencyCap do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.DeliveryControlFrequencyCap do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

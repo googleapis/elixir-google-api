@@ -20,9 +20,13 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueSize do
   @moduledoc """
   
+
+  ## Attributes
+
+  - height (Integer): The height of the creative. Defaults to: `null`.
+  - width (Integer): The width of the creative. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"height",
     :"width"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueSize do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueSize do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

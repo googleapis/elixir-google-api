@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig_excludedPlacements do
+defmodule GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigExcludedPlacements do
   @moduledoc """
   
+
+  ## Attributes
+
+  - token (String): The value of the placement. Interpretation depends on the placement type, e.g. URL for a site placement, channel name for a channel placement, app id for a mobile app placement. Defaults to: `null`.
+  - type (String): The type of the placement. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"token",
     :"type"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig_excludedPlacements do
+defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigExcludedPlacements do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigExcludedPlacements do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

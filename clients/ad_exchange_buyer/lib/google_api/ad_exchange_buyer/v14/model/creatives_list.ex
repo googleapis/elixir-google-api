@@ -20,9 +20,14 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativesList do
   @moduledoc """
   The creatives feed lists the active creatives for the Ad Exchange buyer accounts that the user has access to. Each entry in the feed corresponds to a single creative.
+
+  ## Attributes
+
+  - items (List[Creative]): A list of creatives. Defaults to: `null`.
+  - kind (String): Resource type. Defaults to: `null`.
+  - nextPageToken (String): Continuation token used to page through creatives. To retrieve the next page of results, set the next request&#39;s \&quot;pageToken\&quot; value to this. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"items",
     :"kind",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.CreativesList d
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.AdExchangeBuyer.V14.Model.Creative, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.CreativesList do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 
