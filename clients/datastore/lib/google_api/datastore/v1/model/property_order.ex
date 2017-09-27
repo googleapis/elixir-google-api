@@ -20,9 +20,14 @@
 defmodule GoogleApi.Datastore.V1.Model.PropertyOrder do
   @moduledoc """
   The desired order for a specific property.
+
+  ## Attributes
+
+  - direction (String): The direction to order by. Defaults to &#x60;ASCENDING&#x60;. Defaults to: `null`.
+    - Enum - one of [DIRECTION_UNSPECIFIED, ASCENDING, DESCENDING]
+  - property (PropertyReference): The property to order by. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"direction",
     :"property"
@@ -34,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.PropertyOrder do
   def decode(value, options) do
     value
     |> deserialize(:"property", :struct, GoogleApi.Datastore.V1.Model.PropertyReference, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.PropertyOrder do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

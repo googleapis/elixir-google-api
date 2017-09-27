@@ -20,9 +20,14 @@
 defmodule GoogleApi.Datastore.V1.Model.ReadOptions do
   @moduledoc """
   The options shared by read requests.
+
+  ## Attributes
+
+  - readConsistency (String): The non-transactional read consistency to use. Cannot be set to &#x60;STRONG&#x60; for global queries. Defaults to: `null`.
+    - Enum - one of [READ_CONSISTENCY_UNSPECIFIED, STRONG, EVENTUAL]
+  - transaction (String): The identifier of the transaction in which to read. A transaction identifier is returned by a call to Datastore.BeginTransaction. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"readConsistency",
     :"transaction"
@@ -32,6 +37,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.ReadOptions do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.ReadOptions do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

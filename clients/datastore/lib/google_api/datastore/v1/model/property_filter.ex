@@ -20,9 +20,15 @@
 defmodule GoogleApi.Datastore.V1.Model.PropertyFilter do
   @moduledoc """
   A filter on a specific property.
+
+  ## Attributes
+
+  - op (String): The operator to filter by. Defaults to: `null`.
+    - Enum - one of [OPERATOR_UNSPECIFIED, LESS_THAN, LESS_THAN_OR_EQUAL, GREATER_THAN, GREATER_THAN_OR_EQUAL, EQUAL, HAS_ANCESTOR]
+  - property (PropertyReference): The property to filter by. Defaults to: `null`.
+  - value (Value): The value to compare the property to. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"op",
     :"property",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.PropertyFilter do
     value
     |> deserialize(:"property", :struct, GoogleApi.Datastore.V1.Model.PropertyReference, options)
     |> deserialize(:"value", :struct, GoogleApi.Datastore.V1.Model.Value, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.PropertyFilter do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

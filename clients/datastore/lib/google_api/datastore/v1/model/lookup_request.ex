@@ -20,9 +20,13 @@
 defmodule GoogleApi.Datastore.V1.Model.LookupRequest do
   @moduledoc """
   The request for Datastore.Lookup.
+
+  ## Attributes
+
+  - keys (List[Key]): Keys of entities to look up. Defaults to: `null`.
+  - readOptions (ReadOptions): The options for this lookup request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"keys",
     :"readOptions"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.LookupRequest do
     value
     |> deserialize(:"keys", :list, GoogleApi.Datastore.V1.Model.Key, options)
     |> deserialize(:"readOptions", :struct, GoogleApi.Datastore.V1.Model.ReadOptions, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.LookupRequest do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,16 @@
 defmodule GoogleApi.Datastore.V1.Model.Mutation do
   @moduledoc """
   A mutation to apply to an entity.
+
+  ## Attributes
+
+  - baseVersion (String): The version of the entity that this mutation is being applied to. If this does not match the current version on the server, the mutation conflicts. Defaults to: `null`.
+  - delete (Key): The key of the entity to delete. The entity may or may not already exist. Must have a complete key path and must not be reserved/read-only. Defaults to: `null`.
+  - insert (Entity): The entity to insert. The entity must not already exist. The entity key&#39;s final path element may be incomplete. Defaults to: `null`.
+  - update (Entity): The entity to update. The entity must already exist. Must have a complete key path. Defaults to: `null`.
+  - upsert (Entity): The entity to upsert. The entity may or may not already exist. The entity key&#39;s final path element may be incomplete. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"baseVersion",
     :"delete",
@@ -40,6 +47,12 @@ defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.Mutation do
     |> deserialize(:"insert", :struct, GoogleApi.Datastore.V1.Model.Entity, options)
     |> deserialize(:"update", :struct, GoogleApi.Datastore.V1.Model.Entity, options)
     |> deserialize(:"upsert", :struct, GoogleApi.Datastore.V1.Model.Entity, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.Mutation do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

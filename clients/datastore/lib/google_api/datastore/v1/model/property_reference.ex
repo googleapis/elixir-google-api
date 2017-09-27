@@ -20,9 +20,12 @@
 defmodule GoogleApi.Datastore.V1.Model.PropertyReference do
   @moduledoc """
   A reference to a property relative to the kind expressions.
+
+  ## Attributes
+
+  - name (String): The name of the property. If name includes \&quot;.\&quot;s, it may be interpreted as a property name path. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.PropertyReference do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.PropertyReference do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

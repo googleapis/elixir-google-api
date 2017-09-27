@@ -20,9 +20,14 @@
 defmodule GoogleApi.Datastore.V1.Model.EntityResult do
   @moduledoc """
   The result of fetching an entity from Datastore.
+
+  ## Attributes
+
+  - cursor (String): A cursor that points to the position after the result entity. Set only when the &#x60;EntityResult&#x60; is part of a &#x60;QueryResultBatch&#x60; message. Defaults to: `null`.
+  - entity (Entity): The resulting entity. Defaults to: `null`.
+  - version (String): The version of the entity, a strictly positive number that monotonically increases with changes to the entity.  This field is set for &#x60;FULL&#x60; entity results.  For missing entities in &#x60;LookupResponse&#x60;, this is the version of the snapshot that was used to look up the entity, and it is always set except for eventually consistent reads. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cursor",
     :"entity",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.EntityResult do
   def decode(value, options) do
     value
     |> deserialize(:"entity", :struct, GoogleApi.Datastore.V1.Model.Entity, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.EntityResult do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

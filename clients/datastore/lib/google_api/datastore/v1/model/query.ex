@@ -20,9 +20,20 @@
 defmodule GoogleApi.Datastore.V1.Model.Query do
   @moduledoc """
   A query for entities.
+
+  ## Attributes
+
+  - distinctOn (List[PropertyReference]): The properties to make distinct. The query results will contain the first result for each distinct combination of values for the given properties (if empty, all results are returned). Defaults to: `null`.
+  - endCursor (String): An ending point for the query results. Query cursors are returned in query result batches and [can only be used to limit the same query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets). Defaults to: `null`.
+  - filter (Filter): The filter to apply. Defaults to: `null`.
+  - kind (List[KindExpression]): The kinds to query (if empty, returns entities of all kinds). Currently at most 1 kind may be specified. Defaults to: `null`.
+  - limit (Integer): The maximum number of results to return. Applies after all other constraints. Optional. Unspecified is interpreted as no limit. Must be &gt;&#x3D; 0 if specified. Defaults to: `null`.
+  - offset (Integer): The number of results to skip. Applies before limit, but after all other constraints. Optional. Must be &gt;&#x3D; 0 if specified. Defaults to: `null`.
+  - order (List[PropertyOrder]): The order to apply to the query results (if empty, order is unspecified). Defaults to: `null`.
+  - projection (List[Projection]): The projection to return. Defaults to returning all properties. Defaults to: `null`.
+  - startCursor (String): A starting point for the query results. Query cursors are returned in query result batches and [can only be used to continue the same query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"distinctOn",
     :"endCursor",
@@ -45,6 +56,12 @@ defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.Query do
     |> deserialize(:"kind", :list, GoogleApi.Datastore.V1.Model.KindExpression, options)
     |> deserialize(:"order", :list, GoogleApi.Datastore.V1.Model.PropertyOrder, options)
     |> deserialize(:"projection", :list, GoogleApi.Datastore.V1.Model.Projection, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.Query do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

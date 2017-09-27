@@ -20,9 +20,12 @@
 defmodule GoogleApi.Datastore.V1.Model.KindExpression do
   @moduledoc """
   A representation of a kind.
+
+  ## Attributes
+
+  - name (String): The name of the kind. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.KindExpression do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.KindExpression do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

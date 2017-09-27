@@ -20,9 +20,12 @@
 defmodule GoogleApi.Datastore.V1.Model.ArrayValue do
   @moduledoc """
   An array value.
+
+  ## Attributes
+
+  - values (List[Value]): Values in the array. The order of this array may not be preserved if it contains a mix of indexed and unindexed values. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"values"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.ArrayValue do
   def decode(value, options) do
     value
     |> deserialize(:"values", :list, GoogleApi.Datastore.V1.Model.Value, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.ArrayValue do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

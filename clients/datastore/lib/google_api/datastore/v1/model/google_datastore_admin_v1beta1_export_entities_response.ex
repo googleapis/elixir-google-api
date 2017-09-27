@@ -20,9 +20,12 @@
 defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1ExportEntitiesResponse do
   @moduledoc """
   The response for google.datastore.admin.v1beta1.DatastoreAdmin.ExportEntities.
+
+  ## Attributes
+
+  - outputUrl (String): Location of the output metadata file. This can be used to begin an import into Cloud Datastore (this project or another project). See google.datastore.admin.v1beta1.ImportEntitiesRequest.input_url. Only present if the operation completed successfully. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"outputUrl"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1ExportEntitiesResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1ExportEntitiesResponse do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

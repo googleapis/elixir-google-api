@@ -20,9 +20,13 @@
 defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1EntityFilter do
   @moduledoc """
   Identifies a subset of entities in a project.  This is specified as combinations of kind + namespace (either or both of which may be all, as described in the following examples). Example usage:  Entire project:   kinds&#x3D;[], namespace_ids&#x3D;[]  Kinds Foo and Bar in all namespaces:   kinds&#x3D;[&#39;Foo&#39;, &#39;Bar&#39;], namespace_ids&#x3D;[]  Kinds Foo and Bar only in the default namespace:   kinds&#x3D;[&#39;Foo&#39;, &#39;Bar&#39;], namespace_ids&#x3D;[&#39;&#39;]  Kinds Foo and Bar in both the default and Baz namespaces:   kinds&#x3D;[&#39;Foo&#39;, &#39;Bar&#39;], namespace_ids&#x3D;[&#39;&#39;, &#39;Baz&#39;]  The entire Baz namespace:   kinds&#x3D;[], namespace_ids&#x3D;[&#39;Baz&#39;]
+
+  ## Attributes
+
+  - kinds (List[String]): If empty, then this represents all kinds. Defaults to: `null`.
+  - namespaceIds (List[String]): An empty list represents all namespaces.  This is the preferred usage for projects that don&#39;t use namespaces.  An empty string element represents the default namespace.  This should be used if the project has data in non-default namespaces, but doesn&#39;t want to include them. Each namespace in this list must be unique. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kinds",
     :"namespaceIds"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1EntityFilter do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1EntityFilter do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

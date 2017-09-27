@@ -20,9 +20,14 @@
 defmodule GoogleApi.Datastore.V1.Model.CompositeFilter do
   @moduledoc """
   A filter that merges multiple other filters using the given operator.
+
+  ## Attributes
+
+  - filters (List[Filter]): The list of filters to combine. Must contain at least one filter. Defaults to: `null`.
+  - op (String): The operator for combining multiple filters. Defaults to: `null`.
+    - Enum - one of [OPERATOR_UNSPECIFIED, AND]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"filters",
     :"op"
@@ -34,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.CompositeFilter do
   def decode(value, options) do
     value
     |> deserialize(:"filters", :list, GoogleApi.Datastore.V1.Model.Filter, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.CompositeFilter do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

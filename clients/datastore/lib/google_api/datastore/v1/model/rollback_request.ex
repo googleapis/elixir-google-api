@@ -20,9 +20,12 @@
 defmodule GoogleApi.Datastore.V1.Model.RollbackRequest do
   @moduledoc """
   The request for Datastore.Rollback.
+
+  ## Attributes
+
+  - transaction (String): The transaction identifier, returned by a call to Datastore.BeginTransaction. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"transaction"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.RollbackRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.RollbackRequest do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

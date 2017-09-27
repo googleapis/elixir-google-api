@@ -74,7 +74,9 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/projects/#{project_id}:allocateIds")
+    |> url("/v1/projects/{projectId}:allocateIds", %{
+         "projectId" => URI.encode_www_form(project_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -129,7 +131,9 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/projects/#{project_id}:beginTransaction")
+    |> url("/v1/projects/{projectId}:beginTransaction", %{
+         "projectId" => URI.encode_www_form(project_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -184,7 +188,9 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/projects/#{project_id}:commit")
+    |> url("/v1/projects/{projectId}:commit", %{
+         "projectId" => URI.encode_www_form(project_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -239,7 +245,9 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/projects/#{project_id}:lookup")
+    |> url("/v1/projects/{projectId}:lookup", %{
+         "projectId" => URI.encode_www_form(project_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -292,7 +300,9 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{name}:cancel")
+    |> url("/v1/{+name}:cancel", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -345,7 +355,9 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/#{name}")
+    |> url("/v1/{+name}", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -398,7 +410,9 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{name}")
+    |> url("/v1/{+name}", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -457,7 +471,9 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{name}/operations")
+    |> url("/v1/{+name}/operations", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -512,7 +528,9 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/projects/#{project_id}:rollback")
+    |> url("/v1/projects/{projectId}:rollback", %{
+         "projectId" => URI.encode_www_form(project_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -567,7 +585,9 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/projects/#{project_id}:runQuery")
+    |> url("/v1/projects/{projectId}:runQuery", %{
+         "projectId" => URI.encode_www_form(project_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

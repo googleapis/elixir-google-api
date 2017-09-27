@@ -20,9 +20,13 @@
 defmodule GoogleApi.Datastore.V1.Model.GqlQueryParameter do
   @moduledoc """
   A binding parameter for a GQL query.
+
+  ## Attributes
+
+  - cursor (String): A query cursor. Query cursors are returned in query result batches. Defaults to: `null`.
+  - value (Value): A value parameter. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cursor",
     :"value"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.GqlQueryParameter do
   def decode(value, options) do
     value
     |> deserialize(:"value", :struct, GoogleApi.Datastore.V1.Model.Value, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.GqlQueryParameter do
+  def encode(value, options) do
+    GoogleApi.Datastore.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
