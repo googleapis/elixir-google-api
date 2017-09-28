@@ -20,9 +20,15 @@
 defmodule GoogleApi.AdExchangeSeller.V20.Model.UrlChannels do
   @moduledoc """
   
+
+  ## Attributes
+
+  - etag (String): ETag of this response for caching purposes. Defaults to: `null`.
+  - items (List[UrlChannel]): The URL channels returned in this list response. Defaults to: `null`.
+  - kind (String): Kind of list this is, in this case adexchangeseller#urlChannels. Defaults to: `null`.
+  - nextPageToken (String): Continuation token used to page through URL channels. To retrieve the next page of results, set the next request&#39;s \&quot;pageToken\&quot; value to this. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"items",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeSeller.V20.Model.UrlChannels do
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.AdExchangeSeller.V20.Model.UrlChannel, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeSeller.V20.Model.UrlChannels do
+  def encode(value, options) do
+    GoogleApi.AdExchangeSeller.V20.Deserializer.serialize_non_nil(value, options)
   end
 end
 

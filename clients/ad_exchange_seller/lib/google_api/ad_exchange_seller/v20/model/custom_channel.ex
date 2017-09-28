@@ -20,9 +20,16 @@
 defmodule GoogleApi.AdExchangeSeller.V20.Model.CustomChannel do
   @moduledoc """
   
+
+  ## Attributes
+
+  - code (String): Code of this custom channel, not necessarily unique across ad clients. Defaults to: `null`.
+  - id (String): Unique identifier of this custom channel. This should be considered an opaque identifier; it is not safe to rely on it being in any particular format. Defaults to: `null`.
+  - kind (String): Kind of resource this is, in this case adexchangeseller#customChannel. Defaults to: `null`.
+  - name (String): Name of this custom channel. Defaults to: `null`.
+  - targetingInfo (CustomChannelTargetingInfo):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"code",
     :"id",
@@ -36,7 +43,13 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeSeller.V20.Model.CustomChannel 
   import GoogleApi.AdExchangeSeller.V20.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"targetingInfo", :struct, GoogleApi.AdExchangeSeller.V20.Model.CustomChannel_targetingInfo, options)
+    |> deserialize(:"targetingInfo", :struct, GoogleApi.AdExchangeSeller.V20.Model.CustomChannelTargetingInfo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeSeller.V20.Model.CustomChannel do
+  def encode(value, options) do
+    GoogleApi.AdExchangeSeller.V20.Deserializer.serialize_non_nil(value, options)
   end
 end
 

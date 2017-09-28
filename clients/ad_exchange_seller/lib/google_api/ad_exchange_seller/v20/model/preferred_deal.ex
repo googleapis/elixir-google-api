@@ -20,9 +20,19 @@
 defmodule GoogleApi.AdExchangeSeller.V20.Model.PreferredDeal do
   @moduledoc """
   
+
+  ## Attributes
+
+  - advertiserName (String): The name of the advertiser this deal is for. Defaults to: `null`.
+  - buyerNetworkName (String): The name of the buyer network this deal is for. Defaults to: `null`.
+  - currencyCode (String): The currency code that applies to the fixed_cpm value. If not set then assumed to be USD. Defaults to: `null`.
+  - endTime (String): Time when this deal stops being active in seconds since the epoch (GMT). If not set then this deal is valid until manually disabled by the publisher. Defaults to: `null`.
+  - fixedCpm (String): The fixed price for this preferred deal. In cpm micros of currency according to currencyCode. If set, then this preferred deal is eligible for the fixed price tier of buying (highest priority, pay exactly the configured fixed price). Defaults to: `null`.
+  - id (String): Unique identifier of this preferred deal. Defaults to: `null`.
+  - kind (String): Kind of resource this is, in this case adexchangeseller#preferredDeal. Defaults to: `null`.
+  - startTime (String): Time when this deal becomes active in seconds since the epoch (GMT). If not set then this deal is active immediately upon creation. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"advertiserName",
     :"buyerNetworkName",
@@ -38,6 +48,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AdExchangeSeller.V20.Model.PreferredDeal do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeSeller.V20.Model.PreferredDeal do
+  def encode(value, options) do
+    GoogleApi.AdExchangeSeller.V20.Deserializer.serialize_non_nil(value, options)
   end
 end
 

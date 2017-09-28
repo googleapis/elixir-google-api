@@ -20,9 +20,14 @@
 defmodule GoogleApi.AdExchangeSeller.V20.Model.Account do
   @moduledoc """
   
+
+  ## Attributes
+
+  - id (String): Unique identifier of this account. Defaults to: `null`.
+  - kind (String): Kind of resource this is, in this case adexchangeseller#account. Defaults to: `null`.
+  - name (String): Name of this account. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"kind",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AdExchangeSeller.V20.Model.Account do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeSeller.V20.Model.Account do
+  def encode(value, options) do
+    GoogleApi.AdExchangeSeller.V20.Deserializer.serialize_non_nil(value, options)
   end
 end
 

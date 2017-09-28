@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AdExchangeSeller.V20.Model.Report_headers do
+defmodule GoogleApi.AdExchangeSeller.V20.Model.ReportHeaders do
   @moduledoc """
   
+
+  ## Attributes
+
+  - currency (String): The currency of this column. Only present if the header type is METRIC_CURRENCY. Defaults to: `null`.
+  - name (String): The name of the header. Defaults to: `null`.
+  - type (String): The type of the header; one of DIMENSION, METRIC_TALLY, METRIC_RATIO, or METRIC_CURRENCY. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"currency",
     :"name",
@@ -30,9 +35,15 @@ defmodule GoogleApi.AdExchangeSeller.V20.Model.Report_headers do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AdExchangeSeller.V20.Model.Report_headers do
+defimpl Poison.Decoder, for: GoogleApi.AdExchangeSeller.V20.Model.ReportHeaders do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeSeller.V20.Model.ReportHeaders do
+  def encode(value, options) do
+    GoogleApi.AdExchangeSeller.V20.Deserializer.serialize_non_nil(value, options)
   end
 end
 

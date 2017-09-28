@@ -20,9 +20,14 @@
 defmodule GoogleApi.AdExchangeSeller.V20.Model.SavedReport do
   @moduledoc """
   
+
+  ## Attributes
+
+  - id (String): Unique identifier of this saved report. Defaults to: `null`.
+  - kind (String): Kind of resource this is, in this case adexchangeseller#savedReport. Defaults to: `null`.
+  - name (String): This saved report&#39;s name. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"kind",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AdExchangeSeller.V20.Model.SavedReport do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeSeller.V20.Model.SavedReport do
+  def encode(value, options) do
+    GoogleApi.AdExchangeSeller.V20.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -1,6 +1,6 @@
 # GoogleApi.AdExchangeSeller.V20
 
-**TODO: Add description**
+Accesses the inventory of Ad Exchange seller users and generates reports.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_ad_exchange_seller` to your list of dependencies in `mix.e
 
 ```elixir
 def deps do
-  [{:google_api_ad_exchange_seller, "~> 0.1.0"}]
+  [{:google_api_ad_exchange_seller, "~> 0.0.1"}]
 end
 ```
 

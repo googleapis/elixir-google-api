@@ -20,9 +20,13 @@
 defmodule GoogleApi.AdExchangeSeller.V20.Model.PreferredDeals do
   @moduledoc """
   
+
+  ## Attributes
+
+  - items (List[PreferredDeal]): The preferred deals returned in this list response. Defaults to: `null`.
+  - kind (String): Kind of list this is, in this case adexchangeseller#preferredDeals. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"items",
     :"kind"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeSeller.V20.Model.PreferredDeals
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.AdExchangeSeller.V20.Model.PreferredDeal, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeSeller.V20.Model.PreferredDeals do
+  def encode(value, options) do
+    GoogleApi.AdExchangeSeller.V20.Deserializer.serialize_non_nil(value, options)
   end
 end
 
