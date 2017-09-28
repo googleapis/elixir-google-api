@@ -20,9 +20,13 @@
 defmodule GoogleApi.BigQueryDataTransfer.V1.Model.ListLocationsResponse do
   @moduledoc """
   The response message for Locations.ListLocations.
+
+  ## Attributes
+
+  - locations (List[Location]): A list of locations that matches the specified filter in the request. Defaults to: `null`.
+  - nextPageToken (String): The standard List next-page token. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"locations",
     :"nextPageToken"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.BigQueryDataTransfer.V1.Model.ListLocatio
   def decode(value, options) do
     value
     |> deserialize(:"locations", :list, GoogleApi.BigQueryDataTransfer.V1.Model.Location, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQueryDataTransfer.V1.Model.ListLocationsResponse do
+  def encode(value, options) do
+    GoogleApi.BigQueryDataTransfer.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

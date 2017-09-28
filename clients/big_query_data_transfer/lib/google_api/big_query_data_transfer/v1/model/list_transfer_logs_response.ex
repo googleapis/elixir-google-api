@@ -20,9 +20,13 @@
 defmodule GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferLogsResponse do
   @moduledoc """
   The returned list transfer run messages.
+
+  ## Attributes
+
+  - nextPageToken (String): The next-pagination token. For multiple-page list results, this token can be used as the &#x60;GetTransferRunLogRequest.page_token&#x60; to request the next page of list results. @OutputOnly Defaults to: `null`.
+  - transferMessages (List[TransferMessage]): The stored pipeline transfer messages. @OutputOnly Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nextPageToken",
     :"transferMessages"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.BigQueryDataTransfer.V1.Model.ListTransfe
   def decode(value, options) do
     value
     |> deserialize(:"transferMessages", :list, GoogleApi.BigQueryDataTransfer.V1.Model.TransferMessage, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferLogsResponse do
+  def encode(value, options) do
+    GoogleApi.BigQueryDataTransfer.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

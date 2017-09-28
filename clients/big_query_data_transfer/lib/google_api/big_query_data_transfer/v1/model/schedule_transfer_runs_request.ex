@@ -20,9 +20,13 @@
 defmodule GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleTransferRunsRequest do
   @moduledoc """
   A request to schedule transfer runs for a time range.
+
+  ## Attributes
+
+  - rangeEndTime (String): End time of the range of transfer runs. Defaults to: `null`.
+  - rangeStartTime (String): Start time of the range of transfer runs. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"rangeEndTime",
     :"rangeStartTime"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleTransferRunsRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleTransferRunsRequest do
+  def encode(value, options) do
+    GoogleApi.BigQueryDataTransfer.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

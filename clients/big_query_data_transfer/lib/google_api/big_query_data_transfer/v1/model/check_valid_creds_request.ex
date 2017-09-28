@@ -20,9 +20,11 @@
 defmodule GoogleApi.BigQueryDataTransfer.V1.Model.CheckValidCredsRequest do
   @moduledoc """
   A request to determine whether the user has valid credentials. This method is used to limit the number of OAuth popups in the user interface. The user id is inferred from the API call context. If the data source has the Google+ authorization type, this method returns false, as it cannot be determined whether the credentials are already valid merely based on the user id.
+
+  ## Attributes
+
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     
   ]
@@ -31,6 +33,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.BigQueryDataTransfer.V1.Model.CheckValidCredsRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQueryDataTransfer.V1.Model.CheckValidCredsRequest do
+  def encode(value, options) do
+    GoogleApi.BigQueryDataTransfer.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

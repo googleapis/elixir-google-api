@@ -20,9 +20,12 @@
 defmodule GoogleApi.BigQueryDataTransfer.V1.Model.CheckValidCredsResponse do
   @moduledoc """
   A response indicating whether the credentials exist and are valid.
+
+  ## Attributes
+
+  - hasValidCreds (Boolean): If set to &#x60;true&#x60;, the credentials exist and are valid. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"hasValidCreds"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.BigQueryDataTransfer.V1.Model.CheckValidCredsResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQueryDataTransfer.V1.Model.CheckValidCredsResponse do
+  def encode(value, options) do
+    GoogleApi.BigQueryDataTransfer.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

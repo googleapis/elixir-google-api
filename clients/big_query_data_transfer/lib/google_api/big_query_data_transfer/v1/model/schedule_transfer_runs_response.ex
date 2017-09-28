@@ -20,9 +20,12 @@
 defmodule GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleTransferRunsResponse do
   @moduledoc """
   A response to schedule transfer runs for a time range.
+
+  ## Attributes
+
+  - createdRuns (List[TransferRun]): The transfer runs that were created. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"createdRuns"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleTra
   def decode(value, options) do
     value
     |> deserialize(:"createdRuns", :list, GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleTransferRunsResponse do
+  def encode(value, options) do
+    GoogleApi.BigQueryDataTransfer.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

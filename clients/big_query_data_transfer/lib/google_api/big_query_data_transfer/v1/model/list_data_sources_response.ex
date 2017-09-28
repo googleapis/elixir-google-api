@@ -20,9 +20,13 @@
 defmodule GoogleApi.BigQueryDataTransfer.V1.Model.ListDataSourcesResponse do
   @moduledoc """
   Returns list of supported data sources and their metadata.
+
+  ## Attributes
+
+  - dataSources (List[DataSource]): List of supported data sources and their transfer settings. Defaults to: `null`.
+  - nextPageToken (String): The next-pagination token. For multiple-page list results, this token can be used as the &#x60;ListDataSourcesRequest.page_token&#x60; to request the next page of list results. @OutputOnly Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dataSources",
     :"nextPageToken"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.BigQueryDataTransfer.V1.Model.ListDataSou
   def decode(value, options) do
     value
     |> deserialize(:"dataSources", :list, GoogleApi.BigQueryDataTransfer.V1.Model.DataSource, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQueryDataTransfer.V1.Model.ListDataSourcesResponse do
+  def encode(value, options) do
+    GoogleApi.BigQueryDataTransfer.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

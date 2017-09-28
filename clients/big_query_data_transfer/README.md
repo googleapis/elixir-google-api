@@ -1,6 +1,6 @@
 # GoogleApi.BigQueryDataTransfer.V1
 
-**TODO: Add description**
+Transfers data from partner SaaS applications to Google BigQuery on a scheduled, managed basis.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_big_query_data_transfer` to your list of dependencies in `
 
 ```elixir
 def deps do
-  [{:google_api_big_query_data_transfer, "~> 0.1.0"}]
+  [{:google_api_big_query_data_transfer, "~> 0.0.1"}]
 end
 ```
 

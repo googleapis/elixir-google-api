@@ -20,9 +20,27 @@
 defmodule GoogleApi.BigQueryDataTransfer.V1.Model.DataSourceParameter do
   @moduledoc """
   Represents a data source parameter with validation rules, so that parameters can be rendered in the UI. These parameters are given to us by supported data sources, and include all needed information for rendering and validation. Thus, whoever uses this api can decide to generate either generic ui, or custom data source specific forms.
+
+  ## Attributes
+
+  - allowedValues (List[String]): All possible values for the parameter. Defaults to: `null`.
+  - description (String): Parameter description. Defaults to: `null`.
+  - displayName (String): Parameter display name in the user interface. Defaults to: `null`.
+  - fields (List[DataSourceParameter]): When parameter is a record, describes child fields. Defaults to: `null`.
+  - immutable (Boolean): Cannot be changed after initial creation. Defaults to: `null`.
+  - maxValue (Float): For integer and double values specifies maxminum allowed value. Defaults to: `null`.
+  - minValue (Float): For integer and double values specifies minimum allowed value. Defaults to: `null`.
+  - paramId (String): Parameter identifier. Defaults to: `null`.
+  - recurse (Boolean): If set to true, schema should be taken from the parent with the same parameter_id. Only applicable when parameter type is RECORD. Defaults to: `null`.
+  - repeated (Boolean): Can parameter have multiple values. Defaults to: `null`.
+  - required (Boolean): Is parameter required. Defaults to: `null`.
+  - type (String): Parameter type. Defaults to: `null`.
+    - Enum - one of [TYPE_UNSPECIFIED, STRING, INTEGER, DOUBLE, BOOLEAN, RECORD, PLUS_PAGE]
+  - validationDescription (String): Description of the requirements for this field, in case the user input does not fulfill the regex pattern or min/max values. Defaults to: `null`.
+  - validationHelpUrl (String): URL to a help document to further explain the naming requirements. Defaults to: `null`.
+  - validationRegex (String): Regular expression which can be used for parameter validation. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"allowedValues",
     :"description",
@@ -47,6 +65,12 @@ defimpl Poison.Decoder, for: GoogleApi.BigQueryDataTransfer.V1.Model.DataSourceP
   def decode(value, options) do
     value
     |> deserialize(:"fields", :list, GoogleApi.BigQueryDataTransfer.V1.Model.DataSourceParameter, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQueryDataTransfer.V1.Model.DataSourceParameter do
+  def encode(value, options) do
+    GoogleApi.BigQueryDataTransfer.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferMessage do
   @moduledoc """
   Represents a user facing message for a particular data transfer run.
+
+  ## Attributes
+
+  - messageText (String): Message text. Defaults to: `null`.
+  - messageTime (String): Time when message was logged. Defaults to: `null`.
+  - severity (String): Message severity. Defaults to: `null`.
+    - Enum - one of [MESSAGE_SEVERITY_UNSPECIFIED, INFO, WARNING, ERROR]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"messageText",
     :"messageTime",
@@ -33,6 +39,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.BigQueryDataTransfer.V1.Model.TransferMessage do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQueryDataTransfer.V1.Model.TransferMessage do
+  def encode(value, options) do
+    GoogleApi.BigQueryDataTransfer.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
