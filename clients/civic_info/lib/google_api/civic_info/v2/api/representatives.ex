@@ -118,7 +118,9 @@ defmodule GoogleApi.CivicInfo.V2.Api.Representatives do
     }
     %{}
     |> method(:get)
-    |> url("/representatives/#{ocd_id}")
+    |> url("/representatives/{ocdId}", %{
+         "ocdId" => URI.encode_www_form(ocd_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

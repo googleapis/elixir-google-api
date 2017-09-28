@@ -20,9 +20,13 @@
 defmodule GoogleApi.CivicInfo.V2.Model.Channel do
   @moduledoc """
   A social media or web channel for a candidate.
+
+  ## Attributes
+
+  - id (String): The unique public identifier for the candidate&#39;s channel. Defaults to: `null`.
+  - type (String): The type of channel. The following is a list of types of channels, but is not exhaustive. More channel types may be added at a later time. One of: GooglePlus, YouTube, Facebook, Twitter Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"type"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.Channel do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CivicInfo.V2.Model.Channel do
+  def encode(value, options) do
+    GoogleApi.CivicInfo.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

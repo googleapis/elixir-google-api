@@ -20,9 +20,35 @@
 defmodule GoogleApi.CivicInfo.V2.Model.Contest do
   @moduledoc """
   Information about a contest that appears on a voter&#39;s ballot.
+
+  ## Attributes
+
+  - ballotPlacement (String): A number specifying the position of this contest on the voter&#39;s ballot. Defaults to: `null`.
+  - candidates (List[Candidate]): The candidate choices for this contest. Defaults to: `null`.
+  - district (ElectoralDistrict): Information about the electoral district that this contest is in. Defaults to: `null`.
+  - electorateSpecifications (String): A description of any additional eligibility requirements for voting in this contest. Defaults to: `null`.
+  - id (String): An ID for this object. IDs may change in future requests and should not be cached. Access to this field requires special access that can be requested from the Request more link on the Quotas page. Defaults to: `null`.
+  - level (List[String]): The levels of government of the office for this contest. There may be more than one in cases where a jurisdiction effectively acts at two different levels of government; for example, the mayor of the District of Columbia acts at \&quot;locality\&quot; level, but also effectively at both \&quot;administrative-area-2\&quot; and \&quot;administrative-area-1\&quot;. Defaults to: `null`.
+  - numberElected (String): The number of candidates that will be elected to office in this contest. Defaults to: `null`.
+  - numberVotingFor (String): The number of candidates that a voter may vote for in this contest. Defaults to: `null`.
+  - office (String): The name of the office for this contest. Defaults to: `null`.
+  - primaryParty (String): If this is a partisan election, the name of the party it is for. Defaults to: `null`.
+  - referendumBallotResponses (List[String]): The set of ballot responses for the referendum. A ballot response represents a line on the ballot. Common examples might include \&quot;yes\&quot; or \&quot;no\&quot; for referenda. This field is only populated for contests of type &#39;Referendum&#39;. Defaults to: `null`.
+  - referendumBrief (String): Specifies a short summary of the referendum that is typically on the ballot below the title but above the text. This field is only populated for contests of type &#39;Referendum&#39;. Defaults to: `null`.
+  - referendumConStatement (String): A statement in opposition to the referendum. It does not necessarily appear on the ballot. This field is only populated for contests of type &#39;Referendum&#39;. Defaults to: `null`.
+  - referendumEffectOfAbstain (String): Specifies what effect abstaining (not voting) on the proposition will have (i.e. whether abstaining is considered a vote against it). This field is only populated for contests of type &#39;Referendum&#39;. Defaults to: `null`.
+  - referendumPassageThreshold (String): The threshold of votes that the referendum needs in order to pass, e.g. \&quot;two-thirds\&quot;. This field is only populated for contests of type &#39;Referendum&#39;. Defaults to: `null`.
+  - referendumProStatement (String): A statement in favor of the referendum. It does not necessarily appear on the ballot. This field is only populated for contests of type &#39;Referendum&#39;. Defaults to: `null`.
+  - referendumSubtitle (String): A brief description of the referendum. This field is only populated for contests of type &#39;Referendum&#39;. Defaults to: `null`.
+  - referendumText (String): The full text of the referendum. This field is only populated for contests of type &#39;Referendum&#39;. Defaults to: `null`.
+  - referendumTitle (String): The title of the referendum (e.g. &#39;Proposition 42&#39;). This field is only populated for contests of type &#39;Referendum&#39;. Defaults to: `null`.
+  - referendumUrl (String): A link to the referendum. This field is only populated for contests of type &#39;Referendum&#39;. Defaults to: `null`.
+  - roles (List[String]): The roles which this office fulfills. Defaults to: `null`.
+  - sources (List[Source]): A list of sources for this contest. If multiple sources are listed, the data has been aggregated from those sources. Defaults to: `null`.
+  - special (String): \&quot;Yes\&quot; or \&quot;No\&quot; depending on whether this a contest being held outside the normal election cycle. Defaults to: `null`.
+  - type (String): The type of contest. Usually this will be &#39;General&#39;, &#39;Primary&#39;, or &#39;Run-off&#39; for contests with candidates. For referenda this will be &#39;Referendum&#39;. For Retention contests this will typically be &#39;Retention&#39;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"ballotPlacement",
     :"candidates",
@@ -58,6 +84,12 @@ defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.Contest do
     |> deserialize(:"candidates", :list, GoogleApi.CivicInfo.V2.Model.Candidate, options)
     |> deserialize(:"district", :struct, GoogleApi.CivicInfo.V2.Model.ElectoralDistrict, options)
     |> deserialize(:"sources", :list, GoogleApi.CivicInfo.V2.Model.Source, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CivicInfo.V2.Model.Contest do
+  def encode(value, options) do
+    GoogleApi.CivicInfo.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

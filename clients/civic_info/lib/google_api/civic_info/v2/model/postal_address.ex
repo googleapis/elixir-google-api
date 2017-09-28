@@ -20,9 +20,42 @@
 defmodule GoogleApi.CivicInfo.V2.Model.PostalAddress do
   @moduledoc """
   
+
+  ## Attributes
+
+  - addressLines (List[String]):  Defaults to: `null`.
+  - administrativeAreaName (String):  Defaults to: `null`.
+  - countryName (String):  Defaults to: `null`.
+  - countryNameCode (String):  Defaults to: `null`.
+  - dependentLocalityName (String):  Defaults to: `null`.
+  - dependentThoroughfareLeadingType (String):  Defaults to: `null`.
+  - dependentThoroughfareName (String):  Defaults to: `null`.
+  - dependentThoroughfarePostDirection (String):  Defaults to: `null`.
+  - dependentThoroughfarePreDirection (String):  Defaults to: `null`.
+  - dependentThoroughfareTrailingType (String):  Defaults to: `null`.
+  - dependentThoroughfaresConnector (String):  Defaults to: `null`.
+  - dependentThoroughfaresIndicator (String):  Defaults to: `null`.
+  - dependentThoroughfaresType (String):  Defaults to: `null`.
+  - firmName (String):  Defaults to: `null`.
+  - isDisputed (Boolean):  Defaults to: `null`.
+  - languageCode (String):  Defaults to: `null`.
+  - localityName (String):  Defaults to: `null`.
+  - postBoxNumber (String):  Defaults to: `null`.
+  - postalCodeNumber (String):  Defaults to: `null`.
+  - postalCodeNumberExtension (String):  Defaults to: `null`.
+  - premiseName (String):  Defaults to: `null`.
+  - recipientName (String):  Defaults to: `null`.
+  - sortingCode (String):  Defaults to: `null`.
+  - subAdministrativeAreaName (String):  Defaults to: `null`.
+  - subPremiseName (String):  Defaults to: `null`.
+  - thoroughfareLeadingType (String):  Defaults to: `null`.
+  - thoroughfareName (String):  Defaults to: `null`.
+  - thoroughfareNumber (String):  Defaults to: `null`.
+  - thoroughfarePostDirection (String):  Defaults to: `null`.
+  - thoroughfarePreDirection (String):  Defaults to: `null`.
+  - thoroughfareTrailingType (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"addressLines",
     :"administrativeAreaName",
@@ -61,6 +94,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.PostalAddress do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CivicInfo.V2.Model.PostalAddress do
+  def encode(value, options) do
+    GoogleApi.CivicInfo.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,16 @@
 defmodule GoogleApi.CivicInfo.V2.Model.RepresentativeInfoResponse do
   @moduledoc """
   The result of a representative info lookup query.
+
+  ## Attributes
+
+  - divisions (Map[String, GeographicDivision]): Political geographic divisions that contain the requested address. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;civicinfo#representativeInfoResponse\&quot;. Defaults to: `null`.
+  - normalizedInput (SimpleAddressType): The normalized version of the requested address Defaults to: `null`.
+  - offices (List[Office]): Elected offices referenced by the divisions listed above. Will only be present if includeOffices was true in the request. Defaults to: `null`.
+  - officials (List[Official]): Officials holding the offices listed above. Will only be present if includeOffices was true in the request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"divisions",
     :"kind",
@@ -40,6 +47,12 @@ defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.RepresentativeInfoResp
     |> deserialize(:"normalizedInput", :struct, GoogleApi.CivicInfo.V2.Model.SimpleAddressType, options)
     |> deserialize(:"offices", :list, GoogleApi.CivicInfo.V2.Model.Office, options)
     |> deserialize(:"officials", :list, GoogleApi.CivicInfo.V2.Model.Official, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CivicInfo.V2.Model.RepresentativeInfoResponse do
+  def encode(value, options) do
+    GoogleApi.CivicInfo.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.CivicInfo.V2.Model.ElectoralDistrict do
   @moduledoc """
   Describes the geographic scope of a contest.
+
+  ## Attributes
+
+  - id (String): An identifier for this district, relative to its scope. For example, the 34th State Senate district would have id \&quot;34\&quot; and a scope of stateUpper. Defaults to: `null`.
+  - kgForeignKey (String):  Defaults to: `null`.
+  - name (String): The name of the district. Defaults to: `null`.
+  - scope (String): The geographic scope of this district. If unspecified the district&#39;s geography is not known. One of: national, statewide, congressional, stateUpper, stateLower, countywide, judicial, schoolBoard, cityWide, township, countyCouncil, cityCouncil, ward, special Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"kgForeignKey",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.ElectoralDistrict do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CivicInfo.V2.Model.ElectoralDistrict do
+  def encode(value, options) do
+    GoogleApi.CivicInfo.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

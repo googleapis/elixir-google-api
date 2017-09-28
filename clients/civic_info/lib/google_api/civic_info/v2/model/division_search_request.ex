@@ -20,9 +20,12 @@
 defmodule GoogleApi.CivicInfo.V2.Model.DivisionSearchRequest do
   @moduledoc """
   A search request for political geographies.
+
+  ## Attributes
+
+  - contextParams (ContextParams):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"contextParams"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.DivisionSearchRequest 
   def decode(value, options) do
     value
     |> deserialize(:"contextParams", :struct, GoogleApi.CivicInfo.V2.Model.ContextParams, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CivicInfo.V2.Model.DivisionSearchRequest do
+  def encode(value, options) do
+    GoogleApi.CivicInfo.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

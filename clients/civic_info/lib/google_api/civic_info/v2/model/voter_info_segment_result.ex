@@ -20,9 +20,15 @@
 defmodule GoogleApi.CivicInfo.V2.Model.VoterInfoSegmentResult do
   @moduledoc """
   
+
+  ## Attributes
+
+  - generatedMillis (String):  Defaults to: `null`.
+  - postalAddress (PostalAddress):  Defaults to: `null`.
+  - request (VoterInfoRequest):  Defaults to: `null`.
+  - response (VoterInfoResponse):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"generatedMillis",
     :"postalAddress",
@@ -38,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.VoterInfoSegmentResult
     |> deserialize(:"postalAddress", :struct, GoogleApi.CivicInfo.V2.Model.PostalAddress, options)
     |> deserialize(:"request", :struct, GoogleApi.CivicInfo.V2.Model.VoterInfoRequest, options)
     |> deserialize(:"response", :struct, GoogleApi.CivicInfo.V2.Model.VoterInfoResponse, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CivicInfo.V2.Model.VoterInfoSegmentResult do
+  def encode(value, options) do
+    GoogleApi.CivicInfo.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.CivicInfo.V2.Model.DivisionSearchResult do
   @moduledoc """
   Represents a political geographic division that matches the requested query.
+
+  ## Attributes
+
+  - aliases (List[String]): Other Open Civic Data identifiers that refer to the same division -- for example, those that refer to other political divisions whose boundaries are defined to be coterminous with this one. For example, ocd-division/country:us/state:wy will include an alias of ocd-division/country:us/state:wy/cd:1, since Wyoming has only one Congressional district. Defaults to: `null`.
+  - name (String): The name of the division. Defaults to: `null`.
+  - ocdId (String): The unique Open Civic Data identifier for this division. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"aliases",
     :"name",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.DivisionSearchResult do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CivicInfo.V2.Model.DivisionSearchResult do
+  def encode(value, options) do
+    GoogleApi.CivicInfo.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

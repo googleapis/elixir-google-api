@@ -20,9 +20,16 @@
 defmodule GoogleApi.CivicInfo.V2.Model.ElectionOfficial do
   @moduledoc """
   Information about individual election officials.
+
+  ## Attributes
+
+  - emailAddress (String): The email address of the election official. Defaults to: `null`.
+  - faxNumber (String): The fax number of the election official. Defaults to: `null`.
+  - name (String): The full name of the election official. Defaults to: `null`.
+  - officePhoneNumber (String): The office phone number of the election official. Defaults to: `null`.
+  - title (String): The title of the election official. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"emailAddress",
     :"faxNumber",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.ElectionOfficial do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CivicInfo.V2.Model.ElectionOfficial do
+  def encode(value, options) do
+    GoogleApi.CivicInfo.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

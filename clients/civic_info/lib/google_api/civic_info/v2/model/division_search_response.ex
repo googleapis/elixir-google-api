@@ -20,9 +20,13 @@
 defmodule GoogleApi.CivicInfo.V2.Model.DivisionSearchResponse do
   @moduledoc """
   The result of a division search query.
+
+  ## Attributes
+
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;civicinfo#divisionSearchResponse\&quot;. Defaults to: `null`.
+  - results (List[DivisionSearchResult]):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"results"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.DivisionSearchResponse
   def decode(value, options) do
     value
     |> deserialize(:"results", :list, GoogleApi.CivicInfo.V2.Model.DivisionSearchResult, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CivicInfo.V2.Model.DivisionSearchResponse do
+  def encode(value, options) do
+    GoogleApi.CivicInfo.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

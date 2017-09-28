@@ -1,6 +1,6 @@
 # GoogleApi.CivicInfo.V2
 
-**TODO: Add description**
+Provides polling places, early vote locations, contest data, election officials, and government representatives for U.S. residential addresses.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_civic_info` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_civic_info, "~> 0.1.0"}]
+  [{:google_api_civic_info, "~> 0.0.1"}]
 end
 ```
 

@@ -20,9 +20,18 @@
 defmodule GoogleApi.CivicInfo.V2.Model.SimpleAddressType do
   @moduledoc """
   A simple representation of an address.
+
+  ## Attributes
+
+  - city (String): The city or town for the address. Defaults to: `null`.
+  - line1 (String): The street name and number of this address. Defaults to: `null`.
+  - line2 (String): The second line the address, if needed. Defaults to: `null`.
+  - line3 (String): The third line of the address, if needed. Defaults to: `null`.
+  - locationName (String): The name of the location. Defaults to: `null`.
+  - state (String): The US two letter state abbreviation of the address. Defaults to: `null`.
+  - zip (String): The US Postal Zip Code of the address. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"city",
     :"line1",
@@ -37,6 +46,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.SimpleAddressType do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CivicInfo.V2.Model.SimpleAddressType do
+  def encode(value, options) do
+    GoogleApi.CivicInfo.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

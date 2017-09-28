@@ -20,9 +20,17 @@
 defmodule GoogleApi.CivicInfo.V2.Model.Office do
   @moduledoc """
   Information about an Office held by one or more Officials.
+
+  ## Attributes
+
+  - divisionId (String): The OCD ID of the division with which this office is associated. Defaults to: `null`.
+  - levels (List[String]): The levels of government of which this office is part. There may be more than one in cases where a jurisdiction effectively acts at two different levels of government; for example, the mayor of the District of Columbia acts at \&quot;locality\&quot; level, but also effectively at both \&quot;administrative-area-2\&quot; and \&quot;administrative-area-1\&quot;. Defaults to: `null`.
+  - name (String): The human-readable name of the office. Defaults to: `null`.
+  - officialIndices (List[Integer]): List of indices in the officials array of people who presently hold this office. Defaults to: `null`.
+  - roles (List[String]): The roles which this office fulfills. Roles are not meant to be exhaustive, or to exactly specify the entire set of responsibilities of a given office, but are meant to be rough categories that are useful for general selection from or sorting of a list of offices. Defaults to: `null`.
+  - sources (List[Source]): A list of sources for this office. If multiple sources are listed, the data has been aggregated from those sources. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"divisionId",
     :"levels",
@@ -38,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.Office do
   def decode(value, options) do
     value
     |> deserialize(:"sources", :list, GoogleApi.CivicInfo.V2.Model.Source, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CivicInfo.V2.Model.Office do
+  def encode(value, options) do
+    GoogleApi.CivicInfo.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 
