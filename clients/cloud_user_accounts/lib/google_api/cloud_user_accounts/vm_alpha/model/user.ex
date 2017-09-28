@@ -20,9 +20,20 @@
 defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.User do
   @moduledoc """
   A User resource.
+
+  ## Attributes
+
+  - creationTimestamp (String): [Output Only] Creation timestamp in RFC3339 text format. Defaults to: `null`.
+  - description (String): An optional textual description of the resource; provided by the client when the resource is created. Defaults to: `null`.
+  - groups (List[String]): [Output Only] A list of URLs to Group resources who contain the user. Users are only members of groups in the same project. Defaults to: `null`.
+  - id (String): [Output Only] Unique identifier for the resource; defined by the server. Defaults to: `null`.
+  - kind (String): [Output Only] Type of the resource. Always clouduseraccounts#user for users. Defaults to: `null`.
+  - name (String): Name of the resource; provided by the client when the resource is created. Defaults to: `null`.
+  - owner (String): Email address of account&#39;s owner. This account will be validated to make sure it exists. The email can belong to any domain, but it must be tied to a Google account. Defaults to: `null`.
+  - publicKeys (List[PublicKey]): [Output Only] Public keys that this user may use to login. Defaults to: `null`.
+  - selfLink (String): [Output Only] Server defined URL for the resource. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"creationTimestamp",
     :"description",
@@ -41,6 +52,12 @@ defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.User do
   def decode(value, options) do
     value
     |> deserialize(:"publicKeys", :list, GoogleApi.CloudUserAccounts.Vm_alpha.Model.PublicKey, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.User do
+  def encode(value, options) do
+    GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer.serialize_non_nil(value, options)
   end
 end
 

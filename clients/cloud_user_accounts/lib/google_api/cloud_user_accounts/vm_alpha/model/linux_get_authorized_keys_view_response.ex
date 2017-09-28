@@ -20,9 +20,12 @@
 defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxGetAuthorizedKeysViewResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - resource (AuthorizedKeysView): [Output Only] A list of authorized public keys for a user. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"resource"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxGet
   def decode(value, options) do
     value
     |> deserialize(:"resource", :struct, GoogleApi.CloudUserAccounts.Vm_alpha.Model.AuthorizedKeysView, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxGetAuthorizedKeysViewResponse do
+  def encode(value, options) do
+    GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer.serialize_non_nil(value, options)
   end
 end
 

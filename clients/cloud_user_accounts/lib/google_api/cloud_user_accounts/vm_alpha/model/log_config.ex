@@ -20,9 +20,12 @@
 defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.LogConfig do
   @moduledoc """
   Specifies what kind of log the caller must write
+
+  ## Attributes
+
+  - counter (LogConfigCounterOptions): Counter options. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"counter"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.LogConfi
   def decode(value, options) do
     value
     |> deserialize(:"counter", :struct, GoogleApi.CloudUserAccounts.Vm_alpha.Model.LogConfigCounterOptions, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.LogConfig do
+  def encode(value, options) do
+    GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer.serialize_non_nil(value, options)
   end
 end
 

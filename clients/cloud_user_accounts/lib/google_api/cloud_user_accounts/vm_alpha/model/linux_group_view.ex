@@ -20,9 +20,14 @@
 defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxGroupView do
   @moduledoc """
   A detailed view of a Linux group.
+
+  ## Attributes
+
+  - gid (Integer): [Output Only] The Group ID. Defaults to: `null`.
+  - groupName (String): [Output Only] Group name. Defaults to: `null`.
+  - members (List[String]): [Output Only] List of user accounts that belong to the group. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"gid",
     :"groupName",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxGroupView do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxGroupView do
+  def encode(value, options) do
+    GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer.serialize_non_nil(value, options)
   end
 end
 

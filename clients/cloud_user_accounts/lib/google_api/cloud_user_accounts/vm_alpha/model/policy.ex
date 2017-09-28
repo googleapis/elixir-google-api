@@ -20,9 +20,17 @@
 defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.Policy do
   @moduledoc """
   Defines an Identity and Access Management (IAM) policy. It is used to specify access control policies for Cloud Platform resources.    A &#x60;Policy&#x60; consists of a list of &#x60;bindings&#x60;. A &#x60;Binding&#x60; binds a list of &#x60;members&#x60; to a &#x60;role&#x60;, where the members can be user accounts, Google groups, Google domains, and service accounts. A &#x60;role&#x60; is a named list of permissions defined by IAM.  **Example**  { \&quot;bindings\&quot;: [ { \&quot;role\&quot;: \&quot;roles/owner\&quot;, \&quot;members\&quot;: [ \&quot;user:mike@example.com\&quot;, \&quot;group:admins@example.com\&quot;, \&quot;domain:google.com\&quot;, \&quot;serviceAccount:my-other-app@appspot.gserviceaccount.com\&quot;, ] }, { \&quot;role\&quot;: \&quot;roles/viewer\&quot;, \&quot;members\&quot;: [\&quot;user:sean@example.com\&quot;] } ] }  For a description of IAM and its features, see the [IAM developer&#39;s guide](https://cloud.google.com/iam).
+
+  ## Attributes
+
+  - auditConfigs (List[AuditConfig]): Specifies audit logging configs for \&quot;data access\&quot;. \&quot;data access\&quot;: generally refers to data reads/writes and admin reads. \&quot;admin activity\&quot;: generally refers to admin writes.  Note: &#x60;AuditConfig&#x60; doesn&#39;t apply to \&quot;admin activity\&quot;, which always enables audit logging. Defaults to: `null`.
+  - bindings (List[Binding]): Associates a list of &#x60;members&#x60; to a &#x60;role&#x60;. Multiple &#x60;bindings&#x60; must not be specified for the same &#x60;role&#x60;. &#x60;bindings&#x60; with no members will result in an error. Defaults to: `null`.
+  - etag (String): &#x60;etag&#x60; is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the &#x60;etag&#x60; in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An &#x60;etag&#x60; is returned in the response to &#x60;getIamPolicy&#x60;, and systems are expected to put that etag in the request to &#x60;setIamPolicy&#x60; to ensure that their change will be applied to the same version of the policy.  If no &#x60;etag&#x60; is provided in the call to &#x60;setIamPolicy&#x60;, then the existing policy is overwritten blindly. Defaults to: `null`.
+  - iamOwned (Boolean):  Defaults to: `null`.
+  - rules (List[Rule]): If more than one rule is specified, the rules are applied in the following manner: - All matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission is denied. Logging will be applied if one or more matching rule requires logging. - Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be applied if one or more matching rule requires logging. - Otherwise, if no rule applies, permission is denied. Defaults to: `null`.
+  - version (Integer): Version of the &#x60;Policy&#x60;. The default version is 0. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"auditConfigs",
     :"bindings",
@@ -40,6 +48,12 @@ defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.Policy d
     |> deserialize(:"auditConfigs", :list, GoogleApi.CloudUserAccounts.Vm_alpha.Model.AuditConfig, options)
     |> deserialize(:"bindings", :list, GoogleApi.CloudUserAccounts.Vm_alpha.Model.Binding, options)
     |> deserialize(:"rules", :list, GoogleApi.CloudUserAccounts.Vm_alpha.Model.Rule, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.Policy do
+  def encode(value, options) do
+    GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer.serialize_non_nil(value, options)
   end
 end
 

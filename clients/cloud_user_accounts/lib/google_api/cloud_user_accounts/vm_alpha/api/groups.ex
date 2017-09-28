@@ -63,7 +63,10 @@ defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Api.Groups do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/global/groups/#{group_name}/addMember")
+    |> url("/{project}/global/groups/{groupName}/addMember", %{
+         "project" => URI.encode_www_form(project),
+         "groupName" => URI.encode_www_form(group_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -105,7 +108,10 @@ defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Api.Groups do
     }
     %{}
     |> method(:delete)
-    |> url("/#{project}/global/groups/#{group_name}")
+    |> url("/{project}/global/groups/{groupName}", %{
+         "project" => URI.encode_www_form(project),
+         "groupName" => URI.encode_www_form(group_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -147,7 +153,10 @@ defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Api.Groups do
     }
     %{}
     |> method(:get)
-    |> url("/#{project}/global/groups/#{group_name}")
+    |> url("/{project}/global/groups/{groupName}", %{
+         "project" => URI.encode_www_form(project),
+         "groupName" => URI.encode_www_form(group_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -189,7 +198,10 @@ defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Api.Groups do
     }
     %{}
     |> method(:get)
-    |> url("/#{project}/global/groups/#{resource}/getIamPolicy")
+    |> url("/{project}/global/groups/{resource}/getIamPolicy", %{
+         "project" => URI.encode_www_form(project),
+         "resource" => URI.encode_www_form(resource)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -232,7 +244,9 @@ defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Api.Groups do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/global/groups")
+    |> url("/{project}/global/groups", %{
+         "project" => URI.encode_www_form(project)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -281,7 +295,9 @@ defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Api.Groups do
     }
     %{}
     |> method(:get)
-    |> url("/#{project}/global/groups")
+    |> url("/{project}/global/groups", %{
+         "project" => URI.encode_www_form(project)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -325,7 +341,10 @@ defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Api.Groups do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/global/groups/#{group_name}/removeMember")
+    |> url("/{project}/global/groups/{groupName}/removeMember", %{
+         "project" => URI.encode_www_form(project),
+         "groupName" => URI.encode_www_form(group_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -369,7 +388,10 @@ defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Api.Groups do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/global/groups/#{resource}/setIamPolicy")
+    |> url("/{project}/global/groups/{resource}/setIamPolicy", %{
+         "project" => URI.encode_www_form(project),
+         "resource" => URI.encode_www_form(resource)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -413,7 +435,10 @@ defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Api.Groups do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/global/groups/#{resource}/testIamPermissions")
+    |> url("/{project}/global/groups/{resource}/testIamPermissions", %{
+         "project" => URI.encode_www_form(project),
+         "resource" => URI.encode_www_form(resource)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

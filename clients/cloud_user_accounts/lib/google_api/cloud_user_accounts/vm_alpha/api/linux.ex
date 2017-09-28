@@ -65,7 +65,11 @@ defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Api.Linux do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/zones/#{zone}/authorizedKeysView/#{user}")
+    |> url("/{project}/zones/{zone}/authorizedKeysView/{user}", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone),
+         "user" => URI.encode_www_form(user)
+       })
     |> add_param(:query, :"instance", instance)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -117,7 +121,10 @@ defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Api.Linux do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/zones/#{zone}/linuxAccountViews")
+    |> url("/{project}/zones/{zone}/linuxAccountViews", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone)
+       })
     |> add_param(:query, :"instance", instance)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])

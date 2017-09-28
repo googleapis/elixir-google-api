@@ -20,9 +20,35 @@
 defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation do
   @moduledoc """
   An Operation resource, used to manage asynchronous API requests.
+
+  ## Attributes
+
+  - clientOperationId (String): [Output Only] Reserved for future use. Defaults to: `null`.
+  - creationTimestamp (String): [Output Only] Creation timestamp in RFC3339 text format. Defaults to: `null`.
+  - description (String): [Output Only] A textual description of the operation, which is set when the operation is created. Defaults to: `null`.
+  - endTime (String): [Output Only] The time that this operation was completed. This value is in RFC3339 text format. Defaults to: `null`.
+  - error (OperationError):  Defaults to: `null`.
+  - httpErrorMessage (String): [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as NOT FOUND. Defaults to: `null`.
+  - httpErrorStatusCode (Integer): [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a 404 means the resource was not found. Defaults to: `null`.
+  - id (String): [Output Only] The unique identifier for the resource. This identifier is defined by the server. Defaults to: `null`.
+  - insertTime (String): [Output Only] The time that this operation was requested. This value is in RFC3339 text format. Defaults to: `null`.
+  - kind (String): [Output Only] Type of the resource. Always compute#operation for Operation resources. Defaults to: `null`.
+  - name (String): [Output Only] Name of the resource. Defaults to: `null`.
+  - operationType (String): [Output Only] The type of operation, such as insert, update, or delete, and so on. Defaults to: `null`.
+  - progress (Integer): [Output Only] An optional progress indicator that ranges from 0 to 100. There is no requirement that this be linear or support any granularity of operations. This should not be used to guess when the operation will be complete. This number should monotonically increase as the operation progresses. Defaults to: `null`.
+  - region (String): [Output Only] The URL of the region where the operation resides. Only available when performing regional operations. Defaults to: `null`.
+  - selfLink (String): [Output Only] Server-defined URL for the resource. Defaults to: `null`.
+  - startTime (String): [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format. Defaults to: `null`.
+  - status (String): [Output Only] The status of the operation, which can be one of the following: PENDING, RUNNING, or DONE. Defaults to: `null`.
+    - Enum - one of [DONE, PENDING, RUNNING]
+  - statusMessage (String): [Output Only] An optional textual description of the current status of the operation. Defaults to: `null`.
+  - targetId (String): [Output Only] The unique target ID, which identifies a specific incarnation of the target resource. Defaults to: `null`.
+  - targetLink (String): [Output Only] The URL of the resource that the operation modifies. Defaults to: `null`.
+  - user (String): [Output Only] User who requested the operation, for example: user@example.com. Defaults to: `null`.
+  - warnings (List[OperationWarnings]): [Output Only] If warning messages are generated during processing of the operation, this field will be populated. Defaults to: `null`.
+  - zone (String): [Output Only] The URL of the zone where the operation resides. Only available when performing per-zone operations. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"clientOperationId",
     :"creationTimestamp",
@@ -54,8 +80,14 @@ defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operatio
   import GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"error", :struct, GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation_error, options)
-    |> deserialize(:"warnings", :list, GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation_warnings, options)
+    |> deserialize(:"error", :struct, GoogleApi.CloudUserAccounts.Vm_alpha.Model.OperationError, options)
+    |> deserialize(:"warnings", :list, GoogleApi.CloudUserAccounts.Vm_alpha.Model.OperationWarnings, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation do
+  def encode(value, options) do
+    GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer.serialize_non_nil(value, options)
   end
 end
 

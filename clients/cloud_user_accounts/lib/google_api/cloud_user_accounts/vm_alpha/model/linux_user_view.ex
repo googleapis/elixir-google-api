@@ -20,9 +20,17 @@
 defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxUserView do
   @moduledoc """
   A detailed view of a Linux user account.
+
+  ## Attributes
+
+  - gecos (String): [Output Only] The GECOS (user information) entry for this account. Defaults to: `null`.
+  - gid (Integer): [Output Only] User&#39;s default group ID. Defaults to: `null`.
+  - homeDirectory (String): [Output Only] The path to the home directory for this account. Defaults to: `null`.
+  - shell (String): [Output Only] The path to the login shell for this account. Defaults to: `null`.
+  - uid (Integer): [Output Only] User ID. Defaults to: `null`.
+  - username (String): [Output Only] The username of the account. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"gecos",
     :"gid",
@@ -36,6 +44,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxUserView do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxUserView do
+  def encode(value, options) do
+    GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer.serialize_non_nil(value, options)
   end
 end
 

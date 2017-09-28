@@ -20,9 +20,12 @@
 defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.GroupsRemoveMemberRequest do
   @moduledoc """
   
+
+  ## Attributes
+
+  - users (List[String]): Fully-qualified URLs of the User resources to remove. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"users"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.GroupsRemoveMemberRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.GroupsRemoveMemberRequest do
+  def encode(value, options) do
+    GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer.serialize_non_nil(value, options)
   end
 end
 

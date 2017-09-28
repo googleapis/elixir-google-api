@@ -20,9 +20,14 @@
 defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxAccountViews do
   @moduledoc """
   A list of all Linux accounts for this project. This API is only used by Compute Engine virtual machines to get information about user accounts for a project or instance. Linux resources are read-only views into users and groups managed by the Compute Engine Accounts API.
+
+  ## Attributes
+
+  - groupViews (List[LinuxGroupView]): [Output Only] A list of all groups within a project. Defaults to: `null`.
+  - kind (String): [Output Only] Type of the resource. Always clouduseraccounts#linuxAccountViews for Linux resources. Defaults to: `null`.
+  - userViews (List[LinuxUserView]): [Output Only] A list of all users within a project. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"groupViews",
     :"kind",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxAcc
     value
     |> deserialize(:"groupViews", :list, GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxGroupView, options)
     |> deserialize(:"userViews", :list, GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxUserView, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxAccountViews do
+  def encode(value, options) do
+    GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -61,7 +61,10 @@ defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Api.GlobalAccountsOperations do
     }
     %{}
     |> method(:delete)
-    |> url("/#{project}/global/operations/#{operation}")
+    |> url("/{project}/global/operations/{operation}", %{
+         "project" => URI.encode_www_form(project),
+         "operation" => URI.encode_www_form(operation)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -103,7 +106,10 @@ defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Api.GlobalAccountsOperations do
     }
     %{}
     |> method(:get)
-    |> url("/#{project}/global/operations/#{operation}")
+    |> url("/{project}/global/operations/{operation}", %{
+         "project" => URI.encode_www_form(project),
+         "operation" => URI.encode_www_form(operation)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -152,7 +158,9 @@ defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Api.GlobalAccountsOperations do
     }
     %{}
     |> method(:get)
-    |> url("/#{project}/global/operations")
+    |> url("/{project}/global/operations", %{
+         "project" => URI.encode_www_form(project)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

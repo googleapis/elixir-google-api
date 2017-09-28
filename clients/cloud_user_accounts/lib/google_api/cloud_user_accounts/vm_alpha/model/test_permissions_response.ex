@@ -20,9 +20,12 @@
 defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.TestPermissionsResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - permissions (List[String]): A subset of &#x60;TestPermissionsRequest.permissions&#x60; that the caller is allowed. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"permissions"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.TestPermissionsResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.TestPermissionsResponse do
+  def encode(value, options) do
+    GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer.serialize_non_nil(value, options)
   end
 end
 

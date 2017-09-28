@@ -20,9 +20,13 @@
 defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.AuditConfig do
   @moduledoc """
   Enables \&quot;data access\&quot; audit logging for a service and specifies a list of members that are log-exempted.
+
+  ## Attributes
+
+  - exemptedMembers (List[String]): Specifies the identities that are exempted from \&quot;data access\&quot; audit logging for the &#x60;service&#x60; specified above. Follows the same format of Binding.members. Defaults to: `null`.
+  - service (String): Specifies a service that will be enabled for \&quot;data access\&quot; audit logging. For example, &#x60;resourcemanager&#x60;, &#x60;storage&#x60;, &#x60;compute&#x60;. &#x60;allServices&#x60; is a special value that covers all services. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"exemptedMembers",
     :"service"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.AuditConfig do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.AuditConfig do
+  def encode(value, options) do
+    GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer.serialize_non_nil(value, options)
   end
 end
 

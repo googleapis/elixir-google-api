@@ -20,9 +20,16 @@
 defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.PublicKey do
   @moduledoc """
   A public key for authenticating to guests.
+
+  ## Attributes
+
+  - creationTimestamp (String): [Output Only] Creation timestamp in RFC3339 text format. Defaults to: `null`.
+  - description (String): An optional textual description of the resource; provided by the client when the resource is created. Defaults to: `null`.
+  - expirationTimestamp (String): Optional expiration timestamp. If provided, the timestamp must be in RFC3339 text format. If not provided, the public key never expires. Defaults to: `null`.
+  - fingerprint (String): [Output Only] The fingerprint of the key is defined by RFC4716 to be the MD5 digest of the public key. Defaults to: `null`.
+  - key (String): Public key text in SSH format, defined by RFC4253 section 6.6. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"creationTimestamp",
     :"description",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.PublicKey do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.PublicKey do
+  def encode(value, options) do
+    GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer.serialize_non_nil(value, options)
   end
 end
 
