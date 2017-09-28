@@ -20,9 +20,15 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.StreamingConfigTask do
   @moduledoc """
   A task that carries configuration information for streaming computations.
+
+  ## Attributes
+
+  - streamingComputationConfigs (List[StreamingComputationConfig]): Set of computation configuration information. Defaults to: `null`.
+  - userStepToStateFamilyNameMap (Map[String, String]): Map from user step names to state families. Defaults to: `null`.
+  - windmillServiceEndpoint (String): If present, the worker must use this endpoint to communicate with Windmill Service dispatchers, otherwise the worker must continue to use whatever endpoint it had been using. Defaults to: `null`.
+  - windmillServicePort (String): If present, the worker must use this port to communicate with Windmill Service dispatchers. Only applicable when windmill_service_endpoint is specified. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"streamingComputationConfigs",
     :"userStepToStateFamilyNameMap",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.StreamingConfigTask d
   def decode(value, options) do
     value
     |> deserialize(:"streamingComputationConfigs", :list, GoogleApi.Dataflow.V1b3.Model.StreamingComputationConfig, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.StreamingConfigTask do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

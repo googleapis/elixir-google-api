@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.ApproximateSplitRequest do
   @moduledoc """
   A suggestion by the service to the worker to dynamically split the WorkItem.
+
+  ## Attributes
+
+  - fractionConsumed (Float): A fraction at which to split the work item, from 0.0 (beginning of the input) to 1.0 (end of the input). Defaults to: `null`.
+  - position (Position): A Position at which to split the work item. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fractionConsumed",
     :"position"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.ApproximateSplitReque
   def decode(value, options) do
     value
     |> deserialize(:"position", :struct, GoogleApi.Dataflow.V1b3.Model.Position, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.ApproximateSplitRequest do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

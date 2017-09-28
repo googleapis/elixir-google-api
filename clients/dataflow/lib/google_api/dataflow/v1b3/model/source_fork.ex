@@ -20,9 +20,15 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.SourceFork do
   @moduledoc """
   DEPRECATED in favor of DynamicSourceSplit.
+
+  ## Attributes
+
+  - primary (SourceSplitShard): DEPRECATED Defaults to: `null`.
+  - primarySource (DerivedSource): DEPRECATED Defaults to: `null`.
+  - residual (SourceSplitShard): DEPRECATED Defaults to: `null`.
+  - residualSource (DerivedSource): DEPRECATED Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"primary",
     :"primarySource",
@@ -39,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.SourceFork do
     |> deserialize(:"primarySource", :struct, GoogleApi.Dataflow.V1b3.Model.DerivedSource, options)
     |> deserialize(:"residual", :struct, GoogleApi.Dataflow.V1b3.Model.SourceSplitShard, options)
     |> deserialize(:"residualSource", :struct, GoogleApi.Dataflow.V1b3.Model.DerivedSource, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.SourceFork do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

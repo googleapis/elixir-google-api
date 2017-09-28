@@ -20,9 +20,16 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.JobMessage do
   @moduledoc """
   A particular message pertaining to a Dataflow job.
+
+  ## Attributes
+
+  - id (String): Deprecated. Defaults to: `null`.
+  - messageImportance (String): Importance level of the message. Defaults to: `null`.
+    - Enum - one of [JOB_MESSAGE_IMPORTANCE_UNKNOWN, JOB_MESSAGE_DEBUG, JOB_MESSAGE_DETAILED, JOB_MESSAGE_BASIC, JOB_MESSAGE_WARNING, JOB_MESSAGE_ERROR]
+  - messageText (String): The text of the message. Defaults to: `null`.
+  - time (String): The timestamp of the message. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"messageImportance",
@@ -34,6 +41,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.JobMessage do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.JobMessage do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

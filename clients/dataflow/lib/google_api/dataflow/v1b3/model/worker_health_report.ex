@@ -20,9 +20,15 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.WorkerHealthReport do
   @moduledoc """
   WorkerHealthReport contains information about the health of a worker.  The VM should be identified by the labels attached to the WorkerMessage that this health ping belongs to.
+
+  ## Attributes
+
+  - pods (List[Object]): The pods running on the worker. See: http://kubernetes.io/v1.1/docs/api-reference/v1/definitions.html#_v1_pod  This field is used by the worker to send the status of the indvidual containers running on each worker. Defaults to: `null`.
+  - reportInterval (String): The interval at which the worker is sending health reports. The default value of 0 should be interpreted as the field is not being explicitly set by the worker. Defaults to: `null`.
+  - vmIsHealthy (Boolean): Whether the VM is healthy. Defaults to: `null`.
+  - vmStartupTime (String): The time the VM was booted. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"pods",
     :"reportInterval",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.WorkerHealthReport do
   def decode(value, options) do
     value
     |> deserialize(:"pods", :list, GoogleApi.Dataflow.V1b3.Model.Object, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.WorkerHealthReport do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

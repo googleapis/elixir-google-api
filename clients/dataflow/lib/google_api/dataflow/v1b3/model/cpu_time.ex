@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Dataflow.V1b3.Model.CPUTime do
+defmodule GoogleApi.Dataflow.V1b3.Model.CpuTime do
   @moduledoc """
   Modeled after information exposed by /proc/stat.
+
+  ## Attributes
+
+  - rate (Float): Average CPU utilization rate (% non-idle cpu / second) since previous sample. Defaults to: `null`.
+  - timestamp (String): Timestamp of the measurement. Defaults to: `null`.
+  - totalMs (String): Total active CPU time across all cores (ie., non-idle) in milliseconds since start-up. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"rate",
     :"timestamp",
@@ -30,9 +35,15 @@ defmodule GoogleApi.Dataflow.V1b3.Model.CPUTime do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.CPUTime do
+defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.CpuTime do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.CpuTime do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

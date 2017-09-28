@@ -20,9 +20,17 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment do
   @moduledoc """
   The environment values to set at runtime.
+
+  ## Attributes
+
+  - bypassTempDirValidation (Boolean): Whether to bypass the safety checks for the job&#39;s temporary directory. Use with caution. Defaults to: `null`.
+  - machineType (String): The machine type to use for the job. Defaults to the value from the template if not specified. Defaults to: `null`.
+  - maxWorkers (Integer): The maximum number of Google Compute Engine instances to be made available to your pipeline during execution, from 1 to 1000. Defaults to: `null`.
+  - serviceAccountEmail (String): The email address of the service account to run the job as. Defaults to: `null`.
+  - tempLocation (String): The Cloud Storage path to use for temporary files. Must be a valid Cloud Storage URL, beginning with &#x60;gs://&#x60;. Defaults to: `null`.
+  - zone (String): The Compute Engine [availability zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones) for launching worker instances to run your pipeline. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bypassTempDirValidation",
     :"machineType",
@@ -36,6 +44,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

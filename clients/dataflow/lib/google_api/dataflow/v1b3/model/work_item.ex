@@ -20,9 +20,26 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.WorkItem do
   @moduledoc """
   WorkItem represents basic information about a WorkItem to be executed in the cloud.
+
+  ## Attributes
+
+  - configuration (String): Work item-specific configuration as an opaque blob. Defaults to: `null`.
+  - id (String): Identifies this WorkItem. Defaults to: `null`.
+  - initialReportIndex (String): The initial index to use when reporting the status of the WorkItem. Defaults to: `null`.
+  - jobId (String): Identifies the workflow job this WorkItem belongs to. Defaults to: `null`.
+  - leaseExpireTime (String): Time when the lease on this Work will expire. Defaults to: `null`.
+  - mapTask (MapTask): Additional information for MapTask WorkItems. Defaults to: `null`.
+  - packages (List[Package]): Any required packages that need to be fetched in order to execute this WorkItem. Defaults to: `null`.
+  - projectId (String): Identifies the cloud project this WorkItem belongs to. Defaults to: `null`.
+  - reportStatusInterval (String): Recommended reporting interval. Defaults to: `null`.
+  - seqMapTask (SeqMapTask): Additional information for SeqMapTask WorkItems. Defaults to: `null`.
+  - shellTask (ShellTask): Additional information for ShellTask WorkItems. Defaults to: `null`.
+  - sourceOperationTask (SourceOperationRequest): Additional information for source operation WorkItems. Defaults to: `null`.
+  - streamingComputationTask (StreamingComputationTask): Additional information for StreamingComputationTask WorkItems. Defaults to: `null`.
+  - streamingConfigTask (StreamingConfigTask): Additional information for StreamingConfigTask WorkItems. Defaults to: `null`.
+  - streamingSetupTask (StreamingSetupTask): Additional information for StreamingSetupTask WorkItems. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"configuration",
     :"id",
@@ -54,6 +71,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.WorkItem do
     |> deserialize(:"streamingComputationTask", :struct, GoogleApi.Dataflow.V1b3.Model.StreamingComputationTask, options)
     |> deserialize(:"streamingConfigTask", :struct, GoogleApi.Dataflow.V1b3.Model.StreamingConfigTask, options)
     |> deserialize(:"streamingSetupTask", :struct, GoogleApi.Dataflow.V1b3.Model.StreamingSetupTask, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.WorkItem do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

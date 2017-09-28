@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.IntegerMean do
   @moduledoc """
   A representation of an integer mean metric contribution.
+
+  ## Attributes
+
+  - count (SplitInt64): The number of values being aggregated. Defaults to: `null`.
+  - sum (SplitInt64): The sum of all values being aggregated. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"count",
     :"sum"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.IntegerMean do
     value
     |> deserialize(:"count", :struct, GoogleApi.Dataflow.V1b3.Model.SplitInt64, options)
     |> deserialize(:"sum", :struct, GoogleApi.Dataflow.V1b3.Model.SplitInt64, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.IntegerMean do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

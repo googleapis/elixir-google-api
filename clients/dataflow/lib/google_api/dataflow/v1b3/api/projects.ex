@@ -82,7 +82,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1b3/projects/#{project_id}/jobs:aggregated")
+    |> url("/v1b3/projects/{projectId}/jobs:aggregated", %{
+         "projectId" => URI.encode_www_form(project_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -143,7 +145,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1b3/projects/#{project_id}/jobs")
+    |> url("/v1b3/projects/{projectId}/jobs", %{
+         "projectId" => URI.encode_www_form(project_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -199,7 +203,10 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1b3/projects/#{project_id}/jobs/#{job_id}/debug/getConfig")
+    |> url("/v1b3/projects/{projectId}/jobs/{jobId}/debug/getConfig", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "jobId" => URI.encode_www_form(job_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -255,7 +262,10 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1b3/projects/#{project_id}/jobs/#{job_id}/debug/sendCapture")
+    |> url("/v1b3/projects/{projectId}/jobs/{jobId}/debug/sendCapture", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "jobId" => URI.encode_www_form(job_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -313,7 +323,10 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1b3/projects/#{project_id}/jobs/#{job_id}")
+    |> url("/v1b3/projects/{projectId}/jobs/{jobId}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "jobId" => URI.encode_www_form(job_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -371,7 +384,10 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1b3/projects/#{project_id}/jobs/#{job_id}/metrics")
+    |> url("/v1b3/projects/{projectId}/jobs/{jobId}/metrics", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "jobId" => URI.encode_www_form(job_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -434,7 +450,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1b3/projects/#{project_id}/jobs")
+    |> url("/v1b3/projects/{projectId}/jobs", %{
+         "projectId" => URI.encode_www_form(project_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -500,7 +518,10 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1b3/projects/#{project_id}/jobs/#{job_id}/messages")
+    |> url("/v1b3/projects/{projectId}/jobs/{jobId}/messages", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "jobId" => URI.encode_www_form(job_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -558,7 +579,10 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     }
     %{}
     |> method(:put)
-    |> url("/v1b3/projects/#{project_id}/jobs/#{job_id}")
+    |> url("/v1b3/projects/{projectId}/jobs/{jobId}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "jobId" => URI.encode_www_form(job_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -614,7 +638,10 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1b3/projects/#{project_id}/jobs/#{job_id}/workItems:lease")
+    |> url("/v1b3/projects/{projectId}/jobs/{jobId}/workItems:lease", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "jobId" => URI.encode_www_form(job_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -670,7 +697,10 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1b3/projects/#{project_id}/jobs/#{job_id}/workItems:reportStatus")
+    |> url("/v1b3/projects/{projectId}/jobs/{jobId}/workItems:reportStatus", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "jobId" => URI.encode_www_form(job_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -730,7 +760,10 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1b3/projects/#{project_id}/locations/#{location}/jobs")
+    |> url("/v1b3/projects/{projectId}/locations/{location}/jobs", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "location" => URI.encode_www_form(location)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -787,7 +820,11 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1b3/projects/#{project_id}/locations/#{location}/jobs/#{job_id}/debug/getConfig")
+    |> url("/v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}/debug/getConfig", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "location" => URI.encode_www_form(location),
+         "jobId" => URI.encode_www_form(job_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -844,7 +881,11 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1b3/projects/#{project_id}/locations/#{location}/jobs/#{job_id}/debug/sendCapture")
+    |> url("/v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}/debug/sendCapture", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "location" => URI.encode_www_form(location),
+         "jobId" => URI.encode_www_form(job_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -901,7 +942,11 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1b3/projects/#{project_id}/locations/#{location}/jobs/#{job_id}")
+    |> url("/v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "location" => URI.encode_www_form(location),
+         "jobId" => URI.encode_www_form(job_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -958,7 +1003,11 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1b3/projects/#{project_id}/locations/#{location}/jobs/#{job_id}/metrics")
+    |> url("/v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}/metrics", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "location" => URI.encode_www_form(location),
+         "jobId" => URI.encode_www_form(job_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1020,7 +1069,10 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1b3/projects/#{project_id}/locations/#{location}/jobs")
+    |> url("/v1b3/projects/{projectId}/locations/{location}/jobs", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "location" => URI.encode_www_form(location)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1085,7 +1137,11 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1b3/projects/#{project_id}/locations/#{location}/jobs/#{job_id}/messages")
+    |> url("/v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}/messages", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "location" => URI.encode_www_form(location),
+         "jobId" => URI.encode_www_form(job_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1142,7 +1198,11 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     }
     %{}
     |> method(:put)
-    |> url("/v1b3/projects/#{project_id}/locations/#{location}/jobs/#{job_id}")
+    |> url("/v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "location" => URI.encode_www_form(location),
+         "jobId" => URI.encode_www_form(job_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1199,7 +1259,11 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1b3/projects/#{project_id}/locations/#{location}/jobs/#{job_id}/workItems:lease")
+    |> url("/v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}/workItems:lease", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "location" => URI.encode_www_form(location),
+         "jobId" => URI.encode_www_form(job_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1256,7 +1320,11 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1b3/projects/#{project_id}/locations/#{location}/jobs/#{job_id}/workItems:reportStatus")
+    |> url("/v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}/workItems:reportStatus", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "location" => URI.encode_www_form(location),
+         "jobId" => URI.encode_www_form(job_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1312,7 +1380,10 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1b3/projects/#{project_id}/locations/#{location}/templates")
+    |> url("/v1b3/projects/{projectId}/locations/{location}/templates", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "location" => URI.encode_www_form(location)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1370,7 +1441,10 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1b3/projects/#{project_id}/locations/#{location}/templates:get")
+    |> url("/v1b3/projects/{projectId}/locations/{location}/templates:get", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "location" => URI.encode_www_form(location)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1430,7 +1504,10 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1b3/projects/#{project_id}/locations/#{location}/templates:launch")
+    |> url("/v1b3/projects/{projectId}/locations/{location}/templates:launch", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "location" => URI.encode_www_form(location)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1486,7 +1563,10 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1b3/projects/#{project_id}/locations/#{location}/WorkerMessages")
+    |> url("/v1b3/projects/{projectId}/locations/{location}/WorkerMessages", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "location" => URI.encode_www_form(location)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1541,7 +1621,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1b3/projects/#{project_id}/templates")
+    |> url("/v1b3/projects/{projectId}/templates", %{
+         "projectId" => URI.encode_www_form(project_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1600,7 +1682,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1b3/projects/#{project_id}/templates:get")
+    |> url("/v1b3/projects/{projectId}/templates:get", %{
+         "projectId" => URI.encode_www_form(project_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1661,7 +1745,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1b3/projects/#{project_id}/templates:launch")
+    |> url("/v1b3/projects/{projectId}/templates:launch", %{
+         "projectId" => URI.encode_www_form(project_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1716,7 +1802,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1b3/projects/#{project_id}/WorkerMessages")
+    |> url("/v1b3/projects/{projectId}/WorkerMessages", %{
+         "projectId" => URI.encode_www_form(project_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

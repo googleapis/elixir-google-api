@@ -20,9 +20,12 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.SourceGetMetadataResponse do
   @moduledoc """
   The result of a SourceGetMetadataOperation.
+
+  ## Attributes
+
+  - metadata (SourceMetadata): The computed metadata. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"metadata"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.SourceGetMetadataResp
   def decode(value, options) do
     value
     |> deserialize(:"metadata", :struct, GoogleApi.Dataflow.V1b3.Model.SourceMetadata, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.SourceGetMetadataResponse do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

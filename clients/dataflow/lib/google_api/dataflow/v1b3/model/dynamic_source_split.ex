@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.DynamicSourceSplit do
   @moduledoc """
   When a task splits using WorkItemStatus.dynamic_source_split, this message describes the two parts of the split relative to the description of the current task&#39;s input.
+
+  ## Attributes
+
+  - primary (DerivedSource): Primary part (continued to be processed by worker). Specified relative to the previously-current source. Becomes current. Defaults to: `null`.
+  - residual (DerivedSource): Residual part (returned to the pool of work). Specified relative to the previously-current source. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"primary",
     :"residual"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.DynamicSourceSplit do
     value
     |> deserialize(:"primary", :struct, GoogleApi.Dataflow.V1b3.Model.DerivedSource, options)
     |> deserialize(:"residual", :struct, GoogleApi.Dataflow.V1b3.Model.DerivedSource, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.DynamicSourceSplit do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

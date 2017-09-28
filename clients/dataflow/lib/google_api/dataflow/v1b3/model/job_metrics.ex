@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.JobMetrics do
   @moduledoc """
   JobMetrics contains a collection of metrics descibing the detailed progress of a Dataflow job. Metrics correspond to user-defined and system-defined metrics in the job.  This resource captures only the most recent values of each metric; time-series data can be queried for them (under the same metric names) from Cloud Monitoring.
+
+  ## Attributes
+
+  - metricTime (String): Timestamp as of which metric values are current. Defaults to: `null`.
+  - metrics (List[MetricUpdate]): All metrics for this job. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"metricTime",
     :"metrics"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.JobMetrics do
   def decode(value, options) do
     value
     |> deserialize(:"metrics", :list, GoogleApi.Dataflow.V1b3.Model.MetricUpdate, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.JobMetrics do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

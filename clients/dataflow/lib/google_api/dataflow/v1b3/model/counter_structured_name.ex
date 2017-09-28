@@ -20,9 +20,21 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.CounterStructuredName do
   @moduledoc """
   Identifies a counter within a per-job namespace. Counters whose structured names are the same get merged into a single value for the job.
+
+  ## Attributes
+
+  - componentStepName (String): Name of the optimized step being executed by the workers. Defaults to: `null`.
+  - executionStepName (String): Name of the stage. An execution step contains multiple component steps. Defaults to: `null`.
+  - name (String): Counter name. Not necessarily globally-unique, but unique within the context of the other fields. Required. Defaults to: `null`.
+  - origin (String): One of the standard Origins defined above. Defaults to: `null`.
+    - Enum - one of [SYSTEM, USER]
+  - originNamespace (String): A string containing a more specific namespace of the counter&#39;s origin. Defaults to: `null`.
+  - originalStepName (String): System generated name of the original step in the user&#39;s graph, before optimization. Defaults to: `null`.
+  - portion (String): Portion of this counter, either key or value. Defaults to: `null`.
+    - Enum - one of [ALL, KEY, VALUE]
+  - workerId (String): ID of a particular worker. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"componentStepName",
     :"executionStepName",
@@ -38,6 +50,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.CounterStructuredName do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.CounterStructuredName do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.LaunchTemplateParameters do
   @moduledoc """
   Parameters to provide to the template being launched.
+
+  ## Attributes
+
+  - parameters (Map[String, String]): The runtime parameters to pass to the job. Defaults to: `null`.
+  - environment (RuntimeEnvironment): The runtime environment for the job. Defaults to: `null`.
+  - jobName (String): Required. The job name to use for the created job. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"parameters",
     :"environment",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.LaunchTemplateParamet
   def decode(value, options) do
     value
     |> deserialize(:"environment", :struct, GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.LaunchTemplateParameters do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

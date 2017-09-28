@@ -20,9 +20,12 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReport do
   @moduledoc """
   Worker metrics exported from workers. This contains resource utilization metrics accumulated from a variety of sources. For more information, see go/df-resource-signals.
+
+  ## Attributes
+
+  - cpuTime (List[CpuTime]): CPU utilization samples. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cpuTime"
   ]
@@ -32,7 +35,13 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationRe
   import GoogleApi.Dataflow.V1b3.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"cpuTime", :list, GoogleApi.Dataflow.V1b3.Model.CPUTime, options)
+    |> deserialize(:"cpuTime", :list, GoogleApi.Dataflow.V1b3.Model.CpuTime, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReport do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -1,6 +1,6 @@
-# GoogleApi.Dataflow.V1B3
+# GoogleApi.Dataflow.V1b3
 
-**TODO: Add description**
+Manages Google Cloud Dataflow projects on Google Cloud Platform.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_dataflow` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_dataflow, "~> 0.1.0"}]
+  [{:google_api_dataflow, "~> 0.0.1"}]
 end
 ```
 

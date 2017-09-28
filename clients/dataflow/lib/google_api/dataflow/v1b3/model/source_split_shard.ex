@@ -20,9 +20,14 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.SourceSplitShard do
   @moduledoc """
   DEPRECATED in favor of DerivedSource.
+
+  ## Attributes
+
+  - derivationMode (String): DEPRECATED Defaults to: `null`.
+    - Enum - one of [SOURCE_DERIVATION_MODE_UNKNOWN, SOURCE_DERIVATION_MODE_INDEPENDENT, SOURCE_DERIVATION_MODE_CHILD_OF_CURRENT, SOURCE_DERIVATION_MODE_SIBLING_OF_CURRENT]
+  - source (Source): DEPRECATED Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"derivationMode",
     :"source"
@@ -34,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.SourceSplitShard do
   def decode(value, options) do
     value
     |> deserialize(:"source", :struct, GoogleApi.Dataflow.V1b3.Model.Source, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.SourceSplitShard do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,21 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.Environment do
   @moduledoc """
   Describes the environment in which a Dataflow Job runs.
+
+  ## Attributes
+
+  - clusterManagerApiService (String): The type of cluster manager API to use.  If unknown or unspecified, the service will attempt to choose a reasonable default.  This should be in the form of the API service name, e.g. \&quot;compute.googleapis.com\&quot;. Defaults to: `null`.
+  - dataset (String): The dataset for the current project where various workflow related tables are stored.  The supported resource type is:  Google BigQuery:   bigquery.googleapis.com/{dataset} Defaults to: `null`.
+  - experiments (List[String]): The list of experiments to enable. Defaults to: `null`.
+  - internalExperiments (Object): Experimental settings. Defaults to: `null`.
+  - sdkPipelineOptions (Object): The Cloud Dataflow SDK pipeline options specified by the user. These options are passed through the service and are used to recreate the SDK pipeline options on the worker in a language agnostic and platform independent way. Defaults to: `null`.
+  - serviceAccountEmail (String): Identity to run virtual machines as. Defaults to the default account. Defaults to: `null`.
+  - tempStoragePrefix (String): The prefix of the resources the system should use for temporary storage.  The system will append the suffix \&quot;/temp-{JOBNAME} to this resource prefix, where {JOBNAME} is the value of the job_name field.  The resulting bucket and object prefix is used as the prefix of the resources used to store temporary data needed during the job execution.  NOTE: This will override the value in taskrunner_settings. The supported resource type is:  Google Cloud Storage:    storage.googleapis.com/{bucket}/{object}   bucket.storage.googleapis.com/{object} Defaults to: `null`.
+  - userAgent (Object): A description of the process that generated the request. Defaults to: `null`.
+  - version (Object): A structure describing which components and their versions of the service are required in order to run the job. Defaults to: `null`.
+  - workerPools (List[WorkerPool]): The worker pools. At least one \&quot;harness\&quot; worker pool must be specified in order for the job to have workers. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"clusterManagerApiService",
     :"dataset",
@@ -46,6 +58,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.Environment do
     |> deserialize(:"userAgent", :struct, GoogleApi.Dataflow.V1b3.Model.Object, options)
     |> deserialize(:"version", :struct, GoogleApi.Dataflow.V1b3.Model.Object, options)
     |> deserialize(:"workerPools", :list, GoogleApi.Dataflow.V1b3.Model.WorkerPool, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.Environment do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

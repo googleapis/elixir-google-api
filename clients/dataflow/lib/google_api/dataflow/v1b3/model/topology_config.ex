@@ -20,9 +20,16 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.TopologyConfig do
   @moduledoc """
   Global topology of the streaming Dataflow job, including all computations and their sharded locations.
+
+  ## Attributes
+
+  - computations (List[ComputationTopology]): The computations associated with a streaming Dataflow job. Defaults to: `null`.
+  - dataDiskAssignments (List[DataDiskAssignment]): The disks assigned to a streaming Dataflow job. Defaults to: `null`.
+  - forwardingKeyBits (Integer): The size (in bits) of keys that will be assigned to source messages. Defaults to: `null`.
+  - persistentStateVersion (Integer): Version number for persistent state. Defaults to: `null`.
+  - userStageToComputationNameMap (Map[String, String]): Maps user stage names to stable computation names. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"computations",
     :"dataDiskAssignments",
@@ -38,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.TopologyConfig do
     value
     |> deserialize(:"computations", :list, GoogleApi.Dataflow.V1b3.Model.ComputationTopology, options)
     |> deserialize(:"dataDiskAssignments", :list, GoogleApi.Dataflow.V1b3.Model.DataDiskAssignment, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.TopologyConfig do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

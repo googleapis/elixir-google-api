@@ -20,9 +20,12 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.Parameter do
   @moduledoc """
   Structured data associated with this message.
+
+  ## Attributes
+
+  - key (String): Key or name for this parameter. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"key"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.Parameter do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.Parameter do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

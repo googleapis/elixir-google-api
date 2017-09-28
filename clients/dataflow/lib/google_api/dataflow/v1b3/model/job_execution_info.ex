@@ -20,9 +20,12 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.JobExecutionInfo do
   @moduledoc """
   Additional information about how a Cloud Dataflow job will be executed that isn&#39;t contained in the submitted job.
+
+  ## Attributes
+
+  - stages (Map[String, JobExecutionStageInfo]): A mapping from each stage to the information about that stage. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"stages"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.JobExecutionInfo do
   def decode(value, options) do
     value
     |> deserialize(:"stages", :map, GoogleApi.Dataflow.V1b3.Model.JobExecutionStageInfo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.JobExecutionInfo do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

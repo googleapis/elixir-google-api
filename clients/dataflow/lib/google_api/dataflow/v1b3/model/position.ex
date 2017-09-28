@@ -20,9 +20,17 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.Position do
   @moduledoc """
   Position defines a position within a collection of data.  The value can be either the end position, a key (used with ordered collections), a byte offset, or a record index.
+
+  ## Attributes
+
+  - byteOffset (String): Position is a byte offset. Defaults to: `null`.
+  - concatPosition (ConcatPosition): CloudPosition is a concat position. Defaults to: `null`.
+  - end (Boolean): Position is past all other positions. Also useful for the end position of an unbounded range. Defaults to: `null`.
+  - key (String): Position is a string key, ordered lexicographically. Defaults to: `null`.
+  - recordIndex (String): Position is a record index. Defaults to: `null`.
+  - shufflePosition (String): CloudPosition is a base64 encoded BatchShufflePosition (with FIXED sharding). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"byteOffset",
     :"concatPosition",
@@ -38,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.Position do
   def decode(value, options) do
     value
     |> deserialize(:"concatPosition", :struct, GoogleApi.Dataflow.V1b3.Model.ConcatPosition, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.Position do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

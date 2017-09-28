@@ -20,9 +20,18 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.PubsubLocation do
   @moduledoc """
   Identifies a pubsub location to use for transferring data into or out of a streaming Dataflow job.
+
+  ## Attributes
+
+  - dropLateData (Boolean): Indicates whether the pipeline allows late-arriving data. Defaults to: `null`.
+  - idLabel (String): If set, contains a pubsub label from which to extract record ids. If left empty, record deduplication will be strictly best effort. Defaults to: `null`.
+  - subscription (String): A pubsub subscription, in the form of \&quot;pubsub.googleapis.com/subscriptions/&lt;project-id&gt;/&lt;subscription-name&gt;\&quot; Defaults to: `null`.
+  - timestampLabel (String): If set, contains a pubsub label from which to extract record timestamps. If left empty, record timestamps will be generated upon arrival. Defaults to: `null`.
+  - topic (String): A pubsub topic, in the form of \&quot;pubsub.googleapis.com/topics/&lt;project-id&gt;/&lt;topic-name&gt;\&quot; Defaults to: `null`.
+  - trackingSubscription (String): If set, specifies the pubsub subscription that will be used for tracking custom time timestamps for watermark estimation. Defaults to: `null`.
+  - withAttributes (Boolean): If true, then the client has requested to get pubsub attributes. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dropLateData",
     :"idLabel",
@@ -37,6 +46,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.PubsubLocation do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.PubsubLocation do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.MountedDataDisk do
   @moduledoc """
   Describes mounted data disk.
+
+  ## Attributes
+
+  - dataDisk (String): The name of the data disk. This name is local to the Google Cloud Platform project and uniquely identifies the disk within that project, for example \&quot;myproject-1014-104817-4c2-harness-0-disk-1\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dataDisk"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.MountedDataDisk do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.MountedDataDisk do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

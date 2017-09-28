@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.CounterStructuredNameAndMetadata do
   @moduledoc """
   A single message which encapsulates structured name and metadata for a given counter.
+
+  ## Attributes
+
+  - metadata (CounterMetadata): Metadata associated with a counter Defaults to: `null`.
+  - name (CounterStructuredName): Structured name of the counter. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"metadata",
     :"name"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.CounterStructuredName
     value
     |> deserialize(:"metadata", :struct, GoogleApi.Dataflow.V1b3.Model.CounterMetadata, options)
     |> deserialize(:"name", :struct, GoogleApi.Dataflow.V1b3.Model.CounterStructuredName, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.CounterStructuredNameAndMetadata do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

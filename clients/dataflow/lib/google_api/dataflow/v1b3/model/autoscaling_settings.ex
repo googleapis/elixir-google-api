@@ -20,9 +20,14 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.AutoscalingSettings do
   @moduledoc """
   Settings for WorkerPool autoscaling.
+
+  ## Attributes
+
+  - algorithm (String): The algorithm to use for autoscaling. Defaults to: `null`.
+    - Enum - one of [AUTOSCALING_ALGORITHM_UNKNOWN, AUTOSCALING_ALGORITHM_NONE, AUTOSCALING_ALGORITHM_BASIC]
+  - maxNumWorkers (Integer): The maximum number of workers to cap scaling at. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"algorithm",
     :"maxNumWorkers"
@@ -32,6 +37,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.AutoscalingSettings do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.AutoscalingSettings do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,17 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.PartialGroupByKeyInstruction do
   @moduledoc """
   An instruction that does a partial group-by-key. One input and one output.
+
+  ## Attributes
+
+  - input (InstructionInput): Describes the input to the partial group-by-key instruction. Defaults to: `null`.
+  - inputElementCodec (Object): The codec to use for interpreting an element in the input PTable. Defaults to: `null`.
+  - originalCombineValuesInputStoreName (String): If this instruction includes a combining function this is the name of the intermediate store between the GBK and the CombineValues. Defaults to: `null`.
+  - originalCombineValuesStepName (String): If this instruction includes a combining function, this is the name of the CombineValues instruction lifted into this instruction. Defaults to: `null`.
+  - sideInputs (List[SideInputInfo]): Zero or more side inputs. Defaults to: `null`.
+  - valueCombiningFn (Object): The value combining function to invoke. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"input",
     :"inputElementCodec",
@@ -41,6 +49,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.PartialGroupByKeyInst
     |> deserialize(:"inputElementCodec", :struct, GoogleApi.Dataflow.V1b3.Model.Object, options)
     |> deserialize(:"sideInputs", :list, GoogleApi.Dataflow.V1b3.Model.SideInputInfo, options)
     |> deserialize(:"valueCombiningFn", :struct, GoogleApi.Dataflow.V1b3.Model.Object, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.PartialGroupByKeyInstruction do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

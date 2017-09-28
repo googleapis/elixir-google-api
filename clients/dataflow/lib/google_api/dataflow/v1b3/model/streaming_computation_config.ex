@@ -20,9 +20,15 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.StreamingComputationConfig do
   @moduledoc """
   Configuration information for a single streaming computation.
+
+  ## Attributes
+
+  - computationId (String): Unique identifier for this computation. Defaults to: `null`.
+  - instructions (List[ParallelInstruction]): Instructions that comprise the computation. Defaults to: `null`.
+  - stageName (String): Stage name of this computation. Defaults to: `null`.
+  - systemName (String): System defined name for this computation. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"computationId",
     :"instructions",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.StreamingComputationC
   def decode(value, options) do
     value
     |> deserialize(:"instructions", :list, GoogleApi.Dataflow.V1b3.Model.ParallelInstruction, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.StreamingComputationConfig do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

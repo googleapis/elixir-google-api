@@ -20,9 +20,17 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.CounterMetadata do
   @moduledoc """
   CounterMetadata includes all static non-name non-value counter attributes.
+
+  ## Attributes
+
+  - description (String): Human-readable description of the counter semantics. Defaults to: `null`.
+  - kind (String): Counter aggregation kind. Defaults to: `null`.
+    - Enum - one of [INVALID, SUM, MAX, MIN, MEAN, OR, AND, SET, DISTRIBUTION]
+  - otherUnits (String): A string referring to the unit type. Defaults to: `null`.
+  - standardUnits (String): System defined Units, see above enum. Defaults to: `null`.
+    - Enum - one of [BYTES, BYTES_PER_SEC, MILLISECONDS, MICROSECONDS, NANOSECONDS, TIMESTAMP_MSEC, TIMESTAMP_USEC, TIMESTAMP_NSEC]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"description",
     :"kind",
@@ -34,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.CounterMetadata do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.CounterMetadata do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

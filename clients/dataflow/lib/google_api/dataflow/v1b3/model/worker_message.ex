@@ -20,9 +20,16 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.WorkerMessage do
   @moduledoc """
   WorkerMessage provides information to the backend about a worker.
+
+  ## Attributes
+
+  - labels (Map[String, String]): Labels are used to group WorkerMessages. For example, a worker_message about a particular container might have the labels: { \&quot;JOB_ID\&quot;: \&quot;2015-04-22\&quot;,   \&quot;WORKER_ID\&quot;: \&quot;wordcount-vm-2015…\&quot;   \&quot;CONTAINER_TYPE\&quot;: \&quot;worker\&quot;,   \&quot;CONTAINER_ID\&quot;: \&quot;ac1234def\&quot;} Label tags typically correspond to Label enum values. However, for ease of development other strings can be used as tags. LABEL_UNSPECIFIED should not be used here. Defaults to: `null`.
+  - time (String): The timestamp of the worker_message. Defaults to: `null`.
+  - workerHealthReport (WorkerHealthReport): The health of a worker. Defaults to: `null`.
+  - workerMessageCode (WorkerMessageCode): A worker message code. Defaults to: `null`.
+  - workerMetrics (ResourceUtilizationReport): Resource metrics reported by workers. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"labels",
     :"time",
@@ -39,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.WorkerMessage do
     |> deserialize(:"workerHealthReport", :struct, GoogleApi.Dataflow.V1b3.Model.WorkerHealthReport, options)
     |> deserialize(:"workerMessageCode", :struct, GoogleApi.Dataflow.V1b3.Model.WorkerMessageCode, options)
     |> deserialize(:"workerMetrics", :struct, GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReport, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.WorkerMessage do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

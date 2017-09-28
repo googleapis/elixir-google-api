@@ -20,9 +20,12 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.MultiOutputInfo do
   @moduledoc """
   Information about an output of a multi-output DoFn.
+
+  ## Attributes
+
+  - tag (String): The id of the tag the user code will emit to this output by; this should correspond to the tag of some SideInputInfo. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"tag"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.MultiOutputInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.MultiOutputInfo do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

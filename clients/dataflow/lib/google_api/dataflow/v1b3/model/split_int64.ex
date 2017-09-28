@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.SplitInt64 do
   @moduledoc """
   A representation of an int64, n, that is immune to precision loss when encoded in JSON.
+
+  ## Attributes
+
+  - highBits (Integer): The high order bits, including the sign: n &gt;&gt; 32. Defaults to: `null`.
+  - lowBits (Integer): The low order bits: n &amp; 0xffffffff. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"highBits",
     :"lowBits"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.SplitInt64 do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.SplitInt64 do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

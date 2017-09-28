@@ -20,9 +20,12 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.IntegerList do
   @moduledoc """
   A metric value representing a list of integers.
+
+  ## Attributes
+
+  - elements (List[SplitInt64]): Elements of the list. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"elements"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.IntegerList do
   def decode(value, options) do
     value
     |> deserialize(:"elements", :list, GoogleApi.Dataflow.V1b3.Model.SplitInt64, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.IntegerList do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

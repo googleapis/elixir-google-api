@@ -20,9 +20,14 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.SourceMetadata do
   @moduledoc """
   Metadata about a Source useful for automatically optimizing and tuning the pipeline, etc.
+
+  ## Attributes
+
+  - estimatedSizeBytes (String): An estimate of the total size (in bytes) of the data that would be read from this source.  This estimate is in terms of external storage size, before any decompression or other processing done by the reader. Defaults to: `null`.
+  - infinite (Boolean): Specifies that the size of this source is known to be infinite (this is a streaming source). Defaults to: `null`.
+  - producesSortedKeys (Boolean): Whether this source is known to produce key/value pairs with the (encoded) keys in lexicographically sorted order. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"estimatedSizeBytes",
     :"infinite",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.SourceMetadata do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.SourceMetadata do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

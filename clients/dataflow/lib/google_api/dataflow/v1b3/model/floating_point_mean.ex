@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.FloatingPointMean do
   @moduledoc """
   A representation of a floating point mean metric contribution.
+
+  ## Attributes
+
+  - count (SplitInt64): The number of values being aggregated. Defaults to: `null`.
+  - sum (Float): The sum of all values being aggregated. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"count",
     :"sum"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.FloatingPointMean do
   def decode(value, options) do
     value
     |> deserialize(:"count", :struct, GoogleApi.Dataflow.V1b3.Model.SplitInt64, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.FloatingPointMean do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

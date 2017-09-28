@@ -20,9 +20,14 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.ListJobsResponse do
   @moduledoc """
   Response to a request to list Cloud Dataflow jobs.  This may be a partial response, depending on the page size in the ListJobsRequest.
+
+  ## Attributes
+
+  - failedLocation (List[FailedLocation]): Zero or more messages describing locations that failed to respond. Defaults to: `null`.
+  - jobs (List[Job]): A subset of the requested job information. Defaults to: `null`.
+  - nextPageToken (String): Set if there may be more results than fit in this response. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"failedLocation",
     :"jobs",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.ListJobsResponse do
     value
     |> deserialize(:"failedLocation", :list, GoogleApi.Dataflow.V1b3.Model.FailedLocation, options)
     |> deserialize(:"jobs", :list, GoogleApi.Dataflow.V1b3.Model.Job, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.ListJobsResponse do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

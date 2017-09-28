@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.Sink do
   @moduledoc """
   A sink that records can be encoded and written to.
+
+  ## Attributes
+
+  - codec (Object): The codec to use to encode data written to the sink. Defaults to: `null`.
+  - spec (Object): The sink to write to, plus its parameters. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"codec",
     :"spec"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.Sink do
     value
     |> deserialize(:"codec", :struct, GoogleApi.Dataflow.V1b3.Model.Object, options)
     |> deserialize(:"spec", :struct, GoogleApi.Dataflow.V1b3.Model.Object, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.Sink do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

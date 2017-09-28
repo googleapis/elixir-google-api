@@ -20,9 +20,14 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.ComponentSource do
   @moduledoc """
   Description of an interstitial value between transforms in an execution stage.
+
+  ## Attributes
+
+  - name (String): Dataflow service generated name for this source. Defaults to: `null`.
+  - originalTransformOrCollection (String): User name for the original user transform or collection with which this source is most closely associated. Defaults to: `null`.
+  - userName (String): Human-readable name for this transform; may be user or system generated. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name",
     :"originalTransformOrCollection",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.ComponentSource do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.ComponentSource do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

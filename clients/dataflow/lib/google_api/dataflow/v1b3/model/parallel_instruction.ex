@@ -20,9 +20,20 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.ParallelInstruction do
   @moduledoc """
   Describes a particular operation comprising a MapTask.
+
+  ## Attributes
+
+  - flatten (FlattenInstruction): Additional information for Flatten instructions. Defaults to: `null`.
+  - name (String): User-provided name of this operation. Defaults to: `null`.
+  - originalName (String): System-defined name for the operation in the original workflow graph. Defaults to: `null`.
+  - outputs (List[InstructionOutput]): Describes the outputs of the instruction. Defaults to: `null`.
+  - parDo (ParDoInstruction): Additional information for ParDo instructions. Defaults to: `null`.
+  - partialGroupByKey (PartialGroupByKeyInstruction): Additional information for PartialGroupByKey instructions. Defaults to: `null`.
+  - read (ReadInstruction): Additional information for Read instructions. Defaults to: `null`.
+  - systemName (String): System-defined name of this operation. Unique across the workflow. Defaults to: `null`.
+  - write (WriteInstruction): Additional information for Write instructions. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"flatten",
     :"name",
@@ -46,6 +57,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.ParallelInstruction d
     |> deserialize(:"partialGroupByKey", :struct, GoogleApi.Dataflow.V1b3.Model.PartialGroupByKeyInstruction, options)
     |> deserialize(:"read", :struct, GoogleApi.Dataflow.V1b3.Model.ReadInstruction, options)
     |> deserialize(:"write", :struct, GoogleApi.Dataflow.V1b3.Model.WriteInstruction, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.ParallelInstruction do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

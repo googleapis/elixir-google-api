@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.GetTemplateResponse do
   @moduledoc """
   The response to a GetTemplate request.
+
+  ## Attributes
+
+  - metadata (TemplateMetadata): The template metadata describing the template name, available parameters, etc. Defaults to: `null`.
+  - status (Status): The status of the get template request. Any problems with the request will be indicated in the error_details. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"metadata",
     :"status"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.GetTemplateResponse d
     value
     |> deserialize(:"metadata", :struct, GoogleApi.Dataflow.V1b3.Model.TemplateMetadata, options)
     |> deserialize(:"status", :struct, GoogleApi.Dataflow.V1b3.Model.Status, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.GetTemplateResponse do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

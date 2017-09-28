@@ -20,9 +20,12 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.FailedLocation do
   @moduledoc """
   Indicates which location failed to respond to a request for data.
+
+  ## Attributes
+
+  - name (String): The name of the failed location. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.FailedLocation do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.FailedLocation do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 
