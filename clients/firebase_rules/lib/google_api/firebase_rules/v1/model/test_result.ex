@@ -20,9 +20,16 @@
 defmodule GoogleApi.FirebaseRules.V1.Model.TestResult do
   @moduledoc """
   Test result message containing the state of the test as well as a description and source position for test failures.
+
+  ## Attributes
+
+  - debugMessages (List[String]): Debug messages related to test execution issues encountered during evaluation.  Debug messages may be related to too many or too few invocations of function mocks or to runtime errors that occur during evaluation.  For example: &#x60;&#x60;&#x60;Unable to read variable [name: \&quot;resource\&quot;]&#x60;&#x60;&#x60; Defaults to: `null`.
+  - errorPosition (SourcePosition): Position in the &#x60;Source&#x60; or &#x60;Ruleset&#x60; where the principle runtime error occurs.  Evaluation of an expression may result in an error. Rules are deny by default, so a &#x60;DENY&#x60; expectation when an error is generated is valid. When there is a &#x60;DENY&#x60; with an error, the &#x60;SourcePosition&#x60; is returned.  E.g. &#x60;error_position { line: 19 column: 37 }&#x60; Defaults to: `null`.
+  - functionCalls (List[FunctionCall]): The set of function calls made to service-defined methods.  Function calls are included in the order in which they are encountered during evaluation, are provided for both mocked and unmocked functions, and included on the response regardless of the test &#x60;state&#x60;. Defaults to: `null`.
+  - state (String): State of the test. Defaults to: `null`.
+    - Enum - one of [STATE_UNSPECIFIED, SUCCESS, FAILURE]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"debugMessages",
     :"errorPosition",
@@ -37,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.FirebaseRules.V1.Model.TestResult do
     value
     |> deserialize(:"errorPosition", :struct, GoogleApi.FirebaseRules.V1.Model.SourcePosition, options)
     |> deserialize(:"functionCalls", :list, GoogleApi.FirebaseRules.V1.Model.FunctionCall, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.FirebaseRules.V1.Model.TestResult do
+  def encode(value, options) do
+    GoogleApi.FirebaseRules.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.FirebaseRules.V1.Model.FunctionCall do
   @moduledoc """
   Represents a service-defined function call that was invoked during test execution.
+
+  ## Attributes
+
+  - args (List[ErrorUnknown]): The arguments that were provided to the function. Defaults to: `null`.
+  - function (String): Name of the function invoked. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"args",
     :"function"
@@ -33,7 +37,13 @@ defimpl Poison.Decoder, for: GoogleApi.FirebaseRules.V1.Model.FunctionCall do
   import GoogleApi.FirebaseRules.V1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"args", :list, GoogleApi.FirebaseRules.V1.Model., options)
+    |> deserialize(:"args", :list, nil, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.FirebaseRules.V1.Model.FunctionCall do
+  def encode(value, options) do
+    GoogleApi.FirebaseRules.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

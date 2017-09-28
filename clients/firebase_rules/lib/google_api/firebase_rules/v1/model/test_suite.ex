@@ -20,9 +20,12 @@
 defmodule GoogleApi.FirebaseRules.V1.Model.TestSuite do
   @moduledoc """
   &#x60;TestSuite&#x60; is a collection of &#x60;TestCase&#x60; instances that validate the logical correctness of a &#x60;Ruleset&#x60;. The &#x60;TestSuite&#x60; may be referenced in-line within a &#x60;TestRuleset&#x60; invocation or as part of a &#x60;Release&#x60; object as a pre-release check.
+
+  ## Attributes
+
+  - testCases (List[TestCase]): Collection of test cases associated with the &#x60;TestSuite&#x60;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"testCases"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.FirebaseRules.V1.Model.TestSuite do
   def decode(value, options) do
     value
     |> deserialize(:"testCases", :list, GoogleApi.FirebaseRules.V1.Model.TestCase, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.FirebaseRules.V1.Model.TestSuite do
+  def encode(value, options) do
+    GoogleApi.FirebaseRules.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
