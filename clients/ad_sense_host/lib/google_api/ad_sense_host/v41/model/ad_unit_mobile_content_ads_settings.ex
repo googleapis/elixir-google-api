@@ -17,12 +17,18 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AdSenseHost.V41.Model.AdUnit_mobileContentAdsSettings do
+defmodule GoogleApi.AdSenseHost.V41.Model.AdUnitMobileContentAdsSettings do
   @moduledoc """
   Settings specific to WAP mobile content ads (AFMC - deprecated).
+
+  ## Attributes
+
+  - markupLanguage (String): The markup language to use for this ad unit. Defaults to: `null`.
+  - scriptingLanguage (String): The scripting language to use for this ad unit. Defaults to: `null`.
+  - size (String): Size of this ad unit. Defaults to: `null`.
+  - type (String): Type of this ad unit. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"markupLanguage",
     :"scriptingLanguage",
@@ -31,9 +37,15 @@ defmodule GoogleApi.AdSenseHost.V41.Model.AdUnit_mobileContentAdsSettings do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AdSenseHost.V41.Model.AdUnit_mobileContentAdsSettings do
+defimpl Poison.Decoder, for: GoogleApi.AdSenseHost.V41.Model.AdUnitMobileContentAdsSettings do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdSenseHost.V41.Model.AdUnitMobileContentAdsSettings do
+  def encode(value, options) do
+    GoogleApi.AdSenseHost.V41.Deserializer.serialize_non_nil(value, options)
   end
 end
 

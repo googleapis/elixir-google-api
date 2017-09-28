@@ -20,9 +20,14 @@
 defmodule GoogleApi.AdSenseHost.V41.Model.Accounts do
   @moduledoc """
   
+
+  ## Attributes
+
+  - etag (String): ETag of this response for caching purposes. Defaults to: `null`.
+  - items (List[Account]): The accounts returned in this list response. Defaults to: `null`.
+  - kind (String): Kind of list this is, in this case adsensehost#accounts. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"items",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdSenseHost.V41.Model.Accounts do
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.AdSenseHost.V41.Model.Account, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdSenseHost.V41.Model.Accounts do
+  def encode(value, options) do
+    GoogleApi.AdSenseHost.V41.Deserializer.serialize_non_nil(value, options)
   end
 end
 

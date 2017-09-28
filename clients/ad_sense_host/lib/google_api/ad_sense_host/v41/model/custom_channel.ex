@@ -20,9 +20,15 @@
 defmodule GoogleApi.AdSenseHost.V41.Model.CustomChannel do
   @moduledoc """
   
+
+  ## Attributes
+
+  - code (String): Code of this custom channel, not necessarily unique across ad clients. Defaults to: `null`.
+  - id (String): Unique identifier of this custom channel. This should be considered an opaque identifier; it is not safe to rely on it being in any particular format. Defaults to: `null`.
+  - kind (String): Kind of resource this is, in this case adsensehost#customChannel. Defaults to: `null`.
+  - name (String): Name of this custom channel. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"code",
     :"id",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AdSenseHost.V41.Model.CustomChannel do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdSenseHost.V41.Model.CustomChannel do
+  def encode(value, options) do
+    GoogleApi.AdSenseHost.V41.Deserializer.serialize_non_nil(value, options)
   end
 end
 

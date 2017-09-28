@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AdSenseHost.V41.Model.AdStyle_font do
+defmodule GoogleApi.AdSenseHost.V41.Model.AdStyleFont do
   @moduledoc """
   The font which is included in the style.
+
+  ## Attributes
+
+  - family (String): The family of the font. Possible values are: ACCOUNT_DEFAULT_FAMILY, ADSENSE_DEFAULT_FAMILY, ARIAL, TIMES and VERDANA. Defaults to: `null`.
+  - size (String): The size of the font. Possible values are: ACCOUNT_DEFAULT_SIZE, ADSENSE_DEFAULT_SIZE, SMALL, MEDIUM and LARGE. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"family",
     :"size"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AdSenseHost.V41.Model.AdStyle_font do
+defimpl Poison.Decoder, for: GoogleApi.AdSenseHost.V41.Model.AdStyleFont do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdSenseHost.V41.Model.AdStyleFont do
+  def encode(value, options) do
+    GoogleApi.AdSenseHost.V41.Deserializer.serialize_non_nil(value, options)
   end
 end
 

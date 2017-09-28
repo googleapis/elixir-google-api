@@ -20,9 +20,18 @@
 defmodule GoogleApi.AdSenseHost.V41.Model.Report do
   @moduledoc """
   
+
+  ## Attributes
+
+  - averages (List[String]): The averages of the report. This is the same length as any other row in the report; cells corresponding to dimension columns are empty. Defaults to: `null`.
+  - headers (List[ReportHeaders]): The header information of the columns requested in the report. This is a list of headers; one for each dimension in the request, followed by one for each metric in the request. Defaults to: `null`.
+  - kind (String): Kind this is, in this case adsensehost#report. Defaults to: `null`.
+  - rows (List[List[String]]): The output rows of the report. Each row is a list of cells; one for each dimension in the request, followed by one for each metric in the request. The dimension cells contain strings, and the metric cells contain numbers. Defaults to: `null`.
+  - totalMatchedRows (String): The total number of rows matched by the report request. Fewer rows may be returned in the response due to being limited by the row count requested or the report row limit. Defaults to: `null`.
+  - totals (List[String]): The totals of the report. This is the same length as any other row in the report; cells corresponding to dimension columns are empty. Defaults to: `null`.
+  - warnings (List[String]): Any warnings associated with generation of the report. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"averages",
     :"headers",
@@ -38,7 +47,13 @@ defimpl Poison.Decoder, for: GoogleApi.AdSenseHost.V41.Model.Report do
   import GoogleApi.AdSenseHost.V41.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"headers", :list, GoogleApi.AdSenseHost.V41.Model.Report_headers, options)
+    |> deserialize(:"headers", :list, GoogleApi.AdSenseHost.V41.Model.ReportHeaders, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdSenseHost.V41.Model.Report do
+  def encode(value, options) do
+    GoogleApi.AdSenseHost.V41.Deserializer.serialize_non_nil(value, options)
   end
 end
 

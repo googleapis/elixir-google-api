@@ -17,12 +17,19 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AdSenseHost.V41.Model.AdStyle_colors do
+defmodule GoogleApi.AdSenseHost.V41.Model.AdStyleColors do
   @moduledoc """
   The colors included in the style. These are represented as six hexadecimal characters, similar to HTML color codes, but without the leading hash.
+
+  ## Attributes
+
+  - background (String): The color of the ad background. Defaults to: `null`.
+  - border (String): The color of the ad border. Defaults to: `null`.
+  - text (String): The color of the ad text. Defaults to: `null`.
+  - title (String): The color of the ad title. Defaults to: `null`.
+  - url (String): The color of the ad url. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"background",
     :"border",
@@ -32,9 +39,15 @@ defmodule GoogleApi.AdSenseHost.V41.Model.AdStyle_colors do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AdSenseHost.V41.Model.AdStyle_colors do
+defimpl Poison.Decoder, for: GoogleApi.AdSenseHost.V41.Model.AdStyleColors do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdSenseHost.V41.Model.AdStyleColors do
+  def encode(value, options) do
+    GoogleApi.AdSenseHost.V41.Deserializer.serialize_non_nil(value, options)
   end
 end
 

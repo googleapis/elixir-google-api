@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AdSenseHost.V41.Model.AdUnit_contentAdsSettings_backupOption do
+defmodule GoogleApi.AdSenseHost.V41.Model.AdUnitContentAdsSettingsBackupOption do
   @moduledoc """
   The backup option to be used in instances where no ad is available.
+
+  ## Attributes
+
+  - color (String): Color to use when type is set to COLOR. These are represented as six hexadecimal characters, similar to HTML color codes, but without the leading hash. Defaults to: `null`.
+  - type (String): Type of the backup option. Possible values are BLANK, COLOR and URL. Defaults to: `null`.
+  - url (String): URL to use when type is set to URL. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"color",
     :"type",
@@ -30,9 +35,15 @@ defmodule GoogleApi.AdSenseHost.V41.Model.AdUnit_contentAdsSettings_backupOption
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AdSenseHost.V41.Model.AdUnit_contentAdsSettings_backupOption do
+defimpl Poison.Decoder, for: GoogleApi.AdSenseHost.V41.Model.AdUnitContentAdsSettingsBackupOption do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdSenseHost.V41.Model.AdUnitContentAdsSettingsBackupOption do
+  def encode(value, options) do
+    GoogleApi.AdSenseHost.V41.Deserializer.serialize_non_nil(value, options)
   end
 end
 
