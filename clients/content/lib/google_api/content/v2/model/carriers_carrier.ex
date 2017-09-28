@@ -20,9 +20,14 @@
 defmodule GoogleApi.Content.V2.Model.CarriersCarrier do
   @moduledoc """
   
+
+  ## Attributes
+
+  - country (String): The CLDR country code of the carrier (e.g., \&quot;US\&quot;). Always present. Defaults to: `null`.
+  - name (String): The name of the carrier (e.g., \&quot;UPS\&quot;). Always present. Defaults to: `null`.
+  - services (List[String]): A list of supported services (e.g., \&quot;ground\&quot;) for that carrier. Contains at least one service. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"country",
     :"name",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.CarriersCarrier do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.CarriersCarrier do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

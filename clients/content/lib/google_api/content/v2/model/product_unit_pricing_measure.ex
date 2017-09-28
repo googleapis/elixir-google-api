@@ -20,9 +20,13 @@
 defmodule GoogleApi.Content.V2.Model.ProductUnitPricingMeasure do
   @moduledoc """
   
+
+  ## Attributes
+
+  - unit (String): The unit of the measure. Defaults to: `null`.
+  - value (Float): The measure of an item. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"unit",
     :"value"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.ProductUnitPricingMeasure do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.ProductUnitPricingMeasure do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

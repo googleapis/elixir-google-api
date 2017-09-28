@@ -20,9 +20,13 @@
 defmodule GoogleApi.Content.V2.Model.InventoryPickup do
   @moduledoc """
   
+
+  ## Attributes
+
+  - pickupMethod (String): Whether store pickup is available for this offer and whether the pickup option should be shown as buy, reserve, or not supported. Only supported for local inventory. Unless the value is \&quot;not supported\&quot;, must be submitted together with pickupSla. Defaults to: `null`.
+  - pickupSla (String): The expected date that an order will be ready for pickup, relative to when the order is placed. Only supported for local inventory. Must be submitted together with pickupMethod. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"pickupMethod",
     :"pickupSla"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.InventoryPickup do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.InventoryPickup do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

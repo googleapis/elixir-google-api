@@ -107,7 +107,10 @@ defmodule GoogleApi.Content.V2.Api.Products do
     }
     %{}
     |> method(:delete)
-    |> url("/#{merchant_id}/products/#{product_id}")
+    |> url("/{merchantId}/products/{productId}", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "productId" => URI.encode_www_form(product_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -149,7 +152,10 @@ defmodule GoogleApi.Content.V2.Api.Products do
     }
     %{}
     |> method(:get)
-    |> url("/#{merchant_id}/products/#{product_id}")
+    |> url("/{merchantId}/products/{productId}", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "productId" => URI.encode_www_form(product_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -194,7 +200,9 @@ defmodule GoogleApi.Content.V2.Api.Products do
     }
     %{}
     |> method(:post)
-    |> url("/#{merchant_id}/products")
+    |> url("/{merchantId}/products", %{
+         "merchantId" => URI.encode_www_form(merchant_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -241,7 +249,9 @@ defmodule GoogleApi.Content.V2.Api.Products do
     }
     %{}
     |> method(:get)
-    |> url("/#{merchant_id}/products")
+    |> url("/{merchantId}/products", %{
+         "merchantId" => URI.encode_www_form(merchant_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

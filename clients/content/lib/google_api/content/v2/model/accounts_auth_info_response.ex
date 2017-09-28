@@ -20,9 +20,13 @@
 defmodule GoogleApi.Content.V2.Model.AccountsAuthInfoResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - accountIdentifiers (List[AccountIdentifier]): The account identifiers corresponding to the authenticated user. - For an individual account: only the merchant ID is defined - For an aggregator: only the aggregator ID is defined - For a subaccount of an MCA: both the merchant ID and the aggregator ID are defined. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;content#accountsAuthInfoResponse\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accountIdentifiers",
     :"kind"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.AccountsAuthInfoResponse
   def decode(value, options) do
     value
     |> deserialize(:"accountIdentifiers", :list, GoogleApi.Content.V2.Model.AccountIdentifier, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.AccountsAuthInfoResponse do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,16 @@
 defmodule GoogleApi.Content.V2.Model.OrderPromotionBenefit do
   @moduledoc """
   
+
+  ## Attributes
+
+  - discount (Price): The discount in the order price when the promotion is applied. Defaults to: `null`.
+  - offerIds (List[String]): The OfferId(s) that were purchased in this order and map to this specific benefit of the promotion. Defaults to: `null`.
+  - subType (String): Further describes the benefit of the promotion. Note that we will expand on this enumeration as we support new promotion sub-types. Defaults to: `null`.
+  - taxImpact (Price): The impact on tax when the promotion is applied. Defaults to: `null`.
+  - type (String): Describes whether the promotion applies to products (e.g. 20% off) or to shipping (e.g. Free Shipping). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"discount",
     :"offerIds",
@@ -38,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrderPromotionBenefit do
     value
     |> deserialize(:"discount", :struct, GoogleApi.Content.V2.Model.Price, options)
     |> deserialize(:"taxImpact", :struct, GoogleApi.Content.V2.Model.Price, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrderPromotionBenefit do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

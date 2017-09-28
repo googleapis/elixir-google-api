@@ -20,9 +20,16 @@
 defmodule GoogleApi.Content.V2.Model.OrderCancellation do
   @moduledoc """
   
+
+  ## Attributes
+
+  - actor (String): The actor that created the cancellation. Defaults to: `null`.
+  - creationDate (String): Date on which the cancellation has been created, in ISO 8601 format. Defaults to: `null`.
+  - quantity (Integer): The quantity that was canceled. Defaults to: `null`.
+  - reason (String): The reason for the cancellation. Orders that are cancelled with a noInventory reason will lead to the removal of the product from POG until you make an update to that product. This will not affect your Shopping ads. Defaults to: `null`.
+  - reasonText (String): The explanation of the reason. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"actor",
     :"creationDate",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrderCancellation do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrderCancellation do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

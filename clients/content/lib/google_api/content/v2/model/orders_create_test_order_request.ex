@@ -20,9 +20,13 @@
 defmodule GoogleApi.Content.V2.Model.OrdersCreateTestOrderRequest do
   @moduledoc """
   
+
+  ## Attributes
+
+  - templateName (String): The test order template to use. Specify as an alternative to testOrder as a shortcut for retrieving a template and then creating an order using that template. Defaults to: `null`.
+  - testOrder (TestOrder): The test order to create. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"templateName",
     :"testOrder"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrdersCreateTestOrderReq
   def decode(value, options) do
     value
     |> deserialize(:"testOrder", :struct, GoogleApi.Content.V2.Model.TestOrder, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrdersCreateTestOrderRequest do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

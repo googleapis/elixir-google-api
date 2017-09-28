@@ -20,9 +20,14 @@
 defmodule GoogleApi.Content.V2.Model.ProductAspect do
   @moduledoc """
   
+
+  ## Attributes
+
+  - aspectName (String): The name of the aspect. Defaults to: `null`.
+  - destinationName (String): The name of the destination. Leave out to apply to all destinations. Defaults to: `null`.
+  - intention (String): Whether the aspect is required, excluded or should be validated. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"aspectName",
     :"destinationName",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.ProductAspect do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.ProductAspect do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.Content.V2.Model.OrderLineItemReturnInfo do
   @moduledoc """
   
+
+  ## Attributes
+
+  - daysToReturn (Integer): How many days later the item can be returned. Defaults to: `null`.
+  - isReturnable (Boolean): Whether the item is returnable. Defaults to: `null`.
+  - policyUrl (String): URL of the item return policy. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"daysToReturn",
     :"isReturnable",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrderLineItemReturnInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrderLineItemReturnInfo do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

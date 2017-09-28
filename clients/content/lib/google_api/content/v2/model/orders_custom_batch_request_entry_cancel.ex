@@ -20,9 +20,13 @@
 defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryCancel do
   @moduledoc """
   
+
+  ## Attributes
+
+  - reason (String): The reason for the cancellation. Defaults to: `null`.
+  - reasonText (String): The explanation of the reason. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"reason",
     :"reasonText"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryCancel do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryCancel do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

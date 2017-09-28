@@ -20,9 +20,16 @@
 defmodule GoogleApi.Content.V2.Model.TestOrderPaymentMethod do
   @moduledoc """
   
+
+  ## Attributes
+
+  - expirationMonth (Integer): The card expiration month (January &#x3D; 1, February &#x3D; 2 etc.). Defaults to: `null`.
+  - expirationYear (Integer): The card expiration year (4-digit, e.g. 2015). Defaults to: `null`.
+  - lastFourDigits (String): The last four digits of the card number. Defaults to: `null`.
+  - predefinedBillingAddress (String): The billing address. Defaults to: `null`.
+  - type (String): The type of instrument. Note that real orders might have different values than the four values accepted by createTestOrder. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"expirationMonth",
     :"expirationYear",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.TestOrderPaymentMethod do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.TestOrderPaymentMethod do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

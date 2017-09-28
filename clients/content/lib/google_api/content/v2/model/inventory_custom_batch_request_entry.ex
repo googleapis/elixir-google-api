@@ -20,9 +20,16 @@
 defmodule GoogleApi.Content.V2.Model.InventoryCustomBatchRequestEntry do
   @moduledoc """
   A batch entry encoding a single non-batch inventory request.
+
+  ## Attributes
+
+  - batchId (Integer): An entry ID, unique within the batch request. Defaults to: `null`.
+  - inventory (Inventory): Price and availability of the product. Defaults to: `null`.
+  - merchantId (String): The ID of the managing account. Defaults to: `null`.
+  - productId (String): The ID of the product for which to update price and availability. Defaults to: `null`.
+  - storeCode (String): The code of the store for which to update price and availability. Use online to update price and availability of an online product. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"batchId",
     :"inventory",
@@ -37,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.InventoryCustomBatchRequ
   def decode(value, options) do
     value
     |> deserialize(:"inventory", :struct, GoogleApi.Content.V2.Model.Inventory, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.InventoryCustomBatchRequestEntry do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

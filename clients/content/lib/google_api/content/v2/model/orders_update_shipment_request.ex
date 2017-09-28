@@ -20,9 +20,16 @@
 defmodule GoogleApi.Content.V2.Model.OrdersUpdateShipmentRequest do
   @moduledoc """
   
+
+  ## Attributes
+
+  - carrier (String): The carrier handling the shipment. Not updated if missing. Defaults to: `null`.
+  - operationId (String): The ID of the operation. Unique across all operations for a given order. Defaults to: `null`.
+  - shipmentId (String): The ID of the shipment. Defaults to: `null`.
+  - status (String): New status for the shipment. Not updated if missing. Defaults to: `null`.
+  - trackingId (String): The tracking id for the shipment. Not updated if missing. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"carrier",
     :"operationId",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrdersUpdateShipmentRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrdersUpdateShipmentRequest do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,16 @@
 defmodule GoogleApi.Content.V2.Model.AccountTaxTaxRule do
   @moduledoc """
   Tax calculation rule to apply in a state or province (USA only).
+
+  ## Attributes
+
+  - country (String): Country code in which tax is applicable. Defaults to: `null`.
+  - locationId (String): State (or province) is which the tax is applicable, described by its location id (also called criteria id). Defaults to: `null`.
+  - ratePercent (String): Explicit tax rate in percent, represented as a floating point number without the percentage character. Must not be negative. Defaults to: `null`.
+  - shippingTaxed (Boolean): If true, shipping charges are also taxed. Defaults to: `null`.
+  - useGlobalRate (Boolean): Whether the tax rate is taken from a global tax table or specified explicitly. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"country",
     :"locationId",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.AccountTaxTaxRule do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.AccountTaxTaxRule do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,19 @@
 defmodule GoogleApi.Content.V2.Model.DatafeedStatus do
   @moduledoc """
   The status of a datafeed, i.e., the result of the last retrieval of the datafeed computed asynchronously when the feed processing is finished.
+
+  ## Attributes
+
+  - datafeedId (String): The ID of the feed for which the status is reported. Defaults to: `null`.
+  - errors (List[DatafeedStatusError]): The list of errors occurring in the feed. Defaults to: `null`.
+  - itemsTotal (String): The number of items in the feed that were processed. Defaults to: `null`.
+  - itemsValid (String): The number of items in the feed that were valid. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;content#datafeedStatus\&quot;. Defaults to: `null`.
+  - lastUploadDate (String): The last date at which the feed was uploaded. Defaults to: `null`.
+  - processingStatus (String): The processing status of the feed. Defaults to: `null`.
+  - warnings (List[DatafeedStatusError]): The list of errors occurring in the feed. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"datafeedId",
     :"errors",
@@ -41,6 +51,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.DatafeedStatus do
     value
     |> deserialize(:"errors", :list, GoogleApi.Content.V2.Model.DatafeedStatusError, options)
     |> deserialize(:"warnings", :list, GoogleApi.Content.V2.Model.DatafeedStatusError, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.DatafeedStatus do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

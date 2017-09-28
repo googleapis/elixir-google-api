@@ -20,9 +20,16 @@
 defmodule GoogleApi.Content.V2.Model.RateGroup do
   @moduledoc """
   
+
+  ## Attributes
+
+  - applicableShippingLabels (List[String]): A list of shipping labels defining the products to which this rate group applies to. This is a disjunction: only one of the labels has to match for the rate group to apply. May only be empty for the last rate group of a service. Required. Defaults to: `null`.
+  - carrierRates (List[CarrierRate]): A list of carrier rates that can be referred to by mainTable or singleValue. Defaults to: `null`.
+  - mainTable (Table): A table defining the rate group, when singleValue is not expressive enough. Can only be set if singleValue is not set. Defaults to: `null`.
+  - singleValue (Value): The value of the rate group (e.g. flat rate $10). Can only be set if mainTable and subtables are not set. Defaults to: `null`.
+  - subtables (List[Table]): A list of subtables referred to by mainTable. Can only be set if mainTable is set. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"applicableShippingLabels",
     :"carrierRates",
@@ -40,6 +47,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.RateGroup do
     |> deserialize(:"mainTable", :struct, GoogleApi.Content.V2.Model.Table, options)
     |> deserialize(:"singleValue", :struct, GoogleApi.Content.V2.Model.Value, options)
     |> deserialize(:"subtables", :list, GoogleApi.Content.V2.Model.Table, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.RateGroup do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

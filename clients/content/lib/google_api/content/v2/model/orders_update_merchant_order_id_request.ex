@@ -20,9 +20,13 @@
 defmodule GoogleApi.Content.V2.Model.OrdersUpdateMerchantOrderIdRequest do
   @moduledoc """
   
+
+  ## Attributes
+
+  - merchantOrderId (String): The merchant order id to be assigned to the order. Must be unique per merchant. Defaults to: `null`.
+  - operationId (String): The ID of the operation. Unique across all operations for a given order. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"merchantOrderId",
     :"operationId"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrdersUpdateMerchantOrderIdRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrdersUpdateMerchantOrderIdRequest do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

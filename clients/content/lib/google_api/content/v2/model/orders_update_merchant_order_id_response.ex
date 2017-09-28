@@ -20,9 +20,13 @@
 defmodule GoogleApi.Content.V2.Model.OrdersUpdateMerchantOrderIdResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - executionStatus (String): The status of the execution. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;content#ordersUpdateMerchantOrderIdResponse\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"executionStatus",
     :"kind"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrdersUpdateMerchantOrderIdResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrdersUpdateMerchantOrderIdResponse do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

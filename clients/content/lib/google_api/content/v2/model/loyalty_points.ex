@@ -20,9 +20,14 @@
 defmodule GoogleApi.Content.V2.Model.LoyaltyPoints do
   @moduledoc """
   
+
+  ## Attributes
+
+  - name (String): Name of loyalty points program. It is recommended to limit the name to 12 full-width characters or 24 Roman characters. Defaults to: `null`.
+  - pointsValue (String): The retailer&#39;s loyalty points in absolute value. Defaults to: `null`.
+  - ratio (Float): The ratio of a point when converted to currency. Google assumes currency based on Merchant Center settings. If ratio is left out, it defaults to 1.0. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name",
     :"pointsValue",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.LoyaltyPoints do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.LoyaltyPoints do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

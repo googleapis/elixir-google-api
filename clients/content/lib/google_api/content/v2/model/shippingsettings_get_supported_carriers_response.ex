@@ -20,9 +20,13 @@
 defmodule GoogleApi.Content.V2.Model.ShippingsettingsGetSupportedCarriersResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - carriers (List[CarriersCarrier]): A list of supported carriers. May be empty. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;content#shippingsettingsGetSupportedCarriersResponse\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"carriers",
     :"kind"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.ShippingsettingsGetSuppo
   def decode(value, options) do
     value
     |> deserialize(:"carriers", :list, GoogleApi.Content.V2.Model.CarriersCarrier, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.ShippingsettingsGetSupportedCarriersResponse do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

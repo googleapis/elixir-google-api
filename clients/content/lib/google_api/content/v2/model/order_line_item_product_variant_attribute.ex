@@ -20,9 +20,13 @@
 defmodule GoogleApi.Content.V2.Model.OrderLineItemProductVariantAttribute do
   @moduledoc """
   
+
+  ## Attributes
+
+  - dimension (String): The dimension of the variant. Defaults to: `null`.
+  - value (String): The value for the dimension. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dimension",
     :"value"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrderLineItemProductVariantAttribute do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrderLineItemProductVariantAttribute do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.Content.V2.Model.AccountstatusesCustomBatchRequestEntry do
   @moduledoc """
   A batch entry encoding a single non-batch accountstatuses request.
+
+  ## Attributes
+
+  - accountId (String): The ID of the (sub-)account whose status to get. Defaults to: `null`.
+  - batchId (Integer): An entry ID, unique within the batch request. Defaults to: `null`.
+  - merchantId (String): The ID of the managing account. Defaults to: `null`.
+  - method (String): The method (get). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accountId",
     :"batchId",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.AccountstatusesCustomBatchRequestEntry do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.AccountstatusesCustomBatchRequestEntry do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

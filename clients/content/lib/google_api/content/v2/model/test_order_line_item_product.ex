@@ -20,9 +20,24 @@
 defmodule GoogleApi.Content.V2.Model.TestOrderLineItemProduct do
   @moduledoc """
   
+
+  ## Attributes
+
+  - brand (String): Brand of the item. Defaults to: `null`.
+  - channel (String): The item&#39;s channel. Defaults to: `null`.
+  - condition (String): Condition or state of the item. Defaults to: `null`.
+  - contentLanguage (String): The two-letter ISO 639-1 language code for the item. Defaults to: `null`.
+  - gtin (String): Global Trade Item Number (GTIN) of the item. Optional. Defaults to: `null`.
+  - imageLink (String): URL of an image of the item. Defaults to: `null`.
+  - itemGroupId (String): Shared identifier for all variants of the same product. Optional. Defaults to: `null`.
+  - mpn (String): Manufacturer Part Number (MPN) of the item. Optional. Defaults to: `null`.
+  - offerId (String): An identifier of the item. Defaults to: `null`.
+  - price (Price): The price for the product. Defaults to: `null`.
+  - targetCountry (String): The CLDR territory code of the target country of the product. Defaults to: `null`.
+  - title (String): The title of the product. Defaults to: `null`.
+  - variantAttributes (List[OrderLineItemProductVariantAttribute]): Variant attributes for the item. Optional. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"brand",
     :"channel",
@@ -46,6 +61,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.TestOrderLineItemProduct
     value
     |> deserialize(:"price", :struct, GoogleApi.Content.V2.Model.Price, options)
     |> deserialize(:"variantAttributes", :list, GoogleApi.Content.V2.Model.OrderLineItemProductVariantAttribute, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.TestOrderLineItemProduct do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

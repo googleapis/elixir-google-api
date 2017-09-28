@@ -20,9 +20,14 @@
 defmodule GoogleApi.Content.V2.Model.DatafeedFormat do
   @moduledoc """
   
+
+  ## Attributes
+
+  - columnDelimiter (String): Delimiter for the separation of values in a delimiter-separated values feed. If not specified, the delimiter will be auto-detected. Ignored for non-DSV data feeds. Defaults to: `null`.
+  - fileEncoding (String): Character encoding scheme of the data feed. If not specified, the encoding will be auto-detected. Defaults to: `null`.
+  - quotingMode (String): Specifies how double quotes are interpreted. If not specified, the mode will be auto-detected. Ignored for non-DSV data feeds. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"columnDelimiter",
     :"fileEncoding",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.DatafeedFormat do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.DatafeedFormat do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

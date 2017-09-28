@@ -20,9 +20,19 @@
 defmodule GoogleApi.Content.V2.Model.OrderAddress do
   @moduledoc """
   
+
+  ## Attributes
+
+  - country (String): CLDR country code (e.g. \&quot;US\&quot;). Defaults to: `null`.
+  - fullAddress (List[String]): Strings representing the lines of the printed label for mailing the order, for example: John Smith 1600 Amphitheatre Parkway Mountain View, CA, 94043 United States Defaults to: `null`.
+  - isPostOfficeBox (Boolean): Whether the address is a post office box. Defaults to: `null`.
+  - locality (String): City, town or commune. May also include dependent localities or sublocalities (e.g. neighborhoods or suburbs). Defaults to: `null`.
+  - postalCode (String): Postal Code or ZIP (e.g. \&quot;94043\&quot;). Defaults to: `null`.
+  - recipientName (String): Name of the recipient. Defaults to: `null`.
+  - region (String): Top-level administrative subdivision of the country (e.g. \&quot;CA\&quot;). Defaults to: `null`.
+  - streetAddress (List[String]): Street-level part of the address. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"country",
     :"fullAddress",
@@ -38,6 +48,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrderAddress do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrderAddress do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

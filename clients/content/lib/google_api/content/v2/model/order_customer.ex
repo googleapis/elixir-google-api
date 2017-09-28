@@ -20,9 +20,14 @@
 defmodule GoogleApi.Content.V2.Model.OrderCustomer do
   @moduledoc """
   
+
+  ## Attributes
+
+  - email (String): Email address of the customer. Defaults to: `null`.
+  - explicitMarketingPreference (Boolean): If set, this indicates the user explicitly chose to opt in or out of providing marketing rights to the merchant. If unset, this indicates the user has already made this choice in a previous purchase, and was thus not shown the marketing right opt in/out checkbox during the checkout flow. Defaults to: `null`.
+  - fullName (String): Full name of the customer. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"email",
     :"explicitMarketingPreference",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrderCustomer do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrderCustomer do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

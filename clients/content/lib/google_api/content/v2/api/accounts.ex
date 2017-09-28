@@ -103,7 +103,10 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{merchant_id}/accounts/#{account_id}/claimwebsite")
+    |> url("/{merchantId}/accounts/{accountId}/claimwebsite", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -193,7 +196,10 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
     }
     %{}
     |> method(:delete)
-    |> url("/#{merchant_id}/accounts/#{account_id}")
+    |> url("/{merchantId}/accounts/{accountId}", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -235,7 +241,10 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/#{merchant_id}/accounts/#{account_id}")
+    |> url("/{merchantId}/accounts/{accountId}", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -280,7 +289,9 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{merchant_id}/accounts")
+    |> url("/{merchantId}/accounts", %{
+         "merchantId" => URI.encode_www_form(merchant_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -325,7 +336,9 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/#{merchant_id}/accounts")
+    |> url("/{merchantId}/accounts", %{
+         "merchantId" => URI.encode_www_form(merchant_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -371,7 +384,10 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
     }
     %{}
     |> method(:patch)
-    |> url("/#{merchant_id}/accounts/#{account_id}")
+    |> url("/{merchantId}/accounts/{accountId}", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -417,7 +433,10 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
     }
     %{}
     |> method(:put)
-    |> url("/#{merchant_id}/accounts/#{account_id}")
+    |> url("/{merchantId}/accounts/{accountId}", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

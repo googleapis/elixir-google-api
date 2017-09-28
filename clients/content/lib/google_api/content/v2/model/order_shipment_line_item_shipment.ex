@@ -20,9 +20,13 @@
 defmodule GoogleApi.Content.V2.Model.OrderShipmentLineItemShipment do
   @moduledoc """
   
+
+  ## Attributes
+
+  - lineItemId (String): The id of the line item that is shipped. Defaults to: `null`.
+  - quantity (Integer): The quantity that is shipped. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"lineItemId",
     :"quantity"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrderShipmentLineItemShipment do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrderShipmentLineItemShipment do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

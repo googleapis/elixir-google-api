@@ -20,9 +20,15 @@
 defmodule GoogleApi.Content.V2.Model.ShippingsettingsCustomBatchResponseEntry do
   @moduledoc """
   A batch entry encoding a single non-batch shipping settings response.
+
+  ## Attributes
+
+  - batchId (Integer): The ID of the request entry to which this entry responds. Defaults to: `null`.
+  - errors (Errors): A list of errors defined if, and only if, the request failed. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;content#shippingsettingsCustomBatchResponseEntry\&quot;. Defaults to: `null`.
+  - shippingSettings (ShippingSettings): The retrieved or updated account shipping settings. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"batchId",
     :"errors",
@@ -37,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.ShippingsettingsCustomBa
     value
     |> deserialize(:"errors", :struct, GoogleApi.Content.V2.Model.Errors, options)
     |> deserialize(:"shippingSettings", :struct, GoogleApi.Content.V2.Model.ShippingSettings, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.ShippingsettingsCustomBatchResponseEntry do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

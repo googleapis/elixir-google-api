@@ -20,9 +20,22 @@
 defmodule GoogleApi.Content.V2.Model.Datafeed do
   @moduledoc """
   Datafeed configuration data.
+
+  ## Attributes
+
+  - attributeLanguage (String): The two-letter ISO 639-1 language in which the attributes are defined in the data feed. Defaults to: `null`.
+  - contentLanguage (String): The two-letter ISO 639-1 language of the items in the feed. Must be a valid language for targetCountry. Defaults to: `null`.
+  - contentType (String): The type of data feed. For product inventory feeds, only feeds for local stores, not online stores, are supported. Defaults to: `null`.
+  - fetchSchedule (DatafeedFetchSchedule): Fetch schedule for the feed file. Defaults to: `null`.
+  - fileName (String): The filename of the feed. All feeds must have a unique file name. Defaults to: `null`.
+  - format (DatafeedFormat): Format of the feed file. Defaults to: `null`.
+  - id (String): The ID of the data feed. Defaults to: `null`.
+  - intendedDestinations (List[String]): The list of intended destinations (corresponds to checked check boxes in Merchant Center). Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;content#datafeed\&quot;. Defaults to: `null`.
+  - name (String): A descriptive name of the data feed. Defaults to: `null`.
+  - targetCountry (String): The country where the items in the feed will be included in the search index, represented as a CLDR territory code. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"attributeLanguage",
     :"contentLanguage",
@@ -44,6 +57,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.Datafeed do
     value
     |> deserialize(:"fetchSchedule", :struct, GoogleApi.Content.V2.Model.DatafeedFetchSchedule, options)
     |> deserialize(:"format", :struct, GoogleApi.Content.V2.Model.DatafeedFormat, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.Datafeed do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

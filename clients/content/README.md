@@ -1,6 +1,6 @@
 # GoogleApi.Content.V2
 
-**TODO: Add description**
+Manages product items, inventory, and Merchant Center accounts for Google Shopping.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_content` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_content, "~> 0.1.0"}]
+  [{:google_api_content, "~> 0.0.1"}]
 end
 ```
 

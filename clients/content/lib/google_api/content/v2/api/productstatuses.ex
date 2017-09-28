@@ -107,7 +107,10 @@ defmodule GoogleApi.Content.V2.Api.Productstatuses do
     }
     %{}
     |> method(:get)
-    |> url("/#{merchant_id}/productstatuses/#{product_id}")
+    |> url("/{merchantId}/productstatuses/{productId}", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "productId" => URI.encode_www_form(product_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -156,7 +159,9 @@ defmodule GoogleApi.Content.V2.Api.Productstatuses do
     }
     %{}
     |> method(:get)
-    |> url("/#{merchant_id}/productstatuses")
+    |> url("/{merchantId}/productstatuses", %{
+         "merchantId" => URI.encode_www_form(merchant_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

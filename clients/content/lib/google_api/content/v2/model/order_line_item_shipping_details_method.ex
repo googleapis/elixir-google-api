@@ -20,9 +20,15 @@
 defmodule GoogleApi.Content.V2.Model.OrderLineItemShippingDetailsMethod do
   @moduledoc """
   
+
+  ## Attributes
+
+  - carrier (String): The carrier for the shipping. Optional. Defaults to: `null`.
+  - maxDaysInTransit (Integer): Maximum transit time. Defaults to: `null`.
+  - methodName (String): The name of the shipping method. Defaults to: `null`.
+  - minDaysInTransit (Integer): Minimum transit time. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"carrier",
     :"maxDaysInTransit",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrderLineItemShippingDetailsMethod do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrderLineItemShippingDetailsMethod do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

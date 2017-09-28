@@ -105,7 +105,10 @@ defmodule GoogleApi.Content.V2.Api.Accounttax do
     }
     %{}
     |> method(:get)
-    |> url("/#{merchant_id}/accounttax/#{account_id}")
+    |> url("/{merchantId}/accounttax/{accountId}", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -150,7 +153,9 @@ defmodule GoogleApi.Content.V2.Api.Accounttax do
     }
     %{}
     |> method(:get)
-    |> url("/#{merchant_id}/accounttax")
+    |> url("/{merchantId}/accounttax", %{
+         "merchantId" => URI.encode_www_form(merchant_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -196,7 +201,10 @@ defmodule GoogleApi.Content.V2.Api.Accounttax do
     }
     %{}
     |> method(:patch)
-    |> url("/#{merchant_id}/accounttax/#{account_id}")
+    |> url("/{merchantId}/accounttax/{accountId}", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -242,7 +250,10 @@ defmodule GoogleApi.Content.V2.Api.Accounttax do
     }
     %{}
     |> method(:put)
-    |> url("/#{merchant_id}/accounttax/#{account_id}")
+    |> url("/{merchantId}/accounttax/{accountId}", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

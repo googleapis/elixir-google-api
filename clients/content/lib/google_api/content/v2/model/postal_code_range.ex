@@ -20,9 +20,13 @@
 defmodule GoogleApi.Content.V2.Model.PostalCodeRange do
   @moduledoc """
   
+
+  ## Attributes
+
+  - postalCodeRangeBegin (String): A postal code or a pattern of the form prefix* denoting the inclusive lower bound of the range defining the area. Examples values: \&quot;94108\&quot;, \&quot;9410*\&quot;, \&quot;9*\&quot;. Required. Defaults to: `null`.
+  - postalCodeRangeEnd (String): A postal code or a pattern of the form prefix* denoting the inclusive upper bound of the range defining the area. It must have the same length as postalCodeRangeBegin: if postalCodeRangeBegin is a postal code then postalCodeRangeEnd must be a postal code too; if postalCodeRangeBegin is a pattern then postalCodeRangeEnd must be a pattern with the same prefix length. Optional: if not set, then the area is defined as being all the postal codes matching postalCodeRangeBegin. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"postalCodeRangeBegin",
     :"postalCodeRangeEnd"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.PostalCodeRange do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.PostalCodeRange do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

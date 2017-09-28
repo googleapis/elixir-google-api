@@ -20,9 +20,14 @@
 defmodule GoogleApi.Content.V2.Model.OrderLineItemShippingDetails do
   @moduledoc """
   
+
+  ## Attributes
+
+  - deliverByDate (String): The delivery by date, in ISO 8601 format. Defaults to: `null`.
+  - method (OrderLineItemShippingDetailsMethod): Details of the shipping method. Defaults to: `null`.
+  - shipByDate (String): The ship by date, in ISO 8601 format. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"deliverByDate",
     :"method",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrderLineItemShippingDet
   def decode(value, options) do
     value
     |> deserialize(:"method", :struct, GoogleApi.Content.V2.Model.OrderLineItemShippingDetailsMethod, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrderLineItemShippingDetails do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

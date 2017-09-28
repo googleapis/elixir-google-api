@@ -20,9 +20,16 @@
 defmodule GoogleApi.Content.V2.Model.TestOrderLineItem do
   @moduledoc """
   
+
+  ## Attributes
+
+  - product (TestOrderLineItemProduct): Product data from the time of the order placement. Defaults to: `null`.
+  - quantityOrdered (Integer): Number of items ordered. Defaults to: `null`.
+  - returnInfo (OrderLineItemReturnInfo): Details of the return policy for the line item. Defaults to: `null`.
+  - shippingDetails (OrderLineItemShippingDetails): Details of the requested shipping for the line item. Defaults to: `null`.
+  - unitTax (Price): Unit tax for the line item. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"product",
     :"quantityOrdered",
@@ -40,6 +47,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.TestOrderLineItem do
     |> deserialize(:"returnInfo", :struct, GoogleApi.Content.V2.Model.OrderLineItemReturnInfo, options)
     |> deserialize(:"shippingDetails", :struct, GoogleApi.Content.V2.Model.OrderLineItemShippingDetails, options)
     |> deserialize(:"unitTax", :struct, GoogleApi.Content.V2.Model.Price, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.TestOrderLineItem do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,16 @@
 defmodule GoogleApi.Content.V2.Model.OrdersReturnLineItemRequest do
   @moduledoc """
   
+
+  ## Attributes
+
+  - lineItemId (String): The ID of the line item to return. Defaults to: `null`.
+  - operationId (String): The ID of the operation. Unique across all operations for a given order. Defaults to: `null`.
+  - quantity (Integer): The quantity to return. Defaults to: `null`.
+  - reason (String): The reason for the return. Defaults to: `null`.
+  - reasonText (String): The explanation of the reason. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"lineItemId",
     :"operationId",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrdersReturnLineItemRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrdersReturnLineItemRequest do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

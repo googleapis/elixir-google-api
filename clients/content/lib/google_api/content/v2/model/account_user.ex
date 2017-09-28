@@ -20,9 +20,13 @@
 defmodule GoogleApi.Content.V2.Model.AccountUser do
   @moduledoc """
   
+
+  ## Attributes
+
+  - admin (Boolean): Whether user is an admin. Defaults to: `null`.
+  - emailAddress (String): User&#39;s email address. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"admin",
     :"emailAddress"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.AccountUser do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.AccountUser do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

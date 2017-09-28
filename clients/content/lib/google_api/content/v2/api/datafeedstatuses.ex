@@ -102,7 +102,10 @@ defmodule GoogleApi.Content.V2.Api.Datafeedstatuses do
     }
     %{}
     |> method(:get)
-    |> url("/#{merchant_id}/datafeedstatuses/#{datafeed_id}")
+    |> url("/{merchantId}/datafeedstatuses/{datafeedId}", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "datafeedId" => URI.encode_www_form(datafeed_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -147,7 +150,9 @@ defmodule GoogleApi.Content.V2.Api.Datafeedstatuses do
     }
     %{}
     |> method(:get)
-    |> url("/#{merchant_id}/datafeedstatuses")
+    |> url("/{merchantId}/datafeedstatuses", %{
+         "merchantId" => URI.encode_www_form(merchant_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

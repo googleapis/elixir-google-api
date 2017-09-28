@@ -20,9 +20,16 @@
 defmodule GoogleApi.Content.V2.Model.Headers do
   @moduledoc """
   A non-empty list of row or column headers for a table. Exactly one of prices, weights, numItems, postalCodeGroupNames, or locations must be set.
+
+  ## Attributes
+
+  - locations (List[LocationIdSet]): A list of location ID sets. Must be non-empty. Can only be set if all other fields are not set. Defaults to: `null`.
+  - numberOfItems (List[String]): A list of inclusive number of items upper bounds. The last value can be \&quot;infinity\&quot;. For example [\&quot;10\&quot;, \&quot;50\&quot;, \&quot;infinity\&quot;] represents the headers \&quot;&lt;&#x3D; 10 items\&quot;, \&quot; 50 items\&quot;. Must be non-empty. Can only be set if all other fields are not set. Defaults to: `null`.
+  - postalCodeGroupNames (List[String]): A list of postal group names. The last value can be \&quot;all other locations\&quot;. Example: [\&quot;zone 1\&quot;, \&quot;zone 2\&quot;, \&quot;all other locations\&quot;]. The referred postal code groups must match the delivery country of the service. Must be non-empty. Can only be set if all other fields are not set. Defaults to: `null`.
+  - prices (List[Price]): be \&quot;infinity\&quot;. For example [{\&quot;value\&quot;: \&quot;10\&quot;, \&quot;currency\&quot;: \&quot;USD\&quot;}, {\&quot;value\&quot;: \&quot;500\&quot;, \&quot;currency\&quot;: \&quot;USD\&quot;}, {\&quot;value\&quot;: \&quot;infinity\&quot;, \&quot;currency\&quot;: \&quot;USD\&quot;}] represents the headers \&quot;&lt;&#x3D; $10\&quot;, \&quot; $500\&quot;. All prices within a service must have the same currency. Must be non-empty. Can only be set if all other fields are not set. Defaults to: `null`.
+  - weights (List[Weight]): be \&quot;infinity\&quot;. For example [{\&quot;value\&quot;: \&quot;10\&quot;, \&quot;unit\&quot;: \&quot;kg\&quot;}, {\&quot;value\&quot;: \&quot;50\&quot;, \&quot;unit\&quot;: \&quot;kg\&quot;}, {\&quot;value\&quot;: \&quot;infinity\&quot;, \&quot;unit\&quot;: \&quot;kg\&quot;}] represents the headers \&quot;&lt;&#x3D; 10kg\&quot;, \&quot; 50kg\&quot;. All weights within a service must have the same unit. Must be non-empty. Can only be set if all other fields are not set. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"locations",
     :"numberOfItems",
@@ -39,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.Headers do
     |> deserialize(:"locations", :list, GoogleApi.Content.V2.Model.LocationIdSet, options)
     |> deserialize(:"prices", :list, GoogleApi.Content.V2.Model.Price, options)
     |> deserialize(:"weights", :list, GoogleApi.Content.V2.Model.Weight, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.Headers do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.Content.V2.Model.LocationIdSet do
   @moduledoc """
   
+
+  ## Attributes
+
+  - locationIds (List[String]): A non-empty list of location IDs. They must all be of the same location type (e.g., state). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"locationIds"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.LocationIdSet do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.LocationIdSet do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

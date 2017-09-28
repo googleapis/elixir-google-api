@@ -20,9 +20,12 @@
 defmodule GoogleApi.Content.V2.Model.Row do
   @moduledoc """
   
+
+  ## Attributes
+
+  - cells (List[Value]): The list of cells that constitute the row. Must have the same length as columnHeaders for two-dimensional tables, a length of 1 for one-dimensional tables. Required. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cells"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.Row do
   def decode(value, options) do
     value
     |> deserialize(:"cells", :list, GoogleApi.Content.V2.Model.Value, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.Row do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

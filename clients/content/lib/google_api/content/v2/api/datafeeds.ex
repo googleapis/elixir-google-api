@@ -106,7 +106,10 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
     }
     %{}
     |> method(:delete)
-    |> url("/#{merchant_id}/datafeeds/#{datafeed_id}")
+    |> url("/{merchantId}/datafeeds/{datafeedId}", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "datafeedId" => URI.encode_www_form(datafeed_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -148,7 +151,10 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
     }
     %{}
     |> method(:get)
-    |> url("/#{merchant_id}/datafeeds/#{datafeed_id}")
+    |> url("/{merchantId}/datafeeds/{datafeedId}", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "datafeedId" => URI.encode_www_form(datafeed_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -193,7 +199,9 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
     }
     %{}
     |> method(:post)
-    |> url("/#{merchant_id}/datafeeds")
+    |> url("/{merchantId}/datafeeds", %{
+         "merchantId" => URI.encode_www_form(merchant_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -238,7 +246,9 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
     }
     %{}
     |> method(:get)
-    |> url("/#{merchant_id}/datafeeds")
+    |> url("/{merchantId}/datafeeds", %{
+         "merchantId" => URI.encode_www_form(merchant_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -284,7 +294,10 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
     }
     %{}
     |> method(:patch)
-    |> url("/#{merchant_id}/datafeeds/#{datafeed_id}")
+    |> url("/{merchantId}/datafeeds/{datafeedId}", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "datafeedId" => URI.encode_www_form(datafeed_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -330,7 +343,10 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
     }
     %{}
     |> method(:put)
-    |> url("/#{merchant_id}/datafeeds/#{datafeed_id}")
+    |> url("/{merchantId}/datafeeds/{datafeedId}", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "datafeedId" => URI.encode_www_form(datafeed_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

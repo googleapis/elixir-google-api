@@ -20,9 +20,20 @@
 defmodule GoogleApi.Content.V2.Model.InventorySetRequest do
   @moduledoc """
   
+
+  ## Attributes
+
+  - availability (String): The availability of the product. Defaults to: `null`.
+  - installment (Installment): Number and amount of installments to pay for an item. Brazil only. Defaults to: `null`.
+  - loyaltyPoints (LoyaltyPoints): Loyalty points that users receive after purchasing the item. Japan only. Defaults to: `null`.
+  - pickup (InventoryPickup): Store pickup information. Only supported for local inventory. Not setting pickup means \&quot;don&#39;t update\&quot; while setting it to the empty value ({} in JSON) means \&quot;delete\&quot;. Otherwise, pickupMethod and pickupSla must be set together, unless pickupMethod is \&quot;not supported\&quot;. Defaults to: `null`.
+  - price (Price): The price of the product. Defaults to: `null`.
+  - quantity (Integer): The quantity of the product. Must be equal to or greater than zero. Supported only for local products. Defaults to: `null`.
+  - salePrice (Price): The sale price of the product. Mandatory if sale_price_effective_date is defined. Defaults to: `null`.
+  - salePriceEffectiveDate (String): A date range represented by a pair of ISO 8601 dates separated by a space, comma, or slash. Both dates might be specified as &#39;null&#39; if undecided. Defaults to: `null`.
+  - sellOnGoogleQuantity (Integer): The quantity of the product that is reserved for sell-on-google ads. Supported only for online products. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"availability",
     :"installment",
@@ -45,6 +56,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.InventorySetRequest do
     |> deserialize(:"pickup", :struct, GoogleApi.Content.V2.Model.InventoryPickup, options)
     |> deserialize(:"price", :struct, GoogleApi.Content.V2.Model.Price, options)
     |> deserialize(:"salePrice", :struct, GoogleApi.Content.V2.Model.Price, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.InventorySetRequest do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

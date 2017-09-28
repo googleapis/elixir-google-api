@@ -20,9 +20,17 @@
 defmodule GoogleApi.Content.V2.Model.ProductTax do
   @moduledoc """
   
+
+  ## Attributes
+
+  - country (String): The country within which the item is taxed, specified as a CLDR territory code. Defaults to: `null`.
+  - locationId (String): The numeric id of a location that the tax rate applies to as defined in the AdWords API. Defaults to: `null`.
+  - postalCode (String): The postal code range that the tax rate applies to, represented by a ZIP code, a ZIP code prefix using * wildcard, a range between two ZIP codes or two ZIP code prefixes of equal length. Examples: 94114, 94*, 94002-95460, 94*-95*. Defaults to: `null`.
+  - rate (Float): The percentage of tax rate that applies to the item price. Defaults to: `null`.
+  - region (String): The geographic region to which the tax rate applies. Defaults to: `null`.
+  - taxShip (Boolean): Set to true if tax is charged on shipping. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"country",
     :"locationId",
@@ -36,6 +44,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.ProductTax do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.ProductTax do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

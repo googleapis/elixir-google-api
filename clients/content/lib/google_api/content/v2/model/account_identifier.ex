@@ -20,9 +20,13 @@
 defmodule GoogleApi.Content.V2.Model.AccountIdentifier do
   @moduledoc """
   
+
+  ## Attributes
+
+  - aggregatorId (String): The aggregator ID, set for aggregators and subaccounts (in that case, it represents the aggregator of the subaccount). Defaults to: `null`.
+  - merchantId (String): The merchant account ID, set for individual accounts and subaccounts. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"aggregatorId",
     :"merchantId"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.AccountIdentifier do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.AccountIdentifier do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,16 @@
 defmodule GoogleApi.Content.V2.Model.AccounttaxCustomBatchRequestEntry do
   @moduledoc """
   A batch entry encoding a single non-batch accounttax request.
+
+  ## Attributes
+
+  - accountId (String): The ID of the account for which to get/update account tax settings. Defaults to: `null`.
+  - accountTax (AccountTax): The account tax settings to update. Only defined if the method is update. Defaults to: `null`.
+  - batchId (Integer): An entry ID, unique within the batch request. Defaults to: `null`.
+  - merchantId (String): The ID of the managing account. Defaults to: `null`.
+  - method (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accountId",
     :"accountTax",
@@ -37,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.AccounttaxCustomBatchReq
   def decode(value, options) do
     value
     |> deserialize(:"accountTax", :struct, GoogleApi.Content.V2.Model.AccountTax, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.AccounttaxCustomBatchRequestEntry do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

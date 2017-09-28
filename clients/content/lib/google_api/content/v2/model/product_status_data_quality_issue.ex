@@ -20,9 +20,19 @@
 defmodule GoogleApi.Content.V2.Model.ProductStatusDataQualityIssue do
   @moduledoc """
   
+
+  ## Attributes
+
+  - detail (String): A more detailed error string. Defaults to: `null`.
+  - fetchStatus (String): The fetch status for landing_page_errors. Defaults to: `null`.
+  - id (String): The id of the data quality issue. Defaults to: `null`.
+  - location (String): The attribute name that is relevant for the issue. Defaults to: `null`.
+  - severity (String): The severity of the data quality issue. Defaults to: `null`.
+  - timestamp (String): The time stamp of the data quality issue. Defaults to: `null`.
+  - valueOnLandingPage (String): The value of that attribute that was found on the landing page Defaults to: `null`.
+  - valueProvided (String): The value the attribute had at time of evaluation. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"detail",
     :"fetchStatus",
@@ -38,6 +48,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.ProductStatusDataQualityIssue do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.ProductStatusDataQualityIssue do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

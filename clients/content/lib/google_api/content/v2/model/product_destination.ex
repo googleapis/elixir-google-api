@@ -20,9 +20,13 @@
 defmodule GoogleApi.Content.V2.Model.ProductDestination do
   @moduledoc """
   
+
+  ## Attributes
+
+  - destinationName (String): The name of the destination. Defaults to: `null`.
+  - intention (String): Whether the destination is required, excluded or should be validated. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"destinationName",
     :"intention"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.ProductDestination do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.ProductDestination do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

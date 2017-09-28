@@ -20,9 +20,17 @@
 defmodule GoogleApi.Content.V2.Model.OrderPaymentMethod do
   @moduledoc """
   
+
+  ## Attributes
+
+  - billingAddress (OrderAddress): The billing address. Defaults to: `null`.
+  - expirationMonth (Integer): The card expiration month (January &#x3D; 1, February &#x3D; 2 etc.). Defaults to: `null`.
+  - expirationYear (Integer): The card expiration year (4-digit, e.g. 2015). Defaults to: `null`.
+  - lastFourDigits (String): The last four digits of the card number. Defaults to: `null`.
+  - phoneNumber (String): The billing phone number. Defaults to: `null`.
+  - type (String): The type of instrument (VISA, Mastercard, etc). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"billingAddress",
     :"expirationMonth",
@@ -38,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrderPaymentMethod do
   def decode(value, options) do
     value
     |> deserialize(:"billingAddress", :struct, GoogleApi.Content.V2.Model.OrderAddress, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrderPaymentMethod do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 
