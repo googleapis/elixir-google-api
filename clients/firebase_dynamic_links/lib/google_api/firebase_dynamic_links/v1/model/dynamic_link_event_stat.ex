@@ -20,9 +20,16 @@
 defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkEventStat do
   @moduledoc """
   Dynamic Link event stat.
+
+  ## Attributes
+
+  - count (String): The number of times this event occurred. Defaults to: `null`.
+  - event (String): Link event. Defaults to: `null`.
+    - Enum - one of [DYNAMIC_LINK_EVENT_UNSPECIFIED, CLICK, REDIRECT, APP_INSTALL, APP_FIRST_OPEN, APP_RE_OPEN]
+  - platform (String): Requested platform. Defaults to: `null`.
+    - Enum - one of [DYNAMIC_LINK_PLATFORM_UNSPECIFIED, ANDROID, IOS, DESKTOP]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"count",
     :"event",
@@ -33,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkEventStat do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkEventStat do
+  def encode(value, options) do
+    GoogleApi.FirebaseDynamicLinks.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

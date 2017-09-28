@@ -20,9 +20,17 @@
 defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.IosInfo do
   @moduledoc """
   iOS related attributes to the Dynamic Link..
+
+  ## Attributes
+
+  - iosAppStoreId (String): iOS App Store ID. Defaults to: `null`.
+  - iosBundleId (String): iOS bundle ID of the app. Defaults to: `null`.
+  - iosCustomScheme (String): Custom (destination) scheme to use for iOS. By default, we’ll use the bundle ID as the custom scheme. Developer can override this behavior using this param. Defaults to: `null`.
+  - iosFallbackLink (String): Link to open on iOS if the app is not installed. Defaults to: `null`.
+  - iosIpadBundleId (String): iPad bundle ID of the app. Defaults to: `null`.
+  - iosIpadFallbackLink (String): If specified, this overrides the ios_fallback_link value on iPads. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"iosAppStoreId",
     :"iosBundleId",
@@ -36,6 +44,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.IosInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.IosInfo do
+  def encode(value, options) do
+    GoogleApi.FirebaseDynamicLinks.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkStats do
   @moduledoc """
   Analytics stats of a Dynamic Link for a given timeframe.
+
+  ## Attributes
+
+  - linkEventStats (List[DynamicLinkEventStat]): Dynamic Link event stats. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"linkEventStats"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLink
   def decode(value, options) do
     value
     |> deserialize(:"linkEventStats", :list, GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkEventStat, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkStats do
+  def encode(value, options) do
+    GoogleApi.FirebaseDynamicLinks.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

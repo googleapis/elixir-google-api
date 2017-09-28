@@ -1,6 +1,6 @@
 # GoogleApi.FirebaseDynamicLinks.V1
 
-**TODO: Add description**
+Programmatically creates and manages Firebase Dynamic Links.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_firebase_dynamic_links` to your list of dependencies in `m
 
 ```elixir
 def deps do
-  [{:google_api_firebase_dynamic_links, "~> 0.1.0"}]
+  [{:google_api_firebase_dynamic_links, "~> 0.0.1"}]
 end
 ```
 

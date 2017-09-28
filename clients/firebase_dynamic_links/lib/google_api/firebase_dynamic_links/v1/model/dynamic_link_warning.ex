@@ -20,9 +20,15 @@
 defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkWarning do
   @moduledoc """
   Dynamic Links warning messages.
+
+  ## Attributes
+
+  - warningCode (String): The warning code. Defaults to: `null`.
+    - Enum - one of [CODE_UNSPECIFIED, NOT_IN_PROJECT_ANDROID_PACKAGE_NAME, NOT_INTEGER_ANDROID_PACKAGE_MIN_VERSION, UNNECESSARY_ANDROID_PACKAGE_MIN_VERSION, NOT_URI_ANDROID_LINK, UNNECESSARY_ANDROID_LINK, NOT_URI_ANDROID_FALLBACK_LINK, BAD_URI_SCHEME_ANDROID_FALLBACK_LINK, NOT_IN_PROJECT_IOS_BUNDLE_ID, NOT_IN_PROJECT_IPAD_BUNDLE_ID, UNNECESSARY_IOS_URL_SCHEME, NOT_NUMERIC_IOS_APP_STORE_ID, UNNECESSARY_IOS_APP_STORE_ID, NOT_URI_IOS_FALLBACK_LINK, BAD_URI_SCHEME_IOS_FALLBACK_LINK, NOT_URI_IPAD_FALLBACK_LINK, BAD_URI_SCHEME_IPAD_FALLBACK_LINK, BAD_DEBUG_PARAM, BAD_AD_PARAM, DEPRECATED_PARAM, UNRECOGNIZED_PARAM, TOO_LONG_PARAM, NOT_URI_SOCIAL_IMAGE_LINK, BAD_URI_SCHEME_SOCIAL_IMAGE_LINK, NOT_URI_SOCIAL_URL, BAD_URI_SCHEME_SOCIAL_URL, LINK_LENGTH_TOO_LONG, LINK_WITH_FRAGMENTS, NOT_MATCHING_IOS_BUNDLE_ID_AND_STORE_ID]
+  - warningDocumentLink (String): The document describing the warning, and helps resolve. Defaults to: `null`.
+  - warningMessage (String): The warning message to help developers improve their requests. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"warningCode",
     :"warningDocumentLink",
@@ -33,6 +39,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkWarning do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkWarning do
+  def encode(value, options) do
+    GoogleApi.FirebaseDynamicLinks.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.CreateShortDynamicLinkRequest do
   @moduledoc """
   Request to create a short Dynamic Link.
+
+  ## Attributes
+
+  - dynamicLinkInfo (DynamicLinkInfo): Information about the Dynamic Link to be shortened. [Learn more](https://firebase.google.com/docs/dynamic-links/android#create-a-dynamic-link-programmatically). Defaults to: `null`.
+  - longDynamicLink (String): Full long Dynamic Link URL with desired query parameters specified. For example, \&quot;https://sample.app.goo.gl/?link&#x3D;http://www.google.com&amp;apn&#x3D;com.sample\&quot;, [Learn more](https://firebase.google.com/docs/dynamic-links/android#create-a-dynamic-link-programmatically). Defaults to: `null`.
+  - suffix (Suffix): Short Dynamic Link suffix. Optional. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dynamicLinkInfo",
     :"longDynamicLink",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.CreateShort
     value
     |> deserialize(:"dynamicLinkInfo", :struct, GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkInfo, options)
     |> deserialize(:"suffix", :struct, GoogleApi.FirebaseDynamicLinks.V1.Model.Suffix, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.CreateShortDynamicLinkRequest do
+  def encode(value, options) do
+    GoogleApi.FirebaseDynamicLinks.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

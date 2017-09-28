@@ -20,9 +20,13 @@
 defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.Suffix do
   @moduledoc """
   Short Dynamic Link suffix.
+
+  ## Attributes
+
+  - option (String): Suffix option. Defaults to: `null`.
+    - Enum - one of [OPTION_UNSPECIFIED, UNGUESSABLE, SHORT]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"option"
   ]
@@ -31,6 +35,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.Suffix do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.Suffix do
+  def encode(value, options) do
+    GoogleApi.FirebaseDynamicLinks.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.NavigationInfo do
   @moduledoc """
   Information of navigation behavior.
+
+  ## Attributes
+
+  - enableForcedRedirect (Boolean): If this option is on, FDL click will be forced to redirect rather than show an interstitial page. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"enableForcedRedirect"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.NavigationInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.NavigationInfo do
+  def encode(value, options) do
+    GoogleApi.FirebaseDynamicLinks.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
