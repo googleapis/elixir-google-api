@@ -20,9 +20,13 @@
 defmodule GoogleApi.ConsumerSurveys.V2.Model.SurveyResults do
   @moduledoc """
   
+
+  ## Attributes
+
+  - status (String):  Defaults to: `null`.
+  - surveyUrlId (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"status",
     :"surveyUrlId"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ConsumerSurveys.V2.Model.SurveyResults do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ConsumerSurveys.V2.Model.SurveyResults do
+  def encode(value, options) do
+    GoogleApi.ConsumerSurveys.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.ConsumerSurveys.V2.Model.SurveysStartResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - requestId (String): Unique request ID used for logging and debugging. Please include in any error reporting or troubleshooting requests. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"requestId"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ConsumerSurveys.V2.Model.SurveysStartResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ConsumerSurveys.V2.Model.SurveysStartResponse do
+  def encode(value, options) do
+    GoogleApi.ConsumerSurveys.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

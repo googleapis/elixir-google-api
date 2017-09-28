@@ -20,9 +20,13 @@
 defmodule GoogleApi.ConsumerSurveys.V2.Model.FieldMask do
   @moduledoc """
   
+
+  ## Attributes
+
+  - fields (List[FieldMask]):  Defaults to: `null`.
+  - id (Integer):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fields",
     :"id"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.ConsumerSurveys.V2.Model.FieldMask do
   def decode(value, options) do
     value
     |> deserialize(:"fields", :list, GoogleApi.ConsumerSurveys.V2.Model.FieldMask, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ConsumerSurveys.V2.Model.FieldMask do
+  def encode(value, options) do
+    GoogleApi.ConsumerSurveys.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

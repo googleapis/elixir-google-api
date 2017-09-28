@@ -20,9 +20,12 @@
 defmodule GoogleApi.ConsumerSurveys.V2.Model.SurveysStartRequest do
   @moduledoc """
   
+
+  ## Attributes
+
+  - maxCostPerResponseNanos (String): Threshold to start a survey automically if the quoted prices is less than or equal to this value. See Survey.Cost for more details. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"maxCostPerResponseNanos"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ConsumerSurveys.V2.Model.SurveysStartRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ConsumerSurveys.V2.Model.SurveysStartRequest do
+  def encode(value, options) do
+    GoogleApi.ConsumerSurveys.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

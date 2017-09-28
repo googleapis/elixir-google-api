@@ -20,9 +20,22 @@
 defmodule GoogleApi.ConsumerSurveys.V2.Model.Survey do
   @moduledoc """
   
+
+  ## Attributes
+
+  - audience (SurveyAudience):  Defaults to: `null`.
+  - cost (SurveyCost):  Defaults to: `null`.
+  - customerData (String):  Defaults to: `null`.
+  - description (String):  Defaults to: `null`.
+  - owners (List[String]):  Defaults to: `null`.
+  - questions (List[SurveyQuestion]):  Defaults to: `null`.
+  - rejectionReason (SurveyRejection):  Defaults to: `null`.
+  - state (String):  Defaults to: `null`.
+  - surveyUrlId (String):  Defaults to: `null`.
+  - title (String):  Defaults to: `null`.
+  - wantedResponseCount (Integer):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"audience",
     :"cost",
@@ -46,6 +59,12 @@ defimpl Poison.Decoder, for: GoogleApi.ConsumerSurveys.V2.Model.Survey do
     |> deserialize(:"cost", :struct, GoogleApi.ConsumerSurveys.V2.Model.SurveyCost, options)
     |> deserialize(:"questions", :list, GoogleApi.ConsumerSurveys.V2.Model.SurveyQuestion, options)
     |> deserialize(:"rejectionReason", :struct, GoogleApi.ConsumerSurveys.V2.Model.SurveyRejection, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ConsumerSurveys.V2.Model.Survey do
+  def encode(value, options) do
+    GoogleApi.ConsumerSurveys.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

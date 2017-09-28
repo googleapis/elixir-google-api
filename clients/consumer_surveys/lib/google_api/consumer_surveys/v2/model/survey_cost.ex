@@ -20,9 +20,15 @@
 defmodule GoogleApi.ConsumerSurveys.V2.Model.SurveyCost do
   @moduledoc """
   
+
+  ## Attributes
+
+  - costPerResponseNanos (String):  Defaults to: `null`.
+  - currencyCode (String):  Defaults to: `null`.
+  - maxCostPerResponseNanos (String):  Defaults to: `null`.
+  - nanos (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"costPerResponseNanos",
     :"currencyCode",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ConsumerSurveys.V2.Model.SurveyCost do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ConsumerSurveys.V2.Model.SurveyCost do
+  def encode(value, options) do
+    GoogleApi.ConsumerSurveys.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

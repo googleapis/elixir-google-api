@@ -60,7 +60,9 @@ defmodule GoogleApi.ConsumerSurveys.V2.Api.Mobileapppanels do
     }
     %{}
     |> method(:get)
-    |> url("/mobileAppPanels/#{panel_id}")
+    |> url("/mobileAppPanels/{panelId}", %{
+         "panelId" => URI.encode_www_form(panel_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -149,7 +151,9 @@ defmodule GoogleApi.ConsumerSurveys.V2.Api.Mobileapppanels do
     }
     %{}
     |> method(:put)
-    |> url("/mobileAppPanels/#{panel_id}")
+    |> url("/mobileAppPanels/{panelId}", %{
+         "panelId" => URI.encode_www_form(panel_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

@@ -20,9 +20,18 @@
 defmodule GoogleApi.ConsumerSurveys.V2.Model.SurveyAudience do
   @moduledoc """
   
+
+  ## Attributes
+
+  - ages (List[String]):  Defaults to: `null`.
+  - country (String):  Defaults to: `null`.
+  - countrySubdivision (String):  Defaults to: `null`.
+  - gender (String):  Defaults to: `null`.
+  - languages (List[String]):  Defaults to: `null`.
+  - mobileAppPanelId (String):  Defaults to: `null`.
+  - populationSource (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"ages",
     :"country",
@@ -37,6 +46,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ConsumerSurveys.V2.Model.SurveyAudience do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ConsumerSurveys.V2.Model.SurveyAudience do
+  def encode(value, options) do
+    GoogleApi.ConsumerSurveys.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

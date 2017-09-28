@@ -20,9 +20,17 @@
 defmodule GoogleApi.ConsumerSurveys.V2.Model.MobileAppPanel do
   @moduledoc """
   
+
+  ## Attributes
+
+  - country (String):  Defaults to: `null`.
+  - isPublicPanel (Boolean):  Defaults to: `null`.
+  - language (String):  Defaults to: `null`.
+  - mobileAppPanelId (String):  Defaults to: `null`.
+  - name (String):  Defaults to: `null`.
+  - owners (List[String]):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"country",
     :"isPublicPanel",
@@ -36,6 +44,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ConsumerSurveys.V2.Model.MobileAppPanel do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ConsumerSurveys.V2.Model.MobileAppPanel do
+  def encode(value, options) do
+    GoogleApi.ConsumerSurveys.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

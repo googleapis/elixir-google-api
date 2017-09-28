@@ -20,9 +20,15 @@
 defmodule GoogleApi.ConsumerSurveys.V2.Model.SurveysListResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - pageInfo (PageInfo):  Defaults to: `null`.
+  - requestId (String): Unique request ID used for logging and debugging. Please include in any error reporting or troubleshooting requests. Defaults to: `null`.
+  - resources (List[Survey]): An individual survey resource. Defaults to: `null`.
+  - tokenPagination (TokenPagination):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"pageInfo",
     :"requestId",
@@ -38,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.ConsumerSurveys.V2.Model.SurveysListRespo
     |> deserialize(:"pageInfo", :struct, GoogleApi.ConsumerSurveys.V2.Model.PageInfo, options)
     |> deserialize(:"resources", :list, GoogleApi.ConsumerSurveys.V2.Model.Survey, options)
     |> deserialize(:"tokenPagination", :struct, GoogleApi.ConsumerSurveys.V2.Model.TokenPagination, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ConsumerSurveys.V2.Model.SurveysListResponse do
+  def encode(value, options) do
+    GoogleApi.ConsumerSurveys.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 
