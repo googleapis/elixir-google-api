@@ -36,6 +36,7 @@ defmodule GoogleApi.TestClient.V1.Api.PerformanceReport do
   - end_date_time (String): The end time of the report in ISO 8601 timestamp format using UTC.
   - start_date_time (String): The start time of the report in ISO 8601 timestamp format using UTC.
   - opts (KeywordList): [optional] Optional parameters
+    - :alt (String): Data format for the response.
     - :max_results (Integer): Maximum number of entries returned on one result page. If not set, the default is 100. Optional.
     - :page_token (String): A continuation token, used to page through performance reports. To retrieve the next page, set this parameter to the value of \&quot;nextPageToken\&quot; from the previous response. Optional.
 
@@ -47,6 +48,7 @@ defmodule GoogleApi.TestClient.V1.Api.PerformanceReport do
   @spec adexchangebuyer_performance_report_list(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, GoogleApi.TestClient.V1.Model.PerformanceReportList.t} | {:error, Tesla.Env.t}
   def adexchangebuyer_performance_report_list(connection, account_id, end_date_time, start_date_time, opts \\ []) do
     optional_params = %{
+      :"alt" => :query,
       :"maxResults" => :query,
       :"pageToken" => :query
     }

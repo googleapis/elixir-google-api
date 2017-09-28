@@ -6,11 +6,6 @@
       "url": "https://google.com"
     },
     "description": "Test client for testing generated clients",
-    "license": {
-      "name": "Apache 2.0",
-      "url": "https://www.apache.org/licenses/LICENSE-2.0"
-    },
-    "termsOfService": "https://developers.google.com/terms/",
     "title": "Test Client",
     "version": "v1"
   },
@@ -21,7 +16,11 @@
   ],
   "paths": {
     "/performancereport": {
-      "parameters": [],
+      "parameters": [
+        {
+          "$ref": "#/parameters/alt"
+        }
+      ],
       "get": {
         "parameters": [
           {
@@ -88,7 +87,7 @@
       "description": "The configuration data for an Ad Exchange performance report list.",
       "properties": {
         "calloutStatusRate": {
-          "description": "Example from AdExchangeBuyer with array of anything.",
+          "description": "Rate of various prefiltering statuses per match. Please refer to the callout-status-codes.txt file for different statuses.",
           "items": {},
           "type": "array"
         }
@@ -115,7 +114,16 @@
     }
   },
   "parameters": {
-
+    "alt": {
+      "default": "json",
+      "description": "Data format for the response.",
+      "enum": [
+        "json"
+      ],
+      "in": "query",
+      "name": "alt",
+      "type": "string"
+    }
   },
   "securityDefinitions": {
     "Oauth2": {
@@ -123,7 +131,7 @@
       "description": "Oauth 2.0 authentication",
       "flow": "implicit",
       "scopes": {
-        "https://www.googleapis.com/auth/books": "Manage your books"
+        "https://www.googleapis.com/auth/adexchange.buyer": "Manage your Ad Exchange buyer account configuration"
       },
       "type": "oauth2"
     }

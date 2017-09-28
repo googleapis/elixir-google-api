@@ -30,7 +30,7 @@ defmodule GoogleApi.TestClient.V1.Connection do
   plug Tesla.Middleware.EncodeJson
 
   @scopes [
-    "https://www.googleapis.com/auth/books" # Manage your books
+    "https://www.googleapis.com/auth/adexchange.buyer" # Manage your Ad Exchange buyer account configuration
   ]
 
   @doc """

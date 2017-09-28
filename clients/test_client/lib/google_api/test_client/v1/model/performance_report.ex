@@ -23,7 +23,7 @@ defmodule GoogleApi.TestClient.V1.Model.PerformanceReport do
 
   ## Attributes
 
-  - calloutStatusRate (List[Null]): Example from AdExchangeBuyer with array of anything. Defaults to: `null`.
+  - calloutStatusRate (List[Null]): Rate of various prefiltering statuses per match. Please refer to the callout-status-codes.txt file for different statuses. Defaults to: `null`.
   """
 
   defstruct [
