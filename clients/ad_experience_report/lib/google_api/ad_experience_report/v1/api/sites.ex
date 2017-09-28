@@ -72,7 +72,9 @@ defmodule GoogleApi.AdExperienceReport.V1.Api.Sites do
     }
     %{}
     |> method(:get)
-    |> url("/v1/sites/#{sites_id}")
+    |> url("/v1/sites/{sitesId}", %{
+         "sitesId" => URI.encode_www_form(sites_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

@@ -20,9 +20,14 @@
 defmodule GoogleApi.AdExperienceReport.V1.Model.SiteSummaryResponse do
   @moduledoc """
   Response message for GetSiteSummary.
+
+  ## Attributes
+
+  - desktopSummary (PlatformSummary): Summary for the desktop review of the site. Defaults to: `null`.
+  - mobileSummary (PlatformSummary): Summary for the mobile review of the site. Defaults to: `null`.
+  - reviewedSite (String): The name of the site reviewed. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"desktopSummary",
     :"mobileSummary",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExperienceReport.V1.Model.SiteSummaryRe
     value
     |> deserialize(:"desktopSummary", :struct, GoogleApi.AdExperienceReport.V1.Model.PlatformSummary, options)
     |> deserialize(:"mobileSummary", :struct, GoogleApi.AdExperienceReport.V1.Model.PlatformSummary, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExperienceReport.V1.Model.SiteSummaryResponse do
+  def encode(value, options) do
+    GoogleApi.AdExperienceReport.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
