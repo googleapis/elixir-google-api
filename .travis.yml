@@ -5,6 +5,12 @@ elixir:
 otp_release:
   - 19.3
   - 20.0
+services:
+  - docker
+before_install:
+  - npm install
+  - docker pull swaggerapi/swagger-codegen-cli
 script:
   - mix test --include external
+  - mix do google_apis.convert TestClient, google_apis.build TestClient
   - cd clients/test_client && mix deps.get && mix test
