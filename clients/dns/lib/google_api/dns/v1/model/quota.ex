@@ -20,9 +20,18 @@
 defmodule GoogleApi.DNS.V1.Model.Quota do
   @moduledoc """
   Limits associated with a Project.
+
+  ## Attributes
+
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;dns#quota\&quot;. Defaults to: `null`.
+  - managedZones (Integer): Maximum allowed number of managed zones in the project. Defaults to: `null`.
+  - resourceRecordsPerRrset (Integer): Maximum allowed number of ResourceRecords per ResourceRecordSet. Defaults to: `null`.
+  - rrsetAdditionsPerChange (Integer): Maximum allowed number of ResourceRecordSets to add per ChangesCreateRequest. Defaults to: `null`.
+  - rrsetDeletionsPerChange (Integer): Maximum allowed number of ResourceRecordSets to delete per ChangesCreateRequest. Defaults to: `null`.
+  - rrsetsPerManagedZone (Integer): Maximum allowed number of ResourceRecordSets per zone in the project. Defaults to: `null`.
+  - totalRrdataSizePerChange (Integer): Maximum allowed size for total rrdata in one ChangesCreateRequest in bytes. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"managedZones",
@@ -37,6 +46,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.DNS.V1.Model.Quota do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DNS.V1.Model.Quota do
+  def encode(value, options) do
+    GoogleApi.DNS.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

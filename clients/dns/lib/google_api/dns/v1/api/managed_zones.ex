@@ -62,7 +62,9 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/managedZones")
+    |> url("/{project}/managedZones", %{
+         "project" => URI.encode_www_form(project)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -104,7 +106,10 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
     }
     %{}
     |> method(:delete)
-    |> url("/#{project}/managedZones/#{managed_zone}")
+    |> url("/{project}/managedZones/{managedZone}", %{
+         "project" => URI.encode_www_form(project),
+         "managedZone" => URI.encode_www_form(managed_zone)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -146,7 +151,10 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
     }
     %{}
     |> method(:get)
-    |> url("/#{project}/managedZones/#{managed_zone}")
+    |> url("/{project}/managedZones/{managedZone}", %{
+         "project" => URI.encode_www_form(project),
+         "managedZone" => URI.encode_www_form(managed_zone)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -193,7 +201,9 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
     }
     %{}
     |> method(:get)
-    |> url("/#{project}/managedZones")
+    |> url("/{project}/managedZones", %{
+         "project" => URI.encode_www_form(project)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

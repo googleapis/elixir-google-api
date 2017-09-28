@@ -20,9 +20,19 @@
 defmodule GoogleApi.DNS.V1.Model.ManagedZone do
   @moduledoc """
   A zone is a subtree of the DNS namespace under one administrative responsibility. A ManagedZone is a resource that represents a DNS zone hosted by the Cloud DNS service.
+
+  ## Attributes
+
+  - creationTime (String): The time that this resource was created on the server. This is in RFC3339 text format. Output only. Defaults to: `null`.
+  - description (String): A mutable string of at most 1024 characters associated with this resource for the user&#39;s convenience. Has no effect on the managed zone&#39;s function. Defaults to: `null`.
+  - dnsName (String): The DNS name of this managed zone, for instance \&quot;example.com.\&quot;. Defaults to: `null`.
+  - id (String): Unique identifier for the resource; defined by the server (output only) Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;dns#managedZone\&quot;. Defaults to: `null`.
+  - name (String): User assigned name for this resource. Must be unique within the project. The name must be 1-63 characters long, must begin with a letter, end with a letter or digit, and only contain lowercase letters, digits or dashes. Defaults to: `null`.
+  - nameServerSet (String): Optionally specifies the NameServerSet for this ManagedZone. A NameServerSet is a set of DNS name servers that all host the same ManagedZones. Most users will leave this field unset. Defaults to: `null`.
+  - nameServers (List[String]): Delegate your managed_zone to these virtual name servers; defined by the server (output only) Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"creationTime",
     :"description",
@@ -38,6 +48,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.DNS.V1.Model.ManagedZone do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DNS.V1.Model.ManagedZone do
+  def encode(value, options) do
+    GoogleApi.DNS.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

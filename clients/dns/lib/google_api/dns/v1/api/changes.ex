@@ -63,7 +63,10 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/managedZones/#{managed_zone}/changes")
+    |> url("/{project}/managedZones/{managedZone}/changes", %{
+         "project" => URI.encode_www_form(project),
+         "managedZone" => URI.encode_www_form(managed_zone)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -106,7 +109,11 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
     }
     %{}
     |> method(:get)
-    |> url("/#{project}/managedZones/#{managed_zone}/changes/#{change_id}")
+    |> url("/{project}/managedZones/{managedZone}/changes/{changeId}", %{
+         "project" => URI.encode_www_form(project),
+         "managedZone" => URI.encode_www_form(managed_zone),
+         "changeId" => URI.encode_www_form(change_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -156,7 +163,10 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
     }
     %{}
     |> method(:get)
-    |> url("/#{project}/managedZones/#{managed_zone}/changes")
+    |> url("/{project}/managedZones/{managedZone}/changes", %{
+         "project" => URI.encode_www_form(project),
+         "managedZone" => URI.encode_www_form(managed_zone)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

@@ -20,9 +20,14 @@
 defmodule GoogleApi.DNS.V1.Model.ManagedZonesListResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - kind (String): Type of resource. Defaults to: `null`.
+  - managedZones (List[ManagedZone]): The managed zone resources. Defaults to: `null`.
+  - nextPageToken (String): The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your page token.  In this way you can retrieve the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned will be an inconsistent view of the collection. There is no way to retrieve a consistent snapshot of a collection larger than the maximum page size. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"managedZones",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.DNS.V1.Model.ManagedZonesListResponse do
   def decode(value, options) do
     value
     |> deserialize(:"managedZones", :list, GoogleApi.DNS.V1.Model.ManagedZone, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DNS.V1.Model.ManagedZonesListResponse do
+  def encode(value, options) do
+    GoogleApi.DNS.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

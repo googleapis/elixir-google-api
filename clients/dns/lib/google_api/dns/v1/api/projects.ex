@@ -60,7 +60,9 @@ defmodule GoogleApi.DNS.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/#{project}")
+    |> url("/{project}", %{
+         "project" => URI.encode_www_form(project)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
