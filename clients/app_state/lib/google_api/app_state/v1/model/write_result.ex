@@ -20,9 +20,14 @@
 defmodule GoogleApi.AppState.V1.Model.WriteResult do
   @moduledoc """
   This is a JSON template for an app state write result.
+
+  ## Attributes
+
+  - currentStateVersion (String): The version of the data for this key on the server. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string appstate#writeResult. Defaults to: `null`.
+  - stateKey (Integer): The written key. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"currentStateVersion",
     :"kind",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppState.V1.Model.WriteResult do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppState.V1.Model.WriteResult do
+  def encode(value, options) do
+    GoogleApi.AppState.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

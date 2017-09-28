@@ -20,9 +20,15 @@
 defmodule GoogleApi.AppState.V1.Model.GetResponse do
   @moduledoc """
   This is a JSON template for an app state resource.
+
+  ## Attributes
+
+  - currentStateVersion (String): The current app state version. Defaults to: `null`.
+  - data (String): The requested data. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string appstate#getResponse. Defaults to: `null`.
+  - stateKey (Integer): The key for the data. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"currentStateVersion",
     :"data",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppState.V1.Model.GetResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppState.V1.Model.GetResponse do
+  def encode(value, options) do
+    GoogleApi.AppState.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

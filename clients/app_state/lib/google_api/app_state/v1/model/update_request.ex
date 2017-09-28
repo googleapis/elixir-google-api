@@ -20,9 +20,13 @@
 defmodule GoogleApi.AppState.V1.Model.UpdateRequest do
   @moduledoc """
   This is a JSON template for a requests which update app state
+
+  ## Attributes
+
+  - data (String): The new app state data that your application is trying to update with. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string appstate#updateRequest. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"data",
     :"kind"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppState.V1.Model.UpdateRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppState.V1.Model.UpdateRequest do
+  def encode(value, options) do
+    GoogleApi.AppState.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
