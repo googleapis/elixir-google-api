@@ -20,9 +20,14 @@
 defmodule GoogleApi.AppsActivity.V1.Model.Target do
   @moduledoc """
   Information about the object modified by the event.
+
+  ## Attributes
+
+  - id (String): The ID of the target. For example, in Google Drive, this is the file or folder ID. Defaults to: `null`.
+  - mimeType (String): The MIME type of the target. Defaults to: `null`.
+  - name (String): The name of the target. For example, in Google Drive, this is the title of the file. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"mimeType",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppsActivity.V1.Model.Target do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppsActivity.V1.Model.Target do
+  def encode(value, options) do
+    GoogleApi.AppsActivity.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

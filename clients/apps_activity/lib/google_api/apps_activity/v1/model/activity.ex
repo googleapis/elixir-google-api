@@ -20,9 +20,13 @@
 defmodule GoogleApi.AppsActivity.V1.Model.Activity do
   @moduledoc """
   An Activity resource is a combined view of multiple events. An activity has a list of individual events and a combined view of the common fields among all events.
+
+  ## Attributes
+
+  - combinedEvent (Event): The fields common to all of the singleEvents that make up the Activity. Defaults to: `null`.
+  - singleEvents (List[Event]): A list of all the Events that make up the Activity. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"combinedEvent",
     :"singleEvents"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.AppsActivity.V1.Model.Activity do
     value
     |> deserialize(:"combinedEvent", :struct, GoogleApi.AppsActivity.V1.Model.Event, options)
     |> deserialize(:"singleEvents", :list, GoogleApi.AppsActivity.V1.Model.Event, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppsActivity.V1.Model.Activity do
+  def encode(value, options) do
+    GoogleApi.AppsActivity.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

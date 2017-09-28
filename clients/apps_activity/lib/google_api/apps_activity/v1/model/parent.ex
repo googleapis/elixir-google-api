@@ -20,9 +20,14 @@
 defmodule GoogleApi.AppsActivity.V1.Model.Parent do
   @moduledoc """
   Contains information about a parent object. For example, a folder in Drive is a parent for all files within it.
+
+  ## Attributes
+
+  - id (String): The parent&#39;s ID. Defaults to: `null`.
+  - isRoot (Boolean): Whether this is the root folder. Defaults to: `null`.
+  - title (String): The parent&#39;s title. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"isRoot",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppsActivity.V1.Model.Parent do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppsActivity.V1.Model.Parent do
+  def encode(value, options) do
+    GoogleApi.AppsActivity.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

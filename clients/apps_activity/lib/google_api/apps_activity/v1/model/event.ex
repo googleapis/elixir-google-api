@@ -20,9 +20,22 @@
 defmodule GoogleApi.AppsActivity.V1.Model.Event do
   @moduledoc """
   Represents the changes associated with an action taken by a user.
+
+  ## Attributes
+
+  - additionalEventTypes (List[String]): Additional event types. Some events may have multiple types when multiple actions are part of a single event. For example, creating a document, renaming it, and sharing it may be part of a single file-creation event. Defaults to: `null`.
+    - Enum - one of 
+  - eventTimeMillis (String): The time at which the event occurred formatted as Unix time in milliseconds. Defaults to: `null`.
+  - fromUserDeletion (Boolean): Whether this event is caused by a user being deleted. Defaults to: `null`.
+  - move (Move): Extra information for move type events, such as changes in an object&#39;s parents. Defaults to: `null`.
+  - permissionChanges (List[PermissionChange]): Extra information for permissionChange type events, such as the user or group the new permission applies to. Defaults to: `null`.
+  - primaryEventType (String): The main type of event that occurred. Defaults to: `null`.
+    - Enum - one of [comment, create, edit, emptyTrash, move, permissionChange, rename, trash, unknown, untrash, upload]
+  - rename (Rename): Extra information for rename type events, such as the old and new names. Defaults to: `null`.
+  - target (Target): Information specific to the Target object modified by the event. Defaults to: `null`.
+  - user (User): Represents the user responsible for the event. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"additionalEventTypes",
     :"eventTimeMillis",
@@ -45,6 +58,12 @@ defimpl Poison.Decoder, for: GoogleApi.AppsActivity.V1.Model.Event do
     |> deserialize(:"rename", :struct, GoogleApi.AppsActivity.V1.Model.Rename, options)
     |> deserialize(:"target", :struct, GoogleApi.AppsActivity.V1.Model.Target, options)
     |> deserialize(:"user", :struct, GoogleApi.AppsActivity.V1.Model.User, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppsActivity.V1.Model.Event do
+  def encode(value, options) do
+    GoogleApi.AppsActivity.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

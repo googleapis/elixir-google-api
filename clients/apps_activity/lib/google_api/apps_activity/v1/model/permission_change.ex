@@ -20,9 +20,13 @@
 defmodule GoogleApi.AppsActivity.V1.Model.PermissionChange do
   @moduledoc """
   Contains information about a Drive object&#39;s permissions that changed as a result of a permissionChange type event.
+
+  ## Attributes
+
+  - addedPermissions (List[Permission]): Lists all Permission objects added. Defaults to: `null`.
+  - removedPermissions (List[Permission]): Lists all Permission objects removed. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"addedPermissions",
     :"removedPermissions"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.AppsActivity.V1.Model.PermissionChange do
     value
     |> deserialize(:"addedPermissions", :list, GoogleApi.AppsActivity.V1.Model.Permission, options)
     |> deserialize(:"removedPermissions", :list, GoogleApi.AppsActivity.V1.Model.Permission, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppsActivity.V1.Model.PermissionChange do
+  def encode(value, options) do
+    GoogleApi.AppsActivity.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

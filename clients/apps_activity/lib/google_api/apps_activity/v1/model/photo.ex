@@ -20,9 +20,12 @@
 defmodule GoogleApi.AppsActivity.V1.Model.Photo do
   @moduledoc """
   Photo information for a user.
+
+  ## Attributes
+
+  - url (String): The URL of the photo. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"url"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppsActivity.V1.Model.Photo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppsActivity.V1.Model.Photo do
+  def encode(value, options) do
+    GoogleApi.AppsActivity.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

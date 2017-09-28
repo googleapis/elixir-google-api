@@ -20,9 +20,13 @@
 defmodule GoogleApi.AppsActivity.V1.Model.Rename do
   @moduledoc """
   Contains information about a renametype event.
+
+  ## Attributes
+
+  - newTitle (String): The new title. Defaults to: `null`.
+  - oldTitle (String): The old title. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"newTitle",
     :"oldTitle"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppsActivity.V1.Model.Rename do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppsActivity.V1.Model.Rename do
+  def encode(value, options) do
+    GoogleApi.AppsActivity.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
