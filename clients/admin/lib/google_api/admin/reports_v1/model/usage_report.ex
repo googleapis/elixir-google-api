@@ -20,9 +20,16 @@
 defmodule GoogleApi.Admin.Reports_v1.Model.UsageReport do
   @moduledoc """
   JSON template for a usage report.
+
+  ## Attributes
+
+  - parameters (List[UsageReportParameters]): Parameter value pairs for various applications. Defaults to: `null`.
+  - date (String): The date to which the record belongs. Defaults to: `null`.
+  - entity (UsageReportEntity):  Defaults to: `null`.
+  - etag (String): ETag of the resource. Defaults to: `null`.
+  - kind (String): The kind of object. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"parameters",
     :"date",
@@ -36,8 +43,14 @@ defimpl Poison.Decoder, for: GoogleApi.Admin.Reports_v1.Model.UsageReport do
   import GoogleApi.Admin.Reports_v1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"parameters", :list, GoogleApi.Admin.Reports_v1.Model.UsageReport_parameters, options)
-    |> deserialize(:"entity", :struct, GoogleApi.Admin.Reports_v1.Model.UsageReport_entity, options)
+    |> deserialize(:"parameters", :list, GoogleApi.Admin.Reports_v1.Model.UsageReportParameters, options)
+    |> deserialize(:"entity", :struct, GoogleApi.Admin.Reports_v1.Model.UsageReportEntity, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Admin.Reports_v1.Model.UsageReport do
+  def encode(value, options) do
+    GoogleApi.Admin.Reports_v1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

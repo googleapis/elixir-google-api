@@ -17,12 +17,20 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Admin.Reports_v1.Model.UsageReport_parameters do
+defmodule GoogleApi.Admin.Reports_v1.Model.UsageReportParameters do
   @moduledoc """
   
+
+  ## Attributes
+
+  - boolValue (Boolean): Boolean value of the parameter. Defaults to: `null`.
+  - datetimeValue (DateTime): RFC 3339 formatted value of the parameter. Defaults to: `null`.
+  - intValue (String): Integral value of the parameter. Defaults to: `null`.
+  - msgValue (List[Object]): Nested message value of the parameter. Defaults to: `null`.
+  - name (String): The name of the parameter. Defaults to: `null`.
+  - stringValue (String): String value of the parameter. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"boolValue",
     :"datetimeValue",
@@ -33,11 +41,17 @@ defmodule GoogleApi.Admin.Reports_v1.Model.UsageReport_parameters do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Admin.Reports_v1.Model.UsageReport_parameters do
+defimpl Poison.Decoder, for: GoogleApi.Admin.Reports_v1.Model.UsageReportParameters do
   import GoogleApi.Admin.Reports_v1.Deserializer
   def decode(value, options) do
     value
     |> deserialize(:"msgValue", :list, GoogleApi.Admin.Reports_v1.Model.Object, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Admin.Reports_v1.Model.UsageReportParameters do
+  def encode(value, options) do
+    GoogleApi.Admin.Reports_v1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

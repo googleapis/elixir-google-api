@@ -17,12 +17,18 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Admin.Reports_v1.Model.UsageReport_entity do
+defmodule GoogleApi.Admin.Reports_v1.Model.UsageReportEntity do
   @moduledoc """
   Information about the type of the item.
+
+  ## Attributes
+
+  - customerId (String): Obfuscated customer id for the record. Defaults to: `null`.
+  - profileId (String): Obfuscated user id for the record. Defaults to: `null`.
+  - type (String): The type of item, can be a customer or user. Defaults to: `null`.
+  - userEmail (String): user&#39;s email. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"customerId",
     :"profileId",
@@ -31,9 +37,15 @@ defmodule GoogleApi.Admin.Reports_v1.Model.UsageReport_entity do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Admin.Reports_v1.Model.UsageReport_entity do
+defimpl Poison.Decoder, for: GoogleApi.Admin.Reports_v1.Model.UsageReportEntity do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Admin.Reports_v1.Model.UsageReportEntity do
+  def encode(value, options) do
+    GoogleApi.Admin.Reports_v1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

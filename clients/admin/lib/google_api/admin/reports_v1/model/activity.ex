@@ -20,9 +20,18 @@
 defmodule GoogleApi.Admin.Reports_v1.Model.Activity do
   @moduledoc """
   JSON template for the activity resource.
+
+  ## Attributes
+
+  - actor (ActivityActor):  Defaults to: `null`.
+  - etag (String): ETag of the entry. Defaults to: `null`.
+  - events (List[ActivityEvents]): Activity events. Defaults to: `null`.
+  - id (ActivityId):  Defaults to: `null`.
+  - ipAddress (String): IP Address of the user doing the action. Defaults to: `null`.
+  - kind (String): Kind of resource this is. Defaults to: `null`.
+  - ownerDomain (String): Domain of source customer. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"actor",
     :"etag",
@@ -38,9 +47,15 @@ defimpl Poison.Decoder, for: GoogleApi.Admin.Reports_v1.Model.Activity do
   import GoogleApi.Admin.Reports_v1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"actor", :struct, GoogleApi.Admin.Reports_v1.Model.Activity_actor, options)
-    |> deserialize(:"events", :list, GoogleApi.Admin.Reports_v1.Model.Activity_events, options)
-    |> deserialize(:"id", :struct, GoogleApi.Admin.Reports_v1.Model.Activity_id, options)
+    |> deserialize(:"actor", :struct, GoogleApi.Admin.Reports_v1.Model.ActivityActor, options)
+    |> deserialize(:"events", :list, GoogleApi.Admin.Reports_v1.Model.ActivityEvents, options)
+    |> deserialize(:"id", :struct, GoogleApi.Admin.Reports_v1.Model.ActivityId, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Admin.Reports_v1.Model.Activity do
+  def encode(value, options) do
+    GoogleApi.Admin.Reports_v1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

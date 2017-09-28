@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Admin.Reports_v1.Model.UsageReports_warnings do
+defmodule GoogleApi.Admin.Reports_v1.Model.UsageReportsWarnings do
   @moduledoc """
   
+
+  ## Attributes
+
+  - code (String): Machine readable code / warning type. Defaults to: `null`.
+  - data (List[UsageReportsData]): Key-Value pairs to give detailed information on the warning. Defaults to: `null`.
+  - message (String): Human readable message for the warning. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"code",
     :"data",
@@ -30,11 +35,17 @@ defmodule GoogleApi.Admin.Reports_v1.Model.UsageReports_warnings do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Admin.Reports_v1.Model.UsageReports_warnings do
+defimpl Poison.Decoder, for: GoogleApi.Admin.Reports_v1.Model.UsageReportsWarnings do
   import GoogleApi.Admin.Reports_v1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"data", :list, GoogleApi.Admin.Reports_v1.Model.UsageReports_data, options)
+    |> deserialize(:"data", :list, GoogleApi.Admin.Reports_v1.Model.UsageReportsData, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Admin.Reports_v1.Model.UsageReportsWarnings do
+  def encode(value, options) do
+    GoogleApi.Admin.Reports_v1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

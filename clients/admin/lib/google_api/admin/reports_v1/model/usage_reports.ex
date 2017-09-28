@@ -20,9 +20,16 @@
 defmodule GoogleApi.Admin.Reports_v1.Model.UsageReports do
   @moduledoc """
   JSON template for a collection of usage reports.
+
+  ## Attributes
+
+  - etag (String): ETag of the resource. Defaults to: `null`.
+  - kind (String): The kind of object. Defaults to: `null`.
+  - nextPageToken (String): Token for retrieving the next page Defaults to: `null`.
+  - usageReports (List[UsageReport]): Various application parameter records. Defaults to: `null`.
+  - warnings (List[UsageReportsWarnings]): Warnings if any. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"kind",
@@ -37,7 +44,13 @@ defimpl Poison.Decoder, for: GoogleApi.Admin.Reports_v1.Model.UsageReports do
   def decode(value, options) do
     value
     |> deserialize(:"usageReports", :list, GoogleApi.Admin.Reports_v1.Model.UsageReport, options)
-    |> deserialize(:"warnings", :list, GoogleApi.Admin.Reports_v1.Model.UsageReports_warnings, options)
+    |> deserialize(:"warnings", :list, GoogleApi.Admin.Reports_v1.Model.UsageReportsWarnings, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Admin.Reports_v1.Model.UsageReports do
+  def encode(value, options) do
+    GoogleApi.Admin.Reports_v1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

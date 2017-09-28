@@ -17,12 +17,18 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Admin.Reports_v1.Model.Activity_actor do
+defmodule GoogleApi.Admin.Reports_v1.Model.ActivityActor do
   @moduledoc """
   User doing the action.
+
+  ## Attributes
+
+  - callerType (String): User or OAuth 2LO request. Defaults to: `null`.
+  - email (String): Email address of the user. Defaults to: `null`.
+  - key (String): For OAuth 2LO API requests, consumer_key of the requestor. Defaults to: `null`.
+  - profileId (String): Obfuscated user id of the user. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"callerType",
     :"email",
@@ -31,9 +37,15 @@ defmodule GoogleApi.Admin.Reports_v1.Model.Activity_actor do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Admin.Reports_v1.Model.Activity_actor do
+defimpl Poison.Decoder, for: GoogleApi.Admin.Reports_v1.Model.ActivityActor do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Admin.Reports_v1.Model.ActivityActor do
+  def encode(value, options) do
+    GoogleApi.Admin.Reports_v1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
