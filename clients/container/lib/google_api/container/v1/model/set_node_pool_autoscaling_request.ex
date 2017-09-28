@@ -20,9 +20,12 @@
 defmodule GoogleApi.Container.V1.Model.SetNodePoolAutoscalingRequest do
   @moduledoc """
   SetNodePoolAutoscalingRequest sets the autoscaler settings of a node pool.
+
+  ## Attributes
+
+  - autoscaling (NodePoolAutoscaling): Autoscaling configuration for the node pool. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"autoscaling"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.SetNodePoolAutoscaling
   def decode(value, options) do
     value
     |> deserialize(:"autoscaling", :struct, GoogleApi.Container.V1.Model.NodePoolAutoscaling, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.SetNodePoolAutoscalingRequest do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

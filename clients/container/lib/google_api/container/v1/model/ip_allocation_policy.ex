@@ -17,12 +17,20 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Container.V1.Model.IPAllocationPolicy do
+defmodule GoogleApi.Container.V1.Model.IpAllocationPolicy do
   @moduledoc """
   Configuration for controlling how IPs are allocated in the cluster.
+
+  ## Attributes
+
+  - clusterIpv4Cidr (String): The IP address range for the cluster pod IPs. If this field is set, then &#x60;cluster.cluster_ipv4_cidr&#x60; must be left blank.  This field is only applicable when &#x60;use_ip_aliases&#x60; is true.  Set to blank to have a range will be chosen with the default size.  Set to /netmask (e.g. &#x60;/14&#x60;) to have a range be chosen with a specific netmask.  Set to a [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. &#x60;10.96.0.0/14&#x60;) from the RFC-1918 private networks (e.g. &#x60;10.0.0.0/8&#x60;, &#x60;172.16.0.0/12&#x60;, &#x60;192.168.0.0/16&#x60;) to pick a specific range to use. Defaults to: `null`.
+  - createSubnetwork (Boolean): Whether a new subnetwork will be created automatically for the cluster.  This field is only applicable when &#x60;use_ip_aliases&#x60; is true. Defaults to: `null`.
+  - nodeIpv4Cidr (String): The IP address range of the instance IPs in this cluster.  This is applicable only if &#x60;create_subnetwork&#x60; is true.  Set to blank to have a range will be chosen with the default size.  Set to /netmask (e.g. &#x60;/14&#x60;) to have a range be chosen with a specific netmask.  Set to a [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. &#x60;10.96.0.0/14&#x60;) from the RFC-1918 private networks (e.g. &#x60;10.0.0.0/8&#x60;, &#x60;172.16.0.0/12&#x60;, &#x60;192.168.0.0/16&#x60;) to pick a specific range to use. Defaults to: `null`.
+  - servicesIpv4Cidr (String): The IP address range of the services IPs in this cluster. If blank, a range will be automatically chosen with the default size.  This field is only applicable when &#x60;use_ip_aliases&#x60; is true.  Set to blank to have a range will be chosen with the default size.  Set to /netmask (e.g. &#x60;/14&#x60;) to have a range be chosen with a specific netmask.  Set to a [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. &#x60;10.96.0.0/14&#x60;) from the RFC-1918 private networks (e.g. &#x60;10.0.0.0/8&#x60;, &#x60;172.16.0.0/12&#x60;, &#x60;192.168.0.0/16&#x60;) to pick a specific range to use. Defaults to: `null`.
+  - subnetworkName (String): A custom subnetwork name to be used if &#x60;create_subnetwork&#x60; is true.  If this field is empty, then an automatic name will be chosen for the new subnetwork. Defaults to: `null`.
+  - useIpAliases (Boolean): Whether alias IPs will be used for pod IPs in the cluster. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"clusterIpv4Cidr",
     :"createSubnetwork",
@@ -33,9 +41,15 @@ defmodule GoogleApi.Container.V1.Model.IPAllocationPolicy do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.IPAllocationPolicy do
+defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.IpAllocationPolicy do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.IpAllocationPolicy do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

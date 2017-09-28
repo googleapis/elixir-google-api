@@ -20,9 +20,12 @@
 defmodule GoogleApi.Container.V1.Model.HorizontalPodAutoscaling do
   @moduledoc """
   Configuration options for the horizontal pod autoscaling feature, which increases or decreases the number of replica pods a replication controller has based on the resource usage of the existing pods.
+
+  ## Attributes
+
+  - disabled (Boolean): Whether the Horizontal Pod Autoscaling feature is enabled in the cluster. When enabled, it ensures that a Heapster pod is running in the cluster, which is also used by the Cloud Monitoring service. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"disabled"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.HorizontalPodAutoscaling do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.HorizontalPodAutoscaling do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

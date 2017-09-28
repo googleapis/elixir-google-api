@@ -76,7 +76,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/projects/#{project_id}/zones/#{zone}/clusters/#{cluster_id}/addons")
+    |> url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/addons", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "zone" => URI.encode_www_form(zone),
+         "clusterId" => URI.encode_www_form(cluster_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -106,7 +110,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     - :pp (Boolean): Pretty-print response.
     - :bearer_token (String): OAuth bearer token.
     - :oauth_token (String): OAuth 2.0 token for the current user.
-    - :body (CompleteIPRotationRequest): 
+    - :body (CompleteIpRotationRequest): 
 
   ## Returns
 
@@ -133,7 +137,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/projects/#{project_id}/zones/#{zone}/clusters/#{cluster_id}:completeIpRotation")
+    |> url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}:completeIpRotation", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "zone" => URI.encode_www_form(zone),
+         "clusterId" => URI.encode_www_form(cluster_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -189,7 +197,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/projects/#{project_id}/zones/#{zone}/clusters")
+    |> url("/v1/projects/{projectId}/zones/{zone}/clusters", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "zone" => URI.encode_www_form(zone)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -244,7 +255,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/projects/#{project_id}/zones/#{zone}/clusters/#{cluster_id}")
+    |> url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "zone" => URI.encode_www_form(zone),
+         "clusterId" => URI.encode_www_form(cluster_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -299,7 +314,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/projects/#{project_id}/zones/#{zone}/clusters/#{cluster_id}")
+    |> url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "zone" => URI.encode_www_form(zone),
+         "clusterId" => URI.encode_www_form(cluster_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -356,7 +375,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/projects/#{project_id}/zones/#{zone}/clusters/#{cluster_id}/legacyAbac")
+    |> url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/legacyAbac", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "zone" => URI.encode_www_form(zone),
+         "clusterId" => URI.encode_www_form(cluster_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -410,7 +433,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/projects/#{project_id}/zones/#{zone}/clusters")
+    |> url("/v1/projects/{projectId}/zones/{zone}/clusters", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "zone" => URI.encode_www_form(zone)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -467,7 +493,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/projects/#{project_id}/zones/#{zone}/clusters/#{cluster_id}/locations")
+    |> url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/locations", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "zone" => URI.encode_www_form(zone),
+         "clusterId" => URI.encode_www_form(cluster_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -524,7 +554,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/projects/#{project_id}/zones/#{zone}/clusters/#{cluster_id}/logging")
+    |> url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/logging", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "zone" => URI.encode_www_form(zone),
+         "clusterId" => URI.encode_www_form(cluster_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -581,7 +615,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/projects/#{project_id}/zones/#{zone}/clusters/#{cluster_id}/master")
+    |> url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/master", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "zone" => URI.encode_www_form(zone),
+         "clusterId" => URI.encode_www_form(cluster_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -638,7 +676,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/projects/#{project_id}/zones/#{zone}/clusters/#{cluster_id}/monitoring")
+    |> url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/monitoring", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "zone" => URI.encode_www_form(zone),
+         "clusterId" => URI.encode_www_form(cluster_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -696,7 +738,12 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/projects/#{project_id}/zones/#{zone}/clusters/#{cluster_id}/nodePools/#{node_pool_id}/autoscaling")
+    |> url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/nodePools/{nodePoolId}/autoscaling", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "zone" => URI.encode_www_form(zone),
+         "clusterId" => URI.encode_www_form(cluster_id),
+         "nodePoolId" => URI.encode_www_form(node_pool_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -753,7 +800,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/projects/#{project_id}/zones/#{zone}/clusters/#{cluster_id}/nodePools")
+    |> url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/nodePools", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "zone" => URI.encode_www_form(zone),
+         "clusterId" => URI.encode_www_form(cluster_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -809,7 +860,12 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/projects/#{project_id}/zones/#{zone}/clusters/#{cluster_id}/nodePools/#{node_pool_id}")
+    |> url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/nodePools/{nodePoolId}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "zone" => URI.encode_www_form(zone),
+         "clusterId" => URI.encode_www_form(cluster_id),
+         "nodePoolId" => URI.encode_www_form(node_pool_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -865,7 +921,12 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/projects/#{project_id}/zones/#{zone}/clusters/#{cluster_id}/nodePools/#{node_pool_id}")
+    |> url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/nodePools/{nodePoolId}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "zone" => URI.encode_www_form(zone),
+         "clusterId" => URI.encode_www_form(cluster_id),
+         "nodePoolId" => URI.encode_www_form(node_pool_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -920,7 +981,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/projects/#{project_id}/zones/#{zone}/clusters/#{cluster_id}/nodePools")
+    |> url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/nodePools", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "zone" => URI.encode_www_form(zone),
+         "clusterId" => URI.encode_www_form(cluster_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -978,7 +1043,12 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/projects/#{project_id}/zones/#{zone}/clusters/#{cluster_id}/nodePools/#{node_pool_id}:rollback")
+    |> url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/nodePools/{nodePoolId}:rollback", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "zone" => URI.encode_www_form(zone),
+         "clusterId" => URI.encode_www_form(cluster_id),
+         "nodePoolId" => URI.encode_www_form(node_pool_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1036,7 +1106,12 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/projects/#{project_id}/zones/#{zone}/clusters/#{cluster_id}/nodePools/#{node_pool_id}/setManagement")
+    |> url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/nodePools/{nodePoolId}/setManagement", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "zone" => URI.encode_www_form(zone),
+         "clusterId" => URI.encode_www_form(cluster_id),
+         "nodePoolId" => URI.encode_www_form(node_pool_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1094,7 +1169,12 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/projects/#{project_id}/zones/#{zone}/clusters/#{cluster_id}/nodePools/#{node_pool_id}/setSize")
+    |> url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/nodePools/{nodePoolId}/setSize", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "zone" => URI.encode_www_form(zone),
+         "clusterId" => URI.encode_www_form(cluster_id),
+         "nodePoolId" => URI.encode_www_form(node_pool_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1152,7 +1232,12 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/projects/#{project_id}/zones/#{zone}/clusters/#{cluster_id}/nodePools/#{node_pool_id}/update")
+    |> url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/nodePools/{nodePoolId}/update", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "zone" => URI.encode_www_form(zone),
+         "clusterId" => URI.encode_www_form(cluster_id),
+         "nodePoolId" => URI.encode_www_form(node_pool_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1209,7 +1294,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/projects/#{project_id}/zones/#{zone}/clusters/#{cluster_id}/resourceLabels")
+    |> url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/resourceLabels", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "zone" => URI.encode_www_form(zone),
+         "clusterId" => URI.encode_www_form(cluster_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1266,7 +1355,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/projects/#{project_id}/zones/#{zone}/clusters/#{cluster_id}:setMasterAuth")
+    |> url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}:setMasterAuth", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "zone" => URI.encode_www_form(zone),
+         "clusterId" => URI.encode_www_form(cluster_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1323,7 +1416,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/projects/#{project_id}/zones/#{zone}/clusters/#{cluster_id}:setNetworkPolicy")
+    |> url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}:setNetworkPolicy", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "zone" => URI.encode_www_form(zone),
+         "clusterId" => URI.encode_www_form(cluster_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1353,7 +1450,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     - :pp (Boolean): Pretty-print response.
     - :bearer_token (String): OAuth bearer token.
     - :oauth_token (String): OAuth 2.0 token for the current user.
-    - :body (StartIPRotationRequest): 
+    - :body (StartIpRotationRequest): 
 
   ## Returns
 
@@ -1380,7 +1477,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/projects/#{project_id}/zones/#{zone}/clusters/#{cluster_id}:startIpRotation")
+    |> url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}:startIpRotation", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "zone" => URI.encode_www_form(zone),
+         "clusterId" => URI.encode_www_form(cluster_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1437,7 +1538,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     }
     %{}
     |> method(:put)
-    |> url("/v1/projects/#{project_id}/zones/#{zone}/clusters/#{cluster_id}")
+    |> url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "zone" => URI.encode_www_form(zone),
+         "clusterId" => URI.encode_www_form(cluster_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1491,7 +1596,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/projects/#{project_id}/zones/#{zone}/serverconfig")
+    |> url("/v1/projects/{projectId}/zones/{zone}/serverconfig", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "zone" => URI.encode_www_form(zone)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1548,7 +1656,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/projects/#{project_id}/zones/#{zone}/operations/#{operation_id}:cancel")
+    |> url("/v1/projects/{projectId}/zones/{zone}/operations/{operationId}:cancel", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "zone" => URI.encode_www_form(zone),
+         "operationId" => URI.encode_www_form(operation_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1603,7 +1715,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/projects/#{project_id}/zones/#{zone}/operations/#{operation_id}")
+    |> url("/v1/projects/{projectId}/zones/{zone}/operations/{operationId}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "zone" => URI.encode_www_form(zone),
+         "operationId" => URI.encode_www_form(operation_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1657,7 +1773,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/projects/#{project_id}/zones/#{zone}/operations")
+    |> url("/v1/projects/{projectId}/zones/{zone}/operations", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "zone" => URI.encode_www_form(zone)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

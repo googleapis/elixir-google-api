@@ -20,9 +20,13 @@
 defmodule GoogleApi.Container.V1.Model.ListOperationsResponse do
   @moduledoc """
   ListOperationsResponse is the result of ListOperationsRequest.
+
+  ## Attributes
+
+  - missingZones (List[String]): If any zones are listed here, the list of operations returned may be missing the operations from those zones. Defaults to: `null`.
+  - operations (List[Operation]): A list of operations in the project in the specified zone. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"missingZones",
     :"operations"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.ListOperationsResponse
   def decode(value, options) do
     value
     |> deserialize(:"operations", :list, GoogleApi.Container.V1.Model.Operation, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.ListOperationsResponse do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

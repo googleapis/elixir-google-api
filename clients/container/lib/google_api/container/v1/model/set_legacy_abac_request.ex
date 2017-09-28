@@ -20,9 +20,12 @@
 defmodule GoogleApi.Container.V1.Model.SetLegacyAbacRequest do
   @moduledoc """
   SetLegacyAbacRequest enables or disables the ABAC authorization mechanism for a cluster.
+
+  ## Attributes
+
+  - enabled (Boolean): Whether ABAC authorization will be enabled in the cluster. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"enabled"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.SetLegacyAbacRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.SetLegacyAbacRequest do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

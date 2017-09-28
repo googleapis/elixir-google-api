@@ -20,9 +20,12 @@
 defmodule GoogleApi.Container.V1.Model.UpdateClusterRequest do
   @moduledoc """
   UpdateClusterRequest updates the settings of a cluster.
+
+  ## Attributes
+
+  - update (ClusterUpdate): A description of the update. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"update"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.UpdateClusterRequest d
   def decode(value, options) do
     value
     |> deserialize(:"update", :struct, GoogleApi.Container.V1.Model.ClusterUpdate, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.UpdateClusterRequest do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

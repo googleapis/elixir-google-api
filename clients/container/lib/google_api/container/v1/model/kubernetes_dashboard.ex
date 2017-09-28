@@ -20,9 +20,12 @@
 defmodule GoogleApi.Container.V1.Model.KubernetesDashboard do
   @moduledoc """
   Configuration for the Kubernetes Dashboard.
+
+  ## Attributes
+
+  - disabled (Boolean): Whether the Kubernetes Dashboard is enabled for this cluster. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"disabled"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.KubernetesDashboard do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.KubernetesDashboard do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

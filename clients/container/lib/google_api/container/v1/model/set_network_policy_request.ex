@@ -20,9 +20,12 @@
 defmodule GoogleApi.Container.V1.Model.SetNetworkPolicyRequest do
   @moduledoc """
   SetNetworkPolicyRequest enables/disables network policy for a cluster.
+
+  ## Attributes
+
+  - networkPolicy (NetworkPolicy): Configuration options for the NetworkPolicy feature. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"networkPolicy"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.SetNetworkPolicyReques
   def decode(value, options) do
     value
     |> deserialize(:"networkPolicy", :struct, GoogleApi.Container.V1.Model.NetworkPolicy, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.SetNetworkPolicyRequest do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

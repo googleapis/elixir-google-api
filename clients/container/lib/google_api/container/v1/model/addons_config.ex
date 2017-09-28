@@ -20,9 +20,14 @@
 defmodule GoogleApi.Container.V1.Model.AddonsConfig do
   @moduledoc """
   Configuration for the addons that can be automatically spun up in the cluster, enabling additional functionality.
+
+  ## Attributes
+
+  - horizontalPodAutoscaling (HorizontalPodAutoscaling): Configuration for the horizontal pod autoscaling feature, which increases or decreases the number of replica pods a replication controller has based on the resource usage of the existing pods. Defaults to: `null`.
+  - httpLoadBalancing (HttpLoadBalancing): Configuration for the HTTP (L7) load balancing controller addon, which makes it easy to set up HTTP load balancers for services in a cluster. Defaults to: `null`.
+  - kubernetesDashboard (KubernetesDashboard): Configuration for the Kubernetes Dashboard. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"horizontalPodAutoscaling",
     :"httpLoadBalancing",
@@ -37,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.AddonsConfig do
     |> deserialize(:"horizontalPodAutoscaling", :struct, GoogleApi.Container.V1.Model.HorizontalPodAutoscaling, options)
     |> deserialize(:"httpLoadBalancing", :struct, GoogleApi.Container.V1.Model.HttpLoadBalancing, options)
     |> deserialize(:"kubernetesDashboard", :struct, GoogleApi.Container.V1.Model.KubernetesDashboard, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.AddonsConfig do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

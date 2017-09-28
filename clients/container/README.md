@@ -1,6 +1,6 @@
 # GoogleApi.Container.V1
 
-**TODO: Add description**
+The Google Container Engine API is used for building and managing container based applications, powered by the open source Kubernetes technology.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_container` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_container, "~> 0.1.0"}]
+  [{:google_api_container, "~> 0.0.1"}]
 end
 ```
 

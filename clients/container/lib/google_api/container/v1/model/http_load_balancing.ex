@@ -20,9 +20,12 @@
 defmodule GoogleApi.Container.V1.Model.HttpLoadBalancing do
   @moduledoc """
   Configuration options for the HTTP (L7) load balancing controller addon, which makes it easy to set up HTTP load balancers for services in a cluster.
+
+  ## Attributes
+
+  - disabled (Boolean): Whether the HTTP Load Balancing controller is enabled in the cluster. When enabled, it runs a small pod in the cluster that manages the load balancers. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"disabled"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.HttpLoadBalancing do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.HttpLoadBalancing do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

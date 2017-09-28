@@ -20,9 +20,14 @@
 defmodule GoogleApi.Container.V1.Model.NetworkPolicy do
   @moduledoc """
   Configuration options for the NetworkPolicy feature. https://kubernetes.io/docs/concepts/services-networking/networkpolicies/
+
+  ## Attributes
+
+  - enabled (Boolean): Whether network policy is enabled on the cluster. Defaults to: `null`.
+  - provider (String): The selected network policy provider. Defaults to: `null`.
+    - Enum - one of [PROVIDER_UNSPECIFIED, CALICO]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"enabled",
     :"provider"
@@ -32,6 +37,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.NetworkPolicy do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.NetworkPolicy do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

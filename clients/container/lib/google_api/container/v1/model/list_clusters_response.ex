@@ -20,9 +20,13 @@
 defmodule GoogleApi.Container.V1.Model.ListClustersResponse do
   @moduledoc """
   ListClustersResponse is the result of ListClustersRequest.
+
+  ## Attributes
+
+  - clusters (List[Cluster]): A list of clusters in the project in the specified zone, or across all ones. Defaults to: `null`.
+  - missingZones (List[String]): If any zones are listed here, the list of clusters returned may be missing those zones. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"clusters",
     :"missingZones"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.ListClustersResponse d
   def decode(value, options) do
     value
     |> deserialize(:"clusters", :list, GoogleApi.Container.V1.Model.Cluster, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.ListClustersResponse do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

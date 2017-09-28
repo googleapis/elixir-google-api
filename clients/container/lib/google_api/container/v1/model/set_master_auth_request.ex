@@ -20,9 +20,14 @@
 defmodule GoogleApi.Container.V1.Model.SetMasterAuthRequest do
   @moduledoc """
   SetMasterAuthRequest updates the admin password of a cluster.
+
+  ## Attributes
+
+  - action (String): The exact form of action to be taken on the master auth Defaults to: `null`.
+    - Enum - one of [UNKNOWN, SET_PASSWORD, GENERATE_PASSWORD]
+  - update (MasterAuth): A description of the update. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"action",
     :"update"
@@ -34,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.SetMasterAuthRequest d
   def decode(value, options) do
     value
     |> deserialize(:"update", :struct, GoogleApi.Container.V1.Model.MasterAuth, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.SetMasterAuthRequest do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

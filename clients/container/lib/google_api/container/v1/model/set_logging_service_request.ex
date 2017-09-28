@@ -20,9 +20,12 @@
 defmodule GoogleApi.Container.V1.Model.SetLoggingServiceRequest do
   @moduledoc """
   SetLoggingServiceRequest sets the logging service of a cluster.
+
+  ## Attributes
+
+  - loggingService (String): The logging service the cluster should use to write metrics. Currently available options:  * \&quot;logging.googleapis.com\&quot; - the Google Cloud Logging service * \&quot;none\&quot; - no metrics will be exported from the cluster Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"loggingService"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.SetLoggingServiceRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.SetLoggingServiceRequest do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -17,20 +17,28 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Container.V1.Model.CompleteIPRotationRequest do
+defmodule GoogleApi.Container.V1.Model.CompleteIpRotationRequest do
   @moduledoc """
   CompleteIPRotationRequest moves the cluster master back into single-IP mode.
+
+  ## Attributes
+
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.CompleteIPRotationRequest do
+defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.CompleteIpRotationRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.CompleteIpRotationRequest do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

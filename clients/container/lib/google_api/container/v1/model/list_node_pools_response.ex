@@ -20,9 +20,12 @@
 defmodule GoogleApi.Container.V1.Model.ListNodePoolsResponse do
   @moduledoc """
   ListNodePoolsResponse is the result of ListNodePoolsRequest.
+
+  ## Attributes
+
+  - nodePools (List[NodePool]): A list of node pools for a cluster. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nodePools"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.ListNodePoolsResponse 
   def decode(value, options) do
     value
     |> deserialize(:"nodePools", :list, GoogleApi.Container.V1.Model.NodePool, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.ListNodePoolsResponse do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

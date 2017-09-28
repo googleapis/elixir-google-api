@@ -20,9 +20,21 @@
 defmodule GoogleApi.Container.V1.Model.Operation do
   @moduledoc """
   This operation resource represents operations that may have happened or are happening on the cluster. All fields are output only.
+
+  ## Attributes
+
+  - detail (String): Detailed operation progress, if available. Defaults to: `null`.
+  - name (String): The server-assigned ID for the operation. Defaults to: `null`.
+  - operationType (String): The operation type. Defaults to: `null`.
+    - Enum - one of [TYPE_UNSPECIFIED, CREATE_CLUSTER, DELETE_CLUSTER, UPGRADE_MASTER, UPGRADE_NODES, REPAIR_CLUSTER, UPDATE_CLUSTER, CREATE_NODE_POOL, DELETE_NODE_POOL, SET_NODE_POOL_MANAGEMENT, AUTO_REPAIR_NODES, AUTO_UPGRADE_NODES, SET_LABELS, SET_MASTER_AUTH, SET_NODE_POOL_SIZE, SET_NETWORK_POLICY]
+  - selfLink (String): Server-defined URL for the resource. Defaults to: `null`.
+  - status (String): The current status of the operation. Defaults to: `null`.
+    - Enum - one of [STATUS_UNSPECIFIED, PENDING, RUNNING, DONE, ABORTING]
+  - statusMessage (String): If an error has occurred, a textual description of the error. Defaults to: `null`.
+  - targetLink (String): Server-defined URL for the target of the operation. Defaults to: `null`.
+  - zone (String): The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the operation is taking place. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"detail",
     :"name",
@@ -38,6 +50,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.Operation do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.Operation do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

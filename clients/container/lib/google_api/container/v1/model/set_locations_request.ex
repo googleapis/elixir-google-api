@@ -20,9 +20,12 @@
 defmodule GoogleApi.Container.V1.Model.SetLocationsRequest do
   @moduledoc """
   SetLocationsRequest sets the locations of the cluster.
+
+  ## Attributes
+
+  - locations (List[String]): The desired list of Google Compute Engine [locations](/compute/docs/zones#available) in which the cluster&#39;s nodes should be located. Changing the locations a cluster is in will result in nodes being either created or removed from the cluster, depending on whether locations are being added or removed.  This list must always include the cluster&#39;s primary zone. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"locations"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.SetLocationsRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.SetLocationsRequest do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

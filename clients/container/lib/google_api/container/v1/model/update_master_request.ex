@@ -20,9 +20,12 @@
 defmodule GoogleApi.Container.V1.Model.UpdateMasterRequest do
   @moduledoc """
   UpdateMasterRequest updates the master of the cluster.
+
+  ## Attributes
+
+  - masterVersion (String): The Kubernetes version to change the master to. The only valid value is the latest supported version. Use \&quot;-\&quot; to have the server automatically select the latest version. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"masterVersion"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.UpdateMasterRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.UpdateMasterRequest do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
