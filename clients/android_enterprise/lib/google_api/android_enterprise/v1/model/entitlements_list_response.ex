@@ -20,9 +20,13 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.EntitlementsListResponse do
   @moduledoc """
   The entitlement resources for the user.
+
+  ## Attributes
+
+  - entitlement (List[Entitlement]): An entitlement of a user to a product (e.g. an app). For example, a free app that they have installed, or a paid app that they have been allocated a license to. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#entitlementsListResponse\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"entitlement",
     :"kind"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.EntitlementsLi
   def decode(value, options) do
     value
     |> deserialize(:"entitlement", :list, GoogleApi.AndroidEnterprise.V1.Model.Entitlement, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.EntitlementsListResponse do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

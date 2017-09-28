@@ -61,7 +61,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
     }
     %{}
     |> method(:delete)
-    |> url("/enterprises/#{enterprise_id}/storeLayout/pages/#{page_id}")
+    |> url("/enterprises/{enterpriseId}/storeLayout/pages/{pageId}", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "pageId" => URI.encode_www_form(page_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -103,7 +106,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
     }
     %{}
     |> method(:get)
-    |> url("/enterprises/#{enterprise_id}/storeLayout/pages/#{page_id}")
+    |> url("/enterprises/{enterpriseId}/storeLayout/pages/{pageId}", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "pageId" => URI.encode_www_form(page_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -146,7 +152,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
     }
     %{}
     |> method(:post)
-    |> url("/enterprises/#{enterprise_id}/storeLayout/pages")
+    |> url("/enterprises/{enterpriseId}/storeLayout/pages", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -187,7 +195,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
     }
     %{}
     |> method(:get)
-    |> url("/enterprises/#{enterprise_id}/storeLayout/pages")
+    |> url("/enterprises/{enterpriseId}/storeLayout/pages", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -231,7 +241,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
     }
     %{}
     |> method(:patch)
-    |> url("/enterprises/#{enterprise_id}/storeLayout/pages/#{page_id}")
+    |> url("/enterprises/{enterpriseId}/storeLayout/pages/{pageId}", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "pageId" => URI.encode_www_form(page_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -275,7 +288,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
     }
     %{}
     |> method(:put)
-    |> url("/enterprises/#{enterprise_id}/storeLayout/pages/#{page_id}")
+    |> url("/enterprises/{enterpriseId}/storeLayout/pages/{pageId}", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "pageId" => URI.encode_www_form(page_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

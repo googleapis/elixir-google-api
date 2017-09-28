@@ -20,9 +20,12 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaChangeEvent do
   @moduledoc """
   An event generated when a new app version is uploaded to Google Play and its app restrictions schema changed. To fetch the app restrictions schema for an app, use Products.getAppRestrictionsSchema on the EMM API.
+
+  ## Attributes
+
+  - productId (String): The id of the product (e.g. \&quot;app:com.google.android.gm\&quot;) for which the app restriction schema changed. This field will always be present. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"productId"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaChangeEvent do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaChangeEvent do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

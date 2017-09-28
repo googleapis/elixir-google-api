@@ -20,9 +20,13 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.GroupLicensesListResponse do
   @moduledoc """
   The grouplicense resources for the enterprise.
+
+  ## Attributes
+
+  - groupLicense (List[GroupLicense]): A group license for a product approved for use in the enterprise. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#groupLicensesListResponse\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"groupLicense",
     :"kind"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.GroupLicensesL
   def decode(value, options) do
     value
     |> deserialize(:"groupLicense", :list, GoogleApi.AndroidEnterprise.V1.Model.GroupLicense, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.GroupLicensesListResponse do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -62,7 +62,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsforuser do
     }
     %{}
     |> method(:delete)
-    |> url("/enterprises/#{enterprise_id}/users/#{user_id}/managedConfigurationsForUser/#{managed_configuration_for_user_id}")
+    |> url("/enterprises/{enterpriseId}/users/{userId}/managedConfigurationsForUser/{managedConfigurationForUserId}", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "userId" => URI.encode_www_form(user_id),
+         "managedConfigurationForUserId" => URI.encode_www_form(managed_configuration_for_user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -105,7 +109,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsforuser do
     }
     %{}
     |> method(:get)
-    |> url("/enterprises/#{enterprise_id}/users/#{user_id}/managedConfigurationsForUser/#{managed_configuration_for_user_id}")
+    |> url("/enterprises/{enterpriseId}/users/{userId}/managedConfigurationsForUser/{managedConfigurationForUserId}", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "userId" => URI.encode_www_form(user_id),
+         "managedConfigurationForUserId" => URI.encode_www_form(managed_configuration_for_user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -147,7 +155,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsforuser do
     }
     %{}
     |> method(:get)
-    |> url("/enterprises/#{enterprise_id}/users/#{user_id}/managedConfigurationsForUser")
+    |> url("/enterprises/{enterpriseId}/users/{userId}/managedConfigurationsForUser", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -192,7 +203,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsforuser do
     }
     %{}
     |> method(:patch)
-    |> url("/enterprises/#{enterprise_id}/users/#{user_id}/managedConfigurationsForUser/#{managed_configuration_for_user_id}")
+    |> url("/enterprises/{enterpriseId}/users/{userId}/managedConfigurationsForUser/{managedConfigurationForUserId}", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "userId" => URI.encode_www_form(user_id),
+         "managedConfigurationForUserId" => URI.encode_www_form(managed_configuration_for_user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -237,7 +252,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsforuser do
     }
     %{}
     |> method(:put)
-    |> url("/enterprises/#{enterprise_id}/users/#{user_id}/managedConfigurationsForUser/#{managed_configuration_for_user_id}")
+    |> url("/enterprises/{enterpriseId}/users/{userId}/managedConfigurationsForUser/{managedConfigurationForUserId}", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "userId" => URI.encode_www_form(user_id),
+         "managedConfigurationForUserId" => URI.encode_www_form(managed_configuration_for_user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

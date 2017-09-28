@@ -20,9 +20,13 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.LocalizedText do
   @moduledoc """
   A localized string with its locale.
+
+  ## Attributes
+
+  - locale (String): The BCP47 tag for a locale. (e.g. \&quot;en-US\&quot;, \&quot;de\&quot;). Defaults to: `null`.
+  - text (String): The text localized in the associated locale. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"locale",
     :"text"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.LocalizedText do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.LocalizedText do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

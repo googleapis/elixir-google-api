@@ -62,7 +62,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Entitlements do
     }
     %{}
     |> method(:delete)
-    |> url("/enterprises/#{enterprise_id}/users/#{user_id}/entitlements/#{entitlement_id}")
+    |> url("/enterprises/{enterpriseId}/users/{userId}/entitlements/{entitlementId}", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "userId" => URI.encode_www_form(user_id),
+         "entitlementId" => URI.encode_www_form(entitlement_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -105,7 +109,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Entitlements do
     }
     %{}
     |> method(:get)
-    |> url("/enterprises/#{enterprise_id}/users/#{user_id}/entitlements/#{entitlement_id}")
+    |> url("/enterprises/{enterpriseId}/users/{userId}/entitlements/{entitlementId}", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "userId" => URI.encode_www_form(user_id),
+         "entitlementId" => URI.encode_www_form(entitlement_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -147,7 +155,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Entitlements do
     }
     %{}
     |> method(:get)
-    |> url("/enterprises/#{enterprise_id}/users/#{user_id}/entitlements")
+    |> url("/enterprises/{enterpriseId}/users/{userId}/entitlements", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -194,7 +205,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Entitlements do
     }
     %{}
     |> method(:patch)
-    |> url("/enterprises/#{enterprise_id}/users/#{user_id}/entitlements/#{entitlement_id}")
+    |> url("/enterprises/{enterpriseId}/users/{userId}/entitlements/{entitlementId}", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "userId" => URI.encode_www_form(user_id),
+         "entitlementId" => URI.encode_www_form(entitlement_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -241,7 +256,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Entitlements do
     }
     %{}
     |> method(:put)
-    |> url("/enterprises/#{enterprise_id}/users/#{user_id}/entitlements/#{entitlement_id}")
+    |> url("/enterprises/{enterpriseId}/users/{userId}/entitlements/{entitlementId}", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "userId" => URI.encode_www_form(user_id),
+         "entitlementId" => URI.encode_www_form(entitlement_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

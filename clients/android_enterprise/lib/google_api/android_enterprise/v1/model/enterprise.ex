@@ -20,9 +20,16 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.Enterprise do
   @moduledoc """
   An Enterprises resource represents the binding between an EMM and a specific organization. That binding can be instantiated in one of two different ways using this API as follows:  - For Google managed domain customers, the process involves using Enterprises.enroll and Enterprises.setAccount (in conjunction with artifacts obtained from the Admin console and the Google API Console) and submitted to the EMM through a more-or-less manual process.  - For managed Google Play Accounts customers, the process involves using Enterprises.generateSignupUrl and Enterprises.completeSignup in conjunction with the managed Google Play sign-up UI (Google-provided mechanism) to create the binding without manual steps. As an EMM, you can support either or both approaches in your EMM console. See Create an Enterprise for details.
+
+  ## Attributes
+
+  - administrator (List[Administrator]): Admins of the enterprise. This is only supported for enterprises created via the EMM-initiated flow. Defaults to: `null`.
+  - id (String): The unique ID for the enterprise. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#enterprise\&quot;. Defaults to: `null`.
+  - name (String): The name of the enterprise, for example, \&quot;Example, Inc\&quot;. Defaults to: `null`.
+  - primaryDomain (String): The enterprise&#39;s primary domain, such as \&quot;example.com\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"administrator",
     :"id",
@@ -37,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.Enterprise do
   def decode(value, options) do
     value
     |> deserialize(:"administrator", :list, GoogleApi.AndroidEnterprise.V1.Model.Administrator, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.Enterprise do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

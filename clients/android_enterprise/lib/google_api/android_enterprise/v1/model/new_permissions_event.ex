@@ -20,9 +20,14 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.NewPermissionsEvent do
   @moduledoc """
   An event generated when new permissions are added to an app.
+
+  ## Attributes
+
+  - approvedPermissions (List[String]): The set of permissions that the enterprise admin has already approved for this application. Use Permissions.Get on the EMM API to retrieve details about these permissions. Defaults to: `null`.
+  - productId (String): The id of the product (e.g. \&quot;app:com.google.android.gm\&quot;) for which new permissions were added. This field will always be present. Defaults to: `null`.
+  - requestedPermissions (List[String]): The set of permissions that the app is currently requesting. Use Permissions.Get on the EMM API to retrieve details about these permissions. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"approvedPermissions",
     :"productId",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.NewPermissionsEvent do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.NewPermissionsEvent do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

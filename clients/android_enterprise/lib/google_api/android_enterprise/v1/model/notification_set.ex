@@ -20,9 +20,14 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.NotificationSet do
   @moduledoc """
   A resource returned by the PullNotificationSet API, which contains a collection of notifications for enterprises associated with the service account authenticated for the request.
+
+  ## Attributes
+
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#notificationSet\&quot;. Defaults to: `null`.
+  - notification (List[Notification]): The notifications received, or empty if no notifications are present. Defaults to: `null`.
+  - notificationSetId (String): The notification set ID, required to mark the notification as received with the Enterprises.AcknowledgeNotification API. This will be omitted if no notifications are present. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"notification",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.NotificationSe
   def decode(value, options) do
     value
     |> deserialize(:"notification", :list, GoogleApi.AndroidEnterprise.V1.Model.Notification, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.NotificationSet do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.StoreLayoutClustersListResponse do
   @moduledoc """
   The store page resources for the enterprise.
+
+  ## Attributes
+
+  - cluster (List[StoreCluster]): A store cluster of an enterprise. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#storeLayoutClustersListResponse\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cluster",
     :"kind"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.StoreLayoutClu
   def decode(value, options) do
     value
     |> deserialize(:"cluster", :list, GoogleApi.AndroidEnterprise.V1.Model.StoreCluster, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.StoreLayoutClustersListResponse do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

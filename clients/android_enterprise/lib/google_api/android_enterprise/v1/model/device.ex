@@ -20,9 +20,14 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.Device do
   @moduledoc """
   A Devices resource represents a mobile device managed by the EMM and belonging to a specific enterprise user.  This collection cannot be modified via the API. It is automatically populated as devices are set up to be managed.
+
+  ## Attributes
+
+  - androidId (String): The Google Play Services Android ID for the device encoded as a lowercase hex string. For example, \&quot;123456789abcdef0\&quot;. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#device\&quot;. Defaults to: `null`.
+  - managementType (String): Identifies the extent to which the device is controlled by a managed Google Play EMM in various deployment configurations.  Possible values include:  - \&quot;managedDevice\&quot;, a device that has the EMM&#39;s device policy controller (DPC) as the device owner.  - \&quot;managedProfile\&quot;, a device that has a profile managed by the DPC (DPC is profile owner) in addition to a separate, personal profile that is unavailable to the DPC.  - \&quot;containerApp\&quot;, no longer used (deprecated).  - \&quot;unmanagedProfile\&quot;, a device that has been allowed (by the domain&#39;s admin, using the Admin Console to enable the privilege) to use managed Google Play, but the profile is itself not owned by a DPC. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"androidId",
     :"kind",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.Device do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.Device do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

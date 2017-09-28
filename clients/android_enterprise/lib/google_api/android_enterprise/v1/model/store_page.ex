@@ -20,9 +20,15 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.StorePage do
   @moduledoc """
   Definition of a managed Google Play store page, made of a localized name and links to other pages. A page also contains clusters defined as a subcollection.
+
+  ## Attributes
+
+  - id (String): Unique ID of this page. Assigned by the server. Immutable once assigned. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#storePage\&quot;. Defaults to: `null`.
+  - link (List[String]): Ordered list of pages a user should be able to reach from this page. The pages must exist, must not be this page, and once a link is created the page linked to cannot be deleted until all links to it are removed. It is recommended that the basic pages are created first, before adding the links between pages.  No attempt is made to verify that all pages are reachable from the homepage. Defaults to: `null`.
+  - name (List[LocalizedText]): Ordered list of localized strings giving the name of this page. The text displayed is the one that best matches the user locale, or the first entry if there is no good match. There needs to be at least one entry. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"kind",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.StorePage do
   def decode(value, options) do
     value
     |> deserialize(:"name", :list, GoogleApi.AndroidEnterprise.V1.Model.LocalizedText, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.StorePage do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

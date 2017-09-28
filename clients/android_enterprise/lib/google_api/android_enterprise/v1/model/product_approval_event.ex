@@ -20,9 +20,13 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductApprovalEvent do
   @moduledoc """
   An event generated when a product&#39;s approval status is changed.
+
+  ## Attributes
+
+  - approved (String): Whether the product was approved or unapproved. This field will always be present. Defaults to: `null`.
+  - productId (String): The id of the product (e.g. \&quot;app:com.google.android.gm\&quot;) for which the approval status has changed. This field will always be present. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"approved",
     :"productId"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.ProductApprovalEvent do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.ProductApprovalEvent do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

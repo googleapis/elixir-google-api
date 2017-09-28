@@ -20,9 +20,13 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.EnterprisesSendTestPushNotificationResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - messageId (String): The message ID of the test push notification that was sent. Defaults to: `null`.
+  - topicName (String): The name of the Cloud Pub/Sub topic to which notifications for this enterprise&#39;s enrolled account will be sent. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"messageId",
     :"topicName"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.EnterprisesSendTestPushNotificationResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.EnterprisesSendTestPushNotificationResponse do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.UserToken do
   @moduledoc """
   A UserToken is used by a user when setting up a managed device or profile with their managed Google Play account on a device. When the user enters their email address and token (activation code) the appropriate EMM app can be automatically downloaded.
+
+  ## Attributes
+
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#userToken\&quot;. Defaults to: `null`.
+  - token (String): The token (activation code) to be entered by the user. This consists of a sequence of decimal digits. Note that the leading digit may be 0. Defaults to: `null`.
+  - userId (String): The unique ID for the user. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"token",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.UserToken do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.UserToken do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

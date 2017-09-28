@@ -20,9 +20,14 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.SignupInfo do
   @moduledoc """
   A resource returned by the GenerateSignupUrl API, which contains the Signup URL and Completion Token.
+
+  ## Attributes
+
+  - completionToken (String): An opaque token that will be required, along with the Enterprise Token, for obtaining the enterprise resource from CompleteSignup. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#signupInfo\&quot;. Defaults to: `null`.
+  - url (String): A URL under which the Admin can sign up for an enterprise. The page pointed to cannot be rendered in an iframe. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"completionToken",
     :"kind",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.SignupInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.SignupInfo do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

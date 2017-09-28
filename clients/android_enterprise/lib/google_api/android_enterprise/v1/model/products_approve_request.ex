@@ -20,9 +20,13 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductsApproveRequest do
   @moduledoc """
   
+
+  ## Attributes
+
+  - approvalUrlInfo (ApprovalUrlInfo): The approval URL that was shown to the user. Only the permissions shown to the user with that URL will be accepted, which may not be the product&#39;s entire set of permissions. For example, the URL may only display new permissions from an update after the product was approved, or not include new permissions if the product was updated since the URL was generated. Defaults to: `null`.
+  - approvedPermissions (String): Sets how new permission requests for the product are handled. \&quot;allPermissions\&quot; automatically approves all current and future permissions for the product. \&quot;currentPermissionsOnly\&quot; approves the current set of permissions for the product, but any future permissions added through updates will require manual reapproval. If not specified, only the current set of permissions will be approved. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"approvalUrlInfo",
     :"approvedPermissions"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.ProductsApprov
   def decode(value, options) do
     value
     |> deserialize(:"approvalUrlInfo", :struct, GoogleApi.AndroidEnterprise.V1.Model.ApprovalUrlInfo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.ProductsApproveRequest do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

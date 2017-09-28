@@ -20,9 +20,13 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsForDeviceListResponse do
   @moduledoc """
   The managed configuration resources for the device.
+
+  ## Attributes
+
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#managedConfigurationsForDeviceListResponse\&quot;. Defaults to: `null`.
+  - managedConfigurationForDevice (List[ManagedConfiguration]): A managed configuration for an app on a specific device. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"managedConfigurationForDevice"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigu
   def decode(value, options) do
     value
     |> deserialize(:"managedConfigurationForDevice", :list, GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsForDeviceListResponse do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

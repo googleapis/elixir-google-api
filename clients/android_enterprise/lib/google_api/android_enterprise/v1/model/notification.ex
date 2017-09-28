@@ -20,9 +20,21 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.Notification do
   @moduledoc """
   A notification of one event relating to an enterprise.
+
+  ## Attributes
+
+  - appRestrictionsSchemaChangeEvent (AppRestrictionsSchemaChangeEvent): Notifications about new app restrictions schema changes. Defaults to: `null`.
+  - appUpdateEvent (AppUpdateEvent): Notifications about app updates. Defaults to: `null`.
+  - enterpriseId (String): The ID of the enterprise for which the notification is sent. This will always be present. Defaults to: `null`.
+  - installFailureEvent (InstallFailureEvent): Notifications about an app installation failure. Defaults to: `null`.
+  - newDeviceEvent (NewDeviceEvent): Notifications about new devices. Defaults to: `null`.
+  - newPermissionsEvent (NewPermissionsEvent): Notifications about new app permissions. Defaults to: `null`.
+  - notificationType (String): Type of the notification. Defaults to: `null`.
+  - productApprovalEvent (ProductApprovalEvent): Notifications about changes to a product&#39;s approval status. Defaults to: `null`.
+  - productAvailabilityChangeEvent (ProductAvailabilityChangeEvent): Notifications about product availability changes. Defaults to: `null`.
+  - timestampMillis (String): The time when the notification was published in milliseconds since 1970-01-01T00:00:00Z. This will always be present. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"appRestrictionsSchemaChangeEvent",
     :"appUpdateEvent",
@@ -48,6 +60,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.Notification d
     |> deserialize(:"newPermissionsEvent", :struct, GoogleApi.AndroidEnterprise.V1.Model.NewPermissionsEvent, options)
     |> deserialize(:"productApprovalEvent", :struct, GoogleApi.AndroidEnterprise.V1.Model.ProductApprovalEvent, options)
     |> deserialize(:"productAvailabilityChangeEvent", :struct, GoogleApi.AndroidEnterprise.V1.Model.ProductAvailabilityChangeEvent, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.Notification do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

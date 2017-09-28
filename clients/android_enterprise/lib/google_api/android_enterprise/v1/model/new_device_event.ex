@@ -20,9 +20,14 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.NewDeviceEvent do
   @moduledoc """
   An event generated when a new device is ready to be managed.
+
+  ## Attributes
+
+  - deviceId (String): The Android ID of the device. This field will always be present. Defaults to: `null`.
+  - managementType (String): Identifies the extent to which the device is controlled by an Android EMM in various deployment configurations.  Possible values include:  - \&quot;managedDevice\&quot;, a device where the DPC is set as device owner,  - \&quot;managedProfile\&quot;, a device where the DPC is set as profile owner. Defaults to: `null`.
+  - userId (String): The ID of the user. This field will always be present. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"deviceId",
     :"managementType",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.NewDeviceEvent do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.NewDeviceEvent do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

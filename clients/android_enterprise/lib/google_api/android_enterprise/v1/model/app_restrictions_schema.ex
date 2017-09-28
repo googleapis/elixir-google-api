@@ -20,9 +20,13 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchema do
   @moduledoc """
   Represents the list of app restrictions available to be pre-configured for the product.
+
+  ## Attributes
+
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#appRestrictionsSchema\&quot;. Defaults to: `null`.
+  - restrictions (List[AppRestrictionsSchemaRestriction]): The set of restrictions that make up this schema. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"restrictions"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.AppRestriction
   def decode(value, options) do
     value
     |> deserialize(:"restrictions", :list, GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestriction, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchema do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

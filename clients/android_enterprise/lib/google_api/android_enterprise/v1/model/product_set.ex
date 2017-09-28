@@ -20,9 +20,14 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductSet do
   @moduledoc """
   A set of products.
+
+  ## Attributes
+
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#productSet\&quot;. Defaults to: `null`.
+  - productId (List[String]): The list of product IDs making up the set of products. Defaults to: `null`.
+  - productSetBehavior (String): The interpretation of this product set. \&quot;unknown\&quot; should never be sent and is ignored if received. \&quot;whitelist\&quot; means that the user is entitled to access the product set. \&quot;includeAll\&quot; means that all products are accessible, including products that are approved, products with revoked approval, and products that have never been approved. \&quot;allApproved\&quot; means that the user is entitled to access all products that are approved for the enterprise. If the value is \&quot;allApproved\&quot; or \&quot;includeAll\&quot;, the productId field is ignored. If no value is provided, it is interpreted as \&quot;whitelist\&quot; for backwards compatibility. Further \&quot;allApproved\&quot; or \&quot;includeAll\&quot; does not enable automatic visibility of \&quot;alpha\&quot; or \&quot;beta\&quot; tracks for Android app. Use ProductVisibility to enable \&quot;alpha\&quot; or \&quot;beta\&quot; tracks per user. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"productId",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.ProductSet do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.ProductSet do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

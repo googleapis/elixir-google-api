@@ -62,7 +62,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
     }
     %{}
     |> method(:delete)
-    |> url("/enterprises/#{enterprise_id}/storeLayout/pages/#{page_id}/clusters/#{cluster_id}")
+    |> url("/enterprises/{enterpriseId}/storeLayout/pages/{pageId}/clusters/{clusterId}", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "pageId" => URI.encode_www_form(page_id),
+         "clusterId" => URI.encode_www_form(cluster_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -105,7 +109,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
     }
     %{}
     |> method(:get)
-    |> url("/enterprises/#{enterprise_id}/storeLayout/pages/#{page_id}/clusters/#{cluster_id}")
+    |> url("/enterprises/{enterpriseId}/storeLayout/pages/{pageId}/clusters/{clusterId}", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "pageId" => URI.encode_www_form(page_id),
+         "clusterId" => URI.encode_www_form(cluster_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -149,7 +157,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
     }
     %{}
     |> method(:post)
-    |> url("/enterprises/#{enterprise_id}/storeLayout/pages/#{page_id}/clusters")
+    |> url("/enterprises/{enterpriseId}/storeLayout/pages/{pageId}/clusters", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "pageId" => URI.encode_www_form(page_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -191,7 +202,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
     }
     %{}
     |> method(:get)
-    |> url("/enterprises/#{enterprise_id}/storeLayout/pages/#{page_id}/clusters")
+    |> url("/enterprises/{enterpriseId}/storeLayout/pages/{pageId}/clusters", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "pageId" => URI.encode_www_form(page_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -236,7 +250,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
     }
     %{}
     |> method(:patch)
-    |> url("/enterprises/#{enterprise_id}/storeLayout/pages/#{page_id}/clusters/#{cluster_id}")
+    |> url("/enterprises/{enterpriseId}/storeLayout/pages/{pageId}/clusters/{clusterId}", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "pageId" => URI.encode_www_form(page_id),
+         "clusterId" => URI.encode_www_form(cluster_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -281,7 +299,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
     }
     %{}
     |> method(:put)
-    |> url("/enterprises/#{enterprise_id}/storeLayout/pages/#{page_id}/clusters/#{cluster_id}")
+    |> url("/enterprises/{enterpriseId}/storeLayout/pages/{pageId}/clusters/{clusterId}", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "pageId" => URI.encode_www_form(page_id),
+         "clusterId" => URI.encode_www_form(cluster_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

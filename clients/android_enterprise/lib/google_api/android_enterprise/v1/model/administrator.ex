@@ -20,9 +20,12 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.Administrator do
   @moduledoc """
   This represents an enterprise admin who can manage the enterprise in the managed Google Play store.
+
+  ## Attributes
+
+  - email (String): The admin&#39;s email address. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"email"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.Administrator do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.Administrator do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

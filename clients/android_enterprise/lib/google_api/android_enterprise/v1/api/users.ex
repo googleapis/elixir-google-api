@@ -61,7 +61,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
     }
     %{}
     |> method(:delete)
-    |> url("/enterprises/#{enterprise_id}/users/#{user_id}")
+    |> url("/enterprises/{enterpriseId}/users/{userId}", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -103,7 +106,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
     }
     %{}
     |> method(:post)
-    |> url("/enterprises/#{enterprise_id}/users/#{user_id}/authenticationToken")
+    |> url("/enterprises/{enterpriseId}/users/{userId}/authenticationToken", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -145,7 +151,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
     }
     %{}
     |> method(:post)
-    |> url("/enterprises/#{enterprise_id}/users/#{user_id}/token")
+    |> url("/enterprises/{enterpriseId}/users/{userId}/token", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -187,7 +196,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
     }
     %{}
     |> method(:get)
-    |> url("/enterprises/#{enterprise_id}/users/#{user_id}")
+    |> url("/enterprises/{enterpriseId}/users/{userId}", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -229,7 +241,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
     }
     %{}
     |> method(:get)
-    |> url("/enterprises/#{enterprise_id}/users/#{user_id}/availableProductSet")
+    |> url("/enterprises/{enterpriseId}/users/{userId}/availableProductSet", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -272,7 +287,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
     }
     %{}
     |> method(:post)
-    |> url("/enterprises/#{enterprise_id}/users")
+    |> url("/enterprises/{enterpriseId}/users", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -314,7 +331,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
     }
     %{}
     |> method(:get)
-    |> url("/enterprises/#{enterprise_id}/users")
+    |> url("/enterprises/{enterpriseId}/users", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id)
+       })
     |> add_param(:query, :"email", email)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -359,7 +378,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
     }
     %{}
     |> method(:patch)
-    |> url("/enterprises/#{enterprise_id}/users/#{user_id}")
+    |> url("/enterprises/{enterpriseId}/users/{userId}", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -401,7 +423,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
     }
     %{}
     |> method(:delete)
-    |> url("/enterprises/#{enterprise_id}/users/#{user_id}/token")
+    |> url("/enterprises/{enterpriseId}/users/{userId}/token", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -445,7 +470,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
     }
     %{}
     |> method(:put)
-    |> url("/enterprises/#{enterprise_id}/users/#{user_id}/availableProductSet")
+    |> url("/enterprises/{enterpriseId}/users/{userId}/availableProductSet", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -489,7 +517,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
     }
     %{}
     |> method(:put)
-    |> url("/enterprises/#{enterprise_id}/users/#{user_id}")
+    |> url("/enterprises/{enterpriseId}/users/{userId}", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

@@ -20,9 +20,19 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestriction do
   @moduledoc """
   A restriction in the App Restriction Schema represents a piece of configuration that may be pre-applied.
+
+  ## Attributes
+
+  - defaultValue (AppRestrictionsSchemaRestrictionRestrictionValue): The default value of the restriction. bundle and bundleArray restrictions never have a default value. Defaults to: `null`.
+  - description (String): A longer description of the restriction, giving more detail of what it affects. Defaults to: `null`.
+  - entry (List[String]): For choice or multiselect restrictions, the list of possible entries&#39; human-readable names. Defaults to: `null`.
+  - entryValue (List[String]): For choice or multiselect restrictions, the list of possible entries&#39; machine-readable values. These values should be used in the configuration, either as a single string value for a choice restriction or in a stringArray for a multiselect restriction. Defaults to: `null`.
+  - key (String): The unique key that the product uses to identify the restriction, e.g. \&quot;com.google.android.gm.fieldname\&quot;. Defaults to: `null`.
+  - nestedRestriction (List[AppRestrictionsSchemaRestriction]): For bundle or bundleArray restrictions, the list of nested restrictions. A bundle restriction is always nested within a bundleArray restriction, and a bundleArray restriction is at most two levels deep. Defaults to: `null`.
+  - restrictionType (String): The type of the restriction. Defaults to: `null`.
+  - title (String): The name of the restriction. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"defaultValue",
     :"description",
@@ -41,6 +51,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.AppRestriction
     value
     |> deserialize(:"defaultValue", :struct, GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestrictionRestrictionValue, options)
     |> deserialize(:"nestedRestriction", :list, GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestriction, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestriction do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

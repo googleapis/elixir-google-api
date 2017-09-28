@@ -20,9 +20,13 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.AndroidDevicePolicyConfig do
   @moduledoc """
   The Android Device Policy configuration of an enterprise.
+
+  ## Attributes
+
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#androidDevicePolicyConfig\&quot;. Defaults to: `null`.
+  - state (String): The state of Android Device Policy. \&quot;enabled\&quot; indicates that Android Device Policy is enabled for the enterprise and the EMM is allowed to manage devices with Android Device Policy, while \&quot;disabled\&quot; means that it cannot. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"state"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.AndroidDevicePolicyConfig do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.AndroidDevicePolicyConfig do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

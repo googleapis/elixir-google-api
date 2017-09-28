@@ -20,9 +20,18 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.GroupLicense do
   @moduledoc """
   A group license object indicates a product that an enterprise admin has approved for use in the enterprise. The product may be free or paid. For free products, a group license object is created in these cases: if the enterprise admin approves a product in Google Play, if the product is added to a collection, or if an entitlement for the product is created for a user via the API. For paid products, a group license object is only created as part of the first bulk purchase of that product in Google Play by the enterprise admin.  The API can be used to query group licenses; the available information includes the total number of licenses purchased (for paid products) and the total number of licenses that have been provisioned, that is, the total number of user entitlements in existence for the product.  Group license objects are never deleted. If, for example, a free app is added to a collection and then removed, the group license will remain, allowing the enterprise admin to keep track of any remaining entitlements. An enterprise admin may indicate they are no longer interested in the group license by marking it as unapproved in Google Play.
+
+  ## Attributes
+
+  - acquisitionKind (String): How this group license was acquired. \&quot;bulkPurchase\&quot; means that this Grouplicenses resource was created because the enterprise purchased licenses for this product; otherwise, the value is \&quot;free\&quot; (for free products). Defaults to: `null`.
+  - approval (String): Whether the product to which this group license relates is currently approved by the enterprise. Products are approved when a group license is first created, but this approval may be revoked by an enterprise admin via Google Play. Unapproved products will not be visible to end users in collections, and new entitlements to them should not normally be created. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#groupLicense\&quot;. Defaults to: `null`.
+  - numProvisioned (Integer): The total number of provisioned licenses for this product. Returned by read operations, but ignored in write operations. Defaults to: `null`.
+  - numPurchased (Integer): The number of purchased licenses (possibly in multiple purchases). If this field is omitted, then there is no limit on the number of licenses that can be provisioned (for example, if the acquisition kind is \&quot;free\&quot;). Defaults to: `null`.
+  - permissions (String): The permission approval status of the product. This field is only set if the product is approved. Possible states are:  - \&quot;currentApproved\&quot;, the current set of permissions is approved, but additional permissions will require the administrator to reapprove the product (If the product was approved without specifying the approved permissions setting, then this is the default behavior.),  - \&quot;needsReapproval\&quot;, the product has unapproved permissions. No additional product licenses can be assigned until the product is reapproved,  - \&quot;allCurrentAndFutureApproved\&quot;, the current permissions are approved and any future permission updates will be automatically approved without administrator review. Defaults to: `null`.
+  - productId (String): The ID of the product that the license is for. For example, \&quot;app:com.google.android.gm\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"acquisitionKind",
     :"approval",
@@ -37,6 +46,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.GroupLicense do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.GroupLicense do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

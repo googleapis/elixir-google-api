@@ -20,9 +20,13 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.DevicesListResponse do
   @moduledoc """
   The device resources for the user.
+
+  ## Attributes
+
+  - device (List[Device]): A managed device. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#devicesListResponse\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"device",
     :"kind"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.DevicesListRes
   def decode(value, options) do
     value
     |> deserialize(:"device", :list, GoogleApi.AndroidEnterprise.V1.Model.Device, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.DevicesListResponse do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
