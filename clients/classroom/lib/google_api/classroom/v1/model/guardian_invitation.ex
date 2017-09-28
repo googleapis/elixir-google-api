@@ -20,9 +20,17 @@
 defmodule GoogleApi.Classroom.V1.Model.GuardianInvitation do
   @moduledoc """
   An invitation to become the guardian of a specified user, sent to a specified email address.
+
+  ## Attributes
+
+  - creationTime (String): The time that this invitation was created.  Read-only. Defaults to: `null`.
+  - invitationId (String): Unique identifier for this invitation.  Read-only. Defaults to: `null`.
+  - invitedEmailAddress (String): Email address that the invitation was sent to. This field is only visible to domain administrators. Defaults to: `null`.
+  - state (String): The state that this invitation is in. Defaults to: `null`.
+    - Enum - one of [GUARDIAN_INVITATION_STATE_UNSPECIFIED, PENDING, COMPLETE]
+  - studentId (String): ID of the student (in standard format) Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"creationTime",
     :"invitationId",
@@ -35,6 +43,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.GuardianInvitation do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.GuardianInvitation do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

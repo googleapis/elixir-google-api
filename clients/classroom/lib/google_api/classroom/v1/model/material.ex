@@ -20,9 +20,15 @@
 defmodule GoogleApi.Classroom.V1.Model.Material do
   @moduledoc """
   Material attached to course work.  When creating attachments, setting the &#x60;form&#x60; field is not supported.
+
+  ## Attributes
+
+  - driveFile (SharedDriveFile): Google Drive file material. Defaults to: `null`.
+  - form (Form): Google Forms material. Defaults to: `null`.
+  - link (Link): Link material. On creation, will be upgraded to a more appropriate type if possible, and this will be reflected in the response. Defaults to: `null`.
+  - youtubeVideo (YouTubeVideo): YouTube video material. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"driveFile",
     :"form",
@@ -39,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.Material do
     |> deserialize(:"form", :struct, GoogleApi.Classroom.V1.Model.Form, options)
     |> deserialize(:"link", :struct, GoogleApi.Classroom.V1.Model.Link, options)
     |> deserialize(:"youtubeVideo", :struct, GoogleApi.Classroom.V1.Model.YouTubeVideo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.Material do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.Classroom.V1.Model.Teacher do
   @moduledoc """
   Teacher of a course.
+
+  ## Attributes
+
+  - courseId (String): Identifier of the course.  Read-only. Defaults to: `null`.
+  - profile (UserProfile): Global user information for the teacher.  Read-only. Defaults to: `null`.
+  - userId (String): Identifier of the user.  When specified as a parameter of a request, this identifier can be one of the following:  * the numeric identifier for the user * the email address of the user * the string literal &#x60;\&quot;me\&quot;&#x60;, indicating the requesting user Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"courseId",
     :"profile",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.Teacher do
   def decode(value, options) do
     value
     |> deserialize(:"profile", :struct, GoogleApi.Classroom.V1.Model.UserProfile, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.Teacher do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

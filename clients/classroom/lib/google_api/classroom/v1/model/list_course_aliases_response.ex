@@ -20,9 +20,13 @@
 defmodule GoogleApi.Classroom.V1.Model.ListCourseAliasesResponse do
   @moduledoc """
   Response when listing course aliases.
+
+  ## Attributes
+
+  - aliases (List[CourseAlias]): The course aliases. Defaults to: `null`.
+  - nextPageToken (String): Token identifying the next page of results to return. If empty, no further results are available. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"aliases",
     :"nextPageToken"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.ListCourseAliasesRespo
   def decode(value, options) do
     value
     |> deserialize(:"aliases", :list, GoogleApi.Classroom.V1.Model.CourseAlias, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.ListCourseAliasesResponse do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

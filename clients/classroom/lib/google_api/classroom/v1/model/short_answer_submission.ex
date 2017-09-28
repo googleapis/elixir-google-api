@@ -20,9 +20,12 @@
 defmodule GoogleApi.Classroom.V1.Model.ShortAnswerSubmission do
   @moduledoc """
   Student work for a short answer question.
+
+  ## Attributes
+
+  - answer (String): Student response to a short-answer question. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"answer"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.ShortAnswerSubmission do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.ShortAnswerSubmission do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

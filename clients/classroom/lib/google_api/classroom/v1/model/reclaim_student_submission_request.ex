@@ -20,9 +20,11 @@
 defmodule GoogleApi.Classroom.V1.Model.ReclaimStudentSubmissionRequest do
   @moduledoc """
   Request to reclaim a student submission.
+
+  ## Attributes
+
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     
   ]
@@ -31,6 +33,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.ReclaimStudentSubmissionRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.ReclaimStudentSubmissionRequest do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

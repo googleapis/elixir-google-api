@@ -20,9 +20,14 @@
 defmodule GoogleApi.Classroom.V1.Model.Name do
   @moduledoc """
   Details of the user&#39;s name.
+
+  ## Attributes
+
+  - familyName (String): The user&#39;s last name.  Read-only. Defaults to: `null`.
+  - fullName (String): The user&#39;s full name formed by concatenating the first and last name values.  Read-only. Defaults to: `null`.
+  - givenName (String): The user&#39;s first name.  Read-only. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"familyName",
     :"fullName",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.Name do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.Name do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

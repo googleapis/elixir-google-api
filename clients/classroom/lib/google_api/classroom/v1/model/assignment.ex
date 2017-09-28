@@ -20,9 +20,12 @@
 defmodule GoogleApi.Classroom.V1.Model.Assignment do
   @moduledoc """
   Additional details for assignments.
+
+  ## Attributes
+
+  - studentWorkFolder (DriveFolder): Drive folder where attachments from student submissions are placed. This is only populated for course teachers and administrators. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"studentWorkFolder"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.Assignment do
   def decode(value, options) do
     value
     |> deserialize(:"studentWorkFolder", :struct, GoogleApi.Classroom.V1.Model.DriveFolder, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.Assignment do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

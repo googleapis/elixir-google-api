@@ -20,9 +20,15 @@
 defmodule GoogleApi.Classroom.V1.Model.CourseMaterial do
   @moduledoc """
   A material attached to a course as part of a material set.
+
+  ## Attributes
+
+  - driveFile (DriveFile): Google Drive file attachment. Defaults to: `null`.
+  - form (Form): Google Forms attachment. Defaults to: `null`.
+  - link (Link): Link atatchment. Defaults to: `null`.
+  - youTubeVideo (YouTubeVideo): Youtube video attachment. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"driveFile",
     :"form",
@@ -39,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.CourseMaterial do
     |> deserialize(:"form", :struct, GoogleApi.Classroom.V1.Model.Form, options)
     |> deserialize(:"link", :struct, GoogleApi.Classroom.V1.Model.Link, options)
     |> deserialize(:"youTubeVideo", :struct, GoogleApi.Classroom.V1.Model.YouTubeVideo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.CourseMaterial do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

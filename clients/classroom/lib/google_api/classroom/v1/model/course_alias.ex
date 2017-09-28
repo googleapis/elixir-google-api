@@ -20,9 +20,12 @@
 defmodule GoogleApi.Classroom.V1.Model.CourseAlias do
   @moduledoc """
   Alternative identifier for a course.  An alias uniquely identifies a course. It must be unique within one of the following scopes:  * domain: A domain-scoped alias is visible to all users within the alias creator&#39;s domain and can be created only by a domain admin. A domain-scoped alias is often used when a course has an identifier external to Classroom.  * project: A project-scoped alias is visible to any request from an application using the Developer Console project ID that created the alias and can be created by any project. A project-scoped alias is often used when an application has alternative identifiers. A random value can also be used to avoid duplicate courses in the event of transmission failures, as retrying a request will return &#x60;ALREADY_EXISTS&#x60; if a previous one has succeeded.
+
+  ## Attributes
+
+  - alias (String): Alias string. The format of the string indicates the desired alias scoping.  * &#x60;d:&lt;name&gt;&#x60; indicates a domain-scoped alias.   Example: &#x60;d:math_101&#x60; * &#x60;p:&lt;name&gt;&#x60; indicates a project-scoped alias.   Example: &#x60;p:abc123&#x60;  This field has a maximum length of 256 characters. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"alias"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.CourseAlias do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.CourseAlias do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

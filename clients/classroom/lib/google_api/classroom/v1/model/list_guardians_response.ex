@@ -20,9 +20,13 @@
 defmodule GoogleApi.Classroom.V1.Model.ListGuardiansResponse do
   @moduledoc """
   Response when listing guardians.
+
+  ## Attributes
+
+  - guardians (List[Guardian]): Guardians on this page of results that met the criteria specified in the request. Defaults to: `null`.
+  - nextPageToken (String): Token identifying the next page of results to return. If empty, no further results are available. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"guardians",
     :"nextPageToken"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.ListGuardiansResponse 
   def decode(value, options) do
     value
     |> deserialize(:"guardians", :list, GoogleApi.Classroom.V1.Model.Guardian, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.ListGuardiansResponse do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

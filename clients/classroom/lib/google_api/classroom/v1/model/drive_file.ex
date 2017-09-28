@@ -20,9 +20,15 @@
 defmodule GoogleApi.Classroom.V1.Model.DriveFile do
   @moduledoc """
   Representation of a Google Drive file.
+
+  ## Attributes
+
+  - alternateLink (String): URL that can be used to access the Drive item.  Read-only. Defaults to: `null`.
+  - id (String): Drive API resource ID. Defaults to: `null`.
+  - thumbnailUrl (String): URL of a thumbnail image of the Drive item.  Read-only. Defaults to: `null`.
+  - title (String): Title of the Drive item.  Read-only. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"alternateLink",
     :"id",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.DriveFile do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.DriveFile do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
