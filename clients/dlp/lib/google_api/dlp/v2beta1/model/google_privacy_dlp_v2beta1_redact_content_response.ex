@@ -20,9 +20,12 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1RedactContentResponse do
   @moduledoc """
   Results of redacting a list of items.
+
+  ## Attributes
+
+  - items (List[GooglePrivacyDlpV2beta1ContentItem]): The redacted content. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"items"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1ContentItem, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1RedactContentResponse do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

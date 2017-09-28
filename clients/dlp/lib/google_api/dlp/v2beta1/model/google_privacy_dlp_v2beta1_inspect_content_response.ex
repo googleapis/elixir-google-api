@@ -20,9 +20,12 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InspectContentResponse do
   @moduledoc """
   Results of inspecting a list of items.
+
+  ## Attributes
+
+  - results (List[GooglePrivacyDlpV2beta1InspectResult]): Each content_item from the request has a result in this list, in the same order as the request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"results"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1
   def decode(value, options) do
     value
     |> deserialize(:"results", :list, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InspectResult, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InspectContentResponse do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1ImageLocation do
   @moduledoc """
   Bounding box encompassing detected text within an image.
+
+  ## Attributes
+
+  - height (Integer): Height of the bounding box in pixels. Defaults to: `null`.
+  - left (Integer): Left coordinate of the bounding box. (0,0) is upper left. Defaults to: `null`.
+  - top (Integer): Top coordinate of the bounding box. (0,0) is upper left. Defaults to: `null`.
+  - width (Integer): Width of the bounding box in pixels. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"height",
     :"left",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1ImageLocation do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1ImageLocation do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

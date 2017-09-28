@@ -20,9 +20,13 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InspectResult do
   @moduledoc """
   All the findings for a single scanned item.
+
+  ## Attributes
+
+  - findings (List[GooglePrivacyDlpV2beta1Finding]): List of findings for an item. Defaults to: `null`.
+  - findingsTruncated (Boolean): If true, then this item might have more findings than were returned, and the findings returned are an arbitrary subset of all findings. The findings list might be truncated because the input items were too large, or because the server reached the maximum amount of resources allowed for a single API call. For best results, divide the input into smaller batches. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"findings",
     :"findingsTruncated"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1
   def decode(value, options) do
     value
     |> deserialize(:"findings", :list, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1Finding, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InspectResult do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

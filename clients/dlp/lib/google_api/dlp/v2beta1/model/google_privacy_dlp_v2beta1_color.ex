@@ -20,9 +20,14 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1Color do
   @moduledoc """
   Represents a color in the RGB color space.
+
+  ## Attributes
+
+  - blue (Float): The amount of blue in the color as a value in the interval [0, 1]. Defaults to: `null`.
+  - green (Float): The amount of green in the color as a value in the interval [0, 1]. Defaults to: `null`.
+  - red (Float): The amount of red in the color as a value in the interval [0, 1]. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"blue",
     :"green",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1Color do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1Color do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1Range do
   @moduledoc """
   Generic half-open interval [start, end)
+
+  ## Attributes
+
+  - end (String): Index of the last character of the range (exclusive). Defaults to: `null`.
+  - start (String): Index of the first character of the range (inclusive). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"end",
     :"start"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1Range do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1Range do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

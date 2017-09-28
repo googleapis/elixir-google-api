@@ -20,9 +20,15 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GoogleTypeTimeOfDay do
   @moduledoc """
   Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and &#x60;google.protobuf.Timestamp&#x60;.
+
+  ## Attributes
+
+  - hours (Integer): Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value \&quot;24:00:00\&quot; for scenarios like business closing time. Defaults to: `null`.
+  - minutes (Integer): Minutes of hour of day. Must be from 0 to 59. Defaults to: `null`.
+  - nanos (Integer): Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. Defaults to: `null`.
+  - seconds (Integer): Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"hours",
     :"minutes",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GoogleTypeTimeOfDay do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GoogleTypeTimeOfDay do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,11 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GoogleLongrunningCancelOperationRequest do
   @moduledoc """
   The request message for Operations.CancelOperation.
+
+  ## Attributes
+
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     
   ]
@@ -31,6 +33,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GoogleLongrunningCancelOperationRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GoogleLongrunningCancelOperationRequest do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

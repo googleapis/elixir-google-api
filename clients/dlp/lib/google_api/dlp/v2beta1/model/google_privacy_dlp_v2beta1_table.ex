@@ -20,9 +20,13 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1Table do
   @moduledoc """
   Structured content to inspect. Up to 50,000 &#x60;Value&#x60;s per request allowed.
+
+  ## Attributes
+
+  - headers (List[GooglePrivacyDlpV2beta1FieldId]):  Defaults to: `null`.
+  - rows (List[GooglePrivacyDlpV2beta1Row]):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"headers",
     :"rows"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1
     value
     |> deserialize(:"headers", :list, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1FieldId, options)
     |> deserialize(:"rows", :list, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1Row, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1Table do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

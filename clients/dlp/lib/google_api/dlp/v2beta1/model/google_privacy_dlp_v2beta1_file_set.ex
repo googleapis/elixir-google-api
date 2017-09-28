@@ -20,9 +20,12 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1FileSet do
   @moduledoc """
   Set of files to scan.
+
+  ## Attributes
+
+  - url (String): The url, in the format &#x60;gs://&lt;bucket&gt;/&lt;path&gt;&#x60;. Trailing wildcard in the path is allowed. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"url"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1FileSet do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1FileSet do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1BigQueryTable do
   @moduledoc """
   Message defining the location of a BigQuery table. A table is uniquely identified  by its project_id, dataset_id, and table_name. Within a query a table is often referenced with a string in the format of: &#x60;&lt;project_id&gt;:&lt;dataset_id&gt;.&lt;table_id&gt;&#x60; or &#x60;&lt;project_id&gt;.&lt;dataset_id&gt;.&lt;table_id&gt;&#x60;.
+
+  ## Attributes
+
+  - datasetId (String): Dataset ID of the table. Defaults to: `null`.
+  - projectId (String): The Google Cloud Platform project ID of the project containing the table. If omitted, project ID is inferred from the API call. Defaults to: `null`.
+  - tableId (String): Name of the table. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"datasetId",
     :"projectId",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1BigQueryTable do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1BigQueryTable do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

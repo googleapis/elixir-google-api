@@ -1,6 +1,6 @@
-# GoogleApi.DLP.V2BETA1
+# GoogleApi.DLP.V2beta1
 
-**TODO: Add description**
+The Google Data Loss Prevention API provides methods for detection of privacy-sensitive fragments in text, images, and Google Cloud Platform storage repositories.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_dlp` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_dlp, "~> 0.1.0"}]
+  [{:google_api_dlp, "~> 0.0.1"}]
 end
 ```
 

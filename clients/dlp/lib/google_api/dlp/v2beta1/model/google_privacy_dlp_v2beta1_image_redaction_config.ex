@@ -20,9 +20,14 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1ImageRedactionConfig do
   @moduledoc """
   Configuration for determing how redaction of images should occur.
+
+  ## Attributes
+
+  - infoType (GooglePrivacyDlpV2beta1InfoType): Only one per info_type should be provided per request. If not specified, and redact_all_text is false, the DLP API will redact all text that it matches against all info_types that are found, but not specified in another ImageRedactionConfig. Defaults to: `null`.
+  - redactAllText (Boolean): If true, all text found in the image, regardless whether it matches an info_type, is redacted. Defaults to: `null`.
+  - redactionColor (GooglePrivacyDlpV2beta1Color): The color to use when redacting content from an image. If not specified, the default is black. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"infoType",
     :"redactAllText",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1
     value
     |> deserialize(:"infoType", :struct, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InfoType, options)
     |> deserialize(:"redactionColor", :struct, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1Color, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1ImageRedactionConfig do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

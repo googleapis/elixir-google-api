@@ -20,9 +20,15 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1RedactContentRequest do
   @moduledoc """
   Request to search for potentially sensitive info in a list of items and replace it with a default or provided content.
+
+  ## Attributes
+
+  - imageRedactionConfigs (List[GooglePrivacyDlpV2beta1ImageRedactionConfig]): The configuration for specifying what content to redact from images. Defaults to: `null`.
+  - inspectConfig (GooglePrivacyDlpV2beta1InspectConfig): Configuration for the inspector. Defaults to: `null`.
+  - items (List[GooglePrivacyDlpV2beta1ContentItem]): The list of items to inspect. Up to 100 are allowed per request. Defaults to: `null`.
+  - replaceConfigs (List[GooglePrivacyDlpV2beta1ReplaceConfig]): The strings to replace findings text findings with. Must specify at least one of these or one ImageRedactionConfig if redacting images. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"imageRedactionConfigs",
     :"inspectConfig",
@@ -39,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1
     |> deserialize(:"inspectConfig", :struct, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InspectConfig, options)
     |> deserialize(:"items", :list, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1ContentItem, options)
     |> deserialize(:"replaceConfigs", :list, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1ReplaceConfig, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1RedactContentRequest do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

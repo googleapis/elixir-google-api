@@ -20,9 +20,14 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1StorageConfig do
   @moduledoc """
   Shared message indicating Cloud storage type.
+
+  ## Attributes
+
+  - bigQueryOptions (GooglePrivacyDlpV2beta1BigQueryOptions): BigQuery options specification. Defaults to: `null`.
+  - cloudStorageOptions (GooglePrivacyDlpV2beta1CloudStorageOptions): Google Cloud Storage options specification. Defaults to: `null`.
+  - datastoreOptions (GooglePrivacyDlpV2beta1DatastoreOptions): Google Cloud Datastore options specification. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bigQueryOptions",
     :"cloudStorageOptions",
@@ -37,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1
     |> deserialize(:"bigQueryOptions", :struct, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1BigQueryOptions, options)
     |> deserialize(:"cloudStorageOptions", :struct, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1CloudStorageOptions, options)
     |> deserialize(:"datastoreOptions", :struct, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1DatastoreOptions, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1StorageConfig do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

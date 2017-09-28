@@ -20,9 +20,13 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1RecordKey do
   @moduledoc """
   Message for a unique key indicating a record that contains a finding.
+
+  ## Attributes
+
+  - cloudStorageKey (GooglePrivacyDlpV2beta1CloudStorageKey):  Defaults to: `null`.
+  - datastoreKey (GooglePrivacyDlpV2beta1DatastoreKey):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cloudStorageKey",
     :"datastoreKey"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1
     value
     |> deserialize(:"cloudStorageKey", :struct, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1CloudStorageKey, options)
     |> deserialize(:"datastoreKey", :struct, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1DatastoreKey, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1RecordKey do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

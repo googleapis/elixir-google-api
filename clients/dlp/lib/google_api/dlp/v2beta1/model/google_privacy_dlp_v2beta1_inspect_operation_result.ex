@@ -20,9 +20,12 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InspectOperationResult do
   @moduledoc """
   The operational data.
+
+  ## Attributes
+
+  - name (String): The server-assigned name, which is only unique within the same service that originally returns it. If you use the default HTTP mapping, the &#x60;name&#x60; should have the format of &#x60;inspect/results/{id}&#x60;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InspectOperationResult do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InspectOperationResult do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1OperationConfig do
   @moduledoc """
   Additional configuration for inspect long running operations.
+
+  ## Attributes
+
+  - maxItemFindings (String): Max number of findings per file, Datastore entity, or database row. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"maxItemFindings"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1OperationConfig do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1OperationConfig do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

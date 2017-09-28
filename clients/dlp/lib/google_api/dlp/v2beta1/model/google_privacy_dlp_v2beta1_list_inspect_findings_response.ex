@@ -20,9 +20,13 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1ListInspectFindingsResponse do
   @moduledoc """
   Response to the ListInspectFindings request.
+
+  ## Attributes
+
+  - nextPageToken (String): If not empty, indicates that there may be more results that match the request; this value should be passed in a new &#x60;ListInspectFindingsRequest&#x60;. Defaults to: `null`.
+  - result (GooglePrivacyDlpV2beta1InspectResult): The results. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nextPageToken",
     :"result"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1
   def decode(value, options) do
     value
     |> deserialize(:"result", :struct, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InspectResult, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1ListInspectFindingsResponse do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

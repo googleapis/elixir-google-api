@@ -20,9 +20,16 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GoogleLongrunningOperation do
   @moduledoc """
   This resource represents a long-running operation that is the result of a network API call.
+
+  ## Attributes
+
+  - done (Boolean): If the value is &#x60;false&#x60;, it means the operation is still in progress. If true, the operation is completed, and either &#x60;error&#x60; or &#x60;response&#x60; is available. Defaults to: `null`.
+  - error (GoogleRpcStatus): The error result of the operation in case of failure or cancellation. Defaults to: `null`.
+  - metadata (Object): This field will contain an InspectOperationMetadata object. This will always be returned with the Operation. Defaults to: `null`.
+  - name (String): The server-assigned name, The &#x60;name&#x60; should have the format of &#x60;inspect/operations/&lt;identifier&gt;&#x60;. Defaults to: `null`.
+  - response (Object): This field will contain an InspectOperationResult object. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"done",
     :"error",
@@ -39,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GoogleLongrunningOperat
     |> deserialize(:"error", :struct, GoogleApi.DLP.V2beta1.Model.GoogleRpcStatus, options)
     |> deserialize(:"metadata", :struct, GoogleApi.DLP.V2beta1.Model.Object, options)
     |> deserialize(:"response", :struct, GoogleApi.DLP.V2beta1.Model.Object, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GoogleLongrunningOperation do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

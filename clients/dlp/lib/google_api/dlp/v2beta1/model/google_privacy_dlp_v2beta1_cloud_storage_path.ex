@@ -20,9 +20,12 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1CloudStoragePath do
   @moduledoc """
   A location in Cloud Storage.
+
+  ## Attributes
+
+  - path (String): The url, in the format of &#x60;gs://bucket/&lt;path&gt;&#x60;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"path"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1CloudStoragePath do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1CloudStoragePath do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

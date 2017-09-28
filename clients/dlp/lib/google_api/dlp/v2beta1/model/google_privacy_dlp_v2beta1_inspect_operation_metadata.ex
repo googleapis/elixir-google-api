@@ -20,9 +20,18 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InspectOperationMetadata do
   @moduledoc """
   Metadata returned within GetOperation for an inspect request.
+
+  ## Attributes
+
+  - createTime (String): The time which this request was started. Defaults to: `null`.
+  - infoTypeStats (List[GooglePrivacyDlpV2beta1InfoTypeStatistics]):  Defaults to: `null`.
+  - processedBytes (String): Total size in bytes that were processed. Defaults to: `null`.
+  - requestInspectConfig (GooglePrivacyDlpV2beta1InspectConfig): The inspect config used to create the Operation. Defaults to: `null`.
+  - requestOutputConfig (GooglePrivacyDlpV2beta1OutputStorageConfig): Optional location to store findings. Defaults to: `null`.
+  - requestStorageConfig (GooglePrivacyDlpV2beta1StorageConfig): The storage config used to create the Operation. Defaults to: `null`.
+  - totalEstimatedBytes (String): Estimate of the number of bytes to process. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"createTime",
     :"infoTypeStats",
@@ -42,6 +51,12 @@ defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1
     |> deserialize(:"requestInspectConfig", :struct, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InspectConfig, options)
     |> deserialize(:"requestOutputConfig", :struct, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1OutputStorageConfig, options)
     |> deserialize(:"requestStorageConfig", :struct, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1StorageConfig, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InspectOperationMetadata do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

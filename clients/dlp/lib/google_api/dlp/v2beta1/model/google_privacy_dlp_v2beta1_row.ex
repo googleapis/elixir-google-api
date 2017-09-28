@@ -20,9 +20,12 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1Row do
   @moduledoc """
   
+
+  ## Attributes
+
+  - values (List[GooglePrivacyDlpV2beta1Value]):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"values"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1
   def decode(value, options) do
     value
     |> deserialize(:"values", :list, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1Value, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1Row do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

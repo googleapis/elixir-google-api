@@ -20,9 +20,13 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InfoTypeStatistics do
   @moduledoc """
   Statistics regarding a specific InfoType.
+
+  ## Attributes
+
+  - count (String): Number of findings for this info type. Defaults to: `null`.
+  - infoType (GooglePrivacyDlpV2beta1InfoType): The type of finding this stat is for. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"count",
     :"infoType"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1
   def decode(value, options) do
     value
     |> deserialize(:"infoType", :struct, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InfoType, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InfoTypeStatistics do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

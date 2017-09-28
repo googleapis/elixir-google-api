@@ -20,9 +20,12 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1Projection do
   @moduledoc """
   A representation of a Datastore property in a projection.
+
+  ## Attributes
+
+  - property (GooglePrivacyDlpV2beta1PropertyReference): The property to project. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"property"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1
   def decode(value, options) do
     value
     |> deserialize(:"property", :struct, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1PropertyReference, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1Projection do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

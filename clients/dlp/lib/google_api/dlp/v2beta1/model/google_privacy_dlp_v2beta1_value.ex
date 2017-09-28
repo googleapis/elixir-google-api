@@ -20,9 +20,18 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1Value do
   @moduledoc """
   Set of primitive values supported by the system.
+
+  ## Attributes
+
+  - booleanValue (Boolean):  Defaults to: `null`.
+  - dateValue (GoogleTypeDate):  Defaults to: `null`.
+  - floatValue (Float):  Defaults to: `null`.
+  - integerValue (String):  Defaults to: `null`.
+  - stringValue (String):  Defaults to: `null`.
+  - timeValue (GoogleTypeTimeOfDay):  Defaults to: `null`.
+  - timestampValue (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"booleanValue",
     :"dateValue",
@@ -40,6 +49,12 @@ defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1
     value
     |> deserialize(:"dateValue", :struct, GoogleApi.DLP.V2beta1.Model.GoogleTypeDate, options)
     |> deserialize(:"timeValue", :struct, GoogleApi.DLP.V2beta1.Model.GoogleTypeTimeOfDay, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1Value do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

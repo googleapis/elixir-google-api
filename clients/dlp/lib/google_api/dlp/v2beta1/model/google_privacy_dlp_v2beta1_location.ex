@@ -20,9 +20,17 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1Location do
   @moduledoc """
   Specifies the location of a finding within its source item.
+
+  ## Attributes
+
+  - byteRange (GooglePrivacyDlpV2beta1Range): Zero-based byte offsets within a content item. Defaults to: `null`.
+  - codepointRange (GooglePrivacyDlpV2beta1Range): Character offsets within a content item, included when content type is a text. Default charset assumed to be UTF-8. Defaults to: `null`.
+  - fieldId (GooglePrivacyDlpV2beta1FieldId): Field id of the field containing the finding. Defaults to: `null`.
+  - imageBoxes (List[GooglePrivacyDlpV2beta1ImageLocation]): Location within an image&#39;s pixels. Defaults to: `null`.
+  - recordKey (GooglePrivacyDlpV2beta1RecordKey): Key of the finding. Defaults to: `null`.
+  - tableLocation (GooglePrivacyDlpV2beta1TableLocation): Location within a &#x60;ContentItem.Table&#x60;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"byteRange",
     :"codepointRange",
@@ -43,6 +51,12 @@ defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1
     |> deserialize(:"imageBoxes", :list, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1ImageLocation, options)
     |> deserialize(:"recordKey", :struct, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1RecordKey, options)
     |> deserialize(:"tableLocation", :struct, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1TableLocation, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1Location do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

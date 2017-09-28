@@ -20,9 +20,12 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1ListInfoTypesResponse do
   @moduledoc """
   Response to the ListInfoTypes request.
+
+  ## Attributes
+
+  - infoTypes (List[GooglePrivacyDlpV2beta1InfoTypeDescription]): Set of sensitive info types belonging to a category. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"infoTypes"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1
   def decode(value, options) do
     value
     |> deserialize(:"infoTypes", :list, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InfoTypeDescription, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1ListInfoTypesResponse do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
