@@ -72,7 +72,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     }
     %{}
     |> method(:get)
-    |> url("/v1/partners/{partnerId}/customers", %{
+    |> url("/v1/partners/{+partnerId}/customers", %{
          "partnerId" => URI.encode_www_form(partner_id)
        })
     |> add_optional_params(optional_params, opts)
@@ -129,7 +129,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     }
     %{}
     |> method(:post)
-    |> url("/v1/partners/{partnerId}/devices:claim", %{
+    |> url("/v1/partners/{+partnerId}/devices:claim", %{
          "partnerId" => URI.encode_www_form(partner_id)
        })
     |> add_optional_params(optional_params, opts)
@@ -186,7 +186,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     }
     %{}
     |> method(:post)
-    |> url("/v1/partners/{partnerId}/devices:claimAsync", %{
+    |> url("/v1/partners/{+partnerId}/devices:claimAsync", %{
          "partnerId" => URI.encode_www_form(partner_id)
        })
     |> add_optional_params(optional_params, opts)
@@ -243,7 +243,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     }
     %{}
     |> method(:post)
-    |> url("/v1/partners/{partnerId}/devices:findByIdentifier", %{
+    |> url("/v1/partners/{+partnerId}/devices:findByIdentifier", %{
          "partnerId" => URI.encode_www_form(partner_id)
        })
     |> add_optional_params(optional_params, opts)
@@ -300,7 +300,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     }
     %{}
     |> method(:post)
-    |> url("/v1/partners/{partnerId}/devices:findByOwner", %{
+    |> url("/v1/partners/{+partnerId}/devices:findByOwner", %{
          "partnerId" => URI.encode_www_form(partner_id)
        })
     |> add_optional_params(optional_params, opts)
@@ -358,7 +358,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     }
     %{}
     |> method(:post)
-    |> url("/v1/partners/{metadataOwnerId}/devices/{deviceId}/metadata", %{
+    |> url("/v1/partners/{+metadataOwnerId}/devices/{+deviceId}/metadata", %{
          "metadataOwnerId" => URI.encode_www_form(metadata_owner_id),
          "deviceId" => URI.encode_www_form(device_id)
        })
@@ -416,7 +416,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     }
     %{}
     |> method(:post)
-    |> url("/v1/partners/{partnerId}/devices:unclaim", %{
+    |> url("/v1/partners/{+partnerId}/devices:unclaim", %{
          "partnerId" => URI.encode_www_form(partner_id)
        })
     |> add_optional_params(optional_params, opts)
@@ -473,7 +473,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     }
     %{}
     |> method(:post)
-    |> url("/v1/partners/{partnerId}/devices:unclaimAsync", %{
+    |> url("/v1/partners/{+partnerId}/devices:unclaimAsync", %{
          "partnerId" => URI.encode_www_form(partner_id)
        })
     |> add_optional_params(optional_params, opts)
@@ -530,7 +530,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     }
     %{}
     |> method(:post)
-    |> url("/v1/partners/{partnerId}/devices:updateMetadataAsync", %{
+    |> url("/v1/partners/{+partnerId}/devices:updateMetadataAsync", %{
          "partnerId" => URI.encode_www_form(partner_id)
        })
     |> add_optional_params(optional_params, opts)
