@@ -1,6 +1,6 @@
 # GoogleApi.Fonts.V1
 
-**TODO: Add description**
+Accesses the metadata for all families served by Google Fonts, providing a list of families currently available (including available styles and a list of supported script subsets).
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_fonts` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_fonts, "~> 0.1.0"}]
+  [{:google_api_fonts, "~> 0.0.1"}]
 end
 ```
 

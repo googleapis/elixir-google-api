@@ -20,9 +20,13 @@
 defmodule GoogleApi.Fonts.V1.Model.WebfontList do
   @moduledoc """
   
+
+  ## Attributes
+
+  - items (List[Webfont]): The list of fonts currently served by the Google Fonts API. Defaults to: `null`.
+  - kind (String): This kind represents a list of webfont objects in the webfonts service. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"items",
     :"kind"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Fonts.V1.Model.WebfontList do
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.Fonts.V1.Model.Webfont, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Fonts.V1.Model.WebfontList do
+  def encode(value, options) do
+    GoogleApi.Fonts.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

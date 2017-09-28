@@ -20,9 +20,19 @@
 defmodule GoogleApi.Fonts.V1.Model.Webfont do
   @moduledoc """
   
+
+  ## Attributes
+
+  - category (String): The category of the font. Defaults to: `null`.
+  - family (String): The name of the font. Defaults to: `null`.
+  - files (Map[String, String]): The font files (with all supported scripts) for each one of the available variants, as a key : value map. Defaults to: `null`.
+  - kind (String): This kind represents a webfont object in the webfonts service. Defaults to: `null`.
+  - lastModified (DateTime): The date (format \&quot;yyyy-MM-dd\&quot;) the font was modified for the last time. Defaults to: `null`.
+  - subsets (List[String]): The scripts supported by the font. Defaults to: `null`.
+  - variants (List[String]): The available variants for the font. Defaults to: `null`.
+  - version (String): The font version. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"category",
     :"family",
@@ -40,6 +50,12 @@ defimpl Poison.Decoder, for: GoogleApi.Fonts.V1.Model.Webfont do
   def decode(value, options) do
     value
     |> deserialize(:"lastModified", :date, nil, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Fonts.V1.Model.Webfont do
+  def encode(value, options) do
+    GoogleApi.Fonts.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
