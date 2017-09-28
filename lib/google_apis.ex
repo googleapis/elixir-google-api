@@ -51,13 +51,31 @@ defmodule GoogleApis do
   def fetch(api_config) do
     file = ApiConfig.google_spec_file(api_config)
 
-    with {:ok, body} = GoogleApis.Discovery.fetch(api_config.url),
-         :ok <- File.mkdir_p(Path.dirname(file)),
-         :ok <- File.write(file, body)
-    do
-      {:ok, file}
+    case GoogleApis.Discovery.fetch(api_config.discoveryRestUrl) do
+      {:ok, body} ->
+        case File.mkdir_p(Path.dirname(file)) do
+          :ok ->
+            case File.write(file, body) do
+              :ok ->
+                {:ok, file}
+              {:error, posix} ->
+                msg = "Cannot write file. Error: #{posix}"
+                Logger.warn msg
+                {:error, msg}
+            end
+          _ ->
+            msg = "Cannot make #{Path.dirname(file)}"
+            Logger.warn msg
+            {:error, msg}
+         end
+      _ ->
+        msg = "Cannot Fetch from #{api_config.discoveryRestUrl}"
+        Logger.warn msg
+        {:error, msg}
     end
   end
+
+
 
   def convert_spec(api_config = %ApiConfig{}) do
     converter = Application.get_env(:google_apis, :spec_converter)

@@ -21,7 +21,7 @@ defmodule GoogleApis.Discovery do
         try_formats(base, query, ["GOOGLE_REST_SIMPLE_URI", format])
       nil ->
         {:ok, body} = fetch_direct(url)
-        {:ok, {body, "default"}}
+        {:ok, body}
     end
   end
 
