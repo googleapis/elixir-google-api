@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataproc.V1.Model.AcceleratorConfig do
   @moduledoc """
   Specifies the type and number of accelerator cards attached to the instances of an instance group (see GPUs on Compute Engine).
+
+  ## Attributes
+
+  - acceleratorCount (Integer): The number of the accelerator cards of this type exposed to this instance. Defaults to: `null`.
+  - acceleratorTypeUri (String): Full URL, partial URI, or short name of the accelerator type resource to expose to this instance. See Google Compute Engine AcceleratorTypes( /compute/docs/reference/beta/acceleratorTypes)Examples * https://www.googleapis.com/compute/beta/projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80 * projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80 * nvidia-tesla-k80 Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"acceleratorCount",
     :"acceleratorTypeUri"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.AcceleratorConfig do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataproc.V1.Model.AcceleratorConfig do
+  def encode(value, options) do
+    GoogleApi.Dataproc.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

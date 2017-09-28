@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataproc.V1.Model.LoggingConfig do
   @moduledoc """
   The runtime logging config of the job.
+
+  ## Attributes
+
+  - driverLogLevels (Map[String, String]): The per-package log levels for the driver. This may include \&quot;root\&quot; package name to configure rootLogger. Examples:  &#39;com.google &#x3D; FATAL&#39;, &#39;root &#x3D; INFO&#39;, &#39;org.apache &#x3D; DEBUG&#39; Defaults to: `null`.
+    - Enum - one of 
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"driverLogLevels"
   ]
@@ -31,6 +35,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.LoggingConfig do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataproc.V1.Model.LoggingConfig do
+  def encode(value, options) do
+    GoogleApi.Dataproc.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

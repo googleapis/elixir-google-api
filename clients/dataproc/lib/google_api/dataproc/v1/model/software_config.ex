@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataproc.V1.Model.SoftwareConfig do
   @moduledoc """
   Specifies the selection and config of software inside the cluster.
+
+  ## Attributes
+
+  - imageVersion (String): Optional. The version of software inside the cluster. It must match the regular expression [0-9]+\\.[0-9]+. If unspecified, it defaults to the latest version (see Cloud Dataproc Versioning). Defaults to: `null`.
+  - properties (Map[String, String]): Optional. The properties to set on daemon config files.Property keys are specified in prefix:property format, such as core:fs.defaultFS. The following are supported prefixes and their mappings: capacity-scheduler: capacity-scheduler.xml core: core-site.xml distcp: distcp-default.xml hdfs: hdfs-site.xml hive: hive-site.xml mapred: mapred-site.xml pig: pig.properties spark: spark-defaults.conf yarn: yarn-site.xmlFor more information, see Cluster properties. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"imageVersion",
     :"properties"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.SoftwareConfig do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataproc.V1.Model.SoftwareConfig do
+  def encode(value, options) do
+    GoogleApi.Dataproc.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

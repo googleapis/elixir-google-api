@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataproc.V1.Model.ListClustersResponse do
   @moduledoc """
   The list of all clusters in a project.
+
+  ## Attributes
+
+  - clusters (List[Cluster]): Output-only. The clusters in the project. Defaults to: `null`.
+  - nextPageToken (String): Output-only. This token is included in the response if there are more results to fetch. To fetch additional results, provide this value as the page_token in a subsequent ListClustersRequest. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"clusters",
     :"nextPageToken"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.ListClustersResponse do
   def decode(value, options) do
     value
     |> deserialize(:"clusters", :list, GoogleApi.Dataproc.V1.Model.Cluster, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataproc.V1.Model.ListClustersResponse do
+  def encode(value, options) do
+    GoogleApi.Dataproc.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

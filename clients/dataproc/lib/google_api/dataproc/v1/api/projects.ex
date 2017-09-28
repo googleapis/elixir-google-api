@@ -75,7 +75,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/projects/#{project_id}/regions/#{region}/clusters")
+    |> url("/v1/projects/{projectId}/regions/{region}/clusters", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "region" => URI.encode_www_form(region)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -130,7 +133,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/projects/#{project_id}/regions/#{region}/clusters/#{cluster_name}")
+    |> url("/v1/projects/{projectId}/regions/{region}/clusters/{clusterName}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "region" => URI.encode_www_form(region),
+         "clusterName" => URI.encode_www_form(cluster_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -187,7 +194,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/projects/#{project_id}/regions/#{region}/clusters/#{cluster_name}:diagnose")
+    |> url("/v1/projects/{projectId}/regions/{region}/clusters/{clusterName}:diagnose", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "region" => URI.encode_www_form(region),
+         "clusterName" => URI.encode_www_form(cluster_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -242,7 +253,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/projects/#{project_id}/regions/#{region}/clusters/#{cluster_name}")
+    |> url("/v1/projects/{projectId}/regions/{region}/clusters/{clusterName}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "region" => URI.encode_www_form(region),
+         "clusterName" => URI.encode_www_form(cluster_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -302,7 +317,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/projects/#{project_id}/regions/#{region}/clusters")
+    |> url("/v1/projects/{projectId}/regions/{region}/clusters", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "region" => URI.encode_www_form(region)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -361,7 +379,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     }
     %{}
     |> method(:patch)
-    |> url("/v1/projects/#{project_id}/regions/#{region}/clusters/#{cluster_name}")
+    |> url("/v1/projects/{projectId}/regions/{region}/clusters/{clusterName}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "region" => URI.encode_www_form(region),
+         "clusterName" => URI.encode_www_form(cluster_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -418,7 +440,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/projects/#{project_id}/regions/#{region}/jobs/#{job_id}:cancel")
+    |> url("/v1/projects/{projectId}/regions/{region}/jobs/{jobId}:cancel", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "region" => URI.encode_www_form(region),
+         "jobId" => URI.encode_www_form(job_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -473,7 +499,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/projects/#{project_id}/regions/#{region}/jobs/#{job_id}")
+    |> url("/v1/projects/{projectId}/regions/{region}/jobs/{jobId}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "region" => URI.encode_www_form(region),
+         "jobId" => URI.encode_www_form(job_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -528,7 +558,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/projects/#{project_id}/regions/#{region}/jobs/#{job_id}")
+    |> url("/v1/projects/{projectId}/regions/{region}/jobs/{jobId}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "region" => URI.encode_www_form(region),
+         "jobId" => URI.encode_www_form(job_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -592,7 +626,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/projects/#{project_id}/regions/#{region}/jobs")
+    |> url("/v1/projects/{projectId}/regions/{region}/jobs", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "region" => URI.encode_www_form(region)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -651,7 +688,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     }
     %{}
     |> method(:patch)
-    |> url("/v1/projects/#{project_id}/regions/#{region}/jobs/#{job_id}")
+    |> url("/v1/projects/{projectId}/regions/{region}/jobs/{jobId}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "region" => URI.encode_www_form(region),
+         "jobId" => URI.encode_www_form(job_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -707,7 +748,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/projects/#{project_id}/regions/#{region}/jobs:submit")
+    |> url("/v1/projects/{projectId}/regions/{region}/jobs:submit", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "region" => URI.encode_www_form(region)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -762,7 +806,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/projects/#{projects_id}/regions/#{regions_id}/operations/#{operations_id}:cancel")
+    |> url("/v1/projects/{projectsId}/regions/{regionsId}/operations/{operationsId}:cancel", %{
+         "projectsId" => URI.encode_www_form(projects_id),
+         "regionsId" => URI.encode_www_form(regions_id),
+         "operationsId" => URI.encode_www_form(operations_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -817,7 +865,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/projects/#{projects_id}/regions/#{regions_id}/operations/#{operations_id}")
+    |> url("/v1/projects/{projectsId}/regions/{regionsId}/operations/{operationsId}", %{
+         "projectsId" => URI.encode_www_form(projects_id),
+         "regionsId" => URI.encode_www_form(regions_id),
+         "operationsId" => URI.encode_www_form(operations_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -872,7 +924,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/projects/#{projects_id}/regions/#{regions_id}/operations/#{operations_id}")
+    |> url("/v1/projects/{projectsId}/regions/{regionsId}/operations/{operationsId}", %{
+         "projectsId" => URI.encode_www_form(projects_id),
+         "regionsId" => URI.encode_www_form(regions_id),
+         "operationsId" => URI.encode_www_form(operations_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -932,7 +988,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/projects/#{projects_id}/regions/#{regions_id}/operations")
+    |> url("/v1/projects/{projectsId}/regions/{regionsId}/operations", %{
+         "projectsId" => URI.encode_www_form(projects_id),
+         "regionsId" => URI.encode_www_form(regions_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

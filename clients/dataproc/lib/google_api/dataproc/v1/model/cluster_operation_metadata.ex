@@ -20,9 +20,19 @@
 defmodule GoogleApi.Dataproc.V1.Model.ClusterOperationMetadata do
   @moduledoc """
   Metadata describing the operation.
+
+  ## Attributes
+
+  - clusterName (String): Output-only. Name of the cluster for the operation. Defaults to: `null`.
+  - clusterUuid (String): Output-only. Cluster UUID for the operation. Defaults to: `null`.
+  - description (String): Output-only. Short description of operation. Defaults to: `null`.
+  - labels (Map[String, String]): Output-only. Labels associated with the operation Defaults to: `null`.
+  - operationType (String): Output-only. The operation type. Defaults to: `null`.
+  - status (ClusterOperationStatus): Output-only. Current operation status. Defaults to: `null`.
+  - statusHistory (List[ClusterOperationStatus]): Output-only. The previous operation status. Defaults to: `null`.
+  - warnings (List[String]): Output-only. Errors encountered during operation execution. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"clusterName",
     :"clusterUuid",
@@ -41,6 +51,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.ClusterOperationMetadat
     value
     |> deserialize(:"status", :struct, GoogleApi.Dataproc.V1.Model.ClusterOperationStatus, options)
     |> deserialize(:"statusHistory", :list, GoogleApi.Dataproc.V1.Model.ClusterOperationStatus, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataproc.V1.Model.ClusterOperationMetadata do
+  def encode(value, options) do
+    GoogleApi.Dataproc.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

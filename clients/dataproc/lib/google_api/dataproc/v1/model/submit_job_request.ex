@@ -20,9 +20,12 @@
 defmodule GoogleApi.Dataproc.V1.Model.SubmitJobRequest do
   @moduledoc """
   A request to submit a job.
+
+  ## Attributes
+
+  - job (Job): Required. The job resource. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"job"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.SubmitJobRequest do
   def decode(value, options) do
     value
     |> deserialize(:"job", :struct, GoogleApi.Dataproc.V1.Model.Job, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataproc.V1.Model.SubmitJobRequest do
+  def encode(value, options) do
+    GoogleApi.Dataproc.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

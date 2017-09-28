@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataproc.V1.Model.NodeInitializationAction do
   @moduledoc """
   Specifies an executable to run on a fully configured node and a timeout period for executable completion.
+
+  ## Attributes
+
+  - executableFile (String): Required. Google Cloud Storage URI of executable file. Defaults to: `null`.
+  - executionTimeout (String): Optional. Amount of time executable has to complete. Default is 10 minutes. Cluster creation fails with an explanatory error message (the name of the executable that caused the error and the exceeded timeout period) if the executable is not completed at end of the timeout period. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"executableFile",
     :"executionTimeout"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.NodeInitializationAction do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataproc.V1.Model.NodeInitializationAction do
+  def encode(value, options) do
+    GoogleApi.Dataproc.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

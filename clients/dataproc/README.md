@@ -1,6 +1,6 @@
 # GoogleApi.Dataproc.V1
 
-**TODO: Add description**
+Manages Hadoop-based clusters and jobs on Google Cloud Platform.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_dataproc` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_dataproc, "~> 0.1.0"}]
+  [{:google_api_dataproc, "~> 0.0.1"}]
 end
 ```
 

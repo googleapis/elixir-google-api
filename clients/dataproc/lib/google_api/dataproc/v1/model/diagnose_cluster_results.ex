@@ -20,9 +20,12 @@
 defmodule GoogleApi.Dataproc.V1.Model.DiagnoseClusterResults do
   @moduledoc """
   The location of diagnostic output.
+
+  ## Attributes
+
+  - outputUri (String): Output-only. The Google Cloud Storage URI of the diagnostic output. The output report is a plain text file with a summary of collected diagnostics. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"outputUri"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.DiagnoseClusterResults do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataproc.V1.Model.DiagnoseClusterResults do
+  def encode(value, options) do
+    GoogleApi.Dataproc.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

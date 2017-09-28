@@ -20,9 +20,26 @@
 defmodule GoogleApi.Dataproc.V1.Model.Job do
   @moduledoc """
   A Cloud Dataproc job resource.
+
+  ## Attributes
+
+  - driverControlFilesUri (String): Output-only. If present, the location of miscellaneous control files which may be used as part of job setup and handling. If not present, control files may be placed in the same location as driver_output_uri. Defaults to: `null`.
+  - driverOutputResourceUri (String): Output-only. A URI pointing to the location of the stdout of the job&#39;s driver program. Defaults to: `null`.
+  - hadoopJob (HadoopJob): Job is a Hadoop job. Defaults to: `null`.
+  - hiveJob (HiveJob): Job is a Hive job. Defaults to: `null`.
+  - labels (Map[String, String]): Optional. The labels to associate with this job. Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be associated with a job. Defaults to: `null`.
+  - pigJob (PigJob): Job is a Pig job. Defaults to: `null`.
+  - placement (JobPlacement): Required. Job information, including how, when, and where to run the job. Defaults to: `null`.
+  - pysparkJob (PySparkJob): Job is a Pyspark job. Defaults to: `null`.
+  - reference (JobReference): Optional. The fully qualified reference to the job, which can be used to obtain the equivalent REST path of the job resource. If this property is not specified when a job is created, the server generates a &lt;code&gt;job_id&lt;/code&gt;. Defaults to: `null`.
+  - scheduling (JobScheduling): Optional. Job scheduling configuration. Defaults to: `null`.
+  - sparkJob (SparkJob): Job is a Spark job. Defaults to: `null`.
+  - sparkSqlJob (SparkSqlJob): Job is a SparkSql job. Defaults to: `null`.
+  - status (JobStatus): Output-only. The job status. Additional application-specific status information may be contained in the &lt;code&gt;type_job&lt;/code&gt; and &lt;code&gt;yarn_applications&lt;/code&gt; fields. Defaults to: `null`.
+  - statusHistory (List[JobStatus]): Output-only. The previous job status. Defaults to: `null`.
+  - yarnApplications (List[YarnApplication]): Output-only. The collection of YARN applications spun up by this job.Beta Feature: This report is available for testing purposes only. It may be changed before final release. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"driverControlFilesUri",
     :"driverOutputResourceUri",
@@ -58,6 +75,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.Job do
     |> deserialize(:"status", :struct, GoogleApi.Dataproc.V1.Model.JobStatus, options)
     |> deserialize(:"statusHistory", :list, GoogleApi.Dataproc.V1.Model.JobStatus, options)
     |> deserialize(:"yarnApplications", :list, GoogleApi.Dataproc.V1.Model.YarnApplication, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataproc.V1.Model.Job do
+  def encode(value, options) do
+    GoogleApi.Dataproc.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

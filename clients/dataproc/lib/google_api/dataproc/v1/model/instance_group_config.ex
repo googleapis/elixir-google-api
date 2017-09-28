@@ -20,9 +20,19 @@
 defmodule GoogleApi.Dataproc.V1.Model.InstanceGroupConfig do
   @moduledoc """
   Optional. The config settings for Google Compute Engine resources in an instance group, such as a master or worker group.
+
+  ## Attributes
+
+  - accelerators (List[AcceleratorConfig]): Optional. The Google Compute Engine accelerator configuration for these instances.Beta Feature: This feature is still under development. It may be changed before final release. Defaults to: `null`.
+  - diskConfig (DiskConfig): Optional. Disk option config settings. Defaults to: `null`.
+  - imageUri (String): Output-only. The Google Compute Engine image resource used for cluster instances. Inferred from SoftwareConfig.image_version. Defaults to: `null`.
+  - instanceNames (List[String]): Optional. The list of instance names. Cloud Dataproc derives the names from cluster_name, num_instances, and the instance group if not set by user (recommended practice is to let Cloud Dataproc derive the name). Defaults to: `null`.
+  - isPreemptible (Boolean): Optional. Specifies that this instance group contains preemptible instances. Defaults to: `null`.
+  - machineTypeUri (String): Optional. The Google Compute Engine machine type used for cluster instances.A full URL, partial URI, or short name are valid. Examples: https://www.googleapis.com/compute/v1/projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2 projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2 n1-standard-2 Defaults to: `null`.
+  - managedGroupConfig (ManagedGroupConfig): Output-only. The config for Google Compute Engine Instance Group Manager that manages this group. This is only used for preemptible instance groups. Defaults to: `null`.
+  - numInstances (Integer): Optional. The number of VM instances in the instance group. For master instance groups, must be set to 1. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accelerators",
     :"diskConfig",
@@ -42,6 +52,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.InstanceGroupConfig do
     |> deserialize(:"accelerators", :list, GoogleApi.Dataproc.V1.Model.AcceleratorConfig, options)
     |> deserialize(:"diskConfig", :struct, GoogleApi.Dataproc.V1.Model.DiskConfig, options)
     |> deserialize(:"managedGroupConfig", :struct, GoogleApi.Dataproc.V1.Model.ManagedGroupConfig, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataproc.V1.Model.InstanceGroupConfig do
+  def encode(value, options) do
+    GoogleApi.Dataproc.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

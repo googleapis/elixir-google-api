@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataproc.V1.Model.ManagedGroupConfig do
   @moduledoc """
   Specifies the resources used to actively manage an instance group.
+
+  ## Attributes
+
+  - instanceGroupManagerName (String): Output-only. The name of the Instance Group Manager for this group. Defaults to: `null`.
+  - instanceTemplateName (String): Output-only. The name of the Instance Template used for the Managed Instance Group. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"instanceGroupManagerName",
     :"instanceTemplateName"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.ManagedGroupConfig do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataproc.V1.Model.ManagedGroupConfig do
+  def encode(value, options) do
+    GoogleApi.Dataproc.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

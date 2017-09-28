@@ -20,9 +20,11 @@
 defmodule GoogleApi.Dataproc.V1.Model.CancelJobRequest do
   @moduledoc """
   A request to cancel a job.
+
+  ## Attributes
+
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     
   ]
@@ -31,6 +33,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.CancelJobRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataproc.V1.Model.CancelJobRequest do
+  def encode(value, options) do
+    GoogleApi.Dataproc.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
