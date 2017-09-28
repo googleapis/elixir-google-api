@@ -20,9 +20,13 @@
 defmodule GoogleApi.DoubleClickBidManager.V1.Model.ReportFailure do
   @moduledoc """
   An explanation of a report failure.
+
+  ## Attributes
+
+  - errorCode (String): Error code that shows why the report was not created. Defaults to: `null`.
+    - Enum - one of [AUTHENTICATION_ERROR, DEPRECATED_REPORTING_INVALID_QUERY, REPORTING_BUCKET_NOT_FOUND, REPORTING_CREATE_BUCKET_FAILED, REPORTING_DELETE_BUCKET_FAILED, REPORTING_FATAL_ERROR, REPORTING_ILLEGAL_FILENAME, REPORTING_IMCOMPATIBLE_METRICS, REPORTING_INVALID_QUERY_MISSING_PARTNER_AND_ADVERTISER_FILTERS, REPORTING_INVALID_QUERY_TITLE_MISSING, REPORTING_INVALID_QUERY_TOO_MANY_UNFILTERED_LARGE_GROUP_BYS, REPORTING_QUERY_NOT_FOUND, REPORTING_TRANSIENT_ERROR, REPORTING_UPDATE_BUCKET_PERMISSION_FAILED, REPORTING_WRITE_BUCKET_OBJECT_FAILED, SERVER_ERROR, UNAUTHORIZED_API_ACCESS, VALIDATION_ERROR]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"errorCode"
   ]
@@ -31,6 +35,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.DoubleClickBidManager.V1.Model.ReportFailure do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickBidManager.V1.Model.ReportFailure do
+  def encode(value, options) do
+    GoogleApi.DoubleClickBidManager.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

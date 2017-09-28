@@ -20,9 +20,13 @@
 defmodule GoogleApi.DoubleClickBidManager.V1.Model.ListQueriesResponse do
   @moduledoc """
   List queries response.
+
+  ## Attributes
+
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;doubleclickbidmanager#listQueriesResponse\&quot;. Defaults to: `null`.
+  - queries (List[Query]): Retrieved queries. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"queries"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.DoubleClickBidManager.V1.Model.ListQuerie
   def decode(value, options) do
     value
     |> deserialize(:"queries", :list, GoogleApi.DoubleClickBidManager.V1.Model.Query, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickBidManager.V1.Model.ListQueriesResponse do
+  def encode(value, options) do
+    GoogleApi.DoubleClickBidManager.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

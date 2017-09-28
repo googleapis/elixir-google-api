@@ -1,6 +1,6 @@
 # GoogleApi.DoubleClickBidManager.V1
 
-**TODO: Add description**
+API for viewing and managing your reports in DoubleClick Bid Manager.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_double_click_bid_manager` to your list of dependencies in 
 
 ```elixir
 def deps do
-  [{:google_api_double_click_bid_manager, "~> 0.1.0"}]
+  [{:google_api_double_click_bid_manager, "~> 0.0.1"}]
 end
 ```
 

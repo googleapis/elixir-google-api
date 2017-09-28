@@ -20,9 +20,12 @@
 defmodule GoogleApi.DoubleClickBidManager.V1.Model.UploadLineItemsResponse do
   @moduledoc """
   Upload line items response.
+
+  ## Attributes
+
+  - uploadStatus (UploadStatus): Status of upload. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"uploadStatus"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.DoubleClickBidManager.V1.Model.UploadLine
   def decode(value, options) do
     value
     |> deserialize(:"uploadStatus", :struct, GoogleApi.DoubleClickBidManager.V1.Model.UploadStatus, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickBidManager.V1.Model.UploadLineItemsResponse do
+  def encode(value, options) do
+    GoogleApi.DoubleClickBidManager.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

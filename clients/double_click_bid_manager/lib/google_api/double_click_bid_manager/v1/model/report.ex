@@ -20,9 +20,14 @@
 defmodule GoogleApi.DoubleClickBidManager.V1.Model.Report do
   @moduledoc """
   Represents a report.
+
+  ## Attributes
+
+  - key (ReportKey): Key used to identify a report. Defaults to: `null`.
+  - metadata (ReportMetadata): Report metadata. Defaults to: `null`.
+  - params (Parameters): Report parameters. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"key",
     :"metadata",
@@ -37,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.DoubleClickBidManager.V1.Model.Report do
     |> deserialize(:"key", :struct, GoogleApi.DoubleClickBidManager.V1.Model.ReportKey, options)
     |> deserialize(:"metadata", :struct, GoogleApi.DoubleClickBidManager.V1.Model.ReportMetadata, options)
     |> deserialize(:"params", :struct, GoogleApi.DoubleClickBidManager.V1.Model.Parameters, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickBidManager.V1.Model.Report do
+  def encode(value, options) do
+    GoogleApi.DoubleClickBidManager.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

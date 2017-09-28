@@ -20,9 +20,15 @@
 defmodule GoogleApi.DoubleClickBidManager.V1.Model.DownloadResponse do
   @moduledoc """
   Download response.
+
+  ## Attributes
+
+  - adGroups (String): Retrieved ad groups in SDF format. Defaults to: `null`.
+  - ads (String): Retrieved ads in SDF format. Defaults to: `null`.
+  - insertionOrders (String): Retrieved insertion orders in SDF format. Defaults to: `null`.
+  - lineItems (String): Retrieved line items in SDF format. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"adGroups",
     :"ads",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.DoubleClickBidManager.V1.Model.DownloadResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickBidManager.V1.Model.DownloadResponse do
+  def encode(value, options) do
+    GoogleApi.DoubleClickBidManager.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

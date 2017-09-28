@@ -60,7 +60,9 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Api.Reports do
     }
     %{}
     |> method(:get)
-    |> url("/queries/#{query_id}/reports")
+    |> url("/queries/{queryId}/reports", %{
+         "queryId" => URI.encode_www_form(query_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

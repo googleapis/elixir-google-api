@@ -20,9 +20,17 @@
 defmodule GoogleApi.DoubleClickBidManager.V1.Model.DownloadRequest do
   @moduledoc """
   Request to fetch stored insertion orders, line items, TrueView ad groups and ads.
+
+  ## Attributes
+
+  - fileTypes (List[String]): File types that will be returned. Defaults to: `null`.
+    - Enum - one of 
+  - filterIds (List[String]): The IDs of the specified filter type. This is used to filter entities to fetch. At least one ID must be specified. Only one ID is allowed for the ADVERTISER_ID filter type. For INSERTION_ORDER_ID or LINE_ITEM_ID filter types, all IDs must be from the same Advertiser. Defaults to: `null`.
+  - filterType (String): Filter type used to filter line items to fetch. Defaults to: `null`.
+    - Enum - one of [ADVERTISER_ID, INSERTION_ORDER_ID, LINE_ITEM_ID]
+  - version (String): SDF Version (column names, types, order) in which the entities will be returned. Default to 3. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fileTypes",
     :"filterIds",
@@ -34,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.DoubleClickBidManager.V1.Model.DownloadRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickBidManager.V1.Model.DownloadRequest do
+  def encode(value, options) do
+    GoogleApi.DoubleClickBidManager.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.DoubleClickBidManager.V1.Model.ReportKey do
   @moduledoc """
   Key used to identify a report.
+
+  ## Attributes
+
+  - queryId (String): Query ID. Defaults to: `null`.
+  - reportId (String): Report ID. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"queryId",
     :"reportId"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.DoubleClickBidManager.V1.Model.ReportKey do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickBidManager.V1.Model.ReportKey do
+  def encode(value, options) do
+    GoogleApi.DoubleClickBidManager.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
