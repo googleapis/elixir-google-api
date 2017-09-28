@@ -64,7 +64,9 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Applications do
     }
     %{}
     |> method(:get)
-    |> url("/applications/#{application_id}/players/hidden")
+    |> url("/applications/{applicationId}/players/hidden", %{
+         "applicationId" => URI.encode_www_form(application_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

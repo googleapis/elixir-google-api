@@ -60,7 +60,9 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Quests do
     }
     %{}
     |> method(:post)
-    |> url("/quests/#{quest_id}/reset")
+    |> url("/quests/{questId}/reset", %{
+         "questId" => URI.encode_www_form(quest_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -181,7 +183,9 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Quests do
     }
     %{}
     |> method(:post)
-    |> url("/quests/#{quest_id}/resetForAllPlayers")
+    |> url("/quests/{questId}/resetForAllPlayers", %{
+         "questId" => URI.encode_www_form(quest_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

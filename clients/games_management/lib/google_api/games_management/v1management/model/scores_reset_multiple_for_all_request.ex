@@ -20,9 +20,13 @@
 defmodule GoogleApi.GamesManagement.V1management.Model.ScoresResetMultipleForAllRequest do
   @moduledoc """
   This is a JSON template for multiple scores reset all request.
+
+  ## Attributes
+
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#scoresResetMultipleForAllRequest. Defaults to: `null`.
+  - leaderboard_ids (List[String]): The IDs of leaderboards to reset. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"leaderboard_ids"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1management.Model.ScoresResetMultipleForAllRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.GamesManagement.V1management.Model.ScoresResetMultipleForAllRequest do
+  def encode(value, options) do
+    GoogleApi.GamesManagement.V1management.Deserializer.serialize_non_nil(value, options)
   end
 end
 

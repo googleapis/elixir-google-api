@@ -20,9 +20,13 @@
 defmodule GoogleApi.GamesManagement.V1management.Model.PlayerScoreResetAllResponse do
   @moduledoc """
   This is a JSON template for a list of leaderboard reset resources.
+
+  ## Attributes
+
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#playerScoreResetResponse. Defaults to: `null`.
+  - results (List[PlayerScoreResetResponse]): The leaderboard reset results. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"results"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1management.Model.Player
   def decode(value, options) do
     value
     |> deserialize(:"results", :list, GoogleApi.GamesManagement.V1management.Model.PlayerScoreResetResponse, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.GamesManagement.V1management.Model.PlayerScoreResetAllResponse do
+  def encode(value, options) do
+    GoogleApi.GamesManagement.V1management.Deserializer.serialize_non_nil(value, options)
   end
 end
 

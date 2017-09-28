@@ -20,9 +20,14 @@
 defmodule GoogleApi.GamesManagement.V1management.Model.HiddenPlayer do
   @moduledoc """
   This is a JSON template for the HiddenPlayer resource.
+
+  ## Attributes
+
+  - hiddenTimeMillis (String): The time this player was hidden. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#hiddenPlayer. Defaults to: `null`.
+  - player (Player): The player information. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"hiddenTimeMillis",
     :"kind",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1management.Model.Hidden
   def decode(value, options) do
     value
     |> deserialize(:"player", :struct, GoogleApi.GamesManagement.V1management.Model.Player, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.GamesManagement.V1management.Model.HiddenPlayer do
+  def encode(value, options) do
+    GoogleApi.GamesManagement.V1management.Deserializer.serialize_non_nil(value, options)
   end
 end
 

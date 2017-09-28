@@ -1,6 +1,6 @@
-# GoogleApi.GamesManagement.V1MANAGEMENT
+# GoogleApi.GamesManagement.V1management
 
-**TODO: Add description**
+The Management API for Google Play Game Services.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_games_management` to your list of dependencies in `mix.exs
 
 ```elixir
 def deps do
-  [{:google_api_games_management, "~> 0.1.0"}]
+  [{:google_api_games_management, "~> 0.0.1"}]
 end
 ```
 

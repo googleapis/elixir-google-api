@@ -60,7 +60,9 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Achievements do
     }
     %{}
     |> method(:post)
-    |> url("/achievements/#{achievement_id}/reset")
+    |> url("/achievements/{achievementId}/reset", %{
+         "achievementId" => URI.encode_www_form(achievement_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -181,7 +183,9 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Achievements do
     }
     %{}
     |> method(:post)
-    |> url("/achievements/#{achievement_id}/resetForAllPlayers")
+    |> url("/achievements/{achievementId}/resetForAllPlayers", %{
+         "achievementId" => URI.encode_www_form(achievement_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

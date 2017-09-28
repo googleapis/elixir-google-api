@@ -20,9 +20,14 @@
 defmodule GoogleApi.GamesManagement.V1management.Model.HiddenPlayerList do
   @moduledoc """
   This is a JSON template for a list of hidden players.
+
+  ## Attributes
+
+  - items (List[HiddenPlayer]): The players. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#hiddenPlayerList. Defaults to: `null`.
+  - nextPageToken (String): The pagination token for the next page of results. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"items",
     :"kind",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1management.Model.Hidden
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.GamesManagement.V1management.Model.HiddenPlayer, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.GamesManagement.V1management.Model.HiddenPlayerList do
+  def encode(value, options) do
+    GoogleApi.GamesManagement.V1management.Deserializer.serialize_non_nil(value, options)
   end
 end
 

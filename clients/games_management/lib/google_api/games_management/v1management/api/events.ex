@@ -60,7 +60,9 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Events do
     }
     %{}
     |> method(:post)
-    |> url("/events/#{event_id}/reset")
+    |> url("/events/{eventId}/reset", %{
+         "eventId" => URI.encode_www_form(event_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -181,7 +183,9 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Events do
     }
     %{}
     |> method(:post)
-    |> url("/events/#{event_id}/resetForAllPlayers")
+    |> url("/events/{eventId}/resetForAllPlayers", %{
+         "eventId" => URI.encode_www_form(event_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

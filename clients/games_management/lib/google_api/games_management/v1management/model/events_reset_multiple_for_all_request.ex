@@ -20,9 +20,13 @@
 defmodule GoogleApi.GamesManagement.V1management.Model.EventsResetMultipleForAllRequest do
   @moduledoc """
   This is a JSON template for multiple events reset all request.
+
+  ## Attributes
+
+  - event_ids (List[String]): The IDs of events to reset. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#eventsResetMultipleForAllRequest. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"event_ids",
     :"kind"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1management.Model.EventsResetMultipleForAllRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.GamesManagement.V1management.Model.EventsResetMultipleForAllRequest do
+  def encode(value, options) do
+    GoogleApi.GamesManagement.V1management.Deserializer.serialize_non_nil(value, options)
   end
 end
 
