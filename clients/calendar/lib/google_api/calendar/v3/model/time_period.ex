@@ -20,9 +20,13 @@
 defmodule GoogleApi.Calendar.V3.Model.TimePeriod do
   @moduledoc """
   
+
+  ## Attributes
+
+  - end (DateTime): The (exclusive) end of the time period. Defaults to: `null`.
+  - start (DateTime): The (inclusive) start of the time period. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"end",
     :"start"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.TimePeriod do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.TimePeriod do
+  def encode(value, options) do
+    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

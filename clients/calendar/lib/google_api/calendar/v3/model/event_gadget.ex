@@ -17,12 +17,22 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Calendar.V3.Model.Event_gadget do
+defmodule GoogleApi.Calendar.V3.Model.EventGadget do
   @moduledoc """
   A gadget that extends this event.
+
+  ## Attributes
+
+  - display (String): The gadget&#39;s display mode. Optional. Possible values are:   - \&quot;icon\&quot; - The gadget displays next to the event&#39;s title in the calendar view.  - \&quot;chip\&quot; - The gadget displays when the event is clicked. Defaults to: `null`.
+  - height (Integer): The gadget&#39;s height in pixels. The height must be an integer greater than 0. Optional. Defaults to: `null`.
+  - iconLink (String): The gadget&#39;s icon URL. The URL scheme must be HTTPS. Defaults to: `null`.
+  - link (String): The gadget&#39;s URL. The URL scheme must be HTTPS. Defaults to: `null`.
+  - preferences (Map[String, String]): Preferences. Defaults to: `null`.
+  - title (String): The gadget&#39;s title. Defaults to: `null`.
+  - type (String): The gadget&#39;s type. Defaults to: `null`.
+  - width (Integer): The gadget&#39;s width in pixels. The width must be an integer greater than 0. Optional. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"display",
     :"height",
@@ -35,9 +45,15 @@ defmodule GoogleApi.Calendar.V3.Model.Event_gadget do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.Event_gadget do
+defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.EventGadget do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.EventGadget do
+  def encode(value, options) do
+    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

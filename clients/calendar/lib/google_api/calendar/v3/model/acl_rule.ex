@@ -20,9 +20,16 @@
 defmodule GoogleApi.Calendar.V3.Model.AclRule do
   @moduledoc """
   
+
+  ## Attributes
+
+  - etag (String): ETag of the resource. Defaults to: `null`.
+  - id (String): Identifier of the ACL rule. Defaults to: `null`.
+  - kind (String): Type of the resource (\&quot;calendar#aclRule\&quot;). Defaults to: `null`.
+  - role (String): The role assigned to the scope. Possible values are:   - \&quot;none\&quot; - Provides no access.  - \&quot;freeBusyReader\&quot; - Provides read access to free/busy information.  - \&quot;reader\&quot; - Provides read access to the calendar. Private events will appear to users with reader access, but event details will be hidden.  - \&quot;writer\&quot; - Provides read and write access to the calendar. Private events will appear to users with writer access, and event details will be visible.  - \&quot;owner\&quot; - Provides ownership of the calendar. This role has all of the permissions of the writer role with the additional ability to see and manipulate ACLs. Defaults to: `null`.
+  - scope (AclRuleScope):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"id",
@@ -36,7 +43,13 @@ defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.AclRule do
   import GoogleApi.Calendar.V3.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"scope", :struct, GoogleApi.Calendar.V3.Model.AclRule_scope, options)
+    |> deserialize(:"scope", :struct, GoogleApi.Calendar.V3.Model.AclRuleScope, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.AclRule do
+  def encode(value, options) do
+    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

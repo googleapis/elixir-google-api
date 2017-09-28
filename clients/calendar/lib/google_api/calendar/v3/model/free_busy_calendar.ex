@@ -20,9 +20,13 @@
 defmodule GoogleApi.Calendar.V3.Model.FreeBusyCalendar do
   @moduledoc """
   
+
+  ## Attributes
+
+  - busy (List[TimePeriod]): List of time ranges during which this calendar should be regarded as busy. Defaults to: `null`.
+  - errors (List[Error]): Optional error(s) (if computation for the calendar failed). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"busy",
     :"errors"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.FreeBusyCalendar do
     value
     |> deserialize(:"busy", :list, GoogleApi.Calendar.V3.Model.TimePeriod, options)
     |> deserialize(:"errors", :list, GoogleApi.Calendar.V3.Model.Error, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.FreeBusyCalendar do
+  def encode(value, options) do
+    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

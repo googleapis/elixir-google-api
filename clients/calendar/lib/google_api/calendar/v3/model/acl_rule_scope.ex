@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Calendar.V3.Model.AclRule_scope do
+defmodule GoogleApi.Calendar.V3.Model.AclRuleScope do
   @moduledoc """
   The scope of the rule.
+
+  ## Attributes
+
+  - type (String): The type of the scope. Possible values are:   - \&quot;default\&quot; - The public scope. This is the default value.  - \&quot;user\&quot; - Limits the scope to a single user.  - \&quot;group\&quot; - Limits the scope to a group.  - \&quot;domain\&quot; - Limits the scope to a domain.  Note: The permissions granted to the \&quot;default\&quot;, or public, scope apply to any user, authenticated or not. Defaults to: `null`.
+  - value (String): The email address of a user or group, or the name of a domain, depending on the scope type. Omitted for type \&quot;default\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"type",
     :"value"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.AclRule_scope do
+defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.AclRuleScope do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.AclRuleScope do
+  def encode(value, options) do
+    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.Calendar.V3.Model.EventDateTime do
   @moduledoc """
   
+
+  ## Attributes
+
+  - date (DateTime): The date, in the format \&quot;yyyy-mm-dd\&quot;, if this is an all-day event. Defaults to: `null`.
+  - dateTime (DateTime): The time, as a combined date-time value (formatted according to RFC3339). A time zone offset is required unless a time zone is explicitly specified in timeZone. Defaults to: `null`.
+  - timeZone (String): The time zone in which the time is specified. (Formatted as an IANA Time Zone Database name, e.g. \&quot;Europe/Zurich\&quot;.) For recurring events this field is required and specifies the time zone in which the recurrence is expanded. For single events this field is optional and indicates a custom time zone for the event start/end. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"date",
     :"dateTime",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.EventDateTime do
   def decode(value, options) do
     value
     |> deserialize(:"date", :date, nil, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.EventDateTime do
+  def encode(value, options) do
+    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

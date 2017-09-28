@@ -20,9 +20,12 @@
 defmodule GoogleApi.Calendar.V3.Model.FreeBusyRequestItem do
   @moduledoc """
   
+
+  ## Attributes
+
+  - id (String): The identifier of a calendar or a group. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.FreeBusyRequestItem do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.FreeBusyRequestItem do
+  def encode(value, options) do
+    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

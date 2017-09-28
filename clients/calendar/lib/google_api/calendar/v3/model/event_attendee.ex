@@ -20,9 +20,21 @@
 defmodule GoogleApi.Calendar.V3.Model.EventAttendee do
   @moduledoc """
   
+
+  ## Attributes
+
+  - additionalGuests (Integer): Number of additional guests. Optional. The default is 0. Defaults to: `0`.
+  - comment (String): The attendee&#39;s response comment. Optional. Defaults to: `null`.
+  - displayName (String): The attendee&#39;s name, if available. Optional. Defaults to: `null`.
+  - email (String): The attendee&#39;s email address, if available. This field must be present when adding an attendee. It must be a valid email address as per RFC5322. Defaults to: `null`.
+  - id (String): The attendee&#39;s Profile ID, if available. It corresponds to theid field in the People collection of the Google+ API Defaults to: `null`.
+  - optional (Boolean): Whether this is an optional attendee. Optional. The default is False. Defaults to: `null`.
+  - organizer (Boolean): Whether the attendee is the organizer of the event. Read-only. The default is False. Defaults to: `null`.
+  - resource (Boolean): Whether the attendee is a resource. Read-only. The default is False. Defaults to: `null`.
+  - responseStatus (String): The attendee&#39;s response status. Possible values are:   - \&quot;needsAction\&quot; - The attendee has not responded to the invitation.  - \&quot;declined\&quot; - The attendee has declined the invitation.  - \&quot;tentative\&quot; - The attendee has tentatively accepted the invitation.  - \&quot;accepted\&quot; - The attendee has accepted the invitation. Defaults to: `null`.
+  - self (Boolean): Whether this entry represents the calendar on which this copy of the event appears. Read-only. The default is False. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"additionalGuests",
     :"comment",
@@ -40,6 +52,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.EventAttendee do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.EventAttendee do
+  def encode(value, options) do
+    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

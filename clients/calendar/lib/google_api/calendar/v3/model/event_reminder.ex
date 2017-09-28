@@ -20,9 +20,13 @@
 defmodule GoogleApi.Calendar.V3.Model.EventReminder do
   @moduledoc """
   
+
+  ## Attributes
+
+  - method (String): The method used by this reminder. Possible values are:   - \&quot;email\&quot; - Reminders are sent via email.  - \&quot;sms\&quot; - Reminders are sent via SMS. These are only available for G Suite customers. Requests to set SMS reminders for other account types are ignored.  - \&quot;popup\&quot; - Reminders are sent via a UI popup. Defaults to: `null`.
+  - minutes (Integer): Number of minutes before the start of the event when the reminder should trigger. Valid values are between 0 and 40320 (4 weeks in minutes). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"method",
     :"minutes"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.EventReminder do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.EventReminder do
+  def encode(value, options) do
+    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

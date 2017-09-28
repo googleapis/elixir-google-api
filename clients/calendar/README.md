@@ -1,6 +1,6 @@
 # GoogleApi.Calendar.V3
 
-**TODO: Add description**
+Manipulates events and other calendar data.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_calendar` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_calendar, "~> 0.1.0"}]
+  [{:google_api_calendar, "~> 0.0.1"}]
 end
 ```
 

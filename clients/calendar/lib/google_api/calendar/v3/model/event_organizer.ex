@@ -17,12 +17,18 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Calendar.V3.Model.Event_organizer do
+defmodule GoogleApi.Calendar.V3.Model.EventOrganizer do
   @moduledoc """
   The organizer of the event. If the organizer is also an attendee, this is indicated with a separate entry in attendees with the organizer field set to True. To change the organizer, use the move operation. Read-only, except when importing an event.
+
+  ## Attributes
+
+  - displayName (String): The organizer&#39;s name, if available. Defaults to: `null`.
+  - email (String): The organizer&#39;s email address, if available. It must be a valid email address as per RFC5322. Defaults to: `null`.
+  - id (String): The organizer&#39;s Profile ID, if available. It corresponds to theid field in the People collection of the Google+ API Defaults to: `null`.
+  - self (Boolean): Whether the organizer corresponds to the calendar on which this copy of the event appears. Read-only. The default is False. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"displayName",
     :"email",
@@ -31,9 +37,15 @@ defmodule GoogleApi.Calendar.V3.Model.Event_organizer do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.Event_organizer do
+defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.EventOrganizer do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.EventOrganizer do
+  def encode(value, options) do
+    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

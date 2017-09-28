@@ -60,7 +60,9 @@ defmodule GoogleApi.Calendar.V3.Api.Settings do
     }
     %{}
     |> method(:get)
-    |> url("/users/me/settings/#{setting}")
+    |> url("/users/me/settings/{setting}", %{
+         "setting" => URI.encode_www_form(setting)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

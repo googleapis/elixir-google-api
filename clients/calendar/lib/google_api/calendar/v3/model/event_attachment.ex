@@ -20,9 +20,16 @@
 defmodule GoogleApi.Calendar.V3.Model.EventAttachment do
   @moduledoc """
   
+
+  ## Attributes
+
+  - fileId (String): ID of the attached file. Read-only. For Google Drive files, this is the ID of the corresponding Files resource entry in the Drive API. Defaults to: `null`.
+  - fileUrl (String): URL link to the attachment. For adding Google Drive file attachments use the same format as in alternateLink property of the Files resource in the Drive API. Defaults to: `null`.
+  - iconLink (String): URL link to the attachment&#39;s icon. Read-only. Defaults to: `null`.
+  - mimeType (String): Internet media type (MIME type) of the attachment. Defaults to: `null`.
+  - title (String): Attachment title. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fileId",
     :"fileUrl",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.EventAttachment do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.EventAttachment do
+  def encode(value, options) do
+    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 
