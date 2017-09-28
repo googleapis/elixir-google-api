@@ -29,7 +29,7 @@ use Mix.Config
 #
 #     import_config "#{Mix.env}.exs"
 
-config :google_apis, 
+config :google_apis,
   spec_converter: GoogleApis.Converter.ApiSpecConverter,
   client_generator: GoogleApis.Generator.SwaggerCli,
-  swagger_cli_image: "swagger-cli"
+  swagger_cli_image: "swaggerapi/swagger-codegen-cli"
