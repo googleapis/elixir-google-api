@@ -20,9 +20,13 @@
 defmodule GoogleApi.AppEngine.V1.Model.BasicScaling do
   @moduledoc """
   A service with basic scaling will create an instance when the application receives a request. The instance will be turned down when the app becomes idle. Basic scaling is ideal for work that is intermittent or driven by user activity.
+
+  ## Attributes
+
+  - idleTimeout (String): Duration of time after the last request that an instance must wait before the instance is shut down. Defaults to: `null`.
+  - maxInstances (Integer): Maximum number of instances to create for this version. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"idleTimeout",
     :"maxInstances"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.BasicScaling do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.BasicScaling do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

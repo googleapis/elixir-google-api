@@ -20,9 +20,18 @@
 defmodule GoogleApi.AppEngine.V1.Model.HealthCheck do
   @moduledoc """
   Health checking configuration for VM instances. Unhealthy instances are killed and replaced with new instances. Only applicable for instances in App Engine flexible environment.
+
+  ## Attributes
+
+  - host (String): Host header to send when performing an HTTP health check. Example: \&quot;myapp.appspot.com\&quot; Defaults to: `null`.
+  - checkInterval (String): Interval between health checks. Defaults to: `null`.
+  - disableHealthCheck (Boolean): Whether to explicitly disable health checks for this instance. Defaults to: `null`.
+  - healthyThreshold (Integer): Number of consecutive successful health checks required before receiving traffic. Defaults to: `null`.
+  - restartThreshold (Integer): Number of consecutive failed health checks required before an instance is restarted. Defaults to: `null`.
+  - timeout (String): Time before the health check is considered failed. Defaults to: `null`.
+  - unhealthyThreshold (Integer): Number of consecutive failed health checks required before removing traffic. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"host",
     :"checkInterval",
@@ -37,6 +46,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.HealthCheck do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.HealthCheck do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

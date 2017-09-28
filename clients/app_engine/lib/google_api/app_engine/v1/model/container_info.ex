@@ -20,9 +20,12 @@
 defmodule GoogleApi.AppEngine.V1.Model.ContainerInfo do
   @moduledoc """
   Docker image that is used to create a container and start a VM instance for the version that you deploy. Only applicable for instances running in the App Engine flexible environment.
+
+  ## Attributes
+
+  - image (String): URI to the hosted container image in Google Container Registry. The URI must be fully qualified and include a tag or digest. Examples: \&quot;gcr.io/my-project/image:tag\&quot; or \&quot;gcr.io/my-project/image@digest\&quot; Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"image"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.ContainerInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.ContainerInfo do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

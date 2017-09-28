@@ -20,9 +20,13 @@
 defmodule GoogleApi.AppEngine.V1.Model.RequestUtilization do
   @moduledoc """
   Target scaling by request utilization. Only applicable for VM runtimes.
+
+  ## Attributes
+
+  - targetConcurrentRequests (Integer): Target number of concurrent requests. Defaults to: `null`.
+  - targetRequestCountPerSecond (Integer): Target requests per second. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"targetConcurrentRequests",
     :"targetRequestCountPerSecond"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.RequestUtilization do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.RequestUtilization do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

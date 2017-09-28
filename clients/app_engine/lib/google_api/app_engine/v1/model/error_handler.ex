@@ -20,9 +20,15 @@
 defmodule GoogleApi.AppEngine.V1.Model.ErrorHandler do
   @moduledoc """
   Custom static error page to be served when an error occurs.
+
+  ## Attributes
+
+  - errorCode (String): Error condition this handler applies to. Defaults to: `null`.
+    - Enum - one of [ERROR_CODE_UNSPECIFIED, ERROR_CODE_DEFAULT, ERROR_CODE_OVER_QUOTA, ERROR_CODE_DOS_API_DENIAL, ERROR_CODE_TIMEOUT]
+  - mimeType (String): MIME type of file. Defaults to text/html. Defaults to: `null`.
+  - staticFile (String): Static file content to be served for this error. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"errorCode",
     :"mimeType",
@@ -33,6 +39,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.ErrorHandler do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.ErrorHandler do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

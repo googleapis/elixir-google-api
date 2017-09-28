@@ -20,9 +20,16 @@
 defmodule GoogleApi.AppEngine.V1.Model.OperationMetadataV1Beta5 do
   @moduledoc """
   Metadata for the given google.longrunning.Operation.
+
+  ## Attributes
+
+  - endTime (String): Timestamp that this operation completed.@OutputOnly Defaults to: `null`.
+  - insertTime (String): Timestamp that this operation was created.@OutputOnly Defaults to: `null`.
+  - method (String): API method name that initiated this operation. Example: google.appengine.v1beta5.Version.CreateVersion.@OutputOnly Defaults to: `null`.
+  - target (String): Name of the resource that this operation is acting on. Example: apps/myapp/services/default.@OutputOnly Defaults to: `null`.
+  - user (String): User who requested this operation.@OutputOnly Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"endTime",
     :"insertTime",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.OperationMetadataV1Beta5 do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.OperationMetadataV1Beta5 do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

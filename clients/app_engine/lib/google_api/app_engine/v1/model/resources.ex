@@ -20,9 +20,15 @@
 defmodule GoogleApi.AppEngine.V1.Model.Resources do
   @moduledoc """
   Machine resources for a version.
+
+  ## Attributes
+
+  - cpu (Float): Number of CPU cores needed. Defaults to: `null`.
+  - diskGb (Float): Disk size (GB) needed. Defaults to: `null`.
+  - memoryGb (Float): Memory (GB) needed. Defaults to: `null`.
+  - volumes (List[Volume]): User specified volumes. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cpu",
     :"diskGb",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.Resources do
   def decode(value, options) do
     value
     |> deserialize(:"volumes", :list, GoogleApi.AppEngine.V1.Model.Volume, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.Resources do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.AppEngine.V1.Model.LocationMetadata do
   @moduledoc """
   Metadata for the given google.cloud.location.Location.
+
+  ## Attributes
+
+  - flexibleEnvironmentAvailable (Boolean): App Engine Flexible Environment is available in the given location.@OutputOnly Defaults to: `null`.
+  - standardEnvironmentAvailable (Boolean): App Engine Standard Environment is available in the given location.@OutputOnly Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"flexibleEnvironmentAvailable",
     :"standardEnvironmentAvailable"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.LocationMetadata do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.LocationMetadata do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

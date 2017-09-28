@@ -20,9 +20,18 @@
 defmodule GoogleApi.AppEngine.V1.Model.ReadinessCheck do
   @moduledoc """
   Readiness checking configuration for VM instances. Unhealthy instances are removed from traffic rotation.
+
+  ## Attributes
+
+  - host (String): Host header to send when performing a HTTP Readiness check. Example: \&quot;myapp.appspot.com\&quot; Defaults to: `null`.
+  - appStartTimeout (String): A maximum time limit on application initialization, measured from moment the application successfully replies to a healthcheck until it is ready to serve traffic. Defaults to: `null`.
+  - checkInterval (String): Interval between health checks. Defaults to: `null`.
+  - failureThreshold (Integer): Number of consecutive failed checks required before removing traffic. Defaults to: `null`.
+  - path (String): The request path. Defaults to: `null`.
+  - successThreshold (Integer): Number of consecutive successful checks required before receiving traffic. Defaults to: `null`.
+  - timeout (String): Time before the check is considered failed. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"host",
     :"appStartTimeout",
@@ -37,6 +46,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.ReadinessCheck do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.ReadinessCheck do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

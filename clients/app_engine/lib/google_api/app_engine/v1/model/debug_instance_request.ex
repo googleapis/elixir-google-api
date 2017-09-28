@@ -20,9 +20,12 @@
 defmodule GoogleApi.AppEngine.V1.Model.DebugInstanceRequest do
   @moduledoc """
   Request message for Instances.DebugInstance.
+
+  ## Attributes
+
+  - sshKey (String): Public SSH key to add to the instance. Examples: [USERNAME]:ssh-rsa [KEY_VALUE] [USERNAME] [USERNAME]:ssh-rsa [KEY_VALUE] google-ssh {\&quot;userName\&quot;:\&quot;[USERNAME]\&quot;,\&quot;expireOn\&quot;:\&quot;[EXPIRE_TIME]\&quot;}For more information, see Adding and Removing SSH Keys (https://cloud.google.com/compute/docs/instances/adding-removing-ssh-keys). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"sshKey"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.DebugInstanceRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.DebugInstanceRequest do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

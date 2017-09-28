@@ -20,9 +20,14 @@
 defmodule GoogleApi.AppEngine.V1.Model.Service do
   @moduledoc """
   A Service resource is a logical component of an application that can share state and communicate in a secure fashion with other services. For example, an application that handles customer requests might include separate services to handle tasks such as backend data analysis or API requests from mobile devices. Each service has a collection of versions that define a specific set of code used to implement the functionality of that service.
+
+  ## Attributes
+
+  - id (String): Relative name of the service within the application. Example: default.@OutputOnly Defaults to: `null`.
+  - name (String): Full path to the Service resource in the API. Example: apps/myapp/services/default.@OutputOnly Defaults to: `null`.
+  - split (TrafficSplit): Mapping that defines fractional HTTP traffic diversion to different versions within the service. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"name",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.Service do
   def decode(value, options) do
     value
     |> deserialize(:"split", :struct, GoogleApi.AppEngine.V1.Model.TrafficSplit, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.Service do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

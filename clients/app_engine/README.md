@@ -1,6 +1,6 @@
 # GoogleApi.AppEngine.V1
 
-**TODO: Add description**
+The App Engine Admin API enables developers to provision and manage their App Engine applications.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_app_engine` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_app_engine, "~> 0.1.0"}]
+  [{:google_api_app_engine, "~> 0.0.1"}]
 end
 ```
 

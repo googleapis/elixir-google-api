@@ -20,9 +20,12 @@
 defmodule GoogleApi.AppEngine.V1.Model.ApiEndpointHandler do
   @moduledoc """
   Uses Google Cloud Endpoints to handle requests.
+
+  ## Attributes
+
+  - scriptPath (String): Path to the script from the application root directory. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"scriptPath"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.ApiEndpointHandler do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.ApiEndpointHandler do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

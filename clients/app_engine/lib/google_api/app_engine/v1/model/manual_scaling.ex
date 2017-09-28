@@ -20,9 +20,12 @@
 defmodule GoogleApi.AppEngine.V1.Model.ManualScaling do
   @moduledoc """
   A service with manual scaling runs continuously, allowing you to perform complex initialization and rely on the state of its memory over time.
+
+  ## Attributes
+
+  - instances (Integer): Number of instances to assign to the service at the start. This number can later be altered by using the Modules API (https://cloud.google.com/appengine/docs/python/modules/functions) set_num_instances() function. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"instances"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.ManualScaling do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.ManualScaling do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

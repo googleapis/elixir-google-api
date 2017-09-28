@@ -20,9 +20,14 @@
 defmodule GoogleApi.AppEngine.V1.Model.UrlDispatchRule do
   @moduledoc """
   Rules to match an HTTP request and dispatch that request to a service.
+
+  ## Attributes
+
+  - domain (String): Domain name to match against. The wildcard \&quot;*\&quot; is supported if specified before a period: \&quot;*.\&quot;.Defaults to matching all domains: \&quot;*\&quot;. Defaults to: `null`.
+  - path (String): Pathname within the host. Must start with a \&quot;/\&quot;. A single \&quot;*\&quot; can be included at the end of the path.The sum of the lengths of the domain and path may not exceed 100 characters. Defaults to: `null`.
+  - service (String): Resource ID of a service in this application that should serve the matched request. The service must already exist. Example: default. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"domain",
     :"path",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.UrlDispatchRule do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.UrlDispatchRule do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

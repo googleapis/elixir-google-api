@@ -20,9 +20,15 @@
 defmodule GoogleApi.AppEngine.V1.Model.Network do
   @moduledoc """
   Extra network settings. Only applicable for App Engine flexible environment versions
+
+  ## Attributes
+
+  - forwardedPorts (List[String]): List of ports, or port pairs, to forward from the virtual machine to the application container. Only applicable for App Engine flexible environment versions. Defaults to: `null`.
+  - instanceTag (String): Tag to apply to the VM instance during creation. Only applicable for for App Engine flexible environment versions. Defaults to: `null`.
+  - name (String): Google Compute Engine network where the virtual machines are created. Specify the short name, not the resource path.Defaults to default. Defaults to: `null`.
+  - subnetworkName (String): Google Cloud Platform sub-network where the virtual machines are created. Specify the short name, not the resource path.If a subnetwork name is specified, a network name will also be required unless it is for the default network. If the network the VM instance is being created in is a Legacy network, then the IP address is allocated from the IPv4Range. If the network the VM instance is being created in is an auto Subnet Mode Network, then only network name should be specified (not the subnetwork_name) and the IP address is created from the IPCidrRange of the subnetwork that exists in that zone for that network. If the network the VM instance is being created in is a custom Subnet Mode Network, then the subnetwork_name must be specified and the IP address is created from the IPCidrRange of the subnetwork.If specified, the subnetwork must exist in the same region as the App Engine flexible environment application. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"forwardedPorts",
     :"instanceTag",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.Network do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.Network do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

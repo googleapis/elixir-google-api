@@ -20,9 +20,14 @@
 defmodule GoogleApi.AppEngine.V1.Model.FileInfo do
   @moduledoc """
   Single source file that is part of the version to be deployed. Each source file that is deployed must be specified separately.
+
+  ## Attributes
+
+  - mimeType (String): The MIME type of the file.Defaults to the value from Google Cloud Storage. Defaults to: `null`.
+  - sha1Sum (String): The SHA1 hash of the file, in hex. Defaults to: `null`.
+  - sourceUrl (String): URL source to use to fetch this file. Must be a URL to a resource in Google Cloud Storage in the form &#39;http(s)://storage.googleapis.com/&lt;bucket&gt;/&lt;object&gt;&#39;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"mimeType",
     :"sha1Sum",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.FileInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.FileInfo do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

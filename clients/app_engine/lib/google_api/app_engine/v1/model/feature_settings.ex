@@ -20,9 +20,12 @@
 defmodule GoogleApi.AppEngine.V1.Model.FeatureSettings do
   @moduledoc """
   The feature specific settings to be used in the application. These define behaviors that are user configurable.
+
+  ## Attributes
+
+  - splitHealthChecks (Boolean): Boolean value indicating if split health checks should be used instead of the legacy health checks. At an app.yaml level, this means defaulting to &#39;readiness_check&#39; and &#39;liveness_check&#39; values instead of &#39;health_check&#39; ones. Once the legacy &#39;health_check&#39; behavior is deprecated, and this value is always true, this setting can be removed. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"splitHealthChecks"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.FeatureSettings do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.FeatureSettings do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,45 @@
 defmodule GoogleApi.AppEngine.V1.Model.Version do
   @moduledoc """
   A Version resource is a specific set of source code and configuration files that are deployed into a service.
+
+  ## Attributes
+
+  - apiConfig (ApiConfigHandler): Serving configuration for Google Cloud Endpoints (https://cloud.google.com/appengine/docs/python/endpoints/).Only returned in GET requests if view&#x3D;FULL is set. Defaults to: `null`.
+  - automaticScaling (AutomaticScaling): Automatic scaling is based on request rate, response latencies, and other application metrics. Defaults to: `null`.
+  - basicScaling (BasicScaling): A service with basic scaling will create an instance when the application receives a request. The instance will be turned down when the app becomes idle. Basic scaling is ideal for work that is intermittent or driven by user activity. Defaults to: `null`.
+  - betaSettings (Map[String, String]): Metadata settings that are supplied to this version to enable beta runtime features. Defaults to: `null`.
+  - createTime (String): Time that this version was created.@OutputOnly Defaults to: `null`.
+  - createdBy (String): Email address of the user who created this version.@OutputOnly Defaults to: `null`.
+  - defaultExpiration (String): Duration that static files should be cached by web proxies and browsers. Only applicable if the corresponding StaticFilesHandler (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#staticfileshandler) does not specify its own expiration time.Only returned in GET requests if view&#x3D;FULL is set. Defaults to: `null`.
+  - deployment (Deployment): Code and application artifacts that make up this version.Only returned in GET requests if view&#x3D;FULL is set. Defaults to: `null`.
+  - diskUsageBytes (String): Total size in bytes of all the files that are included in this version and curerntly hosted on the App Engine disk.@OutputOnly Defaults to: `null`.
+  - endpointsApiService (EndpointsApiService): Cloud Endpoints configuration.If endpoints_api_service is set, the Cloud Endpoints Extensible Service Proxy will be provided to serve the API implemented by the app. Defaults to: `null`.
+  - env (String): App Engine execution environment for this version.Defaults to standard. Defaults to: `null`.
+  - envVariables (Map[String, String]): Environment variables available to the application.Only returned in GET requests if view&#x3D;FULL is set. Defaults to: `null`.
+  - errorHandlers (List[ErrorHandler]): Custom static error pages. Limited to 10KB per page.Only returned in GET requests if view&#x3D;FULL is set. Defaults to: `null`.
+  - handlers (List[UrlMap]): An ordered list of URL-matching patterns that should be applied to incoming requests. The first matching URL handles the request and other request handlers are not attempted.Only returned in GET requests if view&#x3D;FULL is set. Defaults to: `null`.
+  - healthCheck (HealthCheck): Configures health checking for VM instances. Unhealthy instances are stopped and replaced with new instances. Only applicable for VM runtimes.Only returned in GET requests if view&#x3D;FULL is set. Defaults to: `null`.
+  - id (String): Relative name of the version within the service. Example: v1. Version names can contain only lowercase letters, numbers, or hyphens. Reserved names: \&quot;default\&quot;, \&quot;latest\&quot;, and any name with the prefix \&quot;ah-\&quot;. Defaults to: `null`.
+  - inboundServices (List[String]): Before an application can receive email or XMPP messages, the application must be configured to enable the service. Defaults to: `null`.
+    - Enum - one of 
+  - instanceClass (String): Instance class that is used to run this version. Valid values are: AutomaticScaling: F1, F2, F4, F4_1G ManualScaling or BasicScaling: B1, B2, B4, B8, B4_1GDefaults to F1 for AutomaticScaling and B1 for ManualScaling or BasicScaling. Defaults to: `null`.
+  - libraries (List[Library]): Configuration for third-party Python runtime libraries that are required by the application.Only returned in GET requests if view&#x3D;FULL is set. Defaults to: `null`.
+  - livenessCheck (LivenessCheck): Configures liveness health checking for VM instances. Unhealthy instances are stopped and replaced with new instancesOnly returned in GET requests if view&#x3D;FULL is set. Defaults to: `null`.
+  - manualScaling (ManualScaling): A service with manual scaling runs continuously, allowing you to perform complex initialization and rely on the state of its memory over time. Defaults to: `null`.
+  - name (String): Full path to the Version resource in the API. Example: apps/myapp/services/default/versions/v1.@OutputOnly Defaults to: `null`.
+  - network (Network): Extra network settings. Only applicable for App Engine flexible environment versions. Defaults to: `null`.
+  - nobuildFilesRegex (String): Files that match this pattern will not be built into this version. Only applicable for Go runtimes.Only returned in GET requests if view&#x3D;FULL is set. Defaults to: `null`.
+  - readinessCheck (ReadinessCheck): Configures readiness health checking for VM instances. Unhealthy instances are not put into the backend traffic rotation.Only returned in GET requests if view&#x3D;FULL is set. Defaults to: `null`.
+  - resources (Resources): Machine resources for this version. Only applicable for VM runtimes. Defaults to: `null`.
+  - runtime (String): Desired runtime. Example: python27. Defaults to: `null`.
+  - runtimeApiVersion (String): The version of the API in the given runtime environment. Please see the app.yaml reference for valid values at https://cloud.google.com/appengine/docs/standard/&lt;language&gt;/config/appref Defaults to: `null`.
+  - servingStatus (String): Current serving status of this version. Only the versions with a SERVING status create instances and can be billed.SERVING_STATUS_UNSPECIFIED is an invalid value. Defaults to SERVING. Defaults to: `null`.
+    - Enum - one of [SERVING_STATUS_UNSPECIFIED, SERVING, STOPPED]
+  - threadsafe (Boolean): Whether multiple requests can be dispatched to this version at once. Defaults to: `null`.
+  - versionUrl (String): Serving URL for this version. Example: \&quot;https://myversion-dot-myservice-dot-myapp.appspot.com\&quot;@OutputOnly Defaults to: `null`.
+  - vm (Boolean): Whether to deploy this version in a container on a virtual machine. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"apiConfig",
     :"automaticScaling",
@@ -77,6 +113,12 @@ defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.Version do
     |> deserialize(:"network", :struct, GoogleApi.AppEngine.V1.Model.Network, options)
     |> deserialize(:"readinessCheck", :struct, GoogleApi.AppEngine.V1.Model.ReadinessCheck, options)
     |> deserialize(:"resources", :struct, GoogleApi.AppEngine.V1.Model.Resources, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.Version do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

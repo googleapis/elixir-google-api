@@ -20,9 +20,18 @@
 defmodule GoogleApi.AppEngine.V1.Model.OperationMetadataV1Alpha do
   @moduledoc """
   Metadata for the given google.longrunning.Operation.
+
+  ## Attributes
+
+  - endTime (String): Time that this operation completed.@OutputOnly Defaults to: `null`.
+  - ephemeralMessage (String): Ephemeral message that may change every time the operation is polled. @OutputOnly Defaults to: `null`.
+  - insertTime (String): Time that this operation was created.@OutputOnly Defaults to: `null`.
+  - method (String): API method that initiated this operation. Example: google.appengine.v1alpha.Versions.CreateVersion.@OutputOnly Defaults to: `null`.
+  - target (String): Name of the resource that this operation is acting on. Example: apps/myapp/services/default.@OutputOnly Defaults to: `null`.
+  - user (String): User who requested this operation.@OutputOnly Defaults to: `null`.
+  - warning (List[String]): Durable messages that persist on every operation poll. @OutputOnly Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"endTime",
     :"ephemeralMessage",
@@ -37,6 +46,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.OperationMetadataV1Alpha do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.OperationMetadataV1Alpha do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
