@@ -20,9 +20,12 @@
 defmodule GoogleApi.AnalyticsReporting.V4.Model.GetReportsRequest do
   @moduledoc """
   The batch request containing multiple report request.
+
+  ## Attributes
+
+  - reportRequests (List[ReportRequest]): Requests, each request will have a separate response. There can be a maximum of 5 requests. All requests should have the same &#x60;dateRanges&#x60;, &#x60;viewId&#x60;, &#x60;segments&#x60;, &#x60;samplingLevel&#x60;, and &#x60;cohortGroup&#x60;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"reportRequests"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.AnalyticsReporting.V4.Model.GetReportsReq
   def decode(value, options) do
     value
     |> deserialize(:"reportRequests", :list, GoogleApi.AnalyticsReporting.V4.Model.ReportRequest, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AnalyticsReporting.V4.Model.GetReportsRequest do
+  def encode(value, options) do
+    GoogleApi.AnalyticsReporting.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

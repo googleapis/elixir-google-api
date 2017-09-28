@@ -20,9 +20,14 @@
 defmodule GoogleApi.AnalyticsReporting.V4.Model.Report do
   @moduledoc """
   The data response corresponding to the request.
+
+  ## Attributes
+
+  - columnHeader (ColumnHeader): The column headers. Defaults to: `null`.
+  - data (ReportData): Response data. Defaults to: `null`.
+  - nextPageToken (String): Page token to retrieve the next page of results in the list. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"columnHeader",
     :"data",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.AnalyticsReporting.V4.Model.Report do
     value
     |> deserialize(:"columnHeader", :struct, GoogleApi.AnalyticsReporting.V4.Model.ColumnHeader, options)
     |> deserialize(:"data", :struct, GoogleApi.AnalyticsReporting.V4.Model.ReportData, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AnalyticsReporting.V4.Model.Report do
+  def encode(value, options) do
+    GoogleApi.AnalyticsReporting.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.AnalyticsReporting.V4.Model.Segment do
   @moduledoc """
   The segment definition, if the report needs to be segmented. A Segment is a subset of the Analytics data. For example, of the entire set of users, one Segment might be users from a particular country or city.
+
+  ## Attributes
+
+  - dynamicSegment (DynamicSegment): A dynamic segment definition in the request. Defaults to: `null`.
+  - segmentId (String): The segment ID of a built-in or custom segment, for example &#x60;gaid::-3&#x60;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dynamicSegment",
     :"segmentId"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AnalyticsReporting.V4.Model.Segment do
   def decode(value, options) do
     value
     |> deserialize(:"dynamicSegment", :struct, GoogleApi.AnalyticsReporting.V4.Model.DynamicSegment, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AnalyticsReporting.V4.Model.Segment do
+  def encode(value, options) do
+    GoogleApi.AnalyticsReporting.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.AnalyticsReporting.V4.Model.OrFiltersForSegment do
   @moduledoc """
   A list of segment filters in the &#x60;OR&#x60; group are combined with the logical OR operator.
+
+  ## Attributes
+
+  - segmentFilterClauses (List[SegmentFilterClause]): List of segment filters to be combined with a &#x60;OR&#x60; operator. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"segmentFilterClauses"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.AnalyticsReporting.V4.Model.OrFiltersForS
   def decode(value, options) do
     value
     |> deserialize(:"segmentFilterClauses", :list, GoogleApi.AnalyticsReporting.V4.Model.SegmentFilterClause, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AnalyticsReporting.V4.Model.OrFiltersForSegment do
+  def encode(value, options) do
+    GoogleApi.AnalyticsReporting.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

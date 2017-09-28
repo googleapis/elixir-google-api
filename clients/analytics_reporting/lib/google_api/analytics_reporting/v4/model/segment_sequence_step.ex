@@ -20,9 +20,14 @@
 defmodule GoogleApi.AnalyticsReporting.V4.Model.SegmentSequenceStep do
   @moduledoc """
   A segment sequence definition.
+
+  ## Attributes
+
+  - matchType (String): Specifies if the step immediately precedes or can be any time before the next step. Defaults to: `null`.
+    - Enum - one of [UNSPECIFIED_MATCH_TYPE, PRECEDES, IMMEDIATELY_PRECEDES]
+  - orFiltersForSegment (List[OrFiltersForSegment]): A sequence is specified with a list of Or grouped filters which are combined with &#x60;AND&#x60; operator. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"matchType",
     :"orFiltersForSegment"
@@ -34,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.AnalyticsReporting.V4.Model.SegmentSequen
   def decode(value, options) do
     value
     |> deserialize(:"orFiltersForSegment", :list, GoogleApi.AnalyticsReporting.V4.Model.OrFiltersForSegment, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AnalyticsReporting.V4.Model.SegmentSequenceStep do
+  def encode(value, options) do
+    GoogleApi.AnalyticsReporting.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

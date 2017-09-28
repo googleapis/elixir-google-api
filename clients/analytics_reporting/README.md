@@ -1,6 +1,6 @@
 # GoogleApi.AnalyticsReporting.V4
 
-**TODO: Add description**
+Accesses Analytics report data.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_analytics_reporting` to your list of dependencies in `mix.
 
 ```elixir
 def deps do
-  [{:google_api_analytics_reporting, "~> 0.1.0"}]
+  [{:google_api_analytics_reporting, "~> 0.0.1"}]
 end
 ```
 

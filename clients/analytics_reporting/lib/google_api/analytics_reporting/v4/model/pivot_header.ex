@@ -20,9 +20,13 @@
 defmodule GoogleApi.AnalyticsReporting.V4.Model.PivotHeader do
   @moduledoc """
   The headers for each of the pivot sections defined in the request.
+
+  ## Attributes
+
+  - pivotHeaderEntries (List[PivotHeaderEntry]): A single pivot section header. Defaults to: `null`.
+  - totalPivotGroupsCount (Integer): The total number of groups for this pivot. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"pivotHeaderEntries",
     :"totalPivotGroupsCount"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AnalyticsReporting.V4.Model.PivotHeader d
   def decode(value, options) do
     value
     |> deserialize(:"pivotHeaderEntries", :list, GoogleApi.AnalyticsReporting.V4.Model.PivotHeaderEntry, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AnalyticsReporting.V4.Model.PivotHeader do
+  def encode(value, options) do
+    GoogleApi.AnalyticsReporting.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,18 @@
 defmodule GoogleApi.AnalyticsReporting.V4.Model.SegmentDimensionFilter do
   @moduledoc """
   Dimension filter specifies the filtering options on a dimension.
+
+  ## Attributes
+
+  - caseSensitive (Boolean): Should the match be case sensitive, ignored for &#x60;IN_LIST&#x60; operator. Defaults to: `null`.
+  - dimensionName (String): Name of the dimension for which the filter is being applied. Defaults to: `null`.
+  - expressions (List[String]): The list of expressions, only the first element is used for all operators Defaults to: `null`.
+  - maxComparisonValue (String): Maximum comparison values for &#x60;BETWEEN&#x60; match type. Defaults to: `null`.
+  - minComparisonValue (String): Minimum comparison values for &#x60;BETWEEN&#x60; match type. Defaults to: `null`.
+  - operator (String): The operator to use to match the dimension with the expressions. Defaults to: `null`.
+    - Enum - one of [OPERATOR_UNSPECIFIED, REGEXP, BEGINS_WITH, ENDS_WITH, PARTIAL, EXACT, IN_LIST, NUMERIC_LESS_THAN, NUMERIC_GREATER_THAN, NUMERIC_BETWEEN]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"caseSensitive",
     :"dimensionName",
@@ -36,6 +45,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AnalyticsReporting.V4.Model.SegmentDimensionFilter do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AnalyticsReporting.V4.Model.SegmentDimensionFilter do
+  def encode(value, options) do
+    GoogleApi.AnalyticsReporting.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

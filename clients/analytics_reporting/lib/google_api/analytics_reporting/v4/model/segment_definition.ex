@@ -20,9 +20,12 @@
 defmodule GoogleApi.AnalyticsReporting.V4.Model.SegmentDefinition do
   @moduledoc """
   SegmentDefinition defines the segment to be a set of SegmentFilters which are combined together with a logical &#x60;AND&#x60; operation.
+
+  ## Attributes
+
+  - segmentFilters (List[SegmentFilter]): A segment is defined by a set of segment filters which are combined together with a logical &#x60;AND&#x60; operation. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"segmentFilters"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.AnalyticsReporting.V4.Model.SegmentDefini
   def decode(value, options) do
     value
     |> deserialize(:"segmentFilters", :list, GoogleApi.AnalyticsReporting.V4.Model.SegmentFilter, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AnalyticsReporting.V4.Model.SegmentDefinition do
+  def encode(value, options) do
+    GoogleApi.AnalyticsReporting.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

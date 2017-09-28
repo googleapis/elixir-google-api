@@ -20,9 +20,13 @@
 defmodule GoogleApi.AnalyticsReporting.V4.Model.SequenceSegment do
   @moduledoc """
   Sequence conditions consist of one or more steps, where each step is defined by one or more dimension/metric conditions. Multiple steps can be combined with special sequence operators.
+
+  ## Attributes
+
+  - firstStepShouldMatchFirstHit (Boolean): If set, first step condition must match the first hit of the visitor (in the date range). Defaults to: `null`.
+  - segmentSequenceSteps (List[SegmentSequenceStep]): The list of steps in the sequence. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"firstStepShouldMatchFirstHit",
     :"segmentSequenceSteps"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AnalyticsReporting.V4.Model.SequenceSegme
   def decode(value, options) do
     value
     |> deserialize(:"segmentSequenceSteps", :list, GoogleApi.AnalyticsReporting.V4.Model.SegmentSequenceStep, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AnalyticsReporting.V4.Model.SequenceSegment do
+  def encode(value, options) do
+    GoogleApi.AnalyticsReporting.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

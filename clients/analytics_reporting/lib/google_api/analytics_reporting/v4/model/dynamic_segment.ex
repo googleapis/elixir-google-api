@@ -20,9 +20,14 @@
 defmodule GoogleApi.AnalyticsReporting.V4.Model.DynamicSegment do
   @moduledoc """
   Dynamic segment definition for defining the segment within the request. A segment can select users, sessions or both.
+
+  ## Attributes
+
+  - name (String): The name of the dynamic segment. Defaults to: `null`.
+  - sessionSegment (SegmentDefinition): Session Segment to select sessions to include in the segment. Defaults to: `null`.
+  - userSegment (SegmentDefinition): User Segment to select users to include in the segment. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name",
     :"sessionSegment",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.AnalyticsReporting.V4.Model.DynamicSegmen
     value
     |> deserialize(:"sessionSegment", :struct, GoogleApi.AnalyticsReporting.V4.Model.SegmentDefinition, options)
     |> deserialize(:"userSegment", :struct, GoogleApi.AnalyticsReporting.V4.Model.SegmentDefinition, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AnalyticsReporting.V4.Model.DynamicSegment do
+  def encode(value, options) do
+    GoogleApi.AnalyticsReporting.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

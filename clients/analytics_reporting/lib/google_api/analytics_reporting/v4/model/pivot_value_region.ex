@@ -20,9 +20,12 @@
 defmodule GoogleApi.AnalyticsReporting.V4.Model.PivotValueRegion do
   @moduledoc """
   The metric values in the pivot region.
+
+  ## Attributes
+
+  - values (List[String]): The values of the metrics in each of the pivot regions. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"values"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AnalyticsReporting.V4.Model.PivotValueRegion do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AnalyticsReporting.V4.Model.PivotValueRegion do
+  def encode(value, options) do
+    GoogleApi.AnalyticsReporting.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

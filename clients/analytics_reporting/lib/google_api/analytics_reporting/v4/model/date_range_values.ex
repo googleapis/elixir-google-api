@@ -20,9 +20,13 @@
 defmodule GoogleApi.AnalyticsReporting.V4.Model.DateRangeValues do
   @moduledoc """
   Used to return a list of metrics for a single DateRange / dimension combination
+
+  ## Attributes
+
+  - pivotValueRegions (List[PivotValueRegion]): The values of each pivot region. Defaults to: `null`.
+  - values (List[String]): Each value corresponds to each Metric in the request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"pivotValueRegions",
     :"values"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AnalyticsReporting.V4.Model.DateRangeValu
   def decode(value, options) do
     value
     |> deserialize(:"pivotValueRegions", :list, GoogleApi.AnalyticsReporting.V4.Model.PivotValueRegion, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AnalyticsReporting.V4.Model.DateRangeValues do
+  def encode(value, options) do
+    GoogleApi.AnalyticsReporting.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 
