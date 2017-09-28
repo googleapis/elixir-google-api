@@ -20,9 +20,14 @@
 defmodule GoogleApi.Games.V1.Model.QuestContribution do
   @moduledoc """
   This is a JSON template for a Quest Criterion Contribution resource.
+
+  ## Attributes
+
+  - formattedValue (String): The formatted value of the contribution as a string. Format depends on the configuration for the associated event definition in the Play Games Developer Console. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#questContribution. Defaults to: `null`.
+  - value (String): The value of the contribution. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"formattedValue",
     :"kind",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.QuestContribution do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.QuestContribution do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

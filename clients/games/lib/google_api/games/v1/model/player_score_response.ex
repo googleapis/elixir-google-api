@@ -20,9 +20,17 @@
 defmodule GoogleApi.Games.V1.Model.PlayerScoreResponse do
   @moduledoc """
   This is a JSON template for a list of leaderboard entry resources.
+
+  ## Attributes
+
+  - beatenScoreTimeSpans (List[String]): The time spans where the submitted score is better than the existing score for that time span. Possible values are:   - \&quot;ALL_TIME\&quot; - The score is an all-time score.  - \&quot;WEEKLY\&quot; - The score is a weekly score.  - \&quot;DAILY\&quot; - The score is a daily score. Defaults to: `null`.
+  - formattedScore (String): The formatted value of the submitted score. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#playerScoreResponse. Defaults to: `null`.
+  - leaderboardId (String): The leaderboard ID that this score was submitted to. Defaults to: `null`.
+  - scoreTag (String): Additional information about this score. Values will contain no more than 64 URI-safe characters as defined by section 2.3 of RFC 3986. Defaults to: `null`.
+  - unbeatenScores (List[PlayerScore]): The scores in time spans that have not been beaten. As an example, the submitted score may be better than the player&#39;s DAILY score, but not better than the player&#39;s scores for the WEEKLY or ALL_TIME time spans. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"beatenScoreTimeSpans",
     :"formattedScore",
@@ -38,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.PlayerScoreResponse do
   def decode(value, options) do
     value
     |> deserialize(:"unbeatenScores", :list, GoogleApi.Games.V1.Model.PlayerScore, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.PlayerScoreResponse do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,24 @@
 defmodule GoogleApi.Games.V1.Model.AchievementDefinition do
   @moduledoc """
   This is a JSON template for an achievement definition object.
+
+  ## Attributes
+
+  - achievementType (String): The type of the achievement. Possible values are:   - \&quot;STANDARD\&quot; - Achievement is either locked or unlocked.  - \&quot;INCREMENTAL\&quot; - Achievement is incremental. Defaults to: `null`.
+  - description (String): The description of the achievement. Defaults to: `null`.
+  - experiencePoints (String): Experience points which will be earned when unlocking this achievement. Defaults to: `null`.
+  - formattedTotalSteps (String): The total steps for an incremental achievement as a string. Defaults to: `null`.
+  - id (String): The ID of the achievement. Defaults to: `null`.
+  - initialState (String): The initial state of the achievement. Possible values are:   - \&quot;HIDDEN\&quot; - Achievement is hidden.  - \&quot;REVEALED\&quot; - Achievement is revealed.  - \&quot;UNLOCKED\&quot; - Achievement is unlocked. Defaults to: `null`.
+  - isRevealedIconUrlDefault (Boolean): Indicates whether the revealed icon image being returned is a default image, or is provided by the game. Defaults to: `null`.
+  - isUnlockedIconUrlDefault (Boolean): Indicates whether the unlocked icon image being returned is a default image, or is game-provided. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#achievementDefinition. Defaults to: `null`.
+  - name (String): The name of the achievement. Defaults to: `null`.
+  - revealedIconUrl (String): The image URL for the revealed achievement icon. Defaults to: `null`.
+  - totalSteps (Integer): The total steps for an incremental achievement. Defaults to: `null`.
+  - unlockedIconUrl (String): The image URL for the unlocked achievement icon. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"achievementType",
     :"description",
@@ -43,6 +58,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.AchievementDefinition do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.AchievementDefinition do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

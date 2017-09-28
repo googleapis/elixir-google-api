@@ -20,9 +20,16 @@
 defmodule GoogleApi.Games.V1.Model.TurnBasedMatchTurn do
   @moduledoc """
   This is a JSON template for the object representing a turn.
+
+  ## Attributes
+
+  - data (TurnBasedMatchDataRequest): The shared game state data after the turn is over. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#turnBasedMatchTurn. Defaults to: `null`.
+  - matchVersion (Integer): The version of this match: an increasing counter, used to avoid out-of-date updates to the match. Defaults to: `null`.
+  - pendingParticipantId (String): The ID of the participant who should take their turn next. May be set to the current player&#39;s participant ID to update match state without changing the turn. If not set, the match will wait for other player(s) to join via automatching; this is only valid if automatch criteria is set on the match with remaining slots for automatched players. Defaults to: `null`.
+  - results (List[ParticipantResult]): The match results for the participants in the match. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"data",
     :"kind",
@@ -38,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.TurnBasedMatchTurn do
     value
     |> deserialize(:"data", :struct, GoogleApi.Games.V1.Model.TurnBasedMatchDataRequest, options)
     |> deserialize(:"results", :list, GoogleApi.Games.V1.Model.ParticipantResult, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.TurnBasedMatchTurn do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,19 @@
 defmodule GoogleApi.Games.V1.Model.PeerChannelDiagnostics do
   @moduledoc """
   This is a JSON template for peer channel diagnostics.
+
+  ## Attributes
+
+  - bytesReceived (AggregateStats): Number of bytes received. Defaults to: `null`.
+  - bytesSent (AggregateStats): Number of bytes sent. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#peerChannelDiagnostics. Defaults to: `null`.
+  - numMessagesLost (Integer): Number of messages lost. Defaults to: `null`.
+  - numMessagesReceived (Integer): Number of messages received. Defaults to: `null`.
+  - numMessagesSent (Integer): Number of messages sent. Defaults to: `null`.
+  - numSendFailures (Integer): Number of send failures. Defaults to: `null`.
+  - roundtripLatencyMillis (AggregateStats): Roundtrip latency stats in milliseconds. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bytesReceived",
     :"bytesSent",
@@ -42,6 +52,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.PeerChannelDiagnostics do
     |> deserialize(:"bytesReceived", :struct, GoogleApi.Games.V1.Model.AggregateStats, options)
     |> deserialize(:"bytesSent", :struct, GoogleApi.Games.V1.Model.AggregateStats, options)
     |> deserialize(:"roundtripLatencyMillis", :struct, GoogleApi.Games.V1.Model.AggregateStats, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.PeerChannelDiagnostics do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

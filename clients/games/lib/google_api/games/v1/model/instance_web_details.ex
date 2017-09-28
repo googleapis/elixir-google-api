@@ -20,9 +20,14 @@
 defmodule GoogleApi.Games.V1.Model.InstanceWebDetails do
   @moduledoc """
   This is a JSON template for the Web details resource.
+
+  ## Attributes
+
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#instanceWebDetails. Defaults to: `null`.
+  - launchUrl (String): Launch URL for the game. Defaults to: `null`.
+  - preferred (Boolean): Indicates that this instance is the default for new installations. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"launchUrl",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.InstanceWebDetails do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.InstanceWebDetails do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

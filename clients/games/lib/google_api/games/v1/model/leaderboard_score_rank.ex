@@ -20,9 +20,16 @@
 defmodule GoogleApi.Games.V1.Model.LeaderboardScoreRank do
   @moduledoc """
   This is a JSON template for a score rank in a leaderboard.
+
+  ## Attributes
+
+  - formattedNumScores (String): The number of scores in the leaderboard as a string. Defaults to: `null`.
+  - formattedRank (String): The rank in the leaderboard as a string. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#leaderboardScoreRank. Defaults to: `null`.
+  - numScores (String): The number of scores in the leaderboard. Defaults to: `null`.
+  - rank (String): The rank in the leaderboard. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"formattedNumScores",
     :"formattedRank",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.LeaderboardScoreRank do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.LeaderboardScoreRank do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

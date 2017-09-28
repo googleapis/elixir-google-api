@@ -20,9 +20,14 @@
 defmodule GoogleApi.Games.V1.Model.EventUpdateRequest do
   @moduledoc """
   This is a JSON template for an event period update resource.
+
+  ## Attributes
+
+  - definitionId (String): The ID of the event being modified in this update. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#eventUpdateRequest. Defaults to: `null`.
+  - updateCount (String): The number of times this event occurred in this time period. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"definitionId",
     :"kind",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.EventUpdateRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.EventUpdateRequest do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

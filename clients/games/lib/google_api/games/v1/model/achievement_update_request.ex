@@ -20,9 +20,16 @@
 defmodule GoogleApi.Games.V1.Model.AchievementUpdateRequest do
   @moduledoc """
   This is a JSON template for a request to update an achievement.
+
+  ## Attributes
+
+  - achievementId (String): The achievement this update is being applied to. Defaults to: `null`.
+  - incrementPayload (GamesAchievementIncrement): The payload if an update of type INCREMENT was requested for the achievement. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#achievementUpdateRequest. Defaults to: `null`.
+  - setStepsAtLeastPayload (GamesAchievementSetStepsAtLeast): The payload if an update of type SET_STEPS_AT_LEAST was requested for the achievement. Defaults to: `null`.
+  - updateType (String): The type of update being applied. Possible values are:   - \&quot;REVEAL\&quot; - Achievement is revealed.  - \&quot;UNLOCK\&quot; - Achievement is unlocked.  - \&quot;INCREMENT\&quot; - Achievement is incremented.  - \&quot;SET_STEPS_AT_LEAST\&quot; - Achievement progress is set to at least the passed value. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"achievementId",
     :"incrementPayload",
@@ -38,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.AchievementUpdateRequest d
     value
     |> deserialize(:"incrementPayload", :struct, GoogleApi.Games.V1.Model.GamesAchievementIncrement, options)
     |> deserialize(:"setStepsAtLeastPayload", :struct, GoogleApi.Games.V1.Model.GamesAchievementSetStepsAtLeast, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.AchievementUpdateRequest do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

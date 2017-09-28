@@ -20,9 +20,27 @@
 defmodule GoogleApi.Games.V1.Model.Quest do
   @moduledoc """
   This is a JSON template for a Quest resource.
+
+  ## Attributes
+
+  - acceptedTimestampMillis (String): The timestamp at which the user accepted the quest in milliseconds since the epoch in UTC. Only present if the player has accepted the quest. Defaults to: `null`.
+  - applicationId (String): The ID of the application this quest is part of. Defaults to: `null`.
+  - bannerUrl (String): The banner image URL for the quest. Defaults to: `null`.
+  - description (String): The description of the quest. Defaults to: `null`.
+  - endTimestampMillis (String): The timestamp at which the quest ceases to be active in milliseconds since the epoch in UTC. Defaults to: `null`.
+  - iconUrl (String): The icon image URL for the quest. Defaults to: `null`.
+  - id (String): The ID of the quest. Defaults to: `null`.
+  - isDefaultBannerUrl (Boolean): Indicates whether the banner image being returned is a default image, or is game-provided. Defaults to: `null`.
+  - isDefaultIconUrl (Boolean): Indicates whether the icon image being returned is a default image, or is game-provided. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#quest. Defaults to: `null`.
+  - lastUpdatedTimestampMillis (String): The timestamp at which the quest was last updated by the user in milliseconds since the epoch in UTC. Only present if the player has accepted the quest. Defaults to: `null`.
+  - milestones (List[QuestMilestone]): The quest milestones. Defaults to: `null`.
+  - name (String): The name of the quest. Defaults to: `null`.
+  - notifyTimestampMillis (String): The timestamp at which the user should be notified that the quest will end soon in milliseconds since the epoch in UTC. Defaults to: `null`.
+  - startTimestampMillis (String): The timestamp at which the quest becomes active in milliseconds since the epoch in UTC. Defaults to: `null`.
+  - state (String): The state of the quest. Possible values are:   - \&quot;UPCOMING\&quot;: The quest is upcoming. The user can see the quest, but cannot accept it until it is open.  - \&quot;OPEN\&quot;: The quest is currently open and may be accepted at this time.  - \&quot;ACCEPTED\&quot;: The user is currently participating in this quest.  - \&quot;COMPLETED\&quot;: The user has completed the quest.  - \&quot;FAILED\&quot;: The quest was attempted but was not completed before the deadline expired.  - \&quot;EXPIRED\&quot;: The quest has expired and was not accepted.  - \&quot;DELETED\&quot;: The quest should be deleted from the local database. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"acceptedTimestampMillis",
     :"applicationId",
@@ -48,6 +66,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.Quest do
   def decode(value, options) do
     value
     |> deserialize(:"milestones", :list, GoogleApi.Games.V1.Model.QuestMilestone, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.Quest do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

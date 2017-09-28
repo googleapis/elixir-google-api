@@ -20,9 +20,15 @@
 defmodule GoogleApi.Games.V1.Model.TurnBasedMatchSync do
   @moduledoc """
   This is a JSON template for a list of turn-based matches returned from a sync.
+
+  ## Attributes
+
+  - items (List[TurnBasedMatch]): The matches. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#turnBasedMatchSync. Defaults to: `null`.
+  - moreAvailable (Boolean): True if there were more matches available to fetch at the time the response was generated (which were not returned due to page size limits.) Defaults to: `null`.
+  - nextPageToken (String): The pagination token for the next page of results. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"items",
     :"kind",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.TurnBasedMatchSync do
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.Games.V1.Model.TurnBasedMatch, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.TurnBasedMatchSync do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

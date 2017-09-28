@@ -20,9 +20,17 @@
 defmodule GoogleApi.Games.V1.Model.Leaderboard do
   @moduledoc """
   This is a JSON template for the Leaderboard resource.
+
+  ## Attributes
+
+  - iconUrl (String): The icon for the leaderboard. Defaults to: `null`.
+  - id (String): The leaderboard ID. Defaults to: `null`.
+  - isIconUrlDefault (Boolean): Indicates whether the icon image being returned is a default image, or is game-provided. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#leaderboard. Defaults to: `null`.
+  - name (String): The name of the leaderboard. Defaults to: `null`.
+  - order (String): How scores are ordered. Possible values are:   - \&quot;LARGER_IS_BETTER\&quot; - Larger values are better; scores are sorted in descending order.  - \&quot;SMALLER_IS_BETTER\&quot; - Smaller values are better; scores are sorted in ascending order. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"iconUrl",
     :"id",
@@ -36,6 +44,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.Leaderboard do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.Leaderboard do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

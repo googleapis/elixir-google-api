@@ -20,9 +20,18 @@
 defmodule GoogleApi.Games.V1.Model.InstanceIosDetails do
   @moduledoc """
   This is a JSON template for the iOS details resource.
+
+  ## Attributes
+
+  - bundleIdentifier (String): Bundle identifier. Defaults to: `null`.
+  - itunesAppId (String): iTunes App ID. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#instanceIosDetails. Defaults to: `null`.
+  - preferredForIpad (Boolean): Indicates that this instance is the default for new installations on iPad devices. Defaults to: `null`.
+  - preferredForIphone (Boolean): Indicates that this instance is the default for new installations on iPhone devices. Defaults to: `null`.
+  - supportIpad (Boolean): Flag to indicate if this instance supports iPad. Defaults to: `null`.
+  - supportIphone (Boolean): Flag to indicate if this instance supports iPhone. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bundleIdentifier",
     :"itunesAppId",
@@ -37,6 +46,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.InstanceIosDetails do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.InstanceIosDetails do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

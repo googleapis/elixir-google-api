@@ -20,9 +20,13 @@
 defmodule GoogleApi.Games.V1.Model.PushTokenId do
   @moduledoc """
   This is a JSON template for a push token ID resource.
+
+  ## Attributes
+
+  - ios (PushTokenIdIos):  Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#pushTokenId. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"ios",
     :"kind"
@@ -33,7 +37,13 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.PushTokenId do
   import GoogleApi.Games.V1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"ios", :struct, GoogleApi.Games.V1.Model.PushTokenId_ios, options)
+    |> deserialize(:"ios", :struct, GoogleApi.Games.V1.Model.PushTokenIdIos, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.PushTokenId do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

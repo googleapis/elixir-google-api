@@ -20,9 +20,13 @@
 defmodule GoogleApi.Games.V1.Model.GamesAchievementSetStepsAtLeast do
   @moduledoc """
   This is a JSON template for the payload to request to increment an achievement.
+
+  ## Attributes
+
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#GamesAchievementSetStepsAtLeast. Defaults to: `null`.
+  - steps (Integer): The minimum number of steps for the achievement to be set to. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"steps"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.GamesAchievementSetStepsAtLeast do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.GamesAchievementSetStepsAtLeast do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

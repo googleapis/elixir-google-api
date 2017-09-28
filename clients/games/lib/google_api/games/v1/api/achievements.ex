@@ -65,7 +65,9 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
     }
     %{}
     |> method(:post)
-    |> url("/achievements/#{achievement_id}/increment")
+    |> url("/achievements/{achievementId}/increment", %{
+         "achievementId" => URI.encode_www_form(achievement_id)
+       })
     |> add_param(:query, :"stepsToIncrement", steps_to_increment)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -117,7 +119,9 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
     }
     %{}
     |> method(:get)
-    |> url("/players/#{player_id}/achievements")
+    |> url("/players/{playerId}/achievements", %{
+         "playerId" => URI.encode_www_form(player_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -160,7 +164,9 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
     }
     %{}
     |> method(:post)
-    |> url("/achievements/#{achievement_id}/reveal")
+    |> url("/achievements/{achievementId}/reveal", %{
+         "achievementId" => URI.encode_www_form(achievement_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -204,7 +210,9 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
     }
     %{}
     |> method(:post)
-    |> url("/achievements/#{achievement_id}/setStepsAtLeast")
+    |> url("/achievements/{achievementId}/setStepsAtLeast", %{
+         "achievementId" => URI.encode_www_form(achievement_id)
+       })
     |> add_param(:query, :"steps", steps)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -248,7 +256,9 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
     }
     %{}
     |> method(:post)
-    |> url("/achievements/#{achievement_id}/unlock")
+    |> url("/achievements/{achievementId}/unlock", %{
+         "achievementId" => URI.encode_www_form(achievement_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

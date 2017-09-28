@@ -20,9 +20,14 @@
 defmodule GoogleApi.Games.V1.Model.ApplicationCategory do
   @moduledoc """
   This is a JSON template for an application category object.
+
+  ## Attributes
+
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#applicationCategory. Defaults to: `null`.
+  - primary (String): The primary category. Defaults to: `null`.
+  - secondary (String): The secondary category. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"primary",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.ApplicationCategory do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.ApplicationCategory do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

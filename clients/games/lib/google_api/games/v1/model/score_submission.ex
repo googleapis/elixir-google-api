@@ -20,9 +20,16 @@
 defmodule GoogleApi.Games.V1.Model.ScoreSubmission do
   @moduledoc """
   This is a JSON template for a request to submit a score to leaderboards.
+
+  ## Attributes
+
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#scoreSubmission. Defaults to: `null`.
+  - leaderboardId (String): The leaderboard this score is being submitted to. Defaults to: `null`.
+  - score (String): The new score being submitted. Defaults to: `null`.
+  - scoreTag (String): Additional information about this score. Values will contain no more than 64 URI-safe characters as defined by section 2.3 of RFC 3986. Defaults to: `null`.
+  - signature (String): Signature Values will contain URI-safe characters as defined by section 2.3 of RFC 3986. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"leaderboardId",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.ScoreSubmission do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.ScoreSubmission do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

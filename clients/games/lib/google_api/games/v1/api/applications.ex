@@ -66,7 +66,9 @@ defmodule GoogleApi.Games.V1.Api.Applications do
     }
     %{}
     |> method(:get)
-    |> url("/applications/#{application_id}")
+    |> url("/applications/{applicationId}", %{
+         "applicationId" => URI.encode_www_form(application_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -151,7 +153,9 @@ defmodule GoogleApi.Games.V1.Api.Applications do
     }
     %{}
     |> method(:get)
-    |> url("/applications/#{application_id}/verify")
+    |> url("/applications/{applicationId}/verify", %{
+         "applicationId" => URI.encode_www_form(application_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

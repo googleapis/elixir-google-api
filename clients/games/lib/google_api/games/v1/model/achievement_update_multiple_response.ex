@@ -20,9 +20,13 @@
 defmodule GoogleApi.Games.V1.Model.AchievementUpdateMultipleResponse do
   @moduledoc """
   This is a JSON template for an achievement unlock response.
+
+  ## Attributes
+
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#achievementUpdateListResponse. Defaults to: `null`.
+  - updatedAchievements (List[AchievementUpdateResponse]): The updated state of the achievements. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"updatedAchievements"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.AchievementUpdateMultipleR
   def decode(value, options) do
     value
     |> deserialize(:"updatedAchievements", :list, GoogleApi.Games.V1.Model.AchievementUpdateResponse, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.AchievementUpdateMultipleResponse do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

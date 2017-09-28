@@ -20,9 +20,14 @@
 defmodule GoogleApi.Games.V1.Model.EventBatchRecordFailure do
   @moduledoc """
   This is a JSON template for a batch update failure resource.
+
+  ## Attributes
+
+  - failureCause (String): The cause for the update failure. Possible values are:   - \&quot;TOO_LARGE\&quot;: A batch request was issued with more events than are allowed in a single batch.  - \&quot;TIME_PERIOD_EXPIRED\&quot;: A batch was sent with data too far in the past to record.  - \&quot;TIME_PERIOD_SHORT\&quot;: A batch was sent with a time range that was too short.  - \&quot;TIME_PERIOD_LONG\&quot;: A batch was sent with a time range that was too long.  - \&quot;ALREADY_UPDATED\&quot;: An attempt was made to record a batch of data which was already seen.  - \&quot;RECORD_RATE_HIGH\&quot;: An attempt was made to record data faster than the server will apply updates. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#eventBatchRecordFailure. Defaults to: `null`.
+  - range (EventPeriodRange): The time range which was rejected; empty for a request-wide failure. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"failureCause",
     :"kind",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.EventBatchRecordFailure do
   def decode(value, options) do
     value
     |> deserialize(:"range", :struct, GoogleApi.Games.V1.Model.EventPeriodRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.EventBatchRecordFailure do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

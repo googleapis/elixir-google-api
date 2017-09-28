@@ -20,9 +20,16 @@
 defmodule GoogleApi.Games.V1.Model.PeerSessionDiagnostics do
   @moduledoc """
   This is a JSON template for peer session diagnostics.
+
+  ## Attributes
+
+  - connectedTimestampMillis (String): Connected time in milliseconds. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#peerSessionDiagnostics. Defaults to: `null`.
+  - participantId (String): The participant ID of the peer. Defaults to: `null`.
+  - reliableChannel (PeerChannelDiagnostics): Reliable channel diagnostics. Defaults to: `null`.
+  - unreliableChannel (PeerChannelDiagnostics): Unreliable channel diagnostics. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"connectedTimestampMillis",
     :"kind",
@@ -38,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.PeerSessionDiagnostics do
     value
     |> deserialize(:"reliableChannel", :struct, GoogleApi.Games.V1.Model.PeerChannelDiagnostics, options)
     |> deserialize(:"unreliableChannel", :struct, GoogleApi.Games.V1.Model.PeerChannelDiagnostics, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.PeerSessionDiagnostics do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

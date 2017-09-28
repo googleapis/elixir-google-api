@@ -64,7 +64,9 @@ defmodule GoogleApi.Games.V1.Api.Players do
     }
     %{}
     |> method(:get)
-    |> url("/players/#{player_id}")
+    |> url("/players/{playerId}", %{
+         "playerId" => URI.encode_www_form(player_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -113,7 +115,9 @@ defmodule GoogleApi.Games.V1.Api.Players do
     }
     %{}
     |> method(:get)
-    |> url("/players/me/players/#{collection}")
+    |> url("/players/me/players/{collection}", %{
+         "collection" => URI.encode_www_form(collection)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

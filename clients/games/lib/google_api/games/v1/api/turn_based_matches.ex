@@ -62,7 +62,9 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
     }
     %{}
     |> method(:put)
-    |> url("/turnbasedmatches/#{match_id}/cancel")
+    |> url("/turnbasedmatches/{matchId}/cancel", %{
+         "matchId" => URI.encode_www_form(match_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -153,7 +155,9 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
     }
     %{}
     |> method(:put)
-    |> url("/turnbasedmatches/#{match_id}/decline")
+    |> url("/turnbasedmatches/{matchId}/decline", %{
+         "matchId" => URI.encode_www_form(match_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -196,7 +200,9 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
     }
     %{}
     |> method(:put)
-    |> url("/turnbasedmatches/#{match_id}/dismiss")
+    |> url("/turnbasedmatches/{matchId}/dismiss", %{
+         "matchId" => URI.encode_www_form(match_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -243,7 +249,9 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
     }
     %{}
     |> method(:put)
-    |> url("/turnbasedmatches/#{match_id}/finish")
+    |> url("/turnbasedmatches/{matchId}/finish", %{
+         "matchId" => URI.encode_www_form(match_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -290,7 +298,9 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
     }
     %{}
     |> method(:get)
-    |> url("/turnbasedmatches/#{match_id}")
+    |> url("/turnbasedmatches/{matchId}", %{
+         "matchId" => URI.encode_www_form(match_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -335,7 +345,9 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
     }
     %{}
     |> method(:put)
-    |> url("/turnbasedmatches/#{match_id}/join")
+    |> url("/turnbasedmatches/{matchId}/join", %{
+         "matchId" => URI.encode_www_form(match_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -380,7 +392,9 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
     }
     %{}
     |> method(:put)
-    |> url("/turnbasedmatches/#{match_id}/leave")
+    |> url("/turnbasedmatches/{matchId}/leave", %{
+         "matchId" => URI.encode_www_form(match_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -428,7 +442,9 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
     }
     %{}
     |> method(:put)
-    |> url("/turnbasedmatches/#{match_id}/leaveTurn")
+    |> url("/turnbasedmatches/{matchId}/leaveTurn", %{
+         "matchId" => URI.encode_www_form(match_id)
+       })
     |> add_param(:query, :"matchVersion", match_version)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -528,7 +544,9 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
     }
     %{}
     |> method(:post)
-    |> url("/turnbasedmatches/#{match_id}/rematch")
+    |> url("/turnbasedmatches/{matchId}/rematch", %{
+         "matchId" => URI.encode_www_form(match_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -627,7 +645,9 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
     }
     %{}
     |> method(:put)
-    |> url("/turnbasedmatches/#{match_id}/turn")
+    |> url("/turnbasedmatches/{matchId}/turn", %{
+         "matchId" => URI.encode_www_form(match_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

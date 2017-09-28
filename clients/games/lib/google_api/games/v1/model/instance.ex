@@ -20,9 +20,20 @@
 defmodule GoogleApi.Games.V1.Model.Instance do
   @moduledoc """
   This is a JSON template for the Instance resource.
+
+  ## Attributes
+
+  - acquisitionUri (String): URI which shows where a user can acquire this instance. Defaults to: `null`.
+  - androidInstance (InstanceAndroidDetails): Platform dependent details for Android. Defaults to: `null`.
+  - iosInstance (InstanceIosDetails): Platform dependent details for iOS. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#instance. Defaults to: `null`.
+  - name (String): Localized display name. Defaults to: `null`.
+  - platformType (String): The platform type. Possible values are:   - \&quot;ANDROID\&quot; - Instance is for Android.  - \&quot;IOS\&quot; - Instance is for iOS  - \&quot;WEB_APP\&quot; - Instance is for Web App. Defaults to: `null`.
+  - realtimePlay (Boolean): Flag to show if this game instance supports realtime play. Defaults to: `null`.
+  - turnBasedPlay (Boolean): Flag to show if this game instance supports turn based play. Defaults to: `null`.
+  - webInstance (InstanceWebDetails): Platform dependent details for Web. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"acquisitionUri",
     :"androidInstance",
@@ -43,6 +54,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.Instance do
     |> deserialize(:"androidInstance", :struct, GoogleApi.Games.V1.Model.InstanceAndroidDetails, options)
     |> deserialize(:"iosInstance", :struct, GoogleApi.Games.V1.Model.InstanceIosDetails, options)
     |> deserialize(:"webInstance", :struct, GoogleApi.Games.V1.Model.InstanceWebDetails, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.Instance do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

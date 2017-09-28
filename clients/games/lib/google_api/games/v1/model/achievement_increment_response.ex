@@ -20,9 +20,14 @@
 defmodule GoogleApi.Games.V1.Model.AchievementIncrementResponse do
   @moduledoc """
   This is a JSON template for an achievement increment response
+
+  ## Attributes
+
+  - currentSteps (Integer): The current steps recorded for this incremental achievement. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#achievementIncrementResponse. Defaults to: `null`.
+  - newlyUnlocked (Boolean): Whether the current steps for the achievement has reached the number of steps required to unlock. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"currentSteps",
     :"kind",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.AchievementIncrementResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.AchievementIncrementResponse do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

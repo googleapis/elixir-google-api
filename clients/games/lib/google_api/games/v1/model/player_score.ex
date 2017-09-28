@@ -20,9 +20,16 @@
 defmodule GoogleApi.Games.V1.Model.PlayerScore do
   @moduledoc """
   This is a JSON template for a player score.
+
+  ## Attributes
+
+  - formattedScore (String): The formatted score for this player score. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#playerScore. Defaults to: `null`.
+  - score (String): The numerical value for this player score. Defaults to: `null`.
+  - scoreTag (String): Additional information about this score. Values will contain no more than 64 URI-safe characters as defined by section 2.3 of RFC 3986. Defaults to: `null`.
+  - timeSpan (String): The time span for this player score. Possible values are:   - \&quot;ALL_TIME\&quot; - The score is an all-time score.  - \&quot;WEEKLY\&quot; - The score is a weekly score.  - \&quot;DAILY\&quot; - The score is a daily score. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"formattedScore",
     :"kind",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.PlayerScore do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.PlayerScore do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

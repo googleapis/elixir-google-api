@@ -20,9 +20,16 @@
 defmodule GoogleApi.Games.V1.Model.QuestCriterion do
   @moduledoc """
   This is a JSON template for a Quest Criterion resource.
+
+  ## Attributes
+
+  - completionContribution (QuestContribution): The total number of times the associated event must be incremented for the player to complete this quest. Defaults to: `null`.
+  - currentContribution (QuestContribution): The number of increments the player has made toward the completion count event increments required to complete the quest. This value will not exceed the completion contribution. There will be no currentContribution until the player has accepted the quest. Defaults to: `null`.
+  - eventId (String): The ID of the event the criterion corresponds to. Defaults to: `null`.
+  - initialPlayerProgress (QuestContribution): The value of the event associated with this quest at the time that the quest was accepted. This value may change if event increments that took place before the start of quest are uploaded after the quest starts. There will be no initialPlayerProgress until the player has accepted the quest. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#questCriterion. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"completionContribution",
     :"currentContribution",
@@ -39,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.QuestCriterion do
     |> deserialize(:"completionContribution", :struct, GoogleApi.Games.V1.Model.QuestContribution, options)
     |> deserialize(:"currentContribution", :struct, GoogleApi.Games.V1.Model.QuestContribution, options)
     |> deserialize(:"initialPlayerProgress", :struct, GoogleApi.Games.V1.Model.QuestContribution, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.QuestCriterion do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Games.V1.Model.PushTokenId_ios do
+defmodule GoogleApi.Games.V1.Model.PushTokenIdIos do
   @moduledoc """
   A push token ID for iOS devices.
+
+  ## Attributes
+
+  - apns_device_token (String): Device token supplied by an iOS system call to register for remote notifications. Encode this field as web-safe base64. Defaults to: `null`.
+  - apns_environment (String): Indicates whether this token should be used for the production or sandbox APNS server. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"apns_device_token",
     :"apns_environment"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.PushTokenId_ios do
+defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.PushTokenIdIos do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.PushTokenIdIos do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

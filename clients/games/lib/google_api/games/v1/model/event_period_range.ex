@@ -20,9 +20,14 @@
 defmodule GoogleApi.Games.V1.Model.EventPeriodRange do
   @moduledoc """
   This is a JSON template for an event period time range.
+
+  ## Attributes
+
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#eventPeriodRange. Defaults to: `null`.
+  - periodEndMillis (String): The time when this update period ends, in millis, since 1970 UTC (Unix Epoch). Defaults to: `null`.
+  - periodStartMillis (String): The time when this update period begins, in millis, since 1970 UTC (Unix Epoch). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"periodEndMillis",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.EventPeriodRange do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.EventPeriodRange do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

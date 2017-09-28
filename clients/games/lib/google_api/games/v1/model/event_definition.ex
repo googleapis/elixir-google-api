@@ -20,9 +20,19 @@
 defmodule GoogleApi.Games.V1.Model.EventDefinition do
   @moduledoc """
   This is a JSON template for an event definition resource.
+
+  ## Attributes
+
+  - childEvents (List[EventChild]): A list of events that are a child of this event. Defaults to: `null`.
+  - description (String): Description of what this event represents. Defaults to: `null`.
+  - displayName (String): The name to display for the event. Defaults to: `null`.
+  - id (String): The ID of the event. Defaults to: `null`.
+  - imageUrl (String): The base URL for the image that represents the event. Defaults to: `null`.
+  - isDefaultImageUrl (Boolean): Indicates whether the icon image being returned is a default image, or is game-provided. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#eventDefinition. Defaults to: `null`.
+  - visibility (String): The visibility of event being tracked in this definition. Possible values are:   - \&quot;REVEALED\&quot;: This event should be visible to all users.  - \&quot;HIDDEN\&quot;: This event should only be shown to users that have recorded this event at least once. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"childEvents",
     :"description",
@@ -40,6 +50,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.EventDefinition do
   def decode(value, options) do
     value
     |> deserialize(:"childEvents", :list, GoogleApi.Games.V1.Model.EventChild, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.EventDefinition do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

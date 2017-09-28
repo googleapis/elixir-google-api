@@ -20,9 +20,14 @@
 defmodule GoogleApi.Games.V1.Model.AnonymousPlayer do
   @moduledoc """
   This is a JSON template for an anonymous player
+
+  ## Attributes
+
+  - avatarImageUrl (String): The base URL for the image to display for the anonymous player. Defaults to: `null`.
+  - displayName (String): The name to display for the anonymous player. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#anonymousPlayer. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"avatarImageUrl",
     :"displayName",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.AnonymousPlayer do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.AnonymousPlayer do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

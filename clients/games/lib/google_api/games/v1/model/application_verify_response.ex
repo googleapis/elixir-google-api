@@ -20,9 +20,14 @@
 defmodule GoogleApi.Games.V1.Model.ApplicationVerifyResponse do
   @moduledoc """
   This is a JSON template for a third party application verification response resource.
+
+  ## Attributes
+
+  - alternate_player_id (String): An alternate ID that was once used for the player that was issued the auth token used in this request. (This field is not normally populated.) Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#applicationVerifyResponse. Defaults to: `null`.
+  - player_id (String): The ID of the player that was issued the auth token used in this request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"alternate_player_id",
     :"kind",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.ApplicationVerifyResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.ApplicationVerifyResponse do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
