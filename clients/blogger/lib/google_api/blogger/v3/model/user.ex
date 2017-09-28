@@ -20,9 +20,20 @@
 defmodule GoogleApi.Blogger.V3.Model.User do
   @moduledoc """
   
+
+  ## Attributes
+
+  - about (String): Profile summary information. Defaults to: `null`.
+  - blogs (UserBlogs):  Defaults to: `null`.
+  - created (DateTime): The timestamp of when this profile was created, in seconds since epoch. Defaults to: `null`.
+  - displayName (String): The display name. Defaults to: `null`.
+  - id (String): The identifier for this User. Defaults to: `null`.
+  - kind (String): The kind of this entity. Always blogger#user Defaults to: `null`.
+  - locale (UserLocale):  Defaults to: `null`.
+  - selfLink (String): The API REST URL to fetch this resource from. Defaults to: `null`.
+  - url (String): The user&#39;s profile page. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"about",
     :"blogs",
@@ -40,8 +51,14 @@ defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.User do
   import GoogleApi.Blogger.V3.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"blogs", :struct, GoogleApi.Blogger.V3.Model.User_blogs, options)
-    |> deserialize(:"locale", :struct, GoogleApi.Blogger.V3.Model.User_locale, options)
+    |> deserialize(:"blogs", :struct, GoogleApi.Blogger.V3.Model.UserBlogs, options)
+    |> deserialize(:"locale", :struct, GoogleApi.Blogger.V3.Model.UserLocale, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Blogger.V3.Model.User do
+  def encode(value, options) do
+    GoogleApi.Blogger.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

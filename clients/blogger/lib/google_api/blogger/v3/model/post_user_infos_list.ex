@@ -20,9 +20,14 @@
 defmodule GoogleApi.Blogger.V3.Model.PostUserInfosList do
   @moduledoc """
   
+
+  ## Attributes
+
+  - items (List[PostUserInfo]): The list of Posts with User information for the post, for this Blog. Defaults to: `null`.
+  - kind (String): The kind of this entity. Always blogger#postList Defaults to: `null`.
+  - nextPageToken (String): Pagination token to fetch the next page, if one exists. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"items",
     :"kind",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.PostUserInfosList do
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.Blogger.V3.Model.PostUserInfo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Blogger.V3.Model.PostUserInfosList do
+  def encode(value, options) do
+    GoogleApi.Blogger.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

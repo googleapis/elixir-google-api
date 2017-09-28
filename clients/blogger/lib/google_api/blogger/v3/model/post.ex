@@ -20,9 +20,30 @@
 defmodule GoogleApi.Blogger.V3.Model.Post do
   @moduledoc """
   
+
+  ## Attributes
+
+  - author (PostAuthor):  Defaults to: `null`.
+  - blog (PostBlog):  Defaults to: `null`.
+  - content (String): The content of the Post. May contain HTML markup. Defaults to: `null`.
+  - customMetaData (String): The JSON meta-data for the Post. Defaults to: `null`.
+  - etag (String): Etag of the resource. Defaults to: `null`.
+  - id (String): The identifier of this Post. Defaults to: `null`.
+  - images (List[PostImages]): Display image for the Post. Defaults to: `null`.
+  - kind (String): The kind of this entity. Always blogger#post Defaults to: `null`.
+  - labels (List[String]): The list of labels this Post was tagged with. Defaults to: `null`.
+  - location (PostLocation):  Defaults to: `null`.
+  - published (DateTime): RFC 3339 date-time when this Post was published. Defaults to: `null`.
+  - readerComments (String): Comment control and display setting for readers of this post. Defaults to: `null`.
+  - replies (PostReplies):  Defaults to: `null`.
+  - selfLink (String): The API REST URL to fetch this resource from. Defaults to: `null`.
+  - status (String): Status of the post. Only set for admin-level requests Defaults to: `null`.
+  - title (String): The title of the Post. Defaults to: `null`.
+  - titleLink (String): The title link URL, similar to atom&#39;s related link. Defaults to: `null`.
+  - updated (DateTime): RFC 3339 date-time when this Post was last updated. Defaults to: `null`.
+  - url (String): The URL where this Post is displayed. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"author",
     :"blog",
@@ -50,11 +71,17 @@ defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.Post do
   import GoogleApi.Blogger.V3.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"author", :struct, GoogleApi.Blogger.V3.Model.Post_author, options)
-    |> deserialize(:"blog", :struct, GoogleApi.Blogger.V3.Model.Post_blog, options)
-    |> deserialize(:"images", :list, GoogleApi.Blogger.V3.Model.Post_images, options)
-    |> deserialize(:"location", :struct, GoogleApi.Blogger.V3.Model.Post_location, options)
-    |> deserialize(:"replies", :struct, GoogleApi.Blogger.V3.Model.Post_replies, options)
+    |> deserialize(:"author", :struct, GoogleApi.Blogger.V3.Model.PostAuthor, options)
+    |> deserialize(:"blog", :struct, GoogleApi.Blogger.V3.Model.PostBlog, options)
+    |> deserialize(:"images", :list, GoogleApi.Blogger.V3.Model.PostImages, options)
+    |> deserialize(:"location", :struct, GoogleApi.Blogger.V3.Model.PostLocation, options)
+    |> deserialize(:"replies", :struct, GoogleApi.Blogger.V3.Model.PostReplies, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Blogger.V3.Model.Post do
+  def encode(value, options) do
+    GoogleApi.Blogger.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Blogger.V3.Model.Pageviews_counts do
+defmodule GoogleApi.Blogger.V3.Model.PageviewsCounts do
   @moduledoc """
   
+
+  ## Attributes
+
+  - count (String): Count of page views for the given time range Defaults to: `null`.
+  - timeRange (String): Time range the given count applies to Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"count",
     :"timeRange"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.Pageviews_counts do
+defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.PageviewsCounts do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Blogger.V3.Model.PageviewsCounts do
+  def encode(value, options) do
+    GoogleApi.Blogger.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

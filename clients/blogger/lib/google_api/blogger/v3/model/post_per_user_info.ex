@@ -20,9 +20,16 @@
 defmodule GoogleApi.Blogger.V3.Model.PostPerUserInfo do
   @moduledoc """
   
+
+  ## Attributes
+
+  - blogId (String): ID of the Blog that the post resource belongs to. Defaults to: `null`.
+  - hasEditAccess (Boolean): True if the user has Author level access to the post. Defaults to: `null`.
+  - kind (String): The kind of this entity. Always blogger#postPerUserInfo Defaults to: `null`.
+  - postId (String): ID of the Post resource. Defaults to: `null`.
+  - userId (String): ID of the User. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"blogId",
     :"hasEditAccess",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.PostPerUserInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Blogger.V3.Model.PostPerUserInfo do
+  def encode(value, options) do
+    GoogleApi.Blogger.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

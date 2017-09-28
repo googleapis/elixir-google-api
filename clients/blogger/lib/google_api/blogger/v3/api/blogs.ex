@@ -64,7 +64,9 @@ defmodule GoogleApi.Blogger.V3.Api.Blogs do
     }
     %{}
     |> method(:get)
-    |> url("/blogs/#{blog_id}")
+    |> url("/blogs/{blogId}", %{
+         "blogId" => URI.encode_www_form(blog_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -157,7 +159,9 @@ defmodule GoogleApi.Blogger.V3.Api.Blogs do
     }
     %{}
     |> method(:get)
-    |> url("/users/#{user_id}/blogs")
+    |> url("/users/{userId}/blogs", %{
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

@@ -20,9 +20,14 @@
 defmodule GoogleApi.Blogger.V3.Model.Pageviews do
   @moduledoc """
   
+
+  ## Attributes
+
+  - blogId (String): Blog Id Defaults to: `null`.
+  - counts (List[PageviewsCounts]): The container of posts in this blog. Defaults to: `null`.
+  - kind (String): The kind of this entry. Always blogger#page_views Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"blogId",
     :"counts",
@@ -34,7 +39,13 @@ defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.Pageviews do
   import GoogleApi.Blogger.V3.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"counts", :list, GoogleApi.Blogger.V3.Model.Pageviews_counts, options)
+    |> deserialize(:"counts", :list, GoogleApi.Blogger.V3.Model.PageviewsCounts, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Blogger.V3.Model.Pageviews do
+  def encode(value, options) do
+    GoogleApi.Blogger.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

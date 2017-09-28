@@ -20,9 +20,23 @@
 defmodule GoogleApi.Blogger.V3.Model.Page do
   @moduledoc """
   
+
+  ## Attributes
+
+  - author (PageAuthor):  Defaults to: `null`.
+  - blog (PageBlog):  Defaults to: `null`.
+  - content (String): The body content of this Page, in HTML. Defaults to: `null`.
+  - etag (String): Etag of the resource. Defaults to: `null`.
+  - id (String): The identifier for this resource. Defaults to: `null`.
+  - kind (String): The kind of this entity. Always blogger#page Defaults to: `null`.
+  - published (DateTime): RFC 3339 date-time when this Page was published. Defaults to: `null`.
+  - selfLink (String): The API REST URL to fetch this resource from. Defaults to: `null`.
+  - status (String): The status of the page for admin resources (either LIVE or DRAFT). Defaults to: `null`.
+  - title (String): The title of this entity. This is the name displayed in the Admin user interface. Defaults to: `null`.
+  - updated (DateTime): RFC 3339 date-time when this Page was last updated. Defaults to: `null`.
+  - url (String): The URL that this Page is displayed at. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"author",
     :"blog",
@@ -43,8 +57,14 @@ defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.Page do
   import GoogleApi.Blogger.V3.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"author", :struct, GoogleApi.Blogger.V3.Model.Page_author, options)
-    |> deserialize(:"blog", :struct, GoogleApi.Blogger.V3.Model.Page_blog, options)
+    |> deserialize(:"author", :struct, GoogleApi.Blogger.V3.Model.PageAuthor, options)
+    |> deserialize(:"blog", :struct, GoogleApi.Blogger.V3.Model.PageBlog, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Blogger.V3.Model.Page do
+  def encode(value, options) do
+    GoogleApi.Blogger.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.Blogger.V3.Model.BlogList do
   @moduledoc """
   
+
+  ## Attributes
+
+  - blogUserInfos (List[BlogUserInfo]): Admin level list of blog per-user information Defaults to: `null`.
+  - items (List[Blog]): The list of Blogs this user has Authorship or Admin rights over. Defaults to: `null`.
+  - kind (String): The kind of this entity. Always blogger#blogList Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"blogUserInfos",
     :"items",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.BlogList do
     value
     |> deserialize(:"blogUserInfos", :list, GoogleApi.Blogger.V3.Model.BlogUserInfo, options)
     |> deserialize(:"items", :list, GoogleApi.Blogger.V3.Model.Blog, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Blogger.V3.Model.BlogList do
+  def encode(value, options) do
+    GoogleApi.Blogger.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

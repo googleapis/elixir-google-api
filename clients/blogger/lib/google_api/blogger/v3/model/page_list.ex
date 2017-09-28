@@ -20,9 +20,15 @@
 defmodule GoogleApi.Blogger.V3.Model.PageList do
   @moduledoc """
   
+
+  ## Attributes
+
+  - etag (String): Etag of the response. Defaults to: `null`.
+  - items (List[Page]): The list of Pages for a Blog. Defaults to: `null`.
+  - kind (String): The kind of this entity. Always blogger#pageList Defaults to: `null`.
+  - nextPageToken (String): Pagination token to fetch the next page, if one exists. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"items",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.PageList do
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.Blogger.V3.Model.Page, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Blogger.V3.Model.PageList do
+  def encode(value, options) do
+    GoogleApi.Blogger.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

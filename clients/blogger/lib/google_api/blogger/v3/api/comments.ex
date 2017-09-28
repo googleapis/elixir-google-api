@@ -62,7 +62,11 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
     }
     %{}
     |> method(:post)
-    |> url("/blogs/#{blog_id}/posts/#{post_id}/comments/#{comment_id}/approve")
+    |> url("/blogs/{blogId}/posts/{postId}/comments/{commentId}/approve", %{
+         "blogId" => URI.encode_www_form(blog_id),
+         "postId" => URI.encode_www_form(post_id),
+         "commentId" => URI.encode_www_form(comment_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -105,7 +109,11 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
     }
     %{}
     |> method(:delete)
-    |> url("/blogs/#{blog_id}/posts/#{post_id}/comments/#{comment_id}")
+    |> url("/blogs/{blogId}/posts/{postId}/comments/{commentId}", %{
+         "blogId" => URI.encode_www_form(blog_id),
+         "postId" => URI.encode_www_form(post_id),
+         "commentId" => URI.encode_www_form(comment_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -150,7 +158,11 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
     }
     %{}
     |> method(:get)
-    |> url("/blogs/#{blog_id}/posts/#{post_id}/comments/#{comment_id}")
+    |> url("/blogs/{blogId}/posts/{postId}/comments/{commentId}", %{
+         "blogId" => URI.encode_www_form(blog_id),
+         "postId" => URI.encode_www_form(post_id),
+         "commentId" => URI.encode_www_form(comment_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -206,7 +218,10 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
     }
     %{}
     |> method(:get)
-    |> url("/blogs/#{blog_id}/posts/#{post_id}/comments")
+    |> url("/blogs/{blogId}/posts/{postId}/comments", %{
+         "blogId" => URI.encode_www_form(blog_id),
+         "postId" => URI.encode_www_form(post_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -259,7 +274,9 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
     }
     %{}
     |> method(:get)
-    |> url("/blogs/#{blog_id}/comments")
+    |> url("/blogs/{blogId}/comments", %{
+         "blogId" => URI.encode_www_form(blog_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -302,7 +319,11 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
     }
     %{}
     |> method(:post)
-    |> url("/blogs/#{blog_id}/posts/#{post_id}/comments/#{comment_id}/spam")
+    |> url("/blogs/{blogId}/posts/{postId}/comments/{commentId}/spam", %{
+         "blogId" => URI.encode_www_form(blog_id),
+         "postId" => URI.encode_www_form(post_id),
+         "commentId" => URI.encode_www_form(comment_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -345,7 +366,11 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
     }
     %{}
     |> method(:post)
-    |> url("/blogs/#{blog_id}/posts/#{post_id}/comments/#{comment_id}/removecontent")
+    |> url("/blogs/{blogId}/posts/{postId}/comments/{commentId}/removecontent", %{
+         "blogId" => URI.encode_www_form(blog_id),
+         "postId" => URI.encode_www_form(post_id),
+         "commentId" => URI.encode_www_form(comment_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

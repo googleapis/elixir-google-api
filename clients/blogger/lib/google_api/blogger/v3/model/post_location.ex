@@ -17,12 +17,18 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Blogger.V3.Model.Post_location do
+defmodule GoogleApi.Blogger.V3.Model.PostLocation do
   @moduledoc """
   The location for geotagged posts.
+
+  ## Attributes
+
+  - lat (Float): Location&#39;s latitude. Defaults to: `null`.
+  - lng (Float): Location&#39;s longitude. Defaults to: `null`.
+  - name (String): Location name. Defaults to: `null`.
+  - span (String): Location&#39;s viewport span. Can be used when rendering a map preview. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"lat",
     :"lng",
@@ -31,9 +37,15 @@ defmodule GoogleApi.Blogger.V3.Model.Post_location do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.Post_location do
+defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.PostLocation do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Blogger.V3.Model.PostLocation do
+  def encode(value, options) do
+    GoogleApi.Blogger.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

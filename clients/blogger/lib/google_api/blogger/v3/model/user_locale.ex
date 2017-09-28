@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Blogger.V3.Model.User_locale do
+defmodule GoogleApi.Blogger.V3.Model.UserLocale do
   @moduledoc """
   This user&#39;s locale
+
+  ## Attributes
+
+  - country (String): The user&#39;s country setting. Defaults to: `null`.
+  - language (String): The user&#39;s language setting. Defaults to: `null`.
+  - variant (String): The user&#39;s language variant setting. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"country",
     :"language",
@@ -30,9 +35,15 @@ defmodule GoogleApi.Blogger.V3.Model.User_locale do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.User_locale do
+defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.UserLocale do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Blogger.V3.Model.UserLocale do
+  def encode(value, options) do
+    GoogleApi.Blogger.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

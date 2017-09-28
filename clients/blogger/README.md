@@ -1,6 +1,6 @@
 # GoogleApi.Blogger.V3
 
-**TODO: Add description**
+API for access to the data within Blogger.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_blogger` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_blogger, "~> 0.1.0"}]
+  [{:google_api_blogger, "~> 0.0.1"}]
 end
 ```
 

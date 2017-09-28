@@ -17,20 +17,29 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Blogger.V3.Model.Page_blog do
+defmodule GoogleApi.Blogger.V3.Model.PageBlog do
   @moduledoc """
   Data about the blog containing this Page.
+
+  ## Attributes
+
+  - id (String): The identifier of the blog containing this page. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.Page_blog do
+defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.PageBlog do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Blogger.V3.Model.PageBlog do
+  def encode(value, options) do
+    GoogleApi.Blogger.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

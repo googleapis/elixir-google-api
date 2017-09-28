@@ -17,20 +17,29 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Blogger.V3.Model.Comment_author_image do
+defmodule GoogleApi.Blogger.V3.Model.CommentAuthorImage do
   @moduledoc """
   The comment creator&#39;s avatar.
+
+  ## Attributes
+
+  - url (String): The comment creator&#39;s avatar URL. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"url"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.Comment_author_image do
+defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.CommentAuthorImage do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Blogger.V3.Model.CommentAuthorImage do
+  def encode(value, options) do
+    GoogleApi.Blogger.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -61,7 +61,10 @@ defmodule GoogleApi.Blogger.V3.Api.Posts do
     }
     %{}
     |> method(:delete)
-    |> url("/blogs/#{blog_id}/posts/#{post_id}")
+    |> url("/blogs/{blogId}/posts/{postId}", %{
+         "blogId" => URI.encode_www_form(blog_id),
+         "postId" => URI.encode_www_form(post_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -111,7 +114,10 @@ defmodule GoogleApi.Blogger.V3.Api.Posts do
     }
     %{}
     |> method(:get)
-    |> url("/blogs/#{blog_id}/posts/#{post_id}")
+    |> url("/blogs/{blogId}/posts/{postId}", %{
+         "blogId" => URI.encode_www_form(blog_id),
+         "postId" => URI.encode_www_form(post_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -157,7 +163,9 @@ defmodule GoogleApi.Blogger.V3.Api.Posts do
     }
     %{}
     |> method(:get)
-    |> url("/blogs/#{blog_id}/posts/bypath")
+    |> url("/blogs/{blogId}/posts/bypath", %{
+         "blogId" => URI.encode_www_form(blog_id)
+       })
     |> add_param(:query, :"path", path)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -207,7 +215,9 @@ defmodule GoogleApi.Blogger.V3.Api.Posts do
     }
     %{}
     |> method(:post)
-    |> url("/blogs/#{blog_id}/posts")
+    |> url("/blogs/{blogId}/posts", %{
+         "blogId" => URI.encode_www_form(blog_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -268,7 +278,9 @@ defmodule GoogleApi.Blogger.V3.Api.Posts do
     }
     %{}
     |> method(:get)
-    |> url("/blogs/#{blog_id}/posts")
+    |> url("/blogs/{blogId}/posts", %{
+         "blogId" => URI.encode_www_form(blog_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -322,7 +334,10 @@ defmodule GoogleApi.Blogger.V3.Api.Posts do
     }
     %{}
     |> method(:patch)
-    |> url("/blogs/#{blog_id}/posts/#{post_id}")
+    |> url("/blogs/{blogId}/posts/{postId}", %{
+         "blogId" => URI.encode_www_form(blog_id),
+         "postId" => URI.encode_www_form(post_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -366,7 +381,10 @@ defmodule GoogleApi.Blogger.V3.Api.Posts do
     }
     %{}
     |> method(:post)
-    |> url("/blogs/#{blog_id}/posts/#{post_id}/publish")
+    |> url("/blogs/{blogId}/posts/{postId}/publish", %{
+         "blogId" => URI.encode_www_form(blog_id),
+         "postId" => URI.encode_www_form(post_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -408,7 +426,10 @@ defmodule GoogleApi.Blogger.V3.Api.Posts do
     }
     %{}
     |> method(:post)
-    |> url("/blogs/#{blog_id}/posts/#{post_id}/revert")
+    |> url("/blogs/{blogId}/posts/{postId}/revert", %{
+         "blogId" => URI.encode_www_form(blog_id),
+         "postId" => URI.encode_www_form(post_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -454,7 +475,9 @@ defmodule GoogleApi.Blogger.V3.Api.Posts do
     }
     %{}
     |> method(:get)
-    |> url("/blogs/#{blog_id}/posts/search")
+    |> url("/blogs/{blogId}/posts/search", %{
+         "blogId" => URI.encode_www_form(blog_id)
+       })
     |> add_param(:query, :"q", q)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -509,7 +532,10 @@ defmodule GoogleApi.Blogger.V3.Api.Posts do
     }
     %{}
     |> method(:put)
-    |> url("/blogs/#{blog_id}/posts/#{post_id}")
+    |> url("/blogs/{blogId}/posts/{postId}", %{
+         "blogId" => URI.encode_www_form(blog_id),
+         "postId" => URI.encode_www_form(post_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

@@ -60,7 +60,9 @@ defmodule GoogleApi.Blogger.V3.Api.Users do
     }
     %{}
     |> method(:get)
-    |> url("/users/#{user_id}")
+    |> url("/users/{userId}", %{
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

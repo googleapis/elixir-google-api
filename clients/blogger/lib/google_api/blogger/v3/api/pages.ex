@@ -61,7 +61,10 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
     }
     %{}
     |> method(:delete)
-    |> url("/blogs/#{blog_id}/pages/#{page_id}")
+    |> url("/blogs/{blogId}/pages/{pageId}", %{
+         "blogId" => URI.encode_www_form(blog_id),
+         "pageId" => URI.encode_www_form(page_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -105,7 +108,10 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
     }
     %{}
     |> method(:get)
-    |> url("/blogs/#{blog_id}/pages/#{page_id}")
+    |> url("/blogs/{blogId}/pages/{pageId}", %{
+         "blogId" => URI.encode_www_form(blog_id),
+         "pageId" => URI.encode_www_form(page_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -150,7 +156,9 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
     }
     %{}
     |> method(:post)
-    |> url("/blogs/#{blog_id}/pages")
+    |> url("/blogs/{blogId}/pages", %{
+         "blogId" => URI.encode_www_form(blog_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -201,7 +209,9 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
     }
     %{}
     |> method(:get)
-    |> url("/blogs/#{blog_id}/pages")
+    |> url("/blogs/{blogId}/pages", %{
+         "blogId" => URI.encode_www_form(blog_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -249,7 +259,10 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
     }
     %{}
     |> method(:patch)
-    |> url("/blogs/#{blog_id}/pages/#{page_id}")
+    |> url("/blogs/{blogId}/pages/{pageId}", %{
+         "blogId" => URI.encode_www_form(blog_id),
+         "pageId" => URI.encode_www_form(page_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -291,7 +304,10 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
     }
     %{}
     |> method(:post)
-    |> url("/blogs/#{blog_id}/pages/#{page_id}/publish")
+    |> url("/blogs/{blogId}/pages/{pageId}/publish", %{
+         "blogId" => URI.encode_www_form(blog_id),
+         "pageId" => URI.encode_www_form(page_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -333,7 +349,10 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
     }
     %{}
     |> method(:post)
-    |> url("/blogs/#{blog_id}/pages/#{page_id}/revert")
+    |> url("/blogs/{blogId}/pages/{pageId}/revert", %{
+         "blogId" => URI.encode_www_form(blog_id),
+         "pageId" => URI.encode_www_form(page_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -381,7 +400,10 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
     }
     %{}
     |> method(:put)
-    |> url("/blogs/#{blog_id}/pages/#{page_id}")
+    |> url("/blogs/{blogId}/pages/{pageId}", %{
+         "blogId" => URI.encode_www_form(blog_id),
+         "pageId" => URI.encode_www_form(page_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
