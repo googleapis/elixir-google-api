@@ -20,9 +20,13 @@
 defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DevicesLongRunningOperationResponse do
   @moduledoc """
   Long running operation response.
+
+  ## Attributes
+
+  - perDeviceStatus (List[OperationPerDevice]): processing status for each device. One PerDeviceStatus per device. The order is the same as in your requests. Defaults to: `null`.
+  - successCount (Integer): Number of succeesfully processed ones. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"perDeviceStatus",
     :"successCount"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.Device
   def decode(value, options) do
     value
     |> deserialize(:"perDeviceStatus", :list, GoogleApi.AndroidDeviceProvisioning.V1.Model.OperationPerDevice, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.DevicesLongRunningOperationResponse do
+  def encode(value, options) do
+    GoogleApi.AndroidDeviceProvisioning.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

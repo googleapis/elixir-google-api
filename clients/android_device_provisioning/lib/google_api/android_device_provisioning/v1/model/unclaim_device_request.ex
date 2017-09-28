@@ -20,9 +20,15 @@
 defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.UnclaimDeviceRequest do
   @moduledoc """
   Request message to unclaim a device.
+
+  ## Attributes
+
+  - deviceId (String): The device id returned by ClaimDevice. Defaults to: `null`.
+  - deviceIdentifier (DeviceIdentifier): The device identifier you use when you claimed this device. Defaults to: `null`.
+  - sectionType (String): The section type to unclaim for. Defaults to: `null`.
+    - Enum - one of [SECTION_TYPE_UNSPECIFIED, SECTION_TYPE_ZERO_TOUCH]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"deviceId",
     :"deviceIdentifier",
@@ -35,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.Unclai
   def decode(value, options) do
     value
     |> deserialize(:"deviceIdentifier", :struct, GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.UnclaimDeviceRequest do
+  def encode(value, options) do
+    GoogleApi.AndroidDeviceProvisioning.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

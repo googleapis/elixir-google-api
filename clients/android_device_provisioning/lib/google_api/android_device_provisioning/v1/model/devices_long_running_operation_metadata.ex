@@ -20,9 +20,15 @@
 defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DevicesLongRunningOperationMetadata do
   @moduledoc """
   Long running operation metadata.
+
+  ## Attributes
+
+  - devicesCount (Integer): Number of devices parsed in your requests. Defaults to: `null`.
+  - processingStatus (String): The overall processing status. Defaults to: `null`.
+    - Enum - one of [BATCH_PROCESS_STATUS_UNSPECIFIED, BATCH_PROCESS_PENDING, BATCH_PROCESS_IN_PROGRESS, BATCH_PROCESS_PROCESSED]
+  - progress (Integer): Processing progress from 0 to 100. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"devicesCount",
     :"processingStatus",
@@ -33,6 +39,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.DevicesLongRunningOperationMetadata do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.DevicesLongRunningOperationMetadata do
+  def encode(value, options) do
+    GoogleApi.AndroidDeviceProvisioning.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

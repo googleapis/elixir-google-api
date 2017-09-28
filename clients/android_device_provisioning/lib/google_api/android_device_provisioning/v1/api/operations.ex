@@ -72,7 +72,9 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Operations do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{name}")
+    |> url("/v1/{name}", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

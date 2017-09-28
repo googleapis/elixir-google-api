@@ -20,9 +20,16 @@
 defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByOwnerRequest do
   @moduledoc """
   Request to find devices by customers.
+
+  ## Attributes
+
+  - customerId (List[String]): List of customer ids to search for. Defaults to: `null`.
+  - limit (String): The number of devices to show in the result. Defaults to: `null`.
+  - pageToken (String): Page token Defaults to: `null`.
+  - sectionType (String): The section type. Defaults to: `null`.
+    - Enum - one of [SECTION_TYPE_UNSPECIFIED, SECTION_TYPE_ZERO_TOUCH]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"customerId",
     :"limit",
@@ -34,6 +41,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByOwnerRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByOwnerRequest do
+  def encode(value, options) do
+    GoogleApi.AndroidDeviceProvisioning.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

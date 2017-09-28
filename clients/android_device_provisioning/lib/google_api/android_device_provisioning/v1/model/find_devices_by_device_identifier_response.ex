@@ -20,9 +20,13 @@
 defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse do
   @moduledoc """
   Response containing found devices.
+
+  ## Attributes
+
+  - devices (List[Device]): Found devices. Defaults to: `null`.
+  - nextPageToken (String): Page token of next page Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"devices",
     :"nextPageToken"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDe
   def decode(value, options) do
     value
     |> deserialize(:"devices", :list, GoogleApi.AndroidDeviceProvisioning.V1.Model.Device, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse do
+  def encode(value, options) do
+    GoogleApi.AndroidDeviceProvisioning.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
