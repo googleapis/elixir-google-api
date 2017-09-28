@@ -17,12 +17,18 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AdSense.V14.Model.CustomChannel_targetingInfo do
+defmodule GoogleApi.AdSense.V14.Model.CustomChannelTargetingInfo do
   @moduledoc """
   The targeting information of this custom channel, if activated.
+
+  ## Attributes
+
+  - adsAppearOn (String): The name used to describe this channel externally. Defaults to: `null`.
+  - description (String): The external description of the channel. Defaults to: `null`.
+  - location (String): The locations in which ads appear. (Only valid for content and mobile content ads (deprecated)). Acceptable values for content ads are: TOP_LEFT, TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_CENTER, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT, MULTIPLE_LOCATIONS. Acceptable values for mobile content ads (deprecated) are: TOP, MIDDLE, BOTTOM, MULTIPLE_LOCATIONS. Defaults to: `null`.
+  - siteLanguage (String): The language of the sites ads will be displayed on. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"adsAppearOn",
     :"description",
@@ -31,9 +37,15 @@ defmodule GoogleApi.AdSense.V14.Model.CustomChannel_targetingInfo do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AdSense.V14.Model.CustomChannel_targetingInfo do
+defimpl Poison.Decoder, for: GoogleApi.AdSense.V14.Model.CustomChannelTargetingInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdSense.V14.Model.CustomChannelTargetingInfo do
+  def encode(value, options) do
+    GoogleApi.AdSense.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

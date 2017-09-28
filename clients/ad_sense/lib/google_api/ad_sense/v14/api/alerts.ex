@@ -60,7 +60,9 @@ defmodule GoogleApi.AdSense.V14.Api.Alerts do
     }
     %{}
     |> method(:delete)
-    |> url("/alerts/#{alert_id}")
+    |> url("/alerts/{alertId}", %{
+         "alertId" => URI.encode_www_form(alert_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

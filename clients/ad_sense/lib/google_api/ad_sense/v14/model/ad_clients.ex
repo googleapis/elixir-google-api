@@ -20,9 +20,15 @@
 defmodule GoogleApi.AdSense.V14.Model.AdClients do
   @moduledoc """
   
+
+  ## Attributes
+
+  - etag (String): ETag of this response for caching purposes. Defaults to: `null`.
+  - items (List[AdClient]): The ad clients returned in this list response. Defaults to: `null`.
+  - kind (String): Kind of list this is, in this case adsense#adClients. Defaults to: `null`.
+  - nextPageToken (String): Continuation token used to page through ad clients. To retrieve the next page of results, set the next request&#39;s \&quot;pageToken\&quot; value to this. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"items",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdSense.V14.Model.AdClients do
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.AdSense.V14.Model.AdClient, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdSense.V14.Model.AdClients do
+  def encode(value, options) do
+    GoogleApi.AdSense.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

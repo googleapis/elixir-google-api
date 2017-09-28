@@ -20,9 +20,15 @@
 defmodule GoogleApi.AdSense.V14.Model.AdStyle do
   @moduledoc """
   
+
+  ## Attributes
+
+  - colors (AdStyleColors):  Defaults to: `null`.
+  - corners (String): The style of the corners in the ad (deprecated: never populated, ignored). Defaults to: `null`.
+  - font (AdStyleFont):  Defaults to: `null`.
+  - kind (String): Kind this is, in this case adsense#adStyle. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"colors",
     :"corners",
@@ -35,8 +41,14 @@ defimpl Poison.Decoder, for: GoogleApi.AdSense.V14.Model.AdStyle do
   import GoogleApi.AdSense.V14.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"colors", :struct, GoogleApi.AdSense.V14.Model.AdStyle_colors, options)
-    |> deserialize(:"font", :struct, GoogleApi.AdSense.V14.Model.AdStyle_font, options)
+    |> deserialize(:"colors", :struct, GoogleApi.AdSense.V14.Model.AdStyleColors, options)
+    |> deserialize(:"font", :struct, GoogleApi.AdSense.V14.Model.AdStyleFont, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdSense.V14.Model.AdStyle do
+  def encode(value, options) do
+    GoogleApi.AdSense.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -60,7 +60,9 @@ defmodule GoogleApi.AdSense.V14.Api.Savedadstyles do
     }
     %{}
     |> method(:get)
-    |> url("/savedadstyles/#{saved_ad_style_id}")
+    |> url("/savedadstyles/{savedAdStyleId}", %{
+         "savedAdStyleId" => URI.encode_www_form(saved_ad_style_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

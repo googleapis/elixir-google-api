@@ -20,9 +20,17 @@
 defmodule GoogleApi.AdSense.V14.Model.Alert do
   @moduledoc """
   
+
+  ## Attributes
+
+  - id (String): Unique identifier of this alert. This should be considered an opaque identifier; it is not safe to rely on it being in any particular format. Defaults to: `null`.
+  - isDismissible (Boolean): Whether this alert can be dismissed. Defaults to: `null`.
+  - kind (String): Kind of resource this is, in this case adsense#alert. Defaults to: `null`.
+  - message (String): The localized alert message. Defaults to: `null`.
+  - severity (String): Severity of this alert. Possible values: INFO, WARNING, SEVERE. Defaults to: `null`.
+  - type (String): Type of this alert. Possible values: SELF_HOLD, MIGRATED_TO_BILLING3, ADDRESS_PIN_VERIFICATION, PHONE_PIN_VERIFICATION, CORPORATE_ENTITY, GRAYLISTED_PUBLISHER, API_HOLD. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"isDismissible",
@@ -36,6 +44,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AdSense.V14.Model.Alert do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdSense.V14.Model.Alert do
+  def encode(value, options) do
+    GoogleApi.AdSense.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

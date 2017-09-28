@@ -17,12 +17,18 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AdSense.V14.Model.AdUnit_feedAdsSettings do
+defmodule GoogleApi.AdSense.V14.Model.AdUnitFeedAdsSettings do
   @moduledoc """
   Settings specific to feed ads (AFF) - deprecated.
+
+  ## Attributes
+
+  - adPosition (String): The position of the ads relative to the feed entries. Defaults to: `null`.
+  - frequency (Integer): The frequency at which ads should appear in the feed (i.e. every N entries). Defaults to: `null`.
+  - minimumWordCount (Integer): The minimum length an entry should be in order to have attached ads. Defaults to: `null`.
+  - type (String): The type of ads which should appear. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"adPosition",
     :"frequency",
@@ -31,9 +37,15 @@ defmodule GoogleApi.AdSense.V14.Model.AdUnit_feedAdsSettings do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AdSense.V14.Model.AdUnit_feedAdsSettings do
+defimpl Poison.Decoder, for: GoogleApi.AdSense.V14.Model.AdUnitFeedAdsSettings do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdSense.V14.Model.AdUnitFeedAdsSettings do
+  def encode(value, options) do
+    GoogleApi.AdSense.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

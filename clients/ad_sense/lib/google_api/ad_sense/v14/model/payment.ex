@@ -20,9 +20,16 @@
 defmodule GoogleApi.AdSense.V14.Model.Payment do
   @moduledoc """
   
+
+  ## Attributes
+
+  - id (String): Unique identifier of this Payment. Defaults to: `null`.
+  - kind (String): Kind of resource this is, in this case adsense#payment. Defaults to: `null`.
+  - paymentAmount (String): The amount to be paid. Defaults to: `null`.
+  - paymentAmountCurrencyCode (String): The currency code for the amount to be paid. Defaults to: `null`.
+  - paymentDate (String): The date this payment was/will be credited to the user, or none if the payment threshold has not been met. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"kind",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AdSense.V14.Model.Payment do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdSense.V14.Model.Payment do
+  def encode(value, options) do
+    GoogleApi.AdSense.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

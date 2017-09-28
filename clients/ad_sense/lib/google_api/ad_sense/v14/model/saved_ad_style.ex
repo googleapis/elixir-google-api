@@ -20,9 +20,15 @@
 defmodule GoogleApi.AdSense.V14.Model.SavedAdStyle do
   @moduledoc """
   
+
+  ## Attributes
+
+  - adStyle (AdStyle): The AdStyle itself. Defaults to: `null`.
+  - id (String): Unique identifier of this saved ad style. This should be considered an opaque identifier; it is not safe to rely on it being in any particular format. Defaults to: `null`.
+  - kind (String): Kind of resource this is, in this case adsense#savedAdStyle. Defaults to: `null`.
+  - name (String): The user selected name of this SavedAdStyle. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"adStyle",
     :"id",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdSense.V14.Model.SavedAdStyle do
   def decode(value, options) do
     value
     |> deserialize(:"adStyle", :struct, GoogleApi.AdSense.V14.Model.AdStyle, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdSense.V14.Model.SavedAdStyle do
+  def encode(value, options) do
+    GoogleApi.AdSense.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

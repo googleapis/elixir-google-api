@@ -130,7 +130,9 @@ defmodule GoogleApi.AdSense.V14.Api.Reports do
     }
     %{}
     |> method(:get)
-    |> url("/reports/#{saved_report_id}")
+    |> url("/reports/{savedReportId}", %{
+         "savedReportId" => URI.encode_www_form(saved_report_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

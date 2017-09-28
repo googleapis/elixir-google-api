@@ -20,9 +20,13 @@
 defmodule GoogleApi.AdSense.V14.Model.Metadata do
   @moduledoc """
   
+
+  ## Attributes
+
+  - items (List[ReportingMetadataEntry]):  Defaults to: `null`.
+  - kind (String): Kind of list this is, in this case adsense#metadata. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"items",
     :"kind"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdSense.V14.Model.Metadata do
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.AdSense.V14.Model.ReportingMetadataEntry, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdSense.V14.Model.Metadata do
+  def encode(value, options) do
+    GoogleApi.AdSense.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

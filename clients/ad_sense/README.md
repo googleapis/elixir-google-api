@@ -1,6 +1,6 @@
 # GoogleApi.AdSense.V14
 
-**TODO: Add description**
+Accesses AdSense publishers&#39; inventory and generates performance reports.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_ad_sense` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_ad_sense, "~> 0.1.0"}]
+  [{:google_api_ad_sense, "~> 0.0.1"}]
 end
 ```
 

@@ -20,9 +20,20 @@
 defmodule GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - averages (List[String]): The averages of the report. This is the same length as any other row in the report; cells corresponding to dimension columns are empty. Defaults to: `null`.
+  - endDate (String): The requested end date in yyyy-mm-dd format. Defaults to: `null`.
+  - headers (List[AdsenseReportsGenerateResponseHeaders]): The header information of the columns requested in the report. This is a list of headers; one for each dimension in the request, followed by one for each metric in the request. Defaults to: `null`.
+  - kind (String): Kind this is, in this case adsense#report. Defaults to: `null`.
+  - rows (List[List[String]]): The output rows of the report. Each row is a list of cells; one for each dimension in the request, followed by one for each metric in the request. The dimension cells contain strings, and the metric cells contain numbers. Defaults to: `null`.
+  - startDate (String): The requested start date in yyyy-mm-dd format. Defaults to: `null`.
+  - totalMatchedRows (String): The total number of rows matched by the report request. Fewer rows may be returned in the response due to being limited by the row count requested or the report row limit. Defaults to: `null`.
+  - totals (List[String]): The totals of the report. This is the same length as any other row in the report; cells corresponding to dimension columns are empty. Defaults to: `null`.
+  - warnings (List[String]): Any warnings associated with generation of the report. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"averages",
     :"endDate",
@@ -40,7 +51,13 @@ defimpl Poison.Decoder, for: GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateR
   import GoogleApi.AdSense.V14.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"headers", :list, GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse_headers, options)
+    |> deserialize(:"headers", :list, GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponseHeaders, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse do
+  def encode(value, options) do
+    GoogleApi.AdSense.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -65,7 +65,10 @@ defmodule GoogleApi.AdSense.V14.Api.Adunits do
     }
     %{}
     |> method(:get)
-    |> url("/adclients/#{ad_client_id}/adunits/#{ad_unit_id}/customchannels")
+    |> url("/adclients/{adClientId}/adunits/{adUnitId}/customchannels", %{
+         "adClientId" => URI.encode_www_form(ad_client_id),
+         "adUnitId" => URI.encode_www_form(ad_unit_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -107,7 +110,10 @@ defmodule GoogleApi.AdSense.V14.Api.Adunits do
     }
     %{}
     |> method(:get)
-    |> url("/adclients/#{ad_client_id}/adunits/#{ad_unit_id}")
+    |> url("/adclients/{adClientId}/adunits/{adUnitId}", %{
+         "adClientId" => URI.encode_www_form(ad_client_id),
+         "adUnitId" => URI.encode_www_form(ad_unit_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -149,7 +155,10 @@ defmodule GoogleApi.AdSense.V14.Api.Adunits do
     }
     %{}
     |> method(:get)
-    |> url("/adclients/#{ad_client_id}/adunits/#{ad_unit_id}/adcode")
+    |> url("/adclients/{adClientId}/adunits/{adUnitId}/adcode", %{
+         "adClientId" => URI.encode_www_form(ad_client_id),
+         "adUnitId" => URI.encode_www_form(ad_unit_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -196,7 +205,9 @@ defmodule GoogleApi.AdSense.V14.Api.Adunits do
     }
     %{}
     |> method(:get)
-    |> url("/adclients/#{ad_client_id}/adunits")
+    |> url("/adclients/{adClientId}/adunits", %{
+         "adClientId" => URI.encode_www_form(ad_client_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

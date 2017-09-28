@@ -64,7 +64,9 @@ defmodule GoogleApi.AdSense.V14.Api.Urlchannels do
     }
     %{}
     |> method(:get)
-    |> url("/adclients/#{ad_client_id}/urlchannels")
+    |> url("/adclients/{adClientId}/urlchannels", %{
+         "adClientId" => URI.encode_www_form(ad_client_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

@@ -20,9 +20,14 @@
 defmodule GoogleApi.AdSense.V14.Model.UrlChannel do
   @moduledoc """
   
+
+  ## Attributes
+
+  - id (String): Unique identifier of this URL channel. This should be considered an opaque identifier; it is not safe to rely on it being in any particular format. Defaults to: `null`.
+  - kind (String): Kind of resource this is, in this case adsense#urlChannel. Defaults to: `null`.
+  - urlPattern (String): URL Pattern of this URL channel. Does not include \&quot;http://\&quot; or \&quot;https://\&quot;. Example: www.example.com/home Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"kind",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AdSense.V14.Model.UrlChannel do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdSense.V14.Model.UrlChannel do
+  def encode(value, options) do
+    GoogleApi.AdSense.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

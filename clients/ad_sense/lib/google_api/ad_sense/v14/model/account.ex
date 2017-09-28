@@ -20,9 +20,18 @@
 defmodule GoogleApi.AdSense.V14.Model.Account do
   @moduledoc """
   
+
+  ## Attributes
+
+  - creation_time (String):  Defaults to: `null`.
+  - id (String): Unique identifier of this account. Defaults to: `null`.
+  - kind (String): Kind of resource this is, in this case adsense#account. Defaults to: `null`.
+  - name (String): Name of this account. Defaults to: `null`.
+  - premium (Boolean): Whether this account is premium. Defaults to: `null`.
+  - subAccounts (List[Account]): Sub accounts of the this account. Defaults to: `null`.
+  - timezone (String): AdSense timezone of this account. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"creation_time",
     :"id",
@@ -39,6 +48,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdSense.V14.Model.Account do
   def decode(value, options) do
     value
     |> deserialize(:"subAccounts", :list, GoogleApi.AdSense.V14.Model.Account, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdSense.V14.Model.Account do
+  def encode(value, options) do
+    GoogleApi.AdSense.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 
