@@ -26,6 +26,7 @@ defmodule GoogleApi.TestClient.V1.Deserializer do
   Update the provided model with a deserialization of a nested value
   """
   @spec deserialize(struct(), :atom, :atom, struct(), keyword()) :: struct()
+  def deserialize(model, field, :list, nil, options), do: model
   def deserialize(model, field, :list, mod, options) do
     model
     |> Map.update!(field, &(Poison.Decode.decode(&1, Keyword.merge(options, [as: [struct(mod)]]))))
@@ -34,6 +35,7 @@ defmodule GoogleApi.TestClient.V1.Deserializer do
     model
     |> Map.update!(field, &(Poison.Decode.decode(&1, Keyword.merge(options, [as: struct(mod)]))))
   end
+  def deserialize(model, field, :map, nil, options), do: model
   def deserialize(model, field, :map, mod, options) do
     model
     |> Map.update!(field, &(Map.new(&1, fn {key, val} -> {key, Poison.Decode.decode(val, Keyword.merge(options, [as: struct(mod)]))} end)))

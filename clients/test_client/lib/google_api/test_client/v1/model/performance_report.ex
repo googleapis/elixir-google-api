@@ -35,7 +35,7 @@ defimpl Poison.Decoder, for: GoogleApi.TestClient.V1.Model.PerformanceReport do
   import GoogleApi.TestClient.V1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"calloutStatusRate", :list, GoogleApi.TestClient.V1.Model., options)
+    |> deserialize(:"calloutStatusRate", :list, nil, options)
   end
 end
 
