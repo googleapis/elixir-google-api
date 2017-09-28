@@ -1,0 +1,140 @@
+{
+ "kind": "discovery#restDescription",
+ "etag": "\"YWOzh2SDasdU84ArJnpYek-OMdg/nD15-sVgx0hSdEaD_RN4E40IFV8\"",
+ "discoveryVersion": "v1",
+ "id": "testclient:v1",
+ "name": "testclient",
+ "canonicalName": "Test Client",
+ "version": "v1",
+ "revision": "20170810",
+ "title": "Test Client",
+ "description": "Test client for testing generated clients",
+ "ownerDomain": "google.com",
+ "ownerName": "Google",
+ "icons": {
+  "x16": "https://www.google.com/images/icons/product/doubleclick-16.gif",
+  "x32": "https://www.google.com/images/icons/product/doubleclick-32.gif"
+ },
+ "documentationLink": "https://github.com/GoogleCloudPlatform/elixir-google-api",
+ "protocol": "rest",
+ "baseUrl": "http://localhost:8080/",
+ "basePath": "/",
+ "rootUrl": "http://localhost:8080/",
+ "servicePath": "",
+ "batchPath": "batch",
+ "parameters": {
+   "alt": {
+    "type": "string",
+    "description": "Data format for the response.",
+    "default": "json",
+    "enum": [
+     "json"
+    ],
+    "enumDescriptions": [
+     "Responses with Content-Type of application/json"
+    ],
+    "location": "query"
+   }
+ },
+ "auth": {
+  "oauth2": {
+   "scopes": {
+    "https://www.googleapis.com/auth/adexchange.buyer": {
+     "description": "Manage your Ad Exchange buyer account configuration"
+    }
+   }
+  }
+ },
+ "schemas": {
+  "PerformanceReport": {
+   "id": "PerformanceReport",
+   "type": "object",
+   "description": "The configuration data for an Ad Exchange performance report list.",
+   "properties": {
+    "calloutStatusRate": {
+     "type": "array",
+     "description": "Rate of various prefiltering statuses per match. Please refer to the callout-status-codes.txt file for different statuses.",
+     "items": {
+      "type": "any"
+     }
+    }
+   }
+  },
+  "PerformanceReportList": {
+   "id": "PerformanceReportList",
+   "type": "object",
+   "description": "The configuration data for an Ad Exchange performance report list.",
+   "properties": {
+    "kind": {
+     "type": "string",
+     "description": "Resource type.",
+     "default": "adexchangebuyer#performanceReportList"
+    },
+    "performanceReport": {
+     "type": "array",
+     "description": "A list of performance reports relevant for the account.",
+     "items": {
+      "$ref": "PerformanceReport"
+     }
+    }
+   }
+  }
+ },
+ "resources": {
+  "performanceReport": {
+   "methods": {
+    "list": {
+     "id": "adexchangebuyer.performanceReport.list",
+     "path": "performancereport",
+     "httpMethod": "GET",
+     "description": "Retrieves the authenticated user's list of performance metrics.",
+     "parameters": {
+      "accountId": {
+        "type": "string",
+        "description": "The account id to get the reports.",
+        "required": true,
+        "format": "int64",
+        "location": "query"
+       },
+      "endDateTime": {
+        "type": "string",
+        "description": "The end time of the report in ISO 8601 timestamp format using UTC.",
+        "required": true,
+        "location": "query"
+       },
+      "maxResults": {
+        "type": "integer",
+        "description": "Maximum number of entries returned on one result page. If not set, the default is 100. Optional.",
+        "format": "uint32",
+        "minimum": "1",
+        "maximum": "1000",
+        "location": "query"
+       },
+      "pageToken": {
+        "type": "string",
+        "description": "A continuation token, used to page through performance reports. To retrieve the next page, set this parameter to the value of \"nextPageToken\" from the previous response. Optional.",
+        "location": "query"
+       },
+      "startDateTime": {
+        "type": "string",
+        "description": "The start time of the report in ISO 8601 timestamp format using UTC.",
+        "required": true,
+        "location": "query"
+       }
+     },
+     "parameterOrder": [
+      "accountId",
+      "endDateTime",
+      "startDateTime"
+     ],
+     "response": {
+      "$ref": "PerformanceReportList"
+     },
+     "scopes": [
+      "https://www.googleapis.com/auth/adexchange.buyer"
+     ]
+    }
+   }
+  }
+ }
+}

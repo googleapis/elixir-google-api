@@ -49,14 +49,14 @@ defmodule GoogleApis.ApiConfig do
   end
 
   def load_all() do
-    apis = "./config/apis.json"
+    "./config/apis.json"
     |> Path.expand
     |> File.read!
     |> Poison.decode!(as: [%__MODULE__{}])
   end
 
   def load(name) do
-    load_all
+    load_all()
     |> Enum.filter(fn (%__MODULE__{name: api_name}) -> api_name == name end)
   end
 

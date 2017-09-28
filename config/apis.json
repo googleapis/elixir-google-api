@@ -11,7 +11,7 @@
   },
   {
     "version": "v2beta1",
-    "name": "AdExchangeBuyer2",
+    "name": "AdExchangeBuyer",
     "url": "https://adexchangebuyer.googleapis.com/$discovery/rest?version=v2beta1"
   },
   {
@@ -608,5 +608,10 @@
     "version": "v1",
     "name": "YouTubeReporting",
     "url": "https://youtubereporting.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v1",
+    "name": "TestClient",
+    "url": ""
   }
 ]
