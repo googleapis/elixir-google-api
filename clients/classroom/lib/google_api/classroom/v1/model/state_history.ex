@@ -20,9 +20,15 @@
 defmodule GoogleApi.Classroom.V1.Model.StateHistory do
   @moduledoc """
   The history of each state this submission has been in.
+
+  ## Attributes
+
+  - actorUserId (String): The teacher or student who made the change Defaults to: `null`.
+  - state (String): The workflow pipeline stage. Defaults to: `null`.
+    - Enum - one of [STATE_UNSPECIFIED, CREATED, TURNED_IN, RETURNED, RECLAIMED_BY_STUDENT, STUDENT_EDITED_AFTER_TURN_IN]
+  - stateTimestamp (String): When the submission entered this state. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"actorUserId",
     :"state",
@@ -33,6 +39,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.StateHistory do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.StateHistory do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

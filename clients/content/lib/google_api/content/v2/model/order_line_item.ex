@@ -20,9 +20,25 @@
 defmodule GoogleApi.Content.V2.Model.OrderLineItem do
   @moduledoc """
   
+
+  ## Attributes
+
+  - cancellations (List[OrderCancellation]): Cancellations of the line item. Defaults to: `null`.
+  - id (String): The id of the line item. Defaults to: `null`.
+  - price (Price): Total price for the line item. For example, if two items for $10 are purchased, the total price will be $20. Defaults to: `null`.
+  - product (OrderLineItemProduct): Product data from the time of the order placement. Defaults to: `null`.
+  - quantityCanceled (Integer): Number of items canceled. Defaults to: `null`.
+  - quantityDelivered (Integer): Number of items delivered. Defaults to: `null`.
+  - quantityOrdered (Integer): Number of items ordered. Defaults to: `null`.
+  - quantityPending (Integer): Number of items pending. Defaults to: `null`.
+  - quantityReturned (Integer): Number of items returned. Defaults to: `null`.
+  - quantityShipped (Integer): Number of items shipped. Defaults to: `null`.
+  - returnInfo (OrderLineItemReturnInfo): Details of the return policy for the line item. Defaults to: `null`.
+  - returns (List[OrderReturn]): Returns of the line item. Defaults to: `null`.
+  - shippingDetails (OrderLineItemShippingDetails): Details of the requested shipping for the line item. Defaults to: `null`.
+  - tax (Price): Total tax amount for the line item. For example, if two items are purchased, and each have a cost tax of $2, the total tax amount will be $4. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cancellations",
     :"id",
@@ -52,6 +68,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrderLineItem do
     |> deserialize(:"returns", :list, GoogleApi.Content.V2.Model.OrderReturn, options)
     |> deserialize(:"shippingDetails", :struct, GoogleApi.Content.V2.Model.OrderLineItemShippingDetails, options)
     |> deserialize(:"tax", :struct, GoogleApi.Content.V2.Model.Price, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrderLineItem do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.StreamLocation do
   @moduledoc """
   Describes a stream of data, either as input to be processed or as output of a streaming Dataflow job.
+
+  ## Attributes
+
+  - customSourceLocation (CustomSourceLocation): The stream is a custom source. Defaults to: `null`.
+  - pubsubLocation (PubsubLocation): The stream is a pubsub stream. Defaults to: `null`.
+  - sideInputLocation (StreamingSideInputLocation): The stream is a streaming side input. Defaults to: `null`.
+  - streamingStageLocation (StreamingStageLocation): The stream is part of another computation within the current streaming Dataflow job. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"customSourceLocation",
     :"pubsubLocation",
@@ -39,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.StreamLocation do
     |> deserialize(:"pubsubLocation", :struct, GoogleApi.Dataflow.V1b3.Model.PubsubLocation, options)
     |> deserialize(:"sideInputLocation", :struct, GoogleApi.Dataflow.V1b3.Model.StreamingSideInputLocation, options)
     |> deserialize(:"streamingStageLocation", :struct, GoogleApi.Dataflow.V1b3.Model.StreamingStageLocation, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.StreamLocation do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

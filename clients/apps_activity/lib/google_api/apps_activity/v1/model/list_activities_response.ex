@@ -20,9 +20,13 @@
 defmodule GoogleApi.AppsActivity.V1.Model.ListActivitiesResponse do
   @moduledoc """
   The response from the list request. Contains a list of activities and a token to retrieve the next page of results.
+
+  ## Attributes
+
+  - activities (List[Activity]): List of activities. Defaults to: `null`.
+  - nextPageToken (String): Token for the next page of results. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"activities",
     :"nextPageToken"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AppsActivity.V1.Model.ListActivitiesRespo
   def decode(value, options) do
     value
     |> deserialize(:"activities", :list, GoogleApi.AppsActivity.V1.Model.Activity, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppsActivity.V1.Model.ListActivitiesResponse do
+  def encode(value, options) do
+    GoogleApi.AppsActivity.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

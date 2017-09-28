@@ -20,9 +20,14 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.MapTask do
   @moduledoc """
   MapTask consists of an ordered set of instructions, each of which describes one particular low-level operation for the worker to perform in order to accomplish the MapTask&#39;s WorkItem.  Each instruction must appear in the list before any instructions which depends on its output.
+
+  ## Attributes
+
+  - instructions (List[ParallelInstruction]): The instructions in the MapTask. Defaults to: `null`.
+  - stageName (String): System-defined name of the stage containing this MapTask. Unique across the workflow. Defaults to: `null`.
+  - systemName (String): System-defined name of this MapTask. Unique across the workflow. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"instructions",
     :"stageName",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.MapTask do
   def decode(value, options) do
     value
     |> deserialize(:"instructions", :list, GoogleApi.Dataflow.V1b3.Model.ParallelInstruction, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.MapTask do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

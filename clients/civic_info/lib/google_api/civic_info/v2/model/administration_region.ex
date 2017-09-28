@@ -20,9 +20,16 @@
 defmodule GoogleApi.CivicInfo.V2.Model.AdministrationRegion do
   @moduledoc """
   Describes information about a regional election administrative area.
+
+  ## Attributes
+
+  - electionAdministrationBody (AdministrativeBody): The election administration body for this area. Defaults to: `null`.
+  - id (String): An ID for this object. IDs may change in future requests and should not be cached. Access to this field requires special access that can be requested from the Request more link on the Quotas page. Defaults to: `null`.
+  - local_jurisdiction (AdministrationRegion): The city or county that provides election information for this voter. This object can have the same elements as state. Defaults to: `null`.
+  - name (String): The name of the jurisdiction. Defaults to: `null`.
+  - sources (List[Source]): A list of sources for this area. If multiple sources are listed the data has been aggregated from those sources. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"electionAdministrationBody",
     :"id",
@@ -39,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.AdministrationRegion d
     |> deserialize(:"electionAdministrationBody", :struct, GoogleApi.CivicInfo.V2.Model.AdministrativeBody, options)
     |> deserialize(:"local_jurisdiction", :struct, GoogleApi.CivicInfo.V2.Model.AdministrationRegion, options)
     |> deserialize(:"sources", :list, GoogleApi.CivicInfo.V2.Model.Source, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CivicInfo.V2.Model.AdministrationRegion do
+  def encode(value, options) do
+    GoogleApi.CivicInfo.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

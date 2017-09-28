@@ -1,6 +1,6 @@
 # GoogleApi.Classroom.V1
 
-**TODO: Add description**
+Manages classes, rosters, and invitations in Google Classroom.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_classroom` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_classroom, "~> 0.1.0"}]
+  [{:google_api_classroom, "~> 0.0.1"}]
 end
 ```
 

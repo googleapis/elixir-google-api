@@ -20,9 +20,15 @@
 defmodule GoogleApi.AnalyticsReporting.V4.Model.Cohort do
   @moduledoc """
   Defines a cohort. A cohort is a group of users who share a common characteristic. For example, all users with the same acquisition date belong to the same cohort.
+
+  ## Attributes
+
+  - dateRange (DateRange): This is used for &#x60;FIRST_VISIT_DATE&#x60; cohort, the cohort selects users whose first visit date is between start date and end date defined in the DateRange. The date ranges should be aligned for cohort requests. If the request contains &#x60;ga:cohortNthDay&#x60; it should be exactly one day long, if &#x60;ga:cohortNthWeek&#x60; it should be aligned to the week boundary (starting at Sunday and ending Saturday), and for &#x60;ga:cohortNthMonth&#x60; the date range should be aligned to the month (starting at the first and ending on the last day of the month). For LTV requests there are no such restrictions. You do not need to supply a date range for the &#x60;reportsRequest.dateRanges&#x60; field. Defaults to: `null`.
+  - name (String): A unique name for the cohort. If not defined name will be auto-generated with values cohort_[1234...]. Defaults to: `null`.
+  - type (String): Type of the cohort. The only supported type as of now is &#x60;FIRST_VISIT_DATE&#x60;. If this field is unspecified the cohort is treated as &#x60;FIRST_VISIT_DATE&#x60; type cohort. Defaults to: `null`.
+    - Enum - one of [UNSPECIFIED_COHORT_TYPE, FIRST_VISIT_DATE]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dateRange",
     :"name",
@@ -35,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.AnalyticsReporting.V4.Model.Cohort do
   def decode(value, options) do
     value
     |> deserialize(:"dateRange", :struct, GoogleApi.AnalyticsReporting.V4.Model.DateRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AnalyticsReporting.V4.Model.Cohort do
+  def encode(value, options) do
+    GoogleApi.AnalyticsReporting.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,18 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InspectConfig do
   @moduledoc """
   Configuration description of the scanning process. When used with redactContent only info_types and min_likelihood are currently used.
+
+  ## Attributes
+
+  - excludeTypes (Boolean): When true, excludes type information of the findings. Defaults to: `null`.
+  - includeQuote (Boolean): When true, a contextual quote from the data that triggered a finding is included in the response; see Finding.quote. Defaults to: `null`.
+  - infoTypeLimits (List[GooglePrivacyDlpV2beta1InfoTypeLimit]): Configuration of findings limit given for specified info types. Defaults to: `null`.
+  - infoTypes (List[GooglePrivacyDlpV2beta1InfoType]): Restricts what info_types to look for. The values must correspond to InfoType values returned by ListInfoTypes or found in documentation. Empty info_types runs all enabled detectors. Defaults to: `null`.
+  - maxFindings (Integer): Limits the number of findings per content item or long running operation. Defaults to: `null`.
+  - minLikelihood (String): Only returns findings equal or above this threshold. Defaults to: `null`.
+    - Enum - one of [LIKELIHOOD_UNSPECIFIED, VERY_UNLIKELY, UNLIKELY, POSSIBLE, LIKELY, VERY_LIKELY]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"excludeTypes",
     :"includeQuote",
@@ -39,6 +48,12 @@ defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1
     value
     |> deserialize(:"infoTypeLimits", :list, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InfoTypeLimit, options)
     |> deserialize(:"infoTypes", :list, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InfoType, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InspectConfig do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

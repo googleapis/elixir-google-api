@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.ReportedParallelism do
   @moduledoc """
   Represents the level of parallelism in a WorkItem&#39;s input, reported by the worker.
+
+  ## Attributes
+
+  - isInfinite (Boolean): Specifies whether the parallelism is infinite. If true, \&quot;value\&quot; is ignored. Infinite parallelism means the service will assume that the work item can always be split into more non-empty work items by dynamic splitting. This is a work-around for lack of support for infinity by the current JSON-based Java RPC stack. Defaults to: `null`.
+  - value (Float): Specifies the level of parallelism in case it is finite. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"isInfinite",
     :"value"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.ReportedParallelism do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.ReportedParallelism do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

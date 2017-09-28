@@ -20,9 +20,28 @@
 defmodule GoogleApi.AppEngine.V1.Model.Instance do
   @moduledoc """
   An Instance resource is the computing unit that App Engine uses to automatically scale an application.
+
+  ## Attributes
+
+  - appEngineRelease (String): App Engine release this instance is running on.@OutputOnly Defaults to: `null`.
+  - availability (String): Availability of the instance.@OutputOnly Defaults to: `null`.
+    - Enum - one of [UNSPECIFIED, RESIDENT, DYNAMIC]
+  - averageLatency (Integer): Average latency (ms) over the last minute.@OutputOnly Defaults to: `null`.
+  - errors (Integer): Number of errors since this instance was started.@OutputOnly Defaults to: `null`.
+  - id (String): Relative name of the instance within the version. Example: instance-1.@OutputOnly Defaults to: `null`.
+  - memoryUsage (String): Total memory in use (bytes).@OutputOnly Defaults to: `null`.
+  - name (String): Full path to the Instance resource in the API. Example: apps/myapp/services/default/versions/v1/instances/instance-1.@OutputOnly Defaults to: `null`.
+  - qps (Float): Average queries per second (QPS) over the last minute.@OutputOnly Defaults to: `null`.
+  - requests (Integer): Number of requests since this instance was started.@OutputOnly Defaults to: `null`.
+  - startTime (String): Time that this instance was started.@OutputOnly Defaults to: `null`.
+  - vmDebugEnabled (Boolean): Whether this instance is in debug mode. Only applicable for instances in App Engine flexible environment.@OutputOnly Defaults to: `null`.
+  - vmId (String): Virtual machine ID of this instance. Only applicable for instances in App Engine flexible environment.@OutputOnly Defaults to: `null`.
+  - vmIp (String): The IP address of this instance. Only applicable for instances in App Engine flexible environment.@OutputOnly Defaults to: `null`.
+  - vmName (String): Name of the virtual machine where this instance lives. Only applicable for instances in App Engine flexible environment.@OutputOnly Defaults to: `null`.
+  - vmStatus (String): Status of the virtual machine where this instance lives. Only applicable for instances in App Engine flexible environment.@OutputOnly Defaults to: `null`.
+  - vmZoneName (String): Zone where the virtual machine is located. Only applicable for instances in App Engine flexible environment.@OutputOnly Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"appEngineRelease",
     :"availability",
@@ -46,6 +65,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.Instance do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.Instance do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

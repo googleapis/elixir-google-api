@@ -20,9 +20,25 @@
 defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig do
   @moduledoc """
   Represents a data transfer configuration. A transfer configuration contains all metadata needed to perform a data transfer. For example, &#x60;destination_dataset_id&#x60; specifies where data should be stored. When a new transfer configuration is created, the specified &#x60;destination_dataset_id&#x60; is created when needed and shared with the appropriate data source service account.
+
+  ## Attributes
+
+  - dataRefreshWindowDays (Integer): The number of days to look back to automatically refresh the data. For example, if &#x60;data_refresh_window_days &#x3D; 10&#x60;, then every day BigQuery reingests data for [today-10, today-1], rather than ingesting data for just [today-1]. Only valid if the data source supports the feature. Set the value to  0 to use the default value. Defaults to: `null`.
+  - dataSourceId (String): Data source id. Cannot be changed once data transfer is created. Defaults to: `null`.
+  - datasetRegion (String): Region in which BigQuery dataset is located. Currently possible values are: \&quot;US\&quot; and \&quot;EU\&quot;. @OutputOnly Defaults to: `null`.
+  - destinationDatasetId (String): The BigQuery target dataset id. Defaults to: `null`.
+  - disabled (Boolean): Is this config disabled. When set to true, no runs are scheduled for a given transfer. Defaults to: `null`.
+  - displayName (String): User specified display name for the data transfer. Defaults to: `null`.
+  - name (String): The resource name of the transfer run. Transfer run names have the form &#x60;projects/{project_id}/transferConfigs/{config_id}&#x60;. Where &#x60;config_id&#x60; is usually a uuid, even though it is not guaranteed or required. The name is ignored when creating a transfer run. Defaults to: `null`.
+  - nextRunTime (String): Next time when data transfer will run. Output only. Applicable only for batch data transfers. @OutputOnly Defaults to: `null`.
+  - params (Object): Data transfer specific parameters. Defaults to: `null`.
+  - schedule (String): Data transfer schedule. If the data source does not support a custom schedule, this should be empty. If it is empty, the default value for the data source will be used. The specified times are in UTC. Examples of valid format: &#x60;1st,3rd monday of month 15:30&#x60;, &#x60;every wed,fri of jan,jun 13:15&#x60;, and &#x60;first sunday of quarter 00:00&#x60;. See more explanation about the format here: https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format NOTE: the granularity should be at least 8 hours, or less frequent. Defaults to: `null`.
+  - status (String): Status of the most recently updated transfer run. @OutputOnly Defaults to: `null`.
+    - Enum - one of [TRANSFER_STATUS_UNSPECIFIED, INACTIVE, PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED]
+  - updateTime (String): Data transfer modification time. Ignored by server on input. @OutputOnly Defaults to: `null`.
+  - userId (String): GaiaID of the user on whose behalf transfer is done. Applicable only to data sources that do not support service accounts. When set to 0, the data source service account credentials are used. @OutputOnly Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dataRefreshWindowDays",
     :"dataSourceId",
@@ -45,6 +61,12 @@ defimpl Poison.Decoder, for: GoogleApi.BigQueryDataTransfer.V1.Model.TransferCon
   def decode(value, options) do
     value
     |> deserialize(:"params", :struct, GoogleApi.BigQueryDataTransfer.V1.Model.Object, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig do
+  def encode(value, options) do
+    GoogleApi.BigQueryDataTransfer.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

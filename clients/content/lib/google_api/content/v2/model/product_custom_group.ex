@@ -20,9 +20,13 @@
 defmodule GoogleApi.Content.V2.Model.ProductCustomGroup do
   @moduledoc """
   
+
+  ## Attributes
+
+  - attributes (List[ProductCustomAttribute]): The sub-attributes. Defaults to: `null`.
+  - name (String): The name of the group. Underscores will be replaced by spaces upon insertion. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"attributes",
     :"name"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.ProductCustomGroup do
   def decode(value, options) do
     value
     |> deserialize(:"attributes", :list, GoogleApi.Content.V2.Model.ProductCustomAttribute, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.ProductCustomGroup do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

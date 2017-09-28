@@ -20,9 +20,19 @@
 defmodule GoogleApi.AndroidManagement.V1.Model.Display do
   @moduledoc """
   Device display information.
+
+  ## Attributes
+
+  - density (Integer): Display density expressed as dots-per-inch. Defaults to: `null`.
+  - displayId (Integer): Unique display id. Defaults to: `null`.
+  - height (Integer): Display height in pixels. Defaults to: `null`.
+  - name (String): Name of the display. Defaults to: `null`.
+  - refreshRate (Integer): Refresh rate of the display in frames per second. Defaults to: `null`.
+  - state (String): State of the display. Defaults to: `null`.
+    - Enum - one of [DISPLAY_STATE_UNSPECIFIED, OFF, ON, DOZE, SUSPENDED]
+  - width (Integer): Display width in pixels. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"density",
     :"displayId",
@@ -37,6 +47,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.Display do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.Display do
+  def encode(value, options) do
+    GoogleApi.AndroidManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

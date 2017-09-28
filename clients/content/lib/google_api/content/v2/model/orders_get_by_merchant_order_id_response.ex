@@ -20,9 +20,13 @@
 defmodule GoogleApi.Content.V2.Model.OrdersGetByMerchantOrderIdResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;content#ordersGetByMerchantOrderIdResponse\&quot;. Defaults to: `null`.
+  - order (Order): The requested order. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"order"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrdersGetByMerchantOrder
   def decode(value, options) do
     value
     |> deserialize(:"order", :struct, GoogleApi.Content.V2.Model.Order, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrdersGetByMerchantOrderIdResponse do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

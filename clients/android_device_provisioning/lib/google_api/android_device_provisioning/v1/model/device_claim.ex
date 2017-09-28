@@ -20,9 +20,14 @@
 defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceClaim do
   @moduledoc """
   containing the necessary info about a claim for a partner.
+
+  ## Attributes
+
+  - ownerCompanyId (String): owner id Defaults to: `null`.
+  - sectionType (String): section type. Defaults to: `null`.
+    - Enum - one of [SECTION_TYPE_UNSPECIFIED, SECTION_TYPE_ZERO_TOUCH]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"ownerCompanyId",
     :"sectionType"
@@ -32,6 +37,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceClaim do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceClaim do
+  def encode(value, options) do
+    GoogleApi.AndroidDeviceProvisioning.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

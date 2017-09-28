@@ -62,7 +62,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Permissions do
     }
     %{}
     |> method(:get)
-    |> url("/permissions/#{permission_id}")
+    |> url("/permissions/{permissionId}", %{
+         "permissionId" => URI.encode_www_form(permission_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

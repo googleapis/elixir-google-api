@@ -20,9 +20,18 @@
 defmodule GoogleApi.AndroidManagement.V1.Model.NonComplianceDetail do
   @moduledoc """
   Provides detail about non-compliance with a policy setting.
+
+  ## Attributes
+
+  - fieldPath (String): For settings with nested fields, if a particular nested field is out of compliance, this specifies the full path to the offending field. The path is formatted in the same way the policy JSON field would be referenced in JavaScript, that is: 1) For object-typed fields, the field name is followed by a dot then by a  subfield name. 2) For array-typed fields, the field name is followed by the array index  enclosed in brackets. For example, to indicate a problem with the url field in the externalData field in the 3rd application, the path would be applications[2].externalData.url Defaults to: `null`.
+  - installationFailureReason (String): If package_name is set and the non-compliance reason is APP_NOT_INSTALLED, the detailed reason the app cannot be installed. Defaults to: `null`.
+    - Enum - one of [INSTALLATION_FAILURE_REASON_UNSPECIFIED, INSTALLATION_FAILURE_REASON_UNKNOWN, IN_PROGRESS, NOT_FOUND, NOT_COMPATIBLE_WITH_DEVICE, NOT_APPROVED, PERMISSIONS_NOT_ACCEPTED, NOT_AVAILABLE_IN_COUNTRY, NO_LICENSES_REMAINING, NOT_ENROLLED, USER_INVALID]
+  - nonComplianceReason (String): The reason the device is not in compliance with the setting. Defaults to: `null`.
+    - Enum - one of [NON_COMPLIANCE_REASON_UNSPECIFIED, API_LEVEL, ADMIN_TYPE, USER_ACTION, INVALID_VALUE, APP_NOT_INSTALLED, UNSUPPORTED, APP_INSTALLED, PENDING, APP_INCOMPATIBLE]
+  - packageName (String): The package name indicating which application is out of compliance, if applicable. Defaults to: `null`.
+  - settingName (String): The name of the policy setting. This is the JSON field name of a top-level Policy  field. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fieldPath",
     :"installationFailureReason",
@@ -35,6 +44,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.NonComplianceDetail do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.NonComplianceDetail do
+  def encode(value, options) do
+    GoogleApi.AndroidManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

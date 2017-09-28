@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.ConcatPosition do
   @moduledoc """
   A position that encapsulates an inner position and an index for the inner position. A ConcatPosition can be used by a reader of a source that encapsulates a set of other sources.
+
+  ## Attributes
+
+  - index (Integer): Index of the inner source. Defaults to: `null`.
+  - position (Position): Position within the inner source. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"index",
     :"position"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.ConcatPosition do
   def decode(value, options) do
     value
     |> deserialize(:"position", :struct, GoogleApi.Dataflow.V1b3.Model.Position, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.ConcatPosition do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

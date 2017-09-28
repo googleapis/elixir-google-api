@@ -20,9 +20,14 @@
 defmodule GoogleApi.Container.V1.Model.NodeManagement do
   @moduledoc """
   NodeManagement defines the set of node management services turned on for the node pool.
+
+  ## Attributes
+
+  - autoRepair (Boolean): A flag that specifies whether the node auto-repair is enabled for the node pool. If enabled, the nodes in this node pool will be monitored and, if they fail health checks too many times, an automatic repair action will be triggered. Defaults to: `null`.
+  - autoUpgrade (Boolean): A flag that specifies whether node auto-upgrade is enabled for the node pool. If enabled, node auto-upgrade helps keep the nodes in your node pool up to date with the latest release version of Kubernetes. Defaults to: `null`.
+  - upgradeOptions (AutoUpgradeOptions): Specifies the Auto Upgrade knobs for the node pool. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"autoRepair",
     :"autoUpgrade",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.NodeManagement do
   def decode(value, options) do
     value
     |> deserialize(:"upgradeOptions", :struct, GoogleApi.Container.V1.Model.AutoUpgradeOptions, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.NodeManagement do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

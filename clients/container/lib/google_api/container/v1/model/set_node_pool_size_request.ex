@@ -20,9 +20,12 @@
 defmodule GoogleApi.Container.V1.Model.SetNodePoolSizeRequest do
   @moduledoc """
   SetNodePoolSizeRequest sets the size a node pool.
+
+  ## Attributes
+
+  - nodeCount (Integer): The desired node count for the pool. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nodeCount"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.SetNodePoolSizeRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.SetNodePoolSizeRequest do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.GetDebugConfigResponse do
   @moduledoc """
   Response to a get debug configuration request.
+
+  ## Attributes
+
+  - config (String): The encoded debug configuration for the requested component. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"config"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.GetDebugConfigResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.GetDebugConfigResponse do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

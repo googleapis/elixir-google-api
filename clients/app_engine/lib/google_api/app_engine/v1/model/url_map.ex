@@ -20,9 +20,23 @@
 defmodule GoogleApi.AppEngine.V1.Model.UrlMap do
   @moduledoc """
   URL pattern and description of how the URL should be handled. App Engine can handle URLs by executing application code or by serving static files uploaded with the version, such as images, CSS, or JavaScript.
+
+  ## Attributes
+
+  - apiEndpoint (ApiEndpointHandler): Uses API Endpoints to handle requests. Defaults to: `null`.
+  - authFailAction (String): Action to take when users access resources that require authentication. Defaults to redirect. Defaults to: `null`.
+    - Enum - one of [AUTH_FAIL_ACTION_UNSPECIFIED, AUTH_FAIL_ACTION_REDIRECT, AUTH_FAIL_ACTION_UNAUTHORIZED]
+  - login (String): Level of login required to access this resource. Defaults to: `null`.
+    - Enum - one of [LOGIN_UNSPECIFIED, LOGIN_OPTIONAL, LOGIN_ADMIN, LOGIN_REQUIRED]
+  - redirectHttpResponseCode (String): 30x code to use when performing redirects for the secure field. Defaults to 302. Defaults to: `null`.
+    - Enum - one of [REDIRECT_HTTP_RESPONSE_CODE_UNSPECIFIED, REDIRECT_HTTP_RESPONSE_CODE_301, REDIRECT_HTTP_RESPONSE_CODE_302, REDIRECT_HTTP_RESPONSE_CODE_303, REDIRECT_HTTP_RESPONSE_CODE_307]
+  - script (ScriptHandler): Executes a script to handle the request that matches this URL pattern. Defaults to: `null`.
+  - securityLevel (String): Security (HTTPS) enforcement for this URL. Defaults to: `null`.
+    - Enum - one of [SECURE_UNSPECIFIED, SECURE_DEFAULT, SECURE_NEVER, SECURE_OPTIONAL, SECURE_ALWAYS]
+  - staticFiles (StaticFilesHandler): Returns the contents of a file, such as an image, as the response. Defaults to: `null`.
+  - urlRegex (String): URL prefix. Uses regular expression syntax, which means regexp special characters must be escaped, but should not contain groupings. All URLs that begin with this prefix are handled by this handler, using the portion of the URL after the prefix as part of the file path. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"apiEndpoint",
     :"authFailAction",
@@ -42,6 +56,12 @@ defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.UrlMap do
     |> deserialize(:"apiEndpoint", :struct, GoogleApi.AppEngine.V1.Model.ApiEndpointHandler, options)
     |> deserialize(:"script", :struct, GoogleApi.AppEngine.V1.Model.ScriptHandler, options)
     |> deserialize(:"staticFiles", :struct, GoogleApi.AppEngine.V1.Model.StaticFilesHandler, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.UrlMap do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

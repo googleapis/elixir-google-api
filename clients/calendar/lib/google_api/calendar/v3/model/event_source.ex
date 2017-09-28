@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Calendar.V3.Model.Event_source do
+defmodule GoogleApi.Calendar.V3.Model.EventSource do
   @moduledoc """
   Source from which the event was created. For example, a web page, an email message or any document identifiable by an URL with HTTP or HTTPS scheme. Can only be seen or modified by the creator of the event.
+
+  ## Attributes
+
+  - title (String): Title of the source; for example a title of a web page or an email subject. Defaults to: `null`.
+  - url (String): URL of the source pointing to a resource. The URL scheme must be HTTP or HTTPS. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"title",
     :"url"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.Event_source do
+defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.EventSource do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.EventSource do
+  def encode(value, options) do
+    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

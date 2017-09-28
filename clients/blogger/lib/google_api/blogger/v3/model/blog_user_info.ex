@@ -20,9 +20,14 @@
 defmodule GoogleApi.Blogger.V3.Model.BlogUserInfo do
   @moduledoc """
   
+
+  ## Attributes
+
+  - blog (Blog): The Blog resource. Defaults to: `null`.
+  - blog_user_info (BlogPerUserInfo): Information about a User for the Blog. Defaults to: `null`.
+  - kind (String): The kind of this entity. Always blogger#blogUserInfo Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"blog",
     :"blog_user_info",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.BlogUserInfo do
     value
     |> deserialize(:"blog", :struct, GoogleApi.Blogger.V3.Model.Blog, options)
     |> deserialize(:"blog_user_info", :struct, GoogleApi.Blogger.V3.Model.BlogPerUserInfo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Blogger.V3.Model.BlogUserInfo do
+  def encode(value, options) do
+    GoogleApi.Blogger.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

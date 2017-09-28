@@ -20,9 +20,30 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.TaskRunnerSettings do
   @moduledoc """
   Taskrunner configuration settings.
+
+  ## Attributes
+
+  - alsologtostderr (Boolean): Whether to also send taskrunner log info to stderr. Defaults to: `null`.
+  - baseTaskDir (String): The location on the worker for task-specific subdirectories. Defaults to: `null`.
+  - baseUrl (String): The base URL for the taskrunner to use when accessing Google Cloud APIs.  When workers access Google Cloud APIs, they logically do so via relative URLs.  If this field is specified, it supplies the base URL to use for resolving these relative URLs.  The normative algorithm used is defined by RFC 1808, \&quot;Relative Uniform Resource Locators\&quot;.  If not specified, the default value is \&quot;http://www.googleapis.com/\&quot; Defaults to: `null`.
+  - commandlinesFileName (String): The file to store preprocessing commands in. Defaults to: `null`.
+  - continueOnException (Boolean): Whether to continue taskrunner if an exception is hit. Defaults to: `null`.
+  - dataflowApiVersion (String): The API version of endpoint, e.g. \&quot;v1b3\&quot; Defaults to: `null`.
+  - harnessCommand (String): The command to launch the worker harness. Defaults to: `null`.
+  - languageHint (String): The suggested backend language. Defaults to: `null`.
+  - logDir (String): The directory on the VM to store logs. Defaults to: `null`.
+  - logToSerialconsole (Boolean): Whether to send taskrunner log info to Google Compute Engine VM serial console. Defaults to: `null`.
+  - logUploadLocation (String): Indicates where to put logs.  If this is not specified, the logs will not be uploaded.  The supported resource type is:  Google Cloud Storage:   storage.googleapis.com/{bucket}/{object}   bucket.storage.googleapis.com/{object} Defaults to: `null`.
+  - oauthScopes (List[String]): The OAuth2 scopes to be requested by the taskrunner in order to access the Cloud Dataflow API. Defaults to: `null`.
+  - parallelWorkerSettings (WorkerSettings): The settings to pass to the parallel worker harness. Defaults to: `null`.
+  - streamingWorkerMainClass (String): The streaming worker main class name. Defaults to: `null`.
+  - taskGroup (String): The UNIX group ID on the worker VM to use for tasks launched by taskrunner; e.g. \&quot;wheel\&quot;. Defaults to: `null`.
+  - taskUser (String): The UNIX user ID on the worker VM to use for tasks launched by taskrunner; e.g. \&quot;root\&quot;. Defaults to: `null`.
+  - tempStoragePrefix (String): The prefix of the resources the taskrunner should use for temporary storage.  The supported resource type is:  Google Cloud Storage:   storage.googleapis.com/{bucket}/{object}   bucket.storage.googleapis.com/{object} Defaults to: `null`.
+  - vmId (String): The ID string of the VM. Defaults to: `null`.
+  - workflowFileName (String): The file to store the workflow in. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"alsologtostderr",
     :"baseTaskDir",
@@ -51,6 +72,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.TaskRunnerSettings do
   def decode(value, options) do
     value
     |> deserialize(:"parallelWorkerSettings", :struct, GoogleApi.Dataflow.V1b3.Model.WorkerSettings, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.TaskRunnerSettings do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

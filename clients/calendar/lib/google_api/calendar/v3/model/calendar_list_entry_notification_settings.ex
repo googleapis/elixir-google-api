@@ -17,22 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Calendar.V3.Model.CalendarListEntry_notificationSettings do
+defmodule GoogleApi.Calendar.V3.Model.CalendarListEntryNotificationSettings do
   @moduledoc """
   The notifications that the authenticated user is receiving for this calendar.
+
+  ## Attributes
+
+  - notifications (List[CalendarNotification]): The list of notifications set for this calendar. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"notifications"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.CalendarListEntry_notificationSettings do
+defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.CalendarListEntryNotificationSettings do
   import GoogleApi.Calendar.V3.Deserializer
   def decode(value, options) do
     value
     |> deserialize(:"notifications", :list, GoogleApi.Calendar.V3.Model.CalendarNotification, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.CalendarListEntryNotificationSettings do
+  def encode(value, options) do
+    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

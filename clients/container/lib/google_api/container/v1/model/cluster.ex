@@ -20,9 +20,46 @@
 defmodule GoogleApi.Container.V1.Model.Cluster do
   @moduledoc """
   A Google Container Engine cluster.
+
+  ## Attributes
+
+  - addonsConfig (AddonsConfig): Configurations for the various addons available to run in the cluster. Defaults to: `null`.
+  - clusterIpv4Cidr (String): The IP address range of the container pods in this cluster, in [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. &#x60;10.96.0.0/14&#x60;). Leave blank to have one automatically chosen or specify a &#x60;/14&#x60; block in &#x60;10.0.0.0/8&#x60;. Defaults to: `null`.
+  - createTime (String): [Output only] The time the cluster was created, in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format. Defaults to: `null`.
+  - currentMasterVersion (String): [Output only] The current software version of the master endpoint. Defaults to: `null`.
+  - currentNodeCount (Integer): [Output only] The number of nodes currently in the cluster. Defaults to: `null`.
+  - currentNodeVersion (String): [Output only] The current version of the node software components. If they are currently at multiple versions because they&#39;re in the process of being upgraded, this reflects the minimum version of all nodes. Defaults to: `null`.
+  - description (String): An optional description of this cluster. Defaults to: `null`.
+  - enableKubernetesAlpha (Boolean): Kubernetes alpha features are enabled on this cluster. This includes alpha API groups (e.g. v1alpha1) and features that may not be production ready in the kubernetes version of the master and nodes. The cluster has no SLA for uptime and master/node upgrades are disabled. Alpha enabled clusters are automatically deleted thirty days after creation. Defaults to: `null`.
+  - endpoint (String): [Output only] The IP address of this cluster&#39;s master endpoint. The endpoint can be accessed from the internet at &#x60;https://username:password@endpoint/&#x60;.  See the &#x60;masterAuth&#x60; property of this resource for username and password information. Defaults to: `null`.
+  - expireTime (String): [Output only] The time the cluster will be automatically deleted in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format. Defaults to: `null`.
+  - initialClusterVersion (String): The initial Kubernetes version for this cluster.  Valid versions are those found in validMasterVersions returned by getServerConfig.  The version can be upgraded over time; such upgrades are reflected in currentMasterVersion and currentNodeVersion. Defaults to: `null`.
+  - initialNodeCount (Integer): The number of nodes to create in this cluster. You must ensure that your Compute Engine &lt;a href&#x3D;\&quot;/compute/docs/resource-quotas\&quot;&gt;resource quota&lt;/a&gt; is sufficient for this number of instances. You must also have available firewall and routes quota. For requests, this field should only be used in lieu of a \&quot;node_pool\&quot; object, since this configuration (along with the \&quot;node_config\&quot;) will be used to create a \&quot;NodePool\&quot; object with an auto-generated name. Do not use this and a node_pool at the same time. Defaults to: `null`.
+  - instanceGroupUrls (List[String]): [Output only] The resource URLs of [instance groups](/compute/docs/instance-groups/) associated with this cluster. Defaults to: `null`.
+  - ipAllocationPolicy (IpAllocationPolicy): Configuration for cluster IP allocation. Defaults to: `null`.
+  - labelFingerprint (String): The fingerprint of the set of labels for this cluster. Defaults to: `null`.
+  - legacyAbac (LegacyAbac): Configuration for the legacy ABAC authorization mode. Defaults to: `null`.
+  - locations (List[String]): The list of Google Compute Engine [locations](/compute/docs/zones#available) in which the cluster&#39;s nodes should be located. Defaults to: `null`.
+  - loggingService (String): The logging service the cluster should use to write logs. Currently available options:  * &#x60;logging.googleapis.com&#x60; - the Google Cloud Logging service. * &#x60;none&#x60; - no logs will be exported from the cluster. * if left as an empty string,&#x60;logging.googleapis.com&#x60; will be used. Defaults to: `null`.
+  - masterAuth (MasterAuth): The authentication information for accessing the master endpoint. Defaults to: `null`.
+  - masterAuthorizedNetworksConfig (MasterAuthorizedNetworksConfig): Master authorized networks is a Beta feature. The configuration options for master authorized networks feature. Defaults to: `null`.
+  - monitoringService (String): The monitoring service the cluster should use to write metrics. Currently available options:  * &#x60;monitoring.googleapis.com&#x60; - the Google Cloud Monitoring service. * &#x60;none&#x60; - no metrics will be exported from the cluster. * if left as an empty string, &#x60;monitoring.googleapis.com&#x60; will be used. Defaults to: `null`.
+  - name (String): The name of this cluster. The name must be unique within this project and zone, and can be up to 40 characters with the following restrictions:  * Lowercase letters, numbers, and hyphens only. * Must start with a letter. * Must end with a number or a letter. Defaults to: `null`.
+  - network (String): The name of the Google Compute Engine [network](/compute/docs/networks-and-firewalls#networks) to which the cluster is connected. If left unspecified, the &#x60;default&#x60; network will be used. Defaults to: `null`.
+  - networkPolicy (NetworkPolicy): Configuration options for the NetworkPolicy feature. Defaults to: `null`.
+  - nodeConfig (NodeConfig): Parameters used in creating the cluster&#39;s nodes. See &#x60;nodeConfig&#x60; for the description of its properties. For requests, this field should only be used in lieu of a \&quot;node_pool\&quot; object, since this configuration (along with the \&quot;initial_node_count\&quot;) will be used to create a \&quot;NodePool\&quot; object with an auto-generated name. Do not use this and a node_pool at the same time. For responses, this field will be populated with the node configuration of the first node pool.  If unspecified, the defaults are used. Defaults to: `null`.
+  - nodeIpv4CidrSize (Integer): [Output only] The size of the address space on each node for hosting containers. This is provisioned from within the &#x60;container_ipv4_cidr&#x60; range. Defaults to: `null`.
+  - nodePools (List[NodePool]): The node pools associated with this cluster. This field should not be set if \&quot;node_config\&quot; or \&quot;initial_node_count\&quot; are specified. Defaults to: `null`.
+  - resourceLabels (Map[String, String]): The resource labels for the cluster to use to annotate any related Google Compute Engine resources. Defaults to: `null`.
+  - selfLink (String): [Output only] Server-defined URL for the resource. Defaults to: `null`.
+  - servicesIpv4Cidr (String): [Output only] The IP address range of the Kubernetes services in this cluster, in [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. &#x60;1.2.3.4/29&#x60;). Service addresses are typically put in the last &#x60;/16&#x60; from the container CIDR. Defaults to: `null`.
+  - status (String): [Output only] The current status of this cluster. Defaults to: `null`.
+    - Enum - one of [STATUS_UNSPECIFIED, PROVISIONING, RUNNING, RECONCILING, STOPPING, ERROR]
+  - statusMessage (String): [Output only] Additional information about the current status of this cluster, if available. Defaults to: `null`.
+  - subnetwork (String): The name of the Google Compute Engine [subnetwork](/compute/docs/subnetworks) to which the cluster is connected. Defaults to: `null`.
+  - zone (String): [Output only] The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"addonsConfig",
     :"clusterIpv4Cidr",
@@ -66,13 +103,19 @@ defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.Cluster do
   def decode(value, options) do
     value
     |> deserialize(:"addonsConfig", :struct, GoogleApi.Container.V1.Model.AddonsConfig, options)
-    |> deserialize(:"ipAllocationPolicy", :struct, GoogleApi.Container.V1.Model.IPAllocationPolicy, options)
+    |> deserialize(:"ipAllocationPolicy", :struct, GoogleApi.Container.V1.Model.IpAllocationPolicy, options)
     |> deserialize(:"legacyAbac", :struct, GoogleApi.Container.V1.Model.LegacyAbac, options)
     |> deserialize(:"masterAuth", :struct, GoogleApi.Container.V1.Model.MasterAuth, options)
     |> deserialize(:"masterAuthorizedNetworksConfig", :struct, GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig, options)
     |> deserialize(:"networkPolicy", :struct, GoogleApi.Container.V1.Model.NetworkPolicy, options)
     |> deserialize(:"nodeConfig", :struct, GoogleApi.Container.V1.Model.NodeConfig, options)
     |> deserialize(:"nodePools", :list, GoogleApi.Container.V1.Model.NodePool, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.Cluster do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

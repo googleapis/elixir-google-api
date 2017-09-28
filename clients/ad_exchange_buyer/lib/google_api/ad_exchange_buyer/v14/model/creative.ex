@@ -20,9 +20,39 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.Creative do
   @moduledoc """
   A creative and its classification data.
+
+  ## Attributes
+
+  - HTMLSnippet (String): The HTML snippet that displays the ad when inserted in the web page. If set, videoURL should not be set. Defaults to: `null`.
+  - accountId (Integer): Account id. Defaults to: `null`.
+  - adChoicesDestinationUrl (String): The link to the Ad Preferences page. This is only supported for native ads. Defaults to: `null`.
+  - advertiserId (List[String]): Detected advertiser id, if any. Read-only. This field should not be set in requests. Defaults to: `null`.
+  - advertiserName (String): The name of the company being advertised in the creative. The value provided must exist in the advertisers.txt file. Defaults to: `null`.
+  - agencyId (String): The agency id for this creative. Defaults to: `null`.
+  - apiUploadTimestamp (DateTime): The last upload timestamp of this creative if it was uploaded via API. Read-only. The value of this field is generated, and will be ignored for uploads. (formatted RFC 3339 timestamp). Defaults to: `null`.
+  - attribute (List[Integer]): List of buyer selectable attributes for the ads that may be shown from this snippet. Each attribute is represented by an integer as defined in  buyer-declarable-creative-attributes.txt. Defaults to: `null`.
+  - buyerCreativeId (String): A buyer-specific id identifying the creative in this ad. Defaults to: `null`.
+  - clickThroughUrl (List[String]): The set of destination urls for the snippet. Defaults to: `null`.
+  - corrections (List[CreativeCorrections]): Shows any corrections that were applied to this creative. Read-only. This field should not be set in requests. Defaults to: `null`.
+  - dealsStatus (String): Top-level deals status. Read-only. This field should not be set in requests. If disapproved, an entry for auctionType&#x3D;DIRECT_DEALS (or ALL) in servingRestrictions will also exist. Note that this may be nuanced with other contextual restrictions, in which case it may be preferable to read from servingRestrictions directly. Defaults to: `null`.
+  - detectedDomains (List[String]): Detected domains for this creative. Read-only. This field should not be set in requests. Defaults to: `null`.
+  - filteringReasons (CreativeFilteringReasons):  Defaults to: `null`.
+  - height (Integer): Ad height. Defaults to: `null`.
+  - impressionTrackingUrl (List[String]): The set of urls to be called to record an impression. Defaults to: `null`.
+  - kind (String): Resource type. Defaults to: `null`.
+  - languages (List[String]): Detected languages for this creative. Read-only. This field should not be set in requests. Defaults to: `null`.
+  - nativeAd (CreativeNativeAd):  Defaults to: `null`.
+  - openAuctionStatus (String): Top-level open auction status. Read-only. This field should not be set in requests. If disapproved, an entry for auctionType&#x3D;OPEN_AUCTION (or ALL) in servingRestrictions will also exist. Note that this may be nuanced with other contextual restrictions, in which case it may be preferable to read from ServingRestrictions directly. Defaults to: `null`.
+  - productCategories (List[Integer]): Detected product categories, if any. Each category is represented by an integer as defined in  ad-product-categories.txt. Read-only. This field should not be set in requests. Defaults to: `null`.
+  - restrictedCategories (List[Integer]): All restricted categories for the ads that may be shown from this snippet. Each category is represented by an integer as defined in the  ad-restricted-categories.txt. Defaults to: `null`.
+  - sensitiveCategories (List[Integer]): Detected sensitive categories, if any. Each category is represented by an integer as defined in  ad-sensitive-categories.txt. Read-only. This field should not be set in requests. Defaults to: `null`.
+  - servingRestrictions (List[CreativeServingRestrictions]): The granular status of this ad in specific contexts. A context here relates to where something ultimately serves (for example, a physical location, a platform, an HTTPS vs HTTP request, or the type of auction). Read-only. This field should not be set in requests. See the examples in the Creatives guide for more details. Defaults to: `null`.
+  - vendorType (List[Integer]): List of vendor types for the ads that may be shown from this snippet. Each vendor type is represented by an integer as defined in vendors.txt. Defaults to: `null`.
+  - version (Integer): The version for this creative. Read-only. This field should not be set in requests. Defaults to: `null`.
+  - videoURL (String): The URL to fetch a video ad. If set, HTMLSnippet and the nativeAd should not be set. Note, this is different from resource.native_ad.video_url above. Defaults to: `null`.
+  - width (Integer): Ad width. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"HTMLSnippet",
     :"accountId",
@@ -59,10 +89,16 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.Creative do
   import GoogleApi.AdExchangeBuyer.V14.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"corrections", :list, GoogleApi.AdExchangeBuyer.V14.Model.Creative_corrections, options)
-    |> deserialize(:"filteringReasons", :struct, GoogleApi.AdExchangeBuyer.V14.Model.Creative_filteringReasons, options)
-    |> deserialize(:"nativeAd", :struct, GoogleApi.AdExchangeBuyer.V14.Model.Creative_nativeAd, options)
-    |> deserialize(:"servingRestrictions", :list, GoogleApi.AdExchangeBuyer.V14.Model.Creative_servingRestrictions, options)
+    |> deserialize(:"corrections", :list, GoogleApi.AdExchangeBuyer.V14.Model.CreativeCorrections, options)
+    |> deserialize(:"filteringReasons", :struct, GoogleApi.AdExchangeBuyer.V14.Model.CreativeFilteringReasons, options)
+    |> deserialize(:"nativeAd", :struct, GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAd, options)
+    |> deserialize(:"servingRestrictions", :list, GoogleApi.AdExchangeBuyer.V14.Model.CreativeServingRestrictions, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.Creative do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

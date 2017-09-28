@@ -20,9 +20,14 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductPermissions do
   @moduledoc """
   Information about the permissions required by a specific app and whether they have been accepted by the enterprise.
+
+  ## Attributes
+
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#productPermissions\&quot;. Defaults to: `null`.
+  - permission (List[ProductPermission]): The permissions required by the app. Defaults to: `null`.
+  - productId (String): The ID of the app that the permissions relate to, e.g. \&quot;app:com.google.android.gm\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"permission",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.ProductPermiss
   def decode(value, options) do
     value
     |> deserialize(:"permission", :list, GoogleApi.AndroidEnterprise.V1.Model.ProductPermission, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.ProductPermissions do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

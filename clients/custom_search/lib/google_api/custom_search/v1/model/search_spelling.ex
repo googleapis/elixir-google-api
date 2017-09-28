@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CustomSearch.V1.Model.Search_spelling do
+defmodule GoogleApi.CustomSearch.V1.Model.SearchSpelling do
   @moduledoc """
   
+
+  ## Attributes
+
+  - correctedQuery (String):  Defaults to: `null`.
+  - htmlCorrectedQuery (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"correctedQuery",
     :"htmlCorrectedQuery"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CustomSearch.V1.Model.Search_spelling do
+defimpl Poison.Decoder, for: GoogleApi.CustomSearch.V1.Model.SearchSpelling do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CustomSearch.V1.Model.SearchSpelling do
+  def encode(value, options) do
+    GoogleApi.CustomSearch.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,17 @@
 defmodule GoogleApi.Classroom.V1.Model.UserProfile do
   @moduledoc """
   Global information for a user.
+
+  ## Attributes
+
+  - emailAddress (String): Email address of the user.  Read-only. Defaults to: `null`.
+  - id (String): Identifier of the user.  Read-only. Defaults to: `null`.
+  - name (Name): Name of the user.  Read-only. Defaults to: `null`.
+  - permissions (List[GlobalPermission]): Global permissions of the user.  Read-only. Defaults to: `null`.
+  - photoUrl (String): URL of user&#39;s profile photo.  Read-only. Defaults to: `null`.
+  - verifiedTeacher (Boolean): Represents whether a G Suite for Education user&#39;s domain administrator has explicitly verified them as being a teacher. If the user is not a member of a G Suite for Education domain, than this field will always be false.  Read-only Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"emailAddress",
     :"id",
@@ -39,6 +47,12 @@ defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.UserProfile do
     value
     |> deserialize(:"name", :struct, GoogleApi.Classroom.V1.Model.Name, options)
     |> deserialize(:"permissions", :list, GoogleApi.Classroom.V1.Model.GlobalPermission, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.UserProfile do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

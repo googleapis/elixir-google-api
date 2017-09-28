@@ -20,9 +20,15 @@
 defmodule GoogleApi.Calendar.V3.Model.Colors do
   @moduledoc """
   
+
+  ## Attributes
+
+  - calendar (Map[String, ColorDefinition]): A global palette of calendar colors, mapping from the color ID to its definition. A calendarListEntry resource refers to one of these color IDs in its color field. Read-only. Defaults to: `null`.
+  - event (Map[String, ColorDefinition]): A global palette of event colors, mapping from the color ID to its definition. An event resource may refer to one of these color IDs in its color field. Read-only. Defaults to: `null`.
+  - kind (String): Type of the resource (\&quot;calendar#colors\&quot;). Defaults to: `null`.
+  - updated (DateTime): Last modification time of the color palette (as a RFC3339 timestamp). Read-only. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"calendar",
     :"event",
@@ -37,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.Colors do
     value
     |> deserialize(:"calendar", :map, GoogleApi.Calendar.V3.Model.ColorDefinition, options)
     |> deserialize(:"event", :map, GoogleApi.Calendar.V3.Model.ColorDefinition, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.Colors do
+  def encode(value, options) do
+    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -126,7 +126,9 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
     }
     %{}
     |> method(:get)
-    |> url("/v1/apps/#{apps_id}")
+    |> url("/v1/apps/{appsId}", %{
+         "appsId" => URI.encode_www_form(apps_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -180,7 +182,10 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
     }
     %{}
     |> method(:get)
-    |> url("/v1/apps/#{apps_id}/locations/#{locations_id}")
+    |> url("/v1/apps/{appsId}/locations/{locationsId}", %{
+         "appsId" => URI.encode_www_form(apps_id),
+         "locationsId" => URI.encode_www_form(locations_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -239,7 +244,9 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
     }
     %{}
     |> method(:get)
-    |> url("/v1/apps/#{apps_id}/locations")
+    |> url("/v1/apps/{appsId}/locations", %{
+         "appsId" => URI.encode_www_form(apps_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -293,7 +300,10 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
     }
     %{}
     |> method(:get)
-    |> url("/v1/apps/#{apps_id}/operations/#{operations_id}")
+    |> url("/v1/apps/{appsId}/operations/{operationsId}", %{
+         "appsId" => URI.encode_www_form(apps_id),
+         "operationsId" => URI.encode_www_form(operations_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -352,7 +362,9 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
     }
     %{}
     |> method(:get)
-    |> url("/v1/apps/#{apps_id}/operations")
+    |> url("/v1/apps/{appsId}/operations", %{
+         "appsId" => URI.encode_www_form(apps_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -409,7 +421,9 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
     }
     %{}
     |> method(:patch)
-    |> url("/v1/apps/#{apps_id}")
+    |> url("/v1/apps/{appsId}", %{
+         "appsId" => URI.encode_www_form(apps_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -464,7 +478,9 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
     }
     %{}
     |> method(:post)
-    |> url("/v1/apps/#{apps_id}:repair")
+    |> url("/v1/apps/{appsId}:repair", %{
+         "appsId" => URI.encode_www_form(apps_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -518,7 +534,10 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/apps/#{apps_id}/services/#{services_id}")
+    |> url("/v1/apps/{appsId}/services/{servicesId}", %{
+         "appsId" => URI.encode_www_form(apps_id),
+         "servicesId" => URI.encode_www_form(services_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -572,7 +591,10 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
     }
     %{}
     |> method(:get)
-    |> url("/v1/apps/#{apps_id}/services/#{services_id}")
+    |> url("/v1/apps/{appsId}/services/{servicesId}", %{
+         "appsId" => URI.encode_www_form(apps_id),
+         "servicesId" => URI.encode_www_form(services_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -629,7 +651,9 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
     }
     %{}
     |> method(:get)
-    |> url("/v1/apps/#{apps_id}/services")
+    |> url("/v1/apps/{appsId}/services", %{
+         "appsId" => URI.encode_www_form(apps_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -689,7 +713,10 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
     }
     %{}
     |> method(:patch)
-    |> url("/v1/apps/#{apps_id}/services/#{services_id}")
+    |> url("/v1/apps/{appsId}/services/{servicesId}", %{
+         "appsId" => URI.encode_www_form(apps_id),
+         "servicesId" => URI.encode_www_form(services_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -745,7 +772,10 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
     }
     %{}
     |> method(:post)
-    |> url("/v1/apps/#{apps_id}/services/#{services_id}/versions")
+    |> url("/v1/apps/{appsId}/services/{servicesId}/versions", %{
+         "appsId" => URI.encode_www_form(apps_id),
+         "servicesId" => URI.encode_www_form(services_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -800,7 +830,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/apps/#{apps_id}/services/#{services_id}/versions/#{versions_id}")
+    |> url("/v1/apps/{appsId}/services/{servicesId}/versions/{versionsId}", %{
+         "appsId" => URI.encode_www_form(apps_id),
+         "servicesId" => URI.encode_www_form(services_id),
+         "versionsId" => URI.encode_www_form(versions_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -857,7 +891,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
     }
     %{}
     |> method(:get)
-    |> url("/v1/apps/#{apps_id}/services/#{services_id}/versions/#{versions_id}")
+    |> url("/v1/apps/{appsId}/services/{servicesId}/versions/{versionsId}", %{
+         "appsId" => URI.encode_www_form(apps_id),
+         "servicesId" => URI.encode_www_form(services_id),
+         "versionsId" => URI.encode_www_form(versions_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -915,7 +953,12 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
     }
     %{}
     |> method(:post)
-    |> url("/v1/apps/#{apps_id}/services/#{services_id}/versions/#{versions_id}/instances/#{instances_id}:debug")
+    |> url("/v1/apps/{appsId}/services/{servicesId}/versions/{versionsId}/instances/{instancesId}:debug", %{
+         "appsId" => URI.encode_www_form(apps_id),
+         "servicesId" => URI.encode_www_form(services_id),
+         "versionsId" => URI.encode_www_form(versions_id),
+         "instancesId" => URI.encode_www_form(instances_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -971,7 +1014,12 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/apps/#{apps_id}/services/#{services_id}/versions/#{versions_id}/instances/#{instances_id}")
+    |> url("/v1/apps/{appsId}/services/{servicesId}/versions/{versionsId}/instances/{instancesId}", %{
+         "appsId" => URI.encode_www_form(apps_id),
+         "servicesId" => URI.encode_www_form(services_id),
+         "versionsId" => URI.encode_www_form(versions_id),
+         "instancesId" => URI.encode_www_form(instances_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1027,7 +1075,12 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
     }
     %{}
     |> method(:get)
-    |> url("/v1/apps/#{apps_id}/services/#{services_id}/versions/#{versions_id}/instances/#{instances_id}")
+    |> url("/v1/apps/{appsId}/services/{servicesId}/versions/{versionsId}/instances/{instancesId}", %{
+         "appsId" => URI.encode_www_form(apps_id),
+         "servicesId" => URI.encode_www_form(services_id),
+         "versionsId" => URI.encode_www_form(versions_id),
+         "instancesId" => URI.encode_www_form(instances_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1086,7 +1139,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
     }
     %{}
     |> method(:get)
-    |> url("/v1/apps/#{apps_id}/services/#{services_id}/versions/#{versions_id}/instances")
+    |> url("/v1/apps/{appsId}/services/{servicesId}/versions/{versionsId}/instances", %{
+         "appsId" => URI.encode_www_form(apps_id),
+         "servicesId" => URI.encode_www_form(services_id),
+         "versionsId" => URI.encode_www_form(versions_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1146,7 +1203,10 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
     }
     %{}
     |> method(:get)
-    |> url("/v1/apps/#{apps_id}/services/#{services_id}/versions")
+    |> url("/v1/apps/{appsId}/services/{servicesId}/versions", %{
+         "appsId" => URI.encode_www_form(apps_id),
+         "servicesId" => URI.encode_www_form(services_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1205,7 +1265,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
     }
     %{}
     |> method(:patch)
-    |> url("/v1/apps/#{apps_id}/services/#{services_id}/versions/#{versions_id}")
+    |> url("/v1/apps/{appsId}/services/{servicesId}/versions/{versionsId}", %{
+         "appsId" => URI.encode_www_form(apps_id),
+         "servicesId" => URI.encode_www_form(services_id),
+         "versionsId" => URI.encode_www_form(versions_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

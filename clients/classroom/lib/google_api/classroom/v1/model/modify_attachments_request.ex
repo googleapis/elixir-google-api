@@ -20,9 +20,12 @@
 defmodule GoogleApi.Classroom.V1.Model.ModifyAttachmentsRequest do
   @moduledoc """
   Request to modify the attachments of a student submission.
+
+  ## Attributes
+
+  - addAttachments (List[Attachment]): Attachments to add. A student submission may not have more than 20 attachments.  Form attachments are not supported. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"addAttachments"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.ModifyAttachmentsReque
   def decode(value, options) do
     value
     |> deserialize(:"addAttachments", :list, GoogleApi.Classroom.V1.Model.Attachment, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.ModifyAttachmentsRequest do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

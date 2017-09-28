@@ -20,9 +20,16 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueCreativeSize do
   @moduledoc """
   
+
+  ## Attributes
+
+  - companionSizes (List[TargetingValueSize]): For video size type, the list of companion sizes. Defaults to: `null`.
+  - creativeSizeType (String): The Creative size type. Defaults to: `null`.
+  - nativeTemplate (String): The native template for native ad. Defaults to: `null`.
+  - size (TargetingValueSize): For regular or video creative size type, specifies the size of the creative. Defaults to: `null`.
+  - skippableAdType (String): The skippable ad type for video size. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"companionSizes",
     :"creativeSizeType",
@@ -38,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueC
     value
     |> deserialize(:"companionSizes", :list, GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueSize, options)
     |> deserialize(:"size", :struct, GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueSize, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueCreativeSize do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

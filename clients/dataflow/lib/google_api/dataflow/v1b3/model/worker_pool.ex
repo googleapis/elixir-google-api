@@ -20,9 +20,35 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.WorkerPool do
   @moduledoc """
   Describes one particular pool of Cloud Dataflow workers to be instantiated by the Cloud Dataflow service in order to perform the computations required by a job.  Note that a workflow job may use multiple pools, in order to match the various computational requirements of the various stages of the job.
+
+  ## Attributes
+
+  - autoscalingSettings (AutoscalingSettings): Settings for autoscaling of this WorkerPool. Defaults to: `null`.
+  - dataDisks (List[Disk]): Data disks that are used by a VM in this workflow. Defaults to: `null`.
+  - defaultPackageSet (String): The default package set to install.  This allows the service to select a default set of packages which are useful to worker harnesses written in a particular language. Defaults to: `null`.
+    - Enum - one of [DEFAULT_PACKAGE_SET_UNKNOWN, DEFAULT_PACKAGE_SET_NONE, DEFAULT_PACKAGE_SET_JAVA, DEFAULT_PACKAGE_SET_PYTHON]
+  - diskSizeGb (Integer): Size of root disk for VMs, in GB.  If zero or unspecified, the service will attempt to choose a reasonable default. Defaults to: `null`.
+  - diskSourceImage (String): Fully qualified source image for disks. Defaults to: `null`.
+  - diskType (String): Type of root disk for VMs.  If empty or unspecified, the service will attempt to choose a reasonable default. Defaults to: `null`.
+  - ipConfiguration (String): Configuration for VM IPs. Defaults to: `null`.
+    - Enum - one of [WORKER_IP_UNSPECIFIED, WORKER_IP_PUBLIC, WORKER_IP_PRIVATE]
+  - kind (String): The kind of the worker pool; currently only &#x60;harness&#x60; and &#x60;shuffle&#x60; are supported. Defaults to: `null`.
+  - machineType (String): Machine type (e.g. \&quot;n1-standard-1\&quot;).  If empty or unspecified, the service will attempt to choose a reasonable default. Defaults to: `null`.
+  - metadata (Map[String, String]): Metadata to set on the Google Compute Engine VMs. Defaults to: `null`.
+  - network (String): Network to which VMs will be assigned.  If empty or unspecified, the service will use the network \&quot;default\&quot;. Defaults to: `null`.
+  - numThreadsPerWorker (Integer): The number of threads per worker harness. If empty or unspecified, the service will choose a number of threads (according to the number of cores on the selected machine type for batch, or 1 by convention for streaming). Defaults to: `null`.
+  - numWorkers (Integer): Number of Google Compute Engine workers in this pool needed to execute the job.  If zero or unspecified, the service will attempt to choose a reasonable default. Defaults to: `null`.
+  - onHostMaintenance (String): The action to take on host maintenance, as defined by the Google Compute Engine API. Defaults to: `null`.
+  - packages (List[Package]): Packages to be installed on workers. Defaults to: `null`.
+  - poolArgs (Object): Extra arguments for this worker pool. Defaults to: `null`.
+  - subnetwork (String): Subnetwork to which VMs will be assigned, if desired.  Expected to be of the form \&quot;regions/REGION/subnetworks/SUBNETWORK\&quot;. Defaults to: `null`.
+  - taskrunnerSettings (TaskRunnerSettings): Settings passed through to Google Compute Engine workers when using the standard Dataflow task runner.  Users should ignore this field. Defaults to: `null`.
+  - teardownPolicy (String): Sets the policy for determining when to turndown worker pool. Allowed values are: &#x60;TEARDOWN_ALWAYS&#x60;, &#x60;TEARDOWN_ON_SUCCESS&#x60;, and &#x60;TEARDOWN_NEVER&#x60;. &#x60;TEARDOWN_ALWAYS&#x60; means workers are always torn down regardless of whether the job succeeds. &#x60;TEARDOWN_ON_SUCCESS&#x60; means workers are torn down if the job succeeds. &#x60;TEARDOWN_NEVER&#x60; means the workers are never torn down.  If the workers are not torn down by the service, they will continue to run and use Google Compute Engine VM resources in the user&#39;s project until they are explicitly terminated by the user. Because of this, Google recommends using the &#x60;TEARDOWN_ALWAYS&#x60; policy except for small, manually supervised test jobs.  If unknown or unspecified, the service will attempt to choose a reasonable default. Defaults to: `null`.
+    - Enum - one of [TEARDOWN_POLICY_UNKNOWN, TEARDOWN_ALWAYS, TEARDOWN_ON_SUCCESS, TEARDOWN_NEVER]
+  - workerHarnessContainerImage (String): Required. Docker container image that executes the Cloud Dataflow worker harness, residing in Google Container Registry. Defaults to: `null`.
+  - zone (String): Zone to run the worker pools in.  If empty or unspecified, the service will attempt to choose a reasonable default. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"autoscalingSettings",
     :"dataDisks",
@@ -57,6 +83,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.WorkerPool do
     |> deserialize(:"packages", :list, GoogleApi.Dataflow.V1b3.Model.Package, options)
     |> deserialize(:"poolArgs", :struct, GoogleApi.Dataflow.V1b3.Model.Object, options)
     |> deserialize(:"taskrunnerSettings", :struct, GoogleApi.Dataflow.V1b3.Model.TaskRunnerSettings, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.WorkerPool do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

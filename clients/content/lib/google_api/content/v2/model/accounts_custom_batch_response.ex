@@ -20,9 +20,13 @@
 defmodule GoogleApi.Content.V2.Model.AccountsCustomBatchResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - entries (List[AccountsCustomBatchResponseEntry]): The result of the execution of the batch requests. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;content#accountsCustomBatchResponse\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"entries",
     :"kind"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.AccountsCustomBatchRespo
   def decode(value, options) do
     value
     |> deserialize(:"entries", :list, GoogleApi.Content.V2.Model.AccountsCustomBatchResponseEntry, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.AccountsCustomBatchResponse do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.Classroom.V1.Model.GlobalPermission do
   @moduledoc """
   Global user permission description.
+
+  ## Attributes
+
+  - permission (String): Permission value. Defaults to: `null`.
+    - Enum - one of [PERMISSION_UNSPECIFIED, CREATE_COURSE]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"permission"
   ]
@@ -31,6 +35,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.GlobalPermission do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.GlobalPermission do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

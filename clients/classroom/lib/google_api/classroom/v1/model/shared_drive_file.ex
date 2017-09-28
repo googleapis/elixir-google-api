@@ -20,9 +20,14 @@
 defmodule GoogleApi.Classroom.V1.Model.SharedDriveFile do
   @moduledoc """
   Drive file that is used as material for course work.
+
+  ## Attributes
+
+  - driveFile (DriveFile): Drive file details. Defaults to: `null`.
+  - shareMode (String): Mechanism by which students access the Drive item. Defaults to: `null`.
+    - Enum - one of [UNKNOWN_SHARE_MODE, VIEW, EDIT, STUDENT_COPY]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"driveFile",
     :"shareMode"
@@ -34,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.SharedDriveFile do
   def decode(value, options) do
     value
     |> deserialize(:"driveFile", :struct, GoogleApi.Classroom.V1.Model.DriveFile, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.SharedDriveFile do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

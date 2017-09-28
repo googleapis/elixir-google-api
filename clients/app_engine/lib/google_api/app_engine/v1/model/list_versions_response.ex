@@ -20,9 +20,13 @@
 defmodule GoogleApi.AppEngine.V1.Model.ListVersionsResponse do
   @moduledoc """
   Response message for Versions.ListVersions.
+
+  ## Attributes
+
+  - nextPageToken (String): Continuation token for fetching the next page of results. Defaults to: `null`.
+  - versions (List[Version]): The versions belonging to the requested service. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nextPageToken",
     :"versions"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.ListVersionsResponse d
   def decode(value, options) do
     value
     |> deserialize(:"versions", :list, GoogleApi.AppEngine.V1.Model.Version, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.ListVersionsResponse do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

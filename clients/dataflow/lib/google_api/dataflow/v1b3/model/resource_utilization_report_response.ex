@@ -20,9 +20,11 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReportResponse do
   @moduledoc """
   Service-side response to WorkerMessage reporting resource utilization.
+
+  ## Attributes
+
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     
   ]
@@ -31,6 +33,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReportResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReportResponse do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

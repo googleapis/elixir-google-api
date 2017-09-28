@@ -20,9 +20,21 @@
 defmodule GoogleApi.Content.V2.Model.ProductStatus do
   @moduledoc """
   The status of a product, i.e., information about a product computed asynchronously by the data quality analysis.
+
+  ## Attributes
+
+  - creationDate (String): Date on which the item has been created, in ISO 8601 format. Defaults to: `null`.
+  - dataQualityIssues (List[ProductStatusDataQualityIssue]): A list of data quality issues associated with the product. Defaults to: `null`.
+  - destinationStatuses (List[ProductStatusDestinationStatus]): The intended destinations for the product. Defaults to: `null`.
+  - googleExpirationDate (String): Date on which the item expires in Google Shopping, in ISO 8601 format. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;content#productStatus\&quot;. Defaults to: `null`.
+  - lastUpdateDate (String): Date on which the item has been last updated, in ISO 8601 format. Defaults to: `null`.
+  - link (String): The link to the product. Defaults to: `null`.
+  - product (Product): Product data after applying all the join inputs. Defaults to: `null`.
+  - productId (String): The id of the product for which status is reported. Defaults to: `null`.
+  - title (String): The title of the product. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"creationDate",
     :"dataQualityIssues",
@@ -44,6 +56,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.ProductStatus do
     |> deserialize(:"dataQualityIssues", :list, GoogleApi.Content.V2.Model.ProductStatusDataQualityIssue, options)
     |> deserialize(:"destinationStatuses", :list, GoogleApi.Content.V2.Model.ProductStatusDestinationStatus, options)
     |> deserialize(:"product", :struct, GoogleApi.Content.V2.Model.Product, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.ProductStatus do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

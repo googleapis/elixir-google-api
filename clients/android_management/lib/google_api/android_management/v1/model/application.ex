@@ -20,9 +20,15 @@
 defmodule GoogleApi.AndroidManagement.V1.Model.Application do
   @moduledoc """
   Application information.
+
+  ## Attributes
+
+  - managedProperties (List[ManagedProperty]): The set of managed properties available to be pre-configured for the application. Defaults to: `null`.
+  - name (String): The name of the application in the form enterprises/{enterpriseId}/applications/{package_name} Defaults to: `null`.
+  - permissions (List[ApplicationPermission]): The permissions required by the app. Defaults to: `null`.
+  - title (String): The title of the application. Localized. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"managedProperties",
     :"name",
@@ -37,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.Application do
     value
     |> deserialize(:"managedProperties", :list, GoogleApi.AndroidManagement.V1.Model.ManagedProperty, options)
     |> deserialize(:"permissions", :list, GoogleApi.AndroidManagement.V1.Model.ApplicationPermission, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.Application do
+  def encode(value, options) do
+    GoogleApi.AndroidManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

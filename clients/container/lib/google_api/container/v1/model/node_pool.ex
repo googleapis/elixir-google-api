@@ -20,9 +20,22 @@
 defmodule GoogleApi.Container.V1.Model.NodePool do
   @moduledoc """
   NodePool contains the name and configuration for a cluster&#39;s node pool. Node pools are a set of nodes (i.e. VM&#39;s), with a common configuration and specification, under the control of the cluster master. They may have a set of Kubernetes labels applied to them, which may be used to reference them during pod scheduling. They may also be resized up or down, to accommodate the workload.
+
+  ## Attributes
+
+  - autoscaling (NodePoolAutoscaling): Autoscaler configuration for this NodePool. Autoscaler is enabled only if a valid configuration is present. Defaults to: `null`.
+  - config (NodeConfig): The node configuration of the pool. Defaults to: `null`.
+  - initialNodeCount (Integer): The initial node count for the pool. You must ensure that your Compute Engine &lt;a href&#x3D;\&quot;/compute/docs/resource-quotas\&quot;&gt;resource quota&lt;/a&gt; is sufficient for this number of instances. You must also have available firewall and routes quota. Defaults to: `null`.
+  - instanceGroupUrls (List[String]): [Output only] The resource URLs of [instance groups](/compute/docs/instance-groups/) associated with this node pool. Defaults to: `null`.
+  - management (NodeManagement): NodeManagement configuration for this NodePool. Defaults to: `null`.
+  - name (String): The name of the node pool. Defaults to: `null`.
+  - selfLink (String): [Output only] Server-defined URL for the resource. Defaults to: `null`.
+  - status (String): [Output only] The status of the nodes in this pool instance. Defaults to: `null`.
+    - Enum - one of [STATUS_UNSPECIFIED, PROVISIONING, RUNNING, RUNNING_WITH_ERROR, RECONCILING, STOPPING, ERROR]
+  - statusMessage (String): [Output only] Additional information about the current status of this node pool instance, if available. Defaults to: `null`.
+  - version (String): [Output only] The version of the Kubernetes of this node. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"autoscaling",
     :"config",
@@ -44,6 +57,12 @@ defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.NodePool do
     |> deserialize(:"autoscaling", :struct, GoogleApi.Container.V1.Model.NodePoolAutoscaling, options)
     |> deserialize(:"config", :struct, GoogleApi.Container.V1.Model.NodeConfig, options)
     |> deserialize(:"management", :struct, GoogleApi.Container.V1.Model.NodeManagement, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.NodePool do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

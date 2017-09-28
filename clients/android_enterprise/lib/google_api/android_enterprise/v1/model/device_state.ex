@@ -20,9 +20,13 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.DeviceState do
   @moduledoc """
   The state of a user&#39;s device, as accessed by the getState and setState methods on device resources.
+
+  ## Attributes
+
+  - accountState (String): The state of the Google account on the device. \&quot;enabled\&quot; indicates that the Google account on the device can be used to access Google services (including Google Play), while \&quot;disabled\&quot; means that it cannot. A new device is initially in the \&quot;disabled\&quot; state. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#deviceState\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accountState",
     :"kind"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.DeviceState do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.DeviceState do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

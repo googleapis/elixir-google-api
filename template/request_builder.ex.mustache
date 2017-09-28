@@ -37,7 +37,10 @@ defmodule {{moduleName}}.RequestBuilder do
   """
   @spec url(map(), String.t, Map.t) :: map()
   def url(request, u, replacements) do
-    Map.put_new(request, :url, replace_path_template_vars(u, replacements))
+    url(request, replace_path_template_vars(u, replacements))
+  end
+  def url(request, u) do
+    Map.put_new(request, :url, u)
   end
 
   def replace_path_template_vars(u, replacements) do

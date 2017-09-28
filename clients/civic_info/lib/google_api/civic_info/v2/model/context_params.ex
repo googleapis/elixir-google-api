@@ -20,9 +20,12 @@
 defmodule GoogleApi.CivicInfo.V2.Model.ContextParams do
   @moduledoc """
   
+
+  ## Attributes
+
+  - clientProfile (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"clientProfile"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.ContextParams do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CivicInfo.V2.Model.ContextParams do
+  def encode(value, options) do
+    GoogleApi.CivicInfo.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

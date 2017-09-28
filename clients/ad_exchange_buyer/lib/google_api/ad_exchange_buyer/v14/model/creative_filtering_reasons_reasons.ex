@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AdExchangeBuyer.V14.Model.Creative_filteringReasons_reasons do
+defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeFilteringReasonsReasons do
   @moduledoc """
   
+
+  ## Attributes
+
+  - filteringCount (String): The number of times the creative was filtered for the status. The count is aggregated across all publishers on the exchange. Defaults to: `null`.
+  - filteringStatus (Integer): The filtering status code as defined in  creative-status-codes.txt. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"filteringCount",
     :"filteringStatus"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.Creative_filteringReasons_reasons do
+defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.CreativeFilteringReasonsReasons do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.CreativeFilteringReasonsReasons do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

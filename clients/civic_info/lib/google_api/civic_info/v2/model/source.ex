@@ -20,9 +20,13 @@
 defmodule GoogleApi.CivicInfo.V2.Model.Source do
   @moduledoc """
   Contains information about the data source for the element containing it.
+
+  ## Attributes
+
+  - name (String): The name of the data source. Defaults to: `null`.
+  - official (Boolean): Whether this data comes from an official government source. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name",
     :"official"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.Source do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CivicInfo.V2.Model.Source do
+  def encode(value, options) do
+    GoogleApi.CivicInfo.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

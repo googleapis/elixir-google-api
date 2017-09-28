@@ -20,9 +20,14 @@
 defmodule GoogleApi.AnalyticsReporting.V4.Model.MetricHeaderEntry do
   @moduledoc """
   Header for the metrics.
+
+  ## Attributes
+
+  - name (String): The name of the header. Defaults to: `null`.
+  - type (String): The type of the metric, for example &#x60;INTEGER&#x60;. Defaults to: `null`.
+    - Enum - one of [METRIC_TYPE_UNSPECIFIED, INTEGER, FLOAT, CURRENCY, PERCENT, TIME]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name",
     :"type"
@@ -32,6 +37,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AnalyticsReporting.V4.Model.MetricHeaderEntry do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AnalyticsReporting.V4.Model.MetricHeaderEntry do
+  def encode(value, options) do
+    GoogleApi.AnalyticsReporting.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

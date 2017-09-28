@@ -20,9 +20,16 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.CreateJobFromTemplateRequest do
   @moduledoc """
   A request to create a Cloud Dataflow job from a template.
+
+  ## Attributes
+
+  - parameters (Map[String, String]): The runtime parameters to pass to the job. Defaults to: `null`.
+  - environment (RuntimeEnvironment): The runtime environment for the job. Defaults to: `null`.
+  - gcsPath (String): Required. A Cloud Storage path to the template from which to create the job. Must be a valid Cloud Storage URL, beginning with &#x60;gs://&#x60;. Defaults to: `null`.
+  - jobName (String): Required. The job name to use for the created job. Defaults to: `null`.
+  - location (String): The location to which to direct the request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"parameters",
     :"environment",
@@ -37,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.CreateJobFromTemplate
   def decode(value, options) do
     value
     |> deserialize(:"environment", :struct, GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.CreateJobFromTemplateRequest do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

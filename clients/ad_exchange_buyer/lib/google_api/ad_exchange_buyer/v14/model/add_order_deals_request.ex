@@ -20,9 +20,14 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.AddOrderDealsRequest do
   @moduledoc """
   
+
+  ## Attributes
+
+  - deals (List[MarketplaceDeal]): The list of deals to add Defaults to: `null`.
+  - proposalRevisionNumber (String): The last known proposal revision number. Defaults to: `null`.
+  - updateAction (String): Indicates an optional action to take on the proposal Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"deals",
     :"proposalRevisionNumber",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.AddOrderDealsRe
   def decode(value, options) do
     value
     |> deserialize(:"deals", :list, GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDeal, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.AddOrderDealsRequest do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

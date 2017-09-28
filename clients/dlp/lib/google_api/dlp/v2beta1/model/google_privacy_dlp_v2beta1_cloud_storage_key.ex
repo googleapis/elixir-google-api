@@ -20,9 +20,13 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1CloudStorageKey do
   @moduledoc """
   Record key for a finding in a Cloud Storage file.
+
+  ## Attributes
+
+  - filePath (String): Path to the file. Defaults to: `null`.
+  - startOffset (String): Byte offset of the referenced data in the file. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"filePath",
     :"startOffset"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1CloudStorageKey do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1CloudStorageKey do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

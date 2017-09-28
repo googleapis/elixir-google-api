@@ -20,9 +20,15 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.BillingInfo do
   @moduledoc """
   The configuration data for an Ad Exchange billing info.
+
+  ## Attributes
+
+  - accountId (Integer): Account id. Defaults to: `null`.
+  - accountName (String): Account name. Defaults to: `null`.
+  - billingId (List[String]): A list of adgroup IDs associated with this particular account. These IDs may show up as part of a realtime bidding BidRequest, which indicates a bid request for this account. Defaults to: `null`.
+  - kind (String): Resource type. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accountId",
     :"accountName",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.BillingInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.BillingInfo do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

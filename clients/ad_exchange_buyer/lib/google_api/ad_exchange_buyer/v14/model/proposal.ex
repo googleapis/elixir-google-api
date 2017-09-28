@@ -20,9 +20,34 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.Proposal do
   @moduledoc """
   Represents a proposal in the marketplace. A proposal is the unit of negotiation between a seller and a buyer and contains deals which are served. Each field in a proposal can have one of the following setting:  (readonly) - It is an error to try and set this field. (buyer-readonly) - Only the seller can set this field. (seller-readonly) - Only the buyer can set this field. (updatable) - The field is updatable at all times by either buyer or the seller.
+
+  ## Attributes
+
+  - billedBuyer (Buyer): Reference to the buyer that will get billed for this proposal. (readonly) Defaults to: `null`.
+  - buyer (Buyer): Reference to the buyer on the proposal. (readonly, except on create) Defaults to: `null`.
+  - buyerContacts (List[ContactInformation]): Optional contact information of the buyer. (seller-readonly) Defaults to: `null`.
+  - buyerPrivateData (PrivateData): Private data for buyer. (hidden from seller). Defaults to: `null`.
+  - dbmAdvertiserIds (List[String]): IDs of DBM advertisers permission to this proposal. Defaults to: `null`.
+  - hasBuyerSignedOff (Boolean): When an proposal is in an accepted state, indicates whether the buyer has signed off. Once both sides have signed off on a deal, the proposal can be finalized by the seller. (seller-readonly) Defaults to: `null`.
+  - hasSellerSignedOff (Boolean): When an proposal is in an accepted state, indicates whether the buyer has signed off Once both sides have signed off on a deal, the proposal can be finalized by the seller. (buyer-readonly) Defaults to: `null`.
+  - inventorySource (String): What exchange will provide this inventory (readonly, except on create). Defaults to: `null`.
+  - isRenegotiating (Boolean): True if the proposal is being renegotiated (readonly). Defaults to: `null`.
+  - isSetupComplete (Boolean): True, if the buyside inventory setup is complete for this proposal. (readonly, except via OrderSetupCompleted action) Deprecated in favor of deal level setup complete flag. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;adexchangebuyer#proposal\&quot;. Defaults to: `null`.
+  - labels (List[MarketplaceLabel]): List of labels associated with the proposal. (readonly) Defaults to: `null`.
+  - lastUpdaterOrCommentorRole (String): The role of the last user that either updated the proposal or left a comment. (readonly) Defaults to: `null`.
+  - name (String): The name for the proposal (updatable) Defaults to: `null`.
+  - negotiationId (String): Optional negotiation id if this proposal is a preferred deal proposal. Defaults to: `null`.
+  - originatorRole (String): Indicates whether the buyer/seller created the proposal.(readonly) Defaults to: `null`.
+  - privateAuctionId (String): Optional private auction id if this proposal is a private auction proposal. Defaults to: `null`.
+  - proposalId (String): The unique id of the proposal. (readonly). Defaults to: `null`.
+  - proposalState (String): The current state of the proposal. (readonly) Defaults to: `null`.
+  - revisionNumber (String): The revision number for the proposal (readonly). Defaults to: `null`.
+  - revisionTimeMs (String): The time (ms since epoch) when the proposal was last revised (readonly). Defaults to: `null`.
+  - seller (Seller): Reference to the seller on the proposal. (readonly, except on create) Defaults to: `null`.
+  - sellerContacts (List[ContactInformation]): Optional contact information of the seller (buyer-readonly). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"billedBuyer",
     :"buyer",
@@ -61,6 +86,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.Proposal do
     |> deserialize(:"labels", :list, GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceLabel, options)
     |> deserialize(:"seller", :struct, GoogleApi.AdExchangeBuyer.V14.Model.Seller, options)
     |> deserialize(:"sellerContacts", :list, GoogleApi.AdExchangeBuyer.V14.Model.ContactInformation, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.Proposal do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

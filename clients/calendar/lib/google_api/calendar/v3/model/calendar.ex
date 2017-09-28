@@ -20,9 +20,18 @@
 defmodule GoogleApi.Calendar.V3.Model.Calendar do
   @moduledoc """
   
+
+  ## Attributes
+
+  - description (String): Description of the calendar. Optional. Defaults to: `null`.
+  - etag (String): ETag of the resource. Defaults to: `null`.
+  - id (String): Identifier of the calendar. To retrieve IDs call the calendarList.list() method. Defaults to: `null`.
+  - kind (String): Type of the resource (\&quot;calendar#calendar\&quot;). Defaults to: `null`.
+  - location (String): Geographic location of the calendar as free-form text. Optional. Defaults to: `null`.
+  - summary (String): Title of the calendar. Defaults to: `null`.
+  - timeZone (String): The time zone of the calendar. (Formatted as an IANA Time Zone Database name, e.g. \&quot;Europe/Zurich\&quot;.) Optional. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"description",
     :"etag",
@@ -37,6 +46,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.Calendar do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.Calendar do
+  def encode(value, options) do
+    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

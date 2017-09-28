@@ -20,9 +20,16 @@
 defmodule GoogleApi.Calendar.V3.Model.FreeBusyResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - calendars (Map[String, FreeBusyCalendar]): List of free/busy information for calendars. Defaults to: `null`.
+  - groups (Map[String, FreeBusyGroup]): Expansion of groups. Defaults to: `null`.
+  - kind (String): Type of the resource (\&quot;calendar#freeBusy\&quot;). Defaults to: `null`.
+  - timeMax (DateTime): The end of the interval. Defaults to: `null`.
+  - timeMin (DateTime): The start of the interval. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"calendars",
     :"groups",
@@ -38,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.FreeBusyResponse do
     value
     |> deserialize(:"calendars", :map, GoogleApi.Calendar.V3.Model.FreeBusyCalendar, options)
     |> deserialize(:"groups", :map, GoogleApi.Calendar.V3.Model.FreeBusyGroup, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.FreeBusyResponse do
+  def encode(value, options) do
+    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

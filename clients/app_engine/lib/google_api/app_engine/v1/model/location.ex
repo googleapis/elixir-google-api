@@ -20,9 +20,15 @@
 defmodule GoogleApi.AppEngine.V1.Model.Location do
   @moduledoc """
   A resource that represents Google Cloud Platform location.
+
+  ## Attributes
+
+  - labels (Map[String, String]): Cross-service attributes for the location. For example {\&quot;cloud.googleapis.com/region\&quot;: \&quot;us-east1\&quot;}  Defaults to: `null`.
+  - locationId (String): The canonical id for this location. For example: \&quot;us-east1\&quot;. Defaults to: `null`.
+  - metadata (Object): Service-specific metadata. For example the available capacity at the given location. Defaults to: `null`.
+  - name (String): Resource name for the location, which may vary between implementations. For example: \&quot;projects/example-project/locations/us-east1\&quot; Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"labels",
     :"locationId",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.Location do
   def decode(value, options) do
     value
     |> deserialize(:"metadata", :struct, GoogleApi.AppEngine.V1.Model.Object, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.Location do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

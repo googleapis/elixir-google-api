@@ -20,9 +20,23 @@
 defmodule GoogleApi.AdExperienceReport.V1.Model.PlatformSummary do
   @moduledoc """
   Summary of the ad experience rating of a site for a specific platform.
+
+  ## Attributes
+
+  - abusiveStatus (String): The status of the site reviewed for abusive ads. Defaults to: `null`.
+    - Enum - one of [UNKNOWN, PASSING, FAILING]
+  - betterAdsStatus (String): The status of the site reviewed for the Better Ads Standards. Defaults to: `null`.
+    - Enum - one of [UNKNOWN, PASSING, WARNING, FAILING]
+  - enforcementTime (String): The date on which ad filtering begins. Defaults to: `null`.
+  - filterStatus (String): The ad filtering status of the site. Defaults to: `null`.
+    - Enum - one of [UNKNOWN, ON, OFF, PAUSED, PENDING]
+  - lastChangeTime (String): The last time that the site changed status. Defaults to: `null`.
+  - region (List[String]): The assigned regions for the site and platform. Defaults to: `null`.
+    - Enum - one of 
+  - reportUrl (String): A link that leads to a full ad experience report. Defaults to: `null`.
+  - underReview (Boolean): Whether the site is currently under review. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"abusiveStatus",
     :"betterAdsStatus",
@@ -38,6 +52,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AdExperienceReport.V1.Model.PlatformSummary do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExperienceReport.V1.Model.PlatformSummary do
+  def encode(value, options) do
+    GoogleApi.AdExperienceReport.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

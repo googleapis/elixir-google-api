@@ -20,9 +20,16 @@
 defmodule GoogleApi.Content.V2.Model.AccountStatus do
   @moduledoc """
   The status of an account, i.e., information about its products, which is computed offline and not returned immediately at insertion time.
+
+  ## Attributes
+
+  - accountId (String): The ID of the account for which the status is reported. Defaults to: `null`.
+  - accountLevelIssues (List[AccountStatusAccountLevelIssue]): A list of account level issues. Defaults to: `null`.
+  - dataQualityIssues (List[AccountStatusDataQualityIssue]): A list of data quality issues. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;content#accountStatus\&quot;. Defaults to: `null`.
+  - websiteClaimed (Boolean): Whether the account&#39;s website is claimed or not. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accountId",
     :"accountLevelIssues",
@@ -38,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.AccountStatus do
     value
     |> deserialize(:"accountLevelIssues", :list, GoogleApi.Content.V2.Model.AccountStatusAccountLevelIssue, options)
     |> deserialize(:"dataQualityIssues", :list, GoogleApi.Content.V2.Model.AccountStatusDataQualityIssue, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.AccountStatus do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

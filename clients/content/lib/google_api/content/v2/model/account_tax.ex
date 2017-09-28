@@ -20,9 +20,14 @@
 defmodule GoogleApi.Content.V2.Model.AccountTax do
   @moduledoc """
   The tax settings of a merchant account.
+
+  ## Attributes
+
+  - accountId (String): The ID of the account to which these account tax settings belong. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;content#accountTax\&quot;. Defaults to: `null`.
+  - rules (List[AccountTaxTaxRule]): Tax rules. Updating the tax rules will enable US taxes (not reversible). Defining no rules is equivalent to not charging tax at all. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accountId",
     :"kind",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.AccountTax do
   def decode(value, options) do
     value
     |> deserialize(:"rules", :list, GoogleApi.Content.V2.Model.AccountTaxTaxRule, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.AccountTax do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

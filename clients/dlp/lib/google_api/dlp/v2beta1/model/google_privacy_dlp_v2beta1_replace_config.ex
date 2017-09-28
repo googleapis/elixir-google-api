@@ -20,9 +20,13 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1ReplaceConfig do
   @moduledoc """
   
+
+  ## Attributes
+
+  - infoType (GooglePrivacyDlpV2beta1InfoType): Type of information to replace. Only one ReplaceConfig per info_type should be provided. If ReplaceConfig does not have an info_type, the DLP API matches it against all info_types that are found but not specified in another ReplaceConfig. Defaults to: `null`.
+  - replaceWith (String): Content replacing sensitive information of given type. Max 256 chars. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"infoType",
     :"replaceWith"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1
   def decode(value, options) do
     value
     |> deserialize(:"infoType", :struct, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InfoType, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1ReplaceConfig do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

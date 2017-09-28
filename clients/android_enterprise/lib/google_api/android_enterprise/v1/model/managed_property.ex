@@ -20,9 +20,18 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.ManagedProperty do
   @moduledoc """
   A managed property of a managed configuration. The property must match one of the properties in the app restrictions schema of the product. Exactly one of the value fields must be populated, and it must match the property&#39;s type in the app restrictions schema.
+
+  ## Attributes
+
+  - key (String): The unique key that identifies the property. Defaults to: `null`.
+  - valueBool (Boolean): The boolean value - this will only be present if type of the property is bool. Defaults to: `null`.
+  - valueBundle (ManagedPropertyBundle): The bundle of managed properties - this will only be present if type of the property is bundle. Defaults to: `null`.
+  - valueBundleArray (List[ManagedPropertyBundle]): The list of bundles of properties - this will only be present if type of the property is bundle_array. Defaults to: `null`.
+  - valueInteger (Integer): The integer value - this will only be present if type of the property is integer. Defaults to: `null`.
+  - valueString (String): The string value - this will only be present if type of the property is string, choice or hidden. Defaults to: `null`.
+  - valueStringArray (List[String]): The list of string values - this will only be present if type of the property is multiselect. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"key",
     :"valueBool",
@@ -40,6 +49,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.ManagedPropert
     value
     |> deserialize(:"valueBundle", :struct, GoogleApi.AndroidEnterprise.V1.Model.ManagedPropertyBundle, options)
     |> deserialize(:"valueBundleArray", :list, GoogleApi.AndroidEnterprise.V1.Model.ManagedPropertyBundle, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.ManagedProperty do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

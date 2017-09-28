@@ -20,9 +20,17 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.WorkerSettings do
   @moduledoc """
   Provides data to pass through to the worker harness.
+
+  ## Attributes
+
+  - baseUrl (String): The base URL for accessing Google Cloud APIs.  When workers access Google Cloud APIs, they logically do so via relative URLs.  If this field is specified, it supplies the base URL to use for resolving these relative URLs.  The normative algorithm used is defined by RFC 1808, \&quot;Relative Uniform Resource Locators\&quot;.  If not specified, the default value is \&quot;http://www.googleapis.com/\&quot; Defaults to: `null`.
+  - reportingEnabled (Boolean): Whether to send work progress updates to the service. Defaults to: `null`.
+  - servicePath (String): The Cloud Dataflow service path relative to the root URL, for example, \&quot;dataflow/v1b3/projects\&quot;. Defaults to: `null`.
+  - shuffleServicePath (String): The Shuffle service path relative to the root URL, for example, \&quot;shuffle/v1beta1\&quot;. Defaults to: `null`.
+  - tempStoragePrefix (String): The prefix of the resources the system should use for temporary storage.  The supported resource type is:  Google Cloud Storage:    storage.googleapis.com/{bucket}/{object}   bucket.storage.googleapis.com/{object} Defaults to: `null`.
+  - workerId (String): The ID of the worker running this pipeline. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"baseUrl",
     :"reportingEnabled",
@@ -36,6 +44,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.WorkerSettings do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.WorkerSettings do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

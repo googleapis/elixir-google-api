@@ -20,9 +20,14 @@
 defmodule GoogleApi.Content.V2.Model.Errors do
   @moduledoc """
   A list of errors returned by a failed batch entry.
+
+  ## Attributes
+
+  - code (Integer): The HTTP status of the first error in errors. Defaults to: `null`.
+  - errors (List[Error]): A list of errors. Defaults to: `null`.
+  - message (String): The message of the first error in errors. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"code",
     :"errors",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.Errors do
   def decode(value, options) do
     value
     |> deserialize(:"errors", :list, GoogleApi.Content.V2.Model.Error, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.Errors do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

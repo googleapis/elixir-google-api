@@ -20,9 +20,18 @@
 defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.Group do
   @moduledoc """
   A Group resource.
+
+  ## Attributes
+
+  - creationTimestamp (String): [Output Only] Creation timestamp in RFC3339 text format. Defaults to: `null`.
+  - description (String): An optional textual description of the resource; provided by the client when the resource is created. Defaults to: `null`.
+  - id (String): [Output Only] Unique identifier for the resource; defined by the server. Defaults to: `null`.
+  - kind (String): [Output Only] Type of the resource. Always clouduseraccounts#group for groups. Defaults to: `null`.
+  - members (List[String]): [Output Only] A list of URLs to User resources who belong to the group. Users may only be members of groups in the same project. Defaults to: `null`.
+  - name (String): Name of the resource; provided by the client when the resource is created. Defaults to: `null`.
+  - selfLink (String): [Output Only] Server defined URL for the resource. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"creationTimestamp",
     :"description",
@@ -37,6 +46,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.Group do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.Group do
+  def encode(value, options) do
+    GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer.serialize_non_nil(value, options)
   end
 end
 

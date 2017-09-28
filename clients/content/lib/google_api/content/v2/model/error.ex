@@ -20,9 +20,14 @@
 defmodule GoogleApi.Content.V2.Model.Error do
   @moduledoc """
   An error returned by the API.
+
+  ## Attributes
+
+  - domain (String): The domain of the error. Defaults to: `null`.
+  - message (String): A description of the error. Defaults to: `null`.
+  - reason (String): The error code. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"domain",
     :"message",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.Error do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.Error do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

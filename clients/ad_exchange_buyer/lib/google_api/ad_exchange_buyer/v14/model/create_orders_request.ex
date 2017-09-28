@@ -20,9 +20,13 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreateOrdersRequest do
   @moduledoc """
   
+
+  ## Attributes
+
+  - proposals (List[Proposal]): The list of proposals to create. Defaults to: `null`.
+  - webPropertyCode (String): Web property id of the seller creating these orders Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"proposals",
     :"webPropertyCode"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.CreateOrdersReq
   def decode(value, options) do
     value
     |> deserialize(:"proposals", :list, GoogleApi.AdExchangeBuyer.V14.Model.Proposal, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.CreateOrdersRequest do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

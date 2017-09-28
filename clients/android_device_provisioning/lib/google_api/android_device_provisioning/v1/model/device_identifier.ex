@@ -20,9 +20,15 @@
 defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier do
   @moduledoc """
   DeviceIdentifiers identifies an unique device.
+
+  ## Attributes
+
+  - imei (String): IMEI Defaults to: `null`.
+  - manufacturer (String): Manufacturer name to match &#x60;android.os.Build.MANUFACTURER&#x60; (required). Allowed values listed in [manufacturer names](/zero-touch/resources/manufacturer-names). Defaults to: `null`.
+  - meid (String): MEID Defaults to: `null`.
+  - serialNumber (String): Serial number (optional) Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"imei",
     :"manufacturer",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier do
+  def encode(value, options) do
+    GoogleApi.AndroidDeviceProvisioning.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

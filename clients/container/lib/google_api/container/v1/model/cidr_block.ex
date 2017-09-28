@@ -20,9 +20,13 @@
 defmodule GoogleApi.Container.V1.Model.CidrBlock do
   @moduledoc """
   CidrBlock contains an optional name and one CIDR block.
+
+  ## Attributes
+
+  - cidrBlock (String): cidr_block must be specified in CIDR notation. Defaults to: `null`.
+  - displayName (String): display_name is an optional field for users to identify CIDR blocks. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cidrBlock",
     :"displayName"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.CidrBlock do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.CidrBlock do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

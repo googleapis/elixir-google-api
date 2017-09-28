@@ -20,9 +20,12 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKeysListResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - serviceAccountKey (List[ServiceAccountKey]): The service account credentials. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"serviceAccountKey"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.ServiceAccount
   def decode(value, options) do
     value
     |> deserialize(:"serviceAccountKey", :list, GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKey, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKeysListResponse do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

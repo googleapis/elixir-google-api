@@ -20,9 +20,13 @@
 defmodule GoogleApi.AdSense.V14.Model.AdCode do
   @moduledoc """
   
+
+  ## Attributes
+
+  - adCode (String): The ad code snippet. Defaults to: `null`.
+  - kind (String): Kind this is, in this case adsense#adCode. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"adCode",
     :"kind"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AdSense.V14.Model.AdCode do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdSense.V14.Model.AdCode do
+  def encode(value, options) do
+    GoogleApi.AdSense.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

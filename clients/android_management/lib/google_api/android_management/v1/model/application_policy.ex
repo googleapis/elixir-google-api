@@ -20,9 +20,19 @@
 defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy do
   @moduledoc """
   Policy for an individual app.
+
+  ## Attributes
+
+  - defaultPermissionPolicy (String): The default policy for all permissions requested by the app. If specified, this overrides the policy-level default_permission_policy which applies to all apps. Defaults to: `null`.
+    - Enum - one of [PERMISSION_POLICY_UNSPECIFIED, PROMPT, GRANT, DENY]
+  - installType (String): The type of installation to perform. Defaults to: `null`.
+    - Enum - one of [INSTALL_TYPE_UNSPECIFIED, PREINSTALLED, FORCE_INSTALLED]
+  - lockTaskAllowed (Boolean): Whether the application is allowed to lock itself in full-screen mode. Defaults to: `null`.
+  - managedConfiguration (Object): Managed configuration applied to the app. The format for the configuration is dictated by the ManagedProperty values supported by the app. Each field name in the managed configuration must match the key field of the ManagedProperty. The field value must be compatible with the type of the ManagedProperty: &lt;table&gt; &lt;tr&gt;&lt;td&gt;&lt;i&gt;type&lt;/i&gt;&lt;/td&gt;&lt;td&gt;&lt;i&gt;JSON value&lt;/i&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td&gt;BOOL&lt;/td&gt;&lt;td&gt;true or false&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td&gt;STRING&lt;/td&gt;&lt;td&gt;string&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td&gt;INTEGER&lt;/td&gt;&lt;td&gt;number&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td&gt;CHOICE&lt;/td&gt;&lt;td&gt;string&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td&gt;MULTISELECT&lt;/td&gt;&lt;td&gt;array of strings&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td&gt;HIDDEN&lt;/td&gt;&lt;td&gt;string&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td&gt;BUNDLE_ARRAY&lt;/td&gt;&lt;td&gt;array of objects&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt; Defaults to: `null`.
+  - packageName (String): The package name of the app, e.g. com.google.android.youtube for the YouTube app. Defaults to: `null`.
+  - permissionGrants (List[PermissionGrant]): Explicit permission grants or denials for the app. These values override the default_permission_policy. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"defaultPermissionPolicy",
     :"installType",
@@ -39,6 +49,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.ApplicationPol
     value
     |> deserialize(:"managedConfiguration", :struct, GoogleApi.AndroidManagement.V1.Model.Object, options)
     |> deserialize(:"permissionGrants", :list, GoogleApi.AndroidManagement.V1.Model.PermissionGrant, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy do
+  def encode(value, options) do
+    GoogleApi.AndroidManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

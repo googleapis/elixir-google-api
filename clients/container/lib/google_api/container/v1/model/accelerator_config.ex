@@ -20,9 +20,13 @@
 defmodule GoogleApi.Container.V1.Model.AcceleratorConfig do
   @moduledoc """
   AcceleratorConfig represents a Hardware Accelerator request.
+
+  ## Attributes
+
+  - acceleratorCount (String): The number of the accelerator cards exposed to an instance. Defaults to: `null`.
+  - acceleratorType (String): The accelerator type resource name. List of supported accelerators [here](/compute/docs/gpus/#Introduction) Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"acceleratorCount",
     :"acceleratorType"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.AcceleratorConfig do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.AcceleratorConfig do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.Content.V2.Model.ProductStatusDestinationStatus do
   @moduledoc """
   
+
+  ## Attributes
+
+  - approvalStatus (String): The destination&#39;s approval status. Defaults to: `null`.
+  - destination (String): The name of the destination Defaults to: `null`.
+  - intention (String): Whether the destination is required, excluded, selected by default or should be validated. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"approvalStatus",
     :"destination",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.ProductStatusDestinationStatus do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.ProductStatusDestinationStatus do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

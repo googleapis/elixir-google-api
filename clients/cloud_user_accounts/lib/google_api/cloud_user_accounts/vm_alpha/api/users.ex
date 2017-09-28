@@ -63,7 +63,10 @@ defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Api.Users do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/global/users/#{user}/addPublicKey")
+    |> url("/{project}/global/users/{user}/addPublicKey", %{
+         "project" => URI.encode_www_form(project),
+         "user" => URI.encode_www_form(user)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -105,7 +108,10 @@ defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Api.Users do
     }
     %{}
     |> method(:delete)
-    |> url("/#{project}/global/users/#{user}")
+    |> url("/{project}/global/users/{user}", %{
+         "project" => URI.encode_www_form(project),
+         "user" => URI.encode_www_form(user)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -147,7 +153,10 @@ defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Api.Users do
     }
     %{}
     |> method(:get)
-    |> url("/#{project}/global/users/#{user}")
+    |> url("/{project}/global/users/{user}", %{
+         "project" => URI.encode_www_form(project),
+         "user" => URI.encode_www_form(user)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -189,7 +198,10 @@ defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Api.Users do
     }
     %{}
     |> method(:get)
-    |> url("/#{project}/global/users/#{resource}/getIamPolicy")
+    |> url("/{project}/global/users/{resource}/getIamPolicy", %{
+         "project" => URI.encode_www_form(project),
+         "resource" => URI.encode_www_form(resource)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -232,7 +244,9 @@ defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Api.Users do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/global/users")
+    |> url("/{project}/global/users", %{
+         "project" => URI.encode_www_form(project)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -281,7 +295,9 @@ defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Api.Users do
     }
     %{}
     |> method(:get)
-    |> url("/#{project}/global/users")
+    |> url("/{project}/global/users", %{
+         "project" => URI.encode_www_form(project)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -324,7 +340,10 @@ defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Api.Users do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/global/users/#{user}/removePublicKey")
+    |> url("/{project}/global/users/{user}/removePublicKey", %{
+         "project" => URI.encode_www_form(project),
+         "user" => URI.encode_www_form(user)
+       })
     |> add_param(:query, :"fingerprint", fingerprint)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -369,7 +388,10 @@ defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Api.Users do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/global/users/#{resource}/setIamPolicy")
+    |> url("/{project}/global/users/{resource}/setIamPolicy", %{
+         "project" => URI.encode_www_form(project),
+         "resource" => URI.encode_www_form(resource)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -413,7 +435,10 @@ defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Api.Users do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/global/users/#{resource}/testIamPermissions")
+    |> url("/{project}/global/users/{resource}/testIamPermissions", %{
+         "project" => URI.encode_www_form(project),
+         "resource" => URI.encode_www_form(resource)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

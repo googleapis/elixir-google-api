@@ -20,9 +20,14 @@
 defmodule GoogleApi.AppEngine.V1.Model.Deployment do
   @moduledoc """
   Code and application artifacts used to deploy a version to App Engine.
+
+  ## Attributes
+
+  - container (ContainerInfo): The Docker image for the container that runs the version. Only applicable for instances running in the App Engine flexible environment. Defaults to: `null`.
+  - files (Map[String, FileInfo]): Manifest of the files stored in Google Cloud Storage that are included as part of this version. All files must be readable using the credentials supplied with this call. Defaults to: `null`.
+  - zip (ZipInfo): The zip file for this deployment, if this is a zip deployment. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"container",
     :"files",
@@ -37,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.Deployment do
     |> deserialize(:"container", :struct, GoogleApi.AppEngine.V1.Model.ContainerInfo, options)
     |> deserialize(:"files", :map, GoogleApi.AppEngine.V1.Model.FileInfo, options)
     |> deserialize(:"zip", :struct, GoogleApi.AppEngine.V1.Model.ZipInfo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.Deployment do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

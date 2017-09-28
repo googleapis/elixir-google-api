@@ -20,9 +20,18 @@
 defmodule GoogleApi.Content.V2.Model.OrderPromotion do
   @moduledoc """
   
+
+  ## Attributes
+
+  - benefits (List[OrderPromotionBenefit]):  Defaults to: `null`.
+  - effectiveDates (String): The date and time frame when the promotion is active and ready for validation review. Note that the promotion live time may be delayed for a few hours due to the validation review. Start date and end date are separated by a forward slash (/). The start date is specified by the format (YYYY-MM-DD), followed by the letter ?T?, the time of the day when the sale starts (in Greenwich Mean Time, GMT), followed by an expression of the time zone for the sale. The end date is in the same format. Defaults to: `null`.
+  - genericRedemptionCode (String): Optional. The text code that corresponds to the promotion when applied on the retailer?s website. Defaults to: `null`.
+  - id (String): The unique ID of the promotion. Defaults to: `null`.
+  - longTitle (String): The full title of the promotion. Defaults to: `null`.
+  - productApplicability (String): Whether the promotion is applicable to all products or only specific products. Defaults to: `null`.
+  - redemptionChannel (String): Indicates that the promotion is valid online. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"benefits",
     :"effectiveDates",
@@ -39,6 +48,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrderPromotion do
   def decode(value, options) do
     value
     |> deserialize(:"benefits", :list, GoogleApi.Content.V2.Model.OrderPromotionBenefit, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrderPromotion do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,16 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.ParameterMetadata do
   @moduledoc """
   Metadata for a specific parameter.
+
+  ## Attributes
+
+  - helpText (String): Required. The help text to display for the parameter. Defaults to: `null`.
+  - isOptional (Boolean): Optional. Whether the parameter is optional. Defaults to false. Defaults to: `null`.
+  - label (String): Required. The label to display for the parameter. Defaults to: `null`.
+  - name (String): Required. The name of the parameter. Defaults to: `null`.
+  - regexes (List[String]): Optional. Regexes that the parameter must match. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"helpText",
     :"isOptional",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.ParameterMetadata do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.ParameterMetadata do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

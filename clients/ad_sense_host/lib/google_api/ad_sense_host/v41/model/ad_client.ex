@@ -20,9 +20,16 @@
 defmodule GoogleApi.AdSenseHost.V41.Model.AdClient do
   @moduledoc """
   
+
+  ## Attributes
+
+  - arcOptIn (Boolean): Whether this ad client is opted in to ARC. Defaults to: `null`.
+  - id (String): Unique identifier of this ad client. Defaults to: `null`.
+  - kind (String): Kind of resource this is, in this case adsensehost#adClient. Defaults to: `null`.
+  - productCode (String): This ad client&#39;s product code, which corresponds to the PRODUCT_CODE report dimension. Defaults to: `null`.
+  - supportsReporting (Boolean): Whether this ad client supports being reported on. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"arcOptIn",
     :"id",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AdSenseHost.V41.Model.AdClient do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdSenseHost.V41.Model.AdClient do
+  def encode(value, options) do
+    GoogleApi.AdSenseHost.V41.Deserializer.serialize_non_nil(value, options)
   end
 end
 

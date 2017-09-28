@@ -20,9 +20,19 @@
 defmodule GoogleApi.Dataproc.V1.Model.Cluster do
   @moduledoc """
   Describes the identifying information, config, and status of a cluster of Google Compute Engine instances.
+
+  ## Attributes
+
+  - clusterName (String): Required. The cluster name. Cluster names within a project must be unique. Names of deleted clusters can be reused. Defaults to: `null`.
+  - clusterUuid (String): Output-only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc generates this value when it creates the cluster. Defaults to: `null`.
+  - config (ClusterConfig): Required. The cluster config. Note that Cloud Dataproc may set default values, and values may change when clusters are updated. Defaults to: `null`.
+  - labels (Map[String, String]): Optional. The labels to associate with this cluster. Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be associated with a cluster. Defaults to: `null`.
+  - metrics (ClusterMetrics): Contains cluster daemon metrics such as HDFS and YARN stats.Beta Feature: This report is available for testing purposes only. It may be changed before final release. Defaults to: `null`.
+  - projectId (String): Required. The Google Cloud Platform project ID that the cluster belongs to. Defaults to: `null`.
+  - status (ClusterStatus): Output-only. Cluster status. Defaults to: `null`.
+  - statusHistory (List[ClusterStatus]): Output-only. The previous cluster status. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"clusterName",
     :"clusterUuid",
@@ -43,6 +53,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.Cluster do
     |> deserialize(:"metrics", :struct, GoogleApi.Dataproc.V1.Model.ClusterMetrics, options)
     |> deserialize(:"status", :struct, GoogleApi.Dataproc.V1.Model.ClusterStatus, options)
     |> deserialize(:"statusHistory", :list, GoogleApi.Dataproc.V1.Model.ClusterStatus, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataproc.V1.Model.Cluster do
+  def encode(value, options) do
+    GoogleApi.Dataproc.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

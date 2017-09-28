@@ -20,9 +20,12 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.StreamingStageLocation do
   @moduledoc """
   Identifies the location of a streaming computation stage, for stage-to-stage communication.
+
+  ## Attributes
+
+  - streamId (String): Identifies the particular stream within the streaming Dataflow job. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"streamId"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.StreamingStageLocation do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.StreamingStageLocation do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

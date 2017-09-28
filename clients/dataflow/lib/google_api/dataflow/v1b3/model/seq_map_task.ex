@@ -20,9 +20,17 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.SeqMapTask do
   @moduledoc """
   Describes a particular function to invoke.
+
+  ## Attributes
+
+  - inputs (List[SideInputInfo]): Information about each of the inputs. Defaults to: `null`.
+  - name (String): The user-provided name of the SeqDo operation. Defaults to: `null`.
+  - outputInfos (List[SeqMapTaskOutputInfo]): Information about each of the outputs. Defaults to: `null`.
+  - stageName (String): System-defined name of the stage containing the SeqDo operation. Unique across the workflow. Defaults to: `null`.
+  - systemName (String): System-defined name of the SeqDo operation. Unique across the workflow. Defaults to: `null`.
+  - userFn (Object): The user function to invoke. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"inputs",
     :"name",
@@ -40,6 +48,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.SeqMapTask do
     |> deserialize(:"inputs", :list, GoogleApi.Dataflow.V1b3.Model.SideInputInfo, options)
     |> deserialize(:"outputInfos", :list, GoogleApi.Dataflow.V1b3.Model.SeqMapTaskOutputInfo, options)
     |> deserialize(:"userFn", :struct, GoogleApi.Dataflow.V1b3.Model.Object, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.SeqMapTask do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

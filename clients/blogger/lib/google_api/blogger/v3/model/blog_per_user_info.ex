@@ -20,9 +20,17 @@
 defmodule GoogleApi.Blogger.V3.Model.BlogPerUserInfo do
   @moduledoc """
   
+
+  ## Attributes
+
+  - blogId (String): ID of the Blog resource Defaults to: `null`.
+  - hasAdminAccess (Boolean): True if the user has Admin level access to the blog. Defaults to: `null`.
+  - kind (String): The kind of this entity. Always blogger#blogPerUserInfo Defaults to: `null`.
+  - photosAlbumKey (String): The Photo Album Key for the user when adding photos to the blog Defaults to: `null`.
+  - role (String): Access permissions that the user has for the blog (ADMIN, AUTHOR, or READER). Defaults to: `null`.
+  - userId (String): ID of the User Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"blogId",
     :"hasAdminAccess",
@@ -36,6 +44,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.BlogPerUserInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Blogger.V3.Model.BlogPerUserInfo do
+  def encode(value, options) do
+    GoogleApi.Blogger.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

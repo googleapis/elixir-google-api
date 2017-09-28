@@ -20,9 +20,25 @@
 defmodule GoogleApi.CivicInfo.V2.Model.AdministrativeBody do
   @moduledoc """
   Information about an election administrative body (e.g. County Board of Elections).
+
+  ## Attributes
+
+  - absenteeVotingInfoUrl (String): A URL provided by this administrative body for information on absentee voting. Defaults to: `null`.
+  - addressLines (List[String]):  Defaults to: `null`.
+  - ballotInfoUrl (String): A URL provided by this administrative body to give contest information to the voter. Defaults to: `null`.
+  - correspondenceAddress (SimpleAddressType): The mailing address of this administrative body. Defaults to: `null`.
+  - electionInfoUrl (String): A URL provided by this administrative body for looking up general election information. Defaults to: `null`.
+  - electionOfficials (List[ElectionOfficial]): The election officials for this election administrative body. Defaults to: `null`.
+  - electionRegistrationConfirmationUrl (String): A URL provided by this administrative body for confirming that the voter is registered to vote. Defaults to: `null`.
+  - electionRegistrationUrl (String): A URL provided by this administrative body for looking up how to register to vote. Defaults to: `null`.
+  - electionRulesUrl (String): A URL provided by this administrative body describing election rules to the voter. Defaults to: `null`.
+  - hoursOfOperation (String): A description of the hours of operation for this administrative body. Defaults to: `null`.
+  - name (String): The name of this election administrative body. Defaults to: `null`.
+  - physicalAddress (SimpleAddressType): The physical address of this administrative body. Defaults to: `null`.
+  - voter_services (List[String]): A description of the services this administrative body may provide. Defaults to: `null`.
+  - votingLocationFinderUrl (String): A URL provided by this administrative body for looking up where to vote. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"absenteeVotingInfoUrl",
     :"addressLines",
@@ -48,6 +64,12 @@ defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.AdministrativeBody do
     |> deserialize(:"correspondenceAddress", :struct, GoogleApi.CivicInfo.V2.Model.SimpleAddressType, options)
     |> deserialize(:"electionOfficials", :list, GoogleApi.CivicInfo.V2.Model.ElectionOfficial, options)
     |> deserialize(:"physicalAddress", :struct, GoogleApi.CivicInfo.V2.Model.SimpleAddressType, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CivicInfo.V2.Model.AdministrativeBody do
+  def encode(value, options) do
+    GoogleApi.CivicInfo.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

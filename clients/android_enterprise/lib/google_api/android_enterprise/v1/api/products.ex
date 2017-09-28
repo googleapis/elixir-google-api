@@ -63,7 +63,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
     }
     %{}
     |> method(:post)
-    |> url("/enterprises/#{enterprise_id}/products/#{product_id}/approve")
+    |> url("/enterprises/{enterpriseId}/products/{productId}/approve", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "productId" => URI.encode_www_form(product_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -107,7 +110,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
     }
     %{}
     |> method(:post)
-    |> url("/enterprises/#{enterprise_id}/products/#{product_id}/generateApprovalUrl")
+    |> url("/enterprises/{enterpriseId}/products/{productId}/generateApprovalUrl", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "productId" => URI.encode_www_form(product_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -151,7 +157,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
     }
     %{}
     |> method(:get)
-    |> url("/enterprises/#{enterprise_id}/products/#{product_id}")
+    |> url("/enterprises/{enterpriseId}/products/{productId}", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "productId" => URI.encode_www_form(product_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -195,7 +204,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
     }
     %{}
     |> method(:get)
-    |> url("/enterprises/#{enterprise_id}/products/#{product_id}/appRestrictionsSchema")
+    |> url("/enterprises/{enterpriseId}/products/{productId}/appRestrictionsSchema", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "productId" => URI.encode_www_form(product_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -237,7 +249,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
     }
     %{}
     |> method(:get)
-    |> url("/enterprises/#{enterprise_id}/products/#{product_id}/permissions")
+    |> url("/enterprises/{enterpriseId}/products/{productId}/permissions", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "productId" => URI.encode_www_form(product_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -288,7 +303,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
     }
     %{}
     |> method(:get)
-    |> url("/enterprises/#{enterprise_id}/products")
+    |> url("/enterprises/{enterpriseId}/products", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -330,7 +347,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
     }
     %{}
     |> method(:post)
-    |> url("/enterprises/#{enterprise_id}/products/#{product_id}/unapprove")
+    |> url("/enterprises/{enterpriseId}/products/{productId}/unapprove", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "productId" => URI.encode_www_form(product_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

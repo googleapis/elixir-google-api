@@ -20,9 +20,23 @@
 defmodule GoogleApi.AndroidManagement.V1.Model.PasswordRequirements do
   @moduledoc """
   Requirements for the password used to unlock a device.
+
+  ## Attributes
+
+  - maximumFailedPasswordsForWipe (Integer): A device will be wiped after too many incorrect device-unlock passwords have been entered. A value of 0 means there is no restriction. Defaults to: `null`.
+  - passwordExpirationTimeout (String): Password expiration timeout. Defaults to: `null`.
+  - passwordHistoryLength (Integer): The length of the password history. After setting this, the user will not be able to enter a new password that is the same as any password in the history. A value of 0 means there is no restriction. Defaults to: `null`.
+  - passwordMinimumLength (Integer): The minimum allowed password length. A value of 0 means there is no restriction. Only enforced when password_quality is NUMERIC, NUMERIC_COMPLEX, ALPHABETIC, ALPHANUMERIC, or COMPLEX. Defaults to: `null`.
+  - passwordMinimumLetters (Integer): Minimum number of letters required in the password. Only enforced when password_quality is COMPLEX. Defaults to: `null`.
+  - passwordMinimumLowerCase (Integer): Minimum number of lower case letters required in the password. Only enforced when password_quality is COMPLEX. Defaults to: `null`.
+  - passwordMinimumNonLetter (Integer): Minimum number of non-letter characters (numerical digits or symbols) required in the password. Only enforced when password_quality is COMPLEX. Defaults to: `null`.
+  - passwordMinimumNumeric (Integer): Minimum number of numerical digits required in the password. Only enforced when password_quality is COMPLEX. Defaults to: `null`.
+  - passwordMinimumSymbols (Integer): Minimum number of symbols required in the password. Only enforced when password_quality is COMPLEX. Defaults to: `null`.
+  - passwordMinimumUpperCase (Integer): Minimum number of upper case letters required in the password. Only enforced when password_quality is COMPLEX. Defaults to: `null`.
+  - passwordQuality (String): The required password quality. Defaults to: `null`.
+    - Enum - one of [PASSWORD_QUALITY_UNSPECIFIED, SOMETHING, NUMERIC, NUMERIC_COMPLEX, ALPHABETIC, ALPHANUMERIC, COMPLEX]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"maximumFailedPasswordsForWipe",
     :"passwordExpirationTimeout",
@@ -41,6 +55,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.PasswordRequirements do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.PasswordRequirements do
+  def encode(value, options) do
+    GoogleApi.AndroidManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

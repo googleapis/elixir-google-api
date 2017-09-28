@@ -20,9 +20,15 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.ExecutionStageState do
   @moduledoc """
   A message describing the state of a particular execution stage.
+
+  ## Attributes
+
+  - currentStateTime (String): The time at which the stage transitioned to this state. Defaults to: `null`.
+  - executionStageName (String): The name of the execution stage. Defaults to: `null`.
+  - executionStageState (String): Executions stage states allow the same set of values as JobState. Defaults to: `null`.
+    - Enum - one of [JOB_STATE_UNKNOWN, JOB_STATE_STOPPED, JOB_STATE_RUNNING, JOB_STATE_DONE, JOB_STATE_FAILED, JOB_STATE_CANCELLED, JOB_STATE_UPDATED, JOB_STATE_DRAINING, JOB_STATE_DRAINED, JOB_STATE_PENDING, JOB_STATE_CANCELLING]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"currentStateTime",
     :"executionStageName",
@@ -33,6 +39,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.ExecutionStageState do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.ExecutionStageState do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

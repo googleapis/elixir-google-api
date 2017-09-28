@@ -20,9 +20,37 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig do
   @moduledoc """
   
+
+  ## Attributes
+
+  - billingId (String): The id for billing purposes, provided for reference. Leave this field blank for insert requests; the id will be generated automatically. Defaults to: `null`.
+  - configId (String): The config id; generated automatically. Leave this field blank for insert requests. Defaults to: `null`.
+  - configName (String): The name of the config. Must be unique. Required for all requests. Defaults to: `null`.
+  - creativeType (List[String]): List must contain exactly one of PRETARGETING_CREATIVE_TYPE_HTML or PRETARGETING_CREATIVE_TYPE_VIDEO. Defaults to: `null`.
+  - dimensions (List[PretargetingConfigDimensions]): Requests which allow one of these (width, height) pairs will match. All pairs must be supported ad dimensions. Defaults to: `null`.
+  - excludedContentLabels (List[String]): Requests with any of these content labels will not match. Values are from content-labels.txt in the downloadable files section. Defaults to: `null`.
+  - excludedGeoCriteriaIds (List[String]): Requests containing any of these geo criteria ids will not match. Defaults to: `null`.
+  - excludedPlacements (List[PretargetingConfigExcludedPlacements]): Requests containing any of these placements will not match. Defaults to: `null`.
+  - excludedUserLists (List[String]): Requests containing any of these users list ids will not match. Defaults to: `null`.
+  - excludedVerticals (List[String]): Requests containing any of these vertical ids will not match. Values are from the publisher-verticals.txt file in the downloadable files section. Defaults to: `null`.
+  - geoCriteriaIds (List[String]): Requests containing any of these geo criteria ids will match. Defaults to: `null`.
+  - isActive (Boolean): Whether this config is active. Required for all requests. Defaults to: `null`.
+  - kind (String): The kind of the resource, i.e. \&quot;adexchangebuyer#pretargetingConfig\&quot;. Defaults to: `null`.
+  - languages (List[String]): Request containing any of these language codes will match. Defaults to: `null`.
+  - minimumViewabilityDecile (Integer): Requests where the predicted viewability is below the specified decile will not match. E.g. if the buyer sets this value to 5, requests from slots where the predicted viewability is below 50% will not match. If the predicted viewability is unknown this field will be ignored. Defaults to: `null`.
+  - mobileCarriers (List[String]): Requests containing any of these mobile carrier ids will match. Values are from mobile-carriers.csv in the downloadable files section. Defaults to: `null`.
+  - mobileDevices (List[String]): Requests containing any of these mobile device ids will match. Values are from mobile-devices.csv in the downloadable files section. Defaults to: `null`.
+  - mobileOperatingSystemVersions (List[String]): Requests containing any of these mobile operating system version ids will match. Values are from mobile-os.csv in the downloadable files section. Defaults to: `null`.
+  - placements (List[PretargetingConfigExcludedPlacements]): Requests containing any of these placements will match. Defaults to: `null`.
+  - platforms (List[String]): Requests matching any of these platforms will match. Possible values are PRETARGETING_PLATFORM_MOBILE, PRETARGETING_PLATFORM_DESKTOP, and PRETARGETING_PLATFORM_TABLET. Defaults to: `null`.
+  - supportedCreativeAttributes (List[String]): Creative attributes should be declared here if all creatives corresponding to this pretargeting configuration have that creative attribute. Values are from pretargetable-creative-attributes.txt in the downloadable files section. Defaults to: `null`.
+  - userIdentifierDataRequired (List[String]): Requests containing the specified type of user data will match. Possible values are HOSTED_MATCH_DATA, which means the request is cookie-targetable and has a match in the buyer&#39;s hosted match table, and COOKIE_OR_IDFA, which means the request has either a targetable cookie or an iOS IDFA. Defaults to: `null`.
+  - userLists (List[String]): Requests containing any of these user list ids will match. Defaults to: `null`.
+  - vendorTypes (List[String]): Requests that allow any of these vendor ids will match. Values are from vendors.txt in the downloadable files section. Defaults to: `null`.
+  - verticals (List[String]): Requests containing any of these vertical ids will match. Defaults to: `null`.
+  - videoPlayerSizes (List[PretargetingConfigVideoPlayerSizes]): Video requests satisfying any of these player size constraints will match. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"billingId",
     :"configId",
@@ -57,10 +85,16 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.PretargetingCon
   import GoogleApi.AdExchangeBuyer.V14.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"dimensions", :list, GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig_dimensions, options)
-    |> deserialize(:"excludedPlacements", :list, GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig_excludedPlacements, options)
-    |> deserialize(:"placements", :list, GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig_excludedPlacements, options)
-    |> deserialize(:"videoPlayerSizes", :list, GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig_videoPlayerSizes, options)
+    |> deserialize(:"dimensions", :list, GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigDimensions, options)
+    |> deserialize(:"excludedPlacements", :list, GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigExcludedPlacements, options)
+    |> deserialize(:"placements", :list, GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigExcludedPlacements, options)
+    |> deserialize(:"videoPlayerSizes", :list, GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigVideoPlayerSizes, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

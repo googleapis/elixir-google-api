@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.StreamingSideInputLocation do
   @moduledoc """
   Identifies the location of a streaming side input.
+
+  ## Attributes
+
+  - stateFamily (String): Identifies the state family where this side input is stored. Defaults to: `null`.
+  - tag (String): Identifies the particular side input within the streaming Dataflow job. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"stateFamily",
     :"tag"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.StreamingSideInputLocation do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.StreamingSideInputLocation do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

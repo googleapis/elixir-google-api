@@ -20,9 +20,12 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.LeaseWorkItemResponse do
   @moduledoc """
   Response to a request to lease WorkItems.
+
+  ## Attributes
+
+  - workItems (List[WorkItem]): A list of the leased WorkItems. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"workItems"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.LeaseWorkItemResponse
   def decode(value, options) do
     value
     |> deserialize(:"workItems", :list, GoogleApi.Dataflow.V1b3.Model.WorkItem, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.LeaseWorkItemResponse do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

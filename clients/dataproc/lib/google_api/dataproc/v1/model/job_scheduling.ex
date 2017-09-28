@@ -20,9 +20,12 @@
 defmodule GoogleApi.Dataproc.V1.Model.JobScheduling do
   @moduledoc """
   Job scheduling options.Beta Feature: These options are available for testing purposes only. They may be changed before final release.
+
+  ## Attributes
+
+  - maxFailuresPerHour (Integer): Optional. Maximum number of times per hour a driver may be restarted as a result of driver terminating with non-zero code before job is reported failed.A job may be reported as thrashing if driver exits with non-zero code 4 times within 10 minute window.Maximum value is 10. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"maxFailuresPerHour"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.JobScheduling do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataproc.V1.Model.JobScheduling do
+  def encode(value, options) do
+    GoogleApi.Dataproc.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

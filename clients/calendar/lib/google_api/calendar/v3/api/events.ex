@@ -63,7 +63,10 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
     }
     %{}
     |> method(:delete)
-    |> url("/calendars/#{calendar_id}/events/#{event_id}")
+    |> url("/calendars/{calendarId}/events/{eventId}", %{
+         "calendarId" => URI.encode_www_form(calendar_id),
+         "eventId" => URI.encode_www_form(event_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -111,7 +114,10 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
     }
     %{}
     |> method(:get)
-    |> url("/calendars/#{calendar_id}/events/#{event_id}")
+    |> url("/calendars/{calendarId}/events/{eventId}", %{
+         "calendarId" => URI.encode_www_form(calendar_id),
+         "eventId" => URI.encode_www_form(event_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -156,7 +162,9 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
     }
     %{}
     |> method(:post)
-    |> url("/calendars/#{calendar_id}/events/import")
+    |> url("/calendars/{calendarId}/events/import", %{
+         "calendarId" => URI.encode_www_form(calendar_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -205,7 +213,9 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
     }
     %{}
     |> method(:post)
-    |> url("/calendars/#{calendar_id}/events")
+    |> url("/calendars/{calendarId}/events", %{
+         "calendarId" => URI.encode_www_form(calendar_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -265,7 +275,10 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
     }
     %{}
     |> method(:get)
-    |> url("/calendars/#{calendar_id}/events/#{event_id}/instances")
+    |> url("/calendars/{calendarId}/events/{eventId}/instances", %{
+         "calendarId" => URI.encode_www_form(calendar_id),
+         "eventId" => URI.encode_www_form(event_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -340,7 +353,9 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
     }
     %{}
     |> method(:get)
-    |> url("/calendars/#{calendar_id}/events")
+    |> url("/calendars/{calendarId}/events", %{
+         "calendarId" => URI.encode_www_form(calendar_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -385,7 +400,10 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
     }
     %{}
     |> method(:post)
-    |> url("/calendars/#{calendar_id}/events/#{event_id}/move")
+    |> url("/calendars/{calendarId}/events/{eventId}/move", %{
+         "calendarId" => URI.encode_www_form(calendar_id),
+         "eventId" => URI.encode_www_form(event_id)
+       })
     |> add_param(:query, :"destination", destination)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -438,7 +456,10 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
     }
     %{}
     |> method(:patch)
-    |> url("/calendars/#{calendar_id}/events/#{event_id}")
+    |> url("/calendars/{calendarId}/events/{eventId}", %{
+         "calendarId" => URI.encode_www_form(calendar_id),
+         "eventId" => URI.encode_www_form(event_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -482,7 +503,9 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
     }
     %{}
     |> method(:post)
-    |> url("/calendars/#{calendar_id}/events/quickAdd")
+    |> url("/calendars/{calendarId}/events/quickAdd", %{
+         "calendarId" => URI.encode_www_form(calendar_id)
+       })
     |> add_param(:query, :"text", text)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -535,7 +558,10 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
     }
     %{}
     |> method(:put)
-    |> url("/calendars/#{calendar_id}/events/#{event_id}")
+    |> url("/calendars/{calendarId}/events/{eventId}", %{
+         "calendarId" => URI.encode_www_form(calendar_id),
+         "eventId" => URI.encode_www_form(event_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -612,7 +638,9 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
     }
     %{}
     |> method(:post)
-    |> url("/calendars/#{calendar_id}/events/watch")
+    |> url("/calendars/{calendarId}/events/watch", %{
+         "calendarId" => URI.encode_www_form(calendar_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

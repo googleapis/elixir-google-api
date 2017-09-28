@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.DataDiskAssignment do
   @moduledoc """
   Data disk assignment for a given VM instance.
+
+  ## Attributes
+
+  - dataDisks (List[String]): Mounted data disks. The order is important a data disk&#39;s 0-based index in this list defines which persistent directory the disk is mounted to, for example the list of { \&quot;myproject-1014-104817-4c2-harness-0-disk-0\&quot; }, { \&quot;myproject-1014-104817-4c2-harness-0-disk-1\&quot; }. Defaults to: `null`.
+  - vmInstance (String): VM instance name the data disks mounted to, for example \&quot;myproject-1014-104817-4c2-harness-0\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dataDisks",
     :"vmInstance"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.DataDiskAssignment do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.DataDiskAssignment do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

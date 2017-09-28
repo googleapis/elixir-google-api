@@ -20,9 +20,12 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.JobExecutionStageInfo do
   @moduledoc """
   Contains information about how a particular google.dataflow.v1beta3.Step will be executed.
+
+  ## Attributes
+
+  - stepName (List[String]): The steps associated with the execution stage. Note that stages may have several steps, and that a given step might be run by more than one stage. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"stepName"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.JobExecutionStageInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.JobExecutionStageInfo do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

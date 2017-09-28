@@ -20,9 +20,13 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigList do
   @moduledoc """
   
+
+  ## Attributes
+
+  - items (List[PretargetingConfig]): A list of pretargeting configs Defaults to: `null`.
+  - kind (String): Resource type. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"items",
     :"kind"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.PretargetingCon
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigList do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.UpdateDeviceMetadataRequest do
   @moduledoc """
   Request to set metadata for a device.
+
+  ## Attributes
+
+  - deviceMetadata (DeviceMetadata): The metdata to set. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"deviceMetadata"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.Update
   def decode(value, options) do
     value
     |> deserialize(:"deviceMetadata", :struct, GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.UpdateDeviceMetadataRequest do
+  def encode(value, options) do
+    GoogleApi.AndroidDeviceProvisioning.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.TestPermissionsRequest do
   @moduledoc """
   
+
+  ## Attributes
+
+  - permissions (List[String]): The set of permissions to check for the &#39;resource&#39;. Permissions with wildcards (such as &#39;*&#39; or &#39;storage.*&#39;) are not allowed. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"permissions"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.TestPermissionsRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.TestPermissionsRequest do
+  def encode(value, options) do
+    GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer.serialize_non_nil(value, options)
   end
 end
 

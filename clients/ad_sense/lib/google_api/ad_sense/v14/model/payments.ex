@@ -20,9 +20,13 @@
 defmodule GoogleApi.AdSense.V14.Model.Payments do
   @moduledoc """
   
+
+  ## Attributes
+
+  - items (List[Payment]): The list of Payments for the account. One or both of a) the account&#39;s most recent payment; and b) the account&#39;s upcoming payment. Defaults to: `null`.
+  - kind (String): Kind of list this is, in this case adsense#payments. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"items",
     :"kind"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdSense.V14.Model.Payments do
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.AdSense.V14.Model.Payment, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdSense.V14.Model.Payments do
+  def encode(value, options) do
+    GoogleApi.AdSense.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -110,7 +110,11 @@ defmodule GoogleApi.Content.V2.Api.Inventory do
     }
     %{}
     |> method(:post)
-    |> url("/#{merchant_id}/inventory/#{store_code}/products/#{product_id}")
+    |> url("/{merchantId}/inventory/{storeCode}/products/{productId}", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "storeCode" => URI.encode_www_form(store_code),
+         "productId" => URI.encode_www_form(product_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

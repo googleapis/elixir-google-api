@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AdSense.V14.Model.AdUnit_contentAdsSettings do
+defmodule GoogleApi.AdSense.V14.Model.AdUnitContentAdsSettings do
   @moduledoc """
   Settings specific to content ads (AFC) and highend mobile content ads (AFMC - deprecated).
+
+  ## Attributes
+
+  - backupOption (AdUnitContentAdsSettingsBackupOption):  Defaults to: `null`.
+  - size (String): Size of this ad unit. Defaults to: `null`.
+  - type (String): Type of this ad unit. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"backupOption",
     :"size",
@@ -30,11 +35,17 @@ defmodule GoogleApi.AdSense.V14.Model.AdUnit_contentAdsSettings do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AdSense.V14.Model.AdUnit_contentAdsSettings do
+defimpl Poison.Decoder, for: GoogleApi.AdSense.V14.Model.AdUnitContentAdsSettings do
   import GoogleApi.AdSense.V14.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"backupOption", :struct, GoogleApi.AdSense.V14.Model.AdUnit_contentAdsSettings_backupOption, options)
+    |> deserialize(:"backupOption", :struct, GoogleApi.AdSense.V14.Model.AdUnitContentAdsSettingsBackupOption, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdSense.V14.Model.AdUnitContentAdsSettings do
+  def encode(value, options) do
+    GoogleApi.AdSense.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

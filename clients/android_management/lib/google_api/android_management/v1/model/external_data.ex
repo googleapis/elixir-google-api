@@ -20,9 +20,13 @@
 defmodule GoogleApi.AndroidManagement.V1.Model.ExternalData do
   @moduledoc """
   Data hosted at an external location. The data is to be downloaded by Android Device Policy and verified against the hash.
+
+  ## Attributes
+
+  - sha256Hash (String): The base-64 encoded SHA-256 hash of the content hosted at url. If the content does not match this hash, Android Device Policy will not use the data. Defaults to: `null`.
+  - url (String): The absolute URL to the data, which must use either the http or https scheme. Android Device Policy does not provide any credentials in the GET request, so the URL must be publicly accessible. Including a long, random component in the URL may be used to prevent attackers from discovering the URL. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"sha256Hash",
     :"url"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.ExternalData do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.ExternalData do
+  def encode(value, options) do
+    GoogleApi.AndroidManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.LaunchTemplateResponse do
   @moduledoc """
   Response to the request to launch a template.
+
+  ## Attributes
+
+  - job (Job): The job that was launched, if the request was not a dry run and the job was successfully launched. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"job"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.LaunchTemplateRespons
   def decode(value, options) do
     value
     |> deserialize(:"job", :struct, GoogleApi.Dataflow.V1b3.Model.Job, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.LaunchTemplateResponse do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

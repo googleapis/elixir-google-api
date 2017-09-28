@@ -1,6 +1,6 @@
 # GoogleApi.AdSenseHost.V41
 
-**TODO: Add description**
+Generates performance reports, generates ad codes, and provides publisher management capabilities for AdSense Hosts.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_ad_sense_host` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_ad_sense_host, "~> 0.1.0"}]
+  [{:google_api_ad_sense_host, "~> 0.0.1"}]
 end
 ```
 

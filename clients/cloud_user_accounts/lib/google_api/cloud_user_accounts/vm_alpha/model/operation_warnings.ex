@@ -17,12 +17,18 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation_warnings do
+defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.OperationWarnings do
   @moduledoc """
   
+
+  ## Attributes
+
+  - code (String): [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response. Defaults to: `null`.
+    - Enum - one of [CLEANUP_FAILED, DEPRECATED_RESOURCE_USED, DISK_SIZE_LARGER_THAN_IMAGE_SIZE, INJECTED_KERNELS_DEPRECATED, NEXT_HOP_ADDRESS_NOT_ASSIGNED, NEXT_HOP_CANNOT_IP_FORWARD, NEXT_HOP_INSTANCE_NOT_FOUND, NEXT_HOP_INSTANCE_NOT_ON_NETWORK, NEXT_HOP_NOT_RUNNING, NOT_CRITICAL_ERROR, NO_RESULTS_ON_PAGE, REQUIRED_TOS_AGREEMENT, RESOURCE_NOT_DELETED, SINGLE_INSTANCE_PROPERTY_TEMPLATE, UNREACHABLE]
+  - data (List[OperationData]): [Output Only] Metadata about this warning in key: value format. For example: \&quot;data\&quot;: [ { \&quot;key\&quot;: \&quot;scope\&quot;, \&quot;value\&quot;: \&quot;zones/us-east1-d\&quot; } Defaults to: `null`.
+  - message (String): [Output Only] A human-readable description of the warning code. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"code",
     :"data",
@@ -30,11 +36,17 @@ defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation_warnings do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation_warnings do
+defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.OperationWarnings do
   import GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"data", :list, GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation_data, options)
+    |> deserialize(:"data", :list, GoogleApi.CloudUserAccounts.Vm_alpha.Model.OperationData, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.OperationWarnings do
+  def encode(value, options) do
+    GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer.serialize_non_nil(value, options)
   end
 end
 

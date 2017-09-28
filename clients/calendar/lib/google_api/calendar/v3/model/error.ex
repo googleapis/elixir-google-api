@@ -20,9 +20,13 @@
 defmodule GoogleApi.Calendar.V3.Model.Error do
   @moduledoc """
   
+
+  ## Attributes
+
+  - domain (String): Domain, or broad category, of the error. Defaults to: `null`.
+  - reason (String): Specific reason for the error. Some of the possible values are:   - \&quot;groupTooBig\&quot; - The group of users requested is too large for a single query.  - \&quot;tooManyCalendarsRequested\&quot; - The number of calendars requested is too large for a single query.  - \&quot;notFound\&quot; - The requested resource was not found.  - \&quot;internalError\&quot; - The API service has encountered an internal error.  Additional error types may be added in the future, so clients should gracefully handle additional error statuses not included in this list. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"domain",
     :"reason"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.Error do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.Error do
+  def encode(value, options) do
+    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

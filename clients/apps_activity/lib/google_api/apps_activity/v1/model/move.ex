@@ -20,9 +20,13 @@
 defmodule GoogleApi.AppsActivity.V1.Model.Move do
   @moduledoc """
   Contains information about changes in an object&#39;s parents as a result of a move type event.
+
+  ## Attributes
+
+  - addedParents (List[Parent]): The added parent(s). Defaults to: `null`.
+  - removedParents (List[Parent]): The removed parent(s). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"addedParents",
     :"removedParents"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.AppsActivity.V1.Model.Move do
     value
     |> deserialize(:"addedParents", :list, GoogleApi.AppsActivity.V1.Model.Parent, options)
     |> deserialize(:"removedParents", :list, GoogleApi.AppsActivity.V1.Model.Parent, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppsActivity.V1.Model.Move do
+  def encode(value, options) do
+    GoogleApi.AppsActivity.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

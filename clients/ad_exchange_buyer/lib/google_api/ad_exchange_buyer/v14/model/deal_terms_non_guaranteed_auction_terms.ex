@@ -20,9 +20,13 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.DealTermsNonGuaranteedAuctionTerms do
   @moduledoc """
   
+
+  ## Attributes
+
+  - autoOptimizePrivateAuction (Boolean): True if open auction buyers are allowed to compete with invited buyers in this private auction (buyer-readonly). Defaults to: `null`.
+  - reservePricePerBuyers (List[PricePerBuyer]): Reserve price for the specified buyer. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"autoOptimizePrivateAuction",
     :"reservePricePerBuyers"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.DealTermsNonGua
   def decode(value, options) do
     value
     |> deserialize(:"reservePricePerBuyers", :list, GoogleApi.AdExchangeBuyer.V14.Model.PricePerBuyer, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.DealTermsNonGuaranteedAuctionTerms do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Calendar.V3.Model.Event_extendedProperties do
+defmodule GoogleApi.Calendar.V3.Model.EventExtendedProperties do
   @moduledoc """
   Extended properties of the event.
+
+  ## Attributes
+
+  - private (Map[String, String]): Properties that are private to the copy of the event that appears on this calendar. Defaults to: `null`.
+  - shared (Map[String, String]): Properties that are shared between copies of the event on other attendees&#39; calendars. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"private",
     :"shared"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.Event_extendedProperties do
+defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.EventExtendedProperties do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.EventExtendedProperties do
+  def encode(value, options) do
+    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

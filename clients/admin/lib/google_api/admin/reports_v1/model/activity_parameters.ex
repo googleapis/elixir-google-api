@@ -17,12 +17,20 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Admin.Reports_v1.Model.Activity_parameters do
+defmodule GoogleApi.Admin.Reports_v1.Model.ActivityParameters do
   @moduledoc """
   
+
+  ## Attributes
+
+  - boolValue (Boolean): Boolean value of the parameter. Defaults to: `null`.
+  - intValue (String): Integral value of the parameter. Defaults to: `null`.
+  - multiIntValue (List[String]): Multi-int value of the parameter. Defaults to: `null`.
+  - multiValue (List[String]): Multi-string value of the parameter. Defaults to: `null`.
+  - name (String): The name of the parameter. Defaults to: `null`.
+  - value (String): String value of the parameter. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"boolValue",
     :"intValue",
@@ -33,9 +41,15 @@ defmodule GoogleApi.Admin.Reports_v1.Model.Activity_parameters do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Admin.Reports_v1.Model.Activity_parameters do
+defimpl Poison.Decoder, for: GoogleApi.Admin.Reports_v1.Model.ActivityParameters do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Admin.Reports_v1.Model.ActivityParameters do
+  def encode(value, options) do
+    GoogleApi.Admin.Reports_v1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

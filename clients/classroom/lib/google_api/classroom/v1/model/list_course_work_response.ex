@@ -20,9 +20,13 @@
 defmodule GoogleApi.Classroom.V1.Model.ListCourseWorkResponse do
   @moduledoc """
   Response when listing course work.
+
+  ## Attributes
+
+  - courseWork (List[CourseWork]): Course work items that match the request. Defaults to: `null`.
+  - nextPageToken (String): Token identifying the next page of results to return. If empty, no further results are available. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"courseWork",
     :"nextPageToken"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.ListCourseWorkResponse
   def decode(value, options) do
     value
     |> deserialize(:"courseWork", :list, GoogleApi.Classroom.V1.Model.CourseWork, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.ListCourseWorkResponse do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

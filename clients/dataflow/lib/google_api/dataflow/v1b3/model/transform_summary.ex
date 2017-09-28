@@ -20,9 +20,18 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.TransformSummary do
   @moduledoc """
   Description of the type, names/ids, and input/outputs for a transform.
+
+  ## Attributes
+
+  - displayData (List[DisplayData]): Transform-specific display data. Defaults to: `null`.
+  - id (String): SDK generated id of this transform instance. Defaults to: `null`.
+  - inputCollectionName (List[String]): User names for all collection inputs to this transform. Defaults to: `null`.
+  - kind (String): Type of transform. Defaults to: `null`.
+    - Enum - one of [UNKNOWN_KIND, PAR_DO_KIND, GROUP_BY_KEY_KIND, FLATTEN_KIND, READ_KIND, WRITE_KIND, CONSTANT_KIND, SINGLETON_KIND, SHUFFLE_KIND]
+  - name (String): User provided name for this transform instance. Defaults to: `null`.
+  - outputCollectionName (List[String]): User  names for all collection outputs to this transform. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"displayData",
     :"id",
@@ -38,6 +47,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.TransformSummary do
   def decode(value, options) do
     value
     |> deserialize(:"displayData", :list, GoogleApi.Dataflow.V1b3.Model.DisplayData, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.TransformSummary do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

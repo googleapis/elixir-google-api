@@ -20,9 +20,12 @@
 defmodule GoogleApi.BigQueryDataTransfer.V1.Model.IsEnabledResponse do
   @moduledoc """
   A response to indicate whether data transfer is enabled for the project.
+
+  ## Attributes
+
+  - enabled (Boolean): Indicates whether the project is enabled. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"enabled"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.BigQueryDataTransfer.V1.Model.IsEnabledResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQueryDataTransfer.V1.Model.IsEnabledResponse do
+  def encode(value, options) do
+    GoogleApi.BigQueryDataTransfer.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

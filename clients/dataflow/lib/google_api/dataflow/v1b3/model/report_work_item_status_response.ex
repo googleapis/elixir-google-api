@@ -20,9 +20,12 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.ReportWorkItemStatusResponse do
   @moduledoc """
   Response from a request to report the status of WorkItems.
+
+  ## Attributes
+
+  - workItemServiceStates (List[WorkItemServiceState]): A set of messages indicating the service-side state for each WorkItem whose status was reported, in the same order as the WorkItemStatus messages in the ReportWorkItemStatusRequest which resulting in this response. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"workItemServiceStates"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.ReportWorkItemStatusR
   def decode(value, options) do
     value
     |> deserialize(:"workItemServiceStates", :list, GoogleApi.Dataflow.V1b3.Model.WorkItemServiceState, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.ReportWorkItemStatusResponse do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

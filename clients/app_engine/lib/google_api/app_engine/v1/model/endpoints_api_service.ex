@@ -20,9 +20,13 @@
 defmodule GoogleApi.AppEngine.V1.Model.EndpointsApiService do
   @moduledoc """
   Cloud Endpoints (https://cloud.google.com/endpoints) configuration. The Endpoints API Service provides tooling for serving Open API and gRPC endpoints via an NGINX proxy.The fields here refer to the name and configuration id of a \&quot;service\&quot; resource in the Service Management API (https://cloud.google.com/service-management/overview).
+
+  ## Attributes
+
+  - configId (String): Endpoints service configuration id as specified by the Service Management API. For example \&quot;2016-09-19r1\&quot; Defaults to: `null`.
+  - name (String): Endpoints service name which is the name of the \&quot;service\&quot; resource in the Service Management API. For example \&quot;myapi.endpoints.myproject.cloud.goog\&quot; Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"configId",
     :"name"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.EndpointsApiService do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.EndpointsApiService do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

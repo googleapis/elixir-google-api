@@ -20,9 +20,13 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1BigQueryOptions do
   @moduledoc """
   Options defining BigQuery table and row identifiers.
+
+  ## Attributes
+
+  - identifyingFields (List[GooglePrivacyDlpV2beta1FieldId]): References to fields uniquely identifying rows within the table. Nested fields in the format, like &#x60;person.birthdate.year&#x60;, are allowed. Defaults to: `null`.
+  - tableReference (GooglePrivacyDlpV2beta1BigQueryTable): Complete BigQuery table reference. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"identifyingFields",
     :"tableReference"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1
     value
     |> deserialize(:"identifyingFields", :list, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1FieldId, options)
     |> deserialize(:"tableReference", :struct, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1BigQueryTable, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1BigQueryOptions do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

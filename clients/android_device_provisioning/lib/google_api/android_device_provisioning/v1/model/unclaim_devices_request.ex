@@ -20,9 +20,12 @@
 defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.UnclaimDevicesRequest do
   @moduledoc """
   Request to unclaim devices asynchronously in batch.
+
+  ## Attributes
+
+  - unclaims (List[PartnerUnclaim]): list of unclaims. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"unclaims"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.Unclai
   def decode(value, options) do
     value
     |> deserialize(:"unclaims", :list, GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerUnclaim, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.UnclaimDevicesRequest do
+  def encode(value, options) do
+    GoogleApi.AndroidDeviceProvisioning.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.Content.V2.Model.ProductsCustomBatchResponseEntry do
   @moduledoc """
   A batch entry encoding a single non-batch products response.
+
+  ## Attributes
+
+  - batchId (Integer): The ID of the request entry this entry responds to. Defaults to: `null`.
+  - errors (Errors): A list of errors defined if and only if the request failed. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;content#productsCustomBatchResponseEntry\&quot;. Defaults to: `null`.
+  - product (Product): The inserted product. Only defined if the method is insert and if the request was successful. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"batchId",
     :"errors",
@@ -37,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.ProductsCustomBatchRespo
     value
     |> deserialize(:"errors", :struct, GoogleApi.Content.V2.Model.Errors, options)
     |> deserialize(:"product", :struct, GoogleApi.Content.V2.Model.Product, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.ProductsCustomBatchResponseEntry do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.Content.V2.Model.OrdersAdvanceTestOrderResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;content#ordersAdvanceTestOrderResponse\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrdersAdvanceTestOrderResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrdersAdvanceTestOrderResponse do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

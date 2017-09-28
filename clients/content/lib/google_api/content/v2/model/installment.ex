@@ -20,9 +20,13 @@
 defmodule GoogleApi.Content.V2.Model.Installment do
   @moduledoc """
   
+
+  ## Attributes
+
+  - amount (Price): The amount the buyer has to pay per month. Defaults to: `null`.
+  - months (String): The number of installments the buyer has to pay. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"amount",
     :"months"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.Installment do
   def decode(value, options) do
     value
     |> deserialize(:"amount", :struct, GoogleApi.Content.V2.Model.Price, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.Installment do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

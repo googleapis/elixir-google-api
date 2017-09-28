@@ -20,9 +20,21 @@
 defmodule GoogleApi.Calendar.V3.Model.Channel do
   @moduledoc """
   
+
+  ## Attributes
+
+  - address (String): The address where notifications are delivered for this channel. Defaults to: `null`.
+  - expiration (String): Date and time of notification channel expiration, expressed as a Unix timestamp, in milliseconds. Optional. Defaults to: `null`.
+  - id (String): A UUID or similar unique string that identifies this channel. Defaults to: `null`.
+  - kind (String): Identifies this as a notification channel used to watch for changes to a resource. Value: the fixed string \&quot;api#channel\&quot;. Defaults to: `null`.
+  - params (Map[String, String]): Additional parameters controlling delivery channel behavior. Optional. Defaults to: `null`.
+  - payload (Boolean): A Boolean value to indicate whether payload is wanted. Optional. Defaults to: `null`.
+  - resourceId (String): An opaque ID that identifies the resource being watched on this channel. Stable across different API versions. Defaults to: `null`.
+  - resourceUri (String): A version-specific identifier for the watched resource. Defaults to: `null`.
+  - token (String): An arbitrary string delivered to the target address with each notification delivered over this channel. Optional. Defaults to: `null`.
+  - type (String): The type of delivery mechanism used for this channel. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"address",
     :"expiration",
@@ -40,6 +52,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.Channel do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.Channel do
+  def encode(value, options) do
+    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

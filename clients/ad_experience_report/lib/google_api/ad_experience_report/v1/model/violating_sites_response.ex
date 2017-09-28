@@ -20,9 +20,12 @@
 defmodule GoogleApi.AdExperienceReport.V1.Model.ViolatingSitesResponse do
   @moduledoc """
   Response message for ListViolatingSites.
+
+  ## Attributes
+
+  - violatingSites (List[SiteSummaryResponse]): A list of summaries of violating sites. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"violatingSites"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExperienceReport.V1.Model.ViolatingSite
   def decode(value, options) do
     value
     |> deserialize(:"violatingSites", :list, GoogleApi.AdExperienceReport.V1.Model.SiteSummaryResponse, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExperienceReport.V1.Model.ViolatingSitesResponse do
+  def encode(value, options) do
+    GoogleApi.AdExperienceReport.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,16 @@
 defmodule GoogleApi.Dataproc.V1.Model.YarnApplication do
   @moduledoc """
   A YARN application created by a job. Application information is a subset of &lt;code&gt;org.apache.hadoop.yarn.proto.YarnProtos.ApplicationReportProto&lt;/code&gt;.Beta Feature: This report is available for testing purposes only. It may be changed before final release.
+
+  ## Attributes
+
+  - name (String): Required. The application name. Defaults to: `null`.
+  - progress (Float): Required. The numerical progress of the application, from 1 to 100. Defaults to: `null`.
+  - state (String): Required. The application state. Defaults to: `null`.
+    - Enum - one of [STATE_UNSPECIFIED, NEW, NEW_SAVING, SUBMITTED, ACCEPTED, RUNNING, FINISHED, FAILED, KILLED]
+  - trackingUrl (String): Optional. The HTTP URL of the ApplicationMaster, HistoryServer, or TimelineServer that provides application-specific information. The URL uses the internal hostname, and requires a proxy server for resolution and, possibly, access. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name",
     :"progress",
@@ -34,6 +41,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.YarnApplication do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataproc.V1.Model.YarnApplication do
+  def encode(value, options) do
+    GoogleApi.Dataproc.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

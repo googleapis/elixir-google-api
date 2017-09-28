@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.StateFamilyConfig do
   @moduledoc """
   State family configuration.
+
+  ## Attributes
+
+  - isRead (Boolean): If true, this family corresponds to a read operation. Defaults to: `null`.
+  - stateFamily (String): The state family value. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"isRead",
     :"stateFamily"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.StateFamilyConfig do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.StateFamilyConfig do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.Content.V2.Model.Weight do
   @moduledoc """
   
+
+  ## Attributes
+
+  - unit (String): The weight unit. Defaults to: `null`.
+  - value (String): The weight represented as a number. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"unit",
     :"value"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.Weight do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.Weight do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

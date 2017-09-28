@@ -20,9 +20,14 @@
 defmodule GoogleApi.Content.V2.Model.AccountstatusesListResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;content#accountstatusesListResponse\&quot;. Defaults to: `null`.
+  - nextPageToken (String): The token for the retrieval of the next page of account statuses. Defaults to: `null`.
+  - resources (List[AccountStatus]):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"nextPageToken",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.AccountstatusesListRespo
   def decode(value, options) do
     value
     |> deserialize(:"resources", :list, GoogleApi.Content.V2.Model.AccountStatus, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.AccountstatusesListResponse do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

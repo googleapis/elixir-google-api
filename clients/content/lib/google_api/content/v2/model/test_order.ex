@@ -20,9 +20,20 @@
 defmodule GoogleApi.Content.V2.Model.TestOrder do
   @moduledoc """
   
+
+  ## Attributes
+
+  - customer (TestOrderCustomer): The details of the customer who placed the order. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;content#testOrder\&quot;. Defaults to: `null`.
+  - lineItems (List[TestOrderLineItem]): Line items that are ordered. At least one line item must be provided. Defaults to: `null`.
+  - paymentMethod (TestOrderPaymentMethod): The details of the payment method. Defaults to: `null`.
+  - predefinedDeliveryAddress (String): Identifier of one of the predefined delivery addresses for the delivery. Defaults to: `null`.
+  - promotions (List[OrderPromotion]): The details of the merchant provided promotions applied to the order. More details about the program are here. Defaults to: `null`.
+  - shippingCost (Price): The total cost of shipping for all items. Defaults to: `null`.
+  - shippingCostTax (Price): The tax for the total shipping cost. Defaults to: `null`.
+  - shippingOption (String): The requested shipping option. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"customer",
     :"kind",
@@ -46,6 +57,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.TestOrder do
     |> deserialize(:"promotions", :list, GoogleApi.Content.V2.Model.OrderPromotion, options)
     |> deserialize(:"shippingCost", :struct, GoogleApi.Content.V2.Model.Price, options)
     |> deserialize(:"shippingCostTax", :struct, GoogleApi.Content.V2.Model.Price, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.TestOrder do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

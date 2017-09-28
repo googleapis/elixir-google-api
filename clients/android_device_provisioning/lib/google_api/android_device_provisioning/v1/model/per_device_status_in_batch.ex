@@ -20,9 +20,16 @@
 defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.PerDeviceStatusInBatch do
   @moduledoc """
   Stores the processing result for each device.
+
+  ## Attributes
+
+  - deviceId (String): device id of the device if process succeeds. Defaults to: `null`.
+  - errorIdentifier (String): Error identifier. Defaults to: `null`.
+  - errorMessage (String): Error message Defaults to: `null`.
+  - status (String): Process result. Defaults to: `null`.
+    - Enum - one of [SINGLE_DEVICE_STATUS_UNSPECIFIED, SINGLE_DEVICE_STATUS_UNKNOWN_ERROR, SINGLE_DEVICE_STATUS_OTHER_ERROR, SINGLE_DEVICE_STATUS_SUCCESS, SINGLE_DEVICE_STATUS_PERMISSION_DENIED, SINGLE_DEVICE_STATUS_INVALID_DEVICE_IDENTIFIER, SINGLE_DEVICE_STATUS_INVALID_SECTION_TYPE, SINGLE_DEVICE_STATUS_SECTION_NOT_YOURS]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"deviceId",
     :"errorIdentifier",
@@ -34,6 +41,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.PerDeviceStatusInBatch do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.PerDeviceStatusInBatch do
+  def encode(value, options) do
+    GoogleApi.AndroidDeviceProvisioning.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

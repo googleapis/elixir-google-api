@@ -20,9 +20,15 @@
 defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryShipLineItems do
   @moduledoc """
   
+
+  ## Attributes
+
+  - carrier (String): The carrier handling the shipment. Defaults to: `null`.
+  - lineItems (List[OrderShipmentLineItemShipment]): Line items to ship. Defaults to: `null`.
+  - shipmentId (String): The ID of the shipment. Defaults to: `null`.
+  - trackingId (String): The tracking id for the shipment. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"carrier",
     :"lineItems",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrdersCustomBatchRequest
   def decode(value, options) do
     value
     |> deserialize(:"lineItems", :list, GoogleApi.Content.V2.Model.OrderShipmentLineItemShipment, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryShipLineItems do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

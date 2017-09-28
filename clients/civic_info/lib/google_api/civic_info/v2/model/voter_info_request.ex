@@ -20,9 +20,13 @@
 defmodule GoogleApi.CivicInfo.V2.Model.VoterInfoRequest do
   @moduledoc """
   A request for information about a voter.
+
+  ## Attributes
+
+  - contextParams (ContextParams):  Defaults to: `null`.
+  - voterInfoSegmentResult (VoterInfoSegmentResult):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"contextParams",
     :"voterInfoSegmentResult"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.VoterInfoRequest do
     value
     |> deserialize(:"contextParams", :struct, GoogleApi.CivicInfo.V2.Model.ContextParams, options)
     |> deserialize(:"voterInfoSegmentResult", :struct, GoogleApi.CivicInfo.V2.Model.VoterInfoSegmentResult, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CivicInfo.V2.Model.VoterInfoRequest do
+  def encode(value, options) do
+    GoogleApi.CivicInfo.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

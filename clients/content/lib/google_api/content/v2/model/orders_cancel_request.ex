@@ -20,9 +20,14 @@
 defmodule GoogleApi.Content.V2.Model.OrdersCancelRequest do
   @moduledoc """
   
+
+  ## Attributes
+
+  - operationId (String): The ID of the operation. Unique across all operations for a given order. Defaults to: `null`.
+  - reason (String): The reason for the cancellation. Defaults to: `null`.
+  - reasonText (String): The explanation of the reason. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"operationId",
     :"reason",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrdersCancelRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrdersCancelRequest do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

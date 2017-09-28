@@ -20,9 +20,16 @@
 defmodule GoogleApi.AppsActivity.V1.Model.User do
   @moduledoc """
   A representation of a user.
+
+  ## Attributes
+
+  - isDeleted (Boolean): A boolean which indicates whether the specified User was deleted. If true, name, photo and permission_id will be omitted. Defaults to: `null`.
+  - isMe (Boolean): Whether the user is the authenticated user. Defaults to: `null`.
+  - name (String): The displayable name of the user. Defaults to: `null`.
+  - permissionId (String): The permission ID associated with this user. Equivalent to the Drive API&#39;s permission ID for this user, returned as part of the Drive Permissions resource. Defaults to: `null`.
+  - photo (Photo): The profile photo of the user. Not present if the user has no profile photo. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"isDeleted",
     :"isMe",
@@ -37,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.AppsActivity.V1.Model.User do
   def decode(value, options) do
     value
     |> deserialize(:"photo", :struct, GoogleApi.AppsActivity.V1.Model.Photo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppsActivity.V1.Model.User do
+  def encode(value, options) do
+    GoogleApi.AppsActivity.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

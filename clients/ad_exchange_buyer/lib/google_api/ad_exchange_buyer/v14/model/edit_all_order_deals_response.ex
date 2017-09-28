@@ -20,9 +20,13 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.EditAllOrderDealsResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - deals (List[MarketplaceDeal]): List of all deals in the proposal after edit. Defaults to: `null`.
+  - orderRevisionNumber (String): The latest revision number after the update has been applied. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"deals",
     :"orderRevisionNumber"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.EditAllOrderDea
   def decode(value, options) do
     value
     |> deserialize(:"deals", :list, GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDeal, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.EditAllOrderDealsResponse do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

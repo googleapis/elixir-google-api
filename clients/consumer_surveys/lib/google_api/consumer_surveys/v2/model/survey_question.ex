@@ -20,9 +20,29 @@
 defmodule GoogleApi.ConsumerSurveys.V2.Model.SurveyQuestion do
   @moduledoc """
   
+
+  ## Attributes
+
+  - answerOrder (String):  Defaults to: `null`.
+  - answers (List[String]):  Defaults to: `null`.
+  - hasOther (Boolean):  Defaults to: `null`.
+  - highValueLabel (String):  Defaults to: `null`.
+  - images (List[SurveyQuestionImage]):  Defaults to: `null`.
+  - lastAnswerPositionPinned (Boolean):  Defaults to: `null`.
+  - lowValueLabel (String):  Defaults to: `null`.
+  - mustPickSuggestion (Boolean):  Defaults to: `null`.
+  - numStars (String):  Defaults to: `null`.
+  - openTextPlaceholder (String):  Defaults to: `null`.
+  - openTextSuggestions (List[String]):  Defaults to: `null`.
+  - question (String):  Defaults to: `null`.
+  - sentimentText (String):  Defaults to: `null`.
+  - singleLineResponse (Boolean):  Defaults to: `null`.
+  - thresholdAnswers (List[String]):  Defaults to: `null`.
+  - type (String):  Defaults to: `null`.
+  - unitOfMeasurementLabel (String):  Defaults to: `null`.
+  - videoId (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"answerOrder",
     :"answers",
@@ -50,6 +70,12 @@ defimpl Poison.Decoder, for: GoogleApi.ConsumerSurveys.V2.Model.SurveyQuestion d
   def decode(value, options) do
     value
     |> deserialize(:"images", :list, GoogleApi.ConsumerSurveys.V2.Model.SurveyQuestionImage, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ConsumerSurveys.V2.Model.SurveyQuestion do
+  def encode(value, options) do
+    GoogleApi.ConsumerSurveys.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,19 @@
 defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.Rule do
   @moduledoc """
   A rule to be applied in a Policy.
+
+  ## Attributes
+
+  - action (String): Required Defaults to: `null`.
+    - Enum - one of [ALLOW, ALLOW_WITH_LOG, DENY, DENY_WITH_LOG, LOG, NO_ACTION]
+  - conditions (List[Condition]): Additional restrictions that must be met Defaults to: `null`.
+  - description (String): Human-readable description of the rule. Defaults to: `null`.
+  - ins (List[String]): The rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in this set of entries. Defaults to: `null`.
+  - logConfigs (List[LogConfig]): The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action. Defaults to: `null`.
+  - notIns (List[String]): The rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is not in this set of entries. Defaults to: `null`.
+  - permissions (List[String]): A permission is a string of form &#39;..&#39; (e.g., &#39;storage.buckets.list&#39;). A value of &#39;*&#39; matches all permissions, and a verb part of &#39;*&#39; (e.g., &#39;storage.buckets.*&#39;) matches all verbs. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"action",
     :"conditions",
@@ -40,6 +50,12 @@ defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.Rule do
     value
     |> deserialize(:"conditions", :list, GoogleApi.CloudUserAccounts.Vm_alpha.Model.Condition, options)
     |> deserialize(:"logConfigs", :list, GoogleApi.CloudUserAccounts.Vm_alpha.Model.LogConfig, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.Rule do
+  def encode(value, options) do
+    GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -62,7 +62,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Marketplacedeals do
     }
     %{}
     |> method(:post)
-    |> url("/proposals/#{proposal_id}/deals/delete")
+    |> url("/proposals/{proposalId}/deals/delete", %{
+         "proposalId" => URI.encode_www_form(proposal_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -105,7 +107,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Marketplacedeals do
     }
     %{}
     |> method(:post)
-    |> url("/proposals/#{proposal_id}/deals/insert")
+    |> url("/proposals/{proposalId}/deals/insert", %{
+         "proposalId" => URI.encode_www_form(proposal_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -148,7 +152,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Marketplacedeals do
     }
     %{}
     |> method(:get)
-    |> url("/proposals/#{proposal_id}/deals")
+    |> url("/proposals/{proposalId}/deals", %{
+         "proposalId" => URI.encode_www_form(proposal_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -191,7 +197,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Marketplacedeals do
     }
     %{}
     |> method(:post)
-    |> url("/proposals/#{proposal_id}/deals/update")
+    |> url("/proposals/{proposalId}/deals/update", %{
+         "proposalId" => URI.encode_www_form(proposal_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

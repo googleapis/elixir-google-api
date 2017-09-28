@@ -20,9 +20,14 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.ComponentTransform do
   @moduledoc """
   Description of a transform executed as part of an execution stage.
+
+  ## Attributes
+
+  - name (String): Dataflow service generated name for this source. Defaults to: `null`.
+  - originalTransform (String): User name for the original user transform with which this transform is most closely associated. Defaults to: `null`.
+  - userName (String): Human-readable name for this transform; may be user or system generated. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name",
     :"originalTransform",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.ComponentTransform do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.ComponentTransform do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

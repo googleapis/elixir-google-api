@@ -20,9 +20,16 @@
 defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerClaim do
   @moduledoc """
   Identifies one claim request.
+
+  ## Attributes
+
+  - customerId (String): customer id to claim for. Defaults to: `null`.
+  - deviceIdentifier (DeviceIdentifier): Device identifier of the device. Defaults to: `null`.
+  - deviceMetadata (DeviceMetadata): metadata to set at claim. Defaults to: `null`.
+  - sectionType (String): section type to claim. Defaults to: `null`.
+    - Enum - one of [SECTION_TYPE_UNSPECIFIED, SECTION_TYPE_ZERO_TOUCH]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"customerId",
     :"deviceIdentifier",
@@ -37,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.Partne
     value
     |> deserialize(:"deviceIdentifier", :struct, GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier, options)
     |> deserialize(:"deviceMetadata", :struct, GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerClaim do
+  def encode(value, options) do
+    GoogleApi.AndroidDeviceProvisioning.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

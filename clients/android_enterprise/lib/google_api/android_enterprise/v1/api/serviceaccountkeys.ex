@@ -61,7 +61,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Serviceaccountkeys do
     }
     %{}
     |> method(:delete)
-    |> url("/enterprises/#{enterprise_id}/serviceAccountKeys/#{key_id}")
+    |> url("/enterprises/{enterpriseId}/serviceAccountKeys/{keyId}", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "keyId" => URI.encode_www_form(key_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -104,7 +107,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Serviceaccountkeys do
     }
     %{}
     |> method(:post)
-    |> url("/enterprises/#{enterprise_id}/serviceAccountKeys")
+    |> url("/enterprises/{enterpriseId}/serviceAccountKeys", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -145,7 +150,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Serviceaccountkeys do
     }
     %{}
     |> method(:get)
-    |> url("/enterprises/#{enterprise_id}/serviceAccountKeys")
+    |> url("/enterprises/{enterpriseId}/serviceAccountKeys", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

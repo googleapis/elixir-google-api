@@ -20,9 +20,13 @@
 defmodule GoogleApi.Classroom.V1.Model.SubmissionHistory do
   @moduledoc """
   The history of the submission. This currently includes state and grade histories.
+
+  ## Attributes
+
+  - gradeHistory (GradeHistory): The grade history information of the submission, if present. Defaults to: `null`.
+  - stateHistory (StateHistory): The state history information of the submission, if present. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"gradeHistory",
     :"stateHistory"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.SubmissionHistory do
     value
     |> deserialize(:"gradeHistory", :struct, GoogleApi.Classroom.V1.Model.GradeHistory, options)
     |> deserialize(:"stateHistory", :struct, GoogleApi.Classroom.V1.Model.StateHistory, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.SubmissionHistory do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

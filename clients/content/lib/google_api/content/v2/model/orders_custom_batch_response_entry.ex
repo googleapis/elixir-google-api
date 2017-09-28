@@ -20,9 +20,16 @@
 defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchResponseEntry do
   @moduledoc """
   
+
+  ## Attributes
+
+  - batchId (Integer): The ID of the request entry this entry responds to. Defaults to: `null`.
+  - errors (Errors): A list of errors defined if and only if the request failed. Defaults to: `null`.
+  - executionStatus (String): The status of the execution. Only defined if the method is not get or getByMerchantOrderId and if the request was successful. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;content#ordersCustomBatchResponseEntry\&quot;. Defaults to: `null`.
+  - order (Order): The retrieved order. Only defined if the method is get and if the request was successful. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"batchId",
     :"errors",
@@ -38,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrdersCustomBatchRespons
     value
     |> deserialize(:"errors", :struct, GoogleApi.Content.V2.Model.Errors, options)
     |> deserialize(:"order", :struct, GoogleApi.Content.V2.Model.Order, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrdersCustomBatchResponseEntry do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

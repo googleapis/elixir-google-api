@@ -62,7 +62,11 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
     }
     %{}
     |> method(:post)
-    |> url("/creatives/#{account_id}/#{buyer_creative_id}/addDeal/#{deal_id}")
+    |> url("/creatives/{accountId}/{buyerCreativeId}/addDeal/{dealId}", %{
+         "accountId" => URI.encode_www_form(account_id),
+         "buyerCreativeId" => URI.encode_www_form(buyer_creative_id),
+         "dealId" => URI.encode_www_form(deal_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -104,7 +108,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
     }
     %{}
     |> method(:get)
-    |> url("/creatives/#{account_id}/#{buyer_creative_id}")
+    |> url("/creatives/{accountId}/{buyerCreativeId}", %{
+         "accountId" => URI.encode_www_form(account_id),
+         "buyerCreativeId" => URI.encode_www_form(buyer_creative_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -240,7 +247,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
     }
     %{}
     |> method(:get)
-    |> url("/creatives/#{account_id}/#{buyer_creative_id}/listDeals")
+    |> url("/creatives/{accountId}/{buyerCreativeId}/listDeals", %{
+         "accountId" => URI.encode_www_form(account_id),
+         "buyerCreativeId" => URI.encode_www_form(buyer_creative_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -283,7 +293,11 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
     }
     %{}
     |> method(:post)
-    |> url("/creatives/#{account_id}/#{buyer_creative_id}/removeDeal/#{deal_id}")
+    |> url("/creatives/{accountId}/{buyerCreativeId}/removeDeal/{dealId}", %{
+         "accountId" => URI.encode_www_form(account_id),
+         "buyerCreativeId" => URI.encode_www_form(buyer_creative_id),
+         "dealId" => URI.encode_www_form(deal_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

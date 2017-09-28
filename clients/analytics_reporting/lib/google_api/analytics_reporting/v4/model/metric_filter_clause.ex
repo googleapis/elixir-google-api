@@ -20,9 +20,14 @@
 defmodule GoogleApi.AnalyticsReporting.V4.Model.MetricFilterClause do
   @moduledoc """
   Represents a group of metric filters. Set the operator value to specify how the filters are logically combined.
+
+  ## Attributes
+
+  - filters (List[MetricFilter]): The repeated set of filters. They are logically combined based on the operator specified. Defaults to: `null`.
+  - operator (String): The operator for combining multiple metric filters. If unspecified, it is treated as an &#x60;OR&#x60;. Defaults to: `null`.
+    - Enum - one of [OPERATOR_UNSPECIFIED, OR, AND]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"filters",
     :"operator"
@@ -34,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.AnalyticsReporting.V4.Model.MetricFilterC
   def decode(value, options) do
     value
     |> deserialize(:"filters", :list, GoogleApi.AnalyticsReporting.V4.Model.MetricFilter, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AnalyticsReporting.V4.Model.MetricFilterClause do
+  def encode(value, options) do
+    GoogleApi.AnalyticsReporting.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.ConsumerSurveys.V2.Model.SurveyQuestionImage do
   @moduledoc """
   
+
+  ## Attributes
+
+  - altText (String):  Defaults to: `null`.
+  - data (String):  Defaults to: `null`.
+  - url (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"altText",
     :"data",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ConsumerSurveys.V2.Model.SurveyQuestionImage do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ConsumerSurveys.V2.Model.SurveyQuestionImage do
+  def encode(value, options) do
+    GoogleApi.ConsumerSurveys.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

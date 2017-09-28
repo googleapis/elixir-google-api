@@ -20,9 +20,17 @@
 defmodule GoogleApi.Content.V2.Model.Service do
   @moduledoc """
   
+
+  ## Attributes
+
+  - active (Boolean): A boolean exposing the active status of the shipping service. Required. Defaults to: `null`.
+  - currency (String): The CLDR code of the currency to which this service applies. Must match that of the prices in rate groups. Defaults to: `null`.
+  - deliveryCountry (String): The CLDR territory code of the country to which the service applies. Required. Defaults to: `null`.
+  - deliveryTime (DeliveryTime): Time spent in various aspects from order to the delivery of the product. Required. Defaults to: `null`.
+  - name (String): Free-form name of the service. Must be unique within target account. Required. Defaults to: `null`.
+  - rateGroups (List[RateGroup]): Shipping rate group definitions. Only the last one is allowed to have an empty applicableShippingLabels, which means \&quot;everything else\&quot;. The other applicableShippingLabels must not overlap. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"active",
     :"currency",
@@ -39,6 +47,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.Service do
     value
     |> deserialize(:"deliveryTime", :struct, GoogleApi.Content.V2.Model.DeliveryTime, options)
     |> deserialize(:"rateGroups", :list, GoogleApi.Content.V2.Model.RateGroup, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.Service do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

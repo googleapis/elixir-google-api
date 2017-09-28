@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.WorkerMessageResponse do
   @moduledoc """
   A worker_message response allows the server to pass information to the sender.
+
+  ## Attributes
+
+  - workerHealthReportResponse (WorkerHealthReportResponse): The service&#39;s response to a worker&#39;s health report. Defaults to: `null`.
+  - workerMetricsResponse (ResourceUtilizationReportResponse): Service&#39;s response to reporting worker metrics (currently empty). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"workerHealthReportResponse",
     :"workerMetricsResponse"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.WorkerMessageResponse
     value
     |> deserialize(:"workerHealthReportResponse", :struct, GoogleApi.Dataflow.V1b3.Model.WorkerHealthReportResponse, options)
     |> deserialize(:"workerMetricsResponse", :struct, GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReportResponse, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.WorkerMessageResponse do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

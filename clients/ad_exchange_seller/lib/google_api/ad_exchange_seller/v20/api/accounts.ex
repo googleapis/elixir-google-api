@@ -64,7 +64,9 @@ defmodule GoogleApi.AdExchangeSeller.V20.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{account_id}/adclients")
+    |> url("/accounts/{accountId}/adclients", %{
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -107,7 +109,9 @@ defmodule GoogleApi.AdExchangeSeller.V20.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{account_id}/alerts")
+    |> url("/accounts/{accountId}/alerts", %{
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -150,7 +154,11 @@ defmodule GoogleApi.AdExchangeSeller.V20.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{account_id}/adclients/#{ad_client_id}/customchannels/#{custom_channel_id}")
+    |> url("/accounts/{accountId}/adclients/{adClientId}/customchannels/{customChannelId}", %{
+         "accountId" => URI.encode_www_form(account_id),
+         "adClientId" => URI.encode_www_form(ad_client_id),
+         "customChannelId" => URI.encode_www_form(custom_channel_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -196,7 +204,10 @@ defmodule GoogleApi.AdExchangeSeller.V20.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{account_id}/adclients/#{ad_client_id}/customchannels")
+    |> url("/accounts/{accountId}/adclients/{adClientId}/customchannels", %{
+         "accountId" => URI.encode_www_form(account_id),
+         "adClientId" => URI.encode_www_form(ad_client_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -237,7 +248,9 @@ defmodule GoogleApi.AdExchangeSeller.V20.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{account_id}")
+    |> url("/accounts/{accountId}", %{
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -322,7 +335,9 @@ defmodule GoogleApi.AdExchangeSeller.V20.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{account_id}/metadata/dimensions")
+    |> url("/accounts/{accountId}/metadata/dimensions", %{
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -363,7 +378,9 @@ defmodule GoogleApi.AdExchangeSeller.V20.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{account_id}/metadata/metrics")
+    |> url("/accounts/{accountId}/metadata/metrics", %{
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -405,7 +422,10 @@ defmodule GoogleApi.AdExchangeSeller.V20.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{account_id}/preferreddeals/#{deal_id}")
+    |> url("/accounts/{accountId}/preferreddeals/{dealId}", %{
+         "accountId" => URI.encode_www_form(account_id),
+         "dealId" => URI.encode_www_form(deal_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -446,7 +466,9 @@ defmodule GoogleApi.AdExchangeSeller.V20.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{account_id}/preferreddeals")
+    |> url("/accounts/{accountId}/preferreddeals", %{
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -503,7 +525,9 @@ defmodule GoogleApi.AdExchangeSeller.V20.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{account_id}/reports")
+    |> url("/accounts/{accountId}/reports", %{
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_param(:query, :"startDate", start_date)
     |> add_param(:query, :"endDate", end_date)
     |> add_optional_params(optional_params, opts)
@@ -553,7 +577,10 @@ defmodule GoogleApi.AdExchangeSeller.V20.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{account_id}/reports/#{saved_report_id}")
+    |> url("/accounts/{accountId}/reports/{savedReportId}", %{
+         "accountId" => URI.encode_www_form(account_id),
+         "savedReportId" => URI.encode_www_form(saved_report_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -598,7 +625,9 @@ defmodule GoogleApi.AdExchangeSeller.V20.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{account_id}/reports/saved")
+    |> url("/accounts/{accountId}/reports/saved", %{
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -644,7 +673,10 @@ defmodule GoogleApi.AdExchangeSeller.V20.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{account_id}/adclients/#{ad_client_id}/urlchannels")
+    |> url("/accounts/{accountId}/adclients/{adClientId}/urlchannels", %{
+         "accountId" => URI.encode_www_form(account_id),
+         "adClientId" => URI.encode_www_form(ad_client_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

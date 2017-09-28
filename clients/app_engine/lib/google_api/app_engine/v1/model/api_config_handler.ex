@@ -20,9 +20,19 @@
 defmodule GoogleApi.AppEngine.V1.Model.ApiConfigHandler do
   @moduledoc """
   Google Cloud Endpoints (https://cloud.google.com/appengine/docs/python/endpoints/) configuration for API handlers.
+
+  ## Attributes
+
+  - authFailAction (String): Action to take when users access resources that require authentication. Defaults to redirect. Defaults to: `null`.
+    - Enum - one of [AUTH_FAIL_ACTION_UNSPECIFIED, AUTH_FAIL_ACTION_REDIRECT, AUTH_FAIL_ACTION_UNAUTHORIZED]
+  - login (String): Level of login required to access this resource. Defaults to optional. Defaults to: `null`.
+    - Enum - one of [LOGIN_UNSPECIFIED, LOGIN_OPTIONAL, LOGIN_ADMIN, LOGIN_REQUIRED]
+  - script (String): Path to the script from the application root directory. Defaults to: `null`.
+  - securityLevel (String): Security (HTTPS) enforcement for this URL. Defaults to: `null`.
+    - Enum - one of [SECURE_UNSPECIFIED, SECURE_DEFAULT, SECURE_NEVER, SECURE_OPTIONAL, SECURE_ALWAYS]
+  - url (String): URL to serve the endpoint at. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"authFailAction",
     :"login",
@@ -35,6 +45,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.ApiConfigHandler do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.ApiConfigHandler do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

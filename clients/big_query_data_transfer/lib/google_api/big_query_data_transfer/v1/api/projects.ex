@@ -74,7 +74,9 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{name}:checkValidCreds")
+    |> url("/v1/{+name}:checkValidCreds", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -127,7 +129,9 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{name}")
+    |> url("/v1/{+name}", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -184,7 +188,9 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{parent}/dataSources")
+    |> url("/v1/{+parent}/dataSources", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -239,7 +245,9 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{name}:isEnabled")
+    |> url("/v1/{+name}:isEnabled", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -298,7 +306,9 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{name}/locations")
+    |> url("/v1/{+name}/locations", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -353,7 +363,9 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{name}:setEnabled")
+    |> url("/v1/{+name}:setEnabled", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -410,7 +422,9 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{parent}/transferConfigs")
+    |> url("/v1/{+parent}/transferConfigs", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -469,7 +483,9 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{parent}/transferConfigs")
+    |> url("/v1/{+parent}/transferConfigs", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -528,7 +544,9 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     }
     %{}
     |> method(:patch)
-    |> url("/v1/#{name}")
+    |> url("/v1/{+name}", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -581,7 +599,9 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/#{name}")
+    |> url("/v1/{+name}", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -642,7 +662,9 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{parent}/runs")
+    |> url("/v1/{+parent}/runs", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -701,7 +723,9 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{parent}/transferLogs")
+    |> url("/v1/{+parent}/transferLogs", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -756,7 +780,9 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{parent}:scheduleRuns")
+    |> url("/v1/{+parent}:scheduleRuns", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

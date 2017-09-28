@@ -20,9 +20,16 @@
 defmodule GoogleApi.AnalyticsReporting.V4.Model.OrderBy do
   @moduledoc """
   Specifies the sorting options.
+
+  ## Attributes
+
+  - fieldName (String): The field which to sort by. The default sort order is ascending. Example: &#x60;ga:browser&#x60;. Note, that you can only specify one field for sort here. For example, &#x60;ga:browser, ga:city&#x60; is not valid. Defaults to: `null`.
+  - orderType (String): The order type. The default orderType is &#x60;VALUE&#x60;. Defaults to: `null`.
+    - Enum - one of [ORDER_TYPE_UNSPECIFIED, VALUE, DELTA, SMART, HISTOGRAM_BUCKET, DIMENSION_AS_INTEGER]
+  - sortOrder (String): The sorting order for the field. Defaults to: `null`.
+    - Enum - one of [SORT_ORDER_UNSPECIFIED, ASCENDING, DESCENDING]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fieldName",
     :"orderType",
@@ -33,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AnalyticsReporting.V4.Model.OrderBy do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AnalyticsReporting.V4.Model.OrderBy do
+  def encode(value, options) do
+    GoogleApi.AnalyticsReporting.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

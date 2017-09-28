@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.SeqMapTaskOutputInfo do
   @moduledoc """
   Information about an output of a SeqMapTask.
+
+  ## Attributes
+
+  - sink (Sink): The sink to write the output value to. Defaults to: `null`.
+  - tag (String): The id of the TupleTag the user code will tag the output value by. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"sink",
     :"tag"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.SeqMapTaskOutputInfo 
   def decode(value, options) do
     value
     |> deserialize(:"sink", :struct, GoogleApi.Dataflow.V1b3.Model.Sink, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.SeqMapTaskOutputInfo do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

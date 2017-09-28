@@ -20,9 +20,13 @@
 defmodule GoogleApi.AppEngine.V1.Model.CpuUtilization do
   @moduledoc """
   Target scaling by CPU usage.
+
+  ## Attributes
+
+  - aggregationWindowLength (String): Period of time over which CPU utilization is calculated. Defaults to: `null`.
+  - targetUtilization (Float): Target CPU utilization ratio to maintain when scaling. Must be between 0 and 1. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"aggregationWindowLength",
     :"targetUtilization"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.CpuUtilization do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.CpuUtilization do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

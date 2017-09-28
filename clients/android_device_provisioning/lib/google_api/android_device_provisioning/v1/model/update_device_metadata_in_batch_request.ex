@@ -20,9 +20,12 @@
 defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.UpdateDeviceMetadataInBatchRequest do
   @moduledoc """
   Request to update device metadata in batch.
+
+  ## Attributes
+
+  - updates (List[UpdateMetadataArguments]): list of metadata updates. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"updates"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.Update
   def decode(value, options) do
     value
     |> deserialize(:"updates", :list, GoogleApi.AndroidDeviceProvisioning.V1.Model.UpdateMetadataArguments, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.UpdateDeviceMetadataInBatchRequest do
+  def encode(value, options) do
+    GoogleApi.AndroidDeviceProvisioning.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

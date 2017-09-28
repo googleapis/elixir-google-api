@@ -20,9 +20,14 @@
 defmodule GoogleApi.AnalyticsReporting.V4.Model.DimensionFilterClause do
   @moduledoc """
   A group of dimension filters. Set the operator value to specify how the filters are logically combined.
+
+  ## Attributes
+
+  - filters (List[DimensionFilter]): The repeated set of filters. They are logically combined based on the operator specified. Defaults to: `null`.
+  - operator (String): The operator for combining multiple dimension filters. If unspecified, it is treated as an &#x60;OR&#x60;. Defaults to: `null`.
+    - Enum - one of [OPERATOR_UNSPECIFIED, OR, AND]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"filters",
     :"operator"
@@ -34,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.AnalyticsReporting.V4.Model.DimensionFilt
   def decode(value, options) do
     value
     |> deserialize(:"filters", :list, GoogleApi.AnalyticsReporting.V4.Model.DimensionFilter, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AnalyticsReporting.V4.Model.DimensionFilterClause do
+  def encode(value, options) do
+    GoogleApi.AnalyticsReporting.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

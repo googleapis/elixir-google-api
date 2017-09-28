@@ -20,9 +20,16 @@
 defmodule GoogleApi.Content.V2.Model.AccountStatusAccountLevelIssue do
   @moduledoc """
   
+
+  ## Attributes
+
+  - country (String): Country for which this issue is reported. Defaults to: `null`.
+  - detail (String): Additional details about the issue. Defaults to: `null`.
+  - id (String): Issue identifier. Defaults to: `null`.
+  - severity (String): Severity of the issue. Defaults to: `null`.
+  - title (String): Short description of the issue. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"country",
     :"detail",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.AccountStatusAccountLevelIssue do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.AccountStatusAccountLevelIssue do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

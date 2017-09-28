@@ -20,9 +20,13 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.PerformanceReportList do
   @moduledoc """
   The configuration data for an Ad Exchange performance report list.
+
+  ## Attributes
+
+  - kind (String): Resource type. Defaults to: `null`.
+  - performanceReport (List[PerformanceReport]): A list of performance reports relevant for the account. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"performanceReport"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.PerformanceRepo
   def decode(value, options) do
     value
     |> deserialize(:"performanceReport", :list, GoogleApi.AdExchangeBuyer.V14.Model.PerformanceReport, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.PerformanceReportList do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

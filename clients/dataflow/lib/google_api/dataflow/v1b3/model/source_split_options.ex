@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.SourceSplitOptions do
   @moduledoc """
   Hints for splitting a Source into bundles (parts for parallel processing) using SourceSplitRequest.
+
+  ## Attributes
+
+  - desiredBundleSizeBytes (String): The source should be split into a set of bundles where the estimated size of each is approximately this many bytes. Defaults to: `null`.
+  - desiredShardSizeBytes (String): DEPRECATED in favor of desired_bundle_size_bytes. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"desiredBundleSizeBytes",
     :"desiredShardSizeBytes"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.SourceSplitOptions do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.SourceSplitOptions do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

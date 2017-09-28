@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Blogger.V3.Model.Blog_pages do
+defmodule GoogleApi.Blogger.V3.Model.BlogPages do
   @moduledoc """
   The container of pages in this blog.
+
+  ## Attributes
+
+  - selfLink (String): The URL of the container for pages in this blog. Defaults to: `null`.
+  - totalItems (Integer): The count of pages in this blog. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"selfLink",
     :"totalItems"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.Blog_pages do
+defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.BlogPages do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Blogger.V3.Model.BlogPages do
+  def encode(value, options) do
+    GoogleApi.Blogger.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

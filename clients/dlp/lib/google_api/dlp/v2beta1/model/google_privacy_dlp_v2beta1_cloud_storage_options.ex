@@ -20,9 +20,12 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1CloudStorageOptions do
   @moduledoc """
   Options defining a file or a set of files (path ending with *) within a Google Cloud Storage bucket.
+
+  ## Attributes
+
+  - fileSet (GooglePrivacyDlpV2beta1FileSet):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fileSet"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1
   def decode(value, options) do
     value
     |> deserialize(:"fileSet", :struct, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1FileSet, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1CloudStorageOptions do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

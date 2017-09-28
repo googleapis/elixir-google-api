@@ -62,7 +62,9 @@ defmodule GoogleApi.Blogger.V3.Api.PageViews do
     }
     %{}
     |> method(:get)
-    |> url("/blogs/#{blog_id}/pageviews")
+    |> url("/blogs/{blogId}/pageviews", %{
+         "blogId" => URI.encode_www_form(blog_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

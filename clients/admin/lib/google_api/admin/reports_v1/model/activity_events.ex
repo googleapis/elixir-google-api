@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Admin.Reports_v1.Model.Activity_events do
+defmodule GoogleApi.Admin.Reports_v1.Model.ActivityEvents do
   @moduledoc """
   
+
+  ## Attributes
+
+  - parameters (List[ActivityParameters]): Parameter value pairs for various applications. Defaults to: `null`.
+  - name (String): Name of event. Defaults to: `null`.
+  - type (String): Type of event. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"parameters",
     :"name",
@@ -30,11 +35,17 @@ defmodule GoogleApi.Admin.Reports_v1.Model.Activity_events do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Admin.Reports_v1.Model.Activity_events do
+defimpl Poison.Decoder, for: GoogleApi.Admin.Reports_v1.Model.ActivityEvents do
   import GoogleApi.Admin.Reports_v1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"parameters", :list, GoogleApi.Admin.Reports_v1.Model.Activity_parameters, options)
+    |> deserialize(:"parameters", :list, GoogleApi.Admin.Reports_v1.Model.ActivityParameters, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Admin.Reports_v1.Model.ActivityEvents do
+  def encode(value, options) do
+    GoogleApi.Admin.Reports_v1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

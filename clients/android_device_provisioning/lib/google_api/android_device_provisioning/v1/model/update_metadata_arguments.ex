@@ -20,9 +20,14 @@
 defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.UpdateMetadataArguments do
   @moduledoc """
   Identifies metdata updates to one device.
+
+  ## Attributes
+
+  - deviceId (String): device id of the device. Defaults to: `null`.
+  - deviceIdentifier (DeviceIdentifier): device identifier. Defaults to: `null`.
+  - deviceMetadata (DeviceMetadata): The metadata to update. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"deviceId",
     :"deviceIdentifier",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.Update
     value
     |> deserialize(:"deviceIdentifier", :struct, GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier, options)
     |> deserialize(:"deviceMetadata", :struct, GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.UpdateMetadataArguments do
+  def encode(value, options) do
+    GoogleApi.AndroidDeviceProvisioning.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

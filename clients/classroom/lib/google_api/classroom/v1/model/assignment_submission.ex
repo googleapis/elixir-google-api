@@ -20,9 +20,12 @@
 defmodule GoogleApi.Classroom.V1.Model.AssignmentSubmission do
   @moduledoc """
   Student work for an assignment.
+
+  ## Attributes
+
+  - attachments (List[Attachment]): Attachments added by the student. Drive files that correspond to materials with a share mode of STUDENT_COPY may not exist yet if the student has not accessed the assignment in Classroom.  Some attachment metadata is only populated if the requesting user has permission to access it. Identifier and alternate_link fields are always available, but others (e.g. title) may not be. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"attachments"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.AssignmentSubmission d
   def decode(value, options) do
     value
     |> deserialize(:"attachments", :list, GoogleApi.Classroom.V1.Model.Attachment, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.AssignmentSubmission do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

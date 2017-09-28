@@ -1,6 +1,6 @@
 # GoogleApi.AdExchangeBuyer.V14
 
-**TODO: Add description**
+Accesses your bidding-account information, submits creatives for validation, finds available direct deals, and retrieves performance reports.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_ad_exchange_buyer` to your list of dependencies in `mix.ex
 
 ```elixir
 def deps do
-  [{:google_api_ad_exchange_buyer, "~> 0.1.0"}]
+  [{:google_api_ad_exchange_buyer, "~> 0.0.1"}]
 end
 ```
 

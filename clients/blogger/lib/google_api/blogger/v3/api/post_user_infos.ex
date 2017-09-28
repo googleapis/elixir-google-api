@@ -64,7 +64,11 @@ defmodule GoogleApi.Blogger.V3.Api.PostUserInfos do
     }
     %{}
     |> method(:get)
-    |> url("/users/#{user_id}/blogs/#{blog_id}/posts/#{post_id}")
+    |> url("/users/{userId}/blogs/{blogId}/posts/{postId}", %{
+         "userId" => URI.encode_www_form(user_id),
+         "blogId" => URI.encode_www_form(blog_id),
+         "postId" => URI.encode_www_form(post_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -124,7 +128,10 @@ defmodule GoogleApi.Blogger.V3.Api.PostUserInfos do
     }
     %{}
     |> method(:get)
-    |> url("/users/#{user_id}/blogs/#{blog_id}/posts")
+    |> url("/users/{userId}/blogs/{blogId}/posts", %{
+         "userId" => URI.encode_www_form(user_id),
+         "blogId" => URI.encode_www_form(blog_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

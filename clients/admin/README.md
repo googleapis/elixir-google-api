@@ -1,6 +1,6 @@
-# GoogleApi.Admin.REPORTS_V1
+# GoogleApi.Admin.Reports_v1
 
-**TODO: Add description**
+Fetches reports for the administrators of G Suite customers about the usage, collaboration, security, and risk for their users.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_admin` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_admin, "~> 0.1.0"}]
+  [{:google_api_admin, "~> 0.0.1"}]
 end
 ```
 

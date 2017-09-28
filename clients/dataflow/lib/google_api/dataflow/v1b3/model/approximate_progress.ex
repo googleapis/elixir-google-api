@@ -20,9 +20,14 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.ApproximateProgress do
   @moduledoc """
   Obsolete in favor of ApproximateReportedProgress and ApproximateSplitRequest.
+
+  ## Attributes
+
+  - percentComplete (Float): Obsolete. Defaults to: `null`.
+  - position (Position): Obsolete. Defaults to: `null`.
+  - remainingTime (String): Obsolete. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"percentComplete",
     :"position",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.ApproximateProgress d
   def decode(value, options) do
     value
     |> deserialize(:"position", :struct, GoogleApi.Dataflow.V1b3.Model.Position, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.ApproximateProgress do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

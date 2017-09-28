@@ -20,9 +20,13 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InspectContentRequest do
   @moduledoc """
   Request to search for potentially sensitive info in a list of items.
+
+  ## Attributes
+
+  - inspectConfig (GooglePrivacyDlpV2beta1InspectConfig): Configuration for the inspector. Defaults to: `null`.
+  - items (List[GooglePrivacyDlpV2beta1ContentItem]): The list of items to inspect. Items in a single request are considered \&quot;related\&quot; unless inspect_config.independent_inputs is true. Up to 100 are allowed per request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"inspectConfig",
     :"items"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1
     value
     |> deserialize(:"inspectConfig", :struct, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InspectConfig, options)
     |> deserialize(:"items", :list, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1ContentItem, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InspectContentRequest do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

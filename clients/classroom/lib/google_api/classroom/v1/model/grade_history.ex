@@ -20,9 +20,17 @@
 defmodule GoogleApi.Classroom.V1.Model.GradeHistory do
   @moduledoc """
   The history of each grade on this submission.
+
+  ## Attributes
+
+  - actorUserId (String): The teacher who made the grade change. Defaults to: `null`.
+  - gradeChangeType (String): The type of grade change at this time in the submission grade history. Defaults to: `null`.
+    - Enum - one of [UNKNOWN_GRADE_CHANGE_TYPE, DRAFT_GRADE_POINTS_EARNED_CHANGE, ASSIGNED_GRADE_POINTS_EARNED_CHANGE, MAX_POINTS_CHANGE]
+  - gradeTimestamp (String): When the grade of the submission was changed. Defaults to: `null`.
+  - maxPoints (Float): The denominator of the grade at this time in the submission grade history. Defaults to: `null`.
+  - pointsEarned (Float): The numerator of the grade at this time in the submission grade history. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"actorUserId",
     :"gradeChangeType",
@@ -35,6 +43,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.GradeHistory do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.GradeHistory do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

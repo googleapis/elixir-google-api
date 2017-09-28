@@ -20,9 +20,13 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductPermission do
   @moduledoc """
   A product permissions resource represents the set of permissions required by a specific app and whether or not they have been accepted by an enterprise admin.  The API can be used to read the set of permissions, and also to update the set to indicate that permissions have been accepted.
+
+  ## Attributes
+
+  - permissionId (String): An opaque string uniquely identifying the permission. Defaults to: `null`.
+  - state (String): Whether the permission has been accepted or not. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"permissionId",
     :"state"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.ProductPermission do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.ProductPermission do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InfoTypeDescription do
   @moduledoc """
   Info type description.
+
+  ## Attributes
+
+  - categories (List[GooglePrivacyDlpV2beta1CategoryDescription]): List of categories this info type belongs to. Defaults to: `null`.
+  - displayName (String): Human readable form of the info type name. Defaults to: `null`.
+  - name (String): Internal name of the info type. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"categories",
     :"displayName",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1
   def decode(value, options) do
     value
     |> deserialize(:"categories", :list, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1CategoryDescription, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InfoTypeDescription do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

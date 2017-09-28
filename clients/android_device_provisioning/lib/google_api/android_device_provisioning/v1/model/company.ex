@@ -20,9 +20,16 @@
 defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.Company do
   @moduledoc """
   Company
+
+  ## Attributes
+
+  - adminEmails (List[String]): Admin email. Admins will be able to operate on the portal. This field is a WRITE-only field at creation time. Defaults to: `null`.
+  - companyId (String): company id Defaults to: `null`.
+  - companyName (String): company name Defaults to: `null`.
+  - name (String): REST Resource name. Defaults to: `null`.
+  - ownerEmails (List[String]): Owner email. Owner is able to operate on the portal, and modify admins and other owners. This field is a WRITE-only field at creation time. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"adminEmails",
     :"companyId",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.Company do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.Company do
+  def encode(value, options) do
+    GoogleApi.AndroidDeviceProvisioning.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

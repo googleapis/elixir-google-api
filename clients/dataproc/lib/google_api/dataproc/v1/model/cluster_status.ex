@@ -20,9 +20,17 @@
 defmodule GoogleApi.Dataproc.V1.Model.ClusterStatus do
   @moduledoc """
   The status of a cluster and its instances.
+
+  ## Attributes
+
+  - detail (String): Output-only. Optional details of cluster&#39;s state. Defaults to: `null`.
+  - state (String): Output-only. The cluster&#39;s state. Defaults to: `null`.
+    - Enum - one of [UNKNOWN, CREATING, RUNNING, ERROR, DELETING, UPDATING]
+  - stateStartTime (String): Output-only. Time when this state was entered. Defaults to: `null`.
+  - substate (String): Output-only. Additional state information that includes status reported by the agent. Defaults to: `null`.
+    - Enum - one of [UNSPECIFIED, UNHEALTHY, STALE_STATUS]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"detail",
     :"state",
@@ -34,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.ClusterStatus do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataproc.V1.Model.ClusterStatus do
+  def encode(value, options) do
+    GoogleApi.Dataproc.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

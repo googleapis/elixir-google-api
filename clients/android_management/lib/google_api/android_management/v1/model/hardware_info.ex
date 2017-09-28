@@ -20,9 +20,25 @@
 defmodule GoogleApi.AndroidManagement.V1.Model.HardwareInfo do
   @moduledoc """
   Information about device hardware. The fields related to temperature thresholds are only available when hardwareStatusEnabled is true in the device&#39;s policy.
+
+  ## Attributes
+
+  - batteryShutdownTemperatures (List[Float]): Battery shutdown temperature thresholds in Celsius for each battery on the device. Defaults to: `null`.
+  - batteryThrottlingTemperatures (List[Float]): Battery throttling temperature thresholds in Celsius for each battery on the device. Defaults to: `null`.
+  - brand (String): Brand of the device, e.g. Google. Defaults to: `null`.
+  - cpuShutdownTemperatures (List[Float]): CPU shutdown temperature thresholds in Celsius for each CPU on the device. Defaults to: `null`.
+  - cpuThrottlingTemperatures (List[Float]): CPU throttling temperature thresholds in Celsius for each CPU on the device. Defaults to: `null`.
+  - deviceBasebandVersion (String): Baseband version, e.g. MDM9625_104662.22.05.34p. Defaults to: `null`.
+  - gpuShutdownTemperatures (List[Float]): GPU shutdown temperature thresholds in Celsius for each GPU on the device. Defaults to: `null`.
+  - gpuThrottlingTemperatures (List[Float]): GPU throttling temperature thresholds in Celsius for each GPU on the device. Defaults to: `null`.
+  - hardware (String): Name of the hardware, e.g. Angler. Defaults to: `null`.
+  - manufacturer (String): Manufacturer, e.g. Motorola. Defaults to: `null`.
+  - model (String): The model of the device, e.g. Asus Nexus 7. Defaults to: `null`.
+  - serialNumber (String): The device serial number. Defaults to: `null`.
+  - skinShutdownTemperatures (List[Float]): Device skin shutdown temperature thresholds in Celsius. Defaults to: `null`.
+  - skinThrottlingTemperatures (List[Float]): Device skin throttling temperature thresholds in Celsius. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"batteryShutdownTemperatures",
     :"batteryThrottlingTemperatures",
@@ -44,6 +60,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.HardwareInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.HardwareInfo do
+  def encode(value, options) do
+    GoogleApi.AndroidManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

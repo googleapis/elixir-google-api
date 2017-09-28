@@ -63,7 +63,12 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
     }
     %{}
     |> method(:delete)
-    |> url("/enterprises/#{enterprise_id}/users/#{user_id}/devices/#{device_id}/managedConfigurationsForDevice/#{managed_configuration_for_device_id}")
+    |> url("/enterprises/{enterpriseId}/users/{userId}/devices/{deviceId}/managedConfigurationsForDevice/{managedConfigurationForDeviceId}", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "userId" => URI.encode_www_form(user_id),
+         "deviceId" => URI.encode_www_form(device_id),
+         "managedConfigurationForDeviceId" => URI.encode_www_form(managed_configuration_for_device_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -107,7 +112,12 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
     }
     %{}
     |> method(:get)
-    |> url("/enterprises/#{enterprise_id}/users/#{user_id}/devices/#{device_id}/managedConfigurationsForDevice/#{managed_configuration_for_device_id}")
+    |> url("/enterprises/{enterpriseId}/users/{userId}/devices/{deviceId}/managedConfigurationsForDevice/{managedConfigurationForDeviceId}", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "userId" => URI.encode_www_form(user_id),
+         "deviceId" => URI.encode_www_form(device_id),
+         "managedConfigurationForDeviceId" => URI.encode_www_form(managed_configuration_for_device_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -150,7 +160,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
     }
     %{}
     |> method(:get)
-    |> url("/enterprises/#{enterprise_id}/users/#{user_id}/devices/#{device_id}/managedConfigurationsForDevice")
+    |> url("/enterprises/{enterpriseId}/users/{userId}/devices/{deviceId}/managedConfigurationsForDevice", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "userId" => URI.encode_www_form(user_id),
+         "deviceId" => URI.encode_www_form(device_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -196,7 +210,12 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
     }
     %{}
     |> method(:patch)
-    |> url("/enterprises/#{enterprise_id}/users/#{user_id}/devices/#{device_id}/managedConfigurationsForDevice/#{managed_configuration_for_device_id}")
+    |> url("/enterprises/{enterpriseId}/users/{userId}/devices/{deviceId}/managedConfigurationsForDevice/{managedConfigurationForDeviceId}", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "userId" => URI.encode_www_form(user_id),
+         "deviceId" => URI.encode_www_form(device_id),
+         "managedConfigurationForDeviceId" => URI.encode_www_form(managed_configuration_for_device_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -242,7 +261,12 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
     }
     %{}
     |> method(:put)
-    |> url("/enterprises/#{enterprise_id}/users/#{user_id}/devices/#{device_id}/managedConfigurationsForDevice/#{managed_configuration_for_device_id}")
+    |> url("/enterprises/{enterpriseId}/users/{userId}/devices/{deviceId}/managedConfigurationsForDevice/{managedConfigurationForDeviceId}", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "userId" => URI.encode_www_form(user_id),
+         "deviceId" => URI.encode_www_form(device_id),
+         "managedConfigurationForDeviceId" => URI.encode_www_form(managed_configuration_for_device_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

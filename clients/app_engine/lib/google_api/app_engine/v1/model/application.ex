@@ -20,9 +20,25 @@
 defmodule GoogleApi.AppEngine.V1.Model.Application do
   @moduledoc """
   An Application resource contains the top-level configuration of an App Engine application. Next tag: 20
+
+  ## Attributes
+
+  - authDomain (String): Google Apps authentication domain that controls which users can access this application.Defaults to open access for any Google Account. Defaults to: `null`.
+  - codeBucket (String): Google Cloud Storage bucket that can be used for storing files associated with this application. This bucket is associated with the application and can be used by the gcloud deployment commands.@OutputOnly Defaults to: `null`.
+  - defaultBucket (String): Google Cloud Storage bucket that can be used by this application to store content.@OutputOnly Defaults to: `null`.
+  - defaultCookieExpiration (String): Cookie expiration policy for this application. Defaults to: `null`.
+  - defaultHostname (String): Hostname used to reach this application, as resolved by App Engine.@OutputOnly Defaults to: `null`.
+  - dispatchRules (List[UrlDispatchRule]): HTTP path dispatch rules for requests to the application that do not explicitly target a service or version. Rules are order-dependent. Up to 20 dispatch rules can be supported.@OutputOnly Defaults to: `null`.
+  - featureSettings (FeatureSettings): The feature specific settings to be used in the application. Defaults to: `null`.
+  - gcrDomain (String): The Google Container Registry domain used for storing managed build docker images for this application. Defaults to: `null`.
+  - iap (IdentityAwareProxy):  Defaults to: `null`.
+  - id (String): Identifier of the Application resource. This identifier is equivalent to the project ID of the Google Cloud Platform project where you want to deploy your application. Example: myapp. Defaults to: `null`.
+  - locationId (String): Location from which this application will be run. Application instances will run out of data centers in the chosen location, which is also where all of the application&#39;s end user content is stored.Defaults to us-central.Options are:us-central - Central USeurope-west - Western Europeus-east1 - Eastern US Defaults to: `null`.
+  - name (String): Full path to the Application resource in the API. Example: apps/myapp.@OutputOnly Defaults to: `null`.
+  - servingStatus (String): Serving status of this application. Defaults to: `null`.
+    - Enum - one of [UNSPECIFIED, SERVING, USER_DISABLED, SYSTEM_DISABLED]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"authDomain",
     :"codeBucket",
@@ -47,6 +63,12 @@ defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.Application do
     |> deserialize(:"dispatchRules", :list, GoogleApi.AppEngine.V1.Model.UrlDispatchRule, options)
     |> deserialize(:"featureSettings", :struct, GoogleApi.AppEngine.V1.Model.FeatureSettings, options)
     |> deserialize(:"iap", :struct, GoogleApi.AppEngine.V1.Model.IdentityAwareProxy, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.Application do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

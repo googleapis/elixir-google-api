@@ -20,9 +20,13 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.InstallsListResponse do
   @moduledoc """
   The install resources for the device.
+
+  ## Attributes
+
+  - install (List[Install]): An installation of an app for a user on a specific device. The existence of an install implies that the user must have an entitlement to the app. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#installsListResponse\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"install",
     :"kind"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.InstallsListRe
   def decode(value, options) do
     value
     |> deserialize(:"install", :list, GoogleApi.AndroidEnterprise.V1.Model.Install, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.InstallsListResponse do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,18 @@
 defmodule GoogleApi.Content.V2.Model.OrderShipment do
   @moduledoc """
   
+
+  ## Attributes
+
+  - carrier (String): The carrier handling the shipment. Defaults to: `null`.
+  - creationDate (String): Date on which the shipment has been created, in ISO 8601 format. Defaults to: `null`.
+  - deliveryDate (String): Date on which the shipment has been delivered, in ISO 8601 format. Present only if status is delievered Defaults to: `null`.
+  - id (String): The id of the shipment. Defaults to: `null`.
+  - lineItems (List[OrderShipmentLineItemShipment]): The line items that are shipped. Defaults to: `null`.
+  - status (String): The status of the shipment. Defaults to: `null`.
+  - trackingId (String): The tracking id for the shipment. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"carrier",
     :"creationDate",
@@ -39,6 +48,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrderShipment do
   def decode(value, options) do
     value
     |> deserialize(:"lineItems", :list, GoogleApi.Content.V2.Model.OrderShipmentLineItemShipment, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrderShipment do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

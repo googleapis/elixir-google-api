@@ -17,20 +17,28 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Container.V1.Model.StartIPRotationRequest do
+defmodule GoogleApi.Container.V1.Model.StartIpRotationRequest do
   @moduledoc """
   StartIPRotationRequest creates a new IP for the cluster and then performs a node upgrade on each node pool to point to the new IP.
+
+  ## Attributes
+
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.StartIPRotationRequest do
+defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.StartIpRotationRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.StartIpRotationRequest do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.Calendar.V3.Model.FreeBusyGroup do
   @moduledoc """
   
+
+  ## Attributes
+
+  - calendars (List[String]): List of calendars&#39; identifiers within a group. Defaults to: `null`.
+  - errors (List[Error]): Optional error(s) (if computation for the group failed). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"calendars",
     :"errors"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.FreeBusyGroup do
   def decode(value, options) do
     value
     |> deserialize(:"errors", :list, GoogleApi.Calendar.V3.Model.Error, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.FreeBusyGroup do
+  def encode(value, options) do
+    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

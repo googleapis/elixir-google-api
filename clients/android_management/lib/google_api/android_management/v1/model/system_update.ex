@@ -20,9 +20,15 @@
 defmodule GoogleApi.AndroidManagement.V1.Model.SystemUpdate do
   @moduledoc """
   Configuration for managing system updates
+
+  ## Attributes
+
+  - endMinutes (Integer): If the type is WINDOWED, the end of the maintenance window, measured as the number of minutes after midnight in device local time. This value must be between 0 and 1439, inclusive. If this value is less than start_minutes, then the maintenance window spans midnight. If the maintenance window specified is smaller than 30 minutes, the actual window is extended to 30 minutes beyond the start time. Defaults to: `null`.
+  - startMinutes (Integer): If the type is WINDOWED, the start of the maintenance window, measured as the number of minutes after midnight in device local time. This value must be between 0 and 1439, inclusive. Defaults to: `null`.
+  - type (String): The type of system update to configure. Defaults to: `null`.
+    - Enum - one of [SYSTEM_UPDATE_TYPE_UNSPECIFIED, AUTOMATIC, WINDOWED, POSTPONE]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"endMinutes",
     :"startMinutes",
@@ -33,6 +39,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.SystemUpdate do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.SystemUpdate do
+  def encode(value, options) do
+    GoogleApi.AndroidManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

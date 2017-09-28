@@ -20,9 +20,14 @@
 defmodule GoogleApi.AnalyticsReporting.V4.Model.SegmentFilter do
   @moduledoc """
   SegmentFilter defines the segment to be either a simple or a sequence segment. A simple segment condition contains dimension and metric conditions to select the sessions or users. A sequence segment condition can be used to select users or sessions based on sequential conditions.
+
+  ## Attributes
+
+  - not (Boolean): If true, match the complement of simple or sequence segment. For example, to match all visits not from \&quot;New York\&quot;, we can define the segment as follows:        \&quot;sessionSegment\&quot;: {         \&quot;segmentFilters\&quot;: [{           \&quot;simpleSegment\&quot; :{             \&quot;orFiltersForSegment\&quot;: [{               \&quot;segmentFilterClauses\&quot;:[{                 \&quot;dimensionFilter\&quot;: {                   \&quot;dimensionName\&quot;: \&quot;ga:city\&quot;,                   \&quot;expressions\&quot;: [\&quot;New York\&quot;]                 }               }]             }]           },           \&quot;not\&quot;: \&quot;True\&quot;         }]       }, Defaults to: `null`.
+  - sequenceSegment (SequenceSegment): Sequence conditions consist of one or more steps, where each step is defined by one or more dimension/metric conditions. Multiple steps can be combined with special sequence operators. Defaults to: `null`.
+  - simpleSegment (SimpleSegment): A Simple segment conditions consist of one or more dimension/metric conditions that can be combined Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"not",
     :"sequenceSegment",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.AnalyticsReporting.V4.Model.SegmentFilter
     value
     |> deserialize(:"sequenceSegment", :struct, GoogleApi.AnalyticsReporting.V4.Model.SequenceSegment, options)
     |> deserialize(:"simpleSegment", :struct, GoogleApi.AnalyticsReporting.V4.Model.SimpleSegment, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AnalyticsReporting.V4.Model.SegmentFilter do
+  def encode(value, options) do
+    GoogleApi.AnalyticsReporting.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

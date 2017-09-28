@@ -20,9 +20,16 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKey do
   @moduledoc """
   Credentials that can be used to authenticate as a service account.
+
+  ## Attributes
+
+  - data (String): The body of the private key credentials file, in string format. This is only populated when the ServiceAccountKey is created, and is not stored by Google. Defaults to: `null`.
+  - id (String): An opaque, unique identifier for this ServiceAccountKey. Assigned by the server. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#serviceAccountKey\&quot;. Defaults to: `null`.
+  - publicData (String): Public key data for the credentials file. This is an X.509 cert. If you are using the googleCredentials key type, this is identical to the cert that can be retrieved by using the X.509 cert url inside of the credentials file. Defaults to: `null`.
+  - type (String): The file format of the generated key data. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"data",
     :"id",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKey do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKey do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

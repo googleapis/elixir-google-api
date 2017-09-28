@@ -20,9 +20,15 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.PricePerBuyer do
   @moduledoc """
   Used to specify pricing rules for buyers. Each PricePerBuyer in a product can become [0,1] deals. To check if there is a PricePerBuyer for a particular buyer we look for the most specific matching rule - we first look for a rule matching the buyer and otherwise look for a matching rule where no buyer is set.
+
+  ## Attributes
+
+  - auctionTier (String): Optional access type for this buyer. Defaults to: `null`.
+  - billedBuyer (Buyer): Reference to the buyer that will get billed. Defaults to: `null`.
+  - buyer (Buyer): The buyer who will pay this price. If unset, all buyers can pay this price (if the advertisers match, and there&#39;s no more specific rule matching the buyer). Defaults to: `null`.
+  - price (Price): The specified price Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"auctionTier",
     :"billedBuyer",
@@ -38,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.PricePerBuyer d
     |> deserialize(:"billedBuyer", :struct, GoogleApi.AdExchangeBuyer.V14.Model.Buyer, options)
     |> deserialize(:"buyer", :struct, GoogleApi.AdExchangeBuyer.V14.Model.Buyer, options)
     |> deserialize(:"price", :struct, GoogleApi.AdExchangeBuyer.V14.Model.Price, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.PricePerBuyer do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

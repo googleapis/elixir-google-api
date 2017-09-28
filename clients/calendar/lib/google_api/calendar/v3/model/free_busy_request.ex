@@ -20,9 +20,17 @@
 defmodule GoogleApi.Calendar.V3.Model.FreeBusyRequest do
   @moduledoc """
   
+
+  ## Attributes
+
+  - calendarExpansionMax (Integer): Maximal number of calendars for which FreeBusy information is to be provided. Optional. Defaults to: `null`.
+  - groupExpansionMax (Integer): Maximal number of calendar identifiers to be provided for a single group. Optional. An error will be returned for a group with more members than this value. Defaults to: `null`.
+  - items (List[FreeBusyRequestItem]): List of calendars and/or groups to query. Defaults to: `null`.
+  - timeMax (DateTime): The end of the interval for the query. Defaults to: `null`.
+  - timeMin (DateTime): The start of the interval for the query. Defaults to: `null`.
+  - timeZone (String): Time zone used in the response. Optional. The default is UTC. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"calendarExpansionMax",
     :"groupExpansionMax",
@@ -38,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.FreeBusyRequest do
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.Calendar.V3.Model.FreeBusyRequestItem, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.FreeBusyRequest do
+  def encode(value, options) do
+    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

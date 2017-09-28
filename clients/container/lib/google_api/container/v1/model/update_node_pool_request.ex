@@ -20,9 +20,13 @@
 defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
   @moduledoc """
   UpdateNodePoolRequests update a node pool&#39;s image and/or version.
+
+  ## Attributes
+
+  - imageType (String): The desired image type for the node pool. Defaults to: `null`.
+  - nodeVersion (String): The Kubernetes version to change the nodes to (typically an upgrade). Use &#x60;-&#x60; to upgrade to the latest version supported by the server. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"imageType",
     :"nodeVersion"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

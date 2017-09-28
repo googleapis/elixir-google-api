@@ -20,9 +20,26 @@
 defmodule GoogleApi.CustomSearch.V1.Model.Result do
   @moduledoc """
   
+
+  ## Attributes
+
+  - cacheId (String):  Defaults to: `null`.
+  - displayLink (String):  Defaults to: `null`.
+  - fileFormat (String):  Defaults to: `null`.
+  - formattedUrl (String):  Defaults to: `null`.
+  - htmlFormattedUrl (String):  Defaults to: `null`.
+  - htmlSnippet (String):  Defaults to: `null`.
+  - htmlTitle (String):  Defaults to: `null`.
+  - image (ResultImage):  Defaults to: `null`.
+  - kind (String):  Defaults to: `null`.
+  - labels (List[ResultLabels]):  Defaults to: `null`.
+  - link (String):  Defaults to: `null`.
+  - mime (String):  Defaults to: `null`.
+  - pagemap (Map[String, List[Object]]):  Defaults to: `null`.
+  - snippet (String):  Defaults to: `null`.
+  - title (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cacheId",
     :"displayLink",
@@ -46,8 +63,14 @@ defimpl Poison.Decoder, for: GoogleApi.CustomSearch.V1.Model.Result do
   import GoogleApi.CustomSearch.V1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"image", :struct, GoogleApi.CustomSearch.V1.Model.Result_image, options)
-    |> deserialize(:"labels", :list, GoogleApi.CustomSearch.V1.Model.Result_labels, options)
+    |> deserialize(:"image", :struct, GoogleApi.CustomSearch.V1.Model.ResultImage, options)
+    |> deserialize(:"labels", :list, GoogleApi.CustomSearch.V1.Model.ResultLabels, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CustomSearch.V1.Model.Result do
+  def encode(value, options) do
+    GoogleApi.CustomSearch.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

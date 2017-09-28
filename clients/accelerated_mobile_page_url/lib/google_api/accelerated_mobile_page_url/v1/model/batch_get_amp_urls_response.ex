@@ -20,9 +20,13 @@
 defmodule GoogleApi.AcceleratedMobilePageUrl.V1.Model.BatchGetAmpUrlsResponse do
   @moduledoc """
   Batch AMP URL response.
+
+  ## Attributes
+
+  - ampUrls (List[AmpUrl]): For each URL in BatchAmpUrlsRequest, the URL response. The response might not be in the same order as URLs in the batch request. If BatchAmpUrlsRequest contains duplicate URLs, AmpUrl is generated only once. Defaults to: `null`.
+  - urlErrors (List[AmpUrlError]): The errors for requested URLs that have no AMP URL. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"ampUrls",
     :"urlErrors"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.AcceleratedMobilePageUrl.V1.Model.BatchGe
     value
     |> deserialize(:"ampUrls", :list, GoogleApi.AcceleratedMobilePageUrl.V1.Model.AmpUrl, options)
     |> deserialize(:"urlErrors", :list, GoogleApi.AcceleratedMobilePageUrl.V1.Model.AmpUrlError, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AcceleratedMobilePageUrl.V1.Model.BatchGetAmpUrlsResponse do
+  def encode(value, options) do
+    GoogleApi.AcceleratedMobilePageUrl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

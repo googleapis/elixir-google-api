@@ -1,6 +1,6 @@
-# GoogleApi.CloudUserAccounts.VM_ALPHA
+# GoogleApi.CloudUserAccounts.Vm_alpha
 
-**TODO: Add description**
+Creates and manages users and groups for accessing Google Compute Engine virtual machines.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_cloud_user_accounts` to your list of dependencies in `mix.
 
 ```elixir
 def deps do
-  [{:google_api_cloud_user_accounts, "~> 0.1.0"}]
+  [{:google_api_cloud_user_accounts, "~> 0.0.1"}]
 end
 ```
 

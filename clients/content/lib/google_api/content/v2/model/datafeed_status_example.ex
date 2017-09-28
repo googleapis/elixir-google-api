@@ -20,9 +20,14 @@
 defmodule GoogleApi.Content.V2.Model.DatafeedStatusExample do
   @moduledoc """
   An example occurrence for a particular error.
+
+  ## Attributes
+
+  - itemId (String): The ID of the example item. Defaults to: `null`.
+  - lineNumber (String): Line number in the data feed where the example is found. Defaults to: `null`.
+  - value (String): The problematic value. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"itemId",
     :"lineNumber",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.DatafeedStatusExample do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.DatafeedStatusExample do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -1,6 +1,6 @@
 # GoogleApi.AdExperienceReport.V1
 
-**TODO: Add description**
+View Ad Experience Report data, and get a list of sites that have a significant number of annoying ads.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_ad_experience_report` to your list of dependencies in `mix
 
 ```elixir
 def deps do
-  [{:google_api_ad_experience_report, "~> 0.1.0"}]
+  [{:google_api_ad_experience_report, "~> 0.0.1"}]
 end
 ```
 

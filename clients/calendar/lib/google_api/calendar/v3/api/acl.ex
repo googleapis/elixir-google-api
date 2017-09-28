@@ -61,7 +61,10 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
     }
     %{}
     |> method(:delete)
-    |> url("/calendars/#{calendar_id}/acl/#{rule_id}")
+    |> url("/calendars/{calendarId}/acl/{ruleId}", %{
+         "calendarId" => URI.encode_www_form(calendar_id),
+         "ruleId" => URI.encode_www_form(rule_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -103,7 +106,10 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
     }
     %{}
     |> method(:get)
-    |> url("/calendars/#{calendar_id}/acl/#{rule_id}")
+    |> url("/calendars/{calendarId}/acl/{ruleId}", %{
+         "calendarId" => URI.encode_www_form(calendar_id),
+         "ruleId" => URI.encode_www_form(rule_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -146,7 +152,9 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
     }
     %{}
     |> method(:post)
-    |> url("/calendars/#{calendar_id}/acl")
+    |> url("/calendars/{calendarId}/acl", %{
+         "calendarId" => URI.encode_www_form(calendar_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -195,7 +203,9 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
     }
     %{}
     |> method(:get)
-    |> url("/calendars/#{calendar_id}/acl")
+    |> url("/calendars/{calendarId}/acl", %{
+         "calendarId" => URI.encode_www_form(calendar_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -239,7 +249,10 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
     }
     %{}
     |> method(:patch)
-    |> url("/calendars/#{calendar_id}/acl/#{rule_id}")
+    |> url("/calendars/{calendarId}/acl/{ruleId}", %{
+         "calendarId" => URI.encode_www_form(calendar_id),
+         "ruleId" => URI.encode_www_form(rule_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -283,7 +296,10 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
     }
     %{}
     |> method(:put)
-    |> url("/calendars/#{calendar_id}/acl/#{rule_id}")
+    |> url("/calendars/{calendarId}/acl/{ruleId}", %{
+         "calendarId" => URI.encode_www_form(calendar_id),
+         "ruleId" => URI.encode_www_form(rule_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -334,7 +350,9 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
     }
     %{}
     |> method(:post)
-    |> url("/calendars/#{calendar_id}/acl/watch")
+    |> url("/calendars/{calendarId}/acl/watch", %{
+         "calendarId" => URI.encode_www_form(calendar_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

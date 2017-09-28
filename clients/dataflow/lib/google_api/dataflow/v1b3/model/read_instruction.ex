@@ -20,9 +20,12 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.ReadInstruction do
   @moduledoc """
   An instruction that reads records. Takes no inputs, produces one output.
+
+  ## Attributes
+
+  - source (Source): The source to read from. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"source"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.ReadInstruction do
   def decode(value, options) do
     value
     |> deserialize(:"source", :struct, GoogleApi.Dataflow.V1b3.Model.Source, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.ReadInstruction do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.Classroom.V1.Model.YouTubeVideo do
   @moduledoc """
   YouTube video item.
+
+  ## Attributes
+
+  - alternateLink (String): URL that can be used to view the YouTube video.  Read-only. Defaults to: `null`.
+  - id (String): YouTube API resource ID. Defaults to: `null`.
+  - thumbnailUrl (String): URL of a thumbnail image of the YouTube video.  Read-only. Defaults to: `null`.
+  - title (String): Title of the YouTube video.  Read-only. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"alternateLink",
     :"id",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.YouTubeVideo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.YouTubeVideo do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

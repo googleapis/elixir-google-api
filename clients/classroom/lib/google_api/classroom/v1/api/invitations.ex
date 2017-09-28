@@ -72,7 +72,9 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
     }
     %{}
     |> method(:post)
-    |> url("/v1/invitations/#{id}:accept")
+    |> url("/v1/invitations/{id}:accept", %{
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -179,7 +181,9 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/invitations/#{id}")
+    |> url("/v1/invitations/{id}", %{
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -232,7 +236,9 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
     }
     %{}
     |> method(:get)
-    |> url("/v1/invitations/#{id}")
+    |> url("/v1/invitations/{id}", %{
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

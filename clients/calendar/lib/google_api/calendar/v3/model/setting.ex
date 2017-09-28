@@ -20,9 +20,15 @@
 defmodule GoogleApi.Calendar.V3.Model.Setting do
   @moduledoc """
   
+
+  ## Attributes
+
+  - etag (String): ETag of the resource. Defaults to: `null`.
+  - id (String): The id of the user setting. Defaults to: `null`.
+  - kind (String): Type of the resource (\&quot;calendar#setting\&quot;). Defaults to: `null`.
+  - value (String): Value of the user setting. The format of the value depends on the ID of the setting. It must always be a UTF-8 string of length up to 1024 characters. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"id",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.Setting do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.Setting do
+  def encode(value, options) do
+    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

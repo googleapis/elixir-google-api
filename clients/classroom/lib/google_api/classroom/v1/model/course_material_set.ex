@@ -20,9 +20,13 @@
 defmodule GoogleApi.Classroom.V1.Model.CourseMaterialSet do
   @moduledoc """
   A set of materials that appears on the \&quot;About\&quot; page of the course. These materials might include a syllabus, schedule, or other background information relating to the course as a whole.
+
+  ## Attributes
+
+  - materials (List[CourseMaterial]): Materials attached to this set. Defaults to: `null`.
+  - title (String): Title for this set. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"materials",
     :"title"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.CourseMaterialSet do
   def decode(value, options) do
     value
     |> deserialize(:"materials", :list, GoogleApi.Classroom.V1.Model.CourseMaterial, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.CourseMaterialSet do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

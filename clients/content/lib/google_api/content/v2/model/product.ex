@@ -20,9 +20,85 @@
 defmodule GoogleApi.Content.V2.Model.Product do
   @moduledoc """
   Product data.
+
+  ## Attributes
+
+  - additionalImageLinks (List[String]): Additional URLs of images of the item. Defaults to: `null`.
+  - additionalProductTypes (List[String]): Additional categories of the item (formatted as in products feed specification). Defaults to: `null`.
+  - adult (Boolean): Set to true if the item is targeted towards adults. Defaults to: `null`.
+  - adwordsGrouping (String): Used to group items in an arbitrary way. Only for CPA%, discouraged otherwise. Defaults to: `null`.
+  - adwordsLabels (List[String]): Similar to adwords_grouping, but only works on CPC. Defaults to: `null`.
+  - adwordsRedirect (String): Allows advertisers to override the item URL when the product is shown within the context of Product Ads. Defaults to: `null`.
+  - ageGroup (String): Target age group of the item. Defaults to: `null`.
+  - aspects (List[ProductAspect]): Specifies the intended aspects for the product. Defaults to: `null`.
+  - availability (String): Availability status of the item. Defaults to: `null`.
+  - availabilityDate (String): The day a pre-ordered product becomes available for delivery, in ISO 8601 format. Defaults to: `null`.
+  - brand (String): Brand of the item. Defaults to: `null`.
+  - channel (String): The item&#39;s channel (online or local). Defaults to: `null`.
+  - color (String): Color of the item. Defaults to: `null`.
+  - condition (String): Condition or state of the item. Defaults to: `null`.
+  - contentLanguage (String): The two-letter ISO 639-1 language code for the item. Defaults to: `null`.
+  - customAttributes (List[ProductCustomAttribute]): A list of custom (merchant-provided) attributes. It can also be used for submitting any attribute of the feed specification in its generic form (e.g., { \&quot;name\&quot;: \&quot;size type\&quot;, \&quot;type\&quot;: \&quot;text\&quot;, \&quot;value\&quot;: \&quot;regular\&quot; }). This is useful for submitting attributes not explicitly exposed by the API. Defaults to: `null`.
+  - customGroups (List[ProductCustomGroup]): A list of custom (merchant-provided) custom attribute groups. Defaults to: `null`.
+  - customLabel0 (String): Custom label 0 for custom grouping of items in a Shopping campaign. Defaults to: `null`.
+  - customLabel1 (String): Custom label 1 for custom grouping of items in a Shopping campaign. Defaults to: `null`.
+  - customLabel2 (String): Custom label 2 for custom grouping of items in a Shopping campaign. Defaults to: `null`.
+  - customLabel3 (String): Custom label 3 for custom grouping of items in a Shopping campaign. Defaults to: `null`.
+  - customLabel4 (String): Custom label 4 for custom grouping of items in a Shopping campaign. Defaults to: `null`.
+  - description (String): Description of the item. Defaults to: `null`.
+  - destinations (List[ProductDestination]): Specifies the intended destinations for the product. Defaults to: `null`.
+  - displayAdsId (String): An identifier for an item for dynamic remarketing campaigns. Defaults to: `null`.
+  - displayAdsLink (String): URL directly to your item&#39;s landing page for dynamic remarketing campaigns. Defaults to: `null`.
+  - displayAdsSimilarIds (List[String]): Advertiser-specified recommendations. Defaults to: `null`.
+  - displayAdsTitle (String): Title of an item for dynamic remarketing campaigns. Defaults to: `null`.
+  - displayAdsValue (Float): Offer margin for dynamic remarketing campaigns. Defaults to: `null`.
+  - energyEfficiencyClass (String): The energy efficiency class as defined in EU directive 2010/30/EU. Defaults to: `null`.
+  - expirationDate (String): Date on which the item should expire, as specified upon insertion, in ISO 8601 format. The actual expiration date in Google Shopping is exposed in productstatuses as googleExpirationDate and might be earlier if expirationDate is too far in the future. Defaults to: `null`.
+  - gender (String): Target gender of the item. Defaults to: `null`.
+  - googleProductCategory (String): Google&#39;s category of the item (see Google product taxonomy). Defaults to: `null`.
+  - gtin (String): Global Trade Item Number (GTIN) of the item. Defaults to: `null`.
+  - id (String): The REST id of the product. Defaults to: `null`.
+  - identifierExists (Boolean): False when the item does not have unique product identifiers appropriate to its category, such as GTIN, MPN, and brand. Required according to the Unique Product Identifier Rules for all target countries except for Canada. Defaults to: `null`.
+  - imageLink (String): URL of an image of the item. Defaults to: `null`.
+  - installment (Installment): Number and amount of installments to pay for an item. Brazil only. Defaults to: `null`.
+  - isBundle (Boolean): Whether the item is a merchant-defined bundle. A bundle is a custom grouping of different products sold by a merchant for a single price. Defaults to: `null`.
+  - itemGroupId (String): Shared identifier for all variants of the same product. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;content#product\&quot;. Defaults to: `null`.
+  - link (String): URL directly linking to your item&#39;s page on your website. Defaults to: `null`.
+  - loyaltyPoints (LoyaltyPoints): Loyalty points that users receive after purchasing the item. Japan only. Defaults to: `null`.
+  - material (String): The material of which the item is made. Defaults to: `null`.
+  - maxHandlingTime (String): Maximal product handling time (in business days). Defaults to: `null`.
+  - minHandlingTime (String): Minimal product handling time (in business days). Defaults to: `null`.
+  - mobileLink (String): Link to a mobile-optimized version of the landing page. Defaults to: `null`.
+  - mpn (String): Manufacturer Part Number (MPN) of the item. Defaults to: `null`.
+  - multipack (String): The number of identical products in a merchant-defined multipack. Defaults to: `null`.
+  - offerId (String): An identifier of the item. Leading and trailing whitespaces are stripped and multiple whitespaces are replaced by a single whitespace upon submission. Only valid unicode characters are accepted. See the products feed specification for details. Defaults to: `null`.
+  - onlineOnly (Boolean): Whether an item is available for purchase only online. Defaults to: `null`.
+  - pattern (String): The item&#39;s pattern (e.g. polka dots). Defaults to: `null`.
+  - price (Price): Price of the item. Defaults to: `null`.
+  - productType (String): Your category of the item (formatted as in products feed specification). Defaults to: `null`.
+  - promotionIds (List[String]): The unique ID of a promotion. Defaults to: `null`.
+  - salePrice (Price): Advertised sale price of the item. Defaults to: `null`.
+  - salePriceEffectiveDate (String): Date range during which the item is on sale (see products feed specification). Defaults to: `null`.
+  - sellOnGoogleQuantity (String): The quantity of the product that is reserved for sell-on-google ads. Defaults to: `null`.
+  - shipping (List[ProductShipping]): Shipping rules. Defaults to: `null`.
+  - shippingHeight (ProductShippingDimension): Height of the item for shipping. Defaults to: `null`.
+  - shippingLabel (String): The shipping label of the product, used to group product in account-level shipping rules. Defaults to: `null`.
+  - shippingLength (ProductShippingDimension): Length of the item for shipping. Defaults to: `null`.
+  - shippingWeight (ProductShippingWeight): Weight of the item for shipping. Defaults to: `null`.
+  - shippingWidth (ProductShippingDimension): Width of the item for shipping. Defaults to: `null`.
+  - sizeSystem (String): System in which the size is specified. Recommended for apparel items. Defaults to: `null`.
+  - sizeType (String): The cut of the item. Recommended for apparel items. Defaults to: `null`.
+  - sizes (List[String]): Size of the item. Defaults to: `null`.
+  - targetCountry (String): The CLDR territory code for the item. Defaults to: `null`.
+  - taxes (List[ProductTax]): Tax information. Defaults to: `null`.
+  - title (String): Title of the item. Defaults to: `null`.
+  - unitPricingBaseMeasure (ProductUnitPricingBaseMeasure): The preference of the denominator of the unit price. Defaults to: `null`.
+  - unitPricingMeasure (ProductUnitPricingMeasure): The measure and dimension of an item. Defaults to: `null`.
+  - validatedDestinations (List[String]): The read-only list of intended destinations which passed validation. Defaults to: `null`.
+  - warnings (List[Error]): Read-only warnings. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"additionalImageLinks",
     :"additionalProductTypes",
@@ -122,6 +198,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.Product do
     |> deserialize(:"unitPricingBaseMeasure", :struct, GoogleApi.Content.V2.Model.ProductUnitPricingBaseMeasure, options)
     |> deserialize(:"unitPricingMeasure", :struct, GoogleApi.Content.V2.Model.ProductUnitPricingMeasure, options)
     |> deserialize(:"warnings", :list, GoogleApi.Content.V2.Model.Error, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.Product do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.Content.V2.Model.DatafeedStatusError do
   @moduledoc """
   An error occurring in the feed, like \&quot;invalid price\&quot;.
+
+  ## Attributes
+
+  - code (String): The code of the error, e.g., \&quot;validation/invalid_value\&quot;. Defaults to: `null`.
+  - count (String): The number of occurrences of the error in the feed. Defaults to: `null`.
+  - examples (List[DatafeedStatusExample]): A list of example occurrences of the error, grouped by product. Defaults to: `null`.
+  - message (String): The error message, e.g., \&quot;Invalid price\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"code",
     :"count",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.DatafeedStatusError do
   def decode(value, options) do
     value
     |> deserialize(:"examples", :list, GoogleApi.Content.V2.Model.DatafeedStatusExample, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.DatafeedStatusError do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

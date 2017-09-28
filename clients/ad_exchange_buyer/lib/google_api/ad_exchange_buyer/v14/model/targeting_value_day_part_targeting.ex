@@ -20,9 +20,13 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDayPartTargeting do
   @moduledoc """
   
+
+  ## Attributes
+
+  - dayParts (List[TargetingValueDayPartTargetingDayPart]):  Defaults to: `null`.
+  - timeZoneType (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dayParts",
     :"timeZoneType"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueD
   def decode(value, options) do
     value
     |> deserialize(:"dayParts", :list, GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDayPartTargetingDayPart, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDayPartTargeting do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

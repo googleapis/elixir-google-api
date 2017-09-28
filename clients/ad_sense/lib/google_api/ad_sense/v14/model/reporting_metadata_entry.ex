@@ -20,9 +20,18 @@
 defmodule GoogleApi.AdSense.V14.Model.ReportingMetadataEntry do
   @moduledoc """
   
+
+  ## Attributes
+
+  - compatibleDimensions (List[String]): For metrics this is a list of dimension IDs which the metric is compatible with, for dimensions it is a list of compatibility groups the dimension belongs to. Defaults to: `null`.
+  - compatibleMetrics (List[String]): The names of the metrics the dimension or metric this reporting metadata entry describes is compatible with. Defaults to: `null`.
+  - id (String): Unique identifier of this reporting metadata entry, corresponding to the name of the appropriate dimension or metric. Defaults to: `null`.
+  - kind (String): Kind of resource this is, in this case adsense#reportingMetadataEntry. Defaults to: `null`.
+  - requiredDimensions (List[String]): The names of the dimensions which the dimension or metric this reporting metadata entry describes requires to also be present in order for the report to be valid. Omitting these will not cause an error or warning, but may result in data which cannot be correctly interpreted. Defaults to: `null`.
+  - requiredMetrics (List[String]): The names of the metrics which the dimension or metric this reporting metadata entry describes requires to also be present in order for the report to be valid. Omitting these will not cause an error or warning, but may result in data which cannot be correctly interpreted. Defaults to: `null`.
+  - supportedProducts (List[String]): The codes of the projects supported by the dimension or metric this reporting metadata entry describes. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"compatibleDimensions",
     :"compatibleMetrics",
@@ -37,6 +46,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AdSense.V14.Model.ReportingMetadataEntry do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdSense.V14.Model.ReportingMetadataEntry do
+  def encode(value, options) do
+    GoogleApi.AdSense.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,21 @@
 defmodule GoogleApi.Content.V2.Model.AccountStatusDataQualityIssue do
   @moduledoc """
   
+
+  ## Attributes
+
+  - country (String): Country for which this issue is reported. Defaults to: `null`.
+  - detail (String): A more detailed description of the issue. Defaults to: `null`.
+  - displayedValue (String): Actual value displayed on the landing page. Defaults to: `null`.
+  - exampleItems (List[AccountStatusExampleItem]): Example items featuring the issue. Defaults to: `null`.
+  - id (String): Issue identifier. Defaults to: `null`.
+  - lastChecked (String): Last time the account was checked for this issue. Defaults to: `null`.
+  - location (String): The attribute name that is relevant for the issue. Defaults to: `null`.
+  - numItems (Integer): Number of items in the account found to have the said issue. Defaults to: `null`.
+  - severity (String): Severity of the problem. Defaults to: `null`.
+  - submittedValue (String): Submitted value that causes the issue. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"country",
     :"detail",
@@ -42,6 +54,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.AccountStatusDataQuality
   def decode(value, options) do
     value
     |> deserialize(:"exampleItems", :list, GoogleApi.Content.V2.Model.AccountStatusExampleItem, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.AccountStatusDataQualityIssue do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

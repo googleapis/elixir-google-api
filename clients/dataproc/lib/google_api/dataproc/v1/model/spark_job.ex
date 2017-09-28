@@ -20,9 +20,19 @@
 defmodule GoogleApi.Dataproc.V1.Model.SparkJob do
   @moduledoc """
   A Cloud Dataproc job for running Apache Spark (http://spark.apache.org/) applications on YARN.
+
+  ## Attributes
+
+  - archiveUris (List[String]): Optional. HCFS URIs of archives to be extracted in the working directory of Spark drivers and tasks. Supported file types: .jar, .tar, .tar.gz, .tgz, and .zip. Defaults to: `null`.
+  - args (List[String]): Optional. The arguments to pass to the driver. Do not include arguments, such as --conf, that can be set as job properties, since a collision may occur that causes an incorrect job submission. Defaults to: `null`.
+  - fileUris (List[String]): Optional. HCFS URIs of files to be copied to the working directory of Spark drivers and distributed tasks. Useful for naively parallel tasks. Defaults to: `null`.
+  - jarFileUris (List[String]): Optional. HCFS URIs of jar files to add to the CLASSPATHs of the Spark driver and tasks. Defaults to: `null`.
+  - loggingConfig (LoggingConfig): Optional. The runtime log config for job execution. Defaults to: `null`.
+  - mainClass (String): The name of the driver&#39;s main class. The jar file that contains the class must be in the default CLASSPATH or specified in jar_file_uris. Defaults to: `null`.
+  - mainJarFileUri (String): The HCFS URI of the jar file that contains the main class. Defaults to: `null`.
+  - properties (Map[String, String]): Optional. A mapping of property names to values, used to configure Spark. Properties that conflict with values set by the Cloud Dataproc API may be overwritten. Can include properties set in /etc/spark/conf/spark-defaults.conf and classes in user code. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"archiveUris",
     :"args",
@@ -40,6 +50,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.SparkJob do
   def decode(value, options) do
     value
     |> deserialize(:"loggingConfig", :struct, GoogleApi.Dataproc.V1.Model.LoggingConfig, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataproc.V1.Model.SparkJob do
+  def encode(value, options) do
+    GoogleApi.Dataproc.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

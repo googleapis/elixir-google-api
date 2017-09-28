@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.SourceOperationRequest do
   @moduledoc """
   A work item that represents the different operations that can be performed on a user-defined Source specification.
+
+  ## Attributes
+
+  - getMetadata (SourceGetMetadataRequest): Information about a request to get metadata about a source. Defaults to: `null`.
+  - split (SourceSplitRequest): Information about a request to split a source. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"getMetadata",
     :"split"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.SourceOperationReques
     value
     |> deserialize(:"getMetadata", :struct, GoogleApi.Dataflow.V1b3.Model.SourceGetMetadataRequest, options)
     |> deserialize(:"split", :struct, GoogleApi.Dataflow.V1b3.Model.SourceSplitRequest, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.SourceOperationRequest do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation_data do
+defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.OperationData do
   @moduledoc """
   
+
+  ## Attributes
+
+  - key (String): [Output Only] A key that provides more detail on the warning being returned. For example, for warnings where there are no results in a list request for a particular zone, this key might be scope and the key value might be the zone name. Other examples might be a key indicating a deprecated resource and a suggested replacement, or a warning about invalid network settings (for example, if an instance attempts to perform IP forwarding but is not enabled for IP forwarding). Defaults to: `null`.
+  - value (String): [Output Only] A warning data value corresponding to the key. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"key",
     :"value"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation_data do
+defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.OperationData do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.OperationData do
+  def encode(value, options) do
+    GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer.serialize_non_nil(value, options)
   end
 end
 

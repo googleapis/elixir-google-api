@@ -20,9 +20,16 @@
 defmodule GoogleApi.Content.V2.Model.Value do
   @moduledoc """
   The single value of a rate group or the value of a rate group table&#39;s cell. Exactly one of noShipping, flatRate, pricePercentage, carrierRateName, subtableName must be set.
+
+  ## Attributes
+
+  - carrierRateName (String): The name of a carrier rate referring to a carrier rate defined in the same rate group. Can only be set if all other fields are not set. Defaults to: `null`.
+  - flatRate (Price): A flat rate. Can only be set if all other fields are not set. Defaults to: `null`.
+  - noShipping (Boolean): If true, then the product can&#39;t ship. Must be true when set, can only be set if all other fields are not set. Defaults to: `null`.
+  - pricePercentage (String): A percentage of the price represented as a number in decimal notation (e.g., \&quot;5.4\&quot;). Can only be set if all other fields are not set. Defaults to: `null`.
+  - subtableName (String): The name of a subtable. Can only be set in table cells (i.e., not for single values), and only if all other fields are not set. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"carrierRateName",
     :"flatRate",
@@ -37,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.Value do
   def decode(value, options) do
     value
     |> deserialize(:"flatRate", :struct, GoogleApi.Content.V2.Model.Price, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.Value do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

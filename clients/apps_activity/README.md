@@ -1,6 +1,6 @@
 # GoogleApi.AppsActivity.V1
 
-**TODO: Add description**
+Provides a historical view of activity.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_apps_activity` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_apps_activity, "~> 0.1.0"}]
+  [{:google_api_apps_activity, "~> 0.0.1"}]
 end
 ```
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierRequest do
   @moduledoc """
   Request to find devices.
+
+  ## Attributes
+
+  - deviceIdentifier (DeviceIdentifier): The device identifier to search Defaults to: `null`.
+  - limit (String): Number of devices to show. Defaults to: `null`.
+  - pageToken (String): Page token Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"deviceIdentifier",
     :"limit",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDe
   def decode(value, options) do
     value
     |> deserialize(:"deviceIdentifier", :struct, GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierRequest do
+  def encode(value, options) do
+    GoogleApi.AndroidDeviceProvisioning.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.GetDebugConfigRequest do
   @moduledoc """
   Request to get updated debug configuration for component.
+
+  ## Attributes
+
+  - componentId (String): The internal component id for which debug configuration is requested. Defaults to: `null`.
+  - location (String): The location which contains the job specified by job_id. Defaults to: `null`.
+  - workerId (String): The worker id, i.e., VM hostname. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"componentId",
     :"location",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.GetDebugConfigRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.GetDebugConfigRequest do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

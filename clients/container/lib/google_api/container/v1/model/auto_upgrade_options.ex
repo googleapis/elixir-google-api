@@ -20,9 +20,13 @@
 defmodule GoogleApi.Container.V1.Model.AutoUpgradeOptions do
   @moduledoc """
   AutoUpgradeOptions defines the set of options for the user to control how the Auto Upgrades will proceed.
+
+  ## Attributes
+
+  - autoUpgradeStartTime (String): [Output only] This field is set when upgrades are about to commence with the approximate start time for the upgrades, in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format. Defaults to: `null`.
+  - description (String): [Output only] This field is set when upgrades are about to commence with the description of the upgrade. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"autoUpgradeStartTime",
     :"description"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.AutoUpgradeOptions do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.AutoUpgradeOptions do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

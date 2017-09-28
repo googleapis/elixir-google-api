@@ -20,9 +20,17 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1Finding do
   @moduledoc """
   Container structure describing a single finding within a string or image.
+
+  ## Attributes
+
+  - createTime (String): Timestamp when finding was detected. Defaults to: `null`.
+  - infoType (GooglePrivacyDlpV2beta1InfoType): The specific type of info the string might be. Defaults to: `null`.
+  - likelihood (String): Estimate of how likely it is that the info_type is correct. Defaults to: `null`.
+    - Enum - one of [LIKELIHOOD_UNSPECIFIED, VERY_UNLIKELY, UNLIKELY, POSSIBLE, LIKELY, VERY_LIKELY]
+  - location (GooglePrivacyDlpV2beta1Location): Location of the info found. Defaults to: `null`.
+  - quote (String): The specific string that may be potentially sensitive info. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"createTime",
     :"infoType",
@@ -38,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1
     value
     |> deserialize(:"infoType", :struct, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InfoType, options)
     |> deserialize(:"location", :struct, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1Location, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1Finding do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

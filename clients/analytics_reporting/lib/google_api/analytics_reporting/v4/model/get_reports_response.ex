@@ -20,9 +20,12 @@
 defmodule GoogleApi.AnalyticsReporting.V4.Model.GetReportsResponse do
   @moduledoc """
   The main response class which holds the reports from the Reporting API &#x60;batchGet&#x60; call.
+
+  ## Attributes
+
+  - reports (List[Report]): Responses corresponding to each of the request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"reports"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.AnalyticsReporting.V4.Model.GetReportsRes
   def decode(value, options) do
     value
     |> deserialize(:"reports", :list, GoogleApi.AnalyticsReporting.V4.Model.Report, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AnalyticsReporting.V4.Model.GetReportsResponse do
+  def encode(value, options) do
+    GoogleApi.AnalyticsReporting.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

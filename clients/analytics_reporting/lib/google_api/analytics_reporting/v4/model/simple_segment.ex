@@ -20,9 +20,12 @@
 defmodule GoogleApi.AnalyticsReporting.V4.Model.SimpleSegment do
   @moduledoc """
   A Simple segment conditions consist of one or more dimension/metric conditions that can be combined.
+
+  ## Attributes
+
+  - orFiltersForSegment (List[OrFiltersForSegment]): A list of segment filters groups which are combined with logical &#x60;AND&#x60; operator. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"orFiltersForSegment"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.AnalyticsReporting.V4.Model.SimpleSegment
   def decode(value, options) do
     value
     |> deserialize(:"orFiltersForSegment", :list, GoogleApi.AnalyticsReporting.V4.Model.OrFiltersForSegment, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AnalyticsReporting.V4.Model.SimpleSegment do
+  def encode(value, options) do
+    GoogleApi.AnalyticsReporting.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

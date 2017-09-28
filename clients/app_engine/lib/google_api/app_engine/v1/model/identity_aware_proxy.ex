@@ -20,9 +20,15 @@
 defmodule GoogleApi.AppEngine.V1.Model.IdentityAwareProxy do
   @moduledoc """
   Identity-Aware Proxy
+
+  ## Attributes
+
+  - enabled (Boolean): Whether the serving infrastructure will authenticate and authorize all incoming requests.If true, the oauth2_client_id and oauth2_client_secret fields must be non-empty. Defaults to: `null`.
+  - oauth2ClientId (String): OAuth2 client ID to use for the authentication flow. Defaults to: `null`.
+  - oauth2ClientSecret (String): OAuth2 client secret to use for the authentication flow.For security reasons, this value cannot be retrieved via the API. Instead, the SHA-256 hash of the value is returned in the oauth2_client_secret_sha256 field.@InputOnly Defaults to: `null`.
+  - oauth2ClientSecretSha256 (String): Hex-encoded SHA-256 hash of the client secret.@OutputOnly Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"enabled",
     :"oauth2ClientId",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.IdentityAwareProxy do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.IdentityAwareProxy do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

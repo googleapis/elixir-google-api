@@ -20,9 +20,25 @@
 defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun do
   @moduledoc """
   Represents a data transfer run.
+
+  ## Attributes
+
+  - dataSourceId (String): Data source id. @OutputOnly Defaults to: `null`.
+  - datasetRegion (String): Region in which BigQuery dataset is located. Currently possible values are: \&quot;US\&quot; and \&quot;EU\&quot;. @OutputOnly Defaults to: `null`.
+  - destinationDatasetId (String): The BigQuery target dataset id. Defaults to: `null`.
+  - endTime (String): Time when transfer run ended. Parameter ignored by server for input requests. @OutputOnly Defaults to: `null`.
+  - name (String): The resource name of the transfer run. Transfer run names have the form &#x60;projects/{project_id}/locations/{location}/transferConfigs/{config_id}/runs/{run_id}&#x60;. The name is ignored when creating a transfer run. Defaults to: `null`.
+  - params (Object): Data transfer specific parameters. Defaults to: `null`.
+  - runTime (String): For batch transfer runs, specifies the date and time that data should be ingested. Defaults to: `null`.
+  - schedule (String): Describes the schedule of this transfer run if it was created as part of a regular schedule. For batch transfer runs that are directly created, this is empty. NOTE: the system might choose to delay the schedule depending on the current load, so &#x60;schedule_time&#x60; doesn&#39;t always matches this. @OutputOnly Defaults to: `null`.
+  - scheduleTime (String): Minimum time after which a transfer run can be started. Defaults to: `null`.
+  - startTime (String): Time when transfer run was started. Parameter ignored by server for input requests. @OutputOnly Defaults to: `null`.
+  - status (String): Data transfer run status. Ignored for input requests. @OutputOnly Defaults to: `null`.
+    - Enum - one of [TRANSFER_STATUS_UNSPECIFIED, INACTIVE, PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED]
+  - updateTime (String): Last time the data transfer run status was updated. @OutputOnly Defaults to: `null`.
+  - userId (String): The user id for this transfer run. @OutputOnly Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dataSourceId",
     :"datasetRegion",
@@ -45,6 +61,12 @@ defimpl Poison.Decoder, for: GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun
   def decode(value, options) do
     value
     |> deserialize(:"params", :struct, GoogleApi.BigQueryDataTransfer.V1.Model.Object, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun do
+  def encode(value, options) do
+    GoogleApi.BigQueryDataTransfer.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

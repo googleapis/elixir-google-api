@@ -20,9 +20,13 @@
 defmodule GoogleApi.Content.V2.Model.OrdersGetTestOrderTemplateResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;content#ordersGetTestOrderTemplateResponse\&quot;. Defaults to: `null`.
+  - template (TestOrder): The requested test order template. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"template"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrdersGetTestOrderTempla
   def decode(value, options) do
     value
     |> deserialize(:"template", :struct, GoogleApi.Content.V2.Model.TestOrder, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrdersGetTestOrderTemplateResponse do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

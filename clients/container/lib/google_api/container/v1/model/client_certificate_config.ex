@@ -20,9 +20,12 @@
 defmodule GoogleApi.Container.V1.Model.ClientCertificateConfig do
   @moduledoc """
   Configuration for client certificates on the cluster.
+
+  ## Attributes
+
+  - issueClientCertificate (Boolean): Issue a client certificate. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"issueClientCertificate"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.ClientCertificateConfig do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.ClientCertificateConfig do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

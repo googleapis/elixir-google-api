@@ -20,9 +20,22 @@
 defmodule GoogleApi.CivicInfo.V2.Model.VoterInfoResponse do
   @moduledoc """
   The result of a voter info lookup query.
+
+  ## Attributes
+
+  - contests (List[Contest]): Contests that will appear on the voter&#39;s ballot. Defaults to: `null`.
+  - dropOffLocations (List[PollingLocation]): Locations where a voter is eligible to drop off a completed ballot. The voter must have received and completed a ballot prior to arriving at the location. The location may not have ballots available on the premises. These locations could be open on or before election day as indicated in the pollingHours field. Defaults to: `null`.
+  - earlyVoteSites (List[PollingLocation]): Locations where the voter is eligible to vote early, prior to election day. Defaults to: `null`.
+  - election (Election): The election that was queried. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;civicinfo#voterInfoResponse\&quot;. Defaults to: `null`.
+  - mailOnly (Boolean): Specifies whether voters in the precinct vote only by mailing their ballots (with the possible option of dropping off their ballots as well). Defaults to: `null`.
+  - normalizedInput (SimpleAddressType): The normalized version of the requested address Defaults to: `null`.
+  - otherElections (List[Election]): If no election ID was specified in the query, and there was more than one election with data for the given voter, this will contain information about the other elections that could apply. Defaults to: `null`.
+  - pollingLocations (List[PollingLocation]): Locations where the voter is eligible to vote on election day. Defaults to: `null`.
+  - precinctId (String):  Defaults to: `null`.
+  - state (List[AdministrationRegion]): Local Election Information for the state that the voter votes in. For the US, there will only be one element in this array. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"contests",
     :"dropOffLocations",
@@ -50,6 +63,12 @@ defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.VoterInfoResponse do
     |> deserialize(:"otherElections", :list, GoogleApi.CivicInfo.V2.Model.Election, options)
     |> deserialize(:"pollingLocations", :list, GoogleApi.CivicInfo.V2.Model.PollingLocation, options)
     |> deserialize(:"state", :list, GoogleApi.CivicInfo.V2.Model.AdministrationRegion, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CivicInfo.V2.Model.VoterInfoResponse do
+  def encode(value, options) do
+    GoogleApi.CivicInfo.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

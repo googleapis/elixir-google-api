@@ -17,12 +17,18 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Calendar.V3.Model.Event_creator do
+defmodule GoogleApi.Calendar.V3.Model.EventCreator do
   @moduledoc """
   The creator of the event. Read-only.
+
+  ## Attributes
+
+  - displayName (String): The creator&#39;s name, if available. Defaults to: `null`.
+  - email (String): The creator&#39;s email address, if available. Defaults to: `null`.
+  - id (String): The creator&#39;s Profile ID, if available. It corresponds to theid field in the People collection of the Google+ API Defaults to: `null`.
+  - self (Boolean): Whether the creator corresponds to the calendar on which this copy of the event appears. Read-only. The default is False. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"displayName",
     :"email",
@@ -31,9 +37,15 @@ defmodule GoogleApi.Calendar.V3.Model.Event_creator do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.Event_creator do
+defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.EventCreator do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.EventCreator do
+  def encode(value, options) do
+    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

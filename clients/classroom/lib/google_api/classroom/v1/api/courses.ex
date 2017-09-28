@@ -74,7 +74,9 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
     }
     %{}
     |> method(:post)
-    |> url("/v1/courses/#{course_id}/aliases")
+    |> url("/v1/courses/{courseId}/aliases", %{
+         "courseId" => URI.encode_www_form(course_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -128,7 +130,10 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/courses/#{course_id}/aliases/#{alias}")
+    |> url("/v1/courses/{courseId}/aliases/{alias}", %{
+         "courseId" => URI.encode_www_form(course_id),
+         "alias" => URI.encode_www_form(alias)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -185,7 +190,9 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
     }
     %{}
     |> method(:get)
-    |> url("/v1/courses/#{course_id}/aliases")
+    |> url("/v1/courses/{courseId}/aliases", %{
+         "courseId" => URI.encode_www_form(course_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -240,7 +247,9 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
     }
     %{}
     |> method(:post)
-    |> url("/v1/courses/#{course_id}/courseWork")
+    |> url("/v1/courses/{courseId}/courseWork", %{
+         "courseId" => URI.encode_www_form(course_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -294,7 +303,10 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/courses/#{course_id}/courseWork/#{id}")
+    |> url("/v1/courses/{courseId}/courseWork/{id}", %{
+         "courseId" => URI.encode_www_form(course_id),
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -348,7 +360,10 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
     }
     %{}
     |> method(:get)
-    |> url("/v1/courses/#{course_id}/courseWork/#{id}")
+    |> url("/v1/courses/{courseId}/courseWork/{id}", %{
+         "courseId" => URI.encode_www_form(course_id),
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -409,7 +424,9 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
     }
     %{}
     |> method(:get)
-    |> url("/v1/courses/#{course_id}/courseWork")
+    |> url("/v1/courses/{courseId}/courseWork", %{
+         "courseId" => URI.encode_www_form(course_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -467,7 +484,10 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
     }
     %{}
     |> method(:patch)
-    |> url("/v1/courses/#{course_id}/courseWork/#{id}")
+    |> url("/v1/courses/{courseId}/courseWork/{id}", %{
+         "courseId" => URI.encode_www_form(course_id),
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -522,7 +542,11 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
     }
     %{}
     |> method(:get)
-    |> url("/v1/courses/#{course_id}/courseWork/#{course_work_id}/studentSubmissions/#{id}")
+    |> url("/v1/courses/{courseId}/courseWork/{courseWorkId}/studentSubmissions/{id}", %{
+         "courseId" => URI.encode_www_form(course_id),
+         "courseWorkId" => URI.encode_www_form(course_work_id),
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -586,7 +610,10 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
     }
     %{}
     |> method(:get)
-    |> url("/v1/courses/#{course_id}/courseWork/#{course_work_id}/studentSubmissions")
+    |> url("/v1/courses/{courseId}/courseWork/{courseWorkId}/studentSubmissions", %{
+         "courseId" => URI.encode_www_form(course_id),
+         "courseWorkId" => URI.encode_www_form(course_work_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -643,7 +670,11 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
     }
     %{}
     |> method(:post)
-    |> url("/v1/courses/#{course_id}/courseWork/#{course_work_id}/studentSubmissions/#{id}:modifyAttachments")
+    |> url("/v1/courses/{courseId}/courseWork/{courseWorkId}/studentSubmissions/{id}:modifyAttachments", %{
+         "courseId" => URI.encode_www_form(course_id),
+         "courseWorkId" => URI.encode_www_form(course_work_id),
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -702,7 +733,11 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
     }
     %{}
     |> method(:patch)
-    |> url("/v1/courses/#{course_id}/courseWork/#{course_work_id}/studentSubmissions/#{id}")
+    |> url("/v1/courses/{courseId}/courseWork/{courseWorkId}/studentSubmissions/{id}", %{
+         "courseId" => URI.encode_www_form(course_id),
+         "courseWorkId" => URI.encode_www_form(course_work_id),
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -759,7 +794,11 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
     }
     %{}
     |> method(:post)
-    |> url("/v1/courses/#{course_id}/courseWork/#{course_work_id}/studentSubmissions/#{id}:reclaim")
+    |> url("/v1/courses/{courseId}/courseWork/{courseWorkId}/studentSubmissions/{id}:reclaim", %{
+         "courseId" => URI.encode_www_form(course_id),
+         "courseWorkId" => URI.encode_www_form(course_work_id),
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -816,7 +855,11 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
     }
     %{}
     |> method(:post)
-    |> url("/v1/courses/#{course_id}/courseWork/#{course_work_id}/studentSubmissions/#{id}:return")
+    |> url("/v1/courses/{courseId}/courseWork/{courseWorkId}/studentSubmissions/{id}:return", %{
+         "courseId" => URI.encode_www_form(course_id),
+         "courseWorkId" => URI.encode_www_form(course_work_id),
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -873,7 +916,11 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
     }
     %{}
     |> method(:post)
-    |> url("/v1/courses/#{course_id}/courseWork/#{course_work_id}/studentSubmissions/#{id}:turnIn")
+    |> url("/v1/courses/{courseId}/courseWork/{courseWorkId}/studentSubmissions/{id}:turnIn", %{
+         "courseId" => URI.encode_www_form(course_id),
+         "courseWorkId" => URI.encode_www_form(course_work_id),
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -980,7 +1027,9 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/courses/#{id}")
+    |> url("/v1/courses/{id}", %{
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1033,7 +1082,9 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
     }
     %{}
     |> method(:get)
-    |> url("/v1/courses/#{id}")
+    |> url("/v1/courses/{id}", %{
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1152,7 +1203,9 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
     }
     %{}
     |> method(:patch)
-    |> url("/v1/courses/#{id}")
+    |> url("/v1/courses/{id}", %{
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1209,7 +1262,9 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
     }
     %{}
     |> method(:post)
-    |> url("/v1/courses/#{course_id}/students")
+    |> url("/v1/courses/{courseId}/students", %{
+         "courseId" => URI.encode_www_form(course_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1263,7 +1318,10 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/courses/#{course_id}/students/#{user_id}")
+    |> url("/v1/courses/{courseId}/students/{userId}", %{
+         "courseId" => URI.encode_www_form(course_id),
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1317,7 +1375,10 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
     }
     %{}
     |> method(:get)
-    |> url("/v1/courses/#{course_id}/students/#{user_id}")
+    |> url("/v1/courses/{courseId}/students/{userId}", %{
+         "courseId" => URI.encode_www_form(course_id),
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1374,7 +1435,9 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
     }
     %{}
     |> method(:get)
-    |> url("/v1/courses/#{course_id}/students")
+    |> url("/v1/courses/{courseId}/students", %{
+         "courseId" => URI.encode_www_form(course_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1429,7 +1492,9 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
     }
     %{}
     |> method(:post)
-    |> url("/v1/courses/#{course_id}/teachers")
+    |> url("/v1/courses/{courseId}/teachers", %{
+         "courseId" => URI.encode_www_form(course_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1483,7 +1548,10 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/courses/#{course_id}/teachers/#{user_id}")
+    |> url("/v1/courses/{courseId}/teachers/{userId}", %{
+         "courseId" => URI.encode_www_form(course_id),
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1537,7 +1605,10 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
     }
     %{}
     |> method(:get)
-    |> url("/v1/courses/#{course_id}/teachers/#{user_id}")
+    |> url("/v1/courses/{courseId}/teachers/{userId}", %{
+         "courseId" => URI.encode_www_form(course_id),
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1594,7 +1665,9 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
     }
     %{}
     |> method(:get)
-    |> url("/v1/courses/#{course_id}/teachers")
+    |> url("/v1/courses/{courseId}/teachers", %{
+         "courseId" => URI.encode_www_form(course_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1649,7 +1722,9 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
     }
     %{}
     |> method(:put)
-    |> url("/v1/courses/#{id}")
+    |> url("/v1/courses/{id}", %{
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

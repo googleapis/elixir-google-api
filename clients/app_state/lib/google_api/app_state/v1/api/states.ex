@@ -62,7 +62,9 @@ defmodule GoogleApi.AppState.V1.Api.States do
     }
     %{}
     |> method(:post)
-    |> url("/states/#{state_key}/clear")
+    |> url("/states/{stateKey}/clear", %{
+         "stateKey" => URI.encode_www_form(state_key)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -103,7 +105,9 @@ defmodule GoogleApi.AppState.V1.Api.States do
     }
     %{}
     |> method(:delete)
-    |> url("/states/#{state_key}")
+    |> url("/states/{stateKey}", %{
+         "stateKey" => URI.encode_www_form(state_key)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -144,7 +148,9 @@ defmodule GoogleApi.AppState.V1.Api.States do
     }
     %{}
     |> method(:get)
-    |> url("/states/#{state_key}")
+    |> url("/states/{stateKey}", %{
+         "stateKey" => URI.encode_www_form(state_key)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -231,7 +237,9 @@ defmodule GoogleApi.AppState.V1.Api.States do
     }
     %{}
     |> method(:put)
-    |> url("/states/#{state_key}")
+    |> url("/states/{stateKey}", %{
+         "stateKey" => URI.encode_www_form(state_key)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

@@ -20,9 +20,13 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.AppVersion do
   @moduledoc """
   This represents a single version of the app.
+
+  ## Attributes
+
+  - versionCode (Integer): Unique increasing identifier for the app version. Defaults to: `null`.
+  - versionString (String): The string used in the Play store by the app developer to identify the version. The string is not necessarily unique or localized (for example, the string could be \&quot;1.4\&quot;). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"versionCode",
     :"versionString"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.AppVersion do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.AppVersion do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

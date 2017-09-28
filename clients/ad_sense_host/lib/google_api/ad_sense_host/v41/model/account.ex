@@ -20,9 +20,15 @@
 defmodule GoogleApi.AdSenseHost.V41.Model.Account do
   @moduledoc """
   
+
+  ## Attributes
+
+  - id (String): Unique identifier of this account. Defaults to: `null`.
+  - kind (String): Kind of resource this is, in this case adsensehost#account. Defaults to: `null`.
+  - name (String): Name of this account. Defaults to: `null`.
+  - status (String): Approval status of this account. One of: PENDING, APPROVED, DISABLED. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"kind",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AdSenseHost.V41.Model.Account do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdSenseHost.V41.Model.Account do
+  def encode(value, options) do
+    GoogleApi.AdSenseHost.V41.Deserializer.serialize_non_nil(value, options)
   end
 end
 

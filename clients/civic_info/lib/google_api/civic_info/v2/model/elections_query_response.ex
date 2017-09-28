@@ -20,9 +20,13 @@
 defmodule GoogleApi.CivicInfo.V2.Model.ElectionsQueryResponse do
   @moduledoc """
   The list of elections available for this version of the API.
+
+  ## Attributes
+
+  - elections (List[Election]): A list of available elections Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;civicinfo#electionsQueryResponse\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"elections",
     :"kind"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.ElectionsQueryResponse
   def decode(value, options) do
     value
     |> deserialize(:"elections", :list, GoogleApi.CivicInfo.V2.Model.Election, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CivicInfo.V2.Model.ElectionsQueryResponse do
+  def encode(value, options) do
+    GoogleApi.CivicInfo.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,16 @@
 defmodule GoogleApi.Classroom.V1.Model.Invitation do
   @moduledoc """
   An invitation to join a course.
+
+  ## Attributes
+
+  - courseId (String): Identifier of the course to invite the user to. Defaults to: `null`.
+  - id (String): Identifier assigned by Classroom.  Read-only. Defaults to: `null`.
+  - role (String): Role to invite the user to have. Must not be &#x60;COURSE_ROLE_UNSPECIFIED&#x60;. Defaults to: `null`.
+    - Enum - one of [COURSE_ROLE_UNSPECIFIED, STUDENT, TEACHER, OWNER]
+  - userId (String): Identifier of the invited user.  When specified as a parameter of a request, this identifier can be set to one of the following:  * the numeric identifier for the user * the email address of the user * the string literal &#x60;\&quot;me\&quot;&#x60;, indicating the requesting user Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"courseId",
     :"id",
@@ -34,6 +41,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.Invitation do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.Invitation do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

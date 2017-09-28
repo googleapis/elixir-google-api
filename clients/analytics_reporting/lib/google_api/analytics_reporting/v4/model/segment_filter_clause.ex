@@ -20,9 +20,14 @@
 defmodule GoogleApi.AnalyticsReporting.V4.Model.SegmentFilterClause do
   @moduledoc """
   Filter Clause to be used in a segment definition, can be wither a metric or a dimension filter.
+
+  ## Attributes
+
+  - dimensionFilter (SegmentDimensionFilter): Dimension Filter for the segment definition. Defaults to: `null`.
+  - metricFilter (SegmentMetricFilter): Metric Filter for the segment definition. Defaults to: `null`.
+  - not (Boolean): Matches the complement (&#x60;!&#x60;) of the filter. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dimensionFilter",
     :"metricFilter",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.AnalyticsReporting.V4.Model.SegmentFilter
     value
     |> deserialize(:"dimensionFilter", :struct, GoogleApi.AnalyticsReporting.V4.Model.SegmentDimensionFilter, options)
     |> deserialize(:"metricFilter", :struct, GoogleApi.AnalyticsReporting.V4.Model.SegmentMetricFilter, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AnalyticsReporting.V4.Model.SegmentFilterClause do
+  def encode(value, options) do
+    GoogleApi.AnalyticsReporting.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

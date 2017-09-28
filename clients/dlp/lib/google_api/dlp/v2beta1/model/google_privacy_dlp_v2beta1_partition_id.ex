@@ -20,9 +20,13 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1PartitionId do
   @moduledoc """
   Datastore partition ID. A partition ID identifies a grouping of entities. The grouping is always by project and namespace, however the namespace ID may be empty.  A partition ID contains several dimensions: project ID and namespace ID.
+
+  ## Attributes
+
+  - namespaceId (String): If not empty, the ID of the namespace to which the entities belong. Defaults to: `null`.
+  - projectId (String): The ID of the project to which the entities belong. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"namespaceId",
     :"projectId"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1PartitionId do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1PartitionId do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

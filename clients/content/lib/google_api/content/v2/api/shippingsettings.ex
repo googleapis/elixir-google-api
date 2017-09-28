@@ -105,7 +105,10 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
     }
     %{}
     |> method(:get)
-    |> url("/#{merchant_id}/shippingsettings/#{account_id}")
+    |> url("/{merchantId}/shippingsettings/{accountId}", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -146,7 +149,9 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
     }
     %{}
     |> method(:get)
-    |> url("/#{merchant_id}/supportedCarriers")
+    |> url("/{merchantId}/supportedCarriers", %{
+         "merchantId" => URI.encode_www_form(merchant_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -191,7 +196,9 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
     }
     %{}
     |> method(:get)
-    |> url("/#{merchant_id}/shippingsettings")
+    |> url("/{merchantId}/shippingsettings", %{
+         "merchantId" => URI.encode_www_form(merchant_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -237,7 +244,10 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
     }
     %{}
     |> method(:patch)
-    |> url("/#{merchant_id}/shippingsettings/#{account_id}")
+    |> url("/{merchantId}/shippingsettings/{accountId}", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -283,7 +293,10 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
     }
     %{}
     |> method(:put)
-    |> url("/#{merchant_id}/shippingsettings/#{account_id}")
+    |> url("/{merchantId}/shippingsettings/{accountId}", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

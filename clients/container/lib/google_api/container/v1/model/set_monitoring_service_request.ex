@@ -20,9 +20,12 @@
 defmodule GoogleApi.Container.V1.Model.SetMonitoringServiceRequest do
   @moduledoc """
   SetMonitoringServiceRequest sets the monitoring service of a cluster.
+
+  ## Attributes
+
+  - monitoringService (String): The monitoring service the cluster should use to write metrics. Currently available options:  * \&quot;monitoring.googleapis.com\&quot; - the Google Cloud Monitoring service * \&quot;none\&quot; - no metrics will be exported from the cluster Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"monitoringService"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.SetMonitoringServiceRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.SetMonitoringServiceRequest do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

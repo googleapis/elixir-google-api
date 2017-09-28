@@ -148,7 +148,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
     }
     %{}
     |> method(:post)
-    |> url("/enterprises/#{enterprise_id}/createWebToken")
+    |> url("/enterprises/{enterpriseId}/createWebToken", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -189,7 +191,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
     }
     %{}
     |> method(:delete)
-    |> url("/enterprises/#{enterprise_id}")
+    |> url("/enterprises/{enterpriseId}", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -316,7 +320,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
     }
     %{}
     |> method(:get)
-    |> url("/enterprises/#{enterprise_id}")
+    |> url("/enterprises/{enterpriseId}", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -357,7 +363,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
     }
     %{}
     |> method(:get)
-    |> url("/enterprises/#{enterprise_id}/androidDevicePolicyConfig")
+    |> url("/enterprises/{enterpriseId}/androidDevicePolicyConfig", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -400,7 +408,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
     }
     %{}
     |> method(:get)
-    |> url("/enterprises/#{enterprise_id}/serviceAccount")
+    |> url("/enterprises/{enterpriseId}/serviceAccount", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -441,7 +451,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
     }
     %{}
     |> method(:get)
-    |> url("/enterprises/#{enterprise_id}/storeLayout")
+    |> url("/enterprises/{enterpriseId}/storeLayout", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -610,7 +622,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
     }
     %{}
     |> method(:post)
-    |> url("/enterprises/#{enterprise_id}/sendTestPushNotification")
+    |> url("/enterprises/{enterpriseId}/sendTestPushNotification", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -653,7 +667,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
     }
     %{}
     |> method(:put)
-    |> url("/enterprises/#{enterprise_id}/account")
+    |> url("/enterprises/{enterpriseId}/account", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -696,7 +712,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
     }
     %{}
     |> method(:put)
-    |> url("/enterprises/#{enterprise_id}/androidDevicePolicyConfig")
+    |> url("/enterprises/{enterpriseId}/androidDevicePolicyConfig", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -739,7 +757,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
     }
     %{}
     |> method(:put)
-    |> url("/enterprises/#{enterprise_id}/storeLayout")
+    |> url("/enterprises/{enterpriseId}/storeLayout", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -780,7 +800,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
     }
     %{}
     |> method(:post)
-    |> url("/enterprises/#{enterprise_id}/unenroll")
+    |> url("/enterprises/{enterpriseId}/unenroll", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

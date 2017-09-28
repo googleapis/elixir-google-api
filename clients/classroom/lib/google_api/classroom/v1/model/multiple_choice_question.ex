@@ -20,9 +20,12 @@
 defmodule GoogleApi.Classroom.V1.Model.MultipleChoiceQuestion do
   @moduledoc """
   Additional details for multiple-choice questions.
+
+  ## Attributes
+
+  - choices (List[String]): Possible choices. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"choices"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.MultipleChoiceQuestion do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.MultipleChoiceQuestion do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

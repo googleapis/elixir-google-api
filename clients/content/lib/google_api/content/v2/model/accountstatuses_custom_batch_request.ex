@@ -20,9 +20,12 @@
 defmodule GoogleApi.Content.V2.Model.AccountstatusesCustomBatchRequest do
   @moduledoc """
   
+
+  ## Attributes
+
+  - entries (List[AccountstatusesCustomBatchRequestEntry]): The request entries to be processed in the batch. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"entries"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.AccountstatusesCustomBat
   def decode(value, options) do
     value
     |> deserialize(:"entries", :list, GoogleApi.Content.V2.Model.AccountstatusesCustomBatchRequestEntry, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.AccountstatusesCustomBatchRequest do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

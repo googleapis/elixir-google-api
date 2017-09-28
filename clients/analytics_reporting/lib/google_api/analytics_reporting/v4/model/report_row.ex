@@ -20,9 +20,13 @@
 defmodule GoogleApi.AnalyticsReporting.V4.Model.ReportRow do
   @moduledoc """
   A row in the report.
+
+  ## Attributes
+
+  - dimensions (List[String]): List of requested dimensions. Defaults to: `null`.
+  - metrics (List[DateRangeValues]): List of metrics for each requested DateRange. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dimensions",
     :"metrics"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AnalyticsReporting.V4.Model.ReportRow do
   def decode(value, options) do
     value
     |> deserialize(:"metrics", :list, GoogleApi.AnalyticsReporting.V4.Model.DateRangeValues, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AnalyticsReporting.V4.Model.ReportRow do
+  def encode(value, options) do
+    GoogleApi.AnalyticsReporting.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

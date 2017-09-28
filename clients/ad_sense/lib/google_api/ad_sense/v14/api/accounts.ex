@@ -64,7 +64,9 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{account_id}/adclients")
+    |> url("/accounts/{accountId}/adclients", %{
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -111,7 +113,11 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{account_id}/adclients/#{ad_client_id}/adunits/#{ad_unit_id}/customchannels")
+    |> url("/accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}/customchannels", %{
+         "accountId" => URI.encode_www_form(account_id),
+         "adClientId" => URI.encode_www_form(ad_client_id),
+         "adUnitId" => URI.encode_www_form(ad_unit_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -154,7 +160,11 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{account_id}/adclients/#{ad_client_id}/adunits/#{ad_unit_id}")
+    |> url("/accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}", %{
+         "accountId" => URI.encode_www_form(account_id),
+         "adClientId" => URI.encode_www_form(ad_client_id),
+         "adUnitId" => URI.encode_www_form(ad_unit_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -197,7 +207,11 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{account_id}/adclients/#{ad_client_id}/adunits/#{ad_unit_id}/adcode")
+    |> url("/accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}/adcode", %{
+         "accountId" => URI.encode_www_form(account_id),
+         "adClientId" => URI.encode_www_form(ad_client_id),
+         "adUnitId" => URI.encode_www_form(ad_unit_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -245,7 +259,10 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{account_id}/adclients/#{ad_client_id}/adunits")
+    |> url("/accounts/{accountId}/adclients/{adClientId}/adunits", %{
+         "accountId" => URI.encode_www_form(account_id),
+         "adClientId" => URI.encode_www_form(ad_client_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -287,7 +304,10 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
     }
     %{}
     |> method(:delete)
-    |> url("/accounts/#{account_id}/alerts/#{alert_id}")
+    |> url("/accounts/{accountId}/alerts/{alertId}", %{
+         "accountId" => URI.encode_www_form(account_id),
+         "alertId" => URI.encode_www_form(alert_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -330,7 +350,9 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{account_id}/alerts")
+    |> url("/accounts/{accountId}/alerts", %{
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -379,7 +401,11 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{account_id}/adclients/#{ad_client_id}/customchannels/#{custom_channel_id}/adunits")
+    |> url("/accounts/{accountId}/adclients/{adClientId}/customchannels/{customChannelId}/adunits", %{
+         "accountId" => URI.encode_www_form(account_id),
+         "adClientId" => URI.encode_www_form(ad_client_id),
+         "customChannelId" => URI.encode_www_form(custom_channel_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -422,7 +448,11 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{account_id}/adclients/#{ad_client_id}/customchannels/#{custom_channel_id}")
+    |> url("/accounts/{accountId}/adclients/{adClientId}/customchannels/{customChannelId}", %{
+         "accountId" => URI.encode_www_form(account_id),
+         "adClientId" => URI.encode_www_form(ad_client_id),
+         "customChannelId" => URI.encode_www_form(custom_channel_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -468,7 +498,10 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{account_id}/adclients/#{ad_client_id}/customchannels")
+    |> url("/accounts/{accountId}/adclients/{adClientId}/customchannels", %{
+         "accountId" => URI.encode_www_form(account_id),
+         "adClientId" => URI.encode_www_form(ad_client_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -511,7 +544,9 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{account_id}")
+    |> url("/accounts/{accountId}", %{
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -596,7 +631,9 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{account_id}/payments")
+    |> url("/accounts/{accountId}/payments", %{
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -657,7 +694,9 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{account_id}/reports")
+    |> url("/accounts/{accountId}/reports", %{
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_param(:query, :"startDate", start_date)
     |> add_param(:query, :"endDate", end_date)
     |> add_optional_params(optional_params, opts)
@@ -707,7 +746,10 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{account_id}/reports/#{saved_report_id}")
+    |> url("/accounts/{accountId}/reports/{savedReportId}", %{
+         "accountId" => URI.encode_www_form(account_id),
+         "savedReportId" => URI.encode_www_form(saved_report_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -752,7 +794,9 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{account_id}/reports/saved")
+    |> url("/accounts/{accountId}/reports/saved", %{
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -794,7 +838,10 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{account_id}/savedadstyles/#{saved_ad_style_id}")
+    |> url("/accounts/{accountId}/savedadstyles/{savedAdStyleId}", %{
+         "accountId" => URI.encode_www_form(account_id),
+         "savedAdStyleId" => URI.encode_www_form(saved_ad_style_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -839,7 +886,9 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{account_id}/savedadstyles")
+    |> url("/accounts/{accountId}/savedadstyles", %{
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -885,7 +934,10 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/accounts/#{account_id}/adclients/#{ad_client_id}/urlchannels")
+    |> url("/accounts/{accountId}/adclients/{adClientId}/urlchannels", %{
+         "accountId" => URI.encode_www_form(account_id),
+         "adClientId" => URI.encode_www_form(ad_client_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

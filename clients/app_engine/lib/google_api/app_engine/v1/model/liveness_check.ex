@@ -20,9 +20,18 @@
 defmodule GoogleApi.AppEngine.V1.Model.LivenessCheck do
   @moduledoc """
   Health checking configuration for VM instances. Unhealthy instances are killed and replaced with new instances.
+
+  ## Attributes
+
+  - host (String): Host header to send when performing a HTTP Liveness check. Example: \&quot;myapp.appspot.com\&quot; Defaults to: `null`.
+  - checkInterval (String): Interval between health checks. Defaults to: `null`.
+  - failureThreshold (Integer): Number of consecutive failed checks required before considering the VM unhealthy. Defaults to: `null`.
+  - initialDelay (String): The initial delay before starting to execute the checks. Defaults to: `null`.
+  - path (String): The request path. Defaults to: `null`.
+  - successThreshold (Integer): Number of consecutive successful checks required before considering the VM healthy. Defaults to: `null`.
+  - timeout (String): Time before the check is considered failed. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"host",
     :"checkInterval",
@@ -37,6 +46,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.LivenessCheck do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.LivenessCheck do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

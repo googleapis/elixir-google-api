@@ -20,9 +20,12 @@
 defmodule GoogleApi.Container.V1.Model.SetAddonsConfigRequest do
   @moduledoc """
   SetAddonsConfigRequest sets the addons associated with the cluster.
+
+  ## Attributes
+
+  - addonsConfig (AddonsConfig): The desired configurations for the various addons available to run in the cluster. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"addonsConfig"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.SetAddonsConfigRequest
   def decode(value, options) do
     value
     |> deserialize(:"addonsConfig", :struct, GoogleApi.Container.V1.Model.AddonsConfig, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.SetAddonsConfigRequest do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

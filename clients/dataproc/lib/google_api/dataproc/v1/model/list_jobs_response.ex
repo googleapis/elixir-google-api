@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataproc.V1.Model.ListJobsResponse do
   @moduledoc """
   A list of jobs in a project.
+
+  ## Attributes
+
+  - jobs (List[Job]): Output-only. Jobs list. Defaults to: `null`.
+  - nextPageToken (String): Optional. This token is included in the response if there are more results to fetch. To fetch additional results, provide this value as the page_token in a subsequent &lt;code&gt;ListJobsRequest&lt;/code&gt;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"jobs",
     :"nextPageToken"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.ListJobsResponse do
   def decode(value, options) do
     value
     |> deserialize(:"jobs", :list, GoogleApi.Dataproc.V1.Model.Job, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataproc.V1.Model.ListJobsResponse do
+  def encode(value, options) do
+    GoogleApi.Dataproc.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

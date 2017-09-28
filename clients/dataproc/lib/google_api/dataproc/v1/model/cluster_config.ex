@@ -20,9 +20,18 @@
 defmodule GoogleApi.Dataproc.V1.Model.ClusterConfig do
   @moduledoc """
   The cluster config.
+
+  ## Attributes
+
+  - configBucket (String): Optional. A Google Cloud Storage staging bucket used for sharing generated SSH keys and config. If you do not specify a staging bucket, Cloud Dataproc will determine an appropriate Cloud Storage location (US, ASIA, or EU) for your cluster&#39;s staging bucket according to the Google Compute Engine zone where your cluster is deployed, and then it will create and manage this project-level, per-location bucket for you. Defaults to: `null`.
+  - gceClusterConfig (GceClusterConfig): Required. The shared Google Compute Engine config settings for all instances in a cluster. Defaults to: `null`.
+  - initializationActions (List[NodeInitializationAction]): Optional. Commands to execute on each node after config is completed. By default, executables are run on master and all worker nodes. You can test a node&#39;s role metadata to run an executable on a master or worker node, as shown below using curl (you can also use wget): ROLE&#x3D;$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role) if [[ \&quot;${ROLE}\&quot; &#x3D;&#x3D; &#39;Master&#39; ]]; then   ... master specific actions ... else   ... worker specific actions ... fi  Defaults to: `null`.
+  - masterConfig (InstanceGroupConfig): Optional. The Google Compute Engine config settings for the master instance in a cluster. Defaults to: `null`.
+  - secondaryWorkerConfig (InstanceGroupConfig): Optional. The Google Compute Engine config settings for additional worker instances in a cluster. Defaults to: `null`.
+  - softwareConfig (SoftwareConfig): Optional. The config settings for software inside the cluster. Defaults to: `null`.
+  - workerConfig (InstanceGroupConfig): Optional. The Google Compute Engine config settings for worker instances in a cluster. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"configBucket",
     :"gceClusterConfig",
@@ -44,6 +53,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.ClusterConfig do
     |> deserialize(:"secondaryWorkerConfig", :struct, GoogleApi.Dataproc.V1.Model.InstanceGroupConfig, options)
     |> deserialize(:"softwareConfig", :struct, GoogleApi.Dataproc.V1.Model.SoftwareConfig, options)
     |> deserialize(:"workerConfig", :struct, GoogleApi.Dataproc.V1.Model.InstanceGroupConfig, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataproc.V1.Model.ClusterConfig do
+  def encode(value, options) do
+    GoogleApi.Dataproc.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

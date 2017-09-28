@@ -20,9 +20,15 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductsListResponse do
   @moduledoc """
   The matching products.
+
+  ## Attributes
+
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#productsListResponse\&quot;. Defaults to: `null`.
+  - pageInfo (PageInfo): General pagination information. Defaults to: `null`.
+  - product (List[Product]): Information about a product (e.g. an app) in the Google Play store, for display to an enterprise admin. Defaults to: `null`.
+  - tokenPagination (TokenPagination): Pagination information for token pagination. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"pageInfo",
@@ -38,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.ProductsListRe
     |> deserialize(:"pageInfo", :struct, GoogleApi.AndroidEnterprise.V1.Model.PageInfo, options)
     |> deserialize(:"product", :list, GoogleApi.AndroidEnterprise.V1.Model.Product, options)
     |> deserialize(:"tokenPagination", :struct, GoogleApi.AndroidEnterprise.V1.Model.TokenPagination, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.ProductsListResponse do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

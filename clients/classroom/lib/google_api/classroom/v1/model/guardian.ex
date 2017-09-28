@@ -20,9 +20,15 @@
 defmodule GoogleApi.Classroom.V1.Model.Guardian do
   @moduledoc """
   Association between a student and a guardian of that student. The guardian may receive information about the student&#39;s course work.
+
+  ## Attributes
+
+  - guardianId (String): Identifier for the guardian. Defaults to: `null`.
+  - guardianProfile (UserProfile): User profile for the guardian. Defaults to: `null`.
+  - invitedEmailAddress (String): The email address to which the initial guardian invitation was sent. This field is only visible to domain administrators. Defaults to: `null`.
+  - studentId (String): Identifier for the student to whom the guardian relationship applies. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"guardianId",
     :"guardianProfile",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.Guardian do
   def decode(value, options) do
     value
     |> deserialize(:"guardianProfile", :struct, GoogleApi.Classroom.V1.Model.UserProfile, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.Guardian do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,17 @@
 defmodule GoogleApi.Dataproc.V1.Model.SparkSqlJob do
   @moduledoc """
   A Cloud Dataproc job for running Apache Spark SQL (http://spark.apache.org/sql/) queries.
+
+  ## Attributes
+
+  - jarFileUris (List[String]): Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH. Defaults to: `null`.
+  - loggingConfig (LoggingConfig): Optional. The runtime log config for job execution. Defaults to: `null`.
+  - properties (Map[String, String]): Optional. A mapping of property names to values, used to configure Spark SQL&#39;s SparkConf. Properties that conflict with values set by the Cloud Dataproc API may be overwritten. Defaults to: `null`.
+  - queryFileUri (String): The HCFS URI of the script that contains SQL queries. Defaults to: `null`.
+  - queryList (QueryList): A list of queries. Defaults to: `null`.
+  - scriptVariables (Map[String, String]): Optional. Mapping of query variable names to values (equivalent to the Spark SQL command: SET name&#x3D;\&quot;value\&quot;;). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"jarFileUris",
     :"loggingConfig",
@@ -39,6 +47,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.SparkSqlJob do
     value
     |> deserialize(:"loggingConfig", :struct, GoogleApi.Dataproc.V1.Model.LoggingConfig, options)
     |> deserialize(:"queryList", :struct, GoogleApi.Dataproc.V1.Model.QueryList, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataproc.V1.Model.SparkSqlJob do
+  def encode(value, options) do
+    GoogleApi.Dataproc.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

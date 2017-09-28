@@ -20,9 +20,13 @@
 defmodule GoogleApi.AppEngine.V1.Model.ListInstancesResponse do
   @moduledoc """
   Response message for Instances.ListInstances.
+
+  ## Attributes
+
+  - instances (List[Instance]): The instances belonging to the requested version. Defaults to: `null`.
+  - nextPageToken (String): Continuation token for fetching the next page of results. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"instances",
     :"nextPageToken"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.ListInstancesResponse 
   def decode(value, options) do
     value
     |> deserialize(:"instances", :list, GoogleApi.AppEngine.V1.Model.Instance, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.ListInstancesResponse do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

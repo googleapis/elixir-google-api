@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CustomSearch.V1.Model.Result_labels do
+defmodule GoogleApi.CustomSearch.V1.Model.ResultLabels do
   @moduledoc """
   
+
+  ## Attributes
+
+  - displayName (String):  Defaults to: `null`.
+  - label_with_op (String):  Defaults to: `null`.
+  - name (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"displayName",
     :"label_with_op",
@@ -30,9 +35,15 @@ defmodule GoogleApi.CustomSearch.V1.Model.Result_labels do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CustomSearch.V1.Model.Result_labels do
+defimpl Poison.Decoder, for: GoogleApi.CustomSearch.V1.Model.ResultLabels do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CustomSearch.V1.Model.ResultLabels do
+  def encode(value, options) do
+    GoogleApi.CustomSearch.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

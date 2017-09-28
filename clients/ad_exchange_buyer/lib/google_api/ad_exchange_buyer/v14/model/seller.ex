@@ -20,9 +20,13 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.Seller do
   @moduledoc """
   
+
+  ## Attributes
+
+  - accountId (String): The unique id for the seller. The seller fills in this field. The seller account id is then available to buyer in the product. Defaults to: `null`.
+  - subAccountId (String): Optional sub-account id for the seller. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accountId",
     :"subAccountId"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.Seller do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.Seller do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

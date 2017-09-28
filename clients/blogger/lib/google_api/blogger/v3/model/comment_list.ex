@@ -20,9 +20,16 @@
 defmodule GoogleApi.Blogger.V3.Model.CommentList do
   @moduledoc """
   
+
+  ## Attributes
+
+  - etag (String): Etag of the response. Defaults to: `null`.
+  - items (List[Comment]): The List of Comments for a Post. Defaults to: `null`.
+  - kind (String): The kind of this entry. Always blogger#commentList Defaults to: `null`.
+  - nextPageToken (String): Pagination token to fetch the next page, if one exists. Defaults to: `null`.
+  - prevPageToken (String): Pagination token to fetch the previous page, if one exists. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"items",
@@ -37,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.CommentList do
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.Blogger.V3.Model.Comment, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Blogger.V3.Model.CommentList do
+  def encode(value, options) do
+    GoogleApi.Blogger.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.AuthorizedKeysView do
   @moduledoc """
   A list of authorized public keys for a user account.
+
+  ## Attributes
+
+  - keys (List[String]): [Output Only] The list of authorized public keys in SSH format. Defaults to: `null`.
+  - sudoer (Boolean): [Output Only] Whether the user has the ability to elevate on the instance that requested the authorized keys. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"keys",
     :"sudoer"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.AuthorizedKeysView do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.AuthorizedKeysView do
+  def encode(value, options) do
+    GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer.serialize_non_nil(value, options)
   end
 end
 

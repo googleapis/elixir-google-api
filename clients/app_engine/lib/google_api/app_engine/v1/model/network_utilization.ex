@@ -20,9 +20,15 @@
 defmodule GoogleApi.AppEngine.V1.Model.NetworkUtilization do
   @moduledoc """
   Target scaling by network usage. Only applicable for VM runtimes.
+
+  ## Attributes
+
+  - targetReceivedBytesPerSecond (Integer): Target bytes received per second. Defaults to: `null`.
+  - targetReceivedPacketsPerSecond (Integer): Target packets received per second. Defaults to: `null`.
+  - targetSentBytesPerSecond (Integer): Target bytes sent per second. Defaults to: `null`.
+  - targetSentPacketsPerSecond (Integer): Target packets sent per second. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"targetReceivedBytesPerSecond",
     :"targetReceivedPacketsPerSecond",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.NetworkUtilization do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.NetworkUtilization do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.ClaimDeviceResponse do
   @moduledoc """
   Response message containing device id of the claim.
+
+  ## Attributes
+
+  - deviceId (String): the device id of the claimed device. Defaults to: `null`.
+  - deviceName (String): the resource name of the device in &#39;partners/[PARTNER_ID]/devices/[DEVICE_ID]&#39;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"deviceId",
     :"deviceName"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.ClaimDeviceResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.ClaimDeviceResponse do
+  def encode(value, options) do
+    GoogleApi.AndroidDeviceProvisioning.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

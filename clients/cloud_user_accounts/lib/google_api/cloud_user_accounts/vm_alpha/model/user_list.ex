@@ -20,9 +20,16 @@
 defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.UserList do
   @moduledoc """
   
+
+  ## Attributes
+
+  - id (String): [Output Only] Unique identifier for the resource; defined by the server. Defaults to: `null`.
+  - items (List[User]): [Output Only] A list of User resources. Defaults to: `null`.
+  - kind (String): [Output Only] Type of resource. Always clouduseraccounts#userList for lists of users. Defaults to: `null`.
+  - nextPageToken (String): [Output Only] A token used to continue a truncated list request. Defaults to: `null`.
+  - selfLink (String): [Output Only] Server defined URL for this resource. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"items",
@@ -37,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.UserList
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.CloudUserAccounts.Vm_alpha.Model.User, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.UserList do
+  def encode(value, options) do
+    GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.Content.V2.Model.AccountAdwordsLink do
   @moduledoc """
   
+
+  ## Attributes
+
+  - adwordsId (String): Customer ID of the AdWords account. Defaults to: `null`.
+  - status (String): Status of the link between this Merchant Center account and the AdWords account. Upon retrieval, it represents the actual status of the link and can be either active if it was approved in Google AdWords or pending if it&#39;s pending approval. Upon insertion, it represents the intended status of the link. Re-uploading a link with status active when it&#39;s still pending or with status pending when it&#39;s already active will have no effect: the status will remain unchanged. Re-uploading a link with deprecated status inactive is equivalent to not submitting the link at all and will delete the link if it was active or cancel the link request if it was pending. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"adwordsId",
     :"status"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.AccountAdwordsLink do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.AccountAdwordsLink do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

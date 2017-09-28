@@ -20,9 +20,14 @@
 defmodule GoogleApi.AnalyticsReporting.V4.Model.PivotHeaderEntry do
   @moduledoc """
   The headers for the each of the metric column corresponding to the metrics requested in the pivots section of the response.
+
+  ## Attributes
+
+  - dimensionNames (List[String]): The name of the dimensions in the pivot response. Defaults to: `null`.
+  - dimensionValues (List[String]): The values for the dimensions in the pivot. Defaults to: `null`.
+  - metric (MetricHeaderEntry): The metric header for the metric in the pivot. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dimensionNames",
     :"dimensionValues",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.AnalyticsReporting.V4.Model.PivotHeaderEn
   def decode(value, options) do
     value
     |> deserialize(:"metric", :struct, GoogleApi.AnalyticsReporting.V4.Model.MetricHeaderEntry, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AnalyticsReporting.V4.Model.PivotHeaderEntry do
+  def encode(value, options) do
+    GoogleApi.AnalyticsReporting.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

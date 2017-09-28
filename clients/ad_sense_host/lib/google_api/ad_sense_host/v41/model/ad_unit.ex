@@ -20,9 +20,19 @@
 defmodule GoogleApi.AdSenseHost.V41.Model.AdUnit do
   @moduledoc """
   
+
+  ## Attributes
+
+  - code (String): Identity code of this ad unit, not necessarily unique across ad clients. Defaults to: `null`.
+  - contentAdsSettings (AdUnitContentAdsSettings):  Defaults to: `null`.
+  - customStyle (AdStyle): Custom style information specific to this ad unit. Defaults to: `null`.
+  - id (String): Unique identifier of this ad unit. This should be considered an opaque identifier; it is not safe to rely on it being in any particular format. Defaults to: `null`.
+  - kind (String): Kind of resource this is, in this case adsensehost#adUnit. Defaults to: `null`.
+  - mobileContentAdsSettings (AdUnitMobileContentAdsSettings):  Defaults to: `null`.
+  - name (String): Name of this ad unit. Defaults to: `null`.
+  - status (String): Status of this ad unit. Possible values are: NEW: Indicates that the ad unit was created within the last seven days and does not yet have any activity associated with it.  ACTIVE: Indicates that there has been activity on this ad unit in the last seven days.  INACTIVE: Indicates that there has been no activity on this ad unit in the last seven days. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"code",
     :"contentAdsSettings",
@@ -39,9 +49,15 @@ defimpl Poison.Decoder, for: GoogleApi.AdSenseHost.V41.Model.AdUnit do
   import GoogleApi.AdSenseHost.V41.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"contentAdsSettings", :struct, GoogleApi.AdSenseHost.V41.Model.AdUnit_contentAdsSettings, options)
+    |> deserialize(:"contentAdsSettings", :struct, GoogleApi.AdSenseHost.V41.Model.AdUnitContentAdsSettings, options)
     |> deserialize(:"customStyle", :struct, GoogleApi.AdSenseHost.V41.Model.AdStyle, options)
-    |> deserialize(:"mobileContentAdsSettings", :struct, GoogleApi.AdSenseHost.V41.Model.AdUnit_mobileContentAdsSettings, options)
+    |> deserialize(:"mobileContentAdsSettings", :struct, GoogleApi.AdSenseHost.V41.Model.AdUnitMobileContentAdsSettings, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdSenseHost.V41.Model.AdUnit do
+  def encode(value, options) do
+    GoogleApi.AdSenseHost.V41.Deserializer.serialize_non_nil(value, options)
   end
 end
 

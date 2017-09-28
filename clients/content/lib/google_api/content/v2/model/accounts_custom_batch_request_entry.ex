@@ -20,9 +20,17 @@
 defmodule GoogleApi.Content.V2.Model.AccountsCustomBatchRequestEntry do
   @moduledoc """
   A batch entry encoding a single non-batch accounts request.
+
+  ## Attributes
+
+  - account (Account): The account to create or update. Only defined if the method is insert or update. Defaults to: `null`.
+  - accountId (String): The ID of the targeted account. Only defined if the method is get, delete or claimwebsite. Defaults to: `null`.
+  - batchId (Integer): An entry ID, unique within the batch request. Defaults to: `null`.
+  - merchantId (String): The ID of the managing account. Defaults to: `null`.
+  - method (String):  Defaults to: `null`.
+  - overwrite (Boolean): Only applicable if the method is claimwebsite. Indicates whether or not to take the claim from another account in case there is a conflict. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"account",
     :"accountId",
@@ -38,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.AccountsCustomBatchReque
   def decode(value, options) do
     value
     |> deserialize(:"account", :struct, GoogleApi.Content.V2.Model.Account, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.AccountsCustomBatchRequestEntry do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

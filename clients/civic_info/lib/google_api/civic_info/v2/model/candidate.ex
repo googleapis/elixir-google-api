@@ -20,9 +20,19 @@
 defmodule GoogleApi.CivicInfo.V2.Model.Candidate do
   @moduledoc """
   Information about a candidate running for elected office.
+
+  ## Attributes
+
+  - candidateUrl (String): The URL for the candidate&#39;s campaign web site. Defaults to: `null`.
+  - channels (List[Channel]): A list of known (social) media channels for this candidate. Defaults to: `null`.
+  - email (String): The email address for the candidate&#39;s campaign. Defaults to: `null`.
+  - name (String): The candidate&#39;s name. If this is a joint ticket it will indicate the name of the candidate at the top of a ticket followed by a / and that name of candidate at the bottom of the ticket. e.g. \&quot;Mitt Romney / Paul Ryan\&quot; Defaults to: `null`.
+  - orderOnBallot (String): The order the candidate appears on the ballot for this contest. Defaults to: `null`.
+  - party (String): The full name of the party the candidate is a member of. Defaults to: `null`.
+  - phone (String): The voice phone number for the candidate&#39;s campaign office. Defaults to: `null`.
+  - photoUrl (String): A URL for a photo of the candidate. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"candidateUrl",
     :"channels",
@@ -40,6 +50,12 @@ defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.Candidate do
   def decode(value, options) do
     value
     |> deserialize(:"channels", :list, GoogleApi.CivicInfo.V2.Model.Channel, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CivicInfo.V2.Model.Candidate do
+  def encode(value, options) do
+    GoogleApi.CivicInfo.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

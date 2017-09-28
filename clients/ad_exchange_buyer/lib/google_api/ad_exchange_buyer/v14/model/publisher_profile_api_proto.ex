@@ -20,9 +20,34 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.PublisherProfileApiProto do
   @moduledoc """
   
+
+  ## Attributes
+
+  - accountId (String): Deprecated: use the seller.account_id. The account id of the seller. Defaults to: `null`.
+  - audience (String): Publisher provided info on its audience. Defaults to: `null`.
+  - buyerPitchStatement (String): A pitch statement for the buyer Defaults to: `null`.
+  - directContact (String): Direct contact for the publisher profile. Defaults to: `null`.
+  - exchange (String): Exchange where this publisher profile is from. E.g. AdX, Rubicon etc... Defaults to: `null`.
+  - googlePlusLink (String): Link to publisher&#39;s Google+ page. Defaults to: `null`.
+  - isParent (Boolean): True, if this is the parent profile, which represents all domains owned by the publisher. Defaults to: `null`.
+  - isPublished (Boolean): True, if this profile is published. Deprecated for state. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;adexchangebuyer#publisherProfileApiProto\&quot;. Defaults to: `null`.
+  - logoUrl (String): The url to the logo for the publisher. Defaults to: `null`.
+  - mediaKitLink (String): The url for additional marketing and sales materials. Defaults to: `null`.
+  - name (String):  Defaults to: `null`.
+  - overview (String): Publisher provided overview. Defaults to: `null`.
+  - profileId (Integer): The pair of (seller.account_id, profile_id) uniquely identifies a publisher profile for a given publisher. Defaults to: `null`.
+  - programmaticContact (String): Programmatic contact for the publisher profile. Defaults to: `null`.
+  - publisherDomains (List[String]): The list of domains represented in this publisher profile. Empty if this is a parent profile. Defaults to: `null`.
+  - publisherProfileId (String): Unique Id for publisher profile. Defaults to: `null`.
+  - publisherProvidedForecast (PublisherProvidedForecast): Publisher provided forecasting information. Defaults to: `null`.
+  - rateCardInfoLink (String): Link to publisher rate card Defaults to: `null`.
+  - samplePageLink (String): Link for a sample content page. Defaults to: `null`.
+  - seller (Seller): Seller of the publisher profile. Defaults to: `null`.
+  - state (String): State of the publisher profile. Defaults to: `null`.
+  - topHeadlines (List[String]): Publisher provided key metrics and rankings. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accountId",
     :"audience",
@@ -56,6 +81,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.PublisherProfil
     value
     |> deserialize(:"publisherProvidedForecast", :struct, GoogleApi.AdExchangeBuyer.V14.Model.PublisherProvidedForecast, options)
     |> deserialize(:"seller", :struct, GoogleApi.AdExchangeBuyer.V14.Model.Seller, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.PublisherProfileApiProto do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

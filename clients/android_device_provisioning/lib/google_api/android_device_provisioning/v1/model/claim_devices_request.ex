@@ -20,9 +20,12 @@
 defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.ClaimDevicesRequest do
   @moduledoc """
   Request to claim devices asynchronously in batch.
+
+  ## Attributes
+
+  - claims (List[PartnerClaim]): list of claims. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"claims"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.ClaimD
   def decode(value, options) do
     value
     |> deserialize(:"claims", :list, GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerClaim, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.ClaimDevicesRequest do
+  def encode(value, options) do
+    GoogleApi.AndroidDeviceProvisioning.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

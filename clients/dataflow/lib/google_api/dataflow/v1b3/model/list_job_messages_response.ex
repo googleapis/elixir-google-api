@@ -20,9 +20,14 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.ListJobMessagesResponse do
   @moduledoc """
   Response to a request to list job messages.
+
+  ## Attributes
+
+  - autoscalingEvents (List[AutoscalingEvent]): Autoscaling events in ascending timestamp order. Defaults to: `null`.
+  - jobMessages (List[JobMessage]): Messages in ascending timestamp order. Defaults to: `null`.
+  - nextPageToken (String): The token to obtain the next page of results if there are more. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"autoscalingEvents",
     :"jobMessages",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.ListJobMessagesRespon
     value
     |> deserialize(:"autoscalingEvents", :list, GoogleApi.Dataflow.V1b3.Model.AutoscalingEvent, options)
     |> deserialize(:"jobMessages", :list, GoogleApi.Dataflow.V1b3.Model.JobMessage, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.ListJobMessagesResponse do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

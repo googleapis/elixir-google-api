@@ -20,9 +20,14 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1DatastoreOptions do
   @moduledoc """
   Options defining a data set within Google Cloud Datastore.
+
+  ## Attributes
+
+  - kind (GooglePrivacyDlpV2beta1KindExpression): The kind to process. Defaults to: `null`.
+  - partitionId (GooglePrivacyDlpV2beta1PartitionId): A partition ID identifies a grouping of entities. The grouping is always by project and namespace, however the namespace ID may be empty. Defaults to: `null`.
+  - projection (List[GooglePrivacyDlpV2beta1Projection]): Properties to scan. If none are specified, all properties will be scanned by default. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"partitionId",
@@ -37,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1
     |> deserialize(:"kind", :struct, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1KindExpression, options)
     |> deserialize(:"partitionId", :struct, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1PartitionId, options)
     |> deserialize(:"projection", :list, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1Projection, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1DatastoreOptions do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

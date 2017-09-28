@@ -20,9 +20,16 @@
 defmodule GoogleApi.Content.V2.Model.AccountStatusExampleItem do
   @moduledoc """
   An example of an item that has poor data quality. An item value on the landing page differs from what is submitted, or conflicts with a policy.
+
+  ## Attributes
+
+  - itemId (String): Unique item ID as specified in the uploaded product data. Defaults to: `null`.
+  - link (String): Landing page of the item. Defaults to: `null`.
+  - submittedValue (String): The item value that was submitted. Defaults to: `null`.
+  - title (String): Title of the item. Defaults to: `null`.
+  - valueOnLandingPage (String): The actual value on the landing page. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"itemId",
     :"link",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.AccountStatusExampleItem do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.AccountStatusExampleItem do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.AndroidManagement.V1.Model.UserFacingMessage do
   @moduledoc """
   Provides user facing message with locale info. The maximum message length is 4096 characters.
+
+  ## Attributes
+
+  - defaultMessage (String): The default message that gets displayed if no localized message is specified, or the user&#39;s locale does not match with any of the localized messages. A default message must be provided if any localized messages are provided. Defaults to: `null`.
+  - localizedMessages (Map[String, String]): A map which contains &lt;locale, message&gt; pairs. The locale is a BCP 47 language code, e.g. en-US, es-ES, fr. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"defaultMessage",
     :"localizedMessages"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.UserFacingMessage do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.UserFacingMessage do
+  def encode(value, options) do
+    GoogleApi.AndroidManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

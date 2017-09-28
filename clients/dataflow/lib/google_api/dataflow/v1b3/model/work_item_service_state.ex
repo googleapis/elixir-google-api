@@ -20,9 +20,19 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.WorkItemServiceState do
   @moduledoc """
   The Dataflow service&#39;s idea of the current state of a WorkItem being processed by a worker.
+
+  ## Attributes
+
+  - harnessData (Object): Other data returned by the service, specific to the particular worker harness. Defaults to: `null`.
+  - leaseExpireTime (String): Time at which the current lease will expire. Defaults to: `null`.
+  - metricShortId (List[MetricShortId]): The short ids that workers should use in subsequent metric updates. Workers should strive to use short ids whenever possible, but it is ok to request the short_id again if a worker lost track of it (e.g. if the worker is recovering from a crash). NOTE: it is possible that the response may have short ids for a subset of the metrics. Defaults to: `null`.
+  - nextReportIndex (String): The index value to use for the next report sent by the worker. Note: If the report call fails for whatever reason, the worker should reuse this index for subsequent report attempts. Defaults to: `null`.
+  - reportStatusInterval (String): New recommended reporting interval. Defaults to: `null`.
+  - splitRequest (ApproximateSplitRequest): The progress point in the WorkItem where the Dataflow service suggests that the worker truncate the task. Defaults to: `null`.
+  - suggestedStopPoint (ApproximateProgress): DEPRECATED in favor of split_request. Defaults to: `null`.
+  - suggestedStopPosition (Position): Obsolete, always empty. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"harnessData",
     :"leaseExpireTime",
@@ -44,6 +54,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.WorkItemServiceState 
     |> deserialize(:"splitRequest", :struct, GoogleApi.Dataflow.V1b3.Model.ApproximateSplitRequest, options)
     |> deserialize(:"suggestedStopPoint", :struct, GoogleApi.Dataflow.V1b3.Model.ApproximateProgress, options)
     |> deserialize(:"suggestedStopPosition", :struct, GoogleApi.Dataflow.V1b3.Model.Position, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.WorkItemServiceState do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

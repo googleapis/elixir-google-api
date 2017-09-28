@@ -46,4 +46,12 @@ defmodule GoogleApi.AcceleratedMobilePageUrl.V1.Deserializer do
         model
     end
   end
+
+  def serialize_non_nil(model, options) do
+    model
+    |> Map.from_struct
+    |> Enum.filter(fn {_k, v} -> v != nil end)
+    |> Enum.into(%{})
+    |> Poison.Encoder.encode(options)
+  end
 end

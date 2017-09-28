@@ -17,12 +17,28 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AdExchangeBuyer.V14.Model.Creative_nativeAd do
+defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAd do
   @moduledoc """
   If nativeAd is set, HTMLSnippet and the videoURL outside of nativeAd should not be set. (The videoURL inside nativeAd can be set.)
+
+  ## Attributes
+
+  - advertiser (String):  Defaults to: `null`.
+  - appIcon (CreativeNativeAdAppIcon):  Defaults to: `null`.
+  - body (String): A long description of the ad. Defaults to: `null`.
+  - callToAction (String): A label for the button that the user is supposed to click. Defaults to: `null`.
+  - clickLinkUrl (String): The URL that the browser/SDK will load when the user clicks the ad. Defaults to: `null`.
+  - clickTrackingUrl (String): The URL to use for click tracking. Defaults to: `null`.
+  - headline (String): A short title for the ad. Defaults to: `null`.
+  - image (CreativeNativeAdImage):  Defaults to: `null`.
+  - impressionTrackingUrl (List[String]): The URLs are called when the impression is rendered. Defaults to: `null`.
+  - logo (CreativeNativeAdLogo):  Defaults to: `null`.
+  - price (String): The price of the promoted app including the currency info. Defaults to: `null`.
+  - starRating (Float): The app rating in the app store. Must be in the range [0-5]. Defaults to: `null`.
+  - store (String): The URL to the app store to purchase/download the promoted app. Defaults to: `null`.
+  - videoURL (String): The URL of the XML VAST for a native ad. Note this is a separate field from resource.video_url. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"advertiser",
     :"appIcon",
@@ -41,13 +57,19 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Creative_nativeAd do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.Creative_nativeAd do
+defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAd do
   import GoogleApi.AdExchangeBuyer.V14.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"appIcon", :struct, GoogleApi.AdExchangeBuyer.V14.Model.Creative_nativeAd_appIcon, options)
-    |> deserialize(:"image", :struct, GoogleApi.AdExchangeBuyer.V14.Model.Creative_nativeAd_image, options)
-    |> deserialize(:"logo", :struct, GoogleApi.AdExchangeBuyer.V14.Model.Creative_nativeAd_logo, options)
+    |> deserialize(:"appIcon", :struct, GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAdAppIcon, options)
+    |> deserialize(:"image", :struct, GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAdImage, options)
+    |> deserialize(:"logo", :struct, GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAdLogo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAd do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

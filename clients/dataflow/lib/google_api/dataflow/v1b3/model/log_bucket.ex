@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.LogBucket do
   @moduledoc """
   Bucket of values for Distribution&#39;s logarithmic histogram.
+
+  ## Attributes
+
+  - count (String): Number of values in this bucket. Defaults to: `null`.
+  - log (Integer): floor(log2(value)); defined to be zero for nonpositive values.   log(-1) &#x3D; 0   log(0) &#x3D; 0   log(1) &#x3D; 0   log(2) &#x3D; 1   log(3) &#x3D; 1   log(4) &#x3D; 2   log(5) &#x3D; 2 Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"count",
     :"log"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.LogBucket do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.LogBucket do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

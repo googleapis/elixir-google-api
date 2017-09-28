@@ -20,9 +20,15 @@
 defmodule GoogleApi.AppEngine.V1.Model.DiskUtilization do
   @moduledoc """
   Target scaling by disk usage. Only applicable for VM runtimes.
+
+  ## Attributes
+
+  - targetReadBytesPerSecond (Integer): Target bytes read per second. Defaults to: `null`.
+  - targetReadOpsPerSecond (Integer): Target ops read per seconds. Defaults to: `null`.
+  - targetWriteBytesPerSecond (Integer): Target bytes written per second. Defaults to: `null`.
+  - targetWriteOpsPerSecond (Integer): Target ops written per second. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"targetReadBytesPerSecond",
     :"targetReadOpsPerSecond",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.DiskUtilization do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.DiskUtilization do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

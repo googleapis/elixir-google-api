@@ -20,9 +20,14 @@
 defmodule GoogleApi.AndroidManagement.V1.Model.NetworkInfo do
   @moduledoc """
   Device network info.
+
+  ## Attributes
+
+  - imei (String): IMEI number of the GSM device, e.g. A1000031212. Defaults to: `null`.
+  - meid (String): MEID number of the CDMA device, e.g. A00000292788E1. Defaults to: `null`.
+  - wifiMacAddress (String): WiFi MAC address of the device, e.g. 7c:11:11:11:11:11. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"imei",
     :"meid",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.NetworkInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.NetworkInfo do
+  def encode(value, options) do
+    GoogleApi.AndroidManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

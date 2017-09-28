@@ -20,9 +20,12 @@
 defmodule GoogleApi.Dataproc.V1.Model.QueryList do
   @moduledoc """
   A list of queries to run on a cluster.
+
+  ## Attributes
+
+  - queries (List[String]): Required. The queries to execute. You do not need to terminate a query with a semicolon. Multiple queries can be specified in one string by separating each with a semicolon. Here is an example of an Cloud Dataproc API snippet that uses a QueryList to specify a HiveJob: \&quot;hiveJob\&quot;: {   \&quot;queryList\&quot;: {     \&quot;queries\&quot;: [       \&quot;query1\&quot;,       \&quot;query2\&quot;,       \&quot;query3;query4\&quot;,     ]   } }  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"queries"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.QueryList do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataproc.V1.Model.QueryList do
+  def encode(value, options) do
+    GoogleApi.Dataproc.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

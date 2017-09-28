@@ -102,7 +102,10 @@ defmodule GoogleApi.Content.V2.Api.Accountstatuses do
     }
     %{}
     |> method(:get)
-    |> url("/#{merchant_id}/accountstatuses/#{account_id}")
+    |> url("/{merchantId}/accountstatuses/{accountId}", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -147,7 +150,9 @@ defmodule GoogleApi.Content.V2.Api.Accountstatuses do
     }
     %{}
     |> method(:get)
-    |> url("/#{merchant_id}/accountstatuses")
+    |> url("/{merchantId}/accountstatuses", %{
+         "merchantId" => URI.encode_www_form(merchant_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

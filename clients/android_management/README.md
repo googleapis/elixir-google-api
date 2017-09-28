@@ -1,6 +1,6 @@
 # GoogleApi.AndroidManagement.V1
 
-**TODO: Add description**
+The Android Management API provides remote enterprise management of Android devices and apps.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_android_management` to your list of dependencies in `mix.e
 
 ```elixir
 def deps do
-  [{:google_api_android_management, "~> 0.1.0"}]
+  [{:google_api_android_management, "~> 0.0.1"}]
 end
 ```
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.Classroom.V1.Model.Form do
   @moduledoc """
   Google Forms item.
+
+  ## Attributes
+
+  - formUrl (String): URL of the form. Defaults to: `null`.
+  - responseUrl (String): URL of the form responses document. Only set if respsonses have been recorded and only when the requesting user is an editor of the form.  Read-only. Defaults to: `null`.
+  - thumbnailUrl (String): URL of a thumbnail image of the Form.  Read-only. Defaults to: `null`.
+  - title (String): Title of the Form.  Read-only. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"formUrl",
     :"responseUrl",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.Form do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.Form do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

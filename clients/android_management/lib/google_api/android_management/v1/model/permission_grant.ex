@@ -20,9 +20,14 @@
 defmodule GoogleApi.AndroidManagement.V1.Model.PermissionGrant do
   @moduledoc """
   Configuration for an Android permission and its grant state.
+
+  ## Attributes
+
+  - permission (String): The android permission, e.g. android.permission.READ_CALENDAR. Defaults to: `null`.
+  - policy (String): The policy for granting the permission. Defaults to: `null`.
+    - Enum - one of [PERMISSION_POLICY_UNSPECIFIED, PROMPT, GRANT, DENY]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"permission",
     :"policy"
@@ -32,6 +37,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.PermissionGrant do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.PermissionGrant do
+  def encode(value, options) do
+    GoogleApi.AndroidManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

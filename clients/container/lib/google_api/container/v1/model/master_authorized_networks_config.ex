@@ -20,9 +20,13 @@
 defmodule GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig do
   @moduledoc """
   Master authorized networks is a Beta feature. Configuration options for the master authorized networks feature. Enabled master authorized networks will disallow all external traffic to access Kubernetes master through HTTPS except traffic from the given CIDR blocks, Google Compute Engine Public IPs and Google Prod IPs.
+
+  ## Attributes
+
+  - cidrBlocks (List[CidrBlock]): cidr_blocks define up to 10 external networks that could access Kubernetes master through HTTPS. Defaults to: `null`.
+  - enabled (Boolean): Whether or not master authorized networks is enabled. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cidrBlocks",
     :"enabled"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.MasterAuthorizedNetwor
   def decode(value, options) do
     value
     |> deserialize(:"cidrBlocks", :list, GoogleApi.Container.V1.Model.CidrBlock, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

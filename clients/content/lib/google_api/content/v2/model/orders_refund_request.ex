@@ -20,9 +20,15 @@
 defmodule GoogleApi.Content.V2.Model.OrdersRefundRequest do
   @moduledoc """
   
+
+  ## Attributes
+
+  - amount (Price): The amount that is refunded. Defaults to: `null`.
+  - operationId (String): The ID of the operation. Unique across all operations for a given order. Defaults to: `null`.
+  - reason (String): The reason for the refund. Defaults to: `null`.
+  - reasonText (String): The explanation of the reason. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"amount",
     :"operationId",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrdersRefundRequest do
   def decode(value, options) do
     value
     |> deserialize(:"amount", :struct, GoogleApi.Content.V2.Model.Price, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrdersRefundRequest do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

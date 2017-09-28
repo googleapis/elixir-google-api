@@ -20,9 +20,14 @@
 defmodule GoogleApi.AppEngine.V1.Model.Volume do
   @moduledoc """
   Volumes mounted within the app container. Only applicable for VM runtimes.
+
+  ## Attributes
+
+  - name (String): Unique name for the volume. Defaults to: `null`.
+  - sizeGb (Float): Volume size in gigabytes. Defaults to: `null`.
+  - volumeType (String): Underlying volume type, e.g. &#39;tmpfs&#39;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name",
     :"sizeGb",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.Volume do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.Volume do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

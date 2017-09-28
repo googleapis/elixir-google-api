@@ -20,9 +20,12 @@
 defmodule GoogleApi.Container.V1.Model.CreateClusterRequest do
   @moduledoc """
   CreateClusterRequest creates a cluster.
+
+  ## Attributes
+
+  - cluster (Cluster): A [cluster resource](/container-engine/reference/rest/v1/projects.zones.clusters) Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cluster"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.CreateClusterRequest d
   def decode(value, options) do
     value
     |> deserialize(:"cluster", :struct, GoogleApi.Container.V1.Model.Cluster, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.CreateClusterRequest do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

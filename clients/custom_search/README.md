@@ -1,6 +1,6 @@
 # GoogleApi.CustomSearch.V1
 
-**TODO: Add description**
+Searches over a website or collection of websites
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_custom_search` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_custom_search, "~> 0.1.0"}]
+  [{:google_api_custom_search, "~> 0.0.1"}]
 end
 ```
 

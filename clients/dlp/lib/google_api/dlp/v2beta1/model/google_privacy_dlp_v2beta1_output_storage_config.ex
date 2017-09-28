@@ -20,9 +20,13 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1OutputStorageConfig do
   @moduledoc """
   Cloud repository for storing output.
+
+  ## Attributes
+
+  - storagePath (GooglePrivacyDlpV2beta1CloudStoragePath): The path to a Google Cloud Storage location to store output. Defaults to: `null`.
+  - table (GooglePrivacyDlpV2beta1BigQueryTable): Store findings in a new table in the dataset. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"storagePath",
     :"table"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1
     value
     |> deserialize(:"storagePath", :struct, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1CloudStoragePath, options)
     |> deserialize(:"table", :struct, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1BigQueryTable, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1OutputStorageConfig do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

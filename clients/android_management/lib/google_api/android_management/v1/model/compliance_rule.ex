@@ -20,9 +20,14 @@
 defmodule GoogleApi.AndroidManagement.V1.Model.ComplianceRule do
   @moduledoc """
   A rule declaring which mitigating actions to take when a device is not compliant with its policy. For every rule, there is always an implicit mitigating action to set policy_compliant to false for the Device resource, and display a message on the device indicating that the device is not compliant with its policy. Other mitigating actions may optionally be taken as well, depending on the field values in the rule.
+
+  ## Attributes
+
+  - apiLevelCondition (ApiLevelCondition): A condition which is satisfied if the Android Framework API level on the device does not meet a minimum requirement. Defaults to: `null`.
+  - disableApps (Boolean): If set to true, the rule includes a mitigating action to disable applications so that the device is effectively disabled, but application data is preserved. If the device is running an app in locked task mode, the app will be closed and a UI showing the reason for non-compliance will be displayed. Defaults to: `null`.
+  - nonComplianceDetailCondition (NonComplianceDetailCondition): A condition which is satisfied if there exists any matching NonComplianceDetail for the device. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"apiLevelCondition",
     :"disableApps",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.ComplianceRule
     value
     |> deserialize(:"apiLevelCondition", :struct, GoogleApi.AndroidManagement.V1.Model.ApiLevelCondition, options)
     |> deserialize(:"nonComplianceDetailCondition", :struct, GoogleApi.AndroidManagement.V1.Model.NonComplianceDetailCondition, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.ComplianceRule do
+  def encode(value, options) do
+    GoogleApi.AndroidManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

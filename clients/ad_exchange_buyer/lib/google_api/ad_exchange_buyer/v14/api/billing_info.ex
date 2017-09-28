@@ -60,7 +60,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.BillingInfo do
     }
     %{}
     |> method(:get)
-    |> url("/billinginfo/#{account_id}")
+    |> url("/billinginfo/{accountId}", %{
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

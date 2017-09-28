@@ -74,7 +74,9 @@ defmodule GoogleApi.DLP.V2beta1.Api.RootCategories do
     }
     %{}
     |> method(:get)
-    |> url("/v2beta1/rootCategories/#{category}/infoTypes")
+    |> url("/v2beta1/rootCategories/{+category}/infoTypes", %{
+         "category" => URI.encode_www_form(category)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

@@ -20,9 +20,12 @@
 defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata do
   @moduledoc """
   A key value pair of the device metadata.
+
+  ## Attributes
+
+  - entries (Map[String, String]): Metadata entries Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"entries"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata do
+  def encode(value, options) do
+    GoogleApi.AndroidDeviceProvisioning.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

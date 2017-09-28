@@ -20,9 +20,13 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InfoTypeLimit do
   @moduledoc """
   Max findings configuration per info type, per content item or long running operation.
+
+  ## Attributes
+
+  - infoType (GooglePrivacyDlpV2beta1InfoType): Type of information the findings limit applies to. Only one limit per info_type should be provided. If InfoTypeLimit does not have an info_type, the DLP API applies the limit against all info_types that are found but not specified in another InfoTypeLimit. Defaults to: `null`.
+  - maxFindings (Integer): Max findings limit for the given infoType. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"infoType",
     :"maxFindings"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1
   def decode(value, options) do
     value
     |> deserialize(:"infoType", :struct, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InfoType, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1InfoTypeLimit do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

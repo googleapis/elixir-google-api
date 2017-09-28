@@ -61,7 +61,10 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Urlchannels do
     }
     %{}
     |> method(:delete)
-    |> url("/adclients/#{ad_client_id}/urlchannels/#{url_channel_id}")
+    |> url("/adclients/{adClientId}/urlchannels/{urlChannelId}", %{
+         "adClientId" => URI.encode_www_form(ad_client_id),
+         "urlChannelId" => URI.encode_www_form(url_channel_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -104,7 +107,9 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Urlchannels do
     }
     %{}
     |> method(:post)
-    |> url("/adclients/#{ad_client_id}/urlchannels")
+    |> url("/adclients/{adClientId}/urlchannels", %{
+         "adClientId" => URI.encode_www_form(ad_client_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -149,7 +154,9 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Urlchannels do
     }
     %{}
     |> method(:get)
-    |> url("/adclients/#{ad_client_id}/urlchannels")
+    |> url("/adclients/{adClientId}/urlchannels", %{
+         "adClientId" => URI.encode_www_form(ad_client_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

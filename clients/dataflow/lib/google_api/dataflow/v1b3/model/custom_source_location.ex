@@ -20,9 +20,12 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.CustomSourceLocation do
   @moduledoc """
   Identifies the location of a custom souce.
+
+  ## Attributes
+
+  - stateful (Boolean): Whether this source is stateful. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"stateful"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.CustomSourceLocation do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.CustomSourceLocation do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

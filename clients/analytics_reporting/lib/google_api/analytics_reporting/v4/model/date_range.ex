@@ -20,9 +20,13 @@
 defmodule GoogleApi.AnalyticsReporting.V4.Model.DateRange do
   @moduledoc """
   A contiguous set of days: startDate, startDate + 1 day, ..., endDate. The start and end dates are specified in [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) date format &#x60;YYYY-MM-DD&#x60;.
+
+  ## Attributes
+
+  - endDate (String): The end date for the query in the format &#x60;YYYY-MM-DD&#x60;. Defaults to: `null`.
+  - startDate (String): The start date for the query in the format &#x60;YYYY-MM-DD&#x60;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"endDate",
     :"startDate"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AnalyticsReporting.V4.Model.DateRange do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AnalyticsReporting.V4.Model.DateRange do
+  def encode(value, options) do
+    GoogleApi.AnalyticsReporting.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

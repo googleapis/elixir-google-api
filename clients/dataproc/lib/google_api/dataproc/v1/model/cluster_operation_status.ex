@@ -20,9 +20,16 @@
 defmodule GoogleApi.Dataproc.V1.Model.ClusterOperationStatus do
   @moduledoc """
   The status of the operation.
+
+  ## Attributes
+
+  - details (String): Output-only.A message containing any operation metadata details. Defaults to: `null`.
+  - innerState (String): Output-only. A message containing the detailed operation state. Defaults to: `null`.
+  - state (String): Output-only. A message containing the operation state. Defaults to: `null`.
+    - Enum - one of [UNKNOWN, PENDING, RUNNING, DONE]
+  - stateStartTime (String): Output-only. The time this state was entered. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"details",
     :"innerState",
@@ -34,6 +41,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.ClusterOperationStatus do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataproc.V1.Model.ClusterOperationStatus do
+  def encode(value, options) do
+    GoogleApi.Dataproc.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

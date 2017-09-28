@@ -20,9 +20,15 @@
 defmodule GoogleApi.Admin.Reports_v1.Model.Activities do
   @moduledoc """
   JSON template for a collection of activites.
+
+  ## Attributes
+
+  - etag (String): ETag of the resource. Defaults to: `null`.
+  - items (List[Activity]): Each record in read response. Defaults to: `null`.
+  - kind (String): Kind of list response this is. Defaults to: `null`.
+  - nextPageToken (String): Token for retrieving the next page Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"items",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Admin.Reports_v1.Model.Activities do
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.Admin.Reports_v1.Model.Activity, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Admin.Reports_v1.Model.Activities do
+  def encode(value, options) do
+    GoogleApi.Admin.Reports_v1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

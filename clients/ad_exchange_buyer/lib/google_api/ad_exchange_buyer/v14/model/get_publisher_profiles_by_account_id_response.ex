@@ -20,9 +20,12 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.GetPublisherProfilesByAccountIdResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - profiles (List[PublisherProfileApiProto]): Profiles for the requested publisher Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"profiles"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.GetPublisherPro
   def decode(value, options) do
     value
     |> deserialize(:"profiles", :list, GoogleApi.AdExchangeBuyer.V14.Model.PublisherProfileApiProto, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.GetPublisherProfilesByAccountIdResponse do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

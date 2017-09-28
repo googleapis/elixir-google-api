@@ -20,9 +20,15 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.SourceSplitResponse do
   @moduledoc """
   The response to a SourceSplitRequest.
+
+  ## Attributes
+
+  - bundles (List[DerivedSource]): If outcome is SPLITTING_HAPPENED, then this is a list of bundles into which the source was split. Otherwise this field is ignored. This list can be empty, which means the source represents an empty input. Defaults to: `null`.
+  - outcome (String): Indicates whether splitting happened and produced a list of bundles. If this is USE_CURRENT_SOURCE_AS_IS, the current source should be processed \&quot;as is\&quot; without splitting. \&quot;bundles\&quot; is ignored in this case. If this is SPLITTING_HAPPENED, then \&quot;bundles\&quot; contains a list of bundles into which the source was split. Defaults to: `null`.
+    - Enum - one of [SOURCE_SPLIT_OUTCOME_UNKNOWN, SOURCE_SPLIT_OUTCOME_USE_CURRENT, SOURCE_SPLIT_OUTCOME_SPLITTING_HAPPENED]
+  - shards (List[SourceSplitShard]): DEPRECATED in favor of bundles. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bundles",
     :"outcome",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.SourceSplitResponse d
     value
     |> deserialize(:"bundles", :list, GoogleApi.Dataflow.V1b3.Model.DerivedSource, options)
     |> deserialize(:"shards", :list, GoogleApi.Dataflow.V1b3.Model.SourceSplitShard, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.SourceSplitResponse do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -77,7 +77,10 @@ defmodule GoogleApi.Admin.Reports_v1.Api.Activities do
     }
     %{}
     |> method(:get)
-    |> url("/activity/users/#{user_key}/applications/#{application_name}")
+    |> url("/activity/users/{userKey}/applications/{applicationName}", %{
+         "userKey" => URI.encode_www_form(user_key),
+         "applicationName" => URI.encode_www_form(application_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -137,7 +140,10 @@ defmodule GoogleApi.Admin.Reports_v1.Api.Activities do
     }
     %{}
     |> method(:post)
-    |> url("/activity/users/#{user_key}/applications/#{application_name}/watch")
+    |> url("/activity/users/{userKey}/applications/{applicationName}/watch", %{
+         "userKey" => URI.encode_www_form(user_key),
+         "applicationName" => URI.encode_www_form(application_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

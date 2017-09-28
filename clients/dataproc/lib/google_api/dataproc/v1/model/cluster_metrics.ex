@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataproc.V1.Model.ClusterMetrics do
   @moduledoc """
   Contains cluster daemon metrics, such as HDFS and YARN stats.Beta Feature: This report is available for testing purposes only. It may be changed before final release.
+
+  ## Attributes
+
+  - hdfsMetrics (Map[String, String]): The HDFS metrics. Defaults to: `null`.
+  - yarnMetrics (Map[String, String]): The YARN metrics. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"hdfsMetrics",
     :"yarnMetrics"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.ClusterMetrics do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataproc.V1.Model.ClusterMetrics do
+  def encode(value, options) do
+    GoogleApi.Dataproc.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

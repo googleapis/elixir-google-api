@@ -20,9 +20,30 @@
 defmodule GoogleApi.Classroom.V1.Model.StudentSubmission do
   @moduledoc """
   Student submission for course work.  StudentSubmission items are generated when a CourseWork item is created.  StudentSubmissions that have never been accessed (i.e. with &#x60;state&#x60; &#x3D; NEW) may not have a creation time or update time.
+
+  ## Attributes
+
+  - alternateLink (String): Absolute link to the submission in the Classroom web UI.  Read-only. Defaults to: `null`.
+  - assignedGrade (Float): Optional grade. If unset, no grade was set. This value must be non-negative. Decimal (i.e. non-integer) values are allowed, but will be rounded to two decimal places.  This may be modified only by course teachers. Defaults to: `null`.
+  - assignmentSubmission (AssignmentSubmission): Submission content when course_work_type is ASSIGNMENT . Defaults to: `null`.
+  - associatedWithDeveloper (Boolean): Whether this student submission is associated with the Developer Console project making the request.  See google.classroom.Work.CreateCourseWork for more details.  Read-only. Defaults to: `null`.
+  - courseId (String): Identifier of the course.  Read-only. Defaults to: `null`.
+  - courseWorkId (String): Identifier for the course work this corresponds to.  Read-only. Defaults to: `null`.
+  - courseWorkType (String): Type of course work this submission is for.  Read-only. Defaults to: `null`.
+    - Enum - one of [COURSE_WORK_TYPE_UNSPECIFIED, ASSIGNMENT, SHORT_ANSWER_QUESTION, MULTIPLE_CHOICE_QUESTION]
+  - creationTime (String): Creation time of this submission. This may be unset if the student has not accessed this item.  Read-only. Defaults to: `null`.
+  - draftGrade (Float): Optional pending grade. If unset, no grade was set. This value must be non-negative. Decimal (i.e. non-integer) values are allowed, but will be rounded to two decimal places.  This is only visible to and modifiable by course teachers. Defaults to: `null`.
+  - id (String): Classroom-assigned Identifier for the student submission. This is unique among submissions for the relevant course work.  Read-only. Defaults to: `null`.
+  - late (Boolean): Whether this submission is late.  Read-only. Defaults to: `null`.
+  - multipleChoiceSubmission (MultipleChoiceSubmission): Submission content when course_work_type is MULTIPLE_CHOICE_QUESTION. Defaults to: `null`.
+  - shortAnswerSubmission (ShortAnswerSubmission): Submission content when course_work_type is SHORT_ANSWER_QUESTION. Defaults to: `null`.
+  - state (String): State of this submission.  Read-only. Defaults to: `null`.
+    - Enum - one of [SUBMISSION_STATE_UNSPECIFIED, NEW, CREATED, TURNED_IN, RETURNED, RECLAIMED_BY_STUDENT]
+  - submissionHistory (List[SubmissionHistory]): The history of the submission (includes state and grade histories).  Read-only. Defaults to: `null`.
+  - updateTime (String): Last update time of this submission. This may be unset if the student has not accessed this item.  Read-only. Defaults to: `null`.
+  - userId (String): Identifier for the student that owns this submission.  Read-only. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"alternateLink",
     :"assignedGrade",
@@ -52,6 +73,12 @@ defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.StudentSubmission do
     |> deserialize(:"multipleChoiceSubmission", :struct, GoogleApi.Classroom.V1.Model.MultipleChoiceSubmission, options)
     |> deserialize(:"shortAnswerSubmission", :struct, GoogleApi.Classroom.V1.Model.ShortAnswerSubmission, options)
     |> deserialize(:"submissionHistory", :list, GoogleApi.Classroom.V1.Model.SubmissionHistory, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.StudentSubmission do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

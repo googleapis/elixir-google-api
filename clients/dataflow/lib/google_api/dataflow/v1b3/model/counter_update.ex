@@ -20,9 +20,24 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.CounterUpdate do
   @moduledoc """
   An update to a Counter sent from a worker.
+
+  ## Attributes
+
+  - boolean (Boolean): Boolean value for And, Or. Defaults to: `null`.
+  - cumulative (Boolean): True if this counter is reported as the total cumulative aggregate value accumulated since the worker started working on this WorkItem. By default this is false, indicating that this counter is reported as a delta. Defaults to: `null`.
+  - distribution (DistributionUpdate): Distribution data Defaults to: `null`.
+  - floatingPoint (Float): Floating point value for Sum, Max, Min. Defaults to: `null`.
+  - floatingPointList (FloatingPointList): List of floating point numbers, for Set. Defaults to: `null`.
+  - floatingPointMean (FloatingPointMean): Floating point mean aggregation value for Mean. Defaults to: `null`.
+  - integer (SplitInt64): Integer value for Sum, Max, Min. Defaults to: `null`.
+  - integerList (IntegerList): List of integers, for Set. Defaults to: `null`.
+  - integerMean (IntegerMean): Integer mean aggregation value for Mean. Defaults to: `null`.
+  - nameAndKind (NameAndKind): Counter name and aggregation type. Defaults to: `null`.
+  - shortId (String): The service-generated short identifier for this counter. The short_id -&gt; (name, metadata) mapping is constant for the lifetime of a job. Defaults to: `null`.
+  - stringList (StringList): List of strings, for Set. Defaults to: `null`.
+  - structuredNameAndMetadata (CounterStructuredNameAndMetadata): Counter structured name and metadata. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"boolean",
     :"cumulative",
@@ -53,6 +68,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.CounterUpdate do
     |> deserialize(:"nameAndKind", :struct, GoogleApi.Dataflow.V1b3.Model.NameAndKind, options)
     |> deserialize(:"stringList", :struct, GoogleApi.Dataflow.V1b3.Model.StringList, options)
     |> deserialize(:"structuredNameAndMetadata", :struct, GoogleApi.Dataflow.V1b3.Model.CounterStructuredNameAndMetadata, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.CounterUpdate do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.AcceleratedMobilePageUrl.V1.Model.AmpUrlError do
   @moduledoc """
   AMP URL Error resource for a requested URL that couldn&#39;t be found.
+
+  ## Attributes
+
+  - errorCode (String): The error code of an API call. Defaults to: `null`.
+    - Enum - one of [ERROR_CODE_UNSPECIFIED, INPUT_URL_NOT_FOUND, NO_AMP_URL, APPLICATION_ERROR, URL_IS_VALID_AMP, URL_IS_INVALID_AMP]
+  - errorMessage (String): An optional descriptive error message. Defaults to: `null`.
+  - originalUrl (String): The original non-AMP URL. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"errorCode",
     :"errorMessage",
@@ -33,6 +39,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AcceleratedMobilePageUrl.V1.Model.AmpUrlError do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AcceleratedMobilePageUrl.V1.Model.AmpUrlError do
+  def encode(value, options) do
+    GoogleApi.AcceleratedMobilePageUrl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

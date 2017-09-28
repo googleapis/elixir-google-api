@@ -20,9 +20,13 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.EnterprisesListResponse do
   @moduledoc """
   The matching enterprise resources.
+
+  ## Attributes
+
+  - enterprise (List[Enterprise]): An enterprise. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#enterprisesListResponse\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"enterprise",
     :"kind"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.EnterprisesLis
   def decode(value, options) do
     value
     |> deserialize(:"enterprise", :list, GoogleApi.AndroidEnterprise.V1.Model.Enterprise, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.EnterprisesListResponse do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

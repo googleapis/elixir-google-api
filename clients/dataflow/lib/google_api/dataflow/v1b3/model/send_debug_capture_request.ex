@@ -20,9 +20,15 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.SendDebugCaptureRequest do
   @moduledoc """
   Request to send encoded debug information.
+
+  ## Attributes
+
+  - componentId (String): The internal component id for which debug information is sent. Defaults to: `null`.
+  - data (String): The encoded debug information. Defaults to: `null`.
+  - location (String): The location which contains the job specified by job_id. Defaults to: `null`.
+  - workerId (String): The worker id, i.e., VM hostname. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"componentId",
     :"data",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.SendDebugCaptureRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.SendDebugCaptureRequest do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

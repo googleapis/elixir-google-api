@@ -20,9 +20,14 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.StructuredMessage do
   @moduledoc """
   A rich message format, including a human readable string, a key for identifying the message, and structured data associated with the message for programmatic consumption.
+
+  ## Attributes
+
+  - parameters (List[Parameter]): The structured data associated with this message. Defaults to: `null`.
+  - messageKey (String): Idenfier for this message type.  Used by external systems to internationalize or personalize message. Defaults to: `null`.
+  - messageText (String): Human-readable version of message. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"parameters",
     :"messageKey",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.StructuredMessage do
   def decode(value, options) do
     value
     |> deserialize(:"parameters", :list, GoogleApi.Dataflow.V1b3.Model.Parameter, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.StructuredMessage do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

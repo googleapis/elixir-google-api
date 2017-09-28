@@ -20,9 +20,13 @@
 defmodule GoogleApi.Classroom.V1.Model.ListStudentsResponse do
   @moduledoc """
   Response when listing students.
+
+  ## Attributes
+
+  - nextPageToken (String): Token identifying the next page of results to return. If empty, no further results are available. Defaults to: `null`.
+  - students (List[Student]): Students who match the list request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nextPageToken",
     :"students"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.ListStudentsResponse d
   def decode(value, options) do
     value
     |> deserialize(:"students", :list, GoogleApi.Classroom.V1.Model.Student, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.ListStudentsResponse do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

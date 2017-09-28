@@ -20,9 +20,14 @@
 defmodule GoogleApi.Container.V1.Model.NodePoolAutoscaling do
   @moduledoc """
   NodePoolAutoscaling contains information required by cluster autoscaler to adjust the size of the node pool to the current cluster usage.
+
+  ## Attributes
+
+  - enabled (Boolean): Is autoscaling enabled for this node pool. Defaults to: `null`.
+  - maxNodeCount (Integer): Maximum number of nodes in the NodePool. Must be &gt;&#x3D; min_node_count. There has to enough quota to scale up the cluster. Defaults to: `null`.
+  - minNodeCount (Integer): Minimum number of nodes in the NodePool. Must be &gt;&#x3D; 1 and &lt;&#x3D; max_node_count. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"enabled",
     :"maxNodeCount",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.NodePoolAutoscaling do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.NodePoolAutoscaling do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,23 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.DisplayData do
   @moduledoc """
   Data provided with a pipeline or transform to provide descriptive info.
+
+  ## Attributes
+
+  - boolValue (Boolean): Contains value if the data is of a boolean type. Defaults to: `null`.
+  - durationValue (String): Contains value if the data is of duration type. Defaults to: `null`.
+  - floatValue (Float): Contains value if the data is of float type. Defaults to: `null`.
+  - int64Value (String): Contains value if the data is of int64 type. Defaults to: `null`.
+  - javaClassValue (String): Contains value if the data is of java class type. Defaults to: `null`.
+  - key (String): The key identifying the display data. This is intended to be used as a label for the display data when viewed in a dax monitoring system. Defaults to: `null`.
+  - label (String): An optional label to display in a dax UI for the element. Defaults to: `null`.
+  - namespace (String): The namespace for the key. This is usually a class name or programming language namespace (i.e. python module) which defines the display data. This allows a dax monitoring system to specially handle the data and perform custom rendering. Defaults to: `null`.
+  - shortStrValue (String): A possible additional shorter value to display. For example a java_class_name_value of com.mypackage.MyDoFn will be stored with MyDoFn as the short_str_value and com.mypackage.MyDoFn as the java_class_name value. short_str_value can be displayed and java_class_name_value will be displayed as a tooltip. Defaults to: `null`.
+  - strValue (String): Contains value if the data is of string type. Defaults to: `null`.
+  - timestampValue (String): Contains value if the data is of timestamp type. Defaults to: `null`.
+  - url (String): An optional full URL. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"boolValue",
     :"durationValue",
@@ -42,6 +56,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.DisplayData do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.DisplayData do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

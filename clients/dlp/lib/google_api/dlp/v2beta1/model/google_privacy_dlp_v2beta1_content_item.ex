@@ -20,9 +20,15 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1ContentItem do
   @moduledoc """
   Container structure for the content to inspect.
+
+  ## Attributes
+
+  - data (String): Content data to inspect or redact. Defaults to: `null`.
+  - table (GooglePrivacyDlpV2beta1Table): Structured content for inspection. Defaults to: `null`.
+  - type (String): Type of the content, as defined in Content-Type HTTP header. Supported types are: all \&quot;text\&quot; types, octet streams, PNG images, JPEG images. Defaults to: `null`.
+  - value (String): String data to inspect or redact. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"data",
     :"table",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1
   def decode(value, options) do
     value
     |> deserialize(:"table", :struct, GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1Table, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GooglePrivacyDlpV2beta1ContentItem do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

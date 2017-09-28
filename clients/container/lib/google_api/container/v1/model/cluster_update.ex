@@ -20,9 +20,20 @@
 defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   @moduledoc """
   ClusterUpdate describes an update to the cluster. Exactly one update can be applied to a cluster with each request, so at most one field can be provided.
+
+  ## Attributes
+
+  - desiredAddonsConfig (AddonsConfig): Configurations for the various addons available to run in the cluster. Defaults to: `null`.
+  - desiredImageType (String): The desired image type for the node pool. NOTE: Set the \&quot;desired_node_pool\&quot; field as well. Defaults to: `null`.
+  - desiredLocations (List[String]): The desired list of Google Compute Engine [locations](/compute/docs/zones#available) in which the cluster&#39;s nodes should be located. Changing the locations a cluster is in will result in nodes being either created or removed from the cluster, depending on whether locations are being added or removed.  This list must always include the cluster&#39;s primary zone. Defaults to: `null`.
+  - desiredMasterAuthorizedNetworksConfig (MasterAuthorizedNetworksConfig): Master authorized networks is a Beta feature. The desired configuration options for master authorized networks feature. Defaults to: `null`.
+  - desiredMasterVersion (String): The Kubernetes version to change the master to. The only valid value is the latest supported version. Use \&quot;-\&quot; to have the server automatically select the latest version. Defaults to: `null`.
+  - desiredMonitoringService (String): The monitoring service the cluster should use to write metrics. Currently available options:  * \&quot;monitoring.googleapis.com\&quot; - the Google Cloud Monitoring service * \&quot;none\&quot; - no metrics will be exported from the cluster Defaults to: `null`.
+  - desiredNodePoolAutoscaling (NodePoolAutoscaling): Autoscaler configuration for the node pool specified in desired_node_pool_id. If there is only one pool in the cluster and desired_node_pool_id is not provided then the change applies to that single node pool. Defaults to: `null`.
+  - desiredNodePoolId (String): The node pool to be upgraded. This field is mandatory if \&quot;desired_node_version\&quot;, \&quot;desired_image_family\&quot; or \&quot;desired_node_pool_autoscaling\&quot; is specified and there is more than one node pool on the cluster. Defaults to: `null`.
+  - desiredNodeVersion (String): The Kubernetes version to change the nodes to (typically an upgrade). Use &#x60;-&#x60; to upgrade to the latest version supported by the server. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"desiredAddonsConfig",
     :"desiredImageType",
@@ -43,6 +54,12 @@ defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.ClusterUpdate do
     |> deserialize(:"desiredAddonsConfig", :struct, GoogleApi.Container.V1.Model.AddonsConfig, options)
     |> deserialize(:"desiredMasterAuthorizedNetworksConfig", :struct, GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig, options)
     |> deserialize(:"desiredNodePoolAutoscaling", :struct, GoogleApi.Container.V1.Model.NodePoolAutoscaling, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.ClusterUpdate do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

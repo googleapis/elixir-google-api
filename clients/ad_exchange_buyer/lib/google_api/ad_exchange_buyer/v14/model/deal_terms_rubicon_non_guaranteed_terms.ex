@@ -20,9 +20,13 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.DealTermsRubiconNonGuaranteedTerms do
   @moduledoc """
   
+
+  ## Attributes
+
+  - priorityPrice (Price): Optional price for Rubicon priority access in the auction. Defaults to: `null`.
+  - standardPrice (Price): Optional price for Rubicon standard access in the auction. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"priorityPrice",
     :"standardPrice"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.DealTermsRubico
     value
     |> deserialize(:"priorityPrice", :struct, GoogleApi.AdExchangeBuyer.V14.Model.Price, options)
     |> deserialize(:"standardPrice", :struct, GoogleApi.AdExchangeBuyer.V14.Model.Price, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.DealTermsRubiconNonGuaranteedTerms do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

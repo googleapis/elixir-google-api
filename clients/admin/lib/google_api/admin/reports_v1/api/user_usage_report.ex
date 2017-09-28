@@ -71,7 +71,10 @@ defmodule GoogleApi.Admin.Reports_v1.Api.UserUsageReport do
     }
     %{}
     |> method(:get)
-    |> url("/usage/users/#{user_key}/dates/#{date}")
+    |> url("/usage/users/{userKey}/dates/{date}", %{
+         "userKey" => URI.encode_www_form(user_key),
+         "date" => URI.encode_www_form(date)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

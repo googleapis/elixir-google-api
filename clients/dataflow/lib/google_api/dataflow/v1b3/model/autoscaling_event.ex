@@ -20,9 +20,17 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.AutoscalingEvent do
   @moduledoc """
   A structured message reporting an autoscaling decision made by the Dataflow service.
+
+  ## Attributes
+
+  - currentNumWorkers (String): The current number of workers the job has. Defaults to: `null`.
+  - description (StructuredMessage): A message describing why the system decided to adjust the current number of workers, why it failed, or why the system decided to not make any changes to the number of workers. Defaults to: `null`.
+  - eventType (String): The type of autoscaling event to report. Defaults to: `null`.
+    - Enum - one of [TYPE_UNKNOWN, TARGET_NUM_WORKERS_CHANGED, CURRENT_NUM_WORKERS_CHANGED, ACTUATION_FAILURE, NO_CHANGE]
+  - targetNumWorkers (String): The target number of workers the worker pool wants to resize to use. Defaults to: `null`.
+  - time (String): The time this event was emitted to indicate a new target or current num_workers value. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"currentNumWorkers",
     :"description",
@@ -37,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.AutoscalingEvent do
   def decode(value, options) do
     value
     |> deserialize(:"description", :struct, GoogleApi.Dataflow.V1b3.Model.StructuredMessage, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.AutoscalingEvent do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

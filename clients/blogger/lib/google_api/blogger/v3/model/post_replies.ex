@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Blogger.V3.Model.Post_replies do
+defmodule GoogleApi.Blogger.V3.Model.PostReplies do
   @moduledoc """
   The container of comments on this Post.
+
+  ## Attributes
+
+  - items (List[Comment]): The List of Comments for this Post. Defaults to: `null`.
+  - selfLink (String): The URL of the comments on this post. Defaults to: `null`.
+  - totalItems (String): The count of comments on this post. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"items",
     :"selfLink",
@@ -30,11 +35,17 @@ defmodule GoogleApi.Blogger.V3.Model.Post_replies do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.Post_replies do
+defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.PostReplies do
   import GoogleApi.Blogger.V3.Deserializer
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.Blogger.V3.Model.Comment, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Blogger.V3.Model.PostReplies do
+  def encode(value, options) do
+    GoogleApi.Blogger.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.BillingInfoList do
   @moduledoc """
   A billing info feed lists Billing Info the Ad Exchange buyer account has access to. Each entry in the feed corresponds to a single billing info.
+
+  ## Attributes
+
+  - items (List[BillingInfo]): A list of billing info relevant for your account. Defaults to: `null`.
+  - kind (String): Resource type. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"items",
     :"kind"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.BillingInfoList
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.AdExchangeBuyer.V14.Model.BillingInfo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.BillingInfoList do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

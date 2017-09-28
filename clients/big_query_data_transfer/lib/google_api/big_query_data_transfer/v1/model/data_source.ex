@@ -20,9 +20,31 @@
 defmodule GoogleApi.BigQueryDataTransfer.V1.Model.DataSource do
   @moduledoc """
   Represents data source metadata. Metadata is sufficient to render UI and request proper OAuth tokens.
+
+  ## Attributes
+
+  - parameters (List[DataSourceParameter]): Data source parameters. Defaults to: `null`.
+  - authorizationType (String): Indicates the type of authorization. Defaults to: `null`.
+    - Enum - one of [AUTHORIZATION_TYPE_UNSPECIFIED, AUTHORIZATION_CODE, GOOGLE_PLUS_AUTHORIZATION_CODE]
+  - clientId (String): Data source client id which should be used to receive refresh token. When not supplied, no offline credentials are populated for data transfer. Defaults to: `null`.
+  - dataRefreshType (String): Specifies whether the data source supports automatic data refresh for the past few days, and how it&#39;s supported. For some data sources, data might not be complete until a few days later, so it&#39;s useful to refresh data automatically. Defaults to: `null`.
+    - Enum - one of [NONE, SLIDING_WINDOW, CUSTOM_SLIDING_WINDOW]
+  - dataSourceId (String): Data source id. Defaults to: `null`.
+  - defaultDataRefreshWindowDays (Integer): Default data refresh window on days. Only meaningful when &#x60;data_refresh_type&#x60; &#x3D; &#x60;SLIDING_WINDOW&#x60;. Defaults to: `null`.
+  - defaultSchedule (String): Default data transfer schedule. Examples of valid schedules include: &#x60;1st,3rd monday of month 15:30&#x60;, &#x60;every wed,fri of jan,jun 13:15&#x60;, and &#x60;first sunday of quarter 00:00&#x60;. Defaults to: `null`.
+  - description (String): User friendly data source description string. Defaults to: `null`.
+  - displayName (String): User friendly data source name. Defaults to: `null`.
+  - helpUrl (String): Url for the help document for this data source. Defaults to: `null`.
+  - manualRunsDisabled (Boolean): Disables backfilling and manual run scheduling for the data source. Defaults to: `null`.
+  - name (String): Data source resource name. Defaults to: `null`.
+  - scopes (List[String]): Api auth scopes for which refresh token needs to be obtained. Only valid when &#x60;client_id&#x60; is specified. Ignored otherwise. These are scopes needed by a data source to prepare data and ingest them into BigQuery, e.g., https://www.googleapis.com/auth/bigquery Defaults to: `null`.
+  - statusUpdateDeadlineSeconds (Integer): The number of seconds to wait for a status update from the data source before BigQuery marks the transfer as failed. Defaults to: `null`.
+  - supportsCustomSchedule (Boolean): Specifies whether the data source supports a user defined schedule, or operates on the default schedule. When set to &#x60;true&#x60;, user can override default schedule. Defaults to: `null`.
+  - supportsMultipleTransfers (Boolean): Indicates whether the data source supports multiple transfers to different BigQuery targets. Defaults to: `null`.
+  - transferType (String): Transfer type. Currently supports only batch transfers, which are transfers that use the BigQuery batch APIs (load or query) to ingest the data. Defaults to: `null`.
+    - Enum - one of [TRANSFER_TYPE_UNSPECIFIED, BATCH, STREAMING]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"parameters",
     :"authorizationType",
@@ -49,6 +71,12 @@ defimpl Poison.Decoder, for: GoogleApi.BigQueryDataTransfer.V1.Model.DataSource 
   def decode(value, options) do
     value
     |> deserialize(:"parameters", :list, GoogleApi.BigQueryDataTransfer.V1.Model.DataSourceParameter, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQueryDataTransfer.V1.Model.DataSource do
+  def encode(value, options) do
+    GoogleApi.BigQueryDataTransfer.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

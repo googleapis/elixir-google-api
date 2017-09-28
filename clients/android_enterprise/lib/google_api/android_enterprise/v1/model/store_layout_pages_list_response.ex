@@ -20,9 +20,13 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.StoreLayoutPagesListResponse do
   @moduledoc """
   The store page resources for the enterprise.
+
+  ## Attributes
+
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#storeLayoutPagesListResponse\&quot;. Defaults to: `null`.
+  - page (List[StorePage]): A store page of an enterprise. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"page"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.StoreLayoutPag
   def decode(value, options) do
     value
     |> deserialize(:"page", :list, GoogleApi.AndroidEnterprise.V1.Model.StorePage, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.StoreLayoutPagesListResponse do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

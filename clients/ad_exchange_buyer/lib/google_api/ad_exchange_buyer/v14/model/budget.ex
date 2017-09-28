@@ -20,9 +20,17 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.Budget do
   @moduledoc """
   The configuration data for Ad Exchange RTB - Budget API.
+
+  ## Attributes
+
+  - accountId (String): The id of the account. This is required for get and update requests. Defaults to: `null`.
+  - billingId (String): The billing id to determine which adgroup to provide budget information for. This is required for get and update requests. Defaults to: `null`.
+  - budgetAmount (String): The daily budget amount in unit amount of the account currency to apply for the billingId provided. This is required for update requests. Defaults to: `null`.
+  - currencyCode (String): The currency code for the buyer. This cannot be altered here. Defaults to: `null`.
+  - id (String): The unique id that describes this item. Defaults to: `null`.
+  - kind (String): The kind of the resource, i.e. \&quot;adexchangebuyer#budget\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accountId",
     :"billingId",
@@ -36,6 +44,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.Budget do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.Budget do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

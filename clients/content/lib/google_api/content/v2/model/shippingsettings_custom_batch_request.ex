@@ -20,9 +20,12 @@
 defmodule GoogleApi.Content.V2.Model.ShippingsettingsCustomBatchRequest do
   @moduledoc """
   
+
+  ## Attributes
+
+  - entries (List[ShippingsettingsCustomBatchRequestEntry]): The request entries to be processed in the batch. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"entries"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.ShippingsettingsCustomBa
   def decode(value, options) do
     value
     |> deserialize(:"entries", :list, GoogleApi.Content.V2.Model.ShippingsettingsCustomBatchRequestEntry, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.ShippingsettingsCustomBatchRequest do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

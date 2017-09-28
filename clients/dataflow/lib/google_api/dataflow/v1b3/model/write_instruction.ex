@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.WriteInstruction do
   @moduledoc """
   An instruction that writes records. Takes one input, produces no outputs.
+
+  ## Attributes
+
+  - input (InstructionInput): The input. Defaults to: `null`.
+  - sink (Sink): The sink to write to. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"input",
     :"sink"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.WriteInstruction do
     value
     |> deserialize(:"input", :struct, GoogleApi.Dataflow.V1b3.Model.InstructionInput, options)
     |> deserialize(:"sink", :struct, GoogleApi.Dataflow.V1b3.Model.Sink, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.WriteInstruction do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -62,7 +62,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
     }
     %{}
     |> method(:get)
-    |> url("/enterprises/#{enterprise_id}/users/#{user_id}/devices/#{device_id}")
+    |> url("/enterprises/{enterpriseId}/users/{userId}/devices/{deviceId}", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "userId" => URI.encode_www_form(user_id),
+         "deviceId" => URI.encode_www_form(device_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -105,7 +109,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
     }
     %{}
     |> method(:get)
-    |> url("/enterprises/#{enterprise_id}/users/#{user_id}/devices/#{device_id}/state")
+    |> url("/enterprises/{enterpriseId}/users/{userId}/devices/{deviceId}/state", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "userId" => URI.encode_www_form(user_id),
+         "deviceId" => URI.encode_www_form(device_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -147,7 +155,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
     }
     %{}
     |> method(:get)
-    |> url("/enterprises/#{enterprise_id}/users/#{user_id}/devices")
+    |> url("/enterprises/{enterpriseId}/users/{userId}/devices", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -192,7 +203,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
     }
     %{}
     |> method(:put)
-    |> url("/enterprises/#{enterprise_id}/users/#{user_id}/devices/#{device_id}/state")
+    |> url("/enterprises/{enterpriseId}/users/{userId}/devices/{deviceId}/state", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "userId" => URI.encode_www_form(user_id),
+         "deviceId" => URI.encode_www_form(device_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

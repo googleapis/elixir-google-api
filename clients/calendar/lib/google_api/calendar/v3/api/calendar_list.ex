@@ -60,7 +60,9 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
     }
     %{}
     |> method(:delete)
-    |> url("/users/me/calendarList/#{calendar_id}")
+    |> url("/users/me/calendarList/{calendarId}", %{
+         "calendarId" => URI.encode_www_form(calendar_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -101,7 +103,9 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
     }
     %{}
     |> method(:get)
-    |> url("/users/me/calendarList/#{calendar_id}")
+    |> url("/users/me/calendarList/{calendarId}", %{
+         "calendarId" => URI.encode_www_form(calendar_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -242,7 +246,9 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
     }
     %{}
     |> method(:patch)
-    |> url("/users/me/calendarList/#{calendar_id}")
+    |> url("/users/me/calendarList/{calendarId}", %{
+         "calendarId" => URI.encode_www_form(calendar_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -287,7 +293,9 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
     }
     %{}
     |> method(:put)
-    |> url("/users/me/calendarList/#{calendar_id}")
+    |> url("/users/me/calendarList/{calendarId}", %{
+         "calendarId" => URI.encode_www_form(calendar_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

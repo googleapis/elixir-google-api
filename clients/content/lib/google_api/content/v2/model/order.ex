@@ -20,9 +20,31 @@
 defmodule GoogleApi.Content.V2.Model.Order do
   @moduledoc """
   
+
+  ## Attributes
+
+  - acknowledged (Boolean): Whether the order was acknowledged. Defaults to: `null`.
+  - channelType (String): The channel type of the order: \&quot;purchaseOnGoogle\&quot; or \&quot;googleExpress\&quot;. Defaults to: `null`.
+  - customer (OrderCustomer): The details of the customer who placed the order. Defaults to: `null`.
+  - deliveryDetails (OrderDeliveryDetails): The details for the delivery. Defaults to: `null`.
+  - id (String): The REST id of the order. Globally unique. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;content#order\&quot;. Defaults to: `null`.
+  - lineItems (List[OrderLineItem]): Line items that are ordered. Defaults to: `null`.
+  - merchantId (String):  Defaults to: `null`.
+  - merchantOrderId (String): Merchant-provided id of the order. Defaults to: `null`.
+  - netAmount (Price): The net amount for the order. For example, if an order was originally for a grand total of $100 and a refund was issued for $20, the net amount will be $80. Defaults to: `null`.
+  - paymentMethod (OrderPaymentMethod): The details of the payment method. Defaults to: `null`.
+  - paymentStatus (String): The status of the payment. Defaults to: `null`.
+  - placedDate (String): The date when the order was placed, in ISO 8601 format. Defaults to: `null`.
+  - promotions (List[OrderPromotion]): The details of the merchant provided promotions applied to the order. More details about the program are here. Defaults to: `null`.
+  - refunds (List[OrderRefund]): Refunds for the order. Defaults to: `null`.
+  - shipments (List[OrderShipment]): Shipments of the order. Defaults to: `null`.
+  - shippingCost (Price): The total cost of shipping for all items. Defaults to: `null`.
+  - shippingCostTax (Price): The tax for the total shipping cost. Defaults to: `null`.
+  - shippingOption (String): The requested shipping option. Defaults to: `null`.
+  - status (String): The status of the order. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"acknowledged",
     :"channelType",
@@ -61,6 +83,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.Order do
     |> deserialize(:"shipments", :list, GoogleApi.Content.V2.Model.OrderShipment, options)
     |> deserialize(:"shippingCost", :struct, GoogleApi.Content.V2.Model.Price, options)
     |> deserialize(:"shippingCostTax", :struct, GoogleApi.Content.V2.Model.Price, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.Order do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

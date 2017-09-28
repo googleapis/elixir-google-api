@@ -20,9 +20,13 @@
 defmodule GoogleApi.Content.V2.Model.DeliveryTime do
   @moduledoc """
   
+
+  ## Attributes
+
+  - maxTransitTimeInDays (Integer): Maximum number of business days that is spent in transit. 0 means same day delivery, 1 means next day delivery. Must be greater than or equal to minTransitTimeInDays. Required. Defaults to: `null`.
+  - minTransitTimeInDays (Integer): Minimum number of business days that is spent in transit. 0 means same day delivery, 1 means next day delivery. Required. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"maxTransitTimeInDays",
     :"minTransitTimeInDays"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.DeliveryTime do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.DeliveryTime do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

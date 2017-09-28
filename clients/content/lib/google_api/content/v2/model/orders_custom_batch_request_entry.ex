@@ -20,9 +20,23 @@
 defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntry do
   @moduledoc """
   
+
+  ## Attributes
+
+  - batchId (Integer): An entry ID, unique within the batch request. Defaults to: `null`.
+  - cancel (OrdersCustomBatchRequestEntryCancel): Required for cancel method. Defaults to: `null`.
+  - cancelLineItem (OrdersCustomBatchRequestEntryCancelLineItem): Required for cancelLineItem method. Defaults to: `null`.
+  - merchantId (String): The ID of the managing account. Defaults to: `null`.
+  - merchantOrderId (String): The merchant order id. Required for updateMerchantOrderId and getByMerchantOrderId methods. Defaults to: `null`.
+  - method (String): The method to apply. Defaults to: `null`.
+  - operationId (String): The ID of the operation. Unique across all operations for a given order. Required for all methods beside get and getByMerchantOrderId. Defaults to: `null`.
+  - orderId (String): The ID of the order. Required for all methods beside getByMerchantOrderId. Defaults to: `null`.
+  - refund (OrdersCustomBatchRequestEntryRefund): Required for refund method. Defaults to: `null`.
+  - returnLineItem (OrdersCustomBatchRequestEntryReturnLineItem): Required for returnLineItem method. Defaults to: `null`.
+  - shipLineItems (OrdersCustomBatchRequestEntryShipLineItems): Required for shipLineItems method. Defaults to: `null`.
+  - updateShipment (OrdersCustomBatchRequestEntryUpdateShipment): Required for updateShipment method. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"batchId",
     :"cancel",
@@ -49,6 +63,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrdersCustomBatchRequest
     |> deserialize(:"returnLineItem", :struct, GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryReturnLineItem, options)
     |> deserialize(:"shipLineItems", :struct, GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryShipLineItems, options)
     |> deserialize(:"updateShipment", :struct, GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryUpdateShipment, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntry do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

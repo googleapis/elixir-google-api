@@ -20,9 +20,12 @@
 defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxGetLinuxAccountViewsResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - resource (LinuxAccountViews): [Output Only] A list of authorized user accounts and groups. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"resource"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxGet
   def decode(value, options) do
     value
     |> deserialize(:"resource", :struct, GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxAccountViews, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.LinuxGetLinuxAccountViewsResponse do
+  def encode(value, options) do
+    GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer.serialize_non_nil(value, options)
   end
 end
 

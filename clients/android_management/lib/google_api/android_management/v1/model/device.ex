@@ -20,9 +20,39 @@
 defmodule GoogleApi.AndroidManagement.V1.Model.Device do
   @moduledoc """
   A device owned by an enterprise. Unless otherwise noted, all fields are read-only and cannot be modified by an update device request.
+
+  ## Attributes
+
+  - apiLevel (Integer): The API level of the Android platform version running on the device. Defaults to: `null`.
+  - appliedPolicyName (String): The name of the policy that is currently applied by the device. Defaults to: `null`.
+  - appliedPolicyVersion (String): The version of the policy that is currently applied by the device. Defaults to: `null`.
+  - appliedState (String): The state that is currently applied by the device. Defaults to: `null`.
+    - Enum - one of [DEVICE_STATE_UNSPECIFIED, ACTIVE, DISABLED, DELETED, PROVISIONING]
+  - disabledReason (UserFacingMessage): If the device state is DISABLED, an optional message that is displayed on the device indicating the reason the device is disabled. This field may be modified by an update request. Defaults to: `null`.
+  - displays (List[Display]): Displays on the device. This information is only available when displayInfoEnabled is true in the device&#39;s policy. Defaults to: `null`.
+  - enrollmentTime (String): The time of device enrollment. Defaults to: `null`.
+  - enrollmentTokenData (String): If this device was enrolled with an enrollment token with additional data provided, this field contains that data. Defaults to: `null`.
+  - enrollmentTokenName (String): If this device was enrolled with an enrollment token, this field contains the name of the token. Defaults to: `null`.
+  - hardwareInfo (HardwareInfo): Detailed information about the device hardware. Defaults to: `null`.
+  - hardwareStatusSamples (List[HardwareStatus]): Hardware status samples in chronological order. This information is only available when hardwareStatusEnabled is true in the device&#39;s policy. Defaults to: `null`.
+  - lastPolicyComplianceReportTime (String): The last time the device sent a policy compliance report. Defaults to: `null`.
+  - lastPolicySyncTime (String): The last time the device fetched its policy. Defaults to: `null`.
+  - lastStatusReportTime (String): The last time the device sent a status report. Defaults to: `null`.
+  - memoryEvents (List[MemoryEvent]): Events related to memory and storage measurements in chronological order. This information is only available when memoryInfoEnabled is true in the device&#39;s policy. Defaults to: `null`.
+  - memoryInfo (MemoryInfo): Memory information. This information is only available when memoryInfoEnabled is true in the device&#39;s policy. Defaults to: `null`.
+  - name (String): The name of the device in the form enterprises/{enterpriseId}/devices/{deviceId} Defaults to: `null`.
+  - networkInfo (NetworkInfo): Device network information. This information is only available when networkInfoEnabled is true in the device&#39;s policy. Defaults to: `null`.
+  - nonComplianceDetails (List[NonComplianceDetail]): Details about policy settings for which the device is not in compliance. Defaults to: `null`.
+  - policyCompliant (Boolean): Whether the device is compliant with its policy. Defaults to: `null`.
+  - policyName (String): The name of the policy that is intended to be applied to the device. If empty, the policy with id default is applied. This field may be modified by an update request. The name of the policy is in the form enterprises/{enterpriseId}/policies/{policyId}. It is also permissible to only specify the policyId when updating this field as long as the policyId contains no slashes since the rest of the policy name can be inferred from context. Defaults to: `null`.
+  - powerManagementEvents (List[PowerManagementEvent]): Power management events on the device in chronological order. This information is only available when powerManagementEventsEnabled is true in the device&#39;s policy. Defaults to: `null`.
+  - previousDeviceNames (List[String]): The previous device names used for the same physical device when it has been enrolled multiple times. The serial number is used as the unique identifier to determine if the same physical device has enrolled previously. The names are in chronological order. Defaults to: `null`.
+  - softwareInfo (SoftwareInfo): Detailed information about the device software. This information is only available when softwareInfoEnabled is true in the device&#39;s policy. Defaults to: `null`.
+  - state (String): The state that is intended to be applied to the device. This field may be modified by an update request. Note that UpdateDevice only handles toggling between ACTIVE and DISABLED states. Use the delete device method to cause the device to enter the DELETED state. Defaults to: `null`.
+    - Enum - one of [DEVICE_STATE_UNSPECIFIED, ACTIVE, DISABLED, DELETED, PROVISIONING]
+  - userName (String): The resource name of the user of the device in the form enterprises/{enterpriseId}/users/{userId}. This is the name of the device account automatically created for this device. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"apiLevel",
     :"appliedPolicyName",
@@ -67,6 +97,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.Device do
     |> deserialize(:"nonComplianceDetails", :list, GoogleApi.AndroidManagement.V1.Model.NonComplianceDetail, options)
     |> deserialize(:"powerManagementEvents", :list, GoogleApi.AndroidManagement.V1.Model.PowerManagementEvent, options)
     |> deserialize(:"softwareInfo", :struct, GoogleApi.AndroidManagement.V1.Model.SoftwareInfo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.Device do
+  def encode(value, options) do
+    GoogleApi.AndroidManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

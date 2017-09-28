@@ -20,9 +20,24 @@
 defmodule GoogleApi.Blogger.V3.Model.Blog do
   @moduledoc """
   
+
+  ## Attributes
+
+  - customMetaData (String): The JSON custom meta-data for the Blog Defaults to: `null`.
+  - description (String): The description of this blog. This is displayed underneath the title. Defaults to: `null`.
+  - id (String): The identifier for this resource. Defaults to: `null`.
+  - kind (String): The kind of this entry. Always blogger#blog Defaults to: `null`.
+  - locale (BlogLocale):  Defaults to: `null`.
+  - name (String): The name of this blog. This is displayed as the title. Defaults to: `null`.
+  - pages (BlogPages):  Defaults to: `null`.
+  - posts (BlogPosts):  Defaults to: `null`.
+  - published (DateTime): RFC 3339 date-time when this blog was published. Defaults to: `null`.
+  - selfLink (String): The API REST URL to fetch this resource from. Defaults to: `null`.
+  - status (String): The status of the blog. Defaults to: `null`.
+  - updated (DateTime): RFC 3339 date-time when this blog was last updated. Defaults to: `null`.
+  - url (String): The URL where this blog is published. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"customMetaData",
     :"description",
@@ -44,9 +59,15 @@ defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.Blog do
   import GoogleApi.Blogger.V3.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"locale", :struct, GoogleApi.Blogger.V3.Model.Blog_locale, options)
-    |> deserialize(:"pages", :struct, GoogleApi.Blogger.V3.Model.Blog_pages, options)
-    |> deserialize(:"posts", :struct, GoogleApi.Blogger.V3.Model.Blog_posts, options)
+    |> deserialize(:"locale", :struct, GoogleApi.Blogger.V3.Model.BlogLocale, options)
+    |> deserialize(:"pages", :struct, GoogleApi.Blogger.V3.Model.BlogPages, options)
+    |> deserialize(:"posts", :struct, GoogleApi.Blogger.V3.Model.BlogPosts, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Blogger.V3.Model.Blog do
+  def encode(value, options) do
+    GoogleApi.Blogger.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

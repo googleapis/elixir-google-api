@@ -20,9 +20,16 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.InstallFailureEvent do
   @moduledoc """
   An event generated when an app installation failed on a device
+
+  ## Attributes
+
+  - deviceId (String): The Android ID of the device. This field will always be present. Defaults to: `null`.
+  - failureDetails (String): Additional details on the failure if applicable. Defaults to: `null`.
+  - failureReason (String): The reason for the installation failure. This field will always be present. Defaults to: `null`.
+  - productId (String): The id of the product (e.g. \&quot;app:com.google.android.gm\&quot;) for which the install failure event occured. This field will always be present. Defaults to: `null`.
+  - userId (String): The ID of the user. This field will always be present. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"deviceId",
     :"failureDetails",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.InstallFailureEvent do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.InstallFailureEvent do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

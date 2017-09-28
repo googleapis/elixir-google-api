@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CustomSearch.V1.Model.Promotion_image do
+defmodule GoogleApi.CustomSearch.V1.Model.PromotionImage do
   @moduledoc """
   
+
+  ## Attributes
+
+  - height (Integer):  Defaults to: `null`.
+  - source (String):  Defaults to: `null`.
+  - width (Integer):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"height",
     :"source",
@@ -30,9 +35,15 @@ defmodule GoogleApi.CustomSearch.V1.Model.Promotion_image do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CustomSearch.V1.Model.Promotion_image do
+defimpl Poison.Decoder, for: GoogleApi.CustomSearch.V1.Model.PromotionImage do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CustomSearch.V1.Model.PromotionImage do
+  def encode(value, options) do
+    GoogleApi.CustomSearch.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

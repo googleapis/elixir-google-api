@@ -20,9 +20,15 @@
 defmodule GoogleApi.Content.V2.Model.AccountsCustomBatchResponseEntry do
   @moduledoc """
   A batch entry encoding a single non-batch accounts response.
+
+  ## Attributes
+
+  - account (Account): The retrieved, created, or updated account. Not defined if the method was delete or claimwebsite. Defaults to: `null`.
+  - batchId (Integer): The ID of the request entry this entry responds to. Defaults to: `null`.
+  - errors (Errors): A list of errors defined if and only if the request failed. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;content#accountsCustomBatchResponseEntry\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"account",
     :"batchId",
@@ -37,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.AccountsCustomBatchRespo
     value
     |> deserialize(:"account", :struct, GoogleApi.Content.V2.Model.Account, options)
     |> deserialize(:"errors", :struct, GoogleApi.Content.V2.Model.Errors, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.AccountsCustomBatchResponseEntry do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

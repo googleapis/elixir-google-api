@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.MetricShortId do
   @moduledoc """
   The metric short id is returned to the user alongside an offset into ReportWorkItemStatusRequest
+
+  ## Attributes
+
+  - metricIndex (Integer): The index of the corresponding metric in the ReportWorkItemStatusRequest. Required. Defaults to: `null`.
+  - shortId (String): The service-generated short identifier for the metric. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"metricIndex",
     :"shortId"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.MetricShortId do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.MetricShortId do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.ReportWorkItemStatusRequest do
   @moduledoc """
   Request to report the status of WorkItems.
+
+  ## Attributes
+
+  - currentWorkerTime (String): The current timestamp at the worker. Defaults to: `null`.
+  - location (String): The location which contains the WorkItem&#39;s job. Defaults to: `null`.
+  - workItemStatuses (List[WorkItemStatus]): The order is unimportant, except that the order of the WorkItemServiceState messages in the ReportWorkItemStatusResponse corresponds to the order of WorkItemStatus messages here. Defaults to: `null`.
+  - workerId (String): The ID of the worker reporting the WorkItem status.  If this does not match the ID of the worker which the Dataflow service believes currently has the lease on the WorkItem, the report will be dropped (with an error response). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"currentWorkerTime",
     :"location",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.ReportWorkItemStatusR
   def decode(value, options) do
     value
     |> deserialize(:"workItemStatuses", :list, GoogleApi.Dataflow.V1b3.Model.WorkItemStatus, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.ReportWorkItemStatusRequest do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

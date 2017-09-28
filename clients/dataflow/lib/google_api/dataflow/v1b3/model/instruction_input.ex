@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.InstructionInput do
   @moduledoc """
   An input of an instruction, as a reference to an output of a producer instruction.
+
+  ## Attributes
+
+  - outputNum (Integer): The output index (origin zero) within the producer. Defaults to: `null`.
+  - producerInstructionIndex (Integer): The index (origin zero) of the parallel instruction that produces the output to be consumed by this input.  This index is relative to the list of instructions in this input&#39;s instruction&#39;s containing MapTask. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"outputNum",
     :"producerInstructionIndex"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.InstructionInput do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.InstructionInput do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

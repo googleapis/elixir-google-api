@@ -20,9 +20,11 @@
 defmodule GoogleApi.AppEngine.V1.Model.RepairApplicationRequest do
   @moduledoc """
   Request message for &#39;Applications.RepairApplication&#39;.
+
+  ## Attributes
+
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     
   ]
@@ -31,6 +33,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.RepairApplicationRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.RepairApplicationRequest do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

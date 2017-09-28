@@ -20,9 +20,12 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.ManagedPropertyBundle do
   @moduledoc """
   A bundle of managed properties.
+
+  ## Attributes
+
+  - managedProperty (List[ManagedProperty]): The list of managed properties. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"managedProperty"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.ManagedPropert
   def decode(value, options) do
     value
     |> deserialize(:"managedProperty", :list, GoogleApi.AndroidEnterprise.V1.Model.ManagedProperty, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.ManagedPropertyBundle do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,34 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.Job do
   @moduledoc """
   Defines a job to be run by the Cloud Dataflow service.
+
+  ## Attributes
+
+  - clientRequestId (String): The client&#39;s unique identifier of the job, re-used across retried attempts. If this field is set, the service will ensure its uniqueness. The request to create a job will fail if the service has knowledge of a previously submitted job with the same client&#39;s ID and job name. The caller may use this field to ensure idempotence of job creation across retried attempts to create a job. By default, the field is empty and, in that case, the service ignores it. Defaults to: `null`.
+  - createTime (String): The timestamp when the job was initially created. Immutable and set by the Cloud Dataflow service. Defaults to: `null`.
+  - currentState (String): The current state of the job.  Jobs are created in the &#x60;JOB_STATE_STOPPED&#x60; state unless otherwise specified.  A job in the &#x60;JOB_STATE_RUNNING&#x60; state may asynchronously enter a terminal state. After a job has reached a terminal state, no further state updates may be made.  This field may be mutated by the Cloud Dataflow service; callers cannot mutate it. Defaults to: `null`.
+    - Enum - one of [JOB_STATE_UNKNOWN, JOB_STATE_STOPPED, JOB_STATE_RUNNING, JOB_STATE_DONE, JOB_STATE_FAILED, JOB_STATE_CANCELLED, JOB_STATE_UPDATED, JOB_STATE_DRAINING, JOB_STATE_DRAINED, JOB_STATE_PENDING, JOB_STATE_CANCELLING]
+  - currentStateTime (String): The timestamp associated with the current state. Defaults to: `null`.
+  - environment (Environment): The environment for the job. Defaults to: `null`.
+  - executionInfo (JobExecutionInfo): Deprecated. Defaults to: `null`.
+  - id (String): The unique ID of this job.  This field is set by the Cloud Dataflow service when the Job is created, and is immutable for the life of the job. Defaults to: `null`.
+  - labels (Map[String, String]): User-defined labels for this job.  The labels map can contain no more than 64 entries.  Entries of the labels map are UTF8 strings that comply with the following restrictions:  * Keys must conform to regexp:  \\p{Ll}\\p{Lo}{0,62} * Values must conform to regexp:  [\\p{Ll}\\p{Lo}\\p{N}_-]{0,63} * Both keys and values are additionally constrained to be &lt;&#x3D; 128 bytes in size. Defaults to: `null`.
+  - location (String): The location that contains this job. Defaults to: `null`.
+  - name (String): The user-specified Cloud Dataflow job name.  Only one Job with a given name may exist in a project at any given time. If a caller attempts to create a Job with the same name as an already-existing Job, the attempt returns the existing Job.  The name must match the regular expression &#x60;[a-z]([-a-z0-9]{0,38}[a-z0-9])?&#x60; Defaults to: `null`.
+  - pipelineDescription (PipelineDescription): Preliminary field: The format of this data may change at any time. A description of the user pipeline and stages through which it is executed. Created by Cloud Dataflow service.  Only retrieved with JOB_VIEW_DESCRIPTION or JOB_VIEW_ALL. Defaults to: `null`.
+  - projectId (String): The ID of the Cloud Platform project that the job belongs to. Defaults to: `null`.
+  - replaceJobId (String): If this job is an update of an existing job, this field is the job ID of the job it replaced.  When sending a &#x60;CreateJobRequest&#x60;, you can update a job by specifying it here. The job named here is stopped, and its intermediate state is transferred to this job. Defaults to: `null`.
+  - replacedByJobId (String): If another job is an update of this job (and thus, this job is in &#x60;JOB_STATE_UPDATED&#x60;), this field contains the ID of that job. Defaults to: `null`.
+  - requestedState (String): The job&#39;s requested state.  &#x60;UpdateJob&#x60; may be used to switch between the &#x60;JOB_STATE_STOPPED&#x60; and &#x60;JOB_STATE_RUNNING&#x60; states, by setting requested_state.  &#x60;UpdateJob&#x60; may also be used to directly set a job&#39;s requested state to &#x60;JOB_STATE_CANCELLED&#x60; or &#x60;JOB_STATE_DONE&#x60;, irrevocably terminating the job if it has not already reached a terminal state. Defaults to: `null`.
+    - Enum - one of [JOB_STATE_UNKNOWN, JOB_STATE_STOPPED, JOB_STATE_RUNNING, JOB_STATE_DONE, JOB_STATE_FAILED, JOB_STATE_CANCELLED, JOB_STATE_UPDATED, JOB_STATE_DRAINING, JOB_STATE_DRAINED, JOB_STATE_PENDING, JOB_STATE_CANCELLING]
+  - stageStates (List[ExecutionStageState]): This field may be mutated by the Cloud Dataflow service; callers cannot mutate it. Defaults to: `null`.
+  - steps (List[Step]): The top-level steps that constitute the entire job. Defaults to: `null`.
+  - tempFiles (List[String]): A set of files the system should be aware of that are used for temporary storage. These temporary files will be removed on job completion. No duplicates are allowed. No file patterns are supported.  The supported files are:  Google Cloud Storage:     storage.googleapis.com/{bucket}/{object}    bucket.storage.googleapis.com/{object} Defaults to: `null`.
+  - transformNameMapping (Map[String, String]): The map of transform name prefixes of the job to be replaced to the corresponding name prefixes of the new job. Defaults to: `null`.
+  - type (String): The type of Cloud Dataflow job. Defaults to: `null`.
+    - Enum - one of [JOB_TYPE_UNKNOWN, JOB_TYPE_BATCH, JOB_TYPE_STREAMING]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"clientRequestId",
     :"createTime",
@@ -56,6 +81,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.Job do
     |> deserialize(:"pipelineDescription", :struct, GoogleApi.Dataflow.V1b3.Model.PipelineDescription, options)
     |> deserialize(:"stageStates", :list, GoogleApi.Dataflow.V1b3.Model.ExecutionStageState, options)
     |> deserialize(:"steps", :list, GoogleApi.Dataflow.V1b3.Model.Step, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.Job do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

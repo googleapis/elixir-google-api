@@ -20,9 +20,14 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.ServiceAccount do
   @moduledoc """
   A service account identity, including the name and credentials that can be used to authenticate as the service account.
+
+  ## Attributes
+
+  - key (ServiceAccountKey): Credentials that can be used to authenticate as this ServiceAccount. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#serviceAccount\&quot;. Defaults to: `null`.
+  - name (String): The account name of the service account, in the form of an email address. Assigned by the server. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"key",
     :"kind",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.ServiceAccount
   def decode(value, options) do
     value
     |> deserialize(:"key", :struct, GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKey, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.ServiceAccount do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

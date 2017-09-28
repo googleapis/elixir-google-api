@@ -20,9 +20,13 @@
 defmodule GoogleApi.AnalyticsReporting.V4.Model.ColumnHeader do
   @moduledoc """
   Column headers.
+
+  ## Attributes
+
+  - dimensions (List[String]): The dimension names in the response. Defaults to: `null`.
+  - metricHeader (MetricHeader): Metric headers for the metrics in the response. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dimensions",
     :"metricHeader"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AnalyticsReporting.V4.Model.ColumnHeader 
   def decode(value, options) do
     value
     |> deserialize(:"metricHeader", :struct, GoogleApi.AnalyticsReporting.V4.Model.MetricHeader, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AnalyticsReporting.V4.Model.ColumnHeader do
+  def encode(value, options) do
+    GoogleApi.AnalyticsReporting.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.AcceleratedMobilePageUrl.V1.Model.AmpUrl do
   @moduledoc """
   AMP URL response for a requested URL.
+
+  ## Attributes
+
+  - ampUrl (String): The AMP URL pointing to the publisher&#39;s web server. Defaults to: `null`.
+  - cdnAmpUrl (String): The [AMP Cache URL](/amp/cache/overview#amp-cache-url-format) pointing to the cached document in the Google AMP Cache. Defaults to: `null`.
+  - originalUrl (String): The original non-AMP URL. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"ampUrl",
     :"cdnAmpUrl",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AcceleratedMobilePageUrl.V1.Model.AmpUrl do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AcceleratedMobilePageUrl.V1.Model.AmpUrl do
+  def encode(value, options) do
+    GoogleApi.AcceleratedMobilePageUrl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.DeleteOrderDealsResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - deals (List[MarketplaceDeal]): List of deals deleted (in the same proposal as passed in the request) Defaults to: `null`.
+  - proposalRevisionNumber (String): The updated revision number for the proposal. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"deals",
     :"proposalRevisionNumber"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.DeleteOrderDeal
   def decode(value, options) do
     value
     |> deserialize(:"deals", :list, GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDeal, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.DeleteOrderDealsResponse do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

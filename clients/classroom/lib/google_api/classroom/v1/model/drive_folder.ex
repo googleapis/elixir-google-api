@@ -20,9 +20,14 @@
 defmodule GoogleApi.Classroom.V1.Model.DriveFolder do
   @moduledoc """
   Representation of a Google Drive folder.
+
+  ## Attributes
+
+  - alternateLink (String): URL that can be used to access the Drive folder.  Read-only. Defaults to: `null`.
+  - id (String): Drive API resource ID. Defaults to: `null`.
+  - title (String): Title of the Drive folder.  Read-only. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"alternateLink",
     :"id",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.DriveFolder do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.DriveFolder do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

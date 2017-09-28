@@ -1,6 +1,6 @@
 # GoogleApi.AppState.V1
 
-**TODO: Add description**
+The Google App State API.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_app_state` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_app_state, "~> 0.1.0"}]
+  [{:google_api_app_state, "~> 0.0.1"}]
 end
 ```
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.OperationPerDevice do
   @moduledoc """
   Operation the server received for every device.
+
+  ## Attributes
+
+  - claim (PartnerClaim): Request to claim a device. Defaults to: `null`.
+  - result (PerDeviceStatusInBatch): Processing result for every device. Defaults to: `null`.
+  - unclaim (PartnerUnclaim): Request to unclaim a device. Defaults to: `null`.
+  - updateMetadata (UpdateMetadataArguments): Request to set metadata for a device. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"claim",
     :"result",
@@ -39,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.Operat
     |> deserialize(:"result", :struct, GoogleApi.AndroidDeviceProvisioning.V1.Model.PerDeviceStatusInBatch, options)
     |> deserialize(:"unclaim", :struct, GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerUnclaim, options)
     |> deserialize(:"updateMetadata", :struct, GoogleApi.AndroidDeviceProvisioning.V1.Model.UpdateMetadataArguments, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.OperationPerDevice do
+  def encode(value, options) do
+    GoogleApi.AndroidDeviceProvisioning.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

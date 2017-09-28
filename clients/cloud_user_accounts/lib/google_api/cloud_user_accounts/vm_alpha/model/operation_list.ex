@@ -20,9 +20,16 @@
 defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.OperationList do
   @moduledoc """
   Contains a list of Operation resources.
+
+  ## Attributes
+
+  - id (String): [Output Only] The unique identifier for the resource. This identifier is defined by the server. Defaults to: `null`.
+  - items (List[Operation]): [Output Only] A list of Operation resources. Defaults to: `null`.
+  - kind (String): [Output Only] Type of resource. Always compute#operations for Operations resource. Defaults to: `null`.
+  - nextPageToken (String): [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results. Defaults to: `null`.
+  - selfLink (String): [Output Only] Server-defined URL for this resource. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"items",
@@ -37,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operatio
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.CloudUserAccounts.Vm_alpha.Model.Operation, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.OperationList do
+  def encode(value, options) do
+    GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer.serialize_non_nil(value, options)
   end
 end
 

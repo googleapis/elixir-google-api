@@ -20,9 +20,14 @@
 defmodule GoogleApi.Content.V2.Model.ShippingSettings do
   @moduledoc """
   The merchant account&#39;s shipping settings.
+
+  ## Attributes
+
+  - accountId (String): The ID of the account to which these account shipping settings belong. Ignored upon update, always present in get request responses. Defaults to: `null`.
+  - postalCodeGroups (List[PostalCodeGroup]): A list of postal code groups that can be referred to in services. Optional. Defaults to: `null`.
+  - services (List[Service]): The target account&#39;s list of services. Optional. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accountId",
     :"postalCodeGroups",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.ShippingSettings do
     value
     |> deserialize(:"postalCodeGroups", :list, GoogleApi.Content.V2.Model.PostalCodeGroup, options)
     |> deserialize(:"services", :list, GoogleApi.Content.V2.Model.Service, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.ShippingSettings do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

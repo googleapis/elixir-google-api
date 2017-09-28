@@ -20,9 +20,15 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.MetricUpdate do
   @moduledoc """
   Describes the state of a metric.
+
+  ## Attributes
+
+  - cumulative (Boolean): True if this metric is reported as the total cumulative aggregate value accumulated since the worker started working on this WorkItem. By default this is false, indicating that this metric is reported as a delta that is not associated with any WorkItem. Defaults to: `null`.
+  - kind (String): Metric aggregation kind.  The possible metric aggregation kinds are \&quot;Sum\&quot;, \&quot;Max\&quot;, \&quot;Min\&quot;, \&quot;Mean\&quot;, \&quot;Set\&quot;, \&quot;And\&quot;, \&quot;Or\&quot;, and \&quot;Distribution\&quot;. The specified aggregation kind is case-insensitive.  If omitted, this is not an aggregated value but instead a single metric sample value. Defaults to: `null`.
+  - name (MetricStructuredName): Name of the metric. Defaults to: `null`.
+  - updateTime (String): Timestamp associated with the metric value. Optional when workers are reporting work progress; it will be filled in responses from the metrics API. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cumulative",
     :"kind",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.MetricUpdate do
   def decode(value, options) do
     value
     |> deserialize(:"name", :struct, GoogleApi.Dataflow.V1b3.Model.MetricStructuredName, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.MetricUpdate do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

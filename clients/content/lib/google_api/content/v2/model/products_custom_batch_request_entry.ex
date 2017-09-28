@@ -20,9 +20,16 @@
 defmodule GoogleApi.Content.V2.Model.ProductsCustomBatchRequestEntry do
   @moduledoc """
   A batch entry encoding a single non-batch products request.
+
+  ## Attributes
+
+  - batchId (Integer): An entry ID, unique within the batch request. Defaults to: `null`.
+  - merchantId (String): The ID of the managing account. Defaults to: `null`.
+  - method (String):  Defaults to: `null`.
+  - product (Product): The product to insert. Only required if the method is insert. Defaults to: `null`.
+  - productId (String): The ID of the product to get or delete. Only defined if the method is get or delete. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"batchId",
     :"merchantId",
@@ -37,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.ProductsCustomBatchReque
   def decode(value, options) do
     value
     |> deserialize(:"product", :struct, GoogleApi.Content.V2.Model.Product, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.ProductsCustomBatchRequestEntry do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

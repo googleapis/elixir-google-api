@@ -20,9 +20,13 @@
 defmodule GoogleApi.Calendar.V3.Model.CalendarNotification do
   @moduledoc """
   
+
+  ## Attributes
+
+  - method (String): The method used to deliver the notification. Possible values are:   - \&quot;email\&quot; - Reminders are sent via email.  - \&quot;sms\&quot; - Reminders are sent via SMS. This value is read-only and is ignored on inserts and updates. SMS reminders are only available for G Suite customers. Defaults to: `null`.
+  - type (String): The type of notification. Possible values are:   - \&quot;eventCreation\&quot; - Notification sent when a new event is put on the calendar.  - \&quot;eventChange\&quot; - Notification sent when an event is changed.  - \&quot;eventCancellation\&quot; - Notification sent when an event is cancelled.  - \&quot;eventResponse\&quot; - Notification sent when an event is changed.  - \&quot;agenda\&quot; - An agenda with the events of the day (sent out in the morning). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"method",
     :"type"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.CalendarNotification do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.CalendarNotification do
+  def encode(value, options) do
+    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

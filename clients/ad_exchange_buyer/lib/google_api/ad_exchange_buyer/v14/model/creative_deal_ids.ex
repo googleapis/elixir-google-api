@@ -20,9 +20,13 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeDealIds do
   @moduledoc """
   The external deal ids associated with a creative.
+
+  ## Attributes
+
+  - dealStatuses (List[CreativeDealIdsDealStatuses]): A list of external deal ids and ARC approval status. Defaults to: `null`.
+  - kind (String): Resource type. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dealStatuses",
     :"kind"
@@ -33,7 +37,13 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.CreativeDealIds
   import GoogleApi.AdExchangeBuyer.V14.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"dealStatuses", :list, GoogleApi.AdExchangeBuyer.V14.Model.CreativeDealIds_dealStatuses, options)
+    |> deserialize(:"dealStatuses", :list, GoogleApi.AdExchangeBuyer.V14.Model.CreativeDealIdsDealStatuses, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.CreativeDealIds do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

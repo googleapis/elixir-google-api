@@ -20,9 +20,13 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.AccountsList do
   @moduledoc """
   An account feed lists Ad Exchange buyer accounts that the user has access to. Each entry in the feed corresponds to a single buyer account.
+
+  ## Attributes
+
+  - items (List[Account]): A list of accounts. Defaults to: `null`.
+  - kind (String): Resource type. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"items",
     :"kind"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.AccountsList do
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.AdExchangeBuyer.V14.Model.Account, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.AccountsList do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

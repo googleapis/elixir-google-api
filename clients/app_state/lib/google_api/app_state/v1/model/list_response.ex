@@ -20,9 +20,14 @@
 defmodule GoogleApi.AppState.V1.Model.ListResponse do
   @moduledoc """
   This is a JSON template to convert a list-response for app state.
+
+  ## Attributes
+
+  - items (List[GetResponse]): The app state data. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string appstate#listResponse. Defaults to: `null`.
+  - maximumKeyCount (Integer): The maximum number of keys allowed for this user. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"items",
     :"kind",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.AppState.V1.Model.ListResponse do
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.AppState.V1.Model.GetResponse, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppState.V1.Model.ListResponse do
+  def encode(value, options) do
+    GoogleApi.AppState.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

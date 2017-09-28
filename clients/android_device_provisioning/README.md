@@ -1,6 +1,6 @@
 # GoogleApi.AndroidDeviceProvisioning.V1
 
-**TODO: Add description**
+Automates reseller integration into Zero Touch Provisioning by assigning devices to customers and creating device reports.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_android_device_provisioning` to your list of dependencies 
 
 ```elixir
 def deps do
-  [{:google_api_android_device_provisioning, "~> 0.1.0"}]
+  [{:google_api_android_device_provisioning, "~> 0.0.1"}]
 end
 ```
 

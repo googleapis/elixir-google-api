@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataproc.V1.Model.DiskConfig do
   @moduledoc """
   Specifies the config of disk options for a group of VM instances.
+
+  ## Attributes
+
+  - bootDiskSizeGb (Integer): Optional. Size in GB of the boot disk (default is 500GB). Defaults to: `null`.
+  - numLocalSsds (Integer): Optional. Number of attached SSDs, from 0 to 4 (default is 0). If SSDs are not attached, the boot disk is used to store runtime logs and HDFS (https://hadoop.apache.org/docs/r1.2.1/hdfs_user_guide.html) data. If one or more SSDs are attached, this runtime bulk data is spread across them, and the boot disk contains only basic config and installed binaries. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bootDiskSizeGb",
     :"numLocalSsds"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.DiskConfig do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataproc.V1.Model.DiskConfig do
+  def encode(value, options) do
+    GoogleApi.Dataproc.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

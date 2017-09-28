@@ -1,6 +1,6 @@
 # GoogleApi.AcceleratedMobilePageUrl.V1
 
-**TODO: Add description**
+Retrieves the list of AMP URLs (and equivalent AMP Cache URLs) for a given list of public URL(s). 
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_accelerated_mobile_page_url` to your list of dependencies 
 
 ```elixir
 def deps do
-  [{:google_api_accelerated_mobile_page_url, "~> 0.1.0"}]
+  [{:google_api_accelerated_mobile_page_url, "~> 0.0.1"}]
 end
 ```
 

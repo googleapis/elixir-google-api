@@ -20,9 +20,17 @@
 defmodule GoogleApi.Dataproc.V1.Model.JobStatus do
   @moduledoc """
   Cloud Dataproc job status.
+
+  ## Attributes
+
+  - details (String): Output-only. Optional job state details, such as an error description if the state is &lt;code&gt;ERROR&lt;/code&gt;. Defaults to: `null`.
+  - state (String): Output-only. A state message specifying the overall job state. Defaults to: `null`.
+    - Enum - one of [STATE_UNSPECIFIED, PENDING, SETUP_DONE, RUNNING, CANCEL_PENDING, CANCEL_STARTED, CANCELLED, DONE, ERROR, ATTEMPT_FAILURE]
+  - stateStartTime (String): Output-only. The time when this state was entered. Defaults to: `null`.
+  - substate (String): Output-only. Additional state information, which includes status reported by the agent. Defaults to: `null`.
+    - Enum - one of [UNSPECIFIED, SUBMITTED, QUEUED, STALE_STATUS]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"details",
     :"state",
@@ -34,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.JobStatus do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataproc.V1.Model.JobStatus do
+  def encode(value, options) do
+    GoogleApi.Dataproc.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -72,7 +72,9 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
     }
     %{}
     |> method(:get)
-    |> url("/v1/userProfiles/#{user_id}")
+    |> url("/v1/userProfiles/{userId}", %{
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -127,7 +129,9 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
     }
     %{}
     |> method(:post)
-    |> url("/v1/userProfiles/#{student_id}/guardianInvitations")
+    |> url("/v1/userProfiles/{studentId}/guardianInvitations", %{
+         "studentId" => URI.encode_www_form(student_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -181,7 +185,10 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
     }
     %{}
     |> method(:get)
-    |> url("/v1/userProfiles/#{student_id}/guardianInvitations/#{invitation_id}")
+    |> url("/v1/userProfiles/{studentId}/guardianInvitations/{invitationId}", %{
+         "studentId" => URI.encode_www_form(student_id),
+         "invitationId" => URI.encode_www_form(invitation_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -242,7 +249,9 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
     }
     %{}
     |> method(:get)
-    |> url("/v1/userProfiles/#{student_id}/guardianInvitations")
+    |> url("/v1/userProfiles/{studentId}/guardianInvitations", %{
+         "studentId" => URI.encode_www_form(student_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -300,7 +309,10 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
     }
     %{}
     |> method(:patch)
-    |> url("/v1/userProfiles/#{student_id}/guardianInvitations/#{invitation_id}")
+    |> url("/v1/userProfiles/{studentId}/guardianInvitations/{invitationId}", %{
+         "studentId" => URI.encode_www_form(student_id),
+         "invitationId" => URI.encode_www_form(invitation_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -354,7 +366,10 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/userProfiles/#{student_id}/guardians/#{guardian_id}")
+    |> url("/v1/userProfiles/{studentId}/guardians/{guardianId}", %{
+         "studentId" => URI.encode_www_form(student_id),
+         "guardianId" => URI.encode_www_form(guardian_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -408,7 +423,10 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
     }
     %{}
     |> method(:get)
-    |> url("/v1/userProfiles/#{student_id}/guardians/#{guardian_id}")
+    |> url("/v1/userProfiles/{studentId}/guardians/{guardianId}", %{
+         "studentId" => URI.encode_www_form(student_id),
+         "guardianId" => URI.encode_www_form(guardian_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -467,7 +485,9 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
     }
     %{}
     |> method(:get)
-    |> url("/v1/userProfiles/#{student_id}/guardians")
+    |> url("/v1/userProfiles/{studentId}/guardians", %{
+         "studentId" => URI.encode_www_form(student_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

@@ -17,20 +17,29 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Blogger.V3.Model.Post_images do
+defmodule GoogleApi.Blogger.V3.Model.PostImages do
   @moduledoc """
   
+
+  ## Attributes
+
+  - url (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"url"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.Post_images do
+defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.PostImages do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Blogger.V3.Model.PostImages do
+  def encode(value, options) do
+    GoogleApi.Blogger.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

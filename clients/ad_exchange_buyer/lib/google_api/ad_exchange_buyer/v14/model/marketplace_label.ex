@@ -20,9 +20,15 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceLabel do
   @moduledoc """
   
+
+  ## Attributes
+
+  - accountId (String): The accountId of the party that created the label. Defaults to: `null`.
+  - createTimeMs (String): The creation time (in ms since epoch) for the label. Defaults to: `null`.
+  - deprecatedMarketplaceDealParty (MarketplaceDealParty): Information about the party that created the label. Defaults to: `null`.
+  - label (String): The label to use. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accountId",
     :"createTimeMs",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceLabe
   def decode(value, options) do
     value
     |> deserialize(:"deprecatedMarketplaceDealParty", :struct, GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDealParty, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceLabel do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

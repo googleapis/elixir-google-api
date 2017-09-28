@@ -20,9 +20,19 @@
 defmodule GoogleApi.CivicInfo.V2.Model.Official do
   @moduledoc """
   Information about a person holding an elected office.
+
+  ## Attributes
+
+  - address (List[SimpleAddressType]): Addresses at which to contact the official. Defaults to: `null`.
+  - channels (List[Channel]): A list of known (social) media channels for this official. Defaults to: `null`.
+  - emails (List[String]): The direct email addresses for the official. Defaults to: `null`.
+  - name (String): The official&#39;s name. Defaults to: `null`.
+  - party (String): The full name of the party the official belongs to. Defaults to: `null`.
+  - phones (List[String]): The official&#39;s public contact phone numbers. Defaults to: `null`.
+  - photoUrl (String): A URL for a photo of the official. Defaults to: `null`.
+  - urls (List[String]): The official&#39;s public website URLs. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"address",
     :"channels",
@@ -41,6 +51,12 @@ defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.Official do
     value
     |> deserialize(:"address", :list, GoogleApi.CivicInfo.V2.Model.SimpleAddressType, options)
     |> deserialize(:"channels", :list, GoogleApi.CivicInfo.V2.Model.Channel, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CivicInfo.V2.Model.Official do
+  def encode(value, options) do
+    GoogleApi.CivicInfo.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

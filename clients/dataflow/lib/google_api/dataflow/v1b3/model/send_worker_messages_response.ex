@@ -20,9 +20,12 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.SendWorkerMessagesResponse do
   @moduledoc """
   The response to the worker messages.
+
+  ## Attributes
+
+  - workerMessageResponses (List[WorkerMessageResponse]): The servers response to the worker messages. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"workerMessageResponses"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.SendWorkerMessagesRes
   def decode(value, options) do
     value
     |> deserialize(:"workerMessageResponses", :list, GoogleApi.Dataflow.V1b3.Model.WorkerMessageResponse, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.SendWorkerMessagesResponse do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

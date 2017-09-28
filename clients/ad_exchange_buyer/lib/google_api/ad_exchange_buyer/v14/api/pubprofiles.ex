@@ -60,7 +60,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Pubprofiles do
     }
     %{}
     |> method(:get)
-    |> url("/publisher/#{account_id}/profiles")
+    |> url("/publisher/{accountId}/profiles", %{
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

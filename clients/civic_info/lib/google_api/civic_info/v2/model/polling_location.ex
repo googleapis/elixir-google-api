@@ -20,9 +20,20 @@
 defmodule GoogleApi.CivicInfo.V2.Model.PollingLocation do
   @moduledoc """
   A location where a voter can vote. This may be an early vote site, an election day voting location, or a drop off location for a completed ballot.
+
+  ## Attributes
+
+  - address (SimpleAddressType): The address of the location. Defaults to: `null`.
+  - endDate (String): The last date that this early vote site or drop off location may be used. This field is not populated for polling locations. Defaults to: `null`.
+  - id (String): An ID for this object. IDs may change in future requests and should not be cached. Access to this field requires special access that can be requested from the Request more link on the Quotas page. Defaults to: `null`.
+  - name (String): The name of the early vote site or drop off location. This field is not populated for polling locations. Defaults to: `null`.
+  - notes (String): Notes about this location (e.g. accessibility ramp or entrance to use). Defaults to: `null`.
+  - pollingHours (String): A description of when this location is open. Defaults to: `null`.
+  - sources (List[Source]): A list of sources for this location. If multiple sources are listed the data has been aggregated from those sources. Defaults to: `null`.
+  - startDate (String): The first date that this early vote site or drop off location may be used. This field is not populated for polling locations. Defaults to: `null`.
+  - voterServices (String): The services provided by this early vote site or drop off location. This field is not populated for polling locations. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"address",
     :"endDate",
@@ -42,6 +53,12 @@ defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.PollingLocation do
     value
     |> deserialize(:"address", :struct, GoogleApi.CivicInfo.V2.Model.SimpleAddressType, options)
     |> deserialize(:"sources", :list, GoogleApi.CivicInfo.V2.Model.Source, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CivicInfo.V2.Model.PollingLocation do
+  def encode(value, options) do
+    GoogleApi.CivicInfo.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.DLP.V2beta1.Model.GoogleTypeDate do
   @moduledoc """
   Represents a whole calendar date, e.g. date of birth. The time of day and time zone are either specified elsewhere or are not significant. The date is relative to the Proleptic Gregorian Calendar. The day may be 0 to represent a year and month where the day is not significant, e.g. credit card expiration date. The year may be 0 to represent a month and day independent of year, e.g. anniversary date. Related types are google.type.TimeOfDay and &#x60;google.protobuf.Timestamp&#x60;.
+
+  ## Attributes
+
+  - day (Integer): Day of month. Must be from 1 to 31 and valid for the year and month, or 0 if specifying a year/month where the day is not significant. Defaults to: `null`.
+  - month (Integer): Month of year. Must be from 1 to 12. Defaults to: `null`.
+  - year (Integer): Year of date. Must be from 1 to 9999, or 0 if specifying a date without a year. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"day",
     :"month",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2beta1.Model.GoogleTypeDate do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2beta1.Model.GoogleTypeDate do
+  def encode(value, options) do
+    GoogleApi.DLP.V2beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

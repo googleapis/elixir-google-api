@@ -20,9 +20,13 @@
 defmodule GoogleApi.Content.V2.Model.OrderDeliveryDetails do
   @moduledoc """
   
+
+  ## Attributes
+
+  - address (OrderAddress): The delivery address Defaults to: `null`.
+  - phoneNumber (String): The phone number of the person receiving the delivery. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"address",
     :"phoneNumber"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrderDeliveryDetails do
   def decode(value, options) do
     value
     |> deserialize(:"address", :struct, GoogleApi.Content.V2.Model.OrderAddress, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrderDeliveryDetails do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

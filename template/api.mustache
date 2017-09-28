@@ -40,10 +40,9 @@ defmodule {{moduleName}}.Api.{{classname}} do
 {{/hasOptionalParams}}
     %{}
     |> method(:{{#underscored}}{{httpMethod}}{{/underscored}})
-    |> url("{{path}}", %{
-         {{#pathParams}}"{{baseName}}" => {{^vendorExtensions.x-allowedReserved}}URI.encode_www_form({{/vendorExtensions.x-allowedReserved}}{{#underscored}}{{paramName}}{{/underscored}}{{^vendorExtensions.x-allowedReserved}}){{/vendorExtensions.x-allowedReserved}}{{#hasMore}},
-       {{/hasMore}}{{/pathParams}}
-       })
+    |> url("{{path}}"{{#hasPathParams}}, %{
+{{#pathParams}}         "{{baseName}}" => {{^vendorExtensions.x-allowedReserved}}URI.encode_www_form({{/vendorExtensions.x-allowedReserved}}{{#underscored}}{{paramName}}{{/underscored}}{{^vendorExtensions.x-allowedReserved}}){{/vendorExtensions.x-allowedReserved}}{{#hasMore}},{{/hasMore}}
+{{/pathParams}}       }{{/hasPathParams}})
 {{#allParams}}
 {{#required}}
 {{^isPathParam}}    |> add_param({{#isBodyParam}}:body{{/isBodyParam}}{{#isFormParam}}{{#isMultipart}}{{#isFile}}:file{{/isFile}}{{^isFile}}:form{{/isFile}}{{/isMultipart}}{{^isMultipart}}:form{{/isMultipart}}{{/isFormParam}}{{#isQueryParam}}:query{{/isQueryParam}}{{#isHeaderParam}}:headers{{/isHeaderParam}}, :"{{baseName}}", {{#underscored}}{{paramName}}{{/underscored}})

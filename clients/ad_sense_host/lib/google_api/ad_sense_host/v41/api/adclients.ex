@@ -60,7 +60,9 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Adclients do
     }
     %{}
     |> method(:get)
-    |> url("/adclients/#{ad_client_id}")
+    |> url("/adclients/{adClientId}", %{
+         "adClientId" => URI.encode_www_form(ad_client_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

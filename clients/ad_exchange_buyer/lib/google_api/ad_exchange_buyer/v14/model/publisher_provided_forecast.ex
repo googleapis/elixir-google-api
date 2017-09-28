@@ -20,9 +20,14 @@
 defmodule GoogleApi.AdExchangeBuyer.V14.Model.PublisherProvidedForecast do
   @moduledoc """
   This message carries publisher provided forecasting information.
+
+  ## Attributes
+
+  - dimensions (List[Dimension]): Publisher provided dimensions. E.g. geo, sizes etc... Defaults to: `null`.
+  - weeklyImpressions (String): Publisher provided weekly impressions. Defaults to: `null`.
+  - weeklyUniques (String): Publisher provided weekly uniques. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dimensions",
     :"weeklyImpressions",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.PublisherProvid
   def decode(value, options) do
     value
     |> deserialize(:"dimensions", :list, GoogleApi.AdExchangeBuyer.V14.Model.Dimension, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.PublisherProvidedForecast do
+  def encode(value, options) do
+    GoogleApi.AdExchangeBuyer.V14.Deserializer.serialize_non_nil(value, options)
   end
 end
 

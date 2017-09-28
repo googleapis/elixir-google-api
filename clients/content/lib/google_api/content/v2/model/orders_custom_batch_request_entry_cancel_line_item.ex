@@ -20,9 +20,16 @@
 defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryCancelLineItem do
   @moduledoc """
   
+
+  ## Attributes
+
+  - amount (Price): Amount to refund for the cancelation. Optional. If not set, Google will calculate the default based on the price and tax of the items involved. The amount must not be larger than the net amount left on the order. Defaults to: `null`.
+  - lineItemId (String): The ID of the line item to cancel. Defaults to: `null`.
+  - quantity (Integer): The quantity to cancel. Defaults to: `null`.
+  - reason (String): The reason for the cancellation. Defaults to: `null`.
+  - reasonText (String): The explanation of the reason. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"amount",
     :"lineItemId",
@@ -37,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrdersCustomBatchRequest
   def decode(value, options) do
     value
     |> deserialize(:"amount", :struct, GoogleApi.Content.V2.Model.Price, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryCancelLineItem do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

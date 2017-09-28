@@ -20,9 +20,15 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.StreamingComputationTask do
   @moduledoc """
   A task which describes what action should be performed for the specified streaming computation ranges.
+
+  ## Attributes
+
+  - computationRanges (List[StreamingComputationRanges]): Contains ranges of a streaming computation this task should apply to. Defaults to: `null`.
+  - dataDisks (List[MountedDataDisk]): Describes the set of data disks this task should apply to. Defaults to: `null`.
+  - taskType (String): A type of streaming computation task. Defaults to: `null`.
+    - Enum - one of [STREAMING_COMPUTATION_TASK_UNKNOWN, STREAMING_COMPUTATION_TASK_STOP, STREAMING_COMPUTATION_TASK_START]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"computationRanges",
     :"dataDisks",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.StreamingComputationT
     value
     |> deserialize(:"computationRanges", :list, GoogleApi.Dataflow.V1b3.Model.StreamingComputationRanges, options)
     |> deserialize(:"dataDisks", :list, GoogleApi.Dataflow.V1b3.Model.MountedDataDisk, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.StreamingComputationTask do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,17 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.ComputationTopology do
   @moduledoc """
   All configuration data for a particular Computation.
+
+  ## Attributes
+
+  - computationId (String): The ID of the computation. Defaults to: `null`.
+  - inputs (List[StreamLocation]): The inputs to the computation. Defaults to: `null`.
+  - keyRanges (List[KeyRangeLocation]): The key ranges processed by the computation. Defaults to: `null`.
+  - outputs (List[StreamLocation]): The outputs from the computation. Defaults to: `null`.
+  - stateFamilies (List[StateFamilyConfig]): The state family values. Defaults to: `null`.
+  - systemStageName (String): The system stage name. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"computationId",
     :"inputs",
@@ -41,6 +49,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.ComputationTopology d
     |> deserialize(:"keyRanges", :list, GoogleApi.Dataflow.V1b3.Model.KeyRangeLocation, options)
     |> deserialize(:"outputs", :list, GoogleApi.Dataflow.V1b3.Model.StreamLocation, options)
     |> deserialize(:"stateFamilies", :list, GoogleApi.Dataflow.V1b3.Model.StateFamilyConfig, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.ComputationTopology do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

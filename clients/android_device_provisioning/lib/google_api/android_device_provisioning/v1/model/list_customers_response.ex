@@ -20,9 +20,12 @@
 defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.ListCustomersResponse do
   @moduledoc """
   Response message of all customers related to this partner.
+
+  ## Attributes
+
+  - customers (List[Company]): List of customers related to this partner. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"customers"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.ListCu
   def decode(value, options) do
     value
     |> deserialize(:"customers", :list, GoogleApi.AndroidDeviceProvisioning.V1.Model.Company, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.ListCustomersResponse do
+  def encode(value, options) do
+    GoogleApi.AndroidDeviceProvisioning.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

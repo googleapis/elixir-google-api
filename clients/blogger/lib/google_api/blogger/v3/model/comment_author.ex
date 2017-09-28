@@ -17,12 +17,18 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Blogger.V3.Model.Comment_author do
+defmodule GoogleApi.Blogger.V3.Model.CommentAuthor do
   @moduledoc """
   The author of this Comment.
+
+  ## Attributes
+
+  - displayName (String): The display name. Defaults to: `null`.
+  - id (String): The identifier of the Comment creator. Defaults to: `null`.
+  - image (CommentAuthorImage):  Defaults to: `null`.
+  - url (String): The URL of the Comment creator&#39;s Profile page. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"displayName",
     :"id",
@@ -31,11 +37,17 @@ defmodule GoogleApi.Blogger.V3.Model.Comment_author do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.Comment_author do
+defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.CommentAuthor do
   import GoogleApi.Blogger.V3.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"image", :struct, GoogleApi.Blogger.V3.Model.Comment_author_image, options)
+    |> deserialize(:"image", :struct, GoogleApi.Blogger.V3.Model.CommentAuthorImage, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Blogger.V3.Model.CommentAuthor do
+  def encode(value, options) do
+    GoogleApi.Blogger.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

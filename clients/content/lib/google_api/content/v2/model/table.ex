@@ -20,9 +20,15 @@
 defmodule GoogleApi.Content.V2.Model.Table do
   @moduledoc """
   
+
+  ## Attributes
+
+  - columnHeaders (Headers): Headers of the table&#39;s columns. Optional: if not set then the table has only one dimension. Defaults to: `null`.
+  - name (String): Name of the table. Required for subtables, ignored for the main table. Defaults to: `null`.
+  - rowHeaders (Headers): Headers of the table&#39;s rows. Required. Defaults to: `null`.
+  - rows (List[Row]): The list of rows that constitute the table. Must have the same length as rowHeaders. Required. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"columnHeaders",
     :"name",
@@ -38,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.Table do
     |> deserialize(:"columnHeaders", :struct, GoogleApi.Content.V2.Model.Headers, options)
     |> deserialize(:"rowHeaders", :struct, GoogleApi.Content.V2.Model.Headers, options)
     |> deserialize(:"rows", :list, GoogleApi.Content.V2.Model.Row, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.Table do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

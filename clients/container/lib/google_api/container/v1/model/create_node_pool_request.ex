@@ -20,9 +20,12 @@
 defmodule GoogleApi.Container.V1.Model.CreateNodePoolRequest do
   @moduledoc """
   CreateNodePoolRequest creates a node pool for a cluster.
+
+  ## Attributes
+
+  - nodePool (NodePool): The node pool to create. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nodePool"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.CreateNodePoolRequest 
   def decode(value, options) do
     value
     |> deserialize(:"nodePool", :struct, GoogleApi.Container.V1.Model.NodePool, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.CreateNodePoolRequest do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

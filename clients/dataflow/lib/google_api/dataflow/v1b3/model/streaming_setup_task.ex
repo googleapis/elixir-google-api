@@ -20,9 +20,15 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.StreamingSetupTask do
   @moduledoc """
   A task which initializes part of a streaming Dataflow job.
+
+  ## Attributes
+
+  - drain (Boolean): The user has requested drain. Defaults to: `null`.
+  - receiveWorkPort (Integer): The TCP port on which the worker should listen for messages from other streaming computation workers. Defaults to: `null`.
+  - streamingComputationTopology (TopologyConfig): The global topology of the streaming Dataflow job. Defaults to: `null`.
+  - workerHarnessPort (Integer): The TCP port used by the worker to communicate with the Dataflow worker harness. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"drain",
     :"receiveWorkPort",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.StreamingSetupTask do
   def decode(value, options) do
     value
     |> deserialize(:"streamingComputationTopology", :struct, GoogleApi.Dataflow.V1b3.Model.TopologyConfig, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.StreamingSetupTask do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

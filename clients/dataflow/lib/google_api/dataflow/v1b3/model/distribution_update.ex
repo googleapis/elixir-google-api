@@ -20,9 +20,17 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.DistributionUpdate do
   @moduledoc """
   A metric value representing a distribution.
+
+  ## Attributes
+
+  - count (SplitInt64): The count of the number of elements present in the distribution. Defaults to: `null`.
+  - logBuckets (List[LogBucket]): (Optional) Logarithmic histogram of values. Each log may be in no more than one bucket. Order does not matter. Defaults to: `null`.
+  - max (SplitInt64): The maximum value present in the distribution. Defaults to: `null`.
+  - min (SplitInt64): The minimum value present in the distribution. Defaults to: `null`.
+  - sum (SplitInt64): Use an int64 since we&#39;d prefer the added precision. If overflow is a common problem we can detect it and use an additional int64 or a double. Defaults to: `null`.
+  - sumOfSquares (Float): Use a double since the sum of squares is likely to overflow int64. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"count",
     :"logBuckets",
@@ -42,6 +50,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.DistributionUpdate do
     |> deserialize(:"max", :struct, GoogleApi.Dataflow.V1b3.Model.SplitInt64, options)
     |> deserialize(:"min", :struct, GoogleApi.Dataflow.V1b3.Model.SplitInt64, options)
     |> deserialize(:"sum", :struct, GoogleApi.Dataflow.V1b3.Model.SplitInt64, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.DistributionUpdate do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

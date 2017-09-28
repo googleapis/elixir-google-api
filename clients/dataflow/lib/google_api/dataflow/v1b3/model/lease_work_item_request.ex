@@ -20,9 +20,17 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.LeaseWorkItemRequest do
   @moduledoc """
   Request to lease WorkItems.
+
+  ## Attributes
+
+  - currentWorkerTime (String): The current timestamp at the worker. Defaults to: `null`.
+  - location (String): The location which contains the WorkItem&#39;s job. Defaults to: `null`.
+  - requestedLeaseDuration (String): The initial lease period. Defaults to: `null`.
+  - workItemTypes (List[String]): Filter for WorkItem type. Defaults to: `null`.
+  - workerCapabilities (List[String]): Worker capabilities. WorkItems might be limited to workers with specific capabilities. Defaults to: `null`.
+  - workerId (String): Identifies the worker leasing work -- typically the ID of the virtual machine running the worker. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"currentWorkerTime",
     :"location",
@@ -36,6 +44,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.LeaseWorkItemRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.LeaseWorkItemRequest do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

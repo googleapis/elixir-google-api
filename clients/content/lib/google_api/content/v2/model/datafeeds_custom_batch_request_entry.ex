@@ -20,9 +20,16 @@
 defmodule GoogleApi.Content.V2.Model.DatafeedsCustomBatchRequestEntry do
   @moduledoc """
   A batch entry encoding a single non-batch datafeeds request.
+
+  ## Attributes
+
+  - batchId (Integer): An entry ID, unique within the batch request. Defaults to: `null`.
+  - datafeed (Datafeed): The data feed to insert. Defaults to: `null`.
+  - datafeedId (String): The ID of the data feed to get or delete. Defaults to: `null`.
+  - merchantId (String): The ID of the managing account. Defaults to: `null`.
+  - method (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"batchId",
     :"datafeed",
@@ -37,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.DatafeedsCustomBatchRequ
   def decode(value, options) do
     value
     |> deserialize(:"datafeed", :struct, GoogleApi.Content.V2.Model.Datafeed, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.DatafeedsCustomBatchRequestEntry do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

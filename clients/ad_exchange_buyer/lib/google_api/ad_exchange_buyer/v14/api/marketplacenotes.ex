@@ -62,7 +62,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Marketplacenotes do
     }
     %{}
     |> method(:post)
-    |> url("/proposals/#{proposal_id}/notes/insert")
+    |> url("/proposals/{proposalId}/notes/insert", %{
+         "proposalId" => URI.encode_www_form(proposal_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -105,7 +107,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Marketplacenotes do
     }
     %{}
     |> method(:get)
-    |> url("/proposals/#{proposal_id}/notes")
+    |> url("/proposals/{proposalId}/notes", %{
+         "proposalId" => URI.encode_www_form(proposal_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

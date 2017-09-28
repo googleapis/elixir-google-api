@@ -20,9 +20,15 @@
 defmodule GoogleApi.Content.V2.Model.ProductCustomAttribute do
   @moduledoc """
   
+
+  ## Attributes
+
+  - name (String): The name of the attribute. Underscores will be replaced by spaces upon insertion. Defaults to: `null`.
+  - type (String): The type of the attribute. Defaults to: `null`.
+  - unit (String): Free-form unit of the attribute. Unit can only be used for values of type INT or FLOAT. Defaults to: `null`.
+  - value (String): The value of the attribute. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name",
     :"type",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.ProductCustomAttribute do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.ProductCustomAttribute do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

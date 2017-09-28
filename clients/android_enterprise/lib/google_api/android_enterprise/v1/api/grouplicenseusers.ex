@@ -61,7 +61,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Grouplicenseusers do
     }
     %{}
     |> method(:get)
-    |> url("/enterprises/#{enterprise_id}/groupLicenses/#{group_license_id}/users")
+    |> url("/enterprises/{enterpriseId}/groupLicenses/{groupLicenseId}/users", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "groupLicenseId" => URI.encode_www_form(group_license_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

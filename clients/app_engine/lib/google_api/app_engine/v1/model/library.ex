@@ -20,9 +20,13 @@
 defmodule GoogleApi.AppEngine.V1.Model.Library do
   @moduledoc """
   Third-party Python runtime library that is required by the application.
+
+  ## Attributes
+
+  - name (String): Name of the library. Example: \&quot;django\&quot;. Defaults to: `null`.
+  - version (String): Version of the library to select, or \&quot;latest\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name",
     :"version"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.Library do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.Library do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

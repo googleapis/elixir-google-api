@@ -74,7 +74,9 @@ defmodule GoogleApi.DLP.V2beta1.Api.Inspect do
     }
     %{}
     |> method(:post)
-    |> url("/v2beta1/#{name}:cancel")
+    |> url("/v2beta1/{+name}:cancel", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -181,7 +183,9 @@ defmodule GoogleApi.DLP.V2beta1.Api.Inspect do
     }
     %{}
     |> method(:delete)
-    |> url("/v2beta1/#{name}")
+    |> url("/v2beta1/{+name}", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -240,7 +244,9 @@ defmodule GoogleApi.DLP.V2beta1.Api.Inspect do
     }
     %{}
     |> method(:get)
-    |> url("/v2beta1/#{name}")
+    |> url("/v2beta1/{+name}", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -299,7 +305,9 @@ defmodule GoogleApi.DLP.V2beta1.Api.Inspect do
     }
     %{}
     |> method(:get)
-    |> url("/v2beta1/#{name}/findings")
+    |> url("/v2beta1/{+name}/findings", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

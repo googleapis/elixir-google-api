@@ -20,9 +20,16 @@
 defmodule GoogleApi.Container.V1.Model.ServerConfig do
   @moduledoc """
   Container Engine service configuration.
+
+  ## Attributes
+
+  - defaultClusterVersion (String): Version of Kubernetes the service deploys by default. Defaults to: `null`.
+  - defaultImageType (String): Default image type. Defaults to: `null`.
+  - validImageTypes (List[String]): List of valid image types. Defaults to: `null`.
+  - validMasterVersions (List[String]): List of valid master versions. Defaults to: `null`.
+  - validNodeVersions (List[String]): List of valid node upgrade target versions. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"defaultClusterVersion",
     :"defaultImageType",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.ServerConfig do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.ServerConfig do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

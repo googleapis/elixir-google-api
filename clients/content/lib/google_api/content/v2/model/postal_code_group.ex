@@ -20,9 +20,14 @@
 defmodule GoogleApi.Content.V2.Model.PostalCodeGroup do
   @moduledoc """
   
+
+  ## Attributes
+
+  - country (String): The CLDR territory code of the country the postal code group applies to. Required. Defaults to: `null`.
+  - name (String): The name of the postal code group, referred to in headers. Required. Defaults to: `null`.
+  - postalCodeRanges (List[PostalCodeRange]): A range of postal codes. Required. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"country",
     :"name",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.PostalCodeGroup do
   def decode(value, options) do
     value
     |> deserialize(:"postalCodeRanges", :list, GoogleApi.Content.V2.Model.PostalCodeRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.PostalCodeGroup do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

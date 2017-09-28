@@ -63,7 +63,10 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     }
     %{}
     |> method(:post)
-    |> url("/#{merchant_id}/orders/#{order_id}/acknowledge")
+    |> url("/{merchantId}/orders/{orderId}/acknowledge", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "orderId" => URI.encode_www_form(order_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -105,7 +108,10 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     }
     %{}
     |> method(:post)
-    |> url("/#{merchant_id}/testorders/#{order_id}/advance")
+    |> url("/{merchantId}/testorders/{orderId}/advance", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "orderId" => URI.encode_www_form(order_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -149,7 +155,10 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     }
     %{}
     |> method(:post)
-    |> url("/#{merchant_id}/orders/#{order_id}/cancel")
+    |> url("/{merchantId}/orders/{orderId}/cancel", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "orderId" => URI.encode_www_form(order_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -193,7 +202,10 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     }
     %{}
     |> method(:post)
-    |> url("/#{merchant_id}/orders/#{order_id}/cancelLineItem")
+    |> url("/{merchantId}/orders/{orderId}/cancelLineItem", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "orderId" => URI.encode_www_form(order_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -236,7 +248,9 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     }
     %{}
     |> method(:post)
-    |> url("/#{merchant_id}/testorders")
+    |> url("/{merchantId}/testorders", %{
+         "merchantId" => URI.encode_www_form(merchant_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -320,7 +334,10 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     }
     %{}
     |> method(:get)
-    |> url("/#{merchant_id}/orders/#{order_id}")
+    |> url("/{merchantId}/orders/{orderId}", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "orderId" => URI.encode_www_form(order_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -362,7 +379,10 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     }
     %{}
     |> method(:get)
-    |> url("/#{merchant_id}/ordersbymerchantid/#{merchant_order_id}")
+    |> url("/{merchantId}/ordersbymerchantid/{merchantOrderId}", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "merchantOrderId" => URI.encode_www_form(merchant_order_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -404,7 +424,10 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     }
     %{}
     |> method(:get)
-    |> url("/#{merchant_id}/testordertemplates/#{template_name}")
+    |> url("/{merchantId}/testordertemplates/{templateName}", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "templateName" => URI.encode_www_form(template_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -459,7 +482,9 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     }
     %{}
     |> method(:get)
-    |> url("/#{merchant_id}/orders")
+    |> url("/{merchantId}/orders", %{
+         "merchantId" => URI.encode_www_form(merchant_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -503,7 +528,10 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     }
     %{}
     |> method(:post)
-    |> url("/#{merchant_id}/orders/#{order_id}/refund")
+    |> url("/{merchantId}/orders/{orderId}/refund", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "orderId" => URI.encode_www_form(order_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -547,7 +575,10 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     }
     %{}
     |> method(:post)
-    |> url("/#{merchant_id}/orders/#{order_id}/returnLineItem")
+    |> url("/{merchantId}/orders/{orderId}/returnLineItem", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "orderId" => URI.encode_www_form(order_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -591,7 +622,10 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     }
     %{}
     |> method(:post)
-    |> url("/#{merchant_id}/orders/#{order_id}/shipLineItems")
+    |> url("/{merchantId}/orders/{orderId}/shipLineItems", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "orderId" => URI.encode_www_form(order_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -635,7 +669,10 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     }
     %{}
     |> method(:post)
-    |> url("/#{merchant_id}/orders/#{order_id}/updateMerchantOrderId")
+    |> url("/{merchantId}/orders/{orderId}/updateMerchantOrderId", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "orderId" => URI.encode_www_form(order_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -679,7 +716,10 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     }
     %{}
     |> method(:post)
-    |> url("/#{merchant_id}/orders/#{order_id}/updateShipment")
+    |> url("/{merchantId}/orders/{orderId}/updateShipment", %{
+         "merchantId" => URI.encode_www_form(merchant_id),
+         "orderId" => URI.encode_www_form(order_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

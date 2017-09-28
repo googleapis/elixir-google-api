@@ -20,9 +20,13 @@
 defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Model.LogConfigCounterOptions do
   @moduledoc """
   Options for counters
+
+  ## Attributes
+
+  - field (String): The field value to attribute. Defaults to: `null`.
+  - metric (String): The metric to update. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"field",
     :"metric"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.LogConfigCounterOptions do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CloudUserAccounts.Vm_alpha.Model.LogConfigCounterOptions do
+  def encode(value, options) do
+    GoogleApi.CloudUserAccounts.Vm_alpha.Deserializer.serialize_non_nil(value, options)
   end
 end
 

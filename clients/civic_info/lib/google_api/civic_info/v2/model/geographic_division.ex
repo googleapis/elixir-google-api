@@ -20,9 +20,14 @@
 defmodule GoogleApi.CivicInfo.V2.Model.GeographicDivision do
   @moduledoc """
   Describes a political geography.
+
+  ## Attributes
+
+  - alsoKnownAs (List[String]): Any other valid OCD IDs that refer to the same division.  Because OCD IDs are meant to be human-readable and at least somewhat predictable, there are occasionally several identifiers for a single division. These identifiers are defined to be equivalent to one another, and one is always indicated as the primary identifier. The primary identifier will be returned in ocd_id above, and any other equivalent valid identifiers will be returned in this list.  For example, if this division&#39;s OCD ID is ocd-division/country:us/district:dc, this will contain ocd-division/country:us/state:dc. Defaults to: `null`.
+  - name (String): The name of the division. Defaults to: `null`.
+  - officeIndices (List[Integer]): List of indices in the offices array, one for each office elected from this division. Will only be present if includeOffices was true (or absent) in the request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"alsoKnownAs",
     :"name",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.GeographicDivision do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CivicInfo.V2.Model.GeographicDivision do
+  def encode(value, options) do
+    GoogleApi.CivicInfo.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

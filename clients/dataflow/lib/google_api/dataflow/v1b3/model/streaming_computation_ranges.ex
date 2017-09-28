@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.StreamingComputationRanges do
   @moduledoc """
   Describes full or partial data disk assignment information of the computation ranges.
+
+  ## Attributes
+
+  - computationId (String): The ID of the computation. Defaults to: `null`.
+  - rangeAssignments (List[KeyRangeDataDiskAssignment]): Data disk assignments for ranges from this computation. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"computationId",
     :"rangeAssignments"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.StreamingComputationR
   def decode(value, options) do
     value
     |> deserialize(:"rangeAssignments", :list, GoogleApi.Dataflow.V1b3.Model.KeyRangeDataDiskAssignment, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.StreamingComputationRanges do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

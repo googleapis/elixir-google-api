@@ -61,7 +61,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Grouplicenses do
     }
     %{}
     |> method(:get)
-    |> url("/enterprises/#{enterprise_id}/groupLicenses/#{group_license_id}")
+    |> url("/enterprises/{enterpriseId}/groupLicenses/{groupLicenseId}", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id),
+         "groupLicenseId" => URI.encode_www_form(group_license_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -102,7 +105,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Grouplicenses do
     }
     %{}
     |> method(:get)
-    |> url("/enterprises/#{enterprise_id}/groupLicenses")
+    |> url("/enterprises/{enterpriseId}/groupLicenses", %{
+         "enterpriseId" => URI.encode_www_form(enterprise_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

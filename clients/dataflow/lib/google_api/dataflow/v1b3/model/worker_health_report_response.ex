@@ -20,9 +20,12 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.WorkerHealthReportResponse do
   @moduledoc """
   WorkerHealthReportResponse contains information returned to the worker in response to a health ping.
+
+  ## Attributes
+
+  - reportInterval (String): A positive value indicates the worker should change its reporting interval to the specified value.  The default value of zero means no change in report rate is requested by the server. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"reportInterval"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.WorkerHealthReportResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.WorkerHealthReportResponse do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.Classroom.V1.Model.Link do
   @moduledoc """
   URL item.
+
+  ## Attributes
+
+  - thumbnailUrl (String): URL of a thumbnail image of the target URL.  Read-only. Defaults to: `null`.
+  - title (String): Title of the target of the URL.  Read-only. Defaults to: `null`.
+  - url (String): URL to link to. This must be a valid UTF-8 string containing between 1 and 2024 characters. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"thumbnailUrl",
     :"title",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.Link do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.Link do
+  def encode(value, options) do
+    GoogleApi.Classroom.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

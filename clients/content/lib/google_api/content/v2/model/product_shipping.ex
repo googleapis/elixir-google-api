@@ -20,9 +20,18 @@
 defmodule GoogleApi.Content.V2.Model.ProductShipping do
   @moduledoc """
   
+
+  ## Attributes
+
+  - country (String): The CLDR territory code of the country to which an item will ship. Defaults to: `null`.
+  - locationGroupName (String): The location where the shipping is applicable, represented by a location group name. Defaults to: `null`.
+  - locationId (String): The numeric id of a location that the shipping rate applies to as defined in the AdWords API. Defaults to: `null`.
+  - postalCode (String): The postal code range that the shipping rate applies to, represented by a postal code, a postal code prefix followed by a * wildcard, a range between two postal codes or two postal code prefixes of equal length. Defaults to: `null`.
+  - price (Price): Fixed shipping price, represented as a number. Defaults to: `null`.
+  - region (String): The geographic region to which a shipping rate applies. Defaults to: `null`.
+  - service (String): A free-form description of the service class or delivery speed. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"country",
     :"locationGroupName",
@@ -39,6 +48,12 @@ defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.ProductShipping do
   def decode(value, options) do
     value
     |> deserialize(:"price", :struct, GoogleApi.Content.V2.Model.Price, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.ProductShipping do
+  def encode(value, options) do
+    GoogleApi.Content.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

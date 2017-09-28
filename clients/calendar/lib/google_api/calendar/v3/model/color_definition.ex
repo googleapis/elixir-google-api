@@ -20,9 +20,13 @@
 defmodule GoogleApi.Calendar.V3.Model.ColorDefinition do
   @moduledoc """
   
+
+  ## Attributes
+
+  - background (String): The background color associated with this color definition. Defaults to: `null`.
+  - foreground (String): The foreground color that can be used to write on top of a background with &#39;background&#39; color. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"background",
     :"foreground"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.ColorDefinition do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.ColorDefinition do
+  def encode(value, options) do
+    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

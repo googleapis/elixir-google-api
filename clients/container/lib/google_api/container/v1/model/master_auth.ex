@@ -20,9 +20,17 @@
 defmodule GoogleApi.Container.V1.Model.MasterAuth do
   @moduledoc """
   The authentication information for accessing the master endpoint. Authentication can be done using HTTP basic auth or using client certificates.
+
+  ## Attributes
+
+  - clientCertificate (String): [Output only] Base64-encoded public certificate used by clients to authenticate to the cluster endpoint. Defaults to: `null`.
+  - clientCertificateConfig (ClientCertificateConfig): Configuration for client certificate authentication on the cluster.  If no configuration is specified, a client certificate is issued. Defaults to: `null`.
+  - clientKey (String): [Output only] Base64-encoded private key used by clients to authenticate to the cluster endpoint. Defaults to: `null`.
+  - clusterCaCertificate (String): [Output only] Base64-encoded public certificate that is the root of trust for the cluster. Defaults to: `null`.
+  - password (String): The password to use for HTTP basic authentication to the master endpoint. Because the master endpoint is open to the Internet, you should create a strong password.  If a password is provided for cluster creation, username must be non-empty. Defaults to: `null`.
+  - username (String): The username to use for HTTP basic authentication to the master endpoint. For clusters v1.6.0 and later, you can disable basic authentication by providing an empty username. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"clientCertificate",
     :"clientCertificateConfig",
@@ -38,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.MasterAuth do
   def decode(value, options) do
     value
     |> deserialize(:"clientCertificateConfig", :struct, GoogleApi.Container.V1.Model.ClientCertificateConfig, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.MasterAuth do
+  def encode(value, options) do
+    GoogleApi.Container.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

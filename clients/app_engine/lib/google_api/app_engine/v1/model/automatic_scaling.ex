@@ -20,9 +20,23 @@
 defmodule GoogleApi.AppEngine.V1.Model.AutomaticScaling do
   @moduledoc """
   Automatic scaling is based on request rate, response latencies, and other application metrics.
+
+  ## Attributes
+
+  - coolDownPeriod (String): Amount of time that the Autoscaler (https://cloud.google.com/compute/docs/autoscaler/) should wait between changes to the number of virtual machines. Only applicable for VM runtimes. Defaults to: `null`.
+  - cpuUtilization (CpuUtilization): Target scaling by CPU usage. Defaults to: `null`.
+  - diskUtilization (DiskUtilization): Target scaling by disk usage. Defaults to: `null`.
+  - maxConcurrentRequests (Integer): Number of concurrent requests an automatic scaling instance can accept before the scheduler spawns a new instance.Defaults to a runtime-specific value. Defaults to: `null`.
+  - maxIdleInstances (Integer): Maximum number of idle instances that should be maintained for this version. Defaults to: `null`.
+  - maxPendingLatency (String): Maximum amount of time that a request should wait in the pending queue before starting a new instance to handle it. Defaults to: `null`.
+  - maxTotalInstances (Integer): Maximum number of instances that should be started to handle requests. Defaults to: `null`.
+  - minIdleInstances (Integer): Minimum number of idle instances that should be maintained for this version. Only applicable for the default version of a service. Defaults to: `null`.
+  - minPendingLatency (String): Minimum amount of time a request should wait in the pending queue before starting a new instance to handle it. Defaults to: `null`.
+  - minTotalInstances (Integer): Minimum number of instances that should be maintained for this version. Defaults to: `null`.
+  - networkUtilization (NetworkUtilization): Target scaling by network usage. Defaults to: `null`.
+  - requestUtilization (RequestUtilization): Target scaling by request utilization. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"coolDownPeriod",
     :"cpuUtilization",
@@ -47,6 +61,12 @@ defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.AutomaticScaling do
     |> deserialize(:"diskUtilization", :struct, GoogleApi.AppEngine.V1.Model.DiskUtilization, options)
     |> deserialize(:"networkUtilization", :struct, GoogleApi.AppEngine.V1.Model.NetworkUtilization, options)
     |> deserialize(:"requestUtilization", :struct, GoogleApi.AppEngine.V1.Model.RequestUtilization, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AppEngine.V1.Model.AutomaticScaling do
+  def encode(value, options) do
+    GoogleApi.AppEngine.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

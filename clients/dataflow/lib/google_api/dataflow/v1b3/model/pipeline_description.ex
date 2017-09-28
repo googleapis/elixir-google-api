@@ -20,9 +20,14 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.PipelineDescription do
   @moduledoc """
   A descriptive representation of submitted pipeline as well as the executed form.  This data is provided by the Dataflow service for ease of visualizing the pipeline and interpretting Dataflow provided metrics.
+
+  ## Attributes
+
+  - displayData (List[DisplayData]): Pipeline level display data. Defaults to: `null`.
+  - executionPipelineStage (List[ExecutionStageSummary]): Description of each stage of execution of the pipeline. Defaults to: `null`.
+  - originalPipelineTransform (List[TransformSummary]): Description of each transform in the pipeline and collections between them. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"displayData",
     :"executionPipelineStage",
@@ -37,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.PipelineDescription d
     |> deserialize(:"displayData", :list, GoogleApi.Dataflow.V1b3.Model.DisplayData, options)
     |> deserialize(:"executionPipelineStage", :list, GoogleApi.Dataflow.V1b3.Model.ExecutionStageSummary, options)
     |> deserialize(:"originalPipelineTransform", :list, GoogleApi.Dataflow.V1b3.Model.TransformSummary, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.PipelineDescription do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

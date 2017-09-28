@@ -20,9 +20,12 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.FlattenInstruction do
   @moduledoc """
   An instruction that copies its inputs (zero or more) to its (single) output.
+
+  ## Attributes
+
+  - inputs (List[InstructionInput]): Describes the inputs to the flatten instruction. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"inputs"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.FlattenInstruction do
   def decode(value, options) do
     value
     |> deserialize(:"inputs", :list, GoogleApi.Dataflow.V1b3.Model.InstructionInput, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.FlattenInstruction do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

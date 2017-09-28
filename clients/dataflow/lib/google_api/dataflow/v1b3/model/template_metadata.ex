@@ -20,9 +20,14 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.TemplateMetadata do
   @moduledoc """
   Metadata describing a template.
+
+  ## Attributes
+
+  - parameters (List[ParameterMetadata]): The parameters for the template. Defaults to: `null`.
+  - description (String): Optional. A description of the template. Defaults to: `null`.
+  - name (String): Required. The name of the template. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"parameters",
     :"description",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.TemplateMetadata do
   def decode(value, options) do
     value
     |> deserialize(:"parameters", :list, GoogleApi.Dataflow.V1b3.Model.ParameterMetadata, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.TemplateMetadata do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

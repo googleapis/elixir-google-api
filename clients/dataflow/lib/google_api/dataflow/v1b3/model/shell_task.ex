@@ -20,9 +20,13 @@
 defmodule GoogleApi.Dataflow.V1b3.Model.ShellTask do
   @moduledoc """
   A task which consists of a shell command for the worker to execute.
+
+  ## Attributes
+
+  - command (String): The shell command to run. Defaults to: `null`.
+  - exitCode (Integer): Exit code for the task. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"command",
     :"exitCode"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.ShellTask do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Dataflow.V1b3.Model.ShellTask do
+  def encode(value, options) do
+    GoogleApi.Dataflow.V1b3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

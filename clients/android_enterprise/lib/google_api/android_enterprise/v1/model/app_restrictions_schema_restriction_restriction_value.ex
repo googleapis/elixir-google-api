@@ -20,9 +20,16 @@
 defmodule GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestrictionRestrictionValue do
   @moduledoc """
   A typed value for the restriction.
+
+  ## Attributes
+
+  - type (String): The type of the value being provided. Defaults to: `null`.
+  - valueBool (Boolean): The boolean value - this will only be present if type is bool. Defaults to: `null`.
+  - valueInteger (Integer): The integer value - this will only be present if type is integer. Defaults to: `null`.
+  - valueMultiselect (List[String]): The list of string values - this will only be present if type is multiselect. Defaults to: `null`.
+  - valueString (String): The string value - this will be present for types string, choice and hidden. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"type",
     :"valueBool",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestrictionRestrictionValue do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestrictionRestrictionValue do
+  def encode(value, options) do
+    GoogleApi.AndroidEnterprise.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

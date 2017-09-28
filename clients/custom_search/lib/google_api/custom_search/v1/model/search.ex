@@ -20,9 +20,19 @@
 defmodule GoogleApi.CustomSearch.V1.Model.Search do
   @moduledoc """
   
+
+  ## Attributes
+
+  - context (Context):  Defaults to: `null`.
+  - items (List[Result]):  Defaults to: `null`.
+  - kind (String):  Defaults to: `null`.
+  - promotions (List[Promotion]):  Defaults to: `null`.
+  - queries (Map[String, List[Query]]):  Defaults to: `null`.
+  - searchInformation (SearchSearchInformation):  Defaults to: `null`.
+  - spelling (SearchSpelling):  Defaults to: `null`.
+  - url (SearchUrl):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"context",
     :"items",
@@ -42,9 +52,15 @@ defimpl Poison.Decoder, for: GoogleApi.CustomSearch.V1.Model.Search do
     |> deserialize(:"context", :struct, GoogleApi.CustomSearch.V1.Model.Context, options)
     |> deserialize(:"items", :list, GoogleApi.CustomSearch.V1.Model.Result, options)
     |> deserialize(:"promotions", :list, GoogleApi.CustomSearch.V1.Model.Promotion, options)
-    |> deserialize(:"searchInformation", :struct, GoogleApi.CustomSearch.V1.Model.Search_searchInformation, options)
-    |> deserialize(:"spelling", :struct, GoogleApi.CustomSearch.V1.Model.Search_spelling, options)
-    |> deserialize(:"url", :struct, GoogleApi.CustomSearch.V1.Model.Search_url, options)
+    |> deserialize(:"searchInformation", :struct, GoogleApi.CustomSearch.V1.Model.SearchSearchInformation, options)
+    |> deserialize(:"spelling", :struct, GoogleApi.CustomSearch.V1.Model.SearchSpelling, options)
+    |> deserialize(:"url", :struct, GoogleApi.CustomSearch.V1.Model.SearchUrl, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CustomSearch.V1.Model.Search do
+  def encode(value, options) do
+    GoogleApi.CustomSearch.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
