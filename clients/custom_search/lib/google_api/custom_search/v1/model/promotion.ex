@@ -20,9 +20,17 @@
 defmodule GoogleApi.CustomSearch.V1.Model.Promotion do
   @moduledoc """
   
+
+  ## Attributes
+
+  - bodyLines (List[PromotionBodyLines]):  Defaults to: `null`.
+  - displayLink (String):  Defaults to: `null`.
+  - htmlTitle (String):  Defaults to: `null`.
+  - image (PromotionImage):  Defaults to: `null`.
+  - link (String):  Defaults to: `null`.
+  - title (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bodyLines",
     :"displayLink",
@@ -37,8 +45,14 @@ defimpl Poison.Decoder, for: GoogleApi.CustomSearch.V1.Model.Promotion do
   import GoogleApi.CustomSearch.V1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"bodyLines", :list, GoogleApi.CustomSearch.V1.Model.Promotion_bodyLines, options)
-    |> deserialize(:"image", :struct, GoogleApi.CustomSearch.V1.Model.Promotion_image, options)
+    |> deserialize(:"bodyLines", :list, GoogleApi.CustomSearch.V1.Model.PromotionBodyLines, options)
+    |> deserialize(:"image", :struct, GoogleApi.CustomSearch.V1.Model.PromotionImage, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CustomSearch.V1.Model.Promotion do
+  def encode(value, options) do
+    GoogleApi.CustomSearch.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

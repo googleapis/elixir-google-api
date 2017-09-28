@@ -20,9 +20,47 @@
 defmodule GoogleApi.CustomSearch.V1.Model.Query do
   @moduledoc """
   
+
+  ## Attributes
+
+  - count (Integer):  Defaults to: `null`.
+  - cr (String):  Defaults to: `null`.
+  - cx (String):  Defaults to: `null`.
+  - dateRestrict (String):  Defaults to: `null`.
+  - disableCnTwTranslation (String):  Defaults to: `null`.
+  - exactTerms (String):  Defaults to: `null`.
+  - excludeTerms (String):  Defaults to: `null`.
+  - fileType (String):  Defaults to: `null`.
+  - filter (String):  Defaults to: `null`.
+  - gl (String):  Defaults to: `null`.
+  - googleHost (String):  Defaults to: `null`.
+  - highRange (String):  Defaults to: `null`.
+  - hl (String):  Defaults to: `null`.
+  - hq (String):  Defaults to: `null`.
+  - imgColorType (String):  Defaults to: `null`.
+  - imgDominantColor (String):  Defaults to: `null`.
+  - imgSize (String):  Defaults to: `null`.
+  - imgType (String):  Defaults to: `null`.
+  - inputEncoding (String):  Defaults to: `null`.
+  - language (String):  Defaults to: `null`.
+  - linkSite (String):  Defaults to: `null`.
+  - lowRange (String):  Defaults to: `null`.
+  - orTerms (String):  Defaults to: `null`.
+  - outputEncoding (String):  Defaults to: `null`.
+  - relatedSite (String):  Defaults to: `null`.
+  - rights (String):  Defaults to: `null`.
+  - safe (String):  Defaults to: `null`.
+  - searchTerms (String):  Defaults to: `null`.
+  - searchType (String):  Defaults to: `null`.
+  - siteSearch (String):  Defaults to: `null`.
+  - siteSearchFilter (String):  Defaults to: `null`.
+  - sort (String):  Defaults to: `null`.
+  - startIndex (Integer):  Defaults to: `null`.
+  - startPage (Integer):  Defaults to: `null`.
+  - title (String):  Defaults to: `null`.
+  - totalResults (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"count",
     :"cr",
@@ -66,6 +104,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.CustomSearch.V1.Model.Query do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CustomSearch.V1.Model.Query do
+  def encode(value, options) do
+    GoogleApi.CustomSearch.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

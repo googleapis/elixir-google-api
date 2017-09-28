@@ -17,12 +17,21 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CustomSearch.V1.Model.Result_image do
+defmodule GoogleApi.CustomSearch.V1.Model.ResultImage do
   @moduledoc """
   
+
+  ## Attributes
+
+  - byteSize (Integer):  Defaults to: `null`.
+  - contextLink (String):  Defaults to: `null`.
+  - height (Integer):  Defaults to: `null`.
+  - thumbnailHeight (Integer):  Defaults to: `null`.
+  - thumbnailLink (String):  Defaults to: `null`.
+  - thumbnailWidth (Integer):  Defaults to: `null`.
+  - width (Integer):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"byteSize",
     :"contextLink",
@@ -34,9 +43,15 @@ defmodule GoogleApi.CustomSearch.V1.Model.Result_image do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CustomSearch.V1.Model.Result_image do
+defimpl Poison.Decoder, for: GoogleApi.CustomSearch.V1.Model.ResultImage do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CustomSearch.V1.Model.ResultImage do
+  def encode(value, options) do
+    GoogleApi.CustomSearch.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

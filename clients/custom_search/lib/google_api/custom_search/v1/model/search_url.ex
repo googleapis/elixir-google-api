@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CustomSearch.V1.Model.Search_url do
+defmodule GoogleApi.CustomSearch.V1.Model.SearchUrl do
   @moduledoc """
   
+
+  ## Attributes
+
+  - template (String):  Defaults to: `null`.
+  - type (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"template",
     :"type"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CustomSearch.V1.Model.Search_url do
+defimpl Poison.Decoder, for: GoogleApi.CustomSearch.V1.Model.SearchUrl do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CustomSearch.V1.Model.SearchUrl do
+  def encode(value, options) do
+    GoogleApi.CustomSearch.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.CustomSearch.V1.Model.Context do
   @moduledoc """
   
+
+  ## Attributes
+
+  - facets (List[List[Object]]):  Defaults to: `null`.
+  - title (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"facets",
     :"title"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.CustomSearch.V1.Model.Context do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CustomSearch.V1.Model.Context do
+  def encode(value, options) do
+    GoogleApi.CustomSearch.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -17,12 +17,18 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CustomSearch.V1.Model.Promotion_bodyLines do
+defmodule GoogleApi.CustomSearch.V1.Model.PromotionBodyLines do
   @moduledoc """
   
+
+  ## Attributes
+
+  - htmlTitle (String):  Defaults to: `null`.
+  - link (String):  Defaults to: `null`.
+  - title (String):  Defaults to: `null`.
+  - url (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"htmlTitle",
     :"link",
@@ -31,9 +37,15 @@ defmodule GoogleApi.CustomSearch.V1.Model.Promotion_bodyLines do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CustomSearch.V1.Model.Promotion_bodyLines do
+defimpl Poison.Decoder, for: GoogleApi.CustomSearch.V1.Model.PromotionBodyLines do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CustomSearch.V1.Model.PromotionBodyLines do
+  def encode(value, options) do
+    GoogleApi.CustomSearch.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -17,12 +17,18 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CustomSearch.V1.Model.Search_searchInformation do
+defmodule GoogleApi.CustomSearch.V1.Model.SearchSearchInformation do
   @moduledoc """
   
+
+  ## Attributes
+
+  - formattedSearchTime (String):  Defaults to: `null`.
+  - formattedTotalResults (String):  Defaults to: `null`.
+  - searchTime (Float):  Defaults to: `null`.
+  - totalResults (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"formattedSearchTime",
     :"formattedTotalResults",
@@ -31,9 +37,15 @@ defmodule GoogleApi.CustomSearch.V1.Model.Search_searchInformation do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CustomSearch.V1.Model.Search_searchInformation do
+defimpl Poison.Decoder, for: GoogleApi.CustomSearch.V1.Model.SearchSearchInformation do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.CustomSearch.V1.Model.SearchSearchInformation do
+  def encode(value, options) do
+    GoogleApi.CustomSearch.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
