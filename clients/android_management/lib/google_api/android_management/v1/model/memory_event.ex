@@ -20,9 +20,15 @@
 defmodule GoogleApi.AndroidManagement.V1.Model.MemoryEvent do
   @moduledoc """
   An event related to memory and storage measurements.
+
+  ## Attributes
+
+  - byteCount (String): The number of free bytes in the medium, or for EXTERNAL_STORAGE_DETECTED, the total capacity in bytes of the storage medium. Defaults to: `null`.
+  - createTime (String): The creation time of the event. Defaults to: `null`.
+  - eventType (String): Event type. Defaults to: `null`.
+    - Enum - one of [MEMORY_EVENT_TYPE_UNSPECIFIED, RAM_MEASURED, INTERNAL_STORAGE_MEASURED, EXTERNAL_STORAGE_DETECTED, EXTERNAL_STORAGE_REMOVED, EXTERNAL_STORAGE_MEASURED]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"byteCount",
     :"createTime",
@@ -33,6 +39,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.MemoryEvent do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.MemoryEvent do
+  def encode(value, options) do
+    GoogleApi.AndroidManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

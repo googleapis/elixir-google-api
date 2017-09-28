@@ -20,9 +20,18 @@
 defmodule GoogleApi.AndroidManagement.V1.Model.ManagedProperty do
   @moduledoc """
   Managed property.
+
+  ## Attributes
+
+  - description (String): A longer description of the property, giving more detail of what it affects. Localized. Defaults to: `null`.
+  - entries (List[ManagedPropertyEntry]): For CHOICE or MULTISELECT properties, the list of possible entries. Defaults to: `null`.
+  - key (String): The unique key that the application uses to identify the property, e.g. \&quot;com.google.android.gm.fieldname\&quot;. Defaults to: `null`.
+  - nestedProperties (List[ManagedProperty]): For BUNDLE_ARRAY properties, the list of nested properties. A BUNDLE_ARRAY property is at most two levels deep. Defaults to: `null`.
+  - title (String): The name of the property. Localized. Defaults to: `null`.
+  - type (String): The type of the property. Defaults to: `null`.
+    - Enum - one of [MANAGED_PROPERTY_TYPE_UNSPECIFIED, BOOL, STRING, INTEGER, CHOICE, MULTISELECT, HIDDEN, BUNDLE_ARRAY]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"description",
     :"entries",
@@ -39,6 +48,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.ManagedPropert
     value
     |> deserialize(:"entries", :list, GoogleApi.AndroidManagement.V1.Model.ManagedPropertyEntry, options)
     |> deserialize(:"nestedProperties", :list, GoogleApi.AndroidManagement.V1.Model.ManagedProperty, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.ManagedProperty do
+  def encode(value, options) do
+    GoogleApi.AndroidManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

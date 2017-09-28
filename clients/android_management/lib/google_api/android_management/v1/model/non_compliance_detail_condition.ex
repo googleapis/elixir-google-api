@@ -20,9 +20,15 @@
 defmodule GoogleApi.AndroidManagement.V1.Model.NonComplianceDetailCondition do
   @moduledoc """
   A compliance rule condition which is satisfied if there exists any matching NonComplianceDetail for the device. A NonComplianceDetail matches a NonComplianceDetailCondition if all the fields which are set within the NonComplianceDetailCondition match the corresponding NonComplianceDetail fields.
+
+  ## Attributes
+
+  - nonComplianceReason (String): The reason the device is not in compliance with the setting. If not set, then this condition matches any reason. Defaults to: `null`.
+    - Enum - one of [NON_COMPLIANCE_REASON_UNSPECIFIED, API_LEVEL, ADMIN_TYPE, USER_ACTION, INVALID_VALUE, APP_NOT_INSTALLED, UNSUPPORTED, APP_INSTALLED, PENDING, APP_INCOMPATIBLE]
+  - packageName (String): The package name indicating which application is out of compliance. If not set, then this condition matches any package name. If this field is set, then setting_name must be unset or set to applications; otherwise, the condition would never be satisfied. Defaults to: `null`.
+  - settingName (String): The name of the policy setting. This is the JSON field name of a top-level Policy field. If not set, then this condition matches any setting name. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nonComplianceReason",
     :"packageName",
@@ -33,6 +39,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.NonComplianceDetailCondition do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.NonComplianceDetailCondition do
+  def encode(value, options) do
+    GoogleApi.AndroidManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

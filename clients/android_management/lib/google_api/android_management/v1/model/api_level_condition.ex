@@ -20,9 +20,12 @@
 defmodule GoogleApi.AndroidManagement.V1.Model.ApiLevelCondition do
   @moduledoc """
   A compliance rule condition which is satisfied if the Android Framework API level on the device does not meet a minimum requirement. There can only be one rule with this type of condition per policy.
+
+  ## Attributes
+
+  - minApiLevel (Integer): The minimum desired Android Framework API level. If the device does not meet the minimum requirement, this condition is satisfied. Must be greater than zero. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"minApiLevel"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.ApiLevelCondition do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.ApiLevelCondition do
+  def encode(value, options) do
+    GoogleApi.AndroidManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

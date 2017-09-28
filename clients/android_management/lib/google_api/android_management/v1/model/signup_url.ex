@@ -20,9 +20,13 @@
 defmodule GoogleApi.AndroidManagement.V1.Model.SignupUrl do
   @moduledoc """
   An enterprise signup URL.
+
+  ## Attributes
+
+  - name (String): The name of the resource. This must be included in the create enterprise request at the end of the signup flow. Defaults to: `null`.
+  - url (String): A URL under which the Admin can sign up for an enterprise. The page pointed to cannot be rendered in an iframe. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name",
     :"url"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.SignupUrl do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.SignupUrl do
+  def encode(value, options) do
+    GoogleApi.AndroidManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

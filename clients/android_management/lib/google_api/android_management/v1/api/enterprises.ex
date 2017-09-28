@@ -134,7 +134,9 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{name}:issueCommand")
+    |> url("/v1/{+name}:issueCommand", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -191,7 +193,9 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{parent}/devices")
+    |> url("/v1/{+parent}/devices", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -244,7 +248,9 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{name}:cancel")
+    |> url("/v1/{+name}:cancel", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -297,7 +303,9 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/#{name}")
+    |> url("/v1/{+name}", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -356,7 +364,9 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{name}")
+    |> url("/v1/{+name}", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -413,7 +423,9 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
     }
     %{}
     |> method(:patch)
-    |> url("/v1/#{name}")
+    |> url("/v1/{+name}", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -468,7 +480,9 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{parent}/enrollmentTokens")
+    |> url("/v1/{+parent}/enrollmentTokens", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -525,7 +539,9 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{parent}/policies")
+    |> url("/v1/{+parent}/policies", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -580,7 +596,9 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{parent}/webTokens")
+    |> url("/v1/{+parent}/webTokens", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

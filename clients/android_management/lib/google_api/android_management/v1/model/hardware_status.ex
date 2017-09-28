@@ -20,9 +20,18 @@
 defmodule GoogleApi.AndroidManagement.V1.Model.HardwareStatus do
   @moduledoc """
   Hardware status. Temperatures may be compared to the temperature thresholds available in hardwareInfo to determine hardware health.
+
+  ## Attributes
+
+  - batteryTemperatures (List[Float]): Current battery temperatures in Celsius for each battery on the device. Defaults to: `null`.
+  - cpuTemperatures (List[Float]): Current CPU temperatures in Celsius for each CPU on the device. Defaults to: `null`.
+  - cpuUsages (List[Float]): CPU usages in percentage for each core available on the device. Usage is 0 for each unplugged core. Empty array implies that CPU usage is not supported in the system. Defaults to: `null`.
+  - createTime (String): The time the measurements were taken. Defaults to: `null`.
+  - fanSpeeds (List[Float]): Fan speeds in RPM for each fan on the device. Empty array means that there are no fans or fan speed is not supported on the system. Defaults to: `null`.
+  - gpuTemperatures (List[Float]): Current GPU temperatures in Celsius for each GPU on the device. Defaults to: `null`.
+  - skinTemperatures (List[Float]): Current device skin temperatures in Celsius. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"batteryTemperatures",
     :"cpuTemperatures",
@@ -37,6 +46,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.HardwareStatus do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.HardwareStatus do
+  def encode(value, options) do
+    GoogleApi.AndroidManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

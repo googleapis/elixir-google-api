@@ -20,9 +20,17 @@
 defmodule GoogleApi.AndroidManagement.V1.Model.SoftwareInfo do
   @moduledoc """
   Information about device software.
+
+  ## Attributes
+
+  - androidBuildNumber (String): Android build Id string meant for displaying to the user, e.g. shamu-userdebug 6.0.1 MOB30I 2756745 dev-keys. Defaults to: `null`.
+  - androidBuildTime (String): Build time. Defaults to: `null`.
+  - androidVersion (String): The user visible Android version string, e.g. 6.0.1. Defaults to: `null`.
+  - bootloaderVersion (String): The system bootloader version number, e.g. 0.6.7. Defaults to: `null`.
+  - deviceKernelVersion (String): Kernel version, e.g. 2.6.32.9-g103d848. Defaults to: `null`.
+  - securityPatchLevel (String): Security patch level, e.g. 2016-05-01. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"androidBuildNumber",
     :"androidBuildTime",
@@ -36,6 +44,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.SoftwareInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.SoftwareInfo do
+  def encode(value, options) do
+    GoogleApi.AndroidManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

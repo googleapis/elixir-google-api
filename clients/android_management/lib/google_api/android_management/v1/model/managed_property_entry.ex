@@ -20,9 +20,13 @@
 defmodule GoogleApi.AndroidManagement.V1.Model.ManagedPropertyEntry do
   @moduledoc """
   An entry of a managed property.
+
+  ## Attributes
+
+  - name (String): The human-readable name of the value. Localized. Defaults to: `null`.
+  - value (String): The machine-readable value of the entry, which should be used in the configuration. Not localized. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name",
     :"value"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.ManagedPropertyEntry do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.ManagedPropertyEntry do
+  def encode(value, options) do
+    GoogleApi.AndroidManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

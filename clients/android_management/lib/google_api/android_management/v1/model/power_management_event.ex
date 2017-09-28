@@ -20,9 +20,15 @@
 defmodule GoogleApi.AndroidManagement.V1.Model.PowerManagementEvent do
   @moduledoc """
   A power management event.
+
+  ## Attributes
+
+  - batteryLevel (Float): For BATTERY_LEVEL_COLLECTED events, the battery level as a percentage. Defaults to: `null`.
+  - createTime (String): The creation time of the event. Defaults to: `null`.
+  - eventType (String): Event type. Defaults to: `null`.
+    - Enum - one of [POWER_MANAGEMENT_EVENT_TYPE_UNSPECIFIED, BATTERY_LEVEL_COLLECTED, POWER_CONNECTED, POWER_DISCONNECTED, BATTERY_LOW, BATTERY_OKAY, BOOT_COMPLETED, SHUTDOWN]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"batteryLevel",
     :"createTime",
@@ -33,6 +39,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.PowerManagementEvent do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.PowerManagementEvent do
+  def encode(value, options) do
+    GoogleApi.AndroidManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

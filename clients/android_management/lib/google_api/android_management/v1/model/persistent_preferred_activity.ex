@@ -20,9 +20,14 @@
 defmodule GoogleApi.AndroidManagement.V1.Model.PersistentPreferredActivity do
   @moduledoc """
   A default activity for handling intents that match a particular intent filter.
+
+  ## Attributes
+
+  - actions (List[String]): The intent actions to match in the filter. If any actions are included in the filter, then an intent&#39;s action must be one of those values for it to match. If no actions are included, the intent action is ignored. Defaults to: `null`.
+  - categories (List[String]): The intent categories to match in the filter. An intent includes the categories that it requires, all of which must be included in the filter in order to match. In other words, adding a category to the filter has no impact on matching unless that category is specified in the intent. Defaults to: `null`.
+  - receiverActivity (String): The activity that should be the default intent handler. This should be an Android component name, e.g. com.android.enterprise.app/.MainActivity. Alternatively, the value may be the package name of an app, which causes Android Device Policy to choose an appropriate activity from the app to handle the intent. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"actions",
     :"categories",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.PersistentPreferredActivity do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.PersistentPreferredActivity do
+  def encode(value, options) do
+    GoogleApi.AndroidManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.AndroidManagement.V1.Model.ListPoliciesResponse do
   @moduledoc """
   Response to a request to list policies for a given enterprise.
+
+  ## Attributes
+
+  - nextPageToken (String): If there are more results, a token to retrieve next page of results. Defaults to: `null`.
+  - policies (List[Policy]): The list of policies. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nextPageToken",
     :"policies"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.ListPoliciesRe
   def decode(value, options) do
     value
     |> deserialize(:"policies", :list, GoogleApi.AndroidManagement.V1.Model.Policy, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.ListPoliciesResponse do
+  def encode(value, options) do
+    GoogleApi.AndroidManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

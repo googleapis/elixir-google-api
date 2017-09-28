@@ -20,9 +20,14 @@
 defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationPermission do
   @moduledoc """
   Application permission.
+
+  ## Attributes
+
+  - description (String): A longer description of the permission, giving more details of what it affects. Localized. Defaults to: `null`.
+  - name (String): The name of the permission. Localized. Defaults to: `null`.
+  - permissionId (String): An opaque string uniquely identifying the permission. Not localized. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"description",
     :"name",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.ApplicationPermission do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.ApplicationPermission do
+  def encode(value, options) do
+    GoogleApi.AndroidManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

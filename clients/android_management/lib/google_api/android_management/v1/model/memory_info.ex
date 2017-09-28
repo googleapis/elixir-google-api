@@ -20,9 +20,13 @@
 defmodule GoogleApi.AndroidManagement.V1.Model.MemoryInfo do
   @moduledoc """
   Information about device memory and storage.
+
+  ## Attributes
+
+  - totalInternalStorage (String): Total internal storage on device in bytes. Defaults to: `null`.
+  - totalRam (String): Total RAM on device in bytes. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"totalInternalStorage",
     :"totalRam"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.MemoryInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.MemoryInfo do
+  def encode(value, options) do
+    GoogleApi.AndroidManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

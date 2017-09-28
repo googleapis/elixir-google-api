@@ -20,9 +20,13 @@
 defmodule GoogleApi.AndroidManagement.V1.Model.ListDevicesResponse do
   @moduledoc """
   Response to a request to list devices for a given enterprise.
+
+  ## Attributes
+
+  - devices (List[Device]): The list of devices. Defaults to: `null`.
+  - nextPageToken (String): If there are more results, a token to retrieve next page of results. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"devices",
     :"nextPageToken"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.ListDevicesRes
   def decode(value, options) do
     value
     |> deserialize(:"devices", :list, GoogleApi.AndroidManagement.V1.Model.Device, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.ListDevicesResponse do
+  def encode(value, options) do
+    GoogleApi.AndroidManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,17 @@
 defmodule GoogleApi.AndroidManagement.V1.Model.StatusReportingSettings do
   @moduledoc """
   Settings controlling the behavior of status reports.
+
+  ## Attributes
+
+  - displayInfoEnabled (Boolean): Whether displays reporting is enabled. Defaults to: `null`.
+  - hardwareStatusEnabled (Boolean): Whether hardware status reporting is enabled. Defaults to: `null`.
+  - memoryInfoEnabled (Boolean): Whether memory info reporting is enabled. Defaults to: `null`.
+  - networkInfoEnabled (Boolean): Whether network info reporting is enabled. Defaults to: `null`.
+  - powerManagementEventsEnabled (Boolean): Whether power management event reporting is enabled. Defaults to: `null`.
+  - softwareInfoEnabled (Boolean): Whether software info reporting is enabled. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"displayInfoEnabled",
     :"hardwareStatusEnabled",
@@ -36,6 +44,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.StatusReportingSettings do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.StatusReportingSettings do
+  def encode(value, options) do
+    GoogleApi.AndroidManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
