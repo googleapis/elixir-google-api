@@ -20,9 +20,15 @@
 defmodule GoogleApi.Fitness.V1.Model.Application do
   @moduledoc """
   
+
+  ## Attributes
+
+  - detailsUrl (String): An optional URI that can be used to link back to the application. Defaults to: `null`.
+  - name (String): The name of this application. This is required for REST clients, but we do not enforce uniqueness of this name. It is provided as a matter of convenience for other developers who would like to identify which REST created an Application or Data Source. Defaults to: `null`.
+  - packageName (String): Package name for this application. This is used as a unique identifier when created by Android applications, but cannot be specified by REST clients. REST clients will have their developer project number reflected into the Data Source data stream IDs, instead of the packageName. Defaults to: `null`.
+  - version (String): Version of the application. You should update this field whenever the application changes in a way that affects the computation of the data. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"detailsUrl",
     :"name",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Fitness.V1.Model.Application do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Fitness.V1.Model.Application do
+  def encode(value, options) do
+    GoogleApi.Fitness.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

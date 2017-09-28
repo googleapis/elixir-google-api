@@ -20,9 +20,18 @@
 defmodule GoogleApi.Fitness.V1.Model.AggregateBucket do
   @moduledoc """
   
+
+  ## Attributes
+
+  - activity (Integer): Available for Bucket.Type.ACTIVITY_TYPE, Bucket.Type.ACTIVITY_SEGMENT Defaults to: `null`.
+  - dataset (List[Dataset]): There will be one dataset per AggregateBy in the request. Defaults to: `null`.
+  - endTimeMillis (String): The end time for the aggregated data, in milliseconds since epoch, inclusive. Defaults to: `null`.
+  - session (Session): Available for Bucket.Type.SESSION Defaults to: `null`.
+  - startTimeMillis (String): The start time for the aggregated data, in milliseconds since epoch, inclusive. Defaults to: `null`.
+  - type (String): The type of a bucket signifies how the data aggregation is performed in the bucket. Defaults to: `null`.
+    - Enum - one of [activitySegment, activityType, session, time, unknown]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"activity",
     :"dataset",
@@ -39,6 +48,12 @@ defimpl Poison.Decoder, for: GoogleApi.Fitness.V1.Model.AggregateBucket do
     value
     |> deserialize(:"dataset", :list, GoogleApi.Fitness.V1.Model.Dataset, options)
     |> deserialize(:"session", :struct, GoogleApi.Fitness.V1.Model.Session, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Fitness.V1.Model.AggregateBucket do
+  def encode(value, options) do
+    GoogleApi.Fitness.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

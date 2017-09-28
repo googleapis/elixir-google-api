@@ -20,9 +20,12 @@
 defmodule GoogleApi.Fitness.V1.Model.AggregateResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - bucket (List[AggregateBucket]): A list of buckets containing the aggregated data. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bucket"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Fitness.V1.Model.AggregateResponse do
   def decode(value, options) do
     value
     |> deserialize(:"bucket", :list, GoogleApi.Fitness.V1.Model.AggregateBucket, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Fitness.V1.Model.AggregateResponse do
+  def encode(value, options) do
+    GoogleApi.Fitness.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

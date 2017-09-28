@@ -62,7 +62,9 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
     }
     %{}
     |> method(:post)
-    |> url("/#{user_id}/dataSources")
+    |> url("/{userId}/dataSources", %{
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -109,7 +111,11 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
     }
     %{}
     |> method(:delete)
-    |> url("/#{user_id}/dataSources/#{data_source_id}/datasets/#{dataset_id}")
+    |> url("/{userId}/dataSources/{dataSourceId}/datasets/{datasetId}", %{
+         "userId" => URI.encode_www_form(user_id),
+         "dataSourceId" => URI.encode_www_form(data_source_id),
+         "datasetId" => URI.encode_www_form(dataset_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -156,7 +162,11 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
     }
     %{}
     |> method(:get)
-    |> url("/#{user_id}/dataSources/#{data_source_id}/datasets/#{dataset_id}")
+    |> url("/{userId}/dataSources/{dataSourceId}/datasets/{datasetId}", %{
+         "userId" => URI.encode_www_form(user_id),
+         "dataSourceId" => URI.encode_www_form(data_source_id),
+         "datasetId" => URI.encode_www_form(dataset_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -203,7 +213,11 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
     }
     %{}
     |> method(:patch)
-    |> url("/#{user_id}/dataSources/#{data_source_id}/datasets/#{dataset_id}")
+    |> url("/{userId}/dataSources/{dataSourceId}/datasets/{datasetId}", %{
+         "userId" => URI.encode_www_form(user_id),
+         "dataSourceId" => URI.encode_www_form(data_source_id),
+         "datasetId" => URI.encode_www_form(dataset_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -245,7 +259,10 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
     }
     %{}
     |> method(:delete)
-    |> url("/#{user_id}/dataSources/#{data_source_id}")
+    |> url("/{userId}/dataSources/{dataSourceId}", %{
+         "userId" => URI.encode_www_form(user_id),
+         "dataSourceId" => URI.encode_www_form(data_source_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -287,7 +304,10 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
     }
     %{}
     |> method(:get)
-    |> url("/#{user_id}/dataSources/#{data_source_id}")
+    |> url("/{userId}/dataSources/{dataSourceId}", %{
+         "userId" => URI.encode_www_form(user_id),
+         "dataSourceId" => URI.encode_www_form(data_source_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -330,7 +350,9 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
     }
     %{}
     |> method(:get)
-    |> url("/#{user_id}/dataSources")
+    |> url("/{userId}/dataSources", %{
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -374,7 +396,10 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
     }
     %{}
     |> method(:patch)
-    |> url("/#{user_id}/dataSources/#{data_source_id}")
+    |> url("/{userId}/dataSources/{dataSourceId}", %{
+         "userId" => URI.encode_www_form(user_id),
+         "dataSourceId" => URI.encode_www_form(data_source_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -418,7 +443,10 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
     }
     %{}
     |> method(:put)
-    |> url("/#{user_id}/dataSources/#{data_source_id}")
+    |> url("/{userId}/dataSources/{dataSourceId}", %{
+         "userId" => URI.encode_www_form(user_id),
+         "dataSourceId" => URI.encode_www_form(data_source_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -461,7 +489,9 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
     }
     %{}
     |> method(:post)
-    |> url("/#{user_id}/dataset:aggregate")
+    |> url("/{userId}/dataset:aggregate", %{
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -505,7 +535,10 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
     }
     %{}
     |> method(:delete)
-    |> url("/#{user_id}/sessions/#{session_id}")
+    |> url("/{userId}/sessions/{sessionId}", %{
+         "userId" => URI.encode_www_form(user_id),
+         "sessionId" => URI.encode_www_form(session_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -554,7 +587,9 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
     }
     %{}
     |> method(:get)
-    |> url("/#{user_id}/sessions")
+    |> url("/{userId}/sessions", %{
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -600,7 +635,10 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
     }
     %{}
     |> method(:put)
-    |> url("/#{user_id}/sessions/#{session_id}")
+    |> url("/{userId}/sessions/{sessionId}", %{
+         "userId" => URI.encode_www_form(user_id),
+         "sessionId" => URI.encode_www_form(session_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

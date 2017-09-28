@@ -20,9 +20,13 @@
 defmodule GoogleApi.Fitness.V1.Model.BucketByTime do
   @moduledoc """
   
+
+  ## Attributes
+
+  - durationMillis (String): Specifies that result buckets aggregate data by exactly durationMillis time frames. Time frames that contain no data will be included in the response with an empty dataset. Defaults to: `null`.
+  - period (BucketByTimePeriod):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"durationMillis",
     :"period"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Fitness.V1.Model.BucketByTime do
   def decode(value, options) do
     value
     |> deserialize(:"period", :struct, GoogleApi.Fitness.V1.Model.BucketByTimePeriod, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Fitness.V1.Model.BucketByTime do
+  def encode(value, options) do
+    GoogleApi.Fitness.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

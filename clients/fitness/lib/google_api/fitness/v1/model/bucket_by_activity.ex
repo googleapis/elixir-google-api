@@ -20,9 +20,13 @@
 defmodule GoogleApi.Fitness.V1.Model.BucketByActivity do
   @moduledoc """
   
+
+  ## Attributes
+
+  - activityDataSourceId (String): The default activity stream will be used if a specific activityDataSourceId is not specified. Defaults to: `null`.
+  - minDurationMillis (String): Specifies that only activity segments of duration longer than minDurationMillis are considered and used as a container for aggregated data. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"activityDataSourceId",
     :"minDurationMillis"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Fitness.V1.Model.BucketByActivity do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Fitness.V1.Model.BucketByActivity do
+  def encode(value, options) do
+    GoogleApi.Fitness.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.Fitness.V1.Model.AggregateBy do
   @moduledoc """
   The specification of which data to aggregate.
+
+  ## Attributes
+
+  - dataSourceId (String): A data source ID to aggregate. Mutually exclusive of dataTypeName. Only data from the specified data source ID will be included in the aggregation. The dataset in the response will have the same data source ID. Defaults to: `null`.
+  - dataTypeName (String): The data type to aggregate. All data sources providing this data type will contribute data to the aggregation. The response will contain a single dataset for this data type name. The dataset will have a data source ID of derived:com.google.:com.google.android.gms:aggregated Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dataSourceId",
     :"dataTypeName"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Fitness.V1.Model.AggregateBy do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Fitness.V1.Model.AggregateBy do
+  def encode(value, options) do
+    GoogleApi.Fitness.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

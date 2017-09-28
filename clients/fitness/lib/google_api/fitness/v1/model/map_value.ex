@@ -20,9 +20,12 @@
 defmodule GoogleApi.Fitness.V1.Model.MapValue do
   @moduledoc """
   Holder object for the value of an entry in a map field of a data point.  A map value supports a subset of the formats that the regular Value supports.
+
+  ## Attributes
+
+  - fpVal (Float): Floating point value. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fpVal"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Fitness.V1.Model.MapValue do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Fitness.V1.Model.MapValue do
+  def encode(value, options) do
+    GoogleApi.Fitness.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

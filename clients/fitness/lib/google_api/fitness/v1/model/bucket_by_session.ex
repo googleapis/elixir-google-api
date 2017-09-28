@@ -20,9 +20,12 @@
 defmodule GoogleApi.Fitness.V1.Model.BucketBySession do
   @moduledoc """
   
+
+  ## Attributes
+
+  - minDurationMillis (String): Specifies that only sessions of duration longer than minDurationMillis are considered and used as a container for aggregated data. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"minDurationMillis"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Fitness.V1.Model.BucketBySession do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Fitness.V1.Model.BucketBySession do
+  def encode(value, options) do
+    GoogleApi.Fitness.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

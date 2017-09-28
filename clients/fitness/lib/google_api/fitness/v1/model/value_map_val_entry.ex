@@ -20,9 +20,13 @@
 defmodule GoogleApi.Fitness.V1.Model.ValueMapValEntry do
   @moduledoc """
   
+
+  ## Attributes
+
+  - key (String):  Defaults to: `null`.
+  - value (MapValue):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"key",
     :"value"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Fitness.V1.Model.ValueMapValEntry do
   def decode(value, options) do
     value
     |> deserialize(:"value", :struct, GoogleApi.Fitness.V1.Model.MapValue, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Fitness.V1.Model.ValueMapValEntry do
+  def encode(value, options) do
+    GoogleApi.Fitness.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
