@@ -20,9 +20,12 @@
 defmodule GoogleApi.DoubleClickSearch.V2.Model.UpdateAvailabilityRequest do
   @moduledoc """
   The request to update availability.
+
+  ## Attributes
+
+  - availabilities (List[Availability]): The availabilities being requested. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"availabilities"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.DoubleClickSearch.V2.Model.UpdateAvailabi
   def decode(value, options) do
     value
     |> deserialize(:"availabilities", :list, GoogleApi.DoubleClickSearch.V2.Model.Availability, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickSearch.V2.Model.UpdateAvailabilityRequest do
+  def encode(value, options) do
+    GoogleApi.DoubleClickSearch.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.DoubleClickSearch.V2.Model.CustomDimension do
   @moduledoc """
   A message containing the custome dimension.
+
+  ## Attributes
+
+  - name (String): Custom dimension name. Defaults to: `null`.
+  - value (String): Custom dimension value. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name",
     :"value"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.DoubleClickSearch.V2.Model.CustomDimension do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickSearch.V2.Model.CustomDimension do
+  def encode(value, options) do
+    GoogleApi.DoubleClickSearch.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 
