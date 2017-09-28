@@ -126,7 +126,9 @@ defmodule GoogleApi.Genomics.V1.Api.Variants do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/variants/#{variant_id}")
+    |> url("/v1/variants/{variantId}", %{
+         "variantId" => URI.encode_www_form(variant_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -179,7 +181,9 @@ defmodule GoogleApi.Genomics.V1.Api.Variants do
     }
     %{}
     |> method(:get)
-    |> url("/v1/variants/#{variant_id}")
+    |> url("/v1/variants/{variantId}", %{
+         "variantId" => URI.encode_www_form(variant_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -344,7 +348,9 @@ defmodule GoogleApi.Genomics.V1.Api.Variants do
     }
     %{}
     |> method(:patch)
-    |> url("/v1/variants/#{variant_id}")
+    |> url("/v1/variants/{variantId}", %{
+         "variantId" => URI.encode_www_form(variant_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

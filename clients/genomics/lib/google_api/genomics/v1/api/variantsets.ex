@@ -126,7 +126,9 @@ defmodule GoogleApi.Genomics.V1.Api.Variantsets do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/variantsets/#{variant_set_id}")
+    |> url("/v1/variantsets/{variantSetId}", %{
+         "variantSetId" => URI.encode_www_form(variant_set_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -181,7 +183,9 @@ defmodule GoogleApi.Genomics.V1.Api.Variantsets do
     }
     %{}
     |> method(:post)
-    |> url("/v1/variantsets/#{variant_set_id}:export")
+    |> url("/v1/variantsets/{variantSetId}:export", %{
+         "variantSetId" => URI.encode_www_form(variant_set_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -234,7 +238,9 @@ defmodule GoogleApi.Genomics.V1.Api.Variantsets do
     }
     %{}
     |> method(:get)
-    |> url("/v1/variantsets/#{variant_set_id}")
+    |> url("/v1/variantsets/{variantSetId}", %{
+         "variantSetId" => URI.encode_www_form(variant_set_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -291,7 +297,9 @@ defmodule GoogleApi.Genomics.V1.Api.Variantsets do
     }
     %{}
     |> method(:patch)
-    |> url("/v1/variantsets/#{variant_set_id}")
+    |> url("/v1/variantsets/{variantSetId}", %{
+         "variantSetId" => URI.encode_www_form(variant_set_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

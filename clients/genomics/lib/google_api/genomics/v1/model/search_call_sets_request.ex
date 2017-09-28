@@ -20,9 +20,15 @@
 defmodule GoogleApi.Genomics.V1.Model.SearchCallSetsRequest do
   @moduledoc """
   The call set search request.
+
+  ## Attributes
+
+  - name (String): Only return call sets for which a substring of the name matches this string. Defaults to: `null`.
+  - pageSize (Integer): The maximum number of results to return in a single page. If unspecified, defaults to 1024. Defaults to: `null`.
+  - pageToken (String): The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of &#x60;nextPageToken&#x60; from the previous response. Defaults to: `null`.
+  - variantSetIds (List[String]): Restrict the query to call sets within the given variant sets. At least one ID must be provided. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name",
     :"pageSize",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.SearchCallSetsRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.SearchCallSetsRequest do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

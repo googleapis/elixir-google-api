@@ -20,9 +20,13 @@
 defmodule GoogleApi.Genomics.V1.Model.Entry do
   @moduledoc """
   
+
+  ## Attributes
+
+  - annotation (Annotation): The created annotation, if creation was successful. Defaults to: `null`.
+  - status (Status): The creation status. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"annotation",
     :"status"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.Entry do
     value
     |> deserialize(:"annotation", :struct, GoogleApi.Genomics.V1.Model.Annotation, options)
     |> deserialize(:"status", :struct, GoogleApi.Genomics.V1.Model.Status, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.Entry do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

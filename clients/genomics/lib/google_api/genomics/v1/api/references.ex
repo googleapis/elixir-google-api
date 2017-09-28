@@ -80,7 +80,9 @@ defmodule GoogleApi.Genomics.V1.Api.References do
     }
     %{}
     |> method(:get)
-    |> url("/v1/references/#{reference_id}/bases")
+    |> url("/v1/references/{referenceId}/bases", %{
+         "referenceId" => URI.encode_www_form(reference_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -133,7 +135,9 @@ defmodule GoogleApi.Genomics.V1.Api.References do
     }
     %{}
     |> method(:get)
-    |> url("/v1/references/#{reference_id}")
+    |> url("/v1/references/{referenceId}", %{
+         "referenceId" => URI.encode_www_form(reference_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

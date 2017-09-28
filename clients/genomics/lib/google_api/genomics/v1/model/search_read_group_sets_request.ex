@@ -20,9 +20,15 @@
 defmodule GoogleApi.Genomics.V1.Model.SearchReadGroupSetsRequest do
   @moduledoc """
   The read group set search request.
+
+  ## Attributes
+
+  - datasetIds (List[String]): Restricts this query to read group sets within the given datasets. At least one ID must be provided. Defaults to: `null`.
+  - name (String): Only return read group sets for which a substring of the name matches this string. Defaults to: `null`.
+  - pageSize (Integer): The maximum number of results to return in a single page. If unspecified, defaults to 256. The maximum value is 1024. Defaults to: `null`.
+  - pageToken (String): The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of &#x60;nextPageToken&#x60; from the previous response. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"datasetIds",
     :"name",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.SearchReadGroupSetsRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.SearchReadGroupSetsRequest do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

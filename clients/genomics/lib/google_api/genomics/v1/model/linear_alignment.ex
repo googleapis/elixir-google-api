@@ -20,9 +20,14 @@
 defmodule GoogleApi.Genomics.V1.Model.LinearAlignment do
   @moduledoc """
   A linear alignment can be represented by one CIGAR string. Describes the mapped position and local alignment of the read to the reference.
+
+  ## Attributes
+
+  - cigar (List[CigarUnit]): Represents the local alignment of this sequence (alignment matches, indels, etc) against the reference. Defaults to: `null`.
+  - mappingQuality (Integer): The mapping quality of this alignment. Represents how likely the read maps to this position as opposed to other locations.  Specifically, this is -10 log10 Pr(mapping position is wrong), rounded to the nearest integer. Defaults to: `null`.
+  - position (Position): The position of this alignment. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cigar",
     :"mappingQuality",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.LinearAlignment do
     value
     |> deserialize(:"cigar", :list, GoogleApi.Genomics.V1.Model.CigarUnit, options)
     |> deserialize(:"position", :struct, GoogleApi.Genomics.V1.Model.Position, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.LinearAlignment do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

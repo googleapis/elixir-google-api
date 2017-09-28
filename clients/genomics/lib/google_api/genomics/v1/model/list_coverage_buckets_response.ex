@@ -20,9 +20,14 @@
 defmodule GoogleApi.Genomics.V1.Model.ListCoverageBucketsResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - bucketWidth (String): The length of each coverage bucket in base pairs. Note that buckets at the end of a reference sequence may be shorter. This value is omitted if the bucket width is infinity (the default behaviour, with no range or &#x60;targetBucketWidth&#x60;). Defaults to: `null`.
+  - coverageBuckets (List[CoverageBucket]): The coverage buckets. The list of buckets is sparse; a bucket with 0 overlapping reads is not returned. A bucket never crosses more than one reference sequence. Each bucket has width &#x60;bucketWidth&#x60;, unless its end is the end of the reference sequence. Defaults to: `null`.
+  - nextPageToken (String): The continuation token, which is used to page through large result sets. Provide this value in a subsequent request to return the next page of results. This field will be empty if there aren&#39;t any additional results. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bucketWidth",
     :"coverageBuckets",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.ListCoverageBucketsResp
   def decode(value, options) do
     value
     |> deserialize(:"coverageBuckets", :list, GoogleApi.Genomics.V1.Model.CoverageBucket, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.ListCoverageBucketsResponse do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

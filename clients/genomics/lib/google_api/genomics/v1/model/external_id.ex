@@ -20,9 +20,13 @@
 defmodule GoogleApi.Genomics.V1.Model.ExternalId do
   @moduledoc """
   
+
+  ## Attributes
+
+  - id (String): The id used by the source of this data. Defaults to: `null`.
+  - sourceName (String): The name of the source of this data. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"sourceName"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.ExternalId do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.ExternalId do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

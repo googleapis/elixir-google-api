@@ -20,9 +20,13 @@
 defmodule GoogleApi.Genomics.V1.Model.CodingSequence do
   @moduledoc """
   
+
+  ## Attributes
+
+  - end (String): The end of the coding sequence on this annotation&#39;s reference sequence, 0-based exclusive. Note that this position is relative to the reference start, and *not* the containing annotation start. Defaults to: `null`.
+  - start (String): The start of the coding sequence on this annotation&#39;s reference sequence, 0-based inclusive. Note that this position is relative to the reference start, and *not* the containing annotation start. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"end",
     :"start"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.CodingSequence do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.CodingSequence do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

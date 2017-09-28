@@ -20,9 +20,14 @@
 defmodule GoogleApi.Genomics.V1.Model.OperationEvent do
   @moduledoc """
   An event that occurred during an Operation.
+
+  ## Attributes
+
+  - description (String): Required description of event. Defaults to: `null`.
+  - endTime (String): Optional time of when event finished. An event can have a start time and no finish time. If an event has a finish time, there must be a start time. Defaults to: `null`.
+  - startTime (String): Optional time of when event started. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"description",
     :"endTime",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.OperationEvent do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.OperationEvent do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

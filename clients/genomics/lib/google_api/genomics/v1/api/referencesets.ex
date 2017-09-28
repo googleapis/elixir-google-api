@@ -72,7 +72,9 @@ defmodule GoogleApi.Genomics.V1.Api.Referencesets do
     }
     %{}
     |> method(:get)
-    |> url("/v1/referencesets/#{reference_set_id}")
+    |> url("/v1/referencesets/{referenceSetId}", %{
+         "referenceSetId" => URI.encode_www_form(reference_set_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

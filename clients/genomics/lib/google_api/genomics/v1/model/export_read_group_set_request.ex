@@ -20,9 +20,14 @@
 defmodule GoogleApi.Genomics.V1.Model.ExportReadGroupSetRequest do
   @moduledoc """
   The read group set export request.
+
+  ## Attributes
+
+  - exportUri (String): Required. A Google Cloud Storage URI for the exported BAM file. The currently authenticated user must have write access to the new file. An error will be returned if the URI already contains data. Defaults to: `null`.
+  - projectId (String): Required. The Google Cloud project ID that owns this export. The caller must have WRITE access to this project. Defaults to: `null`.
+  - referenceNames (List[String]): The reference names to export. If this is not specified, all reference sequences, including unmapped reads, are exported. Use &#x60;*&#x60; to export only unmapped reads. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"exportUri",
     :"projectId",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.ExportReadGroupSetRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.ExportReadGroupSetRequest do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.Genomics.V1.Model.SearchAnnotationsResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - annotations (List[Annotation]): The matching annotations. Defaults to: `null`.
+  - nextPageToken (String): The continuation token, which is used to page through large result sets. Provide this value in a subsequent request to return the next page of results. This field will be empty if there aren&#39;t any additional results. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"annotations",
     :"nextPageToken"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.SearchAnnotationsRespon
   def decode(value, options) do
     value
     |> deserialize(:"annotations", :list, GoogleApi.Genomics.V1.Model.Annotation, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.SearchAnnotationsResponse do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

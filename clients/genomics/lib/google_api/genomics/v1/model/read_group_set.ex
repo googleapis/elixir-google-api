@@ -20,9 +20,18 @@
 defmodule GoogleApi.Genomics.V1.Model.ReadGroupSet do
   @moduledoc """
   A read group set is a logical collection of read groups, which are collections of reads produced by a sequencer. A read group set typically models reads corresponding to one sample, sequenced one way, and aligned one way.  * A read group set belongs to one dataset. * A read group belongs to one read group set. * A read belongs to one read group.  For more genomics resource definitions, see [Fundamentals of Google Genomics](https://cloud.google.com/genomics/fundamentals-of-google-genomics)
+
+  ## Attributes
+
+  - info (Map[String, List[ErrorUnknown]]): A map of additional read group set information. Defaults to: `null`.
+  - datasetId (String): The dataset to which this read group set belongs. Defaults to: `null`.
+  - filename (String): The filename of the original source file for this read group set, if any. Defaults to: `null`.
+  - id (String): The server-generated read group set ID, unique for all read group sets. Defaults to: `null`.
+  - name (String): The read group set name. By default this will be initialized to the sample name of the sequenced data contained in this set. Defaults to: `null`.
+  - readGroups (List[ReadGroup]): The read groups in this set. There are typically 1-10 read groups in a read group set. Defaults to: `null`.
+  - referenceSetId (String): The reference set to which the reads in this read group set are aligned. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"info",
     :"datasetId",
@@ -39,6 +48,12 @@ defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.ReadGroupSet do
   def decode(value, options) do
     value
     |> deserialize(:"readGroups", :list, GoogleApi.Genomics.V1.Model.ReadGroup, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.ReadGroupSet do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

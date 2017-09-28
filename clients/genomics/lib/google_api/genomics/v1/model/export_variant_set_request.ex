@@ -20,9 +20,17 @@
 defmodule GoogleApi.Genomics.V1.Model.ExportVariantSetRequest do
   @moduledoc """
   The variant data export request.
+
+  ## Attributes
+
+  - bigqueryDataset (String): Required. The BigQuery dataset to export data to. This dataset must already exist. Note that this is distinct from the Genomics concept of \&quot;dataset\&quot;. Defaults to: `null`.
+  - bigqueryTable (String): Required. The BigQuery table to export data to. If the table doesn&#39;t exist, it will be created. If it already exists, it will be overwritten. Defaults to: `null`.
+  - callSetIds (List[String]): If provided, only variant call information from the specified call sets will be exported. By default all variant calls are exported. Defaults to: `null`.
+  - format (String): The format for the exported data. Defaults to: `null`.
+    - Enum - one of [FORMAT_UNSPECIFIED, FORMAT_BIGQUERY]
+  - projectId (String): Required. The Google Cloud project ID that owns the destination BigQuery dataset. The caller must have WRITE access to this project.  This project will also own the resulting export job. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bigqueryDataset",
     :"bigqueryTable",
@@ -35,6 +43,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.ExportVariantSetRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.ExportVariantSetRequest do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

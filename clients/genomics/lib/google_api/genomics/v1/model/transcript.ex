@@ -20,9 +20,14 @@
 defmodule GoogleApi.Genomics.V1.Model.Transcript do
   @moduledoc """
   A transcript represents the assertion that a particular region of the reference genome may be transcribed as RNA.
+
+  ## Attributes
+
+  - codingSequence (CodingSequence): The range of the coding sequence for this transcript, if any. To determine the exact ranges of coding sequence, intersect this range with those of the exons, if any. If there are any exons, the codingSequence must start and end within them.  Note that in some cases, the reference genome will not exactly match the observed mRNA transcript e.g. due to variance in the source genome from reference. In these cases, exon.frame will not necessarily match the expected reference reading frame and coding exon reference bases cannot necessarily be concatenated to produce the original transcript mRNA. Defaults to: `null`.
+  - exons (List[Exon]): The &lt;a href&#x3D;\&quot;http://en.wikipedia.org/wiki/Exon\&quot;&gt;exons&lt;/a&gt; that compose this transcript. This field should be unset for genomes where transcript splicing does not occur, for example prokaryotes.  Introns are regions of the transcript that are not included in the spliced RNA product. Though not explicitly modeled here, intron ranges can be deduced; all regions of this transcript that are not exons are introns.  Exonic sequences do not necessarily code for a translational product (amino acids). Only the regions of exons bounded by the codingSequence correspond to coding DNA sequence.  Exons are ordered by start position and may not overlap. Defaults to: `null`.
+  - geneId (String): The annotation ID of the gene from which this transcript is transcribed. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"codingSequence",
     :"exons",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.Transcript do
     value
     |> deserialize(:"codingSequence", :struct, GoogleApi.Genomics.V1.Model.CodingSequence, options)
     |> deserialize(:"exons", :list, GoogleApi.Genomics.V1.Model.Exon, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.Transcript do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

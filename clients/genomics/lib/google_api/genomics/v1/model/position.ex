@@ -20,9 +20,14 @@
 defmodule GoogleApi.Genomics.V1.Model.Position do
   @moduledoc """
   An abstraction for referring to a genomic position, in relation to some already known reference. For now, represents a genomic position as a reference name, a base number on that reference (0-based), and a determination of forward or reverse strand.
+
+  ## Attributes
+
+  - position (String): The 0-based offset from the start of the forward strand for that reference. Defaults to: `null`.
+  - referenceName (String): The name of the reference in whatever reference set is being used. Defaults to: `null`.
+  - reverseStrand (Boolean): Whether this position is on the reverse strand, as opposed to the forward strand. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"position",
     :"referenceName",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.Position do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.Position do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

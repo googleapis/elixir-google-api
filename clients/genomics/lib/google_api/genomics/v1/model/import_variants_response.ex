@@ -20,9 +20,12 @@
 defmodule GoogleApi.Genomics.V1.Model.ImportVariantsResponse do
   @moduledoc """
   The variant data import response.
+
+  ## Attributes
+
+  - callSetIds (List[String]): IDs of the call sets created during the import. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"callSetIds"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.ImportVariantsResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.ImportVariantsResponse do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

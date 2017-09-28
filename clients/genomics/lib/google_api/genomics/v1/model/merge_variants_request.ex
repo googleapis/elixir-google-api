@@ -20,9 +20,15 @@
 defmodule GoogleApi.Genomics.V1.Model.MergeVariantsRequest do
   @moduledoc """
   
+
+  ## Attributes
+
+  - infoMergeConfig (Map[String, String]): A mapping between info field keys and the InfoMergeOperations to be performed on them. Defaults to: `null`.
+    - Enum - one of 
+  - variantSetId (String): The destination variant set. Defaults to: `null`.
+  - variants (List[Variant]): The variants to be merged with existing variants. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"infoMergeConfig",
     :"variantSetId",
@@ -35,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.MergeVariantsRequest do
   def decode(value, options) do
     value
     |> deserialize(:"variants", :list, GoogleApi.Genomics.V1.Model.Variant, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.MergeVariantsRequest do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.Genomics.V1.Model.SearchVariantSetsRequest do
   @moduledoc """
   The search variant sets request.
+
+  ## Attributes
+
+  - datasetIds (List[String]): Exactly one dataset ID must be provided here. Only variant sets which belong to this dataset will be returned. Defaults to: `null`.
+  - pageSize (Integer): The maximum number of results to return in a single page. If unspecified, defaults to 1024. Defaults to: `null`.
+  - pageToken (String): The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of &#x60;nextPageToken&#x60; from the previous response. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"datasetIds",
     :"pageSize",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.SearchVariantSetsRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.SearchVariantSetsRequest do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

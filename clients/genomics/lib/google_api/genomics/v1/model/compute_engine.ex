@@ -20,9 +20,15 @@
 defmodule GoogleApi.Genomics.V1.Model.ComputeEngine do
   @moduledoc """
   Describes a Compute Engine resource that is being managed by a running pipeline.
+
+  ## Attributes
+
+  - diskNames (List[String]): The names of the disks that were created for this pipeline. Defaults to: `null`.
+  - instanceName (String): The instance on which the operation is running. Defaults to: `null`.
+  - machineType (String): The machine type of the instance. Defaults to: `null`.
+  - zone (String): The availability zone in which the instance resides. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"diskNames",
     :"instanceName",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.ComputeEngine do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.ComputeEngine do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

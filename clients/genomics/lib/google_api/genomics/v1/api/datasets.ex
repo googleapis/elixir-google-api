@@ -126,7 +126,9 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/datasets/#{dataset_id}")
+    |> url("/v1/datasets/{datasetId}", %{
+         "datasetId" => URI.encode_www_form(dataset_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -179,7 +181,9 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
     }
     %{}
     |> method(:get)
-    |> url("/v1/datasets/#{dataset_id}")
+    |> url("/v1/datasets/{datasetId}", %{
+         "datasetId" => URI.encode_www_form(dataset_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -234,7 +238,9 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{resource}:getIamPolicy")
+    |> url("/v1/{+resource}:getIamPolicy", %{
+         "resource" => URI.encode_www_form(resource)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -349,7 +355,9 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
     }
     %{}
     |> method(:patch)
-    |> url("/v1/datasets/#{dataset_id}")
+    |> url("/v1/datasets/{datasetId}", %{
+         "datasetId" => URI.encode_www_form(dataset_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -404,7 +412,9 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{resource}:setIamPolicy")
+    |> url("/v1/{+resource}:setIamPolicy", %{
+         "resource" => URI.encode_www_form(resource)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -459,7 +469,9 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{resource}:testIamPermissions")
+    |> url("/v1/{+resource}:testIamPermissions", %{
+         "resource" => URI.encode_www_form(resource)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -514,7 +526,9 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
     }
     %{}
     |> method(:post)
-    |> url("/v1/datasets/#{dataset_id}:undelete")
+    |> url("/v1/datasets/{datasetId}:undelete", %{
+         "datasetId" => URI.encode_www_form(dataset_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

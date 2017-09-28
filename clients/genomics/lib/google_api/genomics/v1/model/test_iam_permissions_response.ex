@@ -20,9 +20,12 @@
 defmodule GoogleApi.Genomics.V1.Model.TestIamPermissionsResponse do
   @moduledoc """
   Response message for &#x60;TestIamPermissions&#x60; method.
+
+  ## Attributes
+
+  - permissions (List[String]): A subset of &#x60;TestPermissionsRequest.permissions&#x60; that the caller is allowed. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"permissions"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.TestIamPermissionsResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.TestIamPermissionsResponse do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

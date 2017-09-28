@@ -20,9 +20,13 @@
 defmodule GoogleApi.Genomics.V1.Model.CoverageBucket do
   @moduledoc """
   A bucket over which read coverage has been precomputed. A bucket corresponds to a specific range of the reference sequence.
+
+  ## Attributes
+
+  - meanCoverage (Float): The average number of reads which are aligned to each individual reference base in this bucket. Defaults to: `null`.
+  - range (Range): The genomic coordinate range spanned by this bucket. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"meanCoverage",
     :"range"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.CoverageBucket do
   def decode(value, options) do
     value
     |> deserialize(:"range", :struct, GoogleApi.Genomics.V1.Model.Range, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.CoverageBucket do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

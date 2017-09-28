@@ -20,9 +20,19 @@
 defmodule GoogleApi.Genomics.V1.Model.AnnotationSet do
   @moduledoc """
   An annotation set is a logical grouping of annotations that share consistent type information and provenance. Examples of annotation sets include &#39;all genes from refseq&#39;, and &#39;all variant annotations from ClinVar&#39;.
+
+  ## Attributes
+
+  - info (Map[String, List[ErrorUnknown]]): A map of additional read alignment information. This must be of the form map&lt;string, string[]&gt; (string key mapping to a list of string values). Defaults to: `null`.
+  - datasetId (String): The dataset to which this annotation set belongs. Defaults to: `null`.
+  - id (String): The server-generated annotation set ID, unique across all annotation sets. Defaults to: `null`.
+  - name (String): The display name for this annotation set. Defaults to: `null`.
+  - referenceSetId (String): The ID of the reference set that defines the coordinate space for this set&#39;s annotations. Defaults to: `null`.
+  - sourceUri (String): The source URI describing the file from which this annotation set was generated, if any. Defaults to: `null`.
+  - type (String): The type of annotations contained within this set. Defaults to: `null`.
+    - Enum - one of [ANNOTATION_TYPE_UNSPECIFIED, GENERIC, VARIANT, GENE, TRANSCRIPT]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"info",
     :"datasetId",
@@ -37,6 +47,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.AnnotationSet do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.AnnotationSet do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

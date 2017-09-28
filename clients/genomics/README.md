@@ -1,6 +1,6 @@
 # GoogleApi.Genomics.V1
 
-**TODO: Add description**
+Upload, process, query, and search Genomics data in the cloud.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_genomics` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_genomics, "~> 0.1.0"}]
+  [{:google_api_genomics, "~> 0.0.1"}]
 end
 ```
 
