@@ -20,9 +20,19 @@
 defmodule GoogleApi.TaskQueue.V1beta2.Model.Task do
   @moduledoc """
   
+
+  ## Attributes
+
+  - enqueueTimestamp (String): Time (in seconds since the epoch) at which the task was enqueued. Defaults to: `null`.
+  - id (String): Name of the task. Defaults to: `null`.
+  - kind (String): The kind of object returned, in this case set to task. Defaults to: `null`.
+  - leaseTimestamp (String): Time (in seconds since the epoch) at which the task lease will expire. This value is 0 if the task isnt currently leased out to a worker. Defaults to: `null`.
+  - payloadBase64 (String): A bag of bytes which is the task payload. The payload on the JSON side is always Base64 encoded. Defaults to: `null`.
+  - queueName (String): Name of the queue that the task is in. Defaults to: `null`.
+  - retry_count (Integer): The number of leases applied to this task. Defaults to: `null`.
+  - tag (String): Tag for the task, could be used later to lease tasks grouped by a specific tag. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"enqueueTimestamp",
     :"id",
@@ -38,6 +48,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.TaskQueue.V1beta2.Model.Task do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TaskQueue.V1beta2.Model.Task do
+  def encode(value, options) do
+    GoogleApi.TaskQueue.V1beta2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,16 @@
 defmodule GoogleApi.TaskQueue.V1beta2.Model.TaskQueue do
   @moduledoc """
   
+
+  ## Attributes
+
+  - acl (TaskQueueAcl):  Defaults to: `null`.
+  - id (String): Name of the taskqueue. Defaults to: `null`.
+  - kind (String): The kind of REST object returned, in this case taskqueue. Defaults to: `null`.
+  - maxLeases (Integer): The number of times we should lease out tasks before giving up on them. If unset we lease them out forever until a worker deletes the task. Defaults to: `null`.
+  - stats (TaskQueueStats):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"acl",
     :"id",
@@ -36,8 +43,14 @@ defimpl Poison.Decoder, for: GoogleApi.TaskQueue.V1beta2.Model.TaskQueue do
   import GoogleApi.TaskQueue.V1beta2.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"acl", :struct, GoogleApi.TaskQueue.V1beta2.Model.TaskQueue_acl, options)
-    |> deserialize(:"stats", :struct, GoogleApi.TaskQueue.V1beta2.Model.TaskQueue_stats, options)
+    |> deserialize(:"acl", :struct, GoogleApi.TaskQueue.V1beta2.Model.TaskQueueAcl, options)
+    |> deserialize(:"stats", :struct, GoogleApi.TaskQueue.V1beta2.Model.TaskQueueStats, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TaskQueue.V1beta2.Model.TaskQueue do
+  def encode(value, options) do
+    GoogleApi.TaskQueue.V1beta2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

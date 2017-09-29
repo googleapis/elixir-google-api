@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.TaskQueue.V1beta2.Model.TaskQueue_acl do
+defmodule GoogleApi.TaskQueue.V1beta2.Model.TaskQueueAcl do
   @moduledoc """
   ACLs that are applicable to this TaskQueue object.
+
+  ## Attributes
+
+  - adminEmails (List[String]): Email addresses of users who are \&quot;admins\&quot; of the TaskQueue. This means they can control the queue, eg set ACLs for the queue. Defaults to: `null`.
+  - consumerEmails (List[String]): Email addresses of users who can \&quot;consume\&quot; tasks from the TaskQueue. This means they can Dequeue and Delete tasks from the queue. Defaults to: `null`.
+  - producerEmails (List[String]): Email addresses of users who can \&quot;produce\&quot; tasks into the TaskQueue. This means they can Insert tasks into the queue. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"adminEmails",
     :"consumerEmails",
@@ -30,9 +35,15 @@ defmodule GoogleApi.TaskQueue.V1beta2.Model.TaskQueue_acl do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.TaskQueue.V1beta2.Model.TaskQueue_acl do
+defimpl Poison.Decoder, for: GoogleApi.TaskQueue.V1beta2.Model.TaskQueueAcl do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TaskQueue.V1beta2.Model.TaskQueueAcl do
+  def encode(value, options) do
+    GoogleApi.TaskQueue.V1beta2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

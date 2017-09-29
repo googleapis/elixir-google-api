@@ -63,7 +63,10 @@ defmodule GoogleApi.TaskQueue.V1beta2.Api.Taskqueues do
     }
     %{}
     |> method(:get)
-    |> url("/#{project}/taskqueues/#{taskqueue}")
+    |> url("/{project}/taskqueues/{taskqueue}", %{
+         "project" => URI.encode_www_form(project),
+         "taskqueue" => URI.encode_www_form(taskqueue)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

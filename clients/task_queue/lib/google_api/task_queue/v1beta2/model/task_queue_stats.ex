@@ -17,12 +17,18 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.TaskQueue.V1beta2.Model.TaskQueue_stats do
+defmodule GoogleApi.TaskQueue.V1beta2.Model.TaskQueueStats do
   @moduledoc """
   Statistics for the TaskQueue object in question.
+
+  ## Attributes
+
+  - leasedLastHour (String): Number of tasks leased in the last hour. Defaults to: `null`.
+  - leasedLastMinute (String): Number of tasks leased in the last minute. Defaults to: `null`.
+  - oldestTask (String): The timestamp (in seconds since the epoch) of the oldest unfinished task. Defaults to: `null`.
+  - totalTasks (Integer): Number of tasks in the queue. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"leasedLastHour",
     :"leasedLastMinute",
@@ -31,9 +37,15 @@ defmodule GoogleApi.TaskQueue.V1beta2.Model.TaskQueue_stats do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.TaskQueue.V1beta2.Model.TaskQueue_stats do
+defimpl Poison.Decoder, for: GoogleApi.TaskQueue.V1beta2.Model.TaskQueueStats do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TaskQueue.V1beta2.Model.TaskQueueStats do
+  def encode(value, options) do
+    GoogleApi.TaskQueue.V1beta2.Deserializer.serialize_non_nil(value, options)
   end
 end
 
