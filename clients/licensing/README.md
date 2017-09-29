@@ -1,6 +1,6 @@
 # GoogleApi.Licensing.V1
 
-**TODO: Add description**
+Views and manages licenses for your domain.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_licensing` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_licensing, "~> 0.1.0"}]
+  [{:google_api_licensing, "~> 0.0.1"}]
 end
 ```
 

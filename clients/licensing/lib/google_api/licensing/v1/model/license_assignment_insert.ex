@@ -20,9 +20,12 @@
 defmodule GoogleApi.Licensing.V1.Model.LicenseAssignmentInsert do
   @moduledoc """
   Template for LicenseAssignment Insert request
+
+  ## Attributes
+
+  - userId (String): Email id of the user Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"userId"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Licensing.V1.Model.LicenseAssignmentInsert do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Licensing.V1.Model.LicenseAssignmentInsert do
+  def encode(value, options) do
+    GoogleApi.Licensing.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
