@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Tasks.V1.Model.Task_links do
+defmodule GoogleApi.Tasks.V1.Model.TaskLinks do
   @moduledoc """
   
+
+  ## Attributes
+
+  - description (String): The description. In HTML speak: Everything between &lt;a&gt; and &lt;/a&gt;. Defaults to: `null`.
+  - link (String): The URL. Defaults to: `null`.
+  - type (String): Type of the link, e.g. \&quot;email\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"description",
     :"link",
@@ -30,9 +35,15 @@ defmodule GoogleApi.Tasks.V1.Model.Task_links do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Tasks.V1.Model.Task_links do
+defimpl Poison.Decoder, for: GoogleApi.Tasks.V1.Model.TaskLinks do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Tasks.V1.Model.TaskLinks do
+  def encode(value, options) do
+    GoogleApi.Tasks.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,17 @@
 defmodule GoogleApi.Tasks.V1.Model.TaskList do
   @moduledoc """
   
+
+  ## Attributes
+
+  - etag (String): ETag of the resource. Defaults to: `null`.
+  - id (String): Task list identifier. Defaults to: `null`.
+  - kind (String): Type of the resource. This is always \&quot;tasks#taskList\&quot;. Defaults to: `null`.
+  - selfLink (String): URL pointing to this task list. Used to retrieve, update, or delete this task list. Defaults to: `null`.
+  - title (String): Title of the task list. Defaults to: `null`.
+  - updated (DateTime): Last modification time of the task list (as a RFC 3339 timestamp). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"id",
@@ -36,6 +44,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Tasks.V1.Model.TaskList do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Tasks.V1.Model.TaskList do
+  def encode(value, options) do
+    GoogleApi.Tasks.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

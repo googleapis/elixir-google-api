@@ -60,7 +60,9 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
     }
     %{}
     |> method(:post)
-    |> url("/lists/#{tasklist}/clear")
+    |> url("/lists/{tasklist}/clear", %{
+         "tasklist" => URI.encode_www_form(tasklist)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -102,7 +104,10 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
     }
     %{}
     |> method(:delete)
-    |> url("/lists/#{tasklist}/tasks/#{task}")
+    |> url("/lists/{tasklist}/tasks/{task}", %{
+         "tasklist" => URI.encode_www_form(tasklist),
+         "task" => URI.encode_www_form(task)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -144,7 +149,10 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
     }
     %{}
     |> method(:get)
-    |> url("/lists/#{tasklist}/tasks/#{task}")
+    |> url("/lists/{tasklist}/tasks/{task}", %{
+         "tasklist" => URI.encode_www_form(tasklist),
+         "task" => URI.encode_www_form(task)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -191,7 +199,9 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
     }
     %{}
     |> method(:post)
-    |> url("/lists/#{tasklist}/tasks")
+    |> url("/lists/{tasklist}/tasks", %{
+         "tasklist" => URI.encode_www_form(tasklist)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -252,7 +262,9 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
     }
     %{}
     |> method(:get)
-    |> url("/lists/#{tasklist}/tasks")
+    |> url("/lists/{tasklist}/tasks", %{
+         "tasklist" => URI.encode_www_form(tasklist)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -298,7 +310,10 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
     }
     %{}
     |> method(:post)
-    |> url("/lists/#{tasklist}/tasks/#{task}/move")
+    |> url("/lists/{tasklist}/tasks/{task}/move", %{
+         "tasklist" => URI.encode_www_form(tasklist),
+         "task" => URI.encode_www_form(task)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -342,7 +357,10 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
     }
     %{}
     |> method(:patch)
-    |> url("/lists/#{tasklist}/tasks/#{task}")
+    |> url("/lists/{tasklist}/tasks/{task}", %{
+         "tasklist" => URI.encode_www_form(tasklist),
+         "task" => URI.encode_www_form(task)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -386,7 +404,10 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
     }
     %{}
     |> method(:put)
-    |> url("/lists/#{tasklist}/tasks/#{task}")
+    |> url("/lists/{tasklist}/tasks/{task}", %{
+         "tasklist" => URI.encode_www_form(tasklist),
+         "task" => URI.encode_www_form(task)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
