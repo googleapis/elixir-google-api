@@ -20,9 +20,15 @@
 defmodule GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsList do
   @moduledoc """
   The response to a list request.
+
+  ## Attributes
+
+  - items (List[ResourceView]): The result that contains all resource views that meet the criteria. Defaults to: `null`.
+  - kind (String): Type of resource. Defaults to: `null`.
+  - nextPageToken (String): A token used for pagination. Defaults to: `null`.
+  - selfLink (String): Server defined URL for this resource (output only). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"items",
     :"kind",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsList
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.ResourceViews.V1beta2.Model.ResourceView, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsList do
+  def encode(value, options) do
+    GoogleApi.ResourceViews.V1beta2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ResourceViews.V1beta2.Model.Operation_warnings do
+defmodule GoogleApi.ResourceViews.V1beta2.Model.OperationWarnings do
   @moduledoc """
   
+
+  ## Attributes
+
+  - code (String): [Output only] The warning type identifier for this warning. Defaults to: `null`.
+  - data (List[OperationData]): [Output only] Metadata for this warning in key:value format. Defaults to: `null`.
+  - message (String): [Output only] Optional human-readable details for this warning. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"code",
     :"data",
@@ -30,11 +35,17 @@ defmodule GoogleApi.ResourceViews.V1beta2.Model.Operation_warnings do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ResourceViews.V1beta2.Model.Operation_warnings do
+defimpl Poison.Decoder, for: GoogleApi.ResourceViews.V1beta2.Model.OperationWarnings do
   import GoogleApi.ResourceViews.V1beta2.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"data", :list, GoogleApi.ResourceViews.V1beta2.Model.Operation_data, options)
+    |> deserialize(:"data", :list, GoogleApi.ResourceViews.V1beta2.Model.OperationData, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ResourceViews.V1beta2.Model.OperationWarnings do
+  def encode(value, options) do
+    GoogleApi.ResourceViews.V1beta2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

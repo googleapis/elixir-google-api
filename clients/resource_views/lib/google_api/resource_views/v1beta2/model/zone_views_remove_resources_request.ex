@@ -20,9 +20,12 @@
 defmodule GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsRemoveResourcesRequest do
   @moduledoc """
   The request to remove resources from the resource view.
+
+  ## Attributes
+
+  - resources (List[String]): The list of resources to be removed. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"resources"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsRemoveResourcesRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsRemoveResourcesRequest do
+  def encode(value, options) do
+    GoogleApi.ResourceViews.V1beta2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

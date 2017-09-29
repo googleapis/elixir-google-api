@@ -20,9 +20,12 @@
 defmodule GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsAddResourcesRequest do
   @moduledoc """
   The request to add resources to the resource view.
+
+  ## Attributes
+
+  - resources (List[String]): The list of resources to be added. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"resources"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsAddResourcesRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsAddResourcesRequest do
+  def encode(value, options) do
+    GoogleApi.ResourceViews.V1beta2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

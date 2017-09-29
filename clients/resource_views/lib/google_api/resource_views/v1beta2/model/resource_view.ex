@@ -20,9 +20,23 @@
 defmodule GoogleApi.ResourceViews.V1beta2.Model.ResourceView do
   @moduledoc """
   The resource view object.
+
+  ## Attributes
+
+  - creationTimestamp (String): The creation time of the resource view. Defaults to: `null`.
+  - description (String): The detailed description of the resource view. Defaults to: `null`.
+  - endpoints (List[ServiceEndpoint]): Services endpoint information. Defaults to: `null`.
+  - fingerprint (String): The fingerprint of the service endpoint information. Defaults to: `null`.
+  - id (String): [Output Only] The ID of the resource view. Defaults to: `null`.
+  - kind (String): Type of the resource. Defaults to: `null`.
+  - labels (List[Label]): The labels for events. Defaults to: `null`.
+  - name (String): The name of the resource view. Defaults to: `null`.
+  - network (String): The URL of a Compute Engine network to which the resources in the view belong. Defaults to: `null`.
+  - resources (List[String]): A list of all resources in the resource view. Defaults to: `null`.
+  - selfLink (String): [Output Only] A self-link to the resource view. Defaults to: `null`.
+  - size (Integer): The total number of resources in the resource view. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"creationTimestamp",
     :"description",
@@ -45,6 +59,12 @@ defimpl Poison.Decoder, for: GoogleApi.ResourceViews.V1beta2.Model.ResourceView 
     value
     |> deserialize(:"endpoints", :list, GoogleApi.ResourceViews.V1beta2.Model.ServiceEndpoint, options)
     |> deserialize(:"labels", :list, GoogleApi.ResourceViews.V1beta2.Model.Label, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ResourceViews.V1beta2.Model.ResourceView do
+  def encode(value, options) do
+    GoogleApi.ResourceViews.V1beta2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

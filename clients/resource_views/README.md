@@ -1,6 +1,6 @@
-# GoogleApi.ResourceViews.V1BETA2
+# GoogleApi.ResourceViews.V1beta2
 
-**TODO: Add description**
+The Resource View API allows users to create and manage logical sets of Google Compute Engine instances.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_resource_views` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_resource_views, "~> 0.1.0"}]
+  [{:google_api_resource_views, "~> 0.0.1"}]
 end
 ```
 

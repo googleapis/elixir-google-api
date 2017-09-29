@@ -62,7 +62,11 @@ defmodule GoogleApi.ResourceViews.V1beta2.Api.ZoneOperations do
     }
     %{}
     |> method(:get)
-    |> url("/#{project}/zones/#{zone}/operations/#{operation}")
+    |> url("/{project}/zones/{zone}/operations/{operation}", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone),
+         "operation" => URI.encode_www_form(operation)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -110,7 +114,10 @@ defmodule GoogleApi.ResourceViews.V1beta2.Api.ZoneOperations do
     }
     %{}
     |> method(:get)
-    |> url("/#{project}/zones/#{zone}/operations")
+    |> url("/{project}/zones/{zone}/operations", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

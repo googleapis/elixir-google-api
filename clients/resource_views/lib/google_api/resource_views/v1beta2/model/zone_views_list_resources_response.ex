@@ -20,9 +20,14 @@
 defmodule GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsListResourcesResponse do
   @moduledoc """
   The response to a list resource request.
+
+  ## Attributes
+
+  - items (List[ListResourceResponseItem]): The formatted JSON that is requested by the user. Defaults to: `null`.
+  - network (String): The URL of a Compute Engine network to which the resources in the view belong. Defaults to: `null`.
+  - nextPageToken (String): A token used for pagination. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"items",
     :"network",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsList
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.ResourceViews.V1beta2.Model.ListResourceResponseItem, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsListResourcesResponse do
+  def encode(value, options) do
+    GoogleApi.ResourceViews.V1beta2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

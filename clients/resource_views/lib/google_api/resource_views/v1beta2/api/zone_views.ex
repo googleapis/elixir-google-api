@@ -64,7 +64,11 @@ defmodule GoogleApi.ResourceViews.V1beta2.Api.ZoneViews do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/zones/#{zone}/resourceViews/#{resource_view}/addResources")
+    |> url("/{project}/zones/{zone}/resourceViews/{resourceView}/addResources", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone),
+         "resourceView" => URI.encode_www_form(resource_view)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -107,7 +111,11 @@ defmodule GoogleApi.ResourceViews.V1beta2.Api.ZoneViews do
     }
     %{}
     |> method(:delete)
-    |> url("/#{project}/zones/#{zone}/resourceViews/#{resource_view}")
+    |> url("/{project}/zones/{zone}/resourceViews/{resourceView}", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone),
+         "resourceView" => URI.encode_www_form(resource_view)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -150,7 +158,11 @@ defmodule GoogleApi.ResourceViews.V1beta2.Api.ZoneViews do
     }
     %{}
     |> method(:get)
-    |> url("/#{project}/zones/#{zone}/resourceViews/#{resource_view}")
+    |> url("/{project}/zones/{zone}/resourceViews/{resourceView}", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone),
+         "resourceView" => URI.encode_www_form(resource_view)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -195,7 +207,11 @@ defmodule GoogleApi.ResourceViews.V1beta2.Api.ZoneViews do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/zones/#{zone}/resourceViews/#{resource_view}/getService")
+    |> url("/{project}/zones/{zone}/resourceViews/{resourceView}/getService", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone),
+         "resourceView" => URI.encode_www_form(resource_view)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -239,7 +255,10 @@ defmodule GoogleApi.ResourceViews.V1beta2.Api.ZoneViews do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/zones/#{zone}/resourceViews")
+    |> url("/{project}/zones/{zone}/resourceViews", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -285,7 +304,10 @@ defmodule GoogleApi.ResourceViews.V1beta2.Api.ZoneViews do
     }
     %{}
     |> method(:get)
-    |> url("/#{project}/zones/#{zone}/resourceViews")
+    |> url("/{project}/zones/{zone}/resourceViews", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -338,7 +360,11 @@ defmodule GoogleApi.ResourceViews.V1beta2.Api.ZoneViews do
     }
     %{}
     |> method(:get)
-    |> url("/#{project}/zones/#{zone}/resourceViews/#{resource_view}/resources")
+    |> url("/{project}/zones/{zone}/resourceViews/{resourceView}/resources", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone),
+         "resourceView" => URI.encode_www_form(resource_view)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -383,7 +409,11 @@ defmodule GoogleApi.ResourceViews.V1beta2.Api.ZoneViews do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/zones/#{zone}/resourceViews/#{resource_view}/removeResources")
+    |> url("/{project}/zones/{zone}/resourceViews/{resourceView}/removeResources", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone),
+         "resourceView" => URI.encode_www_form(resource_view)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -428,7 +458,11 @@ defmodule GoogleApi.ResourceViews.V1beta2.Api.ZoneViews do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/zones/#{zone}/resourceViews/#{resource_view}/setService")
+    |> url("/{project}/zones/{zone}/resourceViews/{resourceView}/setService", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone),
+         "resourceView" => URI.encode_www_form(resource_view)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

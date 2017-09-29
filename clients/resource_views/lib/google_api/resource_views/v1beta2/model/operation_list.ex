@@ -20,9 +20,16 @@
 defmodule GoogleApi.ResourceViews.V1beta2.Model.OperationList do
   @moduledoc """
   
+
+  ## Attributes
+
+  - id (String): Unique identifier for the resource; defined by the server (output only). Defaults to: `null`.
+  - items (List[Operation]): The operation resources. Defaults to: `null`.
+  - kind (String): Type of resource. Defaults to: `null`.
+  - nextPageToken (String): A token used to continue a truncated list request (output only). Defaults to: `null`.
+  - selfLink (String): Server defined URL for this resource (output only). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"items",
@@ -37,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.ResourceViews.V1beta2.Model.OperationList
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.ResourceViews.V1beta2.Model.Operation, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ResourceViews.V1beta2.Model.OperationList do
+  def encode(value, options) do
+    GoogleApi.ResourceViews.V1beta2.Deserializer.serialize_non_nil(value, options)
   end
 end
 
