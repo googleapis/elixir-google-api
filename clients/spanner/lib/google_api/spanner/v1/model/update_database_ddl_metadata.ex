@@ -20,9 +20,14 @@
 defmodule GoogleApi.Spanner.V1.Model.UpdateDatabaseDdlMetadata do
   @moduledoc """
   Metadata type for the operation returned by UpdateDatabaseDdl.
+
+  ## Attributes
+
+  - commitTimestamps (List[String]): Reports the commit timestamps of all statements that have succeeded so far, where &#x60;commit_timestamps[i]&#x60; is the commit timestamp for the statement &#x60;statements[i]&#x60;. Defaults to: `null`.
+  - database (String): The database being modified. Defaults to: `null`.
+  - statements (List[String]): For an update this list contains all the statements. For an individual statement, this list contains only that statement. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"commitTimestamps",
     :"database",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.UpdateDatabaseDdlMetadata do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.UpdateDatabaseDdlMetadata do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

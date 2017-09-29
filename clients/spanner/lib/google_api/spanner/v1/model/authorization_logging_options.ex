@@ -20,9 +20,13 @@
 defmodule GoogleApi.Spanner.V1.Model.AuthorizationLoggingOptions do
   @moduledoc """
   Authorization-related information used by Cloud Audit Logging.
+
+  ## Attributes
+
+  - permissionType (String): The type of the permission that was checked. Defaults to: `null`.
+    - Enum - one of [PERMISSION_TYPE_UNSPECIFIED, ADMIN_READ, ADMIN_WRITE, DATA_READ, DATA_WRITE]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"permissionType"
   ]
@@ -31,6 +35,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.AuthorizationLoggingOptions do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.AuthorizationLoggingOptions do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

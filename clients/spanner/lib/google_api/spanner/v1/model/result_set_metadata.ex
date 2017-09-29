@@ -20,9 +20,13 @@
 defmodule GoogleApi.Spanner.V1.Model.ResultSetMetadata do
   @moduledoc """
   Metadata about a ResultSet or PartialResultSet.
+
+  ## Attributes
+
+  - rowType (StructType): Indicates the field names and types for the rows in the result set.  For example, a SQL query like &#x60;\&quot;SELECT UserId, UserName FROM Users\&quot;&#x60; could return a &#x60;row_type&#x60; value like:      \&quot;fields\&quot;: [       { \&quot;name\&quot;: \&quot;UserId\&quot;, \&quot;type\&quot;: { \&quot;code\&quot;: \&quot;INT64\&quot; } },       { \&quot;name\&quot;: \&quot;UserName\&quot;, \&quot;type\&quot;: { \&quot;code\&quot;: \&quot;STRING\&quot; } },     ] Defaults to: `null`.
+  - transaction (Transaction): If the read or SQL query began a transaction as a side-effect, the information about the new transaction is yielded here. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"rowType",
     :"transaction"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.ResultSetMetadata do
     value
     |> deserialize(:"rowType", :struct, GoogleApi.Spanner.V1.Model.StructType, options)
     |> deserialize(:"transaction", :struct, GoogleApi.Spanner.V1.Model.Transaction, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.ResultSetMetadata do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

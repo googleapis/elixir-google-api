@@ -20,9 +20,13 @@
 defmodule GoogleApi.Spanner.V1.Model.CreateInstanceRequest do
   @moduledoc """
   The request for CreateInstance.
+
+  ## Attributes
+
+  - instance (Instance): Required. The instance to create.  The name may be omitted, but if specified must be &#x60;&lt;parent&gt;/instances/&lt;instance_id&gt;&#x60;. Defaults to: `null`.
+  - instanceId (String): Required. The ID of the instance to create.  Valid identifiers are of the form &#x60;a-z*[a-z0-9]&#x60; and must be between 6 and 30 characters in length. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"instance",
     :"instanceId"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.CreateInstanceRequest do
   def decode(value, options) do
     value
     |> deserialize(:"instance", :struct, GoogleApi.Spanner.V1.Model.Instance, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.CreateInstanceRequest do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

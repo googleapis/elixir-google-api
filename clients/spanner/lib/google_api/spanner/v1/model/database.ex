@@ -20,9 +20,14 @@
 defmodule GoogleApi.Spanner.V1.Model.Database do
   @moduledoc """
   A Cloud Spanner database.
+
+  ## Attributes
+
+  - name (String): Required. The name of the database. Values are of the form &#x60;projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;&#x60;, where &#x60;&lt;database&gt;&#x60; is as specified in the &#x60;CREATE DATABASE&#x60; statement. This name can be passed to other API methods to identify the database. Defaults to: `null`.
+  - state (String): Output only. The current database state. Defaults to: `null`.
+    - Enum - one of [STATE_UNSPECIFIED, CREATING, READY]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name",
     :"state"
@@ -32,6 +37,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.Database do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.Database do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

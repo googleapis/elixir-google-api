@@ -20,9 +20,13 @@
 defmodule GoogleApi.Spanner.V1.Model.Field do
   @moduledoc """
   Message representing a single field of a struct.
+
+  ## Attributes
+
+  - name (String): The name of the field. For reads, this is the column name. For SQL queries, it is the column alias (e.g., &#x60;\&quot;Word\&quot;&#x60; in the query &#x60;\&quot;SELECT &#39;hello&#39; AS Word\&quot;&#x60;), or the column name (e.g., &#x60;\&quot;ColName\&quot;&#x60; in the query &#x60;\&quot;SELECT ColName FROM Table\&quot;&#x60;). Some columns might have an empty name (e.g., !\&quot;SELECT UPPER(ColName)\&quot;&#x60;). Note that a query result can contain multiple fields with the same name. Defaults to: `null`.
+  - type (Type): The type of the field. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name",
     :"type"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.Field do
   def decode(value, options) do
     value
     |> deserialize(:"type", :struct, GoogleApi.Spanner.V1.Model.Type, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.Field do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

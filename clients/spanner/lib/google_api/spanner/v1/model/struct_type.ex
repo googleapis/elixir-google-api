@@ -20,9 +20,12 @@
 defmodule GoogleApi.Spanner.V1.Model.StructType do
   @moduledoc """
   &#x60;StructType&#x60; defines the fields of a STRUCT type.
+
+  ## Attributes
+
+  - fields (List[Field]): The list of fields that make up this struct. Order is significant, because values of this struct type are represented as lists, where the order of field values matches the order of fields in the StructType. In turn, the order of fields matches the order of columns in a read request, or the order of fields in the &#x60;SELECT&#x60; clause of a query. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fields"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.StructType do
   def decode(value, options) do
     value
     |> deserialize(:"fields", :list, GoogleApi.Spanner.V1.Model.Field, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.StructType do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

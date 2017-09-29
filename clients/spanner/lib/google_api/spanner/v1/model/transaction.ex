@@ -20,9 +20,13 @@
 defmodule GoogleApi.Spanner.V1.Model.Transaction do
   @moduledoc """
   A transaction.
+
+  ## Attributes
+
+  - id (String): &#x60;id&#x60; may be used to identify the transaction in subsequent Read, ExecuteSql, Commit, or Rollback calls.  Single-use read-only transactions do not have IDs, because single-use transactions do not support multiple requests. Defaults to: `null`.
+  - readTimestamp (String): For snapshot read-only transactions, the read timestamp chosen for the transaction. Not returned by default: see TransactionOptions.ReadOnly.return_read_timestamp. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"readTimestamp"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.Transaction do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.Transaction do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

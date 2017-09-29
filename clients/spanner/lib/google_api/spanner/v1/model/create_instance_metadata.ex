@@ -20,9 +20,15 @@
 defmodule GoogleApi.Spanner.V1.Model.CreateInstanceMetadata do
   @moduledoc """
   Metadata type for the operation returned by CreateInstance.
+
+  ## Attributes
+
+  - cancelTime (String): The time at which this operation was cancelled. If set, this operation is in the process of undoing itself (which is guaranteed to succeed) and cannot be cancelled again. Defaults to: `null`.
+  - endTime (String): The time at which this operation failed or was completed successfully. Defaults to: `null`.
+  - instance (Instance): The instance being created. Defaults to: `null`.
+  - startTime (String): The time at which the CreateInstance request was received. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cancelTime",
     :"endTime",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.CreateInstanceMetadata d
   def decode(value, options) do
     value
     |> deserialize(:"instance", :struct, GoogleApi.Spanner.V1.Model.Instance, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.CreateInstanceMetadata do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

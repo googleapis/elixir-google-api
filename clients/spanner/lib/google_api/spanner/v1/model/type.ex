@@ -20,9 +20,15 @@
 defmodule GoogleApi.Spanner.V1.Model.Type do
   @moduledoc """
   &#x60;Type&#x60; indicates the type of a Cloud Spanner value, as might be stored in a table cell or returned from an SQL query.
+
+  ## Attributes
+
+  - arrayElementType (Type): If code &#x3D;&#x3D; ARRAY, then &#x60;array_element_type&#x60; is the type of the array elements. Defaults to: `null`.
+  - code (String): Required. The TypeCode for this type. Defaults to: `null`.
+    - Enum - one of [TYPE_CODE_UNSPECIFIED, BOOL, INT64, FLOAT64, TIMESTAMP, DATE, STRING, BYTES, ARRAY, STRUCT]
+  - structType (StructType): If code &#x3D;&#x3D; STRUCT, then &#x60;struct_type&#x60; provides type information for the struct&#39;s fields. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"arrayElementType",
     :"code",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.Type do
     value
     |> deserialize(:"arrayElementType", :struct, GoogleApi.Spanner.V1.Model.Type, options)
     |> deserialize(:"structType", :struct, GoogleApi.Spanner.V1.Model.StructType, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.Type do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

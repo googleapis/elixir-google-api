@@ -20,9 +20,18 @@
 defmodule GoogleApi.Spanner.V1.Model.ReadRequest do
   @moduledoc """
   The request for Read and StreamingRead.
+
+  ## Attributes
+
+  - columns (List[String]): The columns of table to be returned for each row matching this request. Defaults to: `null`.
+  - index (String): If non-empty, the name of an index on table. This index is used instead of the table primary key when interpreting key_set and sorting result rows. See key_set for further information. Defaults to: `null`.
+  - keySet (KeySet): Required. &#x60;key_set&#x60; identifies the rows to be yielded. &#x60;key_set&#x60; names the primary keys of the rows in table to be yielded, unless index is present. If index is present, then key_set instead names index keys in index.  Rows are yielded in table primary key order (if index is empty) or index key order (if index is non-empty).  It is not an error for the &#x60;key_set&#x60; to name rows that do not exist in the database. Read yields nothing for nonexistent rows. Defaults to: `null`.
+  - limit (String): If greater than zero, only the first &#x60;limit&#x60; rows are yielded. If &#x60;limit&#x60; is zero, the default is no limit. Defaults to: `null`.
+  - resumeToken (String): If this request is resuming a previously interrupted read, &#x60;resume_token&#x60; should be copied from the last PartialResultSet yielded before the interruption. Doing this enables the new read to resume where the last read left off. The rest of the request parameters must exactly match the request that yielded this token. Defaults to: `null`.
+  - table (String): Required. The name of the table in the database to be read. Defaults to: `null`.
+  - transaction (TransactionSelector): The transaction to use. If none is provided, the default is a temporary read-only transaction with strong concurrency. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"columns",
     :"index",
@@ -40,6 +49,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.ReadRequest do
     value
     |> deserialize(:"keySet", :struct, GoogleApi.Spanner.V1.Model.KeySet, options)
     |> deserialize(:"transaction", :struct, GoogleApi.Spanner.V1.Model.TransactionSelector, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.ReadRequest do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

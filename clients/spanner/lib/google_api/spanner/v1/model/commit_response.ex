@@ -20,9 +20,12 @@
 defmodule GoogleApi.Spanner.V1.Model.CommitResponse do
   @moduledoc """
   The response for Commit.
+
+  ## Attributes
+
+  - commitTimestamp (String): The Cloud Spanner timestamp at which the transaction committed. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"commitTimestamp"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.CommitResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.CommitResponse do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

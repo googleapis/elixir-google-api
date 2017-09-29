@@ -20,9 +20,13 @@
 defmodule GoogleApi.Spanner.V1.Model.ResultSetStats do
   @moduledoc """
   Additional statistics about a ResultSet or PartialResultSet.
+
+  ## Attributes
+
+  - queryPlan (QueryPlan): QueryPlan for the query associated with this result. Defaults to: `null`.
+  - queryStats (Object): Aggregated statistics from the execution of the query. Only present when the query is profiled. For example, a query could return the statistics as follows:      {       \&quot;rows_returned\&quot;: \&quot;3\&quot;,       \&quot;elapsed_time\&quot;: \&quot;1.22 secs\&quot;,       \&quot;cpu_time\&quot;: \&quot;1.19 secs\&quot;     } Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"queryPlan",
     :"queryStats"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.ResultSetStats do
     value
     |> deserialize(:"queryPlan", :struct, GoogleApi.Spanner.V1.Model.QueryPlan, options)
     |> deserialize(:"queryStats", :struct, GoogleApi.Spanner.V1.Model.Object, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.ResultSetStats do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

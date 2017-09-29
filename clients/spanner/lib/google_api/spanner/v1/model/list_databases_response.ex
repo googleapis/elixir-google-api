@@ -20,9 +20,13 @@
 defmodule GoogleApi.Spanner.V1.Model.ListDatabasesResponse do
   @moduledoc """
   The response for ListDatabases.
+
+  ## Attributes
+
+  - databases (List[Database]): Databases that matched the request. Defaults to: `null`.
+  - nextPageToken (String): &#x60;next_page_token&#x60; can be sent in a subsequent ListDatabases call to fetch more of the matching databases. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"databases",
     :"nextPageToken"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.ListDatabasesResponse do
   def decode(value, options) do
     value
     |> deserialize(:"databases", :list, GoogleApi.Spanner.V1.Model.Database, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.ListDatabasesResponse do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.Spanner.V1.Model.Session do
   @moduledoc """
   A session in the Cloud Spanner API.
+
+  ## Attributes
+
+  - name (String): Required. The name of the session. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.Session do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.Session do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

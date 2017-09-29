@@ -20,9 +20,14 @@
 defmodule GoogleApi.Spanner.V1.Model.CloudAuditOptions do
   @moduledoc """
   Write a Cloud Audit log
+
+  ## Attributes
+
+  - authorizationLoggingOptions (AuthorizationLoggingOptions): Information used by the Cloud Audit Logging pipeline. Defaults to: `null`.
+  - logName (String): The log_name to populate in the Cloud Audit Record. Defaults to: `null`.
+    - Enum - one of [UNSPECIFIED_LOG_NAME, ADMIN_ACTIVITY, DATA_ACCESS]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"authorizationLoggingOptions",
     :"logName"
@@ -34,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.CloudAuditOptions do
   def decode(value, options) do
     value
     |> deserialize(:"authorizationLoggingOptions", :struct, GoogleApi.Spanner.V1.Model.AuthorizationLoggingOptions, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.CloudAuditOptions do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

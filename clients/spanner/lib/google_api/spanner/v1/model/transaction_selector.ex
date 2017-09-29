@@ -20,9 +20,14 @@
 defmodule GoogleApi.Spanner.V1.Model.TransactionSelector do
   @moduledoc """
   This message is used to select the transaction in which a Read or ExecuteSql call runs.  See TransactionOptions for more information about transactions.
+
+  ## Attributes
+
+  - begin (TransactionOptions): Begin a new transaction and execute this read or SQL query in it. The transaction ID of the new transaction is returned in ResultSetMetadata.transaction, which is a Transaction. Defaults to: `null`.
+  - id (String): Execute the read or SQL query in a previously-started transaction. Defaults to: `null`.
+  - singleUse (TransactionOptions): Execute the read or SQL query in a temporary transaction. This is the most efficient way to execute a transaction that consists of a single SQL query. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"begin",
     :"id",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.TransactionSelector do
     value
     |> deserialize(:"begin", :struct, GoogleApi.Spanner.V1.Model.TransactionOptions, options)
     |> deserialize(:"singleUse", :struct, GoogleApi.Spanner.V1.Model.TransactionOptions, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.TransactionSelector do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
