@@ -20,9 +20,13 @@
 defmodule GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2 do
   @moduledoc """
   
+
+  ## Attributes
+
+  - args (List[PagespeedApiFormatStringV2Args]): List of arguments for the format string. Defaults to: `null`.
+  - format (String): A localized format string with {{FOO}} placeholders, where &#39;FOO&#39; is the key of the argument whose value should be substituted. For HYPERLINK arguments, the format string will instead contain {{BEGIN_FOO}} and {{END_FOO}} for the argument with key &#39;FOO&#39;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"args",
     :"format"
@@ -33,7 +37,13 @@ defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiForm
   import GoogleApi.PageSpeedOnline.V2.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"args", :list, GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2_args, options)
+    |> deserialize(:"args", :list, GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2Args, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2 do
+  def encode(value, options) do
+    GoogleApi.PageSpeedOnline.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

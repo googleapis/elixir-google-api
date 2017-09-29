@@ -17,24 +17,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.PageSpeedOnline.V2.Model.Result_formattedResults_urls do
+defmodule GoogleApi.PageSpeedOnline.V2.Model.ResultFormattedResultsUrls do
   @moduledoc """
   
+
+  ## Attributes
+
+  - details (List[PagespeedApiFormatStringV2]): List of entries that provide additional details about a single URL. Optional. Defaults to: `null`.
+  - result (PagespeedApiFormatStringV2): A format string that gives information about the URL, and a list of arguments for that format string. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"details",
     :"result"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.Result_formattedResults_urls do
+defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.ResultFormattedResultsUrls do
   import GoogleApi.PageSpeedOnline.V2.Deserializer
   def decode(value, options) do
     value
     |> deserialize(:"details", :list, GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2, options)
     |> deserialize(:"result", :struct, GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.PageSpeedOnline.V2.Model.ResultFormattedResultsUrls do
+  def encode(value, options) do
+    GoogleApi.PageSpeedOnline.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

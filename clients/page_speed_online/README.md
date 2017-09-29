@@ -1,6 +1,6 @@
 # GoogleApi.PageSpeedOnline.V2
 
-**TODO: Add description**
+Analyzes the performance of a web page and provides tailored suggestions to make that page faster.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_page_speed_online` to your list of dependencies in `mix.ex
 
 ```elixir
 def deps do
-  [{:google_api_page_speed_online, "~> 0.1.0"}]
+  [{:google_api_page_speed_online, "~> 0.0.1"}]
 end
 ```
 

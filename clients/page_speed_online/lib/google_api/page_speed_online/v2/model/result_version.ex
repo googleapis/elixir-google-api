@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.PageSpeedOnline.V2.Model.Result_version do
+defmodule GoogleApi.PageSpeedOnline.V2.Model.ResultVersion do
   @moduledoc """
   The version of PageSpeed used to generate these results.
+
+  ## Attributes
+
+  - major (Integer): The major version number of PageSpeed used to generate these results. Defaults to: `null`.
+  - minor (Integer): The minor version number of PageSpeed used to generate these results. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"major",
     :"minor"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.Result_version do
+defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.ResultVersion do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.PageSpeedOnline.V2.Model.ResultVersion do
+  def encode(value, options) do
+    GoogleApi.PageSpeedOnline.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 
