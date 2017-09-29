@@ -22,6 +22,8 @@ defmodule GoogleApi.KnowledgeGraphSearch.V1.RequestBuilder do
   Helper functions for building Tesla requests
   """
 
+  @path_template_regex ~r/{(\+?[^}]+)}/i
+
   @doc """
   Specify the request method when building a request
 
@@ -51,9 +53,22 @@ defmodule GoogleApi.KnowledgeGraphSearch.V1.RequestBuilder do
 
   Map
   """
-  @spec url(map(), String.t) :: map()
+  @spec url(map(), String.t, Map.t) :: map()
+  def url(request, u, replacements) do
+    url(request, replace_path_template_vars(u, replacements))
+  end
   def url(request, u) do
     Map.put_new(request, :url, u)
+  end
+
+  def replace_path_template_vars(u, replacements) do
+    Regex.replace(@path_template_regex, u, fn (_, var) -> replacement_value(var, replacements) end)
+  end
+  defp replacement_value("+" <> name, replacements) do
+    URI.decode(replacement_value(name, replacements))
+  end
+  defp replacement_value(name, replacements) do
+    Map.get(replacements, name, "")
   end
 
   @doc """
