@@ -20,9 +20,13 @@
 defmodule GoogleApi.Monitoring.V3.Model.MonitoredResource do
   @moduledoc """
   An object representing a resource that can be used for monitoring, logging, billing, or other purposes. Examples include virtual machine instances, databases, and storage devices such as disks. The type field identifies a MonitoredResourceDescriptor object that describes the resource&#39;s schema. Information in the labels field identifies the actual resource and its attributes according to the schema. For example, a particular Compute Engine VM instance could be represented by the following object, because the MonitoredResourceDescriptor for \&quot;gce_instance\&quot; has labels \&quot;instance_id\&quot; and \&quot;zone\&quot;: { \&quot;type\&quot;: \&quot;gce_instance\&quot;,   \&quot;labels\&quot;: { \&quot;instance_id\&quot;: \&quot;12345678901234\&quot;,               \&quot;zone\&quot;: \&quot;us-central1-a\&quot; }} 
+
+  ## Attributes
+
+  - labels (Map[String, String]): Required. Values for all of the labels listed in the associated monitored resource descriptor. For example, Compute Engine VM instances use the labels \&quot;project_id\&quot;, \&quot;instance_id\&quot;, and \&quot;zone\&quot;. Defaults to: `null`.
+  - type (String): Required. The monitored resource type. This field must match the type field of a MonitoredResourceDescriptor object. For example, the type of a Compute Engine VM instance is gce_instance. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"labels",
     :"type"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.MonitoredResource do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Monitoring.V3.Model.MonitoredResource do
+  def encode(value, options) do
+    GoogleApi.Monitoring.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

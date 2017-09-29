@@ -20,9 +20,13 @@
 defmodule GoogleApi.Monitoring.V3.Model.TimeInterval do
   @moduledoc """
   A time interval extending just after a start time through an end time. If the start time is the same as the end time, then the interval represents a single point in time.
+
+  ## Attributes
+
+  - endTime (String): Required. The end of the time interval. Defaults to: `null`.
+  - startTime (String): Optional. The beginning of the time interval. The default value for the start time is the end time. The start time must not be later than the end time. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"endTime",
     :"startTime"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.TimeInterval do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Monitoring.V3.Model.TimeInterval do
+  def encode(value, options) do
+    GoogleApi.Monitoring.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

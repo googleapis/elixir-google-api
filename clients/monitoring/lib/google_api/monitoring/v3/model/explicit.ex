@@ -20,9 +20,12 @@
 defmodule GoogleApi.Monitoring.V3.Model.Explicit do
   @moduledoc """
   Specifies a set of buckets with arbitrary widths.There are size(bounds) + 1 (&#x3D; N) buckets. Bucket i has the following boundaries:Upper bound (0 &lt;&#x3D; i &lt; N-1): boundsi  Lower bound (1 &lt;&#x3D; i &lt; N); boundsi - 1The bounds field must contain at least one element. If bounds has only one element, then there are no finite buckets, and that single element is the common boundary of the overflow and underflow buckets.
+
+  ## Attributes
+
+  - bounds (List[Float]): The values must be monotonically increasing. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bounds"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.Explicit do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Monitoring.V3.Model.Explicit do
+  def encode(value, options) do
+    GoogleApi.Monitoring.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,21 @@
 defmodule GoogleApi.Monitoring.V3.Model.MetricDescriptor do
   @moduledoc """
   Defines a metric type and its schema. Once a metric descriptor is created, deleting or altering it stops data collection and makes the metric type&#39;s existing data unusable.
+
+  ## Attributes
+
+  - description (String): A detailed description of the metric, which can be used in documentation. Defaults to: `null`.
+  - displayName (String): A concise name for the metric, which can be displayed in user interfaces. Use sentence case without an ending period, for example \&quot;Request count\&quot;. Defaults to: `null`.
+  - labels (List[LabelDescriptor]): The set of labels that can be used to describe a specific instance of this metric type. For example, the appengine.googleapis.com/http/server/response_latencies metric type has a label for the HTTP response code, response_code, so you can look at latencies for successful responses or just for responses that failed. Defaults to: `null`.
+  - metricKind (String): Whether the metric records instantaneous values, changes to a value, etc. Some combinations of metric_kind and value_type might not be supported. Defaults to: `null`.
+    - Enum - one of [METRIC_KIND_UNSPECIFIED, GAUGE, DELTA, CUMULATIVE]
+  - name (String): The resource name of the metric descriptor. Depending on the implementation, the name typically includes: (1) the parent resource name that defines the scope of the metric type or of its data; and (2) the metric&#39;s URL-encoded type, which also appears in the type field of this descriptor. For example, following is the resource name of a custom metric within the GCP project my-project-id: \&quot;projects/my-project-id/metricDescriptors/custom.googleapis.com%2Finvoice%2Fpaid%2Famount\&quot;  Defaults to: `null`.
+  - type (String): The metric type, including its DNS name prefix. The type is not URL-encoded. All user-defined custom metric types have the DNS name custom.googleapis.com. Metric types should use a natural hierarchical grouping. For example: \&quot;custom.googleapis.com/invoice/paid/amount\&quot; \&quot;appengine.googleapis.com/http/server/response_latencies\&quot;  Defaults to: `null`.
+  - unit (String): The unit in which the metric value is reported. It is only applicable if the value_type is INT64, DOUBLE, or DISTRIBUTION. The supported units are a subset of The Unified Code for Units of Measure (http://unitsofmeasure.org/ucum.html) standard:Basic units (UNIT) bit bit By byte s second min minute h hour d dayPrefixes (PREFIX) k kilo (10**3) M mega (10**6) G giga (10**9) T tera (10**12) P peta (10**15) E exa (10**18) Z zetta (10**21) Y yotta (10**24) m milli (10**-3) u micro (10**-6) n nano (10**-9) p pico (10**-12) f femto (10**-15) a atto (10**-18) z zepto (10**-21) y yocto (10**-24) Ki kibi (2**10) Mi mebi (2**20) Gi gibi (2**30) Ti tebi (2**40)GrammarThe grammar includes the dimensionless unit 1, such as 1/s.The grammar also includes these connectors: / division (as an infix operator, e.g. 1/s). . multiplication (as an infix operator, e.g. GBy.d)The grammar for a unit is as follows: Expression &#x3D; Component { \&quot;.\&quot; Component } { \&quot;/\&quot; Component } ;  Component &#x3D; [ PREFIX ] UNIT [ Annotation ]           | Annotation           | \&quot;1\&quot;           ;  Annotation &#x3D; \&quot;{\&quot; NAME \&quot;}\&quot; ; Notes: Annotation is just a comment if it follows a UNIT and is  equivalent to 1 if it is used alone. For examples,  {requests}/s &#x3D;&#x3D; 1/s, By{transmitted}/s &#x3D;&#x3D; By/s. NAME is a sequence of non-blank printable ASCII characters not  containing &#39;{&#39; or &#39;}&#39;. Defaults to: `null`.
+  - valueType (String): Whether the measurement is an integer, a floating-point number, etc. Some combinations of metric_kind and value_type might not be supported. Defaults to: `null`.
+    - Enum - one of [VALUE_TYPE_UNSPECIFIED, BOOL, INT64, DOUBLE, STRING, DISTRIBUTION, MONEY]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"description",
     :"displayName",
@@ -40,6 +52,12 @@ defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.MetricDescriptor do
   def decode(value, options) do
     value
     |> deserialize(:"labels", :list, GoogleApi.Monitoring.V3.Model.LabelDescriptor, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Monitoring.V3.Model.MetricDescriptor do
+  def encode(value, options) do
+    GoogleApi.Monitoring.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

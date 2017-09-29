@@ -20,9 +20,12 @@
 defmodule GoogleApi.Monitoring.V3.Model.CreateTimeSeriesRequest do
   @moduledoc """
   The CreateTimeSeries request.
+
+  ## Attributes
+
+  - timeSeries (List[TimeSeries]): The new data to be added to a list of time series. Adds at most one data point to each of several time series. The new data point must be more recent than any other point in its time series. Each TimeSeries value must fully specify a unique time series by supplying all label values for the metric and the monitored resource. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"timeSeries"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.CreateTimeSeriesReque
   def decode(value, options) do
     value
     |> deserialize(:"timeSeries", :list, GoogleApi.Monitoring.V3.Model.TimeSeries, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Monitoring.V3.Model.CreateTimeSeriesRequest do
+  def encode(value, options) do
+    GoogleApi.Monitoring.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

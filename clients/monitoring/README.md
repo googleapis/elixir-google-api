@@ -1,6 +1,6 @@
 # GoogleApi.Monitoring.V3
 
-**TODO: Add description**
+Manages your Stackdriver Monitoring data and configurations. Most projects must be associated with a Stackdriver account, with a few exceptions as noted on the individual method pages.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_monitoring` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_monitoring, "~> 0.1.0"}]
+  [{:google_api_monitoring, "~> 0.0.1"}]
 end
 ```
 

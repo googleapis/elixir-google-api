@@ -20,9 +20,13 @@
 defmodule GoogleApi.Monitoring.V3.Model.Range do
   @moduledoc """
   The range of the population values.
+
+  ## Attributes
+
+  - max (Float): The maximum of the population values. Defaults to: `null`.
+  - min (Float): The minimum of the population values. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"max",
     :"min"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.Range do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Monitoring.V3.Model.Range do
+  def encode(value, options) do
+    GoogleApi.Monitoring.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

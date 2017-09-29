@@ -20,9 +20,13 @@
 defmodule GoogleApi.Monitoring.V3.Model.Point do
   @moduledoc """
   A single data point in a time series.
+
+  ## Attributes
+
+  - interval (TimeInterval): The time interval to which the data point applies. For GAUGE metrics, only the end time of the interval is used. For DELTA metrics, the start and end time should specify a non-zero interval, with subsequent points specifying contiguous and non-overlapping intervals. For CUMULATIVE metrics, the start and end time should specify a non-zero interval, with subsequent points specifying the same start time and increasing end times, until an event resets the cumulative value to zero and sets a new start time for the following points. Defaults to: `null`.
+  - value (TypedValue): The value of the data point. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"interval",
     :"value"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.Point do
     value
     |> deserialize(:"interval", :struct, GoogleApi.Monitoring.V3.Model.TimeInterval, options)
     |> deserialize(:"value", :struct, GoogleApi.Monitoring.V3.Model.TypedValue, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Monitoring.V3.Model.Point do
+  def encode(value, options) do
+    GoogleApi.Monitoring.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

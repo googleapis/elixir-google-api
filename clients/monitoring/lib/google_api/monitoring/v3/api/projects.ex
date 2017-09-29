@@ -74,7 +74,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v3/projects/#{projects_id}/collectdTimeSeries")
+    |> url("/v3/projects/{projectsId}/collectdTimeSeries", %{
+         "projectsId" => URI.encode_www_form(projects_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -131,7 +133,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v3/projects/#{projects_id}/groups")
+    |> url("/v3/projects/{projectsId}/groups", %{
+         "projectsId" => URI.encode_www_form(projects_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -185,7 +189,10 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     }
     %{}
     |> method(:delete)
-    |> url("/v3/projects/#{projects_id}/groups/#{groups_id}")
+    |> url("/v3/projects/{projectsId}/groups/{groupsId}", %{
+         "projectsId" => URI.encode_www_form(projects_id),
+         "groupsId" => URI.encode_www_form(groups_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -239,7 +246,10 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v3/projects/#{projects_id}/groups/#{groups_id}")
+    |> url("/v3/projects/{projectsId}/groups/{groupsId}", %{
+         "projectsId" => URI.encode_www_form(projects_id),
+         "groupsId" => URI.encode_www_form(groups_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -302,7 +312,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v3/projects/#{projects_id}/groups")
+    |> url("/v3/projects/{projectsId}/groups", %{
+         "projectsId" => URI.encode_www_form(projects_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -366,7 +378,10 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v3/projects/#{projects_id}/groups/#{groups_id}/members")
+    |> url("/v3/projects/{projectsId}/groups/{groupsId}/members", %{
+         "projectsId" => URI.encode_www_form(projects_id),
+         "groupsId" => URI.encode_www_form(groups_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -424,7 +439,10 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     }
     %{}
     |> method(:put)
-    |> url("/v3/projects/#{projects_id}/groups/#{groups_id}")
+    |> url("/v3/projects/{projectsId}/groups/{groupsId}", %{
+         "projectsId" => URI.encode_www_form(projects_id),
+         "groupsId" => URI.encode_www_form(groups_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -479,7 +497,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v3/projects/#{projects_id}/metricDescriptors")
+    |> url("/v3/projects/{projectsId}/metricDescriptors", %{
+         "projectsId" => URI.encode_www_form(projects_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -533,7 +553,10 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     }
     %{}
     |> method(:delete)
-    |> url("/v3/projects/#{projects_id}/metricDescriptors/#{metric_descriptors_id}")
+    |> url("/v3/projects/{projectsId}/metricDescriptors/{metricDescriptorsId}", %{
+         "projectsId" => URI.encode_www_form(projects_id),
+         "metricDescriptorsId" => URI.encode_www_form(metric_descriptors_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -587,7 +610,10 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v3/projects/#{projects_id}/metricDescriptors/#{metric_descriptors_id}")
+    |> url("/v3/projects/{projectsId}/metricDescriptors/{metricDescriptorsId}", %{
+         "projectsId" => URI.encode_www_form(projects_id),
+         "metricDescriptorsId" => URI.encode_www_form(metric_descriptors_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -646,7 +672,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v3/projects/#{projects_id}/metricDescriptors")
+    |> url("/v3/projects/{projectsId}/metricDescriptors", %{
+         "projectsId" => URI.encode_www_form(projects_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -700,7 +728,10 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v3/projects/#{projects_id}/monitoredResourceDescriptors/#{monitored_resource_descriptors_id}")
+    |> url("/v3/projects/{projectsId}/monitoredResourceDescriptors/{monitoredResourceDescriptorsId}", %{
+         "projectsId" => URI.encode_www_form(projects_id),
+         "monitoredResourceDescriptorsId" => URI.encode_www_form(monitored_resource_descriptors_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -759,7 +790,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v3/projects/#{projects_id}/monitoredResourceDescriptors")
+    |> url("/v3/projects/{projectsId}/monitoredResourceDescriptors", %{
+         "projectsId" => URI.encode_www_form(projects_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -814,7 +847,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v3/projects/#{projects_id}/timeSeries")
+    |> url("/v3/projects/{projectsId}/timeSeries", %{
+         "projectsId" => URI.encode_www_form(projects_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -889,7 +924,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v3/projects/#{projects_id}/timeSeries")
+    |> url("/v3/projects/{projectsId}/timeSeries", %{
+         "projectsId" => URI.encode_www_form(projects_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

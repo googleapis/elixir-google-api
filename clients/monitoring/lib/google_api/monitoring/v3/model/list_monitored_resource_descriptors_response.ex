@@ -20,9 +20,13 @@
 defmodule GoogleApi.Monitoring.V3.Model.ListMonitoredResourceDescriptorsResponse do
   @moduledoc """
   The ListMonitoredResourceDescriptors response.
+
+  ## Attributes
+
+  - nextPageToken (String): If there are more results than have been returned, then this field is set to a non-empty value. To see the additional results, use that value as pageToken in the next call to this method. Defaults to: `null`.
+  - resourceDescriptors (List[MonitoredResourceDescriptor]): The monitored resource descriptors that are available to this project and that match filter, if present. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nextPageToken",
     :"resourceDescriptors"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.ListMonitoredResource
   def decode(value, options) do
     value
     |> deserialize(:"resourceDescriptors", :list, GoogleApi.Monitoring.V3.Model.MonitoredResourceDescriptor, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Monitoring.V3.Model.ListMonitoredResourceDescriptorsResponse do
+  def encode(value, options) do
+    GoogleApi.Monitoring.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

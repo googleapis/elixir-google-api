@@ -20,9 +20,14 @@
 defmodule GoogleApi.Monitoring.V3.Model.CreateCollectdTimeSeriesRequest do
   @moduledoc """
   The CreateCollectdTimeSeries request.
+
+  ## Attributes
+
+  - collectdPayloads (List[CollectdPayload]): The collectd payloads representing the time series data. You must not include more than a single point for each time series, so no two payloads can have the same values for all of the fields plugin, plugin_instance, type, and type_instance. Defaults to: `null`.
+  - collectdVersion (String): The version of collectd that collected the data. Example: \&quot;5.3.0-192.el6\&quot;. Defaults to: `null`.
+  - resource (MonitoredResource): The monitored resource associated with the time series. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"collectdPayloads",
     :"collectdVersion",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.CreateCollectdTimeSer
     value
     |> deserialize(:"collectdPayloads", :list, GoogleApi.Monitoring.V3.Model.CollectdPayload, options)
     |> deserialize(:"resource", :struct, GoogleApi.Monitoring.V3.Model.MonitoredResource, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Monitoring.V3.Model.CreateCollectdTimeSeriesRequest do
+  def encode(value, options) do
+    GoogleApi.Monitoring.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

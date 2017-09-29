@@ -20,9 +20,18 @@
 defmodule GoogleApi.Monitoring.V3.Model.TimeSeries do
   @moduledoc """
   A collection of data points that describes the time-varying values of a metric. A time series is identified by a combination of a fully-specified monitored resource and a fully-specified metric. This type is used for both listing and creating time series.
+
+  ## Attributes
+
+  - metric (Metric): The associated metric. A fully-specified metric used to identify the time series. Defaults to: `null`.
+  - metricKind (String): The metric kind of the time series. When listing time series, this metric kind might be different from the metric kind of the associated metric if this time series is an alignment or reduction of other time series.When creating a time series, this field is optional. If present, it must be the same as the metric kind of the associated metric. If the associated metric&#39;s descriptor must be auto-created, then this field specifies the metric kind of the new descriptor and must be either GAUGE (the default) or CUMULATIVE. Defaults to: `null`.
+    - Enum - one of [METRIC_KIND_UNSPECIFIED, GAUGE, DELTA, CUMULATIVE]
+  - points (List[Point]): The data points of this time series. When listing time series, the order of the points is specified by the list method.When creating a time series, this field must contain exactly one point and the point&#39;s type must be the same as the value type of the associated metric. If the associated metric&#39;s descriptor must be auto-created, then the value type of the descriptor is determined by the point&#39;s type, which must be BOOL, INT64, DOUBLE, or DISTRIBUTION. Defaults to: `null`.
+  - resource (MonitoredResource): The associated monitored resource. Custom metrics can use only certain monitored resource types in their time series data. Defaults to: `null`.
+  - valueType (String): The value type of the time series. When listing time series, this value type might be different from the value type of the associated metric if this time series is an alignment or reduction of other time series.When creating a time series, this field is optional. If present, it must be the same as the type of the data in the points field. Defaults to: `null`.
+    - Enum - one of [VALUE_TYPE_UNSPECIFIED, BOOL, INT64, DOUBLE, STRING, DISTRIBUTION, MONEY]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"metric",
     :"metricKind",
@@ -39,6 +48,12 @@ defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.TimeSeries do
     |> deserialize(:"metric", :struct, GoogleApi.Monitoring.V3.Model.Metric, options)
     |> deserialize(:"points", :list, GoogleApi.Monitoring.V3.Model.Point, options)
     |> deserialize(:"resource", :struct, GoogleApi.Monitoring.V3.Model.MonitoredResource, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Monitoring.V3.Model.TimeSeries do
+  def encode(value, options) do
+    GoogleApi.Monitoring.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

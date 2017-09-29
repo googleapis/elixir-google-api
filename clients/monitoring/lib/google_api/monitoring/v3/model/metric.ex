@@ -20,9 +20,13 @@
 defmodule GoogleApi.Monitoring.V3.Model.Metric do
   @moduledoc """
   A specific metric, identified by specifying values for all of the labels of a MetricDescriptor.
+
+  ## Attributes
+
+  - labels (Map[String, String]): The set of label values that uniquely identify this metric. All labels listed in the MetricDescriptor must be assigned values. Defaults to: `null`.
+  - type (String): An existing metric type, see google.api.MetricDescriptor. For example, custom.googleapis.com/invoice/paid/amount. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"labels",
     :"type"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.Metric do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Monitoring.V3.Model.Metric do
+  def encode(value, options) do
+    GoogleApi.Monitoring.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 
