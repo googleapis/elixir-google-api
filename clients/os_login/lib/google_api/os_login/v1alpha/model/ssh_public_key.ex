@@ -20,9 +20,14 @@
 defmodule GoogleApi.OSLogin.V1alpha.Model.SshPublicKey do
   @moduledoc """
   The SSH public key information associated with a Directory API User.
+
+  ## Attributes
+
+  - expirationTimeUsec (String): An expiration time in microseconds since epoch. Defaults to: `null`.
+  - fingerprint (String): [Output Only] The SHA-256 fingerprint of the SSH public key. Defaults to: `null`.
+  - key (String): Public key text in SSH format, defined by &lt;a href&#x3D;\&quot;https://www.ietf.org/rfc/rfc4253.txt\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC4253&lt;/a&gt; section 6.6. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"expirationTimeUsec",
     :"fingerprint",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.OSLogin.V1alpha.Model.SshPublicKey do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.OSLogin.V1alpha.Model.SshPublicKey do
+  def encode(value, options) do
+    GoogleApi.OSLogin.V1alpha.Deserializer.serialize_non_nil(value, options)
   end
 end
 

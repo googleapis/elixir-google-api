@@ -20,9 +20,15 @@
 defmodule GoogleApi.OSLogin.V1alpha.Model.LoginProfile do
   @moduledoc """
   The Directory API profile information used for logging in to a virtual machine on Google Compute Engine.
+
+  ## Attributes
+
+  - name (String): A unique user ID for identifying the user. Defaults to: `null`.
+  - posixAccounts (List[PosixAccount]): The list of POSIX accounts associated with the Directory API user. Defaults to: `null`.
+  - sshPublicKeys (Map[String, SshPublicKey]): A map from SSH public key fingerprint to the associated key object. Defaults to: `null`.
+  - suspended (Boolean): Indicates if the user is suspended. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name",
     :"posixAccounts",
@@ -37,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.OSLogin.V1alpha.Model.LoginProfile do
     value
     |> deserialize(:"posixAccounts", :list, GoogleApi.OSLogin.V1alpha.Model.PosixAccount, options)
     |> deserialize(:"sshPublicKeys", :map, GoogleApi.OSLogin.V1alpha.Model.SshPublicKey, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.OSLogin.V1alpha.Model.LoginProfile do
+  def encode(value, options) do
+    GoogleApi.OSLogin.V1alpha.Deserializer.serialize_non_nil(value, options)
   end
 end
 

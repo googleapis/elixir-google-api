@@ -20,9 +20,19 @@
 defmodule GoogleApi.OSLogin.V1alpha.Model.PosixAccount do
   @moduledoc """
   The POSIX account information associated with a Directory API User.
+
+  ## Attributes
+
+  - gecos (String): The GECOS (user information) entry for this account. Defaults to: `null`.
+  - gid (Integer): The default group ID. Defaults to: `null`.
+  - homeDirectory (String): The path to the home directory for this account. Defaults to: `null`.
+  - primary (Boolean): Only one POSIX account can be marked as primary. Defaults to: `null`.
+  - shell (String): The path to the logic shell for this account. Defaults to: `null`.
+  - systemId (String): System identifier for which account the username or uid applies to. By default, the empty value is used. Defaults to: `null`.
+  - uid (Integer): The user ID. Defaults to: `null`.
+  - username (String): The username of the POSIX account. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"gecos",
     :"gid",
@@ -38,6 +48,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.OSLogin.V1alpha.Model.PosixAccount do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.OSLogin.V1alpha.Model.PosixAccount do
+  def encode(value, options) do
+    GoogleApi.OSLogin.V1alpha.Deserializer.serialize_non_nil(value, options)
   end
 end
 

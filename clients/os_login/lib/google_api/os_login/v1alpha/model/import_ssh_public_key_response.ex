@@ -20,9 +20,12 @@
 defmodule GoogleApi.OSLogin.V1alpha.Model.ImportSshPublicKeyResponse do
   @moduledoc """
   A response message for importing an SSH public key.
+
+  ## Attributes
+
+  - loginProfile (LoginProfile): The login profile information for the user. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"loginProfile"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.OSLogin.V1alpha.Model.ImportSshPublicKeyR
   def decode(value, options) do
     value
     |> deserialize(:"loginProfile", :struct, GoogleApi.OSLogin.V1alpha.Model.LoginProfile, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.OSLogin.V1alpha.Model.ImportSshPublicKeyResponse do
+  def encode(value, options) do
+    GoogleApi.OSLogin.V1alpha.Deserializer.serialize_non_nil(value, options)
   end
 end
 
