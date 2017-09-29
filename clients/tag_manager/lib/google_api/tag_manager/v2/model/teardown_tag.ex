@@ -20,9 +20,13 @@
 defmodule GoogleApi.TagManager.V2.Model.TeardownTag do
   @moduledoc """
   Represents a tag that fires after another tag in order to tear down dependencies.
+
+  ## Attributes
+
+  - stopTeardownOnFailure (Boolean): If true, fire the teardown tag if and only if the main tag fires successfully. If false, fire the teardown tag regardless of main tag firing status. Defaults to: `null`.
+  - tagName (String): The name of the teardown tag. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"stopTeardownOnFailure",
     :"tagName"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.TeardownTag do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.TeardownTag do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

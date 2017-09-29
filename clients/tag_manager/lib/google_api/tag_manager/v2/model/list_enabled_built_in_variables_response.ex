@@ -20,9 +20,13 @@
 defmodule GoogleApi.TagManager.V2.Model.ListEnabledBuiltInVariablesResponse do
   @moduledoc """
   A list of enabled built-in variables.
+
+  ## Attributes
+
+  - builtInVariable (List[BuiltInVariable]): All GTM BuiltInVariables of a GTM container. Defaults to: `null`.
+  - nextPageToken (String): Continuation token for fetching the next page of results. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"builtInVariable",
     :"nextPageToken"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.ListEnabledBuiltInVar
   def decode(value, options) do
     value
     |> deserialize(:"builtInVariable", :list, GoogleApi.TagManager.V2.Model.BuiltInVariable, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.ListEnabledBuiltInVariablesResponse do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

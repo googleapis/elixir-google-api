@@ -20,9 +20,13 @@
 defmodule GoogleApi.TagManager.V2.Model.ListWorkspacesResponse do
   @moduledoc """
   A list of workspaces in a container.
+
+  ## Attributes
+
+  - nextPageToken (String): Continuation token for fetching the next page of results. Defaults to: `null`.
+  - workspace (List[Workspace]): All Workspaces of a GTM Container. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nextPageToken",
     :"workspace"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.ListWorkspacesRespons
   def decode(value, options) do
     value
     |> deserialize(:"workspace", :list, GoogleApi.TagManager.V2.Model.Workspace, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.ListWorkspacesResponse do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

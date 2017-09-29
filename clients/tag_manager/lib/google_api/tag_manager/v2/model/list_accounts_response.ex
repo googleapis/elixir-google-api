@@ -20,9 +20,13 @@
 defmodule GoogleApi.TagManager.V2.Model.ListAccountsResponse do
   @moduledoc """
   List Accounts Response.
+
+  ## Attributes
+
+  - account (List[Account]): List of GTM Accounts that a user has access to. Defaults to: `null`.
+  - nextPageToken (String): Continuation token for fetching the next page of results. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"account",
     :"nextPageToken"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.ListAccountsResponse 
   def decode(value, options) do
     value
     |> deserialize(:"account", :list, GoogleApi.TagManager.V2.Model.Account, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.ListAccountsResponse do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

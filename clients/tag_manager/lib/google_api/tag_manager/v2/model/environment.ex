@@ -20,9 +20,27 @@
 defmodule GoogleApi.TagManager.V2.Model.Environment do
   @moduledoc """
   Represents a Google Tag Manager Environment. Note that a user can create, delete and update environments of type USER, but can only update the enable_debug and url fields of environments of other types.
+
+  ## Attributes
+
+  - accountId (String): GTM Account ID. Defaults to: `null`.
+  - authorizationCode (String): The environment authorization code. Defaults to: `null`.
+  - authorizationTimestamp (Timestamp): The last update time-stamp for the authorization code. Defaults to: `null`.
+  - containerId (String): GTM Container ID. Defaults to: `null`.
+  - containerVersionId (String): Represents a link to a container version. Defaults to: `null`.
+  - description (String): The environment description. Can be set or changed only on USER type environments. Defaults to: `null`.
+  - enableDebug (Boolean): Whether or not to enable debug by default for the environment. Defaults to: `null`.
+  - environmentId (String): GTM Environment ID uniquely identifies the GTM Environment. Defaults to: `null`.
+  - fingerprint (String): The fingerprint of the GTM environment as computed at storage time. This value is recomputed whenever the environment is modified. Defaults to: `null`.
+  - name (String): The environment display name. Can be set or changed only on USER type environments. Defaults to: `null`.
+  - path (String): GTM Environment&#39;s API relative path. Defaults to: `null`.
+  - tagManagerUrl (String): Auto generated link to the tag manager UI Defaults to: `null`.
+  - type (String): The type of this environment. Defaults to: `null`.
+    - Enum - one of [latest, live, user, workspace]
+  - url (String): Default preview page url for the environment. Defaults to: `null`.
+  - workspaceId (String): Represents a link to a quick preview of a workspace. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accountId",
     :"authorizationCode",
@@ -47,6 +65,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.Environment do
   def decode(value, options) do
     value
     |> deserialize(:"authorizationTimestamp", :struct, GoogleApi.TagManager.V2.Model.Timestamp, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.Environment do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

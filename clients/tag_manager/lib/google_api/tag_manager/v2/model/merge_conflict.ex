@@ -20,9 +20,13 @@
 defmodule GoogleApi.TagManager.V2.Model.MergeConflict do
   @moduledoc """
   Represents a merge conflict.
+
+  ## Attributes
+
+  - entityInBaseVersion (Entity): The base version entity (since the latest sync operation) that has conflicting changes compared to the workspace. If this field is missing, it means the workspace entity is deleted from the base version. Defaults to: `null`.
+  - entityInWorkspace (Entity): The workspace entity that has conflicting changes compared to the base version. If an entity is deleted in a workspace, it will still appear with a deleted change status. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"entityInBaseVersion",
     :"entityInWorkspace"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.MergeConflict do
     value
     |> deserialize(:"entityInBaseVersion", :struct, GoogleApi.TagManager.V2.Model.Entity, options)
     |> deserialize(:"entityInWorkspace", :struct, GoogleApi.TagManager.V2.Model.Entity, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.MergeConflict do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

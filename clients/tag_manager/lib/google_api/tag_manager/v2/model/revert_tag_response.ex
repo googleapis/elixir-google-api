@@ -20,9 +20,12 @@
 defmodule GoogleApi.TagManager.V2.Model.RevertTagResponse do
   @moduledoc """
   The result of reverting a tag in a workspace.
+
+  ## Attributes
+
+  - tag (Tag): Tag as it appears in the latest container version since the last workspace synchronization operation. If no tag is present, that means the tag was deleted in the latest container version. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"tag"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.RevertTagResponse do
   def decode(value, options) do
     value
     |> deserialize(:"tag", :struct, GoogleApi.TagManager.V2.Model.Tag, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.RevertTagResponse do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

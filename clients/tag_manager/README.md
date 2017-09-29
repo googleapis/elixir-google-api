@@ -1,6 +1,6 @@
 # GoogleApi.TagManager.V2
 
-**TODO: Add description**
+Accesses Tag Manager accounts and containers.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_tag_manager` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_tag_manager, "~> 0.1.0"}]
+  [{:google_api_tag_manager, "~> 0.0.1"}]
 end
 ```
 

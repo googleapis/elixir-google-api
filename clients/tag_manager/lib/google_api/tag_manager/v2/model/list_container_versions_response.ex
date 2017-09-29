@@ -20,9 +20,13 @@
 defmodule GoogleApi.TagManager.V2.Model.ListContainerVersionsResponse do
   @moduledoc """
   List container versions response.
+
+  ## Attributes
+
+  - containerVersionHeader (List[ContainerVersionHeader]): All container version headers of a GTM Container. Defaults to: `null`.
+  - nextPageToken (String): Continuation token for fetching the next page of results. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"containerVersionHeader",
     :"nextPageToken"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.ListContainerVersions
   def decode(value, options) do
     value
     |> deserialize(:"containerVersionHeader", :list, GoogleApi.TagManager.V2.Model.ContainerVersionHeader, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.ListContainerVersionsResponse do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

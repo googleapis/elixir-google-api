@@ -20,9 +20,13 @@
 defmodule GoogleApi.TagManager.V2.Model.ListContainersResponse do
   @moduledoc """
   List Containers Response.
+
+  ## Attributes
+
+  - container (List[Container]): All Containers of a GTM Account. Defaults to: `null`.
+  - nextPageToken (String): Continuation token for fetching the next page of results. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"container",
     :"nextPageToken"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.ListContainersRespons
   def decode(value, options) do
     value
     |> deserialize(:"container", :list, GoogleApi.TagManager.V2.Model.Container, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.ListContainersResponse do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

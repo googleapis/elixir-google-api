@@ -20,9 +20,13 @@
 defmodule GoogleApi.TagManager.V2.Model.CreateContainerVersionRequestVersionOptions do
   @moduledoc """
   Options for new container versions.
+
+  ## Attributes
+
+  - name (String): The name of the container version to be created. Defaults to: `null`.
+  - notes (String): The notes of the container version to be created. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name",
     :"notes"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.CreateContainerVersionRequestVersionOptions do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.CreateContainerVersionRequestVersionOptions do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

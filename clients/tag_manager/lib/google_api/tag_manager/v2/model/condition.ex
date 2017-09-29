@@ -20,9 +20,14 @@
 defmodule GoogleApi.TagManager.V2.Model.Condition do
   @moduledoc """
   Represents a predicate.
+
+  ## Attributes
+
+  - parameter (List[Parameter]): A list of named parameters (key/value), depending on the condition&#39;s type. Notes:  - For binary operators, include parameters named arg0 and arg1 for specifying the left and right operands, respectively.  - At this time, the left operand (arg0) must be a reference to a variable.  - For case-insensitive Regex matching, include a boolean parameter named ignore_case that is set to true. If not specified or set to any other value, the matching will be case sensitive.  - To negate an operator, include a boolean parameter named negate boolean parameter that is set to true. Defaults to: `null`.
+  - type (String): The type of operator for this condition. Defaults to: `null`.
+    - Enum - one of [conditionTypeUnspecified, contains, cssSelector, endsWith, equals, greater, greaterOrEquals, less, lessOrEquals, matchRegex, startsWith, urlMatches]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"parameter",
     :"type"
@@ -34,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.Condition do
   def decode(value, options) do
     value
     |> deserialize(:"parameter", :list, GoogleApi.TagManager.V2.Model.Parameter, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.Condition do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

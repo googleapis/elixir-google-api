@@ -20,9 +20,16 @@
 defmodule GoogleApi.TagManager.V2.Model.UserPermission do
   @moduledoc """
   Represents a user&#39;s permissions to an account and its container.
+
+  ## Attributes
+
+  - accountAccess (AccountAccess): GTM Account access permissions. Defaults to: `null`.
+  - accountId (String): The Account ID uniquely identifies the GTM Account. Defaults to: `null`.
+  - containerAccess (List[ContainerAccess]): GTM Container access permissions. Defaults to: `null`.
+  - emailAddress (String): User&#39;s email address. Defaults to: `null`.
+  - path (String): GTM UserPermission&#39;s API relative path. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accountAccess",
     :"accountId",
@@ -38,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.UserPermission do
     value
     |> deserialize(:"accountAccess", :struct, GoogleApi.TagManager.V2.Model.AccountAccess, options)
     |> deserialize(:"containerAccess", :list, GoogleApi.TagManager.V2.Model.ContainerAccess, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.UserPermission do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

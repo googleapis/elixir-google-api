@@ -20,9 +20,43 @@
 defmodule GoogleApi.TagManager.V2.Model.Trigger do
   @moduledoc """
   Represents a Google Tag Manager Trigger
+
+  ## Attributes
+
+  - accountId (String): GTM Account ID. Defaults to: `null`.
+  - autoEventFilter (List[Condition]): Used in the case of auto event tracking. Defaults to: `null`.
+  - checkValidation (Parameter): Whether or not we should only fire tags if the form submit or link click event is not cancelled by some other event handler (e.g. because of validation). Only valid for Form Submission and Link Click triggers. Defaults to: `null`.
+  - containerId (String): GTM Container ID. Defaults to: `null`.
+  - continuousTimeMinMilliseconds (Parameter): A visibility trigger minimum continuous visible time (in milliseconds). Only valid for AMP Visibility trigger. Defaults to: `null`.
+  - customEventFilter (List[Condition]): Used in the case of custom event, which is fired iff all Conditions are true. Defaults to: `null`.
+  - eventName (Parameter): Name of the GTM event that is fired. Only valid for Timer triggers. Defaults to: `null`.
+  - filter (List[Condition]): The trigger will only fire iff all Conditions are true. Defaults to: `null`.
+  - fingerprint (String): The fingerprint of the GTM Trigger as computed at storage time. This value is recomputed whenever the trigger is modified. Defaults to: `null`.
+  - horizontalScrollPercentageList (Parameter): List of integer percentage values for scroll triggers. The trigger will fire when each percentage is reached when the view is scrolled horizontally. Only valid for AMP scroll triggers. Defaults to: `null`.
+  - interval (Parameter): Time between triggering recurring Timer Events (in milliseconds). Only valid for Timer triggers. Defaults to: `null`.
+  - intervalSeconds (Parameter): Time between Timer Events to fire (in seconds). Only valid for AMP Timer trigger. Defaults to: `null`.
+  - limit (Parameter): Limit of the number of GTM events this Timer Trigger will fire. If no limit is set, we will continue to fire GTM events until the user leaves the page. Only valid for Timer triggers. Defaults to: `null`.
+  - maxTimerLengthSeconds (Parameter): Max time to fire Timer Events (in seconds). Only valid for AMP Timer trigger. Defaults to: `null`.
+  - name (String): Trigger display name. Defaults to: `null`.
+  - notes (String): User notes on how to apply this trigger in the container. Defaults to: `null`.
+  - parentFolderId (String): Parent folder id. Defaults to: `null`.
+  - path (String): GTM Trigger&#39;s API relative path. Defaults to: `null`.
+  - selector (Parameter): A click trigger CSS selector (i.e. \&quot;a\&quot;, \&quot;button\&quot; etc.). Only valid for AMP Click trigger. Defaults to: `null`.
+  - tagManagerUrl (String): Auto generated link to the tag manager UI Defaults to: `null`.
+  - totalTimeMinMilliseconds (Parameter): A visibility trigger minimum total visible time (in milliseconds). Only valid for AMP Visibility trigger. Defaults to: `null`.
+  - triggerId (String): The Trigger ID uniquely identifies the GTM Trigger. Defaults to: `null`.
+  - type (String): Defines the data layer event that causes this trigger. Defaults to: `null`.
+    - Enum - one of [always, ampClick, ampScroll, ampTimer, ampVisibility, click, customEvent, domReady, eventTypeUnspecified, firebaseAppException, firebaseAppUpdate, firebaseCampaign, firebaseFirstOpen, firebaseInAppPurchase, firebaseNotificationDismiss, firebaseNotificationForeground, firebaseNotificationOpen, firebaseNotificationReceive, firebaseOsUpdate, firebaseSessionStart, firebaseUserEngagement, formSubmission, historyChange, jsError, linkClick, pageview, timer, windowLoaded]
+  - uniqueTriggerId (Parameter): Globally unique id of the trigger that auto-generates this (a Form Submit, Link Click or Timer listener) if any. Used to make incompatible auto-events work together with trigger filtering based on trigger ids. This value is populated during output generation since the tags implied by triggers don&#39;t exist until then. Only valid for Form Submit, Link Click and Timer triggers. Defaults to: `null`.
+  - verticalScrollPercentageList (Parameter): List of integer percentage values for scroll triggers. The trigger will fire when each percentage is reached when the view is scrolled vertically. Only valid for AMP scroll triggers. Defaults to: `null`.
+  - visibilitySelector (Parameter): A visibility trigger CSS selector (i.e. \&quot;#id\&quot;). Only valid for AMP Visibility trigger. Defaults to: `null`.
+  - visiblePercentageMax (Parameter): A visibility trigger maximum percent visibility. Only valid for AMP Visibility trigger. Defaults to: `null`.
+  - visiblePercentageMin (Parameter): A visibility trigger minimum percent visibility. Only valid for AMP Visibility trigger. Defaults to: `null`.
+  - waitForTags (Parameter): Whether or not we should delay the form submissions or link opening until all of the tags have fired (by preventing the default action and later simulating the default action). Only valid for Form Submission and Link Click triggers. Defaults to: `null`.
+  - waitForTagsTimeout (Parameter): How long to wait (in milliseconds) for tags to fire when &#39;waits_for_tags&#39; above evaluates to true. Only valid for Form Submission and Link Click triggers. Defaults to: `null`.
+  - workspaceId (String): GTM Workspace ID. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accountId",
     :"autoEventFilter",
@@ -82,6 +116,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.Trigger do
     |> deserialize(:"visiblePercentageMin", :struct, GoogleApi.TagManager.V2.Model.Parameter, options)
     |> deserialize(:"waitForTags", :struct, GoogleApi.TagManager.V2.Model.Parameter, options)
     |> deserialize(:"waitForTagsTimeout", :struct, GoogleApi.TagManager.V2.Model.Parameter, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.Trigger do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

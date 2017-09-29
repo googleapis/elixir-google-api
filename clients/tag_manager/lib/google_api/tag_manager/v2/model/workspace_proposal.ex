@@ -20,9 +20,18 @@
 defmodule GoogleApi.TagManager.V2.Model.WorkspaceProposal do
   @moduledoc """
   A workspace proposal represents an ongoing review of workspace changes in an effort to gain approval for container version creation.
+
+  ## Attributes
+
+  - authors (List[WorkspaceProposalUser]): List of authors for the workspace proposal. Defaults to: `null`.
+  - fingerprint (String): The fingerprint of the GTM workspace proposal as computed at storage time. This value is recomputed whenever the proposal is modified. Defaults to: `null`.
+  - history (List[WorkspaceProposalHistory]): Records the history of comments and status changes. Defaults to: `null`.
+  - path (String): GTM workspace proposal&#39;s relative path. Defaults to: `null`.
+  - reviewers (List[WorkspaceProposalUser]): Lists of reviewers for the workspace proposal. Defaults to: `null`.
+  - status (String): The status of the workspace proposal as it goes through review. Defaults to: `null`.
+    - Enum - one of [approved, cancelled, completed, requested, reviewed, statusUnspecified]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"authors",
     :"fingerprint",
@@ -40,6 +49,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.WorkspaceProposal do
     |> deserialize(:"authors", :list, GoogleApi.TagManager.V2.Model.WorkspaceProposalUser, options)
     |> deserialize(:"history", :list, GoogleApi.TagManager.V2.Model.WorkspaceProposalHistory, options)
     |> deserialize(:"reviewers", :list, GoogleApi.TagManager.V2.Model.WorkspaceProposalUser, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.WorkspaceProposal do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

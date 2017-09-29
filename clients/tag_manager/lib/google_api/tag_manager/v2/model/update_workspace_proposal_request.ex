@@ -20,9 +20,16 @@
 defmodule GoogleApi.TagManager.V2.Model.UpdateWorkspaceProposalRequest do
   @moduledoc """
   Updates a workspace proposal with patch-like semantics.
+
+  ## Attributes
+
+  - fingerprint (String): When provided, this fingerprint must match the fingerprint of the proposal in storage. Defaults to: `null`.
+  - newComment (WorkspaceProposalHistoryComment): If present, a new comment is added to the workspace proposal history. Defaults to: `null`.
+  - reviewers (List[WorkspaceProposalUser]): If present, the list of reviewers of the workspace proposal is updated. Defaults to: `null`.
+  - status (String): If present, the status of the workspace proposal is updated. Defaults to: `null`.
+    - Enum - one of [approved, cancelled, completed, requested, reviewed, statusUnspecified]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fingerprint",
     :"newComment",
@@ -37,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.UpdateWorkspacePropos
     value
     |> deserialize(:"newComment", :struct, GoogleApi.TagManager.V2.Model.WorkspaceProposalHistoryComment, options)
     |> deserialize(:"reviewers", :list, GoogleApi.TagManager.V2.Model.WorkspaceProposalUser, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.UpdateWorkspaceProposalRequest do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

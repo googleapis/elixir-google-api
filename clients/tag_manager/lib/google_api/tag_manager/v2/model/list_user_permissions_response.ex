@@ -20,9 +20,13 @@
 defmodule GoogleApi.TagManager.V2.Model.ListUserPermissionsResponse do
   @moduledoc """
   List user permissions response.
+
+  ## Attributes
+
+  - nextPageToken (String): Continuation token for fetching the next page of results. Defaults to: `null`.
+  - userPermission (List[UserPermission]): All GTM UserPermissions of a GTM Account. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nextPageToken",
     :"userPermission"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.ListUserPermissionsRe
   def decode(value, options) do
     value
     |> deserialize(:"userPermission", :list, GoogleApi.TagManager.V2.Model.UserPermission, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.ListUserPermissionsResponse do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

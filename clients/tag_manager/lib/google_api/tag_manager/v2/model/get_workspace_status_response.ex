@@ -20,9 +20,13 @@
 defmodule GoogleApi.TagManager.V2.Model.GetWorkspaceStatusResponse do
   @moduledoc """
   The changes that have occurred in the workspace since the base container version.
+
+  ## Attributes
+
+  - mergeConflict (List[MergeConflict]): The merge conflict after sync. Defaults to: `null`.
+  - workspaceChange (List[Entity]): Entities that have been changed in the workspace. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"mergeConflict",
     :"workspaceChange"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.GetWorkspaceStatusRes
     value
     |> deserialize(:"mergeConflict", :list, GoogleApi.TagManager.V2.Model.MergeConflict, options)
     |> deserialize(:"workspaceChange", :list, GoogleApi.TagManager.V2.Model.Entity, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.GetWorkspaceStatusResponse do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

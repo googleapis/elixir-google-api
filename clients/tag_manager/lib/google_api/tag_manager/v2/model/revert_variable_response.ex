@@ -20,9 +20,12 @@
 defmodule GoogleApi.TagManager.V2.Model.RevertVariableResponse do
   @moduledoc """
   The result of reverting a variable in a workspace.
+
+  ## Attributes
+
+  - variable (Variable): Variable as it appears in the latest container version since the last workspace synchronization operation. If no variable is present, that means the variable was deleted in the latest container version. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"variable"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.RevertVariableRespons
   def decode(value, options) do
     value
     |> deserialize(:"variable", :struct, GoogleApi.TagManager.V2.Model.Variable, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.RevertVariableResponse do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

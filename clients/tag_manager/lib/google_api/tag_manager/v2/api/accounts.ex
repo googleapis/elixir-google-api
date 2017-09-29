@@ -62,7 +62,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{parent}/containers")
+    |> url("/{+parent}/containers", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -105,7 +107,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{parent}/environments")
+    |> url("/{+parent}/environments", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -148,7 +152,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/#{parent}/environments")
+    |> url("/{+parent}/environments", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -193,7 +199,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:patch)
-    |> url("/#{path}")
+    |> url("/{+path}", %{
+         "path" => URI.encode_www_form(path)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -236,7 +244,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{path}:reauthorize")
+    |> url("/{+path}:reauthorize", %{
+         "path" => URI.encode_www_form(path)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -279,7 +289,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/#{parent}/containers")
+    |> url("/{+parent}/containers", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -320,7 +332,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/#{parent}/version_headers:latest")
+    |> url("/{+parent}/version_headers:latest", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -365,7 +379,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/#{parent}/version_headers")
+    |> url("/{+parent}/version_headers", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -406,7 +422,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/#{parent}/versions:live")
+    |> url("/{+parent}/versions:live", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -449,7 +467,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{path}:publish")
+    |> url("/{+path}:publish", %{
+         "path" => URI.encode_www_form(path)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -490,7 +510,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{path}:set_latest")
+    |> url("/{+path}:set_latest", %{
+         "path" => URI.encode_www_form(path)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -531,7 +553,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{path}:undelete")
+    |> url("/{+path}:undelete", %{
+         "path" => URI.encode_www_form(path)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -574,7 +598,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{parent}/built_in_variables")
+    |> url("/{+parent}/built_in_variables", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -617,7 +643,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/#{parent}/built_in_variables")
+    |> url("/{+parent}/built_in_variables", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -660,7 +688,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{path}/built_in_variables:revert")
+    |> url("/{+path}/built_in_variables:revert", %{
+         "path" => URI.encode_www_form(path)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -703,7 +733,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{parent}/workspaces")
+    |> url("/{+parent}/workspaces", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -746,7 +778,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{path}:create_version")
+    |> url("/{+path}:create_version", %{
+         "path" => URI.encode_www_form(path)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -789,7 +823,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{parent}/folders")
+    |> url("/{+parent}/folders", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -832,7 +868,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{path}:entities")
+    |> url("/{+path}:entities", %{
+         "path" => URI.encode_www_form(path)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -875,7 +913,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/#{parent}/folders")
+    |> url("/{+parent}/folders", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -924,7 +964,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{path}:move_entities_to_folder")
+    |> url("/{+path}:move_entities_to_folder", %{
+         "path" => URI.encode_www_form(path)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -965,7 +1007,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/#{path}/status")
+    |> url("/{+path}/status", %{
+         "path" => URI.encode_www_form(path)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1008,7 +1052,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/#{parent}/workspaces")
+    |> url("/{+parent}/workspaces", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1051,7 +1097,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{parent}/proposal")
+    |> url("/{+parent}/proposal", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1092,7 +1140,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{path}:quick_preview")
+    |> url("/{+path}:quick_preview", %{
+         "path" => URI.encode_www_form(path)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1137,7 +1187,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{path}:resolve_conflict")
+    |> url("/{+path}:resolve_conflict", %{
+         "path" => URI.encode_www_form(path)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1178,7 +1230,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{path}:sync")
+    |> url("/{+path}:sync", %{
+         "path" => URI.encode_www_form(path)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1221,7 +1275,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{parent}/tags")
+    |> url("/{+parent}/tags", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1264,7 +1320,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/#{parent}/tags")
+    |> url("/{+parent}/tags", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1307,7 +1365,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{parent}/triggers")
+    |> url("/{+parent}/triggers", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1350,7 +1410,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/#{parent}/triggers")
+    |> url("/{+parent}/triggers", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1393,7 +1455,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{parent}/variables")
+    |> url("/{+parent}/variables", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1436,7 +1500,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/#{parent}/variables")
+    |> url("/{+parent}/variables", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1479,7 +1545,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{path}:revert")
+    |> url("/{+path}:revert", %{
+         "path" => URI.encode_www_form(path)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1564,7 +1632,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:post)
-    |> url("/#{parent}/user_permissions")
+    |> url("/{+parent}/user_permissions", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1607,7 +1677,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:delete)
-    |> url("/#{path}")
+    |> url("/{+path}", %{
+         "path" => URI.encode_www_form(path)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1650,7 +1722,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/#{path}")
+    |> url("/{+path}", %{
+         "path" => URI.encode_www_form(path)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1693,7 +1767,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/#{parent}/user_permissions")
+    |> url("/{+parent}/user_permissions", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1738,7 +1814,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     }
     %{}
     |> method(:put)
-    |> url("/#{path}")
+    |> url("/{+path}", %{
+         "path" => URI.encode_www_form(path)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

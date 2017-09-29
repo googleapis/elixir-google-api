@@ -20,9 +20,17 @@
 defmodule GoogleApi.TagManager.V2.Model.Parameter do
   @moduledoc """
   Represents a Google Tag Manager Parameter.
+
+  ## Attributes
+
+  - key (String): The named key that uniquely identifies a parameter. Required for top-level parameters, as well as map values. Ignored for list values. Defaults to: `null`.
+  - list (List[Parameter]): This list parameter&#39;s parameters (keys will be ignored). Defaults to: `null`.
+  - map (List[Parameter]): This map parameter&#39;s parameters (must have keys; keys must be unique). Defaults to: `null`.
+  - type (String): The parameter type. Valid values are:  - boolean: The value represents a boolean, represented as &#39;true&#39; or &#39;false&#39;  - integer: The value represents a 64-bit signed integer value, in base 10  - list: A list of parameters should be specified  - map: A map of parameters should be specified  - template: The value represents any text; this can include variable references (even variable references that might return non-string types) Defaults to: `null`.
+    - Enum - one of [boolean, integer, list, map, template, typeUnspecified]
+  - value (String): A parameter&#39;s value (may contain variable references such as \&quot;{{myVariable}}\&quot;) as appropriate to the specified type. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"key",
     :"list",
@@ -38,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.Parameter do
     value
     |> deserialize(:"list", :list, GoogleApi.TagManager.V2.Model.Parameter, options)
     |> deserialize(:"map", :list, GoogleApi.TagManager.V2.Model.Parameter, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.Parameter do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

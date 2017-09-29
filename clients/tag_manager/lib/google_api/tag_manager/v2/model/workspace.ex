@@ -20,9 +20,19 @@
 defmodule GoogleApi.TagManager.V2.Model.Workspace do
   @moduledoc """
   Represents a Google Tag Manager Container Workspace.
+
+  ## Attributes
+
+  - accountId (String): GTM Account ID. Defaults to: `null`.
+  - containerId (String): GTM Container ID. Defaults to: `null`.
+  - description (String): Workspace description. Defaults to: `null`.
+  - fingerprint (String): The fingerprint of the GTM Workspace as computed at storage time. This value is recomputed whenever the workspace is modified. Defaults to: `null`.
+  - name (String): Workspace display name. Defaults to: `null`.
+  - path (String): GTM Workspace&#39;s API relative path. Defaults to: `null`.
+  - tagManagerUrl (String): Auto generated link to the tag manager UI Defaults to: `null`.
+  - workspaceId (String): The Workspace ID uniquely identifies the GTM Workspace. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accountId",
     :"containerId",
@@ -38,6 +48,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.Workspace do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.Workspace do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

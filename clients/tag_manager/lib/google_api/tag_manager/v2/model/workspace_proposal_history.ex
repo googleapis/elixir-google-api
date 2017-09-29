@@ -20,9 +20,17 @@
 defmodule GoogleApi.TagManager.V2.Model.WorkspaceProposalHistory do
   @moduledoc """
   A history event that represents a comment or status change in the proposal.
+
+  ## Attributes
+
+  - comment (WorkspaceProposalHistoryComment): A user or reviewer comment. Defaults to: `null`.
+  - createdBy (WorkspaceProposalUser): The party responsible for the change in history. Defaults to: `null`.
+  - createdTimestamp (Timestamp): When this history event was added to the workspace proposal. Defaults to: `null`.
+  - statusChange (WorkspaceProposalHistoryStatusChange): A change in the proposal&#39;s status. Defaults to: `null`.
+  - type (String): The history type distinguishing between comments and status changes. Defaults to: `null`.
+    - Enum - one of [comment, statusChange, unspecified]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"comment",
     :"createdBy",
@@ -40,6 +48,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.WorkspaceProposalHist
     |> deserialize(:"createdBy", :struct, GoogleApi.TagManager.V2.Model.WorkspaceProposalUser, options)
     |> deserialize(:"createdTimestamp", :struct, GoogleApi.TagManager.V2.Model.Timestamp, options)
     |> deserialize(:"statusChange", :struct, GoogleApi.TagManager.V2.Model.WorkspaceProposalHistoryStatusChange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.WorkspaceProposalHistory do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 
