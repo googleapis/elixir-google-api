@@ -20,9 +20,15 @@
 defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Model.InstanceUpdateList do
   @moduledoc """
   Response returned by ListInstanceUpdates method.
+
+  ## Attributes
+
+  - items (List[InstanceUpdate]): Collection of requested instance updates. Defaults to: `null`.
+  - kind (String): [Output Only] Type of the resource. Defaults to: `null`.
+  - nextPageToken (String): A token used to continue a truncated list request. Defaults to: `null`.
+  - selfLink (String): [Output Only] The fully qualified URL for the resource. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"items",
     :"kind",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Instance
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.InstanceUpdate, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ReplicaPoolUpdater.V1beta1.Model.InstanceUpdateList do
+  def encode(value, options) do
+    GoogleApi.ReplicaPoolUpdater.V1beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

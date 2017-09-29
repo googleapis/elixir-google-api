@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Model.InstanceUpdate_error_errors do
+defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Model.InstanceUpdateErrorErrors do
   @moduledoc """
   
+
+  ## Attributes
+
+  - code (String): [Output Only] The error type identifier for this error. Defaults to: `null`.
+  - location (String): [Output Only] Indicates the field in the request that caused the error. This property is optional. Defaults to: `null`.
+  - message (String): [Output Only] An optional, human-readable error message. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"code",
     :"location",
@@ -30,9 +35,15 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Model.InstanceUpdate_error_errors
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ReplicaPoolUpdater.V1beta1.Model.InstanceUpdate_error_errors do
+defimpl Poison.Decoder, for: GoogleApi.ReplicaPoolUpdater.V1beta1.Model.InstanceUpdateErrorErrors do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ReplicaPoolUpdater.V1beta1.Model.InstanceUpdateErrorErrors do
+  def encode(value, options) do
+    GoogleApi.ReplicaPoolUpdater.V1beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

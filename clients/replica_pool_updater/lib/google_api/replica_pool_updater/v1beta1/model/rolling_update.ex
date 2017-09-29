@@ -20,9 +20,27 @@
 defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Model.RollingUpdate do
   @moduledoc """
   The following represents a resource describing a single update (rollout) of a group of instances to the given template.
+
+  ## Attributes
+
+  - actionType (String): Specifies the action to take for each instance within the instance group. This can be RECREATE which will recreate each instance and is only available for managed instance groups. It can also be REBOOT which performs a soft reboot for each instance and is only available for regular (non-managed) instance groups. Defaults to: `null`.
+  - creationTimestamp (String): [Output Only] Creation timestamp in RFC3339 text format. Defaults to: `null`.
+  - description (String): An optional textual description of the resource; provided by the client when the resource is created. Defaults to: `null`.
+  - error (RollingUpdateError):  Defaults to: `null`.
+  - id (String): [Output Only] Unique identifier for the resource; defined by the server. Defaults to: `null`.
+  - instanceGroup (String): Fully-qualified URL of an instance group being updated. Exactly one of instanceGroupManager and instanceGroup must be set. Defaults to: `null`.
+  - instanceGroupManager (String): Fully-qualified URL of an instance group manager being updated. Exactly one of instanceGroupManager and instanceGroup must be set. Defaults to: `null`.
+  - instanceTemplate (String): Fully-qualified URL of an instance template to apply. Defaults to: `null`.
+  - kind (String): [Output Only] Type of the resource. Defaults to: `null`.
+  - oldInstanceTemplate (String): Fully-qualified URL of the instance template encountered while starting the update. Defaults to: `null`.
+  - policy (RollingUpdatePolicy):  Defaults to: `null`.
+  - progress (Integer): [Output Only] An optional progress indicator that ranges from 0 to 100. There is no requirement that this be linear or support any granularity of operations. This should not be used to guess at when the update will be complete. This number should be monotonically increasing as the update progresses. Defaults to: `null`.
+  - selfLink (String): [Output Only] The fully qualified URL for the resource. Defaults to: `null`.
+  - status (String): [Output Only] Status of the update. Possible values are:   - \&quot;ROLLING_FORWARD\&quot;: The update is going forward.  - \&quot;ROLLING_BACK\&quot;: The update is being rolled back.  - \&quot;PAUSED\&quot;: The update is temporarily paused (inactive).  - \&quot;ROLLED_OUT\&quot;: The update is finished, all instances have been updated successfully.  - \&quot;ROLLED_BACK\&quot;: The update is finished, all instances have been reverted to the previous template.  - \&quot;CANCELLED\&quot;: The update is paused and no longer can be resumed, undefined how many instances are running in which template. Defaults to: `null`.
+  - statusMessage (String): [Output Only] An optional textual description of the current status of the update. Defaults to: `null`.
+  - user (String): [Output Only] User who requested the update, for example: user@example.com. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"actionType",
     :"creationTimestamp",
@@ -47,8 +65,14 @@ defimpl Poison.Decoder, for: GoogleApi.ReplicaPoolUpdater.V1beta1.Model.RollingU
   import GoogleApi.ReplicaPoolUpdater.V1beta1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"error", :struct, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.RollingUpdate_error, options)
-    |> deserialize(:"policy", :struct, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.RollingUpdate_policy, options)
+    |> deserialize(:"error", :struct, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.RollingUpdateError, options)
+    |> deserialize(:"policy", :struct, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.RollingUpdatePolicy, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ReplicaPoolUpdater.V1beta1.Model.RollingUpdate do
+  def encode(value, options) do
+    GoogleApi.ReplicaPoolUpdater.V1beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

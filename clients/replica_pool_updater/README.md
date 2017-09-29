@@ -1,6 +1,6 @@
-# GoogleApi.ReplicaPoolUpdater.V1BETA1
+# GoogleApi.ReplicaPoolUpdater.V1beta1
 
-**TODO: Add description**
+[Deprecated. Please use compute.instanceGroupManagers.update method. replicapoolupdater API will be disabled after December 30th, 2016] Updates groups of Compute Engine instances.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_replica_pool_updater` to your list of dependencies in `mix
 
 ```elixir
 def deps do
-  [{:google_api_replica_pool_updater, "~> 0.1.0"}]
+  [{:google_api_replica_pool_updater, "~> 0.0.1"}]
 end
 ```
 

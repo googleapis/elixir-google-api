@@ -62,7 +62,11 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Api.RollingUpdates do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/zones/#{zone}/rollingUpdates/#{rolling_update}/cancel")
+    |> url("/{project}/zones/{zone}/rollingUpdates/{rollingUpdate}/cancel", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone),
+         "rollingUpdate" => URI.encode_www_form(rolling_update)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -105,7 +109,11 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Api.RollingUpdates do
     }
     %{}
     |> method(:get)
-    |> url("/#{project}/zones/#{zone}/rollingUpdates/#{rolling_update}")
+    |> url("/{project}/zones/{zone}/rollingUpdates/{rollingUpdate}", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone),
+         "rollingUpdate" => URI.encode_www_form(rolling_update)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -149,7 +157,10 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Api.RollingUpdates do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/zones/#{zone}/rollingUpdates")
+    |> url("/{project}/zones/{zone}/rollingUpdates", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -197,7 +208,10 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Api.RollingUpdates do
     }
     %{}
     |> method(:get)
-    |> url("/#{project}/zones/#{zone}/rollingUpdates")
+    |> url("/{project}/zones/{zone}/rollingUpdates", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -246,7 +260,11 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Api.RollingUpdates do
     }
     %{}
     |> method(:get)
-    |> url("/#{project}/zones/#{zone}/rollingUpdates/#{rolling_update}/instanceUpdates")
+    |> url("/{project}/zones/{zone}/rollingUpdates/{rollingUpdate}/instanceUpdates", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone),
+         "rollingUpdate" => URI.encode_www_form(rolling_update)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -289,7 +307,11 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Api.RollingUpdates do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/zones/#{zone}/rollingUpdates/#{rolling_update}/pause")
+    |> url("/{project}/zones/{zone}/rollingUpdates/{rollingUpdate}/pause", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone),
+         "rollingUpdate" => URI.encode_www_form(rolling_update)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -332,7 +354,11 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Api.RollingUpdates do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/zones/#{zone}/rollingUpdates/#{rolling_update}/resume")
+    |> url("/{project}/zones/{zone}/rollingUpdates/{rollingUpdate}/resume", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone),
+         "rollingUpdate" => URI.encode_www_form(rolling_update)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -375,7 +401,11 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Api.RollingUpdates do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/zones/#{zone}/rollingUpdates/#{rolling_update}/rollback")
+    |> url("/{project}/zones/{zone}/rollingUpdates/{rollingUpdate}/rollback", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone),
+         "rollingUpdate" => URI.encode_www_form(rolling_update)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

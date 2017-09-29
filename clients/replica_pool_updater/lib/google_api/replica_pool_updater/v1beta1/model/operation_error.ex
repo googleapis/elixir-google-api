@@ -17,22 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation_error do
+defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Model.OperationError do
   @moduledoc """
   [Output Only] If errors occurred during processing of this operation, this field will be populated.
+
+  ## Attributes
+
+  - errors (List[InstanceUpdateErrorErrors]): [Output Only] The array of errors encountered while processing this operation. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"errors"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation_error do
+defimpl Poison.Decoder, for: GoogleApi.ReplicaPoolUpdater.V1beta1.Model.OperationError do
   import GoogleApi.ReplicaPoolUpdater.V1beta1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"errors", :list, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.InstanceUpdate_error_errors, options)
+    |> deserialize(:"errors", :list, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.InstanceUpdateErrorErrors, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ReplicaPoolUpdater.V1beta1.Model.OperationError do
+  def encode(value, options) do
+    GoogleApi.ReplicaPoolUpdater.V1beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
