@@ -17,20 +17,29 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Prediction.V16.Model.Analyze_dataDescription_text do
+defmodule GoogleApi.Prediction.V16.Model.AnalyzeDataDescriptionText do
   @moduledoc """
   Description of multiple-word text values of this feature.
+
+  ## Attributes
+
+  - count (String): Number of multiple-word text values for this feature. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"count"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.Analyze_dataDescription_text do
+defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.AnalyzeDataDescriptionText do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Prediction.V16.Model.AnalyzeDataDescriptionText do
+  def encode(value, options) do
+    GoogleApi.Prediction.V16.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,17 @@
 defmodule GoogleApi.Prediction.V16.Model.Output do
   @moduledoc """
   
+
+  ## Attributes
+
+  - id (String): The unique name for the predictive model. Defaults to: `null`.
+  - kind (String): What kind of resource this is. Defaults to: `null`.
+  - outputLabel (String): The most likely class label (Categorical models only). Defaults to: `null`.
+  - outputMulti (List[OutputOutputMulti]): A list of class labels with their estimated probabilities (Categorical models only). Defaults to: `null`.
+  - outputValue (String): The estimated regression value (Regression models only). Defaults to: `null`.
+  - selfLink (String): A URL to re-request this resource. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"kind",
@@ -37,7 +45,13 @@ defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.Output do
   import GoogleApi.Prediction.V16.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"outputMulti", :list, GoogleApi.Prediction.V16.Model.Output_outputMulti, options)
+    |> deserialize(:"outputMulti", :list, GoogleApi.Prediction.V16.Model.OutputOutputMulti, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Prediction.V16.Model.Output do
+  def encode(value, options) do
+    GoogleApi.Prediction.V16.Deserializer.serialize_non_nil(value, options)
   end
 end
 

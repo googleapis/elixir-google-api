@@ -17,22 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Prediction.V16.Model.Input_input do
+defmodule GoogleApi.Prediction.V16.Model.InputInput do
   @moduledoc """
   Input to the model for a prediction.
+
+  ## Attributes
+
+  - csvInstance (List[ErrorUnknown]): A list of input features, these can be strings or doubles. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"csvInstance"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.Input_input do
+defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.InputInput do
   import GoogleApi.Prediction.V16.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"csvInstance", :list, GoogleApi.Prediction.V16.Model., options)
+    |> deserialize(:"csvInstance", :list, nil, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Prediction.V16.Model.InputInput do
+  def encode(value, options) do
+    GoogleApi.Prediction.V16.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Prediction.V16.Model.Analyze_modelDescription do
+defmodule GoogleApi.Prediction.V16.Model.AnalyzeModelDescription do
   @moduledoc """
   Description of the model.
+
+  ## Attributes
+
+  - confusionMatrix (Map[String, Map[String, String]]): An output confusion matrix. This shows an estimate for how this model will do in predictions. This is first indexed by the true class label. For each true class label, this provides a pair {predicted_label, count}, where count is the estimated number of times the model will predict the predicted label given the true label. Will not output if more then 100 classes (Categorical models only). Defaults to: `null`.
+  - confusionMatrixRowTotals (Map[String, String]): A list of the confusion matrix row totals. Defaults to: `null`.
+  - modelinfo (Insert2): Basic information about the model. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"confusionMatrix",
     :"confusionMatrixRowTotals",
@@ -30,11 +35,17 @@ defmodule GoogleApi.Prediction.V16.Model.Analyze_modelDescription do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.Analyze_modelDescription do
+defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.AnalyzeModelDescription do
   import GoogleApi.Prediction.V16.Deserializer
   def decode(value, options) do
     value
     |> deserialize(:"modelinfo", :struct, GoogleApi.Prediction.V16.Model.Insert2, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Prediction.V16.Model.AnalyzeModelDescription do
+  def encode(value, options) do
+    GoogleApi.Prediction.V16.Deserializer.serialize_non_nil(value, options)
   end
 end
 

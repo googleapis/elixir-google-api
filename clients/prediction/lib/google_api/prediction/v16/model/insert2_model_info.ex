@@ -17,12 +17,20 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Prediction.V16.Model.Insert2_modelInfo do
+defmodule GoogleApi.Prediction.V16.Model.Insert2ModelInfo do
   @moduledoc """
   Model metadata.
+
+  ## Attributes
+
+  - classWeightedAccuracy (String): Estimated accuracy of model taking utility weights into account (Categorical models only). Defaults to: `null`.
+  - classificationAccuracy (String): A number between 0.0 and 1.0, where 1.0 is 100% accurate. This is an estimate, based on the amount and quality of the training data, of the estimated prediction accuracy. You can use this is a guide to decide whether the results are accurate enough for your needs. This estimate will be more reliable if your real input data is similar to your training data (Categorical models only). Defaults to: `null`.
+  - meanSquaredError (String): An estimated mean squared error. The can be used to measure the quality of the predicted model (Regression models only). Defaults to: `null`.
+  - modelType (String): Type of predictive model (CLASSIFICATION or REGRESSION). Defaults to: `null`.
+  - numberInstances (String): Number of valid data instances used in the trained model. Defaults to: `null`.
+  - numberLabels (String): Number of class labels in the trained model (Categorical models only). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"classWeightedAccuracy",
     :"classificationAccuracy",
@@ -33,9 +41,15 @@ defmodule GoogleApi.Prediction.V16.Model.Insert2_modelInfo do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.Insert2_modelInfo do
+defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.Insert2ModelInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Prediction.V16.Model.Insert2ModelInfo do
+  def encode(value, options) do
+    GoogleApi.Prediction.V16.Deserializer.serialize_non_nil(value, options)
   end
 end
 

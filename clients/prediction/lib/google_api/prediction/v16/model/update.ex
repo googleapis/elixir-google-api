@@ -20,9 +20,13 @@
 defmodule GoogleApi.Prediction.V16.Model.Update do
   @moduledoc """
   
+
+  ## Attributes
+
+  - csvInstance (List[ErrorUnknown]): The input features for this instance. Defaults to: `null`.
+  - output (String): The generic output value - could be regression or class label. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"csvInstance",
     :"output"
@@ -33,7 +37,13 @@ defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.Update do
   import GoogleApi.Prediction.V16.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"csvInstance", :list, GoogleApi.Prediction.V16.Model., options)
+    |> deserialize(:"csvInstance", :list, nil, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Prediction.V16.Model.Update do
+  def encode(value, options) do
+    GoogleApi.Prediction.V16.Deserializer.serialize_non_nil(value, options)
   end
 end
 

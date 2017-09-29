@@ -20,9 +20,22 @@
 defmodule GoogleApi.Prediction.V16.Model.Insert2 do
   @moduledoc """
   
+
+  ## Attributes
+
+  - created (DateTime): Insert time of the model (as a RFC 3339 timestamp). Defaults to: `null`.
+  - id (String): The unique name for the predictive model. Defaults to: `null`.
+  - kind (String): What kind of resource this is. Defaults to: `null`.
+  - modelInfo (Insert2ModelInfo):  Defaults to: `null`.
+  - modelType (String): Type of predictive model (CLASSIFICATION or REGRESSION). Defaults to: `null`.
+  - selfLink (String): A URL to re-request this resource. Defaults to: `null`.
+  - storageDataLocation (String): Google storage location of the training data file. Defaults to: `null`.
+  - storagePMMLLocation (String): Google storage location of the preprocessing pmml file. Defaults to: `null`.
+  - storagePMMLModelLocation (String): Google storage location of the pmml model file. Defaults to: `null`.
+  - trainingComplete (DateTime): Training completion time (as a RFC 3339 timestamp). Defaults to: `null`.
+  - trainingStatus (String): The current status of the training job. This can be one of following: RUNNING; DONE; ERROR; ERROR: TRAINING JOB NOT FOUND Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"created",
     :"id",
@@ -42,7 +55,13 @@ defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.Insert2 do
   import GoogleApi.Prediction.V16.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"modelInfo", :struct, GoogleApi.Prediction.V16.Model.Insert2_modelInfo, options)
+    |> deserialize(:"modelInfo", :struct, GoogleApi.Prediction.V16.Model.Insert2ModelInfo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Prediction.V16.Model.Insert2 do
+  def encode(value, options) do
+    GoogleApi.Prediction.V16.Deserializer.serialize_non_nil(value, options)
   end
 end
 

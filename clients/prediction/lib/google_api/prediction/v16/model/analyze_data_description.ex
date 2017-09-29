@@ -17,24 +17,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Prediction.V16.Model.Analyze_dataDescription do
+defmodule GoogleApi.Prediction.V16.Model.AnalyzeDataDescription do
   @moduledoc """
   Description of the data the model was trained on.
+
+  ## Attributes
+
+  - features (List[AnalyzeDataDescriptionFeatures]): Description of the input features in the data set. Defaults to: `null`.
+  - outputFeature (AnalyzeDataDescriptionOutputFeature):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"features",
     :"outputFeature"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.Analyze_dataDescription do
+defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.AnalyzeDataDescription do
   import GoogleApi.Prediction.V16.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"features", :list, GoogleApi.Prediction.V16.Model.Analyze_dataDescription_features, options)
-    |> deserialize(:"outputFeature", :struct, GoogleApi.Prediction.V16.Model.Analyze_dataDescription_outputFeature, options)
+    |> deserialize(:"features", :list, GoogleApi.Prediction.V16.Model.AnalyzeDataDescriptionFeatures, options)
+    |> deserialize(:"outputFeature", :struct, GoogleApi.Prediction.V16.Model.AnalyzeDataDescriptionOutputFeature, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Prediction.V16.Model.AnalyzeDataDescription do
+  def encode(value, options) do
+    GoogleApi.Prediction.V16.Deserializer.serialize_non_nil(value, options)
   end
 end
 

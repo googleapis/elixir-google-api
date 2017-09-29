@@ -20,9 +20,19 @@
 defmodule GoogleApi.Prediction.V16.Model.Insert do
   @moduledoc """
   
+
+  ## Attributes
+
+  - id (String): The unique name for the predictive model. Defaults to: `null`.
+  - modelType (String): Type of predictive model (classification or regression). Defaults to: `null`.
+  - sourceModel (String): The Id of the model to be copied over. Defaults to: `null`.
+  - storageDataLocation (String): Google storage location of the training data file. Defaults to: `null`.
+  - storagePMMLLocation (String): Google storage location of the preprocessing pmml file. Defaults to: `null`.
+  - storagePMMLModelLocation (String): Google storage location of the pmml model file. Defaults to: `null`.
+  - trainingInstances (List[InsertTrainingInstances]): Instances to train model on. Defaults to: `null`.
+  - utility (List[Map[String, Float]]): A class weighting function, which allows the importance weights for class labels to be specified (Categorical models only). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"modelType",
@@ -39,7 +49,13 @@ defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.Insert do
   import GoogleApi.Prediction.V16.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"trainingInstances", :list, GoogleApi.Prediction.V16.Model.Insert_trainingInstances, options)
+    |> deserialize(:"trainingInstances", :list, GoogleApi.Prediction.V16.Model.InsertTrainingInstances, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Prediction.V16.Model.Insert do
+  def encode(value, options) do
+    GoogleApi.Prediction.V16.Deserializer.serialize_non_nil(value, options)
   end
 end
 
