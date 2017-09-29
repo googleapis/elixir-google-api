@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.CounterOptions do
   @moduledoc """
   Increment a streamz counter with the specified metric and field names.  Metric names should start with a &#39;/&#39;, generally be lowercase-only, and end in \&quot;_count\&quot;. Field names should not contain an initial slash. The actual exported metric names will have \&quot;/iam/policy\&quot; prepended.  Field names correspond to IAM request parameters and field values are their respective values.  At present the only supported field names are    - \&quot;iam_principal\&quot;, corresponding to IAMContext.principal;    - \&quot;\&quot; (empty string), resulting in one aggretated counter with no field.  Examples:   counter { metric: \&quot;/debug_access_count\&quot;  field: \&quot;iam_principal\&quot; }   &#x3D;&#x3D;&gt; increment counter /iam/policy/backend_debug_access_count                         {iam_principal&#x3D;[value of IAMContext.principal]}  At this time we do not support: * multiple field names (though this may be supported in the future) * decrementing the counter * incrementing it by anything other than 1
+
+  ## Attributes
+
+  - field (String): The field value to attribute. Defaults to: `null`.
+  - metric (String): The metric to update. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"field",
     :"metric"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.CounterOptions do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.CounterOptions do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

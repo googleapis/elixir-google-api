@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.Logging do
   @moduledoc """
   Logging configuration of the service.  The following example shows how to configure logs to be sent to the producer and consumer projects. In the example, the &#x60;activity_history&#x60; log is sent to both the producer and consumer projects, whereas the &#x60;purchase_history&#x60; log is only sent to the producer project.      monitored_resources:     - type: library.googleapis.com/branch       labels:       - key: /city         description: The city where the library branch is located in.       - key: /name         description: The name of the branch.     logs:     - name: activity_history       labels:       - key: /customer_id     - name: purchase_history     logging:       producer_destinations:       - monitored_resource: library.googleapis.com/branch         logs:         - activity_history         - purchase_history       consumer_destinations:       - monitored_resource: library.googleapis.com/branch         logs:         - activity_history
+
+  ## Attributes
+
+  - consumerDestinations (List[LoggingDestination]): Logging configurations for sending logs to the consumer project. There can be multiple consumer destinations, each one must have a different monitored resource type. A log can be used in at most one consumer destination. Defaults to: `null`.
+  - producerDestinations (List[LoggingDestination]): Logging configurations for sending logs to the producer project. There can be multiple producer destinations, each one must have a different monitored resource type. A log can be used in at most one producer destination. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"consumerDestinations",
     :"producerDestinations"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.Logging do
     value
     |> deserialize(:"consumerDestinations", :list, GoogleApi.ServiceManagement.V1.Model.LoggingDestination, options)
     |> deserialize(:"producerDestinations", :list, GoogleApi.ServiceManagement.V1.Model.LoggingDestination, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.Logging do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

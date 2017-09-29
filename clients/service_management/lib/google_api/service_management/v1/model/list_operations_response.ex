@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.ListOperationsResponse do
   @moduledoc """
   The response message for Operations.ListOperations.
+
+  ## Attributes
+
+  - nextPageToken (String): The standard List next-page token. Defaults to: `null`.
+  - operations (List[Operation]): A list of operations that matches the specified filter in the request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nextPageToken",
     :"operations"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.ListOperations
   def decode(value, options) do
     value
     |> deserialize(:"operations", :list, GoogleApi.ServiceManagement.V1.Model.Operation, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.ListOperationsResponse do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

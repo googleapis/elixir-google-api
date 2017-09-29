@@ -1,6 +1,6 @@
 # GoogleApi.ServiceManagement.V1
 
-**TODO: Add description**
+Google Service Management allows service producers to publish their services on Google Cloud Platform so that they can be discovered and used by service consumers.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_service_management` to your list of dependencies in `mix.e
 
 ```elixir
 def deps do
-  [{:google_api_service_management, "~> 0.1.0"}]
+  [{:google_api_service_management, "~> 0.0.1"}]
 end
 ```
 

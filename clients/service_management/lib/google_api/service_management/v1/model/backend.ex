@@ -20,9 +20,12 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.Backend do
   @moduledoc """
   &#x60;Backend&#x60; defines the backend configuration for a service.
+
+  ## Attributes
+
+  - rules (List[BackendRule]): A list of API backend rules that apply to individual API methods.  **NOTE:** All service configuration rules follow \&quot;last one wins\&quot; order. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"rules"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.Backend do
   def decode(value, options) do
     value
     |> deserialize(:"rules", :list, GoogleApi.ServiceManagement.V1.Model.BackendRule, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.Backend do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

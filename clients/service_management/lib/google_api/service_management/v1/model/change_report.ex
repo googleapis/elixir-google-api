@@ -20,9 +20,12 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.ChangeReport do
   @moduledoc """
   Change report associated with a particular service configuration.  It contains a list of ConfigChanges based on the comparison between two service configurations.
+
+  ## Attributes
+
+  - configChanges (List[ConfigChange]): List of changes between two service configurations. The changes will be alphabetically sorted based on the identifier of each change. A ConfigChange identifier is a dot separated path to the configuration. Example: visibility.rules[selector&#x3D;&#39;LibraryService.CreateBook&#39;].restriction Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"configChanges"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.ChangeReport d
   def decode(value, options) do
     value
     |> deserialize(:"configChanges", :list, GoogleApi.ServiceManagement.V1.Model.ConfigChange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.ChangeReport do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.LogConfig do
   @moduledoc """
   Specifies what kind of log the caller must write
+
+  ## Attributes
+
+  - cloudAudit (CloudAuditOptions): Cloud audit options. Defaults to: `null`.
+  - counter (CounterOptions): Counter options. Defaults to: `null`.
+  - dataAccess (DataAccessOptions): Data access options. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cloudAudit",
     :"counter",
@@ -37,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.LogConfig do
     |> deserialize(:"cloudAudit", :struct, GoogleApi.ServiceManagement.V1.Model.CloudAuditOptions, options)
     |> deserialize(:"counter", :struct, GoogleApi.ServiceManagement.V1.Model.CounterOptions, options)
     |> deserialize(:"dataAccess", :struct, GoogleApi.ServiceManagement.V1.Model.DataAccessOptions, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.LogConfig do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

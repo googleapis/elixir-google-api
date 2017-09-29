@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.DataAccessOptions do
   @moduledoc """
   Write a Data Access (Gin) log
+
+  ## Attributes
+
+  - logMode (String): Whether Gin logging should happen in a fail-closed manner at the caller. This is relevant only in the LocalIAM implementation, for now. Defaults to: `null`.
+    - Enum - one of [LOG_MODE_UNSPECIFIED, LOG_FAIL_CLOSED]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"logMode"
   ]
@@ -31,6 +35,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.DataAccessOptions do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.DataAccessOptions do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

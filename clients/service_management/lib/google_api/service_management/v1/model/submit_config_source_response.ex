@@ -20,9 +20,12 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.SubmitConfigSourceResponse do
   @moduledoc """
   Response message for SubmitConfigSource method.
+
+  ## Attributes
+
+  - serviceConfig (Service): The generated service configuration. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"serviceConfig"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.SubmitConfigSo
   def decode(value, options) do
     value
     |> deserialize(:"serviceConfig", :struct, GoogleApi.ServiceManagement.V1.Model.Service, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.SubmitConfigSourceResponse do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.SystemParameters do
   @moduledoc """
   ### System parameter configuration  A system parameter is a special kind of parameter defined by the API system, not by an individual API. It is typically mapped to an HTTP header and/or a URL query parameter. This configuration specifies which methods change the names of the system parameters.
+
+  ## Attributes
+
+  - rules (List[SystemParameterRule]): Define system parameters.  The parameters defined here will override the default parameters implemented by the system. If this field is missing from the service config, default system parameters will be used. Default system parameters and names is implementation-dependent.  Example: define api key for all methods      system_parameters       rules:         - selector: \&quot;*\&quot;           parameters:             - name: api_key               url_query_parameter: api_key   Example: define 2 api key names for a specific method.      system_parameters       rules:         - selector: \&quot;/ListShelves\&quot;           parameters:             - name: api_key               http_header: Api-Key1             - name: api_key               http_header: Api-Key2  **NOTE:** All service configuration rules follow \&quot;last one wins\&quot; order. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"rules"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.SystemParamete
   def decode(value, options) do
     value
     |> deserialize(:"rules", :list, GoogleApi.ServiceManagement.V1.Model.SystemParameterRule, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.SystemParameters do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

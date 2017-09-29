@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.ManagedService do
   @moduledoc """
   The full representation of a Service that is managed by Google Service Management.
+
+  ## Attributes
+
+  - producerProjectId (String): ID of the project that produces and owns this service. Defaults to: `null`.
+  - serviceName (String): The name of the service. See the [overview](/service-management/overview) for naming requirements. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"producerProjectId",
     :"serviceName"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.ManagedService do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.ManagedService do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

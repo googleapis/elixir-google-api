@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.SubmitConfigSourceRequest do
   @moduledoc """
   Request message for SubmitConfigSource method.
+
+  ## Attributes
+
+  - configSource (ConfigSource): The source configuration for the service. Defaults to: `null`.
+  - validateOnly (Boolean): Optional. If set, this will result in the generation of a &#x60;google.api.Service&#x60; configuration based on the &#x60;ConfigSource&#x60; provided, but the generated config and the sources will NOT be persisted. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"configSource",
     :"validateOnly"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.SubmitConfigSo
   def decode(value, options) do
     value
     |> deserialize(:"configSource", :struct, GoogleApi.ServiceManagement.V1.Model.ConfigSource, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.SubmitConfigSourceRequest do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

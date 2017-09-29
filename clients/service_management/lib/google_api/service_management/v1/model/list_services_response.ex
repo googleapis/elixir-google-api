@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.ListServicesResponse do
   @moduledoc """
   Response message for &#x60;ListServices&#x60; method.
+
+  ## Attributes
+
+  - nextPageToken (String): Token that can be passed to &#x60;ListServices&#x60; to resume a paginated query. Defaults to: `null`.
+  - services (List[ManagedService]): The returned services will only have the name field set. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nextPageToken",
     :"services"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.ListServicesRe
   def decode(value, options) do
     value
     |> deserialize(:"services", :list, GoogleApi.ServiceManagement.V1.Model.ManagedService, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.ListServicesResponse do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

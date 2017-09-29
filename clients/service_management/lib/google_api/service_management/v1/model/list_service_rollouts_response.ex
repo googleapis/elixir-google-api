@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.ListServiceRolloutsResponse do
   @moduledoc """
   Response message for ListServiceRollouts method.
+
+  ## Attributes
+
+  - nextPageToken (String): The token of the next page of results. Defaults to: `null`.
+  - rollouts (List[Rollout]): The list of rollout resources. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nextPageToken",
     :"rollouts"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.ListServiceRol
   def decode(value, options) do
     value
     |> deserialize(:"rollouts", :list, GoogleApi.ServiceManagement.V1.Model.Rollout, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.ListServiceRolloutsResponse do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

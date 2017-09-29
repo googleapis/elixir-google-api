@@ -20,9 +20,17 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.FlowOperationMetadata do
   @moduledoc """
   The metadata associated with a long running operation resource.
+
+  ## Attributes
+
+  - cancelState (String): The state of the operation with respect to cancellation. Defaults to: `null`.
+    - Enum - one of [RUNNING, UNCANCELLABLE, CANCELLED]
+  - deadline (String): Deadline for the flow to complete, to prevent orphaned Operations.  If the flow has not completed by this time, it may be terminated by the engine, or force-failed by Operation lookup.  Note that this is not a hard deadline after which the Flow will definitely be failed, rather it is a deadline after which it is reasonable to suspect a problem and other parts of the system may kill operation to ensure we don&#39;t have orphans. see also: go/prevent-orphaned-operations Defaults to: `null`.
+  - flowName (String): The name of the top-level flow corresponding to this operation. Must be equal to the \&quot;name\&quot; field for a FlowName enum. Defaults to: `null`.
+  - resourceNames (List[String]): The full name of the resources that this flow is directly associated with. Defaults to: `null`.
+  - startTime (String): The start time of the operation. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cancelState",
     :"deadline",
@@ -35,6 +43,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.FlowOperationMetadata do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.FlowOperationMetadata do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.GenerateConfigReportResponse do
   @moduledoc """
   Response message for GenerateConfigReport method.
+
+  ## Attributes
+
+  - changeReports (List[ChangeReport]): list of ChangeReport, each corresponding to comparison between two service configurations. Defaults to: `null`.
+  - diagnostics (List[Diagnostic]): Errors / Linter warnings associated with the service definition this report belongs to. Defaults to: `null`.
+  - id (String): ID of the service configuration this report belongs to. Defaults to: `null`.
+  - serviceName (String): Name of the service this report belongs to. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"changeReports",
     :"diagnostics",
@@ -37,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.GenerateConfig
     value
     |> deserialize(:"changeReports", :list, GoogleApi.ServiceManagement.V1.Model.ChangeReport, options)
     |> deserialize(:"diagnostics", :list, GoogleApi.ServiceManagement.V1.Model.Diagnostic, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.GenerateConfigReportResponse do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

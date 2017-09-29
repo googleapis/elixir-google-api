@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.Http do
   @moduledoc """
   Defines the HTTP configuration for an API service. It contains a list of HttpRule, each specifying the mapping of an RPC method to one or more HTTP REST API methods.
+
+  ## Attributes
+
+  - fullyDecodeReservedExpansion (Boolean): When set to true, URL path parmeters will be fully URI-decoded except in cases of single segment matches in reserved expansion, where \&quot;%2F\&quot; will be left encoded.  The default behavior is to not decode RFC 6570 reserved characters in multi segment matches. Defaults to: `null`.
+  - rules (List[HttpRule]): A list of HTTP configuration rules that apply to individual API methods.  **NOTE:** All service configuration rules follow \&quot;last one wins\&quot; order. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fullyDecodeReservedExpansion",
     :"rules"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.Http do
   def decode(value, options) do
     value
     |> deserialize(:"rules", :list, GoogleApi.ServiceManagement.V1.Model.HttpRule, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.Http do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.BackendRule do
   @moduledoc """
   A backend rule provides configuration for an individual API element.
+
+  ## Attributes
+
+  - address (String): The address of the API backend. Defaults to: `null`.
+  - deadline (Float): The number of seconds to wait for a response from a request.  The default depends on the deployment context. Defaults to: `null`.
+  - minDeadline (Float): Minimum deadline in seconds needed for this method. Calls having deadline value lower than this will be rejected. Defaults to: `null`.
+  - selector (String): Selects the methods to which this rule applies.  Refer to selector for syntax details. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"address",
     :"deadline",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.BackendRule do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.BackendRule do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

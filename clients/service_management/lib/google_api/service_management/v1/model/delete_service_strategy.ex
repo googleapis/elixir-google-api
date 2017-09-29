@@ -20,9 +20,11 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.DeleteServiceStrategy do
   @moduledoc """
   Strategy used to delete a service. This strategy is a placeholder only used by the system generated rollout to delete a service.
+
+  ## Attributes
+
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     
   ]
@@ -31,6 +33,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.DeleteServiceStrategy do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.DeleteServiceStrategy do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

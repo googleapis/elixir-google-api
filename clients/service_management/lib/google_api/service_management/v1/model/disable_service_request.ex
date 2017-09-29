@@ -20,9 +20,12 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.DisableServiceRequest do
   @moduledoc """
   Request message for DisableService method.
+
+  ## Attributes
+
+  - consumerId (String): The identity of consumer resource which service disablement will be applied to.  The Google Service Management implementation accepts the following forms: - \&quot;project:&lt;project_id&gt;\&quot;  Note: this is made compatible with google.api.servicecontrol.v1.Operation.consumer_id. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"consumerId"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.DisableServiceRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.DisableServiceRequest do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

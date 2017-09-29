@@ -20,9 +20,14 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.DocumentationRule do
   @moduledoc """
   A documentation rule provides information about individual API elements.
+
+  ## Attributes
+
+  - deprecationDescription (String): Deprecation description of the selected element(s). It can be provided if an element is marked as &#x60;deprecated&#x60;. Defaults to: `null`.
+  - description (String): Description of the selected API(s). Defaults to: `null`.
+  - selector (String): The selector is a comma-separated list of patterns. Each pattern is a qualified name of the element which may end in \&quot;*\&quot;, indicating a wildcard. Wildcards are only allowed at the end and for a whole component of the qualified name, i.e. \&quot;foo.*\&quot; is ok, but not \&quot;foo.b*\&quot; or \&quot;foo.*.bar\&quot;. To specify a default for all applicable elements, the whole pattern \&quot;*\&quot; is used. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"deprecationDescription",
     :"description",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.DocumentationRule do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.DocumentationRule do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

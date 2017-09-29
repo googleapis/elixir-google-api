@@ -20,9 +20,12 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.CustomAuthRequirements do
   @moduledoc """
   Configuration for a custom authentication provider.
+
+  ## Attributes
+
+  - provider (String): A configuration string containing connection information for the authentication provider, typically formatted as a SmartService string (go/smartservice). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"provider"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.CustomAuthRequirements do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.CustomAuthRequirements do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

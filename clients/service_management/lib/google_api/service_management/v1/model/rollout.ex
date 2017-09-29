@@ -20,9 +20,19 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.Rollout do
   @moduledoc """
   A rollout resource that defines how service configuration versions are pushed to control plane systems. Typically, you create a new version of the service config, and then create a Rollout to push the service config.
+
+  ## Attributes
+
+  - createTime (String): Creation time of the rollout. Readonly. Defaults to: `null`.
+  - createdBy (String): The user who created the Rollout. Readonly. Defaults to: `null`.
+  - deleteServiceStrategy (DeleteServiceStrategy): The strategy associated with a rollout to delete a &#x60;ManagedService&#x60;. Readonly. Defaults to: `null`.
+  - rolloutId (String): Optional unique identifier of this Rollout. Only lower case letters, digits  and &#39;-&#39; are allowed.  If not specified by client, the server will generate one. The generated id will have the form of &lt;date&gt;&lt;revision number&gt;, where \&quot;date\&quot; is the create date in ISO 8601 format.  \&quot;revision number\&quot; is a monotonically increasing positive number that is reset every day for each service. An example of the generated rollout_id is &#39;2016-02-16r1&#39; Defaults to: `null`.
+  - serviceName (String): The name of the service associated with this Rollout. Defaults to: `null`.
+  - status (String): The status of this rollout. Readonly. In case of a failed rollout, the system will automatically rollback to the current Rollout version. Readonly. Defaults to: `null`.
+    - Enum - one of [ROLLOUT_STATUS_UNSPECIFIED, IN_PROGRESS, SUCCESS, CANCELLED, FAILED, PENDING, FAILED_ROLLED_BACK]
+  - trafficPercentStrategy (TrafficPercentStrategy): Google Service Control selects service configurations based on traffic percentage. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"createTime",
     :"createdBy",
@@ -40,6 +50,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.Rollout do
     value
     |> deserialize(:"deleteServiceStrategy", :struct, GoogleApi.ServiceManagement.V1.Model.DeleteServiceStrategy, options)
     |> deserialize(:"trafficPercentStrategy", :struct, GoogleApi.ServiceManagement.V1.Model.TrafficPercentStrategy, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.Rollout do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

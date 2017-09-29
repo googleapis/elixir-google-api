@@ -20,9 +20,12 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.ConfigRef do
   @moduledoc """
   Represents a service configuration with its name and id.
+
+  ## Attributes
+
+  - name (String): Resource name of a service config. It must have the following format: \&quot;services/{service name}/configs/{config id}\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.ConfigRef do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.ConfigRef do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
