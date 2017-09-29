@@ -20,9 +20,14 @@
 defmodule GoogleApi.SourceRepo.V1.Model.MirrorConfig do
   @moduledoc """
   Configuration to automatically mirror a repository from another hosting service, for example GitHub or BitBucket.
+
+  ## Attributes
+
+  - deployKeyId (String): ID of the SSH deploy key at the other hosting service. Removing this key from the other service would deauthorize Google Cloud Source Repositories from mirroring. Defaults to: `null`.
+  - url (String): URL of the main repository at the other hosting service. Defaults to: `null`.
+  - webhookId (String): ID of the webhook listening to updates to trigger mirroring. Removing this webook from the other hosting service will stop Google Cloud Source Repositories from receiving notifications, and thereby disabling mirroring. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"deployKeyId",
     :"url",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SourceRepo.V1.Model.MirrorConfig do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SourceRepo.V1.Model.MirrorConfig do
+  def encode(value, options) do
+    GoogleApi.SourceRepo.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.SourceRepo.V1.Model.SetIamPolicyRequest do
   @moduledoc """
   Request message for &#x60;SetIamPolicy&#x60; method.
+
+  ## Attributes
+
+  - policy (Policy): REQUIRED: The complete policy to be applied to the &#x60;resource&#x60;. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud Platform services (such as Projects) might reject them. Defaults to: `null`.
+  - updateMask (String): OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only the fields in the mask will be modified. If no mask is provided, the following default mask is used: paths: \&quot;bindings, etag\&quot; This field is only used by Cloud IAM. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"policy",
     :"updateMask"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.SourceRepo.V1.Model.SetIamPolicyRequest d
   def decode(value, options) do
     value
     |> deserialize(:"policy", :struct, GoogleApi.SourceRepo.V1.Model.Policy, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SourceRepo.V1.Model.SetIamPolicyRequest do
+  def encode(value, options) do
+    GoogleApi.SourceRepo.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

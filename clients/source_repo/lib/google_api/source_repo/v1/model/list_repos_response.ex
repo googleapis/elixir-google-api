@@ -20,9 +20,13 @@
 defmodule GoogleApi.SourceRepo.V1.Model.ListReposResponse do
   @moduledoc """
   Response for ListRepos.  The size is not set in the returned repositories.
+
+  ## Attributes
+
+  - nextPageToken (String): If non-empty, additional repositories exist within the project. These can be retrieved by including this value in the next ListReposRequest&#39;s page_token field. Defaults to: `null`.
+  - repos (List[Repo]): The listed repos. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nextPageToken",
     :"repos"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.SourceRepo.V1.Model.ListReposResponse do
   def decode(value, options) do
     value
     |> deserialize(:"repos", :list, GoogleApi.SourceRepo.V1.Model.Repo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SourceRepo.V1.Model.ListReposResponse do
+  def encode(value, options) do
+    GoogleApi.SourceRepo.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

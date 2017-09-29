@@ -1,6 +1,6 @@
 # GoogleApi.SourceRepo.V1
 
-**TODO: Add description**
+Access source code repositories hosted by Google.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_source_repo` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_source_repo, "~> 0.1.0"}]
+  [{:google_api_source_repo, "~> 0.0.1"}]
 end
 ```
 

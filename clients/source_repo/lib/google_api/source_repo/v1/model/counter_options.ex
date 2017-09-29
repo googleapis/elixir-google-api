@@ -20,9 +20,13 @@
 defmodule GoogleApi.SourceRepo.V1.Model.CounterOptions do
   @moduledoc """
   Options for counters
+
+  ## Attributes
+
+  - field (String): The field value to attribute. Defaults to: `null`.
+  - metric (String): The metric to update. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"field",
     :"metric"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SourceRepo.V1.Model.CounterOptions do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SourceRepo.V1.Model.CounterOptions do
+  def encode(value, options) do
+    GoogleApi.SourceRepo.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

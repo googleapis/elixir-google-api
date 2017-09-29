@@ -20,9 +20,12 @@
 defmodule GoogleApi.SourceRepo.V1.Model.TestIamPermissionsRequest do
   @moduledoc """
   Request message for &#x60;TestIamPermissions&#x60; method.
+
+  ## Attributes
+
+  - permissions (List[String]): The set of permissions to check for the &#x60;resource&#x60;. Permissions with wildcards (such as &#39;*&#39; or &#39;storage.*&#39;) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"permissions"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SourceRepo.V1.Model.TestIamPermissionsRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SourceRepo.V1.Model.TestIamPermissionsRequest do
+  def encode(value, options) do
+    GoogleApi.SourceRepo.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
