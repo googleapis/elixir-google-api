@@ -1,6 +1,6 @@
 # GoogleApi.SiteVerification.V1
 
-**TODO: Add description**
+Verifies ownership of websites or domains with Google.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_site_verification` to your list of dependencies in `mix.ex
 
 ```elixir
 def deps do
-  [{:google_api_site_verification, "~> 0.1.0"}]
+  [{:google_api_site_verification, "~> 0.0.1"}]
 end
 ```
 

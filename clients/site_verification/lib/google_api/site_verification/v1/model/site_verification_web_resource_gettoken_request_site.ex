@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceGettokenRequest_site do
+defmodule GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceGettokenRequestSite do
   @moduledoc """
   The site for which a verification token will be generated.
+
+  ## Attributes
+
+  - identifier (String): The site identifier. If the type is set to SITE, the identifier is a URL. If the type is set to INET_DOMAIN, the site identifier is a domain name. Defaults to: `null`.
+  - type (String): The type of resource to be verified. Can be SITE or INET_DOMAIN (domain name). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"identifier",
     :"type"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceGettokenRequest_site do
+defimpl Poison.Decoder, for: GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceGettokenRequestSite do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceGettokenRequestSite do
+  def encode(value, options) do
+    GoogleApi.SiteVerification.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

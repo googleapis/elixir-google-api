@@ -60,7 +60,9 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
     }
     %{}
     |> method(:delete)
-    |> url("/webResource/#{id}")
+    |> url("/webResource/{id}", %{
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -101,7 +103,9 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
     }
     %{}
     |> method(:get)
-    |> url("/webResource/#{id}")
+    |> url("/webResource/{id}", %{
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -270,7 +274,9 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
     }
     %{}
     |> method(:patch)
-    |> url("/webResource/#{id}")
+    |> url("/webResource/{id}", %{
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -313,7 +319,9 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
     }
     %{}
     |> method(:put)
-    |> url("/webResource/#{id}")
+    |> url("/webResource/{id}", %{
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
