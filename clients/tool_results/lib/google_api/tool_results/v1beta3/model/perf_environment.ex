@@ -20,9 +20,13 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.PerfEnvironment do
   @moduledoc """
   Encapsulates performance environment info
+
+  ## Attributes
+
+  - cpuInfo (CpuInfo): CPU related environment info Defaults to: `null`.
+  - memoryInfo (MemoryInfo): Memory related environment info Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cpuInfo",
     :"memoryInfo"
@@ -33,8 +37,14 @@ defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.PerfEnvironment
   import GoogleApi.ToolResults.V1beta3.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"cpuInfo", :struct, GoogleApi.ToolResults.V1beta3.Model.CPUInfo, options)
+    |> deserialize(:"cpuInfo", :struct, GoogleApi.ToolResults.V1beta3.Model.CpuInfo, options)
     |> deserialize(:"memoryInfo", :struct, GoogleApi.ToolResults.V1beta3.Model.MemoryInfo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.PerfEnvironment do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

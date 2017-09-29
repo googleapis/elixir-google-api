@@ -20,9 +20,17 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.PerfSampleSeries do
   @moduledoc """
   Resource representing a collection of performance samples (or data points)
+
+  ## Attributes
+
+  - basicPerfSampleSeries (BasicPerfSampleSeries): Basic series represented by a line chart Defaults to: `null`.
+  - executionId (String): A tool results execution ID. Defaults to: `null`.
+  - historyId (String): A tool results history ID. Defaults to: `null`.
+  - projectId (String): The cloud project Defaults to: `null`.
+  - sampleSeriesId (String): A sample series id Defaults to: `null`.
+  - stepId (String): A tool results step ID. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"basicPerfSampleSeries",
     :"executionId",
@@ -38,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.PerfSampleSerie
   def decode(value, options) do
     value
     |> deserialize(:"basicPerfSampleSeries", :struct, GoogleApi.ToolResults.V1beta3.Model.BasicPerfSampleSeries, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.PerfSampleSeries do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

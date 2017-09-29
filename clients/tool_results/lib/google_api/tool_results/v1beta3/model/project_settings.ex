@@ -20,9 +20,13 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.ProjectSettings do
   @moduledoc """
   Per-project settings for the Tool Results service.
+
+  ## Attributes
+
+  - defaultBucket (String): The name of the Google Cloud Storage bucket to which results are written.  By default, this is unset.  In update request: optional In response: optional Defaults to: `null`.
+  - name (String): The name of the project&#39;s settings.  Always of the form: projects/{project-id}/settings  In update request: never set In response: always set Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"defaultBucket",
     :"name"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.ProjectSettings do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.ProjectSettings do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

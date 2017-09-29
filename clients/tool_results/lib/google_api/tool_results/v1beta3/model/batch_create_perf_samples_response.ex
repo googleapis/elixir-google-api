@@ -20,9 +20,12 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.BatchCreatePerfSamplesResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - perfSamples (List[PerfSample]):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"perfSamples"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.BatchCreatePerf
   def decode(value, options) do
     value
     |> deserialize(:"perfSamples", :list, GoogleApi.ToolResults.V1beta3.Model.PerfSample, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.BatchCreatePerfSamplesResponse do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

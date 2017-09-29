@@ -20,9 +20,13 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.PerfSample do
   @moduledoc """
   Resource representing a single performance measure or data point
+
+  ## Attributes
+
+  - sampleTime (Timestamp): Timestamp of collection Defaults to: `null`.
+  - value (Float): Value observed Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"sampleTime",
     :"value"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.PerfSample do
   def decode(value, options) do
     value
     |> deserialize(:"sampleTime", :struct, GoogleApi.ToolResults.V1beta3.Model.Timestamp, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.PerfSample do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

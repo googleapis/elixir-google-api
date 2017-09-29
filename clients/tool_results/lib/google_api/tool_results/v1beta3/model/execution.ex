@@ -20,9 +20,19 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.Execution do
   @moduledoc """
   An Execution represents a collection of Steps. For instance, it could represent: - a mobile test executed across a range of device configurations - a jenkins job with a build step followed by a test step  The maximum size of an execution message is 1 MiB.  An Execution can be updated until its state is set to COMPLETE at which point it becomes immutable.
+
+  ## Attributes
+
+  - completionTime (Timestamp): The time when the Execution status transitioned to COMPLETE.  This value will be set automatically when state transitions to COMPLETE.  - In response: set if the execution state is COMPLETE. - In create/update request: never set Defaults to: `null`.
+  - creationTime (Timestamp): The time when the Execution was created.  This value will be set automatically when CreateExecution is called.  - In response: always set - In create/update request: never set Defaults to: `null`.
+  - executionId (String): A unique identifier within a History for this Execution.  Returns INVALID_ARGUMENT if this field is set or overwritten by the caller.  - In response always set - In create/update request: never set Defaults to: `null`.
+  - outcome (Outcome): Classify the result, for example into SUCCESS or FAILURE  - In response: present if set by create/update request - In create/update request: optional Defaults to: `null`.
+  - specification (Specification): Lightweight information about execution request.  - In response: present if set by create - In create: optional - In update: optional Defaults to: `null`.
+  - state (String): The initial state is IN_PROGRESS.  The only legal state transitions is from IN_PROGRESS to COMPLETE.  A PRECONDITION_FAILED will be returned if an invalid transition is requested.  The state can only be set to COMPLETE once. A FAILED_PRECONDITION will be returned if the state is set to COMPLETE multiple times.  If the state is set to COMPLETE, all the in-progress steps within the execution will be set as COMPLETE. If the outcome of the step is not set, the outcome will be set to INCONCLUSIVE.  - In response always set - In create/update request: optional Defaults to: `null`.
+    - Enum - one of [complete, inProgress, pending, unknownState]
+  - testExecutionMatrixId (String): TestExecution Matrix ID that the TestExecutionService uses.  - In response: present if set by create - In create: optional - In update: never set Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"completionTime",
     :"creationTime",
@@ -42,6 +52,12 @@ defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.Execution do
     |> deserialize(:"creationTime", :struct, GoogleApi.ToolResults.V1beta3.Model.Timestamp, options)
     |> deserialize(:"outcome", :struct, GoogleApi.ToolResults.V1beta3.Model.Outcome, options)
     |> deserialize(:"specification", :struct, GoogleApi.ToolResults.V1beta3.Model.Specification, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.Execution do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

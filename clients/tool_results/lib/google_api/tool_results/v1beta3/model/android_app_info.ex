@@ -20,9 +20,15 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.AndroidAppInfo do
   @moduledoc """
   Android app information.
+
+  ## Attributes
+
+  - name (String): The name of the app. Optional Defaults to: `null`.
+  - packageName (String): The package name of the app. Required. Defaults to: `null`.
+  - versionCode (String): The internal version code of the app. Optional. Defaults to: `null`.
+  - versionName (String): The version name of the app. Optional. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name",
     :"packageName",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.AndroidAppInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.AndroidAppInfo do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

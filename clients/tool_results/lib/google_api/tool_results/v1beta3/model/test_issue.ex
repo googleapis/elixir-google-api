@@ -20,9 +20,18 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.TestIssue do
   @moduledoc """
   An issue detected occurring during a test execution.
+
+  ## Attributes
+
+  - errorMessage (String): A brief human-readable message describing the issue. Required. Defaults to: `null`.
+  - severity (String): Severity of issue. Required. Defaults to: `null`.
+    - Enum - one of [info, severe, unspecifiedSeverity, warning]
+  - stackTrace (StackTrace): Deprecated in favor of stack trace fields inside specific warnings. Defaults to: `null`.
+  - type (String): Type of issue. Required. Defaults to: `null`.
+    - Enum - one of [anr, fatalException, nativeCrash, unspecifiedType]
+  - warning (Any): Warning message with additional details of the issue. Should always be a message from com.google.devtools.toolresults.v1.warnings Required. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"errorMessage",
     :"severity",
@@ -38,6 +47,12 @@ defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.TestIssue do
     value
     |> deserialize(:"stackTrace", :struct, GoogleApi.ToolResults.V1beta3.Model.StackTrace, options)
     |> deserialize(:"warning", :struct, GoogleApi.ToolResults.V1beta3.Model.Any, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.TestIssue do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.PublishXunitXmlFilesRequest do
   @moduledoc """
   Request message for StepService.PublishXunitXmlFiles.
+
+  ## Attributes
+
+  - xunitXmlFiles (List[FileReference]): URI of the Xunit XML files to publish.  The maximum size of the file this reference is pointing to is 50MB.  Required. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"xunitXmlFiles"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.PublishXunitXml
   def decode(value, options) do
     value
     |> deserialize(:"xunitXmlFiles", :list, GoogleApi.ToolResults.V1beta3.Model.FileReference, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.PublishXunitXmlFilesRequest do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

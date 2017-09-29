@@ -20,9 +20,15 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.Thumbnail do
   @moduledoc """
   A single thumbnail, with its size and format.
+
+  ## Attributes
+
+  - contentType (String): The thumbnail&#39;s content type, i.e. \&quot;image/png\&quot;.  Always set. Defaults to: `null`.
+  - data (String): The thumbnail file itself.  That is, the bytes here are precisely the bytes that make up the thumbnail file; they can be served as an image as-is (with the appropriate content type.)  Always set. Defaults to: `null`.
+  - heightPx (Integer): The height of the thumbnail, in pixels.  Always set. Defaults to: `null`.
+  - widthPx (Integer): The width of the thumbnail, in pixels.  Always set. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"contentType",
     :"data",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.Thumbnail do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.Thumbnail do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

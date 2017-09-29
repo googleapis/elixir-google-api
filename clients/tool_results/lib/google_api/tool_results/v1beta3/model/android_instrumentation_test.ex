@@ -20,9 +20,15 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.AndroidInstrumentationTest do
   @moduledoc """
   A test of an Android application that can control an Android component independently of its normal lifecycle.  See  for more information on types of Android tests.
+
+  ## Attributes
+
+  - testPackageId (String): The java package for the test to be executed. Required Defaults to: `null`.
+  - testRunnerClass (String): The InstrumentationTestRunner class. Required Defaults to: `null`.
+  - testTargets (List[String]): Each target must be fully qualified with the package name or class name, in one of these formats: - \&quot;package package_name\&quot; - \&quot;class package_name.class_name\&quot; - \&quot;class package_name.class_name#method_name\&quot;  If empty, all targets in the module will be run. Defaults to: `null`.
+  - useOrchestrator (Boolean): The flag indicates whether Android Test Orchestrator will be used to run test or not. Test orchestrator is used if either: - orchestrator_option field is USE_ORCHESTRATOR, and test runner is compatible with orchestrator. Or - orchestrator_option field is unspecified or ORCHESTRATOR_OPTION_UNSPECIFIED, and test runner is compatible with orchestrator. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"testPackageId",
     :"testRunnerClass",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.AndroidInstrumentationTest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.AndroidInstrumentationTest do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

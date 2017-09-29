@@ -20,9 +20,15 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.TestExecutionStep do
   @moduledoc """
   A step that represents running tests.  It accepts ant-junit xml files which will be parsed into structured test results by the service. Xml file paths are updated in order to append more files, however they can&#39;t be deleted.  Users can also add test results manually by using the test_result field.
+
+  ## Attributes
+
+  - testIssues (List[TestIssue]): Issues observed during the test execution.  For example, if the mobile app under test crashed during the test, the error message and the stack trace content can be recorded here to assist debugging.  - In response: present if set by create or update - In create/update request: optional Defaults to: `null`.
+  - testSuiteOverviews (List[TestSuiteOverview]): List of test suite overview contents. This could be parsed from xUnit XML log by server, or uploaded directly by user. This references should only be called when test suites are fully parsed or uploaded.  The maximum allowed number of test suite overviews per step is 1000.  - In response: always set - In create request: optional - In update request: never (use publishXunitXmlFiles custom method instead) Defaults to: `null`.
+  - testTiming (TestTiming): The timing break down of the test execution.  - In response: present if set by create or update - In create/update request: optional Defaults to: `null`.
+  - toolExecution (ToolExecution): Represents the execution of the test runner.  The exit code of this tool will be used to determine if the test passed.  - In response: always set - In create/update request: optional Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"testIssues",
     :"testSuiteOverviews",
@@ -39,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.TestExecutionSt
     |> deserialize(:"testSuiteOverviews", :list, GoogleApi.ToolResults.V1beta3.Model.TestSuiteOverview, options)
     |> deserialize(:"testTiming", :struct, GoogleApi.ToolResults.V1beta3.Model.TestTiming, options)
     |> deserialize(:"toolExecution", :struct, GoogleApi.ToolResults.V1beta3.Model.ToolExecution, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.TestExecutionStep do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

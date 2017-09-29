@@ -20,9 +20,13 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.MemoryInfo do
   @moduledoc """
   
+
+  ## Attributes
+
+  - memoryCapInKibibyte (String): Maximum memory that can be allocated to the process in KiB Defaults to: `null`.
+  - memoryTotalInKibibyte (String): Total memory available on the device in KiB Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"memoryCapInKibibyte",
     :"memoryTotalInKibibyte"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.MemoryInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.MemoryInfo do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

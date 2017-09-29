@@ -20,9 +20,14 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.TestCaseReference do
   @moduledoc """
   A reference to a test case.  Test case references are canonically ordered lexicographically by these three factors: * First, by test_suite_name. * Second, by class_name. * Third, by name.
+
+  ## Attributes
+
+  - className (String): The name of the class. Defaults to: `null`.
+  - name (String): The name of the test case.  Required. Defaults to: `null`.
+  - testSuiteName (String): The name of the test suite to which this test case belongs. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"className",
     :"name",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.TestCaseReference do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.TestCaseReference do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

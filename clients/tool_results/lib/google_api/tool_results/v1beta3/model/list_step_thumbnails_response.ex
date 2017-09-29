@@ -20,9 +20,13 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.ListStepThumbnailsResponse do
   @moduledoc """
   A response containing the thumbnails in a step.
+
+  ## Attributes
+
+  - nextPageToken (String): A continuation token to resume the query at the next item.  If set, indicates that there are more thumbnails to read, by calling list again with this value in the page_token field. Defaults to: `null`.
+  - thumbnails (List[Image]): A list of image data.  Images are returned in a deterministic order; they are ordered by these factors, in order of importance: * First, by their associated test case. Images without a test case are considered greater than images with one. * Second, by their creation time. Images without a creation time are greater than images with one. * Third, by the order in which they were added to the step (by calls to CreateStep or UpdateStep). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nextPageToken",
     :"thumbnails"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.ListStepThumbna
   def decode(value, options) do
     value
     |> deserialize(:"thumbnails", :list, GoogleApi.ToolResults.V1beta3.Model.Image, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.ListStepThumbnailsResponse do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

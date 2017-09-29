@@ -20,9 +20,15 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.AndroidTest do
   @moduledoc """
   An Android mobile test specification.
+
+  ## Attributes
+
+  - androidAppInfo (AndroidAppInfo): Infomation about the application under test. Defaults to: `null`.
+  - androidInstrumentationTest (AndroidInstrumentationTest): An Android instrumentation test. Defaults to: `null`.
+  - androidRoboTest (AndroidRoboTest): An Android robo test. Defaults to: `null`.
+  - testTimeout (Duration): Max time a test is allowed to run before it is automatically cancelled. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"androidAppInfo",
     :"androidInstrumentationTest",
@@ -39,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.AndroidTest do
     |> deserialize(:"androidInstrumentationTest", :struct, GoogleApi.ToolResults.V1beta3.Model.AndroidInstrumentationTest, options)
     |> deserialize(:"androidRoboTest", :struct, GoogleApi.ToolResults.V1beta3.Model.AndroidRoboTest, options)
     |> deserialize(:"testTimeout", :struct, GoogleApi.ToolResults.V1beta3.Model.Duration, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.AndroidTest do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

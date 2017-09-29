@@ -20,9 +20,12 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.SuccessDetail do
   @moduledoc """
   
+
+  ## Attributes
+
+  - otherNativeCrash (Boolean): If a native process other than the app crashed. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"otherNativeCrash"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.SuccessDetail do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.SuccessDetail do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

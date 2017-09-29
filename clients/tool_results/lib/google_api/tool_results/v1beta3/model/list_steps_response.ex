@@ -20,9 +20,13 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.ListStepsResponse do
   @moduledoc """
   Response message for StepService.List.
+
+  ## Attributes
+
+  - nextPageToken (String): A continuation token to resume the query at the next item.  If set, indicates that there are more steps to read, by calling list again with this value in the page_token field. Defaults to: `null`.
+  - steps (List[Step]): Steps. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nextPageToken",
     :"steps"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.ListStepsRespon
   def decode(value, options) do
     value
     |> deserialize(:"steps", :list, GoogleApi.ToolResults.V1beta3.Model.Step, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.ListStepsResponse do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

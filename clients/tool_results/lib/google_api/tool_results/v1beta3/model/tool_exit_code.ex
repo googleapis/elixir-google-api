@@ -20,9 +20,12 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.ToolExitCode do
   @moduledoc """
   Exit code from a tool execution.
+
+  ## Attributes
+
+  - number (Integer): Tool execution exit code. A value of 0 means that the execution was successful.  - In response: always set - In create/update request: always set Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"number"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.ToolExitCode do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.ToolExitCode do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

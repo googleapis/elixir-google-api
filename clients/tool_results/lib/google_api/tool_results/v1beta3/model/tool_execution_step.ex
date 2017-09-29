@@ -20,9 +20,12 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.ToolExecutionStep do
   @moduledoc """
   Generic tool step to be used for binaries we do not explicitly support. For example: running cp to copy artifacts from one location to another.
+
+  ## Attributes
+
+  - toolExecution (ToolExecution): A Tool execution.  - In response: present if set by create/update request - In create/update request: optional Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"toolExecution"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.ToolExecutionSt
   def decode(value, options) do
     value
     |> deserialize(:"toolExecution", :struct, GoogleApi.ToolResults.V1beta3.Model.ToolExecution, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.ToolExecutionStep do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

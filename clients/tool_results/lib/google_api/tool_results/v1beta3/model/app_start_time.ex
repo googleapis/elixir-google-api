@@ -20,9 +20,13 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.AppStartTime do
   @moduledoc """
   
+
+  ## Attributes
+
+  - fullyDrawnTime (Duration): Optional. The time from app start to reaching the developer-reported \&quot;fully drawn\&quot; time. This is only stored if the app includes a call to Activity.reportFullyDrawn(). See https://developer.android.com/topic/performance/launch-time.html#time-full Defaults to: `null`.
+  - initialDisplayTime (Duration): The time from app start to the first displayed activity being drawn, as reported in Logcat. See https://developer.android.com/topic/performance/launch-time.html#time-initial Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fullyDrawnTime",
     :"initialDisplayTime"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.AppStartTime do
     value
     |> deserialize(:"fullyDrawnTime", :struct, GoogleApi.ToolResults.V1beta3.Model.Duration, options)
     |> deserialize(:"initialDisplayTime", :struct, GoogleApi.ToolResults.V1beta3.Model.Duration, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.AppStartTime do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

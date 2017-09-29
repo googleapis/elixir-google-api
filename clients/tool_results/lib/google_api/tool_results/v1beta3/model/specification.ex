@@ -20,9 +20,12 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.Specification do
   @moduledoc """
   The details about how to run the execution.
+
+  ## Attributes
+
+  - androidTest (AndroidTest): An Android mobile test execution specification. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"androidTest"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.Specification d
   def decode(value, options) do
     value
     |> deserialize(:"androidTest", :struct, GoogleApi.ToolResults.V1beta3.Model.AndroidTest, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.Specification do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

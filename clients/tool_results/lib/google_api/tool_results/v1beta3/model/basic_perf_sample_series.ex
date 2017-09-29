@@ -20,9 +20,17 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.BasicPerfSampleSeries do
   @moduledoc """
   Encapsulates the metadata for basic sample series represented by a line chart
+
+  ## Attributes
+
+  - perfMetricType (String):  Defaults to: `null`.
+    - Enum - one of [cpu, graphics, memory, network, perfMetricTypeUnspecified]
+  - perfUnit (String):  Defaults to: `null`.
+    - Enum - one of [byte, bytesPerSecond, framesPerSecond, kibibyte, percent, perfUnitUnspecified]
+  - sampleSeriesLabel (String):  Defaults to: `null`.
+    - Enum - one of [cpuKernel, cpuTotal, cpuUser, graphicsFrameRate, memoryRssPrivate, memoryRssShared, memoryRssTotal, memoryTotal, networkReceived, networkSent, ntBytesReceived, ntBytesTransferred, sampleSeriesTypeUnspecified]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"perfMetricType",
     :"perfUnit",
@@ -33,6 +41,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.BasicPerfSampleSeries do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.BasicPerfSampleSeries do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

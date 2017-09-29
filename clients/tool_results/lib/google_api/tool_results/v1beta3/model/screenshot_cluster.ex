@@ -20,9 +20,15 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.ScreenshotCluster do
   @moduledoc """
   
+
+  ## Attributes
+
+  - activity (String): A string that describes the activity of every screen in the cluster. Defaults to: `null`.
+  - clusterId (String): A unique identifier for the cluster. Defaults to: `null`.
+  - keyScreen (Screen): A singular screen that represents the cluster as a whole. This screen will act as the \&quot;cover\&quot; of the entire cluster. When users look at the clusters, only the key screen from each cluster will be shown. Which screen is the key screen is determined by the ClusteringAlgorithm Defaults to: `null`.
+  - screens (List[Screen]): Full list of screens. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"activity",
     :"clusterId",
@@ -37,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.ScreenshotClust
     value
     |> deserialize(:"keyScreen", :struct, GoogleApi.ToolResults.V1beta3.Model.Screen, options)
     |> deserialize(:"screens", :list, GoogleApi.ToolResults.V1beta3.Model.Screen, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.ScreenshotCluster do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

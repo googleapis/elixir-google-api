@@ -20,9 +20,14 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.ToolOutputReference do
   @moduledoc """
   A reference to a ToolExecution output file.
+
+  ## Attributes
+
+  - creationTime (Timestamp): The creation time of the file.  - In response: present if set by create/update request - In create/update request: optional Defaults to: `null`.
+  - output (FileReference): A FileReference to an output file.  - In response: always set - In create/update request: always set Defaults to: `null`.
+  - testCase (TestCaseReference): The test case to which this output file belongs.  - In response: present if set by create/update request - In create/update request: optional Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"creationTime",
     :"output",
@@ -37,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.ToolOutputRefer
     |> deserialize(:"creationTime", :struct, GoogleApi.ToolResults.V1beta3.Model.Timestamp, options)
     |> deserialize(:"output", :struct, GoogleApi.ToolResults.V1beta3.Model.FileReference, options)
     |> deserialize(:"testCase", :struct, GoogleApi.ToolResults.V1beta3.Model.TestCaseReference, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.ToolOutputReference do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

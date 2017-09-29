@@ -20,9 +20,12 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.ListPerfSampleSeriesResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - perfSampleSeries (List[PerfSampleSeries]): The resulting PerfSampleSeries sorted by id Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"perfSampleSeries"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.ListPerfSampleS
   def decode(value, options) do
     value
     |> deserialize(:"perfSampleSeries", :list, GoogleApi.ToolResults.V1beta3.Model.PerfSampleSeries, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.ListPerfSampleSeriesResponse do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

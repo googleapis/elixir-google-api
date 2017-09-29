@@ -20,9 +20,13 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.ListExecutionsResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - executions (List[Execution]): Executions.  Always set. Defaults to: `null`.
+  - nextPageToken (String): A continuation token to resume the query at the next item.  Will only be set if there are more Executions to fetch. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"executions",
     :"nextPageToken"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.ListExecutionsR
   def decode(value, options) do
     value
     |> deserialize(:"executions", :list, GoogleApi.ToolResults.V1beta3.Model.Execution, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.ListExecutionsResponse do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 
