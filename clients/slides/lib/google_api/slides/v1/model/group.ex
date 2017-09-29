@@ -20,9 +20,12 @@
 defmodule GoogleApi.Slides.V1.Model.Group do
   @moduledoc """
   A PageElement kind representing a joined collection of PageElements.
+
+  ## Attributes
+
+  - children (List[PageElement]): The collection of elements in the group. The minimum size of a group is 2. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"children"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.Group do
   def decode(value, options) do
     value
     |> deserialize(:"children", :list, GoogleApi.Slides.V1.Model.PageElement, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.Group do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

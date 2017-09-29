@@ -20,9 +20,12 @@
 defmodule GoogleApi.Slides.V1.Model.ReplaceAllShapesWithSheetsChartResponse do
   @moduledoc """
   The result of replacing shapes with a Google Sheets chart.
+
+  ## Attributes
+
+  - occurrencesChanged (Integer): The number of shapes replaced with charts. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"occurrencesChanged"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.ReplaceAllShapesWithSheetsChartResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.ReplaceAllShapesWithSheetsChartResponse do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.Slides.V1.Model.UpdatePageElementTransformRequest do
   @moduledoc """
   Updates the transform of a page element.  Updating the transform of a group will change the absolute transform of the page elements in that group, which can change their visual appearance. See the documentation for PageElement.transform for more details.
+
+  ## Attributes
+
+  - applyMode (String): The apply mode of the transform update. Defaults to: `null`.
+    - Enum - one of [APPLY_MODE_UNSPECIFIED, RELATIVE, ABSOLUTE]
+  - objectId (String): The object ID of the page element to update. Defaults to: `null`.
+  - transform (AffineTransform): The input transform matrix used to update the page element. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"applyMode",
     :"objectId",
@@ -35,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.UpdatePageElementTransfor
   def decode(value, options) do
     value
     |> deserialize(:"transform", :struct, GoogleApi.Slides.V1.Model.AffineTransform, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.UpdatePageElementTransformRequest do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

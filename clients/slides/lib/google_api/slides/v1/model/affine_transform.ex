@@ -20,9 +20,19 @@
 defmodule GoogleApi.Slides.V1.Model.AffineTransform do
   @moduledoc """
   AffineTransform uses a 3x3 matrix with an implied last row of [ 0 0 1 ] to transform source coordinates (x,y) into destination coordinates (x&#39;, y&#39;) according to:        x&#39;  x  &#x3D;   shear_y  scale_y  translate_y         1  [ 1 ]  After transformation,       x&#39; &#x3D; scale_x * x + shear_x * y + translate_x;      y&#39; &#x3D; scale_y * y + shear_y * x + translate_y;  This message is therefore composed of these six matrix elements.
+
+  ## Attributes
+
+  - scaleX (Float): The X coordinate scaling element. Defaults to: `null`.
+  - scaleY (Float): The Y coordinate scaling element. Defaults to: `null`.
+  - shearX (Float): The X coordinate shearing element. Defaults to: `null`.
+  - shearY (Float): The Y coordinate shearing element. Defaults to: `null`.
+  - translateX (Float): The X coordinate translation element. Defaults to: `null`.
+  - translateY (Float): The Y coordinate translation element. Defaults to: `null`.
+  - unit (String): The units for translate elements. Defaults to: `null`.
+    - Enum - one of [UNIT_UNSPECIFIED, EMU, PT]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"scaleX",
     :"scaleY",
@@ -37,6 +47,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.AffineTransform do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.AffineTransform do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

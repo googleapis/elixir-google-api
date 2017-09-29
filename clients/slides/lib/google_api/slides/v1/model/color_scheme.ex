@@ -20,9 +20,12 @@
 defmodule GoogleApi.Slides.V1.Model.ColorScheme do
   @moduledoc """
   The palette of predefined colors for a page.
+
+  ## Attributes
+
+  - colors (List[ThemeColorPair]): The ThemeColorType and corresponding concrete color pairs. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"colors"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.ColorScheme do
   def decode(value, options) do
     value
     |> deserialize(:"colors", :list, GoogleApi.Slides.V1.Model.ThemeColorPair, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.ColorScheme do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

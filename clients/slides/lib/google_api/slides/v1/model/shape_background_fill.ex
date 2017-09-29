@@ -20,9 +20,14 @@
 defmodule GoogleApi.Slides.V1.Model.ShapeBackgroundFill do
   @moduledoc """
   The shape background fill.
+
+  ## Attributes
+
+  - propertyState (String): The background fill property state.  Updating the the fill on a shape will implicitly update this field to &#x60;RENDERED&#x60;, unless another value is specified in the same request. To have no fill on a shape, set this field to &#x60;NOT_RENDERED&#x60;. In this case, any other fill fields set in the same request will be ignored. Defaults to: `null`.
+    - Enum - one of [RENDERED, NOT_RENDERED, INHERIT]
+  - solidFill (SolidFill): Solid color fill. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"propertyState",
     :"solidFill"
@@ -34,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.ShapeBackgroundFill do
   def decode(value, options) do
     value
     |> deserialize(:"solidFill", :struct, GoogleApi.Slides.V1.Model.SolidFill, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.ShapeBackgroundFill do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

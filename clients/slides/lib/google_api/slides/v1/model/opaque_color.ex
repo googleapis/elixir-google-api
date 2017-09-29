@@ -20,9 +20,14 @@
 defmodule GoogleApi.Slides.V1.Model.OpaqueColor do
   @moduledoc """
   A themeable solid color value.
+
+  ## Attributes
+
+  - rgbColor (RgbColor): An opaque RGB color. Defaults to: `null`.
+  - themeColor (String): An opaque theme color. Defaults to: `null`.
+    - Enum - one of [THEME_COLOR_TYPE_UNSPECIFIED, DARK1, LIGHT1, DARK2, LIGHT2, ACCENT1, ACCENT2, ACCENT3, ACCENT4, ACCENT5, ACCENT6, HYPERLINK, FOLLOWED_HYPERLINK, TEXT1, BACKGROUND1, TEXT2, BACKGROUND2]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"rgbColor",
     :"themeColor"
@@ -34,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.OpaqueColor do
   def decode(value, options) do
     value
     |> deserialize(:"rgbColor", :struct, GoogleApi.Slides.V1.Model.RgbColor, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.OpaqueColor do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.Slides.V1.Model.WriteControl do
   @moduledoc """
   Provides control over how write requests are executed.
+
+  ## Attributes
+
+  - requiredRevisionId (String): The revision ID of the presentation required for the write request. If specified and the &#x60;required_revision_id&#x60; doesn&#39;t exactly match the presentation&#39;s current &#x60;revision_id&#x60;, the request will not be processed and will return a 400 bad request error. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"requiredRevisionId"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.WriteControl do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.WriteControl do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

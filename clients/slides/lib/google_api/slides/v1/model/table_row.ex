@@ -20,9 +20,13 @@
 defmodule GoogleApi.Slides.V1.Model.TableRow do
   @moduledoc """
   Properties and contents of each row in a table.
+
+  ## Attributes
+
+  - rowHeight (Dimension): Height of a row. Defaults to: `null`.
+  - tableCells (List[TableCell]): Properties and contents of each cell.  Cells that span multiple columns are represented only once with a column_span greater than 1. As a result, the length of this collection does not always match the number of columns of the entire table. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"rowHeight",
     :"tableCells"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.TableRow do
     value
     |> deserialize(:"rowHeight", :struct, GoogleApi.Slides.V1.Model.Dimension, options)
     |> deserialize(:"tableCells", :list, GoogleApi.Slides.V1.Model.TableCell, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.TableRow do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

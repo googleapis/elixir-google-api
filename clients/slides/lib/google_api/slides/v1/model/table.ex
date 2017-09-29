@@ -20,9 +20,15 @@
 defmodule GoogleApi.Slides.V1.Model.Table do
   @moduledoc """
   A PageElement kind representing a table.
+
+  ## Attributes
+
+  - columns (Integer): Number of columns in the table. Defaults to: `null`.
+  - rows (Integer): Number of rows in the table. Defaults to: `null`.
+  - tableColumns (List[TableColumnProperties]): Properties of each column. Defaults to: `null`.
+  - tableRows (List[TableRow]): Properties and contents of each row.  Cells that span multiple rows are contained in only one of these rows and have a row_span greater than 1. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"columns",
     :"rows",
@@ -37,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.Table do
     value
     |> deserialize(:"tableColumns", :list, GoogleApi.Slides.V1.Model.TableColumnProperties, options)
     |> deserialize(:"tableRows", :list, GoogleApi.Slides.V1.Model.TableRow, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.Table do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

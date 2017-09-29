@@ -20,9 +20,15 @@
 defmodule GoogleApi.Slides.V1.Model.CreateLineRequest do
   @moduledoc """
   Creates a line.
+
+  ## Attributes
+
+  - elementProperties (PageElementProperties): The element properties for the line. Defaults to: `null`.
+  - lineCategory (String): The category of line to be created. Defaults to: `null`.
+    - Enum - one of [STRAIGHT, BENT, CURVED]
+  - objectId (String): A user-supplied object ID.  If you specify an ID, it must be unique among all pages and page elements in the presentation. The ID must start with an alphanumeric character or an underscore (matches regex &#x60;[a-zA-Z0-9_]&#x60;); remaining characters may include those as well as a hyphen or colon (matches regex &#x60;[a-zA-Z0-9_-:]&#x60;). The length of the ID must not be less than 5 or greater than 50.  If you don&#39;t specify an ID, a unique one is generated. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"elementProperties",
     :"lineCategory",
@@ -35,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.CreateLineRequest do
   def decode(value, options) do
     value
     |> deserialize(:"elementProperties", :struct, GoogleApi.Slides.V1.Model.PageElementProperties, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.CreateLineRequest do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

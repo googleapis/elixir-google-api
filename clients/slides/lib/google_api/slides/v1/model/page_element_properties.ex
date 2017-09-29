@@ -20,9 +20,14 @@
 defmodule GoogleApi.Slides.V1.Model.PageElementProperties do
   @moduledoc """
   Common properties for a page element.  Note: When you initially create a PageElement, the API may modify the values of both &#x60;size&#x60; and &#x60;transform&#x60;, but the visual size will be unchanged.
+
+  ## Attributes
+
+  - pageObjectId (String): The object ID of the page where the element is located. Defaults to: `null`.
+  - size (Size): The size of the element. Defaults to: `null`.
+  - transform (AffineTransform): The transform for the element. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"pageObjectId",
     :"size",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.PageElementProperties do
     value
     |> deserialize(:"size", :struct, GoogleApi.Slides.V1.Model.Size, options)
     |> deserialize(:"transform", :struct, GoogleApi.Slides.V1.Model.AffineTransform, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.PageElementProperties do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

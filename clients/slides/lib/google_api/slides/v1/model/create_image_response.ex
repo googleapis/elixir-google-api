@@ -20,9 +20,12 @@
 defmodule GoogleApi.Slides.V1.Model.CreateImageResponse do
   @moduledoc """
   The result of creating an image.
+
+  ## Attributes
+
+  - objectId (String): The object ID of the created image. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"objectId"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.CreateImageResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.CreateImageResponse do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

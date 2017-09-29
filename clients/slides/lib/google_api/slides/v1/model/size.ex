@@ -20,9 +20,13 @@
 defmodule GoogleApi.Slides.V1.Model.Size do
   @moduledoc """
   A width and height.
+
+  ## Attributes
+
+  - height (Dimension): The height of the object. Defaults to: `null`.
+  - width (Dimension): The width of the object. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"height",
     :"width"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.Size do
     value
     |> deserialize(:"height", :struct, GoogleApi.Slides.V1.Model.Dimension, options)
     |> deserialize(:"width", :struct, GoogleApi.Slides.V1.Model.Dimension, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.Size do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

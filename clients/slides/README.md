@@ -1,6 +1,6 @@
 # GoogleApi.Slides.V1
 
-**TODO: Add description**
+An API for creating and editing Google Slides presentations.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_slides` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_slides, "~> 0.1.0"}]
+  [{:google_api_slides, "~> 0.0.1"}]
 end
 ```
 

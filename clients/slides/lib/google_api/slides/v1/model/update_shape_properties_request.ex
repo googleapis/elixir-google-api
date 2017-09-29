@@ -20,9 +20,14 @@
 defmodule GoogleApi.Slides.V1.Model.UpdateShapePropertiesRequest do
   @moduledoc """
   Update the properties of a Shape.
+
+  ## Attributes
+
+  - fields (String): The fields that should be updated.  At least one field must be specified. The root &#x60;shapeProperties&#x60; is implied and should not be specified. A single &#x60;\&quot;*\&quot;&#x60; can be used as short-hand for listing every field.  For example to update the shape background solid fill color, set &#x60;fields&#x60; to &#x60;\&quot;shapeBackgroundFill.solidFill.color\&quot;&#x60;.  To reset a property to its default value, include its field name in the field mask but leave the field itself unset. Defaults to: `null`.
+  - objectId (String): The object ID of the shape the updates are applied to. Defaults to: `null`.
+  - shapeProperties (ShapeProperties): The shape properties to update. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fields",
     :"objectId",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.UpdateShapePropertiesRequ
   def decode(value, options) do
     value
     |> deserialize(:"shapeProperties", :struct, GoogleApi.Slides.V1.Model.ShapeProperties, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.UpdateShapePropertiesRequest do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.Slides.V1.Model.Placeholder do
   @moduledoc """
   The placeholder information that uniquely identifies a placeholder shape.
+
+  ## Attributes
+
+  - index (Integer): The index of the placeholder. If the same placeholder types are present in the same page, they would have different index values. Defaults to: `null`.
+  - parentObjectId (String): The object ID of this shape&#39;s parent placeholder. If unset, the parent placeholder shape does not exist, so the shape does not inherit properties from any other shape. Defaults to: `null`.
+  - type (String): The type of the placeholder. Defaults to: `null`.
+    - Enum - one of [NONE, BODY, CHART, CLIP_ART, CENTERED_TITLE, DIAGRAM, DATE_AND_TIME, FOOTER, HEADER, MEDIA, OBJECT, PICTURE, SLIDE_NUMBER, SUBTITLE, TABLE, TITLE, SLIDE_IMAGE]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"index",
     :"parentObjectId",
@@ -33,6 +39,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.Placeholder do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.Placeholder do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,16 @@
 defmodule GoogleApi.Slides.V1.Model.ReplaceAllShapesWithImageRequest do
   @moduledoc """
   Replaces all shapes that match the given criteria with the provided image.
+
+  ## Attributes
+
+  - containsText (SubstringMatchCriteria): If set, this request will replace all of the shapes that contain the given text. Defaults to: `null`.
+  - imageUrl (String): The image URL.  The image is fetched once at insertion time and a copy is stored for display inside the presentation. Images must be less than 50MB in size, cannot exceed 25 megapixels, and must be in either in PNG, JPEG, or GIF format.  The provided URL can be at maximum 2K bytes large. Defaults to: `null`.
+  - pageObjectIds (List[String]): If non-empty, limits the matches to page elements only on the given pages.  Returns a 400 bad request error if given the page object ID of a notes page or a notes master, or if a page with that object ID doesn&#39;t exist in the presentation. Defaults to: `null`.
+  - replaceMethod (String): The replace method. Defaults to: `null`.
+    - Enum - one of [CENTER_INSIDE, CENTER_CROP]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"containsText",
     :"imageUrl",
@@ -36,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.ReplaceAllShapesWithImage
   def decode(value, options) do
     value
     |> deserialize(:"containsText", :struct, GoogleApi.Slides.V1.Model.SubstringMatchCriteria, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.ReplaceAllShapesWithImageRequest do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

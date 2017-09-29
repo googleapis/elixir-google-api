@@ -20,9 +20,14 @@
 defmodule GoogleApi.Slides.V1.Model.Line do
   @moduledoc """
   A PageElement kind representing a line, curved connector, or bent connector.
+
+  ## Attributes
+
+  - lineProperties (LineProperties): The properties of the line. Defaults to: `null`.
+  - lineType (String): The type of the line. Defaults to: `null`.
+    - Enum - one of [TYPE_UNSPECIFIED, STRAIGHT_CONNECTOR_1, BENT_CONNECTOR_2, BENT_CONNECTOR_3, BENT_CONNECTOR_4, BENT_CONNECTOR_5, CURVED_CONNECTOR_2, CURVED_CONNECTOR_3, CURVED_CONNECTOR_4, CURVED_CONNECTOR_5]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"lineProperties",
     :"lineType"
@@ -34,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.Line do
   def decode(value, options) do
     value
     |> deserialize(:"lineProperties", :struct, GoogleApi.Slides.V1.Model.LineProperties, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.Line do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

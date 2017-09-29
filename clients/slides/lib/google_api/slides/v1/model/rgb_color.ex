@@ -20,9 +20,14 @@
 defmodule GoogleApi.Slides.V1.Model.RgbColor do
   @moduledoc """
   An RGB color.
+
+  ## Attributes
+
+  - blue (Float): The blue component of the color, from 0.0 to 1.0. Defaults to: `null`.
+  - green (Float): The green component of the color, from 0.0 to 1.0. Defaults to: `null`.
+  - red (Float): The red component of the color, from 0.0 to 1.0. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"blue",
     :"green",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.RgbColor do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.RgbColor do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

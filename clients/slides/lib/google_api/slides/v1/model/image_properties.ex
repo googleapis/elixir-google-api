@@ -20,9 +20,19 @@
 defmodule GoogleApi.Slides.V1.Model.ImageProperties do
   @moduledoc """
   The properties of the Image.
+
+  ## Attributes
+
+  - brightness (Float): The brightness effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect. This property is read-only. Defaults to: `null`.
+  - contrast (Float): The contrast effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect. This property is read-only. Defaults to: `null`.
+  - cropProperties (CropProperties): The crop properties of the image. If not set, the image is not cropped. This property is read-only. Defaults to: `null`.
+  - link (Link): The hyperlink destination of the image. If unset, there is no link. Defaults to: `null`.
+  - outline (Outline): The outline of the image. If not set, the the image has no outline. Defaults to: `null`.
+  - recolor (Recolor): The recolor effect of the image. If not set, the image is not recolored. This property is read-only. Defaults to: `null`.
+  - shadow (Shadow): The shadow of the image. If not set, the image has no shadow. This property is read-only. Defaults to: `null`.
+  - transparency (Float): The transparency effect of the image. The value should be in the interval [0.0, 1.0], where 0 means no effect and 1 means completely transparent. This property is read-only. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"brightness",
     :"contrast",
@@ -44,6 +54,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.ImageProperties do
     |> deserialize(:"outline", :struct, GoogleApi.Slides.V1.Model.Outline, options)
     |> deserialize(:"recolor", :struct, GoogleApi.Slides.V1.Model.Recolor, options)
     |> deserialize(:"shadow", :struct, GoogleApi.Slides.V1.Model.Shadow, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.ImageProperties do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

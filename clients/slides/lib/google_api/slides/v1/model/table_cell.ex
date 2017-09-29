@@ -20,9 +20,16 @@
 defmodule GoogleApi.Slides.V1.Model.TableCell do
   @moduledoc """
   Properties and contents of each table cell.
+
+  ## Attributes
+
+  - columnSpan (Integer): Column span of the cell. Defaults to: `null`.
+  - location (TableCellLocation): The location of the cell within the table. Defaults to: `null`.
+  - rowSpan (Integer): Row span of the cell. Defaults to: `null`.
+  - tableCellProperties (TableCellProperties): The properties of the table cell. Defaults to: `null`.
+  - text (TextContent): The text content of the cell. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"columnSpan",
     :"location",
@@ -39,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.TableCell do
     |> deserialize(:"location", :struct, GoogleApi.Slides.V1.Model.TableCellLocation, options)
     |> deserialize(:"tableCellProperties", :struct, GoogleApi.Slides.V1.Model.TableCellProperties, options)
     |> deserialize(:"text", :struct, GoogleApi.Slides.V1.Model.TextContent, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.TableCell do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

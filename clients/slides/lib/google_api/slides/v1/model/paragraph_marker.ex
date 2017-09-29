@@ -20,9 +20,13 @@
 defmodule GoogleApi.Slides.V1.Model.ParagraphMarker do
   @moduledoc """
   A TextElement kind that represents the beginning of a new paragraph.
+
+  ## Attributes
+
+  - bullet (Bullet): The bullet for this paragraph. If not present, the paragraph does not belong to a list. Defaults to: `null`.
+  - style (ParagraphStyle): The paragraph&#39;s style Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bullet",
     :"style"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.ParagraphMarker do
     value
     |> deserialize(:"bullet", :struct, GoogleApi.Slides.V1.Model.Bullet, options)
     |> deserialize(:"style", :struct, GoogleApi.Slides.V1.Model.ParagraphStyle, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.ParagraphMarker do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

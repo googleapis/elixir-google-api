@@ -20,9 +20,17 @@
 defmodule GoogleApi.Slides.V1.Model.Outline do
   @moduledoc """
   The outline of a PageElement.  If these fields are unset, they may be inherited from a parent placeholder if it exists. If there is no parent, the fields will default to the value used for new page elements created in the Slides editor, which may depend on the page element kind.
+
+  ## Attributes
+
+  - dashStyle (String): The dash style of the outline. Defaults to: `null`.
+    - Enum - one of [DASH_STYLE_UNSPECIFIED, SOLID, DOT, DASH, DASH_DOT, LONG_DASH, LONG_DASH_DOT]
+  - outlineFill (OutlineFill): The fill of the outline. Defaults to: `null`.
+  - propertyState (String): The outline property state.  Updating the the outline on a page element will implicitly update this field to&#x60;RENDERED&#x60;, unless another value is specified in the same request. To have no outline on a page element, set this field to &#x60;NOT_RENDERED&#x60;. In this case, any other outline fields set in the same request will be ignored. Defaults to: `null`.
+    - Enum - one of [RENDERED, NOT_RENDERED, INHERIT]
+  - weight (Dimension): The thickness of the outline. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dashStyle",
     :"outlineFill",
@@ -37,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.Outline do
     value
     |> deserialize(:"outlineFill", :struct, GoogleApi.Slides.V1.Model.OutlineFill, options)
     |> deserialize(:"weight", :struct, GoogleApi.Slides.V1.Model.Dimension, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.Outline do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

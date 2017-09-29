@@ -20,9 +20,12 @@
 defmodule GoogleApi.Slides.V1.Model.MasterProperties do
   @moduledoc """
   The properties of Page that are only relevant for pages with page_type MASTER.
+
+  ## Attributes
+
+  - displayName (String): The human-readable name of the master. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"displayName"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.MasterProperties do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.MasterProperties do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

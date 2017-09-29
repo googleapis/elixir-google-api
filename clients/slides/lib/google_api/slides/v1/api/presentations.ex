@@ -74,7 +74,9 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
     }
     %{}
     |> method(:post)
-    |> url("/v1/presentations/#{presentation_id}:batchUpdate")
+    |> url("/v1/presentations/{presentationId}:batchUpdate", %{
+         "presentationId" => URI.encode_www_form(presentation_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -181,7 +183,9 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
     }
     %{}
     |> method(:get)
-    |> url("/v1/presentations/#{presentation_id}")
+    |> url("/v1/presentations/{+presentationId}", %{
+         "presentationId" => URI.encode_www_form(presentation_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -235,7 +239,10 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
     }
     %{}
     |> method(:get)
-    |> url("/v1/presentations/#{presentation_id}/pages/#{page_object_id}")
+    |> url("/v1/presentations/{presentationId}/pages/{pageObjectId}", %{
+         "presentationId" => URI.encode_www_form(presentation_id),
+         "pageObjectId" => URI.encode_www_form(page_object_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -293,7 +300,10 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
     }
     %{}
     |> method(:get)
-    |> url("/v1/presentations/#{presentation_id}/pages/#{page_object_id}/thumbnail")
+    |> url("/v1/presentations/{presentationId}/pages/{pageObjectId}/thumbnail", %{
+         "presentationId" => URI.encode_www_form(presentation_id),
+         "pageObjectId" => URI.encode_www_form(page_object_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

@@ -20,9 +20,24 @@
 defmodule GoogleApi.Slides.V1.Model.PageElement do
   @moduledoc """
   A visual element rendered on a page.
+
+  ## Attributes
+
+  - description (String): The description of the page element. Combined with title to display alt text. Defaults to: `null`.
+  - elementGroup (Group): A collection of page elements joined as a single unit. Defaults to: `null`.
+  - image (Image): An image page element. Defaults to: `null`.
+  - line (Line): A line page element. Defaults to: `null`.
+  - objectId (String): The object ID for this page element. Object IDs used by google.apps.slides.v1.Page and google.apps.slides.v1.PageElement share the same namespace. Defaults to: `null`.
+  - shape (Shape): A generic shape. Defaults to: `null`.
+  - sheetsChart (SheetsChart): A linked chart embedded from Google Sheets. Unlinked charts are represented as images. Defaults to: `null`.
+  - size (Size): The size of the page element. Defaults to: `null`.
+  - table (Table): A table page element. Defaults to: `null`.
+  - title (String): The title of the page element. Combined with description to display alt text. Defaults to: `null`.
+  - transform (AffineTransform): The transform of the page element.  The visual appearance of the page element is determined by its absolute transform. To compute the absolute transform, preconcatenate a page element&#39;s transform with the transforms of all of its parent groups. If the page element is not in a group, its absolute transform is the same as the value in this field.  The initial transform for the newly created Group is always the identity transform. Defaults to: `null`.
+  - video (Video): A video page element. Defaults to: `null`.
+  - wordArt (WordArt): A word art page element. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"description",
     :"elementGroup",
@@ -54,6 +69,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.PageElement do
     |> deserialize(:"transform", :struct, GoogleApi.Slides.V1.Model.AffineTransform, options)
     |> deserialize(:"video", :struct, GoogleApi.Slides.V1.Model.Video, options)
     |> deserialize(:"wordArt", :struct, GoogleApi.Slides.V1.Model.WordArt, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.PageElement do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

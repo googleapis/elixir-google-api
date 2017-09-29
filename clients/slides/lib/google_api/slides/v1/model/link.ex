@@ -20,9 +20,16 @@
 defmodule GoogleApi.Slides.V1.Model.Link do
   @moduledoc """
   A hypertext link.
+
+  ## Attributes
+
+  - pageObjectId (String): If set, indicates this is a link to the specific page in this presentation with this ID. A page with this ID may not exist. Defaults to: `null`.
+  - relativeLink (String): If set, indicates this is a link to a slide in this presentation, addressed by its position. Defaults to: `null`.
+    - Enum - one of [RELATIVE_SLIDE_LINK_UNSPECIFIED, NEXT_SLIDE, PREVIOUS_SLIDE, FIRST_SLIDE, LAST_SLIDE]
+  - slideIndex (Integer): If set, indicates this is a link to the slide at this zero-based index in the presentation. There may not be a slide at this index. Defaults to: `null`.
+  - url (String): If set, indicates this is a link to the external web page at this URL. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"pageObjectId",
     :"relativeLink",
@@ -34,6 +41,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.Link do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.Link do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

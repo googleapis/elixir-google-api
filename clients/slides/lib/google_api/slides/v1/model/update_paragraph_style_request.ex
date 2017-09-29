@@ -20,9 +20,16 @@
 defmodule GoogleApi.Slides.V1.Model.UpdateParagraphStyleRequest do
   @moduledoc """
   Updates the styling for all of the paragraphs within a Shape or Table that overlap with the given text index range.
+
+  ## Attributes
+
+  - cellLocation (TableCellLocation): The location of the cell in the table containing the paragraph(s) to style. If &#x60;object_id&#x60; refers to a table, &#x60;cell_location&#x60; must have a value. Otherwise, it must not. Defaults to: `null`.
+  - fields (String): The fields that should be updated.  At least one field must be specified. The root &#x60;style&#x60; is implied and should not be specified. A single &#x60;\&quot;*\&quot;&#x60; can be used as short-hand for listing every field.  For example, to update the paragraph alignment, set &#x60;fields&#x60; to &#x60;\&quot;alignment\&quot;&#x60;.  To reset a property to its default value, include its field name in the field mask but leave the field itself unset. Defaults to: `null`.
+  - objectId (String): The object ID of the shape or table with the text to be styled. Defaults to: `null`.
+  - style (ParagraphStyle): The paragraph&#39;s style. Defaults to: `null`.
+  - textRange (Range): The range of text containing the paragraph(s) to style. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cellLocation",
     :"fields",
@@ -39,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.UpdateParagraphStyleReque
     |> deserialize(:"cellLocation", :struct, GoogleApi.Slides.V1.Model.TableCellLocation, options)
     |> deserialize(:"style", :struct, GoogleApi.Slides.V1.Model.ParagraphStyle, options)
     |> deserialize(:"textRange", :struct, GoogleApi.Slides.V1.Model.Range, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.UpdateParagraphStyleRequest do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

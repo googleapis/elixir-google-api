@@ -20,9 +20,13 @@
 defmodule GoogleApi.Slides.V1.Model.BatchUpdatePresentationRequest do
   @moduledoc """
   Request message for PresentationsService.BatchUpdatePresentation.
+
+  ## Attributes
+
+  - requests (List[Request]): A list of updates to apply to the presentation. Defaults to: `null`.
+  - writeControl (WriteControl): Provides control over how write requests are executed. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"requests",
     :"writeControl"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.BatchUpdatePresentationRe
     value
     |> deserialize(:"requests", :list, GoogleApi.Slides.V1.Model.Request, options)
     |> deserialize(:"writeControl", :struct, GoogleApi.Slides.V1.Model.WriteControl, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.BatchUpdatePresentationRequest do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

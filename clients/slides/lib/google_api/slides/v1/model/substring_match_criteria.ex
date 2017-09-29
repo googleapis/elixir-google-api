@@ -20,9 +20,13 @@
 defmodule GoogleApi.Slides.V1.Model.SubstringMatchCriteria do
   @moduledoc """
   A criteria that matches a specific string of text in a shape or table.
+
+  ## Attributes
+
+  - matchCase (Boolean): Indicates whether the search should respect case:  - &#x60;True&#x60;: the search is case sensitive. - &#x60;False&#x60;: the search is case insensitive. Defaults to: `null`.
+  - text (String): The text to search for in the shape or table. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"matchCase",
     :"text"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.SubstringMatchCriteria do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.SubstringMatchCriteria do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

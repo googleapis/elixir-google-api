@@ -20,9 +20,15 @@
 defmodule GoogleApi.Slides.V1.Model.CreateSlideRequest do
   @moduledoc """
   Creates a new slide.
+
+  ## Attributes
+
+  - insertionIndex (Integer): The optional zero-based index indicating where to insert the slides.  If you don&#39;t specify an index, the new slide is created at the end. Defaults to: `null`.
+  - objectId (String): A user-supplied object ID.  If you specify an ID, it must be unique among all pages and page elements in the presentation. The ID must start with an alphanumeric character or an underscore (matches regex &#x60;[a-zA-Z0-9_]&#x60;); remaining characters may include those as well as a hyphen or colon (matches regex &#x60;[a-zA-Z0-9_-:]&#x60;). The length of the ID must not be less than 5 or greater than 50.  If you don&#39;t specify an ID, a unique one is generated. Defaults to: `null`.
+  - placeholderIdMappings (List[LayoutPlaceholderIdMapping]): An optional list of object ID mappings from the placeholder(s) on the layout to the placeholder(s) that will be created on the new slide from that specified layout. Can only be used when &#x60;slide_layout_reference&#x60; is specified. Defaults to: `null`.
+  - slideLayoutReference (LayoutReference): Layout reference of the slide to be inserted, based on the *current master*, which is one of the following:  - The master of the previous slide index. - The master of the first slide, if the insertion_index is zero. - The first master in the presentation, if there are no slides.  If the LayoutReference is not found in the current master, a 400 bad request error is returned.  If you don&#39;t specify a layout reference, then the new slide will use the predefined layout &#x60;BLANK&#x60;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"insertionIndex",
     :"objectId",
@@ -37,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.CreateSlideRequest do
     value
     |> deserialize(:"placeholderIdMappings", :list, GoogleApi.Slides.V1.Model.LayoutPlaceholderIdMapping, options)
     |> deserialize(:"slideLayoutReference", :struct, GoogleApi.Slides.V1.Model.LayoutReference, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.CreateSlideRequest do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

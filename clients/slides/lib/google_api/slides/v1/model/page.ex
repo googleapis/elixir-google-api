@@ -20,9 +20,21 @@
 defmodule GoogleApi.Slides.V1.Model.Page do
   @moduledoc """
   A page in a presentation.
+
+  ## Attributes
+
+  - layoutProperties (LayoutProperties): Layout specific properties. Only set if page_type &#x3D; LAYOUT. Defaults to: `null`.
+  - masterProperties (MasterProperties): Master specific properties. Only set if page_type &#x3D; MASTER. Defaults to: `null`.
+  - notesProperties (NotesProperties): Notes specific properties. Only set if page_type &#x3D; NOTES. Defaults to: `null`.
+  - objectId (String): The object ID for this page. Object IDs used by Page and PageElement share the same namespace. Defaults to: `null`.
+  - pageElements (List[PageElement]): The page elements rendered on the page. Defaults to: `null`.
+  - pageProperties (PageProperties): The properties of the page. Defaults to: `null`.
+  - pageType (String): The type of the page. Defaults to: `null`.
+    - Enum - one of [SLIDE, MASTER, LAYOUT, NOTES, NOTES_MASTER]
+  - revisionId (String): The revision ID of the presentation containing this page. Can be used in update requests to assert that the presentation revision hasn&#39;t changed since the last read operation. Only populated if the user has edit access to the presentation.  The format of the revision ID may change over time, so it should be treated opaquely. A returned revision ID is only guaranteed to be valid for 24 hours after it has been returned and cannot be shared across users. If the revision ID is unchanged between calls, then the presentation has not changed. Conversely, a changed ID (for the same presentation and user) usually means the presentation has been updated; however, a changed ID can also be due to internal factors such as ID format changes. Defaults to: `null`.
+  - slideProperties (SlideProperties): Slide specific properties. Only set if page_type &#x3D; SLIDE. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"layoutProperties",
     :"masterProperties",
@@ -46,6 +58,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.Page do
     |> deserialize(:"pageElements", :list, GoogleApi.Slides.V1.Model.PageElement, options)
     |> deserialize(:"pageProperties", :struct, GoogleApi.Slides.V1.Model.PageProperties, options)
     |> deserialize(:"slideProperties", :struct, GoogleApi.Slides.V1.Model.SlideProperties, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.Page do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

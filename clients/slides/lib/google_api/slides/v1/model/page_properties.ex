@@ -20,9 +20,13 @@
 defmodule GoogleApi.Slides.V1.Model.PageProperties do
   @moduledoc """
   The properties of the Page.  The page will inherit properties from the parent page. Depending on the page type the hierarchy is defined in either SlideProperties or LayoutProperties.
+
+  ## Attributes
+
+  - colorScheme (ColorScheme): The color scheme of the page. If unset, the color scheme is inherited from a parent page. If the page has no parent, the color scheme uses a default Slides color scheme. This field is read-only. Defaults to: `null`.
+  - pageBackgroundFill (PageBackgroundFill): The background fill of the page. If unset, the background fill is inherited from a parent page if it exists. If the page has no parent, then the background fill defaults to the corresponding fill in the Slides editor. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"colorScheme",
     :"pageBackgroundFill"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.PageProperties do
     value
     |> deserialize(:"colorScheme", :struct, GoogleApi.Slides.V1.Model.ColorScheme, options)
     |> deserialize(:"pageBackgroundFill", :struct, GoogleApi.Slides.V1.Model.PageBackgroundFill, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.PageProperties do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

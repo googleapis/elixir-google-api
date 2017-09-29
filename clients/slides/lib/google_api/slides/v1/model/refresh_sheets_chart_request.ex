@@ -20,9 +20,12 @@
 defmodule GoogleApi.Slides.V1.Model.RefreshSheetsChartRequest do
   @moduledoc """
   Refreshes an embedded Google Sheets chart by replacing it with the latest version of the chart from Google Sheets.  NOTE: Refreshing charts requires  at least one of the spreadsheets.readonly, spreadsheets, drive.readonly, or drive OAuth scopes.
+
+  ## Attributes
+
+  - objectId (String): The object ID of the chart to refresh. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"objectId"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.RefreshSheetsChartRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.RefreshSheetsChartRequest do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

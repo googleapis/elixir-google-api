@@ -20,9 +20,16 @@
 defmodule GoogleApi.Slides.V1.Model.CreateParagraphBulletsRequest do
   @moduledoc """
   Creates bullets for all of the paragraphs that overlap with the given text index range.  The nesting level of each paragraph will be determined by counting leading tabs in front of each paragraph. To avoid excess space between the bullet and the corresponding paragraph, these leading tabs are removed by this request. This may change the indices of parts of the text.  If the paragraph immediately before paragraphs being updated is in a list with a matching preset, the paragraphs being updated are added to that preceding list.
+
+  ## Attributes
+
+  - bulletPreset (String): The kinds of bullet glyphs to be used. Defaults to the &#x60;BULLET_DISC_CIRCLE_SQUARE&#x60; preset. Defaults to: `null`.
+    - Enum - one of [BULLET_DISC_CIRCLE_SQUARE, BULLET_DIAMONDX_ARROW3D_SQUARE, BULLET_CHECKBOX, BULLET_ARROW_DIAMOND_DISC, BULLET_STAR_CIRCLE_SQUARE, BULLET_ARROW3D_CIRCLE_SQUARE, BULLET_LEFTTRIANGLE_DIAMOND_DISC, BULLET_DIAMONDX_HOLLOWDIAMOND_SQUARE, BULLET_DIAMOND_CIRCLE_SQUARE, NUMBERED_DIGIT_ALPHA_ROMAN, NUMBERED_DIGIT_ALPHA_ROMAN_PARENS, NUMBERED_DIGIT_NESTED, NUMBERED_UPPERALPHA_ALPHA_ROMAN, NUMBERED_UPPERROMAN_UPPERALPHA_DIGIT, NUMBERED_ZERODIGIT_ALPHA_ROMAN]
+  - cellLocation (TableCellLocation): The optional table cell location if the text to be modified is in a table cell. If present, the object_id must refer to a table. Defaults to: `null`.
+  - objectId (String): The object ID of the shape or table containing the text to add bullets to. Defaults to: `null`.
+  - textRange (Range): The range of text to apply the bullet presets to, based on TextElement indexes. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bulletPreset",
     :"cellLocation",
@@ -37,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.CreateParagraphBulletsReq
     value
     |> deserialize(:"cellLocation", :struct, GoogleApi.Slides.V1.Model.TableCellLocation, options)
     |> deserialize(:"textRange", :struct, GoogleApi.Slides.V1.Model.Range, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.CreateParagraphBulletsRequest do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

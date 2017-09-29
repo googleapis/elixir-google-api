@@ -20,9 +20,14 @@
 defmodule GoogleApi.Slides.V1.Model.LayoutPlaceholderIdMapping do
   @moduledoc """
   The user-specified ID mapping for a placeholder that will be created on a slide from a specified layout.
+
+  ## Attributes
+
+  - layoutPlaceholder (Placeholder): The placeholder on a layout that will be applied to a slide. Only type and index are needed. For example, a predefined &#x60;TITLE_AND_BODY&#x60; layout may usually have a TITLE placeholder with index 0 and a BODY placeholder with index 0. Defaults to: `null`.
+  - layoutPlaceholderObjectId (String): The object ID of the placeholder on a layout that will be applied to a slide. Defaults to: `null`.
+  - objectId (String): A user-supplied object ID for the placeholder identified above that to be created onto a slide.  If you specify an ID, it must be unique among all pages and page elements in the presentation. The ID must start with an alphanumeric character or an underscore (matches regex &#x60;[a-zA-Z0-9_]&#x60;); remaining characters may include those as well as a hyphen or colon (matches regex &#x60;[a-zA-Z0-9_-:]&#x60;). The length of the ID must not be less than 5 or greater than 50.  If you don&#39;t specify an ID, a unique one is generated. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"layoutPlaceholder",
     :"layoutPlaceholderObjectId",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.LayoutPlaceholderIdMappin
   def decode(value, options) do
     value
     |> deserialize(:"layoutPlaceholder", :struct, GoogleApi.Slides.V1.Model.Placeholder, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.LayoutPlaceholderIdMapping do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

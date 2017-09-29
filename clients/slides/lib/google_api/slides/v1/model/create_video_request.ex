@@ -20,9 +20,16 @@
 defmodule GoogleApi.Slides.V1.Model.CreateVideoRequest do
   @moduledoc """
   Creates a video.
+
+  ## Attributes
+
+  - elementProperties (PageElementProperties): The element properties for the video. Defaults to: `null`.
+  - id (String): The video source&#39;s unique identifier for this video.  e.g. For YouTube video https://www.youtube.com/watch?v&#x3D;7U3axjORYZ0, the ID is 7U3axjORYZ0. Defaults to: `null`.
+  - objectId (String): A user-supplied object ID.  If you specify an ID, it must be unique among all pages and page elements in the presentation. The ID must start with an alphanumeric character or an underscore (matches regex &#x60;[a-zA-Z0-9_]&#x60;); remaining characters may include those as well as a hyphen or colon (matches regex &#x60;[a-zA-Z0-9_-:]&#x60;). The length of the ID must not be less than 5 or greater than 50.  If you don&#39;t specify an ID, a unique one is generated. Defaults to: `null`.
+  - source (String): The video source. Defaults to: `null`.
+    - Enum - one of [SOURCE_UNSPECIFIED, YOUTUBE]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"elementProperties",
     :"id",
@@ -36,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.CreateVideoRequest do
   def decode(value, options) do
     value
     |> deserialize(:"elementProperties", :struct, GoogleApi.Slides.V1.Model.PageElementProperties, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.CreateVideoRequest do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.Slides.V1.Model.SheetsChart do
   @moduledoc """
   A PageElement kind representing a linked chart embedded from Google Sheets.
+
+  ## Attributes
+
+  - chartId (Integer): The ID of the specific chart in the Google Sheets spreadsheet that is embedded. Defaults to: `null`.
+  - contentUrl (String): The URL of an image of the embedded chart, with a default lifetime of 30 minutes. This URL is tagged with the account of the requester. Anyone with the URL effectively accesses the image as the original requester. Access to the image may be lost if the presentation&#39;s sharing settings change. Defaults to: `null`.
+  - sheetsChartProperties (SheetsChartProperties): The properties of the Sheets chart. Defaults to: `null`.
+  - spreadsheetId (String): The ID of the Google Sheets spreadsheet that contains the source chart. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"chartId",
     :"contentUrl",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.SheetsChart do
   def decode(value, options) do
     value
     |> deserialize(:"sheetsChartProperties", :struct, GoogleApi.Slides.V1.Model.SheetsChartProperties, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.SheetsChart do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

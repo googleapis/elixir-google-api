@@ -20,9 +20,16 @@
 defmodule GoogleApi.Slides.V1.Model.TextElement do
   @moduledoc """
   A TextElement describes the content of a range of indices in the text content of a Shape or TableCell.
+
+  ## Attributes
+
+  - autoText (AutoText): A TextElement representing a spot in the text that is dynamically replaced with content that can change over time. Defaults to: `null`.
+  - endIndex (Integer): The zero-based end index of this text element, exclusive, in Unicode code units. Defaults to: `null`.
+  - paragraphMarker (ParagraphMarker): A marker representing the beginning of a new paragraph.  The &#x60;start_index&#x60; and &#x60;end_index&#x60; of this TextElement represent the range of the paragraph. Other TextElements with an index range contained inside this paragraph&#39;s range are considered to be part of this paragraph. The range of indices of two separate paragraphs will never overlap. Defaults to: `null`.
+  - startIndex (Integer): The zero-based start index of this text element, in Unicode code units. Defaults to: `null`.
+  - textRun (TextRun): A TextElement representing a run of text where all of the characters in the run have the same TextStyle.  The &#x60;start_index&#x60; and &#x60;end_index&#x60; of TextRuns will always be fully contained in the index range of a single &#x60;paragraph_marker&#x60; TextElement. In other words, a TextRun will never span multiple paragraphs. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"autoText",
     :"endIndex",
@@ -39,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.TextElement do
     |> deserialize(:"autoText", :struct, GoogleApi.Slides.V1.Model.AutoText, options)
     |> deserialize(:"paragraphMarker", :struct, GoogleApi.Slides.V1.Model.ParagraphMarker, options)
     |> deserialize(:"textRun", :struct, GoogleApi.Slides.V1.Model.TextRun, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.TextElement do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

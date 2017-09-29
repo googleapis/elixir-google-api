@@ -20,9 +20,12 @@
 defmodule GoogleApi.Slides.V1.Model.TableColumnProperties do
   @moduledoc """
   Properties of each column in a table.
+
+  ## Attributes
+
+  - columnWidth (Dimension): Width of a column. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"columnWidth"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.TableColumnProperties do
   def decode(value, options) do
     value
     |> deserialize(:"columnWidth", :struct, GoogleApi.Slides.V1.Model.Dimension, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.TableColumnProperties do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

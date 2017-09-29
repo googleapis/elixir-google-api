@@ -20,9 +20,13 @@
 defmodule GoogleApi.Slides.V1.Model.BatchUpdatePresentationResponse do
   @moduledoc """
   Response message from a batch update.
+
+  ## Attributes
+
+  - presentationId (String): The presentation the updates were applied to. Defaults to: `null`.
+  - replies (List[Response]): The reply of the updates.  This maps 1:1 with the updates, although replies to some requests may be empty. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"presentationId",
     :"replies"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.BatchUpdatePresentationRe
   def decode(value, options) do
     value
     |> deserialize(:"replies", :list, GoogleApi.Slides.V1.Model.Response, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.BatchUpdatePresentationResponse do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

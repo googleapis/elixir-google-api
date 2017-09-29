@@ -20,9 +20,12 @@
 defmodule GoogleApi.Slides.V1.Model.CreateSheetsChartResponse do
   @moduledoc """
   The result of creating an embedded Google Sheets chart.
+
+  ## Attributes
+
+  - objectId (String): The object ID of the created chart. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"objectId"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.CreateSheetsChartResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.CreateSheetsChartResponse do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

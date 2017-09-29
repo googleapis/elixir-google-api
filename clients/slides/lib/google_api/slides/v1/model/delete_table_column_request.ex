@@ -20,9 +20,13 @@
 defmodule GoogleApi.Slides.V1.Model.DeleteTableColumnRequest do
   @moduledoc """
   Deletes a column from a table.
+
+  ## Attributes
+
+  - cellLocation (TableCellLocation): The reference table cell location from which a column will be deleted.  The column this cell spans will be deleted. If this is a merged cell, multiple columns will be deleted. If no columns remain in the table after this deletion, the whole table is deleted. Defaults to: `null`.
+  - tableObjectId (String): The table to delete columns from. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cellLocation",
     :"tableObjectId"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.DeleteTableColumnRequest 
   def decode(value, options) do
     value
     |> deserialize(:"cellLocation", :struct, GoogleApi.Slides.V1.Model.TableCellLocation, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.DeleteTableColumnRequest do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

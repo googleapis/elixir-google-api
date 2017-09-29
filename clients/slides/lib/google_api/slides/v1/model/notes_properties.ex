@@ -20,9 +20,12 @@
 defmodule GoogleApi.Slides.V1.Model.NotesProperties do
   @moduledoc """
   The properties of Page that are only relevant for pages with page_type NOTES.
+
+  ## Attributes
+
+  - speakerNotesObjectId (String): The object ID of the shape on this notes page that contains the speaker notes for the corresponding slide. The actual shape may not always exist on the notes page. Inserting text using this object ID will automatically create the shape. In this case, the actual shape may have different object ID. The &#x60;GetPresentation&#x60; or &#x60;GetPage&#x60; action will always return the latest object ID. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"speakerNotesObjectId"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.NotesProperties do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.NotesProperties do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.Slides.V1.Model.InsertTableRowsRequest do
   @moduledoc """
   Inserts rows into a table.
+
+  ## Attributes
+
+  - cellLocation (TableCellLocation): The reference table cell location from which rows will be inserted.  A new row will be inserted above (or below) the row where the reference cell is. If the reference cell is a merged cell, a new row will be inserted above (or below) the merged cell. Defaults to: `null`.
+  - insertBelow (Boolean): Whether to insert new rows below the reference cell location.  - &#x60;True&#x60;: insert below the cell. - &#x60;False&#x60;: insert above the cell. Defaults to: `null`.
+  - number (Integer): The number of rows to be inserted. Maximum 20 per request. Defaults to: `null`.
+  - tableObjectId (String): The table to insert rows into. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cellLocation",
     :"insertBelow",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.InsertTableRowsRequest do
   def decode(value, options) do
     value
     |> deserialize(:"cellLocation", :struct, GoogleApi.Slides.V1.Model.TableCellLocation, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.InsertTableRowsRequest do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

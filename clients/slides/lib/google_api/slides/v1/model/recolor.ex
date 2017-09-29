@@ -20,9 +20,14 @@
 defmodule GoogleApi.Slides.V1.Model.Recolor do
   @moduledoc """
   A recolor effect applied on an image.
+
+  ## Attributes
+
+  - name (String): The name of the recolor effect.  The name is determined from the &#x60;recolor_stops&#x60; by matching the gradient against the colors in the page&#39;s current color scheme. This property is read-only. Defaults to: `null`.
+    - Enum - one of [NONE, LIGHT1, LIGHT2, LIGHT3, LIGHT4, LIGHT5, LIGHT6, LIGHT7, LIGHT8, LIGHT9, LIGHT10, DARK1, DARK2, DARK3, DARK4, DARK5, DARK6, DARK7, DARK8, DARK9, DARK10, GRAYSCALE, NEGATIVE, SEPIA, CUSTOM]
+  - recolorStops (List[ColorStop]): The recolor effect is represented by a gradient, which is a list of color stops.  The colors in the gradient will replace the corresponding colors at the same position in the color palette and apply to the image. This property is read-only. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name",
     :"recolorStops"
@@ -34,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.Recolor do
   def decode(value, options) do
     value
     |> deserialize(:"recolorStops", :list, GoogleApi.Slides.V1.Model.ColorStop, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.Recolor do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,17 @@
 defmodule GoogleApi.Slides.V1.Model.ReplaceAllShapesWithSheetsChartRequest do
   @moduledoc """
   Replaces all shapes that match the given criteria with the provided Google Sheets chart. The chart will be scaled and centered to fit within the bounds of the original shape.  NOTE: Replacing shapes with a chart requires at least one of the spreadsheets.readonly, spreadsheets, drive.readonly, or drive OAuth scopes.
+
+  ## Attributes
+
+  - chartId (Integer): The ID of the specific chart in the Google Sheets spreadsheet. Defaults to: `null`.
+  - containsText (SubstringMatchCriteria): The criteria that the shapes must match in order to be replaced. The request will replace all of the shapes that contain the given text. Defaults to: `null`.
+  - linkingMode (String): The mode with which the chart is linked to the source spreadsheet. When not specified, the chart will be an image that is not linked. Defaults to: `null`.
+    - Enum - one of [NOT_LINKED_IMAGE, LINKED]
+  - pageObjectIds (List[String]): If non-empty, limits the matches to page elements only on the given pages.  Returns a 400 bad request error if given the page object ID of a notes page or a notes master, or if a page with that object ID doesn&#39;t exist in the presentation. Defaults to: `null`.
+  - spreadsheetId (String): The ID of the Google Sheets spreadsheet that contains the chart. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"chartId",
     :"containsText",
@@ -37,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.ReplaceAllShapesWithSheet
   def decode(value, options) do
     value
     |> deserialize(:"containsText", :struct, GoogleApi.Slides.V1.Model.SubstringMatchCriteria, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.ReplaceAllShapesWithSheetsChartRequest do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
