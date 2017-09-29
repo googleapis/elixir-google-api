@@ -20,9 +20,14 @@
 defmodule GoogleApi.Surveys.V2.Model.SurveyQuestionImage do
   @moduledoc """
   Container object for image data and alt_text.
+
+  ## Attributes
+
+  - altText (String): The alt text property used in image tags is required for all images. Defaults to: `null`.
+  - data (String): Inline jpeg, gif, tiff, bmp, or png image raw bytes for an image question types. Defaults to: `null`.
+  - url (String): The read-only URL for the hosted images. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"altText",
     :"data",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Surveys.V2.Model.SurveyQuestionImage do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Surveys.V2.Model.SurveyQuestionImage do
+  def encode(value, options) do
+    GoogleApi.Surveys.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,22 @@
 defmodule GoogleApi.Surveys.V2.Model.Survey do
   @moduledoc """
   Representation of an individual survey object.
+
+  ## Attributes
+
+  - audience (SurveyAudience): Targeting-criteria message containing demographic information Defaults to: `null`.
+  - cost (SurveyCost): Cost to run the survey and collect the necessary number of responses. Defaults to: `null`.
+  - customerData (String): Additional information to store on behalf of the API consumer and associate with this question. This binary blob is treated as opaque. This field is limited to 64K bytes. Defaults to: `null`.
+  - description (String): Text description of the survey. Defaults to: `null`.
+  - owners (List[String]): List of email addresses for survey owners. Must contain at least the address of the user making the API call. Defaults to: `null`.
+  - questions (List[SurveyQuestion]): List of questions defining the survey. Defaults to: `null`.
+  - rejectionReason (SurveyRejection): Reason for the survey being rejected. Only present if the survey state is rejected. Defaults to: `null`.
+  - state (String): State that the survey is in. Defaults to: `null`.
+  - surveyUrlId (String): Unique survey ID, that is viewable in the URL of the Survey Creator UI Defaults to: `null`.
+  - title (String): Optional name that will be given to the survey. Defaults to: `null`.
+  - wantedResponseCount (Integer): Number of responses desired for the survey. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"audience",
     :"cost",
@@ -46,6 +59,12 @@ defimpl Poison.Decoder, for: GoogleApi.Surveys.V2.Model.Survey do
     |> deserialize(:"cost", :struct, GoogleApi.Surveys.V2.Model.SurveyCost, options)
     |> deserialize(:"questions", :list, GoogleApi.Surveys.V2.Model.SurveyQuestion, options)
     |> deserialize(:"rejectionReason", :struct, GoogleApi.Surveys.V2.Model.SurveyRejection, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Surveys.V2.Model.Survey do
+  def encode(value, options) do
+    GoogleApi.Surveys.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

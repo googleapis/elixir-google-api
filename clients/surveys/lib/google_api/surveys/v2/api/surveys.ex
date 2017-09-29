@@ -60,7 +60,9 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
     }
     %{}
     |> method(:delete)
-    |> url("/surveys/#{survey_url_id}")
+    |> url("/surveys/{surveyUrlId}", %{
+         "surveyUrlId" => URI.encode_www_form(survey_url_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -101,7 +103,9 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
     }
     %{}
     |> method(:get)
-    |> url("/surveys/#{survey_url_id}")
+    |> url("/surveys/{surveyUrlId}", %{
+         "surveyUrlId" => URI.encode_www_form(survey_url_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -232,7 +236,9 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
     }
     %{}
     |> method(:post)
-    |> url("/surveys/#{resource_id}/start")
+    |> url("/surveys/{resourceId}/start", %{
+         "resourceId" => URI.encode_www_form(resource_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -273,7 +279,9 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
     }
     %{}
     |> method(:post)
-    |> url("/surveys/#{resource_id}/stop")
+    |> url("/surveys/{resourceId}/stop", %{
+         "resourceId" => URI.encode_www_form(resource_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -316,7 +324,9 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
     }
     %{}
     |> method(:put)
-    |> url("/surveys/#{survey_url_id}")
+    |> url("/surveys/{surveyUrlId}", %{
+         "surveyUrlId" => URI.encode_www_form(survey_url_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

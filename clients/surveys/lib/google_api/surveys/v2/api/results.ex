@@ -62,7 +62,9 @@ defmodule GoogleApi.Surveys.V2.Api.Results do
     }
     %{}
     |> method(:get)
-    |> url("/surveys/#{survey_url_id}/results")
+    |> url("/surveys/{surveyUrlId}/results", %{
+         "surveyUrlId" => URI.encode_www_form(survey_url_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

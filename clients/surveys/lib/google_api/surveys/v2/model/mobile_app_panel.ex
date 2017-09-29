@@ -20,9 +20,17 @@
 defmodule GoogleApi.Surveys.V2.Model.MobileAppPanel do
   @moduledoc """
   Representation of an individual pre-defined panel object defining a targeted audience of opinion rewards mobile app users.
+
+  ## Attributes
+
+  - country (String): Country code for the country of the users that the panel contains. Uses standard ISO 3166-1 2-character language codes. For instance, &#39;US&#39; for the United States, and &#39;GB&#39; for the United Kingdom. Any survey created targeting this panel must also target the corresponding country. Defaults to: `null`.
+  - isPublicPanel (Boolean): Whether or not the panel is accessible to all API users. Defaults to: `null`.
+  - language (String): Language code that the panel can target. For instance, &#39;en-US&#39;. Uses standard BCP47 language codes. See specification. Any survey created targeting this panel must also target the corresponding language. Defaults to: `null`.
+  - mobileAppPanelId (String): Unique panel ID string. This corresponds to the mobile_app_panel_id used in Survey Insert requests. Defaults to: `null`.
+  - name (String): Human readable name of the audience panel. Defaults to: `null`.
+  - owners (List[String]): List of email addresses for users who can target members of this panel. Must contain at least the address of the user making the API call for panels that are not public. This field will be empty for public panels. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"country",
     :"isPublicPanel",
@@ -36,6 +44,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Surveys.V2.Model.MobileAppPanel do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Surveys.V2.Model.MobileAppPanel do
+  def encode(value, options) do
+    GoogleApi.Surveys.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

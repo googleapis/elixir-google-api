@@ -20,9 +20,13 @@
 defmodule GoogleApi.Surveys.V2.Model.SurveyRejection do
   @moduledoc """
   Message representing why the survey was rejected from review, if it was.
+
+  ## Attributes
+
+  - explanation (String): A human-readable explanation of what was wrong with the survey. Defaults to: `null`.
+  - type (String): Which category of rejection this was. See the  Google Surveys Help Center for additional details on each category. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"explanation",
     :"type"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Surveys.V2.Model.SurveyRejection do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Surveys.V2.Model.SurveyRejection do
+  def encode(value, options) do
+    GoogleApi.Surveys.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 
