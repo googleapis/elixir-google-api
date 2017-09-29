@@ -20,9 +20,15 @@
 defmodule GoogleApi.YouTubeReporting.V1.Model.ReportType do
   @moduledoc """
   A report type.
+
+  ## Attributes
+
+  - deprecateTime (String): The date/time when this report type was/will be deprecated. Defaults to: `null`.
+  - id (String): The ID of the report type (max. 100 characters). Defaults to: `null`.
+  - name (String): The name of the report type (max. 100 characters). Defaults to: `null`.
+  - systemManaged (Boolean): True if this a system-managed report type; otherwise false. Reporting jobs for system-managed report types are created automatically and can thus not be used in the &#x60;CreateJob&#x60; method. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"deprecateTime",
     :"id",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTubeReporting.V1.Model.ReportType do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTubeReporting.V1.Model.ReportType do
+  def encode(value, options) do
+    GoogleApi.YouTubeReporting.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

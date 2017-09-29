@@ -1,6 +1,6 @@
 # GoogleApi.YouTubeReporting.V1
 
-**TODO: Add description**
+Schedules reporting jobs containing your YouTube Analytics data and downloads the resulting bulk data reports in the form of CSV files.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_you_tube_reporting` to your list of dependencies in `mix.e
 
 ```elixir
 def deps do
-  [{:google_api_you_tube_reporting, "~> 0.1.0"}]
+  [{:google_api_you_tube_reporting, "~> 0.0.1"}]
 end
 ```
 

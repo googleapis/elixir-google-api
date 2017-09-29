@@ -20,9 +20,17 @@
 defmodule GoogleApi.YouTubeReporting.V1.Model.Job do
   @moduledoc """
   A job creating reports of a specific type.
+
+  ## Attributes
+
+  - createTime (String): The creation date/time of the job. Defaults to: `null`.
+  - expireTime (String): The date/time when this job will expire/expired. After a job expired, no new reports are generated. Defaults to: `null`.
+  - id (String): The server-generated ID of the job (max. 40 characters). Defaults to: `null`.
+  - name (String): The name of the job (max. 100 characters). Defaults to: `null`.
+  - reportTypeId (String): The type of reports this job creates. Corresponds to the ID of a ReportType. Defaults to: `null`.
+  - systemManaged (Boolean): True if this a system-managed job that cannot be modified by the user; otherwise false. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"createTime",
     :"expireTime",
@@ -36,6 +44,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTubeReporting.V1.Model.Job do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTubeReporting.V1.Model.Job do
+  def encode(value, options) do
+    GoogleApi.YouTubeReporting.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

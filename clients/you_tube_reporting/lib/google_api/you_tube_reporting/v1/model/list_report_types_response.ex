@@ -20,9 +20,13 @@
 defmodule GoogleApi.YouTubeReporting.V1.Model.ListReportTypesResponse do
   @moduledoc """
   Response message for ReportingService.ListReportTypes.
+
+  ## Attributes
+
+  - nextPageToken (String): A token to retrieve next page of results. Pass this value in the ListReportTypesRequest.page_token field in the subsequent call to &#x60;ListReportTypes&#x60; method to retrieve the next page of results. Defaults to: `null`.
+  - reportTypes (List[ReportType]): The list of report types. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nextPageToken",
     :"reportTypes"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTubeReporting.V1.Model.ListReportTypes
   def decode(value, options) do
     value
     |> deserialize(:"reportTypes", :list, GoogleApi.YouTubeReporting.V1.Model.ReportType, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTubeReporting.V1.Model.ListReportTypesResponse do
+  def encode(value, options) do
+    GoogleApi.YouTubeReporting.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
