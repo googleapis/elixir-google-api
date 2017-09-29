@@ -1,6 +1,6 @@
 # GoogleApi.Manufacturers.V1
 
-**TODO: Add description**
+Public API for managing Manufacturer Center related data.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_manufacturers` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_manufacturers, "~> 0.1.0"}]
+  [{:google_api_manufacturers, "~> 0.0.1"}]
 end
 ```
 

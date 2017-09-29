@@ -20,9 +20,14 @@
 defmodule GoogleApi.Manufacturers.V1.Model.FeatureDescription do
   @moduledoc """
   A feature description of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#featuredesc.
+
+  ## Attributes
+
+  - headline (String): A short description of the feature. Defaults to: `null`.
+  - image (Image): An optional image describing the feature. Defaults to: `null`.
+  - text (String): A detailed description of the feature. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"headline",
     :"image",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Manufacturers.V1.Model.FeatureDescription
   def decode(value, options) do
     value
     |> deserialize(:"image", :struct, GoogleApi.Manufacturers.V1.Model.Image, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Manufacturers.V1.Model.FeatureDescription do
+  def encode(value, options) do
+    GoogleApi.Manufacturers.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

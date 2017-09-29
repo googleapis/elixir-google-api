@@ -20,9 +20,16 @@
 defmodule GoogleApi.Manufacturers.V1.Model.Image do
   @moduledoc """
   An image.
+
+  ## Attributes
+
+  - imageUrl (String): The URL of the image. For crawled images, this is the provided URL. For uploaded images, this is a serving URL from Google if the image has been processed successfully. Defaults to: `null`.
+  - status (String): The status of the image. @OutputOnly Defaults to: `null`.
+    - Enum - one of [STATUS_UNSPECIFIED, PENDING_PROCESSING, PENDING_CRAWL, OK, ROBOTED, XROBOTED, CRAWL_ERROR, PROCESSING_ERROR, DECODING_ERROR, TOO_BIG, CRAWL_SKIPPED]
+  - type (String): The type of the image, i.e., crawled or uploaded. @OutputOnly Defaults to: `null`.
+    - Enum - one of [TYPE_UNSPECIFIED, CRAWLED, UPLOADED]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"imageUrl",
     :"status",
@@ -33,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Manufacturers.V1.Model.Image do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Manufacturers.V1.Model.Image do
+  def encode(value, options) do
+    GoogleApi.Manufacturers.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -73,7 +73,10 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/#{parent}/products/#{name}")
+    |> url("/v1/{+parent}/products/{+name}", %{
+         "parent" => URI.encode_www_form(parent),
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -127,7 +130,10 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{parent}/products/#{name}")
+    |> url("/v1/{+parent}/products/{+name}", %{
+         "parent" => URI.encode_www_form(parent),
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -184,7 +190,9 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{parent}/products")
+    |> url("/v1/{+parent}/products", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -240,7 +248,10 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
     }
     %{}
     |> method(:put)
-    |> url("/v1/#{parent}/products/#{name}")
+    |> url("/v1/{+parent}/products/{+name}", %{
+         "parent" => URI.encode_www_form(parent),
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

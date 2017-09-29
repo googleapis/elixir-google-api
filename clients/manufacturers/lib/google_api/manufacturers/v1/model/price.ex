@@ -20,9 +20,13 @@
 defmodule GoogleApi.Manufacturers.V1.Model.Price do
   @moduledoc """
   A price.
+
+  ## Attributes
+
+  - amount (String): The numeric value of the price. Defaults to: `null`.
+  - currency (String): The currency in which the price is denoted. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"amount",
     :"currency"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Manufacturers.V1.Model.Price do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Manufacturers.V1.Model.Price do
+  def encode(value, options) do
+    GoogleApi.Manufacturers.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

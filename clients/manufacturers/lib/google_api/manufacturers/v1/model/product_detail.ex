@@ -20,9 +20,14 @@
 defmodule GoogleApi.Manufacturers.V1.Model.ProductDetail do
   @moduledoc """
   A product detail of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#productdetail.
+
+  ## Attributes
+
+  - attributeName (String): The name of the attribute. Defaults to: `null`.
+  - attributeValue (String): The value of the attribute. Defaults to: `null`.
+  - sectionName (String): A short section name that can be reused between multiple product details. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"attributeName",
     :"attributeValue",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Manufacturers.V1.Model.ProductDetail do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Manufacturers.V1.Model.ProductDetail do
+  def encode(value, options) do
+    GoogleApi.Manufacturers.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
