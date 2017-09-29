@@ -20,9 +20,17 @@
 defmodule GoogleApi.ServiceUser.V1.Model.MediaDownload do
   @moduledoc """
   Defines the Media configuration for a service in case of a download. Use this only for Scotty Requests. Do not use this for media support using Bytestream, add instead [][google.bytestream.RestByteStream] as an API to your configuration for Bytestream methods.
+
+  ## Attributes
+
+  - completeNotification (Boolean): A boolean that determines whether a notification for the completion of a download should be sent to the backend. Defaults to: `null`.
+  - downloadService (String): DO NOT USE FIELDS BELOW THIS LINE UNTIL THIS WARNING IS REMOVED.  Specify name of the download service if one is used for download. Defaults to: `null`.
+  - dropzone (String): Name of the Scotty dropzone to use for the current API. Defaults to: `null`.
+  - enabled (Boolean): Whether download is enabled. Defaults to: `null`.
+  - maxDirectDownloadSize (String): Optional maximum acceptable size for direct download. The size is specified in bytes. Defaults to: `null`.
+  - useDirectDownload (Boolean): A boolean that determines if direct download from ESF should be used for download of this media. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"completeNotification",
     :"downloadService",
@@ -36,6 +44,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceUser.V1.Model.MediaDownload do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceUser.V1.Model.MediaDownload do
+  def encode(value, options) do
+    GoogleApi.ServiceUser.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

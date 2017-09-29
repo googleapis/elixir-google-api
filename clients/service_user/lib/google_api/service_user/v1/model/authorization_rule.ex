@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceUser.V1.Model.AuthorizationRule do
   @moduledoc """
   Authorization rule for API services.  It specifies the permission(s) required for an API element for the overall API request to succeed. It is typically used to mark request message fields that contain the name of the resource and indicates the permissions that will be checked on that resource.  For example:      package google.storage.v1;      message CopyObjectRequest {       string source &#x3D; 1 [         (google.api.authz).permissions &#x3D; \&quot;storage.objects.get\&quot;];        string destination &#x3D; 2 [         (google.api.authz).permissions &#x3D;             \&quot;storage.objects.create,storage.objects.update\&quot;];     }
+
+  ## Attributes
+
+  - permissions (String): The required permissions. The acceptable values vary depend on the authorization system used. For Google APIs, it should be a comma-separated Google IAM permission values. When multiple permissions are listed, the semantics is not defined by the system. Additional documentation must be provided manually. Defaults to: `null`.
+  - selector (String): Selects the API elements to which this rule applies.  Refer to selector for syntax details. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"permissions",
     :"selector"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceUser.V1.Model.AuthorizationRule do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceUser.V1.Model.AuthorizationRule do
+  def encode(value, options) do
+    GoogleApi.ServiceUser.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

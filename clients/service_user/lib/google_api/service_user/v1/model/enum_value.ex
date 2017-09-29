@@ -20,9 +20,14 @@
 defmodule GoogleApi.ServiceUser.V1.Model.EnumValue do
   @moduledoc """
   Enum value definition.
+
+  ## Attributes
+
+  - name (String): Enum value name. Defaults to: `null`.
+  - number (Integer): Enum value number. Defaults to: `null`.
+  - options (List[Option]): Protocol buffer options. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name",
     :"number",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceUser.V1.Model.EnumValue do
   def decode(value, options) do
     value
     |> deserialize(:"options", :list, GoogleApi.ServiceUser.V1.Model.Option, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceUser.V1.Model.EnumValue do
+  def encode(value, options) do
+    GoogleApi.ServiceUser.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

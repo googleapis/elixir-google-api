@@ -20,9 +20,14 @@
 defmodule GoogleApi.ServiceUser.V1.Model.SystemParameter do
   @moduledoc """
   Define a parameter&#39;s name and location. The parameter may be passed as either an HTTP header or a URL query parameter, and if both are passed the behavior is implementation-dependent.
+
+  ## Attributes
+
+  - httpHeader (String): Define the HTTP header name to use for the parameter. It is case insensitive. Defaults to: `null`.
+  - name (String): Define the name of the parameter, such as \&quot;api_key\&quot; . It is case sensitive. Defaults to: `null`.
+  - urlQueryParameter (String): Define the URL query parameter name to use for the parameter. It is case sensitive. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"httpHeader",
     :"name",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceUser.V1.Model.SystemParameter do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceUser.V1.Model.SystemParameter do
+  def encode(value, options) do
+    GoogleApi.ServiceUser.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

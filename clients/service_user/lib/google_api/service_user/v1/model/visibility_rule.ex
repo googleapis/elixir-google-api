@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceUser.V1.Model.VisibilityRule do
   @moduledoc """
   A visibility rule provides visibility configuration for an individual API element.
+
+  ## Attributes
+
+  - restriction (String): A comma-separated list of visibility labels that apply to the &#x60;selector&#x60;. Any of the listed labels can be used to grant the visibility.  If a rule has multiple labels, removing one of the labels but not all of them can break clients.  Example:      visibility:       rules:       - selector: google.calendar.Calendar.EnhancedSearch         restriction: GOOGLE_INTERNAL, TRUSTED_TESTER  Removing GOOGLE_INTERNAL from this restriction will break clients that rely on this method and only had access to it through GOOGLE_INTERNAL. Defaults to: `null`.
+  - selector (String): Selects methods, messages, fields, enums, etc. to which this rule applies.  Refer to selector for syntax details. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"restriction",
     :"selector"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceUser.V1.Model.VisibilityRule do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceUser.V1.Model.VisibilityRule do
+  def encode(value, options) do
+    GoogleApi.ServiceUser.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

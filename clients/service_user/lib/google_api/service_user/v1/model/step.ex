@@ -20,9 +20,14 @@
 defmodule GoogleApi.ServiceUser.V1.Model.Step do
   @moduledoc """
   Represents the status of one operation step.
+
+  ## Attributes
+
+  - description (String): The short description of the step. Defaults to: `null`.
+  - status (String): The status code. Defaults to: `null`.
+    - Enum - one of [STATUS_UNSPECIFIED, DONE, NOT_STARTED, IN_PROGRESS, FAILED, CANCELLED]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"description",
     :"status"
@@ -32,6 +37,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceUser.V1.Model.Step do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceUser.V1.Model.Step do
+  def encode(value, options) do
+    GoogleApi.ServiceUser.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

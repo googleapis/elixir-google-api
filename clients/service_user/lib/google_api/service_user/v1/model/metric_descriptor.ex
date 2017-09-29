@@ -20,9 +20,21 @@
 defmodule GoogleApi.ServiceUser.V1.Model.MetricDescriptor do
   @moduledoc """
   Defines a metric type and its schema. Once a metric descriptor is created, deleting or altering it stops data collection and makes the metric type&#39;s existing data unusable.
+
+  ## Attributes
+
+  - description (String): A detailed description of the metric, which can be used in documentation. Defaults to: `null`.
+  - displayName (String): A concise name for the metric, which can be displayed in user interfaces. Use sentence case without an ending period, for example \&quot;Request count\&quot;. Defaults to: `null`.
+  - labels (List[LabelDescriptor]): The set of labels that can be used to describe a specific instance of this metric type. For example, the &#x60;appengine.googleapis.com/http/server/response_latencies&#x60; metric type has a label for the HTTP response code, &#x60;response_code&#x60;, so you can look at latencies for successful responses or just for responses that failed. Defaults to: `null`.
+  - metricKind (String): Whether the metric records instantaneous values, changes to a value, etc. Some combinations of &#x60;metric_kind&#x60; and &#x60;value_type&#x60; might not be supported. Defaults to: `null`.
+    - Enum - one of [METRIC_KIND_UNSPECIFIED, GAUGE, DELTA, CUMULATIVE]
+  - name (String): The resource name of the metric descriptor. Depending on the implementation, the name typically includes: (1) the parent resource name that defines the scope of the metric type or of its data; and (2) the metric&#39;s URL-encoded type, which also appears in the &#x60;type&#x60; field of this descriptor. For example, following is the resource name of a custom metric within the GCP project &#x60;my-project-id&#x60;:      \&quot;projects/my-project-id/metricDescriptors/custom.googleapis.com%2Finvoice%2Fpaid%2Famount\&quot; Defaults to: `null`.
+  - type (String): The metric type, including its DNS name prefix. The type is not URL-encoded.  All user-defined custom metric types have the DNS name &#x60;custom.googleapis.com&#x60;.  Metric types should use a natural hierarchical grouping. For example:      \&quot;custom.googleapis.com/invoice/paid/amount\&quot;     \&quot;appengine.googleapis.com/http/server/response_latencies\&quot; Defaults to: `null`.
+  - unit (String): The unit in which the metric value is reported. It is only applicable if the &#x60;value_type&#x60; is &#x60;INT64&#x60;, &#x60;DOUBLE&#x60;, or &#x60;DISTRIBUTION&#x60;. The supported units are a subset of [The Unified Code for Units of Measure](http://unitsofmeasure.org/ucum.html) standard:  **Basic units (UNIT)**  * &#x60;bit&#x60;   bit * &#x60;By&#x60;    byte * &#x60;s&#x60;     second * &#x60;min&#x60;   minute * &#x60;h&#x60;     hour * &#x60;d&#x60;     day  **Prefixes (PREFIX)**  * &#x60;k&#x60;     kilo    (10**3) * &#x60;M&#x60;     mega    (10**6) * &#x60;G&#x60;     giga    (10**9) * &#x60;T&#x60;     tera    (10**12) * &#x60;P&#x60;     peta    (10**15) * &#x60;E&#x60;     exa     (10**18) * &#x60;Z&#x60;     zetta   (10**21) * &#x60;Y&#x60;     yotta   (10**24) * &#x60;m&#x60;     milli   (10**-3) * &#x60;u&#x60;     micro   (10**-6) * &#x60;n&#x60;     nano    (10**-9) * &#x60;p&#x60;     pico    (10**-12) * &#x60;f&#x60;     femto   (10**-15) * &#x60;a&#x60;     atto    (10**-18) * &#x60;z&#x60;     zepto   (10**-21) * &#x60;y&#x60;     yocto   (10**-24) * &#x60;Ki&#x60;    kibi    (2**10) * &#x60;Mi&#x60;    mebi    (2**20) * &#x60;Gi&#x60;    gibi    (2**30) * &#x60;Ti&#x60;    tebi    (2**40)  **Grammar**  The grammar includes the dimensionless unit &#x60;1&#x60;, such as &#x60;1/s&#x60;.  The grammar also includes these connectors:  * &#x60;/&#x60;    division (as an infix operator, e.g. &#x60;1/s&#x60;). * &#x60;.&#x60;    multiplication (as an infix operator, e.g. &#x60;GBy.d&#x60;)  The grammar for a unit is as follows:      Expression &#x3D; Component { \&quot;.\&quot; Component } { \&quot;/\&quot; Component } ;      Component &#x3D; [ PREFIX ] UNIT [ Annotation ]               | Annotation               | \&quot;1\&quot;               ;      Annotation &#x3D; \&quot;{\&quot; NAME \&quot;}\&quot; ;  Notes:  * &#x60;Annotation&#x60; is just a comment if it follows a &#x60;UNIT&#x60; and is    equivalent to &#x60;1&#x60; if it is used alone. For examples,    &#x60;{requests}/s &#x3D;&#x3D; 1/s&#x60;, &#x60;By{transmitted}/s &#x3D;&#x3D; By/s&#x60;. * &#x60;NAME&#x60; is a sequence of non-blank printable ASCII characters not    containing &#39;{&#39; or &#39;}&#39;. Defaults to: `null`.
+  - valueType (String): Whether the measurement is an integer, a floating-point number, etc. Some combinations of &#x60;metric_kind&#x60; and &#x60;value_type&#x60; might not be supported. Defaults to: `null`.
+    - Enum - one of [VALUE_TYPE_UNSPECIFIED, BOOL, INT64, DOUBLE, STRING, DISTRIBUTION, MONEY]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"description",
     :"displayName",
@@ -40,6 +52,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceUser.V1.Model.MetricDescriptor do
   def decode(value, options) do
     value
     |> deserialize(:"labels", :list, GoogleApi.ServiceUser.V1.Model.LabelDescriptor, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceUser.V1.Model.MetricDescriptor do
+  def encode(value, options) do
+    GoogleApi.ServiceUser.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

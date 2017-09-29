@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceUser.V1.Model.ListEnabledServicesResponse do
   @moduledoc """
   Response message for &#x60;ListEnabledServices&#x60; method.
+
+  ## Attributes
+
+  - nextPageToken (String): Token that can be passed to &#x60;ListEnabledServices&#x60; to resume a paginated query. Defaults to: `null`.
+  - services (List[PublishedService]): Services enabled for the specified parent. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nextPageToken",
     :"services"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceUser.V1.Model.ListEnabledServicesR
   def decode(value, options) do
     value
     |> deserialize(:"services", :list, GoogleApi.ServiceUser.V1.Model.PublishedService, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceUser.V1.Model.ListEnabledServicesResponse do
+  def encode(value, options) do
+    GoogleApi.ServiceUser.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

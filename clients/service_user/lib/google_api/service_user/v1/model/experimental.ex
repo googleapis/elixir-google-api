@@ -20,9 +20,12 @@
 defmodule GoogleApi.ServiceUser.V1.Model.Experimental do
   @moduledoc """
   Experimental service configuration. These configuration options can only be used by whitelisted users.
+
+  ## Attributes
+
+  - authorization (AuthorizationConfig): Authorization configuration. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"authorization"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceUser.V1.Model.Experimental do
   def decode(value, options) do
     value
     |> deserialize(:"authorization", :struct, GoogleApi.ServiceUser.V1.Model.AuthorizationConfig, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceUser.V1.Model.Experimental do
+  def encode(value, options) do
+    GoogleApi.ServiceUser.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

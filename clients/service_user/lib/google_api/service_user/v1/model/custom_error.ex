@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceUser.V1.Model.CustomError do
   @moduledoc """
   Customize service error responses.  For example, list any service specific protobuf types that can appear in error detail lists of error responses.  Example:      custom_error:       types:       - google.foo.v1.CustomError       - google.foo.v1.AnotherError
+
+  ## Attributes
+
+  - rules (List[CustomErrorRule]): The list of custom error rules that apply to individual API messages.  **NOTE:** All service configuration rules follow \&quot;last one wins\&quot; order. Defaults to: `null`.
+  - types (List[String]): The list of custom error detail types, e.g. &#39;google.foo.v1.CustomError&#39;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"rules",
     :"types"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceUser.V1.Model.CustomError do
   def decode(value, options) do
     value
     |> deserialize(:"rules", :list, GoogleApi.ServiceUser.V1.Model.CustomErrorRule, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceUser.V1.Model.CustomError do
+  def encode(value, options) do
+    GoogleApi.ServiceUser.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
