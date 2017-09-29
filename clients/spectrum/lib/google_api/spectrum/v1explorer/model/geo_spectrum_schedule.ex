@@ -20,9 +20,13 @@
 defmodule GoogleApi.Spectrum.V1explorer.Model.GeoSpectrumSchedule do
   @moduledoc """
   The schedule of spectrum profiles available at a particular geolocation.
+
+  ## Attributes
+
+  - location (GeoLocation): The geolocation identifies the location at which the spectrum schedule applies. It will always be present. Defaults to: `null`.
+  - spectrumSchedules (List[SpectrumSchedule]): A list of available spectrum profiles and associated times. It will always be present, and at least one schedule must be included (though it may be empty if there is no available spectrum). More than one schedule may be included to represent future changes to the available spectrum. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"location",
     :"spectrumSchedules"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spectrum.V1explorer.Model.GeoSpectrumSche
     value
     |> deserialize(:"location", :struct, GoogleApi.Spectrum.V1explorer.Model.GeoLocation, options)
     |> deserialize(:"spectrumSchedules", :list, GoogleApi.Spectrum.V1explorer.Model.SpectrumSchedule, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spectrum.V1explorer.Model.GeoSpectrumSchedule do
+  def encode(value, options) do
+    GoogleApi.Spectrum.V1explorer.Deserializer.serialize_non_nil(value, options)
   end
 end
 

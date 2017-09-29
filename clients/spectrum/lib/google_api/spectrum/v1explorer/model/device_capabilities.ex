@@ -20,9 +20,12 @@
 defmodule GoogleApi.Spectrum.V1explorer.Model.DeviceCapabilities do
   @moduledoc """
   Device capabilities provide additional information that may be used by a device to provide additional information to the database that may help it to determine available spectrum. If the database does not support device capabilities it will ignore the parameter altogether.
+
+  ## Attributes
+
+  - frequencyRanges (List[FrequencyRange]): An optional list of frequency ranges supported by the device. Each element must contain start and stop frequencies in which the device can operate. Channel identifiers are optional. When specified, the database should not return available spectrum that falls outside these ranges or channel IDs. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"frequencyRanges"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spectrum.V1explorer.Model.DeviceCapabilit
   def decode(value, options) do
     value
     |> deserialize(:"frequencyRanges", :list, GoogleApi.Spectrum.V1explorer.Model.FrequencyRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spectrum.V1explorer.Model.DeviceCapabilities do
+  def encode(value, options) do
+    GoogleApi.Spectrum.V1explorer.Deserializer.serialize_non_nil(value, options)
   end
 end
 

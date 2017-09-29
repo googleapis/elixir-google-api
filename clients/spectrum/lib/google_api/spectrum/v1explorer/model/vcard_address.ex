@@ -20,9 +20,17 @@
 defmodule GoogleApi.Spectrum.V1explorer.Model.VcardAddress do
   @moduledoc """
   The structure used to represent a street address.
+
+  ## Attributes
+
+  - code (String): The postal code associated with the address. For example: 94423. Defaults to: `null`.
+  - country (String): The country name. For example: US. Defaults to: `null`.
+  - locality (String): The city or local equivalent portion of the address. For example: San Jose. Defaults to: `null`.
+  - pobox (String): An optional post office box number. Defaults to: `null`.
+  - region (String): The state or local equivalent portion of the address. For example: CA. Defaults to: `null`.
+  - street (String): The street number and name. For example: 123 Any St. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"code",
     :"country",
@@ -36,6 +44,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Spectrum.V1explorer.Model.VcardAddress do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spectrum.V1explorer.Model.VcardAddress do
+  def encode(value, options) do
+    GoogleApi.Spectrum.V1explorer.Deserializer.serialize_non_nil(value, options)
   end
 end
 

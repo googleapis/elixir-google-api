@@ -20,9 +20,12 @@
 defmodule GoogleApi.Spectrum.V1explorer.Model.GeoLocationPolygon do
   @moduledoc """
   A region is represented using the polygonal shape.
+
+  ## Attributes
+
+  - exterior (List[GeoLocationPoint]): When the geolocation describes a region, the exterior field refers to a list of latitude/longitude points that represent the vertices of a polygon. The first and last points must be the same. Thus, a minimum of four points is required. The following polygon restrictions from RFC5491 apply:   - A connecting line shall not cross another connecting line of the same polygon.  - The vertices must be defined in a counterclockwise order.  - The edges of a polygon are defined by the shortest path between two points in space (not a geodesic curve). Consequently, the length between two adjacent vertices should be restricted to a maximum of 130 km.  - All vertices are assumed to be at the same altitude.  - Polygon shapes should be restricted to a maximum of 15 vertices (16 points that include the repeated vertex). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"exterior"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spectrum.V1explorer.Model.GeoLocationPoly
   def decode(value, options) do
     value
     |> deserialize(:"exterior", :list, GoogleApi.Spectrum.V1explorer.Model.GeoLocationPoint, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spectrum.V1explorer.Model.GeoLocationPolygon do
+  def encode(value, options) do
+    GoogleApi.Spectrum.V1explorer.Deserializer.serialize_non_nil(value, options)
   end
 end
 

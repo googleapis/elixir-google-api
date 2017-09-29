@@ -20,9 +20,13 @@
 defmodule GoogleApi.Spectrum.V1explorer.Model.GeoLocationPoint do
   @moduledoc """
   A single geolocation on the globe.
+
+  ## Attributes
+
+  - latitude (Float): A required floating-point number that expresses the latitude in degrees using the WGS84 datum. For details on this encoding, see the National Imagery and Mapping Agency&#39;s Technical Report TR8350.2. Defaults to: `null`.
+  - longitude (Float): A required floating-point number that expresses the longitude in degrees using the WGS84 datum. For details on this encoding, see the National Imagery and Mapping Agency&#39;s Technical Report TR8350.2. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"latitude",
     :"longitude"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Spectrum.V1explorer.Model.GeoLocationPoint do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spectrum.V1explorer.Model.GeoLocationPoint do
+  def encode(value, options) do
+    GoogleApi.Spectrum.V1explorer.Deserializer.serialize_non_nil(value, options)
   end
 end
 

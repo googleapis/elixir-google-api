@@ -20,9 +20,14 @@
 defmodule GoogleApi.Spectrum.V1explorer.Model.DeviceValidity do
   @moduledoc """
   The device validity element describes whether a particular device is valid to operate in the regulatory domain.
+
+  ## Attributes
+
+  - deviceDesc (DeviceDescriptor): The descriptor of the device for which the validity check was requested. It will always be present. Defaults to: `null`.
+  - isValid (Boolean): The validity status: true if the device is valid for operation, false otherwise. It will always be present. Defaults to: `null`.
+  - reason (String): If the device identifier is not valid, the database may include a reason. The reason may be in any language. The length of the value should not exceed 128 characters. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"deviceDesc",
     :"isValid",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spectrum.V1explorer.Model.DeviceValidity 
   def decode(value, options) do
     value
     |> deserialize(:"deviceDesc", :struct, GoogleApi.Spectrum.V1explorer.Model.DeviceDescriptor, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spectrum.V1explorer.Model.DeviceValidity do
+  def encode(value, options) do
+    GoogleApi.Spectrum.V1explorer.Deserializer.serialize_non_nil(value, options)
   end
 end
 

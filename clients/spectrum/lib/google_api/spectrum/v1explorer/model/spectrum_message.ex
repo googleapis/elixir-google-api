@@ -20,9 +20,13 @@
 defmodule GoogleApi.Spectrum.V1explorer.Model.SpectrumMessage do
   @moduledoc """
   Available spectrum can be logically characterized by a list of frequency ranges and permissible power levels for each range.
+
+  ## Attributes
+
+  - bandwidth (Float): The bandwidth (in Hertz) for which permissible power levels are specified. For example, FCC regulation would require only one spectrum specification at 6MHz bandwidth, but Ofcom regulation would require two specifications, at 0.1MHz and 8MHz. This parameter may be empty if there is no available spectrum. It will be present otherwise. Defaults to: `null`.
+  - frequencyRanges (List[FrequencyRange]): The list of frequency ranges and permissible power levels. The list may be empty if there is no available spectrum, otherwise it will be present. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bandwidth",
     :"frequencyRanges"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spectrum.V1explorer.Model.SpectrumMessage
   def decode(value, options) do
     value
     |> deserialize(:"frequencyRanges", :list, GoogleApi.Spectrum.V1explorer.Model.FrequencyRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spectrum.V1explorer.Model.SpectrumMessage do
+  def encode(value, options) do
+    GoogleApi.Spectrum.V1explorer.Deserializer.serialize_non_nil(value, options)
   end
 end
 

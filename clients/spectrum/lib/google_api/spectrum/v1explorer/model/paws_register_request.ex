@@ -20,9 +20,17 @@
 defmodule GoogleApi.Spectrum.V1explorer.Model.PawsRegisterRequest do
   @moduledoc """
   The registration request message contains the required registration parameters.
+
+  ## Attributes
+
+  - antenna (AntennaCharacteristics): Antenna characteristics, including its height and height type. Defaults to: `null`.
+  - deviceDesc (DeviceDescriptor): A DeviceDescriptor is required. Defaults to: `null`.
+  - deviceOwner (DeviceOwner): Device owner information is required. Defaults to: `null`.
+  - location (GeoLocation): A device&#39;s geolocation is required. Defaults to: `null`.
+  - type (String): The message type (e.g., INIT_REQ, AVAIL_SPECTRUM_REQ, ...).  Required field. Defaults to: `null`.
+  - version (String): The PAWS version. Must be exactly 1.0.  Required field. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"antenna",
     :"deviceDesc",
@@ -41,6 +49,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spectrum.V1explorer.Model.PawsRegisterReq
     |> deserialize(:"deviceDesc", :struct, GoogleApi.Spectrum.V1explorer.Model.DeviceDescriptor, options)
     |> deserialize(:"deviceOwner", :struct, GoogleApi.Spectrum.V1explorer.Model.DeviceOwner, options)
     |> deserialize(:"location", :struct, GoogleApi.Spectrum.V1explorer.Model.GeoLocation, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spectrum.V1explorer.Model.PawsRegisterRequest do
+  def encode(value, options) do
+    GoogleApi.Spectrum.V1explorer.Deserializer.serialize_non_nil(value, options)
   end
 end
 

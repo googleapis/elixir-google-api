@@ -20,9 +20,15 @@
 defmodule GoogleApi.Spectrum.V1explorer.Model.PawsInitRequest do
   @moduledoc """
   The initialization request message allows the master device to initiate exchange of capabilities with the database.
+
+  ## Attributes
+
+  - deviceDesc (DeviceDescriptor): The DeviceDescriptor parameter is required. If the database does not support the device or any of the rulesets specified in the device descriptor, it must return an UNSUPPORTED error code in the error response. Defaults to: `null`.
+  - location (GeoLocation): A device&#39;s geolocation is required. Defaults to: `null`.
+  - type (String): The message type (e.g., INIT_REQ, AVAIL_SPECTRUM_REQ, ...).  Required field. Defaults to: `null`.
+  - version (String): The PAWS version. Must be exactly 1.0.  Required field. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"deviceDesc",
     :"location",
@@ -37,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spectrum.V1explorer.Model.PawsInitRequest
     value
     |> deserialize(:"deviceDesc", :struct, GoogleApi.Spectrum.V1explorer.Model.DeviceDescriptor, options)
     |> deserialize(:"location", :struct, GoogleApi.Spectrum.V1explorer.Model.GeoLocation, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spectrum.V1explorer.Model.PawsInitRequest do
+  def encode(value, options) do
+    GoogleApi.Spectrum.V1explorer.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,21 @@
 defmodule GoogleApi.Spectrum.V1explorer.Model.DeviceDescriptor do
   @moduledoc """
   The device descriptor contains parameters that identify the specific device, such as its manufacturer serial number, regulatory-specific identifier (e.g., FCC ID), and any other device characteristics required by regulatory domains.
+
+  ## Attributes
+
+  - etsiEnDeviceCategory (String): Specifies the ETSI white space device category. Valid values are the strings master and slave. This field is case-insensitive. Consult the ETSI documentation for details about the device types. Defaults to: `null`.
+  - etsiEnDeviceEmissionsClass (String): Specifies the ETSI white space device emissions class. The values are represented by numeric strings, such as 1, 2, etc. Consult the ETSI documentation for details about the device types. Defaults to: `null`.
+  - etsiEnDeviceType (String): Specifies the ETSI white space device type. Valid values are single-letter strings, such as A, B, etc. Consult the ETSI documentation for details about the device types. Defaults to: `null`.
+  - etsiEnTechnologyId (String): Specifies the ETSI white space device technology identifier. The string value must not exceed 64 characters in length. Consult the ETSI documentation for details about the device types. Defaults to: `null`.
+  - fccId (String): Specifies the device&#39;s FCC certification identifier. The value is an identifier string whose length should not exceed 32 characters. Note that, in practice, a valid FCC ID may be limited to 19 characters. Defaults to: `null`.
+  - fccTvbdDeviceType (String): Specifies the TV Band White Space device type, as defined by the FCC. Valid values are FIXED, MODE_1, MODE_2. Defaults to: `null`.
+  - manufacturerId (String): The manufacturer&#39;s ID may be required by the regulatory domain. This should represent the name of the device manufacturer, should be consistent across all devices from the same manufacturer, and should be distinct from that of other manufacturers. The string value must not exceed 64 characters in length. Defaults to: `null`.
+  - modelId (String): The device&#39;s model ID may be required by the regulatory domain. The string value must not exceed 64 characters in length. Defaults to: `null`.
+  - rulesetIds (List[String]): The list of identifiers for rulesets supported by the device. A database may require that the device provide this list before servicing the device requests. If the database does not support any of the rulesets specified in the list, the database may refuse to service the device requests. If present, the list must contain at least one entry.  For information about the valid requests, see section 9.2 of the PAWS specification. Currently, FccTvBandWhiteSpace-2010 is the only supported ruleset. Defaults to: `null`.
+  - serialNumber (String): The manufacturer&#39;s device serial number; required by the applicable regulatory domain. The length of the value must not exceed 64 characters. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etsiEnDeviceCategory",
     :"etsiEnDeviceEmissionsClass",
@@ -40,6 +52,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Spectrum.V1explorer.Model.DeviceDescriptor do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spectrum.V1explorer.Model.DeviceDescriptor do
+  def encode(value, options) do
+    GoogleApi.Spectrum.V1explorer.Deserializer.serialize_non_nil(value, options)
   end
 end
 

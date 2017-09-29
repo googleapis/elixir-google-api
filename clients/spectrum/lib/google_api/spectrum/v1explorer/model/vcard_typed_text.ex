@@ -20,9 +20,12 @@
 defmodule GoogleApi.Spectrum.V1explorer.Model.VcardTypedText do
   @moduledoc """
   The structure used to represent an organization and an email address.
+
+  ## Attributes
+
+  - text (String): The text string associated with this item. For example, for an org field: ACME, inc. For an email field: smith@example.com. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"text"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Spectrum.V1explorer.Model.VcardTypedText do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spectrum.V1explorer.Model.VcardTypedText do
+  def encode(value, options) do
+    GoogleApi.Spectrum.V1explorer.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.Spectrum.V1explorer.Model.GeoLocationEllipse do
   @moduledoc """
   A \&quot;point\&quot; with uncertainty is represented using the Ellipse shape.
+
+  ## Attributes
+
+  - center (GeoLocationPoint): A required geo-spatial point representing the center of the ellipse. Defaults to: `null`.
+  - orientation (Float): A floating-point number that expresses the orientation of the ellipse, representing the rotation, in degrees, of the semi-major axis from North towards the East. For example, when the uncertainty is greatest along the North-South direction, orientation is 0 degrees; conversely, if the uncertainty is greatest along the East-West direction, orientation is 90 degrees. When orientation is not present, the orientation is assumed to be 0. Defaults to: `null`.
+  - semiMajorAxis (Float): A floating-point number that expresses the location uncertainty along the major axis of the ellipse. May be required by the regulatory domain. When the uncertainty is optional, the default value is 0. Defaults to: `null`.
+  - semiMinorAxis (Float): A floating-point number that expresses the location uncertainty along the minor axis of the ellipse. May be required by the regulatory domain. When the uncertainty is optional, the default value is 0. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"center",
     :"orientation",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spectrum.V1explorer.Model.GeoLocationElli
   def decode(value, options) do
     value
     |> deserialize(:"center", :struct, GoogleApi.Spectrum.V1explorer.Model.GeoLocationPoint, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spectrum.V1explorer.Model.GeoLocationEllipse do
+  def encode(value, options) do
+    GoogleApi.Spectrum.V1explorer.Deserializer.serialize_non_nil(value, options)
   end
 end
 

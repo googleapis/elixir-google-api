@@ -20,9 +20,16 @@
 defmodule GoogleApi.Spectrum.V1explorer.Model.PawsNotifySpectrumUseRequest do
   @moduledoc """
   The spectrum-use notification message which must contain the geolocation of the Device and parameters required by the regulatory domain.
+
+  ## Attributes
+
+  - deviceDesc (DeviceDescriptor): Device descriptor information is required in the spectrum-use notification message. Defaults to: `null`.
+  - location (GeoLocation): The geolocation of the master device (the device that is sending the spectrum-use notification) to the database is required in the spectrum-use notification message. Defaults to: `null`.
+  - spectra (List[SpectrumMessage]): A spectrum list is required in the spectrum-use notification. The list specifies the spectrum that the device expects to use, which includes frequency ranges and maximum power levels. The list may be empty if the device decides not to use any of spectrum. For consistency, the psdBandwidthHz value should match that from one of the spectrum elements in the corresponding available spectrum response previously sent to the device by the database. Note that maximum power levels in the spectrum element must be expressed as power spectral density over the specified psdBandwidthHz value. The actual bandwidth to be used (as computed from the start and stop frequencies) may be different from the psdBandwidthHz value. As an example, when regulatory rules express maximum power spectral density in terms of maximum power over any 100 kHz band, then the psdBandwidthHz value should be set to 100 kHz, even though the actual bandwidth used can be 20 kHz. Defaults to: `null`.
+  - type (String): The message type (e.g., INIT_REQ, AVAIL_SPECTRUM_REQ, ...).  Required field. Defaults to: `null`.
+  - version (String): The PAWS version. Must be exactly 1.0.  Required field. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"deviceDesc",
     :"location",
@@ -39,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spectrum.V1explorer.Model.PawsNotifySpect
     |> deserialize(:"deviceDesc", :struct, GoogleApi.Spectrum.V1explorer.Model.DeviceDescriptor, options)
     |> deserialize(:"location", :struct, GoogleApi.Spectrum.V1explorer.Model.GeoLocation, options)
     |> deserialize(:"spectra", :list, GoogleApi.Spectrum.V1explorer.Model.SpectrumMessage, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spectrum.V1explorer.Model.PawsNotifySpectrumUseRequest do
+  def encode(value, options) do
+    GoogleApi.Spectrum.V1explorer.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.Spectrum.V1explorer.Model.DbUpdateSpec do
   @moduledoc """
   This message is provided by the database to notify devices of an upcoming change to the database URI.
+
+  ## Attributes
+
+  - databases (List[DatabaseSpec]): A required list of one or more databases. A device should update its preconfigured list of databases to replace (only) the database that provided the response with the specified entries. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"databases"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spectrum.V1explorer.Model.DbUpdateSpec do
   def decode(value, options) do
     value
     |> deserialize(:"databases", :list, GoogleApi.Spectrum.V1explorer.Model.DatabaseSpec, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spectrum.V1explorer.Model.DbUpdateSpec do
+  def encode(value, options) do
+    GoogleApi.Spectrum.V1explorer.Deserializer.serialize_non_nil(value, options)
   end
 end
 

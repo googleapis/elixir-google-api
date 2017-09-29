@@ -20,9 +20,14 @@
 defmodule GoogleApi.Spectrum.V1explorer.Model.AntennaCharacteristics do
   @moduledoc """
   Antenna characteristics provide additional information, such as the antenna height, antenna type, etc. Whether antenna characteristics must be provided in a request depends on the device type and regulatory domain.
+
+  ## Attributes
+
+  - height (Float): The antenna height in meters. Whether the antenna height is required depends on the device type and the regulatory domain. Note that the height may be negative. Defaults to: `null`.
+  - heightType (String): If the height is required, then the height type (AGL for above ground level or AMSL for above mean sea level) is also required. The default is AGL. Defaults to: `null`.
+  - heightUncertainty (Float): The height uncertainty in meters. Whether this is required depends on the regulatory domain. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"height",
     :"heightType",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Spectrum.V1explorer.Model.AntennaCharacteristics do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spectrum.V1explorer.Model.AntennaCharacteristics do
+  def encode(value, options) do
+    GoogleApi.Spectrum.V1explorer.Deserializer.serialize_non_nil(value, options)
   end
 end
 
