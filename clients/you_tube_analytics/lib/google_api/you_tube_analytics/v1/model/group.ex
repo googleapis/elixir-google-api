@@ -20,9 +20,16 @@
 defmodule GoogleApi.YouTubeAnalytics.V1.Model.Group do
   @moduledoc """
   
+
+  ## Attributes
+
+  - contentDetails (GroupContentDetails):  Defaults to: `null`.
+  - etag (String):  Defaults to: `null`.
+  - id (String):  Defaults to: `null`.
+  - kind (String):  Defaults to: `null`.
+  - snippet (GroupSnippet):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"contentDetails",
     :"etag",
@@ -36,8 +43,14 @@ defimpl Poison.Decoder, for: GoogleApi.YouTubeAnalytics.V1.Model.Group do
   import GoogleApi.YouTubeAnalytics.V1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"contentDetails", :struct, GoogleApi.YouTubeAnalytics.V1.Model.Group_contentDetails, options)
-    |> deserialize(:"snippet", :struct, GoogleApi.YouTubeAnalytics.V1.Model.Group_snippet, options)
+    |> deserialize(:"contentDetails", :struct, GoogleApi.YouTubeAnalytics.V1.Model.GroupContentDetails, options)
+    |> deserialize(:"snippet", :struct, GoogleApi.YouTubeAnalytics.V1.Model.GroupSnippet, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTubeAnalytics.V1.Model.Group do
+  def encode(value, options) do
+    GoogleApi.YouTubeAnalytics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

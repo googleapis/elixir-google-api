@@ -20,9 +20,14 @@
 defmodule GoogleApi.YouTubeAnalytics.V1.Model.ResultTable do
   @moduledoc """
   Contains a single result table. The table is returned as an array of rows that contain the values for the cells of the table. Depending on the metric or dimension, the cell can contain a string (video ID, country code) or a number (number of views or number of likes).
+
+  ## Attributes
+
+  - columnHeaders (List[ResultTableColumnHeaders]): This value specifies information about the data returned in the rows fields. Each item in the columnHeaders list identifies a field returned in the rows value, which contains a list of comma-delimited data. The columnHeaders list will begin with the dimensions specified in the API request, which will be followed by the metrics specified in the API request. The order of both dimensions and metrics will match the ordering in the API request. For example, if the API request contains the parameters dimensions&#x3D;ageGroup,gender&amp;metrics&#x3D;viewerPercentage, the API response will return columns in this order: ageGroup,gender,viewerPercentage. Defaults to: `null`.
+  - kind (String): This value specifies the type of data included in the API response. For the query method, the kind property value will be youtubeAnalytics#resultTable. Defaults to: `null`.
+  - rows (List[List[ErrorUnknown]]): The list contains all rows of the result table. Each item in the list is an array that contains comma-delimited data corresponding to a single row of data. The order of the comma-delimited data fields will match the order of the columns listed in the columnHeaders field. If no data is available for the given query, the rows element will be omitted from the response. The response for a query with the day dimension will not contain rows for the most recent days. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"columnHeaders",
     :"kind",
@@ -34,7 +39,13 @@ defimpl Poison.Decoder, for: GoogleApi.YouTubeAnalytics.V1.Model.ResultTable do
   import GoogleApi.YouTubeAnalytics.V1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"columnHeaders", :list, GoogleApi.YouTubeAnalytics.V1.Model.ResultTable_columnHeaders, options)
+    |> deserialize(:"columnHeaders", :list, GoogleApi.YouTubeAnalytics.V1.Model.ResultTableColumnHeaders, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTubeAnalytics.V1.Model.ResultTable do
+  def encode(value, options) do
+    GoogleApi.YouTubeAnalytics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

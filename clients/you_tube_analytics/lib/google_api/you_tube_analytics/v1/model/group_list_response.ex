@@ -20,9 +20,15 @@
 defmodule GoogleApi.YouTubeAnalytics.V1.Model.GroupListResponse do
   @moduledoc """
   A paginated list of grouList resources returned in response to a youtubeAnalytics.groupApi.list request.
+
+  ## Attributes
+
+  - etag (String):  Defaults to: `null`.
+  - items (List[Group]):  Defaults to: `null`.
+  - kind (String):  Defaults to: `null`.
+  - nextPageToken (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"items",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTubeAnalytics.V1.Model.GroupListRespon
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.YouTubeAnalytics.V1.Model.Group, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTubeAnalytics.V1.Model.GroupListResponse do
+  def encode(value, options) do
+    GoogleApi.YouTubeAnalytics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

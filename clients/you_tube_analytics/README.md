@@ -1,6 +1,6 @@
 # GoogleApi.YouTubeAnalytics.V1
 
-**TODO: Add description**
+Retrieves your YouTube Analytics data.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_you_tube_analytics` to your list of dependencies in `mix.e
 
 ```elixir
 def deps do
-  [{:google_api_you_tube_analytics, "~> 0.1.0"}]
+  [{:google_api_you_tube_analytics, "~> 0.0.1"}]
 end
 ```
 

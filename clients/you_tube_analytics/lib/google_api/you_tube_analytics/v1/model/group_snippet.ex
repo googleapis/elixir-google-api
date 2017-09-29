@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.YouTubeAnalytics.V1.Model.Group_snippet do
+defmodule GoogleApi.YouTubeAnalytics.V1.Model.GroupSnippet do
   @moduledoc """
   
+
+  ## Attributes
+
+  - publishedAt (DateTime):  Defaults to: `null`.
+  - title (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"publishedAt",
     :"title"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.YouTubeAnalytics.V1.Model.Group_snippet do
+defimpl Poison.Decoder, for: GoogleApi.YouTubeAnalytics.V1.Model.GroupSnippet do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTubeAnalytics.V1.Model.GroupSnippet do
+  def encode(value, options) do
+    GoogleApi.YouTubeAnalytics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

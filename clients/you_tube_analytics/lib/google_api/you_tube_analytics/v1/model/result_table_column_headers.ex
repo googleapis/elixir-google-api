@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.YouTubeAnalytics.V1.Model.ResultTable_columnHeaders do
+defmodule GoogleApi.YouTubeAnalytics.V1.Model.ResultTableColumnHeaders do
   @moduledoc """
   
+
+  ## Attributes
+
+  - columnType (String): The type of the column (DIMENSION or METRIC). Defaults to: `null`.
+  - dataType (String): The type of the data in the column (STRING, INTEGER, FLOAT, etc.). Defaults to: `null`.
+  - name (String): The name of the dimension or metric. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"columnType",
     :"dataType",
@@ -30,9 +35,15 @@ defmodule GoogleApi.YouTubeAnalytics.V1.Model.ResultTable_columnHeaders do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.YouTubeAnalytics.V1.Model.ResultTable_columnHeaders do
+defimpl Poison.Decoder, for: GoogleApi.YouTubeAnalytics.V1.Model.ResultTableColumnHeaders do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTubeAnalytics.V1.Model.ResultTableColumnHeaders do
+  def encode(value, options) do
+    GoogleApi.YouTubeAnalytics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
