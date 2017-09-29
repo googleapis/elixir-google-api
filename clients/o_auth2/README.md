@@ -1,6 +1,6 @@
 # GoogleApi.OAuth2.V2
 
-**TODO: Add description**
+Obtains end-user authorization grants for use with other Google APIs.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_o_auth2` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_o_auth2, "~> 0.1.0"}]
+  [{:google_api_o_auth2, "~> 0.0.1"}]
 end
 ```
 

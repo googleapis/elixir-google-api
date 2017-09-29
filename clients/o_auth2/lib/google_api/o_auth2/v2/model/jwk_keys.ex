@@ -17,12 +17,20 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.OAuth2.V2.Model.Jwk_keys do
+defmodule GoogleApi.OAuth2.V2.Model.JwkKeys do
   @moduledoc """
   
+
+  ## Attributes
+
+  - alg (String):  Defaults to: `null`.
+  - e (String):  Defaults to: `null`.
+  - kid (String):  Defaults to: `null`.
+  - kty (String):  Defaults to: `null`.
+  - n (String):  Defaults to: `null`.
+  - use (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"alg",
     :"e",
@@ -33,9 +41,15 @@ defmodule GoogleApi.OAuth2.V2.Model.Jwk_keys do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.OAuth2.V2.Model.Jwk_keys do
+defimpl Poison.Decoder, for: GoogleApi.OAuth2.V2.Model.JwkKeys do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.OAuth2.V2.Model.JwkKeys do
+  def encode(value, options) do
+    GoogleApi.OAuth2.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

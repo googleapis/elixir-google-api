@@ -20,9 +20,22 @@
 defmodule GoogleApi.OAuth2.V2.Model.Userinfoplus do
   @moduledoc """
   
+
+  ## Attributes
+
+  - email (String): The user&#39;s email address. Defaults to: `null`.
+  - family_name (String): The user&#39;s last name. Defaults to: `null`.
+  - gender (String): The user&#39;s gender. Defaults to: `null`.
+  - given_name (String): The user&#39;s first name. Defaults to: `null`.
+  - hd (String): The hosted domain e.g. example.com if the user is Google apps user. Defaults to: `null`.
+  - id (String): The obfuscated ID of the user. Defaults to: `null`.
+  - link (String): URL of the profile page. Defaults to: `null`.
+  - locale (String): The user&#39;s preferred locale. Defaults to: `null`.
+  - name (String): The user&#39;s full name. Defaults to: `null`.
+  - picture (String): URL of the user&#39;s picture image. Defaults to: `null`.
+  - verified_email (Boolean): Boolean flag which is true if the email address is verified. Always verified because we only return the user&#39;s primary email address. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"email",
     :"family_name",
@@ -41,6 +54,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.OAuth2.V2.Model.Userinfoplus do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.OAuth2.V2.Model.Userinfoplus do
+  def encode(value, options) do
+    GoogleApi.OAuth2.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 
