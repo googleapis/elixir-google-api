@@ -20,9 +20,12 @@
 defmodule GoogleApi.ReplicaPool.V1beta2.Model.InstanceGroupManagersSetInstanceTemplateRequest do
   @moduledoc """
   
+
+  ## Attributes
+
+  - instanceTemplate (String): The full URL to an Instance Template from which all new instances will be created. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"instanceTemplate"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ReplicaPool.V1beta2.Model.InstanceGroupManagersSetInstanceTemplateRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ReplicaPool.V1beta2.Model.InstanceGroupManagersSetInstanceTemplateRequest do
+  def encode(value, options) do
+    GoogleApi.ReplicaPool.V1beta2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

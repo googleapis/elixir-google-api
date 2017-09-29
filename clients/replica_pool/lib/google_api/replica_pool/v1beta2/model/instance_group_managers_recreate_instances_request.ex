@@ -20,9 +20,12 @@
 defmodule GoogleApi.ReplicaPool.V1beta2.Model.InstanceGroupManagersRecreateInstancesRequest do
   @moduledoc """
   
+
+  ## Attributes
+
+  - instances (List[String]): The names of one or more instances to recreate. For example: { &#39;instances&#39;: [ &#39;instance-c3po&#39;, &#39;instance-r2d2&#39; ] } Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"instances"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ReplicaPool.V1beta2.Model.InstanceGroupManagersRecreateInstancesRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ReplicaPool.V1beta2.Model.InstanceGroupManagersRecreateInstancesRequest do
+  def encode(value, options) do
+    GoogleApi.ReplicaPool.V1beta2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

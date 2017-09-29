@@ -20,9 +20,12 @@
 defmodule GoogleApi.ReplicaPool.V1beta2.Model.InstanceGroupManagersDeleteInstancesRequest do
   @moduledoc """
   
+
+  ## Attributes
+
+  - instances (List[String]): Names of instances to delete.  Example: &#39;instance-foo&#39;, &#39;instance-bar&#39; Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"instances"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ReplicaPool.V1beta2.Model.InstanceGroupManagersDeleteInstancesRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ReplicaPool.V1beta2.Model.InstanceGroupManagersDeleteInstancesRequest do
+  def encode(value, options) do
+    GoogleApi.ReplicaPool.V1beta2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

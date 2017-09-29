@@ -64,7 +64,11 @@ defmodule GoogleApi.ReplicaPool.V1beta2.Api.InstanceGroupManagers do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/zones/#{zone}/instanceGroupManagers/#{instance_group_manager}/abandonInstances")
+    |> url("/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/abandonInstances", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone),
+         "instanceGroupManager" => URI.encode_www_form(instance_group_manager)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -107,7 +111,11 @@ defmodule GoogleApi.ReplicaPool.V1beta2.Api.InstanceGroupManagers do
     }
     %{}
     |> method(:delete)
-    |> url("/#{project}/zones/#{zone}/instanceGroupManagers/#{instance_group_manager}")
+    |> url("/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone),
+         "instanceGroupManager" => URI.encode_www_form(instance_group_manager)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -152,7 +160,11 @@ defmodule GoogleApi.ReplicaPool.V1beta2.Api.InstanceGroupManagers do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/zones/#{zone}/instanceGroupManagers/#{instance_group_manager}/deleteInstances")
+    |> url("/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/deleteInstances", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone),
+         "instanceGroupManager" => URI.encode_www_form(instance_group_manager)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -195,7 +207,11 @@ defmodule GoogleApi.ReplicaPool.V1beta2.Api.InstanceGroupManagers do
     }
     %{}
     |> method(:get)
-    |> url("/#{project}/zones/#{zone}/instanceGroupManagers/#{instance_group_manager}")
+    |> url("/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone),
+         "instanceGroupManager" => URI.encode_www_form(instance_group_manager)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -240,7 +256,10 @@ defmodule GoogleApi.ReplicaPool.V1beta2.Api.InstanceGroupManagers do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/zones/#{zone}/instanceGroupManagers")
+    |> url("/{project}/zones/{zone}/instanceGroupManagers", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone)
+       })
     |> add_param(:query, :"size", size)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -289,7 +308,10 @@ defmodule GoogleApi.ReplicaPool.V1beta2.Api.InstanceGroupManagers do
     }
     %{}
     |> method(:get)
-    |> url("/#{project}/zones/#{zone}/instanceGroupManagers")
+    |> url("/{project}/zones/{zone}/instanceGroupManagers", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -334,7 +356,11 @@ defmodule GoogleApi.ReplicaPool.V1beta2.Api.InstanceGroupManagers do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/zones/#{zone}/instanceGroupManagers/#{instance_group_manager}/recreateInstances")
+    |> url("/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/recreateInstances", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone),
+         "instanceGroupManager" => URI.encode_www_form(instance_group_manager)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -378,7 +404,11 @@ defmodule GoogleApi.ReplicaPool.V1beta2.Api.InstanceGroupManagers do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/zones/#{zone}/instanceGroupManagers/#{instance_group_manager}/resize")
+    |> url("/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/resize", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone),
+         "instanceGroupManager" => URI.encode_www_form(instance_group_manager)
+       })
     |> add_param(:query, :"size", size)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -424,7 +454,11 @@ defmodule GoogleApi.ReplicaPool.V1beta2.Api.InstanceGroupManagers do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/zones/#{zone}/instanceGroupManagers/#{instance_group_manager}/setInstanceTemplate")
+    |> url("/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/setInstanceTemplate", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone),
+         "instanceGroupManager" => URI.encode_www_form(instance_group_manager)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -469,7 +503,11 @@ defmodule GoogleApi.ReplicaPool.V1beta2.Api.InstanceGroupManagers do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/zones/#{zone}/instanceGroupManagers/#{instance_group_manager}/setTargetPools")
+    |> url("/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/setTargetPools", %{
+         "project" => URI.encode_www_form(project),
+         "zone" => URI.encode_www_form(zone),
+         "instanceGroupManager" => URI.encode_www_form(instance_group_manager)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

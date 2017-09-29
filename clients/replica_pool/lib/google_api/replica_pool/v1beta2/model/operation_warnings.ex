@@ -17,12 +17,18 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ReplicaPool.V1beta2.Model.Operation_warnings do
+defmodule GoogleApi.ReplicaPool.V1beta2.Model.OperationWarnings do
   @moduledoc """
   
+
+  ## Attributes
+
+  - code (String): [Output only] The warning type identifier for this warning. Defaults to: `null`.
+    - Enum - one of [DEPRECATED_RESOURCE_USED, DISK_SIZE_LARGER_THAN_IMAGE_SIZE, INJECTED_KERNELS_DEPRECATED, NEXT_HOP_ADDRESS_NOT_ASSIGNED, NEXT_HOP_CANNOT_IP_FORWARD, NEXT_HOP_INSTANCE_NOT_FOUND, NEXT_HOP_INSTANCE_NOT_ON_NETWORK, NEXT_HOP_NOT_RUNNING, NO_RESULTS_ON_PAGE, REQUIRED_TOS_AGREEMENT, RESOURCE_NOT_DELETED, SINGLE_INSTANCE_PROPERTY_TEMPLATE, UNREACHABLE]
+  - data (List[OperationData]): [Output only] Metadata for this warning in key:value format. Defaults to: `null`.
+  - message (String): [Output only] Optional human-readable details for this warning. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"code",
     :"data",
@@ -30,11 +36,17 @@ defmodule GoogleApi.ReplicaPool.V1beta2.Model.Operation_warnings do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ReplicaPool.V1beta2.Model.Operation_warnings do
+defimpl Poison.Decoder, for: GoogleApi.ReplicaPool.V1beta2.Model.OperationWarnings do
   import GoogleApi.ReplicaPool.V1beta2.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"data", :list, GoogleApi.ReplicaPool.V1beta2.Model.Operation_data, options)
+    |> deserialize(:"data", :list, GoogleApi.ReplicaPool.V1beta2.Model.OperationData, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ReplicaPool.V1beta2.Model.OperationWarnings do
+  def encode(value, options) do
+    GoogleApi.ReplicaPool.V1beta2.Deserializer.serialize_non_nil(value, options)
   end
 end
 
