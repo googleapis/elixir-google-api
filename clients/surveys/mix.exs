@@ -39,7 +39,7 @@ defmodule GoogleApi.Surveys.V2.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/surveys",
-        "Homepage" => ""
+        "Homepage" => "https://developers.google.com/surveys/"
       }
     ]
   end
