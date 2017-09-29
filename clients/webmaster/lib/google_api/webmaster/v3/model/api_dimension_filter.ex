@@ -20,9 +20,14 @@
 defmodule GoogleApi.Webmaster.V3.Model.ApiDimensionFilter do
   @moduledoc """
   
+
+  ## Attributes
+
+  - dimension (String):  Defaults to: `null`.
+  - expression (String):  Defaults to: `null`.
+  - operator (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dimension",
     :"expression",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Webmaster.V3.Model.ApiDimensionFilter do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Webmaster.V3.Model.ApiDimensionFilter do
+  def encode(value, options) do
+    GoogleApi.Webmaster.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

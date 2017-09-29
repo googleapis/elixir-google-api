@@ -66,7 +66,9 @@ defmodule GoogleApi.Webmaster.V3.Api.Urlcrawlerrorscounts do
     }
     %{}
     |> method(:get)
-    |> url("/sites/#{site_url}/urlCrawlErrorsCounts/query")
+    |> url("/sites/{siteUrl}/urlCrawlErrorsCounts/query", %{
+         "siteUrl" => URI.encode_www_form(site_url)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

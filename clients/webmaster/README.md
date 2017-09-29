@@ -1,6 +1,6 @@
 # GoogleApi.Webmaster.V3
 
-**TODO: Add description**
+View Google Search Console data for your verified sites.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_webmaster` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_webmaster, "~> 0.1.0"}]
+  [{:google_api_webmaster, "~> 0.0.1"}]
 end
 ```
 

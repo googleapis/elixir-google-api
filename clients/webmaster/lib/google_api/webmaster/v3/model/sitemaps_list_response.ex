@@ -20,9 +20,12 @@
 defmodule GoogleApi.Webmaster.V3.Model.SitemapsListResponse do
   @moduledoc """
   List of sitemaps.
+
+  ## Attributes
+
+  - sitemap (List[WmxSitemap]): Contains detailed information about a specific URL submitted as a sitemap. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"sitemap"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Webmaster.V3.Model.SitemapsListResponse d
   def decode(value, options) do
     value
     |> deserialize(:"sitemap", :list, GoogleApi.Webmaster.V3.Model.WmxSitemap, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Webmaster.V3.Model.SitemapsListResponse do
+  def encode(value, options) do
+    GoogleApi.Webmaster.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -62,7 +62,9 @@ defmodule GoogleApi.Webmaster.V3.Api.Searchanalytics do
     }
     %{}
     |> method(:post)
-    |> url("/sites/#{site_url}/searchAnalytics/query")
+    |> url("/sites/{siteUrl}/searchAnalytics/query", %{
+         "siteUrl" => URI.encode_www_form(site_url)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

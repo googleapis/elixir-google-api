@@ -20,9 +20,16 @@
 defmodule GoogleApi.Webmaster.V3.Model.UrlCrawlErrorsSample do
   @moduledoc """
   Contains information about specific crawl errors.
+
+  ## Attributes
+
+  - first_detected (DateTime): The time the error was first detected, in RFC 3339 format. Defaults to: `null`.
+  - last_crawled (DateTime): The time when the URL was last crawled, in RFC 3339 format. Defaults to: `null`.
+  - pageUrl (String): The URL of an error, relative to the site. Defaults to: `null`.
+  - responseCode (Integer): The HTTP response code, if any. Defaults to: `null`.
+  - urlDetails (UrlSampleDetails): Additional details about the URL, set only when calling get(). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"first_detected",
     :"last_crawled",
@@ -37,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.Webmaster.V3.Model.UrlCrawlErrorsSample d
   def decode(value, options) do
     value
     |> deserialize(:"urlDetails", :struct, GoogleApi.Webmaster.V3.Model.UrlSampleDetails, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Webmaster.V3.Model.UrlCrawlErrorsSample do
+  def encode(value, options) do
+    GoogleApi.Webmaster.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -61,7 +61,10 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
     }
     %{}
     |> method(:delete)
-    |> url("/sites/#{site_url}/sitemaps/#{feedpath}")
+    |> url("/sites/{siteUrl}/sitemaps/{feedpath}", %{
+         "siteUrl" => URI.encode_www_form(site_url),
+         "feedpath" => URI.encode_www_form(feedpath)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -103,7 +106,10 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
     }
     %{}
     |> method(:get)
-    |> url("/sites/#{site_url}/sitemaps/#{feedpath}")
+    |> url("/sites/{siteUrl}/sitemaps/{feedpath}", %{
+         "siteUrl" => URI.encode_www_form(site_url),
+         "feedpath" => URI.encode_www_form(feedpath)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -146,7 +152,9 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
     }
     %{}
     |> method(:get)
-    |> url("/sites/#{site_url}/sitemaps")
+    |> url("/sites/{siteUrl}/sitemaps", %{
+         "siteUrl" => URI.encode_www_form(site_url)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -188,7 +196,10 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
     }
     %{}
     |> method(:put)
-    |> url("/sites/#{site_url}/sitemaps/#{feedpath}")
+    |> url("/sites/{siteUrl}/sitemaps/{feedpath}", %{
+         "siteUrl" => URI.encode_www_form(site_url),
+         "feedpath" => URI.encode_www_form(feedpath)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

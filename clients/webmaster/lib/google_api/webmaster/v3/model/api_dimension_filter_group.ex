@@ -20,9 +20,13 @@
 defmodule GoogleApi.Webmaster.V3.Model.ApiDimensionFilterGroup do
   @moduledoc """
   
+
+  ## Attributes
+
+  - filters (List[ApiDimensionFilter]):  Defaults to: `null`.
+  - groupType (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"filters",
     :"groupType"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Webmaster.V3.Model.ApiDimensionFilterGrou
   def decode(value, options) do
     value
     |> deserialize(:"filters", :list, GoogleApi.Webmaster.V3.Model.ApiDimensionFilter, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Webmaster.V3.Model.ApiDimensionFilterGroup do
+  def encode(value, options) do
+    GoogleApi.Webmaster.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.Webmaster.V3.Model.UrlCrawlErrorCount do
   @moduledoc """
   An entry in a URL crawl errors time series.
+
+  ## Attributes
+
+  - count (String): The error count at the given timestamp. Defaults to: `null`.
+  - timestamp (DateTime): The date and time when the crawl attempt took place, in RFC 3339 format. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"count",
     :"timestamp"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Webmaster.V3.Model.UrlCrawlErrorCount do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Webmaster.V3.Model.UrlCrawlErrorCount do
+  def encode(value, options) do
+    GoogleApi.Webmaster.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

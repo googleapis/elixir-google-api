@@ -20,9 +20,13 @@
 defmodule GoogleApi.Webmaster.V3.Model.SearchAnalyticsQueryResponse do
   @moduledoc """
   A list of rows, one per result, grouped by key. Metrics in each row are aggregated for all data grouped by that key either by page or property, as specified by the aggregation type parameter.
+
+  ## Attributes
+
+  - responseAggregationType (String): How the results were aggregated. Defaults to: `null`.
+  - rows (List[ApiDataRow]): A list of rows grouped by the key values in the order given in the query. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"responseAggregationType",
     :"rows"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Webmaster.V3.Model.SearchAnalyticsQueryRe
   def decode(value, options) do
     value
     |> deserialize(:"rows", :list, GoogleApi.Webmaster.V3.Model.ApiDataRow, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Webmaster.V3.Model.SearchAnalyticsQueryResponse do
+  def encode(value, options) do
+    GoogleApi.Webmaster.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

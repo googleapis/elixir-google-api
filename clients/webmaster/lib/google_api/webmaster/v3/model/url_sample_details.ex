@@ -20,9 +20,13 @@
 defmodule GoogleApi.Webmaster.V3.Model.UrlSampleDetails do
   @moduledoc """
   Additional details about the URL, set only when calling get().
+
+  ## Attributes
+
+  - containingSitemaps (List[String]): List of sitemaps pointing at this URL. Defaults to: `null`.
+  - linkedFromUrls (List[String]): A sample set of URLs linking to this URL. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"containingSitemaps",
     :"linkedFromUrls"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Webmaster.V3.Model.UrlSampleDetails do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Webmaster.V3.Model.UrlSampleDetails do
+  def encode(value, options) do
+    GoogleApi.Webmaster.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 
