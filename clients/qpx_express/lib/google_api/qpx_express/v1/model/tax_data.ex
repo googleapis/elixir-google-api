@@ -20,9 +20,14 @@
 defmodule GoogleApi.QPXExpress.V1.Model.TaxData do
   @moduledoc """
   Tax data.
+
+  ## Attributes
+
+  - id (String): An identifier uniquely identifying a tax in a response. Defaults to: `null`.
+  - kind (String): Identifies this as a tax data object, representing some tax. Value: the fixed string qpxexpress#taxData. Defaults to: `null`.
+  - name (String): The name of a tax. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"kind",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.QPXExpress.V1.Model.TaxData do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.QPXExpress.V1.Model.TaxData do
+  def encode(value, options) do
+    GoogleApi.QPXExpress.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

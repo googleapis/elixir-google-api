@@ -20,9 +20,16 @@
 defmodule GoogleApi.QPXExpress.V1.Model.BagDescriptor do
   @moduledoc """
   Information about an item of baggage.
+
+  ## Attributes
+
+  - commercialName (String): Provides the commercial name for an optional service. Defaults to: `null`.
+  - count (Integer): How many of this type of bag will be checked on this flight. Defaults to: `null`.
+  - description (List[String]): A description of the baggage. Defaults to: `null`.
+  - kind (String): Identifies this as a baggage object. Value: the fixed string qpxexpress#bagDescriptor. Defaults to: `null`.
+  - subcode (String): The standard IATA subcode used to identify this optional service. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"commercialName",
     :"count",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.QPXExpress.V1.Model.BagDescriptor do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.QPXExpress.V1.Model.BagDescriptor do
+  def encode(value, options) do
+    GoogleApi.QPXExpress.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

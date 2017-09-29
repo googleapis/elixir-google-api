@@ -20,9 +20,15 @@
 defmodule GoogleApi.QPXExpress.V1.Model.CityData do
   @moduledoc """
   Information about a city that might be useful to an end-user; typically the city of an airport.
+
+  ## Attributes
+
+  - code (String): The IATA character ID of a city. For example, for Boston this is BOS. Defaults to: `null`.
+  - country (String): The two-character country code of the country the city is located in. For example, US for the United States of America. Defaults to: `null`.
+  - kind (String): Identifies this as a city, typically with one or more airports. Value: the fixed string qpxexpress#cityData. Defaults to: `null`.
+  - name (String): The full name of a city. An example would be: New York. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"code",
     :"country",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.QPXExpress.V1.Model.CityData do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.QPXExpress.V1.Model.CityData do
+  def encode(value, options) do
+    GoogleApi.QPXExpress.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

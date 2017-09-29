@@ -20,9 +20,14 @@
 defmodule GoogleApi.QPXExpress.V1.Model.SliceInfo do
   @moduledoc """
   Information about a slice. A slice represents a traveller&#39;s intent, the portion of a low-fare search corresponding to a traveler&#39;s request to get between two points. One-way journeys are generally expressed using 1 slice, round-trips using 2. For example, if a traveler specifies the following trip in a user interface: | Origin | Destination | Departure Date | | BOS | LAX | March 10, 2007 | | LAX | SYD | March 17, 2007 | | SYD | BOS | March 22, 2007 | then this is a three slice trip.
+
+  ## Attributes
+
+  - duration (Integer): The duration of the slice in minutes. Defaults to: `null`.
+  - kind (String): Identifies this as a slice object. A slice represents a traveller&#39;s intent, the portion of a low-fare search corresponding to a traveler&#39;s request to get between two points. One-way journeys are generally expressed using 1 slice, round-trips using 2. Value: the fixed string qpxexpress#sliceInfo. Defaults to: `null`.
+  - segment (List[SegmentInfo]): The segment(s) constituting the slice. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"duration",
     :"kind",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.QPXExpress.V1.Model.SliceInfo do
   def decode(value, options) do
     value
     |> deserialize(:"segment", :list, GoogleApi.QPXExpress.V1.Model.SegmentInfo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.QPXExpress.V1.Model.SliceInfo do
+  def encode(value, options) do
+    GoogleApi.QPXExpress.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

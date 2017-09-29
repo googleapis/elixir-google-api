@@ -20,9 +20,16 @@
 defmodule GoogleApi.QPXExpress.V1.Model.TripOption do
   @moduledoc """
   Trip information.
+
+  ## Attributes
+
+  - id (String): Identifier uniquely identifying this trip in a response. Defaults to: `null`.
+  - kind (String): Identifies this as a trip information object. Value: the fixed string qpxexpress#tripOption. Defaults to: `null`.
+  - pricing (List[PricingInfo]): Per passenger pricing information. Defaults to: `null`.
+  - saleTotal (String): The total price for all passengers on the trip, in the form of a currency followed by an amount, e.g. USD253.35. Defaults to: `null`.
+  - slice (List[SliceInfo]): The slices that make up this trip&#39;s itinerary. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"kind",
@@ -38,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.QPXExpress.V1.Model.TripOption do
     value
     |> deserialize(:"pricing", :list, GoogleApi.QPXExpress.V1.Model.PricingInfo, options)
     |> deserialize(:"slice", :list, GoogleApi.QPXExpress.V1.Model.SliceInfo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.QPXExpress.V1.Model.TripOption do
+  def encode(value, options) do
+    GoogleApi.QPXExpress.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -1,6 +1,6 @@
 # GoogleApi.QPXExpress.V1
 
-**TODO: Add description**
+Finds the least expensive flights between an origin and a destination.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_qpx_express` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_qpx_express, "~> 0.1.0"}]
+  [{:google_api_qpx_express, "~> 0.0.1"}]
 end
 ```
 

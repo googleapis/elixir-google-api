@@ -20,9 +20,14 @@
 defmodule GoogleApi.QPXExpress.V1.Model.TimeOfDayRange do
   @moduledoc """
   Two times in a single day defining a time range.
+
+  ## Attributes
+
+  - earliestTime (String): The earliest time of day in HH:MM format. Defaults to: `null`.
+  - kind (String): Identifies this as a time of day range object, representing two times in a single day defining a time range. Value: the fixed string qpxexpress#timeOfDayRange. Defaults to: `null`.
+  - latestTime (String): The latest time of day in HH:MM format. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"earliestTime",
     :"kind",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.QPXExpress.V1.Model.TimeOfDayRange do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.QPXExpress.V1.Model.TimeOfDayRange do
+  def encode(value, options) do
+    GoogleApi.QPXExpress.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

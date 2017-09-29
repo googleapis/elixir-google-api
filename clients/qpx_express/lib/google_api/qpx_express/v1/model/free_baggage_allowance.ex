@@ -20,9 +20,17 @@
 defmodule GoogleApi.QPXExpress.V1.Model.FreeBaggageAllowance do
   @moduledoc """
   Information about free baggage allowed on one segment of a trip.
+
+  ## Attributes
+
+  - bagDescriptor (List[BagDescriptor]): A representation of a type of bag, such as an ATPCo subcode, Commercial Name, or other description. Defaults to: `null`.
+  - kilos (Integer): The maximum number of kilos all the free baggage together may weigh. Defaults to: `null`.
+  - kilosPerPiece (Integer): The maximum number of kilos any one piece of baggage may weigh. Defaults to: `null`.
+  - kind (String): Identifies this as free baggage object, allowed on one segment of a trip. Value: the fixed string qpxexpress#freeBaggageAllowance. Defaults to: `null`.
+  - pieces (Integer): The number of free pieces of baggage allowed. Defaults to: `null`.
+  - pounds (Integer): The number of pounds of free baggage allowed. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bagDescriptor",
     :"kilos",
@@ -38,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.QPXExpress.V1.Model.FreeBaggageAllowance 
   def decode(value, options) do
     value
     |> deserialize(:"bagDescriptor", :list, GoogleApi.QPXExpress.V1.Model.BagDescriptor, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.QPXExpress.V1.Model.FreeBaggageAllowance do
+  def encode(value, options) do
+    GoogleApi.QPXExpress.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

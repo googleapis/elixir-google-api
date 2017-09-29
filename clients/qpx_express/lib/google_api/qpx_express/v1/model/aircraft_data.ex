@@ -20,9 +20,14 @@
 defmodule GoogleApi.QPXExpress.V1.Model.AircraftData do
   @moduledoc """
   The make, model, and type of an aircraft.
+
+  ## Attributes
+
+  - code (String): The aircraft code. For example, for a Boeing 777 the code would be 777. Defaults to: `null`.
+  - kind (String): Identifies this as an aircraftData object. Value: the fixed string qpxexpress#aircraftData Defaults to: `null`.
+  - name (String): The name of an aircraft, for example Boeing 777. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"code",
     :"kind",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.QPXExpress.V1.Model.AircraftData do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.QPXExpress.V1.Model.AircraftData do
+  def encode(value, options) do
+    GoogleApi.QPXExpress.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

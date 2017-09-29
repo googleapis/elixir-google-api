@@ -20,9 +20,17 @@
 defmodule GoogleApi.QPXExpress.V1.Model.PassengerCounts do
   @moduledoc """
   The number and type of passengers. Unfortunately the definition of an infant, child, adult, and senior citizen varies across carriers and reservation systems.
+
+  ## Attributes
+
+  - adultCount (Integer): The number of passengers that are adults. Defaults to: `null`.
+  - childCount (Integer): The number of passengers that are children. Defaults to: `null`.
+  - infantInLapCount (Integer): The number of passengers that are infants travelling in the lap of an adult. Defaults to: `null`.
+  - infantInSeatCount (Integer): The number of passengers that are infants each assigned a seat. Defaults to: `null`.
+  - kind (String): Identifies this as a passenger count object, representing the number of passengers. Value: the fixed string qpxexpress#passengerCounts. Defaults to: `null`.
+  - seniorCount (Integer): The number of passengers that are senior citizens. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"adultCount",
     :"childCount",
@@ -36,6 +44,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.QPXExpress.V1.Model.PassengerCounts do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.QPXExpress.V1.Model.PassengerCounts do
+  def encode(value, options) do
+    GoogleApi.QPXExpress.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

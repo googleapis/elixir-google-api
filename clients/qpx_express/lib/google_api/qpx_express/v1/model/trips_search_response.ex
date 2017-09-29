@@ -20,9 +20,13 @@
 defmodule GoogleApi.QPXExpress.V1.Model.TripsSearchResponse do
   @moduledoc """
   A QPX Express search response.
+
+  ## Attributes
+
+  - kind (String): Identifies this as a QPX Express API search response resource. Value: the fixed string qpxExpress#tripsSearch. Defaults to: `null`.
+  - trips (TripOptionsResponse): All possible solutions to the QPX Express search request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"trips"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.QPXExpress.V1.Model.TripsSearchResponse d
   def decode(value, options) do
     value
     |> deserialize(:"trips", :struct, GoogleApi.QPXExpress.V1.Model.TripOptionsResponse, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.QPXExpress.V1.Model.TripsSearchResponse do
+  def encode(value, options) do
+    GoogleApi.QPXExpress.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

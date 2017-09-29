@@ -20,9 +20,15 @@
 defmodule GoogleApi.QPXExpress.V1.Model.TripOptionsResponse do
   @moduledoc """
   A QPX Express search response.
+
+  ## Attributes
+
+  - data (Data): Informational data global to list of solutions. Defaults to: `null`.
+  - kind (String): Identifies this as a QPX Express trip response object, which consists of zero or more solutions. Value: the fixed string qpxexpress#tripOptions. Defaults to: `null`.
+  - requestId (String): An identifier uniquely identifying this response. Defaults to: `null`.
+  - tripOption (List[TripOption]): A list of priced itinerary solutions to the QPX Express query. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"data",
     :"kind",
@@ -37,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.QPXExpress.V1.Model.TripOptionsResponse d
     value
     |> deserialize(:"data", :struct, GoogleApi.QPXExpress.V1.Model.Data, options)
     |> deserialize(:"tripOption", :list, GoogleApi.QPXExpress.V1.Model.TripOption, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.QPXExpress.V1.Model.TripOptionsResponse do
+  def encode(value, options) do
+    GoogleApi.QPXExpress.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

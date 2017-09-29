@@ -20,9 +20,14 @@
 defmodule GoogleApi.QPXExpress.V1.Model.CarrierData do
   @moduledoc """
   Information about a carrier (ie. an airline, bus line, railroad, etc) that might be useful to display to an end-user.
+
+  ## Attributes
+
+  - code (String): The IATA designator of a carrier (airline, etc). For example, for American Airlines, the code is AA. Defaults to: `null`.
+  - kind (String): Identifies this as a kind of carrier (ie. an airline, bus line, railroad, etc). Value: the fixed string qpxexpress#carrierData. Defaults to: `null`.
+  - name (String): The long, full name of a carrier. For example: American Airlines. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"code",
     :"kind",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.QPXExpress.V1.Model.CarrierData do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.QPXExpress.V1.Model.CarrierData do
+  def encode(value, options) do
+    GoogleApi.QPXExpress.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

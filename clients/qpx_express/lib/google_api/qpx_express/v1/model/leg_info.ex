@@ -20,9 +20,28 @@
 defmodule GoogleApi.QPXExpress.V1.Model.LegInfo do
   @moduledoc """
   Information about a leg. (A leg is the smallest unit of travel, in the case of a flight a takeoff immediately followed by a landing at two set points on a particular carrier with a particular flight number.)
+
+  ## Attributes
+
+  - aircraft (String): The aircraft (or bus, ferry, railcar, etc) travelling between the two points of this leg. Defaults to: `null`.
+  - arrivalTime (String): The scheduled time of arrival at the destination of the leg, local to the point of arrival. Defaults to: `null`.
+  - changePlane (Boolean): Whether you have to change planes following this leg. Only applies to the next leg. Defaults to: `null`.
+  - connectionDuration (Integer): Duration of a connection following this leg, in minutes. Defaults to: `null`.
+  - departureTime (String): The scheduled departure time of the leg, local to the point of departure. Defaults to: `null`.
+  - destination (String): The leg destination as a city and airport. Defaults to: `null`.
+  - destinationTerminal (String): The terminal the flight is scheduled to arrive at. Defaults to: `null`.
+  - duration (Integer): The scheduled travelling time from the origin to the destination. Defaults to: `null`.
+  - id (String): An identifier that uniquely identifies this leg in the solution. Defaults to: `null`.
+  - kind (String): Identifies this as a leg object. A leg is the smallest unit of travel, in the case of a flight a takeoff immediately followed by a landing at two set points on a particular carrier with a particular flight number. Value: the fixed string qpxexpress#legInfo. Defaults to: `null`.
+  - meal (String): A simple, general description of the meal(s) served on the flight, for example: \&quot;Hot meal\&quot;. Defaults to: `null`.
+  - mileage (Integer): The number of miles in this leg. Defaults to: `null`.
+  - onTimePerformance (Integer): In percent, the published on time performance on this leg. Defaults to: `null`.
+  - operatingDisclosure (String): Department of Transportation disclosure information on the actual operator of a flight in a code share. (A code share refers to a marketing agreement between two carriers, where one carrier will list in its schedules (and take bookings for) flights that are actually operated by another carrier.) Defaults to: `null`.
+  - origin (String): The leg origin as a city and airport. Defaults to: `null`.
+  - originTerminal (String): The terminal the flight is scheduled to depart from. Defaults to: `null`.
+  - secure (Boolean): Whether passenger information must be furnished to the United States Transportation Security Administration (TSA) prior to departure. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"aircraft",
     :"arrivalTime",
@@ -47,6 +66,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.QPXExpress.V1.Model.LegInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.QPXExpress.V1.Model.LegInfo do
+  def encode(value, options) do
+    GoogleApi.QPXExpress.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
