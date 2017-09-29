@@ -130,7 +130,9 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Namespaces do
     }
     %{}
     |> method(:put)
-    |> url("/v1beta1/#{namespace_name}")
+    |> url("/v1beta1/{+namespaceName}", %{
+         "namespaceName" => URI.encode_www_form(namespace_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

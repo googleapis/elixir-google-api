@@ -20,9 +20,14 @@
 defmodule GoogleApi.ProximityBeacon.V1beta1.Model.BeaconInfo do
   @moduledoc """
   A subset of beacon information served via the &#x60;beaconinfo.getforobserved&#x60; method, which you call when users of your app encounter your beacons.
+
+  ## Attributes
+
+  - advertisedId (AdvertisedId): The ID advertised by the beacon. Defaults to: `null`.
+  - attachments (List[AttachmentInfo]): Attachments matching the type(s) requested. May be empty if no attachment types were requested. Defaults to: `null`.
+  - beaconName (String): The name under which the beacon is registered. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"advertisedId",
     :"attachments",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.BeaconInfo 
     value
     |> deserialize(:"advertisedId", :struct, GoogleApi.ProximityBeacon.V1beta1.Model.AdvertisedId, options)
     |> deserialize(:"attachments", :list, GoogleApi.ProximityBeacon.V1beta1.Model.AttachmentInfo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.BeaconInfo do
+  def encode(value, options) do
+    GoogleApi.ProximityBeacon.V1beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.ProximityBeacon.V1beta1.Model.AttachmentInfo do
   @moduledoc """
   A subset of attachment information served via the &#x60;beaconinfo.getforobserved&#x60; method, used when your users encounter your beacons.
+
+  ## Attributes
+
+  - data (String): An opaque data container for client-provided data. Defaults to: `null`.
+  - namespacedType (String): Specifies what kind of attachment this is. Tells a client how to interpret the &#x60;data&#x60; field. Format is &lt;var&gt;namespace/type&lt;/var&gt;, for example &lt;code&gt;scrupulous-wombat-12345/welcome-message&lt;/code&gt; Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"data",
     :"namespacedType"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.AttachmentInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.AttachmentInfo do
+  def encode(value, options) do
+    GoogleApi.ProximityBeacon.V1beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

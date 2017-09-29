@@ -20,9 +20,13 @@
 defmodule GoogleApi.ProximityBeacon.V1beta1.Model.ListDiagnosticsResponse do
   @moduledoc """
   Response that contains the requested diagnostics.
+
+  ## Attributes
+
+  - diagnostics (List[Diagnostics]): The diagnostics matching the given request. Defaults to: `null`.
+  - nextPageToken (String): Token that can be used for pagination. Returned only if the request matches more beacons than can be returned in this response. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"diagnostics",
     :"nextPageToken"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.ListDiagnos
   def decode(value, options) do
     value
     |> deserialize(:"diagnostics", :list, GoogleApi.ProximityBeacon.V1beta1.Model.Diagnostics, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.ListDiagnosticsResponse do
+  def encode(value, options) do
+    GoogleApi.ProximityBeacon.V1beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

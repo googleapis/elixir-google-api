@@ -20,9 +20,12 @@
 defmodule GoogleApi.ProximityBeacon.V1beta1.Model.ListNamespacesResponse do
   @moduledoc """
   Response to ListNamespacesRequest that contains all the project&#39;s namespaces.
+
+  ## Attributes
+
+  - namespaces (List[Namespace]): The attachments that corresponded to the request params. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"namespaces"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.ListNamespa
   def decode(value, options) do
     value
     |> deserialize(:"namespaces", :list, GoogleApi.ProximityBeacon.V1beta1.Model.Namespace, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.ListNamespacesResponse do
+  def encode(value, options) do
+    GoogleApi.ProximityBeacon.V1beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

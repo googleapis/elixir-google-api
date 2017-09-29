@@ -20,9 +20,14 @@
 defmodule GoogleApi.ProximityBeacon.V1beta1.Model.Observation do
   @moduledoc """
   Represents one beacon observed once.
+
+  ## Attributes
+
+  - advertisedId (AdvertisedId): The ID advertised by the beacon the client has encountered.  If the submitted &#x60;advertised_id&#x60; type is Eddystone-EID, then the client must be authorized to resolve the given beacon. Otherwise no data will be returned for that beacon. Required. Defaults to: `null`.
+  - telemetry (String): The array of telemetry bytes received from the beacon. The server is responsible for parsing it. This field may frequently be empty, as with a beacon that transmits telemetry only occasionally. Defaults to: `null`.
+  - timestampMs (String): Time when the beacon was observed. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"advertisedId",
     :"telemetry",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.Observation
   def decode(value, options) do
     value
     |> deserialize(:"advertisedId", :struct, GoogleApi.ProximityBeacon.V1beta1.Model.AdvertisedId, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.Observation do
+  def encode(value, options) do
+    GoogleApi.ProximityBeacon.V1beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

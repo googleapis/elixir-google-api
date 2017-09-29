@@ -1,6 +1,6 @@
-# GoogleApi.ProximityBeacon.V1BETA1
+# GoogleApi.ProximityBeacon.V1beta1
 
-**TODO: Add description**
+Registers, manages, indexes, and searches beacons.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_proximity_beacon` to your list of dependencies in `mix.exs
 
 ```elixir
 def deps do
-  [{:google_api_proximity_beacon, "~> 0.1.0"}]
+  [{:google_api_proximity_beacon, "~> 0.0.1"}]
 end
 ```
 

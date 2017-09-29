@@ -20,9 +20,14 @@
 defmodule GoogleApi.ProximityBeacon.V1beta1.Model.EphemeralIdRegistrationParams do
   @moduledoc """
   Information a client needs to provision and register beacons that broadcast Eddystone-EID format beacon IDs, using Elliptic curve Diffie-Hellman key exchange. See [the Eddystone specification](https://github.com/google/eddystone/tree/master/eddystone-eid) at GitHub.
+
+  ## Attributes
+
+  - maxRotationPeriodExponent (Integer): Indicates the maximum rotation period supported by the service. See EddystoneEidRegistration.rotation_period_exponent Defaults to: `null`.
+  - minRotationPeriodExponent (Integer): Indicates the minimum rotation period supported by the service. See EddystoneEidRegistration.rotation_period_exponent Defaults to: `null`.
+  - serviceEcdhPublicKey (String): The beacon service&#39;s public key for use by a beacon to derive its Identity Key using Elliptic Curve Diffie-Hellman key exchange. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"maxRotationPeriodExponent",
     :"minRotationPeriodExponent",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.EphemeralIdRegistrationParams do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.EphemeralIdRegistrationParams do
+  def encode(value, options) do
+    GoogleApi.ProximityBeacon.V1beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.ProximityBeacon.V1beta1.Model.DeleteAttachmentsResponse do
   @moduledoc """
   Response for a request to delete attachments.
+
+  ## Attributes
+
+  - numDeleted (Integer): The number of attachments that were deleted. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"numDeleted"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.DeleteAttachmentsResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.DeleteAttachmentsResponse do
+  def encode(value, options) do
+    GoogleApi.ProximityBeacon.V1beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

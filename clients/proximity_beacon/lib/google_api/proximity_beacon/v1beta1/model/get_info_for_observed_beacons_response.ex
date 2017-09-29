@@ -20,9 +20,12 @@
 defmodule GoogleApi.ProximityBeacon.V1beta1.Model.GetInfoForObservedBeaconsResponse do
   @moduledoc """
   Information about the requested beacons, optionally including attachment data.
+
+  ## Attributes
+
+  - beacons (List[BeaconInfo]): Public information about beacons. May be empty if the request matched no beacons. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"beacons"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.GetInfoForO
   def decode(value, options) do
     value
     |> deserialize(:"beacons", :list, GoogleApi.ProximityBeacon.V1beta1.Model.BeaconInfo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.GetInfoForObservedBeaconsResponse do
+  def encode(value, options) do
+    GoogleApi.ProximityBeacon.V1beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
