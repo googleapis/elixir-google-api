@@ -20,9 +20,17 @@
 defmodule GoogleApi.SearchConsole.V1.Model.RunMobileFriendlyTestResponse do
   @moduledoc """
   Mobile-friendly test response, including mobile-friendly issues and resource issues.
+
+  ## Attributes
+
+  - mobileFriendliness (String): Test verdict, whether the page is mobile friendly or not. Defaults to: `null`.
+    - Enum - one of [MOBILE_FRIENDLY_TEST_RESULT_UNSPECIFIED, MOBILE_FRIENDLY, NOT_MOBILE_FRIENDLY]
+  - mobileFriendlyIssues (List[MobileFriendlyIssue]): List of mobile-usability issues. Defaults to: `null`.
+  - resourceIssues (List[ResourceIssue]): Information about embedded resources issues. Defaults to: `null`.
+  - screenshot (Image): Screenshot of the requested URL. Defaults to: `null`.
+  - testStatus (TestStatus): Final state of the test, can be either complete or an error. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"mobileFriendliness",
     :"mobileFriendlyIssues",
@@ -40,6 +48,12 @@ defimpl Poison.Decoder, for: GoogleApi.SearchConsole.V1.Model.RunMobileFriendlyT
     |> deserialize(:"resourceIssues", :list, GoogleApi.SearchConsole.V1.Model.ResourceIssue, options)
     |> deserialize(:"screenshot", :struct, GoogleApi.SearchConsole.V1.Model.Image, options)
     |> deserialize(:"testStatus", :struct, GoogleApi.SearchConsole.V1.Model.TestStatus, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SearchConsole.V1.Model.RunMobileFriendlyTestResponse do
+  def encode(value, options) do
+    GoogleApi.SearchConsole.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

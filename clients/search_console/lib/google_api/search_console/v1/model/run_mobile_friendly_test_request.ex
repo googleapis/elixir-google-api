@@ -20,9 +20,13 @@
 defmodule GoogleApi.SearchConsole.V1.Model.RunMobileFriendlyTestRequest do
   @moduledoc """
   Mobile-friendly test request.
+
+  ## Attributes
+
+  - requestScreenshot (Boolean): Whether or not screenshot is requested. Default is false. Defaults to: `null`.
+  - url (String): URL for inspection. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"requestScreenshot",
     :"url"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SearchConsole.V1.Model.RunMobileFriendlyTestRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SearchConsole.V1.Model.RunMobileFriendlyTestRequest do
+  def encode(value, options) do
+    GoogleApi.SearchConsole.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

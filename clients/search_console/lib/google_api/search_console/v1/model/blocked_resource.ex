@@ -20,9 +20,12 @@
 defmodule GoogleApi.SearchConsole.V1.Model.BlockedResource do
   @moduledoc """
   Blocked resource.
+
+  ## Attributes
+
+  - url (String): URL of the blocked resource. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"url"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SearchConsole.V1.Model.BlockedResource do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SearchConsole.V1.Model.BlockedResource do
+  def encode(value, options) do
+    GoogleApi.SearchConsole.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

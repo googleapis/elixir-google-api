@@ -20,9 +20,13 @@
 defmodule GoogleApi.SearchConsole.V1.Model.Image do
   @moduledoc """
   Describe image data.
+
+  ## Attributes
+
+  - data (String): Image data in format determined by the mime type. Currently, the format will always be \&quot;image/png\&quot;, but this might change in the future. Defaults to: `null`.
+  - mimeType (String): The mime-type of the image data. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"data",
     :"mimeType"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SearchConsole.V1.Model.Image do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SearchConsole.V1.Model.Image do
+  def encode(value, options) do
+    GoogleApi.SearchConsole.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

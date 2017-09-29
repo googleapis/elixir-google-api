@@ -20,9 +20,14 @@
 defmodule GoogleApi.SearchConsole.V1.Model.TestStatus do
   @moduledoc """
   Final state of the test, including error details if necessary.
+
+  ## Attributes
+
+  - details (String): Error details if applicable. Defaults to: `null`.
+  - status (String): Status of the test. Defaults to: `null`.
+    - Enum - one of [TEST_STATUS_UNSPECIFIED, COMPLETE, INTERNAL_ERROR, PAGE_UNREACHABLE]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"details",
     :"status"
@@ -32,6 +37,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SearchConsole.V1.Model.TestStatus do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SearchConsole.V1.Model.TestStatus do
+  def encode(value, options) do
+    GoogleApi.SearchConsole.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
