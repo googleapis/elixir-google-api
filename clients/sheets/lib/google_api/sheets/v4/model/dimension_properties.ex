@@ -20,9 +20,14 @@
 defmodule GoogleApi.Sheets.V4.Model.DimensionProperties do
   @moduledoc """
   Properties about a dimension.
+
+  ## Attributes
+
+  - hiddenByFilter (Boolean): True if this dimension is being filtered. This field is read-only. Defaults to: `null`.
+  - hiddenByUser (Boolean): True if this dimension is explicitly hidden. Defaults to: `null`.
+  - pixelSize (Integer): The height (if a row) or width (if a column) of the dimension in pixels. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"hiddenByFilter",
     :"hiddenByUser",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DimensionProperties do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.DimensionProperties do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.Sheets.V4.Model.NamedRange do
   @moduledoc """
   A named range.
+
+  ## Attributes
+
+  - name (String): The name of the named range. Defaults to: `null`.
+  - namedRangeId (String): The ID of the named range. Defaults to: `null`.
+  - range (GridRange): The range this represents. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name",
     :"namedRangeId",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.NamedRange do
   def decode(value, options) do
     value
     |> deserialize(:"range", :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.NamedRange do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

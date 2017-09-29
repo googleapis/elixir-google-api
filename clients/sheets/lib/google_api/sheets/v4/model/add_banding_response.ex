@@ -20,9 +20,12 @@
 defmodule GoogleApi.Sheets.V4.Model.AddBandingResponse do
   @moduledoc """
   The result of adding a banded range.
+
+  ## Attributes
+
+  - bandedRange (BandedRange): The banded range that was added. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bandedRange"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.AddBandingResponse do
   def decode(value, options) do
     value
     |> deserialize(:"bandedRange", :struct, GoogleApi.Sheets.V4.Model.BandedRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.AddBandingResponse do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,16 @@
 defmodule GoogleApi.Sheets.V4.Model.ExtendedValue do
   @moduledoc """
   The kinds of value that a cell in a spreadsheet can have.
+
+  ## Attributes
+
+  - boolValue (Boolean): Represents a boolean value. Defaults to: `null`.
+  - errorValue (ErrorValue): Represents an error. This field is read-only. Defaults to: `null`.
+  - formulaValue (String): Represents a formula. Defaults to: `null`.
+  - numberValue (Float): Represents a double value. Note: Dates, Times and DateTimes are represented as doubles in \&quot;serial number\&quot; format. Defaults to: `null`.
+  - stringValue (String): Represents a string value. Leading single quotes are not included. For example, if the user typed &#x60;&#39;123&#x60; into the UI, this would be represented as a &#x60;stringValue&#x60; of &#x60;\&quot;123\&quot;&#x60;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"boolValue",
     :"errorValue",
@@ -37,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.ExtendedValue do
   def decode(value, options) do
     value
     |> deserialize(:"errorValue", :struct, GoogleApi.Sheets.V4.Model.ErrorValue, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.ExtendedValue do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

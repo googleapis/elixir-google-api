@@ -20,9 +20,14 @@
 defmodule GoogleApi.Sheets.V4.Model.Editors do
   @moduledoc """
   The editors of a protected range.
+
+  ## Attributes
+
+  - domainUsersCanEdit (Boolean): True if anyone in the document&#39;s domain has edit access to the protected range.  Domain protection is only supported on documents within a domain. Defaults to: `null`.
+  - groups (List[String]): The email addresses of groups with edit access to the protected range. Defaults to: `null`.
+  - users (List[String]): The email addresses of users with edit access to the protected range. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"domainUsersCanEdit",
     :"groups",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.Editors do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.Editors do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

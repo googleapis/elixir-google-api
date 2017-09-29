@@ -20,9 +20,14 @@
 defmodule GoogleApi.Sheets.V4.Model.SortSpec do
   @moduledoc """
   A sort order associated with a specific column or row.
+
+  ## Attributes
+
+  - dimensionIndex (Integer): The dimension the sort should be applied to. Defaults to: `null`.
+  - sortOrder (String): The order data should be sorted. Defaults to: `null`.
+    - Enum - one of [SORT_ORDER_UNSPECIFIED, ASCENDING, DESCENDING]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dimensionIndex",
     :"sortOrder"
@@ -32,6 +37,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.SortSpec do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.SortSpec do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

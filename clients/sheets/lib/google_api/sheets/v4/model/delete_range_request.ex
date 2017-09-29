@@ -20,9 +20,14 @@
 defmodule GoogleApi.Sheets.V4.Model.DeleteRangeRequest do
   @moduledoc """
   Deletes a range of cells, shifting other cells into the deleted area.
+
+  ## Attributes
+
+  - range (GridRange): The range of cells to delete. Defaults to: `null`.
+  - shiftDimension (String): The dimension from which deleted cells will be replaced with. If ROWS, existing cells will be shifted upward to replace the deleted cells. If COLUMNS, existing cells will be shifted left to replace the deleted cells. Defaults to: `null`.
+    - Enum - one of [DIMENSION_UNSPECIFIED, ROWS, COLUMNS]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"range",
     :"shiftDimension"
@@ -34,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DeleteRangeRequest do
   def decode(value, options) do
     value
     |> deserialize(:"range", :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.DeleteRangeRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

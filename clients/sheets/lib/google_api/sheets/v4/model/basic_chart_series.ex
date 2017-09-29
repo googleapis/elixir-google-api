@@ -20,9 +20,16 @@
 defmodule GoogleApi.Sheets.V4.Model.BasicChartSeries do
   @moduledoc """
   A single series of data in a chart. For example, if charting stock prices over time, multiple series may exist, one for the \&quot;Open Price\&quot;, \&quot;High Price\&quot;, \&quot;Low Price\&quot; and \&quot;Close Price\&quot;.
+
+  ## Attributes
+
+  - series (ChartData): The data being visualized in this chart series. Defaults to: `null`.
+  - targetAxis (String): The minor axis that will specify the range of values for this series. For example, if charting stocks over time, the \&quot;Volume\&quot; series may want to be pinned to the right with the prices pinned to the left, because the scale of trading volume is different than the scale of prices. It is an error to specify an axis that isn&#39;t a valid minor axis for the chart&#39;s type. Defaults to: `null`.
+    - Enum - one of [BASIC_CHART_AXIS_POSITION_UNSPECIFIED, BOTTOM_AXIS, LEFT_AXIS, RIGHT_AXIS]
+  - type (String): The type of this series. Valid only if the chartType is COMBO. Different types will change the way the series is visualized. Only LINE, AREA, and COLUMN are supported. Defaults to: `null`.
+    - Enum - one of [BASIC_CHART_TYPE_UNSPECIFIED, BAR, LINE, AREA, COLUMN, SCATTER, COMBO, STEPPED_AREA]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"series",
     :"targetAxis",
@@ -35,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BasicChartSeries do
   def decode(value, options) do
     value
     |> deserialize(:"series", :struct, GoogleApi.Sheets.V4.Model.ChartData, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BasicChartSeries do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.Sheets.V4.Model.UpdateBandingRequest do
   @moduledoc """
   Updates properties of the supplied banded range.
+
+  ## Attributes
+
+  - bandedRange (BandedRange): The banded range to update with the new properties. Defaults to: `null`.
+  - fields (String): The fields that should be updated.  At least one field must be specified. The root &#x60;bandedRange&#x60; is implied and should not be specified. A single &#x60;\&quot;*\&quot;&#x60; can be used as short-hand for listing every field. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bandedRange",
     :"fields"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UpdateBandingRequest do
   def decode(value, options) do
     value
     |> deserialize(:"bandedRange", :struct, GoogleApi.Sheets.V4.Model.BandedRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UpdateBandingRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

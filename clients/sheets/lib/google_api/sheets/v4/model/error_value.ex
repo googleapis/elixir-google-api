@@ -20,9 +20,14 @@
 defmodule GoogleApi.Sheets.V4.Model.ErrorValue do
   @moduledoc """
   An error in a cell.
+
+  ## Attributes
+
+  - message (String): A message with more information about the error (in the spreadsheet&#39;s locale). Defaults to: `null`.
+  - type (String): The type of error. Defaults to: `null`.
+    - Enum - one of [ERROR_TYPE_UNSPECIFIED, ERROR, NULL_VALUE, DIVIDE_BY_ZERO, VALUE, REF, NAME, NUM, N_A, LOADING]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"message",
     :"type"
@@ -32,6 +37,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.ErrorValue do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.ErrorValue do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

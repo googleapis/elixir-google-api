@@ -20,9 +20,17 @@
 defmodule GoogleApi.Sheets.V4.Model.UpdateValuesResponse do
   @moduledoc """
   The response when updating a range of values in a spreadsheet.
+
+  ## Attributes
+
+  - spreadsheetId (String): The spreadsheet the updates were applied to. Defaults to: `null`.
+  - updatedCells (Integer): The number of cells updated. Defaults to: `null`.
+  - updatedColumns (Integer): The number of columns where at least one cell in the column was updated. Defaults to: `null`.
+  - updatedData (ValueRange): The values of the cells after updates were applied. This is only included if the request&#39;s &#x60;includeValuesInResponse&#x60; field was &#x60;true&#x60;. Defaults to: `null`.
+  - updatedRange (String): The range (in A1 notation) that updates were applied to. Defaults to: `null`.
+  - updatedRows (Integer): The number of rows where at least one cell in the row was updated. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"spreadsheetId",
     :"updatedCells",
@@ -38,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UpdateValuesResponse do
   def decode(value, options) do
     value
     |> deserialize(:"updatedData", :struct, GoogleApi.Sheets.V4.Model.ValueRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UpdateValuesResponse do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

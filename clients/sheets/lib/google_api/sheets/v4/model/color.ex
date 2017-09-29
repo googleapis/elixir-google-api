@@ -20,9 +20,15 @@
 defmodule GoogleApi.Sheets.V4.Model.Color do
   @moduledoc """
   Represents a color in the RGBA color space. This representation is designed for simplicity of conversion to/from color representations in various languages over compactness; for example, the fields of this representation can be trivially provided to the constructor of \&quot;java.awt.Color\&quot; in Java; it can also be trivially provided to UIColor&#39;s \&quot;+colorWithRed:green:blue:alpha\&quot; method in iOS; and, with just a little work, it can be easily formatted into a CSS \&quot;rgba()\&quot; string in JavaScript, as well. Here are some examples:  Example (Java):       import com.google.type.Color;       // ...      public static java.awt.Color fromProto(Color protocolor) {        float alpha &#x3D; protocolor.hasAlpha()            ? protocolor.getAlpha().getValue()            : 1.0;         return new java.awt.Color(            protocolor.getRed(),            protocolor.getGreen(),            protocolor.getBlue(),            alpha);      }       public static Color toProto(java.awt.Color color) {        float red &#x3D; (float) color.getRed();        float green &#x3D; (float) color.getGreen();        float blue &#x3D; (float) color.getBlue();        float denominator &#x3D; 255.0;        Color.Builder resultBuilder &#x3D;            Color                .newBuilder()                .setRed(red / denominator)                .setGreen(green / denominator)                .setBlue(blue / denominator);        int alpha &#x3D; color.getAlpha();        if (alpha !&#x3D; 255) {          result.setAlpha(              FloatValue                  .newBuilder()                  .setValue(((float) alpha) / denominator)                  .build());        }        return resultBuilder.build();      }      // ...  Example (iOS / Obj-C):       // ...      static UIColor* fromProto(Color* protocolor) {         float red &#x3D; [protocolor red];         float green &#x3D; [protocolor green];         float blue &#x3D; [protocolor blue];         FloatValue* alpha_wrapper &#x3D; [protocolor alpha];         float alpha &#x3D; 1.0;         if (alpha_wrapper !&#x3D; nil) {           alpha &#x3D; [alpha_wrapper value];         }         return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];      }       static Color* toProto(UIColor* color) {          CGFloat red, green, blue, alpha;          if (![color getRed:&amp;red green:&amp;green blue:&amp;blue alpha:&amp;alpha]) {            return nil;          }          Color* result &#x3D; [Color alloc] init];          [result setRed:red];          [result setGreen:green];          [result setBlue:blue];          if (alpha &lt;&#x3D; 0.9999) {            [result setAlpha:floatWrapperWithValue(alpha)];          }          [result autorelease];          return result;     }     // ...   Example (JavaScript):      // ...      var protoToCssColor &#x3D; function(rgb_color) {        var redFrac &#x3D; rgb_color.red || 0.0;        var greenFrac &#x3D; rgb_color.green || 0.0;        var blueFrac &#x3D; rgb_color.blue || 0.0;        var red &#x3D; Math.floor(redFrac * 255);        var green &#x3D; Math.floor(greenFrac * 255);        var blue &#x3D; Math.floor(blueFrac * 255);         if (!(&#39;alpha&#39; in rgb_color)) {           return rgbToCssColor_(red, green, blue);        }         var alphaFrac &#x3D; rgb_color.alpha.value || 0.0;        var rgbParams &#x3D; [red, green, blue].join(&#39;,&#39;);        return [&#39;rgba(&#39;, rgbParams, &#39;,&#39;, alphaFrac, &#39;)&#39;].join(&#39;&#39;);     };      var rgbToCssColor_ &#x3D; function(red, green, blue) {       var rgbNumber &#x3D; new Number((red &lt;&lt; 16) | (green &lt;&lt; 8) | blue);       var hexString &#x3D; rgbNumber.toString(16);       var missingZeros &#x3D; 6 - hexString.length;       var resultBuilder &#x3D; [&#39;#&#39;];       for (var i &#x3D; 0; i &lt; missingZeros; i++) {          resultBuilder.push(&#39;0&#39;);       }       resultBuilder.push(hexString);       return resultBuilder.join(&#39;&#39;);     };      // ...
+
+  ## Attributes
+
+  - alpha (Float): The fraction of this color that should be applied to the pixel. That is, the final pixel color is defined by the equation:    pixel color &#x3D; alpha * (this color) + (1.0 - alpha) * (background color)  This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. This uses a wrapper message rather than a simple float scalar so that it is possible to distinguish between a default value and the value being unset. If omitted, this color object is to be rendered as a solid color (as if the alpha value had been explicitly given with a value of 1.0). Defaults to: `null`.
+  - blue (Float): The amount of blue in the color as a value in the interval [0, 1]. Defaults to: `null`.
+  - green (Float): The amount of green in the color as a value in the interval [0, 1]. Defaults to: `null`.
+  - red (Float): The amount of red in the color as a value in the interval [0, 1]. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"alpha",
     :"blue",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.Color do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.Color do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

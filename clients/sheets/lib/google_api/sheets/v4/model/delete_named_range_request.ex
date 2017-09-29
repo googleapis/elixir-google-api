@@ -20,9 +20,12 @@
 defmodule GoogleApi.Sheets.V4.Model.DeleteNamedRangeRequest do
   @moduledoc """
   Removes the named range with the given ID from the spreadsheet.
+
+  ## Attributes
+
+  - namedRangeId (String): The ID of the named range to delete. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"namedRangeId"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DeleteNamedRangeRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.DeleteNamedRangeRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

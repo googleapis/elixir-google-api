@@ -20,9 +20,12 @@
 defmodule GoogleApi.Sheets.V4.Model.DeleteConditionalFormatRuleResponse do
   @moduledoc """
   The result of deleting a conditional format rule.
+
+  ## Attributes
+
+  - rule (ConditionalFormatRule): The rule that was deleted. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"rule"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DeleteConditionalFormatRu
   def decode(value, options) do
     value
     |> deserialize(:"rule", :struct, GoogleApi.Sheets.V4.Model.ConditionalFormatRule, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.DeleteConditionalFormatRuleResponse do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

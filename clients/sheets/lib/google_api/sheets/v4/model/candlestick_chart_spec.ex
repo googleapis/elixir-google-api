@@ -20,9 +20,13 @@
 defmodule GoogleApi.Sheets.V4.Model.CandlestickChartSpec do
   @moduledoc """
   A &lt;a href&#x3D;\&quot;/chart/interactive/docs/gallery/candlestickchart\&quot;&gt;candlestick chart&lt;/a&gt;.
+
+  ## Attributes
+
+  - data (List[CandlestickData]): The Candlestick chart data. Only one CandlestickData is supported. Defaults to: `null`.
+  - domain (CandlestickDomain): The domain data (horizontal axis) for the candlestick chart.  String data will be treated as discrete labels, other data will be treated as continuous values. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"data",
     :"domain"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.CandlestickChartSpec do
     value
     |> deserialize(:"data", :list, GoogleApi.Sheets.V4.Model.CandlestickData, options)
     |> deserialize(:"domain", :struct, GoogleApi.Sheets.V4.Model.CandlestickDomain, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.CandlestickChartSpec do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

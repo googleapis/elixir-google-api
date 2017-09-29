@@ -20,9 +20,12 @@
 defmodule GoogleApi.Sheets.V4.Model.DuplicateFilterViewResponse do
   @moduledoc """
   The result of a filter view being duplicated.
+
+  ## Attributes
+
+  - filter (FilterView): The newly created filter. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"filter"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DuplicateFilterViewRespon
   def decode(value, options) do
     value
     |> deserialize(:"filter", :struct, GoogleApi.Sheets.V4.Model.FilterView, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.DuplicateFilterViewResponse do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

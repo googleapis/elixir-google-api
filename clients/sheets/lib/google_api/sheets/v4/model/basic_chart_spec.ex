@@ -20,9 +20,24 @@
 defmodule GoogleApi.Sheets.V4.Model.BasicChartSpec do
   @moduledoc """
   The specification for a basic chart.  See BasicChartType for the list of charts this supports.
+
+  ## Attributes
+
+  - axis (List[BasicChartAxis]): The axis on the chart. Defaults to: `null`.
+  - chartType (String): The type of the chart. Defaults to: `null`.
+    - Enum - one of [BASIC_CHART_TYPE_UNSPECIFIED, BAR, LINE, AREA, COLUMN, SCATTER, COMBO, STEPPED_AREA]
+  - domains (List[BasicChartDomain]): The domain of data this is charting. Only a single domain is supported. Defaults to: `null`.
+  - headerCount (Integer): The number of rows or columns in the data that are \&quot;headers\&quot;. If not set, Google Sheets will guess how many rows are headers based on the data.  (Note that BasicChartAxis.title may override the axis title  inferred from the header values.) Defaults to: `null`.
+  - interpolateNulls (Boolean): If some values in a series are missing, gaps may appear in the chart (e.g, segments of lines in a line chart will be missing).  To eliminate these gaps set this to true. Applies to Line, Area, and Combo charts. Defaults to: `null`.
+  - legendPosition (String): The position of the chart legend. Defaults to: `null`.
+    - Enum - one of [BASIC_CHART_LEGEND_POSITION_UNSPECIFIED, BOTTOM_LEGEND, LEFT_LEGEND, RIGHT_LEGEND, TOP_LEGEND, NO_LEGEND]
+  - lineSmoothing (Boolean): Gets whether all lines should be rendered smooth or straight by default. Applies to Line charts. Defaults to: `null`.
+  - series (List[BasicChartSeries]): The data this chart is visualizing. Defaults to: `null`.
+  - stackedType (String): The stacked type for charts that support vertical stacking. Applies to Area, Bar, Column, and Stepped Area charts. Defaults to: `null`.
+    - Enum - one of [BASIC_CHART_STACKED_TYPE_UNSPECIFIED, NOT_STACKED, STACKED, PERCENT_STACKED]
+  - threeDimensional (Boolean): True to make the chart 3D. Applies to Bar and Column charts. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"axis",
     :"chartType",
@@ -44,6 +59,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BasicChartSpec do
     |> deserialize(:"axis", :list, GoogleApi.Sheets.V4.Model.BasicChartAxis, options)
     |> deserialize(:"domains", :list, GoogleApi.Sheets.V4.Model.BasicChartDomain, options)
     |> deserialize(:"series", :list, GoogleApi.Sheets.V4.Model.BasicChartSeries, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BasicChartSpec do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

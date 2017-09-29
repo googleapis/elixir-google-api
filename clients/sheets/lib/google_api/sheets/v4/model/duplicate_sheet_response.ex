@@ -20,9 +20,12 @@
 defmodule GoogleApi.Sheets.V4.Model.DuplicateSheetResponse do
   @moduledoc """
   The result of duplicating a sheet.
+
+  ## Attributes
+
+  - properties (SheetProperties): The properties of the duplicate sheet. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"properties"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DuplicateSheetResponse do
   def decode(value, options) do
     value
     |> deserialize(:"properties", :struct, GoogleApi.Sheets.V4.Model.SheetProperties, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.DuplicateSheetResponse do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

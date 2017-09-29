@@ -20,9 +20,13 @@
 defmodule GoogleApi.Sheets.V4.Model.DeleteConditionalFormatRuleRequest do
   @moduledoc """
   Deletes a conditional format rule at the given index. All subsequent rules&#39; indexes are decremented.
+
+  ## Attributes
+
+  - index (Integer): The zero-based index of the rule to be deleted. Defaults to: `null`.
+  - sheetId (Integer): The sheet the rule is being deleted from. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"index",
     :"sheetId"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DeleteConditionalFormatRuleRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.DeleteConditionalFormatRuleRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

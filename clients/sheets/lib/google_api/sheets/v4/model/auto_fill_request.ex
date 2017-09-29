@@ -20,9 +20,14 @@
 defmodule GoogleApi.Sheets.V4.Model.AutoFillRequest do
   @moduledoc """
   Fills in more data based on existing data.
+
+  ## Attributes
+
+  - range (GridRange): The range to autofill. This will examine the range and detect the location that has data and automatically fill that data in to the rest of the range. Defaults to: `null`.
+  - sourceAndDestination (SourceAndDestination): The source and destination areas to autofill. This explicitly lists the source of the autofill and where to extend that data. Defaults to: `null`.
+  - useAlternateSeries (Boolean): True if we should generate data with the \&quot;alternate\&quot; series. This differs based on the type and amount of source data. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"range",
     :"sourceAndDestination",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.AutoFillRequest do
     value
     |> deserialize(:"range", :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
     |> deserialize(:"sourceAndDestination", :struct, GoogleApi.Sheets.V4.Model.SourceAndDestination, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.AutoFillRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

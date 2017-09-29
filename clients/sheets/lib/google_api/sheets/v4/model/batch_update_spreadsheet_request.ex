@@ -20,9 +20,15 @@
 defmodule GoogleApi.Sheets.V4.Model.BatchUpdateSpreadsheetRequest do
   @moduledoc """
   The request for updating any aspect of a spreadsheet.
+
+  ## Attributes
+
+  - includeSpreadsheetInResponse (Boolean): Determines if the update response should include the spreadsheet resource. Defaults to: `null`.
+  - requests (List[Request]): A list of updates to apply to the spreadsheet. Requests will be applied in the order they are specified. If any request is not valid, no requests will be applied. Defaults to: `null`.
+  - responseIncludeGridData (Boolean): True if grid data should be returned. Meaningful only if if include_spreadsheet_response is &#39;true&#39;. This parameter is ignored if a field mask was set in the request. Defaults to: `null`.
+  - responseRanges (List[String]): Limits the ranges included in the response spreadsheet. Meaningful only if include_spreadsheet_response is &#39;true&#39;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"includeSpreadsheetInResponse",
     :"requests",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BatchUpdateSpreadsheetReq
   def decode(value, options) do
     value
     |> deserialize(:"requests", :list, GoogleApi.Sheets.V4.Model.Request, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BatchUpdateSpreadsheetRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

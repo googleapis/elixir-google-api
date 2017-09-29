@@ -20,9 +20,15 @@
 defmodule GoogleApi.Sheets.V4.Model.InterpolationPoint do
   @moduledoc """
   A single interpolation point on a gradient conditional format. These pin the gradient color scale according to the color, type and value chosen.
+
+  ## Attributes
+
+  - color (Color): The color this interpolation point should use. Defaults to: `null`.
+  - type (String): How the value should be interpreted. Defaults to: `null`.
+    - Enum - one of [INTERPOLATION_POINT_TYPE_UNSPECIFIED, MIN, MAX, NUMBER, PERCENT, PERCENTILE]
+  - value (String): The value this interpolation point uses.  May be a formula. Unused if type is MIN or MAX. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"color",
     :"type",
@@ -35,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.InterpolationPoint do
   def decode(value, options) do
     value
     |> deserialize(:"color", :struct, GoogleApi.Sheets.V4.Model.Color, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.InterpolationPoint do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

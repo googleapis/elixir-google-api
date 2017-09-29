@@ -20,9 +20,12 @@
 defmodule GoogleApi.Sheets.V4.Model.RowData do
   @moduledoc """
   Data about each cell in a row.
+
+  ## Attributes
+
+  - values (List[CellData]): The values in the row, one per column. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"values"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.RowData do
   def decode(value, options) do
     value
     |> deserialize(:"values", :list, GoogleApi.Sheets.V4.Model.CellData, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.RowData do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

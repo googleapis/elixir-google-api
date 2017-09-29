@@ -20,9 +20,17 @@
 defmodule GoogleApi.Sheets.V4.Model.PieChartSpec do
   @moduledoc """
   A &lt;a href&#x3D;\&quot;/chart/interactive/docs/gallery/piechart\&quot;&gt;pie chart&lt;/a&gt;.
+
+  ## Attributes
+
+  - domain (ChartData): The data that covers the domain of the pie chart. Defaults to: `null`.
+  - legendPosition (String): Where the legend of the pie chart should be drawn. Defaults to: `null`.
+    - Enum - one of [PIE_CHART_LEGEND_POSITION_UNSPECIFIED, BOTTOM_LEGEND, LEFT_LEGEND, RIGHT_LEGEND, TOP_LEGEND, NO_LEGEND, LABELED_LEGEND]
+  - pieHole (Float): The size of the hole in the pie chart. Defaults to: `null`.
+  - series (ChartData): The data that covers the one and only series of the pie chart. Defaults to: `null`.
+  - threeDimensional (Boolean): True if the pie is three dimensional. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"domain",
     :"legendPosition",
@@ -38,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.PieChartSpec do
     value
     |> deserialize(:"domain", :struct, GoogleApi.Sheets.V4.Model.ChartData, options)
     |> deserialize(:"series", :struct, GoogleApi.Sheets.V4.Model.ChartData, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.PieChartSpec do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

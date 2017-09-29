@@ -20,9 +20,14 @@
 defmodule GoogleApi.Sheets.V4.Model.BooleanCondition do
   @moduledoc """
   A condition that can evaluate to true or false. BooleanConditions are used by conditional formatting, data validation, and the criteria in filters.
+
+  ## Attributes
+
+  - type (String): The type of condition. Defaults to: `null`.
+    - Enum - one of [CONDITION_TYPE_UNSPECIFIED, NUMBER_GREATER, NUMBER_GREATER_THAN_EQ, NUMBER_LESS, NUMBER_LESS_THAN_EQ, NUMBER_EQ, NUMBER_NOT_EQ, NUMBER_BETWEEN, NUMBER_NOT_BETWEEN, TEXT_CONTAINS, TEXT_NOT_CONTAINS, TEXT_STARTS_WITH, TEXT_ENDS_WITH, TEXT_EQ, TEXT_IS_EMAIL, TEXT_IS_URL, DATE_EQ, DATE_BEFORE, DATE_AFTER, DATE_ON_OR_BEFORE, DATE_ON_OR_AFTER, DATE_BETWEEN, DATE_NOT_BETWEEN, DATE_IS_VALID, ONE_OF_RANGE, ONE_OF_LIST, BLANK, NOT_BLANK, CUSTOM_FORMULA]
+  - values (List[ConditionValue]): The values of the condition. The number of supported values depends on the condition type.  Some support zero values, others one or two values, and ConditionType.ONE_OF_LIST supports an arbitrary number of values. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"type",
     :"values"
@@ -34,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BooleanCondition do
   def decode(value, options) do
     value
     |> deserialize(:"values", :list, GoogleApi.Sheets.V4.Model.ConditionValue, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BooleanCondition do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

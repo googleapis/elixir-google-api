@@ -20,9 +20,15 @@
 defmodule GoogleApi.Sheets.V4.Model.DuplicateSheetRequest do
   @moduledoc """
   Duplicates the contents of a sheet.
+
+  ## Attributes
+
+  - insertSheetIndex (Integer): The zero-based index where the new sheet should be inserted. The index of all sheets after this are incremented. Defaults to: `null`.
+  - newSheetId (Integer): If set, the ID of the new sheet. If not set, an ID is chosen. If set, the ID must not conflict with any existing sheet ID. If set, it must be non-negative. Defaults to: `null`.
+  - newSheetName (String): The name of the new sheet.  If empty, a new name is chosen for you. Defaults to: `null`.
+  - sourceSheetId (Integer): The sheet to duplicate. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"insertSheetIndex",
     :"newSheetId",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DuplicateSheetRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.DuplicateSheetRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

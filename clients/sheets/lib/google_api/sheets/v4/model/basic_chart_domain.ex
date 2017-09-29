@@ -20,9 +20,13 @@
 defmodule GoogleApi.Sheets.V4.Model.BasicChartDomain do
   @moduledoc """
   The domain of a chart. For example, if charting stock prices over time, this would be the date.
+
+  ## Attributes
+
+  - domain (ChartData): The data of the domain. For example, if charting stock prices over time, this is the data representing the dates. Defaults to: `null`.
+  - reversed (Boolean): True to reverse the order of the domain values (horizontal axis). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"domain",
     :"reversed"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BasicChartDomain do
   def decode(value, options) do
     value
     |> deserialize(:"domain", :struct, GoogleApi.Sheets.V4.Model.ChartData, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BasicChartDomain do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

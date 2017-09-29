@@ -74,7 +74,9 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
     }
     %{}
     |> method(:post)
-    |> url("/v4/spreadsheets/#{spreadsheet_id}:batchUpdate")
+    |> url("/v4/spreadsheets/{spreadsheetId}:batchUpdate", %{
+         "spreadsheetId" => URI.encode_www_form(spreadsheet_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -185,7 +187,9 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
     }
     %{}
     |> method(:get)
-    |> url("/v4/spreadsheets/#{spreadsheet_id}")
+    |> url("/v4/spreadsheets/{spreadsheetId}", %{
+         "spreadsheetId" => URI.encode_www_form(spreadsheet_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -241,7 +245,10 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
     }
     %{}
     |> method(:post)
-    |> url("/v4/spreadsheets/#{spreadsheet_id}/sheets/#{sheet_id}:copyTo")
+    |> url("/v4/spreadsheets/{spreadsheetId}/sheets/{sheetId}:copyTo", %{
+         "spreadsheetId" => URI.encode_www_form(spreadsheet_id),
+         "sheetId" => URI.encode_www_form(sheet_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -307,7 +314,10 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
     }
     %{}
     |> method(:post)
-    |> url("/v4/spreadsheets/#{spreadsheet_id}/values/#{range}:append")
+    |> url("/v4/spreadsheets/{spreadsheetId}/values/{range}:append", %{
+         "spreadsheetId" => URI.encode_www_form(spreadsheet_id),
+         "range" => URI.encode_www_form(range)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -362,7 +372,9 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
     }
     %{}
     |> method(:post)
-    |> url("/v4/spreadsheets/#{spreadsheet_id}/values:batchClear")
+    |> url("/v4/spreadsheets/{spreadsheetId}/values:batchClear", %{
+         "spreadsheetId" => URI.encode_www_form(spreadsheet_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -423,7 +435,9 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
     }
     %{}
     |> method(:get)
-    |> url("/v4/spreadsheets/#{spreadsheet_id}/values:batchGet")
+    |> url("/v4/spreadsheets/{spreadsheetId}/values:batchGet", %{
+         "spreadsheetId" => URI.encode_www_form(spreadsheet_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -478,7 +492,9 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
     }
     %{}
     |> method(:post)
-    |> url("/v4/spreadsheets/#{spreadsheet_id}/values:batchUpdate")
+    |> url("/v4/spreadsheets/{spreadsheetId}/values:batchUpdate", %{
+         "spreadsheetId" => URI.encode_www_form(spreadsheet_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -534,7 +550,10 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
     }
     %{}
     |> method(:post)
-    |> url("/v4/spreadsheets/#{spreadsheet_id}/values/#{range}:clear")
+    |> url("/v4/spreadsheets/{spreadsheetId}/values/{range}:clear", %{
+         "spreadsheetId" => URI.encode_www_form(spreadsheet_id),
+         "range" => URI.encode_www_form(range)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -594,7 +613,10 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
     }
     %{}
     |> method(:get)
-    |> url("/v4/spreadsheets/#{spreadsheet_id}/values/#{range}")
+    |> url("/v4/spreadsheets/{spreadsheetId}/values/{range}", %{
+         "spreadsheetId" => URI.encode_www_form(spreadsheet_id),
+         "range" => URI.encode_www_form(range)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -658,7 +680,10 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
     }
     %{}
     |> method(:put)
-    |> url("/v4/spreadsheets/#{spreadsheet_id}/values/#{range}")
+    |> url("/v4/spreadsheets/{spreadsheetId}/values/{range}", %{
+         "spreadsheetId" => URI.encode_www_form(spreadsheet_id),
+         "range" => URI.encode_www_form(range)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

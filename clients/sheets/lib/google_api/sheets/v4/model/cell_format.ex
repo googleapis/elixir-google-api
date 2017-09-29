@@ -20,9 +20,27 @@
 defmodule GoogleApi.Sheets.V4.Model.CellFormat do
   @moduledoc """
   The format of a cell.
+
+  ## Attributes
+
+  - backgroundColor (Color): The background color of the cell. Defaults to: `null`.
+  - borders (Borders): The borders of the cell. Defaults to: `null`.
+  - horizontalAlignment (String): The horizontal alignment of the value in the cell. Defaults to: `null`.
+    - Enum - one of [HORIZONTAL_ALIGN_UNSPECIFIED, LEFT, CENTER, RIGHT]
+  - hyperlinkDisplayType (String): How a hyperlink, if it exists, should be displayed in the cell. Defaults to: `null`.
+    - Enum - one of [HYPERLINK_DISPLAY_TYPE_UNSPECIFIED, LINKED, PLAIN_TEXT]
+  - numberFormat (NumberFormat): A format describing how number values should be represented to the user. Defaults to: `null`.
+  - padding (Padding): The padding of the cell. Defaults to: `null`.
+  - textDirection (String): The direction of the text in the cell. Defaults to: `null`.
+    - Enum - one of [TEXT_DIRECTION_UNSPECIFIED, LEFT_TO_RIGHT, RIGHT_TO_LEFT]
+  - textFormat (TextFormat): The format of the text in the cell (unless overridden by a format run). Defaults to: `null`.
+  - textRotation (TextRotation): The rotation applied to text in a cell Defaults to: `null`.
+  - verticalAlignment (String): The vertical alignment of the value in the cell. Defaults to: `null`.
+    - Enum - one of [VERTICAL_ALIGN_UNSPECIFIED, TOP, MIDDLE, BOTTOM]
+  - wrapStrategy (String): The wrap strategy for the value in the cell. Defaults to: `null`.
+    - Enum - one of [WRAP_STRATEGY_UNSPECIFIED, OVERFLOW_CELL, LEGACY_WRAP, CLIP, WRAP]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"backgroundColor",
     :"borders",
@@ -48,6 +66,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.CellFormat do
     |> deserialize(:"padding", :struct, GoogleApi.Sheets.V4.Model.Padding, options)
     |> deserialize(:"textFormat", :struct, GoogleApi.Sheets.V4.Model.TextFormat, options)
     |> deserialize(:"textRotation", :struct, GoogleApi.Sheets.V4.Model.TextRotation, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.CellFormat do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.Sheets.V4.Model.CandlestickData do
   @moduledoc """
   The Candlestick chart data, each containing the low, open, close, and high values for a series.
+
+  ## Attributes
+
+  - closeSeries (CandlestickSeries): The range data (vertical axis) for the close/final value for each candle. This is the top of the candle body.  If greater than the open value the candle will be filled.  Otherwise the candle will be hollow. Defaults to: `null`.
+  - highSeries (CandlestickSeries): The range data (vertical axis) for the high/maximum value for each candle. This is the top of the candle&#39;s center line. Defaults to: `null`.
+  - lowSeries (CandlestickSeries): The range data (vertical axis) for the low/minimum value for each candle. This is the bottom of the candle&#39;s center line. Defaults to: `null`.
+  - openSeries (CandlestickSeries): The range data (vertical axis) for the open/initial value for each candle. This is the bottom of the candle body.  If less than the close value the candle will be filled.  Otherwise the candle will be hollow. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"closeSeries",
     :"highSeries",
@@ -39,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.CandlestickData do
     |> deserialize(:"highSeries", :struct, GoogleApi.Sheets.V4.Model.CandlestickSeries, options)
     |> deserialize(:"lowSeries", :struct, GoogleApi.Sheets.V4.Model.CandlestickSeries, options)
     |> deserialize(:"openSeries", :struct, GoogleApi.Sheets.V4.Model.CandlestickSeries, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.CandlestickData do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

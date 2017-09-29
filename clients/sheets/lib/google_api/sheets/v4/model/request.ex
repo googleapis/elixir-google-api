@@ -20,9 +20,61 @@
 defmodule GoogleApi.Sheets.V4.Model.Request do
   @moduledoc """
   A single kind of update to apply to a spreadsheet.
+
+  ## Attributes
+
+  - addBanding (AddBandingRequest): Adds a new banded range Defaults to: `null`.
+  - addChart (AddChartRequest): Adds a chart. Defaults to: `null`.
+  - addConditionalFormatRule (AddConditionalFormatRuleRequest): Adds a new conditional format rule. Defaults to: `null`.
+  - addFilterView (AddFilterViewRequest): Adds a filter view. Defaults to: `null`.
+  - addNamedRange (AddNamedRangeRequest): Adds a named range. Defaults to: `null`.
+  - addProtectedRange (AddProtectedRangeRequest): Adds a protected range. Defaults to: `null`.
+  - addSheet (AddSheetRequest): Adds a sheet. Defaults to: `null`.
+  - appendCells (AppendCellsRequest): Appends cells after the last row with data in a sheet. Defaults to: `null`.
+  - appendDimension (AppendDimensionRequest): Appends dimensions to the end of a sheet. Defaults to: `null`.
+  - autoFill (AutoFillRequest): Automatically fills in more data based on existing data. Defaults to: `null`.
+  - autoResizeDimensions (AutoResizeDimensionsRequest): Automatically resizes one or more dimensions based on the contents of the cells in that dimension. Defaults to: `null`.
+  - clearBasicFilter (ClearBasicFilterRequest): Clears the basic filter on a sheet. Defaults to: `null`.
+  - copyPaste (CopyPasteRequest): Copies data from one area and pastes it to another. Defaults to: `null`.
+  - cutPaste (CutPasteRequest): Cuts data from one area and pastes it to another. Defaults to: `null`.
+  - deleteBanding (DeleteBandingRequest): Removes a banded range Defaults to: `null`.
+  - deleteConditionalFormatRule (DeleteConditionalFormatRuleRequest): Deletes an existing conditional format rule. Defaults to: `null`.
+  - deleteDimension (DeleteDimensionRequest): Deletes rows or columns in a sheet. Defaults to: `null`.
+  - deleteEmbeddedObject (DeleteEmbeddedObjectRequest): Deletes an embedded object (e.g, chart, image) in a sheet. Defaults to: `null`.
+  - deleteFilterView (DeleteFilterViewRequest): Deletes a filter view from a sheet. Defaults to: `null`.
+  - deleteNamedRange (DeleteNamedRangeRequest): Deletes a named range. Defaults to: `null`.
+  - deleteProtectedRange (DeleteProtectedRangeRequest): Deletes a protected range. Defaults to: `null`.
+  - deleteRange (DeleteRangeRequest): Deletes a range of cells from a sheet, shifting the remaining cells. Defaults to: `null`.
+  - deleteSheet (DeleteSheetRequest): Deletes a sheet. Defaults to: `null`.
+  - duplicateFilterView (DuplicateFilterViewRequest): Duplicates a filter view. Defaults to: `null`.
+  - duplicateSheet (DuplicateSheetRequest): Duplicates a sheet. Defaults to: `null`.
+  - findReplace (FindReplaceRequest): Finds and replaces occurrences of some text with other text. Defaults to: `null`.
+  - insertDimension (InsertDimensionRequest): Inserts new rows or columns in a sheet. Defaults to: `null`.
+  - insertRange (InsertRangeRequest): Inserts new cells in a sheet, shifting the existing cells. Defaults to: `null`.
+  - mergeCells (MergeCellsRequest): Merges cells together. Defaults to: `null`.
+  - moveDimension (MoveDimensionRequest): Moves rows or columns to another location in a sheet. Defaults to: `null`.
+  - pasteData (PasteDataRequest): Pastes data (HTML or delimited) into a sheet. Defaults to: `null`.
+  - randomizeRange (RandomizeRangeRequest): Randomizes the order of the rows in a range. Defaults to: `null`.
+  - repeatCell (RepeatCellRequest): Repeats a single cell across a range. Defaults to: `null`.
+  - setBasicFilter (SetBasicFilterRequest): Sets the basic filter on a sheet. Defaults to: `null`.
+  - setDataValidation (SetDataValidationRequest): Sets data validation for one or more cells. Defaults to: `null`.
+  - sortRange (SortRangeRequest): Sorts data in a range. Defaults to: `null`.
+  - textToColumns (TextToColumnsRequest): Converts a column of text into many columns of text. Defaults to: `null`.
+  - unmergeCells (UnmergeCellsRequest): Unmerges merged cells. Defaults to: `null`.
+  - updateBanding (UpdateBandingRequest): Updates a banded range Defaults to: `null`.
+  - updateBorders (UpdateBordersRequest): Updates the borders in a range of cells. Defaults to: `null`.
+  - updateCells (UpdateCellsRequest): Updates many cells at once. Defaults to: `null`.
+  - updateChartSpec (UpdateChartSpecRequest): Updates a chart&#39;s specifications. Defaults to: `null`.
+  - updateConditionalFormatRule (UpdateConditionalFormatRuleRequest): Updates an existing conditional format rule. Defaults to: `null`.
+  - updateDimensionProperties (UpdateDimensionPropertiesRequest): Updates dimensions&#39; properties. Defaults to: `null`.
+  - updateEmbeddedObjectPosition (UpdateEmbeddedObjectPositionRequest): Updates an embedded object&#39;s (e.g. chart, image) position. Defaults to: `null`.
+  - updateFilterView (UpdateFilterViewRequest): Updates the properties of a filter view. Defaults to: `null`.
+  - updateNamedRange (UpdateNamedRangeRequest): Updates a named range. Defaults to: `null`.
+  - updateProtectedRange (UpdateProtectedRangeRequest): Updates a protected range. Defaults to: `null`.
+  - updateSheetProperties (UpdateSheetPropertiesRequest): Updates a sheet&#39;s properties. Defaults to: `null`.
+  - updateSpreadsheetProperties (UpdateSpreadsheetPropertiesRequest): Updates the spreadsheet&#39;s properties. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"addBanding",
     :"addChart",
@@ -131,6 +183,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.Request do
     |> deserialize(:"updateProtectedRange", :struct, GoogleApi.Sheets.V4.Model.UpdateProtectedRangeRequest, options)
     |> deserialize(:"updateSheetProperties", :struct, GoogleApi.Sheets.V4.Model.UpdateSheetPropertiesRequest, options)
     |> deserialize(:"updateSpreadsheetProperties", :struct, GoogleApi.Sheets.V4.Model.UpdateSpreadsheetPropertiesRequest, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.Request do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

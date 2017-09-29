@@ -20,9 +20,12 @@
 defmodule GoogleApi.Sheets.V4.Model.AddFilterViewResponse do
   @moduledoc """
   The result of adding a filter view.
+
+  ## Attributes
+
+  - filter (FilterView): The newly added filter view. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"filter"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.AddFilterViewResponse do
   def decode(value, options) do
     value
     |> deserialize(:"filter", :struct, GoogleApi.Sheets.V4.Model.FilterView, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.AddFilterViewResponse do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

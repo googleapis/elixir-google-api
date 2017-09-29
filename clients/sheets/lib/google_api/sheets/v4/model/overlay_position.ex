@@ -20,9 +20,16 @@
 defmodule GoogleApi.Sheets.V4.Model.OverlayPosition do
   @moduledoc """
   The location an object is overlaid on top of a grid.
+
+  ## Attributes
+
+  - anchorCell (GridCoordinate): The cell the object is anchored to. Defaults to: `null`.
+  - heightPixels (Integer): The height of the object, in pixels. Defaults to 371. Defaults to: `null`.
+  - offsetXPixels (Integer): The horizontal offset, in pixels, that the object is offset from the anchor cell. Defaults to: `null`.
+  - offsetYPixels (Integer): The vertical offset, in pixels, that the object is offset from the anchor cell. Defaults to: `null`.
+  - widthPixels (Integer): The width of the object, in pixels. Defaults to 600. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"anchorCell",
     :"heightPixels",
@@ -37,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.OverlayPosition do
   def decode(value, options) do
     value
     |> deserialize(:"anchorCell", :struct, GoogleApi.Sheets.V4.Model.GridCoordinate, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.OverlayPosition do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

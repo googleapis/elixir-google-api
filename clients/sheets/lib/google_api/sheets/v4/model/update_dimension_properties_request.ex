@@ -20,9 +20,14 @@
 defmodule GoogleApi.Sheets.V4.Model.UpdateDimensionPropertiesRequest do
   @moduledoc """
   Updates properties of dimensions within the specified range.
+
+  ## Attributes
+
+  - fields (String): The fields that should be updated.  At least one field must be specified. The root &#x60;properties&#x60; is implied and should not be specified. A single &#x60;\&quot;*\&quot;&#x60; can be used as short-hand for listing every field. Defaults to: `null`.
+  - properties (DimensionProperties): Properties to update. Defaults to: `null`.
+  - range (DimensionRange): The rows or columns to update. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fields",
     :"properties",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UpdateDimensionProperties
     value
     |> deserialize(:"properties", :struct, GoogleApi.Sheets.V4.Model.DimensionProperties, options)
     |> deserialize(:"range", :struct, GoogleApi.Sheets.V4.Model.DimensionRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UpdateDimensionPropertiesRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

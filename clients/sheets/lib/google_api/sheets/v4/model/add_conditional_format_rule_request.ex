@@ -20,9 +20,13 @@
 defmodule GoogleApi.Sheets.V4.Model.AddConditionalFormatRuleRequest do
   @moduledoc """
   Adds a new conditional format rule at the given index. All subsequent rules&#39; indexes are incremented.
+
+  ## Attributes
+
+  - index (Integer): The zero-based index where the rule should be inserted. Defaults to: `null`.
+  - rule (ConditionalFormatRule): The rule to add. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"index",
     :"rule"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.AddConditionalFormatRuleR
   def decode(value, options) do
     value
     |> deserialize(:"rule", :struct, GoogleApi.Sheets.V4.Model.ConditionalFormatRule, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.AddConditionalFormatRuleRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

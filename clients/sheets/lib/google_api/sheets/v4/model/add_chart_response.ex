@@ -20,9 +20,12 @@
 defmodule GoogleApi.Sheets.V4.Model.AddChartResponse do
   @moduledoc """
   The result of adding a chart to a spreadsheet.
+
+  ## Attributes
+
+  - chart (EmbeddedChart): The newly added chart. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"chart"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.AddChartResponse do
   def decode(value, options) do
     value
     |> deserialize(:"chart", :struct, GoogleApi.Sheets.V4.Model.EmbeddedChart, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.AddChartResponse do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.Sheets.V4.Model.TextRotation do
   @moduledoc """
   The rotation applied to text in a cell.
+
+  ## Attributes
+
+  - angle (Integer): The angle between the standard orientation and the desired orientation. Measured in degrees. Valid values are between -90 and 90. Positive angles are angled upwards, negative are angled downwards.  Note: For LTR text direction positive angles are in the counterclockwise direction, whereas for RTL they are in the clockwise direction Defaults to: `null`.
+  - vertical (Boolean): If true, text reads top to bottom, but the orientation of individual characters is unchanged. For example:      | V |     | e |     | r |     | t |     | i |     | c |     | a |     | l | Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"angle",
     :"vertical"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.TextRotation do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.TextRotation do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

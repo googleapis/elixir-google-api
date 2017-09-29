@@ -20,9 +20,13 @@
 defmodule GoogleApi.Sheets.V4.Model.UpdateSpreadsheetPropertiesRequest do
   @moduledoc """
   Updates properties of a spreadsheet.
+
+  ## Attributes
+
+  - fields (String): The fields that should be updated.  At least one field must be specified. The root &#39;properties&#39; is implied and should not be specified. A single &#x60;\&quot;*\&quot;&#x60; can be used as short-hand for listing every field. Defaults to: `null`.
+  - properties (SpreadsheetProperties): The properties to update. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fields",
     :"properties"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UpdateSpreadsheetProperti
   def decode(value, options) do
     value
     |> deserialize(:"properties", :struct, GoogleApi.Sheets.V4.Model.SpreadsheetProperties, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UpdateSpreadsheetPropertiesRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

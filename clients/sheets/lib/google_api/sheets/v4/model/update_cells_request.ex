@@ -20,9 +20,15 @@
 defmodule GoogleApi.Sheets.V4.Model.UpdateCellsRequest do
   @moduledoc """
   Updates all cells in a range with new data.
+
+  ## Attributes
+
+  - fields (String): The fields of CellData that should be updated. At least one field must be specified. The root is the CellData; &#39;row.values.&#39; should not be specified. A single &#x60;\&quot;*\&quot;&#x60; can be used as short-hand for listing every field. Defaults to: `null`.
+  - range (GridRange): The range to write data to.  If the data in rows does not cover the entire requested range, the fields matching those set in fields will be cleared. Defaults to: `null`.
+  - rows (List[RowData]): The data to write. Defaults to: `null`.
+  - start (GridCoordinate): The coordinate to start writing data at. Any number of rows and columns (including a different number of columns per row) may be written. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fields",
     :"range",
@@ -38,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UpdateCellsRequest do
     |> deserialize(:"range", :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
     |> deserialize(:"rows", :list, GoogleApi.Sheets.V4.Model.RowData, options)
     |> deserialize(:"start", :struct, GoogleApi.Sheets.V4.Model.GridCoordinate, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UpdateCellsRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

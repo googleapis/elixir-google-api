@@ -20,9 +20,18 @@
 defmodule GoogleApi.Sheets.V4.Model.PivotTable do
   @moduledoc """
   A pivot table.
+
+  ## Attributes
+
+  - columns (List[PivotGroup]): Each column grouping in the pivot table. Defaults to: `null`.
+  - criteria (Map[String, PivotFilterCriteria]): An optional mapping of filters per source column offset.  The filters will be applied before aggregating data into the pivot table. The map&#39;s key is the column offset of the source range that you want to filter, and the value is the criteria for that column.  For example, if the source was &#x60;C10:E15&#x60;, a key of &#x60;0&#x60; will have the filter for column &#x60;C&#x60;, whereas the key &#x60;1&#x60; is for column &#x60;D&#x60;. Defaults to: `null`.
+  - rows (List[PivotGroup]): Each row grouping in the pivot table. Defaults to: `null`.
+  - source (GridRange): The range the pivot table is reading data from. Defaults to: `null`.
+  - valueLayout (String): Whether values should be listed horizontally (as columns) or vertically (as rows). Defaults to: `null`.
+    - Enum - one of [HORIZONTAL, VERTICAL]
+  - values (List[PivotValue]): A list of values to include in the pivot table. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"columns",
     :"criteria",
@@ -42,6 +51,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.PivotTable do
     |> deserialize(:"rows", :list, GoogleApi.Sheets.V4.Model.PivotGroup, options)
     |> deserialize(:"source", :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
     |> deserialize(:"values", :list, GoogleApi.Sheets.V4.Model.PivotValue, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.PivotTable do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

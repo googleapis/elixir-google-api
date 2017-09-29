@@ -20,9 +20,12 @@
 defmodule GoogleApi.Sheets.V4.Model.DeleteDimensionRequest do
   @moduledoc """
   Deletes the dimensions from the sheet.
+
+  ## Attributes
+
+  - range (DimensionRange): The dimensions to delete from the sheet. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"range"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DeleteDimensionRequest do
   def decode(value, options) do
     value
     |> deserialize(:"range", :struct, GoogleApi.Sheets.V4.Model.DimensionRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.DeleteDimensionRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

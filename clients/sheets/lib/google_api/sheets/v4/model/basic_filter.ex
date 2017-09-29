@@ -20,9 +20,14 @@
 defmodule GoogleApi.Sheets.V4.Model.BasicFilter do
   @moduledoc """
   The default filter associated with a sheet.
+
+  ## Attributes
+
+  - criteria (Map[String, FilterCriteria]): The criteria for showing/hiding values per column. The map&#39;s key is the column index, and the value is the criteria for that column. Defaults to: `null`.
+  - range (GridRange): The range the filter covers. Defaults to: `null`.
+  - sortSpecs (List[SortSpec]): The sort order per column. Later specifications are used when values are equal in the earlier specifications. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"criteria",
     :"range",
@@ -37,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BasicFilter do
     |> deserialize(:"criteria", :map, GoogleApi.Sheets.V4.Model.FilterCriteria, options)
     |> deserialize(:"range", :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
     |> deserialize(:"sortSpecs", :list, GoogleApi.Sheets.V4.Model.SortSpec, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BasicFilter do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

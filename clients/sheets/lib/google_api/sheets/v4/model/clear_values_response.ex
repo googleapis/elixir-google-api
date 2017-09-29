@@ -20,9 +20,13 @@
 defmodule GoogleApi.Sheets.V4.Model.ClearValuesResponse do
   @moduledoc """
   The response when clearing a range of values in a spreadsheet.
+
+  ## Attributes
+
+  - clearedRange (String): The range (in A1 notation) that was cleared. (If the request was for an unbounded range or a ranger larger  than the bounds of the sheet, this will be the actual range  that was cleared, bounded to the sheet&#39;s limits.) Defaults to: `null`.
+  - spreadsheetId (String): The spreadsheet the updates were applied to. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"clearedRange",
     :"spreadsheetId"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.ClearValuesResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.ClearValuesResponse do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

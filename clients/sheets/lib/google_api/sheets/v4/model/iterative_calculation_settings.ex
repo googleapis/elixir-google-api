@@ -20,9 +20,13 @@
 defmodule GoogleApi.Sheets.V4.Model.IterativeCalculationSettings do
   @moduledoc """
   Settings to control how circular dependencies are resolved with iterative calculation.
+
+  ## Attributes
+
+  - convergenceThreshold (Float): When iterative calculation is enabled and successive results differ by less than this threshold value, the calculation rounds stop. Defaults to: `null`.
+  - maxIterations (Integer): When iterative calculation is enabled, the maximum number of calculation rounds to perform. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"convergenceThreshold",
     :"maxIterations"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.IterativeCalculationSettings do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.IterativeCalculationSettings do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

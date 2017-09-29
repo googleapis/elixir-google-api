@@ -20,9 +20,13 @@
 defmodule GoogleApi.Sheets.V4.Model.SortRangeRequest do
   @moduledoc """
   Sorts data in rows based on a sort order per column.
+
+  ## Attributes
+
+  - range (GridRange): The range to sort. Defaults to: `null`.
+  - sortSpecs (List[SortSpec]): The sort order per column. Later specifications are used when values are equal in the earlier specifications. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"range",
     :"sortSpecs"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.SortRangeRequest do
     value
     |> deserialize(:"range", :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
     |> deserialize(:"sortSpecs", :list, GoogleApi.Sheets.V4.Model.SortSpec, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.SortRangeRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

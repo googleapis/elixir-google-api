@@ -20,9 +20,17 @@
 defmodule GoogleApi.Sheets.V4.Model.PasteDataRequest do
   @moduledoc """
   Inserts data into the spreadsheet starting at the specified coordinate.
+
+  ## Attributes
+
+  - coordinate (GridCoordinate): The coordinate at which the data should start being inserted. Defaults to: `null`.
+  - data (String): The data to insert. Defaults to: `null`.
+  - delimiter (String): The delimiter in the data. Defaults to: `null`.
+  - html (Boolean): True if the data is HTML. Defaults to: `null`.
+  - type (String): How the data should be pasted. Defaults to: `null`.
+    - Enum - one of [PASTE_NORMAL, PASTE_VALUES, PASTE_FORMAT, PASTE_NO_BORDERS, PASTE_FORMULA, PASTE_DATA_VALIDATION, PASTE_CONDITIONAL_FORMATTING]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"coordinate",
     :"data",
@@ -37,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.PasteDataRequest do
   def decode(value, options) do
     value
     |> deserialize(:"coordinate", :struct, GoogleApi.Sheets.V4.Model.GridCoordinate, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.PasteDataRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

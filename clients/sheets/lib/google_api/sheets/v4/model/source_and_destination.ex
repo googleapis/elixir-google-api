@@ -20,9 +20,15 @@
 defmodule GoogleApi.Sheets.V4.Model.SourceAndDestination do
   @moduledoc """
   A combination of a source range and how to extend that source.
+
+  ## Attributes
+
+  - dimension (String): The dimension that data should be filled into. Defaults to: `null`.
+    - Enum - one of [DIMENSION_UNSPECIFIED, ROWS, COLUMNS]
+  - fillLength (Integer): The number of rows or columns that data should be filled into. Positive numbers expand beyond the last row or last column of the source.  Negative numbers expand before the first row or first column of the source. Defaults to: `null`.
+  - source (GridRange): The location of the data to use as the source of the autofill. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dimension",
     :"fillLength",
@@ -35,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.SourceAndDestination do
   def decode(value, options) do
     value
     |> deserialize(:"source", :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.SourceAndDestination do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

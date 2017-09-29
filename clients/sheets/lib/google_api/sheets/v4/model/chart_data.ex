@@ -20,9 +20,12 @@
 defmodule GoogleApi.Sheets.V4.Model.ChartData do
   @moduledoc """
   The data included in a domain or series.
+
+  ## Attributes
+
+  - sourceRange (ChartSourceRange): The source ranges of the data. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"sourceRange"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.ChartData do
   def decode(value, options) do
     value
     |> deserialize(:"sourceRange", :struct, GoogleApi.Sheets.V4.Model.ChartSourceRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.ChartData do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.Sheets.V4.Model.AppendValuesResponse do
   @moduledoc """
   The response when updating a range of values in a spreadsheet.
+
+  ## Attributes
+
+  - spreadsheetId (String): The spreadsheet the updates were applied to. Defaults to: `null`.
+  - tableRange (String): The range (in A1 notation) of the table that values are being appended to (before the values were appended). Empty if no table was found. Defaults to: `null`.
+  - updates (UpdateValuesResponse): Information about the updates that were applied. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"spreadsheetId",
     :"tableRange",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.AppendValuesResponse do
   def decode(value, options) do
     value
     |> deserialize(:"updates", :struct, GoogleApi.Sheets.V4.Model.UpdateValuesResponse, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.AppendValuesResponse do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

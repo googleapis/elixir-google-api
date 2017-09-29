@@ -20,9 +20,12 @@
 defmodule GoogleApi.Sheets.V4.Model.RandomizeRangeRequest do
   @moduledoc """
   Randomizes the order of the rows in a range.
+
+  ## Attributes
+
+  - range (GridRange): The range to randomize. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"range"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.RandomizeRangeRequest do
   def decode(value, options) do
     value
     |> deserialize(:"range", :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.RandomizeRangeRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

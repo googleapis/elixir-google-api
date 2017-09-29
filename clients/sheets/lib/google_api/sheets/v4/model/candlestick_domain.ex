@@ -20,9 +20,13 @@
 defmodule GoogleApi.Sheets.V4.Model.CandlestickDomain do
   @moduledoc """
   The domain of a CandlestickChart.
+
+  ## Attributes
+
+  - data (ChartData): The data of the CandlestickDomain. Defaults to: `null`.
+  - reversed (Boolean): True to reverse the order of the domain values (horizontal axis). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"data",
     :"reversed"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.CandlestickDomain do
   def decode(value, options) do
     value
     |> deserialize(:"data", :struct, GoogleApi.Sheets.V4.Model.ChartData, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.CandlestickDomain do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

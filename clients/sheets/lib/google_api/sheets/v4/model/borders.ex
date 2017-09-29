@@ -20,9 +20,15 @@
 defmodule GoogleApi.Sheets.V4.Model.Borders do
   @moduledoc """
   The borders of the cell.
+
+  ## Attributes
+
+  - bottom (Border): The bottom border of the cell. Defaults to: `null`.
+  - left (Border): The left border of the cell. Defaults to: `null`.
+  - right (Border): The right border of the cell. Defaults to: `null`.
+  - top (Border): The top border of the cell. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bottom",
     :"left",
@@ -39,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.Borders do
     |> deserialize(:"left", :struct, GoogleApi.Sheets.V4.Model.Border, options)
     |> deserialize(:"right", :struct, GoogleApi.Sheets.V4.Model.Border, options)
     |> deserialize(:"top", :struct, GoogleApi.Sheets.V4.Model.Border, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.Borders do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

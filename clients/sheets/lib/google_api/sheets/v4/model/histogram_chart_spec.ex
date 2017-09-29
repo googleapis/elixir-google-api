@@ -20,9 +20,17 @@
 defmodule GoogleApi.Sheets.V4.Model.HistogramChartSpec do
   @moduledoc """
   A &lt;a href&#x3D;\&quot;/chart/interactive/docs/gallery/histogram\&quot;&gt;histogram chart&lt;/a&gt;. A histogram chart groups data items into bins, displaying each bin as a column of stacked items.  Histograms are used to display the distribution of a dataset.  Each column of items represents a range into which those items fall.  The number of bins can be chosen automatically or specified explicitly.
+
+  ## Attributes
+
+  - bucketSize (Float): By default the bucket size (the range of values stacked in a single column) is chosen automatically, but it may be overridden here. E.g., A bucket size of 1.5 results in buckets from 0 - 1.5, 1.5 - 3.0, etc. Cannot be negative. This field is optional. Defaults to: `null`.
+  - legendPosition (String): The position of the chart legend. Defaults to: `null`.
+    - Enum - one of [HISTOGRAM_CHART_LEGEND_POSITION_UNSPECIFIED, BOTTOM_LEGEND, LEFT_LEGEND, RIGHT_LEGEND, TOP_LEGEND, NO_LEGEND, INSIDE_LEGEND]
+  - outlierPercentile (Float): The outlier percentile is used to ensure that outliers do not adversely affect the calculation of bucket sizes.  For example, setting an outlier percentile of 0.05 indicates that the top and bottom 5% of values when calculating buckets.  The values are still included in the chart, they will be added to the first or last buckets instead of their own buckets. Must be between 0.0 and 0.5. Defaults to: `null`.
+  - series (List[HistogramSeries]): The series for a histogram may be either a single series of values to be bucketed or multiple series, each of the same length, containing the name of the series followed by the values to be bucketed for that series. Defaults to: `null`.
+  - showItemDividers (Boolean): Whether horizontal divider lines should be displayed between items in each column. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bucketSize",
     :"legendPosition",
@@ -37,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.HistogramChartSpec do
   def decode(value, options) do
     value
     |> deserialize(:"series", :list, GoogleApi.Sheets.V4.Model.HistogramSeries, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.HistogramChartSpec do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

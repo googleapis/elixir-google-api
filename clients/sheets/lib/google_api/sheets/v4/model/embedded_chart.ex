@@ -20,9 +20,14 @@
 defmodule GoogleApi.Sheets.V4.Model.EmbeddedChart do
   @moduledoc """
   A chart embedded in a sheet.
+
+  ## Attributes
+
+  - chartId (Integer): The ID of the chart. Defaults to: `null`.
+  - position (EmbeddedObjectPosition): The position of the chart. Defaults to: `null`.
+  - spec (ChartSpec): The specification of the chart. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"chartId",
     :"position",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.EmbeddedChart do
     value
     |> deserialize(:"position", :struct, GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition, options)
     |> deserialize(:"spec", :struct, GoogleApi.Sheets.V4.Model.ChartSpec, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.EmbeddedChart do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.Sheets.V4.Model.RepeatCellRequest do
   @moduledoc """
   Updates all cells in the range to the values in the given Cell object. Only the fields listed in the fields field are updated; others are unchanged.  If writing a cell with a formula, the formula&#39;s ranges will automatically increment for each field in the range. For example, if writing a cell with formula &#x60;&#x3D;A1&#x60; into range B2:C4, B2 would be &#x60;&#x3D;A1&#x60;, B3 would be &#x60;&#x3D;A2&#x60;, B4 would be &#x60;&#x3D;A3&#x60;, C2 would be &#x60;&#x3D;B1&#x60;, C3 would be &#x60;&#x3D;B2&#x60;, C4 would be &#x60;&#x3D;B3&#x60;.  To keep the formula&#39;s ranges static, use the &#x60;$&#x60; indicator. For example, use the formula &#x60;&#x3D;$A$1&#x60; to prevent both the row and the column from incrementing.
+
+  ## Attributes
+
+  - cell (CellData): The data to write. Defaults to: `null`.
+  - fields (String): The fields that should be updated.  At least one field must be specified. The root &#x60;cell&#x60; is implied and should not be specified. A single &#x60;\&quot;*\&quot;&#x60; can be used as short-hand for listing every field. Defaults to: `null`.
+  - range (GridRange): The range to repeat the cell in. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cell",
     :"fields",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.RepeatCellRequest do
     value
     |> deserialize(:"cell", :struct, GoogleApi.Sheets.V4.Model.CellData, options)
     |> deserialize(:"range", :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.RepeatCellRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

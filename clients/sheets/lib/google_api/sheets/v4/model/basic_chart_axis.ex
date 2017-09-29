@@ -20,9 +20,15 @@
 defmodule GoogleApi.Sheets.V4.Model.BasicChartAxis do
   @moduledoc """
   An axis of the chart. A chart may not have more than one axis per axis position.
+
+  ## Attributes
+
+  - format (TextFormat): The format of the title. Only valid if the axis is not associated with the domain. Defaults to: `null`.
+  - position (String): The position of this axis. Defaults to: `null`.
+    - Enum - one of [BASIC_CHART_AXIS_POSITION_UNSPECIFIED, BOTTOM_AXIS, LEFT_AXIS, RIGHT_AXIS]
+  - title (String): The title of this axis. If set, this overrides any title inferred from headers of the data. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"format",
     :"position",
@@ -35,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BasicChartAxis do
   def decode(value, options) do
     value
     |> deserialize(:"format", :struct, GoogleApi.Sheets.V4.Model.TextFormat, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BasicChartAxis do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

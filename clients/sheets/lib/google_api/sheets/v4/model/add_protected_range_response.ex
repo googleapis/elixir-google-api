@@ -20,9 +20,12 @@
 defmodule GoogleApi.Sheets.V4.Model.AddProtectedRangeResponse do
   @moduledoc """
   The result of adding a new protected range.
+
+  ## Attributes
+
+  - protectedRange (ProtectedRange): The newly added protected range. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"protectedRange"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.AddProtectedRangeResponse
   def decode(value, options) do
     value
     |> deserialize(:"protectedRange", :struct, GoogleApi.Sheets.V4.Model.ProtectedRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.AddProtectedRangeResponse do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

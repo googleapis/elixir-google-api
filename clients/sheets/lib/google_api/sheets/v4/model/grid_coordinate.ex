@@ -20,9 +20,14 @@
 defmodule GoogleApi.Sheets.V4.Model.GridCoordinate do
   @moduledoc """
   A coordinate in a sheet. All indexes are zero-based.
+
+  ## Attributes
+
+  - columnIndex (Integer): The column index of the coordinate. Defaults to: `null`.
+  - rowIndex (Integer): The row index of the coordinate. Defaults to: `null`.
+  - sheetId (Integer): The sheet this coordinate is on. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"columnIndex",
     :"rowIndex",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.GridCoordinate do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.GridCoordinate do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

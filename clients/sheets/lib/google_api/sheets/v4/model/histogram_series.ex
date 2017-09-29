@@ -20,9 +20,13 @@
 defmodule GoogleApi.Sheets.V4.Model.HistogramSeries do
   @moduledoc """
   A histogram series containing the series color and data.
+
+  ## Attributes
+
+  - barColor (Color): The color of the column representing this series in each bucket. This field is optional. Defaults to: `null`.
+  - data (ChartData): The data for this histogram series. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"barColor",
     :"data"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.HistogramSeries do
     value
     |> deserialize(:"barColor", :struct, GoogleApi.Sheets.V4.Model.Color, options)
     |> deserialize(:"data", :struct, GoogleApi.Sheets.V4.Model.ChartData, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.HistogramSeries do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

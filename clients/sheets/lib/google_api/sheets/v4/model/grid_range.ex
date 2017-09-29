@@ -20,9 +20,16 @@
 defmodule GoogleApi.Sheets.V4.Model.GridRange do
   @moduledoc """
   A range on a sheet. All indexes are zero-based. Indexes are half open, e.g the start index is inclusive and the end index is exclusive -- [start_index, end_index). Missing indexes indicate the range is unbounded on that side.  For example, if &#x60;\&quot;Sheet1\&quot;&#x60; is sheet ID 0, then:    &#x60;Sheet1!A1:A1 &#x3D;&#x3D; sheet_id: 0,                   start_row_index: 0, end_row_index: 1,                   start_column_index: 0, end_column_index: 1&#x60;    &#x60;Sheet1!A3:B4 &#x3D;&#x3D; sheet_id: 0,                   start_row_index: 2, end_row_index: 4,                   start_column_index: 0, end_column_index: 2&#x60;    &#x60;Sheet1!A:B &#x3D;&#x3D; sheet_id: 0,                 start_column_index: 0, end_column_index: 2&#x60;    &#x60;Sheet1!A5:B &#x3D;&#x3D; sheet_id: 0,                  start_row_index: 4,                  start_column_index: 0, end_column_index: 2&#x60;    &#x60;Sheet1 &#x3D;&#x3D; sheet_id:0&#x60;  The start index must always be less than or equal to the end index. If the start index equals the end index, then the range is empty. Empty ranges are typically not meaningful and are usually rendered in the UI as &#x60;#REF!&#x60;.
+
+  ## Attributes
+
+  - endColumnIndex (Integer): The end column (exclusive) of the range, or not set if unbounded. Defaults to: `null`.
+  - endRowIndex (Integer): The end row (exclusive) of the range, or not set if unbounded. Defaults to: `null`.
+  - sheetId (Integer): The sheet this range is on. Defaults to: `null`.
+  - startColumnIndex (Integer): The start column (inclusive) of the range, or not set if unbounded. Defaults to: `null`.
+  - startRowIndex (Integer): The start row (inclusive) of the range, or not set if unbounded. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"endColumnIndex",
     :"endRowIndex",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.GridRange do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.GridRange do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.Sheets.V4.Model.SetDataValidationRequest do
   @moduledoc """
   Sets a data validation rule to every cell in the range. To clear validation in a range, call this with no rule specified.
+
+  ## Attributes
+
+  - range (GridRange): The range the data validation rule should apply to. Defaults to: `null`.
+  - rule (DataValidationRule): The data validation rule to set on each cell in the range, or empty to clear the data validation in the range. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"range",
     :"rule"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.SetDataValidationRequest 
     value
     |> deserialize(:"range", :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
     |> deserialize(:"rule", :struct, GoogleApi.Sheets.V4.Model.DataValidationRule, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.SetDataValidationRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 
