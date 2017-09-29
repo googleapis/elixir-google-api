@@ -20,9 +20,16 @@
 defmodule GoogleApi.Spanner.V1.Model.Mutation do
   @moduledoc """
   A modification to one or more Cloud Spanner rows.  Mutations can be applied to a Cloud Spanner database by sending them in a Commit call.
+
+  ## Attributes
+
+  - delete (Delete): Delete rows from a table. Succeeds whether or not the named rows were present. Defaults to: `null`.
+  - insert (Write): Insert new rows in a table. If any of the rows already exist, the write or transaction fails with error &#x60;ALREADY_EXISTS&#x60;. Defaults to: `null`.
+  - insertOrUpdate (Write): Like insert, except that if the row already exists, then its column values are overwritten with the ones provided. Any column values not explicitly written are preserved. Defaults to: `null`.
+  - replace (Write): Like insert, except that if the row already exists, it is deleted, and the column values provided are inserted instead. Unlike insert_or_update, this means any values not explicitly written become &#x60;NULL&#x60;. Defaults to: `null`.
+  - update (Write): Update existing rows in a table. If any of the rows does not already exist, the transaction fails with error &#x60;NOT_FOUND&#x60;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"delete",
     :"insert",
@@ -41,6 +48,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.Mutation do
     |> deserialize(:"insertOrUpdate", :struct, GoogleApi.Spanner.V1.Model.Write, options)
     |> deserialize(:"replace", :struct, GoogleApi.Spanner.V1.Model.Write, options)
     |> deserialize(:"update", :struct, GoogleApi.Spanner.V1.Model.Write, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.Mutation do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

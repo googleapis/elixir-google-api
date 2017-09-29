@@ -20,9 +20,17 @@
 defmodule GoogleApi.Sheets.V4.Model.FilterView do
   @moduledoc """
   A filter view.
+
+  ## Attributes
+
+  - criteria (Map[String, FilterCriteria]): The criteria for showing/hiding values per column. The map&#39;s key is the column index, and the value is the criteria for that column. Defaults to: `null`.
+  - filterViewId (Integer): The ID of the filter view. Defaults to: `null`.
+  - namedRangeId (String): The named range this filter view is backed by, if any.  When writing, only one of range or named_range_id may be set. Defaults to: `null`.
+  - range (GridRange): The range this filter view covers.  When writing, only one of range or named_range_id may be set. Defaults to: `null`.
+  - sortSpecs (List[SortSpec]): The sort order per column. Later specifications are used when values are equal in the earlier specifications. Defaults to: `null`.
+  - title (String): The name of the filter view. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"criteria",
     :"filterViewId",
@@ -40,6 +48,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.FilterView do
     |> deserialize(:"criteria", :map, GoogleApi.Sheets.V4.Model.FilterCriteria, options)
     |> deserialize(:"range", :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
     |> deserialize(:"sortSpecs", :list, GoogleApi.Sheets.V4.Model.SortSpec, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.FilterView do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

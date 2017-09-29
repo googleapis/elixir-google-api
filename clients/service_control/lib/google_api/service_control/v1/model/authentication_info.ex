@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceControl.V1.Model.AuthenticationInfo do
   @moduledoc """
   Authentication information for the operation.
+
+  ## Attributes
+
+  - authoritySelector (String): The authority selector specified by the requestor, if any. It is not guaranteed that the principal was allowed to use this authority. Defaults to: `null`.
+  - principalEmail (String): The email address of the authenticated user making the request. For privacy reasons, the principal email address is redacted for all read-only operations that fail with a \&quot;permission denied\&quot; error. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"authoritySelector",
     :"principalEmail"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.AuthenticationInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.AuthenticationInfo do
+  def encode(value, options) do
+    GoogleApi.ServiceControl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

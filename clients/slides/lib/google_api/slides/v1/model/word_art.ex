@@ -20,9 +20,12 @@
 defmodule GoogleApi.Slides.V1.Model.WordArt do
   @moduledoc """
   A PageElement kind representing word art.
+
+  ## Attributes
+
+  - renderedText (String): The text rendered as word art. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"renderedText"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.WordArt do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.WordArt do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

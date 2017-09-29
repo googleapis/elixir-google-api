@@ -20,9 +20,13 @@
 defmodule GoogleApi.Sheets.V4.Model.BooleanRule do
   @moduledoc """
   A rule that may or may not match, depending on the condition.
+
+  ## Attributes
+
+  - condition (BooleanCondition): The condition of the rule. If the condition evaluates to true, the format will be applied. Defaults to: `null`.
+  - format (CellFormat): The format to apply. Conditional formatting can only apply a subset of formatting: bold, italic, strikethrough, foreground color &amp; background color. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"condition",
     :"format"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BooleanRule do
     value
     |> deserialize(:"condition", :struct, GoogleApi.Sheets.V4.Model.BooleanCondition, options)
     |> deserialize(:"format", :struct, GoogleApi.Sheets.V4.Model.CellFormat, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BooleanRule do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.Genomics.V1.Model.TestIamPermissionsRequest do
   @moduledoc """
   Request message for &#x60;TestIamPermissions&#x60; method.
+
+  ## Attributes
+
+  - permissions (List[String]): REQUIRED: The set of permissions to check for the &#39;resource&#39;. Permissions with wildcards (such as &#39;*&#39; or &#39;storage.*&#39;) are not allowed. Allowed permissions are&amp;#58;  * &#x60;genomics.datasets.create&#x60; * &#x60;genomics.datasets.delete&#x60; * &#x60;genomics.datasets.get&#x60; * &#x60;genomics.datasets.list&#x60; * &#x60;genomics.datasets.update&#x60; * &#x60;genomics.datasets.getIamPolicy&#x60; * &#x60;genomics.datasets.setIamPolicy&#x60; Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"permissions"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.TestIamPermissionsRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.TestIamPermissionsRequest do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

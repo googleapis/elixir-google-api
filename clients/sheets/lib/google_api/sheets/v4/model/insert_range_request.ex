@@ -20,9 +20,14 @@
 defmodule GoogleApi.Sheets.V4.Model.InsertRangeRequest do
   @moduledoc """
   Inserts cells into a range, shifting the existing cells over or down.
+
+  ## Attributes
+
+  - range (GridRange): The range to insert new cells into. Defaults to: `null`.
+  - shiftDimension (String): The dimension which will be shifted when inserting cells. If ROWS, existing cells will be shifted down. If COLUMNS, existing cells will be shifted right. Defaults to: `null`.
+    - Enum - one of [DIMENSION_UNSPECIFIED, ROWS, COLUMNS]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"range",
     :"shiftDimension"
@@ -34,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.InsertRangeRequest do
   def decode(value, options) do
     value
     |> deserialize(:"range", :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.InsertRangeRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

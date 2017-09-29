@@ -20,9 +20,18 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyPhoneNumberRequest do
   @moduledoc """
   Request for Identitytoolkit-VerifyPhoneNumber
+
+  ## Attributes
+
+  - code (String):  Defaults to: `null`.
+  - idToken (String):  Defaults to: `null`.
+  - operation (String):  Defaults to: `null`.
+  - phoneNumber (String):  Defaults to: `null`.
+  - sessionInfo (String): The session info previously returned by IdentityToolkit-SendVerificationCode. Defaults to: `null`.
+  - temporaryProof (String):  Defaults to: `null`.
+  - verificationProof (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"code",
     :"idToken",
@@ -37,6 +46,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyPhoneNumberRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyPhoneNumberRequest do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.Webmaster.V3.Model.UrlCrawlErrorCountsPerType do
   @moduledoc """
   Number of errors per day for a specific error type (defined by platform and category).
+
+  ## Attributes
+
+  - category (String): The crawl error type. Defaults to: `null`.
+  - entries (List[UrlCrawlErrorCount]): The error count entries time series. Defaults to: `null`.
+  - platform (String): The general type of Googlebot that made the request (see list of Googlebot user-agents for the user-agents used). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"category",
     :"entries",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Webmaster.V3.Model.UrlCrawlErrorCountsPer
   def decode(value, options) do
     value
     |> deserialize(:"entries", :list, GoogleApi.Webmaster.V3.Model.UrlCrawlErrorCount, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Webmaster.V3.Model.UrlCrawlErrorCountsPerType do
+  def encode(value, options) do
+    GoogleApi.Webmaster.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

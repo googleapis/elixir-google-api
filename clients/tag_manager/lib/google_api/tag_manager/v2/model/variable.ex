@@ -20,9 +20,27 @@
 defmodule GoogleApi.TagManager.V2.Model.Variable do
   @moduledoc """
   Represents a Google Tag Manager Variable.
+
+  ## Attributes
+
+  - accountId (String): GTM Account ID. Defaults to: `null`.
+  - containerId (String): GTM Container ID. Defaults to: `null`.
+  - disablingTriggerId (List[String]): For mobile containers only: A list of trigger IDs for disabling conditional variables; the variable is enabled if one of the enabling trigger is true while all the disabling trigger are false. Treated as an unordered set. Defaults to: `null`.
+  - enablingTriggerId (List[String]): For mobile containers only: A list of trigger IDs for enabling conditional variables; the variable is enabled if one of the enabling triggers is true while all the disabling triggers are false. Treated as an unordered set. Defaults to: `null`.
+  - fingerprint (String): The fingerprint of the GTM Variable as computed at storage time. This value is recomputed whenever the variable is modified. Defaults to: `null`.
+  - name (String): Variable display name. Defaults to: `null`.
+  - notes (String): User notes on how to apply this variable in the container. Defaults to: `null`.
+  - parameter (List[Parameter]): The variable&#39;s parameters. Defaults to: `null`.
+  - parentFolderId (String): Parent folder id. Defaults to: `null`.
+  - path (String): GTM Variable&#39;s API relative path. Defaults to: `null`.
+  - scheduleEndMs (String): The end timestamp in milliseconds to schedule a variable. Defaults to: `null`.
+  - scheduleStartMs (String): The start timestamp in milliseconds to schedule a variable. Defaults to: `null`.
+  - tagManagerUrl (String): Auto generated link to the tag manager UI Defaults to: `null`.
+  - type (String): GTM Variable Type. Defaults to: `null`.
+  - variableId (String): The Variable ID uniquely identifies the GTM Variable. Defaults to: `null`.
+  - workspaceId (String): GTM Workspace ID. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accountId",
     :"containerId",
@@ -48,6 +66,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.Variable do
   def decode(value, options) do
     value
     |> deserialize(:"parameter", :list, GoogleApi.TagManager.V2.Model.Parameter, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.Variable do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

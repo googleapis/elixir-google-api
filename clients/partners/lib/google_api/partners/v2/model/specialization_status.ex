@@ -20,9 +20,15 @@
 defmodule GoogleApi.Partners.V2.Model.SpecializationStatus do
   @moduledoc """
   Agency specialization status
+
+  ## Attributes
+
+  - badgeSpecialization (String): The specialization this status is for. Defaults to: `null`.
+    - Enum - one of [BADGE_SPECIALIZATION_UNKNOWN, BADGE_SPECIALIZATION_ADWORDS_SEARCH, BADGE_SPECIALIZATION_ADWORDS_DISPLAY, BADGE_SPECIALIZATION_ADWORDS_MOBILE, BADGE_SPECIALIZATION_ADWORDS_VIDEO, BADGE_SPECIALIZATION_ADWORDS_SHOPPING]
+  - badgeSpecializationState (String): State of agency specialization. Defaults to: `null`.
+    - Enum - one of [BADGE_SPECIALIZATION_STATE_UNKNOWN, BADGE_SPECIALIZATION_STATE_PASSED, BADGE_SPECIALIZATION_STATE_NOT_PASSED, BADGE_SPECIALIZATION_STATE_IN_GRACE]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"badgeSpecialization",
     :"badgeSpecializationState"
@@ -32,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.SpecializationStatus do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.SpecializationStatus do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

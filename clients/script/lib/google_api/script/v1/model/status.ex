@@ -20,9 +20,14 @@
 defmodule GoogleApi.Script.V1.Model.Status do
   @moduledoc """
   If a &#x60;run&#x60; call succeeds but the script function (or Apps Script itself) throws an exception, the response body&#39;s &#x60;error&#x60; field will contain this &#x60;Status&#x60; object.
+
+  ## Attributes
+
+  - code (Integer): The status code. For this API, this value will always be 3, corresponding to an &lt;code&gt;INVALID_ARGUMENT&lt;/code&gt; error. Defaults to: `null`.
+  - details (List[Object]): An array that contains a single &#x60;ExecutionError&#x60; object that provides information about the nature of the error. Defaults to: `null`.
+  - message (String): A developer-facing error message, which is in English. Any user-facing error message is localized and sent in the [&#x60;google.rpc.Status.details&#x60;](google.rpc.Status.details) field, or localized by the client. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"code",
     :"details",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Script.V1.Model.Status do
   def decode(value, options) do
     value
     |> deserialize(:"details", :list, GoogleApi.Script.V1.Model.Object, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Script.V1.Model.Status do
+  def encode(value, options) do
+    GoogleApi.Script.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

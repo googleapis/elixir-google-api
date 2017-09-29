@@ -1,6 +1,6 @@
 # GoogleApi.UrlShortener.V1
 
-**TODO: Add description**
+Lets you create, inspect, and manage goo.gl short URLs
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_url_shortener` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_url_shortener, "~> 0.1.0"}]
+  [{:google_api_url_shortener, "~> 0.0.1"}]
 end
 ```
 

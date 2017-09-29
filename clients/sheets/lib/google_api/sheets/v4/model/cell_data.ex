@@ -20,9 +20,21 @@
 defmodule GoogleApi.Sheets.V4.Model.CellData do
   @moduledoc """
   Data about a specific cell.
+
+  ## Attributes
+
+  - dataValidation (DataValidationRule): A data validation rule on the cell, if any.  When writing, the new data validation rule will overwrite any prior rule. Defaults to: `null`.
+  - effectiveFormat (CellFormat): The effective format being used by the cell. This includes the results of applying any conditional formatting and, if the cell contains a formula, the computed number format. If the effective format is the default format, effective format will not be written. This field is read-only. Defaults to: `null`.
+  - effectiveValue (ExtendedValue): The effective value of the cell. For cells with formulas, this will be the calculated value.  For cells with literals, this will be the same as the user_entered_value. This field is read-only. Defaults to: `null`.
+  - formattedValue (String): The formatted value of the cell. This is the value as it&#39;s shown to the user. This field is read-only. Defaults to: `null`.
+  - hyperlink (String): A hyperlink this cell points to, if any. This field is read-only.  (To set it, use a &#x60;&#x3D;HYPERLINK&#x60; formula in the userEnteredValue.formulaValue field.) Defaults to: `null`.
+  - note (String): Any note on the cell. Defaults to: `null`.
+  - pivotTable (PivotTable): A pivot table anchored at this cell. The size of pivot table itself is computed dynamically based on its data, grouping, filters, values, etc. Only the top-left cell of the pivot table contains the pivot table definition. The other cells will contain the calculated values of the results of the pivot in their effective_value fields. Defaults to: `null`.
+  - textFormatRuns (List[TextFormatRun]): Runs of rich text applied to subsections of the cell.  Runs are only valid on user entered strings, not formulas, bools, or numbers. Runs start at specific indexes in the text and continue until the next run. Properties of a run will continue unless explicitly changed in a subsequent run (and properties of the first run will continue the properties of the cell unless explicitly changed).  When writing, the new runs will overwrite any prior runs.  When writing a new user_entered_value, previous runs will be erased. Defaults to: `null`.
+  - userEnteredFormat (CellFormat): The format the user entered for the cell.  When writing, the new format will be merged with the existing format. Defaults to: `null`.
+  - userEnteredValue (ExtendedValue): The value the user entered in the cell. e.g, &#x60;1234&#x60;, &#x60;&#39;Hello&#39;&#x60;, or &#x60;&#x3D;NOW()&#x60; Note: Dates, Times and DateTimes are represented as doubles in serial number format. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dataValidation",
     :"effectiveFormat",
@@ -48,6 +60,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.CellData do
     |> deserialize(:"textFormatRuns", :list, GoogleApi.Sheets.V4.Model.TextFormatRun, options)
     |> deserialize(:"userEnteredFormat", :struct, GoogleApi.Sheets.V4.Model.CellFormat, options)
     |> deserialize(:"userEnteredValue", :struct, GoogleApi.Sheets.V4.Model.ExtendedValue, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.CellData do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

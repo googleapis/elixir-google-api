@@ -20,9 +20,13 @@
 defmodule GoogleApi.ProximityBeacon.V1beta1.Model.GetInfoForObservedBeaconsRequest do
   @moduledoc """
   Request for beacon and attachment information about beacons that a mobile client has encountered \&quot;in the wild\&quot;.
+
+  ## Attributes
+
+  - namespacedTypes (List[String]): Specifies what kind of attachments to include in the response. When given, the response will include only attachments of the given types. When empty, no attachments will be returned. Must be in the format &lt;var&gt;namespace/type&lt;/var&gt;. Accepts &#x60;*&#x60; to specify all types in all namespaces owned by the client. Optional. Defaults to: `null`.
+  - observations (List[Observation]): The beacons that the client has encountered. At least one must be given. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"namespacedTypes",
     :"observations"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.GetInfoForO
   def decode(value, options) do
     value
     |> deserialize(:"observations", :list, GoogleApi.ProximityBeacon.V1beta1.Model.Observation, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.GetInfoForObservedBeaconsRequest do
+  def encode(value, options) do
+    GoogleApi.ProximityBeacon.V1beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,24 @@
 defmodule GoogleApi.QPXExpress.V1.Model.PricingInfo do
   @moduledoc """
   The price of one or more travel segments. The currency used to purchase tickets is usually determined by the sale/ticketing city or the sale/ticketing country, unless none are specified, in which case it defaults to that of the journey origin country.
+
+  ## Attributes
+
+  - baseFareTotal (String): The total fare in the base fare currency (the currency of the country of origin). This element is only present when the sales currency and the currency of the country of commencement are different. Defaults to: `null`.
+  - fare (List[FareInfo]): The fare used to price one or more segments. Defaults to: `null`.
+  - fareCalculation (String): The horizontal fare calculation. This is a field on a ticket that displays all of the relevant items that go into the calculation of the fare. Defaults to: `null`.
+  - kind (String): Identifies this as a pricing object, representing the price of one or more travel segments. Value: the fixed string qpxexpress#pricingInfo. Defaults to: `null`.
+  - latestTicketingTime (String): The latest ticketing time for this pricing assuming the reservation occurs at ticketing time and there is no change in fares/rules. The time is local to the point of sale (POS). Defaults to: `null`.
+  - passengers (PassengerCounts): The number of passengers to which this price applies. Defaults to: `null`.
+  - ptc (String): The passenger type code for this pricing. An alphanumeric code used by a carrier to restrict fares to certain categories of passenger. For instance, a fare might be valid only for senior citizens. Defaults to: `null`.
+  - refundable (Boolean): Whether the fares on this pricing are refundable. Defaults to: `null`.
+  - saleFareTotal (String): The total fare in the sale or equivalent currency. Defaults to: `null`.
+  - saleTaxTotal (String): The taxes in the sale or equivalent currency. Defaults to: `null`.
+  - saleTotal (String): Total per-passenger price (fare and tax) in the sale or equivalent currency. Defaults to: `null`.
+  - segmentPricing (List[SegmentPricing]): The per-segment price and baggage information. Defaults to: `null`.
+  - tax (List[TaxInfo]): The taxes used to calculate the tax total per ticket. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"baseFareTotal",
     :"fare",
@@ -48,6 +63,12 @@ defimpl Poison.Decoder, for: GoogleApi.QPXExpress.V1.Model.PricingInfo do
     |> deserialize(:"passengers", :struct, GoogleApi.QPXExpress.V1.Model.PassengerCounts, options)
     |> deserialize(:"segmentPricing", :list, GoogleApi.QPXExpress.V1.Model.SegmentPricing, options)
     |> deserialize(:"tax", :list, GoogleApi.QPXExpress.V1.Model.TaxInfo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.QPXExpress.V1.Model.PricingInfo do
+  def encode(value, options) do
+    GoogleApi.QPXExpress.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

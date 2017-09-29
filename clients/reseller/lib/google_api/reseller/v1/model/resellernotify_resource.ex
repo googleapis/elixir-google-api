@@ -20,9 +20,12 @@
 defmodule GoogleApi.Reseller.V1.Model.ResellernotifyResource do
   @moduledoc """
   JSON template for resellernotify response.
+
+  ## Attributes
+
+  - topicName (String): Topic name of the PubSub Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"topicName"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Reseller.V1.Model.ResellernotifyResource do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Reseller.V1.Model.ResellernotifyResource do
+  def encode(value, options) do
+    GoogleApi.Reseller.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

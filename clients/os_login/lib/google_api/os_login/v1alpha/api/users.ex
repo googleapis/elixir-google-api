@@ -72,7 +72,9 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
     }
     %{}
     |> method(:get)
-    |> url("/v1alpha/#{name}/loginProfile")
+    |> url("/v1alpha/{+name}/loginProfile", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -127,7 +129,9 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
     }
     %{}
     |> method(:post)
-    |> url("/v1alpha/#{parent}:importSshPublicKey")
+    |> url("/v1alpha/{+parent}:importSshPublicKey", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -180,7 +184,9 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
     }
     %{}
     |> method(:delete)
-    |> url("/v1alpha/#{name}")
+    |> url("/v1alpha/{+name}", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -233,7 +239,9 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
     }
     %{}
     |> method(:get)
-    |> url("/v1alpha/#{name}")
+    |> url("/v1alpha/{+name}", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -290,7 +298,9 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
     }
     %{}
     |> method(:patch)
-    |> url("/v1alpha/#{name}")
+    |> url("/v1alpha/{+name}", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

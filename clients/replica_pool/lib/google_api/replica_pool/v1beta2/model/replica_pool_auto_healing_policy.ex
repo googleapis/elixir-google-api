@@ -20,9 +20,14 @@
 defmodule GoogleApi.ReplicaPool.V1beta2.Model.ReplicaPoolAutoHealingPolicy do
   @moduledoc """
   
+
+  ## Attributes
+
+  - actionType (String): The action to perform when an instance becomes unhealthy. Possible values are RECREATE or REBOOT. RECREATE replaces an unhealthy instance with a new instance that is based on the instance template for this managed instance group. REBOOT performs a soft reboot on an instance. If the instance cannot reboot, the instance performs a hard restart. Defaults to: `null`.
+    - Enum - one of [REBOOT, RECREATE]
+  - healthCheck (String): The URL for the HealthCheck that signals autohealing. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"actionType",
     :"healthCheck"
@@ -32,6 +37,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ReplicaPool.V1beta2.Model.ReplicaPoolAutoHealingPolicy do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ReplicaPool.V1beta2.Model.ReplicaPoolAutoHealingPolicy do
+  def encode(value, options) do
+    GoogleApi.ReplicaPool.V1beta2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

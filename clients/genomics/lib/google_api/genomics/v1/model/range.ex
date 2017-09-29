@@ -20,9 +20,14 @@
 defmodule GoogleApi.Genomics.V1.Model.Range do
   @moduledoc """
   A 0-based half-open genomic coordinate range for search requests.
+
+  ## Attributes
+
+  - end (String): The end position of the range on the reference, 0-based exclusive. Defaults to: `null`.
+  - referenceName (String): The reference sequence name, for example &#x60;chr1&#x60;, &#x60;1&#x60;, or &#x60;chrX&#x60;. Defaults to: `null`.
+  - start (String): The start position of the range on the reference, 0-based inclusive. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"end",
     :"referenceName",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.Range do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.Range do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

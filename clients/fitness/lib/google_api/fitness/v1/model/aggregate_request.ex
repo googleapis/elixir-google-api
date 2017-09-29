@@ -20,9 +20,20 @@
 defmodule GoogleApi.Fitness.V1.Model.AggregateRequest do
   @moduledoc """
   Next id: 10
+
+  ## Attributes
+
+  - aggregateBy (List[AggregateBy]): The specification of data to be aggregated. At least one aggregateBy spec must be provided. All data that is specified will be aggregated using the same bucketing criteria. There will be one dataset in the response for every aggregateBy spec. Defaults to: `null`.
+  - bucketByActivitySegment (BucketByActivity): Specifies that data be aggregated each activity segment recored for a user. Similar to bucketByActivitySegment, but bucketing is done for each activity segment rather than all segments of the same type. Mutually exclusive of other bucketing specifications. Defaults to: `null`.
+  - bucketByActivityType (BucketByActivity): Specifies that data be aggregated by the type of activity being performed when the data was recorded. All data that was recorded during a certain activity type (for the given time range) will be aggregated into the same bucket. Data that was recorded while the user was not active will not be included in the response. Mutually exclusive of other bucketing specifications. Defaults to: `null`.
+  - bucketBySession (BucketBySession): Specifies that data be aggregated by user sessions. Data that does not fall within the time range of a session will not be included in the response. Mutually exclusive of other bucketing specifications. Defaults to: `null`.
+  - bucketByTime (BucketByTime): Specifies that data be aggregated by a single time interval. Mutually exclusive of other bucketing specifications. Defaults to: `null`.
+  - endTimeMillis (String): The end of a window of time. Data that intersects with this time window will be aggregated. The time is in milliseconds since epoch, inclusive. Defaults to: `null`.
+  - filteredDataQualityStandard (List[String]): A list of acceptable data quality standards. Only data points which conform to at least one of the specified data quality standards will be returned. If the list is empty, all data points are returned. Defaults to: `null`.
+    - Enum - one of 
+  - startTimeMillis (String): The start of a window of time. Data that intersects with this time window will be aggregated. The time is in milliseconds since epoch, inclusive. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"aggregateBy",
     :"bucketByActivitySegment",
@@ -44,6 +55,12 @@ defimpl Poison.Decoder, for: GoogleApi.Fitness.V1.Model.AggregateRequest do
     |> deserialize(:"bucketByActivityType", :struct, GoogleApi.Fitness.V1.Model.BucketByActivity, options)
     |> deserialize(:"bucketBySession", :struct, GoogleApi.Fitness.V1.Model.BucketBySession, options)
     |> deserialize(:"bucketByTime", :struct, GoogleApi.Fitness.V1.Model.BucketByTime, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Fitness.V1.Model.AggregateRequest do
+  def encode(value, options) do
+    GoogleApi.Fitness.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

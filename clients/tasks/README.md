@@ -1,6 +1,6 @@
 # GoogleApi.Tasks.V1
 
-**TODO: Add description**
+Lets you manage your tasks and task lists.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_tasks` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_tasks, "~> 0.1.0"}]
+  [{:google_api_tasks, "~> 0.0.1"}]
 end
 ```
 

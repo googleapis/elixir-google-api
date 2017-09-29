@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceUser.V1.Model.LoggingDestination do
   @moduledoc """
   Configuration of a specific logging destination (the producer project or the consumer project).
+
+  ## Attributes
+
+  - logs (List[String]): Names of the logs to be sent to this destination. Each name must be defined in the Service.logs section. If the log name is not a domain scoped name, it will be automatically prefixed with the service name followed by \&quot;/\&quot;. Defaults to: `null`.
+  - monitoredResource (String): The monitored resource type. The type must be defined in the Service.monitored_resources section. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"logs",
     :"monitoredResource"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceUser.V1.Model.LoggingDestination do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceUser.V1.Model.LoggingDestination do
+  def encode(value, options) do
+    GoogleApi.ServiceUser.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

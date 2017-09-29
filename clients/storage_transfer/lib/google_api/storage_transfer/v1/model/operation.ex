@@ -20,9 +20,16 @@
 defmodule GoogleApi.StorageTransfer.V1.Model.Operation do
   @moduledoc """
   This resource represents a long-running operation that is the result of a network API call.
+
+  ## Attributes
+
+  - done (Boolean): If the value is &#x60;false&#x60;, it means the operation is still in progress. If &#x60;true&#x60;, the operation is completed, and either &#x60;error&#x60; or &#x60;response&#x60; is available. Defaults to: `null`.
+  - error (Status): The error result of the operation in case of failure or cancellation. Defaults to: `null`.
+  - metadata (Object): Represents the transfer operation object. Defaults to: `null`.
+  - name (String): The server-assigned name, which is only unique within the same service that originally returns it. If you use the default HTTP mapping, the &#x60;name&#x60; should have the format of &#x60;transferOperations/some/unique/name&#x60;. Defaults to: `null`.
+  - response (Object): The normal response of the operation in case of success.  If the original method returns no data on success, such as &#x60;Delete&#x60;, the response is &#x60;google.protobuf.Empty&#x60;.  If the original method is standard &#x60;Get&#x60;/&#x60;Create&#x60;/&#x60;Update&#x60;, the response should be the resource.  For other methods, the response should have the type &#x60;XxxResponse&#x60;, where &#x60;Xxx&#x60; is the original method name.  For example, if the original method name is &#x60;TakeSnapshot()&#x60;, the inferred response type is &#x60;TakeSnapshotResponse&#x60;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"done",
     :"error",
@@ -39,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.StorageTransfer.V1.Model.Operation do
     |> deserialize(:"error", :struct, GoogleApi.StorageTransfer.V1.Model.Status, options)
     |> deserialize(:"metadata", :struct, GoogleApi.StorageTransfer.V1.Model.Object, options)
     |> deserialize(:"response", :struct, GoogleApi.StorageTransfer.V1.Model.Object, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.StorageTransfer.V1.Model.Operation do
+  def encode(value, options) do
+    GoogleApi.StorageTransfer.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

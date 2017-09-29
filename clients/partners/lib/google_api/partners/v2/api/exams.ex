@@ -86,7 +86,9 @@ defmodule GoogleApi.Partners.V2.Api.Exams do
     }
     %{}
     |> method(:get)
-    |> url("/v2/exams/#{exam_type}/token")
+    |> url("/v2/exams/{examType}/token", %{
+         "examType" => URI.encode_www_form(exam_type)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

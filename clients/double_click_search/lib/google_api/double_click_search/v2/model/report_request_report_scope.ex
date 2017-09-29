@@ -17,12 +17,21 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.DoubleClickSearch.V2.Model.ReportRequest_reportScope do
+defmodule GoogleApi.DoubleClickSearch.V2.Model.ReportRequestReportScope do
   @moduledoc """
   The reportScope is a set of IDs that are used to determine which subset of entities will be returned in the report. The full lineage of IDs from the lowest scoped level desired up through agency is required.
+
+  ## Attributes
+
+  - adGroupId (String): DS ad group ID. Defaults to: `null`.
+  - adId (String): DS ad ID. Defaults to: `null`.
+  - advertiserId (String): DS advertiser ID. Defaults to: `null`.
+  - agencyId (String): DS agency ID. Defaults to: `null`.
+  - campaignId (String): DS campaign ID. Defaults to: `null`.
+  - engineAccountId (String): DS engine account ID. Defaults to: `null`.
+  - keywordId (String): DS keyword ID. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"adGroupId",
     :"adId",
@@ -34,9 +43,15 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.ReportRequest_reportScope do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.DoubleClickSearch.V2.Model.ReportRequest_reportScope do
+defimpl Poison.Decoder, for: GoogleApi.DoubleClickSearch.V2.Model.ReportRequestReportScope do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickSearch.V2.Model.ReportRequestReportScope do
+  def encode(value, options) do
+    GoogleApi.DoubleClickSearch.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

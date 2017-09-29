@@ -20,9 +20,13 @@
 defmodule GoogleApi.Manufacturers.V1.Model.Capacity do
   @moduledoc """
   The capacity of a product. For more information, see https://support.google.com/manufacturers/answer/6124116#capacity.
+
+  ## Attributes
+
+  - unit (String): The unit of the capacity, i.e., MB, GB, or TB. Defaults to: `null`.
+  - value (String): The numeric value of the capacity. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"unit",
     :"value"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Manufacturers.V1.Model.Capacity do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Manufacturers.V1.Model.Capacity do
+  def encode(value, options) do
+    GoogleApi.Manufacturers.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

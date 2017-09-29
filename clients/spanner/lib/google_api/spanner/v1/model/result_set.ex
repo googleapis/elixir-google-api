@@ -20,9 +20,14 @@
 defmodule GoogleApi.Spanner.V1.Model.ResultSet do
   @moduledoc """
   Results from Read or ExecuteSql.
+
+  ## Attributes
+
+  - metadata (ResultSetMetadata): Metadata about the result set, such as row type information. Defaults to: `null`.
+  - rows (List[List[ErrorUnknown]]): Each element in &#x60;rows&#x60; is a row whose format is defined by metadata.row_type. The ith element in each row matches the ith field in metadata.row_type. Elements are encoded based on type as described here. Defaults to: `null`.
+  - stats (ResultSetStats): Query plan and execution statistics for the query that produced this result set. These can be requested by setting ExecuteSqlRequest.query_mode. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"metadata",
     :"rows",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.ResultSet do
     value
     |> deserialize(:"metadata", :struct, GoogleApi.Spanner.V1.Model.ResultSetMetadata, options)
     |> deserialize(:"stats", :struct, GoogleApi.Spanner.V1.Model.ResultSetStats, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.ResultSet do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

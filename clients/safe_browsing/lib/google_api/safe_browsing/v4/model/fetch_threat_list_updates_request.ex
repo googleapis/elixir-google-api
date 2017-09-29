@@ -20,9 +20,13 @@
 defmodule GoogleApi.SafeBrowsing.V4.Model.FetchThreatListUpdatesRequest do
   @moduledoc """
   Describes a Safe Browsing API update request. Clients can request updates for multiple lists in a single request. NOTE: Field index 2 is unused. NEXT: 5
+
+  ## Attributes
+
+  - client (ClientInfo): The client metadata. Defaults to: `null`.
+  - listUpdateRequests (List[ListUpdateRequest]): The requested threat list updates. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"client",
     :"listUpdateRequests"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.FetchThreatListUpda
     value
     |> deserialize(:"client", :struct, GoogleApi.SafeBrowsing.V4.Model.ClientInfo, options)
     |> deserialize(:"listUpdateRequests", :list, GoogleApi.SafeBrowsing.V4.Model.ListUpdateRequest, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SafeBrowsing.V4.Model.FetchThreatListUpdatesRequest do
+  def encode(value, options) do
+    GoogleApi.SafeBrowsing.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

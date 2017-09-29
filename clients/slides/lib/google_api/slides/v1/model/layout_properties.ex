@@ -20,9 +20,14 @@
 defmodule GoogleApi.Slides.V1.Model.LayoutProperties do
   @moduledoc """
   The properties of Page are only relevant for pages with page_type LAYOUT.
+
+  ## Attributes
+
+  - displayName (String): The human-readable name of the layout. Defaults to: `null`.
+  - masterObjectId (String): The object ID of the master that this layout is based on. Defaults to: `null`.
+  - name (String): The name of the layout. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"displayName",
     :"masterObjectId",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.LayoutProperties do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.LayoutProperties do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

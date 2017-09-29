@@ -20,9 +20,12 @@
 defmodule GoogleApi.KnowledgeGraphSearch.V1.Model.SearchResponse do
   @moduledoc """
   Response message includes the context and a list of matching results which contain the detail of associated entities.
+
+  ## Attributes
+
+  - itemListElement (List[ErrorUnknown]): The item list of search results. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"itemListElement"
   ]
@@ -32,7 +35,13 @@ defimpl Poison.Decoder, for: GoogleApi.KnowledgeGraphSearch.V1.Model.SearchRespo
   import GoogleApi.KnowledgeGraphSearch.V1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"itemListElement", :list, GoogleApi.KnowledgeGraphSearch.V1.Model., options)
+    |> deserialize(:"itemListElement", :list, nil, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.KnowledgeGraphSearch.V1.Model.SearchResponse do
+  def encode(value, options) do
+    GoogleApi.KnowledgeGraphSearch.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

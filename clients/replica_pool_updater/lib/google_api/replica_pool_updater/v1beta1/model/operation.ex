@@ -20,9 +20,33 @@
 defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation do
   @moduledoc """
   An operation resource, used to manage asynchronous API requests.
+
+  ## Attributes
+
+  - clientOperationId (String):  Defaults to: `null`.
+  - creationTimestamp (String): [Output Only] Creation timestamp in RFC3339 text format. Defaults to: `null`.
+  - endTime (String):  Defaults to: `null`.
+  - error (OperationError):  Defaults to: `null`.
+  - httpErrorMessage (String):  Defaults to: `null`.
+  - httpErrorStatusCode (Integer):  Defaults to: `null`.
+  - id (String): [Output Only] Unique identifier for the resource; defined by the server. Defaults to: `null`.
+  - insertTime (String): [Output Only] The time that this operation was requested. This is in RFC 3339 format. Defaults to: `null`.
+  - kind (String): [Output Only] Type of the resource. Always replicapoolupdater#operation for Operation resources. Defaults to: `null`.
+  - name (String): [Output Only] Name of the resource. Defaults to: `null`.
+  - operationType (String):  Defaults to: `null`.
+  - progress (Integer):  Defaults to: `null`.
+  - region (String): [Output Only] URL of the region where the operation resides. Defaults to: `null`.
+  - selfLink (String): [Output Only] The fully qualified URL for the resource. Defaults to: `null`.
+  - startTime (String): [Output Only] The time that this operation was started by the server. This is in RFC 3339 format. Defaults to: `null`.
+  - status (String): [Output Only] Status of the operation. Can be one of the following: \&quot;PENDING\&quot;, \&quot;RUNNING\&quot;, or \&quot;DONE\&quot;. Defaults to: `null`.
+  - statusMessage (String): [Output Only] An optional textual description of the current status of the operation. Defaults to: `null`.
+  - targetId (String): [Output Only] Unique target id which identifies a particular incarnation of the target. Defaults to: `null`.
+  - targetLink (String): [Output Only] URL of the resource the operation is mutating. Defaults to: `null`.
+  - user (String):  Defaults to: `null`.
+  - warnings (List[OperationWarnings]):  Defaults to: `null`.
+  - zone (String): [Output Only] URL of the zone where the operation resides. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"clientOperationId",
     :"creationTimestamp",
@@ -53,8 +77,14 @@ defimpl Poison.Decoder, for: GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operatio
   import GoogleApi.ReplicaPoolUpdater.V1beta1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"error", :struct, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation_error, options)
-    |> deserialize(:"warnings", :list, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation_warnings, options)
+    |> deserialize(:"error", :struct, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.OperationError, options)
+    |> deserialize(:"warnings", :list, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.OperationWarnings, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation do
+  def encode(value, options) do
+    GoogleApi.ReplicaPoolUpdater.V1beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

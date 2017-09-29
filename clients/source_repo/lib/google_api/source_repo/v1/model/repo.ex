@@ -20,9 +20,15 @@
 defmodule GoogleApi.SourceRepo.V1.Model.Repo do
   @moduledoc """
   A repository (or repo) is a Git repository storing versioned source content.
+
+  ## Attributes
+
+  - mirrorConfig (MirrorConfig): How this repository mirrors a repository managed by another service. Defaults to: `null`.
+  - name (String): Resource name of the repository, of the form &#x60;projects/&lt;project&gt;/repos/&lt;repo&gt;&#x60;.  The repo name may contain slashes. eg, &#x60;projects/myproject/repos/name/with/slash&#x60; Defaults to: `null`.
+  - size (String): The disk usage of the repo, in bytes. Only returned by GetRepo. Defaults to: `null`.
+  - url (String): URL to clone the repository from Google Cloud Source Repositories. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"mirrorConfig",
     :"name",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.SourceRepo.V1.Model.Repo do
   def decode(value, options) do
     value
     |> deserialize(:"mirrorConfig", :struct, GoogleApi.SourceRepo.V1.Model.MirrorConfig, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SourceRepo.V1.Model.Repo do
+  def encode(value, options) do
+    GoogleApi.SourceRepo.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

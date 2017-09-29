@@ -20,9 +20,13 @@
 defmodule GoogleApi.Reseller.V1.Model.RenewalSettings do
   @moduledoc """
   JSON template for a subscription renewal settings.
+
+  ## Attributes
+
+  - kind (String): Identifies the resource as a subscription renewal setting. Value: subscriptions#renewalSettings Defaults to: `null`.
+  - renewalType (String): Renewal settings for the annual commitment plan. For more detailed information, see renewal options in the administrator help center. When renewing a subscription, the renewalType is a required property. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"renewalType"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Reseller.V1.Model.RenewalSettings do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Reseller.V1.Model.RenewalSettings do
+  def encode(value, options) do
+    GoogleApi.Reseller.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

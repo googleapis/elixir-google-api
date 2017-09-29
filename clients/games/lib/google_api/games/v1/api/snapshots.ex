@@ -64,7 +64,9 @@ defmodule GoogleApi.Games.V1.Api.Snapshots do
     }
     %{}
     |> method(:get)
-    |> url("/snapshots/#{snapshot_id}")
+    |> url("/snapshots/{snapshotId}", %{
+         "snapshotId" => URI.encode_www_form(snapshot_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -113,7 +115,9 @@ defmodule GoogleApi.Games.V1.Api.Snapshots do
     }
     %{}
     |> method(:get)
-    |> url("/players/#{player_id}/snapshots")
+    |> url("/players/{playerId}/snapshots", %{
+         "playerId" => URI.encode_www_form(player_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

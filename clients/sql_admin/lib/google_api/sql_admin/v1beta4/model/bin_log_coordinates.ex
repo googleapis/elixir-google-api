@@ -20,9 +20,14 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.BinLogCoordinates do
   @moduledoc """
   Binary log coordinates.
+
+  ## Attributes
+
+  - binLogFileName (String): Name of the binary log file for a Cloud SQL instance. Defaults to: `null`.
+  - binLogPosition (String): Position (offset) within the binary log file. Defaults to: `null`.
+  - kind (String): This is always sql#binLogCoordinates. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"binLogFileName",
     :"binLogPosition",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.BinLogCoordinates do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.BinLogCoordinates do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

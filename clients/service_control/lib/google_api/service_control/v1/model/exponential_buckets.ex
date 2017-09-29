@@ -20,9 +20,14 @@
 defmodule GoogleApi.ServiceControl.V1.Model.ExponentialBuckets do
   @moduledoc """
   Describing buckets with exponentially growing width.
+
+  ## Attributes
+
+  - growthFactor (Float): The i&#39;th exponential bucket covers the interval   [scale * growth_factor^(i-1), scale * growth_factor^i) where i ranges from 1 to num_finite_buckets inclusive. Must be larger than 1.0. Defaults to: `null`.
+  - numFiniteBuckets (Integer): The number of finite buckets. With the underflow and overflow buckets, the total number of buckets is &#x60;num_finite_buckets&#x60; + 2. See comments on &#x60;bucket_options&#x60; for details. Defaults to: `null`.
+  - scale (Float): The i&#39;th exponential bucket covers the interval   [scale * growth_factor^(i-1), scale * growth_factor^i) where i ranges from 1 to num_finite_buckets inclusive. Must be &gt; 0. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"growthFactor",
     :"numFiniteBuckets",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.ExponentialBuckets do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.ExponentialBuckets do
+  def encode(value, options) do
+    GoogleApi.ServiceControl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

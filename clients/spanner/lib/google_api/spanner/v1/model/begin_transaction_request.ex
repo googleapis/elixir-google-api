@@ -20,9 +20,12 @@
 defmodule GoogleApi.Spanner.V1.Model.BeginTransactionRequest do
   @moduledoc """
   The request for BeginTransaction.
+
+  ## Attributes
+
+  - options (TransactionOptions): Required. Options for the new transaction. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"options"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.BeginTransactionRequest 
   def decode(value, options) do
     value
     |> deserialize(:"options", :struct, GoogleApi.Spanner.V1.Model.TransactionOptions, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.BeginTransactionRequest do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

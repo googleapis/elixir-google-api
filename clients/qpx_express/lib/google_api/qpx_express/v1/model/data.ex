@@ -20,9 +20,17 @@
 defmodule GoogleApi.QPXExpress.V1.Model.Data do
   @moduledoc """
   Detailed information about components found in the solutions of this response, including a trip&#39;s airport, city, taxes, airline, and aircraft.
+
+  ## Attributes
+
+  - aircraft (List[AircraftData]): The aircraft that is flying between an origin and destination. Defaults to: `null`.
+  - airport (List[AirportData]): The airport of an origin or destination. Defaults to: `null`.
+  - carrier (List[CarrierData]): The airline carrier of the aircraft flying between an origin and destination. Allowed values are IATA carrier codes. Defaults to: `null`.
+  - city (List[CityData]): The city that is either the origin or destination of part of a trip. Defaults to: `null`.
+  - kind (String): Identifies this as QPX Express response resource, including a trip&#39;s airport, city, taxes, airline, and aircraft. Value: the fixed string qpxexpress#data. Defaults to: `null`.
+  - tax (List[TaxData]): The taxes due for flying between an origin and a destination. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"aircraft",
     :"airport",
@@ -42,6 +50,12 @@ defimpl Poison.Decoder, for: GoogleApi.QPXExpress.V1.Model.Data do
     |> deserialize(:"carrier", :list, GoogleApi.QPXExpress.V1.Model.CarrierData, options)
     |> deserialize(:"city", :list, GoogleApi.QPXExpress.V1.Model.CityData, options)
     |> deserialize(:"tax", :list, GoogleApi.QPXExpress.V1.Model.TaxData, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.QPXExpress.V1.Model.Data do
+  def encode(value, options) do
+    GoogleApi.QPXExpress.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

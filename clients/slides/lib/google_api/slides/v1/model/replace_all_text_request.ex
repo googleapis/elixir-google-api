@@ -20,9 +20,14 @@
 defmodule GoogleApi.Slides.V1.Model.ReplaceAllTextRequest do
   @moduledoc """
   Replaces all instances of text matching a criteria with replace text.
+
+  ## Attributes
+
+  - containsText (SubstringMatchCriteria): Finds text in a shape matching this substring. Defaults to: `null`.
+  - pageObjectIds (List[String]): If non-empty, limits the matches to page elements only on the given pages.  Returns a 400 bad request error if given the page object ID of a notes master, or if a page with that object ID doesn&#39;t exist in the presentation. Defaults to: `null`.
+  - replaceText (String): The text that will replace the matched text. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"containsText",
     :"pageObjectIds",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.ReplaceAllTextRequest do
   def decode(value, options) do
     value
     |> deserialize(:"containsText", :struct, GoogleApi.Slides.V1.Model.SubstringMatchCriteria, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.ReplaceAllTextRequest do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

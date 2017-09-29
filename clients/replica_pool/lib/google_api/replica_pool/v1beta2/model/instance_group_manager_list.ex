@@ -20,9 +20,16 @@
 defmodule GoogleApi.ReplicaPool.V1beta2.Model.InstanceGroupManagerList do
   @moduledoc """
   
+
+  ## Attributes
+
+  - id (String): Unique identifier for the resource; defined by the server (output only). Defaults to: `null`.
+  - items (List[InstanceGroupManager]): A list of instance resources. Defaults to: `null`.
+  - kind (String): Type of resource. Defaults to: `null`.
+  - nextPageToken (String): A token used to continue a truncated list request (output only). Defaults to: `null`.
+  - selfLink (String): Server defined URL for this resource (output only). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"items",
@@ -37,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.ReplicaPool.V1beta2.Model.InstanceGroupMa
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.ReplicaPool.V1beta2.Model.InstanceGroupManager, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ReplicaPool.V1beta2.Model.InstanceGroupManagerList do
+  def encode(value, options) do
+    GoogleApi.ReplicaPool.V1beta2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

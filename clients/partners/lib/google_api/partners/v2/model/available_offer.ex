@@ -20,9 +20,25 @@
 defmodule GoogleApi.Partners.V2.Model.AvailableOffer do
   @moduledoc """
   Available Offers to be distributed.
+
+  ## Attributes
+
+  - available (Integer): The number of codes for this offer that are available for distribution. Defaults to: `null`.
+  - countryOfferInfos (List[CountryOfferInfo]): Offer info by country. Defaults to: `null`.
+  - description (String): Description of the offer. Defaults to: `null`.
+  - id (String): ID of this offer. Defaults to: `null`.
+  - maxAccountAge (Integer): The maximum age of an account [in days] to be eligible. Defaults to: `null`.
+  - name (String): Name of the offer. Defaults to: `null`.
+  - offerLevel (String): Level of this offer. Defaults to: `null`.
+    - Enum - one of [OFFER_LEVEL_UNSPECIFIED, OFFER_LEVEL_DENY_PROBLEM, OFFER_LEVEL_DENY_CONTRACT, OFFER_LEVEL_MANUAL, OFFER_LEVEL_LIMIT_0, OFFER_LEVEL_LIMIT_5, OFFER_LEVEL_LIMIT_15, OFFER_LEVEL_LIMIT_50]
+  - offerType (String): Type of offer. Defaults to: `null`.
+    - Enum - one of [OFFER_TYPE_UNSPECIFIED, OFFER_TYPE_SPEND_X_GET_Y, OFFER_TYPE_VIDEO, OFFER_TYPE_SPEND_MATCH]
+  - qualifiedCustomer (List[OfferCustomer]): Customers who qualify for this offer. Defaults to: `null`.
+  - qualifiedCustomersComplete (Boolean): Whether or not the list of qualified customers is definitely complete. Defaults to: `null`.
+  - showSpecialOfferCopy (Boolean): Should special text be shown on the offers page. Defaults to: `null`.
+  - terms (String): Terms of the offer. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"available",
     :"countryOfferInfos",
@@ -45,6 +61,12 @@ defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.AvailableOffer do
     value
     |> deserialize(:"countryOfferInfos", :list, GoogleApi.Partners.V2.Model.CountryOfferInfo, options)
     |> deserialize(:"qualifiedCustomer", :list, GoogleApi.Partners.V2.Model.OfferCustomer, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.AvailableOffer do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

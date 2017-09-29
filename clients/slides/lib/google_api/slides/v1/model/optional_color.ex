@@ -20,9 +20,12 @@
 defmodule GoogleApi.Slides.V1.Model.OptionalColor do
   @moduledoc """
   A color that can either be fully opaque or fully transparent.
+
+  ## Attributes
+
+  - opaqueColor (OpaqueColor): If set, this will be used as an opaque color. If unset, this represents a transparent color. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"opaqueColor"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.OptionalColor do
   def decode(value, options) do
     value
     |> deserialize(:"opaqueColor", :struct, GoogleApi.Slides.V1.Model.OpaqueColor, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.OptionalColor do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

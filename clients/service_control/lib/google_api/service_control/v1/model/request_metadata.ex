@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceControl.V1.Model.RequestMetadata do
   @moduledoc """
   Metadata about the request.
+
+  ## Attributes
+
+  - callerIp (String): The IP address of the caller. For caller from internet, this will be public IPv4 or IPv6 address. For caller from GCE VM with external IP address, this will be the VM&#39;s external IP address. For caller from GCE VM without external IP address, if the VM is in the same GCP organization (or project) as the accessed resource, &#x60;caller_ip&#x60; will be the GCE VM&#39;s internal IPv4 address, otherwise it will be redacted to \&quot;gce-internal-ip\&quot;. See https://cloud.google.com/compute/docs/vpc/ for more information. Defaults to: `null`.
+  - callerSuppliedUserAgent (String): The user agent of the caller. This information is not authenticated and should be treated accordingly. For example:  +   &#x60;google-api-python-client/1.4.0&#x60;:     The request was made by the Google API client for Python. +   &#x60;Cloud SDK Command Line Tool apitools-client/1.0 gcloud/0.9.62&#x60;:     The request was made by the Google Cloud SDK CLI (gcloud). +   &#x60;AppEngine-Google; (+http://code.google.com/appengine; appid: s~my-project&#x60;:     The request was made from the &#x60;my-project&#x60; App Engine app. NOLINT Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"callerIp",
     :"callerSuppliedUserAgent"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.RequestMetadata do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.RequestMetadata do
+  def encode(value, options) do
+    GoogleApi.ServiceControl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

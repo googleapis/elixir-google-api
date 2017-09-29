@@ -20,9 +20,14 @@
 defmodule GoogleApi.Slides.V1.Model.DeleteTextRequest do
   @moduledoc """
   Deletes text from a shape or a table cell.
+
+  ## Attributes
+
+  - cellLocation (TableCellLocation): The optional table cell location if the text is to be deleted from a table cell. If present, the object_id must refer to a table. Defaults to: `null`.
+  - objectId (String): The object ID of the shape or table from which the text will be deleted. Defaults to: `null`.
+  - textRange (Range): The range of text to delete, based on TextElement indexes.  There is always an implicit newline character at the end of a shape&#39;s or table cell&#39;s text that cannot be deleted. &#x60;Range.Type.ALL&#x60; will use the correct bounds, but care must be taken when specifying explicit bounds for range types &#x60;FROM_START_INDEX&#x60; and &#x60;FIXED_RANGE&#x60;. For example, if the text is \&quot;ABC\&quot;, followed by an implicit newline, then the maximum value is 2 for &#x60;text_range.start_index&#x60; and 3 for &#x60;text_range.end_index&#x60;.  Deleting text that crosses a paragraph boundary may result in changes to paragraph styles and lists as the two paragraphs are merged.  Ranges that include only one code unit of a surrogate pair are expanded to include both code units. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cellLocation",
     :"objectId",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.DeleteTextRequest do
     value
     |> deserialize(:"cellLocation", :struct, GoogleApi.Slides.V1.Model.TableCellLocation, options)
     |> deserialize(:"textRange", :struct, GoogleApi.Slides.V1.Model.Range, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.DeleteTextRequest do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

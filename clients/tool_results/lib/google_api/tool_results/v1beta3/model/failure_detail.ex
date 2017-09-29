@@ -20,9 +20,16 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.FailureDetail do
   @moduledoc """
   
+
+  ## Attributes
+
+  - crashed (Boolean): If the failure was severe because the system under test crashed. Defaults to: `null`.
+  - notInstalled (Boolean): If an app is not installed and thus no test can be run with the app. This might be caused by trying to run a test on an unsupported platform. Defaults to: `null`.
+  - otherNativeCrash (Boolean): If a native process other than the app crashed. Defaults to: `null`.
+  - timedOut (Boolean): If the test overran some time limit, and that is why it failed. Defaults to: `null`.
+  - unableToCrawl (Boolean): If the robo was unable to crawl the app; perhaps because the app did not start. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"crashed",
     :"notInstalled",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.FailureDetail do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.FailureDetail do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

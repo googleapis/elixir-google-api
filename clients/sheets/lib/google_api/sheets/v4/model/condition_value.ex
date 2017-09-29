@@ -20,9 +20,14 @@
 defmodule GoogleApi.Sheets.V4.Model.ConditionValue do
   @moduledoc """
   The value of the condition.
+
+  ## Attributes
+
+  - relativeDate (String): A relative date (based on the current date). Valid only if the type is DATE_BEFORE, DATE_AFTER, DATE_ON_OR_BEFORE or DATE_ON_OR_AFTER.  Relative dates are not supported in data validation. They are supported only in conditional formatting and conditional filters. Defaults to: `null`.
+    - Enum - one of [RELATIVE_DATE_UNSPECIFIED, PAST_YEAR, PAST_MONTH, PAST_WEEK, YESTERDAY, TODAY, TOMORROW]
+  - userEnteredValue (String): A value the condition is based on. The value will be parsed as if the user typed into a cell. Formulas are supported (and must begin with an &#x60;&#x3D;&#x60;). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"relativeDate",
     :"userEnteredValue"
@@ -32,6 +37,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.ConditionValue do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.ConditionValue do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

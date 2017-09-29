@@ -20,9 +20,21 @@
 defmodule GoogleApi.Genomics.V1.Model.VariantAnnotation do
   @moduledoc """
   
+
+  ## Attributes
+
+  - alternateBases (String): The alternate allele for this variant. If multiple alternate alleles exist at this location, create a separate variant for each one, as they may represent distinct conditions. Defaults to: `null`.
+  - clinicalSignificance (String): Describes the clinical significance of a variant. It is adapted from the ClinVar controlled vocabulary for clinical significance described at: http://www.ncbi.nlm.nih.gov/clinvar/docs/clinsig/ Defaults to: `null`.
+    - Enum - one of [CLINICAL_SIGNIFICANCE_UNSPECIFIED, CLINICAL_SIGNIFICANCE_OTHER, UNCERTAIN, BENIGN, LIKELY_BENIGN, LIKELY_PATHOGENIC, PATHOGENIC, DRUG_RESPONSE, HISTOCOMPATIBILITY, CONFERS_SENSITIVITY, RISK_FACTOR, ASSOCIATION, PROTECTIVE, MULTIPLE_REPORTED]
+  - conditions (List[ClinicalCondition]): The set of conditions associated with this variant. A condition describes the way a variant influences human health. Defaults to: `null`.
+  - effect (String): Effect of the variant on the coding sequence. Defaults to: `null`.
+    - Enum - one of [EFFECT_UNSPECIFIED, EFFECT_OTHER, FRAMESHIFT, FRAME_PRESERVING_INDEL, SYNONYMOUS_SNP, NONSYNONYMOUS_SNP, STOP_GAIN, STOP_LOSS, SPLICE_SITE_DISRUPTION]
+  - geneId (String): Google annotation ID of the gene affected by this variant. This should be provided when the variant is created. Defaults to: `null`.
+  - transcriptIds (List[String]): Google annotation IDs of the transcripts affected by this variant. These should be provided when the variant is created. Defaults to: `null`.
+  - type (String): Type has been adapted from ClinVar&#39;s list of variant types. Defaults to: `null`.
+    - Enum - one of [TYPE_UNSPECIFIED, TYPE_OTHER, INSERTION, DELETION, SUBSTITUTION, SNP, STRUCTURAL, CNV]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"alternateBases",
     :"clinicalSignificance",
@@ -39,6 +51,12 @@ defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.VariantAnnotation do
   def decode(value, options) do
     value
     |> deserialize(:"conditions", :list, GoogleApi.Genomics.V1.Model.ClinicalCondition, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.VariantAnnotation do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

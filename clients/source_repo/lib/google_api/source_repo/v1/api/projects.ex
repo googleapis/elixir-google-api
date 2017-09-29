@@ -74,7 +74,9 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{parent}/repos")
+    |> url("/v1/{+parent}/repos", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -127,7 +129,9 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/#{name}")
+    |> url("/v1/{+name}", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -180,7 +184,9 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{name}")
+    |> url("/v1/{+name}", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -233,7 +239,9 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{resource}:getIamPolicy")
+    |> url("/v1/{+resource}:getIamPolicy", %{
+         "resource" => URI.encode_www_form(resource)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -290,7 +298,9 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{name}/repos")
+    |> url("/v1/{+name}/repos", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -345,7 +355,9 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{resource}:setIamPolicy")
+    |> url("/v1/{+resource}:setIamPolicy", %{
+         "resource" => URI.encode_www_form(resource)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -400,7 +412,9 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{resource}:testIamPermissions")
+    |> url("/v1/{+resource}:testIamPermissions", %{
+         "resource" => URI.encode_www_form(resource)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

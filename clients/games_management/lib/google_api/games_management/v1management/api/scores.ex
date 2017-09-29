@@ -60,7 +60,9 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Scores do
     }
     %{}
     |> method(:post)
-    |> url("/leaderboards/#{leaderboard_id}/scores/reset")
+    |> url("/leaderboards/{leaderboardId}/scores/reset", %{
+         "leaderboardId" => URI.encode_www_form(leaderboard_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -181,7 +183,9 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Scores do
     }
     %{}
     |> method(:post)
-    |> url("/leaderboards/#{leaderboard_id}/scores/resetForAllPlayers")
+    |> url("/leaderboards/{leaderboardId}/scores/resetForAllPlayers", %{
+         "leaderboardId" => URI.encode_www_form(leaderboard_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

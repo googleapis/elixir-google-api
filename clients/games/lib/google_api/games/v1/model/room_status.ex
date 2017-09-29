@@ -20,9 +20,17 @@
 defmodule GoogleApi.Games.V1.Model.RoomStatus do
   @moduledoc """
   This is a JSON template for the status of a room that the player has joined.
+
+  ## Attributes
+
+  - autoMatchingStatus (RoomAutoMatchStatus): Auto-matching status for this room. Not set if the room is not currently in the automatching queue. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#roomStatus. Defaults to: `null`.
+  - participants (List[RoomParticipant]): The participants involved in the room, along with their statuses. Includes participants who have left or declined invitations. Defaults to: `null`.
+  - roomId (String): Globally unique ID for a room. Defaults to: `null`.
+  - status (String): The status of the room. Possible values are:   - \&quot;ROOM_INVITING\&quot; - One or more players have been invited and not responded.  - \&quot;ROOM_AUTO_MATCHING\&quot; - One or more slots need to be filled by auto-matching.  - \&quot;ROOM_CONNECTING\&quot; - Players have joined are connecting to each other (either before or after auto-matching).  - \&quot;ROOM_ACTIVE\&quot; - All players have joined and connected to each other.  - \&quot;ROOM_DELETED\&quot; - All joined players have left. Defaults to: `null`.
+  - statusVersion (Integer): The version of the status for the room: an increasing counter, used by the client to ignore out-of-order updates to room status. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"autoMatchingStatus",
     :"kind",
@@ -39,6 +47,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.RoomStatus do
     value
     |> deserialize(:"autoMatchingStatus", :struct, GoogleApi.Games.V1.Model.RoomAutoMatchStatus, options)
     |> deserialize(:"participants", :list, GoogleApi.Games.V1.Model.RoomParticipant, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.RoomStatus do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

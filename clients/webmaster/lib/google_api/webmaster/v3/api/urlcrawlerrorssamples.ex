@@ -63,7 +63,10 @@ defmodule GoogleApi.Webmaster.V3.Api.Urlcrawlerrorssamples do
     }
     %{}
     |> method(:get)
-    |> url("/sites/#{site_url}/urlCrawlErrorsSamples/#{url}")
+    |> url("/sites/{siteUrl}/urlCrawlErrorsSamples/{url}", %{
+         "siteUrl" => URI.encode_www_form(site_url),
+         "url" => URI.encode_www_form(url)
+       })
     |> add_param(:query, :"category", category)
     |> add_param(:query, :"platform", platform)
     |> add_optional_params(optional_params, opts)
@@ -108,7 +111,9 @@ defmodule GoogleApi.Webmaster.V3.Api.Urlcrawlerrorssamples do
     }
     %{}
     |> method(:get)
-    |> url("/sites/#{site_url}/urlCrawlErrorsSamples")
+    |> url("/sites/{siteUrl}/urlCrawlErrorsSamples", %{
+         "siteUrl" => URI.encode_www_form(site_url)
+       })
     |> add_param(:query, :"category", category)
     |> add_param(:query, :"platform", platform)
     |> add_optional_params(optional_params, opts)
@@ -154,7 +159,10 @@ defmodule GoogleApi.Webmaster.V3.Api.Urlcrawlerrorssamples do
     }
     %{}
     |> method(:delete)
-    |> url("/sites/#{site_url}/urlCrawlErrorsSamples/#{url}")
+    |> url("/sites/{siteUrl}/urlCrawlErrorsSamples/{url}", %{
+         "siteUrl" => URI.encode_www_form(site_url),
+         "url" => URI.encode_www_form(url)
+       })
     |> add_param(:query, :"category", category)
     |> add_param(:query, :"platform", platform)
     |> add_optional_params(optional_params, opts)

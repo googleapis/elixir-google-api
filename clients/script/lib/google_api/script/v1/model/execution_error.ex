@@ -20,9 +20,14 @@
 defmodule GoogleApi.Script.V1.Model.ExecutionError do
   @moduledoc """
   An object that provides information about the nature of an error in the Apps Script Execution API. If an &#x60;run&#x60; call succeeds but the script function (or Apps Script itself) throws an exception, the response body&#39;s &#x60;error&#x60; field contains a &#x60;Status&#x60; object. The &#x60;Status&#x60; object&#39;s &#x60;details&#x60; field contains an array with a single one of these &#x60;ExecutionError&#x60; objects.
+
+  ## Attributes
+
+  - errorMessage (String): The error message thrown by Apps Script, usually localized into the user&#39;s language. Defaults to: `null`.
+  - errorType (String): The error type, for example &#x60;TypeError&#x60; or &#x60;ReferenceError&#x60;. If the error type is unavailable, this field is not included. Defaults to: `null`.
+  - scriptStackTraceElements (List[ScriptStackTraceElement]): An array of objects that provide a stack trace through the script to show where the execution failed, with the deepest call first. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"errorMessage",
     :"errorType",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Script.V1.Model.ExecutionError do
   def decode(value, options) do
     value
     |> deserialize(:"scriptStackTraceElements", :list, GoogleApi.Script.V1.Model.ScriptStackTraceElement, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Script.V1.Model.ExecutionError do
+  def encode(value, options) do
+    GoogleApi.Script.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

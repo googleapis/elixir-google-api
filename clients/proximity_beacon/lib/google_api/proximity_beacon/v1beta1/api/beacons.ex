@@ -74,7 +74,9 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
     }
     %{}
     |> method(:post)
-    |> url("/v1beta1/#{beacon_name}:activate")
+    |> url("/v1beta1/{+beaconName}:activate", %{
+         "beaconName" => URI.encode_www_form(beacon_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -131,7 +133,9 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
     }
     %{}
     |> method(:post)
-    |> url("/v1beta1/#{beacon_name}/attachments:batchDelete")
+    |> url("/v1beta1/{+beaconName}/attachments:batchDelete", %{
+         "beaconName" => URI.encode_www_form(beacon_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -188,7 +192,9 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
     }
     %{}
     |> method(:post)
-    |> url("/v1beta1/#{beacon_name}/attachments")
+    |> url("/v1beta1/{+beaconName}/attachments", %{
+         "beaconName" => URI.encode_www_form(beacon_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -243,7 +249,9 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
     }
     %{}
     |> method(:delete)
-    |> url("/v1beta1/#{attachment_name}")
+    |> url("/v1beta1/{+attachmentName}", %{
+         "attachmentName" => URI.encode_www_form(attachment_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -300,7 +308,9 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
     }
     %{}
     |> method(:get)
-    |> url("/v1beta1/#{beacon_name}/attachments")
+    |> url("/v1beta1/{+beaconName}/attachments", %{
+         "beaconName" => URI.encode_www_form(beacon_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -355,7 +365,9 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
     }
     %{}
     |> method(:post)
-    |> url("/v1beta1/#{beacon_name}:deactivate")
+    |> url("/v1beta1/{+beaconName}:deactivate", %{
+         "beaconName" => URI.encode_www_form(beacon_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -410,7 +422,9 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
     }
     %{}
     |> method(:post)
-    |> url("/v1beta1/#{beacon_name}:decommission")
+    |> url("/v1beta1/{+beaconName}:decommission", %{
+         "beaconName" => URI.encode_www_form(beacon_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -465,7 +479,9 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
     }
     %{}
     |> method(:delete)
-    |> url("/v1beta1/#{beacon_name}")
+    |> url("/v1beta1/{+beaconName}", %{
+         "beaconName" => URI.encode_www_form(beacon_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -526,7 +542,9 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
     }
     %{}
     |> method(:get)
-    |> url("/v1beta1/#{beacon_name}/diagnostics")
+    |> url("/v1beta1/{+beaconName}/diagnostics", %{
+         "beaconName" => URI.encode_www_form(beacon_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -581,7 +599,9 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
     }
     %{}
     |> method(:get)
-    |> url("/v1beta1/#{beacon_name}")
+    |> url("/v1beta1/{+beaconName}", %{
+         "beaconName" => URI.encode_www_form(beacon_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -754,7 +774,9 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
     }
     %{}
     |> method(:put)
-    |> url("/v1beta1/#{beacon_name}")
+    |> url("/v1beta1/{+beaconName}", %{
+         "beaconName" => URI.encode_www_form(beacon_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

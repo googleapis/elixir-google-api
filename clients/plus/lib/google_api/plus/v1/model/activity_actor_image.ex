@@ -17,20 +17,29 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Plus.V1.Model.Activity_actor_image do
+defmodule GoogleApi.Plus.V1.Model.ActivityActorImage do
   @moduledoc """
   The image representation of the actor.
+
+  ## Attributes
+
+  - url (String): The URL of the actor&#39;s profile photo. To resize the image and crop it to a square, append the query string ?sz&#x3D;x, where x is the dimension in pixels of each side. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"url"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Activity_actor_image do
+defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.ActivityActorImage do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.ActivityActorImage do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsGetServiceResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - endpoints (List[ServiceEndpoint]): The service information. Defaults to: `null`.
+  - fingerprint (String): The fingerprint of the service information. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"endpoints",
     :"fingerprint"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsGetS
   def decode(value, options) do
     value
     |> deserialize(:"endpoints", :list, GoogleApi.ResourceViews.V1beta2.Model.ServiceEndpoint, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsGetServiceResponse do
+  def encode(value, options) do
+    GoogleApi.ResourceViews.V1beta2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

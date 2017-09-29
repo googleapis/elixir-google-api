@@ -20,9 +20,14 @@
 defmodule GoogleApi.Games.V1.Model.EventPeriodUpdate do
   @moduledoc """
   This is a JSON template for an event period update resource.
+
+  ## Attributes
+
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#eventPeriodUpdate. Defaults to: `null`.
+  - timePeriod (EventPeriodRange): The time period being covered by this update. Defaults to: `null`.
+  - updates (List[EventUpdateRequest]): The updates being made for this time period. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"timePeriod",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.EventPeriodUpdate do
     value
     |> deserialize(:"timePeriod", :struct, GoogleApi.Games.V1.Model.EventPeriodRange, options)
     |> deserialize(:"updates", :list, GoogleApi.Games.V1.Model.EventUpdateRequest, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.EventPeriodUpdate do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.Slides.V1.Model.DeleteParagraphBulletsRequest do
   @moduledoc """
   Deletes bullets from all of the paragraphs that overlap with the given text index range.  The nesting level of each paragraph will be visually preserved by adding indent to the start of the corresponding paragraph.
+
+  ## Attributes
+
+  - cellLocation (TableCellLocation): The optional table cell location if the text to be modified is in a table cell. If present, the object_id must refer to a table. Defaults to: `null`.
+  - objectId (String): The object ID of the shape or table containing the text to delete bullets from. Defaults to: `null`.
+  - textRange (Range): The range of text to delete bullets from, based on TextElement indexes. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cellLocation",
     :"objectId",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.DeleteParagraphBulletsReq
     value
     |> deserialize(:"cellLocation", :struct, GoogleApi.Slides.V1.Model.TableCellLocation, options)
     |> deserialize(:"textRange", :struct, GoogleApi.Slides.V1.Model.Range, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.DeleteParagraphBulletsRequest do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

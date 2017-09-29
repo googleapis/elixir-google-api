@@ -20,9 +20,15 @@
 defmodule GoogleApi.Reseller.V1.Model.Seats do
   @moduledoc """
   JSON template for subscription seats.
+
+  ## Attributes
+
+  - kind (String): Identifies the resource as a subscription change plan request. Value: subscriptions#seats Defaults to: `null`.
+  - licensedNumberOfSeats (Integer): Read-only field containing the current number of licensed seats for FLEXIBLE Google-Apps subscriptions and secondary subscriptions such as Google-Vault and Drive-storage. Defaults to: `null`.
+  - maximumNumberOfSeats (Integer): The maximumNumberOfSeats property is the maximum number of licenses that the customer can purchase. This property applies to plans other than the annual commitment plan. How a user&#39;s licenses are managed depends on the subscription&#39;s payment plan:   - annual commitment plan (with monthly or yearly payments) — For this plan, a reseller is invoiced on the number of user licenses in the numberOfSeats property. The maximumNumberOfSeats property is a read-only property in the API&#39;s response.   - flexible plan — For this plan, a reseller is invoiced on the actual number of users which is capped by the maximumNumberOfSeats. This is the maximum number of user licenses a customer has for user license provisioning. This quantity can be increased up to the maximum limit defined in the reseller&#39;s contract. And the minimum quantity is the current number of users in the customer account.   - 30-day free trial plan — A subscription in a 30-day free trial is restricted to maximum 10 seats. Defaults to: `null`.
+  - numberOfSeats (Integer): The numberOfSeats property holds the customer&#39;s number of user licenses. How a user&#39;s licenses are managed depends on the subscription&#39;s plan:   - annual commitment plan (with monthly or yearly pay) — For this plan, a reseller is invoiced on the number of user licenses in the numberOfSeats property. This is the maximum number of user licenses that a reseller&#39;s customer can create. The reseller can add more licenses, but once set, the numberOfSeats can not be reduced until renewal. The reseller is invoiced based on the numberOfSeats value regardless of how many of these user licenses are provisioned users.   - flexible plan — For this plan, a reseller is invoiced on the actual number of users which is capped by the maximumNumberOfSeats. The numberOfSeats property is not used in the request or response for flexible plan customers.   - 30-day free trial plan — The numberOfSeats property is not used in the request or response for an account in a 30-day trial. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"licensedNumberOfSeats",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Reseller.V1.Model.Seats do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Reseller.V1.Model.Seats do
+  def encode(value, options) do
+    GoogleApi.Reseller.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,16 @@
 defmodule GoogleApi.Slides.V1.Model.CropProperties do
   @moduledoc """
   The crop properties of an object enclosed in a container. For example, an Image.  The crop properties is represented by the offsets of four edges which define a crop rectangle. The offsets are measured in percentage from the corresponding edges of the object&#39;s original bounding rectangle towards inside, relative to the object&#39;s original dimensions.  - If the offset is in the interval (0, 1), the corresponding edge of crop rectangle is positioned inside of the object&#39;s original bounding rectangle. - If the offset is negative or greater than 1, the corresponding edge of crop rectangle is positioned outside of the object&#39;s original bounding rectangle. - If the left edge of the crop rectangle is on the right side of its right edge, the object will be flipped horizontally. - If the top edge of the crop rectangle is below its bottom edge, the object will be flipped vertically. - If all offsets and rotation angle is 0, the object is not cropped.  After cropping, the content in the crop rectangle will be stretched to fit its container.
+
+  ## Attributes
+
+  - angle (Float): The rotation angle of the crop window around its center, in radians. Rotation angle is applied after the offset. Defaults to: `null`.
+  - bottomOffset (Float): The offset specifies the bottom edge of the crop rectangle that is located above the original bounding rectangle bottom edge, relative to the object&#39;s original height. Defaults to: `null`.
+  - leftOffset (Float): The offset specifies the left edge of the crop rectangle that is located to the right of the original bounding rectangle left edge, relative to the object&#39;s original width. Defaults to: `null`.
+  - rightOffset (Float): The offset specifies the right edge of the crop rectangle that is located to the left of the original bounding rectangle right edge, relative to the object&#39;s original width. Defaults to: `null`.
+  - topOffset (Float): The offset specifies the top edge of the crop rectangle that is located below the original bounding rectangle top edge, relative to the object&#39;s original height. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"angle",
     :"bottomOffset",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.CropProperties do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.CropProperties do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

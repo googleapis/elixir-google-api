@@ -20,9 +20,15 @@
 defmodule GoogleApi.Fitness.V1.Model.BucketByTimePeriod do
   @moduledoc """
   
+
+  ## Attributes
+
+  - timeZoneId (String): org.joda.timezone.DateTimeZone Defaults to: `null`.
+  - type (String):  Defaults to: `null`.
+    - Enum - one of [day, month, week]
+  - value (Integer):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"timeZoneId",
     :"type",
@@ -33,6 +39,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Fitness.V1.Model.BucketByTimePeriod do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Fitness.V1.Model.BucketByTimePeriod do
+  def encode(value, options) do
+    GoogleApi.Fitness.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

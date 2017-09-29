@@ -20,9 +20,15 @@
 defmodule GoogleApi.Sheets.V4.Model.TextToColumnsRequest do
   @moduledoc """
   Splits a column of text into multiple columns, based on a delimiter in each cell.
+
+  ## Attributes
+
+  - delimiter (String): The delimiter to use. Used only if delimiterType is CUSTOM. Defaults to: `null`.
+  - delimiterType (String): The delimiter type to use. Defaults to: `null`.
+    - Enum - one of [DELIMITER_TYPE_UNSPECIFIED, COMMA, SEMICOLON, PERIOD, SPACE, CUSTOM]
+  - source (GridRange): The source data range.  This must span exactly one column. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"delimiter",
     :"delimiterType",
@@ -35,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.TextToColumnsRequest do
   def decode(value, options) do
     value
     |> deserialize(:"source", :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.TextToColumnsRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

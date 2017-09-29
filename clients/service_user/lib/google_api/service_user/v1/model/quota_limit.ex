@@ -20,9 +20,21 @@
 defmodule GoogleApi.ServiceUser.V1.Model.QuotaLimit do
   @moduledoc """
   &#x60;QuotaLimit&#x60; defines a specific limit that applies over a specified duration for a limit type. There can be at most one limit for a duration and limit type combination defined within a &#x60;QuotaGroup&#x60;.
+
+  ## Attributes
+
+  - defaultLimit (String): Default number of tokens that can be consumed during the specified duration. This is the number of tokens assigned when a client application developer activates the service for his/her project.  Specifying a value of 0 will block all requests. This can be used if you are provisioning quota to selected consumers and blocking others. Similarly, a value of -1 will indicate an unlimited quota. No other negative values are allowed.  Used by group-based quotas only. Defaults to: `null`.
+  - description (String): Optional. User-visible, extended description for this quota limit. Should be used only when more context is needed to understand this limit than provided by the limit&#39;s display name (see: &#x60;display_name&#x60;). Defaults to: `null`.
+  - displayName (String): User-visible display name for this limit. Optional. If not set, the UI will provide a default display name based on the quota configuration. This field can be used to override the default display name generated from the configuration. Defaults to: `null`.
+  - duration (String): Duration of this limit in textual notation. Example: \&quot;100s\&quot;, \&quot;24h\&quot;, \&quot;1d\&quot;. For duration longer than a day, only multiple of days is supported. We support only \&quot;100s\&quot; and \&quot;1d\&quot; for now. Additional support will be added in the future. \&quot;0\&quot; indicates indefinite duration.  Used by group-based quotas only. Defaults to: `null`.
+  - freeTier (String): Free tier value displayed in the Developers Console for this limit. The free tier is the number of tokens that will be subtracted from the billed amount when billing is enabled. This field can only be set on a limit with duration \&quot;1d\&quot;, in a billable group; it is invalid on any other limit. If this field is not set, it defaults to 0, indicating that there is no free tier for this service.  Used by group-based quotas only. Defaults to: `null`.
+  - maxLimit (String): Maximum number of tokens that can be consumed during the specified duration. Client application developers can override the default limit up to this maximum. If specified, this value cannot be set to a value less than the default limit. If not specified, it is set to the default limit.  To allow clients to apply overrides with no upper bound, set this to -1, indicating unlimited maximum quota.  Used by group-based quotas only. Defaults to: `null`.
+  - metric (String): The name of the metric this quota limit applies to. The quota limits with the same metric will be checked together during runtime. The metric must be defined within the service config.  Used by metric-based quotas only. Defaults to: `null`.
+  - name (String): Name of the quota limit. The name is used to refer to the limit when overriding the default limit on per-consumer basis.  For metric-based quota limits, the name must be provided, and it must be unique within the service. The name can only include alphanumeric characters as well as &#39;-&#39;.  The maximum length of the limit name is 64 characters.  The name of a limit is used as a unique identifier for this limit. Therefore, once a limit has been put into use, its name should be immutable. You can use the display_name field to provide a user-friendly name for the limit. The display name can be evolved over time without affecting the identity of the limit. Defaults to: `null`.
+  - unit (String): Specify the unit of the quota limit. It uses the same syntax as Metric.unit. The supported unit kinds are determined by the quota backend system.  The [Google Service Control](https://cloud.google.com/service-control) supports the following unit components: * One of the time intevals:   * \&quot;/min\&quot;  for quota every minute.   * \&quot;/d\&quot;  for quota every 24 hours, starting 00:00 US Pacific Time.   * Otherwise the quota won&#39;t be reset by time, such as storage limit. * One and only one of the granted containers:   * \&quot;/{project}\&quot; quota for a project  Here are some examples: * \&quot;1/min/{project}\&quot; for quota per minute per project.  Note: the order of unit components is insignificant. The \&quot;1\&quot; at the beginning is required to follow the metric unit syntax.  Used by metric-based quotas only. Defaults to: `null`.
+  - values (Map[String, String]): Tiered limit values, currently only STANDARD is supported. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"defaultLimit",
     :"description",
@@ -40,6 +52,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceUser.V1.Model.QuotaLimit do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceUser.V1.Model.QuotaLimit do
+  def encode(value, options) do
+    GoogleApi.ServiceUser.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

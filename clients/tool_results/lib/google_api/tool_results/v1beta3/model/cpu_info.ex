@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ToolResults.V1beta3.Model.CPUInfo do
+defmodule GoogleApi.ToolResults.V1beta3.Model.CpuInfo do
   @moduledoc """
   
+
+  ## Attributes
+
+  - cpuProcessor (String): description of the device processor ie &#39;1.8 GHz hexa core 64-bit ARMv8-A&#39; Defaults to: `null`.
+  - cpuSpeedInGhz (Float): the CPU clock speed in GHz Defaults to: `null`.
+  - numberOfCores (Integer): the number of CPU cores Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cpuProcessor",
     :"cpuSpeedInGhz",
@@ -30,9 +35,15 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.CPUInfo do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.CPUInfo do
+defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.CpuInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.CpuInfo do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

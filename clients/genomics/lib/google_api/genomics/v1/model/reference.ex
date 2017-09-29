@@ -20,9 +20,18 @@
 defmodule GoogleApi.Genomics.V1.Model.Reference do
   @moduledoc """
   A reference is a canonical assembled DNA sequence, intended to act as a reference coordinate space for other genomic annotations. A single reference might represent the human chromosome 1 or mitochandrial DNA, for instance. A reference belongs to one or more reference sets.  For more genomics resource definitions, see [Fundamentals of Google Genomics](https://cloud.google.com/genomics/fundamentals-of-google-genomics)
+
+  ## Attributes
+
+  - id (String): The server-generated reference ID, unique across all references. Defaults to: `null`.
+  - length (String): The length of this reference&#39;s sequence. Defaults to: `null`.
+  - md5checksum (String): MD5 of the upper-case sequence excluding all whitespace characters (this is equivalent to SQ:M5 in SAM). This value is represented in lower case hexadecimal format. Defaults to: `null`.
+  - name (String): The name of this reference, for example &#x60;22&#x60;. Defaults to: `null`.
+  - ncbiTaxonId (Integer): ID from http://www.ncbi.nlm.nih.gov/taxonomy. For example, 9606 for human. Defaults to: `null`.
+  - sourceAccessions (List[String]): All known corresponding accession IDs in INSDC (GenBank/ENA/DDBJ) ideally with a version number, for example &#x60;GCF_000001405.26&#x60;. Defaults to: `null`.
+  - sourceUri (String): The URI from which the sequence was obtained. Typically specifies a FASTA format file. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"length",
@@ -37,6 +46,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.Reference do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.Reference do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

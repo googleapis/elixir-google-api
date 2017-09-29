@@ -20,9 +20,14 @@
 defmodule GoogleApi.Spectrum.V1explorer.Model.PawsVerifyDeviceRequest do
   @moduledoc """
   The device validation request message.
+
+  ## Attributes
+
+  - deviceDescs (List[DeviceDescriptor]): A list of device descriptors, which specifies the slave devices to be validated, is required. Defaults to: `null`.
+  - type (String): The message type (e.g., INIT_REQ, AVAIL_SPECTRUM_REQ, ...).  Required field. Defaults to: `null`.
+  - version (String): The PAWS version. Must be exactly 1.0.  Required field. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"deviceDescs",
     :"type",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spectrum.V1explorer.Model.PawsVerifyDevic
   def decode(value, options) do
     value
     |> deserialize(:"deviceDescs", :list, GoogleApi.Spectrum.V1explorer.Model.DeviceDescriptor, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spectrum.V1explorer.Model.PawsVerifyDeviceRequest do
+  def encode(value, options) do
+    GoogleApi.Spectrum.V1explorer.Deserializer.serialize_non_nil(value, options)
   end
 end
 

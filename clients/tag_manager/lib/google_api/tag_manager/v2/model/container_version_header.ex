@@ -20,9 +20,22 @@
 defmodule GoogleApi.TagManager.V2.Model.ContainerVersionHeader do
   @moduledoc """
   Represents a Google Tag Manager Container Version Header.
+
+  ## Attributes
+
+  - accountId (String): GTM Account ID. Defaults to: `null`.
+  - containerId (String): GTM Container ID. Defaults to: `null`.
+  - containerVersionId (String): The Container Version ID uniquely identifies the GTM Container Version. Defaults to: `null`.
+  - deleted (Boolean): A value of true indicates this container version has been deleted. Defaults to: `null`.
+  - name (String): Container version display name. Defaults to: `null`.
+  - numMacros (String): Number of macros in the container version. Defaults to: `null`.
+  - numRules (String): Number of rules in the container version. Defaults to: `null`.
+  - numTags (String): Number of tags in the container version. Defaults to: `null`.
+  - numTriggers (String): Number of triggers in the container version. Defaults to: `null`.
+  - numVariables (String): Number of variables in the container version. Defaults to: `null`.
+  - path (String): GTM Container Versions&#39;s API relative path. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accountId",
     :"containerId",
@@ -41,6 +54,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.ContainerVersionHeader do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.ContainerVersionHeader do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

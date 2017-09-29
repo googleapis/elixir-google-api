@@ -20,9 +20,12 @@
 defmodule GoogleApi.Vault.V1.Model.CloseMatterResponse do
   @moduledoc """
   Response to a CloseMatterRequest.
+
+  ## Attributes
+
+  - matter (Matter): The updated matter, with state CLOSED. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"matter"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Vault.V1.Model.CloseMatterResponse do
   def decode(value, options) do
     value
     |> deserialize(:"matter", :struct, GoogleApi.Vault.V1.Model.Matter, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Vault.V1.Model.CloseMatterResponse do
+  def encode(value, options) do
+    GoogleApi.Vault.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

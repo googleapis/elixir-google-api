@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.Quota do
   @moduledoc """
   Quota configuration helps to achieve fairness and budgeting in service usage.  The quota configuration works this way: - The service configuration defines a set of metrics. - For API calls, the quota.metric_rules maps methods to metrics with   corresponding costs. - The quota.limits defines limits on the metrics, which will be used for   quota checks at runtime.  An example quota configuration in yaml format:     quota:       - name: apiWriteQpsPerProject        metric: library.googleapis.com/write_calls        unit: \&quot;1/min/{project}\&quot;  # rate limit for consumer projects        values:          STANDARD: 10000        # The metric rules bind all methods to the read_calls metric,      # except for the UpdateBook and DeleteBook methods. These two methods      # are mapped to the write_calls metric, with the UpdateBook method      # consuming at twice rate as the DeleteBook method.      metric_rules:      - selector: \&quot;*\&quot;        metric_costs:          library.googleapis.com/read_calls: 1      - selector: google.example.library.v1.LibraryService.UpdateBook        metric_costs:          library.googleapis.com/write_calls: 2      - selector: google.example.library.v1.LibraryService.DeleteBook        metric_costs:          library.googleapis.com/write_calls: 1   Corresponding Metric definition:       metrics:      - name: library.googleapis.com/read_calls        display_name: Read requests        metric_kind: DELTA        value_type: INT64       - name: library.googleapis.com/write_calls        display_name: Write requests        metric_kind: DELTA        value_type: INT64
+
+  ## Attributes
+
+  - limits (List[QuotaLimit]): List of &#x60;QuotaLimit&#x60; definitions for the service. Defaults to: `null`.
+  - metricRules (List[MetricRule]): List of &#x60;MetricRule&#x60; definitions, each one mapping a selected method to one or more metrics. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"limits",
     :"metricRules"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.Quota do
     value
     |> deserialize(:"limits", :list, GoogleApi.ServiceManagement.V1.Model.QuotaLimit, options)
     |> deserialize(:"metricRules", :list, GoogleApi.ServiceManagement.V1.Model.MetricRule, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.Quota do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

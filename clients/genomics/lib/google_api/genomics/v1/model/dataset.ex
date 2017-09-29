@@ -20,9 +20,15 @@
 defmodule GoogleApi.Genomics.V1.Model.Dataset do
   @moduledoc """
   A Dataset is a collection of genomic data.  For more genomics resource definitions, see [Fundamentals of Google Genomics](https://cloud.google.com/genomics/fundamentals-of-google-genomics)
+
+  ## Attributes
+
+  - createTime (String): The time this dataset was created, in seconds from the epoch. Defaults to: `null`.
+  - id (String): The server-generated dataset ID, unique across all datasets. Defaults to: `null`.
+  - name (String): The dataset name. Defaults to: `null`.
+  - projectId (String): The Google Cloud project ID that this dataset belongs to. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"createTime",
     :"id",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.Dataset do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.Dataset do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

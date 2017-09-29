@@ -20,9 +20,15 @@
 defmodule GoogleApi.ServiceControl.V1.Model.QuotaError do
   @moduledoc """
   
+
+  ## Attributes
+
+  - code (String): Error code. Defaults to: `null`.
+    - Enum - one of [UNSPECIFIED, RESOURCE_EXHAUSTED, OUT_OF_RANGE, BILLING_NOT_ACTIVE, PROJECT_DELETED, API_KEY_INVALID, API_KEY_EXPIRED, SPATULA_HEADER_INVALID, LOAS_ROLE_INVALID, NO_LOAS_PROJECT, PROJECT_STATUS_UNAVAILABLE, SERVICE_STATUS_UNAVAILABLE, BILLING_STATUS_UNAVAILABLE, QUOTA_SYSTEM_UNAVAILABLE]
+  - description (String): Free-form text that provides details on the cause of the error. Defaults to: `null`.
+  - subject (String): Subject to whom this error applies. See the specific enum for more details on this field. For example, \&quot;clientip:&lt;ip address of client&gt;\&quot; or \&quot;project:&lt;Google developer project id&gt;\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"code",
     :"description",
@@ -33,6 +39,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.QuotaError do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.QuotaError do
+  def encode(value, options) do
+    GoogleApi.ServiceControl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

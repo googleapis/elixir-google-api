@@ -20,9 +20,16 @@
 defmodule GoogleApi.Sheets.V4.Model.DimensionRange do
   @moduledoc """
   A range along a single dimension on a sheet. All indexes are zero-based. Indexes are half open: the start index is inclusive and the end index is exclusive. Missing indexes indicate the range is unbounded on that side.
+
+  ## Attributes
+
+  - dimension (String): The dimension of the span. Defaults to: `null`.
+    - Enum - one of [DIMENSION_UNSPECIFIED, ROWS, COLUMNS]
+  - endIndex (Integer): The end (exclusive) of the span, or not set if unbounded. Defaults to: `null`.
+  - sheetId (Integer): The sheet this span is on. Defaults to: `null`.
+  - startIndex (Integer): The start (inclusive) of the span, or not set if unbounded. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dimension",
     :"endIndex",
@@ -34,6 +41,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DimensionRange do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.DimensionRange do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

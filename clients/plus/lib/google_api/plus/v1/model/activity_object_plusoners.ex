@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Plus.V1.Model.Activity_object_plusoners do
+defmodule GoogleApi.Plus.V1.Model.ActivityObjectPlusoners do
   @moduledoc """
   People who +1&#39;d this activity.
+
+  ## Attributes
+
+  - selfLink (String): The URL for the collection of people who +1&#39;d this activity. Defaults to: `null`.
+  - totalItems (Integer): Total number of people who +1&#39;d this activity. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"selfLink",
     :"totalItems"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Activity_object_plusoners do
+defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.ActivityObjectPlusoners do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.ActivityObjectPlusoners do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

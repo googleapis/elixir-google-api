@@ -20,9 +20,20 @@
 defmodule GoogleApi.Genomics.V1.Model.OperationMetadata do
   @moduledoc """
   Metadata describing an Operation.
+
+  ## Attributes
+
+  - clientId (String): This field is deprecated. Use &#x60;labels&#x60; instead. Optionally provided by the caller when submitting the request that creates the operation. Defaults to: `null`.
+  - createTime (String): The time at which the job was submitted to the Genomics service. Defaults to: `null`.
+  - endTime (String): The time at which the job stopped running. Defaults to: `null`.
+  - events (List[OperationEvent]): Optional event messages that were generated during the job&#39;s execution. This also contains any warnings that were generated during import or export. Defaults to: `null`.
+  - labels (Map[String, String]): Optionally provided by the caller when submitting the request that creates the operation. Defaults to: `null`.
+  - projectId (String): The Google Cloud Project in which the job is scoped. Defaults to: `null`.
+  - request (Object): The original request that started the operation. Note that this will be in current version of the API. If the operation was started with v1beta2 API and a GetOperation is performed on v1 API, a v1 request will be returned. Defaults to: `null`.
+  - runtimeMetadata (Object): Runtime metadata on this Operation. Defaults to: `null`.
+  - startTime (String): The time at which the job began to run. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"clientId",
     :"createTime",
@@ -43,6 +54,12 @@ defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.OperationMetadata do
     |> deserialize(:"events", :list, GoogleApi.Genomics.V1.Model.OperationEvent, options)
     |> deserialize(:"request", :struct, GoogleApi.Genomics.V1.Model.Object, options)
     |> deserialize(:"runtimeMetadata", :struct, GoogleApi.Genomics.V1.Model.Object, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.OperationMetadata do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

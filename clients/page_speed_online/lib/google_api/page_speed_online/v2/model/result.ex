@@ -20,9 +20,21 @@
 defmodule GoogleApi.PageSpeedOnline.V2.Model.Result do
   @moduledoc """
   
+
+  ## Attributes
+
+  - formattedResults (ResultFormattedResults):  Defaults to: `null`.
+  - id (String): Canonicalized and final URL for the document, after following page redirects (if any). Defaults to: `null`.
+  - invalidRules (List[String]): List of rules that were specified in the request, but which the server did not know how to instantiate. Defaults to: `null`.
+  - kind (String): Kind of result. Defaults to: `null`.
+  - pageStats (ResultPageStats):  Defaults to: `null`.
+  - responseCode (Integer): Response code for the document. 200 indicates a normal page load. 4xx/5xx indicates an error. Defaults to: `null`.
+  - ruleGroups (Map[String, ResultRuleGroups]): A map with one entry for each rule group in these results. Defaults to: `null`.
+  - screenshot (PagespeedApiImageV2): Base64-encoded screenshot of the page that was analyzed. Defaults to: `null`.
+  - title (String): Title of the page, as displayed in the browser&#39;s title bar. Defaults to: `null`.
+  - version (ResultVersion):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"formattedResults",
     :"id",
@@ -41,11 +53,17 @@ defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.Result do
   import GoogleApi.PageSpeedOnline.V2.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"formattedResults", :struct, GoogleApi.PageSpeedOnline.V2.Model.Result_formattedResults, options)
-    |> deserialize(:"pageStats", :struct, GoogleApi.PageSpeedOnline.V2.Model.Result_pageStats, options)
-    |> deserialize(:"ruleGroups", :map, GoogleApi.PageSpeedOnline.V2.Model.Result_ruleGroups, options)
+    |> deserialize(:"formattedResults", :struct, GoogleApi.PageSpeedOnline.V2.Model.ResultFormattedResults, options)
+    |> deserialize(:"pageStats", :struct, GoogleApi.PageSpeedOnline.V2.Model.ResultPageStats, options)
+    |> deserialize(:"ruleGroups", :map, GoogleApi.PageSpeedOnline.V2.Model.ResultRuleGroups, options)
     |> deserialize(:"screenshot", :struct, GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiImageV2, options)
-    |> deserialize(:"version", :struct, GoogleApi.PageSpeedOnline.V2.Model.Result_version, options)
+    |> deserialize(:"version", :struct, GoogleApi.PageSpeedOnline.V2.Model.ResultVersion, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.PageSpeedOnline.V2.Model.Result do
+  def encode(value, options) do
+    GoogleApi.PageSpeedOnline.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

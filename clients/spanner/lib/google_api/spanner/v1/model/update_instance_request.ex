@@ -20,9 +20,13 @@
 defmodule GoogleApi.Spanner.V1.Model.UpdateInstanceRequest do
   @moduledoc """
   The request for UpdateInstance.
+
+  ## Attributes
+
+  - fieldMask (String): Required. A mask specifying which fields in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should be updated. The field mask must always be specified; this prevents any future fields in [][google.spanner.admin.instance.v1.Instance] from being erased accidentally by clients that do not know about them. Defaults to: `null`.
+  - instance (Instance): Required. The instance to update, which must always include the instance name.  Otherwise, only fields mentioned in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need be included. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fieldMask",
     :"instance"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.UpdateInstanceRequest do
   def decode(value, options) do
     value
     |> deserialize(:"instance", :struct, GoogleApi.Spanner.V1.Model.Instance, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.UpdateInstanceRequest do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.Monitoring.V3.Model.ListMetricDescriptorsResponse do
   @moduledoc """
   The ListMetricDescriptors response.
+
+  ## Attributes
+
+  - metricDescriptors (List[MetricDescriptor]): The metric descriptors that are available to the project and that match the value of filter, if present. Defaults to: `null`.
+  - nextPageToken (String): If there are more results than have been returned, then this field is set to a non-empty value. To see the additional results, use that value as pageToken in the next call to this method. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"metricDescriptors",
     :"nextPageToken"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.ListMetricDescriptors
   def decode(value, options) do
     value
     |> deserialize(:"metricDescriptors", :list, GoogleApi.Monitoring.V3.Model.MetricDescriptor, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Monitoring.V3.Model.ListMetricDescriptorsResponse do
+  def encode(value, options) do
+    GoogleApi.Monitoring.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

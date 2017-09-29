@@ -20,9 +20,14 @@
 defmodule GoogleApi.Games.V1.Model.TurnBasedMatchModification do
   @moduledoc """
   This is a JSON template for turn-based match modification metadata.
+
+  ## Attributes
+
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#turnBasedMatchModification. Defaults to: `null`.
+  - modifiedTimestampMillis (String): The timestamp at which they modified the match, in milliseconds since the epoch in UTC. Defaults to: `null`.
+  - participantId (String): The ID of the participant that modified the match. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"modifiedTimestampMillis",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.TurnBasedMatchModification do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.TurnBasedMatchModification do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

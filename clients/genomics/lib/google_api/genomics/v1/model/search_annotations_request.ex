@@ -20,9 +20,18 @@
 defmodule GoogleApi.Genomics.V1.Model.SearchAnnotationsRequest do
   @moduledoc """
   
+
+  ## Attributes
+
+  - annotationSetIds (List[String]): Required. The annotation sets to search within. The caller must have &#x60;READ&#x60; access to these annotation sets. All queried annotation sets must have the same type. Defaults to: `null`.
+  - end (String): The end position of the range on the reference, 0-based exclusive. If referenceId or referenceName must be specified, Defaults to the length of the reference. Defaults to: `null`.
+  - pageSize (Integer): The maximum number of results to return in a single page. If unspecified, defaults to 256. The maximum value is 2048. Defaults to: `null`.
+  - pageToken (String): The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of &#x60;nextPageToken&#x60; from the previous response. Defaults to: `null`.
+  - referenceId (String): The ID of the reference to query. Defaults to: `null`.
+  - referenceName (String): The name of the reference to query, within the reference set associated with this query. Defaults to: `null`.
+  - start (String): The start position of the range on the reference, 0-based inclusive. If specified, referenceId or referenceName must be specified. Defaults to 0. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"annotationSetIds",
     :"end",
@@ -37,6 +46,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.SearchAnnotationsRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.SearchAnnotationsRequest do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,17 @@
 defmodule GoogleApi.UrlShortener.V1.Model.AnalyticsSnapshot do
   @moduledoc """
   
+
+  ## Attributes
+
+  - browsers (List[StringCount]): Top browsers, e.g. \&quot;Chrome\&quot;; sorted by (descending) click counts. Only present if this data is available. Defaults to: `null`.
+  - countries (List[StringCount]): Top countries (expressed as country codes), e.g. \&quot;US\&quot; or \&quot;DE\&quot;; sorted by (descending) click counts. Only present if this data is available. Defaults to: `null`.
+  - longUrlClicks (String): Number of clicks on all goo.gl short URLs pointing to this long URL. Defaults to: `null`.
+  - platforms (List[StringCount]): Top platforms or OSes, e.g. \&quot;Windows\&quot;; sorted by (descending) click counts. Only present if this data is available. Defaults to: `null`.
+  - referrers (List[StringCount]): Top referring hosts, e.g. \&quot;www.google.com\&quot;; sorted by (descending) click counts. Only present if this data is available. Defaults to: `null`.
+  - shortUrlClicks (String): Number of clicks on this short URL. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"browsers",
     :"countries",
@@ -41,6 +49,12 @@ defimpl Poison.Decoder, for: GoogleApi.UrlShortener.V1.Model.AnalyticsSnapshot d
     |> deserialize(:"countries", :list, GoogleApi.UrlShortener.V1.Model.StringCount, options)
     |> deserialize(:"platforms", :list, GoogleApi.UrlShortener.V1.Model.StringCount, options)
     |> deserialize(:"referrers", :list, GoogleApi.UrlShortener.V1.Model.StringCount, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.UrlShortener.V1.Model.AnalyticsSnapshot do
+  def encode(value, options) do
+    GoogleApi.UrlShortener.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

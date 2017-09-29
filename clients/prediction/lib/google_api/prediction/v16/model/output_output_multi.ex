@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Prediction.V16.Model.Output_outputMulti do
+defmodule GoogleApi.Prediction.V16.Model.OutputOutputMulti do
   @moduledoc """
   
+
+  ## Attributes
+
+  - label (String): The class label. Defaults to: `null`.
+  - score (String): The probability of the class label. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"label",
     :"score"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.Output_outputMulti do
+defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.OutputOutputMulti do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Prediction.V16.Model.OutputOutputMulti do
+  def encode(value, options) do
+    GoogleApi.Prediction.V16.Deserializer.serialize_non_nil(value, options)
   end
 end
 

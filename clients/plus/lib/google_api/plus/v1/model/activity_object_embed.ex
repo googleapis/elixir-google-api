@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Plus.V1.Model.Activity_object_embed do
+defmodule GoogleApi.Plus.V1.Model.ActivityObjectEmbed do
   @moduledoc """
   If the attachment is a video, the embeddable link.
+
+  ## Attributes
+
+  - type (String): Media type of the link. Defaults to: `null`.
+  - url (String): URL of the link. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"type",
     :"url"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Activity_object_embed do
+defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.ActivityObjectEmbed do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.ActivityObjectEmbed do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

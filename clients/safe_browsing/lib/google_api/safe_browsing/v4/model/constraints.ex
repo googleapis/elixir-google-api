@@ -20,9 +20,16 @@
 defmodule GoogleApi.SafeBrowsing.V4.Model.Constraints do
   @moduledoc """
   The constraints for this update.
+
+  ## Attributes
+
+  - maxDatabaseEntries (Integer): Sets the maximum number of entries that the client is willing to have in the local database. This should be a power of 2 between 2**10 and 2**20. If zero, no database size limit is set. Defaults to: `null`.
+  - maxUpdateEntries (Integer): The maximum size in number of entries. The update will not contain more entries than this value.  This should be a power of 2 between 2**10 and 2**20.  If zero, no update size limit is set. Defaults to: `null`.
+  - region (String): Requests the list for a specific geographic location. If not set the server may pick that value based on the user&#39;s IP address. Expects ISO 3166-1 alpha-2 format. Defaults to: `null`.
+  - supportedCompressions (List[String]): The compression types supported by the client. Defaults to: `null`.
+    - Enum - one of 
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"maxDatabaseEntries",
     :"maxUpdateEntries",
@@ -34,6 +41,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.Constraints do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SafeBrowsing.V4.Model.Constraints do
+  def encode(value, options) do
+    GoogleApi.SafeBrowsing.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

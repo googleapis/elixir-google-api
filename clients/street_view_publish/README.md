@@ -1,6 +1,6 @@
 # GoogleApi.StreetViewPublish.V1
 
-**TODO: Add description**
+Publishes 360 photos to Google Maps, along with position, orientation, and connectivity metadata. Apps can offer an interface for positioning, connecting, and uploading user-generated Street View images. 
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_street_view_publish` to your list of dependencies in `mix.
 
 ```elixir
 def deps do
-  [{:google_api_street_view_publish, "~> 0.1.0"}]
+  [{:google_api_street_view_publish, "~> 0.0.1"}]
 end
 ```
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.Games.V1.Model.Category do
   @moduledoc """
   This is a JSON template for data related to individual game categories.
+
+  ## Attributes
+
+  - category (String): The category name. Defaults to: `null`.
+  - experiencePoints (String): Experience points earned in this category. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#category. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"category",
     :"experiencePoints",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.Category do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.Category do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

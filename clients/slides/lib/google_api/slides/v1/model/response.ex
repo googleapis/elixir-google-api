@@ -20,9 +20,22 @@
 defmodule GoogleApi.Slides.V1.Model.Response do
   @moduledoc """
   A single response from an update.
+
+  ## Attributes
+
+  - createImage (CreateImageResponse): The result of creating an image. Defaults to: `null`.
+  - createLine (CreateLineResponse): The result of creating a line. Defaults to: `null`.
+  - createShape (CreateShapeResponse): The result of creating a shape. Defaults to: `null`.
+  - createSheetsChart (CreateSheetsChartResponse): The result of creating a Google Sheets chart. Defaults to: `null`.
+  - createSlide (CreateSlideResponse): The result of creating a slide. Defaults to: `null`.
+  - createTable (CreateTableResponse): The result of creating a table. Defaults to: `null`.
+  - createVideo (CreateVideoResponse): The result of creating a video. Defaults to: `null`.
+  - duplicateObject (DuplicateObjectResponse): The result of duplicating an object. Defaults to: `null`.
+  - replaceAllShapesWithImage (ReplaceAllShapesWithImageResponse): The result of replacing all shapes matching some criteria with an image. Defaults to: `null`.
+  - replaceAllShapesWithSheetsChart (ReplaceAllShapesWithSheetsChartResponse): The result of replacing all shapes matching some criteria with a Google Sheets chart. Defaults to: `null`.
+  - replaceAllText (ReplaceAllTextResponse): The result of replacing text. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"createImage",
     :"createLine",
@@ -53,6 +66,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.Response do
     |> deserialize(:"replaceAllShapesWithImage", :struct, GoogleApi.Slides.V1.Model.ReplaceAllShapesWithImageResponse, options)
     |> deserialize(:"replaceAllShapesWithSheetsChart", :struct, GoogleApi.Slides.V1.Model.ReplaceAllShapesWithSheetsChartResponse, options)
     |> deserialize(:"replaceAllText", :struct, GoogleApi.Slides.V1.Model.ReplaceAllTextResponse, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.Response do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

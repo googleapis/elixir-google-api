@@ -20,9 +20,16 @@
 defmodule GoogleApi.Monitoring.V3.Model.Group do
   @moduledoc """
   The description of a dynamic collection of monitored resources. Each group has a filter that is matched against monitored resources and their associated metadata. If a group&#39;s filter matches an available monitored resource, then that resource is a member of that group. Groups can contain any number of monitored resources, and each monitored resource can be a member of any number of groups.Groups can be nested in parent-child hierarchies. The parentName field identifies an optional parent for each group. If a group has a parent, then the only monitored resources available to be matched by the group&#39;s filter are the resources contained in the parent group. In other words, a group contains the monitored resources that match its filter and the filters of all the group&#39;s ancestors. A group without a parent can contain any monitored resource.For example, consider an infrastructure running a set of instances with two user-defined tags: \&quot;environment\&quot; and \&quot;role\&quot;. A parent group has a filter, environment&#x3D;\&quot;production\&quot;. A child of that parent group has a filter, role&#x3D;\&quot;transcoder\&quot;. The parent group contains all instances in the production environment, regardless of their roles. The child group contains instances that have the transcoder role and are in the production environment.The monitored resources contained in a group can change at any moment, depending on what resources exist and what filters are associated with the group and its ancestors.
+
+  ## Attributes
+
+  - displayName (String): A user-assigned name for this group, used only for display purposes. Defaults to: `null`.
+  - filter (String): The filter used to determine which monitored resources belong to this group. Defaults to: `null`.
+  - isCluster (Boolean): If true, the members of this group are considered to be a cluster. The system can perform additional analysis on groups that are clusters. Defaults to: `null`.
+  - name (String): Output only. The name of this group. The format is \&quot;projects/{project_id_or_number}/groups/{group_id}\&quot;. When creating a group, this field is ignored and a new name is created consisting of the project specified in the call to CreateGroup and a unique {group_id} that is generated automatically. Defaults to: `null`.
+  - parentName (String): The name of the group&#39;s parent, if it has one. The format is \&quot;projects/{project_id_or_number}/groups/{group_id}\&quot;. For groups with no parent, parentName is the empty string, \&quot;\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"displayName",
     :"filter",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.Group do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Monitoring.V3.Model.Group do
+  def encode(value, options) do
+    GoogleApi.Monitoring.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

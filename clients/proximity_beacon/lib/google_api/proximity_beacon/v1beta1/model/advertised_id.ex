@@ -20,9 +20,14 @@
 defmodule GoogleApi.ProximityBeacon.V1beta1.Model.AdvertisedId do
   @moduledoc """
   Defines a unique identifier of a beacon as broadcast by the device.
+
+  ## Attributes
+
+  - id (String): The actual beacon identifier, as broadcast by the beacon hardware. Must be [base64](http://tools.ietf.org/html/rfc4648#section-4) encoded in HTTP requests, and will be so encoded (with padding) in responses. The base64 encoding should be of the binary byte-stream and not any textual (such as hex) representation thereof. Required. Defaults to: `null`.
+  - type (String): Specifies the identifier type. Required. Defaults to: `null`.
+    - Enum - one of [TYPE_UNSPECIFIED, EDDYSTONE, IBEACON, ALTBEACON, EDDYSTONE_EID]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"type"
@@ -32,6 +37,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.AdvertisedId do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.AdvertisedId do
+  def encode(value, options) do
+    GoogleApi.ProximityBeacon.V1beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

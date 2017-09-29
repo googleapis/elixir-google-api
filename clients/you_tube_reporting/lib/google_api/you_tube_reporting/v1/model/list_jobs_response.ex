@@ -20,9 +20,13 @@
 defmodule GoogleApi.YouTubeReporting.V1.Model.ListJobsResponse do
   @moduledoc """
   Response message for ReportingService.ListJobs.
+
+  ## Attributes
+
+  - jobs (List[Job]): The list of jobs. Defaults to: `null`.
+  - nextPageToken (String): A token to retrieve next page of results. Pass this value in the ListJobsRequest.page_token field in the subsequent call to &#x60;ListJobs&#x60; method to retrieve the next page of results. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"jobs",
     :"nextPageToken"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTubeReporting.V1.Model.ListJobsRespons
   def decode(value, options) do
     value
     |> deserialize(:"jobs", :list, GoogleApi.YouTubeReporting.V1.Model.Job, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTubeReporting.V1.Model.ListJobsResponse do
+  def encode(value, options) do
+    GoogleApi.YouTubeReporting.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

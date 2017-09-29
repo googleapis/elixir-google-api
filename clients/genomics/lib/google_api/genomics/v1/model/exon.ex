@@ -20,9 +20,14 @@
 defmodule GoogleApi.Genomics.V1.Model.Exon do
   @moduledoc """
   
+
+  ## Attributes
+
+  - end (String): The end position of the exon on this annotation&#39;s reference sequence, 0-based exclusive. Note that this is relative to the reference start, and *not* the containing annotation start. Defaults to: `null`.
+  - frame (Integer): The frame of this exon. Contains a value of 0, 1, or 2, which indicates the offset of the first coding base of the exon within the reading frame of the coding DNA sequence, if any. This field is dependent on the strandedness of this annotation (see Annotation.reverse_strand). For forward stranded annotations, this offset is relative to the exon.start. For reverse strand annotations, this offset is relative to the exon.end &#x60;- 1&#x60;.  Unset if this exon does not intersect the coding sequence. Upon creation of a transcript, the frame must be populated for all or none of the coding exons. Defaults to: `null`.
+  - start (String): The start position of the exon on this annotation&#39;s reference sequence, 0-based inclusive. Note that this is relative to the reference start, and **not** the containing annotation start. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"end",
     :"frame",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.Exon do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.Exon do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

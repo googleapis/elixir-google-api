@@ -20,9 +20,15 @@
 defmodule GoogleApi.Slides.V1.Model.InsertTableColumnsRequest do
   @moduledoc """
   Inserts columns into a table.  Other columns in the table will be resized to fit the new column.
+
+  ## Attributes
+
+  - cellLocation (TableCellLocation): The reference table cell location from which columns will be inserted.  A new column will be inserted to the left (or right) of the column where the reference cell is. If the reference cell is a merged cell, a new column will be inserted to the left (or right) of the merged cell. Defaults to: `null`.
+  - insertRight (Boolean): Whether to insert new columns to the right of the reference cell location.  - &#x60;True&#x60;: insert to the right. - &#x60;False&#x60;: insert to the left. Defaults to: `null`.
+  - number (Integer): The number of columns to be inserted. Maximum 20 per request. Defaults to: `null`.
+  - tableObjectId (String): The table to insert columns into. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cellLocation",
     :"insertRight",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.InsertTableColumnsRequest
   def decode(value, options) do
     value
     |> deserialize(:"cellLocation", :struct, GoogleApi.Slides.V1.Model.TableCellLocation, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.InsertTableColumnsRequest do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

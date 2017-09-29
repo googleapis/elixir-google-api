@@ -20,9 +20,15 @@
 defmodule GoogleApi.Tasks.V1.Model.Tasks do
   @moduledoc """
   
+
+  ## Attributes
+
+  - etag (String): ETag of the resource. Defaults to: `null`.
+  - items (List[Task]): Collection of tasks. Defaults to: `null`.
+  - kind (String): Type of the resource. This is always \&quot;tasks#tasks\&quot;. Defaults to: `null`.
+  - nextPageToken (String): Token used to access the next page of this result. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"items",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Tasks.V1.Model.Tasks do
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.Tasks.V1.Model.Task, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Tasks.V1.Model.Tasks do
+  def encode(value, options) do
+    GoogleApi.Tasks.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

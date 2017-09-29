@@ -20,9 +20,25 @@
 defmodule GoogleApi.DoubleClickSearch.V2.Model.ReportRequest do
   @moduledoc """
   A request object used to create a DoubleClick Search report.
+
+  ## Attributes
+
+  - columns (List[ReportApiColumnSpec]): The columns to include in the report. This includes both DoubleClick Search columns and saved columns. For DoubleClick Search columns, only the columnName parameter is required. For saved columns only the savedColumnName parameter is required. Both columnName and savedColumnName cannot be set in the same stanza. Defaults to: `null`.
+  - downloadFormat (String): Format that the report should be returned in. Currently csv or tsv is supported. Defaults to: `null`.
+  - filters (List[ReportRequestFilters]): A list of filters to be applied to the report. Defaults to: `null`.
+  - includeDeletedEntities (Boolean): Determines if removed entities should be included in the report. Defaults to false. Deprecated, please use includeRemovedEntities instead. Defaults to: `null`.
+  - includeRemovedEntities (Boolean): Determines if removed entities should be included in the report. Defaults to false. Defaults to: `null`.
+  - maxRowsPerFile (Integer): Asynchronous report only. The maximum number of rows per report file. A large report is split into many files based on this field. Acceptable values are 1000000 to 100000000, inclusive. Defaults to: `null`.
+  - orderBy (List[ReportRequestOrderBy]): Synchronous report only. A list of columns and directions defining sorting to be performed on the report rows. Defaults to: `null`.
+  - reportScope (ReportRequestReportScope):  Defaults to: `null`.
+  - reportType (String): Determines the type of rows that are returned in the report. For example, if you specify reportType: keyword, each row in the report will contain data about a keyword. See the Types of Reports reference for the columns that are available for each type. Defaults to: `null`.
+  - rowCount (Integer): Synchronous report only. The maxinum number of rows to return; additional rows are dropped. Acceptable values are 0 to 10000, inclusive. Defaults to 10000. Defaults to: `10000`.
+  - startRow (Integer): Synchronous report only. Zero-based index of the first row to return. Acceptable values are 0 to 50000, inclusive. Defaults to 0. Defaults to: `0`.
+  - statisticsCurrency (String): Specifies the currency in which monetary will be returned. Possible values are: usd, agency (valid if the report is scoped to agency or lower), advertiser (valid if the report is scoped to * advertiser or lower), or account (valid if the report is scoped to engine account or lower). Defaults to: `null`.
+  - timeRange (ReportRequestTimeRange):  Defaults to: `null`.
+  - verifySingleTimeZone (Boolean): If true, the report would only be created if all the requested stat data are sourced from a single timezone. Defaults to false. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"columns",
     :"downloadFormat",
@@ -46,10 +62,16 @@ defimpl Poison.Decoder, for: GoogleApi.DoubleClickSearch.V2.Model.ReportRequest 
   def decode(value, options) do
     value
     |> deserialize(:"columns", :list, GoogleApi.DoubleClickSearch.V2.Model.ReportApiColumnSpec, options)
-    |> deserialize(:"filters", :list, GoogleApi.DoubleClickSearch.V2.Model.ReportRequest_filters, options)
-    |> deserialize(:"orderBy", :list, GoogleApi.DoubleClickSearch.V2.Model.ReportRequest_orderBy, options)
-    |> deserialize(:"reportScope", :struct, GoogleApi.DoubleClickSearch.V2.Model.ReportRequest_reportScope, options)
-    |> deserialize(:"timeRange", :struct, GoogleApi.DoubleClickSearch.V2.Model.ReportRequest_timeRange, options)
+    |> deserialize(:"filters", :list, GoogleApi.DoubleClickSearch.V2.Model.ReportRequestFilters, options)
+    |> deserialize(:"orderBy", :list, GoogleApi.DoubleClickSearch.V2.Model.ReportRequestOrderBy, options)
+    |> deserialize(:"reportScope", :struct, GoogleApi.DoubleClickSearch.V2.Model.ReportRequestReportScope, options)
+    |> deserialize(:"timeRange", :struct, GoogleApi.DoubleClickSearch.V2.Model.ReportRequestTimeRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickSearch.V2.Model.ReportRequest do
+  def encode(value, options) do
+    GoogleApi.DoubleClickSearch.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

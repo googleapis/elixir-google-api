@@ -1,6 +1,6 @@
-# GoogleApi.ToolResults.V1BETA3
+# GoogleApi.ToolResults.V1beta3
 
-**TODO: Add description**
+Reads and publishes results from Firebase Test Lab.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_tool_results` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_tool_results, "~> 0.1.0"}]
+  [{:google_api_tool_results, "~> 0.0.1"}]
 end
 ```
 

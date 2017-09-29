@@ -20,9 +20,13 @@
 defmodule GoogleApi.Spectrum.V1explorer.Model.SpectrumSchedule do
   @moduledoc """
   The spectrum schedule element combines an event time with spectrum profile to define a time period in which the profile is valid.
+
+  ## Attributes
+
+  - eventTime (EventTime): The event time expresses when the spectrum profile is valid. It will always be present. Defaults to: `null`.
+  - spectra (List[SpectrumMessage]): A list of spectrum messages representing the usable profile. It will always be present, but may be empty when there is no available spectrum. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"eventTime",
     :"spectra"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spectrum.V1explorer.Model.SpectrumSchedul
     value
     |> deserialize(:"eventTime", :struct, GoogleApi.Spectrum.V1explorer.Model.EventTime, options)
     |> deserialize(:"spectra", :list, GoogleApi.Spectrum.V1explorer.Model.SpectrumMessage, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spectrum.V1explorer.Model.SpectrumSchedule do
+  def encode(value, options) do
+    GoogleApi.Spectrum.V1explorer.Deserializer.serialize_non_nil(value, options)
   end
 end
 

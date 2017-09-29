@@ -20,9 +20,14 @@
 defmodule GoogleApi.Monitoring.V3.Model.ListGroupMembersResponse do
   @moduledoc """
   The ListGroupMembers response.
+
+  ## Attributes
+
+  - members (List[MonitoredResource]): A set of monitored resources in the group. Defaults to: `null`.
+  - nextPageToken (String): If there are more results than have been returned, then this field is set to a non-empty value. To see the additional results, use that value as pageToken in the next call to this method. Defaults to: `null`.
+  - totalSize (Integer): The total number of elements matching this request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"members",
     :"nextPageToken",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.ListGroupMembersRespo
   def decode(value, options) do
     value
     |> deserialize(:"members", :list, GoogleApi.Monitoring.V3.Model.MonitoredResource, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Monitoring.V3.Model.ListGroupMembersResponse do
+  def encode(value, options) do
+    GoogleApi.Monitoring.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

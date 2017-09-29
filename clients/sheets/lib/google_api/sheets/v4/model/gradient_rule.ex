@@ -20,9 +20,14 @@
 defmodule GoogleApi.Sheets.V4.Model.GradientRule do
   @moduledoc """
   A rule that applies a gradient color scale format, based on the interpolation points listed. The format of a cell will vary based on its contents as compared to the values of the interpolation points.
+
+  ## Attributes
+
+  - maxpoint (InterpolationPoint): The final interpolation point. Defaults to: `null`.
+  - midpoint (InterpolationPoint): An optional midway interpolation point. Defaults to: `null`.
+  - minpoint (InterpolationPoint): The starting interpolation point. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"maxpoint",
     :"midpoint",
@@ -37,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.GradientRule do
     |> deserialize(:"maxpoint", :struct, GoogleApi.Sheets.V4.Model.InterpolationPoint, options)
     |> deserialize(:"midpoint", :struct, GoogleApi.Sheets.V4.Model.InterpolationPoint, options)
     |> deserialize(:"minpoint", :struct, GoogleApi.Sheets.V4.Model.InterpolationPoint, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.GradientRule do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

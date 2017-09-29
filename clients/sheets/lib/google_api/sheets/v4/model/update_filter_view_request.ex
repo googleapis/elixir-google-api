@@ -20,9 +20,13 @@
 defmodule GoogleApi.Sheets.V4.Model.UpdateFilterViewRequest do
   @moduledoc """
   Updates properties of the filter view.
+
+  ## Attributes
+
+  - fields (String): The fields that should be updated.  At least one field must be specified. The root &#x60;filter&#x60; is implied and should not be specified. A single &#x60;\&quot;*\&quot;&#x60; can be used as short-hand for listing every field. Defaults to: `null`.
+  - filter (FilterView): The new properties of the filter view. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fields",
     :"filter"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UpdateFilterViewRequest d
   def decode(value, options) do
     value
     |> deserialize(:"filter", :struct, GoogleApi.Sheets.V4.Model.FilterView, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UpdateFilterViewRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

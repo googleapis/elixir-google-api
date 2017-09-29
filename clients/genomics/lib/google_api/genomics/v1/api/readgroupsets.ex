@@ -84,7 +84,9 @@ defmodule GoogleApi.Genomics.V1.Api.Readgroupsets do
     }
     %{}
     |> method(:get)
-    |> url("/v1/readgroupsets/#{read_group_set_id}/coveragebuckets")
+    |> url("/v1/readgroupsets/{readGroupSetId}/coveragebuckets", %{
+         "readGroupSetId" => URI.encode_www_form(read_group_set_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -137,7 +139,9 @@ defmodule GoogleApi.Genomics.V1.Api.Readgroupsets do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/readgroupsets/#{read_group_set_id}")
+    |> url("/v1/readgroupsets/{readGroupSetId}", %{
+         "readGroupSetId" => URI.encode_www_form(read_group_set_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -192,7 +196,9 @@ defmodule GoogleApi.Genomics.V1.Api.Readgroupsets do
     }
     %{}
     |> method(:post)
-    |> url("/v1/readgroupsets/#{read_group_set_id}:export")
+    |> url("/v1/readgroupsets/{readGroupSetId}:export", %{
+         "readGroupSetId" => URI.encode_www_form(read_group_set_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -245,7 +251,9 @@ defmodule GoogleApi.Genomics.V1.Api.Readgroupsets do
     }
     %{}
     |> method(:get)
-    |> url("/v1/readgroupsets/#{read_group_set_id}")
+    |> url("/v1/readgroupsets/{readGroupSetId}", %{
+         "readGroupSetId" => URI.encode_www_form(read_group_set_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -356,7 +364,9 @@ defmodule GoogleApi.Genomics.V1.Api.Readgroupsets do
     }
     %{}
     |> method(:patch)
-    |> url("/v1/readgroupsets/#{read_group_set_id}")
+    |> url("/v1/readgroupsets/{readGroupSetId}", %{
+         "readGroupSetId" => URI.encode_www_form(read_group_set_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

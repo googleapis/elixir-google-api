@@ -20,9 +20,13 @@
 defmodule GoogleApi.Spanner.V1.Model.ListInstanceConfigsResponse do
   @moduledoc """
   The response for ListInstanceConfigs.
+
+  ## Attributes
+
+  - instanceConfigs (List[InstanceConfig]): The list of requested instance configurations. Defaults to: `null`.
+  - nextPageToken (String): &#x60;next_page_token&#x60; can be sent in a subsequent ListInstanceConfigs call to fetch more of the matching instance configurations. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"instanceConfigs",
     :"nextPageToken"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.ListInstanceConfigsRespo
   def decode(value, options) do
     value
     |> deserialize(:"instanceConfigs", :list, GoogleApi.Spanner.V1.Model.InstanceConfig, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.ListInstanceConfigsResponse do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

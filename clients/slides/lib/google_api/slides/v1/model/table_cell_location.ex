@@ -20,9 +20,13 @@
 defmodule GoogleApi.Slides.V1.Model.TableCellLocation do
   @moduledoc """
   A location of a single table cell within a table.
+
+  ## Attributes
+
+  - columnIndex (Integer): The 0-based column index. Defaults to: `null`.
+  - rowIndex (Integer): The 0-based row index. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"columnIndex",
     :"rowIndex"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.TableCellLocation do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.TableCellLocation do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

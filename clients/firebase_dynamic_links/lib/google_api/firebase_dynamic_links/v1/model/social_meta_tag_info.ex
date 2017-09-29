@@ -20,9 +20,14 @@
 defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.SocialMetaTagInfo do
   @moduledoc """
   Parameters for social meta tag params. Used to set meta tag data for link previews on social sites.
+
+  ## Attributes
+
+  - socialDescription (String): A short description of the link. Optional. Defaults to: `null`.
+  - socialImageLink (String): An image url string. Optional. Defaults to: `null`.
+  - socialTitle (String): Title to be displayed. Optional. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"socialDescription",
     :"socialImageLink",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.SocialMetaTagInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.SocialMetaTagInfo do
+  def encode(value, options) do
+    GoogleApi.FirebaseDynamicLinks.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

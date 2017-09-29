@@ -20,9 +20,16 @@
 defmodule GoogleApi.Spectrum.V1explorer.Model.Vcard do
   @moduledoc """
   A vCard-in-JSON message that contains only the fields needed for PAWS:   - fn: Full name of an individual  - org: Name of the organization  - adr: Address fields  - tel: Telephone numbers  - email: Email addresses
+
+  ## Attributes
+
+  - adr (VcardAddress): The street address of the entity. Defaults to: `null`.
+  - email (VcardTypedText): An email address that can be used to reach the contact. Defaults to: `null`.
+  - fn (String): The full name of the contact person. For example: John A. Smith. Defaults to: `null`.
+  - org (VcardTypedText): The organization associated with the registering entity. Defaults to: `null`.
+  - tel (VcardTelephone): A telephone number that can be used to call the contact. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"adr",
     :"email",
@@ -40,6 +47,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spectrum.V1explorer.Model.Vcard do
     |> deserialize(:"email", :struct, GoogleApi.Spectrum.V1explorer.Model.VcardTypedText, options)
     |> deserialize(:"org", :struct, GoogleApi.Spectrum.V1explorer.Model.VcardTypedText, options)
     |> deserialize(:"tel", :struct, GoogleApi.Spectrum.V1explorer.Model.VcardTelephone, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spectrum.V1explorer.Model.Vcard do
+  def encode(value, options) do
+    GoogleApi.Spectrum.V1explorer.Deserializer.serialize_non_nil(value, options)
   end
 end
 

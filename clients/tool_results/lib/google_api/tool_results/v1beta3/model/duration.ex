@@ -20,9 +20,13 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.Duration do
   @moduledoc """
   A Duration represents a signed, fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like \&quot;day\&quot; or \&quot;month\&quot;. It is related to Timestamp in that the difference between two Timestamp values is a Duration and it can be added or subtracted from a Timestamp. Range is approximately +-10,000 years.  # Examples  Example 1: Compute Duration from two Timestamps in pseudo code.  Timestamp start &#x3D; ...; Timestamp end &#x3D; ...; Duration duration &#x3D; ...;  duration.seconds &#x3D; end.seconds - start.seconds; duration.nanos &#x3D; end.nanos - start.nanos;  if (duration.seconds  0) { duration.seconds +&#x3D; 1; duration.nanos -&#x3D; 1000000000; } else if (durations.seconds &gt; 0 &amp;&amp; duration.nanos &lt; 0) { duration.seconds -&#x3D; 1; duration.nanos +&#x3D; 1000000000; }  Example 2: Compute Timestamp from Timestamp + Duration in pseudo code.  Timestamp start &#x3D; ...; Duration duration &#x3D; ...; Timestamp end &#x3D; ...;  end.seconds &#x3D; start.seconds + duration.seconds; end.nanos &#x3D; start.nanos + duration.nanos;  if (end.nanos &#x3D; 1000000000) { end.seconds +&#x3D; 1; end.nanos -&#x3D; 1000000000; }  Example 3: Compute Duration from datetime.timedelta in Python.  td &#x3D; datetime.timedelta(days&#x3D;3, minutes&#x3D;10) duration &#x3D; Duration() duration.FromTimedelta(td)  # JSON Mapping  In JSON format, the Duration type is encoded as a string rather than an object, where the string ends in the suffix \&quot;s\&quot; (indicating seconds) and is preceded by the number of seconds, with nanoseconds expressed as fractional seconds. For example, 3 seconds with 0 nanoseconds should be encoded in JSON format as \&quot;3s\&quot;, while 3 seconds and 1 nanosecond should be expressed in JSON format as \&quot;3.000000001s\&quot;, and 3 seconds and 1 microsecond should be expressed in JSON format as \&quot;3.000001s\&quot;.
+
+  ## Attributes
+
+  - nanos (Integer): Signed fractions of a second at nanosecond resolution of the span of time. Durations less than one second are represented with a 0 &#x60;seconds&#x60; field and a positive or negative &#x60;nanos&#x60; field. For durations of one second or more, a non-zero value for the &#x60;nanos&#x60; field must be of the same sign as the &#x60;seconds&#x60; field. Must be from -999,999,999 to +999,999,999 inclusive. Defaults to: `null`.
+  - seconds (String): Signed seconds of the span of time. Must be from -315,576,000,000 to +315,576,000,000 inclusive. Note: these bounds are computed from: 60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nanos",
     :"seconds"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.Duration do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.Duration do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

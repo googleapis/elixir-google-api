@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceUser.V1.Model.PublishedService do
   @moduledoc """
   The published version of a Service that is managed by Google Service Management.
+
+  ## Attributes
+
+  - name (String): The resource name of the service.  A valid name would be: - services/serviceuser.googleapis.com Defaults to: `null`.
+  - service (Service): The service&#39;s published configuration. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name",
     :"service"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceUser.V1.Model.PublishedService do
   def decode(value, options) do
     value
     |> deserialize(:"service", :struct, GoogleApi.ServiceUser.V1.Model.Service, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceUser.V1.Model.PublishedService do
+  def encode(value, options) do
+    GoogleApi.ServiceUser.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

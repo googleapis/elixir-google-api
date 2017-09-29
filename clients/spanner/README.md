@@ -1,6 +1,6 @@
 # GoogleApi.Spanner.V1
 
-**TODO: Add description**
+Cloud Spanner is a managed, mission-critical, globally consistent and scalable relational database service.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_spanner` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_spanner, "~> 0.1.0"}]
+  [{:google_api_spanner, "~> 0.0.1"}]
 end
 ```
 

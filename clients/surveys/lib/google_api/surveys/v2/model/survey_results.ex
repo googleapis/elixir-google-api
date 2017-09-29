@@ -20,9 +20,13 @@
 defmodule GoogleApi.Surveys.V2.Model.SurveyResults do
   @moduledoc """
   Reference to the current results for a given survey.
+
+  ## Attributes
+
+  - status (String): Human readable string describing the status of the request. Defaults to: `null`.
+  - surveyUrlId (String): External survey ID as viewable by survey owners in the editor view. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"status",
     :"surveyUrlId"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Surveys.V2.Model.SurveyResults do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Surveys.V2.Model.SurveyResults do
+  def encode(value, options) do
+    GoogleApi.Surveys.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.Spanner.V1.Model.QueryPlan do
   @moduledoc """
   Contains an ordered list of nodes appearing in the query plan.
+
+  ## Attributes
+
+  - planNodes (List[PlanNode]): The nodes in the query plan. Plan nodes are returned in pre-order starting with the plan root. Each PlanNode&#39;s &#x60;id&#x60; corresponds to its index in &#x60;plan_nodes&#x60;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"planNodes"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.QueryPlan do
   def decode(value, options) do
     value
     |> deserialize(:"planNodes", :list, GoogleApi.Spanner.V1.Model.PlanNode, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.QueryPlan do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

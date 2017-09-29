@@ -20,9 +20,18 @@
 defmodule GoogleApi.Genomics.V1.Model.VariantSet do
   @moduledoc """
   A variant set is a collection of call sets and variants. It contains summary statistics of those contents. A variant set belongs to a dataset.  For more genomics resource definitions, see [Fundamentals of Google Genomics](https://cloud.google.com/genomics/fundamentals-of-google-genomics)
+
+  ## Attributes
+
+  - datasetId (String): The dataset to which this variant set belongs. Defaults to: `null`.
+  - description (String): A textual description of this variant set. Defaults to: `null`.
+  - id (String): The server-generated variant set ID, unique across all variant sets. Defaults to: `null`.
+  - metadata (List[VariantSetMetadata]): The metadata associated with this variant set. Defaults to: `null`.
+  - name (String): User-specified, mutable name. Defaults to: `null`.
+  - referenceBounds (List[ReferenceBound]): A list of all references used by the variants in a variant set with associated coordinate upper bounds for each one. Defaults to: `null`.
+  - referenceSetId (String): The reference set to which the variant set is mapped. The reference set describes the alignment provenance of the variant set, while the &#x60;referenceBounds&#x60; describe the shape of the actual variant data. The reference set&#39;s reference names are a superset of those found in the &#x60;referenceBounds&#x60;.  For example, given a variant set that is mapped to the GRCh38 reference set and contains a single variant on reference &#39;X&#39;, &#x60;referenceBounds&#x60; would contain only an entry for &#39;X&#39;, while the associated reference set enumerates all possible references: &#39;1&#39;, &#39;2&#39;, &#39;X&#39;, &#39;Y&#39;, &#39;MT&#39;, etc. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"datasetId",
     :"description",
@@ -40,6 +49,12 @@ defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.VariantSet do
     value
     |> deserialize(:"metadata", :list, GoogleApi.Genomics.V1.Model.VariantSetMetadata, options)
     |> deserialize(:"referenceBounds", :list, GoogleApi.Genomics.V1.Model.ReferenceBound, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.VariantSet do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

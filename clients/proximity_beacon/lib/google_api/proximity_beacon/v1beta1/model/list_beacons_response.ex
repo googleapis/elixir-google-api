@@ -20,9 +20,14 @@
 defmodule GoogleApi.ProximityBeacon.V1beta1.Model.ListBeaconsResponse do
   @moduledoc """
   Response that contains list beacon results and pagination help.
+
+  ## Attributes
+
+  - beacons (List[Beacon]): The beacons that matched the search criteria. Defaults to: `null`.
+  - nextPageToken (String): An opaque pagination token that the client may provide in their next request to retrieve the next page of results. Defaults to: `null`.
+  - totalCount (String): Estimate of the total number of beacons matched by the query. Higher values may be less accurate. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"beacons",
     :"nextPageToken",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.ListBeacons
   def decode(value, options) do
     value
     |> deserialize(:"beacons", :list, GoogleApi.ProximityBeacon.V1beta1.Model.Beacon, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.ListBeaconsResponse do
+  def encode(value, options) do
+    GoogleApi.ProximityBeacon.V1beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,17 @@
 defmodule GoogleApi.Genomics.V1.Model.CallSet do
   @moduledoc """
   A call set is a collection of variant calls, typically for one sample. It belongs to a variant set.  For more genomics resource definitions, see [Fundamentals of Google Genomics](https://cloud.google.com/genomics/fundamentals-of-google-genomics)
+
+  ## Attributes
+
+  - info (Map[String, List[ErrorUnknown]]): A map of additional call set information. This must be of the form map&lt;string, string[]&gt; (string key mapping to a list of string values). Defaults to: `null`.
+  - created (String): The date this call set was created in milliseconds from the epoch. Defaults to: `null`.
+  - id (String): The server-generated call set ID, unique across all call sets. Defaults to: `null`.
+  - name (String): The call set name. Defaults to: `null`.
+  - sampleId (String): The sample ID this call set corresponds to. Defaults to: `null`.
+  - variantSetIds (List[String]): The IDs of the variant sets this call set belongs to. This field must have exactly length one, as a call set belongs to a single variant set. This field is repeated for compatibility with the [GA4GH 0.5.1 API](https://github.com/ga4gh/schemas/blob/v0.5.1/src/main/resources/avro/variants.avdl#L76). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"info",
     :"created",
@@ -36,6 +44,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.CallSet do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.CallSet do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

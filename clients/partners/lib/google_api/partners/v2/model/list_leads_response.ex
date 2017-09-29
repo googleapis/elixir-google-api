@@ -20,9 +20,15 @@
 defmodule GoogleApi.Partners.V2.Model.ListLeadsResponse do
   @moduledoc """
   Response message for ListLeads.
+
+  ## Attributes
+
+  - leads (List[Lead]): The list of leads. Defaults to: `null`.
+  - nextPageToken (String): A token to retrieve next page of results. Pass this value in the &#x60;ListLeadsRequest.page_token&#x60; field in the subsequent call to ListLeads to retrieve the next page of results. Defaults to: `null`.
+  - responseMetadata (ResponseMetadata): Current response metadata. Defaults to: `null`.
+  - totalSize (Integer): The total count of leads for the given company. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"leads",
     :"nextPageToken",
@@ -37,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.ListLeadsResponse do
     value
     |> deserialize(:"leads", :list, GoogleApi.Partners.V2.Model.Lead, options)
     |> deserialize(:"responseMetadata", :struct, GoogleApi.Partners.V2.Model.ResponseMetadata, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.ListLeadsResponse do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

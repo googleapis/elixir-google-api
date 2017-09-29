@@ -74,7 +74,9 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
     }
     %{}
     |> method(:post)
-    |> url("/v1/services/#{service_name}/configs")
+    |> url("/v1/services/{serviceName}/configs", %{
+         "serviceName" => URI.encode_www_form(service_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -130,7 +132,10 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
     }
     %{}
     |> method(:get)
-    |> url("/v1/services/#{service_name}/configs/#{config_id}")
+    |> url("/v1/services/{serviceName}/configs/{configId}", %{
+         "serviceName" => URI.encode_www_form(service_name),
+         "configId" => URI.encode_www_form(config_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -187,7 +192,9 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
     }
     %{}
     |> method(:get)
-    |> url("/v1/services/#{service_name}/configs")
+    |> url("/v1/services/{serviceName}/configs", %{
+         "serviceName" => URI.encode_www_form(service_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -242,7 +249,9 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
     }
     %{}
     |> method(:post)
-    |> url("/v1/services/#{service_name}/configs:submit")
+    |> url("/v1/services/{serviceName}/configs:submit", %{
+         "serviceName" => URI.encode_www_form(service_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -297,7 +306,9 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{resource}:getIamPolicy")
+    |> url("/v1/{+resource}:getIamPolicy", %{
+         "resource" => URI.encode_www_form(resource)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -352,7 +363,9 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{resource}:setIamPolicy")
+    |> url("/v1/{+resource}:setIamPolicy", %{
+         "resource" => URI.encode_www_form(resource)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -407,7 +420,9 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{resource}:testIamPermissions")
+    |> url("/v1/{+resource}:testIamPermissions", %{
+         "resource" => URI.encode_www_form(resource)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -514,7 +529,9 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/services/#{service_name}")
+    |> url("/v1/services/{serviceName}", %{
+         "serviceName" => URI.encode_www_form(service_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -569,7 +586,9 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
     }
     %{}
     |> method(:post)
-    |> url("/v1/services/#{service_name}:disable")
+    |> url("/v1/services/{serviceName}:disable", %{
+         "serviceName" => URI.encode_www_form(service_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -624,7 +643,9 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
     }
     %{}
     |> method(:post)
-    |> url("/v1/services/#{service_name}:enable")
+    |> url("/v1/services/{serviceName}:enable", %{
+         "serviceName" => URI.encode_www_form(service_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -731,7 +752,9 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
     }
     %{}
     |> method(:get)
-    |> url("/v1/services/#{service_name}")
+    |> url("/v1/services/{serviceName}", %{
+         "serviceName" => URI.encode_www_form(service_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -788,7 +811,9 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
     }
     %{}
     |> method(:get)
-    |> url("/v1/services/#{service_name}/config")
+    |> url("/v1/services/{serviceName}/config", %{
+         "serviceName" => URI.encode_www_form(service_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -903,7 +928,9 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
     }
     %{}
     |> method(:post)
-    |> url("/v1/services/#{service_name}/rollouts")
+    |> url("/v1/services/{serviceName}/rollouts", %{
+         "serviceName" => URI.encode_www_form(service_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -957,7 +984,10 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
     }
     %{}
     |> method(:get)
-    |> url("/v1/services/#{service_name}/rollouts/#{rollout_id}")
+    |> url("/v1/services/{serviceName}/rollouts/{rolloutId}", %{
+         "serviceName" => URI.encode_www_form(service_name),
+         "rolloutId" => URI.encode_www_form(rollout_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1016,7 +1046,9 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
     }
     %{}
     |> method(:get)
-    |> url("/v1/services/#{service_name}/rollouts")
+    |> url("/v1/services/{serviceName}/rollouts", %{
+         "serviceName" => URI.encode_www_form(service_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1069,7 +1101,9 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
     }
     %{}
     |> method(:post)
-    |> url("/v1/services/#{service_name}:undelete")
+    |> url("/v1/services/{serviceName}:undelete", %{
+         "serviceName" => URI.encode_www_form(service_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

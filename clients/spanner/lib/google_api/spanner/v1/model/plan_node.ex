@@ -20,9 +20,19 @@
 defmodule GoogleApi.Spanner.V1.Model.PlanNode do
   @moduledoc """
   Node information for nodes appearing in a QueryPlan.plan_nodes.
+
+  ## Attributes
+
+  - childLinks (List[ChildLink]): List of child node &#x60;index&#x60;es and their relationship to this parent. Defaults to: `null`.
+  - displayName (String): The display name for the node. Defaults to: `null`.
+  - executionStats (Object): The execution statistics associated with the node, contained in a group of key-value pairs. Only present if the plan was returned as a result of a profile query. For example, number of executions, number of rows/time per execution etc. Defaults to: `null`.
+  - index (Integer): The &#x60;PlanNode&#x60;&#39;s index in node list. Defaults to: `null`.
+  - kind (String): Used to determine the type of node. May be needed for visualizing different kinds of nodes differently. For example, If the node is a SCALAR node, it will have a condensed representation which can be used to directly embed a description of the node in its parent. Defaults to: `null`.
+    - Enum - one of [KIND_UNSPECIFIED, RELATIONAL, SCALAR]
+  - metadata (Object): Attributes relevant to the node contained in a group of key-value pairs. For example, a Parameter Reference node could have the following information in its metadata:      {       \&quot;parameter_reference\&quot;: \&quot;param1\&quot;,       \&quot;parameter_type\&quot;: \&quot;array\&quot;     } Defaults to: `null`.
+  - shortRepresentation (ShortRepresentation): Condensed representation for SCALAR nodes. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"childLinks",
     :"displayName",
@@ -42,6 +52,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.PlanNode do
     |> deserialize(:"executionStats", :struct, GoogleApi.Spanner.V1.Model.Object, options)
     |> deserialize(:"metadata", :struct, GoogleApi.Spanner.V1.Model.Object, options)
     |> deserialize(:"shortRepresentation", :struct, GoogleApi.Spanner.V1.Model.ShortRepresentation, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.PlanNode do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

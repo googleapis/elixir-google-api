@@ -20,9 +20,13 @@
 defmodule GoogleApi.DoubleClickBidManager.V1.Model.ListReportsResponse do
   @moduledoc """
   List reports response.
+
+  ## Attributes
+
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;doubleclickbidmanager#listReportsResponse\&quot;. Defaults to: `null`.
+  - reports (List[Report]): Retrieved reports. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"reports"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.DoubleClickBidManager.V1.Model.ListReport
   def decode(value, options) do
     value
     |> deserialize(:"reports", :list, GoogleApi.DoubleClickBidManager.V1.Model.Report, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickBidManager.V1.Model.ListReportsResponse do
+  def encode(value, options) do
+    GoogleApi.DoubleClickBidManager.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

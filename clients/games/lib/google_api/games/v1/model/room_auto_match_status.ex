@@ -20,9 +20,13 @@
 defmodule GoogleApi.Games.V1.Model.RoomAutoMatchStatus do
   @moduledoc """
   This is a JSON template for status of room automatching that is in progress.
+
+  ## Attributes
+
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#roomAutoMatchStatus. Defaults to: `null`.
+  - waitEstimateSeconds (Integer): An estimate for the amount of time (in seconds) that auto-matching is expected to take to complete. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"waitEstimateSeconds"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.RoomAutoMatchStatus do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.RoomAutoMatchStatus do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

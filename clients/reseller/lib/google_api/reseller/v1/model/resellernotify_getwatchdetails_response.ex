@@ -20,9 +20,13 @@
 defmodule GoogleApi.Reseller.V1.Model.ResellernotifyGetwatchdetailsResponse do
   @moduledoc """
   JSON template for resellernotify getwatchdetails response.
+
+  ## Attributes
+
+  - serviceAccountEmailAddresses (List[String]): List of registered service accounts. Defaults to: `null`.
+  - topicName (String): Topic name of the PubSub Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"serviceAccountEmailAddresses",
     :"topicName"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Reseller.V1.Model.ResellernotifyGetwatchdetailsResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Reseller.V1.Model.ResellernotifyGetwatchdetailsResponse do
+  def encode(value, options) do
+    GoogleApi.Reseller.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

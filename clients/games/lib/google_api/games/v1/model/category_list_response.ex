@@ -20,9 +20,14 @@
 defmodule GoogleApi.Games.V1.Model.CategoryListResponse do
   @moduledoc """
   This is a JSON template for a list of category data objects.
+
+  ## Attributes
+
+  - items (List[Category]): The list of categories with usage data. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#categoryListResponse. Defaults to: `null`.
+  - nextPageToken (String): Token corresponding to the next page of results. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"items",
     :"kind",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.CategoryListResponse do
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.Games.V1.Model.Category, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.CategoryListResponse do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

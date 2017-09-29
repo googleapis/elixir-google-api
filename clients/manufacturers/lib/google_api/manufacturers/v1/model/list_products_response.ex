@@ -20,9 +20,13 @@
 defmodule GoogleApi.Manufacturers.V1.Model.ListProductsResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - nextPageToken (String): The token for the retrieval of the next page of product statuses. Defaults to: `null`.
+  - products (List[Product]): List of the products. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nextPageToken",
     :"products"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Manufacturers.V1.Model.ListProductsRespon
   def decode(value, options) do
     value
     |> deserialize(:"products", :list, GoogleApi.Manufacturers.V1.Model.Product, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Manufacturers.V1.Model.ListProductsResponse do
+  def encode(value, options) do
+    GoogleApi.Manufacturers.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

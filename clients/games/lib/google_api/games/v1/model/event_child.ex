@@ -20,9 +20,13 @@
 defmodule GoogleApi.Games.V1.Model.EventChild do
   @moduledoc """
   This is a JSON template for an event child relationship resource.
+
+  ## Attributes
+
+  - childId (String): The ID of the child event. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#eventChild. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"childId",
     :"kind"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.EventChild do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.EventChild do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

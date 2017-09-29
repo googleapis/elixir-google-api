@@ -20,9 +20,20 @@
 defmodule GoogleApi.Fitness.V1.Model.Session do
   @moduledoc """
   Sessions contain metadata, such as a user-friendly name and time interval information.
+
+  ## Attributes
+
+  - activeTimeMillis (String): Session active time. While start_time_millis and end_time_millis define the full session time, the active time can be shorter and specified by active_time_millis. If the inactive time during the session is known, it should also be inserted via a com.google.activity.segment data point with a STILL activity value Defaults to: `null`.
+  - activityType (Integer): The type of activity this session represents. Defaults to: `null`.
+  - application (Application): The application that created the session. Defaults to: `null`.
+  - description (String): A description for this session. Defaults to: `null`.
+  - endTimeMillis (String): An end time, in milliseconds since epoch, inclusive. Defaults to: `null`.
+  - id (String): A client-generated identifier that is unique across all sessions owned by this particular user. Defaults to: `null`.
+  - modifiedTimeMillis (String): A timestamp that indicates when the session was last modified. Defaults to: `null`.
+  - name (String): A human readable name of the session. Defaults to: `null`.
+  - startTimeMillis (String): A start time, in milliseconds since epoch, inclusive. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"activeTimeMillis",
     :"activityType",
@@ -41,6 +52,12 @@ defimpl Poison.Decoder, for: GoogleApi.Fitness.V1.Model.Session do
   def decode(value, options) do
     value
     |> deserialize(:"application", :struct, GoogleApi.Fitness.V1.Model.Application, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Fitness.V1.Model.Session do
+  def encode(value, options) do
+    GoogleApi.Fitness.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

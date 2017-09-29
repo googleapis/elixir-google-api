@@ -20,9 +20,18 @@
 defmodule GoogleApi.SafeBrowsing.V4.Model.ThreatInfo do
   @moduledoc """
   The information regarding one or more threats that a client submits when checking for matches in threat lists.
+
+  ## Attributes
+
+  - platformTypes (List[String]): The platform types to be checked. Defaults to: `null`.
+    - Enum - one of 
+  - threatEntries (List[ThreatEntry]): The threat entries to be checked. Defaults to: `null`.
+  - threatEntryTypes (List[String]): The entry types to be checked. Defaults to: `null`.
+    - Enum - one of 
+  - threatTypes (List[String]): The threat types to be checked. Defaults to: `null`.
+    - Enum - one of 
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"platformTypes",
     :"threatEntries",
@@ -36,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.ThreatInfo do
   def decode(value, options) do
     value
     |> deserialize(:"threatEntries", :list, GoogleApi.SafeBrowsing.V4.Model.ThreatEntry, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SafeBrowsing.V4.Model.ThreatInfo do
+  def encode(value, options) do
+    GoogleApi.SafeBrowsing.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

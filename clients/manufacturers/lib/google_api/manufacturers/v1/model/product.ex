@@ -20,9 +20,21 @@
 defmodule GoogleApi.Manufacturers.V1.Model.Product do
   @moduledoc """
   Product data.
+
+  ## Attributes
+
+  - contentLanguage (String): The content language of the product as a two-letter ISO 639-1 language code (for example, en). @OutputOnly Defaults to: `null`.
+  - finalAttributes (Attributes): Final attributes of the product. The final attributes are obtained by overriding the uploaded attributes with the manually provided and deleted attributes. Google systems only process, evaluate, review, and/or use final attributes. @OutputOnly Defaults to: `null`.
+  - issues (List[Issue]): A server-generated list of issues associated with the product. @OutputOnly Defaults to: `null`.
+  - manuallyDeletedAttributes (List[String]): Names of the attributes of the product deleted manually via the Manufacturer Center UI. @OutputOnly Defaults to: `null`.
+  - manuallyProvidedAttributes (Attributes): Attributes of the product provided manually via the Manufacturer Center UI. @OutputOnly Defaults to: `null`.
+  - name (String): Name in the format &#x60;{target_country}:{content_language}:{product_id}&#x60;.  &#x60;target_country&#x60;   - The target country of the product as a CLDR territory                      code (for example, US).  &#x60;content_language&#x60; - The content language of the product as a two-letter                      ISO 639-1 language code (for example, en).  &#x60;product_id&#x60;     -   The ID of the product. For more information, see                      https://support.google.com/manufacturers/answer/6124116#id. @OutputOnly Defaults to: `null`.
+  - parent (String): Parent ID in the format &#x60;accounts/{account_id}&#x60;.  &#x60;account_id&#x60; - The ID of the Manufacturer Center account. @OutputOnly Defaults to: `null`.
+  - productId (String): The ID of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#id. @OutputOnly Defaults to: `null`.
+  - targetCountry (String): The target country of the product as a CLDR territory code (for example, US). @OutputOnly Defaults to: `null`.
+  - uploadedAttributes (Attributes): Attributes of the product uploaded via the Manufacturer Center API or via feeds. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"contentLanguage",
     :"finalAttributes",
@@ -45,6 +57,12 @@ defimpl Poison.Decoder, for: GoogleApi.Manufacturers.V1.Model.Product do
     |> deserialize(:"issues", :list, GoogleApi.Manufacturers.V1.Model.Issue, options)
     |> deserialize(:"manuallyProvidedAttributes", :struct, GoogleApi.Manufacturers.V1.Model.Attributes, options)
     |> deserialize(:"uploadedAttributes", :struct, GoogleApi.Manufacturers.V1.Model.Attributes, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Manufacturers.V1.Model.Product do
+  def encode(value, options) do
+    GoogleApi.Manufacturers.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

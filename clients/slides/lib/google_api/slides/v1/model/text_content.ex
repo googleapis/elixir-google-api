@@ -20,9 +20,13 @@
 defmodule GoogleApi.Slides.V1.Model.TextContent do
   @moduledoc """
   The general text content. The text must reside in a compatible shape (e.g. text box or rectangle) or a table cell in a page.
+
+  ## Attributes
+
+  - lists (Map[String, List]): The bulleted lists contained in this text, keyed by list ID. Defaults to: `null`.
+  - textElements (List[TextElement]): The text contents broken down into its component parts, including styling information. This property is read-only. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"lists",
     :"textElements"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.TextContent do
   def decode(value, options) do
     value
     |> deserialize(:"textElements", :list, GoogleApi.Slides.V1.Model.TextElement, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.TextContent do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

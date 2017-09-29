@@ -20,9 +20,13 @@
 defmodule GoogleApi.Spectrum.V1explorer.Model.DatabaseSpec do
   @moduledoc """
   This message contains the name and URI of a database.
+
+  ## Attributes
+
+  - name (String): The display name for a database. Defaults to: `null`.
+  - uri (String): The corresponding URI of the database. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name",
     :"uri"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Spectrum.V1explorer.Model.DatabaseSpec do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spectrum.V1explorer.Model.DatabaseSpec do
+  def encode(value, options) do
+    GoogleApi.Spectrum.V1explorer.Deserializer.serialize_non_nil(value, options)
   end
 end
 

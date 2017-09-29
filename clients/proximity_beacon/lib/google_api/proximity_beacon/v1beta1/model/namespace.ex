@@ -20,9 +20,14 @@
 defmodule GoogleApi.ProximityBeacon.V1beta1.Model.Namespace do
   @moduledoc """
   An attachment namespace defines read and write access for all the attachments created under it. Each namespace is globally unique, and owned by one project which is the only project that can create attachments under it.
+
+  ## Attributes
+
+  - namespaceName (String): Resource name of this namespace. Namespaces names have the format: &lt;code&gt;namespaces/&lt;var&gt;namespace&lt;/var&gt;&lt;/code&gt;. Defaults to: `null`.
+  - servingVisibility (String): Specifies what clients may receive attachments under this namespace via &#x60;beaconinfo.getforobserved&#x60;. Defaults to: `null`.
+    - Enum - one of [VISIBILITY_UNSPECIFIED, UNLISTED, PUBLIC]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"namespaceName",
     :"servingVisibility"
@@ -32,6 +37,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.Namespace do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.Namespace do
+  def encode(value, options) do
+    GoogleApi.ProximityBeacon.V1beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

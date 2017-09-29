@@ -20,9 +20,19 @@
 defmodule GoogleApi.Genomics.V1.Model.VariantSetMetadata do
   @moduledoc """
   Metadata describes a single piece of variant call metadata. These data include a top level key and either a single value string (value) or a list of key-value pairs (info.) Value and info are mutually exclusive.
+
+  ## Attributes
+
+  - info (Map[String, List[ErrorUnknown]]): Remaining structured metadata key-value pairs. This must be of the form map&lt;string, string[]&gt; (string key mapping to a list of string values). Defaults to: `null`.
+  - description (String): A textual description of this metadata. Defaults to: `null`.
+  - id (String): User-provided ID field, not enforced by this API. Two or more pieces of structured metadata with identical id and key fields are considered equivalent. Defaults to: `null`.
+  - key (String): The top-level key. Defaults to: `null`.
+  - number (String): The number of values that can be included in a field described by this metadata. Defaults to: `null`.
+  - type (String): The type of data. Possible types include: Integer, Float, Flag, Character, and String. Defaults to: `null`.
+    - Enum - one of [TYPE_UNSPECIFIED, INTEGER, FLOAT, FLAG, CHARACTER, STRING]
+  - value (String): The value field for simple metadata Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"info",
     :"description",
@@ -37,6 +47,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.VariantSetMetadata do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.VariantSetMetadata do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,16 @@
 defmodule GoogleApi.Plus.V1.Model.Place do
   @moduledoc """
   
+
+  ## Attributes
+
+  - address (PlaceAddress):  Defaults to: `null`.
+  - displayName (String): The display name of the place. Defaults to: `null`.
+  - id (String): The id of the place. Defaults to: `null`.
+  - kind (String): Identifies this resource as a place. Value: \&quot;plus#place\&quot;. Defaults to: `null`.
+  - position (PlacePosition):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"address",
     :"displayName",
@@ -36,8 +43,14 @@ defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Place do
   import GoogleApi.Plus.V1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"address", :struct, GoogleApi.Plus.V1.Model.Place_address, options)
-    |> deserialize(:"position", :struct, GoogleApi.Plus.V1.Model.Place_position, options)
+    |> deserialize(:"address", :struct, GoogleApi.Plus.V1.Model.PlaceAddress, options)
+    |> deserialize(:"position", :struct, GoogleApi.Plus.V1.Model.PlacePosition, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.Place do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

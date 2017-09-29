@@ -20,9 +20,12 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesTruncateLogRequest do
   @moduledoc """
   Instance truncate log request.
+
+  ## Attributes
+
+  - truncateLogContext (TruncateLogContext): Contains details about the truncate log operation. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"truncateLogContext"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.InstancesTruncateL
   def decode(value, options) do
     value
     |> deserialize(:"truncateLogContext", :struct, GoogleApi.SQLAdmin.V1beta4.Model.TruncateLogContext, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.InstancesTruncateLogRequest do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

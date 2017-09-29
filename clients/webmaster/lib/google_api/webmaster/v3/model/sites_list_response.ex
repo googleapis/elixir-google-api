@@ -20,9 +20,12 @@
 defmodule GoogleApi.Webmaster.V3.Model.SitesListResponse do
   @moduledoc """
   List of sites with access level information.
+
+  ## Attributes
+
+  - siteEntry (List[WmxSite]): Contains permission level information about a Search Console site. For more information, see Permissions in Search Console. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"siteEntry"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Webmaster.V3.Model.SitesListResponse do
   def decode(value, options) do
     value
     |> deserialize(:"siteEntry", :list, GoogleApi.Webmaster.V3.Model.WmxSite, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Webmaster.V3.Model.SitesListResponse do
+  def encode(value, options) do
+    GoogleApi.Webmaster.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

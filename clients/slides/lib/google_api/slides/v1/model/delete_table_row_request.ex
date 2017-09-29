@@ -20,9 +20,13 @@
 defmodule GoogleApi.Slides.V1.Model.DeleteTableRowRequest do
   @moduledoc """
   Deletes a row from a table.
+
+  ## Attributes
+
+  - cellLocation (TableCellLocation): The reference table cell location from which a row will be deleted.  The row this cell spans will be deleted. If this is a merged cell, multiple rows will be deleted. If no rows remain in the table after this deletion, the whole table is deleted. Defaults to: `null`.
+  - tableObjectId (String): The table to delete rows from. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cellLocation",
     :"tableObjectId"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.DeleteTableRowRequest do
   def decode(value, options) do
     value
     |> deserialize(:"cellLocation", :struct, GoogleApi.Slides.V1.Model.TableCellLocation, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.DeleteTableRowRequest do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

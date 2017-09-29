@@ -20,9 +20,14 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.ContextRule do
   @moduledoc """
   A context rule provides information about the context for an individual API element.
+
+  ## Attributes
+
+  - provided (List[String]): A list of full type names of provided contexts. Defaults to: `null`.
+  - requested (List[String]): A list of full type names of requested contexts. Defaults to: `null`.
+  - selector (String): Selects the methods to which this rule applies.  Refer to selector for syntax details. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"provided",
     :"requested",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.ContextRule do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.ContextRule do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

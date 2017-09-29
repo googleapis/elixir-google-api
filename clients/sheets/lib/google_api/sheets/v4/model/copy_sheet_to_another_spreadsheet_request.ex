@@ -20,9 +20,12 @@
 defmodule GoogleApi.Sheets.V4.Model.CopySheetToAnotherSpreadsheetRequest do
   @moduledoc """
   The request to copy a sheet across spreadsheets.
+
+  ## Attributes
+
+  - destinationSpreadsheetId (String): The ID of the spreadsheet to copy the sheet to. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"destinationSpreadsheetId"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.CopySheetToAnotherSpreadsheetRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.CopySheetToAnotherSpreadsheetRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

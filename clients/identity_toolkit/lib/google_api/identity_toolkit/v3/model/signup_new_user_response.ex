@@ -20,9 +20,18 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.SignupNewUserResponse do
   @moduledoc """
   Response of signing up new user, creating anonymous user or anonymous user reauth.
+
+  ## Attributes
+
+  - displayName (String): The name of the user. Defaults to: `null`.
+  - email (String): The email of the user. Defaults to: `null`.
+  - expiresIn (String): If idToken is STS id token, then this field will be expiration time of STS id token in seconds. Defaults to: `null`.
+  - idToken (String): The Gitkit id token to login the newly sign up user. Defaults to: `null`.
+  - kind (String): The fixed string \&quot;identitytoolkit#SignupNewUserResponse\&quot;. Defaults to: `null`.
+  - localId (String): The RP local ID of the user. Defaults to: `null`.
+  - refreshToken (String): If idToken is STS id token, then this field will be refresh token. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"displayName",
     :"email",
@@ -37,6 +46,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.SignupNewUserResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.SignupNewUserResponse do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

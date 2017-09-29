@@ -20,9 +20,21 @@
 defmodule GoogleApi.DoubleClickSearch.V2.Model.ReportApiColumnSpec do
   @moduledoc """
   A request object used to create a DoubleClick Search report.
+
+  ## Attributes
+
+  - columnName (String): Name of a DoubleClick Search column to include in the report. Defaults to: `null`.
+  - customDimensionName (String): Segments a report by a custom dimension. The report must be scoped to an advertiser or lower, and the custom dimension must already be set up in DoubleClick Search. The custom dimension name, which appears in DoubleClick Search, is case sensitive. If used in a conversion report, returns the value of the specified custom dimension for the given conversion, if set. This column does not segment the conversion report. Defaults to: `null`.
+  - customMetricName (String): Name of a custom metric to include in the report. The report must be scoped to an advertiser or lower, and the custom metric must already be set up in DoubleClick Search. The custom metric name, which appears in DoubleClick Search, is case sensitive. Defaults to: `null`.
+  - endDate (String): Inclusive day in YYYY-MM-DD format. When provided, this overrides the overall time range of the report for this column only. Must be provided together with startDate. Defaults to: `null`.
+  - groupByColumn (Boolean): Synchronous report only. Set to true to group by this column. Defaults to false. Defaults to: `null`.
+  - headerText (String): Text used to identify this column in the report output; defaults to columnName or savedColumnName when not specified. This can be used to prevent collisions between DoubleClick Search columns and saved columns with the same name. Defaults to: `null`.
+  - platformSource (String): The platform that is used to provide data for the custom dimension. Acceptable values are \&quot;floodlight\&quot;. Defaults to: `null`.
+  - productReportPerspective (String): Returns metrics only for a specific type of product activity. Accepted values are:   - \&quot;sold\&quot;: returns metrics only for products that were sold  - \&quot;advertised\&quot;: returns metrics only for products that were advertised in a Shopping campaign, and that might or might not have been sold Defaults to: `null`.
+  - savedColumnName (String): Name of a saved column to include in the report. The report must be scoped at advertiser or lower, and this saved column must already be created in the DoubleClick Search UI. Defaults to: `null`.
+  - startDate (String): Inclusive date in YYYY-MM-DD format. When provided, this overrides the overall time range of the report for this column only. Must be provided together with endDate. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"columnName",
     :"customDimensionName",
@@ -40,6 +52,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.DoubleClickSearch.V2.Model.ReportApiColumnSpec do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickSearch.V2.Model.ReportApiColumnSpec do
+  def encode(value, options) do
+    GoogleApi.DoubleClickSearch.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

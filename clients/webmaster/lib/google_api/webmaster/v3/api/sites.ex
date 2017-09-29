@@ -60,7 +60,9 @@ defmodule GoogleApi.Webmaster.V3.Api.Sites do
     }
     %{}
     |> method(:put)
-    |> url("/sites/#{site_url}")
+    |> url("/sites/{siteUrl}", %{
+         "siteUrl" => URI.encode_www_form(site_url)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -101,7 +103,9 @@ defmodule GoogleApi.Webmaster.V3.Api.Sites do
     }
     %{}
     |> method(:delete)
-    |> url("/sites/#{site_url}")
+    |> url("/sites/{siteUrl}", %{
+         "siteUrl" => URI.encode_www_form(site_url)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -142,7 +146,9 @@ defmodule GoogleApi.Webmaster.V3.Api.Sites do
     }
     %{}
     |> method(:get)
-    |> url("/sites/#{site_url}")
+    |> url("/sites/{siteUrl}", %{
+         "siteUrl" => URI.encode_www_form(site_url)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

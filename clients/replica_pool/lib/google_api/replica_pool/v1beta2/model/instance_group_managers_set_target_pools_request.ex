@@ -20,9 +20,13 @@
 defmodule GoogleApi.ReplicaPool.V1beta2.Model.InstanceGroupManagersSetTargetPoolsRequest do
   @moduledoc """
   
+
+  ## Attributes
+
+  - fingerprint (String): The current fingerprint of the Instance Group Manager resource. If this does not match the server-side fingerprint of the resource, then the request will be rejected. Defaults to: `null`.
+  - targetPools (List[String]): A list of fully-qualified URLs to existing Target Pool resources. New instances in the Instance Group Manager will be added to the specified target pools; existing instances are not affected. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fingerprint",
     :"targetPools"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ReplicaPool.V1beta2.Model.InstanceGroupManagersSetTargetPoolsRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ReplicaPool.V1beta2.Model.InstanceGroupManagersSetTargetPoolsRequest do
+  def encode(value, options) do
+    GoogleApi.ReplicaPool.V1beta2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

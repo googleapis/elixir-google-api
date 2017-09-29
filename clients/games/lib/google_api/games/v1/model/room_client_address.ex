@@ -20,9 +20,13 @@
 defmodule GoogleApi.Games.V1.Model.RoomClientAddress do
   @moduledoc """
   This is a JSON template for the client address when setting up a room.
+
+  ## Attributes
+
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#roomClientAddress. Defaults to: `null`.
+  - xmppAddress (String): The XMPP address of the client on the Google Games XMPP network. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"xmppAddress"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.RoomClientAddress do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.RoomClientAddress do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

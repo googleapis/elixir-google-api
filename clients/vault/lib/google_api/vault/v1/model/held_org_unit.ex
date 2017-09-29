@@ -20,9 +20,13 @@
 defmodule GoogleApi.Vault.V1.Model.HeldOrgUnit do
   @moduledoc """
   A organizational unit being held in a particular hold. This structure is immutable.
+
+  ## Attributes
+
+  - holdTime (String): When the org unit was put on hold. This property is immutable. Defaults to: `null`.
+  - orgUnitId (String): The org unit&#39;s immutable ID as provided by the admin SDK. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"holdTime",
     :"orgUnitId"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Vault.V1.Model.HeldOrgUnit do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Vault.V1.Model.HeldOrgUnit do
+  def encode(value, options) do
+    GoogleApi.Vault.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

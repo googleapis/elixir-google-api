@@ -20,9 +20,12 @@
 defmodule GoogleApi.Slides.V1.Model.ReplaceAllTextResponse do
   @moduledoc """
   The result of replacing text.
+
+  ## Attributes
+
+  - occurrencesChanged (Integer): The number of occurrences changed by replacing all text. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"occurrencesChanged"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.ReplaceAllTextResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.ReplaceAllTextResponse do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

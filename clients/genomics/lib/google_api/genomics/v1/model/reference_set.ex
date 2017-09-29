@@ -20,9 +20,19 @@
 defmodule GoogleApi.Genomics.V1.Model.ReferenceSet do
   @moduledoc """
   A reference set is a set of references which typically comprise a reference assembly for a species, such as &#x60;GRCh38&#x60; which is representative of the human genome. A reference set defines a common coordinate space for comparing reference-aligned experimental data. A reference set contains 1 or more references.  For more genomics resource definitions, see [Fundamentals of Google Genomics](https://cloud.google.com/genomics/fundamentals-of-google-genomics)
+
+  ## Attributes
+
+  - assemblyId (String): Public id of this reference set, such as &#x60;GRCh37&#x60;. Defaults to: `null`.
+  - description (String): Free text description of this reference set. Defaults to: `null`.
+  - id (String): The server-generated reference set ID, unique across all reference sets. Defaults to: `null`.
+  - md5checksum (String): Order-independent MD5 checksum which identifies this reference set. The checksum is computed by sorting all lower case hexidecimal string &#x60;reference.md5checksum&#x60; (for all reference in this set) in ascending lexicographic order, concatenating, and taking the MD5 of that value. The resulting value is represented in lower case hexadecimal format. Defaults to: `null`.
+  - ncbiTaxonId (Integer): ID from http://www.ncbi.nlm.nih.gov/taxonomy (for example, 9606 for human) indicating the species which this reference set is intended to model. Note that contained references may specify a different &#x60;ncbiTaxonId&#x60;, as assemblies may contain reference sequences which do not belong to the modeled species, for example EBV in a human reference genome. Defaults to: `null`.
+  - referenceIds (List[String]): The IDs of the reference objects that are part of this set. &#x60;Reference.md5checksum&#x60; must be unique within this set. Defaults to: `null`.
+  - sourceAccessions (List[String]): All known corresponding accession IDs in INSDC (GenBank/ENA/DDBJ) ideally with a version number, for example &#x60;NC_000001.11&#x60;. Defaults to: `null`.
+  - sourceUri (String): The URI from which the references were obtained. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"assemblyId",
     :"description",
@@ -38,6 +48,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.ReferenceSet do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.ReferenceSet do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

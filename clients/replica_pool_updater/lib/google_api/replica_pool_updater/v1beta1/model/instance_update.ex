@@ -20,9 +20,14 @@
 defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Model.InstanceUpdate do
   @moduledoc """
   Update of a single instance.
+
+  ## Attributes
+
+  - error (InstanceUpdateError):  Defaults to: `null`.
+  - instance (String): Fully-qualified URL of the instance being updated. Defaults to: `null`.
+  - status (String): Status of the instance update. Possible values are:   - \&quot;PENDING\&quot;: The instance update is pending execution.  - \&quot;ROLLING_FORWARD\&quot;: The instance update is going forward.  - \&quot;ROLLING_BACK\&quot;: The instance update is being rolled back.  - \&quot;PAUSED\&quot;: The instance update is temporarily paused (inactive).  - \&quot;ROLLED_OUT\&quot;: The instance update is finished, the instance is running the new template.  - \&quot;ROLLED_BACK\&quot;: The instance update is finished, the instance has been reverted to the previous template.  - \&quot;CANCELLED\&quot;: The instance update is paused and no longer can be resumed, undefined in which template the instance is running. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"error",
     :"instance",
@@ -34,7 +39,13 @@ defimpl Poison.Decoder, for: GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Instance
   import GoogleApi.ReplicaPoolUpdater.V1beta1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"error", :struct, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.InstanceUpdate_error, options)
+    |> deserialize(:"error", :struct, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.InstanceUpdateError, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ReplicaPoolUpdater.V1beta1.Model.InstanceUpdate do
+  def encode(value, options) do
+    GoogleApi.ReplicaPoolUpdater.V1beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

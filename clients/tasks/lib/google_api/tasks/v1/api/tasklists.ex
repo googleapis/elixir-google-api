@@ -60,7 +60,9 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
     }
     %{}
     |> method(:delete)
-    |> url("/users/@me/lists/#{tasklist}")
+    |> url("/users/@me/lists/{tasklist}", %{
+         "tasklist" => URI.encode_www_form(tasklist)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -101,7 +103,9 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
     }
     %{}
     |> method(:get)
-    |> url("/users/@me/lists/#{tasklist}")
+    |> url("/users/@me/lists/{tasklist}", %{
+         "tasklist" => URI.encode_www_form(tasklist)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -230,7 +234,9 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
     }
     %{}
     |> method(:patch)
-    |> url("/users/@me/lists/#{tasklist}")
+    |> url("/users/@me/lists/{tasklist}", %{
+         "tasklist" => URI.encode_www_form(tasklist)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -273,7 +279,9 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
     }
     %{}
     |> method(:put)
-    |> url("/users/@me/lists/#{tasklist}")
+    |> url("/users/@me/lists/{tasklist}", %{
+         "tasklist" => URI.encode_www_form(tasklist)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

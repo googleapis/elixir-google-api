@@ -20,9 +20,15 @@
 defmodule GoogleApi.GamesManagement.V1management.Model.AchievementResetResponse do
   @moduledoc """
   This is a JSON template for an achievement reset response.
+
+  ## Attributes
+
+  - currentState (String): The current state of the achievement. This is the same as the initial state of the achievement. Possible values are:   - \&quot;HIDDEN\&quot;- Achievement is hidden.  - \&quot;REVEALED\&quot; - Achievement is revealed.  - \&quot;UNLOCKED\&quot; - Achievement is unlocked. Defaults to: `null`.
+  - definitionId (String): The ID of an achievement for which player state has been updated. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#achievementResetResponse. Defaults to: `null`.
+  - updateOccurred (Boolean): Flag to indicate if the requested update actually occurred. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"currentState",
     :"definitionId",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1management.Model.AchievementResetResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.GamesManagement.V1management.Model.AchievementResetResponse do
+  def encode(value, options) do
+    GoogleApi.GamesManagement.V1management.Deserializer.serialize_non_nil(value, options)
   end
 end
 

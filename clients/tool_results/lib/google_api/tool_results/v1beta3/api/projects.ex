@@ -60,7 +60,9 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/#{project_id}/settings")
+    |> url("/{projectId}/settings", %{
+         "projectId" => URI.encode_www_form(project_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -105,7 +107,9 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/#{project_id}/histories")
+    |> url("/{projectId}/histories", %{
+         "projectId" => URI.encode_www_form(project_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -148,7 +152,11 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/#{project_id}/histories/#{history_id}/executions/#{execution_id}/clusters")
+    |> url("/{projectId}/histories/{historyId}/executions/{executionId}/clusters", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "historyId" => URI.encode_www_form(history_id),
+         "executionId" => URI.encode_www_form(execution_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -194,7 +202,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/#{project_id}/histories/#{history_id}/executions")
+    |> url("/{projectId}/histories/{historyId}/executions", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "historyId" => URI.encode_www_form(history_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -237,7 +248,11 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/#{project_id}/histories/#{history_id}/executions/#{execution_id}")
+    |> url("/{projectId}/histories/{historyId}/executions/{executionId}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "historyId" => URI.encode_www_form(history_id),
+         "executionId" => URI.encode_www_form(execution_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -283,7 +298,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/#{project_id}/histories/#{history_id}/executions")
+    |> url("/{projectId}/histories/{historyId}/executions", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "historyId" => URI.encode_www_form(history_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -330,7 +348,11 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     }
     %{}
     |> method(:patch)
-    |> url("/#{project_id}/histories/#{history_id}/executions/#{execution_id}")
+    |> url("/{projectId}/histories/{historyId}/executions/{executionId}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "historyId" => URI.encode_www_form(history_id),
+         "executionId" => URI.encode_www_form(execution_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -377,7 +399,11 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/#{project_id}/histories/#{history_id}/executions/#{execution_id}/steps")
+    |> url("/{projectId}/histories/{historyId}/executions/{executionId}/steps", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "historyId" => URI.encode_www_form(history_id),
+         "executionId" => URI.encode_www_form(execution_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -421,7 +447,12 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/#{project_id}/histories/#{history_id}/executions/#{execution_id}/steps/#{step_id}")
+    |> url("/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "historyId" => URI.encode_www_form(history_id),
+         "executionId" => URI.encode_www_form(execution_id),
+         "stepId" => URI.encode_www_form(step_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -465,7 +496,12 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/#{project_id}/histories/#{history_id}/executions/#{execution_id}/steps/#{step_id}/perfMetricsSummary")
+    |> url("/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/perfMetricsSummary", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "historyId" => URI.encode_www_form(history_id),
+         "executionId" => URI.encode_www_form(execution_id),
+         "stepId" => URI.encode_www_form(step_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -512,7 +548,11 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/#{project_id}/histories/#{history_id}/executions/#{execution_id}/steps")
+    |> url("/{projectId}/histories/{historyId}/executions/{executionId}/steps", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "historyId" => URI.encode_www_form(history_id),
+         "executionId" => URI.encode_www_form(execution_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -560,7 +600,12 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     }
     %{}
     |> method(:patch)
-    |> url("/#{project_id}/histories/#{history_id}/executions/#{execution_id}/steps/#{step_id}")
+    |> url("/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "historyId" => URI.encode_www_form(history_id),
+         "executionId" => URI.encode_www_form(execution_id),
+         "stepId" => URI.encode_www_form(step_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -606,7 +651,12 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/#{project_id}/histories/#{history_id}/executions/#{execution_id}/steps/#{step_id}/perfMetricsSummary")
+    |> url("/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/perfMetricsSummary", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "historyId" => URI.encode_www_form(history_id),
+         "executionId" => URI.encode_www_form(execution_id),
+         "stepId" => URI.encode_www_form(step_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -652,7 +702,12 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/#{project_id}/histories/#{history_id}/executions/#{execution_id}/steps/#{step_id}/perfSampleSeries")
+    |> url("/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/perfSampleSeries", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "historyId" => URI.encode_www_form(history_id),
+         "executionId" => URI.encode_www_form(execution_id),
+         "stepId" => URI.encode_www_form(step_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -697,7 +752,13 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/#{project_id}/histories/#{history_id}/executions/#{execution_id}/steps/#{step_id}/perfSampleSeries/#{sample_series_id}")
+    |> url("/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/perfSampleSeries/{sampleSeriesId}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "historyId" => URI.encode_www_form(history_id),
+         "executionId" => URI.encode_www_form(execution_id),
+         "stepId" => URI.encode_www_form(step_id),
+         "sampleSeriesId" => URI.encode_www_form(sample_series_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -743,7 +804,12 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/#{project_id}/histories/#{history_id}/executions/#{execution_id}/steps/#{step_id}/perfSampleSeries")
+    |> url("/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/perfSampleSeries", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "historyId" => URI.encode_www_form(history_id),
+         "executionId" => URI.encode_www_form(execution_id),
+         "stepId" => URI.encode_www_form(step_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -790,7 +856,13 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/#{project_id}/histories/#{history_id}/executions/#{execution_id}/steps/#{step_id}/perfSampleSeries/#{sample_series_id}/samples:batchCreate")
+    |> url("/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/perfSampleSeries/{sampleSeriesId}/samples:batchCreate", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "historyId" => URI.encode_www_form(history_id),
+         "executionId" => URI.encode_www_form(execution_id),
+         "stepId" => URI.encode_www_form(step_id),
+         "sampleSeriesId" => URI.encode_www_form(sample_series_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -839,7 +911,13 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/#{project_id}/histories/#{history_id}/executions/#{execution_id}/steps/#{step_id}/perfSampleSeries/#{sample_series_id}/samples")
+    |> url("/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/perfSampleSeries/{sampleSeriesId}/samples", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "historyId" => URI.encode_www_form(history_id),
+         "executionId" => URI.encode_www_form(execution_id),
+         "stepId" => URI.encode_www_form(step_id),
+         "sampleSeriesId" => URI.encode_www_form(sample_series_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -885,7 +963,12 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/#{project_id}/histories/#{history_id}/executions/#{execution_id}/steps/#{step_id}:publishXunitXmlFiles")
+    |> url("/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}:publishXunitXmlFiles", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "historyId" => URI.encode_www_form(history_id),
+         "executionId" => URI.encode_www_form(execution_id),
+         "stepId" => URI.encode_www_form(step_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -933,7 +1016,12 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/#{project_id}/histories/#{history_id}/executions/#{execution_id}/steps/#{step_id}/thumbnails")
+    |> url("/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/thumbnails", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "historyId" => URI.encode_www_form(history_id),
+         "executionId" => URI.encode_www_form(execution_id),
+         "stepId" => URI.encode_www_form(step_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -975,7 +1063,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/#{project_id}/histories/#{history_id}")
+    |> url("/{projectId}/histories/{historyId}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "historyId" => URI.encode_www_form(history_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1022,7 +1113,9 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/#{project_id}/histories")
+    |> url("/{projectId}/histories", %{
+         "projectId" => URI.encode_www_form(project_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1063,7 +1156,9 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/#{project_id}:initializeSettings")
+    |> url("/{projectId}:initializeSettings", %{
+         "projectId" => URI.encode_www_form(project_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

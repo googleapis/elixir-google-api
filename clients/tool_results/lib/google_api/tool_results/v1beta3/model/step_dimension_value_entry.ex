@@ -20,9 +20,13 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.StepDimensionValueEntry do
   @moduledoc """
   
+
+  ## Attributes
+
+  - key (String):  Defaults to: `null`.
+  - value (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"key",
     :"value"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.StepDimensionValueEntry do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.StepDimensionValueEntry do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

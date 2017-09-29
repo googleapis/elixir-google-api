@@ -20,9 +20,15 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.Diagnostic do
   @moduledoc """
   Represents a diagnostic message (error or warning)
+
+  ## Attributes
+
+  - kind (String): The kind of diagnostic information provided. Defaults to: `null`.
+    - Enum - one of [WARNING, ERROR]
+  - location (String): File name and line number of the error or warning. Defaults to: `null`.
+  - message (String): Message describing the error or warning. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"location",
@@ -33,6 +39,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.Diagnostic do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.Diagnostic do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.ServiceUser.V1.Model.SourceContext do
   @moduledoc """
   &#x60;SourceContext&#x60; represents information about the source of a protobuf element, like the file in which it is defined.
+
+  ## Attributes
+
+  - fileName (String): The path-qualified name of the .proto file that contained the associated protobuf element.  For example: &#x60;\&quot;google/protobuf/source_context.proto\&quot;&#x60;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fileName"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceUser.V1.Model.SourceContext do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceUser.V1.Model.SourceContext do
+  def encode(value, options) do
+    GoogleApi.ServiceUser.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,17 @@
 defmodule GoogleApi.DoubleClickSearch.V2.Model.Availability do
   @moduledoc """
   A message containing availability data relevant to DoubleClick Search.
+
+  ## Attributes
+
+  - advertiserId (String): DS advertiser ID. Defaults to: `null`.
+  - agencyId (String): DS agency ID. Defaults to: `null`.
+  - availabilityTimestamp (String): The time by which all conversions have been uploaded, in epoch millis UTC. Defaults to: `null`.
+  - segmentationId (String): The numeric segmentation identifier (for example, DoubleClick Search Floodlight activity ID). Defaults to: `null`.
+  - segmentationName (String): The friendly segmentation identifier (for example, DoubleClick Search Floodlight activity name). Defaults to: `null`.
+  - segmentationType (String): The segmentation type that this availability is for (its default value is FLOODLIGHT). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"advertiserId",
     :"agencyId",
@@ -36,6 +44,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.DoubleClickSearch.V2.Model.Availability do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickSearch.V2.Model.Availability do
+  def encode(value, options) do
+    GoogleApi.DoubleClickSearch.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

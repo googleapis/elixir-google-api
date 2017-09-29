@@ -20,9 +20,15 @@
 defmodule GoogleApi.Games.V1.Model.EventRecordRequest do
   @moduledoc """
   This is a JSON template for an event period update resource.
+
+  ## Attributes
+
+  - currentTimeMillis (String): The current time when this update was sent, in milliseconds, since 1970 UTC (Unix Epoch). Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#eventRecordRequest. Defaults to: `null`.
+  - requestId (String): The request ID used to identify this attempt to record events. Defaults to: `null`.
+  - timePeriods (List[EventPeriodUpdate]): A list of the time period updates being made in this request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"currentTimeMillis",
     :"kind",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.EventRecordRequest do
   def decode(value, options) do
     value
     |> deserialize(:"timePeriods", :list, GoogleApi.Games.V1.Model.EventPeriodUpdate, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.EventRecordRequest do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

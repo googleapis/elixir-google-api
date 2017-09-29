@@ -20,9 +20,20 @@
 defmodule GoogleApi.ServiceControl.V1.Model.LogEntry do
   @moduledoc """
   An individual log entry.
+
+  ## Attributes
+
+  - insertId (String): A unique ID for the log entry used for deduplication. If omitted, the implementation will generate one based on operation_id. Defaults to: `null`.
+  - labels (Map[String, String]): A set of user-defined (key, value) data that provides additional information about the log entry. Defaults to: `null`.
+  - name (String): Required. The log to which this log entry belongs. Examples: &#x60;\&quot;syslog\&quot;&#x60;, &#x60;\&quot;book_log\&quot;&#x60;. Defaults to: `null`.
+  - protoPayload (Object): The log entry payload, represented as a protocol buffer that is expressed as a JSON object. The only accepted type currently is AuditLog. Defaults to: `null`.
+  - severity (String): The severity of the log entry. The default value is &#x60;LogSeverity.DEFAULT&#x60;. Defaults to: `null`.
+    - Enum - one of [DEFAULT, DEBUG, INFO, NOTICE, WARNING, ERROR, CRITICAL, ALERT, EMERGENCY]
+  - structPayload (Object): The log entry payload, represented as a structure that is expressed as a JSON object. Defaults to: `null`.
+  - textPayload (String): The log entry payload, represented as a Unicode string (UTF-8). Defaults to: `null`.
+  - timestamp (String): The time the event described by the log entry occurred. If omitted, defaults to operation start time. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"insertId",
     :"labels",
@@ -41,6 +52,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.LogEntry do
     value
     |> deserialize(:"protoPayload", :struct, GoogleApi.ServiceControl.V1.Model.Object, options)
     |> deserialize(:"structPayload", :struct, GoogleApi.ServiceControl.V1.Model.Object, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.LogEntry do
+  def encode(value, options) do
+    GoogleApi.ServiceControl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

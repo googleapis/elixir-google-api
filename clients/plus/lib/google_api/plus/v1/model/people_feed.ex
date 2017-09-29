@@ -20,9 +20,18 @@
 defmodule GoogleApi.Plus.V1.Model.PeopleFeed do
   @moduledoc """
   
+
+  ## Attributes
+
+  - etag (String): ETag of this response for caching purposes. Defaults to: `null`.
+  - items (List[Person]): The people in this page of results. Each item includes the id, displayName, image, and url for the person. To retrieve additional profile data, see the people.get method. Defaults to: `null`.
+  - kind (String): Identifies this resource as a collection of people. Value: \&quot;plus#peopleFeed\&quot;. Defaults to: `null`.
+  - nextPageToken (String): The continuation token, which is used to page through large result sets. Provide this value in a subsequent request to return the next page of results. Defaults to: `null`.
+  - selfLink (String): Link to this resource. Defaults to: `null`.
+  - title (String): The title of this collection of people. Defaults to: `null`.
+  - totalItems (Integer): The total number of people available in this list. The number of people in a response might be smaller due to paging. This might not be set for all collections. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"items",
@@ -39,6 +48,12 @@ defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.PeopleFeed do
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.Plus.V1.Model.Person, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.PeopleFeed do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

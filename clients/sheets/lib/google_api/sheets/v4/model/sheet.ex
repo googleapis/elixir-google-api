@@ -20,9 +20,20 @@
 defmodule GoogleApi.Sheets.V4.Model.Sheet do
   @moduledoc """
   A sheet in a spreadsheet.
+
+  ## Attributes
+
+  - bandedRanges (List[BandedRange]): The banded (i.e. alternating colors) ranges on this sheet. Defaults to: `null`.
+  - basicFilter (BasicFilter): The filter on this sheet, if any. Defaults to: `null`.
+  - charts (List[EmbeddedChart]): The specifications of every chart on this sheet. Defaults to: `null`.
+  - conditionalFormats (List[ConditionalFormatRule]): The conditional format rules in this sheet. Defaults to: `null`.
+  - data (List[GridData]): Data in the grid, if this is a grid sheet. The number of GridData objects returned is dependent on the number of ranges requested on this sheet. For example, if this is representing &#x60;Sheet1&#x60;, and the spreadsheet was requested with ranges &#x60;Sheet1!A1:C10&#x60; and &#x60;Sheet1!D15:E20&#x60;, then the first GridData will have a startRow/startColumn of &#x60;0&#x60;, while the second one will have &#x60;startRow 14&#x60; (zero-based row 15), and &#x60;startColumn 3&#x60; (zero-based column D). Defaults to: `null`.
+  - filterViews (List[FilterView]): The filter views in this sheet. Defaults to: `null`.
+  - merges (List[GridRange]): The ranges that are merged together. Defaults to: `null`.
+  - properties (SheetProperties): The properties of the sheet. Defaults to: `null`.
+  - protectedRanges (List[ProtectedRange]): The protected ranges in this sheet. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bandedRanges",
     :"basicFilter",
@@ -49,6 +60,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.Sheet do
     |> deserialize(:"merges", :list, GoogleApi.Sheets.V4.Model.GridRange, options)
     |> deserialize(:"properties", :struct, GoogleApi.Sheets.V4.Model.SheetProperties, options)
     |> deserialize(:"protectedRanges", :list, GoogleApi.Sheets.V4.Model.ProtectedRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.Sheet do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -17,12 +17,19 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.PageSpeedOnline.V2.Model.Result_formattedResults_ruleResults do
+defmodule GoogleApi.PageSpeedOnline.V2.Model.ResultFormattedResultsRuleResults do
   @moduledoc """
   The enum-like identifier for this rule. For instance \&quot;EnableKeepAlive\&quot; or \&quot;AvoidCssImport\&quot;. Not localized.
+
+  ## Attributes
+
+  - groups (List[String]): List of rule groups that this rule belongs to. Each entry in the list is one of \&quot;SPEED\&quot; or \&quot;USABILITY\&quot;. Defaults to: `null`.
+  - localizedRuleName (String): Localized name of the rule, intended for presentation to a user. Defaults to: `null`.
+  - ruleImpact (Float): The impact (unbounded floating point value) that implementing the suggestions for this rule would have on making the page faster. Impact is comparable between rules to determine which rule&#39;s suggestions would have a higher or lower impact on making a page faster. For instance, if enabling compression would save 1MB, while optimizing images would save 500kB, the enable compression rule would have 2x the impact of the image optimization rule, all other things being equal. Defaults to: `null`.
+  - summary (PagespeedApiFormatStringV2): A brief summary description for the rule, indicating at a high level what should be done to follow the rule and what benefit can be gained by doing so. Defaults to: `null`.
+  - urlBlocks (List[ResultFormattedResultsUrlBlocks]): List of blocks of URLs. Each block may contain a heading and a list of URLs. Each URL may optionally include additional details. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"groups",
     :"localizedRuleName",
@@ -32,12 +39,18 @@ defmodule GoogleApi.PageSpeedOnline.V2.Model.Result_formattedResults_ruleResults
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.Result_formattedResults_ruleResults do
+defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.ResultFormattedResultsRuleResults do
   import GoogleApi.PageSpeedOnline.V2.Deserializer
   def decode(value, options) do
     value
     |> deserialize(:"summary", :struct, GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2, options)
-    |> deserialize(:"urlBlocks", :list, GoogleApi.PageSpeedOnline.V2.Model.Result_formattedResults_urlBlocks, options)
+    |> deserialize(:"urlBlocks", :list, GoogleApi.PageSpeedOnline.V2.Model.ResultFormattedResultsUrlBlocks, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.PageSpeedOnline.V2.Model.ResultFormattedResultsRuleResults do
+  def encode(value, options) do
+    GoogleApi.PageSpeedOnline.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

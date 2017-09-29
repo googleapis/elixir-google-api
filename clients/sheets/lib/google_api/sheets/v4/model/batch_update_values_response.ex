@@ -20,9 +20,17 @@
 defmodule GoogleApi.Sheets.V4.Model.BatchUpdateValuesResponse do
   @moduledoc """
   The response when updating a range of values in a spreadsheet.
+
+  ## Attributes
+
+  - responses (List[UpdateValuesResponse]): One UpdateValuesResponse per requested range, in the same order as the requests appeared. Defaults to: `null`.
+  - spreadsheetId (String): The spreadsheet the updates were applied to. Defaults to: `null`.
+  - totalUpdatedCells (Integer): The total number of cells updated. Defaults to: `null`.
+  - totalUpdatedColumns (Integer): The total number of columns where at least one cell in the column was updated. Defaults to: `null`.
+  - totalUpdatedRows (Integer): The total number of rows where at least one cell in the row was updated. Defaults to: `null`.
+  - totalUpdatedSheets (Integer): The total number of sheets where at least one cell in the sheet was updated. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"responses",
     :"spreadsheetId",
@@ -38,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BatchUpdateValuesResponse
   def decode(value, options) do
     value
     |> deserialize(:"responses", :list, GoogleApi.Sheets.V4.Model.UpdateValuesResponse, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BatchUpdateValuesResponse do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

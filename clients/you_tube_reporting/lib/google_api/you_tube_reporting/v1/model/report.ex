@@ -20,9 +20,18 @@
 defmodule GoogleApi.YouTubeReporting.V1.Model.Report do
   @moduledoc """
   A report&#39;s metadata including the URL from which the report itself can be downloaded.
+
+  ## Attributes
+
+  - createTime (String): The date/time when this report was created. Defaults to: `null`.
+  - downloadUrl (String): The URL from which the report can be downloaded (max. 1000 characters). Defaults to: `null`.
+  - endTime (String): The end of the time period that the report instance covers. The value is exclusive. Defaults to: `null`.
+  - id (String): The server-generated ID of the report. Defaults to: `null`.
+  - jobExpireTime (String): The date/time when the job this report belongs to will expire/expired. Defaults to: `null`.
+  - jobId (String): The ID of the job that created this report. Defaults to: `null`.
+  - startTime (String): The start of the time period that the report instance covers. The value is inclusive. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"createTime",
     :"downloadUrl",
@@ -37,6 +46,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTubeReporting.V1.Model.Report do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTubeReporting.V1.Model.Report do
+  def encode(value, options) do
+    GoogleApi.YouTubeReporting.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

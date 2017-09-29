@@ -20,9 +20,16 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.AndroidRoboTest do
   @moduledoc """
   A test of an android application that explores the application on a virtual or physical Android device, finding culprits and crashes as it goes.
+
+  ## Attributes
+
+  - appInitialActivity (String): The initial activity that should be used to start the app. Optional Defaults to: `null`.
+  - bootstrapPackageId (String): The java package for the bootstrap. Optional Defaults to: `null`.
+  - bootstrapRunnerClass (String): The runner class for the bootstrap. Optional Defaults to: `null`.
+  - maxDepth (Integer): The max depth of the traversal stack Robo can explore. Optional Defaults to: `null`.
+  - maxSteps (Integer): The max number of steps/actions Robo can execute. Default is no limit (0). Optional Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"appInitialActivity",
     :"bootstrapPackageId",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.AndroidRoboTest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.AndroidRoboTest do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,17 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.TestSuiteOverview do
   @moduledoc """
   A summary of a test suite result either parsed from XML or uploaded directly by a user.  Note: the API related comments are for StepService only. This message is also being used in ExecutionService in a read only mode for the corresponding step.
+
+  ## Attributes
+
+  - errorCount (Integer): Number of test cases in error, typically set by the service by parsing the xml_source.  - In create/response: always set - In update request: never Defaults to: `null`.
+  - failureCount (Integer): Number of failed test cases, typically set by the service by parsing the xml_source. May also be set by the user.  - In create/response: always set - In update request: never Defaults to: `null`.
+  - name (String): The name of the test suite.  - In create/response: always set - In update request: never Defaults to: `null`.
+  - skippedCount (Integer): Number of test cases not run, typically set by the service by parsing the xml_source.  - In create/response: always set - In update request: never Defaults to: `null`.
+  - totalCount (Integer): Number of test cases, typically set by the service by parsing the xml_source.  - In create/response: always set - In update request: never Defaults to: `null`.
+  - xmlSource (FileReference): If this test suite was parsed from XML, this is the URI where the original XML file is stored.  Note: Multiple test suites can share the same xml_source  Returns INVALID_ARGUMENT if the uri format is not supported.  - In create/response: optional - In update request: never Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"errorCount",
     :"failureCount",
@@ -38,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.TestSuiteOvervi
   def decode(value, options) do
     value
     |> deserialize(:"xmlSource", :struct, GoogleApi.ToolResults.V1beta3.Model.FileReference, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.TestSuiteOverview do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

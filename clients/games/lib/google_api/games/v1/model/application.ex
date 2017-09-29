@@ -20,9 +20,24 @@
 defmodule GoogleApi.Games.V1.Model.Application do
   @moduledoc """
   This is a JSON template for the Application resource.
+
+  ## Attributes
+
+  - achievement_count (Integer): The number of achievements visible to the currently authenticated player. Defaults to: `null`.
+  - assets (List[ImageAsset]): The assets of the application. Defaults to: `null`.
+  - author (String): The author of the application. Defaults to: `null`.
+  - category (ApplicationCategory): The category of the application. Defaults to: `null`.
+  - description (String): The description of the application. Defaults to: `null`.
+  - enabledFeatures (List[String]): A list of features that have been enabled for the application. Possible values are:   - \&quot;SNAPSHOTS\&quot; - Snapshots has been enabled Defaults to: `null`.
+  - id (String): The ID of the application. Defaults to: `null`.
+  - instances (List[Instance]): The instances of the application. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#application. Defaults to: `null`.
+  - lastUpdatedTimestamp (String): The last updated timestamp of the application. Defaults to: `null`.
+  - leaderboard_count (Integer): The number of leaderboards visible to the currently authenticated player. Defaults to: `null`.
+  - name (String): The name of the application. Defaults to: `null`.
+  - themeColor (String): A hint to the client UI for what color to use as an app-themed color. The color is given as an RGB triplet (e.g. \&quot;E0E0E0\&quot;). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"achievement_count",
     :"assets",
@@ -47,6 +62,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.Application do
     |> deserialize(:"assets", :list, GoogleApi.Games.V1.Model.ImageAsset, options)
     |> deserialize(:"category", :struct, GoogleApi.Games.V1.Model.ApplicationCategory, options)
     |> deserialize(:"instances", :list, GoogleApi.Games.V1.Model.Instance, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.Application do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

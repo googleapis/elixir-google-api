@@ -20,9 +20,23 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupRun do
   @moduledoc """
   A database instance backup run resource.
+
+  ## Attributes
+
+  - description (String): The description of this run, only applicable to on-demand backups. Defaults to: `null`.
+  - endTime (DateTime): The time the backup operation completed in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z. Defaults to: `null`.
+  - enqueuedTime (DateTime): The time the run was enqueued in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z. Defaults to: `null`.
+  - error (OperationError): Information about why the backup operation failed. This is only present if the run has the FAILED status. Defaults to: `null`.
+  - id (String): A unique identifier for this backup run. Note that this is unique only within the scope of a particular Cloud SQL instance. Defaults to: `null`.
+  - instance (String): Name of the database instance. Defaults to: `null`.
+  - kind (String): This is always sql#backupRun. Defaults to: `null`.
+  - selfLink (String): The URI of this resource. Defaults to: `null`.
+  - startTime (DateTime): The time the backup operation actually started in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z. Defaults to: `null`.
+  - status (String): The status of this run. Defaults to: `null`.
+  - type (String): The type of this run; can be either \&quot;AUTOMATED\&quot; or \&quot;ON_DEMAND\&quot;. Defaults to: `null`.
+  - windowStartTime (DateTime): The start time of the backup window during which this the backup was attempted in RFC 3339 format, for example 2012-11-15T16:19:00.094Z. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"description",
     :"endTime",
@@ -44,6 +58,12 @@ defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.BackupRun do
   def decode(value, options) do
     value
     |> deserialize(:"error", :struct, GoogleApi.SQLAdmin.V1beta4.Model.OperationError, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.BackupRun do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

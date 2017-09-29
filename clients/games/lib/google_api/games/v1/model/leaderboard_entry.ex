@@ -20,9 +20,20 @@
 defmodule GoogleApi.Games.V1.Model.LeaderboardEntry do
   @moduledoc """
   This is a JSON template for the Leaderboard Entry resource.
+
+  ## Attributes
+
+  - formattedScore (String): The localized string for the numerical value of this score. Defaults to: `null`.
+  - formattedScoreRank (String): The localized string for the rank of this score for this leaderboard. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#leaderboardEntry. Defaults to: `null`.
+  - player (Player): The player who holds this score. Defaults to: `null`.
+  - scoreRank (String): The rank of this score for this leaderboard. Defaults to: `null`.
+  - scoreTag (String): Additional information about the score. Values must contain no more than 64 URI-safe characters as defined by section 2.3 of RFC 3986. Defaults to: `null`.
+  - scoreValue (String): The numerical value of this score. Defaults to: `null`.
+  - timeSpan (String): The time span of this high score. Possible values are:   - \&quot;ALL_TIME\&quot; - The score is an all-time high score.  - \&quot;WEEKLY\&quot; - The score is a weekly high score.  - \&quot;DAILY\&quot; - The score is a daily high score. Defaults to: `null`.
+  - writeTimestampMillis (String): The timestamp at which this score was recorded, in milliseconds since the epoch in UTC. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"formattedScore",
     :"formattedScoreRank",
@@ -41,6 +52,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.LeaderboardEntry do
   def decode(value, options) do
     value
     |> deserialize(:"player", :struct, GoogleApi.Games.V1.Model.Player, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.LeaderboardEntry do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

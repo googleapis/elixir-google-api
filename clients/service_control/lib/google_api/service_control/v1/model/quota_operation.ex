@@ -20,9 +20,18 @@
 defmodule GoogleApi.ServiceControl.V1.Model.QuotaOperation do
   @moduledoc """
   Represents information regarding a quota operation.
+
+  ## Attributes
+
+  - consumerId (String): Identity of the consumer for whom this quota operation is being performed.  This can be in one of the following formats:   project:&lt;project_id&gt;,   project_number:&lt;project_number&gt;,   api_key:&lt;api_key&gt;. Defaults to: `null`.
+  - labels (Map[String, String]): Labels describing the operation. Defaults to: `null`.
+  - methodName (String): Fully qualified name of the API method for which this quota operation is requested. This name is used for matching quota rules or metric rules and billing status rules defined in service configuration. This field is not required if the quota operation is performed on non-API resources.  Example of an RPC method name:     google.example.library.v1.LibraryService.CreateShelf Defaults to: `null`.
+  - operationId (String): Identity of the operation. This is expected to be unique within the scope of the service that generated the operation, and guarantees idempotency in case of retries.  UUID version 4 is recommended, though not required. In scenarios where an operation is computed from existing information and an idempotent id is desirable for deduplication purpose, UUID version 5 is recommended. See RFC 4122 for details. Defaults to: `null`.
+  - quotaMetrics (List[MetricValueSet]): Represents information about this operation. Each MetricValueSet corresponds to a metric defined in the service configuration. The data type used in the MetricValueSet must agree with the data type specified in the metric definition.  Within a single operation, it is not allowed to have more than one MetricValue instances that have the same metric names and identical label value combinations. If a request has such duplicated MetricValue instances, the entire request is rejected with an invalid argument error. Defaults to: `null`.
+  - quotaMode (String): Quota mode for this operation. Defaults to: `null`.
+    - Enum - one of [UNSPECIFIED, NORMAL, BEST_EFFORT, CHECK_ONLY]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"consumerId",
     :"labels",
@@ -38,6 +47,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.QuotaOperation do
   def decode(value, options) do
     value
     |> deserialize(:"quotaMetrics", :list, GoogleApi.ServiceControl.V1.Model.MetricValueSet, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.QuotaOperation do
+  def encode(value, options) do
+    GoogleApi.ServiceControl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

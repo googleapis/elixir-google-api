@@ -20,9 +20,12 @@
 defmodule GoogleApi.TagManager.V2.Model.RevertTriggerResponse do
   @moduledoc """
   The result of reverting a trigger in a workspace.
+
+  ## Attributes
+
+  - trigger (Trigger): Trigger as it appears in the latest container version since the last workspace synchronization operation. If no trigger is present, that means the trigger was deleted in the latest container version. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"trigger"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.RevertTriggerResponse
   def decode(value, options) do
     value
     |> deserialize(:"trigger", :struct, GoogleApi.TagManager.V2.Model.Trigger, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.RevertTriggerResponse do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

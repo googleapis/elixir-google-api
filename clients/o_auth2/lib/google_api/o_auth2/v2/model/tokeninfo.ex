@@ -20,9 +20,20 @@
 defmodule GoogleApi.OAuth2.V2.Model.Tokeninfo do
   @moduledoc """
   
+
+  ## Attributes
+
+  - access_type (String): The access type granted with this token. It can be offline or online. Defaults to: `null`.
+  - audience (String): Who is the intended audience for this token. In general the same as issued_to. Defaults to: `null`.
+  - email (String): The email address of the user. Present only if the email scope is present in the request. Defaults to: `null`.
+  - expires_in (Integer): The expiry time of the token, as number of seconds left until expiry. Defaults to: `null`.
+  - issued_to (String): To whom was the token issued to. In general the same as audience. Defaults to: `null`.
+  - scope (String): The space separated list of scopes granted to this token. Defaults to: `null`.
+  - token_handle (String): The token handle associated with this token. Defaults to: `null`.
+  - user_id (String): The obfuscated user id. Defaults to: `null`.
+  - verified_email (Boolean): Boolean flag which is true if the email address is verified. Present only if the email scope is present in the request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"access_type",
     :"audience",
@@ -39,6 +50,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.OAuth2.V2.Model.Tokeninfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.OAuth2.V2.Model.Tokeninfo do
+  def encode(value, options) do
+    GoogleApi.OAuth2.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

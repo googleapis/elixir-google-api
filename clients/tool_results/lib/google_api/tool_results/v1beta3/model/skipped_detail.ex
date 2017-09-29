@@ -20,9 +20,14 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.SkippedDetail do
   @moduledoc """
   
+
+  ## Attributes
+
+  - incompatibleAppVersion (Boolean): If the App doesn&#39;t support the specific API level. Defaults to: `null`.
+  - incompatibleArchitecture (Boolean): If the App doesn&#39;t run on the specific architecture, for example, x86. Defaults to: `null`.
+  - incompatibleDevice (Boolean): If the requested OS version doesn&#39;t run on the specific device model. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"incompatibleAppVersion",
     :"incompatibleArchitecture",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.SkippedDetail do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.SkippedDetail do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

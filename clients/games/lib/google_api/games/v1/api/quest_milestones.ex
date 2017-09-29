@@ -64,7 +64,10 @@ defmodule GoogleApi.Games.V1.Api.QuestMilestones do
     }
     %{}
     |> method(:put)
-    |> url("/quests/#{quest_id}/milestones/#{milestone_id}/claim")
+    |> url("/quests/{questId}/milestones/{milestoneId}/claim", %{
+         "questId" => URI.encode_www_form(quest_id),
+         "milestoneId" => URI.encode_www_form(milestone_id)
+       })
     |> add_param(:query, :"requestId", request_id)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])

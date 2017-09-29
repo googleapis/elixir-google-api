@@ -20,9 +20,13 @@
 defmodule GoogleApi.Games.V1.Model.AchievementUnlockResponse do
   @moduledoc """
   This is a JSON template for an achievement unlock response
+
+  ## Attributes
+
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#achievementUnlockResponse. Defaults to: `null`.
+  - newlyUnlocked (Boolean): Whether this achievement was newly unlocked (that is, whether the unlock request for the achievement was the first for the player). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"newlyUnlocked"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.AchievementUnlockResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.AchievementUnlockResponse do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

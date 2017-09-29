@@ -20,9 +20,16 @@
 defmodule GoogleApi.Games.V1.Model.TurnBasedMatchCreateRequest do
   @moduledoc """
   This is a JSON template for a turn-based match creation request.
+
+  ## Attributes
+
+  - autoMatchingCriteria (TurnBasedAutoMatchingCriteria): Criteria for auto-matching players into this match. Defaults to: `null`.
+  - invitedPlayerIds (List[String]): The player ids to invite to the match. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#turnBasedMatchCreateRequest. Defaults to: `null`.
+  - requestId (String): A randomly generated numeric ID. This number is used at the server to ensure that the request is handled correctly across retries. Defaults to: `null`.
+  - variant (Integer): The variant / mode of the application to be played. This can be any integer value, or left blank. You should use a small number of variants to keep the auto-matching pool as large as possible. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"autoMatchingCriteria",
     :"invitedPlayerIds",
@@ -37,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.TurnBasedMatchCreateReques
   def decode(value, options) do
     value
     |> deserialize(:"autoMatchingCriteria", :struct, GoogleApi.Games.V1.Model.TurnBasedAutoMatchingCriteria, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.TurnBasedMatchCreateRequest do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

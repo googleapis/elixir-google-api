@@ -20,9 +20,13 @@
 defmodule GoogleApi.TagManager.V2.Model.SetupTag do
   @moduledoc """
   Represents a reference to atag that fires before another tag in order to set up dependencies.
+
+  ## Attributes
+
+  - stopOnSetupFailure (Boolean): If true, fire the main tag if and only if the setup tag fires successfully. If false, fire the main tag regardless of setup tag firing status. Defaults to: `null`.
+  - tagName (String): The name of the setup tag. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"stopOnSetupFailure",
     :"tagName"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.SetupTag do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.SetupTag do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

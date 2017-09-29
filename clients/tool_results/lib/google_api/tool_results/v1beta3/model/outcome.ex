@@ -20,9 +20,17 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.Outcome do
   @moduledoc """
   Interprets a result so that humans and machines can act on it.
+
+  ## Attributes
+
+  - failureDetail (FailureDetail): More information about a FAILURE outcome.  Returns INVALID_ARGUMENT if this field is set but the summary is not FAILURE.  Optional Defaults to: `null`.
+  - inconclusiveDetail (InconclusiveDetail): More information about an INCONCLUSIVE outcome.  Returns INVALID_ARGUMENT if this field is set but the summary is not INCONCLUSIVE.  Optional Defaults to: `null`.
+  - skippedDetail (SkippedDetail): More information about a SKIPPED outcome.  Returns INVALID_ARGUMENT if this field is set but the summary is not SKIPPED.  Optional Defaults to: `null`.
+  - successDetail (SuccessDetail): More information about a SUCCESS outcome.  Returns INVALID_ARGUMENT if this field is set but the summary is not SUCCESS.  Optional Defaults to: `null`.
+  - summary (String): The simplest way to interpret a result.  Required Defaults to: `null`.
+    - Enum - one of [failure, inconclusive, skipped, success, unset]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"failureDetail",
     :"inconclusiveDetail",
@@ -40,6 +48,12 @@ defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.Outcome do
     |> deserialize(:"inconclusiveDetail", :struct, GoogleApi.ToolResults.V1beta3.Model.InconclusiveDetail, options)
     |> deserialize(:"skippedDetail", :struct, GoogleApi.ToolResults.V1beta3.Model.SkippedDetail, options)
     |> deserialize(:"successDetail", :struct, GoogleApi.ToolResults.V1beta3.Model.SuccessDetail, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.Outcome do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

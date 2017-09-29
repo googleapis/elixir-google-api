@@ -20,9 +20,14 @@
 defmodule GoogleApi.Monitoring.V3.Model.Linear do
   @moduledoc """
   Specifies a linear sequence of buckets that all have the same width (except overflow and underflow). Each bucket represents a constant absolute uncertainty on the specific value in the bucket.There are num_finite_buckets + 2 (&#x3D; N) buckets. Bucket i has the following boundaries:Upper bound (0 &lt;&#x3D; i &lt; N-1): offset + (width * i).  Lower bound (1 &lt;&#x3D; i &lt; N): offset + (width * (i - 1)).
+
+  ## Attributes
+
+  - numFiniteBuckets (Integer): Must be greater than 0. Defaults to: `null`.
+  - offset (Float): Lower bound of the first bucket. Defaults to: `null`.
+  - width (Float): Must be greater than 0. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"numFiniteBuckets",
     :"offset",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.Linear do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Monitoring.V3.Model.Linear do
+  def encode(value, options) do
+    GoogleApi.Monitoring.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.TagManager.V2.Model.WorkspaceProposalHistoryStatusChange do
   @moduledoc """
   A change in the proposal&#39;s status.
+
+  ## Attributes
+
+  - newStatus (String): The new proposal status after that status change. Defaults to: `null`.
+    - Enum - one of [approved, cancelled, completed, requested, reviewed, statusUnspecified]
+  - oldStatus (String): The old proposal status before the status change. Defaults to: `null`.
+    - Enum - one of [approved, cancelled, completed, requested, reviewed, statusUnspecified]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"newStatus",
     :"oldStatus"
@@ -32,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.WorkspaceProposalHistoryStatusChange do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.WorkspaceProposalHistoryStatusChange do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

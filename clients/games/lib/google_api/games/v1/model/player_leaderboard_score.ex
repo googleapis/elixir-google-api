@@ -20,9 +20,20 @@
 defmodule GoogleApi.Games.V1.Model.PlayerLeaderboardScore do
   @moduledoc """
   This is a JSON template for a player leaderboard score object.
+
+  ## Attributes
+
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#playerLeaderboardScore. Defaults to: `null`.
+  - leaderboard_id (String): The ID of the leaderboard this score is in. Defaults to: `null`.
+  - publicRank (LeaderboardScoreRank): The public rank of the score in this leaderboard. This object will not be present if the user is not sharing their scores publicly. Defaults to: `null`.
+  - scoreString (String): The formatted value of this score. Defaults to: `null`.
+  - scoreTag (String): Additional information about the score. Values must contain no more than 64 URI-safe characters as defined by section 2.3 of RFC 3986. Defaults to: `null`.
+  - scoreValue (String): The numerical value of this score. Defaults to: `null`.
+  - socialRank (LeaderboardScoreRank): The social rank of the score in this leaderboard. Defaults to: `null`.
+  - timeSpan (String): The time span of this score. Possible values are:   - \&quot;ALL_TIME\&quot; - The score is an all-time score.  - \&quot;WEEKLY\&quot; - The score is a weekly score.  - \&quot;DAILY\&quot; - The score is a daily score. Defaults to: `null`.
+  - writeTimestamp (String): The timestamp at which this score was recorded, in milliseconds since the epoch in UTC. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"leaderboard_id",
@@ -42,6 +53,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.PlayerLeaderboardScore do
     value
     |> deserialize(:"publicRank", :struct, GoogleApi.Games.V1.Model.LeaderboardScoreRank, options)
     |> deserialize(:"socialRank", :struct, GoogleApi.Games.V1.Model.LeaderboardScoreRank, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.PlayerLeaderboardScore do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

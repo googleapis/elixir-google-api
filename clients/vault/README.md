@@ -1,6 +1,6 @@
 # GoogleApi.Vault.V1
 
-**TODO: Add description**
+Add archiving and eDiscovery to G Suite. Manage, retain, search and export your organization’s email and on-the-record chats. Vault is included with G Suite's Business and Enterprise editions.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_vault` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_vault, "~> 0.1.0"}]
+  [{:google_api_vault, "~> 0.0.1"}]
 end
 ```
 

@@ -20,9 +20,18 @@
 defmodule GoogleApi.Games.V1.Model.NetworkDiagnostics do
   @moduledoc """
   This is a JSON template for network diagnostics reported for a client.
+
+  ## Attributes
+
+  - androidNetworkSubtype (Integer): The Android network subtype. Defaults to: `null`.
+  - androidNetworkType (Integer): The Android network type. Defaults to: `null`.
+  - iosNetworkType (Integer): iOS network type as defined in Reachability.h. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#networkDiagnostics. Defaults to: `null`.
+  - networkOperatorCode (String): The MCC+MNC code for the client&#39;s network connection. On Android: http://developer.android.com/reference/android/telephony/TelephonyManager.html#getNetworkOperator() On iOS, see: https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTCarrier/Reference/Reference.html Defaults to: `null`.
+  - networkOperatorName (String): The name of the carrier of the client&#39;s network connection. On Android: http://developer.android.com/reference/android/telephony/TelephonyManager.html#getNetworkOperatorName() On iOS: https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTCarrier/Reference/Reference.html#//apple_ref/occ/instp/CTCarrier/carrierName Defaults to: `null`.
+  - registrationLatencyMillis (Integer): The amount of time in milliseconds it took for the client to establish a connection with the XMPP server. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"androidNetworkSubtype",
     :"androidNetworkType",
@@ -37,6 +46,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.NetworkDiagnostics do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.NetworkDiagnostics do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

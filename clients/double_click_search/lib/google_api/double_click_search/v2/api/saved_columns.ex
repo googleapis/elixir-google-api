@@ -61,7 +61,10 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.SavedColumns do
     }
     %{}
     |> method(:get)
-    |> url("/agency/#{agency_id}/advertiser/#{advertiser_id}/savedcolumns")
+    |> url("/agency/{agencyId}/advertiser/{advertiserId}/savedcolumns", %{
+         "agencyId" => URI.encode_www_form(agency_id),
+         "advertiserId" => URI.encode_www_form(advertiser_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

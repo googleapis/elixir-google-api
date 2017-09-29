@@ -20,9 +20,16 @@
 defmodule GoogleApi.DNS.V1.Model.ResourceRecordSet do
   @moduledoc """
   A unit of data that will be returned by the DNS servers.
+
+  ## Attributes
+
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;dns#resourceRecordSet\&quot;. Defaults to: `null`.
+  - name (String): For example, www.example.com. Defaults to: `null`.
+  - rrdatas (List[String]): As defined in RFC 1035 (section 5) and RFC 1034 (section 3.6.1). Defaults to: `null`.
+  - ttl (Integer): Number of seconds that this ResourceRecordSet can be cached by resolvers. Defaults to: `null`.
+  - type (String): The identifier of a supported record type, for example, A, AAAA, MX, TXT, and so on. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"name",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.DNS.V1.Model.ResourceRecordSet do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DNS.V1.Model.ResourceRecordSet do
+  def encode(value, options) do
+    GoogleApi.DNS.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

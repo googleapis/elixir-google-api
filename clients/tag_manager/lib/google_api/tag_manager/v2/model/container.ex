@@ -20,9 +20,22 @@
 defmodule GoogleApi.TagManager.V2.Model.Container do
   @moduledoc """
   Represents a Google Tag Manager Container, which specifies the platform tags will run on, manages workspaces, and retains container versions.
+
+  ## Attributes
+
+  - accountId (String): GTM Account ID. Defaults to: `null`.
+  - containerId (String): The Container ID uniquely identifies the GTM Container. Defaults to: `null`.
+  - domainName (List[String]): List of domain names associated with the Container. Defaults to: `null`.
+  - fingerprint (String): The fingerprint of the GTM Container as computed at storage time. This value is recomputed whenever the account is modified. Defaults to: `null`.
+  - name (String): Container display name. Defaults to: `null`.
+  - notes (String): Container Notes. Defaults to: `null`.
+  - path (String): GTM Container&#39;s API relative path. Defaults to: `null`.
+  - publicId (String): Container Public ID. Defaults to: `null`.
+  - tagManagerUrl (String): Auto generated link to the tag manager UI Defaults to: `null`.
+  - usageContext (List[String]): List of Usage Contexts for the Container. Valid values include: web, android, or ios. Defaults to: `null`.
+    - Enum - one of 
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accountId",
     :"containerId",
@@ -40,6 +53,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.Container do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.Container do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

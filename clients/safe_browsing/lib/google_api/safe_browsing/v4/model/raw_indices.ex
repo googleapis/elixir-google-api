@@ -20,9 +20,12 @@
 defmodule GoogleApi.SafeBrowsing.V4.Model.RawIndices do
   @moduledoc """
   A set of raw indices to remove from a local list.
+
+  ## Attributes
+
+  - indices (List[Integer]): The indices to remove from a lexicographically-sorted local list. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"indices"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.RawIndices do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SafeBrowsing.V4.Model.RawIndices do
+  def encode(value, options) do
+    GoogleApi.SafeBrowsing.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

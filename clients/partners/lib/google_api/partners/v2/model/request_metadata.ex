@@ -20,9 +20,16 @@
 defmodule GoogleApi.Partners.V2.Model.RequestMetadata do
   @moduledoc """
   Common data that is in each API request.
+
+  ## Attributes
+
+  - experimentIds (List[String]): Experiment IDs the current request belongs to. Defaults to: `null`.
+  - locale (String): Locale to use for the current request. Defaults to: `null`.
+  - partnersSessionId (String): Google Partners session ID. Defaults to: `null`.
+  - trafficSource (TrafficSource): Source of traffic for the current request. Defaults to: `null`.
+  - userOverrides (UserOverrides): Values to use instead of the user&#39;s respective defaults for the current request. These are only honored by whitelisted products. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"experimentIds",
     :"locale",
@@ -38,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.RequestMetadata do
     value
     |> deserialize(:"trafficSource", :struct, GoogleApi.Partners.V2.Model.TrafficSource, options)
     |> deserialize(:"userOverrides", :struct, GoogleApi.Partners.V2.Model.UserOverrides, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.RequestMetadata do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

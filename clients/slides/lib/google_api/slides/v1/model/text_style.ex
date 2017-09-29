@@ -20,9 +20,24 @@
 defmodule GoogleApi.Slides.V1.Model.TextStyle do
   @moduledoc """
   Represents the styling that can be applied to a TextRun.  If this text is contained in a shape with a parent placeholder, then these text styles may be inherited from the parent. Which text styles are inherited depend on the nesting level of lists:  * A text run in a paragraph that is not in a list will inherit its text style   from the the newline character in the paragraph at the 0 nesting level of   the list inside the parent placeholder. * A text run in a paragraph that is in a list will inherit its text style   from the newline character in the paragraph at its corresponding nesting   level of the list inside the parent placeholder.  Inherited text styles are represented as unset fields in this message. If text is contained in a shape without a parent placeholder, unsetting these fields will revert the style to a value matching the defaults in the Slides editor.
+
+  ## Attributes
+
+  - backgroundColor (OptionalColor): The background color of the text. If set, the color is either opaque or transparent, depending on if the &#x60;opaque_color&#x60; field in it is set. Defaults to: `null`.
+  - baselineOffset (String): The text&#39;s vertical offset from its normal position.  Text with &#x60;SUPERSCRIPT&#x60; or &#x60;SUBSCRIPT&#x60; baseline offsets is automatically rendered in a smaller font size, computed based on the &#x60;font_size&#x60; field. The &#x60;font_size&#x60; itself is not affected by changes in this field. Defaults to: `null`.
+    - Enum - one of [BASELINE_OFFSET_UNSPECIFIED, NONE, SUPERSCRIPT, SUBSCRIPT]
+  - bold (Boolean): Whether or not the text is rendered as bold. Defaults to: `null`.
+  - fontFamily (String): The font family of the text.  The font family can be any font from the Font menu in Slides or from [Google Fonts] (https://fonts.google.com/). If the font name is unrecognized, the text is rendered in &#x60;Arial&#x60;.  Some fonts can affect the weight of the text. If an update request specifies values for both &#x60;font_family&#x60; and &#x60;bold&#x60;, the explicitly-set &#x60;bold&#x60; value is used. Defaults to: `null`.
+  - fontSize (Dimension): The size of the text&#39;s font. When read, the &#x60;font_size&#x60; will specified in points. Defaults to: `null`.
+  - foregroundColor (OptionalColor): The color of the text itself. If set, the color is either opaque or transparent, depending on if the &#x60;opaque_color&#x60; field in it is set. Defaults to: `null`.
+  - italic (Boolean): Whether or not the text is italicized. Defaults to: `null`.
+  - link (Link): The hyperlink destination of the text. If unset, there is no link. Links are not inherited from parent text.  Changing the link in an update request causes some other changes to the text style of the range:  * When setting a link, the text foreground color will be set to   ThemeColorType.HYPERLINK and the text will   be underlined. If these fields are modified in the same   request, those values will be used instead of the link defaults. * Setting a link on a text range that overlaps with an existing link will   also update the existing link to point to the new URL. * Links are not settable on newline characters. As a result, setting a link   on a text range that crosses a paragraph boundary, such as &#x60;\&quot;ABC\\n123\&quot;&#x60;,   will separate the newline character(s) into their own text runs. The   link will be applied separately to the runs before and after the newline. * Removing a link will update the text style of the range to match the   style of the preceding text (or the default text styles if the preceding   text is another link) unless different styles are being set in the same   request. Defaults to: `null`.
+  - smallCaps (Boolean): Whether or not the text is in small capital letters. Defaults to: `null`.
+  - strikethrough (Boolean): Whether or not the text is struck through. Defaults to: `null`.
+  - underline (Boolean): Whether or not the text is underlined. Defaults to: `null`.
+  - weightedFontFamily (WeightedFontFamily): The font family and rendered weight of the text.  This field is an extension of &#x60;font_family&#x60; meant to support explicit font weights without breaking backwards compatibility. As such, when reading the style of a range of text, the value of &#x60;weighted_font_family#font_family&#x60; will always be equal to that of &#x60;font_family&#x60;. However, when writing, if both fields are included in the field mask (either explicitly or through the wildcard &#x60;\&quot;*\&quot;&#x60;), their values are reconciled as follows:  * If &#x60;font_family&#x60; is set and &#x60;weighted_font_family&#x60; is not, the value of   &#x60;font_family&#x60; is applied with weight &#x60;400&#x60; (\&quot;normal\&quot;). * If both fields are set, the value of &#x60;font_family&#x60; must match that of   &#x60;weighted_font_family#font_family&#x60;. If so, the font family and weight of   &#x60;weighted_font_family&#x60; is applied. Otherwise, a 400 bad request error is   returned. * If &#x60;weighted_font_family&#x60; is set and &#x60;font_family&#x60; is not, the font   family and weight of &#x60;weighted_font_family&#x60; is applied. * If neither field is set, the font family and weight of the text inherit   from the parent. Note that these properties cannot inherit separately   from each other.  If an update request specifies values for both &#x60;weighted_font_family&#x60; and &#x60;bold&#x60;, the &#x60;weighted_font_family&#x60; is applied first, then &#x60;bold&#x60;.  If &#x60;weighted_font_family#weight&#x60; is not set, it defaults to &#x60;400&#x60;.  If &#x60;weighted_font_family&#x60; is set, then &#x60;weighted_font_family#font_family&#x60; must also be set with a non-empty value. Otherwise, a 400 bad request error is returned. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"backgroundColor",
     :"baselineOffset",
@@ -48,6 +63,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.TextStyle do
     |> deserialize(:"foregroundColor", :struct, GoogleApi.Slides.V1.Model.OptionalColor, options)
     |> deserialize(:"link", :struct, GoogleApi.Slides.V1.Model.Link, options)
     |> deserialize(:"weightedFontFamily", :struct, GoogleApi.Slides.V1.Model.WeightedFontFamily, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.TextStyle do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

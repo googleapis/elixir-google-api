@@ -1,6 +1,6 @@
 # GoogleApi.SearchConsole.V1
 
-**TODO: Add description**
+Provides tools for running validation tests against single URLs
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_search_console` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_search_console, "~> 0.1.0"}]
+  [{:google_api_search_console, "~> 0.0.1"}]
 end
 ```
 

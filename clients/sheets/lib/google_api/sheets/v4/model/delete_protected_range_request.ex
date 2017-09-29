@@ -20,9 +20,12 @@
 defmodule GoogleApi.Sheets.V4.Model.DeleteProtectedRangeRequest do
   @moduledoc """
   Deletes the protected range with the given ID.
+
+  ## Attributes
+
+  - protectedRangeId (Integer): The ID of the protected range to delete. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"protectedRangeId"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DeleteProtectedRangeRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.DeleteProtectedRangeRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

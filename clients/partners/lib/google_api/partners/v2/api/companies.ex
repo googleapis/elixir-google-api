@@ -94,7 +94,9 @@ defmodule GoogleApi.Partners.V2.Api.Companies do
     }
     %{}
     |> method(:get)
-    |> url("/v2/companies/#{company_id}")
+    |> url("/v2/companies/{companyId}", %{
+         "companyId" => URI.encode_www_form(company_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -149,7 +151,9 @@ defmodule GoogleApi.Partners.V2.Api.Companies do
     }
     %{}
     |> method(:post)
-    |> url("/v2/companies/#{company_id}/leads")
+    |> url("/v2/companies/{companyId}/leads", %{
+         "companyId" => URI.encode_www_form(company_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

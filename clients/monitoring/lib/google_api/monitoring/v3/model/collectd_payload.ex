@@ -20,9 +20,19 @@
 defmodule GoogleApi.Monitoring.V3.Model.CollectdPayload do
   @moduledoc """
   A collection of data points sent from a collectd-based plugin. See the collectd documentation for more information.
+
+  ## Attributes
+
+  - endTime (String): The end time of the interval. Defaults to: `null`.
+  - metadata (Map[String, TypedValue]): The measurement metadata. Example: \&quot;process_id\&quot; -&gt; 12345 Defaults to: `null`.
+  - plugin (String): The name of the plugin. Example: \&quot;disk\&quot;. Defaults to: `null`.
+  - pluginInstance (String): The instance name of the plugin Example: \&quot;hdcl\&quot;. Defaults to: `null`.
+  - startTime (String): The start time of the interval. Defaults to: `null`.
+  - type (String): The measurement type. Example: \&quot;memory\&quot;. Defaults to: `null`.
+  - typeInstance (String): The measurement type instance. Example: \&quot;used\&quot;. Defaults to: `null`.
+  - values (List[CollectdValue]): The measured values during this time interval. Each value must have a different dataSourceName. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"endTime",
     :"metadata",
@@ -41,6 +51,12 @@ defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.CollectdPayload do
     value
     |> deserialize(:"metadata", :map, GoogleApi.Monitoring.V3.Model.TypedValue, options)
     |> deserialize(:"values", :list, GoogleApi.Monitoring.V3.Model.CollectdValue, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Monitoring.V3.Model.CollectdPayload do
+  def encode(value, options) do
+    GoogleApi.Monitoring.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

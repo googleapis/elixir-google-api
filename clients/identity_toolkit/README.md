@@ -1,6 +1,6 @@
 # GoogleApi.IdentityToolkit.V3
 
-**TODO: Add description**
+Help the third party sites to implement federated login.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_identity_toolkit` to your list of dependencies in `mix.exs
 
 ```elixir
 def deps do
-  [{:google_api_identity_toolkit, "~> 0.1.0"}]
+  [{:google_api_identity_toolkit, "~> 0.0.1"}]
 end
 ```
 

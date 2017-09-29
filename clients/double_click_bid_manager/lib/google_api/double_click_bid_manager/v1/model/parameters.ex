@@ -20,9 +20,19 @@
 defmodule GoogleApi.DoubleClickBidManager.V1.Model.Parameters do
   @moduledoc """
   Parameters of a query or report.
+
+  ## Attributes
+
+  - filters (List[FilterPair]): Filters used to match traffic data in your report. Defaults to: `null`.
+  - groupBys (List[String]): Data is grouped by the filters listed in this field. Defaults to: `null`.
+    - Enum - one of 
+  - includeInviteData (Boolean): Whether to include data from Invite Media. Defaults to: `null`.
+  - metrics (List[String]): Metrics to include as columns in your report. Defaults to: `null`.
+    - Enum - one of 
+  - type (String): Report type. Defaults to: `null`.
+    - Enum - one of [TYPE_ACTIVE_GRP, TYPE_AUDIENCE_COMPOSITION, TYPE_AUDIENCE_PERFORMANCE, TYPE_CLIENT_SAFE, TYPE_COMSCORE_VCE, TYPE_CROSS_FEE, TYPE_CROSS_PARTNER, TYPE_CROSS_PARTNER_THIRD_PARTY_DATA_PROVIDER, TYPE_ESTIMATED_CONVERSION, TYPE_FEE, TYPE_GENERAL, TYPE_INVENTORY_AVAILABILITY, TYPE_KEYWORD, TYPE_NIELSEN_AUDIENCE_PROFILE, TYPE_NIELSEN_DAILY_REACH_BUILD, TYPE_NIELSEN_ONLINE_GLOBAL_MARKET, TYPE_NIELSEN_SITE, TYPE_NOT_SUPPORTED, TYPE_ORDER_ID, TYPE_PAGE_CATEGORY, TYPE_PETRA_NIELSEN_AUDIENCE_PROFILE, TYPE_PETRA_NIELSEN_DAILY_REACH_BUILD, TYPE_PETRA_NIELSEN_ONLINE_GLOBAL_MARKET, TYPE_PIXEL_LOAD, TYPE_REACH_AND_FREQUENCY, TYPE_REACH_AUDIENCE, TYPE_THIRD_PARTY_DATA_PROVIDER, TYPE_TRUEVIEW, TYPE_TRUEVIEW_IAR, TYPE_VERIFICATION, TYPE_YOUTUBE_VERTICAL]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"filters",
     :"groupBys",
@@ -37,6 +47,12 @@ defimpl Poison.Decoder, for: GoogleApi.DoubleClickBidManager.V1.Model.Parameters
   def decode(value, options) do
     value
     |> deserialize(:"filters", :list, GoogleApi.DoubleClickBidManager.V1.Model.FilterPair, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickBidManager.V1.Model.Parameters do
+  def encode(value, options) do
+    GoogleApi.DoubleClickBidManager.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

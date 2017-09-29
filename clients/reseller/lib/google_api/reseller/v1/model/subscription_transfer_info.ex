@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Reseller.V1.Model.Subscription_transferInfo do
+defmodule GoogleApi.Reseller.V1.Model.SubscriptionTransferInfo do
   @moduledoc """
   Read-only transfer related information for the subscription. For more information, see retrieve transferable subscriptions for a customer.
+
+  ## Attributes
+
+  - minimumTransferableSeats (Integer): When inserting a subscription, this is the minimum number of seats listed in the transfer order for this product. For example, if the customer has 20 users, the reseller cannot place a transfer order of 15 seats. The minimum is 20 seats. Defaults to: `null`.
+  - transferabilityExpirationTime (String): The time when transfer token or intent to transfer will expire. The time is in milliseconds using UNIX Epoch format. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"minimumTransferableSeats",
     :"transferabilityExpirationTime"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Reseller.V1.Model.Subscription_transferInfo do
+defimpl Poison.Decoder, for: GoogleApi.Reseller.V1.Model.SubscriptionTransferInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Reseller.V1.Model.SubscriptionTransferInfo do
+  def encode(value, options) do
+    GoogleApi.Reseller.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.SQLAdmin.V1beta4.Model.ImportContext_csvImportOptions do
+defmodule GoogleApi.SQLAdmin.V1beta4.Model.ImportContextCsvImportOptions do
   @moduledoc """
   Options for importing data as CSV.
+
+  ## Attributes
+
+  - columns (List[String]): The columns to which CSV data is imported. If not specified, all columns of the database table are loaded with CSV data. Defaults to: `null`.
+  - table (String): The table to which CSV data is imported. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"columns",
     :"table"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.ImportContext_csvImportOptions do
+defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.ImportContextCsvImportOptions do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.ImportContextCsvImportOptions do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

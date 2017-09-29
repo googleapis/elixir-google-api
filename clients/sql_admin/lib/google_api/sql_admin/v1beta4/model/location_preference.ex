@@ -20,9 +20,14 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.LocationPreference do
   @moduledoc """
   Preferred location. This specifies where a Cloud SQL instance should preferably be located, either in a specific Compute Engine zone, or co-located with an App Engine application. Note that if the preferred location is not available, the instance will be located as close as possible within the region. Only one location may be specified.
+
+  ## Attributes
+
+  - followGaeApplication (String): The AppEngine application to follow, it must be in the same region as the Cloud SQL instance. Defaults to: `null`.
+  - kind (String): This is always sql#locationPreference. Defaults to: `null`.
+  - zone (String): The preferred Compute Engine zone (e.g. us-centra1-a, us-central1-b, etc.). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"followGaeApplication",
     :"kind",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.LocationPreference do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.LocationPreference do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

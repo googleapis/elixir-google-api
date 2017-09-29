@@ -20,9 +20,26 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.Operation do
   @moduledoc """
   An Operations resource contains information about database instance operations such as create, delete, and restart. Operations resources are created in response to operations that were initiated; you never create them directly.
+
+  ## Attributes
+
+  - endTime (DateTime): The time this operation finished in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z. Defaults to: `null`.
+  - error (OperationErrors): If errors occurred during processing of this operation, this field will be populated. Defaults to: `null`.
+  - exportContext (ExportContext): The context for export operation, if applicable. Defaults to: `null`.
+  - importContext (ImportContext): The context for import operation, if applicable. Defaults to: `null`.
+  - insertTime (DateTime): The time this operation was enqueued in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z. Defaults to: `null`.
+  - kind (String): This is always sql#operation. Defaults to: `null`.
+  - name (String): An identifier that uniquely identifies the operation. You can use this identifier to retrieve the Operations resource that has information about the operation. Defaults to: `null`.
+  - operationType (String): The type of the operation. Valid values are CREATE, DELETE, UPDATE, RESTART, IMPORT, EXPORT, BACKUP_VOLUME, RESTORE_VOLUME, CREATE_USER, DELETE_USER, CREATE_DATABASE, DELETE_DATABASE . Defaults to: `null`.
+  - selfLink (String): The URI of this resource. Defaults to: `null`.
+  - startTime (DateTime): The time this operation actually started in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z. Defaults to: `null`.
+  - status (String): The status of an operation. Valid values are PENDING, RUNNING, DONE, UNKNOWN. Defaults to: `null`.
+  - targetId (String): Name of the database instance related to this operation. Defaults to: `null`.
+  - targetLink (String):  Defaults to: `null`.
+  - targetProject (String): The project ID of the target instance related to this operation. Defaults to: `null`.
+  - user (String): The email address of the user who initiated this operation. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"endTime",
     :"error",
@@ -49,6 +66,12 @@ defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.Operation do
     |> deserialize(:"error", :struct, GoogleApi.SQLAdmin.V1beta4.Model.OperationErrors, options)
     |> deserialize(:"exportContext", :struct, GoogleApi.SQLAdmin.V1beta4.Model.ExportContext, options)
     |> deserialize(:"importContext", :struct, GoogleApi.SQLAdmin.V1beta4.Model.ImportContext, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.Operation do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

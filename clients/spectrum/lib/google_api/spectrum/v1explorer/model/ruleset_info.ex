@@ -20,9 +20,15 @@
 defmodule GoogleApi.Spectrum.V1explorer.Model.RulesetInfo do
   @moduledoc """
   This contains parameters for the ruleset of a regulatory domain that is communicated using the initialization and available-spectrum processes.
+
+  ## Attributes
+
+  - authority (String): The regulatory domain to which the ruleset belongs is required. It must be a 2-letter country code. The device should use this to determine additional device behavior required by the associated regulatory domain. Defaults to: `null`.
+  - maxLocationChange (Float): The maximum location change in meters is required in the initialization response, but optional otherwise. When the device changes location by more than this specified distance, it must contact the database to get the available spectrum for the new location. If the device is using spectrum that is no longer available, it must immediately cease use of the spectrum under rules for database-managed spectrum. If this value is provided within the context of an available-spectrum response, it takes precedence over the value within the initialization response. Defaults to: `null`.
+  - maxPollingSecs (Integer): The maximum duration, in seconds, between requests for available spectrum. It is required in the initialization response, but optional otherwise. The device must contact the database to get available spectrum no less frequently than this duration. If the new spectrum information indicates that the device is using spectrum that is no longer available, it must immediately cease use of those frequencies under rules for database-managed spectrum. If this value is provided within the context of an available-spectrum response, it takes precedence over the value within the initialization response. Defaults to: `null`.
+  - rulesetIds (List[String]): The identifiers of the rulesets supported for the device&#39;s location. The database should include at least one applicable ruleset in the initialization response. The device may use the ruleset identifiers to determine parameters to include in subsequent requests. Within the context of the available-spectrum responses, the database should include the identifier of the ruleset that it used to determine the available-spectrum response. If included, the device must use the specified ruleset to interpret the response. If the device does not support the indicated ruleset, it must not operate in the spectrum governed by the ruleset. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"authority",
     :"maxLocationChange",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Spectrum.V1explorer.Model.RulesetInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spectrum.V1explorer.Model.RulesetInfo do
+  def encode(value, options) do
+    GoogleApi.Spectrum.V1explorer.Deserializer.serialize_non_nil(value, options)
   end
 end
 

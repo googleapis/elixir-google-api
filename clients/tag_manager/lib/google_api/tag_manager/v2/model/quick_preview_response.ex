@@ -20,9 +20,14 @@
 defmodule GoogleApi.TagManager.V2.Model.QuickPreviewResponse do
   @moduledoc """
   Response to quick previewing a workspace.
+
+  ## Attributes
+
+  - compilerError (Boolean): Were there compiler errors or not. Defaults to: `null`.
+  - containerVersion (ContainerVersion): The quick previewed container version. Defaults to: `null`.
+  - syncStatus (SyncStatus): Whether quick previewing failed when syncing the workspace to the latest container version. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"compilerError",
     :"containerVersion",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.QuickPreviewResponse 
     value
     |> deserialize(:"containerVersion", :struct, GoogleApi.TagManager.V2.Model.ContainerVersion, options)
     |> deserialize(:"syncStatus", :struct, GoogleApi.TagManager.V2.Model.SyncStatus, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.QuickPreviewResponse do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

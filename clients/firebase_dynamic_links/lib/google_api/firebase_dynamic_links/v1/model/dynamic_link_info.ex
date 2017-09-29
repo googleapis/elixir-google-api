@@ -20,9 +20,18 @@
 defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkInfo do
   @moduledoc """
   Information about a Dynamic Link.
+
+  ## Attributes
+
+  - analyticsInfo (AnalyticsInfo): Parameters used for tracking. See all tracking parameters in the [documentation](https://firebase.google.com/docs/dynamic-links/create-manually). Defaults to: `null`.
+  - androidInfo (AndroidInfo): Android related information. See Android related parameters in the [documentation](https://firebase.google.com/docs/dynamic-links/create-manually). Defaults to: `null`.
+  - dynamicLinkDomain (String): Dynamic Links domain that the project owns, e.g. abcd.app.goo.gl [Learn more](https://firebase.google.com/docs/dynamic-links/android/receive) on how to set up Dynamic Link domain associated with your Firebase project.  Required. Defaults to: `null`.
+  - iosInfo (IosInfo): iOS related information. See iOS related parameters in the [documentation](https://firebase.google.com/docs/dynamic-links/create-manually). Defaults to: `null`.
+  - link (String): The link your app will open, You can specify any URL your app can handle. This link must be a well-formatted URL, be properly URL-encoded, and use the HTTP or HTTPS scheme. See &#39;link&#39; parameters in the [documentation](https://firebase.google.com/docs/dynamic-links/create-manually).  Required. Defaults to: `null`.
+  - navigationInfo (NavigationInfo): Information of navigation behavior of a Firebase Dynamic Links. Defaults to: `null`.
+  - socialMetaTagInfo (SocialMetaTagInfo): Parameters for social meta tag params. Used to set meta tag data for link previews on social sites. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"analyticsInfo",
     :"androidInfo",
@@ -43,6 +52,12 @@ defimpl Poison.Decoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLink
     |> deserialize(:"iosInfo", :struct, GoogleApi.FirebaseDynamicLinks.V1.Model.IosInfo, options)
     |> deserialize(:"navigationInfo", :struct, GoogleApi.FirebaseDynamicLinks.V1.Model.NavigationInfo, options)
     |> deserialize(:"socialMetaTagInfo", :struct, GoogleApi.FirebaseDynamicLinks.V1.Model.SocialMetaTagInfo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkInfo do
+  def encode(value, options) do
+    GoogleApi.FirebaseDynamicLinks.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

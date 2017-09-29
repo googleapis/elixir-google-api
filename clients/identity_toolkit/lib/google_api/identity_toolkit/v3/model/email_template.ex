@@ -20,9 +20,17 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.EmailTemplate do
   @moduledoc """
   Template for an email template.
+
+  ## Attributes
+
+  - body (String): Email body. Defaults to: `null`.
+  - format (String): Email body format. Defaults to: `null`.
+  - from (String): From address of the email. Defaults to: `null`.
+  - fromDisplayName (String): From display name. Defaults to: `null`.
+  - replyTo (String): Reply-to address. Defaults to: `null`.
+  - subject (String): Subject of the email. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"body",
     :"format",
@@ -36,6 +44,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.EmailTemplate do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.EmailTemplate do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

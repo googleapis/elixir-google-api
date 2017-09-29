@@ -20,9 +20,13 @@
 defmodule GoogleApi.Spectrum.V1explorer.Model.DeviceOwner do
   @moduledoc """
   This parameter contains device-owner information required as part of device registration. The regulatory domains may require additional parameters.  All contact information must be expressed using the structure defined by the vCard format specification. Only the contact fields of vCard are supported:   - fn: Full name of an individual  - org: Name of the organization  - adr: Address fields  - tel: Telephone numbers  - email: Email addresses    Note that the vCard specification defines maximum lengths for each field.
+
+  ## Attributes
+
+  - operator (Vcard): The vCard contact information for the device operator is optional, but may be required by specific regulatory domains. Defaults to: `null`.
+  - owner (Vcard): The vCard contact information for the individual or business that owns the device is required. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"operator",
     :"owner"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spectrum.V1explorer.Model.DeviceOwner do
     value
     |> deserialize(:"operator", :struct, GoogleApi.Spectrum.V1explorer.Model.Vcard, options)
     |> deserialize(:"owner", :struct, GoogleApi.Spectrum.V1explorer.Model.Vcard, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spectrum.V1explorer.Model.DeviceOwner do
+  def encode(value, options) do
+    GoogleApi.Spectrum.V1explorer.Deserializer.serialize_non_nil(value, options)
   end
 end
 

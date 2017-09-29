@@ -20,9 +20,12 @@
 defmodule GoogleApi.ProximityBeacon.V1beta1.Model.ListBeaconAttachmentsResponse do
   @moduledoc """
   Response to &#x60;ListBeaconAttachments&#x60; that contains the requested attachments.
+
+  ## Attributes
+
+  - attachments (List[BeaconAttachment]): The attachments that corresponded to the request params. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"attachments"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.ListBeaconA
   def decode(value, options) do
     value
     |> deserialize(:"attachments", :list, GoogleApi.ProximityBeacon.V1beta1.Model.BeaconAttachment, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.ListBeaconAttachmentsResponse do
+  def encode(value, options) do
+    GoogleApi.ProximityBeacon.V1beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

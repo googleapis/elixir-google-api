@@ -20,9 +20,17 @@
 defmodule GoogleApi.Games.V1.Model.AchievementUpdateResponse do
   @moduledoc """
   This is a JSON template for an achievement update response.
+
+  ## Attributes
+
+  - achievementId (String): The achievement this update is was applied to. Defaults to: `null`.
+  - currentState (String): The current state of the achievement. Possible values are:   - \&quot;HIDDEN\&quot; - Achievement is hidden.  - \&quot;REVEALED\&quot; - Achievement is revealed.  - \&quot;UNLOCKED\&quot; - Achievement is unlocked. Defaults to: `null`.
+  - currentSteps (Integer): The current steps recorded for this achievement if it is incremental. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#achievementUpdateResponse. Defaults to: `null`.
+  - newlyUnlocked (Boolean): Whether this achievement was newly unlocked (that is, whether the unlock request for the achievement was the first for the player). Defaults to: `null`.
+  - updateOccurred (Boolean): Whether the requested updates actually affected the achievement. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"achievementId",
     :"currentState",
@@ -36,6 +44,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.AchievementUpdateResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.AchievementUpdateResponse do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

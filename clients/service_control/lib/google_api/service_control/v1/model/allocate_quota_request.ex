@@ -20,9 +20,15 @@
 defmodule GoogleApi.ServiceControl.V1.Model.AllocateQuotaRequest do
   @moduledoc """
   Request message for the AllocateQuota method.
+
+  ## Attributes
+
+  - allocateOperation (QuotaOperation): Operation that describes the quota allocation. Defaults to: `null`.
+  - allocationMode (String): Allocation mode for this operation. Deprecated: use QuotaMode inside the QuotaOperation. Defaults to: `null`.
+    - Enum - one of [UNSPECIFIED, NORMAL, BEST_EFFORT, CHECK_ONLY]
+  - serviceConfigId (String): Specifies which version of service configuration should be used to process the request. If unspecified or no matching version can be found, the latest one will be used. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"allocateOperation",
     :"allocationMode",
@@ -35,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.AllocateQuotaRequ
   def decode(value, options) do
     value
     |> deserialize(:"allocateOperation", :struct, GoogleApi.ServiceControl.V1.Model.QuotaOperation, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.AllocateQuotaRequest do
+  def encode(value, options) do
+    GoogleApi.ServiceControl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

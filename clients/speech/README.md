@@ -1,6 +1,6 @@
 # GoogleApi.Speech.V1
 
-**TODO: Add description**
+Converts audio to text by applying powerful neural network models.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_speech` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_speech, "~> 0.1.0"}]
+  [{:google_api_speech, "~> 0.0.1"}]
 end
 ```
 

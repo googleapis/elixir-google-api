@@ -74,7 +74,9 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
     }
     %{}
     |> method(:post)
-    |> url("/v1/operations/#{operations_id}:cancel")
+    |> url("/v1/operations/{operationsId}:cancel", %{
+         "operationsId" => URI.encode_www_form(operations_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -127,7 +129,9 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/operations/#{operations_id}")
+    |> url("/v1/operations/{operationsId}", %{
+         "operationsId" => URI.encode_www_form(operations_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

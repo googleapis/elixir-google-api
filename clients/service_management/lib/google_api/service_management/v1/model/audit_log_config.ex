@@ -20,9 +20,14 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.AuditLogConfig do
   @moduledoc """
   Provides the configuration for logging a type of permissions. Example:      {       \&quot;audit_log_configs\&quot;: [         {           \&quot;log_type\&quot;: \&quot;DATA_READ\&quot;,           \&quot;exempted_members\&quot;: [             \&quot;user:foo@gmail.com\&quot;           ]         },         {           \&quot;log_type\&quot;: \&quot;DATA_WRITE\&quot;,         }       ]     }  This enables &#39;DATA_READ&#39; and &#39;DATA_WRITE&#39; logging, while exempting foo@gmail.com from DATA_READ logging.
+
+  ## Attributes
+
+  - exemptedMembers (List[String]): Specifies the identities that do not cause logging for this type of permission. Follows the same format of Binding.members. Defaults to: `null`.
+  - logType (String): The log type that this config enables. Defaults to: `null`.
+    - Enum - one of [LOG_TYPE_UNSPECIFIED, ADMIN_READ, DATA_WRITE, DATA_READ]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"exemptedMembers",
     :"logType"
@@ -32,6 +37,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.AuditLogConfig do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.AuditLogConfig do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

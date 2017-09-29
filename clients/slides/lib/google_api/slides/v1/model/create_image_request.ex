@@ -20,9 +20,14 @@
 defmodule GoogleApi.Slides.V1.Model.CreateImageRequest do
   @moduledoc """
   Creates an image.
+
+  ## Attributes
+
+  - elementProperties (PageElementProperties): The element properties for the image.  When the aspect ratio of the provided size does not match the image aspect ratio, the image is scaled and centered with respect to the size in order to maintain aspect ratio. The provided transform is applied after this operation. Defaults to: `null`.
+  - objectId (String): A user-supplied object ID.  If you specify an ID, it must be unique among all pages and page elements in the presentation. The ID must start with an alphanumeric character or an underscore (matches regex &#x60;[a-zA-Z0-9_]&#x60;); remaining characters may include those as well as a hyphen or colon (matches regex &#x60;[a-zA-Z0-9_-:]&#x60;). The length of the ID must not be less than 5 or greater than 50.  If you don&#39;t specify an ID, a unique one is generated. Defaults to: `null`.
+  - url (String): The image URL.  The image is fetched once at insertion time and a copy is stored for display inside the presentation. Images must be less than 50MB in size, cannot exceed 25 megapixels, and must be in either in PNG, JPEG, or GIF format.  The provided URL can be at maximum 2K bytes large. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"elementProperties",
     :"objectId",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.CreateImageRequest do
   def decode(value, options) do
     value
     |> deserialize(:"elementProperties", :struct, GoogleApi.Slides.V1.Model.PageElementProperties, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.CreateImageRequest do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,20 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.SslCert do
   @moduledoc """
   SslCerts Resource
+
+  ## Attributes
+
+  - cert (String): PEM representation. Defaults to: `null`.
+  - certSerialNumber (String): Serial number, as extracted from the certificate. Defaults to: `null`.
+  - commonName (String): User supplied name. Constrained to [a-zA-Z.-_ ]+. Defaults to: `null`.
+  - createTime (DateTime): The time when the certificate was created in RFC 3339 format, for example 2012-11-15T16:19:00.094Z Defaults to: `null`.
+  - expirationTime (DateTime): The time when the certificate expires in RFC 3339 format, for example 2012-11-15T16:19:00.094Z. Defaults to: `null`.
+  - instance (String): Name of the database instance. Defaults to: `null`.
+  - kind (String): This is always sql#sslCert. Defaults to: `null`.
+  - selfLink (String): The URI of this resource. Defaults to: `null`.
+  - sha1Fingerprint (String): Sha1 Fingerprint. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cert",
     :"certSerialNumber",
@@ -39,6 +50,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.SslCert do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.SslCert do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

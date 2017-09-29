@@ -20,9 +20,20 @@
 defmodule GoogleApi.Slides.V1.Model.LineProperties do
   @moduledoc """
   The properties of the Line.  When unset, these fields default to values that match the appearance of new lines created in the Slides editor.
+
+  ## Attributes
+
+  - dashStyle (String): The dash style of the line. Defaults to: `null`.
+    - Enum - one of [DASH_STYLE_UNSPECIFIED, SOLID, DOT, DASH, DASH_DOT, LONG_DASH, LONG_DASH_DOT]
+  - endArrow (String): The style of the arrow at the end of the line. Defaults to: `null`.
+    - Enum - one of [ARROW_STYLE_UNSPECIFIED, NONE, STEALTH_ARROW, FILL_ARROW, FILL_CIRCLE, FILL_SQUARE, FILL_DIAMOND, OPEN_ARROW, OPEN_CIRCLE, OPEN_SQUARE, OPEN_DIAMOND]
+  - lineFill (LineFill): The fill of the line. The default line fill matches the defaults for new lines created in the Slides editor. Defaults to: `null`.
+  - link (Link): The hyperlink destination of the line. If unset, there is no link. Defaults to: `null`.
+  - startArrow (String): The style of the arrow at the beginning of the line. Defaults to: `null`.
+    - Enum - one of [ARROW_STYLE_UNSPECIFIED, NONE, STEALTH_ARROW, FILL_ARROW, FILL_CIRCLE, FILL_SQUARE, FILL_DIAMOND, OPEN_ARROW, OPEN_CIRCLE, OPEN_SQUARE, OPEN_DIAMOND]
+  - weight (Dimension): The thickness of the line. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dashStyle",
     :"endArrow",
@@ -40,6 +51,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.LineProperties do
     |> deserialize(:"lineFill", :struct, GoogleApi.Slides.V1.Model.LineFill, options)
     |> deserialize(:"link", :struct, GoogleApi.Slides.V1.Model.Link, options)
     |> deserialize(:"weight", :struct, GoogleApi.Slides.V1.Model.Dimension, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.LineProperties do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

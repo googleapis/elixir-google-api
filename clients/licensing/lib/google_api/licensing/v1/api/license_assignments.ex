@@ -62,7 +62,11 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
     }
     %{}
     |> method(:delete)
-    |> url("/#{product_id}/sku/#{sku_id}/user/#{user_id}")
+    |> url("/{productId}/sku/{skuId}/user/{userId}", %{
+         "productId" => URI.encode_www_form(product_id),
+         "skuId" => URI.encode_www_form(sku_id),
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -105,7 +109,11 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
     }
     %{}
     |> method(:get)
-    |> url("/#{product_id}/sku/#{sku_id}/user/#{user_id}")
+    |> url("/{productId}/sku/{skuId}/user/{userId}", %{
+         "productId" => URI.encode_www_form(product_id),
+         "skuId" => URI.encode_www_form(sku_id),
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -149,7 +157,10 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
     }
     %{}
     |> method(:post)
-    |> url("/#{product_id}/sku/#{sku_id}/user")
+    |> url("/{productId}/sku/{skuId}/user", %{
+         "productId" => URI.encode_www_form(product_id),
+         "skuId" => URI.encode_www_form(sku_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -195,7 +206,9 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
     }
     %{}
     |> method(:get)
-    |> url("/#{product_id}/users")
+    |> url("/{productId}/users", %{
+         "productId" => URI.encode_www_form(product_id)
+       })
     |> add_param(:query, :"customerId", customer_id)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -243,7 +256,10 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
     }
     %{}
     |> method(:get)
-    |> url("/#{product_id}/sku/#{sku_id}/users")
+    |> url("/{productId}/sku/{skuId}/users", %{
+         "productId" => URI.encode_www_form(product_id),
+         "skuId" => URI.encode_www_form(sku_id)
+       })
     |> add_param(:query, :"customerId", customer_id)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -289,7 +305,11 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
     }
     %{}
     |> method(:patch)
-    |> url("/#{product_id}/sku/#{sku_id}/user/#{user_id}")
+    |> url("/{productId}/sku/{skuId}/user/{userId}", %{
+         "productId" => URI.encode_www_form(product_id),
+         "skuId" => URI.encode_www_form(sku_id),
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -334,7 +354,11 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
     }
     %{}
     |> method(:put)
-    |> url("/#{product_id}/sku/#{sku_id}/user/#{user_id}")
+    |> url("/{productId}/sku/{skuId}/user/{userId}", %{
+         "productId" => URI.encode_www_form(product_id),
+         "skuId" => URI.encode_www_form(sku_id),
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

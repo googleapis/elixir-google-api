@@ -20,9 +20,14 @@
 defmodule GoogleApi.Partners.V2.Model.CertificationExamStatus do
   @moduledoc """
   Status for a Google Partners certification exam.
+
+  ## Attributes
+
+  - numberUsersPass (Integer): The number of people who have passed the certification exam. Defaults to: `null`.
+  - type (String): The type of certification exam. Defaults to: `null`.
+    - Enum - one of [CERTIFICATION_EXAM_TYPE_UNSPECIFIED, CET_ADWORDS_FUNDAMENTALS, CET_ADWORDS_ADVANCED_SEARCH, CET_ADWORDS_ADVANCED_DISPLAY, CET_VIDEO_ADS, CET_DOUBLECLICK, CET_ANALYTICS, CET_SHOPPING, CET_MOBILE, CET_DIGITAL_SALES, CET_MOBILE_SITES]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"numberUsersPass",
     :"type"
@@ -32,6 +37,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.CertificationExamStatus do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.CertificationExamStatus do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

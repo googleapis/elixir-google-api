@@ -20,9 +20,13 @@
 defmodule GoogleApi.Slides.V1.Model.SolidFill do
   @moduledoc """
   A solid color fill. The page or page element is filled entirely with the specified color value.  If any field is unset, its value may be inherited from a parent placeholder if it exists.
+
+  ## Attributes
+
+  - alpha (Float): The fraction of this &#x60;color&#x60; that should be applied to the pixel. That is, the final pixel color is defined by the equation:    pixel color &#x3D; alpha * (color) + (1.0 - alpha) * (background color)  This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. Defaults to: `null`.
+  - color (OpaqueColor): The color value of the solid fill. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"alpha",
     :"color"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.SolidFill do
   def decode(value, options) do
     value
     |> deserialize(:"color", :struct, GoogleApi.Slides.V1.Model.OpaqueColor, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.SolidFill do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

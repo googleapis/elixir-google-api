@@ -20,9 +20,23 @@
 defmodule GoogleApi.Sheets.V4.Model.Response do
   @moduledoc """
   A single response from an update.
+
+  ## Attributes
+
+  - addBanding (AddBandingResponse): A reply from adding a banded range. Defaults to: `null`.
+  - addChart (AddChartResponse): A reply from adding a chart. Defaults to: `null`.
+  - addFilterView (AddFilterViewResponse): A reply from adding a filter view. Defaults to: `null`.
+  - addNamedRange (AddNamedRangeResponse): A reply from adding a named range. Defaults to: `null`.
+  - addProtectedRange (AddProtectedRangeResponse): A reply from adding a protected range. Defaults to: `null`.
+  - addSheet (AddSheetResponse): A reply from adding a sheet. Defaults to: `null`.
+  - deleteConditionalFormatRule (DeleteConditionalFormatRuleResponse): A reply from deleting a conditional format rule. Defaults to: `null`.
+  - duplicateFilterView (DuplicateFilterViewResponse): A reply from duplicating a filter view. Defaults to: `null`.
+  - duplicateSheet (DuplicateSheetResponse): A reply from duplicating a sheet. Defaults to: `null`.
+  - findReplace (FindReplaceResponse): A reply from doing a find/replace. Defaults to: `null`.
+  - updateConditionalFormatRule (UpdateConditionalFormatRuleResponse): A reply from updating a conditional format rule. Defaults to: `null`.
+  - updateEmbeddedObjectPosition (UpdateEmbeddedObjectPositionResponse): A reply from updating an embedded object&#39;s position. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"addBanding",
     :"addChart",
@@ -55,6 +69,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.Response do
     |> deserialize(:"findReplace", :struct, GoogleApi.Sheets.V4.Model.FindReplaceResponse, options)
     |> deserialize(:"updateConditionalFormatRule", :struct, GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRuleResponse, options)
     |> deserialize(:"updateEmbeddedObjectPosition", :struct, GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionResponse, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.Response do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,16 @@
 defmodule GoogleApi.Games.V1.Model.PlayerExperienceInfo do
   @moduledoc """
   This is a JSON template for 1P/3P metadata about the player&#39;s experience.
+
+  ## Attributes
+
+  - currentExperiencePoints (String): The current number of experience points for the player. Defaults to: `null`.
+  - currentLevel (PlayerLevel): The current level of the player. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#playerExperienceInfo. Defaults to: `null`.
+  - lastLevelUpTimestampMillis (String): The timestamp when the player was leveled up, in millis since Unix epoch UTC. Defaults to: `null`.
+  - nextLevel (PlayerLevel): The next level of the player. If the current level is the maximum level, this should be same as the current level. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"currentExperiencePoints",
     :"currentLevel",
@@ -38,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.PlayerExperienceInfo do
     value
     |> deserialize(:"currentLevel", :struct, GoogleApi.Games.V1.Model.PlayerLevel, options)
     |> deserialize(:"nextLevel", :struct, GoogleApi.Games.V1.Model.PlayerLevel, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.PlayerExperienceInfo do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

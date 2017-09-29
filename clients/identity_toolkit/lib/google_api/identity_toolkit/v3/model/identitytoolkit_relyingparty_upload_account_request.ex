@@ -20,9 +20,21 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyUploadAccountRequest do
   @moduledoc """
   Request to upload user account in batch.
+
+  ## Attributes
+
+  - allowOverwrite (Boolean): Whether allow overwrite existing account when user local_id exists. Defaults to: `null`.
+  - delegatedProjectNumber (String): GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration. Defaults to: `null`.
+  - hashAlgorithm (String): The password hash algorithm. Defaults to: `null`.
+  - memoryCost (Integer): Memory cost for hash calculation. Used by scrypt similar algorithms. Defaults to: `null`.
+  - rounds (Integer): Rounds for hash calculation. Used by scrypt and similar algorithms. Defaults to: `null`.
+  - saltSeparator (String): The salt separator. Defaults to: `null`.
+  - sanityCheck (Boolean): If true, backend will do sanity check(including duplicate email and federated id) when uploading account. Defaults to: `null`.
+  - signerKey (String): The key for to hash the password. Defaults to: `null`.
+  - targetProjectId (String): Specify which project (field value is actually project id) to operate. Only used when provided credential. Defaults to: `null`.
+  - users (List[UserInfo]): The account info to be stored. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"allowOverwrite",
     :"delegatedProjectNumber",
@@ -42,6 +54,12 @@ defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitR
   def decode(value, options) do
     value
     |> deserialize(:"users", :list, GoogleApi.IdentityToolkit.V3.Model.UserInfo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyUploadAccountRequest do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

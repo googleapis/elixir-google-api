@@ -1,6 +1,6 @@
 # GoogleApi.Games.V1
 
-**TODO: Add description**
+The API for Google Play Game Services.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_games` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_games, "~> 0.1.0"}]
+  [{:google_api_games, "~> 0.0.1"}]
 end
 ```
 

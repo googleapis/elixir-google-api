@@ -17,24 +17,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.PageSpeedOnline.V2.Model.Result_formattedResults_urlBlocks do
+defmodule GoogleApi.PageSpeedOnline.V2.Model.ResultFormattedResultsUrlBlocks do
   @moduledoc """
   
+
+  ## Attributes
+
+  - header (PagespeedApiFormatStringV2): Heading to be displayed with the list of URLs. Defaults to: `null`.
+  - urls (List[ResultFormattedResultsUrls]): List of entries that provide information about URLs in the url block. Optional. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"header",
     :"urls"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.Result_formattedResults_urlBlocks do
+defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.ResultFormattedResultsUrlBlocks do
   import GoogleApi.PageSpeedOnline.V2.Deserializer
   def decode(value, options) do
     value
     |> deserialize(:"header", :struct, GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2, options)
-    |> deserialize(:"urls", :list, GoogleApi.PageSpeedOnline.V2.Model.Result_formattedResults_urls, options)
+    |> deserialize(:"urls", :list, GoogleApi.PageSpeedOnline.V2.Model.ResultFormattedResultsUrls, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.PageSpeedOnline.V2.Model.ResultFormattedResultsUrlBlocks do
+  def encode(value, options) do
+    GoogleApi.PageSpeedOnline.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

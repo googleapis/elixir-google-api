@@ -20,9 +20,11 @@
 defmodule GoogleApi.Spanner.V1.Model.ReadWrite do
   @moduledoc """
   Message type to initiate a read-write transaction. Currently this transaction type has no options.
+
+  ## Attributes
+
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     
   ]
@@ -31,6 +33,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.ReadWrite do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.ReadWrite do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

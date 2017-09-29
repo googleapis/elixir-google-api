@@ -20,9 +20,16 @@
 defmodule GoogleApi.ServiceUser.V1.Model.AuthenticationRule do
   @moduledoc """
   Authentication rules for the service.  By default, if a method has any authentication requirements, every request must include a valid credential matching one of the requirements. It&#39;s an error to include more than one kind of credential in a single request.  If a method doesn&#39;t have any auth requirements, request credentials will be ignored.
+
+  ## Attributes
+
+  - allowWithoutCredential (Boolean): Whether to allow requests without a credential. The credential can be an OAuth token, Google cookies (first-party auth) or EndUserCreds.  For requests without credentials, if the service control environment is specified, each incoming request **must** be associated with a service consumer. This can be done by passing an API key that belongs to a consumer project. Defaults to: `null`.
+  - customAuth (CustomAuthRequirements): Configuration for custom authentication. Defaults to: `null`.
+  - oauth (OAuthRequirements): The requirements for OAuth credentials. Defaults to: `null`.
+  - requirements (List[AuthRequirement]): Requirements for additional authentication providers. Defaults to: `null`.
+  - selector (String): Selects the methods to which this rule applies.  Refer to selector for syntax details. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"allowWithoutCredential",
     :"customAuth",
@@ -39,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceUser.V1.Model.AuthenticationRule d
     |> deserialize(:"customAuth", :struct, GoogleApi.ServiceUser.V1.Model.CustomAuthRequirements, options)
     |> deserialize(:"oauth", :struct, GoogleApi.ServiceUser.V1.Model.OAuthRequirements, options)
     |> deserialize(:"requirements", :list, GoogleApi.ServiceUser.V1.Model.AuthRequirement, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceUser.V1.Model.AuthenticationRule do
+  def encode(value, options) do
+    GoogleApi.ServiceUser.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

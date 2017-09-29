@@ -20,9 +20,12 @@
 defmodule GoogleApi.Slides.V1.Model.ReplaceAllShapesWithImageResponse do
   @moduledoc """
   The result of replacing shapes with an image.
+
+  ## Attributes
+
+  - occurrencesChanged (Integer): The number of shapes replaced with images. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"occurrencesChanged"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.ReplaceAllShapesWithImageResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.ReplaceAllShapesWithImageResponse do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.ResourceViews.V1beta2.Model.ServiceEndpoint do
   @moduledoc """
   The service endpoint that may be started in a VM.
+
+  ## Attributes
+
+  - name (String): The name of the service endpoint. Defaults to: `null`.
+  - port (Integer): The port of the service endpoint. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name",
     :"port"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ResourceViews.V1beta2.Model.ServiceEndpoint do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ResourceViews.V1beta2.Model.ServiceEndpoint do
+  def encode(value, options) do
+    GoogleApi.ResourceViews.V1beta2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

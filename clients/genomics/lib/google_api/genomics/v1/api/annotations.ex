@@ -180,7 +180,9 @@ defmodule GoogleApi.Genomics.V1.Api.Annotations do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/annotations/#{annotation_id}")
+    |> url("/v1/annotations/{annotationId}", %{
+         "annotationId" => URI.encode_www_form(annotation_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -233,7 +235,9 @@ defmodule GoogleApi.Genomics.V1.Api.Annotations do
     }
     %{}
     |> method(:get)
-    |> url("/v1/annotations/#{annotation_id}")
+    |> url("/v1/annotations/{annotationId}", %{
+         "annotationId" => URI.encode_www_form(annotation_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -344,7 +348,9 @@ defmodule GoogleApi.Genomics.V1.Api.Annotations do
     }
     %{}
     |> method(:put)
-    |> url("/v1/annotations/#{annotation_id}")
+    |> url("/v1/annotations/{annotationId}", %{
+         "annotationId" => URI.encode_www_form(annotation_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

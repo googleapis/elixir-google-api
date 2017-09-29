@@ -20,9 +20,44 @@
 defmodule GoogleApi.DoubleClickSearch.V2.Model.Conversion do
   @moduledoc """
   A conversion containing data relevant to DoubleClick Search.
+
+  ## Attributes
+
+  - adGroupId (String): DS ad group ID. Defaults to: `null`.
+  - adId (String): DS ad ID. Defaults to: `null`.
+  - advertiserId (String): DS advertiser ID. Defaults to: `null`.
+  - agencyId (String): DS agency ID. Defaults to: `null`.
+  - attributionModel (String): Available to advertisers only after contacting DoubleClick Search customer support. Defaults to: `null`.
+  - campaignId (String): DS campaign ID. Defaults to: `null`.
+  - channel (String): Sales channel for the product. Acceptable values are:   - \&quot;local\&quot;: a physical store  - \&quot;online\&quot;: an online store Defaults to: `null`.
+  - clickId (String): DS click ID for the conversion. Defaults to: `null`.
+  - conversionId (String): For offline conversions, advertisers provide this ID. Advertisers can specify any ID that is meaningful to them. Each conversion in a request must specify a unique ID, and the combination of ID and timestamp must be unique amongst all conversions within the advertiser. For online conversions, DS copies the dsConversionId or floodlightOrderId into this property depending on the advertiser&#39;s Floodlight instructions. Defaults to: `null`.
+  - conversionModifiedTimestamp (String): The time at which the conversion was last modified, in epoch millis UTC. Defaults to: `null`.
+  - conversionTimestamp (String): The time at which the conversion took place, in epoch millis UTC. Defaults to: `null`.
+  - countMillis (String): Available to advertisers only after contacting DoubleClick Search customer support. Defaults to: `null`.
+  - criterionId (String): DS criterion (keyword) ID. Defaults to: `null`.
+  - currencyCode (String): The currency code for the conversion&#39;s revenue. Should be in ISO 4217 alphabetic (3-char) format. Defaults to: `null`.
+  - customDimension (List[CustomDimension]): Custom dimensions for the conversion, which can be used to filter data in a report. Defaults to: `null`.
+  - customMetric (List[CustomMetric]): Custom metrics for the conversion. Defaults to: `null`.
+  - deviceType (String): The type of device on which the conversion occurred. Defaults to: `null`.
+  - dsConversionId (String): ID that DoubleClick Search generates for each conversion. Defaults to: `null`.
+  - engineAccountId (String): DS engine account ID. Defaults to: `null`.
+  - floodlightOrderId (String): The Floodlight order ID provided by the advertiser for the conversion. Defaults to: `null`.
+  - inventoryAccountId (String): ID that DS generates and uses to uniquely identify the inventory account that contains the product. Defaults to: `null`.
+  - productCountry (String): The country registered for the Merchant Center feed that contains the product. Use an ISO 3166 code to specify a country. Defaults to: `null`.
+  - productGroupId (String): DS product group ID. Defaults to: `null`.
+  - productId (String): The product ID (SKU). Defaults to: `null`.
+  - productLanguage (String): The language registered for the Merchant Center feed that contains the product. Use an ISO 639 code to specify a language. Defaults to: `null`.
+  - quantityMillis (String): The quantity of this conversion, in millis. Defaults to: `null`.
+  - revenueMicros (String): The revenue amount of this TRANSACTION conversion, in micros (value multiplied by 1000000, no decimal). For example, to specify a revenue value of \&quot;10\&quot; enter \&quot;10000000\&quot; (10 million) in your request. Defaults to: `null`.
+  - segmentationId (String): The numeric segmentation identifier (for example, DoubleClick Search Floodlight activity ID). Defaults to: `null`.
+  - segmentationName (String): The friendly segmentation identifier (for example, DoubleClick Search Floodlight activity name). Defaults to: `null`.
+  - segmentationType (String): The segmentation type of this conversion (for example, FLOODLIGHT). Defaults to: `null`.
+  - state (String): The state of the conversion, that is, either ACTIVE or REMOVED. Note: state DELETED is deprecated. Defaults to: `null`.
+  - storeId (String): The ID of the local store for which the product was advertised. Applicable only when the channel is \&quot;local\&quot;. Defaults to: `null`.
+  - type (String): The type of the conversion, that is, either ACTION or TRANSACTION. An ACTION conversion is an action by the user that has no monetarily quantifiable value, while a TRANSACTION conversion is an action that does have a monetarily quantifiable value. Examples are email list signups (ACTION) versus ecommerce purchases (TRANSACTION). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"adGroupId",
     :"adId",
@@ -66,6 +101,12 @@ defimpl Poison.Decoder, for: GoogleApi.DoubleClickSearch.V2.Model.Conversion do
     value
     |> deserialize(:"customDimension", :list, GoogleApi.DoubleClickSearch.V2.Model.CustomDimension, options)
     |> deserialize(:"customMetric", :list, GoogleApi.DoubleClickSearch.V2.Model.CustomMetric, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickSearch.V2.Model.Conversion do
+  def encode(value, options) do
+    GoogleApi.DoubleClickSearch.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.FirebaseRules.V1.Model.ListReleasesResponse do
   @moduledoc """
   The response for FirebaseRulesService.ListReleases.
+
+  ## Attributes
+
+  - nextPageToken (String): The pagination token to retrieve the next page of results. If the value is empty, no further results remain. Defaults to: `null`.
+  - releases (List[Release]): List of &#x60;Release&#x60; instances. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nextPageToken",
     :"releases"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.FirebaseRules.V1.Model.ListReleasesRespon
   def decode(value, options) do
     value
     |> deserialize(:"releases", :list, GoogleApi.FirebaseRules.V1.Model.Release, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.FirebaseRules.V1.Model.ListReleasesResponse do
+  def encode(value, options) do
+    GoogleApi.FirebaseRules.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

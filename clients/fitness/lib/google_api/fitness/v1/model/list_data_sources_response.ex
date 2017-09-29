@@ -20,9 +20,12 @@
 defmodule GoogleApi.Fitness.V1.Model.ListDataSourcesResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - dataSource (List[DataSource]): A previously created data source. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dataSource"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Fitness.V1.Model.ListDataSourcesResponse 
   def decode(value, options) do
     value
     |> deserialize(:"dataSource", :list, GoogleApi.Fitness.V1.Model.DataSource, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Fitness.V1.Model.ListDataSourcesResponse do
+  def encode(value, options) do
+    GoogleApi.Fitness.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

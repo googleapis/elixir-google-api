@@ -20,9 +20,17 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.ConfigChange do
   @moduledoc """
   Output generated from semantically comparing two versions of a service configuration.  Includes detailed information about a field that have changed with applicable advice about potential consequences for the change, such as backwards-incompatibility.
+
+  ## Attributes
+
+  - advices (List[Advice]): Collection of advice provided for this change, useful for determining the possible impact of this change. Defaults to: `null`.
+  - changeType (String): The type for this change, either ADDED, REMOVED, or MODIFIED. Defaults to: `null`.
+    - Enum - one of [CHANGE_TYPE_UNSPECIFIED, ADDED, REMOVED, MODIFIED]
+  - element (String): Object hierarchy path to the change, with levels separated by a &#39;.&#39; character. For repeated fields, an applicable unique identifier field is used for the index (usually selector, name, or id). For maps, the term &#39;key&#39; is used. If the field has no unique identifier, the numeric index is used. Examples: - visibility.rules[selector&#x3D;&#x3D;\&quot;google.LibraryService.CreateBook\&quot;].restriction - quota.metric_rules[selector&#x3D;&#x3D;\&quot;google\&quot;].metric_costs[key&#x3D;&#x3D;\&quot;reads\&quot;].value - logging.producer_destinations[0] Defaults to: `null`.
+  - newValue (String): Value of the changed object in the new Service configuration, in JSON format. This field will not be populated if ChangeType &#x3D;&#x3D; REMOVED. Defaults to: `null`.
+  - oldValue (String): Value of the changed object in the old Service configuration, in JSON format. This field will not be populated if ChangeType &#x3D;&#x3D; ADDED. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"advices",
     :"changeType",
@@ -37,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.ConfigChange d
   def decode(value, options) do
     value
     |> deserialize(:"advices", :list, GoogleApi.ServiceManagement.V1.Model.Advice, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.ConfigChange do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

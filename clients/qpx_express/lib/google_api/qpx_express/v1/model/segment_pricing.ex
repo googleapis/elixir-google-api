@@ -20,9 +20,15 @@
 defmodule GoogleApi.QPXExpress.V1.Model.SegmentPricing do
   @moduledoc """
   The price of this segment.
+
+  ## Attributes
+
+  - fareId (String): A segment identifier unique within a single solution. It is used to refer to different parts of the same solution. Defaults to: `null`.
+  - freeBaggageOption (List[FreeBaggageAllowance]): Details of the free baggage allowance on this segment. Defaults to: `null`.
+  - kind (String): Identifies this as a segment pricing object, representing the price of this segment. Value: the fixed string qpxexpress#segmentPricing. Defaults to: `null`.
+  - segmentId (String): Unique identifier in the response of this segment. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fareId",
     :"freeBaggageOption",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.QPXExpress.V1.Model.SegmentPricing do
   def decode(value, options) do
     value
     |> deserialize(:"freeBaggageOption", :list, GoogleApi.QPXExpress.V1.Model.FreeBaggageAllowance, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.QPXExpress.V1.Model.SegmentPricing do
+  def encode(value, options) do
+    GoogleApi.QPXExpress.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

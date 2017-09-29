@@ -20,9 +20,15 @@
 defmodule GoogleApi.Fitness.V1.Model.DataTypeField do
   @moduledoc """
   In case of multi-dimensional data (such as an accelerometer with x, y, and z axes) each field represents one dimension. Each data type field has a unique name which identifies it. The field also defines the format of the data (int, float, etc.).  This message is only instantiated in code and not used for wire comms or stored in any way.
+
+  ## Attributes
+
+  - format (String): The different supported formats for each field in a data type. Defaults to: `null`.
+    - Enum - one of [blob, floatList, floatPoint, integer, integerList, map, string]
+  - name (String): Defines the name and format of data. Unlike data type names, field names are not namespaced, and only need to be unique within the data type. Defaults to: `null`.
+  - optional (Boolean):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"format",
     :"name",
@@ -33,6 +39,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Fitness.V1.Model.DataTypeField do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Fitness.V1.Model.DataTypeField do
+  def encode(value, options) do
+    GoogleApi.Fitness.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

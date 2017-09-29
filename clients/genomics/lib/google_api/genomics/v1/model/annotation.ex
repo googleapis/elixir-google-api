@@ -20,9 +20,24 @@
 defmodule GoogleApi.Genomics.V1.Model.Annotation do
   @moduledoc """
   An annotation describes a region of reference genome. The value of an annotation may be one of several canonical types, supplemented by arbitrary info tags. An annotation is not inherently associated with a specific sample or individual (though a client could choose to use annotations in this way). Example canonical annotation types are &#x60;GENE&#x60; and &#x60;VARIANT&#x60;.
+
+  ## Attributes
+
+  - info (Map[String, List[ErrorUnknown]]): A map of additional read alignment information. This must be of the form map&lt;string, string[]&gt; (string key mapping to a list of string values). Defaults to: `null`.
+  - annotationSetId (String): The annotation set to which this annotation belongs. Defaults to: `null`.
+  - end (String): The end position of the range on the reference, 0-based exclusive. Defaults to: `null`.
+  - id (String): The server-generated annotation ID, unique across all annotations. Defaults to: `null`.
+  - name (String): The display name of this annotation. Defaults to: `null`.
+  - referenceId (String): The ID of the Google Genomics reference associated with this range. Defaults to: `null`.
+  - referenceName (String): The display name corresponding to the reference specified by &#x60;referenceId&#x60;, for example &#x60;chr1&#x60;, &#x60;1&#x60;, or &#x60;chrX&#x60;. Defaults to: `null`.
+  - reverseStrand (Boolean): Whether this range refers to the reverse strand, as opposed to the forward strand. Note that regardless of this field, the start/end position of the range always refer to the forward strand. Defaults to: `null`.
+  - start (String): The start position of the range on the reference, 0-based inclusive. Defaults to: `null`.
+  - transcript (Transcript): A transcript value represents the assertion that a particular region of the reference genome may be transcribed as RNA. An alternative splicing pattern would be represented as a separate transcript object. This field is only set for annotations of type &#x60;TRANSCRIPT&#x60;. Defaults to: `null`.
+  - type (String): The data type for this annotation. Must match the containing annotation set&#39;s type. Defaults to: `null`.
+    - Enum - one of [ANNOTATION_TYPE_UNSPECIFIED, GENERIC, VARIANT, GENE, TRANSCRIPT]
+  - variant (VariantAnnotation): A variant annotation, which describes the effect of a variant on the genome, the coding sequence, and/or higher level consequences at the organism level e.g. pathogenicity. This field is only set for annotations of type &#x60;VARIANT&#x60;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"info",
     :"annotationSetId",
@@ -45,6 +60,12 @@ defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.Annotation do
     value
     |> deserialize(:"transcript", :struct, GoogleApi.Genomics.V1.Model.Transcript, options)
     |> deserialize(:"variant", :struct, GoogleApi.Genomics.V1.Model.VariantAnnotation, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.Annotation do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

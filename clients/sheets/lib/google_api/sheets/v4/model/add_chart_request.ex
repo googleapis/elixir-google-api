@@ -20,9 +20,12 @@
 defmodule GoogleApi.Sheets.V4.Model.AddChartRequest do
   @moduledoc """
   Adds a chart to a sheet in the spreadsheet.
+
+  ## Attributes
+
+  - chart (EmbeddedChart): The chart that should be added to the spreadsheet, including the position where it should be placed. The chartId field is optional; if one is not set, an id will be randomly generated. (It is an error to specify the ID of a chart that already exists.) Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"chart"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.AddChartRequest do
   def decode(value, options) do
     value
     |> deserialize(:"chart", :struct, GoogleApi.Sheets.V4.Model.EmbeddedChart, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.AddChartRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

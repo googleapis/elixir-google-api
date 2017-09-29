@@ -20,9 +20,17 @@
 defmodule GoogleApi.Sheets.V4.Model.PivotGroup do
   @moduledoc """
   A single grouping (either row or column) in a pivot table.
+
+  ## Attributes
+
+  - showTotals (Boolean): True if the pivot table should include the totals for this grouping. Defaults to: `null`.
+  - sortOrder (String): The order the values in this group should be sorted. Defaults to: `null`.
+    - Enum - one of [SORT_ORDER_UNSPECIFIED, ASCENDING, DESCENDING]
+  - sourceColumnOffset (Integer): The column offset of the source range that this grouping is based on.  For example, if the source was &#x60;C10:E15&#x60;, a &#x60;sourceColumnOffset&#x60; of &#x60;0&#x60; means this group refers to column &#x60;C&#x60;, whereas the offset &#x60;1&#x60; would refer to column &#x60;D&#x60;. Defaults to: `null`.
+  - valueBucket (PivotGroupSortValueBucket): The bucket of the opposite pivot group to sort by. If not specified, sorting is alphabetical by this group&#39;s values. Defaults to: `null`.
+  - valueMetadata (List[PivotGroupValueMetadata]): Metadata about values in the grouping. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"showTotals",
     :"sortOrder",
@@ -38,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.PivotGroup do
     value
     |> deserialize(:"valueBucket", :struct, GoogleApi.Sheets.V4.Model.PivotGroupSortValueBucket, options)
     |> deserialize(:"valueMetadata", :list, GoogleApi.Sheets.V4.Model.PivotGroupValueMetadata, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.PivotGroup do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

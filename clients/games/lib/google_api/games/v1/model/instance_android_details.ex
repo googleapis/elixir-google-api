@@ -20,9 +20,15 @@
 defmodule GoogleApi.Games.V1.Model.InstanceAndroidDetails do
   @moduledoc """
   This is a JSON template for the Android instance details resource.
+
+  ## Attributes
+
+  - enablePiracyCheck (Boolean): Flag indicating whether the anti-piracy check is enabled. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#instanceAndroidDetails. Defaults to: `null`.
+  - packageName (String): Android package name which maps to Google Play URL. Defaults to: `null`.
+  - preferred (Boolean): Indicates that this instance is the default for new installations. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"enablePiracyCheck",
     :"kind",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.InstanceAndroidDetails do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.InstanceAndroidDetails do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

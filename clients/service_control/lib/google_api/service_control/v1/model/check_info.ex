@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceControl.V1.Model.CheckInfo do
   @moduledoc """
   
+
+  ## Attributes
+
+  - consumerInfo (ConsumerInfo): Consumer info of this check. Defaults to: `null`.
+  - unusedArguments (List[String]): A list of fields and label keys that are ignored by the server. The client doesn&#39;t need to send them for following requests to improve performance and allow better aggregation. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"consumerInfo",
     :"unusedArguments"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.CheckInfo do
   def decode(value, options) do
     value
     |> deserialize(:"consumerInfo", :struct, GoogleApi.ServiceControl.V1.Model.ConsumerInfo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.CheckInfo do
+  def encode(value, options) do
+    GoogleApi.ServiceControl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.Slides.V1.Model.Range do
   @moduledoc """
   Specifies a contiguous range of an indexed collection, such as characters in text.
+
+  ## Attributes
+
+  - endIndex (Integer): The optional zero-based index of the end of the collection. Required for &#x60;FIXED_RANGE&#x60; ranges. Defaults to: `null`.
+  - startIndex (Integer): The optional zero-based index of the beginning of the collection. Required for &#x60;FIXED_RANGE&#x60; and &#x60;FROM_START_INDEX&#x60; ranges. Defaults to: `null`.
+  - type (String): The type of range. Defaults to: `null`.
+    - Enum - one of [RANGE_TYPE_UNSPECIFIED, FIXED_RANGE, FROM_START_INDEX, ALL]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"endIndex",
     :"startIndex",
@@ -33,6 +39,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.Range do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.Range do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

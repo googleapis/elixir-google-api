@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ReplicaPool.V1beta2.Model.Operation_error_errors do
+defmodule GoogleApi.ReplicaPool.V1beta2.Model.OperationErrorErrors do
   @moduledoc """
   
+
+  ## Attributes
+
+  - code (String): [Output Only] The error type identifier for this error. Defaults to: `null`.
+  - location (String): [Output Only] Indicates the field in the request which caused the error. This property is optional. Defaults to: `null`.
+  - message (String): [Output Only] An optional, human-readable error message. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"code",
     :"location",
@@ -30,9 +35,15 @@ defmodule GoogleApi.ReplicaPool.V1beta2.Model.Operation_error_errors do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ReplicaPool.V1beta2.Model.Operation_error_errors do
+defimpl Poison.Decoder, for: GoogleApi.ReplicaPool.V1beta2.Model.OperationErrorErrors do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ReplicaPool.V1beta2.Model.OperationErrorErrors do
+  def encode(value, options) do
+    GoogleApi.ReplicaPool.V1beta2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

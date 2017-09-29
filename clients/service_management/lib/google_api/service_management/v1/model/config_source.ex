@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.ConfigSource do
   @moduledoc """
   Represents a source file which is used to generate the service configuration defined by &#x60;google.api.Service&#x60;.
+
+  ## Attributes
+
+  - files (List[ConfigFile]): Set of source configuration files that are used to generate a service configuration (&#x60;google.api.Service&#x60;). Defaults to: `null`.
+  - id (String): A unique ID for a specific instance of this message, typically assigned by the client for tracking purpose. If empty, the server may choose to generate one instead. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"files",
     :"id"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.ConfigSource d
   def decode(value, options) do
     value
     |> deserialize(:"files", :list, GoogleApi.ServiceManagement.V1.Model.ConfigFile, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.ConfigSource do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

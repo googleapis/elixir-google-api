@@ -102,7 +102,9 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Api.Queries do
     }
     %{}
     |> method(:delete)
-    |> url("/query/#{query_id}")
+    |> url("/query/{queryId}", %{
+         "queryId" => URI.encode_www_form(query_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -143,7 +145,9 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Api.Queries do
     }
     %{}
     |> method(:get)
-    |> url("/query/#{query_id}")
+    |> url("/query/{queryId}", %{
+         "queryId" => URI.encode_www_form(query_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -226,7 +230,9 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Api.Queries do
     }
     %{}
     |> method(:post)
-    |> url("/query/#{query_id}")
+    |> url("/query/{queryId}", %{
+         "queryId" => URI.encode_www_form(query_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

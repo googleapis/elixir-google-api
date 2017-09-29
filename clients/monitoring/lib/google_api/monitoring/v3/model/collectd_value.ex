@@ -20,9 +20,15 @@
 defmodule GoogleApi.Monitoring.V3.Model.CollectdValue do
   @moduledoc """
   A single data point from a collectd-based plugin.
+
+  ## Attributes
+
+  - dataSourceName (String): The data source for the collectd value. For example there are two data sources for network measurements: \&quot;rx\&quot; and \&quot;tx\&quot;. Defaults to: `null`.
+  - dataSourceType (String): The type of measurement. Defaults to: `null`.
+    - Enum - one of [UNSPECIFIED_DATA_SOURCE_TYPE, GAUGE, COUNTER, DERIVE, ABSOLUTE]
+  - value (TypedValue): The measurement value. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dataSourceName",
     :"dataSourceType",
@@ -35,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.CollectdValue do
   def decode(value, options) do
     value
     |> deserialize(:"value", :struct, GoogleApi.Monitoring.V3.Model.TypedValue, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Monitoring.V3.Model.CollectdValue do
+  def encode(value, options) do
+    GoogleApi.Monitoring.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

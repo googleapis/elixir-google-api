@@ -20,9 +20,12 @@
 defmodule GoogleApi.Sheets.V4.Model.AddNamedRangeRequest do
   @moduledoc """
   Adds a named range to the spreadsheet.
+
+  ## Attributes
+
+  - namedRange (NamedRange): The named range to add. The namedRangeId field is optional; if one is not set, an id will be randomly generated. (It is an error to specify the ID of a range that already exists.) Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"namedRange"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.AddNamedRangeRequest do
   def decode(value, options) do
     value
     |> deserialize(:"namedRange", :struct, GoogleApi.Sheets.V4.Model.NamedRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.AddNamedRangeRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

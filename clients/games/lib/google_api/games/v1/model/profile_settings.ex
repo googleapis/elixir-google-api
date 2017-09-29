@@ -20,9 +20,13 @@
 defmodule GoogleApi.Games.V1.Model.ProfileSettings do
   @moduledoc """
   This is a JSON template for profile settings
+
+  ## Attributes
+
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#profileSettings. Defaults to: `null`.
+  - profileVisible (Boolean): The player&#39;s current profile visibility. This field is visible to both 1P and 3P APIs. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"profileVisible"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.ProfileSettings do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.ProfileSettings do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

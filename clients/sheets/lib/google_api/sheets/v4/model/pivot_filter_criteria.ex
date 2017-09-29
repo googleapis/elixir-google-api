@@ -20,9 +20,12 @@
 defmodule GoogleApi.Sheets.V4.Model.PivotFilterCriteria do
   @moduledoc """
   Criteria for showing/hiding rows in a pivot table.
+
+  ## Attributes
+
+  - visibleValues (List[String]): Values that should be included.  Values not listed here are excluded. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"visibleValues"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.PivotFilterCriteria do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.PivotFilterCriteria do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

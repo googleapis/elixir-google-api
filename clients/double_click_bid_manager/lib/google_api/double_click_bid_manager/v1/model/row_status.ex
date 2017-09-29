@@ -20,9 +20,17 @@
 defmodule GoogleApi.DoubleClickBidManager.V1.Model.RowStatus do
   @moduledoc """
   Represents the upload status of a row in the request.
+
+  ## Attributes
+
+  - changed (Boolean): Whether the stored entity is changed as a result of upload. Defaults to: `null`.
+  - entityId (String): Entity Id. Defaults to: `null`.
+  - entityName (String): Entity name. Defaults to: `null`.
+  - errors (List[String]): Reasons why the entity can&#39;t be uploaded. Defaults to: `null`.
+  - persisted (Boolean): Whether the entity is persisted. Defaults to: `null`.
+  - rowNumber (Integer): Row number. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"changed",
     :"entityId",
@@ -36,6 +44,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.DoubleClickBidManager.V1.Model.RowStatus do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickBidManager.V1.Model.RowStatus do
+  def encode(value, options) do
+    GoogleApi.DoubleClickBidManager.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

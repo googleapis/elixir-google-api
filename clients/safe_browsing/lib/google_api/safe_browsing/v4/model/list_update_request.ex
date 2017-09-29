@@ -20,9 +20,19 @@
 defmodule GoogleApi.SafeBrowsing.V4.Model.ListUpdateRequest do
   @moduledoc """
   A single list update request.
+
+  ## Attributes
+
+  - constraints (Constraints): The constraints associated with this request. Defaults to: `null`.
+  - platformType (String): The type of platform at risk by entries present in the list. Defaults to: `null`.
+    - Enum - one of [PLATFORM_TYPE_UNSPECIFIED, WINDOWS, LINUX, ANDROID, OSX, IOS, ANY_PLATFORM, ALL_PLATFORMS, CHROME]
+  - state (String): The current state of the client for the requested list (the encrypted client state that was received from the last successful list update). Defaults to: `null`.
+  - threatEntryType (String): The types of entries present in the list. Defaults to: `null`.
+    - Enum - one of [THREAT_ENTRY_TYPE_UNSPECIFIED, URL, EXECUTABLE, IP_RANGE, CHROME_EXTENSION, FILENAME, CERT]
+  - threatType (String): The type of threat posed by entries present in the list. Defaults to: `null`.
+    - Enum - one of [THREAT_TYPE_UNSPECIFIED, MALWARE, SOCIAL_ENGINEERING, UNWANTED_SOFTWARE, POTENTIALLY_HARMFUL_APPLICATION, SOCIAL_ENGINEERING_INTERNAL, API_ABUSE, MALICIOUS_BINARY, CSD_WHITELIST, CSD_DOWNLOAD_WHITELIST, CLIENT_INCIDENT, CLIENT_INCIDENT_WHITELIST, APK_MALWARE_OFFLINE, SUBRESOURCE_FILTER]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"constraints",
     :"platformType",
@@ -37,6 +47,12 @@ defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.ListUpdateRequest d
   def decode(value, options) do
     value
     |> deserialize(:"constraints", :struct, GoogleApi.SafeBrowsing.V4.Model.Constraints, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SafeBrowsing.V4.Model.ListUpdateRequest do
+  def encode(value, options) do
+    GoogleApi.SafeBrowsing.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

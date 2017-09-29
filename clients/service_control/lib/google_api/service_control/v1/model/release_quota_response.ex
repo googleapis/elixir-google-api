@@ -20,9 +20,15 @@
 defmodule GoogleApi.ServiceControl.V1.Model.ReleaseQuotaResponse do
   @moduledoc """
   Response message for the ReleaseQuota method.
+
+  ## Attributes
+
+  - operationId (String): The same operation_id value used in the ReleaseQuotaRequest. Used for logging and diagnostics purposes. Defaults to: `null`.
+  - quotaMetrics (List[MetricValueSet]): Quota metrics to indicate the result of release. Depending on the request, one or more of the following metrics will be included:  1. For rate quota, per quota group or per quota metric released amount will be specified using the following delta metric:   \&quot;serviceruntime.googleapis.com/api/consumer/quota_refund_count\&quot;  2. For allocation quota, per quota metric total usage will be specified using the following gauge metric:   \&quot;serviceruntime.googleapis.com/allocation/consumer/quota_used_count\&quot;  3. For allocation quota, value for each quota limit associated with the metrics will be specified using the following gauge metric:   \&quot;serviceruntime.googleapis.com/quota/limit\&quot; Defaults to: `null`.
+  - releaseErrors (List[QuotaError]): Indicates the decision of the release. Defaults to: `null`.
+  - serviceConfigId (String): ID of the actual config used to process the request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"operationId",
     :"quotaMetrics",
@@ -37,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.ReleaseQuotaRespo
     value
     |> deserialize(:"quotaMetrics", :list, GoogleApi.ServiceControl.V1.Model.MetricValueSet, options)
     |> deserialize(:"releaseErrors", :list, GoogleApi.ServiceControl.V1.Model.QuotaError, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.ReleaseQuotaResponse do
+  def encode(value, options) do
+    GoogleApi.ServiceControl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

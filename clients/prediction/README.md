@@ -1,6 +1,6 @@
 # GoogleApi.Prediction.V16
 
-**TODO: Add description**
+Lets you access a cloud hosted machine learning service that makes it easy to build smart apps
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_prediction` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_prediction, "~> 0.1.0"}]
+  [{:google_api_prediction, "~> 0.0.1"}]
 end
 ```
 

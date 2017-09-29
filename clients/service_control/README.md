@@ -1,6 +1,6 @@
 # GoogleApi.ServiceControl.V1
 
-**TODO: Add description**
+Google Service Control provides control plane functionality to managed services, such as logging, monitoring, and status checks.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_service_control` to your list of dependencies in `mix.exs`
 
 ```elixir
 def deps do
-  [{:google_api_service_control, "~> 0.1.0"}]
+  [{:google_api_service_control, "~> 0.0.1"}]
 end
 ```
 

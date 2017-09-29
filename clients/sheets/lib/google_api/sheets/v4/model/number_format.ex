@@ -20,9 +20,14 @@
 defmodule GoogleApi.Sheets.V4.Model.NumberFormat do
   @moduledoc """
   The number format of a cell.
+
+  ## Attributes
+
+  - pattern (String): Pattern string used for formatting.  If not set, a default pattern based on the user&#39;s locale will be used if necessary for the given type. See the [Date and Number Formats guide](/sheets/api/guides/formats) for more information about the supported patterns. Defaults to: `null`.
+  - type (String): The type of the number format. When writing, this field must be set. Defaults to: `null`.
+    - Enum - one of [NUMBER_FORMAT_TYPE_UNSPECIFIED, TEXT, NUMBER, PERCENT, CURRENCY, DATE, TIME, DATE_TIME, SCIENTIFIC]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"pattern",
     :"type"
@@ -32,6 +37,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.NumberFormat do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.NumberFormat do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

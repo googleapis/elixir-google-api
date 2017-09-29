@@ -20,9 +20,13 @@
 defmodule GoogleApi.StorageTransfer.V1.Model.ListTransferJobsResponse do
   @moduledoc """
   Response from ListTransferJobs.
+
+  ## Attributes
+
+  - nextPageToken (String): The list next page token. Defaults to: `null`.
+  - transferJobs (List[TransferJob]): A list of transfer jobs. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nextPageToken",
     :"transferJobs"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.StorageTransfer.V1.Model.ListTransferJobs
   def decode(value, options) do
     value
     |> deserialize(:"transferJobs", :list, GoogleApi.StorageTransfer.V1.Model.TransferJob, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.StorageTransfer.V1.Model.ListTransferJobsResponse do
+  def encode(value, options) do
+    GoogleApi.StorageTransfer.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

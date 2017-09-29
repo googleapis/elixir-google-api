@@ -20,9 +20,20 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.Condition do
   @moduledoc """
   A condition to be met.
+
+  ## Attributes
+
+  - iam (String): Trusted attributes supplied by the IAM system. Defaults to: `null`.
+    - Enum - one of [NO_ATTR, AUTHORITY, ATTRIBUTION, APPROVER, JUSTIFICATION_TYPE]
+  - op (String): An operator to apply the subject with. Defaults to: `null`.
+    - Enum - one of [NO_OP, EQUALS, NOT_EQUALS, IN, NOT_IN, DISCHARGED]
+  - svc (String): Trusted attributes discharged by the service. Defaults to: `null`.
+  - sys (String): Trusted attributes supplied by any service that owns resources and uses the IAM system for access control. Defaults to: `null`.
+    - Enum - one of [NO_ATTR, REGION, SERVICE, NAME, IP]
+  - value (String): DEPRECATED. Use &#39;values&#39; instead. Defaults to: `null`.
+  - values (List[String]): The objects of the condition. This is mutually exclusive with &#39;value&#39;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"iam",
     :"op",
@@ -36,6 +47,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.Condition do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.Condition do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

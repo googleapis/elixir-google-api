@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.DoubleClickSearch.V2.Model.ReportRequest_filters do
+defmodule GoogleApi.DoubleClickSearch.V2.Model.ReportRequestFilters do
   @moduledoc """
   
+
+  ## Attributes
+
+  - column (ReportApiColumnSpec): Column to perform the filter on. This can be a DoubleClick Search column or a saved column. Defaults to: `null`.
+  - operator (String): Operator to use in the filter. See the filter reference for a list of available operators. Defaults to: `null`.
+  - values (List[ErrorUnknown]): A list of values to filter the column value against. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"column",
     :"operator",
@@ -30,12 +35,18 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.ReportRequest_filters do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.DoubleClickSearch.V2.Model.ReportRequest_filters do
+defimpl Poison.Decoder, for: GoogleApi.DoubleClickSearch.V2.Model.ReportRequestFilters do
   import GoogleApi.DoubleClickSearch.V2.Deserializer
   def decode(value, options) do
     value
     |> deserialize(:"column", :struct, GoogleApi.DoubleClickSearch.V2.Model.ReportApiColumnSpec, options)
-    |> deserialize(:"values", :list, GoogleApi.DoubleClickSearch.V2.Model., options)
+    |> deserialize(:"values", :list, nil, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickSearch.V2.Model.ReportRequestFilters do
+  def encode(value, options) do
+    GoogleApi.DoubleClickSearch.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

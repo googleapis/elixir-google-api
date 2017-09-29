@@ -20,9 +20,12 @@
 defmodule GoogleApi.Sheets.V4.Model.BatchClearValuesRequest do
   @moduledoc """
   The request for clearing more than one range of values in a spreadsheet.
+
+  ## Attributes
+
+  - ranges (List[String]): The ranges to clear, in A1 notation. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"ranges"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BatchClearValuesRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BatchClearValuesRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.Spanner.V1.Model.CreateDatabaseRequest do
   @moduledoc """
   The request for CreateDatabase.
+
+  ## Attributes
+
+  - createStatement (String): Required. A &#x60;CREATE DATABASE&#x60; statement, which specifies the ID of the new database.  The database ID must conform to the regular expression &#x60;a-z*[a-z0-9]&#x60; and be between 2 and 30 characters in length. If the database ID is a reserved word or if it contains a hyphen, the database ID must be enclosed in backticks (&#x60;&#x60; &#x60; &#x60;&#x60;). Defaults to: `null`.
+  - extraStatements (List[String]): An optional list of DDL statements to run inside the newly created database. Statements can create tables, indexes, etc. These statements execute atomically with the creation of the database: if there is an error in any statement, the database is not created. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"createStatement",
     :"extraStatements"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.CreateDatabaseRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.CreateDatabaseRequest do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

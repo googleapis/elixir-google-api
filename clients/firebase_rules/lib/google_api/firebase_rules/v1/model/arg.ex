@@ -20,9 +20,12 @@
 defmodule GoogleApi.FirebaseRules.V1.Model.Arg do
   @moduledoc """
   Arg matchers for the mock function.
+
+  ## Attributes
+
+  - anyValue (Empty): Argument matches any value provided. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"anyValue"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.FirebaseRules.V1.Model.Arg do
   def decode(value, options) do
     value
     |> deserialize(:"anyValue", :struct, GoogleApi.FirebaseRules.V1.Model.Empty, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.FirebaseRules.V1.Model.Arg do
+  def encode(value, options) do
+    GoogleApi.FirebaseRules.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

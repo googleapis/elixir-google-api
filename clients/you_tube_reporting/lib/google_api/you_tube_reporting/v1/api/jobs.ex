@@ -130,7 +130,9 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Jobs do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/jobs/#{job_id}")
+    |> url("/v1/jobs/{jobId}", %{
+         "jobId" => URI.encode_www_form(job_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -185,7 +187,9 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Jobs do
     }
     %{}
     |> method(:get)
-    |> url("/v1/jobs/#{job_id}")
+    |> url("/v1/jobs/{jobId}", %{
+         "jobId" => URI.encode_www_form(job_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -301,7 +305,10 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Jobs do
     }
     %{}
     |> method(:get)
-    |> url("/v1/jobs/#{job_id}/reports/#{report_id}")
+    |> url("/v1/jobs/{jobId}/reports/{reportId}", %{
+         "jobId" => URI.encode_www_form(job_id),
+         "reportId" => URI.encode_www_form(report_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -366,7 +373,9 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Jobs do
     }
     %{}
     |> method(:get)
-    |> url("/v1/jobs/#{job_id}/reports")
+    |> url("/v1/jobs/{jobId}/reports", %{
+         "jobId" => URI.encode_www_form(job_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

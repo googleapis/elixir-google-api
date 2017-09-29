@@ -20,9 +20,14 @@
 defmodule GoogleApi.ServiceControl.V1.Model.LinearBuckets do
   @moduledoc """
   Describing buckets with constant width.
+
+  ## Attributes
+
+  - numFiniteBuckets (Integer): The number of finite buckets. With the underflow and overflow buckets, the total number of buckets is &#x60;num_finite_buckets&#x60; + 2. See comments on &#x60;bucket_options&#x60; for details. Defaults to: `null`.
+  - offset (Float): The i&#39;th linear bucket covers the interval   [offset + (i-1) * width, offset + i * width) where i ranges from 1 to num_finite_buckets, inclusive. Defaults to: `null`.
+  - width (Float): The i&#39;th linear bucket covers the interval   [offset + (i-1) * width, offset + i * width) where i ranges from 1 to num_finite_buckets, inclusive. Must be strictly positive. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"numFiniteBuckets",
     :"offset",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.LinearBuckets do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.LinearBuckets do
+  def encode(value, options) do
+    GoogleApi.ServiceControl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

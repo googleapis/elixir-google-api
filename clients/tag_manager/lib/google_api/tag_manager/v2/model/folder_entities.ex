@@ -20,9 +20,15 @@
 defmodule GoogleApi.TagManager.V2.Model.FolderEntities do
   @moduledoc """
   Represents a Google Tag Manager Folder&#39;s contents.
+
+  ## Attributes
+
+  - nextPageToken (String): Continuation token for fetching the next page of results. Defaults to: `null`.
+  - tag (List[Tag]): The list of tags inside the folder. Defaults to: `null`.
+  - trigger (List[Trigger]): The list of triggers inside the folder. Defaults to: `null`.
+  - variable (List[Variable]): The list of variables inside the folder. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nextPageToken",
     :"tag",
@@ -38,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.FolderEntities do
     |> deserialize(:"tag", :list, GoogleApi.TagManager.V2.Model.Tag, options)
     |> deserialize(:"trigger", :list, GoogleApi.TagManager.V2.Model.Trigger, options)
     |> deserialize(:"variable", :list, GoogleApi.TagManager.V2.Model.Variable, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.FolderEntities do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

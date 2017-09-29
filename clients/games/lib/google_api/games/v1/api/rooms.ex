@@ -110,7 +110,9 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
     }
     %{}
     |> method(:post)
-    |> url("/rooms/#{room_id}/decline")
+    |> url("/rooms/{roomId}/decline", %{
+         "roomId" => URI.encode_www_form(room_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -153,7 +155,9 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
     }
     %{}
     |> method(:post)
-    |> url("/rooms/#{room_id}/dismiss")
+    |> url("/rooms/{roomId}/dismiss", %{
+         "roomId" => URI.encode_www_form(room_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -198,7 +202,9 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
     }
     %{}
     |> method(:get)
-    |> url("/rooms/#{room_id}")
+    |> url("/rooms/{roomId}", %{
+         "roomId" => URI.encode_www_form(room_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -245,7 +251,9 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
     }
     %{}
     |> method(:post)
-    |> url("/rooms/#{room_id}/join")
+    |> url("/rooms/{roomId}/join", %{
+         "roomId" => URI.encode_www_form(room_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -292,7 +300,9 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
     }
     %{}
     |> method(:post)
-    |> url("/rooms/#{room_id}/leave")
+    |> url("/rooms/{roomId}/leave", %{
+         "roomId" => URI.encode_www_form(room_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -387,7 +397,9 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
     }
     %{}
     |> method(:post)
-    |> url("/rooms/#{room_id}/reportstatus")
+    |> url("/rooms/{roomId}/reportstatus", %{
+         "roomId" => URI.encode_www_form(room_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

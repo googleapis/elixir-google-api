@@ -20,9 +20,19 @@
 defmodule GoogleApi.ServiceUser.V1.Model.Method do
   @moduledoc """
   Method represents a method of an API interface.
+
+  ## Attributes
+
+  - name (String): The simple name of this method. Defaults to: `null`.
+  - options (List[Option]): Any metadata attached to the method. Defaults to: `null`.
+  - requestStreaming (Boolean): If true, the request is streamed. Defaults to: `null`.
+  - requestTypeUrl (String): A URL of the input message type. Defaults to: `null`.
+  - responseStreaming (Boolean): If true, the response is streamed. Defaults to: `null`.
+  - responseTypeUrl (String): The URL of the output message type. Defaults to: `null`.
+  - syntax (String): The source syntax of this method. Defaults to: `null`.
+    - Enum - one of [SYNTAX_PROTO2, SYNTAX_PROTO3]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name",
     :"options",
@@ -39,6 +49,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceUser.V1.Model.Method do
   def decode(value, options) do
     value
     |> deserialize(:"options", :list, GoogleApi.ServiceUser.V1.Model.Option, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceUser.V1.Model.Method do
+  def encode(value, options) do
+    GoogleApi.ServiceUser.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

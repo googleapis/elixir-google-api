@@ -20,9 +20,17 @@
 defmodule GoogleApi.TagManager.V2.Model.Account do
   @moduledoc """
   Represents a Google Tag Manager Account.
+
+  ## Attributes
+
+  - accountId (String): The Account ID uniquely identifies the GTM Account. Defaults to: `null`.
+  - fingerprint (String): The fingerprint of the GTM Account as computed at storage time. This value is recomputed whenever the account is modified. Defaults to: `null`.
+  - name (String): Account display name. Defaults to: `null`.
+  - path (String): GTM Account&#39;s API relative path. Defaults to: `null`.
+  - shareData (Boolean): Whether the account shares data anonymously with Google and others. This flag enables benchmarking by sharing your data in an anonymous form. Google will remove all identifiable information about your website, combine the data with hundreds of other anonymous sites and report aggregate trends in the benchmarking service. Defaults to: `null`.
+  - tagManagerUrl (String): Auto generated link to the tag manager UI Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accountId",
     :"fingerprint",
@@ -36,6 +44,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.Account do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.Account do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

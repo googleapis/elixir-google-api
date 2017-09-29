@@ -20,9 +20,14 @@
 defmodule GoogleApi.DoubleClickSearch.V2.Model.SavedColumn do
   @moduledoc """
   A saved column
+
+  ## Attributes
+
+  - kind (String): Identifies this as a SavedColumn resource. Value: the fixed string doubleclicksearch#savedColumn. Defaults to: `null`.
+  - savedColumnName (String): The name of the saved column. Defaults to: `null`.
+  - type (String): The type of data this saved column will produce. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"savedColumnName",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.DoubleClickSearch.V2.Model.SavedColumn do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickSearch.V2.Model.SavedColumn do
+  def encode(value, options) do
+    GoogleApi.DoubleClickSearch.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.TagManager.V2.Model.CreateBuiltInVariableResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - builtInVariable (List[BuiltInVariable]): List of created built-in variables. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"builtInVariable"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.CreateBuiltInVariable
   def decode(value, options) do
     value
     |> deserialize(:"builtInVariable", :list, GoogleApi.TagManager.V2.Model.BuiltInVariable, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.CreateBuiltInVariableResponse do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

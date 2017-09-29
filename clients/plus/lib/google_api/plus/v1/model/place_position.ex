@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Plus.V1.Model.Place_position do
+defmodule GoogleApi.Plus.V1.Model.PlacePosition do
   @moduledoc """
   The position of the place.
+
+  ## Attributes
+
+  - latitude (Float): The latitude of this position. Defaults to: `null`.
+  - longitude (Float): The longitude of this position. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"latitude",
     :"longitude"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Place_position do
+defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.PlacePosition do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.PlacePosition do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.Games.V1.Model.RoomJoinRequest do
   @moduledoc """
   This is a JSON template for a join room request.
+
+  ## Attributes
+
+  - capabilities (List[String]): The capabilities that this client supports for realtime communication. Defaults to: `null`.
+  - clientAddress (RoomClientAddress): Client address for the player joining the room. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#roomJoinRequest. Defaults to: `null`.
+  - networkDiagnostics (NetworkDiagnostics): Network diagnostics for the client joining the room. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"capabilities",
     :"clientAddress",
@@ -37,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.RoomJoinRequest do
     value
     |> deserialize(:"clientAddress", :struct, GoogleApi.Games.V1.Model.RoomClientAddress, options)
     |> deserialize(:"networkDiagnostics", :struct, GoogleApi.Games.V1.Model.NetworkDiagnostics, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.RoomJoinRequest do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

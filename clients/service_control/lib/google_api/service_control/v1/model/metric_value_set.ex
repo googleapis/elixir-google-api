@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceControl.V1.Model.MetricValueSet do
   @moduledoc """
   Represents a set of metric values in the same metric. Each metric value in the set should have a unique combination of start time, end time, and label values.
+
+  ## Attributes
+
+  - metricName (String): The metric name defined in the service configuration. Defaults to: `null`.
+  - metricValues (List[MetricValue]): The values in this metric. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"metricName",
     :"metricValues"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.MetricValueSet do
   def decode(value, options) do
     value
     |> deserialize(:"metricValues", :list, GoogleApi.ServiceControl.V1.Model.MetricValue, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.MetricValueSet do
+  def encode(value, options) do
+    GoogleApi.ServiceControl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

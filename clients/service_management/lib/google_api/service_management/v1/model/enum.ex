@@ -20,9 +20,17 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.Enum do
   @moduledoc """
   Enum type definition.
+
+  ## Attributes
+
+  - enumvalue (List[EnumValue]): Enum value definitions. Defaults to: `null`.
+  - name (String): Enum type name. Defaults to: `null`.
+  - options (List[Option]): Protocol buffer options. Defaults to: `null`.
+  - sourceContext (SourceContext): The source context. Defaults to: `null`.
+  - syntax (String): The source syntax. Defaults to: `null`.
+    - Enum - one of [SYNTAX_PROTO2, SYNTAX_PROTO3]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"enumvalue",
     :"name",
@@ -39,6 +47,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.Enum do
     |> deserialize(:"enumvalue", :list, GoogleApi.ServiceManagement.V1.Model.EnumValue, options)
     |> deserialize(:"options", :list, GoogleApi.ServiceManagement.V1.Model.Option, options)
     |> deserialize(:"sourceContext", :struct, GoogleApi.ServiceManagement.V1.Model.SourceContext, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.Enum do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

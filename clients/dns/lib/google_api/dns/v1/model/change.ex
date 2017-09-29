@@ -20,9 +20,18 @@
 defmodule GoogleApi.DNS.V1.Model.Change do
   @moduledoc """
   An atomic update to a collection of ResourceRecordSets.
+
+  ## Attributes
+
+  - additions (List[ResourceRecordSet]): Which ResourceRecordSets to add? Defaults to: `null`.
+  - deletions (List[ResourceRecordSet]): Which ResourceRecordSets to remove? Must match existing data exactly. Defaults to: `null`.
+  - id (String): Unique identifier for the resource; defined by the server (output only). Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;dns#change\&quot;. Defaults to: `null`.
+  - startTime (String): The time that this operation was started by the server (output only). This is in RFC3339 text format. Defaults to: `null`.
+  - status (String): Status of the operation (output only). Defaults to: `null`.
+    - Enum - one of [done, pending]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"additions",
     :"deletions",
@@ -39,6 +48,12 @@ defimpl Poison.Decoder, for: GoogleApi.DNS.V1.Model.Change do
     value
     |> deserialize(:"additions", :list, GoogleApi.DNS.V1.Model.ResourceRecordSet, options)
     |> deserialize(:"deletions", :list, GoogleApi.DNS.V1.Model.ResourceRecordSet, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DNS.V1.Model.Change do
+  def encode(value, options) do
+    GoogleApi.DNS.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

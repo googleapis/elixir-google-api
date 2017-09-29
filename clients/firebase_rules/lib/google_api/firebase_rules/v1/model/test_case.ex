@@ -20,9 +20,14 @@
 defmodule GoogleApi.FirebaseRules.V1.Model.TestCase do
   @moduledoc """
   &#x60;TestCase&#x60; messages provide the request context and an expectation as to whether the given context will be allowed or denied. Test cases may specify the &#x60;request&#x60;, &#x60;resource&#x60;, and &#x60;function_mocks&#x60; to mock a function call to a service-provided function.  The &#x60;request&#x60; object represents context present at request-time.  The &#x60;resource&#x60; is the value of the target resource as it appears in persistent storage before the request is executed.
+
+  ## Attributes
+
+  - expectation (String): Test expectation. Defaults to: `null`.
+    - Enum - one of [EXPECTATION_UNSPECIFIED, ALLOW, DENY]
+  - functionMocks (List[FunctionMock]): Optional function mocks for service-defined functions. If not set, any service defined function is expected to return an error, which may or may not influence the test outcome. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"expectation",
     :"functionMocks"
@@ -34,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.FirebaseRules.V1.Model.TestCase do
   def decode(value, options) do
     value
     |> deserialize(:"functionMocks", :list, GoogleApi.FirebaseRules.V1.Model.FunctionMock, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.FirebaseRules.V1.Model.TestCase do
+  def encode(value, options) do
+    GoogleApi.FirebaseRules.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

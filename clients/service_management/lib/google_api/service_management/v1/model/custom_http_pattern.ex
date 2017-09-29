@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.CustomHttpPattern do
   @moduledoc """
   A custom pattern is used for defining custom HTTP verb.
+
+  ## Attributes
+
+  - kind (String): The name of this custom HTTP verb. Defaults to: `null`.
+  - path (String): The path matched by this custom verb. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"path"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.CustomHttpPattern do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.CustomHttpPattern do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

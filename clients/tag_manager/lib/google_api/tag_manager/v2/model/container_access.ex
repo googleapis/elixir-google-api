@@ -20,9 +20,14 @@
 defmodule GoogleApi.TagManager.V2.Model.ContainerAccess do
   @moduledoc """
   Defines the Google Tag Manager Container access permissions.
+
+  ## Attributes
+
+  - containerId (String): GTM Container ID. Defaults to: `null`.
+  - permission (String): List of Container permissions. Defaults to: `null`.
+    - Enum - one of [approve, containerPermissionUnspecified, edit, noAccess, publish, read]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"containerId",
     :"permission"
@@ -32,6 +37,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.ContainerAccess do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.ContainerAccess do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

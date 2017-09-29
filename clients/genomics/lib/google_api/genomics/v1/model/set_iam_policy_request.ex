@@ -20,9 +20,12 @@
 defmodule GoogleApi.Genomics.V1.Model.SetIamPolicyRequest do
   @moduledoc """
   Request message for &#x60;SetIamPolicy&#x60; method.
+
+  ## Attributes
+
+  - policy (Policy): REQUIRED: The complete policy to be applied to the &#x60;resource&#x60;. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud Platform services (such as Projects) might reject them. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"policy"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.SetIamPolicyRequest do
   def decode(value, options) do
     value
     |> deserialize(:"policy", :struct, GoogleApi.Genomics.V1.Model.Policy, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.SetIamPolicyRequest do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

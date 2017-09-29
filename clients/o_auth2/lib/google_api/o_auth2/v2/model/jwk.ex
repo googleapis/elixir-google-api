@@ -20,9 +20,12 @@
 defmodule GoogleApi.OAuth2.V2.Model.Jwk do
   @moduledoc """
   
+
+  ## Attributes
+
+  - keys (List[JwkKeys]):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"keys"
   ]
@@ -32,7 +35,13 @@ defimpl Poison.Decoder, for: GoogleApi.OAuth2.V2.Model.Jwk do
   import GoogleApi.OAuth2.V2.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"keys", :list, GoogleApi.OAuth2.V2.Model.Jwk_keys, options)
+    |> deserialize(:"keys", :list, GoogleApi.OAuth2.V2.Model.JwkKeys, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.OAuth2.V2.Model.Jwk do
+  def encode(value, options) do
+    GoogleApi.OAuth2.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

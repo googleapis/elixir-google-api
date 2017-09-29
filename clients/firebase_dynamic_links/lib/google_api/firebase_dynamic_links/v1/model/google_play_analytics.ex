@@ -20,9 +20,17 @@
 defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.GooglePlayAnalytics do
   @moduledoc """
   Parameters for Google Play Campaign Measurements. [Learn more](https://developers.google.com/analytics/devguides/collection/android/v4/campaigns#campaign-params)
+
+  ## Attributes
+
+  - gclid (String): [AdWords autotagging parameter](https://support.google.com/analytics/answer/1033981?hl&#x3D;en); used to measure Google AdWords ads. This value is generated dynamically and should never be modified. Defaults to: `null`.
+  - utmCampaign (String): Campaign name; used for keyword analysis to identify a specific product promotion or strategic campaign. Defaults to: `null`.
+  - utmContent (String): Campaign content; used for A/B testing and content-targeted ads to differentiate ads or links that point to the same URL. Defaults to: `null`.
+  - utmMedium (String): Campaign medium; used to identify a medium such as email or cost-per-click. Defaults to: `null`.
+  - utmSource (String): Campaign source; used to identify a search engine, newsletter, or other source. Defaults to: `null`.
+  - utmTerm (String): Campaign term; used with paid search to supply the keywords for ads. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"gclid",
     :"utmCampaign",
@@ -36,6 +44,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.GooglePlayAnalytics do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.GooglePlayAnalytics do
+  def encode(value, options) do
+    GoogleApi.FirebaseDynamicLinks.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

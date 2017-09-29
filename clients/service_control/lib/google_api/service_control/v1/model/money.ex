@@ -20,9 +20,14 @@
 defmodule GoogleApi.ServiceControl.V1.Model.Money do
   @moduledoc """
   Represents an amount of money with its currency type.
+
+  ## Attributes
+
+  - currencyCode (String): The 3-letter currency code defined in ISO 4217. Defaults to: `null`.
+  - nanos (Integer): Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If &#x60;units&#x60; is positive, &#x60;nanos&#x60; must be positive or zero. If &#x60;units&#x60; is zero, &#x60;nanos&#x60; can be positive, zero, or negative. If &#x60;units&#x60; is negative, &#x60;nanos&#x60; must be negative or zero. For example $-1.75 is represented as &#x60;units&#x60;&#x3D;-1 and &#x60;nanos&#x60;&#x3D;-750,000,000. Defaults to: `null`.
+  - units (String): The whole units of the amount. For example if &#x60;currencyCode&#x60; is &#x60;\&quot;USD\&quot;&#x60;, then 1 unit is one US dollar. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"currencyCode",
     :"nanos",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.Money do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.Money do
+  def encode(value, options) do
+    GoogleApi.ServiceControl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

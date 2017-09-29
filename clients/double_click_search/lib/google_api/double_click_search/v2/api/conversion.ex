@@ -74,7 +74,11 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
     }
     %{}
     |> method(:get)
-    |> url("/agency/#{agency_id}/advertiser/#{advertiser_id}/engine/#{engine_account_id}/conversion")
+    |> url("/agency/{agencyId}/advertiser/{advertiserId}/engine/{engineAccountId}/conversion", %{
+         "agencyId" => URI.encode_www_form(agency_id),
+         "advertiserId" => URI.encode_www_form(advertiser_id),
+         "engineAccountId" => URI.encode_www_form(engine_account_id)
+       })
     |> add_param(:query, :"endDate", end_date)
     |> add_param(:query, :"rowCount", row_count)
     |> add_param(:query, :"startDate", start_date)

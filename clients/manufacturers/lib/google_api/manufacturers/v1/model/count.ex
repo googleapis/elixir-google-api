@@ -20,9 +20,13 @@
 defmodule GoogleApi.Manufacturers.V1.Model.Count do
   @moduledoc """
   The number of products in a single package. For more information, see https://support.google.com/manufacturers/answer/6124116#count.
+
+  ## Attributes
+
+  - unit (String): The unit in which these products are counted. Defaults to: `null`.
+  - value (String): The numeric value of the number of products in a package. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"unit",
     :"value"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Manufacturers.V1.Model.Count do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Manufacturers.V1.Model.Count do
+  def encode(value, options) do
+    GoogleApi.Manufacturers.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

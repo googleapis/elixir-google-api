@@ -20,9 +20,13 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.ListPerfSamplesResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - nextPageToken (String): Optional, returned if result size exceeds the page size specified in the request (or the default page size, 500, if unspecified). It indicates the last sample timestamp to be used as page_token in subsequent request Defaults to: `null`.
+  - perfSamples (List[PerfSample]):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nextPageToken",
     :"perfSamples"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.ListPerfSamples
   def decode(value, options) do
     value
     |> deserialize(:"perfSamples", :list, GoogleApi.ToolResults.V1beta3.Model.PerfSample, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.ListPerfSamplesResponse do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -60,7 +60,9 @@ defmodule GoogleApi.Plus.V1.Api.People do
     }
     %{}
     |> method(:get)
-    |> url("/people/#{user_id}")
+    |> url("/people/{userId}", %{
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -108,7 +110,10 @@ defmodule GoogleApi.Plus.V1.Api.People do
     }
     %{}
     |> method(:get)
-    |> url("/people/#{user_id}/people/#{collection}")
+    |> url("/people/{userId}/people/{collection}", %{
+         "userId" => URI.encode_www_form(user_id),
+         "collection" => URI.encode_www_form(collection)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -154,7 +159,10 @@ defmodule GoogleApi.Plus.V1.Api.People do
     }
     %{}
     |> method(:get)
-    |> url("/activities/#{activity_id}/people/#{collection}")
+    |> url("/activities/{activityId}/people/{collection}", %{
+         "activityId" => URI.encode_www_form(activity_id),
+         "collection" => URI.encode_www_form(collection)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

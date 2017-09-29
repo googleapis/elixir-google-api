@@ -20,9 +20,20 @@
 defmodule GoogleApi.Sheets.V4.Model.FindReplaceRequest do
   @moduledoc """
   Finds and replaces data in cells over a range, sheet, or all sheets.
+
+  ## Attributes
+
+  - allSheets (Boolean): True to find/replace over all sheets. Defaults to: `null`.
+  - find (String): The value to search. Defaults to: `null`.
+  - includeFormulas (Boolean): True if the search should include cells with formulas. False to skip cells with formulas. Defaults to: `null`.
+  - matchCase (Boolean): True if the search is case sensitive. Defaults to: `null`.
+  - matchEntireCell (Boolean): True if the find value should match the entire cell. Defaults to: `null`.
+  - range (GridRange): The range to find/replace over. Defaults to: `null`.
+  - replacement (String): The value to use as the replacement. Defaults to: `null`.
+  - searchByRegex (Boolean): True if the find value is a regex. The regular expression and replacement should follow Java regex rules at https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html. The replacement string is allowed to refer to capturing groups. For example, if one cell has the contents &#x60;\&quot;Google Sheets\&quot;&#x60; and another has &#x60;\&quot;Google Docs\&quot;&#x60;, then searching for &#x60;\&quot;o.* (.*)\&quot;&#x60; with a replacement of &#x60;\&quot;$1 Rocks\&quot;&#x60; would change the contents of the cells to &#x60;\&quot;GSheets Rocks\&quot;&#x60; and &#x60;\&quot;GDocs Rocks\&quot;&#x60; respectively. Defaults to: `null`.
+  - sheetId (Integer): The sheet to find/replace over. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"allSheets",
     :"find",
@@ -41,6 +52,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.FindReplaceRequest do
   def decode(value, options) do
     value
     |> deserialize(:"range", :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.FindReplaceRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

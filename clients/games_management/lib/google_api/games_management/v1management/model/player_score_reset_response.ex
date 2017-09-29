@@ -20,9 +20,14 @@
 defmodule GoogleApi.GamesManagement.V1management.Model.PlayerScoreResetResponse do
   @moduledoc """
   This is a JSON template for a list of reset leaderboard entry resources.
+
+  ## Attributes
+
+  - definitionId (String): The ID of an leaderboard for which player state has been updated. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#playerScoreResetResponse. Defaults to: `null`.
+  - resetScoreTimeSpans (List[String]): The time spans of the updated score. Possible values are:   - \&quot;ALL_TIME\&quot; - The score is an all-time score.  - \&quot;WEEKLY\&quot; - The score is a weekly score.  - \&quot;DAILY\&quot; - The score is a daily score. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"definitionId",
     :"kind",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1management.Model.PlayerScoreResetResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.GamesManagement.V1management.Model.PlayerScoreResetResponse do
+  def encode(value, options) do
+    GoogleApi.GamesManagement.V1management.Deserializer.serialize_non_nil(value, options)
   end
 end
 

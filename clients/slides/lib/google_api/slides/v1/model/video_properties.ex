@@ -20,9 +20,12 @@
 defmodule GoogleApi.Slides.V1.Model.VideoProperties do
   @moduledoc """
   The properties of the Video.
+
+  ## Attributes
+
+  - outline (Outline): The outline of the video. The default outline matches the defaults for new videos created in the Slides editor. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"outline"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.VideoProperties do
   def decode(value, options) do
     value
     |> deserialize(:"outline", :struct, GoogleApi.Slides.V1.Model.Outline, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.VideoProperties do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

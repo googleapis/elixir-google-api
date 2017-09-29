@@ -20,9 +20,14 @@
 defmodule GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsSetServiceRequest do
   @moduledoc """
   
+
+  ## Attributes
+
+  - endpoints (List[ServiceEndpoint]): The service information to be updated. Defaults to: `null`.
+  - fingerprint (String): Fingerprint of the service information; a hash of the contents. This field is used for optimistic locking when updating the service entries. Defaults to: `null`.
+  - resourceName (String): The name of the resource if user wants to update the service information of the resource. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"endpoints",
     :"fingerprint",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsSetS
   def decode(value, options) do
     value
     |> deserialize(:"endpoints", :list, GoogleApi.ResourceViews.V1beta2.Model.ServiceEndpoint, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ResourceViews.V1beta2.Model.ZoneViewsSetServiceRequest do
+  def encode(value, options) do
+    GoogleApi.ResourceViews.V1beta2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

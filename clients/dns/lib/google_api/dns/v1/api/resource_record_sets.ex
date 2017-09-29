@@ -69,7 +69,10 @@ defmodule GoogleApi.DNS.V1.Api.ResourceRecordSets do
     }
     %{}
     |> method(:get)
-    |> url("/#{project}/managedZones/#{managed_zone}/rrsets")
+    |> url("/{project}/managedZones/{managedZone}/rrsets", %{
+         "project" => URI.encode_www_form(project),
+         "managedZone" => URI.encode_www_form(managed_zone)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

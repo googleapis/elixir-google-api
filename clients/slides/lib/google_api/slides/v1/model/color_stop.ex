@@ -20,9 +20,14 @@
 defmodule GoogleApi.Slides.V1.Model.ColorStop do
   @moduledoc """
   A color and position in a gradient band.
+
+  ## Attributes
+
+  - alpha (Float): The alpha value of this color in the gradient band. Defaults to 1.0, fully opaque. Defaults to: `null`.
+  - color (OpaqueColor): The color of the gradient stop. Defaults to: `null`.
+  - position (Float): The relative position of the color stop in the gradient band measured in percentage. The value should be in the interval [0.0, 1.0]. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"alpha",
     :"color",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.ColorStop do
   def decode(value, options) do
     value
     |> deserialize(:"color", :struct, GoogleApi.Slides.V1.Model.OpaqueColor, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.ColorStop do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

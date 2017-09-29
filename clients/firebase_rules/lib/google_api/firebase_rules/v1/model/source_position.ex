@@ -20,9 +20,14 @@
 defmodule GoogleApi.FirebaseRules.V1.Model.SourcePosition do
   @moduledoc """
   Position in the &#x60;Source&#x60; content including its line, column number, and an index of the &#x60;File&#x60; in the &#x60;Source&#x60; message. Used for debug purposes.
+
+  ## Attributes
+
+  - column (Integer): First column on the source line associated with the source fragment. Defaults to: `null`.
+  - fileName (String): Name of the &#x60;File&#x60;. Defaults to: `null`.
+  - line (Integer): Line number of the source fragment. 1-based. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"column",
     :"fileName",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.FirebaseRules.V1.Model.SourcePosition do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.FirebaseRules.V1.Model.SourcePosition do
+  def encode(value, options) do
+    GoogleApi.FirebaseRules.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

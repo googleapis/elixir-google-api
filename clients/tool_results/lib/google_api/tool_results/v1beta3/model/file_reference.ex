@@ -20,9 +20,12 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.FileReference do
   @moduledoc """
   A reference to a file.
+
+  ## Attributes
+
+  - fileUri (String): The URI of a file stored in Google Cloud Storage.  For example: http://storage.googleapis.com/mybucket/path/to/test.xml or in gsutil format: gs://mybucket/path/to/test.xml with version-specific info, gs://mybucket/path/to/test.xml#1360383693690000  An INVALID_ARGUMENT error will be returned if the URI format is not supported.  - In response: always set - In create/update request: always set Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fileUri"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.FileReference do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.FileReference do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

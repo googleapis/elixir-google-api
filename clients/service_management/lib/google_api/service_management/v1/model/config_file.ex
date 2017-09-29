@@ -20,9 +20,15 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.ConfigFile do
   @moduledoc """
   Generic specification of a source configuration file
+
+  ## Attributes
+
+  - fileContents (String): The bytes that constitute the file. Defaults to: `null`.
+  - filePath (String): The file name of the configuration file (full or relative path). Defaults to: `null`.
+  - fileType (String): The type of configuration file this represents. Defaults to: `null`.
+    - Enum - one of [FILE_TYPE_UNSPECIFIED, SERVICE_CONFIG_YAML, OPEN_API_JSON, OPEN_API_YAML, FILE_DESCRIPTOR_SET_PROTO]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fileContents",
     :"filePath",
@@ -33,6 +39,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.ConfigFile do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.ConfigFile do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

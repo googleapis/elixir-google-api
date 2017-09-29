@@ -20,9 +20,15 @@
 defmodule GoogleApi.Sheets.V4.Model.Border do
   @moduledoc """
   A border along a cell.
+
+  ## Attributes
+
+  - color (Color): The color of the border. Defaults to: `null`.
+  - style (String): The style of the border. Defaults to: `null`.
+    - Enum - one of [STYLE_UNSPECIFIED, DOTTED, DASHED, SOLID, SOLID_MEDIUM, SOLID_THICK, NONE, DOUBLE]
+  - width (Integer): The width of the border, in pixels. Deprecated; the width is determined by the \&quot;style\&quot; field. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"color",
     :"style",
@@ -35,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.Border do
   def decode(value, options) do
     value
     |> deserialize(:"color", :struct, GoogleApi.Sheets.V4.Model.Color, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.Border do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

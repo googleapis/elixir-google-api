@@ -20,9 +20,15 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.Image do
   @moduledoc """
   An image, with a link to the main image and a thumbnail.
+
+  ## Attributes
+
+  - error (Status): An error explaining why the thumbnail could not be rendered. Defaults to: `null`.
+  - sourceImage (ToolOutputReference): A reference to the full-size, original image.  This is the same as the tool_outputs entry for the image under its Step.  Always set. Defaults to: `null`.
+  - stepId (String): The step to which the image is attached.  Always set. Defaults to: `null`.
+  - thumbnail (Thumbnail): The thumbnail. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"error",
     :"sourceImage",
@@ -38,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.Image do
     |> deserialize(:"error", :struct, GoogleApi.ToolResults.V1beta3.Model.Status, options)
     |> deserialize(:"sourceImage", :struct, GoogleApi.ToolResults.V1beta3.Model.ToolOutputReference, options)
     |> deserialize(:"thumbnail", :struct, GoogleApi.ToolResults.V1beta3.Model.Thumbnail, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.Image do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

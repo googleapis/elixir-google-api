@@ -20,9 +20,12 @@
 defmodule GoogleApi.QPXExpress.V1.Model.TripsSearchRequest do
   @moduledoc """
   A QPX Express search request.
+
+  ## Attributes
+
+  - request (TripOptionsRequest): A QPX Express search request. Required values are at least one adult or senior passenger, an origin, a destination, and a date. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"request"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.QPXExpress.V1.Model.TripsSearchRequest do
   def decode(value, options) do
     value
     |> deserialize(:"request", :struct, GoogleApi.QPXExpress.V1.Model.TripOptionsRequest, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.QPXExpress.V1.Model.TripsSearchRequest do
+  def encode(value, options) do
+    GoogleApi.QPXExpress.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

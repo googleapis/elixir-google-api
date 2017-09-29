@@ -20,9 +20,12 @@
 defmodule GoogleApi.Sheets.V4.Model.SetBasicFilterRequest do
   @moduledoc """
   Sets the basic filter associated with a sheet.
+
+  ## Attributes
+
+  - filter (BasicFilter): The filter to set. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"filter"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.SetBasicFilterRequest do
   def decode(value, options) do
     value
     |> deserialize(:"filter", :struct, GoogleApi.Sheets.V4.Model.BasicFilter, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.SetBasicFilterRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.ServiceControl.V1.Model.EndReconciliationResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - operationId (String): The same operation_id value used in the EndReconciliationRequest. Used for logging and diagnostics purposes. Defaults to: `null`.
+  - quotaMetrics (List[MetricValueSet]): Metric values as tracked by One Platform before the adjustment was made. The following metrics will be included:  1. Per quota metric total usage will be specified using the following gauge metric:   \&quot;serviceruntime.googleapis.com/allocation/consumer/quota_used_count\&quot;  2. Value for each quota limit associated with the metrics will be specified using the following gauge metric:   \&quot;serviceruntime.googleapis.com/quota/limit\&quot;  3. Delta value of the usage after the reconciliation for limits associated with the metrics will be specified using the following metric:   \&quot;serviceruntime.googleapis.com/allocation/reconciliation_delta\&quot; The delta value is defined as:   new_usage_from_client - existing_value_in_spanner. This metric is not defined in serviceruntime.yaml or in Cloud Monarch. This metric is meant for callers&#39; use only. Since this metric is not defined in the monitoring backend, reporting on this metric will result in an error. Defaults to: `null`.
+  - reconciliationErrors (List[QuotaError]): Indicates the decision of the reconciliation end. Defaults to: `null`.
+  - serviceConfigId (String): ID of the actual config used to process the request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"operationId",
     :"quotaMetrics",
@@ -37,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.EndReconciliation
     value
     |> deserialize(:"quotaMetrics", :list, GoogleApi.ServiceControl.V1.Model.MetricValueSet, options)
     |> deserialize(:"reconciliationErrors", :list, GoogleApi.ServiceControl.V1.Model.QuotaError, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.EndReconciliationResponse do
+  def encode(value, options) do
+    GoogleApi.ServiceControl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

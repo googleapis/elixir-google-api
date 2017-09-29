@@ -20,9 +20,15 @@
 defmodule GoogleApi.FirebaseRules.V1.Model.Issue do
   @moduledoc """
   Issues include warnings, errors, and deprecation notices.
+
+  ## Attributes
+
+  - description (String): Short error description. Defaults to: `null`.
+  - severity (String): The severity of the issue. Defaults to: `null`.
+    - Enum - one of [SEVERITY_UNSPECIFIED, DEPRECATION, WARNING, ERROR]
+  - sourcePosition (SourcePosition): Position of the issue in the &#x60;Source&#x60;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"description",
     :"severity",
@@ -35,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.FirebaseRules.V1.Model.Issue do
   def decode(value, options) do
     value
     |> deserialize(:"sourcePosition", :struct, GoogleApi.FirebaseRules.V1.Model.SourcePosition, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.FirebaseRules.V1.Model.Issue do
+  def encode(value, options) do
+    GoogleApi.FirebaseRules.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

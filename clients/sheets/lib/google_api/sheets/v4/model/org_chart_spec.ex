@@ -20,9 +20,18 @@
 defmodule GoogleApi.Sheets.V4.Model.OrgChartSpec do
   @moduledoc """
   An &lt;a href&#x3D;\&quot;/chart/interactive/docs/gallery/orgchart\&quot;&gt;org chart&lt;/a&gt;. Org charts require a unique set of labels in labels and may optionally include parent_labels and tooltips. parent_labels contain, for each node, the label identifying the parent node.  tooltips contain, for each node, an optional tooltip.  For example, to describe an OrgChart with Alice as the CEO, Bob as the President (reporting to Alice) and Cathy as VP of Sales (also reporting to Alice), have labels contain \&quot;Alice\&quot;, \&quot;Bob\&quot;, \&quot;Cathy\&quot;, parent_labels contain \&quot;\&quot;, \&quot;Alice\&quot;, \&quot;Alice\&quot; and tooltips contain \&quot;CEO\&quot;, \&quot;President\&quot;, \&quot;VP Sales\&quot;.
+
+  ## Attributes
+
+  - labels (ChartData): The data containing the labels for all the nodes in the chart.  Labels must be unique. Defaults to: `null`.
+  - nodeColor (Color): The color of the org chart nodes. Defaults to: `null`.
+  - nodeSize (String): The size of the org chart nodes. Defaults to: `null`.
+    - Enum - one of [ORG_CHART_LABEL_SIZE_UNSPECIFIED, SMALL, MEDIUM, LARGE]
+  - parentLabels (ChartData): The data containing the label of the parent for the corresponding node. A blank value indicates that the node has no parent and is a top-level node. This field is optional. Defaults to: `null`.
+  - selectedNodeColor (Color): The color of the selected org chart nodes. Defaults to: `null`.
+  - tooltips (ChartData): The data containing the tooltip for the corresponding node.  A blank value results in no tooltip being displayed for the node. This field is optional. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"labels",
     :"nodeColor",
@@ -42,6 +51,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.OrgChartSpec do
     |> deserialize(:"parentLabels", :struct, GoogleApi.Sheets.V4.Model.ChartData, options)
     |> deserialize(:"selectedNodeColor", :struct, GoogleApi.Sheets.V4.Model.Color, options)
     |> deserialize(:"tooltips", :struct, GoogleApi.Sheets.V4.Model.ChartData, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.OrgChartSpec do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

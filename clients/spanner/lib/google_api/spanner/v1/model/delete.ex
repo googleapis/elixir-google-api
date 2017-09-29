@@ -20,9 +20,13 @@
 defmodule GoogleApi.Spanner.V1.Model.Delete do
   @moduledoc """
   Arguments to delete operations.
+
+  ## Attributes
+
+  - keySet (KeySet): Required. The primary keys of the rows within table to delete. Defaults to: `null`.
+  - table (String): Required. The table whose rows will be deleted. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"keySet",
     :"table"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.Delete do
   def decode(value, options) do
     value
     |> deserialize(:"keySet", :struct, GoogleApi.Spanner.V1.Model.KeySet, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.Delete do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

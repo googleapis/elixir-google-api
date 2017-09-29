@@ -20,9 +20,19 @@
 defmodule GoogleApi.Licensing.V1.Model.LicenseAssignment do
   @moduledoc """
   Template for LiscenseAssignment Resource
+
+  ## Attributes
+
+  - etags (String): ETag of the resource. Defaults to: `null`.
+  - kind (String): Identifies the resource as a LicenseAssignment. Defaults to: `null`.
+  - productId (String): Id of the product. Defaults to: `null`.
+  - productName (String): Display Name of the product. Defaults to: `null`.
+  - selfLink (String): Link to this page. Defaults to: `null`.
+  - skuId (String): Id of the sku of the product. Defaults to: `null`.
+  - skuName (String): Display Name of the sku of the product. Defaults to: `null`.
+  - userId (String): Email id of the user. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etags",
     :"kind",
@@ -38,6 +48,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Licensing.V1.Model.LicenseAssignment do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Licensing.V1.Model.LicenseAssignment do
+  def encode(value, options) do
+    GoogleApi.Licensing.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

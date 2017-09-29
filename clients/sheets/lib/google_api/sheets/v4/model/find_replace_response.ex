@@ -20,9 +20,16 @@
 defmodule GoogleApi.Sheets.V4.Model.FindReplaceResponse do
   @moduledoc """
   The result of the find/replace.
+
+  ## Attributes
+
+  - formulasChanged (Integer): The number of formula cells changed. Defaults to: `null`.
+  - occurrencesChanged (Integer): The number of occurrences (possibly multiple within a cell) changed. For example, if replacing &#x60;\&quot;e\&quot;&#x60; with &#x60;\&quot;o\&quot;&#x60; in &#x60;\&quot;Google Sheets\&quot;&#x60;, this would be &#x60;\&quot;3\&quot;&#x60; because &#x60;\&quot;Google Sheets\&quot;&#x60; -&gt; &#x60;\&quot;Googlo Shoots\&quot;&#x60;. Defaults to: `null`.
+  - rowsChanged (Integer): The number of rows changed. Defaults to: `null`.
+  - sheetsChanged (Integer): The number of sheets changed. Defaults to: `null`.
+  - valuesChanged (Integer): The number of non-formula cells changed. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"formulasChanged",
     :"occurrencesChanged",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.FindReplaceResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.FindReplaceResponse do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

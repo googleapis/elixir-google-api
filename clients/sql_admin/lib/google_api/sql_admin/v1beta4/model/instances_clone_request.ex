@@ -20,9 +20,12 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesCloneRequest do
   @moduledoc """
   Database instance clone request.
+
+  ## Attributes
+
+  - cloneContext (CloneContext): Contains details about the clone operation. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cloneContext"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.InstancesCloneRequ
   def decode(value, options) do
     value
     |> deserialize(:"cloneContext", :struct, GoogleApi.SQLAdmin.V1beta4.Model.CloneContext, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.InstancesCloneRequest do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

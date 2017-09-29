@@ -20,9 +20,13 @@
 defmodule GoogleApi.SourceRepo.V1.Model.CloudAuditOptions do
   @moduledoc """
   Write a Cloud Audit log
+
+  ## Attributes
+
+  - logName (String): The log_name to populate in the Cloud Audit Record. Defaults to: `null`.
+    - Enum - one of [UNSPECIFIED_LOG_NAME, ADMIN_ACTIVITY, DATA_ACCESS]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"logName"
   ]
@@ -31,6 +35,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SourceRepo.V1.Model.CloudAuditOptions do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SourceRepo.V1.Model.CloudAuditOptions do
+  def encode(value, options) do
+    GoogleApi.SourceRepo.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

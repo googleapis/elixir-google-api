@@ -20,9 +20,24 @@
 defmodule GoogleApi.Genomics.V1.Model.Variant do
   @moduledoc """
   A variant represents a change in DNA sequence relative to a reference sequence. For example, a variant could represent a SNP or an insertion. Variants belong to a variant set.  For more genomics resource definitions, see [Fundamentals of Google Genomics](https://cloud.google.com/genomics/fundamentals-of-google-genomics)  Each of the calls on a variant represent a determination of genotype with respect to that variant. For example, a call might assign probability of 0.32 to the occurrence of a SNP named rs1234 in a sample named NA12345. A call belongs to a call set, which contains related calls typically from one sample.
+
+  ## Attributes
+
+  - info (Map[String, List[ErrorUnknown]]): A map of additional variant information. This must be of the form map&lt;string, string[]&gt; (string key mapping to a list of string values). Defaults to: `null`.
+  - alternateBases (List[String]): The bases that appear instead of the reference bases. Defaults to: `null`.
+  - calls (List[VariantCall]): The variant calls for this particular variant. Each one represents the determination of genotype with respect to this variant. Defaults to: `null`.
+  - created (String): The date this variant was created, in milliseconds from the epoch. Defaults to: `null`.
+  - end (String): The end position (0-based) of this variant. This corresponds to the first base after the last base in the reference allele. So, the length of the reference allele is (end - start). This is useful for variants that don&#39;t explicitly give alternate bases, for example large deletions. Defaults to: `null`.
+  - filter (List[String]): A list of filters (normally quality filters) this variant has failed. &#x60;PASS&#x60; indicates this variant has passed all filters. Defaults to: `null`.
+  - id (String): The server-generated variant ID, unique across all variants. Defaults to: `null`.
+  - names (List[String]): Names for the variant, for example a RefSNP ID. Defaults to: `null`.
+  - quality (Float): A measure of how likely this variant is to be real. A higher value is better. Defaults to: `null`.
+  - referenceBases (String): The reference bases for this variant. They start at the given position. Defaults to: `null`.
+  - referenceName (String): The reference on which this variant occurs. (such as &#x60;chr20&#x60; or &#x60;X&#x60;) Defaults to: `null`.
+  - start (String): The position at which this variant occurs (0-based). This corresponds to the first base of the string of reference bases. Defaults to: `null`.
+  - variantSetId (String): The ID of the variant set this variant belongs to. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"info",
     :"alternateBases",
@@ -45,6 +60,12 @@ defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.Variant do
   def decode(value, options) do
     value
     |> deserialize(:"calls", :list, GoogleApi.Genomics.V1.Model.VariantCall, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.Variant do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

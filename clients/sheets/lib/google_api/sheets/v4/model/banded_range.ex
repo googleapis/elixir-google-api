@@ -20,9 +20,15 @@
 defmodule GoogleApi.Sheets.V4.Model.BandedRange do
   @moduledoc """
   A banded (alternating colors) range in a sheet.
+
+  ## Attributes
+
+  - bandedRangeId (Integer): The id of the banded range. Defaults to: `null`.
+  - columnProperties (BandingProperties): Properties for column bands. These properties will be applied on a column- by-column basis throughout all the columns in the range. At least one of row_properties or column_properties must be specified. Defaults to: `null`.
+  - range (GridRange): The range over which these properties are applied. Defaults to: `null`.
+  - rowProperties (BandingProperties): Properties for row bands. These properties will be applied on a row-by-row basis throughout all the rows in the range. At least one of row_properties or column_properties must be specified. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bandedRangeId",
     :"columnProperties",
@@ -38,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BandedRange do
     |> deserialize(:"columnProperties", :struct, GoogleApi.Sheets.V4.Model.BandingProperties, options)
     |> deserialize(:"range", :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
     |> deserialize(:"rowProperties", :struct, GoogleApi.Sheets.V4.Model.BandingProperties, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BandedRange do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

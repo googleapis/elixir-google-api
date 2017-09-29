@@ -20,9 +20,14 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.History do
   @moduledoc """
   A History represents a sorted list of Executions ordered by the start_timestamp_millis field (descending). It can be used to group all the Executions of a continuous build.  Note that the ordering only operates on one-dimension. If a repository has multiple branches, it means that multiple histories will need to be used in order to order Executions per branch.
+
+  ## Attributes
+
+  - displayName (String): A short human-readable (plain text) name to display in the UI. Maximum of 100 characters.  - In response: present if set during create. - In create request: optional Defaults to: `null`.
+  - historyId (String): A unique identifier within a project for this History.  Returns INVALID_ARGUMENT if this field is set or overwritten by the caller.  - In response always set - In create request: never set Defaults to: `null`.
+  - name (String): A name to uniquely identify a history within a project. Maximum of 100 characters.  - In response always set - In create request: always set Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"displayName",
     :"historyId",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.History do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.History do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

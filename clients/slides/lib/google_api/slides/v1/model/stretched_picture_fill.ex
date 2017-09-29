@@ -20,9 +20,13 @@
 defmodule GoogleApi.Slides.V1.Model.StretchedPictureFill do
   @moduledoc """
   The stretched picture fill. The page or page element is filled entirely with the specified picture. The picture is stretched to fit its container.
+
+  ## Attributes
+
+  - contentUrl (String): Reading the content_url:  An URL to a picture with a default lifetime of 30 minutes. This URL is tagged with the account of the requester. Anyone with the URL effectively accesses the picture as the original requester. Access to the picture may be lost if the presentation&#39;s sharing settings change.  Writing the content_url:  The picture is fetched once at insertion time and a copy is stored for display inside the presentation. Pictures must be less than 50MB in size, cannot exceed 25 megapixels, and must be in either in PNG, JPEG, or GIF format.  The provided URL can be at maximum 2K bytes large. Defaults to: `null`.
+  - size (Size): The original size of the picture fill. This field is read-only. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"contentUrl",
     :"size"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.StretchedPictureFill do
   def decode(value, options) do
     value
     |> deserialize(:"size", :struct, GoogleApi.Slides.V1.Model.Size, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.StretchedPictureFill do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

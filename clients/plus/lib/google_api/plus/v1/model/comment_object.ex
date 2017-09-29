@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Plus.V1.Model.Comment_object do
+defmodule GoogleApi.Plus.V1.Model.CommentObject do
   @moduledoc """
   The object of this comment.
+
+  ## Attributes
+
+  - content (String): The HTML-formatted content, suitable for display. Defaults to: `null`.
+  - objectType (String): The object type of this comment. Possible values are:   - \&quot;comment\&quot; - A comment in reply to an activity. Defaults to: `null`.
+  - originalContent (String): The content (text) as provided by the author, stored without any HTML formatting. When creating or updating a comment, this value must be supplied as plain text in the request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"content",
     :"objectType",
@@ -30,9 +35,15 @@ defmodule GoogleApi.Plus.V1.Model.Comment_object do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Comment_object do
+defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.CommentObject do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.CommentObject do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

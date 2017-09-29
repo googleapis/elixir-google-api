@@ -20,9 +20,12 @@
 defmodule GoogleApi.Webmaster.V3.Model.UrlCrawlErrorsSamplesListResponse do
   @moduledoc """
   List of crawl error samples.
+
+  ## Attributes
+
+  - urlCrawlErrorSample (List[UrlCrawlErrorsSample]): Information about the sample URL and its crawl error. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"urlCrawlErrorSample"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Webmaster.V3.Model.UrlCrawlErrorsSamplesL
   def decode(value, options) do
     value
     |> deserialize(:"urlCrawlErrorSample", :list, GoogleApi.Webmaster.V3.Model.UrlCrawlErrorsSample, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Webmaster.V3.Model.UrlCrawlErrorsSamplesListResponse do
+  def encode(value, options) do
+    GoogleApi.Webmaster.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

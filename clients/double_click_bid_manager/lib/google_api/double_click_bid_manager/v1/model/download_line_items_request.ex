@@ -20,9 +20,18 @@
 defmodule GoogleApi.DoubleClickBidManager.V1.Model.DownloadLineItemsRequest do
   @moduledoc """
   Request to fetch stored line items.
+
+  ## Attributes
+
+  - fileSpec (String): File specification (column names, types, order) in which the line items will be returned. Default to EWF. Defaults to: `null`.
+    - Enum - one of [EWF]
+  - filterIds (List[String]): Ids of the specified filter type used to filter line items to fetch. If omitted, all the line items will be returned. Defaults to: `null`.
+  - filterType (String): Filter type used to filter line items to fetch. Defaults to: `null`.
+    - Enum - one of [ADVERTISER_ID, INSERTION_ORDER_ID, LINE_ITEM_ID]
+  - format (String): Format in which the line items will be returned. Default to CSV. Defaults to: `null`.
+    - Enum - one of [CSV]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fileSpec",
     :"filterIds",
@@ -34,6 +43,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.DoubleClickBidManager.V1.Model.DownloadLineItemsRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickBidManager.V1.Model.DownloadLineItemsRequest do
+  def encode(value, options) do
+    GoogleApi.DoubleClickBidManager.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

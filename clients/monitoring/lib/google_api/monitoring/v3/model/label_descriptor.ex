@@ -20,9 +20,15 @@
 defmodule GoogleApi.Monitoring.V3.Model.LabelDescriptor do
   @moduledoc """
   A description of a label.
+
+  ## Attributes
+
+  - description (String): A human-readable description for the label. Defaults to: `null`.
+  - key (String): The label key. Defaults to: `null`.
+  - valueType (String): The type of data that can be assigned to the label. Defaults to: `null`.
+    - Enum - one of [STRING, BOOL, INT64]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"description",
     :"key",
@@ -33,6 +39,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.LabelDescriptor do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Monitoring.V3.Model.LabelDescriptor do
+  def encode(value, options) do
+    GoogleApi.Monitoring.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

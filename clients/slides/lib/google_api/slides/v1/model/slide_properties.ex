@@ -20,9 +20,14 @@
 defmodule GoogleApi.Slides.V1.Model.SlideProperties do
   @moduledoc """
   The properties of Page that are only relevant for pages with page_type SLIDE.
+
+  ## Attributes
+
+  - layoutObjectId (String): The object ID of the layout that this slide is based on. Defaults to: `null`.
+  - masterObjectId (String): The object ID of the master that this slide is based on. Defaults to: `null`.
+  - notesPage (Page): The notes page that this slide is associated with. It defines the visual appearance of a notes page when printing or exporting slides with speaker notes. A notes page inherits properties from the notes master. The placeholder shape with type BODY on the notes page contains the speaker notes for this slide. The ID of this shape is identified by the speakerNotesObjectId field. The notes page is read-only except for the text content and styles of the speaker notes shape. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"layoutObjectId",
     :"masterObjectId",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.SlideProperties do
   def decode(value, options) do
     value
     |> deserialize(:"notesPage", :struct, GoogleApi.Slides.V1.Model.Page, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.SlideProperties do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

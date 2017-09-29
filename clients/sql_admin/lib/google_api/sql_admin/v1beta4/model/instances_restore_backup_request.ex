@@ -20,9 +20,12 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesRestoreBackupRequest do
   @moduledoc """
   Database instance restore backup request.
+
+  ## Attributes
+
+  - restoreBackupContext (RestoreBackupContext): Parameters required to perform the restore backup operation. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"restoreBackupContext"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.InstancesRestoreBa
   def decode(value, options) do
     value
     |> deserialize(:"restoreBackupContext", :struct, GoogleApi.SQLAdmin.V1beta4.Model.RestoreBackupContext, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.InstancesRestoreBackupRequest do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

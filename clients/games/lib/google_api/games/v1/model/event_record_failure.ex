@@ -20,9 +20,14 @@
 defmodule GoogleApi.Games.V1.Model.EventRecordFailure do
   @moduledoc """
   This is a JSON template for an event update failure resource.
+
+  ## Attributes
+
+  - eventId (String): The ID of the event that was not updated. Defaults to: `null`.
+  - failureCause (String): The cause for the update failure. Possible values are:   - \&quot;NOT_FOUND\&quot; - An attempt was made to set an event that was not defined.  - \&quot;INVALID_UPDATE_VALUE\&quot; - An attempt was made to increment an event by a non-positive value. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#eventRecordFailure. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"eventId",
     :"failureCause",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.EventRecordFailure do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.EventRecordFailure do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

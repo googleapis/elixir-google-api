@@ -20,9 +20,39 @@
 defmodule GoogleApi.ServiceUser.V1.Model.Service do
   @moduledoc """
   &#x60;Service&#x60; is the root object of Google service configuration schema. It describes basic information about a service, such as the name and the title, and delegates other aspects to sub-sections. Each sub-section is either a proto message or a repeated proto message that configures a specific aspect, such as auth. See each proto message definition for details.  Example:      type: google.api.Service     config_version: 3     name: calendar.googleapis.com     title: Google Calendar API     apis:     - name: google.calendar.v3.Calendar     authentication:       providers:       - id: google_calendar_auth         jwks_uri: https://www.googleapis.com/oauth2/v1/certs         issuer: https://securetoken.google.com       rules:       - selector: \&quot;*\&quot;         requirements:           provider_id: google_calendar_auth
+
+  ## Attributes
+
+  - apis (List[Api]): A list of API interfaces exported by this service. Only the &#x60;name&#x60; field of the google.protobuf.Api needs to be provided by the configuration author, as the remaining fields will be derived from the IDL during the normalization process. It is an error to specify an API interface here which cannot be resolved against the associated IDL files. Defaults to: `null`.
+  - authentication (Authentication): Auth configuration. Defaults to: `null`.
+  - backend (Backend): API backend configuration. Defaults to: `null`.
+  - configVersion (Integer): The semantic version of the service configuration. The config version affects the interpretation of the service configuration. For example, certain features are enabled by default for certain config versions. The latest config version is &#x60;3&#x60;. Defaults to: `null`.
+  - context (Context): Context configuration. Defaults to: `null`.
+  - control (Control): Configuration for the service control plane. Defaults to: `null`.
+  - customError (CustomError): Custom error configuration. Defaults to: `null`.
+  - documentation (Documentation): Additional API documentation. Defaults to: `null`.
+  - endpoints (List[Endpoint]): Configuration for network endpoints.  If this is empty, then an endpoint with the same name as the service is automatically generated to service all defined APIs. Defaults to: `null`.
+  - enums (List[Enum]): A list of all enum types included in this API service.  Enums referenced directly or indirectly by the &#x60;apis&#x60; are automatically included.  Enums which are not referenced but shall be included should be listed here by name. Example:      enums:     - name: google.someapi.v1.SomeEnum Defaults to: `null`.
+  - experimental (Experimental): Experimental configuration. Defaults to: `null`.
+  - http (Http): HTTP configuration. Defaults to: `null`.
+  - id (String): A unique ID for a specific instance of this message, typically assigned by the client for tracking purpose. If empty, the server may choose to generate one instead. Defaults to: `null`.
+  - logging (Logging): Logging configuration. Defaults to: `null`.
+  - logs (List[LogDescriptor]): Defines the logs used by this service. Defaults to: `null`.
+  - metrics (List[MetricDescriptor]): Defines the metrics used by this service. Defaults to: `null`.
+  - monitoredResources (List[MonitoredResourceDescriptor]): Defines the monitored resources used by this service. This is required by the Service.monitoring and Service.logging configurations. Defaults to: `null`.
+  - monitoring (Monitoring): Monitoring configuration. Defaults to: `null`.
+  - name (String): The DNS address at which this service is available, e.g. &#x60;calendar.googleapis.com&#x60;. Defaults to: `null`.
+  - producerProjectId (String): The Google project that owns this service. Defaults to: `null`.
+  - quota (Quota): Quota configuration. Defaults to: `null`.
+  - sourceInfo (SourceInfo): Output only. The source information for this configuration if available. Defaults to: `null`.
+  - systemParameters (SystemParameters): System parameter configuration. Defaults to: `null`.
+  - systemTypes (List[Type]): A list of all proto message types included in this API service. It serves similar purpose as [google.api.Service.types], except that these types are not needed by user-defined APIs. Therefore, they will not show up in the generated discovery doc. This field should only be used to define system APIs in ESF. Defaults to: `null`.
+  - title (String): The product title for this service. Defaults to: `null`.
+  - types (List[Type]): A list of all proto message types included in this API service. Types referenced directly or indirectly by the &#x60;apis&#x60; are automatically included.  Messages which are not referenced but shall be included, such as types used by the &#x60;google.protobuf.Any&#x60; type, should be listed here by name. Example:      types:     - name: google.protobuf.Int32 Defaults to: `null`.
+  - usage (Usage): Configuration controlling usage of this service. Defaults to: `null`.
+  - visibility (Visibility): API visibility configuration. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"apis",
     :"authentication",
@@ -82,6 +112,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceUser.V1.Model.Service do
     |> deserialize(:"types", :list, GoogleApi.ServiceUser.V1.Model.Type, options)
     |> deserialize(:"usage", :struct, GoogleApi.ServiceUser.V1.Model.Usage, options)
     |> deserialize(:"visibility", :struct, GoogleApi.ServiceUser.V1.Model.Visibility, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceUser.V1.Model.Service do
+  def encode(value, options) do
+    GoogleApi.ServiceUser.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

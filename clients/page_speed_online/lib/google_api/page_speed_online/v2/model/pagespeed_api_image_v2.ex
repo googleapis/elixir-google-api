@@ -20,9 +20,17 @@
 defmodule GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiImageV2 do
   @moduledoc """
   
+
+  ## Attributes
+
+  - data (String): Image data base64 encoded. Defaults to: `null`.
+  - height (Integer): Height of screenshot in pixels. Defaults to: `null`.
+  - key (String): Unique string key, if any, identifying this image. Defaults to: `null`.
+  - mime_type (String): Mime type of image data (e.g. \&quot;image/jpeg\&quot;). Defaults to: `null`.
+  - page_rect (PagespeedApiImageV2PageRect):  Defaults to: `null`.
+  - width (Integer): Width of screenshot in pixels. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"data",
     :"height",
@@ -37,7 +45,13 @@ defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiImag
   import GoogleApi.PageSpeedOnline.V2.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"page_rect", :struct, GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiImageV2_page_rect, options)
+    |> deserialize(:"page_rect", :struct, GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiImageV2PageRect, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiImageV2 do
+  def encode(value, options) do
+    GoogleApi.PageSpeedOnline.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContext_sqlExportOptions do
+defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptions do
   @moduledoc """
   Options for exporting data as SQL statements.
+
+  ## Attributes
+
+  - schemaOnly (Boolean): Export only schemas. Defaults to: `null`.
+  - tables (List[String]): Tables to export, or that were exported, from the specified database. If you specify tables, specify one and only one database. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"schemaOnly",
     :"tables"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.ExportContext_sqlExportOptions do
+defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptions do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptions do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

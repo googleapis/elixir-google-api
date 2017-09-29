@@ -20,9 +20,19 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.MediaUpload do
   @moduledoc """
   Defines the Media configuration for a service in case of an upload. Use this only for Scotty Requests. Do not use this for media support using Bytestream, add instead [][google.bytestream.RestByteStream] as an API to your configuration for Bytestream methods.
+
+  ## Attributes
+
+  - completeNotification (Boolean): A boolean that determines whether a notification for the completion of an upload should be sent to the backend. These notifications will not be seen by the client and will not consume quota. Defaults to: `null`.
+  - dropzone (String): Name of the Scotty dropzone to use for the current API. Defaults to: `null`.
+  - enabled (Boolean): Whether upload is enabled. Defaults to: `null`.
+  - maxSize (String): Optional maximum acceptable size for an upload. The size is specified in bytes. Defaults to: `null`.
+  - mimeTypes (List[String]): An array of mimetype patterns. Esf will only accept uploads that match one of the given patterns. Defaults to: `null`.
+  - progressNotification (Boolean): Whether to receive a notification for progress changes of media upload. Defaults to: `null`.
+  - startNotification (Boolean): Whether to receive a notification on the start of media upload. Defaults to: `null`.
+  - uploadService (String): DO NOT USE FIELDS BELOW THIS LINE UNTIL THIS WARNING IS REMOVED.  Specify name of the upload service if one is used for upload. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"completeNotification",
     :"dropzone",
@@ -38,6 +48,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.MediaUpload do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.MediaUpload do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -1,6 +1,6 @@
 # GoogleApi.DoubleClickSearch.V2
 
-**TODO: Add description**
+Reports and modifies your advertising data in DoubleClick Search (for example, campaigns, ad groups, keywords, and conversions).
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_double_click_search` to your list of dependencies in `mix.
 
 ```elixir
 def deps do
-  [{:google_api_double_click_search, "~> 0.1.0"}]
+  [{:google_api_double_click_search, "~> 0.0.1"}]
 end
 ```
 

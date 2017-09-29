@@ -20,9 +20,15 @@
 defmodule GoogleApi.Games.V1.Model.PlayerLeaderboardScoreListResponse do
   @moduledoc """
   This is a JSON template for a list of player leaderboard scores.
+
+  ## Attributes
+
+  - items (List[PlayerLeaderboardScore]): The leaderboard scores. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#playerLeaderboardScoreListResponse. Defaults to: `null`.
+  - nextPageToken (String): The pagination token for the next page of results. Defaults to: `null`.
+  - player (Player): The Player resources for the owner of this score. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"items",
     :"kind",
@@ -37,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.PlayerLeaderboardScoreList
     value
     |> deserialize(:"items", :list, GoogleApi.Games.V1.Model.PlayerLeaderboardScore, options)
     |> deserialize(:"player", :struct, GoogleApi.Games.V1.Model.Player, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.PlayerLeaderboardScoreListResponse do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

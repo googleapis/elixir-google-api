@@ -20,9 +20,16 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyGetAccountInfoRequest do
   @moduledoc """
   Request to get the account information.
+
+  ## Attributes
+
+  - delegatedProjectNumber (String): GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration. Defaults to: `null`.
+  - email (List[String]): The list of emails of the users to inquiry. Defaults to: `null`.
+  - idToken (String): The GITKit token of the authenticated user. Defaults to: `null`.
+  - localId (List[String]): The list of local ID&#39;s of the users to inquiry. Defaults to: `null`.
+  - phoneNumber (List[String]): Privileged caller can query users by specified phone number. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"delegatedProjectNumber",
     :"email",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyGetAccountInfoRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyGetAccountInfoRequest do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

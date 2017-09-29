@@ -17,20 +17,29 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Plus.V1.Model.Place_address do
+defmodule GoogleApi.Plus.V1.Model.PlaceAddress do
   @moduledoc """
   The physical address of the place.
+
+  ## Attributes
+
+  - formatted (String): The formatted address for display. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"formatted"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Place_address do
+defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.PlaceAddress do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.PlaceAddress do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

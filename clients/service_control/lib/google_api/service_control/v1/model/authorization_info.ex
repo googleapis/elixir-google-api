@@ -20,9 +20,14 @@
 defmodule GoogleApi.ServiceControl.V1.Model.AuthorizationInfo do
   @moduledoc """
   Authorization information for the operation.
+
+  ## Attributes
+
+  - granted (Boolean): Whether or not authorization for &#x60;resource&#x60; and &#x60;permission&#x60; was granted. Defaults to: `null`.
+  - permission (String): The required IAM permission. Defaults to: `null`.
+  - resource (String): The resource being accessed, as a REST-style string. For example:      bigquery.googleapis.com/projects/PROJECTID/datasets/DATASETID Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"granted",
     :"permission",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.AuthorizationInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.AuthorizationInfo do
+  def encode(value, options) do
+    GoogleApi.ServiceControl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

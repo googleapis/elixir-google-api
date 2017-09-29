@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.GenerateConfigReportRequest do
   @moduledoc """
   Request message for GenerateConfigReport method.
+
+  ## Attributes
+
+  - newConfig (Object): Service configuration for which we want to generate the report. For this version of API, the supported types are google.api.servicemanagement.v1.ConfigRef, google.api.servicemanagement.v1.ConfigSource, and google.api.Service Defaults to: `null`.
+  - oldConfig (Object): Service configuration against which the comparison will be done. For this version of API, the supported types are google.api.servicemanagement.v1.ConfigRef, google.api.servicemanagement.v1.ConfigSource, and google.api.Service Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"newConfig",
     :"oldConfig"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.GenerateConfig
     value
     |> deserialize(:"newConfig", :struct, GoogleApi.ServiceManagement.V1.Model.Object, options)
     |> deserialize(:"oldConfig", :struct, GoogleApi.ServiceManagement.V1.Model.Object, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.GenerateConfigReportRequest do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

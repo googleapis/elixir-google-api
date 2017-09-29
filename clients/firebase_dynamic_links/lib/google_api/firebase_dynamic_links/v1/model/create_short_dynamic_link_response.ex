@@ -20,9 +20,14 @@
 defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.CreateShortDynamicLinkResponse do
   @moduledoc """
   Response to create a short Dynamic Link.
+
+  ## Attributes
+
+  - previewLink (String): Preivew link to show the link flow chart. Defaults to: `null`.
+  - shortLink (String): Short Dynamic Link value. e.g. https://abcd.app.goo.gl/wxyz Defaults to: `null`.
+  - warning (List[DynamicLinkWarning]): Information about potential warnings on link creation. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"previewLink",
     :"shortLink",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.CreateShort
   def decode(value, options) do
     value
     |> deserialize(:"warning", :list, GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkWarning, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.CreateShortDynamicLinkResponse do
+  def encode(value, options) do
+    GoogleApi.FirebaseDynamicLinks.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

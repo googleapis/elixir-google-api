@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Plus.V1.Model.Activity_object_replies do
+defmodule GoogleApi.Plus.V1.Model.ActivityObjectReplies do
   @moduledoc """
   Comments in reply to this activity.
+
+  ## Attributes
+
+  - selfLink (String): The URL for the collection of comments in reply to this activity. Defaults to: `null`.
+  - totalItems (Integer): Total number of comments on this activity. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"selfLink",
     :"totalItems"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Activity_object_replies do
+defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.ActivityObjectReplies do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.ActivityObjectReplies do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

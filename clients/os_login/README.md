@@ -1,6 +1,6 @@
-# GoogleApi.OSLogin.V1ALPHA
+# GoogleApi.OSLogin.V1alpha
 
-**TODO: Add description**
+Manages OS login configuration for Directory API users.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_os_login` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_os_login, "~> 0.1.0"}]
+  [{:google_api_os_login, "~> 0.0.1"}]
 end
 ```
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.Prediction.V16.Model.Input do
   @moduledoc """
   
+
+  ## Attributes
+
+  - input (InputInput):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"input"
   ]
@@ -32,7 +35,13 @@ defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.Input do
   import GoogleApi.Prediction.V16.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"input", :struct, GoogleApi.Prediction.V16.Model.Input_input, options)
+    |> deserialize(:"input", :struct, GoogleApi.Prediction.V16.Model.InputInput, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Prediction.V16.Model.Input do
+  def encode(value, options) do
+    GoogleApi.Prediction.V16.Deserializer.serialize_non_nil(value, options)
   end
 end
 

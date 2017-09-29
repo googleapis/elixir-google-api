@@ -20,9 +20,15 @@
 defmodule GoogleApi.Sheets.V4.Model.Padding do
   @moduledoc """
   The amount of padding around the cell, in pixels. When updating padding, every field must be specified.
+
+  ## Attributes
+
+  - bottom (Integer): The bottom padding of the cell. Defaults to: `null`.
+  - left (Integer): The left padding of the cell. Defaults to: `null`.
+  - right (Integer): The right padding of the cell. Defaults to: `null`.
+  - top (Integer): The top padding of the cell. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bottom",
     :"left",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.Padding do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.Padding do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

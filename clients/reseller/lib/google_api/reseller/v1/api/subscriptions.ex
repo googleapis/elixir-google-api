@@ -61,7 +61,10 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
     }
     %{}
     |> method(:post)
-    |> url("/customers/#{customer_id}/subscriptions/#{subscription_id}/activate")
+    |> url("/customers/{customerId}/subscriptions/{subscriptionId}/activate", %{
+         "customerId" => URI.encode_www_form(customer_id),
+         "subscriptionId" => URI.encode_www_form(subscription_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -105,7 +108,10 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
     }
     %{}
     |> method(:post)
-    |> url("/customers/#{customer_id}/subscriptions/#{subscription_id}/changePlan")
+    |> url("/customers/{customerId}/subscriptions/{subscriptionId}/changePlan", %{
+         "customerId" => URI.encode_www_form(customer_id),
+         "subscriptionId" => URI.encode_www_form(subscription_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -149,7 +155,10 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
     }
     %{}
     |> method(:post)
-    |> url("/customers/#{customer_id}/subscriptions/#{subscription_id}/changeRenewalSettings")
+    |> url("/customers/{customerId}/subscriptions/{subscriptionId}/changeRenewalSettings", %{
+         "customerId" => URI.encode_www_form(customer_id),
+         "subscriptionId" => URI.encode_www_form(subscription_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -193,7 +202,10 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
     }
     %{}
     |> method(:post)
-    |> url("/customers/#{customer_id}/subscriptions/#{subscription_id}/changeSeats")
+    |> url("/customers/{customerId}/subscriptions/{subscriptionId}/changeSeats", %{
+         "customerId" => URI.encode_www_form(customer_id),
+         "subscriptionId" => URI.encode_www_form(subscription_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -236,7 +248,10 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
     }
     %{}
     |> method(:delete)
-    |> url("/customers/#{customer_id}/subscriptions/#{subscription_id}")
+    |> url("/customers/{customerId}/subscriptions/{subscriptionId}", %{
+         "customerId" => URI.encode_www_form(customer_id),
+         "subscriptionId" => URI.encode_www_form(subscription_id)
+       })
     |> add_param(:query, :"deletionType", deletion_type)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -279,7 +294,10 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
     }
     %{}
     |> method(:get)
-    |> url("/customers/#{customer_id}/subscriptions/#{subscription_id}")
+    |> url("/customers/{customerId}/subscriptions/{subscriptionId}", %{
+         "customerId" => URI.encode_www_form(customer_id),
+         "subscriptionId" => URI.encode_www_form(subscription_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -324,7 +342,9 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
     }
     %{}
     |> method(:post)
-    |> url("/customers/#{customer_id}/subscriptions")
+    |> url("/customers/{customerId}/subscriptions", %{
+         "customerId" => URI.encode_www_form(customer_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -416,7 +436,10 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
     }
     %{}
     |> method(:post)
-    |> url("/customers/#{customer_id}/subscriptions/#{subscription_id}/startPaidService")
+    |> url("/customers/{customerId}/subscriptions/{subscriptionId}/startPaidService", %{
+         "customerId" => URI.encode_www_form(customer_id),
+         "subscriptionId" => URI.encode_www_form(subscription_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -458,7 +481,10 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
     }
     %{}
     |> method(:post)
-    |> url("/customers/#{customer_id}/subscriptions/#{subscription_id}/suspend")
+    |> url("/customers/{customerId}/subscriptions/{subscriptionId}/suspend", %{
+         "customerId" => URI.encode_www_form(customer_id),
+         "subscriptionId" => URI.encode_www_form(subscription_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

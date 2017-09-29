@@ -20,9 +20,12 @@
 defmodule GoogleApi.StorageTransfer.V1.Model.GoogleServiceAccount do
   @moduledoc """
   Google service account
+
+  ## Attributes
+
+  - accountEmail (String): Required. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accountEmail"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.StorageTransfer.V1.Model.GoogleServiceAccount do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.StorageTransfer.V1.Model.GoogleServiceAccount do
+  def encode(value, options) do
+    GoogleApi.StorageTransfer.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

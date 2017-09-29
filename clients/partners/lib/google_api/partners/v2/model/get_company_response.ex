@@ -20,9 +20,13 @@
 defmodule GoogleApi.Partners.V2.Model.GetCompanyResponse do
   @moduledoc """
   Response message for GetCompany.
+
+  ## Attributes
+
+  - company (Company): The company. Defaults to: `null`.
+  - responseMetadata (ResponseMetadata): Current response metadata. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"company",
     :"responseMetadata"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.GetCompanyResponse do
     value
     |> deserialize(:"company", :struct, GoogleApi.Partners.V2.Model.Company, options)
     |> deserialize(:"responseMetadata", :struct, GoogleApi.Partners.V2.Model.ResponseMetadata, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.GetCompanyResponse do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

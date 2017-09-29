@@ -20,9 +20,15 @@
 defmodule GoogleApi.Slides.V1.Model.ShapeProperties do
   @moduledoc """
   The properties of a Shape.  If the shape is a placeholder shape as determined by the placeholder field, then these properties may be inherited from a parent placeholder shape. Determining the rendered value of the property depends on the corresponding property_state field value.
+
+  ## Attributes
+
+  - link (Link): The hyperlink destination of the shape. If unset, there is no link. Links are not inherited from parent placeholders. Defaults to: `null`.
+  - outline (Outline): The outline of the shape. If unset, the outline is inherited from a parent placeholder if it exists. If the shape has no parent, then the default outline depends on the shape type, matching the defaults for new shapes created in the Slides editor. Defaults to: `null`.
+  - shadow (Shadow): The shadow properties of the shape. If unset, the shadow is inherited from a parent placeholder if it exists. If the shape has no parent, then the default shadow matches the defaults for new shapes created in the Slides editor. This property is read-only. Defaults to: `null`.
+  - shapeBackgroundFill (ShapeBackgroundFill): The background fill of the shape. If unset, the background fill is inherited from a parent placeholder if it exists. If the shape has no parent, then the default background fill depends on the shape type, matching the defaults for new shapes created in the Slides editor. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"link",
     :"outline",
@@ -39,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.ShapeProperties do
     |> deserialize(:"outline", :struct, GoogleApi.Slides.V1.Model.Outline, options)
     |> deserialize(:"shadow", :struct, GoogleApi.Slides.V1.Model.Shadow, options)
     |> deserialize(:"shapeBackgroundFill", :struct, GoogleApi.Slides.V1.Model.ShapeBackgroundFill, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.ShapeProperties do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

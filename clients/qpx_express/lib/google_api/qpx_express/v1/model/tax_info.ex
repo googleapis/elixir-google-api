@@ -20,9 +20,17 @@
 defmodule GoogleApi.QPXExpress.V1.Model.TaxInfo do
   @moduledoc """
   Tax information.
+
+  ## Attributes
+
+  - chargeType (String): Whether this is a government charge or a carrier surcharge. Defaults to: `null`.
+  - code (String): The code to enter in the ticket&#39;s tax box. Defaults to: `null`.
+  - country (String): For government charges, the country levying the charge. Defaults to: `null`.
+  - id (String): Identifier uniquely identifying this tax in a response. Not present for unnamed carrier surcharges. Defaults to: `null`.
+  - kind (String): Identifies this as a tax information object. Value: the fixed string qpxexpress#taxInfo. Defaults to: `null`.
+  - salePrice (String): The price of the tax in the sales or equivalent currency. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"chargeType",
     :"code",
@@ -36,6 +44,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.QPXExpress.V1.Model.TaxInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.QPXExpress.V1.Model.TaxInfo do
+  def encode(value, options) do
+    GoogleApi.QPXExpress.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

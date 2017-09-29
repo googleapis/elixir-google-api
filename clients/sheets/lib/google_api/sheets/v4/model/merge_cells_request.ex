@@ -20,9 +20,14 @@
 defmodule GoogleApi.Sheets.V4.Model.MergeCellsRequest do
   @moduledoc """
   Merges all cells in the range.
+
+  ## Attributes
+
+  - mergeType (String): How the cells should be merged. Defaults to: `null`.
+    - Enum - one of [MERGE_ALL, MERGE_COLUMNS, MERGE_ROWS]
+  - range (GridRange): The range of cells to merge. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"mergeType",
     :"range"
@@ -34,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.MergeCellsRequest do
   def decode(value, options) do
     value
     |> deserialize(:"range", :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.MergeCellsRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

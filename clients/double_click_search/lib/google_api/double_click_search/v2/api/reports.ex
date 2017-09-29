@@ -102,7 +102,9 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Reports do
     }
     %{}
     |> method(:get)
-    |> url("/reports/#{report_id}")
+    |> url("/reports/{reportId}", %{
+         "reportId" => URI.encode_www_form(report_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -144,7 +146,10 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Reports do
     }
     %{}
     |> method(:get)
-    |> url("/reports/#{report_id}/files/#{report_fragment}")
+    |> url("/reports/{reportId}/files/{reportFragment}", %{
+         "reportId" => URI.encode_www_form(report_id),
+         "reportFragment" => URI.encode_www_form(report_fragment)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

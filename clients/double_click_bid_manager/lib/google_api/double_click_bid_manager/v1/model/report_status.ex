@@ -20,9 +20,17 @@
 defmodule GoogleApi.DoubleClickBidManager.V1.Model.ReportStatus do
   @moduledoc """
   Report status.
+
+  ## Attributes
+
+  - failure (ReportFailure): If the report failed, this records the cause. Defaults to: `null`.
+  - finishTimeMs (String): The time when this report either completed successfully or failed. Defaults to: `null`.
+  - format (String): The file type of the report. Defaults to: `null`.
+    - Enum - one of [CSV, EXCEL_CSV, XLSX]
+  - state (String): The state of the report. Defaults to: `null`.
+    - Enum - one of [DONE, FAILED, RUNNING]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"failure",
     :"finishTimeMs",
@@ -36,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.DoubleClickBidManager.V1.Model.ReportStat
   def decode(value, options) do
     value
     |> deserialize(:"failure", :struct, GoogleApi.DoubleClickBidManager.V1.Model.ReportFailure, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickBidManager.V1.Model.ReportStatus do
+  def encode(value, options) do
+    GoogleApi.DoubleClickBidManager.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

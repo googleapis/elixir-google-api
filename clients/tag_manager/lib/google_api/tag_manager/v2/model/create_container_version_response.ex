@@ -20,9 +20,15 @@
 defmodule GoogleApi.TagManager.V2.Model.CreateContainerVersionResponse do
   @moduledoc """
   Create container versions response.
+
+  ## Attributes
+
+  - compilerError (Boolean): Compiler errors or not. Defaults to: `null`.
+  - containerVersion (ContainerVersion): The container version created. Defaults to: `null`.
+  - newWorkspacePath (String): Auto generated workspace path created as a result of version creation. This field should only be populated if the created version was not a quick preview. Defaults to: `null`.
+  - syncStatus (SyncStatus): Whether version creation failed when syncing the workspace to the latest container version. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"compilerError",
     :"containerVersion",
@@ -37,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.CreateContainerVersio
     value
     |> deserialize(:"containerVersion", :struct, GoogleApi.TagManager.V2.Model.ContainerVersion, options)
     |> deserialize(:"syncStatus", :struct, GoogleApi.TagManager.V2.Model.SyncStatus, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.CreateContainerVersionResponse do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.Monitoring do
   @moduledoc """
   Monitoring configuration of the service.  The example below shows how to configure monitored resources and metrics for monitoring. In the example, a monitored resource and two metrics are defined. The &#x60;library.googleapis.com/book/returned_count&#x60; metric is sent to both producer and consumer projects, whereas the &#x60;library.googleapis.com/book/overdue_count&#x60; metric is only sent to the consumer project.      monitored_resources:     - type: library.googleapis.com/branch       labels:       - key: /city         description: The city where the library branch is located in.       - key: /name         description: The name of the branch.     metrics:     - name: library.googleapis.com/book/returned_count       metric_kind: DELTA       value_type: INT64       labels:       - key: /customer_id     - name: library.googleapis.com/book/overdue_count       metric_kind: GAUGE       value_type: INT64       labels:       - key: /customer_id     monitoring:       producer_destinations:       - monitored_resource: library.googleapis.com/branch         metrics:         - library.googleapis.com/book/returned_count       consumer_destinations:       - monitored_resource: library.googleapis.com/branch         metrics:         - library.googleapis.com/book/returned_count         - library.googleapis.com/book/overdue_count
+
+  ## Attributes
+
+  - consumerDestinations (List[MonitoringDestination]): Monitoring configurations for sending metrics to the consumer project. There can be multiple consumer destinations, each one must have a different monitored resource type. A metric can be used in at most one consumer destination. Defaults to: `null`.
+  - producerDestinations (List[MonitoringDestination]): Monitoring configurations for sending metrics to the producer project. There can be multiple producer destinations, each one must have a different monitored resource type. A metric can be used in at most one producer destination. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"consumerDestinations",
     :"producerDestinations"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.Monitoring do
     value
     |> deserialize(:"consumerDestinations", :list, GoogleApi.ServiceManagement.V1.Model.MonitoringDestination, options)
     |> deserialize(:"producerDestinations", :list, GoogleApi.ServiceManagement.V1.Model.MonitoringDestination, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.Monitoring do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

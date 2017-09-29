@@ -20,9 +20,12 @@
 defmodule GoogleApi.Genomics.V1.Model.RuntimeMetadata do
   @moduledoc """
   Runtime metadata that will be populated in the runtimeMetadata field of the Operation associated with a RunPipeline execution.
+
+  ## Attributes
+
+  - computeEngine (ComputeEngine): Execution information specific to Google Compute Engine. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"computeEngine"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.RuntimeMetadata do
   def decode(value, options) do
     value
     |> deserialize(:"computeEngine", :struct, GoogleApi.Genomics.V1.Model.ComputeEngine, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.RuntimeMetadata do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

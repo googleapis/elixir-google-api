@@ -20,9 +20,13 @@
 defmodule GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceGettokenRequest do
   @moduledoc """
   
+
+  ## Attributes
+
+  - site (SiteVerificationWebResourceGettokenRequestSite):  Defaults to: `null`.
+  - verificationMethod (String): The verification method that will be used to verify this site. For sites, &#39;FILE&#39; or &#39;META&#39; methods may be used. For domains, only &#39;DNS&#39; may be used. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"site",
     :"verificationMethod"
@@ -33,7 +37,13 @@ defimpl Poison.Decoder, for: GoogleApi.SiteVerification.V1.Model.SiteVerificatio
   import GoogleApi.SiteVerification.V1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"site", :struct, GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceGettokenRequest_site, options)
+    |> deserialize(:"site", :struct, GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceGettokenRequestSite, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceGettokenRequest do
+  def encode(value, options) do
+    GoogleApi.SiteVerification.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

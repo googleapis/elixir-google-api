@@ -20,9 +20,13 @@
 defmodule GoogleApi.SearchConsole.V1.Model.MobileFriendlyIssue do
   @moduledoc """
   Mobile-friendly issue.
+
+  ## Attributes
+
+  - rule (String): Rule violated. Defaults to: `null`.
+    - Enum - one of [MOBILE_FRIENDLY_RULE_UNSPECIFIED, USES_INCOMPATIBLE_PLUGINS, CONFIGURE_VIEWPORT, FIXED_WIDTH_VIEWPORT, SIZE_CONTENT_TO_VIEWPORT, USE_LEGIBLE_FONT_SIZES, TAP_TARGETS_TOO_CLOSE]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"rule"
   ]
@@ -31,6 +35,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SearchConsole.V1.Model.MobileFriendlyIssue do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SearchConsole.V1.Model.MobileFriendlyIssue do
+  def encode(value, options) do
+    GoogleApi.SearchConsole.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

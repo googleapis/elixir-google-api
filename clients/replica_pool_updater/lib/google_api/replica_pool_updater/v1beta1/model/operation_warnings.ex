@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation_warnings do
+defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Model.OperationWarnings do
   @moduledoc """
   
+
+  ## Attributes
+
+  - code (String): [Output only] The warning type identifier for this warning. Defaults to: `null`.
+  - data (List[OperationData]): [Output only] Metadata for this warning in key:value format. Defaults to: `null`.
+  - message (String): [Output only] Optional human-readable details for this warning. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"code",
     :"data",
@@ -30,11 +35,17 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation_warnings do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation_warnings do
+defimpl Poison.Decoder, for: GoogleApi.ReplicaPoolUpdater.V1beta1.Model.OperationWarnings do
   import GoogleApi.ReplicaPoolUpdater.V1beta1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"data", :list, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation_data, options)
+    |> deserialize(:"data", :list, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.OperationData, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ReplicaPoolUpdater.V1beta1.Model.OperationWarnings do
+  def encode(value, options) do
+    GoogleApi.ReplicaPoolUpdater.V1beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,11 @@
 defmodule GoogleApi.Sheets.V4.Model.ClearValuesRequest do
   @moduledoc """
   The request for clearing a range of values in a spreadsheet.
+
+  ## Attributes
+
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     
   ]
@@ -31,6 +33,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.ClearValuesRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.ClearValuesRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

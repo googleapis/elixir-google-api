@@ -62,7 +62,11 @@ defmodule GoogleApi.TaskQueue.V1beta2.Api.Tasks do
     }
     %{}
     |> method(:delete)
-    |> url("/#{project}/taskqueues/#{taskqueue}/tasks/#{task}")
+    |> url("/{project}/taskqueues/{taskqueue}/tasks/{task}", %{
+         "project" => URI.encode_www_form(project),
+         "taskqueue" => URI.encode_www_form(taskqueue),
+         "task" => URI.encode_www_form(task)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -105,7 +109,11 @@ defmodule GoogleApi.TaskQueue.V1beta2.Api.Tasks do
     }
     %{}
     |> method(:get)
-    |> url("/#{project}/taskqueues/#{taskqueue}/tasks/#{task}")
+    |> url("/{project}/taskqueues/{taskqueue}/tasks/{task}", %{
+         "project" => URI.encode_www_form(project),
+         "taskqueue" => URI.encode_www_form(taskqueue),
+         "task" => URI.encode_www_form(task)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -149,7 +157,10 @@ defmodule GoogleApi.TaskQueue.V1beta2.Api.Tasks do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/taskqueues/#{taskqueue}/tasks")
+    |> url("/{project}/taskqueues/{taskqueue}/tasks", %{
+         "project" => URI.encode_www_form(project),
+         "taskqueue" => URI.encode_www_form(taskqueue)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -197,7 +208,10 @@ defmodule GoogleApi.TaskQueue.V1beta2.Api.Tasks do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/taskqueues/#{taskqueue}/tasks/lease")
+    |> url("/{project}/taskqueues/{taskqueue}/tasks/lease", %{
+         "project" => URI.encode_www_form(project),
+         "taskqueue" => URI.encode_www_form(taskqueue)
+       })
     |> add_param(:query, :"numTasks", num_tasks)
     |> add_param(:query, :"leaseSecs", lease_secs)
     |> add_optional_params(optional_params, opts)
@@ -241,7 +255,10 @@ defmodule GoogleApi.TaskQueue.V1beta2.Api.Tasks do
     }
     %{}
     |> method(:get)
-    |> url("/#{project}/taskqueues/#{taskqueue}/tasks")
+    |> url("/{project}/taskqueues/{taskqueue}/tasks", %{
+         "project" => URI.encode_www_form(project),
+         "taskqueue" => URI.encode_www_form(taskqueue)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -287,7 +304,11 @@ defmodule GoogleApi.TaskQueue.V1beta2.Api.Tasks do
     }
     %{}
     |> method(:patch)
-    |> url("/#{project}/taskqueues/#{taskqueue}/tasks/#{task}")
+    |> url("/{project}/taskqueues/{taskqueue}/tasks/{task}", %{
+         "project" => URI.encode_www_form(project),
+         "taskqueue" => URI.encode_www_form(taskqueue),
+         "task" => URI.encode_www_form(task)
+       })
     |> add_param(:query, :"newLeaseSeconds", new_lease_seconds)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -334,7 +355,11 @@ defmodule GoogleApi.TaskQueue.V1beta2.Api.Tasks do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/taskqueues/#{taskqueue}/tasks/#{task}")
+    |> url("/{project}/taskqueues/{taskqueue}/tasks/{task}", %{
+         "project" => URI.encode_www_form(project),
+         "taskqueue" => URI.encode_www_form(taskqueue),
+         "task" => URI.encode_www_form(task)
+       })
     |> add_param(:query, :"newLeaseSeconds", new_lease_seconds)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])

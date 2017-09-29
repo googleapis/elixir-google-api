@@ -20,9 +20,23 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySignupNewUserRequest do
   @moduledoc """
   Request to signup new user, create anonymous user or anonymous user reauth.
+
+  ## Attributes
+
+  - captchaChallenge (String): The captcha challenge. Defaults to: `null`.
+  - captchaResponse (String): Response to the captcha. Defaults to: `null`.
+  - disabled (Boolean): Whether to disable the user. Only can be used by service account. Defaults to: `null`.
+  - displayName (String): The name of the user. Defaults to: `null`.
+  - email (String): The email of the user. Defaults to: `null`.
+  - emailVerified (Boolean): Mark the email as verified or not. Only can be used by service account. Defaults to: `null`.
+  - idToken (String): The GITKit token of the authenticated user. Defaults to: `null`.
+  - instanceId (String): Instance id token of the app. Defaults to: `null`.
+  - localId (String): Privileged caller can create user with specified user id. Defaults to: `null`.
+  - password (String): The new password of the user. Defaults to: `null`.
+  - phoneNumber (String): Privileged caller can create user with specified phone number. Defaults to: `null`.
+  - photoUrl (String): The photo url of the user. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"captchaChallenge",
     :"captchaResponse",
@@ -42,6 +56,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySignupNewUserRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySignupNewUserRequest do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.ProximityBeacon.V1beta1.Model.Diagnostics do
   @moduledoc """
   Diagnostics for a single beacon.
+
+  ## Attributes
+
+  - alerts (List[String]): An unordered list of Alerts that the beacon has. Defaults to: `null`.
+    - Enum - one of 
+  - beaconName (String): Resource name of the beacon. For Eddystone-EID beacons, this may be the beacon&#39;s current EID, or the beacon&#39;s \&quot;stable\&quot; Eddystone-UID. Defaults to: `null`.
+  - estimatedLowBatteryDate (DateTime): The date when the battery is expected to be low. If the value is missing then there is no estimate for when the battery will be low. This value is only an estimate, not an exact date. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"alerts",
     :"beaconName",
@@ -33,6 +39,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.Diagnostics do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.Diagnostics do
+  def encode(value, options) do
+    GoogleApi.ProximityBeacon.V1beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

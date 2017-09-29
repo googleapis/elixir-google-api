@@ -1,6 +1,6 @@
 # GoogleApi.Fitness.V1
 
-**TODO: Add description**
+Stores and accesses user data in the fitness store from apps on any platform.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_fitness` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_fitness, "~> 0.1.0"}]
+  [{:google_api_fitness, "~> 0.0.1"}]
 end
 ```
 

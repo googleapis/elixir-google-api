@@ -20,9 +20,20 @@
 defmodule GoogleApi.TagManager.V2.Model.Folder do
   @moduledoc """
   Represents a Google Tag Manager Folder.
+
+  ## Attributes
+
+  - accountId (String): GTM Account ID. Defaults to: `null`.
+  - containerId (String): GTM Container ID. Defaults to: `null`.
+  - fingerprint (String): The fingerprint of the GTM Folder as computed at storage time. This value is recomputed whenever the folder is modified. Defaults to: `null`.
+  - folderId (String): The Folder ID uniquely identifies the GTM Folder. Defaults to: `null`.
+  - name (String): Folder display name. Defaults to: `null`.
+  - notes (String): User notes on how to apply this folder in the container. Defaults to: `null`.
+  - path (String): GTM Folder&#39;s API relative path. Defaults to: `null`.
+  - tagManagerUrl (String): Auto generated link to the tag manager UI Defaults to: `null`.
+  - workspaceId (String): GTM Workspace ID. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accountId",
     :"containerId",
@@ -39,6 +50,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.Folder do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.Folder do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

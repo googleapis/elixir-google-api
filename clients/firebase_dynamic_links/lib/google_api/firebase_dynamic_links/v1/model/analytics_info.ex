@@ -20,9 +20,13 @@
 defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.AnalyticsInfo do
   @moduledoc """
   Tracking parameters supported by Dynamic Link.
+
+  ## Attributes
+
+  - googlePlayAnalytics (GooglePlayAnalytics): Google Play Campaign Measurements. Defaults to: `null`.
+  - itunesConnectAnalytics (ITunesConnectAnalytics): iTunes Connect App Analytics. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"googlePlayAnalytics",
     :"itunesConnectAnalytics"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.AnalyticsIn
     value
     |> deserialize(:"googlePlayAnalytics", :struct, GoogleApi.FirebaseDynamicLinks.V1.Model.GooglePlayAnalytics, options)
     |> deserialize(:"itunesConnectAnalytics", :struct, GoogleApi.FirebaseDynamicLinks.V1.Model.ITunesConnectAnalytics, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.AnalyticsInfo do
+  def encode(value, options) do
+    GoogleApi.FirebaseDynamicLinks.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -76,7 +76,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{parent}/instanceConfigs")
+    |> url("/v1/{+parent}/instanceConfigs", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -131,7 +133,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{parent}/instances")
+    |> url("/v1/{+parent}/instances", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -186,7 +190,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{parent}/databases")
+    |> url("/v1/{+parent}/databases", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -239,7 +245,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/#{database}")
+    |> url("/v1/{+database}", %{
+         "database" => URI.encode_www_form(database)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -292,7 +300,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{database}/ddl")
+    |> url("/v1/{+database}/ddl", %{
+         "database" => URI.encode_www_form(database)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -347,7 +357,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{resource}:getIamPolicy")
+    |> url("/v1/{+resource}:getIamPolicy", %{
+         "resource" => URI.encode_www_form(resource)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -404,7 +416,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{parent}/databases")
+    |> url("/v1/{+parent}/databases", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -457,7 +471,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{name}:cancel")
+    |> url("/v1/{+name}:cancel", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -510,7 +526,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/#{name}")
+    |> url("/v1/{+name}", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -569,7 +587,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{name}")
+    |> url("/v1/{+name}", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -624,7 +644,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{session}:beginTransaction")
+    |> url("/v1/{+session}:beginTransaction", %{
+         "session" => URI.encode_www_form(session)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -679,7 +701,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{session}:commit")
+    |> url("/v1/{+session}:commit", %{
+         "session" => URI.encode_www_form(session)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -732,7 +756,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{database}/sessions")
+    |> url("/v1/{+database}/sessions", %{
+         "database" => URI.encode_www_form(database)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -787,7 +813,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{session}:executeSql")
+    |> url("/v1/{+session}:executeSql", %{
+         "session" => URI.encode_www_form(session)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -842,7 +870,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{session}:executeStreamingSql")
+    |> url("/v1/{+session}:executeStreamingSql", %{
+         "session" => URI.encode_www_form(session)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -897,7 +927,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{session}:read")
+    |> url("/v1/{+session}:read", %{
+         "session" => URI.encode_www_form(session)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -952,7 +984,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{session}:rollback")
+    |> url("/v1/{+session}:rollback", %{
+         "session" => URI.encode_www_form(session)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1007,7 +1041,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{session}:streamingRead")
+    |> url("/v1/{+session}:streamingRead", %{
+         "session" => URI.encode_www_form(session)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1062,7 +1098,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{resource}:setIamPolicy")
+    |> url("/v1/{+resource}:setIamPolicy", %{
+         "resource" => URI.encode_www_form(resource)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1117,7 +1155,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
     }
     %{}
     |> method(:post)
-    |> url("/v1/#{resource}:testIamPermissions")
+    |> url("/v1/{+resource}:testIamPermissions", %{
+         "resource" => URI.encode_www_form(resource)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1172,7 +1212,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
     }
     %{}
     |> method(:patch)
-    |> url("/v1/#{database}/ddl")
+    |> url("/v1/{+database}/ddl", %{
+         "database" => URI.encode_www_form(database)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1231,7 +1273,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{parent}/instances")
+    |> url("/v1/{+parent}/instances", %{
+         "parent" => URI.encode_www_form(parent)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1286,7 +1330,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
     }
     %{}
     |> method(:patch)
-    |> url("/v1/#{name}")
+    |> url("/v1/{+name}", %{
+         "name" => URI.encode_www_form(name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

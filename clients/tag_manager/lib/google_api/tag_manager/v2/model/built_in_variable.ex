@@ -20,9 +20,18 @@
 defmodule GoogleApi.TagManager.V2.Model.BuiltInVariable do
   @moduledoc """
   Built-in variables are a special category of variables that are pre-created and non-customizable. They provide common functionality like accessing propeties of the gtm data layer, monitoring clicks, or accessing elements of a page URL.
+
+  ## Attributes
+
+  - accountId (String): GTM Account ID. Defaults to: `null`.
+  - containerId (String): GTM Container ID. Defaults to: `null`.
+  - name (String): Name of the built-in variable to be used to refer to the built-in variable. Defaults to: `null`.
+  - path (String): GTM BuiltInVariable&#39;s API relative path. Defaults to: `null`.
+  - type (String): Type of built-in variable. Defaults to: `null`.
+    - Enum - one of [advertiserId, advertisingTrackingEnabled, ampBrowserLanguage, ampCanonicalHost, ampCanonicalPath, ampCanonicalUrl, ampClientId, ampClientMaxScrollX, ampClientMaxScrollY, ampClientScreenHeight, ampClientScreenWidth, ampClientScrollX, ampClientScrollY, ampClientTimestamp, ampClientTimezone, ampGtmEvent, ampPageDownloadTime, ampPageLoadTime, ampPageViewId, ampReferrer, ampTitle, ampTotalEngagedTime, appId, appName, appVersionCode, appVersionName, builtInVariableTypeUnspecified, clickClasses, clickElement, clickId, clickTarget, clickText, clickUrl, containerId, containerVersion, debugMode, deviceName, environmentName, errorLine, errorMessage, errorUrl, event, eventName, firebaseEventParameterCampaign, firebaseEventParameterCampaignAclid, firebaseEventParameterCampaignAnid, firebaseEventParameterCampaignClickTimestamp, firebaseEventParameterCampaignContent, firebaseEventParameterCampaignCp1, firebaseEventParameterCampaignGclid, firebaseEventParameterCampaignSource, firebaseEventParameterCampaignTerm, firebaseEventParameterCurrency, firebaseEventParameterDynamicLinkAcceptTime, firebaseEventParameterDynamicLinkLinkid, firebaseEventParameterNotificationMessageDeviceTime, firebaseEventParameterNotificationMessageId, firebaseEventParameterNotificationMessageName, firebaseEventParameterNotificationMessageTime, firebaseEventParameterNotificationTopic, firebaseEventParameterPreviousAppVersion, firebaseEventParameterPreviousOsVersion, firebaseEventParameterPrice, firebaseEventParameterProductId, firebaseEventParameterQuantity, firebaseEventParameterValue, formClasses, formElement, formId, formTarget, formText, formUrl, historySource, htmlId, language, newHistoryFragment, newHistoryState, oldHistoryFragment, oldHistoryState, osVersion, pageHostname, pagePath, pageUrl, platform, randomNumber, referrer, resolution, sdkVersion]
+  - workspaceId (String): GTM Workspace ID. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accountId",
     :"containerId",
@@ -36,6 +45,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.BuiltInVariable do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.BuiltInVariable do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

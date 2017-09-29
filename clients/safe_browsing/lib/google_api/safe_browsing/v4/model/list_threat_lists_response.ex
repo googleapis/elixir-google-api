@@ -20,9 +20,12 @@
 defmodule GoogleApi.SafeBrowsing.V4.Model.ListThreatListsResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - threatLists (List[ThreatListDescriptor]): The lists available for download by the client. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"threatLists"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.ListThreatListsResp
   def decode(value, options) do
     value
     |> deserialize(:"threatLists", :list, GoogleApi.SafeBrowsing.V4.Model.ThreatListDescriptor, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SafeBrowsing.V4.Model.ListThreatListsResponse do
+  def encode(value, options) do
+    GoogleApi.SafeBrowsing.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

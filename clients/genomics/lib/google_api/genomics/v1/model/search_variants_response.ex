@@ -20,9 +20,13 @@
 defmodule GoogleApi.Genomics.V1.Model.SearchVariantsResponse do
   @moduledoc """
   The variant search response.
+
+  ## Attributes
+
+  - nextPageToken (String): The continuation token, which is used to page through large result sets. Provide this value in a subsequent request to return the next page of results. This field will be empty if there aren&#39;t any additional results. Defaults to: `null`.
+  - variants (List[Variant]): The list of matching Variants. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nextPageToken",
     :"variants"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.SearchVariantsResponse 
   def decode(value, options) do
     value
     |> deserialize(:"variants", :list, GoogleApi.Genomics.V1.Model.Variant, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.SearchVariantsResponse do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

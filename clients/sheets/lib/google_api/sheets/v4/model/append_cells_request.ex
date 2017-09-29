@@ -20,9 +20,14 @@
 defmodule GoogleApi.Sheets.V4.Model.AppendCellsRequest do
   @moduledoc """
   Adds new cells after the last row with data in a sheet, inserting new rows into the sheet if necessary.
+
+  ## Attributes
+
+  - fields (String): The fields of CellData that should be updated. At least one field must be specified. The root is the CellData; &#39;row.values.&#39; should not be specified. A single &#x60;\&quot;*\&quot;&#x60; can be used as short-hand for listing every field. Defaults to: `null`.
+  - rows (List[RowData]): The data to append. Defaults to: `null`.
+  - sheetId (Integer): The sheet ID to append the data to. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fields",
     :"rows",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.AppendCellsRequest do
   def decode(value, options) do
     value
     |> deserialize(:"rows", :list, GoogleApi.Sheets.V4.Model.RowData, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.AppendCellsRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

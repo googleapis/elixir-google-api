@@ -20,9 +20,13 @@
 defmodule GoogleApi.Webmaster.V3.Model.WmxSite do
   @moduledoc """
   Contains permission level information about a Search Console site. For more information, see  Permissions in Search Console.
+
+  ## Attributes
+
+  - permissionLevel (String): The user&#39;s permission level for the site. Defaults to: `null`.
+  - siteUrl (String): The URL of the site. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"permissionLevel",
     :"siteUrl"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Webmaster.V3.Model.WmxSite do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Webmaster.V3.Model.WmxSite do
+  def encode(value, options) do
+    GoogleApi.Webmaster.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

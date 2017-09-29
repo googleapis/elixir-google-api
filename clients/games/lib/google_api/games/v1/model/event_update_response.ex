@@ -20,9 +20,15 @@
 defmodule GoogleApi.Games.V1.Model.EventUpdateResponse do
   @moduledoc """
   This is a JSON template for an event period update resource.
+
+  ## Attributes
+
+  - batchFailures (List[EventBatchRecordFailure]): Any batch-wide failures which occurred applying updates. Defaults to: `null`.
+  - eventFailures (List[EventRecordFailure]): Any failures updating a particular event. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#eventUpdateResponse. Defaults to: `null`.
+  - playerEvents (List[PlayerEvent]): The current status of any updated events Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"batchFailures",
     :"eventFailures",
@@ -38,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.EventUpdateResponse do
     |> deserialize(:"batchFailures", :list, GoogleApi.Games.V1.Model.EventBatchRecordFailure, options)
     |> deserialize(:"eventFailures", :list, GoogleApi.Games.V1.Model.EventRecordFailure, options)
     |> deserialize(:"playerEvents", :list, GoogleApi.Games.V1.Model.PlayerEvent, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.EventUpdateResponse do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

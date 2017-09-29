@@ -20,9 +20,12 @@
 defmodule GoogleApi.StreetViewPublish.V1.Model.BatchDeletePhotosResponse do
   @moduledoc """
   Response to batch delete of one or more Photos.
+
+  ## Attributes
+
+  - status (List[Status]): The status for the operation to delete a single Photo in the batch request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"status"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.StreetViewPublish.V1.Model.BatchDeletePho
   def decode(value, options) do
     value
     |> deserialize(:"status", :list, GoogleApi.StreetViewPublish.V1.Model.Status, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.StreetViewPublish.V1.Model.BatchDeletePhotosResponse do
+  def encode(value, options) do
+    GoogleApi.StreetViewPublish.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

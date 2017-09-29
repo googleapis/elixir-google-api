@@ -20,9 +20,33 @@
 defmodule GoogleApi.Partners.V2.Model.CompanyRelation do
   @moduledoc """
   A CompanyRelation resource representing information about a user&#39;s affiliation and standing with a company in Partners.
+
+  ## Attributes
+
+  - address (String): The primary address for this company. Defaults to: `null`.
+  - badgeTier (String): Whether the company is a Partner. Defaults to: `null`.
+    - Enum - one of [BADGE_TIER_NONE, BADGE_TIER_REGULAR, BADGE_TIER_PREMIER]
+  - companyAdmin (Boolean): Indicates if the user is an admin for this company. Defaults to: `null`.
+  - companyId (String): The ID of the company. There may be no id if this is a pending company.5 Defaults to: `null`.
+  - creationTime (String): The timestamp of when affiliation was requested. @OutputOnly Defaults to: `null`.
+  - internalCompanyId (String): The internal company ID. Only available for a whitelisted set of api clients. Defaults to: `null`.
+  - isPending (Boolean): The flag that indicates if the company is pending verification. Defaults to: `null`.
+  - logoUrl (String): A URL to a profile photo, e.g. a G+ profile photo. Defaults to: `null`.
+  - managerAccount (String): The AdWords manager account # associated this company. Defaults to: `null`.
+  - name (String): The name (in the company&#39;s primary language) for the company. Defaults to: `null`.
+  - phoneNumber (String): The phone number for the company&#39;s primary address. Defaults to: `null`.
+  - primaryAddress (Location): The primary location of the company. Defaults to: `null`.
+  - primaryCountryCode (String): The primary country code of the company. Defaults to: `null`.
+  - primaryLanguageCode (String): The primary language code of the company. Defaults to: `null`.
+  - resolvedTimestamp (String): The timestamp when the user was approved. @OutputOnly Defaults to: `null`.
+  - segment (List[String]): The segment the company is classified as. Defaults to: `null`.
+    - Enum - one of 
+  - specializationStatus (List[SpecializationStatus]): The list of Google Partners specialization statuses for the company. Defaults to: `null`.
+  - state (String): The state of relationship, in terms of approvals. Defaults to: `null`.
+    - Enum - one of [USER_COMPANY_REATION_STATE_NONE_SPECIFIED, USER_COMPANY_RELATION_STATE_AWAIT_EMAIL, USER_COMPANY_RELATION_STATE_AWAIT_ADMIN, USER_COMPANY_RELATION_STATE_APPROVED]
+  - website (String): The website URL for this company. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"address",
     :"badgeTier",
@@ -52,6 +76,12 @@ defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.CompanyRelation do
     value
     |> deserialize(:"primaryAddress", :struct, GoogleApi.Partners.V2.Model.Location, options)
     |> deserialize(:"specializationStatus", :list, GoogleApi.Partners.V2.Model.SpecializationStatus, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.CompanyRelation do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

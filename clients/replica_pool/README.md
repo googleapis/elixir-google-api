@@ -1,6 +1,6 @@
-# GoogleApi.ReplicaPool.V1BETA2
+# GoogleApi.ReplicaPool.V1beta2
 
-**TODO: Add description**
+[Deprecated. Please use Instance Group Manager in Compute API] Provides groups of homogenous Compute Engine instances.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_replica_pool` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_replica_pool, "~> 0.1.0"}]
+  [{:google_api_replica_pool, "~> 0.0.1"}]
 end
 ```
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.Sheets.V4.Model.UpdateChartSpecRequest do
   @moduledoc """
   Updates a chart&#39;s specifications. (This does not move or resize a chart. To move or resize a chart, use  UpdateEmbeddedObjectPositionRequest.)
+
+  ## Attributes
+
+  - chartId (Integer): The ID of the chart to update. Defaults to: `null`.
+  - spec (ChartSpec): The specification to apply to the chart. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"chartId",
     :"spec"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UpdateChartSpecRequest do
   def decode(value, options) do
     value
     |> deserialize(:"spec", :struct, GoogleApi.Sheets.V4.Model.ChartSpec, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UpdateChartSpecRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

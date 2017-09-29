@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceControl.V1.Model.ReportInfo do
   @moduledoc """
   
+
+  ## Attributes
+
+  - operationId (String): The Operation.operation_id value from the request. Defaults to: `null`.
+  - quotaInfo (QuotaInfo): Quota usage info when processing the &#x60;Operation&#x60;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"operationId",
     :"quotaInfo"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.ReportInfo do
   def decode(value, options) do
     value
     |> deserialize(:"quotaInfo", :struct, GoogleApi.ServiceControl.V1.Model.QuotaInfo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.ReportInfo do
+  def encode(value, options) do
+    GoogleApi.ServiceControl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,17 @@
 defmodule GoogleApi.UrlShortener.V1.Model.Url do
   @moduledoc """
   
+
+  ## Attributes
+
+  - analytics (AnalyticsSummary): A summary of the click analytics for the short and long URL. Might not be present if not requested or currently unavailable. Defaults to: `null`.
+  - created (String): Time the short URL was created; ISO 8601 representation using the yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ format, e.g. \&quot;2010-10-14T19:01:24.944+00:00\&quot;. Defaults to: `null`.
+  - id (String): Short URL, e.g. \&quot;http://goo.gl/l6MS\&quot;. Defaults to: `null`.
+  - kind (String): The fixed string \&quot;urlshortener#url\&quot;. Defaults to: `null`.
+  - longUrl (String): Long URL, e.g. \&quot;http://www.google.com/\&quot;. Might not be present if the status is \&quot;REMOVED\&quot;. Defaults to: `null`.
+  - status (String): Status of the target URL. Possible values: \&quot;OK\&quot;, \&quot;MALWARE\&quot;, \&quot;PHISHING\&quot;, or \&quot;REMOVED\&quot;. A URL might be marked \&quot;REMOVED\&quot; if it was flagged as spam, for example. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"analytics",
     :"created",
@@ -38,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.UrlShortener.V1.Model.Url do
   def decode(value, options) do
     value
     |> deserialize(:"analytics", :struct, GoogleApi.UrlShortener.V1.Model.AnalyticsSummary, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.UrlShortener.V1.Model.Url do
+  def encode(value, options) do
+    GoogleApi.UrlShortener.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.Sheets.V4.Model.ConditionalFormatRule do
   @moduledoc """
   A rule describing a conditional format.
+
+  ## Attributes
+
+  - booleanRule (BooleanRule): The formatting is either \&quot;on\&quot; or \&quot;off\&quot; according to the rule. Defaults to: `null`.
+  - gradientRule (GradientRule): The formatting will vary based on the gradients in the rule. Defaults to: `null`.
+  - ranges (List[GridRange]): The ranges that will be formatted if the condition is true. All the ranges must be on the same grid. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"booleanRule",
     :"gradientRule",
@@ -37,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.ConditionalFormatRule do
     |> deserialize(:"booleanRule", :struct, GoogleApi.Sheets.V4.Model.BooleanRule, options)
     |> deserialize(:"gradientRule", :struct, GoogleApi.Sheets.V4.Model.GradientRule, options)
     |> deserialize(:"ranges", :list, GoogleApi.Sheets.V4.Model.GridRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.ConditionalFormatRule do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

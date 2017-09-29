@@ -20,9 +20,13 @@
 defmodule GoogleApi.Monitoring.V3.Model.ListGroupsResponse do
   @moduledoc """
   The ListGroups response.
+
+  ## Attributes
+
+  - group (List[Group]): The groups that match the specified filters. Defaults to: `null`.
+  - nextPageToken (String): If there are more results than have been returned, then this field is set to a non-empty value. To see the additional results, use that value as pageToken in the next call to this method. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"group",
     :"nextPageToken"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.ListGroupsResponse do
   def decode(value, options) do
     value
     |> deserialize(:"group", :list, GoogleApi.Monitoring.V3.Model.Group, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Monitoring.V3.Model.ListGroupsResponse do
+  def encode(value, options) do
+    GoogleApi.Monitoring.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.DoubleClickBidManager.V1.Model.ReportMetadata do
   @moduledoc """
   Report metadata.
+
+  ## Attributes
+
+  - googleCloudStoragePath (String): The path to the location in Google Cloud Storage where the report is stored. Defaults to: `null`.
+  - reportDataEndTimeMs (String): The ending time for the data that is shown in the report. Defaults to: `null`.
+  - reportDataStartTimeMs (String): The starting time for the data that is shown in the report. Defaults to: `null`.
+  - status (ReportStatus): Report status. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"googleCloudStoragePath",
     :"reportDataEndTimeMs",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.DoubleClickBidManager.V1.Model.ReportMeta
   def decode(value, options) do
     value
     |> deserialize(:"status", :struct, GoogleApi.DoubleClickBidManager.V1.Model.ReportStatus, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickBidManager.V1.Model.ReportMetadata do
+  def encode(value, options) do
+    GoogleApi.DoubleClickBidManager.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

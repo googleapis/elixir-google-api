@@ -20,9 +20,12 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.DeleteAccountResponse do
   @moduledoc """
   Respone of deleting account.
+
+  ## Attributes
+
+  - kind (String): The fixed string \&quot;identitytoolkit#DeleteAccountResponse\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.DeleteAccountResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.DeleteAccountResponse do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

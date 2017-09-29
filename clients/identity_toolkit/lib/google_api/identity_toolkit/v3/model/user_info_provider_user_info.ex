@@ -17,12 +17,22 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.IdentityToolkit.V3.Model.UserInfo_providerUserInfo do
+defmodule GoogleApi.IdentityToolkit.V3.Model.UserInfoProviderUserInfo do
   @moduledoc """
   
+
+  ## Attributes
+
+  - displayName (String): The user&#39;s display name at the IDP. Defaults to: `null`.
+  - email (String): User&#39;s email at IDP. Defaults to: `null`.
+  - federatedId (String): User&#39;s identifier at IDP. Defaults to: `null`.
+  - phoneNumber (String): User&#39;s phone number. Defaults to: `null`.
+  - photoUrl (String): The user&#39;s photo url at the IDP. Defaults to: `null`.
+  - providerId (String): The IdP ID. For white listed IdPs it&#39;s a short domain name, e.g., google.com, aol.com, live.net and yahoo.com. For other OpenID IdPs it&#39;s the OP identifier. Defaults to: `null`.
+  - rawId (String): User&#39;s raw identifier directly returned from IDP. Defaults to: `null`.
+  - screenName (String): User&#39;s screen name at Twitter or login name at Github. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"displayName",
     :"email",
@@ -35,9 +45,15 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.UserInfo_providerUserInfo do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.UserInfo_providerUserInfo do
+defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.UserInfoProviderUserInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.UserInfoProviderUserInfo do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.SafeBrowsing.V4.Model.FindFullHashesRequest do
   @moduledoc """
   Request to return full hashes matched by the provided hash prefixes.
+
+  ## Attributes
+
+  - apiClient (ClientInfo): Client metadata associated with callers of higher-level APIs built on top of the client&#39;s implementation. Defaults to: `null`.
+  - client (ClientInfo): The client metadata. Defaults to: `null`.
+  - clientStates (List[String]): The current client states for each of the client&#39;s local threat lists. Defaults to: `null`.
+  - threatInfo (ThreatInfo): The lists and hashes to be checked. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"apiClient",
     :"client",
@@ -38,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.FindFullHashesReque
     |> deserialize(:"apiClient", :struct, GoogleApi.SafeBrowsing.V4.Model.ClientInfo, options)
     |> deserialize(:"client", :struct, GoogleApi.SafeBrowsing.V4.Model.ClientInfo, options)
     |> deserialize(:"threatInfo", :struct, GoogleApi.SafeBrowsing.V4.Model.ThreatInfo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SafeBrowsing.V4.Model.FindFullHashesRequest do
+  def encode(value, options) do
+    GoogleApi.SafeBrowsing.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

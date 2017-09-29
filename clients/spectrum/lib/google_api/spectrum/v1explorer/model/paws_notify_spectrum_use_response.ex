@@ -20,9 +20,14 @@
 defmodule GoogleApi.Spectrum.V1explorer.Model.PawsNotifySpectrumUseResponse do
   @moduledoc """
   An empty response to the notification.
+
+  ## Attributes
+
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;spectrum#pawsNotifySpectrumUseResponse\&quot;. Defaults to: `null`.
+  - type (String): The message type (e.g., INIT_REQ, AVAIL_SPECTRUM_REQ, ...).  Required field. Defaults to: `null`.
+  - version (String): The PAWS version. Must be exactly 1.0.  Required field. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"type",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Spectrum.V1explorer.Model.PawsNotifySpectrumUseResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spectrum.V1explorer.Model.PawsNotifySpectrumUseResponse do
+  def encode(value, options) do
+    GoogleApi.Spectrum.V1explorer.Deserializer.serialize_non_nil(value, options)
   end
 end
 

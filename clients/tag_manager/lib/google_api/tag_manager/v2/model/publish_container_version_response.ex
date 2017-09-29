@@ -20,9 +20,13 @@
 defmodule GoogleApi.TagManager.V2.Model.PublishContainerVersionResponse do
   @moduledoc """
   Publish container version response.
+
+  ## Attributes
+
+  - compilerError (Boolean): Compiler errors or not. Defaults to: `null`.
+  - containerVersion (ContainerVersion): The container version created. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"compilerError",
     :"containerVersion"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.PublishContainerVersi
   def decode(value, options) do
     value
     |> deserialize(:"containerVersion", :struct, GoogleApi.TagManager.V2.Model.ContainerVersion, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.PublishContainerVersionResponse do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

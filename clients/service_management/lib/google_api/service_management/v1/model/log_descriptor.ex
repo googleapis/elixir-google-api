@@ -20,9 +20,15 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.LogDescriptor do
   @moduledoc """
   A description of a log type. Example in YAML format:      - name: library.googleapis.com/activity_history       description: The history of borrowing and returning library items.       display_name: Activity       labels:       - key: /customer_id         description: Identifier of a library customer
+
+  ## Attributes
+
+  - description (String): A human-readable description of this log. This information appears in the documentation and can contain details. Defaults to: `null`.
+  - displayName (String): The human-readable name for this log. This information appears on the user interface and should be concise. Defaults to: `null`.
+  - labels (List[LabelDescriptor]): The set of labels that are available to describe a specific log entry. Runtime requests that contain labels not specified here are considered invalid. Defaults to: `null`.
+  - name (String): The name of the log. It must be less than 512 characters long and can include the following characters: upper- and lower-case alphanumeric characters [A-Za-z0-9], and punctuation characters including slash, underscore, hyphen, period [/_-.]. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"description",
     :"displayName",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.LogDescriptor 
   def decode(value, options) do
     value
     |> deserialize(:"labels", :list, GoogleApi.ServiceManagement.V1.Model.LabelDescriptor, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.LogDescriptor do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

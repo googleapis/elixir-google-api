@@ -20,9 +20,19 @@
 defmodule GoogleApi.Games.V1.Model.RoomCreateRequest do
   @moduledoc """
   This is a JSON template for a room creation request.
+
+  ## Attributes
+
+  - autoMatchingCriteria (RoomAutoMatchingCriteria): Criteria for auto-matching players into this room. Defaults to: `null`.
+  - capabilities (List[String]): The capabilities that this client supports for realtime communication. Defaults to: `null`.
+  - clientAddress (RoomClientAddress): Client address for the player creating the room. Defaults to: `null`.
+  - invitedPlayerIds (List[String]): The player IDs to invite to the room. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#roomCreateRequest. Defaults to: `null`.
+  - networkDiagnostics (NetworkDiagnostics): Network diagnostics for the client creating the room. Defaults to: `null`.
+  - requestId (String): A randomly generated numeric ID. This number is used at the server to ensure that the request is handled correctly across retries. Defaults to: `null`.
+  - variant (Integer): The variant / mode of the application to be played. This can be any integer value, or left blank. You should use a small number of variants to keep the auto-matching pool as large as possible. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"autoMatchingCriteria",
     :"capabilities",
@@ -42,6 +52,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.RoomCreateRequest do
     |> deserialize(:"autoMatchingCriteria", :struct, GoogleApi.Games.V1.Model.RoomAutoMatchingCriteria, options)
     |> deserialize(:"clientAddress", :struct, GoogleApi.Games.V1.Model.RoomClientAddress, options)
     |> deserialize(:"networkDiagnostics", :struct, GoogleApi.Games.V1.Model.NetworkDiagnostics, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.RoomCreateRequest do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

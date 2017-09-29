@@ -20,9 +20,15 @@
 defmodule GoogleApi.Sheets.V4.Model.CutPasteRequest do
   @moduledoc """
   Moves data from the source to the destination.
+
+  ## Attributes
+
+  - destination (GridCoordinate): The top-left coordinate where the data should be pasted. Defaults to: `null`.
+  - pasteType (String): What kind of data to paste.  All the source data will be cut, regardless of what is pasted. Defaults to: `null`.
+    - Enum - one of [PASTE_NORMAL, PASTE_VALUES, PASTE_FORMAT, PASTE_NO_BORDERS, PASTE_FORMULA, PASTE_DATA_VALIDATION, PASTE_CONDITIONAL_FORMATTING]
+  - source (GridRange): The source data to cut. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"destination",
     :"pasteType",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.CutPasteRequest do
     value
     |> deserialize(:"destination", :struct, GoogleApi.Sheets.V4.Model.GridCoordinate, options)
     |> deserialize(:"source", :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.CutPasteRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

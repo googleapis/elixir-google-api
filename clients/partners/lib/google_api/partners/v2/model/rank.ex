@@ -20,9 +20,14 @@
 defmodule GoogleApi.Partners.V2.Model.Rank do
   @moduledoc """
   Information related to ranking of results.
+
+  ## Attributes
+
+  - type (String): The type of rank. Defaults to: `null`.
+    - Enum - one of [RANK_TYPE_UNSPECIFIED, RT_FINAL_SCORE]
+  - value (Float): The numerical value of the rank. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"type",
     :"value"
@@ -32,6 +37,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.Rank do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.Rank do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

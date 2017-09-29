@@ -20,9 +20,16 @@
 defmodule GoogleApi.UrlShortener.V1.Model.UrlHistory do
   @moduledoc """
   
+
+  ## Attributes
+
+  - items (List[Url]): A list of URL resources. Defaults to: `null`.
+  - itemsPerPage (Integer): Number of items returned with each full \&quot;page\&quot; of results. Note that the last page could have fewer items than the \&quot;itemsPerPage\&quot; value. Defaults to: `null`.
+  - kind (String): The fixed string \&quot;urlshortener#urlHistory\&quot;. Defaults to: `null`.
+  - nextPageToken (String): A token to provide to get the next page of results. Defaults to: `null`.
+  - totalItems (Integer): Total number of short URLs associated with this user (may be approximate). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"items",
     :"itemsPerPage",
@@ -37,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.UrlShortener.V1.Model.UrlHistory do
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.UrlShortener.V1.Model.Url, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.UrlShortener.V1.Model.UrlHistory do
+  def encode(value, options) do
+    GoogleApi.UrlShortener.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,16 @@
 defmodule GoogleApi.DoubleClickBidManager.V1.Model.QuerySchedule do
   @moduledoc """
   Information on how frequently and when to run a query.
+
+  ## Attributes
+
+  - endTimeMs (String): Datetime to periodically run the query until. Defaults to: `null`.
+  - frequency (String): How often the query is run. Defaults to: `null`.
+    - Enum - one of [DAILY, MONTHLY, ONE_TIME, QUARTERLY, SEMI_MONTHLY, WEEKLY]
+  - nextRunMinuteOfDay (Integer): Time of day at which a new report will be generated, represented as minutes past midnight. Range is 0 to 1439. Only applies to scheduled reports. Defaults to: `null`.
+  - nextRunTimezoneCode (String): Canonical timezone code for report generation time. Defaults to America/New_York. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"endTimeMs",
     :"frequency",
@@ -34,6 +41,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.DoubleClickBidManager.V1.Model.QuerySchedule do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickBidManager.V1.Model.QuerySchedule do
+  def encode(value, options) do
+    GoogleApi.DoubleClickBidManager.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

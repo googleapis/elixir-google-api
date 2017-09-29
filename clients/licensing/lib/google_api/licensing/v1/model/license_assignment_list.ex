@@ -20,9 +20,15 @@
 defmodule GoogleApi.Licensing.V1.Model.LicenseAssignmentList do
   @moduledoc """
   LicesnseAssignment List for a given product/sku for a customer.
+
+  ## Attributes
+
+  - etag (String): ETag of the resource. Defaults to: `null`.
+  - items (List[LicenseAssignment]): The LicenseAssignments in this page of results. Defaults to: `null`.
+  - kind (String): Identifies the resource as a collection of LicenseAssignments. Defaults to: `null`.
+  - nextPageToken (String): The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"items",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Licensing.V1.Model.LicenseAssignmentList 
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.Licensing.V1.Model.LicenseAssignment, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Licensing.V1.Model.LicenseAssignmentList do
+  def encode(value, options) do
+    GoogleApi.Licensing.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

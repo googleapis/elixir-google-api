@@ -20,9 +20,13 @@
 defmodule GoogleApi.GamesManagement.V1management.Model.AchievementResetAllResponse do
   @moduledoc """
   This is a JSON template for achievement reset all response.
+
+  ## Attributes
+
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#achievementResetAllResponse. Defaults to: `null`.
+  - results (List[AchievementResetResponse]): The achievement reset results. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"results"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1management.Model.Achiev
   def decode(value, options) do
     value
     |> deserialize(:"results", :list, GoogleApi.GamesManagement.V1management.Model.AchievementResetResponse, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.GamesManagement.V1management.Model.AchievementResetAllResponse do
+  def encode(value, options) do
+    GoogleApi.GamesManagement.V1management.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.Slides.V1.Model.TextRun do
   @moduledoc """
   A TextElement kind that represents a run of text that all has the same styling.
+
+  ## Attributes
+
+  - content (String): The text of this run. Defaults to: `null`.
+  - style (TextStyle): The styling applied to this run. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"content",
     :"style"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.TextRun do
   def decode(value, options) do
     value
     |> deserialize(:"style", :struct, GoogleApi.Slides.V1.Model.TextStyle, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.TextRun do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.GamesManagement.V1management.Model.AchievementResetMultipleForAllRequest do
   @moduledoc """
   This is a JSON template for multiple achievements reset all request.
+
+  ## Attributes
+
+  - achievement_ids (List[String]): The IDs of achievements to reset. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#achievementResetMultipleForAllRequest. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"achievement_ids",
     :"kind"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.GamesManagement.V1management.Model.AchievementResetMultipleForAllRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.GamesManagement.V1management.Model.AchievementResetMultipleForAllRequest do
+  def encode(value, options) do
+    GoogleApi.GamesManagement.V1management.Deserializer.serialize_non_nil(value, options)
   end
 end
 

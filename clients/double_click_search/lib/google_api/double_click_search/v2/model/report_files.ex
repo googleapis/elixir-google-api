@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.DoubleClickSearch.V2.Model.Report_files do
+defmodule GoogleApi.DoubleClickSearch.V2.Model.ReportFiles do
   @moduledoc """
   
+
+  ## Attributes
+
+  - byteCount (String): The size of this report file in bytes. Defaults to: `null`.
+  - url (String): Use this url to download the report file. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"byteCount",
     :"url"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.DoubleClickSearch.V2.Model.Report_files do
+defimpl Poison.Decoder, for: GoogleApi.DoubleClickSearch.V2.Model.ReportFiles do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickSearch.V2.Model.ReportFiles do
+  def encode(value, options) do
+    GoogleApi.DoubleClickSearch.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

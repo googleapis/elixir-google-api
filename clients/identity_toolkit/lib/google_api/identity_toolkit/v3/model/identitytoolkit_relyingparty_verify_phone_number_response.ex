@@ -20,9 +20,21 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyPhoneNumberResponse do
   @moduledoc """
   Response for Identitytoolkit-VerifyPhoneNumber
+
+  ## Attributes
+
+  - expiresIn (String):  Defaults to: `null`.
+  - idToken (String):  Defaults to: `null`.
+  - isNewUser (Boolean):  Defaults to: `null`.
+  - localId (String):  Defaults to: `null`.
+  - phoneNumber (String):  Defaults to: `null`.
+  - refreshToken (String):  Defaults to: `null`.
+  - temporaryProof (String):  Defaults to: `null`.
+  - temporaryProofExpiresIn (String):  Defaults to: `null`.
+  - verificationProof (String):  Defaults to: `null`.
+  - verificationProofExpiresIn (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"expiresIn",
     :"idToken",
@@ -40,6 +52,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyPhoneNumberResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyPhoneNumberResponse do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

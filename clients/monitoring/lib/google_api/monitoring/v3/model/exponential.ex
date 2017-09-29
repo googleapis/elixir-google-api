@@ -20,9 +20,14 @@
 defmodule GoogleApi.Monitoring.V3.Model.Exponential do
   @moduledoc """
   Specifies an exponential sequence of buckets that have a width that is proportional to the value of the lower bound. Each bucket represents a constant relative uncertainty on a specific value in the bucket.There are num_finite_buckets + 2 (&#x3D; N) buckets. Bucket i has the following boundaries:Upper bound (0 &lt;&#x3D; i &lt; N-1): scale * (growth_factor ^ i).  Lower bound (1 &lt;&#x3D; i &lt; N): scale * (growth_factor ^ (i - 1)).
+
+  ## Attributes
+
+  - growthFactor (Float): Must be greater than 1. Defaults to: `null`.
+  - numFiniteBuckets (Integer): Must be greater than 0. Defaults to: `null`.
+  - scale (Float): Must be greater than 0. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"growthFactor",
     :"numFiniteBuckets",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.Exponential do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Monitoring.V3.Model.Exponential do
+  def encode(value, options) do
+    GoogleApi.Monitoring.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

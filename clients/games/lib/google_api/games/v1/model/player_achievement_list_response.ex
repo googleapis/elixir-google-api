@@ -20,9 +20,14 @@
 defmodule GoogleApi.Games.V1.Model.PlayerAchievementListResponse do
   @moduledoc """
   This is a JSON template for a list of achievement objects.
+
+  ## Attributes
+
+  - items (List[PlayerAchievement]): The achievements. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#playerAchievementListResponse. Defaults to: `null`.
+  - nextPageToken (String): Token corresponding to the next page of results. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"items",
     :"kind",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.PlayerAchievementListRespo
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.Games.V1.Model.PlayerAchievement, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.PlayerAchievementListResponse do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

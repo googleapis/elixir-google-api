@@ -20,9 +20,18 @@
 defmodule GoogleApi.QPXExpress.V1.Model.FareInfo do
   @moduledoc """
   Complete information about a fare used in the solution to a low-fare search query. In the airline industry a fare is a price an airline charges for one-way travel between two points. A fare typically contains a carrier code, two city codes, a price, and a fare basis. (A fare basis is a one-to-eight character alphanumeric code used to identify a fare.)
+
+  ## Attributes
+
+  - basisCode (String):  Defaults to: `null`.
+  - carrier (String): The carrier of the aircraft or other vehicle commuting between two points. Defaults to: `null`.
+  - destination (String): The city code of the city the trip ends at. Defaults to: `null`.
+  - id (String): A unique identifier of the fare. Defaults to: `null`.
+  - kind (String): Identifies this as a fare object. Value: the fixed string qpxexpress#fareInfo. Defaults to: `null`.
+  - origin (String): The city code of the city the trip begins at. Defaults to: `null`.
+  - private (Boolean): Whether this is a private fare, for example one offered only to select customers rather than the general public. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"basisCode",
     :"carrier",
@@ -37,6 +46,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.QPXExpress.V1.Model.FareInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.QPXExpress.V1.Model.FareInfo do
+  def encode(value, options) do
+    GoogleApi.QPXExpress.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

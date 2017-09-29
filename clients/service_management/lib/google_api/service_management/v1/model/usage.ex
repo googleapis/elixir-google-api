@@ -20,9 +20,14 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.Usage do
   @moduledoc """
   Configuration controlling usage of a service.
+
+  ## Attributes
+
+  - producerNotificationChannel (String): The full resource name of a channel used for sending notifications to the service producer.  Google Service Management currently only supports [Google Cloud Pub/Sub](https://cloud.google.com/pubsub) as a notification channel. To use Google Cloud Pub/Sub as the channel, this must be the name of a Cloud Pub/Sub topic that uses the Cloud Pub/Sub topic name format documented in https://cloud.google.com/pubsub/docs/overview. Defaults to: `null`.
+  - requirements (List[String]): Requirements that must be satisfied before a consumer project can use the service. Each requirement is of the form &lt;service.name&gt;/&lt;requirement-id&gt;; for example &#39;serviceusage.googleapis.com/billing-enabled&#39;. Defaults to: `null`.
+  - rules (List[UsageRule]): A list of usage rules that apply to individual API methods.  **NOTE:** All service configuration rules follow \&quot;last one wins\&quot; order. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"producerNotificationChannel",
     :"requirements",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.Usage do
   def decode(value, options) do
     value
     |> deserialize(:"rules", :list, GoogleApi.ServiceManagement.V1.Model.UsageRule, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.Usage do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.AuditConfig do
   @moduledoc """
   Specifies the audit configuration for a service. The configuration determines which permission types are logged, and what identities, if any, are exempted from logging. An AuditConfig must have one or more AuditLogConfigs.  If there are AuditConfigs for both &#x60;allServices&#x60; and a specific service, the union of the two AuditConfigs is used for that service: the log_types specified in each AuditConfig are enabled, and the exempted_members in each AuditConfig are exempted.  Example Policy with multiple AuditConfigs:      {       \&quot;audit_configs\&quot;: [         {           \&quot;service\&quot;: \&quot;allServices\&quot;           \&quot;audit_log_configs\&quot;: [             {               \&quot;log_type\&quot;: \&quot;DATA_READ\&quot;,               \&quot;exempted_members\&quot;: [                 \&quot;user:foo@gmail.com\&quot;               ]             },             {               \&quot;log_type\&quot;: \&quot;DATA_WRITE\&quot;,             },             {               \&quot;log_type\&quot;: \&quot;ADMIN_READ\&quot;,             }           ]         },         {           \&quot;service\&quot;: \&quot;fooservice.googleapis.com\&quot;           \&quot;audit_log_configs\&quot;: [             {               \&quot;log_type\&quot;: \&quot;DATA_READ\&quot;,             },             {               \&quot;log_type\&quot;: \&quot;DATA_WRITE\&quot;,               \&quot;exempted_members\&quot;: [                 \&quot;user:bar@gmail.com\&quot;               ]             }           ]         }       ]     }  For fooservice, this policy enables DATA_READ, DATA_WRITE and ADMIN_READ logging. It also exempts foo@gmail.com from DATA_READ logging, and bar@gmail.com from DATA_WRITE logging.
+
+  ## Attributes
+
+  - auditLogConfigs (List[AuditLogConfig]): The configuration for logging of each type of permission. Next ID: 4 Defaults to: `null`.
+  - exemptedMembers (List[String]):  Defaults to: `null`.
+  - service (String): Specifies a service that will be enabled for audit logging. For example, &#x60;storage.googleapis.com&#x60;, &#x60;cloudsql.googleapis.com&#x60;. &#x60;allServices&#x60; is a special value that covers all services. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"auditLogConfigs",
     :"exemptedMembers",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.AuditConfig do
   def decode(value, options) do
     value
     |> deserialize(:"auditLogConfigs", :list, GoogleApi.ServiceManagement.V1.Model.AuditLogConfig, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.AuditConfig do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

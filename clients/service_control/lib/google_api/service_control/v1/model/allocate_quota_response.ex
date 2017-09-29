@@ -20,9 +20,15 @@
 defmodule GoogleApi.ServiceControl.V1.Model.AllocateQuotaResponse do
   @moduledoc """
   Response message for the AllocateQuota method.
+
+  ## Attributes
+
+  - allocateErrors (List[QuotaError]): Indicates the decision of the allocate. Defaults to: `null`.
+  - operationId (String): The same operation_id value used in the AllocateQuotaRequest. Used for logging and diagnostics purposes. Defaults to: `null`.
+  - quotaMetrics (List[MetricValueSet]): Quota metrics to indicate the result of allocation. Depending on the request, one or more of the following metrics will be included:  1. For rate quota, per quota group or per quota metric incremental usage will be specified using the following delta metric:   \&quot;serviceruntime.googleapis.com/api/consumer/quota_used_count\&quot;  2. For allocation quota, per quota metric total usage will be specified using the following gauge metric:   \&quot;serviceruntime.googleapis.com/allocation/consumer/quota_used_count\&quot;  3. For both rate quota and allocation quota, the quota limit reached condition will be specified using the following boolean metric:   \&quot;serviceruntime.googleapis.com/quota/exceeded\&quot;  4. For allocation quota, value for each quota limit associated with the metrics will be specified using the following gauge metric:   \&quot;serviceruntime.googleapis.com/quota/limit\&quot; Defaults to: `null`.
+  - serviceConfigId (String): ID of the actual config used to process the request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"allocateErrors",
     :"operationId",
@@ -37,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.AllocateQuotaResp
     value
     |> deserialize(:"allocateErrors", :list, GoogleApi.ServiceControl.V1.Model.QuotaError, options)
     |> deserialize(:"quotaMetrics", :list, GoogleApi.ServiceControl.V1.Model.MetricValueSet, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.AllocateQuotaResponse do
+  def encode(value, options) do
+    GoogleApi.ServiceControl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

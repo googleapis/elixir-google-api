@@ -20,9 +20,12 @@
 defmodule GoogleApi.Genomics.V1.Model.BatchCreateAnnotationsResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - entries (List[Entry]): The resulting per-annotation entries, ordered consistently with the original request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"entries"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.BatchCreateAnnotationsR
   def decode(value, options) do
     value
     |> deserialize(:"entries", :list, GoogleApi.Genomics.V1.Model.Entry, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.BatchCreateAnnotationsResponse do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

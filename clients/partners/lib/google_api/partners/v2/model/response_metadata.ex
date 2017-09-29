@@ -20,9 +20,12 @@
 defmodule GoogleApi.Partners.V2.Model.ResponseMetadata do
   @moduledoc """
   Common data that is in each API response.
+
+  ## Attributes
+
+  - debugInfo (DebugInfo): Debug information about this request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"debugInfo"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.ResponseMetadata do
   def decode(value, options) do
     value
     |> deserialize(:"debugInfo", :struct, GoogleApi.Partners.V2.Model.DebugInfo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.ResponseMetadata do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

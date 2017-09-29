@@ -20,9 +20,13 @@
 defmodule GoogleApi.Sheets.V4.Model.UpdateNamedRangeRequest do
   @moduledoc """
   Updates properties of the named range with the specified namedRangeId.
+
+  ## Attributes
+
+  - fields (String): The fields that should be updated.  At least one field must be specified. The root &#x60;namedRange&#x60; is implied and should not be specified. A single &#x60;\&quot;*\&quot;&#x60; can be used as short-hand for listing every field. Defaults to: `null`.
+  - namedRange (NamedRange): The named range to update with the new properties. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fields",
     :"namedRange"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UpdateNamedRangeRequest d
   def decode(value, options) do
     value
     |> deserialize(:"namedRange", :struct, GoogleApi.Sheets.V4.Model.NamedRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UpdateNamedRangeRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

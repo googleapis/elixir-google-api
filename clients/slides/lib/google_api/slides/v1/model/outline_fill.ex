@@ -20,9 +20,12 @@
 defmodule GoogleApi.Slides.V1.Model.OutlineFill do
   @moduledoc """
   The fill of the outline.
+
+  ## Attributes
+
+  - solidFill (SolidFill): Solid color fill. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"solidFill"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.OutlineFill do
   def decode(value, options) do
     value
     |> deserialize(:"solidFill", :struct, GoogleApi.Slides.V1.Model.SolidFill, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.OutlineFill do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

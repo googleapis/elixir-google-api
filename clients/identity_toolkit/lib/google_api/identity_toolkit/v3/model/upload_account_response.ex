@@ -20,9 +20,13 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.UploadAccountResponse do
   @moduledoc """
   Respone of uploading accounts in batch.
+
+  ## Attributes
+
+  - error (List[UploadAccountResponseError]): The error encountered while processing the account info. Defaults to: `null`.
+  - kind (String): The fixed string \&quot;identitytoolkit#UploadAccountResponse\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"error",
     :"kind"
@@ -33,7 +37,13 @@ defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.UploadAccountRes
   import GoogleApi.IdentityToolkit.V3.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"error", :list, GoogleApi.IdentityToolkit.V3.Model.UploadAccountResponse_error, options)
+    |> deserialize(:"error", :list, GoogleApi.IdentityToolkit.V3.Model.UploadAccountResponseError, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.UploadAccountResponse do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

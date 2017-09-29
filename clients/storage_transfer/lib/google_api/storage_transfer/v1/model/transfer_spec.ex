@@ -20,9 +20,17 @@
 defmodule GoogleApi.StorageTransfer.V1.Model.TransferSpec do
   @moduledoc """
   Configuration for running a transfer.
+
+  ## Attributes
+
+  - awsS3DataSource (AwsS3Data): An AWS S3 data source. Defaults to: `null`.
+  - gcsDataSink (GcsData): A Google Cloud Storage data sink. Defaults to: `null`.
+  - gcsDataSource (GcsData): A Google Cloud Storage data source. Defaults to: `null`.
+  - httpDataSource (HttpData): An HTTP URL data source. Defaults to: `null`.
+  - objectConditions (ObjectConditions): Only objects that satisfy these object conditions are included in the set of data source and data sink objects.  Object conditions based on objects&#39; &#x60;lastModificationTime&#x60; do not exclude objects in a data sink. Defaults to: `null`.
+  - transferOptions (TransferOptions): If the option &#x60;deleteObjectsUniqueInSink&#x60; is &#x60;true&#x60;, object conditions based on objects&#39; &#x60;lastModificationTime&#x60; are ignored and do not exclude objects in a data source or a data sink. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"awsS3DataSource",
     :"gcsDataSink",
@@ -43,6 +51,12 @@ defimpl Poison.Decoder, for: GoogleApi.StorageTransfer.V1.Model.TransferSpec do
     |> deserialize(:"httpDataSource", :struct, GoogleApi.StorageTransfer.V1.Model.HttpData, options)
     |> deserialize(:"objectConditions", :struct, GoogleApi.StorageTransfer.V1.Model.ObjectConditions, options)
     |> deserialize(:"transferOptions", :struct, GoogleApi.StorageTransfer.V1.Model.TransferOptions, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.StorageTransfer.V1.Model.TransferSpec do
+  def encode(value, options) do
+    GoogleApi.StorageTransfer.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.QPXExpress.V1.Model.AirportData do
   @moduledoc """
   An airport.
+
+  ## Attributes
+
+  - city (String): The city code an airport is located in. For example, for JFK airport, this is NYC. Defaults to: `null`.
+  - code (String): An airport&#39;s code. For example, for Boston Logan airport, this is BOS. Defaults to: `null`.
+  - kind (String): Identifies this as an airport object. Value: the fixed string qpxexpress#airportData. Defaults to: `null`.
+  - name (String): The name of an airport. For example, for airport BOS the name is \&quot;Boston Logan International\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"city",
     :"code",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.QPXExpress.V1.Model.AirportData do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.QPXExpress.V1.Model.AirportData do
+  def encode(value, options) do
+    GoogleApi.QPXExpress.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

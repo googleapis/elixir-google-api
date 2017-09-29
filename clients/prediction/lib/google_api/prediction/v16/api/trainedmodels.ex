@@ -61,7 +61,10 @@ defmodule GoogleApi.Prediction.V16.Api.Trainedmodels do
     }
     %{}
     |> method(:get)
-    |> url("/#{project}/trainedmodels/#{id}/analyze")
+    |> url("/{project}/trainedmodels/{id}/analyze", %{
+         "project" => URI.encode_www_form(project),
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -103,7 +106,10 @@ defmodule GoogleApi.Prediction.V16.Api.Trainedmodels do
     }
     %{}
     |> method(:delete)
-    |> url("/#{project}/trainedmodels/#{id}")
+    |> url("/{project}/trainedmodels/{id}", %{
+         "project" => URI.encode_www_form(project),
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -145,7 +151,10 @@ defmodule GoogleApi.Prediction.V16.Api.Trainedmodels do
     }
     %{}
     |> method(:get)
-    |> url("/#{project}/trainedmodels/#{id}")
+    |> url("/{project}/trainedmodels/{id}", %{
+         "project" => URI.encode_www_form(project),
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -188,7 +197,9 @@ defmodule GoogleApi.Prediction.V16.Api.Trainedmodels do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/trainedmodels")
+    |> url("/{project}/trainedmodels", %{
+         "project" => URI.encode_www_form(project)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -233,7 +244,9 @@ defmodule GoogleApi.Prediction.V16.Api.Trainedmodels do
     }
     %{}
     |> method(:get)
-    |> url("/#{project}/trainedmodels/list")
+    |> url("/{project}/trainedmodels/list", %{
+         "project" => URI.encode_www_form(project)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -277,7 +290,10 @@ defmodule GoogleApi.Prediction.V16.Api.Trainedmodels do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/trainedmodels/#{id}/predict")
+    |> url("/{project}/trainedmodels/{id}/predict", %{
+         "project" => URI.encode_www_form(project),
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -321,7 +337,10 @@ defmodule GoogleApi.Prediction.V16.Api.Trainedmodels do
     }
     %{}
     |> method(:put)
-    |> url("/#{project}/trainedmodels/#{id}")
+    |> url("/{project}/trainedmodels/{id}", %{
+         "project" => URI.encode_www_form(project),
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

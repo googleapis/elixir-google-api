@@ -20,9 +20,15 @@
 defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.AndroidInfo do
   @moduledoc """
   Android related attributes to the Dynamic Link.
+
+  ## Attributes
+
+  - androidFallbackLink (String): Link to open on Android if the app is not installed. Defaults to: `null`.
+  - androidLink (String): If specified, this overrides the ‘link’ parameter on Android. Defaults to: `null`.
+  - androidMinPackageVersionCode (String): Minimum version code for the Android app. If the installed app’s version code is lower, then the user is taken to the Play Store. Defaults to: `null`.
+  - androidPackageName (String): Android package name of the app. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"androidFallbackLink",
     :"androidLink",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.AndroidInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.AndroidInfo do
+  def encode(value, options) do
+    GoogleApi.FirebaseDynamicLinks.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

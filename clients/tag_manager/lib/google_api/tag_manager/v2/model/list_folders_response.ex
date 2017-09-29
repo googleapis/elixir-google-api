@@ -20,9 +20,13 @@
 defmodule GoogleApi.TagManager.V2.Model.ListFoldersResponse do
   @moduledoc """
   List Folders Response.
+
+  ## Attributes
+
+  - folder (List[Folder]): All GTM Folders of a GTM Container. Defaults to: `null`.
+  - nextPageToken (String): Continuation token for fetching the next page of results. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"folder",
     :"nextPageToken"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.ListFoldersResponse d
   def decode(value, options) do
     value
     |> deserialize(:"folder", :list, GoogleApi.TagManager.V2.Model.Folder, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.ListFoldersResponse do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

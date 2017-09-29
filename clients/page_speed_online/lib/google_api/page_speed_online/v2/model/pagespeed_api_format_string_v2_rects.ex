@@ -17,12 +17,18 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2_rects do
+defmodule GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2Rects do
   @moduledoc """
   
+
+  ## Attributes
+
+  - height (Integer): The height of the rect. Defaults to: `null`.
+  - left (Integer): The left coordinate of the rect, in page coordinates. Defaults to: `null`.
+  - top (Integer): The top coordinate of the rect, in page coordinates. Defaults to: `null`.
+  - width (Integer): The width of the rect. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"height",
     :"left",
@@ -31,9 +37,15 @@ defmodule GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2_rects do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2_rects do
+defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2Rects do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2Rects do
+  def encode(value, options) do
+    GoogleApi.PageSpeedOnline.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

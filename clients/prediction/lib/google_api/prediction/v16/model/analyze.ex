@@ -20,9 +20,17 @@
 defmodule GoogleApi.Prediction.V16.Model.Analyze do
   @moduledoc """
   
+
+  ## Attributes
+
+  - dataDescription (AnalyzeDataDescription):  Defaults to: `null`.
+  - errors (List[Map[String, String]]): List of errors with the data. Defaults to: `null`.
+  - id (String): The unique name for the predictive model. Defaults to: `null`.
+  - kind (String): What kind of resource this is. Defaults to: `null`.
+  - modelDescription (AnalyzeModelDescription):  Defaults to: `null`.
+  - selfLink (String): A URL to re-request this resource. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dataDescription",
     :"errors",
@@ -37,8 +45,14 @@ defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.Analyze do
   import GoogleApi.Prediction.V16.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"dataDescription", :struct, GoogleApi.Prediction.V16.Model.Analyze_dataDescription, options)
-    |> deserialize(:"modelDescription", :struct, GoogleApi.Prediction.V16.Model.Analyze_modelDescription, options)
+    |> deserialize(:"dataDescription", :struct, GoogleApi.Prediction.V16.Model.AnalyzeDataDescription, options)
+    |> deserialize(:"modelDescription", :struct, GoogleApi.Prediction.V16.Model.AnalyzeModelDescription, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Prediction.V16.Model.Analyze do
+  def encode(value, options) do
+    GoogleApi.Prediction.V16.Deserializer.serialize_non_nil(value, options)
   end
 end
 

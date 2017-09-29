@@ -20,9 +20,12 @@
 defmodule GoogleApi.Webmaster.V3.Model.UrlCrawlErrorsCountsQueryResponse do
   @moduledoc """
   A time series of the number of URL crawl errors per error category and platform.
+
+  ## Attributes
+
+  - countPerTypes (List[UrlCrawlErrorCountsPerType]): The time series of the number of URL crawl errors per error category and platform. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"countPerTypes"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Webmaster.V3.Model.UrlCrawlErrorsCountsQu
   def decode(value, options) do
     value
     |> deserialize(:"countPerTypes", :list, GoogleApi.Webmaster.V3.Model.UrlCrawlErrorCountsPerType, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Webmaster.V3.Model.UrlCrawlErrorsCountsQueryResponse do
+  def encode(value, options) do
+    GoogleApi.Webmaster.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

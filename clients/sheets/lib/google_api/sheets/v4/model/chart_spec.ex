@@ -20,9 +20,25 @@
 defmodule GoogleApi.Sheets.V4.Model.ChartSpec do
   @moduledoc """
   The specifications of a chart.
+
+  ## Attributes
+
+  - altText (String): The alternative text that describes the chart.  This is often used for accessibility. Defaults to: `null`.
+  - backgroundColor (Color): The background color of the entire chart. Not applicable to Org charts. Defaults to: `null`.
+  - basicChart (BasicChartSpec): A basic chart specification, can be one of many kinds of charts. See BasicChartType for the list of all charts this supports. Defaults to: `null`.
+  - bubbleChart (BubbleChartSpec): A bubble chart specification. Defaults to: `null`.
+  - candlestickChart (CandlestickChartSpec): A candlestick chart specification. Defaults to: `null`.
+  - fontName (String): The name of the font to use by default for all chart text (e.g. title, axis labels, legend).  If a font is specified for a specific part of the chart it will override this font name. Defaults to: `null`.
+  - hiddenDimensionStrategy (String): Determines how the charts will use hidden rows or columns. Defaults to: `null`.
+    - Enum - one of [CHART_HIDDEN_DIMENSION_STRATEGY_UNSPECIFIED, SKIP_HIDDEN_ROWS_AND_COLUMNS, SKIP_HIDDEN_ROWS, SKIP_HIDDEN_COLUMNS, SHOW_ALL]
+  - histogramChart (HistogramChartSpec): A histogram chart specification. Defaults to: `null`.
+  - maximized (Boolean): True to make a chart fill the entire space in which it&#39;s rendered with minimum padding.  False to use the default padding. (Not applicable to Geo and Org charts.) Defaults to: `null`.
+  - orgChart (OrgChartSpec): An org chart specification. Defaults to: `null`.
+  - pieChart (PieChartSpec): A pie chart specification. Defaults to: `null`.
+  - title (String): The title of the chart. Defaults to: `null`.
+  - titleTextFormat (TextFormat): The title text format. Strikethrough and underline are not supported. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"altText",
     :"backgroundColor",
@@ -52,6 +68,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.ChartSpec do
     |> deserialize(:"orgChart", :struct, GoogleApi.Sheets.V4.Model.OrgChartSpec, options)
     |> deserialize(:"pieChart", :struct, GoogleApi.Sheets.V4.Model.PieChartSpec, options)
     |> deserialize(:"titleTextFormat", :struct, GoogleApi.Sheets.V4.Model.TextFormat, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.ChartSpec do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.Fitness.V1.Model.DataType do
   @moduledoc """
   
+
+  ## Attributes
+
+  - field (List[DataTypeField]): A field represents one dimension of a data type. Defaults to: `null`.
+  - name (String): Each data type has a unique, namespaced, name. All data types in the com.google namespace are shared as part of the platform. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"field",
     :"name"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Fitness.V1.Model.DataType do
   def decode(value, options) do
     value
     |> deserialize(:"field", :list, GoogleApi.Fitness.V1.Model.DataTypeField, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Fitness.V1.Model.DataType do
+  def encode(value, options) do
+    GoogleApi.Fitness.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.Sheets.V4.Model.ClearBasicFilterRequest do
   @moduledoc """
   Clears the basic filter, if any exists on the sheet.
+
+  ## Attributes
+
+  - sheetId (Integer): The sheet ID on which the basic filter should be cleared. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"sheetId"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.ClearBasicFilterRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.ClearBasicFilterRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

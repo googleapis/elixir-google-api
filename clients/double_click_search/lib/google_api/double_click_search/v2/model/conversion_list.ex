@@ -20,9 +20,13 @@
 defmodule GoogleApi.DoubleClickSearch.V2.Model.ConversionList do
   @moduledoc """
   A list of conversions.
+
+  ## Attributes
+
+  - conversion (List[Conversion]): The conversions being requested. Defaults to: `null`.
+  - kind (String): Identifies this as a ConversionList resource. Value: the fixed string doubleclicksearch#conversionList. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"conversion",
     :"kind"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.DoubleClickSearch.V2.Model.ConversionList
   def decode(value, options) do
     value
     |> deserialize(:"conversion", :list, GoogleApi.DoubleClickSearch.V2.Model.Conversion, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickSearch.V2.Model.ConversionList do
+  def encode(value, options) do
+    GoogleApi.DoubleClickSearch.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

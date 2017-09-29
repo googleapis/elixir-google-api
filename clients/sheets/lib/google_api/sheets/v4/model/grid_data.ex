@@ -20,9 +20,16 @@
 defmodule GoogleApi.Sheets.V4.Model.GridData do
   @moduledoc """
   Data in the grid, as well as metadata about the dimensions.
+
+  ## Attributes
+
+  - columnMetadata (List[DimensionProperties]): Metadata about the requested columns in the grid, starting with the column in start_column. Defaults to: `null`.
+  - rowData (List[RowData]): The data in the grid, one entry per row, starting with the row in startRow. The values in RowData will correspond to columns starting at start_column. Defaults to: `null`.
+  - rowMetadata (List[DimensionProperties]): Metadata about the requested rows in the grid, starting with the row in start_row. Defaults to: `null`.
+  - startColumn (Integer): The first column this GridData refers to, zero-based. Defaults to: `null`.
+  - startRow (Integer): The first row this GridData refers to, zero-based. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"columnMetadata",
     :"rowData",
@@ -39,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.GridData do
     |> deserialize(:"columnMetadata", :list, GoogleApi.Sheets.V4.Model.DimensionProperties, options)
     |> deserialize(:"rowData", :list, GoogleApi.Sheets.V4.Model.RowData, options)
     |> deserialize(:"rowMetadata", :list, GoogleApi.Sheets.V4.Model.DimensionProperties, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.GridData do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

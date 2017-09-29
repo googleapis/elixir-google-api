@@ -20,9 +20,12 @@
 defmodule GoogleApi.Slides.V1.Model.CreateTableResponse do
   @moduledoc """
   The result of creating a table.
+
+  ## Attributes
+
+  - objectId (String): The object ID of the created table. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"objectId"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.CreateTableResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.CreateTableResponse do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

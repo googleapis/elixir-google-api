@@ -72,7 +72,11 @@ defmodule GoogleApi.Games.V1.Api.Scores do
     }
     %{}
     |> method(:get)
-    |> url("/players/#{player_id}/leaderboards/#{leaderboard_id}/scores/#{time_span}")
+    |> url("/players/{playerId}/leaderboards/{leaderboardId}/scores/{timeSpan}", %{
+         "playerId" => URI.encode_www_form(player_id),
+         "leaderboardId" => URI.encode_www_form(leaderboard_id),
+         "timeSpan" => URI.encode_www_form(time_span)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -123,7 +127,10 @@ defmodule GoogleApi.Games.V1.Api.Scores do
     }
     %{}
     |> method(:get)
-    |> url("/leaderboards/#{leaderboard_id}/scores/#{collection}")
+    |> url("/leaderboards/{leaderboardId}/scores/{collection}", %{
+         "leaderboardId" => URI.encode_www_form(leaderboard_id),
+         "collection" => URI.encode_www_form(collection)
+       })
     |> add_param(:query, :"timeSpan", time_span)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -179,7 +186,10 @@ defmodule GoogleApi.Games.V1.Api.Scores do
     }
     %{}
     |> method(:get)
-    |> url("/leaderboards/#{leaderboard_id}/window/#{collection}")
+    |> url("/leaderboards/{leaderboardId}/window/{collection}", %{
+         "leaderboardId" => URI.encode_www_form(leaderboard_id),
+         "collection" => URI.encode_www_form(collection)
+       })
     |> add_param(:query, :"timeSpan", time_span)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -228,7 +238,9 @@ defmodule GoogleApi.Games.V1.Api.Scores do
     }
     %{}
     |> method(:post)
-    |> url("/leaderboards/#{leaderboard_id}/scores")
+    |> url("/leaderboards/{leaderboardId}/scores", %{
+         "leaderboardId" => URI.encode_www_form(leaderboard_id)
+       })
     |> add_param(:query, :"score", score)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])

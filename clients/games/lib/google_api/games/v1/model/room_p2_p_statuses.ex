@@ -20,9 +20,13 @@
 defmodule GoogleApi.Games.V1.Model.RoomP2PStatuses do
   @moduledoc """
   This is a JSON template for an update on the status of peers in a room.
+
+  ## Attributes
+
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#roomP2PStatuses. Defaults to: `null`.
+  - updates (List[RoomP2PStatus]): The updates for the peers. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"updates"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.RoomP2PStatuses do
   def decode(value, options) do
     value
     |> deserialize(:"updates", :list, GoogleApi.Games.V1.Model.RoomP2PStatus, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.RoomP2PStatuses do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

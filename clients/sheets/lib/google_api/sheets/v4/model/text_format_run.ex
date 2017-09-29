@@ -20,9 +20,13 @@
 defmodule GoogleApi.Sheets.V4.Model.TextFormatRun do
   @moduledoc """
   A run of a text format. The format of this run continues until the start index of the next run. When updating, all fields must be set.
+
+  ## Attributes
+
+  - format (TextFormat): The format of this run.  Absent values inherit the cell&#39;s format. Defaults to: `null`.
+  - startIndex (Integer): The character index where this run starts. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"format",
     :"startIndex"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.TextFormatRun do
   def decode(value, options) do
     value
     |> deserialize(:"format", :struct, GoogleApi.Sheets.V4.Model.TextFormat, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.TextFormatRun do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

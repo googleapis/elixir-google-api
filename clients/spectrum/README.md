@@ -1,6 +1,6 @@
-# GoogleApi.Spectrum.V1EXPLORER
+# GoogleApi.Spectrum.V1explorer
 
-**TODO: Add description**
+API for spectrum-management functions.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_spectrum` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_spectrum, "~> 0.1.0"}]
+  [{:google_api_spectrum, "~> 0.0.1"}]
 end
 ```
 

@@ -20,9 +20,20 @@
 defmodule GoogleApi.Webmaster.V3.Model.WmxSitemap do
   @moduledoc """
   Contains detailed information about a specific URL submitted as a sitemap.
+
+  ## Attributes
+
+  - contents (List[WmxSitemapContent]): The various content types in the sitemap. Defaults to: `null`.
+  - errors (String): Number of errors in the sitemap. These are issues with the sitemap itself that need to be fixed before it can be processed correctly. Defaults to: `null`.
+  - isPending (Boolean): If true, the sitemap has not been processed. Defaults to: `null`.
+  - isSitemapsIndex (Boolean): If true, the sitemap is a collection of sitemaps. Defaults to: `null`.
+  - lastDownloaded (DateTime): Date &amp; time in which this sitemap was last downloaded. Date format is in RFC 3339 format (yyyy-mm-dd). Defaults to: `null`.
+  - lastSubmitted (DateTime): Date &amp; time in which this sitemap was submitted. Date format is in RFC 3339 format (yyyy-mm-dd). Defaults to: `null`.
+  - path (String): The url of the sitemap. Defaults to: `null`.
+  - type (String): The type of the sitemap. For example: rssFeed. Defaults to: `null`.
+  - warnings (String): Number of warnings for the sitemap. These are generally non-critical issues with URLs in the sitemaps. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"contents",
     :"errors",
@@ -41,6 +52,12 @@ defimpl Poison.Decoder, for: GoogleApi.Webmaster.V3.Model.WmxSitemap do
   def decode(value, options) do
     value
     |> deserialize(:"contents", :list, GoogleApi.Webmaster.V3.Model.WmxSitemapContent, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Webmaster.V3.Model.WmxSitemap do
+  def encode(value, options) do
+    GoogleApi.Webmaster.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

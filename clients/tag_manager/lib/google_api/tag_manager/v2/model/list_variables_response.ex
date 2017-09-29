@@ -20,9 +20,13 @@
 defmodule GoogleApi.TagManager.V2.Model.ListVariablesResponse do
   @moduledoc """
   List Variables Response.
+
+  ## Attributes
+
+  - nextPageToken (String): Continuation token for fetching the next page of results. Defaults to: `null`.
+  - variable (List[Variable]): All GTM Variables of a GTM Container. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nextPageToken",
     :"variable"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.ListVariablesResponse
   def decode(value, options) do
     value
     |> deserialize(:"variable", :list, GoogleApi.TagManager.V2.Model.Variable, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.ListVariablesResponse do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

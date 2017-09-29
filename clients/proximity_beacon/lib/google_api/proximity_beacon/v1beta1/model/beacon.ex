@@ -20,9 +20,24 @@
 defmodule GoogleApi.ProximityBeacon.V1beta1.Model.Beacon do
   @moduledoc """
   Details of a beacon device.
+
+  ## Attributes
+
+  - advertisedId (AdvertisedId): The identifier of a beacon as advertised by it. This field must be populated when registering. It may be empty when updating a beacon record because it is ignored in updates.  When registering a beacon that broadcasts Eddystone-EID, this field should contain a \&quot;stable\&quot; Eddystone-UID that identifies the beacon and links it to its attachments. The stable Eddystone-UID is only used for administering the beacon. Defaults to: `null`.
+  - beaconName (String): Resource name of this beacon. A beacon name has the format \&quot;beacons/N!beaconId\&quot; where the beaconId is the base16 ID broadcast by the beacon and N is a code for the beacon&#39;s type. Possible values are &#x60;3&#x60; for Eddystone, &#x60;1&#x60; for iBeacon, or &#x60;5&#x60; for AltBeacon.  This field must be left empty when registering. After reading a beacon, clients can use the name for future operations. Defaults to: `null`.
+  - description (String): Free text used to identify and describe the beacon. Maximum length 140 characters. Optional. Defaults to: `null`.
+  - ephemeralIdRegistration (EphemeralIdRegistration): Write-only registration parameters for beacons using Eddystone-EID (remotely resolved ephemeral ID) format. This information will not be populated in API responses. When submitting this data, the &#x60;advertised_id&#x60; field must contain an ID of type Eddystone-UID. Any other ID type will result in an error. Defaults to: `null`.
+  - expectedStability (String): Expected location stability. This is set when the beacon is registered or updated, not automatically detected in any way. Optional. Defaults to: `null`.
+    - Enum - one of [STABILITY_UNSPECIFIED, STABLE, PORTABLE, MOBILE, ROVING]
+  - indoorLevel (IndoorLevel): The indoor level information for this beacon, if known. As returned by the Google Maps API. Optional. Defaults to: `null`.
+  - latLng (LatLng): The location of the beacon, expressed as a latitude and longitude pair. This location is given when the beacon is registered or updated. It does not necessarily indicate the actual current location of the beacon. Optional. Defaults to: `null`.
+  - placeId (String): The [Google Places API](/places/place-id) Place ID of the place where the beacon is deployed. This is given when the beacon is registered or updated, not automatically detected in any way. Optional. Defaults to: `null`.
+  - properties (Map[String, String]): Properties of the beacon device, for example battery type or firmware version. Optional. Defaults to: `null`.
+  - provisioningKey (String): Some beacons may require a user to provide an authorization key before changing any of its configuration (e.g. broadcast frames, transmit power). This field provides a place to store and control access to that key. This field is populated in responses to &#x60;GET /v1beta1/beacons/3!beaconId&#x60; from users with write access to the given beacon. That is to say: If the user is authorized to write the beacon&#39;s confidential data in the service, the service considers them authorized to configure the beacon. Note that this key grants nothing on the service, only on the beacon itself. Defaults to: `null`.
+  - status (String): Current status of the beacon. Required. Defaults to: `null`.
+    - Enum - one of [STATUS_UNSPECIFIED, ACTIVE, DECOMMISSIONED, INACTIVE]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"advertisedId",
     :"beaconName",
@@ -46,6 +61,12 @@ defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.Beacon do
     |> deserialize(:"ephemeralIdRegistration", :struct, GoogleApi.ProximityBeacon.V1beta1.Model.EphemeralIdRegistration, options)
     |> deserialize(:"indoorLevel", :struct, GoogleApi.ProximityBeacon.V1beta1.Model.IndoorLevel, options)
     |> deserialize(:"latLng", :struct, GoogleApi.ProximityBeacon.V1beta1.Model.LatLng, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.Beacon do
+  def encode(value, options) do
+    GoogleApi.ProximityBeacon.V1beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

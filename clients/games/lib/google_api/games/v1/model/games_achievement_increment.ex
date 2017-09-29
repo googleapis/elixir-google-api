@@ -20,9 +20,14 @@
 defmodule GoogleApi.Games.V1.Model.GamesAchievementIncrement do
   @moduledoc """
   This is a JSON template for the payload to request to increment an achievement.
+
+  ## Attributes
+
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#GamesAchievementIncrement. Defaults to: `null`.
+  - requestId (String): The requestId associated with an increment to an achievement. Defaults to: `null`.
+  - steps (Integer): The number of steps to be incremented. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"requestId",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.GamesAchievementIncrement do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.GamesAchievementIncrement do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

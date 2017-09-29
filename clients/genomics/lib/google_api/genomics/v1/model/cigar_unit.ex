@@ -20,9 +20,15 @@
 defmodule GoogleApi.Genomics.V1.Model.CigarUnit do
   @moduledoc """
   A single CIGAR operation.
+
+  ## Attributes
+
+  - operation (String):  Defaults to: `null`.
+    - Enum - one of [OPERATION_UNSPECIFIED, ALIGNMENT_MATCH, INSERT, DELETE, SKIP, CLIP_SOFT, CLIP_HARD, PAD, SEQUENCE_MATCH, SEQUENCE_MISMATCH]
+  - operationLength (String): The number of genomic bases that the operation runs for. Required. Defaults to: `null`.
+  - referenceSequence (String): &#x60;referenceSequence&#x60; is only used at mismatches (&#x60;SEQUENCE_MISMATCH&#x60;) and deletions (&#x60;DELETE&#x60;). Filling this field replaces SAM&#39;s MD tag. If the relevant information is not available, this field is unset. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"operation",
     :"operationLength",
@@ -33,6 +39,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.CigarUnit do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.CigarUnit do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

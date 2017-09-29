@@ -61,7 +61,10 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Players do
     }
     %{}
     |> method(:post)
-    |> url("/applications/#{application_id}/players/hidden/#{player_id}")
+    |> url("/applications/{applicationId}/players/hidden/{playerId}", %{
+         "applicationId" => URI.encode_www_form(application_id),
+         "playerId" => URI.encode_www_form(player_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -103,7 +106,10 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Players do
     }
     %{}
     |> method(:delete)
-    |> url("/applications/#{application_id}/players/hidden/#{player_id}")
+    |> url("/applications/{applicationId}/players/hidden/{playerId}", %{
+         "applicationId" => URI.encode_www_form(application_id),
+         "playerId" => URI.encode_www_form(player_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

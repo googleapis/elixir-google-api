@@ -20,9 +20,12 @@
 defmodule GoogleApi.Slides.V1.Model.NestingLevel do
   @moduledoc """
   Contains properties describing the look and feel of a list bullet at a given level of nesting.
+
+  ## Attributes
+
+  - bulletStyle (TextStyle): The style of a bullet at this level of nesting. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bulletStyle"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.NestingLevel do
   def decode(value, options) do
     value
     |> deserialize(:"bulletStyle", :struct, GoogleApi.Slides.V1.Model.TextStyle, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.NestingLevel do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

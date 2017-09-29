@@ -1,6 +1,6 @@
-# GoogleApi.TaskQueue.V1BETA2
+# GoogleApi.TaskQueue.V1beta2
 
-**TODO: Add description**
+Accesses a Google App Engine Pull Task Queue over REST.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_task_queue` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_task_queue, "~> 0.1.0"}]
+  [{:google_api_task_queue, "~> 0.0.1"}]
 end
 ```
 

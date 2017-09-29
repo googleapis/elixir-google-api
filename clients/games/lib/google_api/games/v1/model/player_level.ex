@@ -20,9 +20,15 @@
 defmodule GoogleApi.Games.V1.Model.PlayerLevel do
   @moduledoc """
   This is a JSON template for 1P/3P metadata about a user&#39;s level.
+
+  ## Attributes
+
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#playerLevel. Defaults to: `null`.
+  - level (Integer): The level for the user. Defaults to: `null`.
+  - maxExperiencePoints (String): The maximum experience points for this level. Defaults to: `null`.
+  - minExperiencePoints (String): The minimum experience points for this level. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"level",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.PlayerLevel do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.PlayerLevel do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

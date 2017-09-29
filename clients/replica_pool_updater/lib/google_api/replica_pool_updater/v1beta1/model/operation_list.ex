@@ -20,9 +20,16 @@
 defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Model.OperationList do
   @moduledoc """
   Contains a list of Operation resources.
+
+  ## Attributes
+
+  - id (String): [Output Only] Unique identifier for the resource; defined by the server. Defaults to: `null`.
+  - items (List[Operation]): [Output Only] The Operation resources. Defaults to: `null`.
+  - kind (String): [Output Only] Type of resource. Always replicapoolupdater#operationList for OperationList resources. Defaults to: `null`.
+  - nextPageToken (String): [Output Only] A token used to continue a truncate. Defaults to: `null`.
+  - selfLink (String): [Output Only] The fully qualified URL for the resource. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"items",
@@ -37,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operatio
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.ReplicaPoolUpdater.V1beta1.Model.Operation, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ReplicaPoolUpdater.V1beta1.Model.OperationList do
+  def encode(value, options) do
+    GoogleApi.ReplicaPoolUpdater.V1beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

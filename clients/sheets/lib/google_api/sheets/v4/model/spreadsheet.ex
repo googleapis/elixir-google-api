@@ -20,9 +20,16 @@
 defmodule GoogleApi.Sheets.V4.Model.Spreadsheet do
   @moduledoc """
   Resource that represents a spreadsheet.
+
+  ## Attributes
+
+  - namedRanges (List[NamedRange]): The named ranges defined in a spreadsheet. Defaults to: `null`.
+  - properties (SpreadsheetProperties): Overall properties of a spreadsheet. Defaults to: `null`.
+  - sheets (List[Sheet]): The sheets that are part of a spreadsheet. Defaults to: `null`.
+  - spreadsheetId (String): The ID of the spreadsheet. This field is read-only. Defaults to: `null`.
+  - spreadsheetUrl (String): The url of the spreadsheet. This field is read-only. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"namedRanges",
     :"properties",
@@ -39,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.Spreadsheet do
     |> deserialize(:"namedRanges", :list, GoogleApi.Sheets.V4.Model.NamedRange, options)
     |> deserialize(:"properties", :struct, GoogleApi.Sheets.V4.Model.SpreadsheetProperties, options)
     |> deserialize(:"sheets", :list, GoogleApi.Sheets.V4.Model.Sheet, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.Spreadsheet do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

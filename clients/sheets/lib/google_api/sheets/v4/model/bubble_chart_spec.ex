@@ -20,9 +20,23 @@
 defmodule GoogleApi.Sheets.V4.Model.BubbleChartSpec do
   @moduledoc """
   A &lt;a href&#x3D;\&quot;/chart/interactive/docs/gallery/bubblechart\&quot;&gt;bubble chart&lt;/a&gt;.
+
+  ## Attributes
+
+  - bubbleBorderColor (Color): The bubble border color. Defaults to: `null`.
+  - bubbleLabels (ChartData): The data containing the bubble labels.  These do not need to be unique. Defaults to: `null`.
+  - bubbleMaxRadiusSize (Integer): The max radius size of the bubbles, in pixels. If specified, the field must be a positive value. Defaults to: `null`.
+  - bubbleMinRadiusSize (Integer): The minimum radius size of the bubbles, in pixels. If specific, the field must be a positive value. Defaults to: `null`.
+  - bubbleOpacity (Float): The opacity of the bubbles between 0 and 1.0. 0 is fully transparent and 1 is fully opaque. Defaults to: `null`.
+  - bubbleSizes (ChartData): The data contianing the bubble sizes.  Bubble sizes are used to draw the bubbles at different sizes relative to each other. If specified, group_ids must also be specified.  This field is optional. Defaults to: `null`.
+  - bubbleTextStyle (TextFormat): The format of the text inside the bubbles. Underline and Strikethrough are not supported. Defaults to: `null`.
+  - domain (ChartData): The data containing the bubble x-values.  These values locate the bubbles in the chart horizontally. Defaults to: `null`.
+  - groupIds (ChartData): The data containing the bubble group IDs. All bubbles with the same group ID will be drawn in the same color. If bubble_sizes is specified then this field must also be specified but may contain blank values. This field is optional. Defaults to: `null`.
+  - legendPosition (String): Where the legend of the chart should be drawn. Defaults to: `null`.
+    - Enum - one of [BUBBLE_CHART_LEGEND_POSITION_UNSPECIFIED, BOTTOM_LEGEND, LEFT_LEGEND, RIGHT_LEGEND, TOP_LEGEND, NO_LEGEND, INSIDE_LEGEND]
+  - series (ChartData): The data contianing the bubble y-values.  These values locate the bubbles in the chart vertically. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bubbleBorderColor",
     :"bubbleLabels",
@@ -49,6 +63,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BubbleChartSpec do
     |> deserialize(:"domain", :struct, GoogleApi.Sheets.V4.Model.ChartData, options)
     |> deserialize(:"groupIds", :struct, GoogleApi.Sheets.V4.Model.ChartData, options)
     |> deserialize(:"series", :struct, GoogleApi.Sheets.V4.Model.ChartData, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BubbleChartSpec do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

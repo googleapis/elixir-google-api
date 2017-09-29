@@ -20,9 +20,14 @@
 defmodule GoogleApi.Slides.V1.Model.UpdateVideoPropertiesRequest do
   @moduledoc """
   Update the properties of a Video.
+
+  ## Attributes
+
+  - fields (String): The fields that should be updated.  At least one field must be specified. The root &#x60;videoProperties&#x60; is implied and should not be specified. A single &#x60;\&quot;*\&quot;&#x60; can be used as short-hand for listing every field.  For example to update the video outline color, set &#x60;fields&#x60; to &#x60;\&quot;outline.outlineFill.solidFill.color\&quot;&#x60;.  To reset a property to its default value, include its field name in the field mask but leave the field itself unset. Defaults to: `null`.
+  - objectId (String): The object ID of the video the updates are applied to. Defaults to: `null`.
+  - videoProperties (VideoProperties): The video properties to update. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fields",
     :"objectId",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.UpdateVideoPropertiesRequ
   def decode(value, options) do
     value
     |> deserialize(:"videoProperties", :struct, GoogleApi.Slides.V1.Model.VideoProperties, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.UpdateVideoPropertiesRequest do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

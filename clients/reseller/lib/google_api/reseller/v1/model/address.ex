@@ -20,9 +20,21 @@
 defmodule GoogleApi.Reseller.V1.Model.Address do
   @moduledoc """
   JSON template for address of a customer.
+
+  ## Attributes
+
+  - addressLine1 (String): A customer&#39;s physical address. An address can be composed of one to three lines. The addressline2 and addressLine3 are optional. Defaults to: `null`.
+  - addressLine2 (String): Line 2 of the address. Defaults to: `null`.
+  - addressLine3 (String): Line 3 of the address. Defaults to: `null`.
+  - contactName (String): The customer contact&#39;s name. This is required. Defaults to: `null`.
+  - countryCode (String): For countryCode information, see the ISO 3166 country code elements. Verify that country is approved for resale of Google products. This property is required when creating a new customer. Defaults to: `null`.
+  - kind (String): Identifies the resource as a customer address. Value: customers#address Defaults to: `null`.
+  - locality (String): An example of a locality value is the city of San Francisco. Defaults to: `null`.
+  - organizationName (String): The company or company division name. This is required. Defaults to: `null`.
+  - postalCode (String): A postalCode example is a postal zip code such as 94043. This property is required when creating a new customer. Defaults to: `null`.
+  - region (String): An example of a region value is CA for the state of California. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"addressLine1",
     :"addressLine2",
@@ -40,6 +52,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Reseller.V1.Model.Address do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Reseller.V1.Model.Address do
+  def encode(value, options) do
+    GoogleApi.Reseller.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

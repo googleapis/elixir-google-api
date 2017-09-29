@@ -20,9 +20,12 @@
 defmodule GoogleApi.DoubleClickBidManager.V1.Model.DownloadLineItemsResponse do
   @moduledoc """
   Download line items response.
+
+  ## Attributes
+
+  - lineItems (String): Retrieved line items in CSV format. For more information about file formats, see  Entity Write File Format. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"lineItems"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.DoubleClickBidManager.V1.Model.DownloadLineItemsResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickBidManager.V1.Model.DownloadLineItemsResponse do
+  def encode(value, options) do
+    GoogleApi.DoubleClickBidManager.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

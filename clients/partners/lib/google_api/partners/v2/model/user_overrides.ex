@@ -20,9 +20,13 @@
 defmodule GoogleApi.Partners.V2.Model.UserOverrides do
   @moduledoc """
   Values to use instead of the user&#39;s respective defaults. These are only honored by whitelisted products.
+
+  ## Attributes
+
+  - ipAddress (String): IP address to use instead of the user&#39;s geo-located IP address. Defaults to: `null`.
+  - userId (String): Logged-in user ID to impersonate instead of the user&#39;s ID. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"ipAddress",
     :"userId"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.UserOverrides do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.UserOverrides do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

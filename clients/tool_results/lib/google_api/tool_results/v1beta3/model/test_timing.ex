@@ -20,9 +20,12 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.TestTiming do
   @moduledoc """
   Testing timing break down to know phases.
+
+  ## Attributes
+
+  - testProcessDuration (Duration): How long it took to run the test process.  - In response: present if previously set. - In create/update request: optional Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"testProcessDuration"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.TestTiming do
   def decode(value, options) do
     value
     |> deserialize(:"testProcessDuration", :struct, GoogleApi.ToolResults.V1beta3.Model.Duration, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.TestTiming do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

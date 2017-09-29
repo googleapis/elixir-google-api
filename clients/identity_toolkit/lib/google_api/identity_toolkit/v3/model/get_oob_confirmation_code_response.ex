@@ -20,9 +20,14 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.GetOobConfirmationCodeResponse do
   @moduledoc """
   Response of getting a code for user confirmation (reset password, change email etc.).
+
+  ## Attributes
+
+  - email (String): The email address that the email is sent to. Defaults to: `null`.
+  - kind (String): The fixed string \&quot;identitytoolkit#GetOobConfirmationCodeResponse\&quot;. Defaults to: `null`.
+  - oobCode (String): The code to be send to the user. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"email",
     :"kind",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.GetOobConfirmationCodeResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.GetOobConfirmationCodeResponse do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

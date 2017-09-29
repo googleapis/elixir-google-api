@@ -64,7 +64,9 @@ defmodule GoogleApi.Games.V1.Api.Quests do
     }
     %{}
     |> method(:post)
-    |> url("/quests/#{quest_id}/accept")
+    |> url("/quests/{questId}/accept", %{
+         "questId" => URI.encode_www_form(quest_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -113,7 +115,9 @@ defmodule GoogleApi.Games.V1.Api.Quests do
     }
     %{}
     |> method(:get)
-    |> url("/players/#{player_id}/quests")
+    |> url("/players/{playerId}/quests", %{
+         "playerId" => URI.encode_www_form(player_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

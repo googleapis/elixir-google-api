@@ -20,9 +20,13 @@
 defmodule GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceGettokenResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - method (String): The verification method to use in conjunction with this token. For FILE, the token should be placed in the top-level directory of the site, stored inside a file of the same name. For META, the token should be placed in the HEAD tag of the default page that is loaded for the site. For DNS, the token should be placed in a TXT record of the domain. Defaults to: `null`.
+  - token (String): The verification token. The token must be placed appropriately in order for verification to succeed. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"method",
     :"token"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceGettokenResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceGettokenResponse do
+  def encode(value, options) do
+    GoogleApi.SiteVerification.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

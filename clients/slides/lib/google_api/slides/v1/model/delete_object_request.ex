@@ -20,9 +20,12 @@
 defmodule GoogleApi.Slides.V1.Model.DeleteObjectRequest do
   @moduledoc """
   Deletes an object, either pages or page elements, from the presentation.
+
+  ## Attributes
+
+  - objectId (String): The object ID of the page or page element to delete.  If after a delete operation a group contains only 1 or no page elements, the group is also deleted.  If a placeholder is deleted on a layout, any empty inheriting shapes are also deleted. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"objectId"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.DeleteObjectRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.DeleteObjectRequest do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.TagManager.V2.Model.SyncStatus do
   @moduledoc """
   The status of a workspace after synchronization.
+
+  ## Attributes
+
+  - mergeConflict (Boolean): Synchornization operation detected a merge conflict. Defaults to: `null`.
+  - syncError (Boolean): An error occurred during the synchronization operation. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"mergeConflict",
     :"syncError"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.SyncStatus do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.SyncStatus do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

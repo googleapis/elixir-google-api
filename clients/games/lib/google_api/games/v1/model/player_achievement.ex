@@ -20,9 +20,18 @@
 defmodule GoogleApi.Games.V1.Model.PlayerAchievement do
   @moduledoc """
   This is a JSON template for an achievement object.
+
+  ## Attributes
+
+  - achievementState (String): The state of the achievement. Possible values are:   - \&quot;HIDDEN\&quot; - Achievement is hidden.  - \&quot;REVEALED\&quot; - Achievement is revealed.  - \&quot;UNLOCKED\&quot; - Achievement is unlocked. Defaults to: `null`.
+  - currentSteps (Integer): The current steps for an incremental achievement. Defaults to: `null`.
+  - experiencePoints (String): Experience points earned for the achievement. This field is absent for achievements that have not yet been unlocked and 0 for achievements that have been unlocked by testers but that are unpublished. Defaults to: `null`.
+  - formattedCurrentStepsString (String): The current steps for an incremental achievement as a string. Defaults to: `null`.
+  - id (String): The ID of the achievement. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#playerAchievement. Defaults to: `null`.
+  - lastUpdatedTimestamp (String): The timestamp of the last modification to this achievement&#39;s state. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"achievementState",
     :"currentSteps",
@@ -37,6 +46,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.PlayerAchievement do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.PlayerAchievement do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

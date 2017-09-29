@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceUser.V1.Model.MonitoringDestination do
   @moduledoc """
   Configuration of a specific monitoring destination (the producer project or the consumer project).
+
+  ## Attributes
+
+  - metrics (List[String]): Names of the metrics to report to this monitoring destination. Each name must be defined in Service.metrics section. Defaults to: `null`.
+  - monitoredResource (String): The monitored resource type. The type must be defined in Service.monitored_resources section. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"metrics",
     :"monitoredResource"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceUser.V1.Model.MonitoringDestination do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceUser.V1.Model.MonitoringDestination do
+  def encode(value, options) do
+    GoogleApi.ServiceUser.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

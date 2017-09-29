@@ -126,7 +126,9 @@ defmodule GoogleApi.Genomics.V1.Api.Callsets do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/callsets/#{call_set_id}")
+    |> url("/v1/callsets/{callSetId}", %{
+         "callSetId" => URI.encode_www_form(call_set_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -179,7 +181,9 @@ defmodule GoogleApi.Genomics.V1.Api.Callsets do
     }
     %{}
     |> method(:get)
-    |> url("/v1/callsets/#{call_set_id}")
+    |> url("/v1/callsets/{callSetId}", %{
+         "callSetId" => URI.encode_www_form(call_set_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -236,7 +240,9 @@ defmodule GoogleApi.Genomics.V1.Api.Callsets do
     }
     %{}
     |> method(:patch)
-    |> url("/v1/callsets/#{call_set_id}")
+    |> url("/v1/callsets/{callSetId}", %{
+         "callSetId" => URI.encode_www_form(call_set_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

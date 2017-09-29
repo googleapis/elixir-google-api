@@ -20,9 +20,14 @@
 defmodule GoogleApi.Games.V1.Model.TurnBasedMatchRematch do
   @moduledoc """
   This is a JSON template for a rematch response.
+
+  ## Attributes
+
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#turnBasedMatchRematch. Defaults to: `null`.
+  - previousMatch (TurnBasedMatch): The old match that the rematch was created from; will be updated such that the rematchId field will point at the new match. Defaults to: `null`.
+  - rematch (TurnBasedMatch): The newly created match; a rematch of the old match with the same participants. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"previousMatch",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.TurnBasedMatchRematch do
     value
     |> deserialize(:"previousMatch", :struct, GoogleApi.Games.V1.Model.TurnBasedMatch, options)
     |> deserialize(:"rematch", :struct, GoogleApi.Games.V1.Model.TurnBasedMatch, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.TurnBasedMatchRematch do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

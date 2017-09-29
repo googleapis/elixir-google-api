@@ -74,7 +74,9 @@ defmodule GoogleApi.Script.V1.Api.Scripts do
     }
     %{}
     |> method(:post)
-    |> url("/v1/scripts/#{script_id}:run")
+    |> url("/v1/scripts/{scriptId}:run", %{
+         "scriptId" => URI.encode_www_form(script_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

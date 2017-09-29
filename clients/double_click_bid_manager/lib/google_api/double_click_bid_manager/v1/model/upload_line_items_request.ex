@@ -20,9 +20,15 @@
 defmodule GoogleApi.DoubleClickBidManager.V1.Model.UploadLineItemsRequest do
   @moduledoc """
   Request to upload line items.
+
+  ## Attributes
+
+  - dryRun (Boolean): Set to true to get upload status without actually persisting the line items. Defaults to: `null`.
+  - format (String): Format the line items are in. Default to CSV. Defaults to: `null`.
+    - Enum - one of [CSV]
+  - lineItems (String): Line items in CSV to upload. Refer to  Entity Write File Format for more information on file format. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dryRun",
     :"format",
@@ -33,6 +39,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.DoubleClickBidManager.V1.Model.UploadLineItemsRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickBidManager.V1.Model.UploadLineItemsRequest do
+  def encode(value, options) do
+    GoogleApi.DoubleClickBidManager.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

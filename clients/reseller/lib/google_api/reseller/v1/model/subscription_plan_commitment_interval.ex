@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Reseller.V1.Model.Subscription_plan_commitmentInterval do
+defmodule GoogleApi.Reseller.V1.Model.SubscriptionPlanCommitmentInterval do
   @moduledoc """
   In this version of the API, annual commitment plan&#39;s interval is one year.
+
+  ## Attributes
+
+  - endTime (String): An annual commitment plan&#39;s interval&#39;s endTime in milliseconds using the UNIX Epoch format. See an example Epoch converter. Defaults to: `null`.
+  - startTime (String): An annual commitment plan&#39;s interval&#39;s startTime in milliseconds using UNIX Epoch format. See an example Epoch converter. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"endTime",
     :"startTime"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Reseller.V1.Model.Subscription_plan_commitmentInterval do
+defimpl Poison.Decoder, for: GoogleApi.Reseller.V1.Model.SubscriptionPlanCommitmentInterval do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Reseller.V1.Model.SubscriptionPlanCommitmentInterval do
+  def encode(value, options) do
+    GoogleApi.Reseller.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

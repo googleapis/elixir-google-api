@@ -20,9 +20,15 @@
 defmodule GoogleApi.Slides.V1.Model.CreateTableRequest do
   @moduledoc """
   Creates a new table.
+
+  ## Attributes
+
+  - columns (Integer): Number of columns in the table. Defaults to: `null`.
+  - elementProperties (PageElementProperties): The element properties for the table.  The table will be created at the provided size, subject to a minimum size. If no size is provided, the table will be automatically sized.  Table transforms must have a scale of 1 and no shear components. If no transform is provided, the table will be centered on the page. Defaults to: `null`.
+  - objectId (String): A user-supplied object ID.  If you specify an ID, it must be unique among all pages and page elements in the presentation. The ID must start with an alphanumeric character or an underscore (matches regex &#x60;[a-zA-Z0-9_]&#x60;); remaining characters may include those as well as a hyphen or colon (matches regex &#x60;[a-zA-Z0-9_-:]&#x60;). The length of the ID must not be less than 5 or greater than 50.  If you don&#39;t specify an ID, a unique one is generated. Defaults to: `null`.
+  - rows (Integer): Number of rows in the table. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"columns",
     :"elementProperties",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.CreateTableRequest do
   def decode(value, options) do
     value
     |> deserialize(:"elementProperties", :struct, GoogleApi.Slides.V1.Model.PageElementProperties, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.CreateTableRequest do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

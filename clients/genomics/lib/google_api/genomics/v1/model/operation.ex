@@ -20,9 +20,16 @@
 defmodule GoogleApi.Genomics.V1.Model.Operation do
   @moduledoc """
   This resource represents a long-running operation that is the result of a network API call.
+
+  ## Attributes
+
+  - done (Boolean): If the value is &#x60;false&#x60;, it means the operation is still in progress. If &#x60;true&#x60;, the operation is completed, and either &#x60;error&#x60; or &#x60;response&#x60; is available. Defaults to: `null`.
+  - error (Status): The error result of the operation in case of failure or cancellation. Defaults to: `null`.
+  - metadata (Object): An OperationMetadata object. This will always be returned with the Operation. Defaults to: `null`.
+  - name (String): The server-assigned name, which is only unique within the same service that originally returns it. For example&amp;#58; &#x60;operations/CJHU7Oi_ChDrveSpBRjfuL-qzoWAgEw&#x60; Defaults to: `null`.
+  - response (Object): If importing ReadGroupSets, an ImportReadGroupSetsResponse is returned. If importing Variants, an ImportVariantsResponse is returned. For pipelines and exports, an empty response is returned. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"done",
     :"error",
@@ -39,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.Operation do
     |> deserialize(:"error", :struct, GoogleApi.Genomics.V1.Model.Status, options)
     |> deserialize(:"metadata", :struct, GoogleApi.Genomics.V1.Model.Object, options)
     |> deserialize(:"response", :struct, GoogleApi.Genomics.V1.Model.Object, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.Operation do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

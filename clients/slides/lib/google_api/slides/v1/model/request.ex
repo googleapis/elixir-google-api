@@ -20,9 +20,42 @@
 defmodule GoogleApi.Slides.V1.Model.Request do
   @moduledoc """
   A single kind of update to apply to a presentation.
+
+  ## Attributes
+
+  - createImage (CreateImageRequest): Creates an image. Defaults to: `null`.
+  - createLine (CreateLineRequest): Creates a line. Defaults to: `null`.
+  - createParagraphBullets (CreateParagraphBulletsRequest): Creates bullets for paragraphs. Defaults to: `null`.
+  - createShape (CreateShapeRequest): Creates a new shape. Defaults to: `null`.
+  - createSheetsChart (CreateSheetsChartRequest): Creates an embedded Google Sheets chart. Defaults to: `null`.
+  - createSlide (CreateSlideRequest): Creates a new slide. Defaults to: `null`.
+  - createTable (CreateTableRequest): Creates a new table. Defaults to: `null`.
+  - createVideo (CreateVideoRequest): Creates a video. Defaults to: `null`.
+  - deleteObject (DeleteObjectRequest): Deletes a page or page element from the presentation. Defaults to: `null`.
+  - deleteParagraphBullets (DeleteParagraphBulletsRequest): Deletes bullets from paragraphs. Defaults to: `null`.
+  - deleteTableColumn (DeleteTableColumnRequest): Deletes a column from a table. Defaults to: `null`.
+  - deleteTableRow (DeleteTableRowRequest): Deletes a row from a table. Defaults to: `null`.
+  - deleteText (DeleteTextRequest): Deletes text from a shape or a table cell. Defaults to: `null`.
+  - duplicateObject (DuplicateObjectRequest): Duplicates a slide or page element. Defaults to: `null`.
+  - insertTableColumns (InsertTableColumnsRequest): Inserts columns into a table. Defaults to: `null`.
+  - insertTableRows (InsertTableRowsRequest): Inserts rows into a table. Defaults to: `null`.
+  - insertText (InsertTextRequest): Inserts text into a shape or table cell. Defaults to: `null`.
+  - refreshSheetsChart (RefreshSheetsChartRequest): Refreshes a Google Sheets chart. Defaults to: `null`.
+  - replaceAllShapesWithImage (ReplaceAllShapesWithImageRequest): Replaces all shapes matching some criteria with an image. Defaults to: `null`.
+  - replaceAllShapesWithSheetsChart (ReplaceAllShapesWithSheetsChartRequest): Replaces all shapes matching some criteria with a Google Sheets chart. Defaults to: `null`.
+  - replaceAllText (ReplaceAllTextRequest): Replaces all instances of specified text. Defaults to: `null`.
+  - updateImageProperties (UpdateImagePropertiesRequest): Updates the properties of an Image. Defaults to: `null`.
+  - updateLineProperties (UpdateLinePropertiesRequest): Updates the properties of a Line. Defaults to: `null`.
+  - updatePageElementTransform (UpdatePageElementTransformRequest): Updates the transform of a page element. Defaults to: `null`.
+  - updatePageProperties (UpdatePagePropertiesRequest): Updates the properties of a Page. Defaults to: `null`.
+  - updateParagraphStyle (UpdateParagraphStyleRequest): Updates the styling of paragraphs within a Shape or Table. Defaults to: `null`.
+  - updateShapeProperties (UpdateShapePropertiesRequest): Updates the properties of a Shape. Defaults to: `null`.
+  - updateSlidesPosition (UpdateSlidesPositionRequest): Updates the position of a set of slides in the presentation. Defaults to: `null`.
+  - updateTableCellProperties (UpdateTableCellPropertiesRequest): Updates the properties of a TableCell. Defaults to: `null`.
+  - updateTextStyle (UpdateTextStyleRequest): Updates the styling of text within a Shape or Table. Defaults to: `null`.
+  - updateVideoProperties (UpdateVideoPropertiesRequest): Updates the properties of a Video. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"createImage",
     :"createLine",
@@ -93,6 +126,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.Request do
     |> deserialize(:"updateTableCellProperties", :struct, GoogleApi.Slides.V1.Model.UpdateTableCellPropertiesRequest, options)
     |> deserialize(:"updateTextStyle", :struct, GoogleApi.Slides.V1.Model.UpdateTextStyleRequest, options)
     |> deserialize(:"updateVideoProperties", :struct, GoogleApi.Slides.V1.Model.UpdateVideoPropertiesRequest, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.Request do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

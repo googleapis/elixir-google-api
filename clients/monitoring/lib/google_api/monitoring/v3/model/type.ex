@@ -20,9 +20,18 @@
 defmodule GoogleApi.Monitoring.V3.Model.Type do
   @moduledoc """
   A protocol buffer message type.
+
+  ## Attributes
+
+  - fields (List[Field]): The list of fields. Defaults to: `null`.
+  - name (String): The fully qualified message name. Defaults to: `null`.
+  - oneofs (List[String]): The list of types appearing in oneof definitions in this type. Defaults to: `null`.
+  - options (List[Option]): The protocol buffer options. Defaults to: `null`.
+  - sourceContext (SourceContext): The source context. Defaults to: `null`.
+  - syntax (String): The source syntax. Defaults to: `null`.
+    - Enum - one of [SYNTAX_PROTO2, SYNTAX_PROTO3]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fields",
     :"name",
@@ -40,6 +49,12 @@ defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.Type do
     |> deserialize(:"fields", :list, GoogleApi.Monitoring.V3.Model.Field, options)
     |> deserialize(:"options", :list, GoogleApi.Monitoring.V3.Model.Option, options)
     |> deserialize(:"sourceContext", :struct, GoogleApi.Monitoring.V3.Model.SourceContext, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Monitoring.V3.Model.Type do
+  def encode(value, options) do
+    GoogleApi.Monitoring.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

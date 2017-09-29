@@ -20,9 +20,13 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.FlagsListResponse do
   @moduledoc """
   Flags list response.
+
+  ## Attributes
+
+  - items (List[Flag]): List of flags. Defaults to: `null`.
+  - kind (String): This is always sql#flagsList. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"items",
     :"kind"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.FlagsListResponse 
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.SQLAdmin.V1beta4.Model.Flag, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.FlagsListResponse do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

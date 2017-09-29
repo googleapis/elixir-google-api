@@ -20,9 +20,19 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.Flag do
   @moduledoc """
   A Google Cloud SQL service flag resource.
+
+  ## Attributes
+
+  - allowedStringValues (List[String]): For STRING flags, a list of strings that the value can be set to. Defaults to: `null`.
+  - appliesTo (List[String]): The database version this flag applies to. Can be MYSQL_5_5, MYSQL_5_6, or MYSQL_5_7. MYSQL_5_7 is applicable only to Second Generation instances. Defaults to: `null`.
+  - kind (String): This is always sql#flag. Defaults to: `null`.
+  - maxValue (String): For INTEGER flags, the maximum allowed value. Defaults to: `null`.
+  - minValue (String): For INTEGER flags, the minimum allowed value. Defaults to: `null`.
+  - name (String): This is the name of the flag. Flag names always use underscores, not hyphens, e.g. max_allowed_packet Defaults to: `null`.
+  - requiresRestart (Boolean): Indicates whether changing this flag will trigger a database restart. Only applicable to Second Generation instances. Defaults to: `null`.
+  - type (String): The type of the flag. Flags are typed to being BOOLEAN, STRING, INTEGER or NONE. NONE is used for flags which do not take a value, such as skip_grant_tables. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"allowedStringValues",
     :"appliesTo",
@@ -38,6 +48,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.Flag do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.Flag do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

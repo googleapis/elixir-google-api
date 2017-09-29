@@ -20,9 +20,13 @@
 defmodule GoogleApi.TaskQueue.V1beta2.Model.Tasks2 do
   @moduledoc """
   
+
+  ## Attributes
+
+  - items (List[Task]): The actual list of tasks currently active in the TaskQueue. Defaults to: `null`.
+  - kind (String): The kind of object returned, a list of tasks. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"items",
     :"kind"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.TaskQueue.V1beta2.Model.Tasks2 do
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.TaskQueue.V1beta2.Model.Task, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TaskQueue.V1beta2.Model.Tasks2 do
+  def encode(value, options) do
+    GoogleApi.TaskQueue.V1beta2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

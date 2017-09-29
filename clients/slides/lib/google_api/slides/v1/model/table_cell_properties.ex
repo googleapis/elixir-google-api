@@ -20,9 +20,12 @@
 defmodule GoogleApi.Slides.V1.Model.TableCellProperties do
   @moduledoc """
   The properties of the TableCell.
+
+  ## Attributes
+
+  - tableCellBackgroundFill (TableCellBackgroundFill): The background fill of the table cell. The default fill matches the fill for newly created table cells in the Slides editor. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"tableCellBackgroundFill"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.TableCellProperties do
   def decode(value, options) do
     value
     |> deserialize(:"tableCellBackgroundFill", :struct, GoogleApi.Slides.V1.Model.TableCellBackgroundFill, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.TableCellProperties do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

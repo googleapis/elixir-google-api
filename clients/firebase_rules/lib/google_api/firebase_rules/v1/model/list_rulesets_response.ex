@@ -20,9 +20,13 @@
 defmodule GoogleApi.FirebaseRules.V1.Model.ListRulesetsResponse do
   @moduledoc """
   The response for FirebaseRulesService.ListRulesets.
+
+  ## Attributes
+
+  - nextPageToken (String): The pagination token to retrieve the next page of results. If the value is empty, no further results remain. Defaults to: `null`.
+  - rulesets (List[Ruleset]): List of &#x60;Ruleset&#x60; instances. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nextPageToken",
     :"rulesets"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.FirebaseRules.V1.Model.ListRulesetsRespon
   def decode(value, options) do
     value
     |> deserialize(:"rulesets", :list, GoogleApi.FirebaseRules.V1.Model.Ruleset, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.FirebaseRules.V1.Model.ListRulesetsResponse do
+  def encode(value, options) do
+    GoogleApi.FirebaseRules.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.Slides.V1.Model.ThemeColorPair do
   @moduledoc """
   A pair mapping a theme color type to the concrete color it represents.
+
+  ## Attributes
+
+  - color (RgbColor): The concrete color corresponding to the theme color type above. Defaults to: `null`.
+  - type (String): The type of the theme color. Defaults to: `null`.
+    - Enum - one of [THEME_COLOR_TYPE_UNSPECIFIED, DARK1, LIGHT1, DARK2, LIGHT2, ACCENT1, ACCENT2, ACCENT3, ACCENT4, ACCENT5, ACCENT6, HYPERLINK, FOLLOWED_HYPERLINK, TEXT1, BACKGROUND1, TEXT2, BACKGROUND2]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"color",
     :"type"
@@ -34,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.ThemeColorPair do
   def decode(value, options) do
     value
     |> deserialize(:"color", :struct, GoogleApi.Slides.V1.Model.RgbColor, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.ThemeColorPair do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

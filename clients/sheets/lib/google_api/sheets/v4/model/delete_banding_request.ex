@@ -20,9 +20,12 @@
 defmodule GoogleApi.Sheets.V4.Model.DeleteBandingRequest do
   @moduledoc """
   Removes the banded range with the given ID from the spreadsheet.
+
+  ## Attributes
+
+  - bandedRangeId (Integer): The ID of the banded range to delete. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bandedRangeId"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DeleteBandingRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.DeleteBandingRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

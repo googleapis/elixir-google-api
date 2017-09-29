@@ -1,6 +1,6 @@
 # GoogleApi.FirebaseRules.V1
 
-**TODO: Add description**
+Creates and manages rules that determine when a Firebase Rules-enabled service should permit a request. 
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_firebase_rules` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_firebase_rules, "~> 0.1.0"}]
+  [{:google_api_firebase_rules, "~> 0.0.1"}]
 end
 ```
 

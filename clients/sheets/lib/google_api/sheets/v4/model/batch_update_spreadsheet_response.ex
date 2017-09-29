@@ -20,9 +20,14 @@
 defmodule GoogleApi.Sheets.V4.Model.BatchUpdateSpreadsheetResponse do
   @moduledoc """
   The reply for batch updating a spreadsheet.
+
+  ## Attributes
+
+  - replies (List[Response]): The reply of the updates.  This maps 1:1 with the updates, although replies to some requests may be empty. Defaults to: `null`.
+  - spreadsheetId (String): The spreadsheet the updates were applied to. Defaults to: `null`.
+  - updatedSpreadsheet (Spreadsheet): The spreadsheet after updates were applied. This is only set if [BatchUpdateSpreadsheetRequest.include_spreadsheet_in_response] is &#x60;true&#x60;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"replies",
     :"spreadsheetId",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BatchUpdateSpreadsheetRes
     value
     |> deserialize(:"replies", :list, GoogleApi.Sheets.V4.Model.Response, options)
     |> deserialize(:"updatedSpreadsheet", :struct, GoogleApi.Sheets.V4.Model.Spreadsheet, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BatchUpdateSpreadsheetResponse do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

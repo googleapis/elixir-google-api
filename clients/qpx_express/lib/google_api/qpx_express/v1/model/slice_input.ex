@@ -20,9 +20,22 @@
 defmodule GoogleApi.QPXExpress.V1.Model.SliceInput do
   @moduledoc """
   Criteria a desired slice must satisfy.
+
+  ## Attributes
+
+  - alliance (String): Slices with only the carriers in this alliance should be returned; do not use this field with permittedCarrier. Allowed values are ONEWORLD, SKYTEAM, and STAR. Defaults to: `null`.
+  - date (String): Departure date in YYYY-MM-DD format. Defaults to: `null`.
+  - destination (String): Airport or city IATA designator of the destination. Defaults to: `null`.
+  - kind (String): Identifies this as a slice input object, representing the criteria a desired slice must satisfy. Value: the fixed string qpxexpress#sliceInput. Defaults to: `null`.
+  - maxConnectionDuration (Integer): The longest connection between two legs, in minutes, you are willing to accept. Defaults to: `null`.
+  - maxStops (Integer): The maximum number of stops you are willing to accept in this slice. Defaults to: `null`.
+  - origin (String): Airport or city IATA designator of the origin. Defaults to: `null`.
+  - permittedCarrier (List[String]): A list of 2-letter IATA airline designators. Slices with only these carriers should be returned. Defaults to: `null`.
+  - permittedDepartureTime (TimeOfDayRange): Slices must depart in this time of day range, local to the point of departure. Defaults to: `null`.
+  - preferredCabin (String): Prefer solutions that book in this cabin for this slice. Allowed values are COACH, PREMIUM_COACH, BUSINESS, and FIRST. Defaults to: `null`.
+  - prohibitedCarrier (List[String]): A list of 2-letter IATA airline designators. Exclude slices that use these carriers. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"alliance",
     :"date",
@@ -43,6 +56,12 @@ defimpl Poison.Decoder, for: GoogleApi.QPXExpress.V1.Model.SliceInput do
   def decode(value, options) do
     value
     |> deserialize(:"permittedDepartureTime", :struct, GoogleApi.QPXExpress.V1.Model.TimeOfDayRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.QPXExpress.V1.Model.SliceInput do
+  def encode(value, options) do
+    GoogleApi.QPXExpress.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.Spectrum.V1explorer.Model.EventTime do
   @moduledoc """
   The start and stop times of an event. This is used to indicate the time period for which a spectrum profile is valid.  Both times are expressed using the format, YYYY-MM-DDThh:mm:ssZ, as defined in RFC3339. The times must be expressed using UTC.
+
+  ## Attributes
+
+  - startTime (String): The inclusive start of the event. It will be present. Defaults to: `null`.
+  - stopTime (String): The exclusive end of the event. It will be present. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"startTime",
     :"stopTime"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Spectrum.V1explorer.Model.EventTime do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spectrum.V1explorer.Model.EventTime do
+  def encode(value, options) do
+    GoogleApi.Spectrum.V1explorer.Deserializer.serialize_non_nil(value, options)
   end
 end
 

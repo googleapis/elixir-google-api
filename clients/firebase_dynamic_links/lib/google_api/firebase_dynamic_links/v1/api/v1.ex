@@ -74,7 +74,9 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Api.V1 do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{dynamic_link}/linkStats")
+    |> url("/v1/{dynamicLink}/linkStats", %{
+         "dynamicLink" => URI.encode_www_form(dynamic_link)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

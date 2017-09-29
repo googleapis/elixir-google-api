@@ -20,9 +20,16 @@
 defmodule GoogleApi.Sheets.V4.Model.PivotValue do
   @moduledoc """
   The definition of how a value in a pivot table should be calculated.
+
+  ## Attributes
+
+  - formula (String): A custom formula to calculate the value.  The formula must start with an &#x60;&#x3D;&#x60; character. Defaults to: `null`.
+  - name (String): A name to use for the value. This is only used if formula was set. Otherwise, the column name is used. Defaults to: `null`.
+  - sourceColumnOffset (Integer): The column offset of the source range that this value reads from.  For example, if the source was &#x60;C10:E15&#x60;, a &#x60;sourceColumnOffset&#x60; of &#x60;0&#x60; means this value refers to column &#x60;C&#x60;, whereas the offset &#x60;1&#x60; would refer to column &#x60;D&#x60;. Defaults to: `null`.
+  - summarizeFunction (String): A function to summarize the value. If formula is set, the only supported values are SUM and CUSTOM. If sourceColumnOffset is set, then &#x60;CUSTOM&#x60; is not supported. Defaults to: `null`.
+    - Enum - one of [PIVOT_STANDARD_VALUE_FUNCTION_UNSPECIFIED, SUM, COUNTA, COUNT, COUNTUNIQUE, AVERAGE, MAX, MIN, MEDIAN, PRODUCT, STDEV, STDEVP, VAR, VARP, CUSTOM]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"formula",
     :"name",
@@ -34,6 +41,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.PivotValue do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.PivotValue do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

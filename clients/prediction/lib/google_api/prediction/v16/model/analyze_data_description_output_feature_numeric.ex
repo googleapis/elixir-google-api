@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Prediction.V16.Model.Analyze_dataDescription_outputFeature_numeric do
+defmodule GoogleApi.Prediction.V16.Model.AnalyzeDataDescriptionOutputFeatureNumeric do
   @moduledoc """
   Description of the output values in the data set.
+
+  ## Attributes
+
+  - count (String): Number of numeric output values in the data set. Defaults to: `null`.
+  - mean (String): Mean of the output values in the data set. Defaults to: `null`.
+  - variance (String): Variance of the output values in the data set. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"count",
     :"mean",
@@ -30,9 +35,15 @@ defmodule GoogleApi.Prediction.V16.Model.Analyze_dataDescription_outputFeature_n
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.Analyze_dataDescription_outputFeature_numeric do
+defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.AnalyzeDataDescriptionOutputFeatureNumeric do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Prediction.V16.Model.AnalyzeDataDescriptionOutputFeatureNumeric do
+  def encode(value, options) do
+    GoogleApi.Prediction.V16.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -1,6 +1,6 @@
-# GoogleApi.SQLAdmin.V1BETA4
+# GoogleApi.SQLAdmin.V1beta4
 
-**TODO: Add description**
+Creates and configures Cloud SQL instances, which provide fully-managed MySQL databases.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_sql_admin` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_sql_admin, "~> 0.1.0"}]
+  [{:google_api_sql_admin, "~> 0.0.1"}]
 end
 ```
 

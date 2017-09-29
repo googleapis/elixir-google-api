@@ -20,9 +20,15 @@
 defmodule GoogleApi.Spectrum.V1explorer.Model.PawsRegisterResponse do
   @moduledoc """
   The registration response message simply acknowledges receipt of the request and is otherwise empty.
+
+  ## Attributes
+
+  - databaseChange (DbUpdateSpec): A database may include the databaseChange parameter to notify a device of a change to its database URI, providing one or more alternate database URIs. The device should use this information to update its list of pre-configured databases by (only) replacing its entry for the responding database with the list of alternate URIs. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;spectrum#pawsRegisterResponse\&quot;. Defaults to: `null`.
+  - type (String): The message type (e.g., INIT_REQ, AVAIL_SPECTRUM_REQ, ...).  Required field. Defaults to: `null`.
+  - version (String): The PAWS version. Must be exactly 1.0.  Required field. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"databaseChange",
     :"kind",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spectrum.V1explorer.Model.PawsRegisterRes
   def decode(value, options) do
     value
     |> deserialize(:"databaseChange", :struct, GoogleApi.Spectrum.V1explorer.Model.DbUpdateSpec, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spectrum.V1explorer.Model.PawsRegisterResponse do
+  def encode(value, options) do
+    GoogleApi.Spectrum.V1explorer.Deserializer.serialize_non_nil(value, options)
   end
 end
 

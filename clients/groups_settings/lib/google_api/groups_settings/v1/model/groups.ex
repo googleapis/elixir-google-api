@@ -20,9 +20,42 @@
 defmodule GoogleApi.GroupsSettings.V1.Model.Groups do
   @moduledoc """
   JSON template for Group resource
+
+  ## Attributes
+
+  - allowExternalMembers (String): Are external members allowed to join the group. Defaults to: `null`.
+  - allowGoogleCommunication (String): Is google allowed to contact admins. Defaults to: `null`.
+  - allowWebPosting (String): If posting from web is allowed. Defaults to: `null`.
+  - archiveOnly (String): If the group is archive only Defaults to: `null`.
+  - customFooterText (String): Custom footer text. Defaults to: `null`.
+  - customReplyTo (String): Default email to which reply to any message should go. Defaults to: `null`.
+  - defaultMessageDenyNotificationText (String): Default message deny notification message Defaults to: `null`.
+  - description (String): Description of the group Defaults to: `null`.
+  - email (String): Email id of the group Defaults to: `null`.
+  - includeCustomFooter (String): Whether to include custom footer. Defaults to: `null`.
+  - includeInGlobalAddressList (String): If this groups should be included in global address list or not. Defaults to: `null`.
+  - isArchived (String): If the contents of the group are archived. Defaults to: `null`.
+  - kind (String): The type of the resource. Defaults to: `null`.
+  - maxMessageBytes (Integer): Maximum message size allowed. Defaults to: `null`.
+  - membersCanPostAsTheGroup (String): Can members post using the group email address. Defaults to: `null`.
+  - messageDisplayFont (String): Default message display font. Possible values are: DEFAULT_FONT FIXED_WIDTH_FONT Defaults to: `null`.
+  - messageModerationLevel (String): Moderation level for messages. Possible values are: MODERATE_ALL_MESSAGES MODERATE_NON_MEMBERS MODERATE_NEW_MEMBERS MODERATE_NONE Defaults to: `null`.
+  - name (String): Name of the Group Defaults to: `null`.
+  - primaryLanguage (String): Primary language for the group. Defaults to: `null`.
+  - replyTo (String): Whome should the default reply to a message go to. Possible values are: REPLY_TO_CUSTOM REPLY_TO_SENDER REPLY_TO_LIST REPLY_TO_OWNER REPLY_TO_IGNORE REPLY_TO_MANAGERS Defaults to: `null`.
+  - sendMessageDenyNotification (String): Should the member be notified if his message is denied by owner. Defaults to: `null`.
+  - showInGroupDirectory (String): Is the group listed in groups directory Defaults to: `null`.
+  - spamModerationLevel (String): Moderation level for messages detected as spam. Possible values are: ALLOW MODERATE SILENTLY_MODERATE REJECT Defaults to: `null`.
+  - whoCanAdd (String): Permissions to add members. Possible values are: ALL_MANAGERS_CAN_ADD ALL_MEMBERS_CAN_ADD NONE_CAN_ADD Defaults to: `null`.
+  - whoCanContactOwner (String): Permission to contact owner of the group via web UI. Possible values are: ANYONE_CAN_CONTACT ALL_IN_DOMAIN_CAN_CONTACT ALL_MEMBERS_CAN_CONTACT ALL_MANAGERS_CAN_CONTACT Defaults to: `null`.
+  - whoCanInvite (String): Permissions to invite members. Possible values are: ALL_MEMBERS_CAN_INVITE ALL_MANAGERS_CAN_INVITE NONE_CAN_INVITE Defaults to: `null`.
+  - whoCanJoin (String): Permissions to join the group. Possible values are: ANYONE_CAN_JOIN ALL_IN_DOMAIN_CAN_JOIN INVITED_CAN_JOIN CAN_REQUEST_TO_JOIN Defaults to: `null`.
+  - whoCanLeaveGroup (String): Permission to leave the group. Possible values are: ALL_MANAGERS_CAN_LEAVE ALL_MEMBERS_CAN_LEAVE NONE_CAN_LEAVE Defaults to: `null`.
+  - whoCanPostMessage (String): Permissions to post messages to the group. Possible values are: NONE_CAN_POST ALL_MANAGERS_CAN_POST ALL_MEMBERS_CAN_POST ALL_OWNERS_CAN_POST ALL_IN_DOMAIN_CAN_POST ANYONE_CAN_POST Defaults to: `null`.
+  - whoCanViewGroup (String): Permissions to view group. Possible values are: ANYONE_CAN_VIEW ALL_IN_DOMAIN_CAN_VIEW ALL_MEMBERS_CAN_VIEW ALL_MANAGERS_CAN_VIEW Defaults to: `null`.
+  - whoCanViewMembership (String): Permissions to view membership. Possible values are: ALL_IN_DOMAIN_CAN_VIEW ALL_MEMBERS_CAN_VIEW ALL_MANAGERS_CAN_VIEW Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"allowExternalMembers",
     :"allowGoogleCommunication",
@@ -61,6 +94,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.GroupsSettings.V1.Model.Groups do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.GroupsSettings.V1.Model.Groups do
+  def encode(value, options) do
+    GoogleApi.GroupsSettings.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

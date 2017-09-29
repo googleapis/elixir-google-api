@@ -1,6 +1,6 @@
 # GoogleApi.Sheets.V4
 
-**TODO: Add description**
+Reads and writes Google Sheets.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_sheets` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_sheets, "~> 0.1.0"}]
+  [{:google_api_sheets, "~> 0.0.1"}]
 end
 ```
 

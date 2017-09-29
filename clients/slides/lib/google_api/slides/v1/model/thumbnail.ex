@@ -20,9 +20,14 @@
 defmodule GoogleApi.Slides.V1.Model.Thumbnail do
   @moduledoc """
   The thumbnail of a page.
+
+  ## Attributes
+
+  - contentUrl (String): The content URL of the thumbnail image.  The URL to the image has a default lifetime of 30 minutes. This URL is tagged with the account of the requester. Anyone with the URL effectively accesses the image as the original requester. Access to the image may be lost if the presentation&#39;s sharing settings change. The mime type of the thumbnail image is the same as specified in the &#x60;GetPageThumbnailRequest&#x60;. Defaults to: `null`.
+  - height (Integer): The positive height in pixels of the thumbnail image. Defaults to: `null`.
+  - width (Integer): The positive width in pixels of the thumbnail image. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"contentUrl",
     :"height",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.Thumbnail do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.Thumbnail do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

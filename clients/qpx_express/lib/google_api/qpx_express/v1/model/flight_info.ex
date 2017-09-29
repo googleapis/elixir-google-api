@@ -20,9 +20,13 @@
 defmodule GoogleApi.QPXExpress.V1.Model.FlightInfo do
   @moduledoc """
   A flight is a sequence of legs with the same airline carrier and flight number. (A leg is the smallest unit of travel, in the case of a flight a takeoff immediately followed by a landing at two set points on a particular carrier with a particular flight number.) The naive view is that a flight is scheduled travel of an aircraft between two points, with possibly intermediate stops, but carriers will frequently list flights that require a change of aircraft between legs.
+
+  ## Attributes
+
+  - carrier (String):  Defaults to: `null`.
+  - number (String): The flight number. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"carrier",
     :"number"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.QPXExpress.V1.Model.FlightInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.QPXExpress.V1.Model.FlightInfo do
+  def encode(value, options) do
+    GoogleApi.QPXExpress.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

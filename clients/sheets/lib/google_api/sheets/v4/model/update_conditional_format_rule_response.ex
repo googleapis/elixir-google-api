@@ -20,9 +20,15 @@
 defmodule GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRuleResponse do
   @moduledoc """
   The result of updating a conditional format rule.
+
+  ## Attributes
+
+  - newIndex (Integer): The index of the new rule. Defaults to: `null`.
+  - newRule (ConditionalFormatRule): The new rule that replaced the old rule (if replacing), or the rule that was moved (if moved) Defaults to: `null`.
+  - oldIndex (Integer): The old index of the rule. Not set if a rule was replaced (because it is the same as new_index). Defaults to: `null`.
+  - oldRule (ConditionalFormatRule): The old (deleted) rule. Not set if a rule was moved (because it is the same as new_rule). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"newIndex",
     :"newRule",
@@ -37,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRu
     value
     |> deserialize(:"newRule", :struct, GoogleApi.Sheets.V4.Model.ConditionalFormatRule, options)
     |> deserialize(:"oldRule", :struct, GoogleApi.Sheets.V4.Model.ConditionalFormatRule, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRuleResponse do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

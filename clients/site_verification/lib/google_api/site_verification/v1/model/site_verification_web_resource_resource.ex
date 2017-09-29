@@ -20,9 +20,14 @@
 defmodule GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceResource do
   @moduledoc """
   
+
+  ## Attributes
+
+  - id (String): The string used to identify this site. This value should be used in the \&quot;id\&quot; portion of the REST URL for the Get, Update, and Delete operations. Defaults to: `null`.
+  - owners (List[String]): The email addresses of all verified owners. Defaults to: `null`.
+  - site (SiteVerificationWebResourceResourceSite):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"owners",
@@ -34,7 +39,13 @@ defimpl Poison.Decoder, for: GoogleApi.SiteVerification.V1.Model.SiteVerificatio
   import GoogleApi.SiteVerification.V1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"site", :struct, GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceResource_site, options)
+    |> deserialize(:"site", :struct, GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceResourceSite, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceResource do
+  def encode(value, options) do
+    GoogleApi.SiteVerification.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

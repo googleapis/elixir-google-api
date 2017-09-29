@@ -1,6 +1,6 @@
 # GoogleApi.Script.V1
 
-**TODO: Add description**
+Executes functions in Google Apps Script projects.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_script` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_script, "~> 0.1.0"}]
+  [{:google_api_script, "~> 0.0.1"}]
 end
 ```
 

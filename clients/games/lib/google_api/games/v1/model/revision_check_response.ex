@@ -20,9 +20,14 @@
 defmodule GoogleApi.Games.V1.Model.RevisionCheckResponse do
   @moduledoc """
   This is a JSON template for the result of checking a revision.
+
+  ## Attributes
+
+  - apiVersion (String): The version of the API this client revision should use when calling API methods. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#revisionCheckResponse. Defaults to: `null`.
+  - revisionStatus (String): The result of the revision check. Possible values are:   - \&quot;OK\&quot; - The revision being used is current.  - \&quot;DEPRECATED\&quot; - There is currently a newer version available, but the revision being used still works.  - \&quot;INVALID\&quot; - The revision being used is not supported in any released version. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"apiVersion",
     :"kind",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.RevisionCheckResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.RevisionCheckResponse do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

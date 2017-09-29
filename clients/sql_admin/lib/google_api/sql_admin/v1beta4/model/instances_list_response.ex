@@ -20,9 +20,14 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesListResponse do
   @moduledoc """
   Database instances list response.
+
+  ## Attributes
+
+  - items (List[DatabaseInstance]): List of database instance resources. Defaults to: `null`.
+  - kind (String): This is always sql#instancesList. Defaults to: `null`.
+  - nextPageToken (String): The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"items",
     :"kind",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.InstancesListRespo
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.InstancesListResponse do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

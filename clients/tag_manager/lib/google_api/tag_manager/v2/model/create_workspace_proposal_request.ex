@@ -20,9 +20,13 @@
 defmodule GoogleApi.TagManager.V2.Model.CreateWorkspaceProposalRequest do
   @moduledoc """
   Creates a workspace proposal to start a review of a workspace.
+
+  ## Attributes
+
+  - initialComment (WorkspaceProposalHistoryComment): If present, an initial comment to associate with the workspace proposal. Defaults to: `null`.
+  - reviewers (List[WorkspaceProposalUser]): List of users to review the workspace proposal. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"initialComment",
     :"reviewers"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.CreateWorkspacePropos
     value
     |> deserialize(:"initialComment", :struct, GoogleApi.TagManager.V2.Model.WorkspaceProposalHistoryComment, options)
     |> deserialize(:"reviewers", :list, GoogleApi.TagManager.V2.Model.WorkspaceProposalUser, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.CreateWorkspaceProposalRequest do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

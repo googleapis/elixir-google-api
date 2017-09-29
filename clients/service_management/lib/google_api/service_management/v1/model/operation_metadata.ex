@@ -20,9 +20,15 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.OperationMetadata do
   @moduledoc """
   The metadata associated with a long running operation resource.
+
+  ## Attributes
+
+  - progressPercentage (Integer): Percentage of completion of this operation, ranging from 0 to 100. Defaults to: `null`.
+  - resourceNames (List[String]): The full name of the resources that this operation is directly associated with. Defaults to: `null`.
+  - startTime (String): The start time of the operation. Defaults to: `null`.
+  - steps (List[Step]): Detailed status information for each step. The order is undetermined. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"progressPercentage",
     :"resourceNames",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.OperationMetad
   def decode(value, options) do
     value
     |> deserialize(:"steps", :list, GoogleApi.ServiceManagement.V1.Model.Step, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.OperationMetadata do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

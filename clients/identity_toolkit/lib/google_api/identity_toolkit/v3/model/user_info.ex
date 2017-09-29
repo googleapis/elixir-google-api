@@ -20,9 +20,30 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.UserInfo do
   @moduledoc """
   Template for an individual account info.
+
+  ## Attributes
+
+  - createdAt (String): User creation timestamp. Defaults to: `null`.
+  - customAttributes (String): The custom attributes to be set in the user&#39;s id token. Defaults to: `null`.
+  - customAuth (Boolean): Whether the user is authenticated by the developer. Defaults to: `null`.
+  - disabled (Boolean): Whether the user is disabled. Defaults to: `null`.
+  - displayName (String): The name of the user. Defaults to: `null`.
+  - email (String): The email of the user. Defaults to: `null`.
+  - emailVerified (Boolean): Whether the email has been verified. Defaults to: `null`.
+  - lastLoginAt (String): last login timestamp. Defaults to: `null`.
+  - localId (String): The local ID of the user. Defaults to: `null`.
+  - passwordHash (String): The user&#39;s hashed password. Defaults to: `null`.
+  - passwordUpdatedAt (Float): The timestamp when the password was last updated. Defaults to: `null`.
+  - phoneNumber (String): User&#39;s phone number. Defaults to: `null`.
+  - photoUrl (String): The URL of the user profile photo. Defaults to: `null`.
+  - providerUserInfo (List[UserInfoProviderUserInfo]): The IDP of the user. Defaults to: `null`.
+  - rawPassword (String): The user&#39;s plain text password. Defaults to: `null`.
+  - salt (String): The user&#39;s password salt. Defaults to: `null`.
+  - screenName (String): User&#39;s screen name at Twitter or login name at Github. Defaults to: `null`.
+  - validSince (String): Timestamp in seconds for valid login token. Defaults to: `null`.
+  - version (Integer): Version of the user&#39;s password. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"createdAt",
     :"customAttributes",
@@ -50,7 +71,13 @@ defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.UserInfo do
   import GoogleApi.IdentityToolkit.V3.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"providerUserInfo", :list, GoogleApi.IdentityToolkit.V3.Model.UserInfo_providerUserInfo, options)
+    |> deserialize(:"providerUserInfo", :list, GoogleApi.IdentityToolkit.V3.Model.UserInfoProviderUserInfo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.UserInfo do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

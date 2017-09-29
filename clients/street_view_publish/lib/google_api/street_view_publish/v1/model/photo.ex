@@ -20,9 +20,21 @@
 defmodule GoogleApi.StreetViewPublish.V1.Model.Photo do
   @moduledoc """
   Photo is used to store 360 photos along with photo metadata.
+
+  ## Attributes
+
+  - captureTime (String): Absolute time when the photo was captured. When the photo has no exif timestamp, this is used to set a timestamp in the photo metadata. Defaults to: `null`.
+  - connections (List[Connection]): Connections to other photos. A connection represents the link from this photo to another photo. Defaults to: `null`.
+  - downloadUrl (String): Output only. The download URL for the photo bytes. This field is set only when GetPhotoRequest.view is set to PhotoView.INCLUDE_DOWNLOAD_URL. Defaults to: `null`.
+  - photoId (PhotoId): Required when updating photo. Output only when creating photo. Identifier for the photo, which is unique among all photos in Google. Defaults to: `null`.
+  - places (List[Place]): Places where this photo belongs. Defaults to: `null`.
+  - pose (Pose): Pose of the photo. Defaults to: `null`.
+  - shareLink (String): Output only. The share link for the photo. Defaults to: `null`.
+  - thumbnailUrl (String): Output only. The thumbnail URL for showing a preview of the given photo. Defaults to: `null`.
+  - uploadReference (UploadRef): Required when creating photo. Input only. The resource URL where the photo bytes are uploaded to. Defaults to: `null`.
+  - viewCount (String): Output only. View count of the photo. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"captureTime",
     :"connections",
@@ -46,6 +58,12 @@ defimpl Poison.Decoder, for: GoogleApi.StreetViewPublish.V1.Model.Photo do
     |> deserialize(:"places", :list, GoogleApi.StreetViewPublish.V1.Model.Place, options)
     |> deserialize(:"pose", :struct, GoogleApi.StreetViewPublish.V1.Model.Pose, options)
     |> deserialize(:"uploadReference", :struct, GoogleApi.StreetViewPublish.V1.Model.UploadRef, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.StreetViewPublish.V1.Model.Photo do
+  def encode(value, options) do
+    GoogleApi.StreetViewPublish.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

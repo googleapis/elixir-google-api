@@ -20,9 +20,12 @@
 defmodule GoogleApi.FirebaseRules.V1.Model.Result do
   @moduledoc """
   Possible result values from the function mock invocation.
+
+  ## Attributes
+
+  - undefined (Empty): The result is undefined, meaning the result could not be computed. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"undefined"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.FirebaseRules.V1.Model.Result do
   def decode(value, options) do
     value
     |> deserialize(:"undefined", :struct, GoogleApi.FirebaseRules.V1.Model.Empty, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.FirebaseRules.V1.Model.Result do
+  def encode(value, options) do
+    GoogleApi.FirebaseRules.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

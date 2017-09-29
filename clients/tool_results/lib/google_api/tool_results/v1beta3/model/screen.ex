@@ -20,9 +20,15 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.Screen do
   @moduledoc """
   
+
+  ## Attributes
+
+  - fileReference (String): File reference of the png file. Required. Defaults to: `null`.
+  - locale (String): Locale of the device that the screenshot was taken on. Required. Defaults to: `null`.
+  - model (String): Model of the device that the screenshot was taken on. Required. Defaults to: `null`.
+  - version (String): OS version of the device that the screenshot was taken on. Required. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fileReference",
     :"locale",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.Screen do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.Screen do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

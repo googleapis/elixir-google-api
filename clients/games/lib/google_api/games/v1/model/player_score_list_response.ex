@@ -20,9 +20,13 @@
 defmodule GoogleApi.Games.V1.Model.PlayerScoreListResponse do
   @moduledoc """
   This is a JSON template for a list of score submission statuses.
+
+  ## Attributes
+
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#playerScoreListResponse. Defaults to: `null`.
+  - submittedScores (List[PlayerScoreResponse]): The score submissions statuses. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"submittedScores"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.PlayerScoreListResponse do
   def decode(value, options) do
     value
     |> deserialize(:"submittedScores", :list, GoogleApi.Games.V1.Model.PlayerScoreResponse, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.PlayerScoreListResponse do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

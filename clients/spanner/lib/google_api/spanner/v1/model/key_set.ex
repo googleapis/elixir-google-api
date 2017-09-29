@@ -20,9 +20,14 @@
 defmodule GoogleApi.Spanner.V1.Model.KeySet do
   @moduledoc """
   &#x60;KeySet&#x60; defines a collection of Cloud Spanner keys and/or key ranges. All the keys are expected to be in the same table or index. The keys need not be sorted in any particular way.  If the same key is specified multiple times in the set (for example if two ranges, two keys, or a key and a range overlap), Cloud Spanner behaves as if the key were only specified once.
+
+  ## Attributes
+
+  - all (Boolean): For convenience &#x60;all&#x60; can be set to &#x60;true&#x60; to indicate that this &#x60;KeySet&#x60; matches all keys in the table or index. Note that any keys specified in &#x60;keys&#x60; or &#x60;ranges&#x60; are only yielded once. Defaults to: `null`.
+  - keys (List[List[ErrorUnknown]]): A list of specific keys. Entries in &#x60;keys&#x60; should have exactly as many elements as there are columns in the primary or index key with which this &#x60;KeySet&#x60; is used.  Individual key values are encoded as described here. Defaults to: `null`.
+  - ranges (List[KeyRange]): A list of key ranges. See KeyRange for more information about key range specifications. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"all",
     :"keys",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.KeySet do
   def decode(value, options) do
     value
     |> deserialize(:"ranges", :list, GoogleApi.Spanner.V1.Model.KeyRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.KeySet do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

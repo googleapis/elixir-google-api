@@ -20,9 +20,12 @@
 defmodule GoogleApi.Sheets.V4.Model.AutoResizeDimensionsRequest do
   @moduledoc """
   Automatically resizes one or more dimensions based on the contents of the cells in that dimension.
+
+  ## Attributes
+
+  - dimensions (DimensionRange): The dimensions to automatically resize. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dimensions"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.AutoResizeDimensionsReque
   def decode(value, options) do
     value
     |> deserialize(:"dimensions", :struct, GoogleApi.Sheets.V4.Model.DimensionRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.AutoResizeDimensionsRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

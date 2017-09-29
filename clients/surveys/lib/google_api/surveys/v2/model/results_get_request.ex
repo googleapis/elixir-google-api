@@ -20,9 +20,12 @@
 defmodule GoogleApi.Surveys.V2.Model.ResultsGetRequest do
   @moduledoc """
   
+
+  ## Attributes
+
+  - resultMask (ResultsMask):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"resultMask"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Surveys.V2.Model.ResultsGetRequest do
   def decode(value, options) do
     value
     |> deserialize(:"resultMask", :struct, GoogleApi.Surveys.V2.Model.ResultsMask, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Surveys.V2.Model.ResultsGetRequest do
+  def encode(value, options) do
+    GoogleApi.Surveys.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

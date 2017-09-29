@@ -20,9 +20,14 @@
 defmodule GoogleApi.Partners.V2.Model.DebugInfo do
   @moduledoc """
   Debug information about this request.
+
+  ## Attributes
+
+  - serverInfo (String): Info about the server that serviced this request. Defaults to: `null`.
+  - serverTraceInfo (String): Server-side debug stack trace. Defaults to: `null`.
+  - serviceUrl (String): URL of the service that handled this request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"serverInfo",
     :"serverTraceInfo",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.DebugInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.DebugInfo do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

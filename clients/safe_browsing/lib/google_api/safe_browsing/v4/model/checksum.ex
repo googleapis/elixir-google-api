@@ -20,9 +20,12 @@
 defmodule GoogleApi.SafeBrowsing.V4.Model.Checksum do
   @moduledoc """
   The expected state of a client&#39;s local database.
+
+  ## Attributes
+
+  - sha256 (String): The SHA256 hash of the client state; that is, of the sorted list of all hashes present in the database. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"sha256"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.Checksum do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SafeBrowsing.V4.Model.Checksum do
+  def encode(value, options) do
+    GoogleApi.SafeBrowsing.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

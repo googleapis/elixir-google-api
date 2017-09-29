@@ -20,9 +20,15 @@
 defmodule GoogleApi.Spectrum.V1explorer.Model.FrequencyRange do
   @moduledoc """
   A specific range of frequencies together with the associated maximum power level and channel identifier.
+
+  ## Attributes
+
+  - channelId (String): The database may include a channel identifier, when applicable. When it is included, the device should treat it as informative. The length of the identifier should not exceed 16 characters. Defaults to: `null`.
+  - maxPowerDBm (Float): The maximum total power level (EIRP)—computed over the corresponding operating bandwidth—that is permitted within the frequency range. Depending on the context in which the frequency-range element appears, this value may be required. For example, it is required in the available-spectrum response, available-spectrum-batch response, and spectrum-use notification message, but it should not be present (it is not applicable) when the frequency range appears inside a device-capabilities message. Defaults to: `null`.
+  - startHz (Float): The required inclusive start of the frequency range (in Hertz). Defaults to: `null`.
+  - stopHz (Float): The required exclusive end of the frequency range (in Hertz). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"channelId",
     :"maxPowerDBm",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Spectrum.V1explorer.Model.FrequencyRange do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spectrum.V1explorer.Model.FrequencyRange do
+  def encode(value, options) do
+    GoogleApi.Spectrum.V1explorer.Deserializer.serialize_non_nil(value, options)
   end
 end
 

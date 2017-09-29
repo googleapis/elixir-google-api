@@ -20,9 +20,13 @@
 defmodule GoogleApi.Sheets.V4.Model.BatchGetValuesResponse do
   @moduledoc """
   The response when retrieving more than one range of values in a spreadsheet.
+
+  ## Attributes
+
+  - spreadsheetId (String): The ID of the spreadsheet the data was retrieved from. Defaults to: `null`.
+  - valueRanges (List[ValueRange]): The requested values. The order of the ValueRanges is the same as the order of the requested ranges. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"spreadsheetId",
     :"valueRanges"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BatchGetValuesResponse do
   def decode(value, options) do
     value
     |> deserialize(:"valueRanges", :list, GoogleApi.Sheets.V4.Model.ValueRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BatchGetValuesResponse do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

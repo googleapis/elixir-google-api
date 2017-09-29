@@ -20,9 +20,12 @@
 defmodule GoogleApi.Sheets.V4.Model.CandlestickSeries do
   @moduledoc """
   The series of a CandlestickData.
+
+  ## Attributes
+
+  - data (ChartData): The data of the CandlestickSeries. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"data"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.CandlestickSeries do
   def decode(value, options) do
     value
     |> deserialize(:"data", :struct, GoogleApi.Sheets.V4.Model.ChartData, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.CandlestickSeries do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

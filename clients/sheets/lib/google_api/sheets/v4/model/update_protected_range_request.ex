@@ -20,9 +20,13 @@
 defmodule GoogleApi.Sheets.V4.Model.UpdateProtectedRangeRequest do
   @moduledoc """
   Updates an existing protected range with the specified protectedRangeId.
+
+  ## Attributes
+
+  - fields (String): The fields that should be updated.  At least one field must be specified. The root &#x60;protectedRange&#x60; is implied and should not be specified. A single &#x60;\&quot;*\&quot;&#x60; can be used as short-hand for listing every field. Defaults to: `null`.
+  - protectedRange (ProtectedRange): The protected range to update with the new properties. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fields",
     :"protectedRange"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UpdateProtectedRangeReque
   def decode(value, options) do
     value
     |> deserialize(:"protectedRange", :struct, GoogleApi.Sheets.V4.Model.ProtectedRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UpdateProtectedRangeRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

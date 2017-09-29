@@ -20,9 +20,12 @@
 defmodule GoogleApi.TagManager.V2.Model.WorkspaceProposalHistoryComment do
   @moduledoc """
   A comment from the reviewer or author.
+
+  ## Attributes
+
+  - content (String): The contents of the reviewer or author comment. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"content"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.WorkspaceProposalHistoryComment do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.WorkspaceProposalHistoryComment do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

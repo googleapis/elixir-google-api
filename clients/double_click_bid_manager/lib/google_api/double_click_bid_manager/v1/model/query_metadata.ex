@@ -20,9 +20,24 @@
 defmodule GoogleApi.DoubleClickBidManager.V1.Model.QueryMetadata do
   @moduledoc """
   Query metadata.
+
+  ## Attributes
+
+  - dataRange (String): Range of report data. Defaults to: `null`.
+    - Enum - one of [ALL_TIME, CURRENT_DAY, CUSTOM_DATES, LAST_14_DAYS, LAST_30_DAYS, LAST_365_DAYS, LAST_7_DAYS, LAST_90_DAYS, MONTH_TO_DATE, PREVIOUS_DAY, PREVIOUS_HALF_MONTH, PREVIOUS_MONTH, PREVIOUS_QUARTER, PREVIOUS_WEEK, PREVIOUS_YEAR, QUARTER_TO_DATE, TYPE_NOT_SUPPORTED, WEEK_TO_DATE, YEAR_TO_DATE]
+  - format (String): Format of the generated report. Defaults to: `null`.
+    - Enum - one of [CSV, EXCEL_CSV, XLSX]
+  - googleCloudStoragePathForLatestReport (String): The path to the location in Google Cloud Storage where the latest report is stored. Defaults to: `null`.
+  - googleDrivePathForLatestReport (String): The path in Google Drive for the latest report. Defaults to: `null`.
+  - latestReportRunTimeMs (String): The time when the latest report started to run. Defaults to: `null`.
+  - locale (String): Locale of the generated reports. Valid values are cs CZECH de GERMAN en ENGLISH es SPANISH fr FRENCH it ITALIAN ja JAPANESE ko KOREAN pl POLISH pt-BR BRAZILIAN_PORTUGUESE ru RUSSIAN tr TURKISH uk UKRAINIAN zh-CN CHINA_CHINESE zh-TW TAIWAN_CHINESE  An locale string not in the list above will generate reports in English. Defaults to: `null`.
+  - reportCount (Integer): Number of reports that have been generated for the query. Defaults to: `null`.
+  - running (Boolean): Whether the latest report is currently running. Defaults to: `null`.
+  - sendNotification (Boolean): Whether to send an email notification when a report is ready. Default to false. Defaults to: `null`.
+  - shareEmailAddress (List[String]): List of email addresses which are sent email notifications when the report is finished. Separate from sendNotification. Defaults to: `null`.
+  - title (String): Query title. It is used to name the reports generated from this query. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dataRange",
     :"format",
@@ -41,6 +56,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.DoubleClickBidManager.V1.Model.QueryMetadata do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickBidManager.V1.Model.QueryMetadata do
+  def encode(value, options) do
+    GoogleApi.DoubleClickBidManager.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

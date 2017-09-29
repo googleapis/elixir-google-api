@@ -20,9 +20,15 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySendVerificationCodeRequest do
   @moduledoc """
   Request for Identitytoolkit-SendVerificationCode
+
+  ## Attributes
+
+  - iosReceipt (String): Receipt of successful app token validation with APNS. Defaults to: `null`.
+  - iosSecret (String): Secret delivered to iOS app via APNS. Defaults to: `null`.
+  - phoneNumber (String): The phone number to send the verification code to in E.164 format. Defaults to: `null`.
+  - recaptchaToken (String): Recaptcha solution. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"iosReceipt",
     :"iosSecret",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySendVerificationCodeRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySendVerificationCodeRequest do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

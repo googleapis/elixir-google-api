@@ -20,9 +20,13 @@
 defmodule GoogleApi.Genomics.V1.Model.ReferenceBound do
   @moduledoc """
   ReferenceBound records an upper bound for the starting coordinate of variants in a particular reference.
+
+  ## Attributes
+
+  - referenceName (String): The name of the reference associated with this reference bound. Defaults to: `null`.
+  - upperBound (String): An upper bound (inclusive) on the starting coordinate of any variant in the reference sequence. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"referenceName",
     :"upperBound"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.ReferenceBound do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.ReferenceBound do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

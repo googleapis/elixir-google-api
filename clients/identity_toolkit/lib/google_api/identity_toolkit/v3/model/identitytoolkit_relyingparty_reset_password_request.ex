@@ -20,9 +20,15 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyResetPasswordRequest do
   @moduledoc """
   Request to reset the password.
+
+  ## Attributes
+
+  - email (String): The email address of the user. Defaults to: `null`.
+  - newPassword (String): The new password inputted by the user. Defaults to: `null`.
+  - oldPassword (String): The old password inputted by the user. Defaults to: `null`.
+  - oobCode (String): The confirmation code. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"email",
     :"newPassword",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyResetPasswordRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyResetPasswordRequest do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

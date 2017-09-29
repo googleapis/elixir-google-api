@@ -20,9 +20,14 @@
 defmodule GoogleApi.TagManager.V2.Model.WorkspaceProposalUser do
   @moduledoc """
   Represents an external user or internal Google Tag Manager system.
+
+  ## Attributes
+
+  - gaiaId (String): Gaia id associated with a user, absent for the Google Tag Manager system. Defaults to: `null`.
+  - type (String): User type distinguishes between a user and the Google Tag Manager system. Defaults to: `null`.
+    - Enum - one of [gaiaId, system]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"gaiaId",
     :"type"
@@ -32,6 +37,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.WorkspaceProposalUser do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.WorkspaceProposalUser do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.DNS.V1.Model.Project do
   @moduledoc """
   A project resource. The project is a top level container for resources including Cloud DNS ManagedZones. Projects can be created only in the APIs console.
+
+  ## Attributes
+
+  - id (String): User assigned unique identifier for the resource (output only). Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;dns#project\&quot;. Defaults to: `null`.
+  - number (String): Unique numeric identifier for the resource; defined by the server (output only). Defaults to: `null`.
+  - quota (Quota): Quotas assigned to this project (output only). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"kind",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.DNS.V1.Model.Project do
   def decode(value, options) do
     value
     |> deserialize(:"quota", :struct, GoogleApi.DNS.V1.Model.Quota, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DNS.V1.Model.Project do
+  def encode(value, options) do
+    GoogleApi.DNS.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

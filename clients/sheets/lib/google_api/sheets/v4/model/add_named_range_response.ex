@@ -20,9 +20,12 @@
 defmodule GoogleApi.Sheets.V4.Model.AddNamedRangeResponse do
   @moduledoc """
   The result of adding a named range.
+
+  ## Attributes
+
+  - namedRange (NamedRange): The named range to add. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"namedRange"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.AddNamedRangeResponse do
   def decode(value, options) do
     value
     |> deserialize(:"namedRange", :struct, GoogleApi.Sheets.V4.Model.NamedRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.AddNamedRangeResponse do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

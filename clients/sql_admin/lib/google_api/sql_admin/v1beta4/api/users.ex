@@ -63,7 +63,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Users do
     }
     %{}
     |> method(:delete)
-    |> url("/projects/#{project}/instances/#{instance}/users")
+    |> url("/projects/{project}/instances/{instance}/users", %{
+         "project" => URI.encode_www_form(project),
+         "instance" => URI.encode_www_form(instance)
+       })
     |> add_param(:query, :"host", host)
     |> add_param(:query, :"name", name)
     |> add_optional_params(optional_params, opts)
@@ -109,7 +112,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Users do
     }
     %{}
     |> method(:post)
-    |> url("/projects/#{project}/instances/#{instance}/users")
+    |> url("/projects/{project}/instances/{instance}/users", %{
+         "project" => URI.encode_www_form(project),
+         "instance" => URI.encode_www_form(instance)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -151,7 +157,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Users do
     }
     %{}
     |> method(:get)
-    |> url("/projects/#{project}/instances/#{instance}/users")
+    |> url("/projects/{project}/instances/{instance}/users", %{
+         "project" => URI.encode_www_form(project),
+         "instance" => URI.encode_www_form(instance)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -197,7 +206,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Users do
     }
     %{}
     |> method(:put)
-    |> url("/projects/#{project}/instances/#{instance}/users")
+    |> url("/projects/{project}/instances/{instance}/users", %{
+         "project" => URI.encode_www_form(project),
+         "instance" => URI.encode_www_form(instance)
+       })
     |> add_param(:query, :"host", host)
     |> add_param(:query, :"name", name)
     |> add_optional_params(optional_params, opts)

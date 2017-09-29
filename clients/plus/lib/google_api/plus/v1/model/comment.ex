@@ -20,9 +20,22 @@
 defmodule GoogleApi.Plus.V1.Model.Comment do
   @moduledoc """
   
+
+  ## Attributes
+
+  - actor (CommentActor):  Defaults to: `null`.
+  - etag (String): ETag of this response for caching purposes. Defaults to: `null`.
+  - id (String): The ID of this comment. Defaults to: `null`.
+  - inReplyTo (List[CommentInReplyTo]): The activity this comment replied to. Defaults to: `null`.
+  - kind (String): Identifies this resource as a comment. Value: \&quot;plus#comment\&quot;. Defaults to: `null`.
+  - object (CommentObject):  Defaults to: `null`.
+  - plusoners (CommentPlusoners):  Defaults to: `null`.
+  - published (DateTime): The time at which this comment was initially published. Formatted as an RFC 3339 timestamp. Defaults to: `null`.
+  - selfLink (String): Link to this comment resource. Defaults to: `null`.
+  - updated (DateTime): The time at which this comment was last updated. Formatted as an RFC 3339 timestamp. Defaults to: `null`.
+  - verb (String): This comment&#39;s verb, indicating what action was performed. Possible values are:   - \&quot;post\&quot; - Publish content to the stream. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"actor",
     :"etag",
@@ -42,10 +55,16 @@ defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Comment do
   import GoogleApi.Plus.V1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"actor", :struct, GoogleApi.Plus.V1.Model.Comment_actor, options)
-    |> deserialize(:"inReplyTo", :list, GoogleApi.Plus.V1.Model.Comment_inReplyTo, options)
-    |> deserialize(:"object", :struct, GoogleApi.Plus.V1.Model.Comment_object, options)
-    |> deserialize(:"plusoners", :struct, GoogleApi.Plus.V1.Model.Comment_plusoners, options)
+    |> deserialize(:"actor", :struct, GoogleApi.Plus.V1.Model.CommentActor, options)
+    |> deserialize(:"inReplyTo", :list, GoogleApi.Plus.V1.Model.CommentInReplyTo, options)
+    |> deserialize(:"object", :struct, GoogleApi.Plus.V1.Model.CommentObject, options)
+    |> deserialize(:"plusoners", :struct, GoogleApi.Plus.V1.Model.CommentPlusoners, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.Comment do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

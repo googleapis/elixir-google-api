@@ -20,9 +20,12 @@
 defmodule GoogleApi.Spanner.V1.Model.CreateDatabaseMetadata do
   @moduledoc """
   Metadata type for the operation returned by CreateDatabase.
+
+  ## Attributes
+
+  - database (String): The database being created. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"database"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.CreateDatabaseMetadata do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.CreateDatabaseMetadata do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

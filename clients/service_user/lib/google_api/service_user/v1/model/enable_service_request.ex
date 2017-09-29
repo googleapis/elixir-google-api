@@ -20,9 +20,11 @@
 defmodule GoogleApi.ServiceUser.V1.Model.EnableServiceRequest do
   @moduledoc """
   Request message for EnableService method.
+
+  ## Attributes
+
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     
   ]
@@ -31,6 +33,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceUser.V1.Model.EnableServiceRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceUser.V1.Model.EnableServiceRequest do
+  def encode(value, options) do
+    GoogleApi.ServiceUser.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

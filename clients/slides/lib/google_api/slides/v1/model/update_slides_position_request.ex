@@ -20,9 +20,13 @@
 defmodule GoogleApi.Slides.V1.Model.UpdateSlidesPositionRequest do
   @moduledoc """
   Updates the position of slides in the presentation.
+
+  ## Attributes
+
+  - insertionIndex (Integer): The index where the slides should be inserted, based on the slide arrangement before the move takes place. Must be between zero and the number of slides in the presentation, inclusive. Defaults to: `null`.
+  - slideObjectIds (List[String]): The IDs of the slides in the presentation that should be moved. The slides in this list must be in existing presentation order, without duplicates. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"insertionIndex",
     :"slideObjectIds"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.UpdateSlidesPositionRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.UpdateSlidesPositionRequest do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

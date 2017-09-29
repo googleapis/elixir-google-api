@@ -20,9 +20,16 @@
 defmodule GoogleApi.Partners.V2.Model.OptIns do
   @moduledoc """
   A set of opt-ins for a user.
+
+  ## Attributes
+
+  - marketComm (Boolean): An opt-in about receiving email from Partners marketing teams. Includes member-only events and special promotional offers for Google products. Defaults to: `null`.
+  - performanceSuggestions (Boolean): An opt-in about receiving email with customized AdWords campaign management tips. Defaults to: `null`.
+  - phoneContact (Boolean): An opt-in to allow recieivng phone calls about their Partners account. Defaults to: `null`.
+  - physicalMail (Boolean): An opt-in to receive special promotional gifts and material in the mail. Defaults to: `null`.
+  - specialOffers (Boolean): An opt-in about receiving email regarding new features and products. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"marketComm",
     :"performanceSuggestions",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.OptIns do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.OptIns do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

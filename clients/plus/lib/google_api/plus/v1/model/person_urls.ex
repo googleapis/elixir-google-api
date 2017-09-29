@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Plus.V1.Model.Person_urls do
+defmodule GoogleApi.Plus.V1.Model.PersonUrls do
   @moduledoc """
   
+
+  ## Attributes
+
+  - label (String): The label of the URL. Defaults to: `null`.
+  - type (String): The type of URL. Possible values include, but are not limited to, the following values:   - \&quot;otherProfile\&quot; - URL for another profile.  - \&quot;contributor\&quot; - URL to a site for which this person is a contributor.  - \&quot;website\&quot; - URL for this Google+ Page&#39;s primary website.  - \&quot;other\&quot; - Other URL. Defaults to: `null`.
+  - value (String): The URL value. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"label",
     :"type",
@@ -30,9 +35,15 @@ defmodule GoogleApi.Plus.V1.Model.Person_urls do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Person_urls do
+defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.PersonUrls do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.PersonUrls do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

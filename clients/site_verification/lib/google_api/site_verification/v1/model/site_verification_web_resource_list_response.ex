@@ -20,9 +20,12 @@
 defmodule GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceListResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - items (List[SiteVerificationWebResourceResource]): The list of sites that are owned by the authenticated user. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"items"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.SiteVerification.V1.Model.SiteVerificatio
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceResource, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceListResponse do
+  def encode(value, options) do
+    GoogleApi.SiteVerification.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

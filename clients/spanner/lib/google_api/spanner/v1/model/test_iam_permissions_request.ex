@@ -20,9 +20,12 @@
 defmodule GoogleApi.Spanner.V1.Model.TestIamPermissionsRequest do
   @moduledoc """
   Request message for &#x60;TestIamPermissions&#x60; method.
+
+  ## Attributes
+
+  - permissions (List[String]): REQUIRED: The set of permissions to check for &#39;resource&#39;. Permissions with wildcards (such as &#39;*&#39;, &#39;spanner.*&#39;, &#39;spanner.instances.*&#39;) are not allowed. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"permissions"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.TestIamPermissionsRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.TestIamPermissionsRequest do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -17,23 +17,33 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.PageSpeedOnline.V2.Model.Result_formattedResults do
+defmodule GoogleApi.PageSpeedOnline.V2.Model.ResultFormattedResults do
   @moduledoc """
   Localized PageSpeed results. Contains a ruleResults entry for each PageSpeed rule instantiated and run by the server.
+
+  ## Attributes
+
+  - locale (String): The locale of the formattedResults, e.g. \&quot;en_US\&quot;. Defaults to: `null`.
+  - ruleResults (Map[String, ResultFormattedResultsRuleResults]): Dictionary of formatted rule results, with one entry for each PageSpeed rule instantiated and run by the server. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"locale",
     :"ruleResults"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.Result_formattedResults do
+defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.ResultFormattedResults do
   import GoogleApi.PageSpeedOnline.V2.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"ruleResults", :map, GoogleApi.PageSpeedOnline.V2.Model.Result_formattedResults_ruleResults, options)
+    |> deserialize(:"ruleResults", :map, GoogleApi.PageSpeedOnline.V2.Model.ResultFormattedResultsRuleResults, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.PageSpeedOnline.V2.Model.ResultFormattedResults do
+  def encode(value, options) do
+    GoogleApi.PageSpeedOnline.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

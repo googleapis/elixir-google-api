@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.CustomErrorRule do
   @moduledoc """
   A custom error rule.
+
+  ## Attributes
+
+  - isErrorType (Boolean): Mark this message as possible payload in error response.  Otherwise, objects of this type will be filtered when they appear in error payload. Defaults to: `null`.
+  - selector (String): Selects messages to which this rule applies.  Refer to selector for syntax details. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"isErrorType",
     :"selector"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.CustomErrorRule do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.CustomErrorRule do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

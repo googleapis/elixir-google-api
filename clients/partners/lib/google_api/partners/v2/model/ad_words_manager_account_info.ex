@@ -20,9 +20,13 @@
 defmodule GoogleApi.Partners.V2.Model.AdWordsManagerAccountInfo do
   @moduledoc """
   Information about a particular AdWords Manager Account. Read more at https://support.google.com/adwords/answer/6139186
+
+  ## Attributes
+
+  - customerName (String): Name of the customer this account represents. Defaults to: `null`.
+  - id (String): The AdWords Manager Account id. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"customerName",
     :"id"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.AdWordsManagerAccountInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.AdWordsManagerAccountInfo do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

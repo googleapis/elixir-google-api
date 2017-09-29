@@ -20,9 +20,22 @@
 defmodule GoogleApi.ServiceControl.V1.Model.AuditLog do
   @moduledoc """
   Common audit log format for Google Cloud Platform API operations.  
+
+  ## Attributes
+
+  - authenticationInfo (AuthenticationInfo): Authentication information. Defaults to: `null`.
+  - authorizationInfo (List[AuthorizationInfo]): Authorization information. If there are multiple resources or permissions involved, then there is one AuthorizationInfo element for each {resource, permission} tuple. Defaults to: `null`.
+  - methodName (String): The name of the service method or operation. For API calls, this should be the name of the API method. For example,      \&quot;google.datastore.v1.Datastore.RunQuery\&quot;     \&quot;google.logging.v1.LoggingService.DeleteLog\&quot; Defaults to: `null`.
+  - numResponseItems (String): The number of items returned from a List or Query API method, if applicable. Defaults to: `null`.
+  - request (Object): The operation request. This may not include all request parameters, such as those that are too large, privacy-sensitive, or duplicated elsewhere in the log record. It should never include user-generated data, such as file contents. When the JSON object represented here has a proto equivalent, the proto name will be indicated in the &#x60;@type&#x60; property. Defaults to: `null`.
+  - requestMetadata (RequestMetadata): Metadata about the operation. Defaults to: `null`.
+  - resourceName (String): The resource or collection that is the target of the operation. The name is a scheme-less URI, not including the API service name. For example:      \&quot;shelves/SHELF_ID/books\&quot;     \&quot;shelves/SHELF_ID/books/BOOK_ID\&quot; Defaults to: `null`.
+  - response (Object): The operation response. This may not include all response elements, such as those that are too large, privacy-sensitive, or duplicated elsewhere in the log record. It should never include user-generated data, such as file contents. When the JSON object represented here has a proto equivalent, the proto name will be indicated in the &#x60;@type&#x60; property. Defaults to: `null`.
+  - serviceData (Object): Other service-specific data about the request, response, and other activities. Defaults to: `null`.
+  - serviceName (String): The name of the API service performing the operation. For example, &#x60;\&quot;datastore.googleapis.com\&quot;&#x60;. Defaults to: `null`.
+  - status (Status): The status of the overall operation. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"authenticationInfo",
     :"authorizationInfo",
@@ -49,6 +62,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.AuditLog do
     |> deserialize(:"response", :struct, GoogleApi.ServiceControl.V1.Model.Object, options)
     |> deserialize(:"serviceData", :struct, GoogleApi.ServiceControl.V1.Model.Object, options)
     |> deserialize(:"status", :struct, GoogleApi.ServiceControl.V1.Model.Status, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.AuditLog do
+  def encode(value, options) do
+    GoogleApi.ServiceControl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

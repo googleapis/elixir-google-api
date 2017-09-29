@@ -20,9 +20,12 @@
 defmodule GoogleApi.Spectrum.V1explorer.Model.VcardTelephone do
   @moduledoc """
   The structure used to represent a telephone number.
+
+  ## Attributes
+
+  - uri (String): A nested telephone URI of the form: tel:+1-123-456-7890. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"uri"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Spectrum.V1explorer.Model.VcardTelephone do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spectrum.V1explorer.Model.VcardTelephone do
+  def encode(value, options) do
+    GoogleApi.Spectrum.V1explorer.Deserializer.serialize_non_nil(value, options)
   end
 end
 

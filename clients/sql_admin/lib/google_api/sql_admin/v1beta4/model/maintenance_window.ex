@@ -20,9 +20,15 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.MaintenanceWindow do
   @moduledoc """
   Maintenance window. This specifies when a v2 Cloud SQL instance should preferably be restarted for system maintenance puruposes.
+
+  ## Attributes
+
+  - day (Integer): day of week (1-7), starting on Monday. Defaults to: `null`.
+  - hour (Integer): hour of day - 0 to 23. Defaults to: `null`.
+  - kind (String): This is always sql#maintenanceWindow. Defaults to: `null`.
+  - updateTrack (String):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"day",
     :"hour",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.MaintenanceWindow do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.MaintenanceWindow do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

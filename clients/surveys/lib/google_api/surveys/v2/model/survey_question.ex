@@ -20,9 +20,29 @@
 defmodule GoogleApi.Surveys.V2.Model.SurveyQuestion do
   @moduledoc """
   Message defining the question specifications.
+
+  ## Attributes
+
+  - answerOrder (String): The randomization option for multiple choice and multi-select questions. If not specified, this option defaults to randomize. Defaults to: `null`.
+  - answers (List[String]): Required list of answer options for a question. Defaults to: `null`.
+  - hasOther (Boolean): Option to allow open-ended text box for Single Answer and Multiple Answer question types. This can be used with SINGLE_ANSWER, SINGLE_ANSWER_WITH_IMAGE, MULTIPLE_ANSWERS, and MULTIPLE_ANSWERS_WITH_IMAGE question types. Defaults to: `null`.
+  - highValueLabel (String): For rating questions, the text for the higher end of the scale, such as &#39;Best&#39;. For numeric questions, a string representing a floating-point that is the maximum allowed number for a response. Defaults to: `null`.
+  - images (List[SurveyQuestionImage]):  Defaults to: `null`.
+  - lastAnswerPositionPinned (Boolean): Currently only support pinning an answer option to the last position. Defaults to: `null`.
+  - lowValueLabel (String): For rating questions, the text for the lower end of the scale, such as &#39;Worst&#39;. For numeric questions, a string representing a floating-point that is the minimum allowed number for a response. Defaults to: `null`.
+  - mustPickSuggestion (Boolean): Option to force the user to pick one of the open text suggestions. This requires that suggestions are provided for this question. Defaults to: `null`.
+  - numStars (String): Number of stars to use for ratings questions. Defaults to: `null`.
+  - openTextPlaceholder (String): Placeholder text for an open text question. Defaults to: `null`.
+  - openTextSuggestions (List[String]): A list of suggested answers for open text question auto-complete. This is only valid if single_line_response is true. Defaults to: `null`.
+  - question (String): Required question text shown to the respondent. Defaults to: `null`.
+  - sentimentText (String): Used by the Rating Scale with Text question type. This text goes along with the question field that is presented to the respondent, and is the actual text that the respondent is asked to rate. Defaults to: `null`.
+  - singleLineResponse (Boolean): Option to allow multiple line open text responses instead of a single line response. Note that we don&#39;t show auto-complete suggestions with multiple line responses. Defaults to: `null`.
+  - thresholdAnswers (List[String]): The threshold/screener answer options, which will screen a user into the rest of the survey. These will be a subset of the answer option strings. Defaults to: `null`.
+  - type (String): Required field defining the question type. For details about configuring different type of questions, consult the question configuration guide. Defaults to: `null`.
+  - unitOfMeasurementLabel (String): Optional unit of measurement for display (for example: hours, people, miles). Defaults to: `null`.
+  - videoId (String): The YouTube video ID to be show in video questions. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"answerOrder",
     :"answers",
@@ -50,6 +70,12 @@ defimpl Poison.Decoder, for: GoogleApi.Surveys.V2.Model.SurveyQuestion do
   def decode(value, options) do
     value
     |> deserialize(:"images", :list, GoogleApi.Surveys.V2.Model.SurveyQuestionImage, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Surveys.V2.Model.SurveyQuestion do
+  def encode(value, options) do
+    GoogleApi.Surveys.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

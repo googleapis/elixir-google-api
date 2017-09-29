@@ -20,9 +20,15 @@
 defmodule GoogleApi.ServiceControl.V1.Model.StartReconciliationResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - operationId (String): The same operation_id value used in the StartReconciliationRequest. Used for logging and diagnostics purposes. Defaults to: `null`.
+  - quotaMetrics (List[MetricValueSet]): Metric values as tracked by One Platform before the start of reconciliation. The following metrics will be included:  1. Per quota metric total usage will be specified using the following gauge metric:   \&quot;serviceruntime.googleapis.com/allocation/consumer/quota_used_count\&quot;  2. Value for each quota limit associated with the metrics will be specified using the following gauge metric:   \&quot;serviceruntime.googleapis.com/quota/limit\&quot; Defaults to: `null`.
+  - reconciliationErrors (List[QuotaError]): Indicates the decision of the reconciliation start. Defaults to: `null`.
+  - serviceConfigId (String): ID of the actual config used to process the request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"operationId",
     :"quotaMetrics",
@@ -37,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.StartReconciliati
     value
     |> deserialize(:"quotaMetrics", :list, GoogleApi.ServiceControl.V1.Model.MetricValueSet, options)
     |> deserialize(:"reconciliationErrors", :list, GoogleApi.ServiceControl.V1.Model.QuotaError, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.StartReconciliationResponse do
+  def encode(value, options) do
+    GoogleApi.ServiceControl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

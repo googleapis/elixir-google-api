@@ -20,9 +20,12 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.Context do
   @moduledoc """
   &#x60;Context&#x60; defines which contexts an API requests.  Example:      context:       rules:       - selector: \&quot;*\&quot;         requested:         - google.rpc.context.ProjectContext         - google.rpc.context.OriginContext  The above specifies that all methods in the API request &#x60;google.rpc.context.ProjectContext&#x60; and &#x60;google.rpc.context.OriginContext&#x60;.  Available context types are defined in package &#x60;google.rpc.context&#x60;.
+
+  ## Attributes
+
+  - rules (List[ContextRule]): A list of RPC context rules that apply to individual API methods.  **NOTE:** All service configuration rules follow \&quot;last one wins\&quot; order. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"rules"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.Context do
   def decode(value, options) do
     value
     |> deserialize(:"rules", :list, GoogleApi.ServiceManagement.V1.Model.ContextRule, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.Context do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

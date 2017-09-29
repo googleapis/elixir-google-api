@@ -20,9 +20,14 @@
 defmodule GoogleApi.Slides.V1.Model.UpdateImagePropertiesRequest do
   @moduledoc """
   Update the properties of an Image.
+
+  ## Attributes
+
+  - fields (String): The fields that should be updated.  At least one field must be specified. The root &#x60;imageProperties&#x60; is implied and should not be specified. A single &#x60;\&quot;*\&quot;&#x60; can be used as short-hand for listing every field.  For example to update the image outline color, set &#x60;fields&#x60; to &#x60;\&quot;outline.outlineFill.solidFill.color\&quot;&#x60;.  To reset a property to its default value, include its field name in the field mask but leave the field itself unset. Defaults to: `null`.
+  - imageProperties (ImageProperties): The image properties to update. Defaults to: `null`.
+  - objectId (String): The object ID of the image the updates are applied to. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fields",
     :"imageProperties",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.UpdateImagePropertiesRequ
   def decode(value, options) do
     value
     |> deserialize(:"imageProperties", :struct, GoogleApi.Slides.V1.Model.ImageProperties, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.UpdateImagePropertiesRequest do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

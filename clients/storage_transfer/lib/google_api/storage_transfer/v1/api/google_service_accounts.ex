@@ -72,7 +72,9 @@ defmodule GoogleApi.StorageTransfer.V1.Api.GoogleServiceAccounts do
     }
     %{}
     |> method(:get)
-    |> url("/v1/googleServiceAccounts/#{project_id}")
+    |> url("/v1/googleServiceAccounts/{projectId}", %{
+         "projectId" => URI.encode_www_form(project_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

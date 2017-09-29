@@ -20,9 +20,12 @@
 defmodule GoogleApi.StorageTransfer.V1.Model.GcsData do
   @moduledoc """
   In a GcsData, an object&#39;s name is the Google Cloud Storage object&#39;s name and its &#x60;lastModificationTime&#x60; refers to the object&#39;s updated time, which changes when the content or the metadata of the object is updated.
+
+  ## Attributes
+
+  - bucketName (String): Google Cloud Storage bucket name (see [Bucket Name Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)). Required. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bucketName"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.StorageTransfer.V1.Model.GcsData do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.StorageTransfer.V1.Model.GcsData do
+  def encode(value, options) do
+    GoogleApi.StorageTransfer.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

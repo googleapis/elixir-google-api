@@ -17,23 +17,33 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Prediction.V16.Model.Analyze_dataDescription_categorical do
+defmodule GoogleApi.Prediction.V16.Model.AnalyzeDataDescriptionCategorical do
   @moduledoc """
   Description of the categorical values of this feature.
+
+  ## Attributes
+
+  - count (String): Number of categorical values for this feature in the data. Defaults to: `null`.
+  - values (List[AnalyzeDataDescriptionCategoricalValues]): List of all the categories for this feature in the data set. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"count",
     :"values"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.Analyze_dataDescription_categorical do
+defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.AnalyzeDataDescriptionCategorical do
   import GoogleApi.Prediction.V16.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"values", :list, GoogleApi.Prediction.V16.Model.Analyze_dataDescription_categorical_values, options)
+    |> deserialize(:"values", :list, GoogleApi.Prediction.V16.Model.AnalyzeDataDescriptionCategoricalValues, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Prediction.V16.Model.AnalyzeDataDescriptionCategorical do
+  def encode(value, options) do
+    GoogleApi.Prediction.V16.Deserializer.serialize_non_nil(value, options)
   end
 end
 

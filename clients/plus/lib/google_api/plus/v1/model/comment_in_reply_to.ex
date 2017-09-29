@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Plus.V1.Model.Comment_inReplyTo do
+defmodule GoogleApi.Plus.V1.Model.CommentInReplyTo do
   @moduledoc """
   
+
+  ## Attributes
+
+  - id (String): The ID of the activity. Defaults to: `null`.
+  - url (String): The URL of the activity. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"url"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Comment_inReplyTo do
+defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.CommentInReplyTo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.CommentInReplyTo do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

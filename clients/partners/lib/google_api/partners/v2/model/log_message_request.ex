@@ -20,9 +20,16 @@
 defmodule GoogleApi.Partners.V2.Model.LogMessageRequest do
   @moduledoc """
   Request message for LogClientMessage.
+
+  ## Attributes
+
+  - clientInfo (Map[String, String]): Map of client info, such as URL, browser navigator, browser platform, etc. Defaults to: `null`.
+  - details (String): Details about the client message. Defaults to: `null`.
+  - level (String): Message level of client message. Defaults to: `null`.
+    - Enum - one of [MESSAGE_LEVEL_UNSPECIFIED, ML_FINE, ML_INFO, ML_WARNING, ML_SEVERE]
+  - requestMetadata (RequestMetadata): Current request metadata. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"clientInfo",
     :"details",
@@ -36,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.LogMessageRequest do
   def decode(value, options) do
     value
     |> deserialize(:"requestMetadata", :struct, GoogleApi.Partners.V2.Model.RequestMetadata, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.LogMessageRequest do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

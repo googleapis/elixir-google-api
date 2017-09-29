@@ -20,9 +20,15 @@
 defmodule GoogleApi.Games.V1.Model.TurnBasedMatchResults do
   @moduledoc """
   This is a JSON template for a turn-based match results object.
+
+  ## Attributes
+
+  - data (TurnBasedMatchDataRequest): The final match data. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#turnBasedMatchResults. Defaults to: `null`.
+  - matchVersion (Integer): The version of the match being updated. Defaults to: `null`.
+  - results (List[ParticipantResult]): The match results for the participants in the match. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"data",
     :"kind",
@@ -37,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.TurnBasedMatchResults do
     value
     |> deserialize(:"data", :struct, GoogleApi.Games.V1.Model.TurnBasedMatchDataRequest, options)
     |> deserialize(:"results", :list, GoogleApi.Games.V1.Model.ParticipantResult, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.TurnBasedMatchResults do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

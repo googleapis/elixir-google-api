@@ -20,9 +20,14 @@
 defmodule GoogleApi.Games.V1.Model.PlayerEventListResponse do
   @moduledoc """
   This is a JSON template for a ListByPlayer response.
+
+  ## Attributes
+
+  - items (List[PlayerEvent]): The player events. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#playerEventListResponse. Defaults to: `null`.
+  - nextPageToken (String): The pagination token for the next page of results. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"items",
     :"kind",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.PlayerEventListResponse do
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.Games.V1.Model.PlayerEvent, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.PlayerEventListResponse do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

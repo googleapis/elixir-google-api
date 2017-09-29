@@ -20,9 +20,13 @@
 defmodule GoogleApi.ResourceViews.V1beta2.Model.ListResourceResponseItem do
   @moduledoc """
   The list response item that contains the resource and end points information.
+
+  ## Attributes
+
+  - endpoints (Map[String, List[Integer]]): The list of service end points on the resource. Defaults to: `null`.
+  - resource (String): The full URL of the resource. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"endpoints",
     :"resource"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ResourceViews.V1beta2.Model.ListResourceResponseItem do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ResourceViews.V1beta2.Model.ListResourceResponseItem do
+  def encode(value, options) do
+    GoogleApi.ResourceViews.V1beta2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

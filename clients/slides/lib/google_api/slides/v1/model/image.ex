@@ -20,9 +20,13 @@
 defmodule GoogleApi.Slides.V1.Model.Image do
   @moduledoc """
   A PageElement kind representing an image.
+
+  ## Attributes
+
+  - contentUrl (String): An URL to an image with a default lifetime of 30 minutes. This URL is tagged with the account of the requester. Anyone with the URL effectively accesses the image as the original requester. Access to the image may be lost if the presentation&#39;s sharing settings change. Defaults to: `null`.
+  - imageProperties (ImageProperties): The properties of the image. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"contentUrl",
     :"imageProperties"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.Image do
   def decode(value, options) do
     value
     |> deserialize(:"imageProperties", :struct, GoogleApi.Slides.V1.Model.ImageProperties, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.Image do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

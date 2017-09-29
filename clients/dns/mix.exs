@@ -1,19 +1,16 @@
 defmodule GoogleApi.DNS.V1.Mixfile do
   use Mix.Project
 
-  @version "0.0.1"
-
-  def project() do
-    [
-      app: :google_api_dns,
-      version: @version,
-      elixir: "~> 1.4",
-      build_embedded: Mix.env == :prod,
-      start_permanent: Mix.env == :prod,
-      description: description(),
-      package: package(),
-      deps: deps(),
-      source_url: "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/dns"
+  def project do
+    [app: :google_api_dns,
+     version: "0.0.1",
+     elixir: "~> 1.4",
+     build_embedded: Mix.env == :prod,
+     start_permanent: Mix.env == :prod,
+     description: description(),
+     package: package(),
+     deps: deps(),
+     source_url: "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/dns"
     ]
   end
 
@@ -23,7 +20,7 @@ defmodule GoogleApi.DNS.V1.Mixfile do
 
   defp deps() do
     [
-      {:tesla, "~> 0.5"},
+      {:tesla, "~> 0.8"},
       {:poison, ">= 1.0.0"},
       {:ex_doc, "~> 0.16", only: :dev}
     ]
@@ -42,7 +39,7 @@ defmodule GoogleApi.DNS.V1.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/dns",
-        "Homepage" => "https://cloud.google.com/dns/"
+        "Homepage" => "https://developers.google.com/cloud-dns"
       }
     ]
   end

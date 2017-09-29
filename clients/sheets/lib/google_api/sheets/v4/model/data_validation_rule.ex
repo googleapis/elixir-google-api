@@ -20,9 +20,15 @@
 defmodule GoogleApi.Sheets.V4.Model.DataValidationRule do
   @moduledoc """
   A data validation rule.
+
+  ## Attributes
+
+  - condition (BooleanCondition): The condition that data in the cell must match. Defaults to: `null`.
+  - inputMessage (String): A message to show the user when adding data to the cell. Defaults to: `null`.
+  - showCustomUi (Boolean): True if the UI should be customized based on the kind of condition. If true, \&quot;List\&quot; conditions will show a dropdown. Defaults to: `null`.
+  - strict (Boolean): True if invalid data should be rejected. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"condition",
     :"inputMessage",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DataValidationRule do
   def decode(value, options) do
     value
     |> deserialize(:"condition", :struct, GoogleApi.Sheets.V4.Model.BooleanCondition, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.DataValidationRule do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

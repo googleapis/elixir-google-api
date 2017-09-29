@@ -20,9 +20,15 @@
 defmodule GoogleApi.Slides.V1.Model.Bullet do
   @moduledoc """
   Describes the bullet of a paragraph.
+
+  ## Attributes
+
+  - bulletStyle (TextStyle): The paragraph specific text style applied to this bullet. Defaults to: `null`.
+  - glyph (String): The rendered bullet glyph for this paragraph. Defaults to: `null`.
+  - listId (String): The ID of the list this paragraph belongs to. Defaults to: `null`.
+  - nestingLevel (Integer): The nesting level of this paragraph in the list. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bulletStyle",
     :"glyph",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.Bullet do
   def decode(value, options) do
     value
     |> deserialize(:"bulletStyle", :struct, GoogleApi.Slides.V1.Model.TextStyle, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.Bullet do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

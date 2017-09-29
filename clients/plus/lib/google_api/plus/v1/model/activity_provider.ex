@@ -17,20 +17,29 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Plus.V1.Model.Activity_provider do
+defmodule GoogleApi.Plus.V1.Model.ActivityProvider do
   @moduledoc """
   The service provider that initially published this activity.
+
+  ## Attributes
+
+  - title (String): Name of the service provider. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"title"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Activity_provider do
+defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.ActivityProvider do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.ActivityProvider do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

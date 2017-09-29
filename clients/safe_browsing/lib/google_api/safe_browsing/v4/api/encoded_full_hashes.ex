@@ -76,7 +76,9 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.EncodedFullHashes do
     }
     %{}
     |> method(:get)
-    |> url("/v4/encodedFullHashes/#{encoded_request}")
+    |> url("/v4/encodedFullHashes/{encodedRequest}", %{
+         "encodedRequest" => URI.encode_www_form(encoded_request)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

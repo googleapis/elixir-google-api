@@ -20,9 +20,12 @@
 defmodule GoogleApi.SearchConsole.V1.Model.ResourceIssue do
   @moduledoc """
   Information about a resource with issue.
+
+  ## Attributes
+
+  - blockedResource (BlockedResource): Describes a blocked resource issue. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"blockedResource"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.SearchConsole.V1.Model.ResourceIssue do
   def decode(value, options) do
     value
     |> deserialize(:"blockedResource", :struct, GoogleApi.SearchConsole.V1.Model.BlockedResource, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SearchConsole.V1.Model.ResourceIssue do
+  def encode(value, options) do
+    GoogleApi.SearchConsole.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

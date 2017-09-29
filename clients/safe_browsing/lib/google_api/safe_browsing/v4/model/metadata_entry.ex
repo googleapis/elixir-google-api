@@ -20,9 +20,13 @@
 defmodule GoogleApi.SafeBrowsing.V4.Model.MetadataEntry do
   @moduledoc """
   A single metadata entry.
+
+  ## Attributes
+
+  - key (String): The metadata entry key. For JSON requests, the key is base64-encoded. Defaults to: `null`.
+  - value (String): The metadata entry value. For JSON requests, the value is base64-encoded. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"key",
     :"value"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.MetadataEntry do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SafeBrowsing.V4.Model.MetadataEntry do
+  def encode(value, options) do
+    GoogleApi.SafeBrowsing.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

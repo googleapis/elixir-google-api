@@ -20,9 +20,13 @@
 defmodule GoogleApi.Genomics.V1.Model.BatchCreateAnnotationsRequest do
   @moduledoc """
   
+
+  ## Attributes
+
+  - annotations (List[Annotation]): The annotations to be created. At most 4096 can be specified in a single request. Defaults to: `null`.
+  - requestId (String): A unique request ID which enables the server to detect duplicated requests. If provided, duplicated requests will result in the same response; if not provided, duplicated requests may result in duplicated data. For a given annotation set, callers should not reuse &#x60;request_id&#x60;s when writing different batches of annotations - behavior in this case is undefined. A common approach is to use a UUID. For batch jobs where worker crashes are a possibility, consider using some unique variant of a worker or run ID. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"annotations",
     :"requestId"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.BatchCreateAnnotationsR
   def decode(value, options) do
     value
     |> deserialize(:"annotations", :list, GoogleApi.Genomics.V1.Model.Annotation, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.BatchCreateAnnotationsRequest do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -17,12 +17,18 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Prediction.V16.Model.Analyze_dataDescription_features do
+defmodule GoogleApi.Prediction.V16.Model.AnalyzeDataDescriptionFeatures do
   @moduledoc """
   
+
+  ## Attributes
+
+  - categorical (AnalyzeDataDescriptionCategorical):  Defaults to: `null`.
+  - index (String): The feature index. Defaults to: `null`.
+  - numeric (AnalyzeDataDescriptionNumeric):  Defaults to: `null`.
+  - text (AnalyzeDataDescriptionText):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"categorical",
     :"index",
@@ -31,13 +37,19 @@ defmodule GoogleApi.Prediction.V16.Model.Analyze_dataDescription_features do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.Analyze_dataDescription_features do
+defimpl Poison.Decoder, for: GoogleApi.Prediction.V16.Model.AnalyzeDataDescriptionFeatures do
   import GoogleApi.Prediction.V16.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"categorical", :struct, GoogleApi.Prediction.V16.Model.Analyze_dataDescription_categorical, options)
-    |> deserialize(:"numeric", :struct, GoogleApi.Prediction.V16.Model.Analyze_dataDescription_numeric, options)
-    |> deserialize(:"text", :struct, GoogleApi.Prediction.V16.Model.Analyze_dataDescription_text, options)
+    |> deserialize(:"categorical", :struct, GoogleApi.Prediction.V16.Model.AnalyzeDataDescriptionCategorical, options)
+    |> deserialize(:"numeric", :struct, GoogleApi.Prediction.V16.Model.AnalyzeDataDescriptionNumeric, options)
+    |> deserialize(:"text", :struct, GoogleApi.Prediction.V16.Model.AnalyzeDataDescriptionText, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Prediction.V16.Model.AnalyzeDataDescriptionFeatures do
+  def encode(value, options) do
+    GoogleApi.Prediction.V16.Deserializer.serialize_non_nil(value, options)
   end
 end
 

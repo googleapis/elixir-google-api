@@ -20,9 +20,12 @@
 defmodule GoogleApi.Sheets.V4.Model.DuplicateFilterViewRequest do
   @moduledoc """
   Duplicates a particular filter view.
+
+  ## Attributes
+
+  - filterId (Integer): The ID of the filter being duplicated. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"filterId"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DuplicateFilterViewRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.DuplicateFilterViewRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

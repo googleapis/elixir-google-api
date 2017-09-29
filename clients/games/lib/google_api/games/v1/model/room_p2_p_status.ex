@@ -20,9 +20,18 @@
 defmodule GoogleApi.Games.V1.Model.RoomP2PStatus do
   @moduledoc """
   This is a JSON template for an update on the status of a peer in a room.
+
+  ## Attributes
+
+  - connectionSetupLatencyMillis (Integer): The amount of time in milliseconds it took to establish connections with this peer. Defaults to: `null`.
+  - error (String): The error code in event of a failure. Possible values are:   - \&quot;P2P_FAILED\&quot; - The client failed to establish a P2P connection with the peer.  - \&quot;PRESENCE_FAILED\&quot; - The client failed to register to receive P2P connections.  - \&quot;RELAY_SERVER_FAILED\&quot; - The client received an error when trying to use the relay server to establish a P2P connection with the peer. Defaults to: `null`.
+  - error_reason (String): More detailed diagnostic message returned in event of a failure. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#roomP2PStatus. Defaults to: `null`.
+  - participantId (String): The ID of the participant. Defaults to: `null`.
+  - status (String): The status of the peer in the room. Possible values are:   - \&quot;CONNECTION_ESTABLISHED\&quot; - The client established a P2P connection with the peer.  - \&quot;CONNECTION_FAILED\&quot; - The client failed to establish directed presence with the peer. Defaults to: `null`.
+  - unreliableRoundtripLatencyMillis (Integer): The amount of time in milliseconds it took to send packets back and forth on the unreliable channel with this peer. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"connectionSetupLatencyMillis",
     :"error",
@@ -37,6 +46,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.RoomP2PStatus do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.RoomP2PStatus do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

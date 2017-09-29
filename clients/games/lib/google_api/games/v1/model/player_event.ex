@@ -20,9 +20,16 @@
 defmodule GoogleApi.Games.V1.Model.PlayerEvent do
   @moduledoc """
   This is a JSON template for an event status resource.
+
+  ## Attributes
+
+  - definitionId (String): The ID of the event definition. Defaults to: `null`.
+  - formattedNumEvents (String): The current number of times this event has occurred, as a string. The formatting of this string depends on the configuration of your event in the Play Games Developer Console. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#playerEvent. Defaults to: `null`.
+  - numEvents (String): The current number of times this event has occurred. Defaults to: `null`.
+  - playerId (String): The ID of the player. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"definitionId",
     :"formattedNumEvents",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.PlayerEvent do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.PlayerEvent do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

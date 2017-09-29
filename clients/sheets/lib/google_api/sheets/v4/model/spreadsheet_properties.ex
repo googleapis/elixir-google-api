@@ -20,9 +20,18 @@
 defmodule GoogleApi.Sheets.V4.Model.SpreadsheetProperties do
   @moduledoc """
   Properties of a spreadsheet.
+
+  ## Attributes
+
+  - autoRecalc (String): The amount of time to wait before volatile functions are recalculated. Defaults to: `null`.
+    - Enum - one of [RECALCULATION_INTERVAL_UNSPECIFIED, ON_CHANGE, MINUTE, HOUR]
+  - defaultFormat (CellFormat): The default format of all cells in the spreadsheet. CellData.effectiveFormat will not be set if the cell&#39;s format is equal to this default format. This field is read-only. Defaults to: `null`.
+  - iterativeCalculationSettings (IterativeCalculationSettings): Determines whether and how circular references are resolved with iterative calculation.  Absence of this field means that circular references will result in calculation errors. Defaults to: `null`.
+  - locale (String): The locale of the spreadsheet in one of the following formats:  * an ISO 639-1 language code such as &#x60;en&#x60;  * an ISO 639-2 language code such as &#x60;fil&#x60;, if no 639-1 code exists  * a combination of the ISO language code and country code, such as &#x60;en_US&#x60;  Note: when updating this field, not all locales/languages are supported. Defaults to: `null`.
+  - timeZone (String): The time zone of the spreadsheet, in CLDR format such as &#x60;America/New_York&#x60;. If the time zone isn&#39;t recognized, this may be a custom time zone such as &#x60;GMT-07:00&#x60;. Defaults to: `null`.
+  - title (String): The title of the spreadsheet. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"autoRecalc",
     :"defaultFormat",
@@ -39,6 +48,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.SpreadsheetProperties do
     value
     |> deserialize(:"defaultFormat", :struct, GoogleApi.Sheets.V4.Model.CellFormat, options)
     |> deserialize(:"iterativeCalculationSettings", :struct, GoogleApi.Sheets.V4.Model.IterativeCalculationSettings, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.SpreadsheetProperties do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.ServiceUser.V1.Model.Control do
   @moduledoc """
   Selects and configures the service controller used by the service.  The service controller handles features like abuse, quota, billing, logging, monitoring, etc.
+
+  ## Attributes
+
+  - environment (String): The service control environment to use. If empty, no control plane feature (like quota and billing) will be enabled. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"environment"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceUser.V1.Model.Control do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceUser.V1.Model.Control do
+  def encode(value, options) do
+    GoogleApi.ServiceUser.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

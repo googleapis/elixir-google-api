@@ -20,9 +20,16 @@
 defmodule GoogleApi.Spectrum.V1explorer.Model.PawsVerifyDeviceResponse do
   @moduledoc """
   The device validation response message.
+
+  ## Attributes
+
+  - databaseChange (DbUpdateSpec): A database may include the databaseChange parameter to notify a device of a change to its database URI, providing one or more alternate database URIs. The device should use this information to update its list of pre-configured databases by (only) replacing its entry for the responding database with the list of alternate URIs. Defaults to: `null`.
+  - deviceValidities (List[DeviceValidity]): A device validities list is required in the device validation response to report whether each slave device listed in a previous device validation request is valid. The number of entries must match the number of device descriptors listed in the previous device validation request. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;spectrum#pawsVerifyDeviceResponse\&quot;. Defaults to: `null`.
+  - type (String): The message type (e.g., INIT_REQ, AVAIL_SPECTRUM_REQ, ...).  Required field. Defaults to: `null`.
+  - version (String): The PAWS version. Must be exactly 1.0.  Required field. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"databaseChange",
     :"deviceValidities",
@@ -38,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spectrum.V1explorer.Model.PawsVerifyDevic
     value
     |> deserialize(:"databaseChange", :struct, GoogleApi.Spectrum.V1explorer.Model.DbUpdateSpec, options)
     |> deserialize(:"deviceValidities", :list, GoogleApi.Spectrum.V1explorer.Model.DeviceValidity, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spectrum.V1explorer.Model.PawsVerifyDeviceResponse do
+  def encode(value, options) do
+    GoogleApi.Spectrum.V1explorer.Deserializer.serialize_non_nil(value, options)
   end
 end
 

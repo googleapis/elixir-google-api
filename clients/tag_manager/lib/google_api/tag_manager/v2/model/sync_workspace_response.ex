@@ -20,9 +20,13 @@
 defmodule GoogleApi.TagManager.V2.Model.SyncWorkspaceResponse do
   @moduledoc """
   A response after synchronizing the workspace to the latest container version.
+
+  ## Attributes
+
+  - mergeConflict (List[MergeConflict]): The merge conflict after sync. If this field is not empty, the sync is still treated as successful. But a version cannot be created until all conflicts are resolved. Defaults to: `null`.
+  - syncStatus (SyncStatus): Indicates whether synchronization caused a merge conflict or sync error. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"mergeConflict",
     :"syncStatus"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.SyncWorkspaceResponse
     value
     |> deserialize(:"mergeConflict", :list, GoogleApi.TagManager.V2.Model.MergeConflict, options)
     |> deserialize(:"syncStatus", :struct, GoogleApi.TagManager.V2.Model.SyncStatus, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.SyncWorkspaceResponse do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

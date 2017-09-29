@@ -20,9 +20,19 @@
 defmodule GoogleApi.DoubleClickBidManager.V1.Model.Query do
   @moduledoc """
   Represents a query.
+
+  ## Attributes
+
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;doubleclickbidmanager#query\&quot;. Defaults to: `null`.
+  - metadata (QueryMetadata): Query metadata. Defaults to: `null`.
+  - params (Parameters): Query parameters. Defaults to: `null`.
+  - queryId (String): Query ID. Defaults to: `null`.
+  - reportDataEndTimeMs (String): The ending time for the data that is shown in the report. Note, reportDataEndTimeMs is required if metadata.dataRange is CUSTOM_DATES and ignored otherwise. Defaults to: `null`.
+  - reportDataStartTimeMs (String): The starting time for the data that is shown in the report. Note, reportDataStartTimeMs is required if metadata.dataRange is CUSTOM_DATES and ignored otherwise. Defaults to: `null`.
+  - schedule (QuerySchedule): Information on how often and when to run a query. Defaults to: `null`.
+  - timezoneCode (String): Canonical timezone code for report data time. Defaults to America/New_York. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"metadata",
@@ -42,6 +52,12 @@ defimpl Poison.Decoder, for: GoogleApi.DoubleClickBidManager.V1.Model.Query do
     |> deserialize(:"metadata", :struct, GoogleApi.DoubleClickBidManager.V1.Model.QueryMetadata, options)
     |> deserialize(:"params", :struct, GoogleApi.DoubleClickBidManager.V1.Model.Parameters, options)
     |> deserialize(:"schedule", :struct, GoogleApi.DoubleClickBidManager.V1.Model.QuerySchedule, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickBidManager.V1.Model.Query do
+  def encode(value, options) do
+    GoogleApi.DoubleClickBidManager.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

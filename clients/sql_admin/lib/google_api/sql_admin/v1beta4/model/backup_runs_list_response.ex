@@ -20,9 +20,14 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupRunsListResponse do
   @moduledoc """
   Backup run list results.
+
+  ## Attributes
+
+  - items (List[BackupRun]): A list of backup runs in reverse chronological order of the enqueued time. Defaults to: `null`.
+  - kind (String): This is always sql#backupRunsList. Defaults to: `null`.
+  - nextPageToken (String): The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"items",
     :"kind",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.BackupRunsListResp
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.SQLAdmin.V1beta4.Model.BackupRun, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.BackupRunsListResponse do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceControl.V1.Model.ReportError do
   @moduledoc """
   Represents the processing error of one Operation in the request.
+
+  ## Attributes
+
+  - operationId (String): The Operation.operation_id value from the request. Defaults to: `null`.
+  - status (Status): Details of the error when processing the Operation. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"operationId",
     :"status"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.ReportError do
   def decode(value, options) do
     value
     |> deserialize(:"status", :struct, GoogleApi.ServiceControl.V1.Model.Status, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.ReportError do
+  def encode(value, options) do
+    GoogleApi.ServiceControl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,17 @@
 defmodule GoogleApi.TagManager.V2.Model.Entity do
   @moduledoc """
   A workspace entity that may represent a tag, trigger, variable, or folder in addition to its status in the workspace.
+
+  ## Attributes
+
+  - changeStatus (String): Represents how the entity has been changed in the workspace. Defaults to: `null`.
+    - Enum - one of [added, changeStatusUnspecified, deleted, none, updated]
+  - folder (Folder): The Folder being represented by the entity. Defaults to: `null`.
+  - tag (Tag): The tag being represented by the entity. Defaults to: `null`.
+  - trigger (Trigger): The trigger being represented by the entity. Defaults to: `null`.
+  - variable (Variable): The variable being represented by the entity. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"changeStatus",
     :"folder",
@@ -40,6 +48,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.Entity do
     |> deserialize(:"tag", :struct, GoogleApi.TagManager.V2.Model.Tag, options)
     |> deserialize(:"trigger", :struct, GoogleApi.TagManager.V2.Model.Trigger, options)
     |> deserialize(:"variable", :struct, GoogleApi.TagManager.V2.Model.Variable, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.Entity do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

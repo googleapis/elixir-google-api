@@ -20,9 +20,12 @@
 defmodule GoogleApi.Genomics.V1.Model.ImportReadGroupSetsResponse do
   @moduledoc """
   The read group set import response.
+
+  ## Attributes
+
+  - readGroupSetIds (List[String]): IDs of the read group sets that were created. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"readGroupSetIds"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.ImportReadGroupSetsResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.ImportReadGroupSetsResponse do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

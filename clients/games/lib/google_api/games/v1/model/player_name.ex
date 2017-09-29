@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Games.V1.Model.Player_name do
+defmodule GoogleApi.Games.V1.Model.PlayerName do
   @moduledoc """
   An object representation of the individual components of the player&#39;s name. For some players, these fields may not be present.
+
+  ## Attributes
+
+  - familyName (String): The family name of this player. In some places, this is known as the last name. Defaults to: `null`.
+  - givenName (String): The given name of this player. In some places, this is known as the first name. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"familyName",
     :"givenName"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.Player_name do
+defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.PlayerName do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.PlayerName do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

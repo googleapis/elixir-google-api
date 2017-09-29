@@ -20,9 +20,13 @@
 defmodule GoogleApi.FirebaseRules.V1.Model.TestRulesetResponse do
   @moduledoc """
   The response for FirebaseRulesService.TestRuleset.
+
+  ## Attributes
+
+  - issues (List[Issue]): Syntactic and semantic &#x60;Source&#x60; issues of varying severity. Issues of &#x60;ERROR&#x60; severity will prevent tests from executing. Defaults to: `null`.
+  - testResults (List[TestResult]): The set of test results given the test cases in the &#x60;TestSuite&#x60;. The results will appear in the same order as the test cases appear in the &#x60;TestSuite&#x60;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"issues",
     :"testResults"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.FirebaseRules.V1.Model.TestRulesetRespons
     value
     |> deserialize(:"issues", :list, GoogleApi.FirebaseRules.V1.Model.Issue, options)
     |> deserialize(:"testResults", :list, GoogleApi.FirebaseRules.V1.Model.TestResult, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.FirebaseRules.V1.Model.TestRulesetResponse do
+  def encode(value, options) do
+    GoogleApi.FirebaseRules.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

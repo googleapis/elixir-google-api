@@ -20,9 +20,12 @@
 defmodule GoogleApi.Sheets.V4.Model.DeleteSheetRequest do
   @moduledoc """
   Deletes the requested sheet.
+
+  ## Attributes
+
+  - sheetId (Integer): The ID of the sheet to delete. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"sheetId"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DeleteSheetRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.DeleteSheetRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

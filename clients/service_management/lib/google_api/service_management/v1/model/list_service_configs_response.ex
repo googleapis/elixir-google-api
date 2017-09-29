@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.ListServiceConfigsResponse do
   @moduledoc """
   Response message for ListServiceConfigs method.
+
+  ## Attributes
+
+  - nextPageToken (String): The token of the next page of results. Defaults to: `null`.
+  - serviceConfigs (List[Service]): The list of service configuration resources. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nextPageToken",
     :"serviceConfigs"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.ListServiceCon
   def decode(value, options) do
     value
     |> deserialize(:"serviceConfigs", :list, GoogleApi.ServiceManagement.V1.Model.Service, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.ListServiceConfigsResponse do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

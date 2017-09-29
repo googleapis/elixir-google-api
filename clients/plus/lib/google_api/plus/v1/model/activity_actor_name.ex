@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Plus.V1.Model.Activity_actor_name do
+defmodule GoogleApi.Plus.V1.Model.ActivityActorName do
   @moduledoc """
   An object representation of the individual components of name.
+
+  ## Attributes
+
+  - familyName (String): The family name (\&quot;last name\&quot;) of the actor. Defaults to: `null`.
+  - givenName (String): The given name (\&quot;first name\&quot;) of the actor. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"familyName",
     :"givenName"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Activity_actor_name do
+defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.ActivityActorName do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.ActivityActorName do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

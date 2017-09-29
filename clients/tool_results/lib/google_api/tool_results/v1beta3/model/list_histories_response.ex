@@ -20,9 +20,13 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.ListHistoriesResponse do
   @moduledoc """
   Response message for HistoryService.List
+
+  ## Attributes
+
+  - histories (List[History]): Histories. Defaults to: `null`.
+  - nextPageToken (String): A continuation token to resume the query at the next item.  Will only be set if there are more histories to fetch.  Tokens are valid for up to one hour from the time of the first list request. For instance, if you make a list request at 1PM and use the token from this first request 10 minutes later, the token from this second response will only be valid for 50 minutes. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"histories",
     :"nextPageToken"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.ListHistoriesRe
   def decode(value, options) do
     value
     |> deserialize(:"histories", :list, GoogleApi.ToolResults.V1beta3.Model.History, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.ListHistoriesResponse do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

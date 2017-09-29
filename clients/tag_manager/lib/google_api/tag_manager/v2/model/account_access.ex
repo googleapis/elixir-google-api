@@ -20,9 +20,13 @@
 defmodule GoogleApi.TagManager.V2.Model.AccountAccess do
   @moduledoc """
   Defines the Google Tag Manager Account access permissions.
+
+  ## Attributes
+
+  - permission (String): Whether the user has no access, user access, or admin access to an account. Defaults to: `null`.
+    - Enum - one of [accountPermissionUnspecified, admin, noAccess, user]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"permission"
   ]
@@ -31,6 +35,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.AccountAccess do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.AccountAccess do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

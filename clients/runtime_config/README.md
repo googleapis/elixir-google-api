@@ -1,6 +1,6 @@
 # GoogleApi.RuntimeConfig.V1
 
-**TODO: Add description**
+The Runtime Configurator allows you to dynamically configure and expose variables through Google Cloud Platform. In addition, you can also set Watchers and Waiters that will watch for changes to your data and return based on certain conditions.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_runtime_config` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_runtime_config, "~> 0.1.0"}]
+  [{:google_api_runtime_config, "~> 0.0.1"}]
 end
 ```
 

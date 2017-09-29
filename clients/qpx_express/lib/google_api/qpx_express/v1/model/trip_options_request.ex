@@ -20,9 +20,18 @@
 defmodule GoogleApi.QPXExpress.V1.Model.TripOptionsRequest do
   @moduledoc """
   A QPX Express search request, which will yield one or more solutions.
+
+  ## Attributes
+
+  - maxPrice (String): Do not return solutions that cost more than this price. The alphabetical part of the price is in ISO 4217. The format, in regex, is [A-Z]{3}\\d+(\\.\\d+)? Example: $102.07 Defaults to: `null`.
+  - passengers (PassengerCounts): Counts for each passenger type in the request. Defaults to: `null`.
+  - refundable (Boolean): Return only solutions with refundable fares. Defaults to: `null`.
+  - saleCountry (String): IATA country code representing the point of sale. This determines the \&quot;equivalent amount paid\&quot; currency for the ticket. Defaults to: `null`.
+  - slice (List[SliceInput]): The slices that make up the itinerary of this trip. A slice represents a traveler&#39;s intent, the portion of a low-fare search corresponding to a traveler&#39;s request to get between two points. One-way journeys are generally expressed using one slice, round-trips using two. An example of a one slice trip with three segments might be BOS-SYD, SYD-LAX, LAX-BOS if the traveler only stopped in SYD and LAX just long enough to change planes. Defaults to: `null`.
+  - solutions (Integer): The number of solutions to return, maximum 500. Defaults to: `null`.
+  - ticketingCountry (String): IATA country code representing the point of ticketing. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"maxPrice",
     :"passengers",
@@ -40,6 +49,12 @@ defimpl Poison.Decoder, for: GoogleApi.QPXExpress.V1.Model.TripOptionsRequest do
     value
     |> deserialize(:"passengers", :struct, GoogleApi.QPXExpress.V1.Model.PassengerCounts, options)
     |> deserialize(:"slice", :list, GoogleApi.QPXExpress.V1.Model.SliceInput, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.QPXExpress.V1.Model.TripOptionsRequest do
+  def encode(value, options) do
+    GoogleApi.QPXExpress.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

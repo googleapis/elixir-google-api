@@ -20,9 +20,12 @@
 defmodule GoogleApi.Sheets.V4.Model.AddFilterViewRequest do
   @moduledoc """
   Adds a filter view.
+
+  ## Attributes
+
+  - filter (FilterView): The filter to add. The filterViewId field is optional; if one is not set, an id will be randomly generated. (It is an error to specify the ID of a filter that already exists.) Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"filter"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.AddFilterViewRequest do
   def decode(value, options) do
     value
     |> deserialize(:"filter", :struct, GoogleApi.Sheets.V4.Model.FilterView, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.AddFilterViewRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

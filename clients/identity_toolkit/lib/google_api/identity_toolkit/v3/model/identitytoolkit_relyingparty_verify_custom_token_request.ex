@@ -20,9 +20,15 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyCustomTokenRequest do
   @moduledoc """
   Request to verify a custom token
+
+  ## Attributes
+
+  - delegatedProjectNumber (String): GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration. Defaults to: `null`.
+  - instanceId (String): Instance id token of the app. Defaults to: `null`.
+  - returnSecureToken (Boolean): Whether return sts id token and refresh token instead of gitkit token. Defaults to: `null`.
+  - token (String): The custom token to verify Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"delegatedProjectNumber",
     :"instanceId",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyCustomTokenRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyCustomTokenRequest do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

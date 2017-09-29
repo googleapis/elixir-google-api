@@ -20,9 +20,12 @@
 defmodule GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionResponse do
   @moduledoc """
   The result of updating an embedded object&#39;s position.
+
+  ## Attributes
+
+  - position (EmbeddedObjectPosition): The new position of the embedded object. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"position"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPosit
   def decode(value, options) do
     value
     |> deserialize(:"position", :struct, GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionResponse do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.Vault.V1.Model.RemoveMatterPermissionsRequest do
   @moduledoc """
   Remove an account as a matter collaborator.
+
+  ## Attributes
+
+  - accountId (String): The account ID. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accountId"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Vault.V1.Model.RemoveMatterPermissionsRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Vault.V1.Model.RemoveMatterPermissionsRequest do
+  def encode(value, options) do
+    GoogleApi.Vault.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

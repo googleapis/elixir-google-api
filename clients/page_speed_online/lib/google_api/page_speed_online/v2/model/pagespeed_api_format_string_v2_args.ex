@@ -17,12 +17,19 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2_args do
+defmodule GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2Args do
   @moduledoc """
   
+
+  ## Attributes
+
+  - key (String): The placeholder key for this arg, as a string. Defaults to: `null`.
+  - rects (List[PagespeedApiFormatStringV2Rects]): The screen rectangles being referred to, with dimensions measured in CSS pixels. This is only ever used for SNAPSHOT_RECT arguments. If this is absent for a SNAPSHOT_RECT argument, it means that that argument refers to the entire snapshot. Defaults to: `null`.
+  - secondary_rects (List[PagespeedApiFormatStringV2Rects]): Secondary screen rectangles being referred to, with dimensions measured in CSS pixels. This is only ever used for SNAPSHOT_RECT arguments. Defaults to: `null`.
+  - type (String): Type of argument. One of URL, STRING_LITERAL, INT_LITERAL, BYTES, DURATION, VERBATIM_STRING, PERCENTAGE, HYPERLINK, or SNAPSHOT_RECT. Defaults to: `null`.
+  - value (String): Argument value, as a localized string. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"key",
     :"rects",
@@ -32,12 +39,18 @@ defmodule GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2_args do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2_args do
+defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2Args do
   import GoogleApi.PageSpeedOnline.V2.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"rects", :list, GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2_rects, options)
-    |> deserialize(:"secondary_rects", :list, GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2_rects, options)
+    |> deserialize(:"rects", :list, GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2Rects, options)
+    |> deserialize(:"secondary_rects", :list, GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2Rects, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2Args do
+  def encode(value, options) do
+    GoogleApi.PageSpeedOnline.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

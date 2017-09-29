@@ -20,9 +20,12 @@
 defmodule GoogleApi.Spanner.V1.Model.GetDatabaseDdlResponse do
   @moduledoc """
   The response for GetDatabaseDdl.
+
+  ## Attributes
+
+  - statements (List[String]): A list of formatted DDL statements defining the schema of the database specified in the request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"statements"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.GetDatabaseDdlResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.GetDatabaseDdlResponse do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

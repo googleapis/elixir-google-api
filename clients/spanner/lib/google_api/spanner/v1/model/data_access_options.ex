@@ -20,9 +20,11 @@
 defmodule GoogleApi.Spanner.V1.Model.DataAccessOptions do
   @moduledoc """
   Write a Data Access (Gin) log
+
+  ## Attributes
+
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     
   ]
@@ -31,6 +33,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.DataAccessOptions do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.DataAccessOptions do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

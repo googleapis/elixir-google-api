@@ -20,9 +20,16 @@
 defmodule GoogleApi.Webmaster.V3.Model.ApiDataRow do
   @moduledoc """
   
+
+  ## Attributes
+
+  - clicks (Float):  Defaults to: `null`.
+  - ctr (Float):  Defaults to: `null`.
+  - impressions (Float):  Defaults to: `null`.
+  - keys (List[String]):  Defaults to: `null`.
+  - position (Float):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"clicks",
     :"ctr",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Webmaster.V3.Model.ApiDataRow do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Webmaster.V3.Model.ApiDataRow do
+  def encode(value, options) do
+    GoogleApi.Webmaster.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

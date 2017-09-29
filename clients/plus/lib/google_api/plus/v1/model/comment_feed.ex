@@ -20,9 +20,19 @@
 defmodule GoogleApi.Plus.V1.Model.CommentFeed do
   @moduledoc """
   
+
+  ## Attributes
+
+  - etag (String): ETag of this response for caching purposes. Defaults to: `null`.
+  - id (String): The ID of this collection of comments. Defaults to: `null`.
+  - items (List[Comment]): The comments in this page of results. Defaults to: `null`.
+  - kind (String): Identifies this resource as a collection of comments. Value: \&quot;plus#commentFeed\&quot;. Defaults to: `null`.
+  - nextLink (String): Link to the next page of activities. Defaults to: `null`.
+  - nextPageToken (String): The continuation token, which is used to page through large result sets. Provide this value in a subsequent request to return the next page of results. Defaults to: `null`.
+  - title (String): The title of this collection of comments. Defaults to: `null`.
+  - updated (DateTime): The time at which this collection of comments was last updated. Formatted as an RFC 3339 timestamp. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"id",
@@ -40,6 +50,12 @@ defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.CommentFeed do
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.Plus.V1.Model.Comment, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.CommentFeed do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

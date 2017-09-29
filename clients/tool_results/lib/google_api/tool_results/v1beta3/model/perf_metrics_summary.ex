@@ -20,9 +20,19 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.PerfMetricsSummary do
   @moduledoc """
   A summary of perf metrics collected and performance environment info
+
+  ## Attributes
+
+  - appStartTime (AppStartTime):  Defaults to: `null`.
+  - executionId (String): A tool results execution ID. Defaults to: `null`.
+  - historyId (String): A tool results history ID. Defaults to: `null`.
+  - perfEnvironment (PerfEnvironment): Describes the environment in which the performance metrics were collected Defaults to: `null`.
+  - perfMetrics (List[String]): Set of resource collected Defaults to: `null`.
+    - Enum - one of 
+  - projectId (String): The cloud project Defaults to: `null`.
+  - stepId (String): A tool results step ID. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"appStartTime",
     :"executionId",
@@ -40,6 +50,12 @@ defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.PerfMetricsSumm
     value
     |> deserialize(:"appStartTime", :struct, GoogleApi.ToolResults.V1beta3.Model.AppStartTime, options)
     |> deserialize(:"perfEnvironment", :struct, GoogleApi.ToolResults.V1beta3.Model.PerfEnvironment, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.PerfMetricsSummary do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

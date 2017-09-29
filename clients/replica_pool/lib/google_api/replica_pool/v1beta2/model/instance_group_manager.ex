@@ -20,9 +20,25 @@
 defmodule GoogleApi.ReplicaPool.V1beta2.Model.InstanceGroupManager do
   @moduledoc """
   An Instance Group Manager resource.
+
+  ## Attributes
+
+  - autoHealingPolicies (List[ReplicaPoolAutoHealingPolicy]): The autohealing policy for this managed instance group. You can specify only one value. Defaults to: `null`.
+  - baseInstanceName (String): The base instance name to use for instances in this group. The value must be a valid RFC1035 name. Supported characters are lowercase letters, numbers, and hyphens (-). Instances are named by appending a hyphen and a random four-character string to the base instance name. Defaults to: `null`.
+  - creationTimestamp (String): [Output only] The time the instance group manager was created, in RFC3339 text format. Defaults to: `null`.
+  - currentSize (Integer): [Output only] The number of instances that currently exist and are a part of this group. This includes instances that are starting but are not yet RUNNING, and instances that are in the process of being deleted or abandoned. Defaults to: `null`.
+  - description (String): An optional textual description of the instance group manager. Defaults to: `null`.
+  - fingerprint (String): [Output only] Fingerprint of the instance group manager. This field is used for optimistic locking. An up-to-date fingerprint must be provided in order to modify the Instance Group Manager resource. Defaults to: `null`.
+  - group (String): [Output only] The full URL of the instance group created by the manager. This group contains all of the instances being managed, and cannot contain non-managed instances. Defaults to: `null`.
+  - id (String): [Output only] A server-assigned unique identifier for the resource. Defaults to: `null`.
+  - instanceTemplate (String): The full URL to an instance template from which all new instances will be created. Defaults to: `null`.
+  - kind (String): [Output only] The resource type. Always replicapool#instanceGroupManager. Defaults to: `null`.
+  - name (String): The name of the instance group manager. Must be 1-63 characters long and comply with RFC1035. Supported characters include lowercase letters, numbers, and hyphens. Defaults to: `null`.
+  - selfLink (String): [Output only] The fully qualified URL for this resource. Defaults to: `null`.
+  - targetPools (List[String]): The full URL of all target pools to which new instances in the group are added. Updating the target pool values does not affect existing instances. Defaults to: `null`.
+  - targetSize (Integer): [Output only] The number of instances that the manager is attempting to maintain. Deleting or abandoning instances affects this number, as does resizing the group. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"autoHealingPolicies",
     :"baseInstanceName",
@@ -46,6 +62,12 @@ defimpl Poison.Decoder, for: GoogleApi.ReplicaPool.V1beta2.Model.InstanceGroupMa
   def decode(value, options) do
     value
     |> deserialize(:"autoHealingPolicies", :list, GoogleApi.ReplicaPool.V1beta2.Model.ReplicaPoolAutoHealingPolicy, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ReplicaPool.V1beta2.Model.InstanceGroupManager do
+  def encode(value, options) do
+    GoogleApi.ReplicaPool.V1beta2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

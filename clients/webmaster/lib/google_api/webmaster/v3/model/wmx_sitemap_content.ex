@@ -20,9 +20,14 @@
 defmodule GoogleApi.Webmaster.V3.Model.WmxSitemapContent do
   @moduledoc """
   Information about the various content types in the sitemap.
+
+  ## Attributes
+
+  - indexed (String): The number of URLs from the sitemap that were indexed (of the content type). Defaults to: `null`.
+  - submitted (String): The number of URLs in the sitemap (of the content type). Defaults to: `null`.
+  - type (String): The specific type of content in this sitemap. For example: web. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"indexed",
     :"submitted",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Webmaster.V3.Model.WmxSitemapContent do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Webmaster.V3.Model.WmxSitemapContent do
+  def encode(value, options) do
+    GoogleApi.Webmaster.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.Games.V1.Model.Played do
   @moduledoc """
   This is a JSON template for metadata about a player playing a game with the currently authenticated user.
+
+  ## Attributes
+
+  - autoMatched (Boolean): True if the player was auto-matched with the currently authenticated user. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#played. Defaults to: `null`.
+  - timeMillis (String): The last time the player played the game in milliseconds since the epoch in UTC. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"autoMatched",
     :"kind",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.Played do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.Played do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

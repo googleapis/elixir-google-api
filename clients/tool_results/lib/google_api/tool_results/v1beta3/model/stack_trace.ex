@@ -20,9 +20,14 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.StackTrace do
   @moduledoc """
   A stacktrace.
+
+  ## Attributes
+
+  - clusterId (String): Exception cluster ID Defaults to: `null`.
+  - exception (String): The stack trace message.  Required Defaults to: `null`.
+  - reportId (String): Exception report ID Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"clusterId",
     :"exception",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.StackTrace do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.StackTrace do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

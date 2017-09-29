@@ -20,9 +20,15 @@
 defmodule GoogleApi.Games.V1.Model.PushToken do
   @moduledoc """
   This is a JSON template for a push token resource.
+
+  ## Attributes
+
+  - clientRevision (String): The revision of the client SDK used by your application, in the same format that&#39;s used by revisions.check. Used to send backward compatible messages. Format: [PLATFORM_TYPE]:[VERSION_NUMBER]. Possible values of PLATFORM_TYPE are:   - IOS - Push token is for iOS Defaults to: `null`.
+  - id (PushTokenId): Unique identifier for this push token. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#pushToken. Defaults to: `null`.
+  - language (String): The preferred language for notifications that are sent using this token. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"clientRevision",
     :"id",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.PushToken do
   def decode(value, options) do
     value
     |> deserialize(:"id", :struct, GoogleApi.Games.V1.Model.PushTokenId, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.PushToken do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

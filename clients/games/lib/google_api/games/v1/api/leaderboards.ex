@@ -64,7 +64,9 @@ defmodule GoogleApi.Games.V1.Api.Leaderboards do
     }
     %{}
     |> method(:get)
-    |> url("/leaderboards/#{leaderboard_id}")
+    |> url("/leaderboards/{leaderboardId}", %{
+         "leaderboardId" => URI.encode_www_form(leaderboard_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

@@ -20,9 +20,14 @@
 defmodule GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionRequest do
   @moduledoc """
   Update an embedded object&#39;s position (such as a moving or resizing a chart or image).
+
+  ## Attributes
+
+  - fields (String): The fields of OverlayPosition that should be updated when setting a new position. Used only if newPosition.overlayPosition is set, in which case at least one field must be specified.  The root &#x60;newPosition.overlayPosition&#x60; is implied and should not be specified. A single &#x60;\&quot;*\&quot;&#x60; can be used as short-hand for listing every field. Defaults to: `null`.
+  - newPosition (EmbeddedObjectPosition): An explicit position to move the embedded object to. If newPosition.sheetId is set, a new sheet with that ID will be created. If newPosition.newSheet is set to true, a new sheet will be created with an ID that will be chosen for you. Defaults to: `null`.
+  - objectId (Integer): The ID of the object to moved. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fields",
     :"newPosition",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPosit
   def decode(value, options) do
     value
     |> deserialize(:"newPosition", :struct, GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,19 @@
 defmodule GoogleApi.Sheets.V4.Model.ProtectedRange do
   @moduledoc """
   A protected range.
+
+  ## Attributes
+
+  - description (String): The description of this protected range. Defaults to: `null`.
+  - editors (Editors): The users and groups with edit access to the protected range. This field is only visible to users with edit access to the protected range and the document. Editors are not supported with warning_only protection. Defaults to: `null`.
+  - namedRangeId (String): The named range this protected range is backed by, if any.  When writing, only one of range or named_range_id may be set. Defaults to: `null`.
+  - protectedRangeId (Integer): The ID of the protected range. This field is read-only. Defaults to: `null`.
+  - range (GridRange): The range that is being protected. The range may be fully unbounded, in which case this is considered a protected sheet.  When writing, only one of range or named_range_id may be set. Defaults to: `null`.
+  - requestingUserCanEdit (Boolean): True if the user who requested this protected range can edit the protected area. This field is read-only. Defaults to: `null`.
+  - unprotectedRanges (List[GridRange]): The list of unprotected ranges within a protected sheet. Unprotected ranges are only supported on protected sheets. Defaults to: `null`.
+  - warningOnly (Boolean): True if this protected range will show a warning when editing. Warning-based protection means that every user can edit data in the protected range, except editing will prompt a warning asking the user to confirm the edit.  When writing: if this field is true, then editors is ignored. Additionally, if this field is changed from true to false and the &#x60;editors&#x60; field is not set (nor included in the field mask), then the editors will be set to all the editors in the document. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"description",
     :"editors",
@@ -42,6 +52,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.ProtectedRange do
     |> deserialize(:"editors", :struct, GoogleApi.Sheets.V4.Model.Editors, options)
     |> deserialize(:"range", :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
     |> deserialize(:"unprotectedRanges", :list, GoogleApi.Sheets.V4.Model.GridRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.ProtectedRange do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

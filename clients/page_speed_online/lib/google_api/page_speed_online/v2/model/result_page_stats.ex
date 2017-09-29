@@ -17,12 +17,27 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.PageSpeedOnline.V2.Model.Result_pageStats do
+defmodule GoogleApi.PageSpeedOnline.V2.Model.ResultPageStats do
   @moduledoc """
   Summary statistics for the page, such as number of JavaScript bytes, number of HTML bytes, etc.
+
+  ## Attributes
+
+  - cssResponseBytes (String): Number of uncompressed response bytes for CSS resources on the page. Defaults to: `null`.
+  - flashResponseBytes (String): Number of response bytes for flash resources on the page. Defaults to: `null`.
+  - htmlResponseBytes (String): Number of uncompressed response bytes for the main HTML document and all iframes on the page. Defaults to: `null`.
+  - imageResponseBytes (String): Number of response bytes for image resources on the page. Defaults to: `null`.
+  - javascriptResponseBytes (String): Number of uncompressed response bytes for JS resources on the page. Defaults to: `null`.
+  - numberCssResources (Integer): Number of CSS resources referenced by the page. Defaults to: `null`.
+  - numberHosts (Integer): Number of unique hosts referenced by the page. Defaults to: `null`.
+  - numberJsResources (Integer): Number of JavaScript resources referenced by the page. Defaults to: `null`.
+  - numberResources (Integer): Number of HTTP resources loaded by the page. Defaults to: `null`.
+  - numberStaticResources (Integer): Number of static (i.e. cacheable) resources on the page. Defaults to: `null`.
+  - otherResponseBytes (String): Number of response bytes for other resources on the page. Defaults to: `null`.
+  - textResponseBytes (String): Number of uncompressed response bytes for text resources not covered by other statistics (i.e non-HTML, non-script, non-CSS resources) on the page. Defaults to: `null`.
+  - totalRequestBytes (String): Total size of all request bytes sent by the page. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cssResponseBytes",
     :"flashResponseBytes",
@@ -40,9 +55,15 @@ defmodule GoogleApi.PageSpeedOnline.V2.Model.Result_pageStats do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.Result_pageStats do
+defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.ResultPageStats do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.PageSpeedOnline.V2.Model.ResultPageStats do
+  def encode(value, options) do
+    GoogleApi.PageSpeedOnline.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

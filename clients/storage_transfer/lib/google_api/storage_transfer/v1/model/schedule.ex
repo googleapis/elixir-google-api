@@ -20,9 +20,14 @@
 defmodule GoogleApi.StorageTransfer.V1.Model.Schedule do
   @moduledoc """
   Transfers can be scheduled to recur or to run just once.
+
+  ## Attributes
+
+  - scheduleEndDate (DateTime): The last day the recurring transfer will be run. If &#x60;scheduleEndDate&#x60; is the same as &#x60;scheduleStartDate&#x60;, the transfer will be executed only once. Defaults to: `null`.
+  - scheduleStartDate (DateTime): The first day the recurring transfer is scheduled to run. If &#x60;scheduleStartDate&#x60; is in the past, the transfer will run for the first time on the following day. Required. Defaults to: `null`.
+  - startTimeOfDay (TimeOfDay): The time in UTC at which the transfer will be scheduled to start in a day. Transfers may start later than this time. If not specified, recurring and one-time transfers that are scheduled to run today will run immediately; recurring transfers that are scheduled to run on a future date will start at approximately midnight UTC on that date. Note that when configuring a transfer with the Cloud Platform Console, the transfer&#39;s start time in a day is specified in your local timezone. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"scheduleEndDate",
     :"scheduleStartDate",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.StorageTransfer.V1.Model.Schedule do
   def decode(value, options) do
     value
     |> deserialize(:"startTimeOfDay", :struct, GoogleApi.StorageTransfer.V1.Model.TimeOfDay, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.StorageTransfer.V1.Model.Schedule do
+  def encode(value, options) do
+    GoogleApi.StorageTransfer.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

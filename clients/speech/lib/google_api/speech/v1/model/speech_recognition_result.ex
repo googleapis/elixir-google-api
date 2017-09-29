@@ -20,9 +20,12 @@
 defmodule GoogleApi.Speech.V1.Model.SpeechRecognitionResult do
   @moduledoc """
   A speech recognition result corresponding to a portion of the audio.
+
+  ## Attributes
+
+  - alternatives (List[SpeechRecognitionAlternative]): *Output-only* May contain one or more recognition hypotheses (up to the maximum specified in &#x60;max_alternatives&#x60;). These alternatives are ordered in terms of accuracy, with the top (first) alternative being the most probable, as ranked by the recognizer. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"alternatives"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Speech.V1.Model.SpeechRecognitionResult d
   def decode(value, options) do
     value
     |> deserialize(:"alternatives", :list, GoogleApi.Speech.V1.Model.SpeechRecognitionAlternative, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Speech.V1.Model.SpeechRecognitionResult do
+  def encode(value, options) do
+    GoogleApi.Speech.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

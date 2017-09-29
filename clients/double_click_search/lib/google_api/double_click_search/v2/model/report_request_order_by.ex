@@ -17,23 +17,33 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.DoubleClickSearch.V2.Model.ReportRequest_orderBy do
+defmodule GoogleApi.DoubleClickSearch.V2.Model.ReportRequestOrderBy do
   @moduledoc """
   
+
+  ## Attributes
+
+  - column (ReportApiColumnSpec): Column to perform the sort on. This can be a DoubleClick Search-defined column or a saved column. Defaults to: `null`.
+  - sortOrder (String): The sort direction, which is either ascending or descending. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"column",
     :"sortOrder"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.DoubleClickSearch.V2.Model.ReportRequest_orderBy do
+defimpl Poison.Decoder, for: GoogleApi.DoubleClickSearch.V2.Model.ReportRequestOrderBy do
   import GoogleApi.DoubleClickSearch.V2.Deserializer
   def decode(value, options) do
     value
     |> deserialize(:"column", :struct, GoogleApi.DoubleClickSearch.V2.Model.ReportApiColumnSpec, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickSearch.V2.Model.ReportRequestOrderBy do
+  def encode(value, options) do
+    GoogleApi.DoubleClickSearch.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

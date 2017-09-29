@@ -20,9 +20,13 @@
 defmodule GoogleApi.DoubleClickBidManager.V1.Model.UploadStatus do
   @moduledoc """
   Represents the status of upload.
+
+  ## Attributes
+
+  - errors (List[String]): Reasons why upload can&#39;t be completed. Defaults to: `null`.
+  - rowStatus (List[RowStatus]): Per-row upload status. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"errors",
     :"rowStatus"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.DoubleClickBidManager.V1.Model.UploadStat
   def decode(value, options) do
     value
     |> deserialize(:"rowStatus", :list, GoogleApi.DoubleClickBidManager.V1.Model.RowStatus, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickBidManager.V1.Model.UploadStatus do
+  def encode(value, options) do
+    GoogleApi.DoubleClickBidManager.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

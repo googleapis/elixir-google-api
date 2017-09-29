@@ -60,7 +60,9 @@ defmodule GoogleApi.GroupsSettings.V1.Api.Groups do
     }
     %{}
     |> method(:get)
-    |> url("/#{group_unique_id}")
+    |> url("/{groupUniqueId}", %{
+         "groupUniqueId" => URI.encode_www_form(group_unique_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -103,7 +105,9 @@ defmodule GoogleApi.GroupsSettings.V1.Api.Groups do
     }
     %{}
     |> method(:patch)
-    |> url("/#{group_unique_id}")
+    |> url("/{groupUniqueId}", %{
+         "groupUniqueId" => URI.encode_www_form(group_unique_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -146,7 +150,9 @@ defmodule GoogleApi.GroupsSettings.V1.Api.Groups do
     }
     %{}
     |> method(:put)
-    |> url("/#{group_unique_id}")
+    |> url("/{groupUniqueId}", %{
+         "groupUniqueId" => URI.encode_www_form(group_unique_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

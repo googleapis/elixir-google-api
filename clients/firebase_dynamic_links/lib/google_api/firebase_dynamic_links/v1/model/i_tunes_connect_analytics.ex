@@ -20,9 +20,15 @@
 defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.ITunesConnectAnalytics do
   @moduledoc """
   Parameters for iTunes Connect App Analytics.
+
+  ## Attributes
+
+  - at (String): Affiliate token used to create affiliate-coded links. Defaults to: `null`.
+  - ct (String): Campaign text that developers can optionally add to any link in order to track sales from a specific marketing campaign. Defaults to: `null`.
+  - mt (String): iTune media types, including music, podcasts, audiobooks and so on. Defaults to: `null`.
+  - pt (String): Provider token that enables analytics for Dynamic Links from within iTunes Connect. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"at",
     :"ct",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.ITunesConnectAnalytics do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.ITunesConnectAnalytics do
+  def encode(value, options) do
+    GoogleApi.FirebaseDynamicLinks.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

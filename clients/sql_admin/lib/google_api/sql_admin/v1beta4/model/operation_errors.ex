@@ -20,9 +20,13 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.OperationErrors do
   @moduledoc """
   Database instance operation errors list wrapper.
+
+  ## Attributes
+
+  - errors (List[OperationError]): The list of errors encountered while processing this operation. Defaults to: `null`.
+  - kind (String): This is always sql#operationErrors. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"errors",
     :"kind"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.OperationErrors do
   def decode(value, options) do
     value
     |> deserialize(:"errors", :list, GoogleApi.SQLAdmin.V1beta4.Model.OperationError, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.OperationErrors do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

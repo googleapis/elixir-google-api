@@ -20,9 +20,12 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.Advice do
   @moduledoc """
   Generated advice about this change, used for providing more information about how a change will affect the existing service.
+
+  ## Attributes
+
+  - description (String): Useful description for why this advice was applied and what actions should be taken to mitigate any implied risks. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"description"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.Advice do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.Advice do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

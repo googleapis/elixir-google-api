@@ -20,9 +20,26 @@
 defmodule GoogleApi.TagManager.V2.Model.ContainerVersion do
   @moduledoc """
   Represents a Google Tag Manager Container Version.
+
+  ## Attributes
+
+  - accountId (String): GTM Account ID. Defaults to: `null`.
+  - builtInVariable (List[BuiltInVariable]): The built-in variables in the container that this version was taken from. Defaults to: `null`.
+  - container (Container): The container that this version was taken from. Defaults to: `null`.
+  - containerId (String): GTM Container ID. Defaults to: `null`.
+  - containerVersionId (String): The Container Version ID uniquely identifies the GTM Container Version. Defaults to: `null`.
+  - deleted (Boolean): A value of true indicates this container version has been deleted. Defaults to: `null`.
+  - description (String): Container version description. Defaults to: `null`.
+  - fingerprint (String): The fingerprint of the GTM Container Version as computed at storage time. This value is recomputed whenever the container version is modified. Defaults to: `null`.
+  - folder (List[Folder]): The folders in the container that this version was taken from. Defaults to: `null`.
+  - name (String): Container version display name. Defaults to: `null`.
+  - path (String): GTM ContainerVersions&#39;s API relative path. Defaults to: `null`.
+  - tag (List[Tag]): The tags in the container that this version was taken from. Defaults to: `null`.
+  - tagManagerUrl (String): Auto generated link to the tag manager UI Defaults to: `null`.
+  - trigger (List[Trigger]): The triggers in the container that this version was taken from. Defaults to: `null`.
+  - variable (List[Variable]): The variables in the container that this version was taken from. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accountId",
     :"builtInVariable",
@@ -52,6 +69,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.ContainerVersion do
     |> deserialize(:"tag", :list, GoogleApi.TagManager.V2.Model.Tag, options)
     |> deserialize(:"trigger", :list, GoogleApi.TagManager.V2.Model.Trigger, options)
     |> deserialize(:"variable", :list, GoogleApi.TagManager.V2.Model.Variable, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.ContainerVersion do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

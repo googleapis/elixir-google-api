@@ -20,9 +20,14 @@
 defmodule GoogleApi.Slides.V1.Model.Dimension do
   @moduledoc """
   A magnitude in a single direction in the specified units.
+
+  ## Attributes
+
+  - magnitude (Float): The magnitude. Defaults to: `null`.
+  - unit (String): The units for magnitude. Defaults to: `null`.
+    - Enum - one of [UNIT_UNSPECIFIED, EMU, PT]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"magnitude",
     :"unit"
@@ -32,6 +37,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.Dimension do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.Dimension do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

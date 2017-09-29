@@ -20,9 +20,18 @@
 defmodule GoogleApi.Sheets.V4.Model.TextFormat do
   @moduledoc """
   The format of a run of text in a cell. Absent values indicate that the field isn&#39;t specified.
+
+  ## Attributes
+
+  - bold (Boolean): True if the text is bold. Defaults to: `null`.
+  - fontFamily (String): The font family. Defaults to: `null`.
+  - fontSize (Integer): The size of the font. Defaults to: `null`.
+  - foregroundColor (Color): The foreground color of the text. Defaults to: `null`.
+  - italic (Boolean): True if the text is italicized. Defaults to: `null`.
+  - strikethrough (Boolean): True if the text has a strikethrough. Defaults to: `null`.
+  - underline (Boolean): True if the text is underlined. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bold",
     :"fontFamily",
@@ -39,6 +48,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.TextFormat do
   def decode(value, options) do
     value
     |> deserialize(:"foregroundColor", :struct, GoogleApi.Sheets.V4.Model.Color, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.TextFormat do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

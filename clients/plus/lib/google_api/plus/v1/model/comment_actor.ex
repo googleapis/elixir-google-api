@@ -17,12 +17,20 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Plus.V1.Model.Comment_actor do
+defmodule GoogleApi.Plus.V1.Model.CommentActor do
   @moduledoc """
   The person who posted this comment.
+
+  ## Attributes
+
+  - clientSpecificActorInfo (ActivityActorClientSpecificActorInfo):  Defaults to: `null`.
+  - displayName (String): The name of this actor, suitable for display. Defaults to: `null`.
+  - id (String): The ID of the actor. Defaults to: `null`.
+  - image (CommentActorImage):  Defaults to: `null`.
+  - url (String): A link to the Person resource for this actor. Defaults to: `null`.
+  - verification (ActivityActorVerification):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"clientSpecificActorInfo",
     :"displayName",
@@ -33,13 +41,19 @@ defmodule GoogleApi.Plus.V1.Model.Comment_actor do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Comment_actor do
+defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.CommentActor do
   import GoogleApi.Plus.V1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"clientSpecificActorInfo", :struct, GoogleApi.Plus.V1.Model.Activity_actor_clientSpecificActorInfo, options)
-    |> deserialize(:"image", :struct, GoogleApi.Plus.V1.Model.Comment_actor_image, options)
-    |> deserialize(:"verification", :struct, GoogleApi.Plus.V1.Model.Activity_actor_verification, options)
+    |> deserialize(:"clientSpecificActorInfo", :struct, GoogleApi.Plus.V1.Model.ActivityActorClientSpecificActorInfo, options)
+    |> deserialize(:"image", :struct, GoogleApi.Plus.V1.Model.CommentActorImage, options)
+    |> deserialize(:"verification", :struct, GoogleApi.Plus.V1.Model.ActivityActorVerification, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.CommentActor do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

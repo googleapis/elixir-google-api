@@ -20,9 +20,17 @@
 defmodule GoogleApi.Manufacturers.V1.Model.Issue do
   @moduledoc """
   Product issue.
+
+  ## Attributes
+
+  - attribute (String): If present, the attribute that triggered the issue. For more information about attributes, see https://support.google.com/manufacturers/answer/6124116. Defaults to: `null`.
+  - description (String): Description of the issue. Defaults to: `null`.
+  - severity (String): The severity of the issue. Defaults to: `null`.
+    - Enum - one of [SEVERITY_UNSPECIFIED, ERROR, WARNING, INFO]
+  - timestamp (String): The timestamp when this issue appeared. Defaults to: `null`.
+  - type (String): The server-generated type of the issue, for example, “INCORRECT_TEXT_FORMATTING”, “IMAGE_NOT_SERVEABLE”, etc. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"attribute",
     :"description",
@@ -35,6 +43,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Manufacturers.V1.Model.Issue do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Manufacturers.V1.Model.Issue do
+  def encode(value, options) do
+    GoogleApi.Manufacturers.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

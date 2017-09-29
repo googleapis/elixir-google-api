@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.SystemParameterRule do
   @moduledoc """
   Define a system parameter rule mapping system parameter definitions to methods.
+
+  ## Attributes
+
+  - parameters (List[SystemParameter]): Define parameters. Multiple names may be defined for a parameter. For a given method call, only one of them should be used. If multiple names are used the behavior is implementation-dependent. If none of the specified names are present the behavior is parameter-dependent. Defaults to: `null`.
+  - selector (String): Selects the methods to which this rule applies. Use &#39;*&#39; to indicate all methods in all APIs.  Refer to selector for syntax details. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"parameters",
     :"selector"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.SystemParamete
   def decode(value, options) do
     value
     |> deserialize(:"parameters", :list, GoogleApi.ServiceManagement.V1.Model.SystemParameter, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.SystemParameterRule do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

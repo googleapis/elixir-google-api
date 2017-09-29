@@ -20,9 +20,13 @@
 defmodule GoogleApi.Sheets.V4.Model.PivotGroupValueMetadata do
   @moduledoc """
   Metadata about a value in a pivot grouping.
+
+  ## Attributes
+
+  - collapsed (Boolean): True if the data corresponding to the value is collapsed. Defaults to: `null`.
+  - value (ExtendedValue): The calculated value the metadata corresponds to. (Note that formulaValue is not valid,  because the values will be calculated.) Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"collapsed",
     :"value"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.PivotGroupValueMetadata d
   def decode(value, options) do
     value
     |> deserialize(:"value", :struct, GoogleApi.Sheets.V4.Model.ExtendedValue, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.PivotGroupValueMetadata do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

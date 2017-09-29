@@ -20,9 +20,14 @@
 defmodule GoogleApi.Games.V1.Model.RoomModification do
   @moduledoc """
   This is a JSON template for room modification metadata.
+
+  ## Attributes
+
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#roomModification. Defaults to: `null`.
+  - modifiedTimestampMillis (String): The timestamp at which they modified the room, in milliseconds since the epoch in UTC. Defaults to: `null`.
+  - participantId (String): The ID of the participant that modified the room. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"modifiedTimestampMillis",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.RoomModification do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.RoomModification do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

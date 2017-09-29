@@ -20,9 +20,23 @@
 defmodule GoogleApi.Slides.V1.Model.ParagraphStyle do
   @moduledoc """
   Styles that apply to a whole paragraph.  If this text is contained in a shape with a parent placeholder, then these paragraph styles may be inherited from the parent. Which paragraph styles are inherited depend on the nesting level of lists:  * A paragraph not in a list will inherit its paragraph style from the   paragraph at the 0 nesting level of the list inside the parent placeholder. * A paragraph in a list will inherit its paragraph style from the paragraph   at its corresponding nesting level of the list inside the parent   placeholder.  Inherited paragraph styles are represented as unset fields in this message.
+
+  ## Attributes
+
+  - alignment (String): The text alignment for this paragraph. Defaults to: `null`.
+    - Enum - one of [ALIGNMENT_UNSPECIFIED, START, CENTER, END, JUSTIFIED]
+  - direction (String): The text direction of this paragraph. If unset, the value defaults to LEFT_TO_RIGHT since text direction is not inherited. Defaults to: `null`.
+    - Enum - one of [TEXT_DIRECTION_UNSPECIFIED, LEFT_TO_RIGHT, RIGHT_TO_LEFT]
+  - indentEnd (Dimension): The amount indentation for the paragraph on the side that corresponds to the end of the text, based on the current text direction. If unset, the value is inherited from the parent. Defaults to: `null`.
+  - indentFirstLine (Dimension): The amount of indentation for the start of the first line of the paragraph. If unset, the value is inherited from the parent. Defaults to: `null`.
+  - indentStart (Dimension): The amount indentation for the paragraph on the side that corresponds to the start of the text, based on the current text direction. If unset, the value is inherited from the parent. Defaults to: `null`.
+  - lineSpacing (Float): The amount of space between lines, as a percentage of normal, where normal is represented as 100.0. If unset, the value is inherited from the parent. Defaults to: `null`.
+  - spaceAbove (Dimension): The amount of extra space above the paragraph. If unset, the value is inherited from the parent. Defaults to: `null`.
+  - spaceBelow (Dimension): The amount of extra space above the paragraph. If unset, the value is inherited from the parent. Defaults to: `null`.
+  - spacingMode (String): The spacing mode for the paragraph. Defaults to: `null`.
+    - Enum - one of [SPACING_MODE_UNSPECIFIED, NEVER_COLLAPSE, COLLAPSE_LISTS]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"alignment",
     :"direction",
@@ -45,6 +59,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.ParagraphStyle do
     |> deserialize(:"indentStart", :struct, GoogleApi.Slides.V1.Model.Dimension, options)
     |> deserialize(:"spaceAbove", :struct, GoogleApi.Slides.V1.Model.Dimension, options)
     |> deserialize(:"spaceBelow", :struct, GoogleApi.Slides.V1.Model.Dimension, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.ParagraphStyle do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -17,20 +17,29 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.PageSpeedOnline.V2.Model.Result_ruleGroups do
+defmodule GoogleApi.PageSpeedOnline.V2.Model.ResultRuleGroups do
   @moduledoc """
   The name of this rule group: one of \&quot;SPEED\&quot; or \&quot;USABILITY\&quot;.
+
+  ## Attributes
+
+  - score (Integer): The score (0-100) for this rule group, which indicates how much better a page could be in that category (e.g. how much faster, or how much more usable). A high score indicates little room for improvement, while a lower score indicates more room for improvement. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"score"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.Result_ruleGroups do
+defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.ResultRuleGroups do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.PageSpeedOnline.V2.Model.ResultRuleGroups do
+  def encode(value, options) do
+    GoogleApi.PageSpeedOnline.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

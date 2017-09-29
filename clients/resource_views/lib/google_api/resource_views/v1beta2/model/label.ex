@@ -20,9 +20,13 @@
 defmodule GoogleApi.ResourceViews.V1beta2.Model.Label do
   @moduledoc """
   The Label to be applied to the resource views.
+
+  ## Attributes
+
+  - key (String): Key of the label. Defaults to: `null`.
+  - value (String): Value of the label. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"key",
     :"value"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ResourceViews.V1beta2.Model.Label do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ResourceViews.V1beta2.Model.Label do
+  def encode(value, options) do
+    GoogleApi.ResourceViews.V1beta2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

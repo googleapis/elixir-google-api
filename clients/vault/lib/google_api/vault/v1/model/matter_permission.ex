@@ -20,9 +20,14 @@
 defmodule GoogleApi.Vault.V1.Model.MatterPermission do
   @moduledoc """
   Currently each matter only has one owner, and all others are collaborators. When an account is purged, its corresponding MatterPermission resources cease to exist.
+
+  ## Attributes
+
+  - accountId (String): The account id, as provided by &lt;a href&#x3D;\&quot;https://developers.google.com/admin-sdk/\&quot;&gt;Admin SDK&lt;/a&gt;. Defaults to: `null`.
+  - role (String): The user&#39;s role in this matter. Defaults to: `null`.
+    - Enum - one of [ROLE_UNSPECIFIED, COLLABORATOR, OWNER]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accountId",
     :"role"
@@ -32,6 +37,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Vault.V1.Model.MatterPermission do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Vault.V1.Model.MatterPermission do
+  def encode(value, options) do
+    GoogleApi.Vault.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

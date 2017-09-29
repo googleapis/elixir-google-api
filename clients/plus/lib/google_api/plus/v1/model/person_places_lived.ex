@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Plus.V1.Model.Person_placesLived do
+defmodule GoogleApi.Plus.V1.Model.PersonPlacesLived do
   @moduledoc """
   
+
+  ## Attributes
+
+  - primary (Boolean): If \&quot;true\&quot;, this place of residence is this person&#39;s primary residence. Defaults to: `null`.
+  - value (String): A place where this person has lived. For example: \&quot;Seattle, WA\&quot;, \&quot;Near Toronto\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"primary",
     :"value"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Person_placesLived do
+defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.PersonPlacesLived do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.PersonPlacesLived do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

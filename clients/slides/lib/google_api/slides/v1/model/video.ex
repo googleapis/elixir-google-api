@@ -20,9 +20,16 @@
 defmodule GoogleApi.Slides.V1.Model.Video do
   @moduledoc """
   A PageElement kind representing a video.
+
+  ## Attributes
+
+  - id (String): The video source&#39;s unique identifier for this video. Defaults to: `null`.
+  - source (String): The video source. Defaults to: `null`.
+    - Enum - one of [SOURCE_UNSPECIFIED, YOUTUBE]
+  - url (String): An URL to a video. The URL is valid as long as the source video exists and sharing settings do not change. Defaults to: `null`.
+  - videoProperties (VideoProperties): The properties of the video. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"source",
@@ -36,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.Video do
   def decode(value, options) do
     value
     |> deserialize(:"videoProperties", :struct, GoogleApi.Slides.V1.Model.VideoProperties, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.Video do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

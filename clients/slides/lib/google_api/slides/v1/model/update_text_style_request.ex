@@ -20,9 +20,16 @@
 defmodule GoogleApi.Slides.V1.Model.UpdateTextStyleRequest do
   @moduledoc """
   Update the styling of text in a Shape or Table.
+
+  ## Attributes
+
+  - cellLocation (TableCellLocation): The location of the cell in the table containing the text to style. If &#x60;object_id&#x60; refers to a table, &#x60;cell_location&#x60; must have a value. Otherwise, it must not. Defaults to: `null`.
+  - fields (String): The fields that should be updated.  At least one field must be specified. The root &#x60;style&#x60; is implied and should not be specified. A single &#x60;\&quot;*\&quot;&#x60; can be used as short-hand for listing every field.  For example, to update the text style to bold, set &#x60;fields&#x60; to &#x60;\&quot;bold\&quot;&#x60;.  To reset a property to its default value, include its field name in the field mask but leave the field itself unset. Defaults to: `null`.
+  - objectId (String): The object ID of the shape or table with the text to be styled. Defaults to: `null`.
+  - style (TextStyle): The style(s) to set on the text.  If the value for a particular style matches that of the parent, that style will be set to inherit.  Certain text style changes may cause other changes meant to mirror the behavior of the Slides editor. See the documentation of TextStyle for more information. Defaults to: `null`.
+  - textRange (Range): The range of text to style.  The range may be extended to include adjacent newlines.  If the range fully contains a paragraph belonging to a list, the paragraph&#39;s bullet is also updated with the matching text style. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cellLocation",
     :"fields",
@@ -39,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.UpdateTextStyleRequest do
     |> deserialize(:"cellLocation", :struct, GoogleApi.Slides.V1.Model.TableCellLocation, options)
     |> deserialize(:"style", :struct, GoogleApi.Slides.V1.Model.TextStyle, options)
     |> deserialize(:"textRange", :struct, GoogleApi.Slides.V1.Model.Range, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.UpdateTextStyleRequest do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -63,7 +63,10 @@ defmodule GoogleApi.Prediction.V16.Api.Hostedmodels do
     }
     %{}
     |> method(:post)
-    |> url("/#{project}/hostedmodels/#{hosted_model_name}/predict")
+    |> url("/{project}/hostedmodels/{hostedModelName}/predict", %{
+         "project" => URI.encode_www_form(project),
+         "hostedModelName" => URI.encode_www_form(hosted_model_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

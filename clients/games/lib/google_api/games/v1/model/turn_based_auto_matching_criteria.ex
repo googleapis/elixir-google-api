@@ -20,9 +20,15 @@
 defmodule GoogleApi.Games.V1.Model.TurnBasedAutoMatchingCriteria do
   @moduledoc """
   This is a JSON template for an turn-based auto-match criteria object.
+
+  ## Attributes
+
+  - exclusiveBitmask (String): A bitmask indicating when auto-matches are valid. When ANDed with other exclusive bitmasks, the result must be zero. Can be used to support exclusive roles within a game. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#turnBasedAutoMatchingCriteria. Defaults to: `null`.
+  - maxAutoMatchingPlayers (Integer): The maximum number of players that should be added to the match by auto-matching. Defaults to: `null`.
+  - minAutoMatchingPlayers (Integer): The minimum number of players that should be added to the match by auto-matching. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"exclusiveBitmask",
     :"kind",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.TurnBasedAutoMatchingCriteria do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.TurnBasedAutoMatchingCriteria do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.Authentication do
   @moduledoc """
   &#x60;Authentication&#x60; defines the authentication configuration for an API.  Example for an API targeted for external use:      name: calendar.googleapis.com     authentication:       providers:       - id: google_calendar_auth         jwks_uri: https://www.googleapis.com/oauth2/v1/certs         issuer: https://securetoken.google.com       rules:       - selector: \&quot;*\&quot;         requirements:           provider_id: google_calendar_auth
+
+  ## Attributes
+
+  - providers (List[AuthProvider]): Defines a set of authentication providers that a service supports. Defaults to: `null`.
+  - rules (List[AuthenticationRule]): A list of authentication rules that apply to individual API methods.  **NOTE:** All service configuration rules follow \&quot;last one wins\&quot; order. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"providers",
     :"rules"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.Authentication
     value
     |> deserialize(:"providers", :list, GoogleApi.ServiceManagement.V1.Model.AuthProvider, options)
     |> deserialize(:"rules", :list, GoogleApi.ServiceManagement.V1.Model.AuthenticationRule, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.Authentication do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,21 @@
 defmodule GoogleApi.Genomics.V1.Model.ReadGroup do
   @moduledoc """
   A read group is all the data that&#39;s processed the same way by the sequencer.
+
+  ## Attributes
+
+  - info (Map[String, List[ErrorUnknown]]): A map of additional read group information. This must be of the form map&lt;string, string[]&gt; (string key mapping to a list of string values). Defaults to: `null`.
+  - datasetId (String): The dataset to which this read group belongs. Defaults to: `null`.
+  - description (String): A free-form text description of this read group. Defaults to: `null`.
+  - experiment (Experiment): The experiment used to generate this read group. Defaults to: `null`.
+  - id (String): The server-generated read group ID, unique for all read groups. Note: This is different than the @RG ID field in the SAM spec. For that value, see name. Defaults to: `null`.
+  - name (String): The read group name. This corresponds to the @RG ID field in the SAM spec. Defaults to: `null`.
+  - predictedInsertSize (Integer): The predicted insert size of this read group. The insert size is the length the sequenced DNA fragment from end-to-end, not including the adapters. Defaults to: `null`.
+  - programs (List[Program]): The programs used to generate this read group. Programs are always identical for all read groups within a read group set. For this reason, only the first read group in a returned set will have this field populated. Defaults to: `null`.
+  - referenceSetId (String): The reference set the reads in this read group are aligned to. Defaults to: `null`.
+  - sampleId (String): A client-supplied sample identifier for the reads in this read group. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"info",
     :"datasetId",
@@ -43,6 +55,12 @@ defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.ReadGroup do
     value
     |> deserialize(:"experiment", :struct, GoogleApi.Genomics.V1.Model.Experiment, options)
     |> deserialize(:"programs", :list, GoogleApi.Genomics.V1.Model.Program, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.ReadGroup do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

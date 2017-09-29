@@ -20,9 +20,12 @@
 defmodule GoogleApi.FirebaseRules.V1.Model.Source do
   @moduledoc """
   &#x60;Source&#x60; is one or more &#x60;File&#x60; messages comprising a logical set of rules.
+
+  ## Attributes
+
+  - files (List[File]): &#x60;File&#x60; set constituting the &#x60;Source&#x60; bundle. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"files"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.FirebaseRules.V1.Model.Source do
   def decode(value, options) do
     value
     |> deserialize(:"files", :list, GoogleApi.FirebaseRules.V1.Model.File, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.FirebaseRules.V1.Model.Source do
+  def encode(value, options) do
+    GoogleApi.FirebaseRules.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,16 @@
 defmodule GoogleApi.Sheets.V4.Model.GridProperties do
   @moduledoc """
   Properties of a grid.
+
+  ## Attributes
+
+  - columnCount (Integer): The number of columns in the grid. Defaults to: `null`.
+  - frozenColumnCount (Integer): The number of columns that are frozen in the grid. Defaults to: `null`.
+  - frozenRowCount (Integer): The number of rows that are frozen in the grid. Defaults to: `null`.
+  - hideGridlines (Boolean): True if the grid isn&#39;t showing gridlines in the UI. Defaults to: `null`.
+  - rowCount (Integer): The number of rows in the grid. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"columnCount",
     :"frozenColumnCount",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.GridProperties do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.GridProperties do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

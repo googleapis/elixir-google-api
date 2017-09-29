@@ -20,9 +20,16 @@
 defmodule GoogleApi.Spectrum.V1explorer.Model.PawsInitResponse do
   @moduledoc """
   The initialization response message communicates database parameters to the requesting device.
+
+  ## Attributes
+
+  - databaseChange (DbUpdateSpec): A database may include the databaseChange parameter to notify a device of a change to its database URI, providing one or more alternate database URIs. The device should use this information to update its list of pre-configured databases by (only) replacing its entry for the responding database with the list of alternate URIs. Defaults to: `null`.
+  - kind (String): Identifies what kind of resource this is. Value: the fixed string \&quot;spectrum#pawsInitResponse\&quot;. Defaults to: `null`.
+  - rulesetInfo (RulesetInfo): The rulesetInfo parameter must be included in the response. This parameter specifies the regulatory domain and parameters applicable to that domain. The database must include the authority field, which defines the regulatory domain for the location specified in the INIT_REQ message. Defaults to: `null`.
+  - type (String): The message type (e.g., INIT_REQ, AVAIL_SPECTRUM_REQ, ...).  Required field. Defaults to: `null`.
+  - version (String): The PAWS version. Must be exactly 1.0.  Required field. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"databaseChange",
     :"kind",
@@ -38,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.Spectrum.V1explorer.Model.PawsInitRespons
     value
     |> deserialize(:"databaseChange", :struct, GoogleApi.Spectrum.V1explorer.Model.DbUpdateSpec, options)
     |> deserialize(:"rulesetInfo", :struct, GoogleApi.Spectrum.V1explorer.Model.RulesetInfo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spectrum.V1explorer.Model.PawsInitResponse do
+  def encode(value, options) do
+    GoogleApi.Spectrum.V1explorer.Deserializer.serialize_non_nil(value, options)
   end
 end
 

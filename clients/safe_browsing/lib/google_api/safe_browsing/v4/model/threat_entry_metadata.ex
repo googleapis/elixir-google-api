@@ -20,9 +20,12 @@
 defmodule GoogleApi.SafeBrowsing.V4.Model.ThreatEntryMetadata do
   @moduledoc """
   The metadata associated with a specific threat entry. The client is expected to know the metadata key/value pairs associated with each threat type.
+
+  ## Attributes
+
+  - entries (List[MetadataEntry]): The metadata entries. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"entries"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.ThreatEntryMetadata
   def decode(value, options) do
     value
     |> deserialize(:"entries", :list, GoogleApi.SafeBrowsing.V4.Model.MetadataEntry, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SafeBrowsing.V4.Model.ThreatEntryMetadata do
+  def encode(value, options) do
+    GoogleApi.SafeBrowsing.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

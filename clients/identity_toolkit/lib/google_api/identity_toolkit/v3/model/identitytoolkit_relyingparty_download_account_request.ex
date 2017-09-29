@@ -20,9 +20,15 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyDownloadAccountRequest do
   @moduledoc """
   Request to download user account in batch.
+
+  ## Attributes
+
+  - delegatedProjectNumber (String): GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration. Defaults to: `null`.
+  - maxResults (Integer): The max number of results to return in the response. Defaults to: `null`.
+  - nextPageToken (String): The token for the next page. This should be taken from the previous response. Defaults to: `null`.
+  - targetProjectId (String): Specify which project (field value is actually project id) to operate. Only used when provided credential. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"delegatedProjectNumber",
     :"maxResults",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyDownloadAccountRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyDownloadAccountRequest do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

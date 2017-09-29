@@ -20,9 +20,12 @@
 defmodule GoogleApi.Sheets.V4.Model.UnmergeCellsRequest do
   @moduledoc """
   Unmerges cells in the given range.
+
+  ## Attributes
+
+  - range (GridRange): The range within which all cells should be unmerged. If the range spans multiple merges, all will be unmerged. The range must not partially span any merge. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"range"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UnmergeCellsRequest do
   def decode(value, options) do
     value
     |> deserialize(:"range", :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UnmergeCellsRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

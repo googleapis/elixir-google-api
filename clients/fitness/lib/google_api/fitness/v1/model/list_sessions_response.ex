@@ -20,9 +20,15 @@
 defmodule GoogleApi.Fitness.V1.Model.ListSessionsResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - deletedSession (List[Session]): If includeDeleted is set to true in the request, this list will contain sessions deleted with original end times that are within the startTime and endTime frame. Defaults to: `null`.
+  - hasMoreData (Boolean): Flag to indicate server has more data to transfer Defaults to: `null`.
+  - nextPageToken (String): The continuation token, which is used to page through large result sets. Provide this value in a subsequent request to return the next page of results. Defaults to: `null`.
+  - session (List[Session]): Sessions with an end time that is between startTime and endTime of the request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"deletedSession",
     :"hasMoreData",
@@ -37,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.Fitness.V1.Model.ListSessionsResponse do
     value
     |> deserialize(:"deletedSession", :list, GoogleApi.Fitness.V1.Model.Session, options)
     |> deserialize(:"session", :list, GoogleApi.Fitness.V1.Model.Session, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Fitness.V1.Model.ListSessionsResponse do
+  def encode(value, options) do
+    GoogleApi.Fitness.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

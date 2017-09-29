@@ -20,9 +20,22 @@
 defmodule GoogleApi.Games.V1.Model.Snapshot do
   @moduledoc """
   This is a JSON template for an snapshot object.
+
+  ## Attributes
+
+  - coverImage (SnapshotImage): The cover image of this snapshot. May be absent if there is no image. Defaults to: `null`.
+  - description (String): The description of this snapshot. Defaults to: `null`.
+  - driveId (String): The ID of the file underlying this snapshot in the Drive API. Only present if the snapshot is a view on a Drive file and the file is owned by the caller. Defaults to: `null`.
+  - durationMillis (String): The duration associated with this snapshot, in millis. Defaults to: `null`.
+  - id (String): The ID of the snapshot. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#snapshot. Defaults to: `null`.
+  - lastModifiedMillis (String): The timestamp (in millis since Unix epoch) of the last modification to this snapshot. Defaults to: `null`.
+  - progressValue (String): The progress value (64-bit integer set by developer) associated with this snapshot. Defaults to: `null`.
+  - title (String): The title of this snapshot. Defaults to: `null`.
+  - type (String): The type of this snapshot. Possible values are:   - \&quot;SAVE_GAME\&quot; - A snapshot representing a save game. Defaults to: `null`.
+  - uniqueName (String): The unique name provided when the snapshot was created. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"coverImage",
     :"description",
@@ -43,6 +56,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.Snapshot do
   def decode(value, options) do
     value
     |> deserialize(:"coverImage", :struct, GoogleApi.Games.V1.Model.SnapshotImage, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.Snapshot do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -17,12 +17,18 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.DoubleClickSearch.V2.Model.ReportRequest_timeRange do
+defmodule GoogleApi.DoubleClickSearch.V2.Model.ReportRequestTimeRange do
   @moduledoc """
   If metrics are requested in a report, this argument will be used to restrict the metrics to a specific time range.
+
+  ## Attributes
+
+  - changedAttributesSinceTimestamp (DateTime): Inclusive UTC timestamp in RFC format, e.g., 2013-07-16T10:16:23.555Z. See additional references on how changed attribute reports work. Defaults to: `null`.
+  - changedMetricsSinceTimestamp (DateTime): Inclusive UTC timestamp in RFC format, e.g., 2013-07-16T10:16:23.555Z. See additional references on how changed metrics reports work. Defaults to: `null`.
+  - endDate (String): Inclusive date in YYYY-MM-DD format. Defaults to: `null`.
+  - startDate (String): Inclusive date in YYYY-MM-DD format. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"changedAttributesSinceTimestamp",
     :"changedMetricsSinceTimestamp",
@@ -31,9 +37,15 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.ReportRequest_timeRange do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.DoubleClickSearch.V2.Model.ReportRequest_timeRange do
+defimpl Poison.Decoder, for: GoogleApi.DoubleClickSearch.V2.Model.ReportRequestTimeRange do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.DoubleClickSearch.V2.Model.ReportRequestTimeRange do
+  def encode(value, options) do
+    GoogleApi.DoubleClickSearch.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

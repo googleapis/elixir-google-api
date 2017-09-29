@@ -20,9 +20,14 @@
 defmodule GoogleApi.Games.V1.Model.TurnBasedMatchData do
   @moduledoc """
   This is a JSON template for a turn-based match data object.
+
+  ## Attributes
+
+  - data (String): The byte representation of the data (limited to 128 kB), as a Base64-encoded string with the URL_SAFE encoding option. Defaults to: `null`.
+  - dataAvailable (Boolean): True if this match has data available but it wasn&#39;t returned in a list response; fetching the match individually will retrieve this data. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#turnBasedMatchData. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"data",
     :"dataAvailable",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.TurnBasedMatchData do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.TurnBasedMatchData do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

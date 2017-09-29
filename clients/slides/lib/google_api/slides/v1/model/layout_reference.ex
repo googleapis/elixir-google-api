@@ -20,9 +20,14 @@
 defmodule GoogleApi.Slides.V1.Model.LayoutReference do
   @moduledoc """
   Slide layout reference. This may reference either:  - A predefined layout - One of the layouts in the presentation.
+
+  ## Attributes
+
+  - layoutId (String): Layout ID: the object ID of one of the layouts in the presentation. Defaults to: `null`.
+  - predefinedLayout (String): Predefined layout. Defaults to: `null`.
+    - Enum - one of [PREDEFINED_LAYOUT_UNSPECIFIED, BLANK, CAPTION_ONLY, TITLE, TITLE_AND_BODY, TITLE_AND_TWO_COLUMNS, TITLE_ONLY, SECTION_HEADER, SECTION_TITLE_AND_DESCRIPTION, ONE_COLUMN_TEXT, MAIN_POINT, BIG_NUMBER]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"layoutId",
     :"predefinedLayout"
@@ -32,6 +37,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.LayoutReference do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.LayoutReference do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,16 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.Tier do
   @moduledoc """
   A Google Cloud SQL service tier resource.
+
+  ## Attributes
+
+  - DiskQuota (String): The maximum disk size of this tier in bytes. Defaults to: `null`.
+  - RAM (String): The maximum RAM usage of this tier in bytes. Defaults to: `null`.
+  - kind (String): This is always sql#tier. Defaults to: `null`.
+  - region (List[String]): The applicable regions for this tier. Defaults to: `null`.
+  - tier (String): An identifier for the service tier, for example D1, D2 etc. For related information, see Pricing. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"DiskQuota",
     :"RAM",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.Tier do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.Tier do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

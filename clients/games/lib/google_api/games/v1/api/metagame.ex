@@ -111,7 +111,10 @@ defmodule GoogleApi.Games.V1.Api.Metagame do
     }
     %{}
     |> method(:get)
-    |> url("/players/#{player_id}/categories/#{collection}")
+    |> url("/players/{playerId}/categories/{collection}", %{
+         "playerId" => URI.encode_www_form(player_id),
+         "collection" => URI.encode_www_form(collection)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

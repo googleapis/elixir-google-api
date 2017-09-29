@@ -20,9 +20,12 @@
 defmodule GoogleApi.TagManager.V2.Model.RevertFolderResponse do
   @moduledoc """
   The result of reverting folder changes in a workspace.
+
+  ## Attributes
+
+  - folder (Folder): Folder as it appears in the latest container version since the last workspace synchronization operation. If no folder is present, that means the folder was deleted in the latest container version. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"folder"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.RevertFolderResponse 
   def decode(value, options) do
     value
     |> deserialize(:"folder", :struct, GoogleApi.TagManager.V2.Model.Folder, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.RevertFolderResponse do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

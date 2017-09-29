@@ -20,9 +20,13 @@
 defmodule GoogleApi.Spanner.V1.Model.InstanceConfig do
   @moduledoc """
   A possible configuration for a Cloud Spanner instance. Configurations define the geographic placement of nodes and their replication.
+
+  ## Attributes
+
+  - displayName (String): The name of this instance configuration as it appears in UIs. Defaults to: `null`.
+  - name (String): A unique identifier for the instance configuration.  Values are of the form &#x60;projects/&lt;project&gt;/instanceConfigs/a-z*&#x60; Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"displayName",
     :"name"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.InstanceConfig do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.InstanceConfig do
+  def encode(value, options) do
+    GoogleApi.Spanner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

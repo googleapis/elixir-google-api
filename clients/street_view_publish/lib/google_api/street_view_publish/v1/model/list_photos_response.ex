@@ -20,9 +20,13 @@
 defmodule GoogleApi.StreetViewPublish.V1.Model.ListPhotosResponse do
   @moduledoc """
   Response to list all photos that belong to a user.
+
+  ## Attributes
+
+  - nextPageToken (String): Token to retrieve the next page of results, or empty if there are no more results in the list. Defaults to: `null`.
+  - photos (List[Photo]): List of photos. The maximum number of items returned is based on the pageSize field in the request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nextPageToken",
     :"photos"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.StreetViewPublish.V1.Model.ListPhotosResp
   def decode(value, options) do
     value
     |> deserialize(:"photos", :list, GoogleApi.StreetViewPublish.V1.Model.Photo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.StreetViewPublish.V1.Model.ListPhotosResponse do
+  def encode(value, options) do
+    GoogleApi.StreetViewPublish.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

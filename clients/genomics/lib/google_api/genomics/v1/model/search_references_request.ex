@@ -20,9 +20,16 @@
 defmodule GoogleApi.Genomics.V1.Model.SearchReferencesRequest do
   @moduledoc """
   
+
+  ## Attributes
+
+  - accessions (List[String]): If present, return references for which a prefix of any of sourceAccessions match any of these strings. Accession numbers typically have a main number and a version, for example &#x60;GCF_000001405.26&#x60;. Defaults to: `null`.
+  - md5checksums (List[String]): If present, return references for which the md5checksum matches exactly. Defaults to: `null`.
+  - pageSize (Integer): The maximum number of results to return in a single page. If unspecified, defaults to 1024. The maximum value is 4096. Defaults to: `null`.
+  - pageToken (String): The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of &#x60;nextPageToken&#x60; from the previous response. Defaults to: `null`.
+  - referenceSetId (String): If present, return only references which belong to this reference set. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accessions",
     :"md5checksums",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.SearchReferencesRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.SearchReferencesRequest do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

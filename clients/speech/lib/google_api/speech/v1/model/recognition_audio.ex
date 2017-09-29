@@ -20,9 +20,13 @@
 defmodule GoogleApi.Speech.V1.Model.RecognitionAudio do
   @moduledoc """
   Contains audio data in the encoding specified in the &#x60;RecognitionConfig&#x60;. Either &#x60;content&#x60; or &#x60;uri&#x60; must be supplied. Supplying both or neither returns google.rpc.Code.INVALID_ARGUMENT. See [audio limits](https://cloud.google.com/speech/limits#content).
+
+  ## Attributes
+
+  - content (String): The audio data bytes encoded as specified in &#x60;RecognitionConfig&#x60;. Note: as with all bytes fields, protobuffers use a pure binary representation, whereas JSON representations use base64. Defaults to: `null`.
+  - uri (String): URI that points to a file that contains audio data bytes as specified in &#x60;RecognitionConfig&#x60;. Currently, only Google Cloud Storage URIs are supported, which must be specified in the following format: &#x60;gs://bucket_name/object_name&#x60; (other URI formats return google.rpc.Code.INVALID_ARGUMENT). For more information, see [Request URIs](https://cloud.google.com/storage/docs/reference-uris). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"content",
     :"uri"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1.Model.RecognitionAudio do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Speech.V1.Model.RecognitionAudio do
+  def encode(value, options) do
+    GoogleApi.Speech.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

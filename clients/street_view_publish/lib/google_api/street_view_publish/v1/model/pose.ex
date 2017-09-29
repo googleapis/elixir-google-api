@@ -20,9 +20,17 @@
 defmodule GoogleApi.StreetViewPublish.V1.Model.Pose do
   @moduledoc """
   Raw pose measurement for an entity.
+
+  ## Attributes
+
+  - altitude (Float): Altitude of the pose in meters above ground level (as defined by WGS84). NaN indicates an unmeasured quantity. Defaults to: `null`.
+  - heading (Float): Compass heading, measured at the center of the photo in degrees clockwise from North. Value must be &gt;&#x3D;0 and &lt;360. NaN indicates an unmeasured quantity. Defaults to: `null`.
+  - latLngPair (LatLng): Latitude and longitude pair of the pose, as explained here: https://cloud.google.com/datastore/docs/reference/rest/Shared.Types/LatLng When creating a Photo, if the latitude and longitude pair are not provided here, the geolocation from the exif header will be used. If the latitude and longitude pair is not provided and cannot be found in the exif header, the create photo process will fail. Defaults to: `null`.
+  - level (Level): Level (the floor in a building) used to configure vertical navigation. Defaults to: `null`.
+  - pitch (Float): Pitch, measured at the center of the photo in degrees. Value must be &gt;&#x3D;-90 and &lt;&#x3D; 90. A value of -90 means looking directly down, and a value of 90 means looking directly up. NaN indicates an unmeasured quantity. Defaults to: `null`.
+  - roll (Float): Roll, measured in degrees. Value must be &gt;&#x3D; 0 and &lt;360. A value of 0 means level with the horizon. NaN indicates an unmeasured quantity. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"altitude",
     :"heading",
@@ -39,6 +47,12 @@ defimpl Poison.Decoder, for: GoogleApi.StreetViewPublish.V1.Model.Pose do
     value
     |> deserialize(:"latLngPair", :struct, GoogleApi.StreetViewPublish.V1.Model.LatLng, options)
     |> deserialize(:"level", :struct, GoogleApi.StreetViewPublish.V1.Model.Level, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.StreetViewPublish.V1.Model.Pose do
+  def encode(value, options) do
+    GoogleApi.StreetViewPublish.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

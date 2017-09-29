@@ -20,9 +20,11 @@
 defmodule GoogleApi.Genomics.V1.Model.GetIamPolicyRequest do
   @moduledoc """
   Request message for &#x60;GetIamPolicy&#x60; method.
+
+  ## Attributes
+
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     
   ]
@@ -31,6 +33,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.GetIamPolicyRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.GetIamPolicyRequest do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

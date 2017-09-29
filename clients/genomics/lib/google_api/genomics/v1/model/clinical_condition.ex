@@ -20,9 +20,15 @@
 defmodule GoogleApi.Genomics.V1.Model.ClinicalCondition do
   @moduledoc """
   
+
+  ## Attributes
+
+  - conceptId (String): The MedGen concept id associated with this gene. Search for these IDs at http://www.ncbi.nlm.nih.gov/medgen/ Defaults to: `null`.
+  - externalIds (List[ExternalId]): The set of external IDs for this condition. Defaults to: `null`.
+  - names (List[String]): A set of names for the condition. Defaults to: `null`.
+  - omimId (String): The OMIM id for this condition. Search for these IDs at http://omim.org/ Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"conceptId",
     :"externalIds",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.ClinicalCondition do
   def decode(value, options) do
     value
     |> deserialize(:"externalIds", :list, GoogleApi.Genomics.V1.Model.ExternalId, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.ClinicalCondition do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

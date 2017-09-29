@@ -20,9 +20,15 @@
 defmodule GoogleApi.Sheets.V4.Model.AppendDimensionRequest do
   @moduledoc """
   Appends rows or columns to the end of a sheet.
+
+  ## Attributes
+
+  - dimension (String): Whether rows or columns should be appended. Defaults to: `null`.
+    - Enum - one of [DIMENSION_UNSPECIFIED, ROWS, COLUMNS]
+  - length (Integer): The number of rows or columns to append. Defaults to: `null`.
+  - sheetId (Integer): The sheet to append rows or columns to. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dimension",
     :"length",
@@ -33,6 +39,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.AppendDimensionRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.AppendDimensionRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.ServiceManagement.V1.Model.UndeleteServiceResponse do
   @moduledoc """
   Response message for UndeleteService method.
+
+  ## Attributes
+
+  - service (ManagedService): Revived service resource. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"service"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.UndeleteServic
   def decode(value, options) do
     value
     |> deserialize(:"service", :struct, GoogleApi.ServiceManagement.V1.Model.ManagedService, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.UndeleteServiceResponse do
+  def encode(value, options) do
+    GoogleApi.ServiceManagement.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

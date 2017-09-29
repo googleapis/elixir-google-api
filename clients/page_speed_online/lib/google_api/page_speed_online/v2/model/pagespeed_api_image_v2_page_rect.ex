@@ -17,12 +17,18 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiImageV2_page_rect do
+defmodule GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiImageV2PageRect do
   @moduledoc """
   The region of the page that is captured by this image, with dimensions measured in CSS pixels.
+
+  ## Attributes
+
+  - height (Integer): The height of the rect. Defaults to: `null`.
+  - left (Integer): The left coordinate of the rect, in page coordinates. Defaults to: `null`.
+  - top (Integer): The top coordinate of the rect, in page coordinates. Defaults to: `null`.
+  - width (Integer): The width of the rect. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"height",
     :"left",
@@ -31,9 +37,15 @@ defmodule GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiImageV2_page_rect do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiImageV2_page_rect do
+defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiImageV2PageRect do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiImageV2PageRect do
+  def encode(value, options) do
+    GoogleApi.PageSpeedOnline.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

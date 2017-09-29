@@ -126,7 +126,9 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/photo/#{photo_id}")
+    |> url("/v1/photo/{photoId}", %{
+         "photoId" => URI.encode_www_form(photo_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -181,7 +183,9 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
     }
     %{}
     |> method(:get)
-    |> url("/v1/photo/#{photo_id}")
+    |> url("/v1/photo/{photoId}", %{
+         "photoId" => URI.encode_www_form(photo_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -292,7 +296,9 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
     }
     %{}
     |> method(:put)
-    |> url("/v1/photo/#{id}")
+    |> url("/v1/photo/{id}", %{
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

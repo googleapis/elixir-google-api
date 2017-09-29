@@ -20,9 +20,15 @@
 defmodule GoogleApi.Slides.V1.Model.AutoText do
   @moduledoc """
   A TextElement kind that represents auto text.
+
+  ## Attributes
+
+  - content (String): The rendered content of this auto text, if available. Defaults to: `null`.
+  - style (TextStyle): The styling applied to this auto text. Defaults to: `null`.
+  - type (String): The type of this auto text. Defaults to: `null`.
+    - Enum - one of [TYPE_UNSPECIFIED, SLIDE_NUMBER]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"content",
     :"style",
@@ -35,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.AutoText do
   def decode(value, options) do
     value
     |> deserialize(:"style", :struct, GoogleApi.Slides.V1.Model.TextStyle, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.AutoText do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

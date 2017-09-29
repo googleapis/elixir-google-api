@@ -20,9 +20,13 @@
 defmodule GoogleApi.Monitoring.V3.Model.ListTimeSeriesResponse do
   @moduledoc """
   The ListTimeSeries response.
+
+  ## Attributes
+
+  - nextPageToken (String): If there are more results than have been returned, then this field is set to a non-empty value. To see the additional results, use that value as pageToken in the next call to this method. Defaults to: `null`.
+  - timeSeries (List[TimeSeries]): One or more time series that match the filter included in the request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nextPageToken",
     :"timeSeries"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.ListTimeSeriesRespons
   def decode(value, options) do
     value
     |> deserialize(:"timeSeries", :list, GoogleApi.Monitoring.V3.Model.TimeSeries, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Monitoring.V3.Model.ListTimeSeriesResponse do
+  def encode(value, options) do
+    GoogleApi.Monitoring.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

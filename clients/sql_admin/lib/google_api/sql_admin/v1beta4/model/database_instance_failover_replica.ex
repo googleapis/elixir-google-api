@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance_failoverReplica do
+defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstanceFailoverReplica do
   @moduledoc """
   The name and status of the failover replica. This property is applicable only to Second Generation instances.
+
+  ## Attributes
+
+  - available (Boolean): The availability status of the failover replica. A false status indicates that the failover replica is out of sync. The master can only failover to the falover replica when the status is true. Defaults to: `null`.
+  - name (String): The name of the failover replica. If specified at instance creation, a failover replica is created for the instance. The name doesn&#39;t include the project ID. This property is applicable only to Second Generation instances. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"available",
     :"name"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance_failoverReplica do
+defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstanceFailoverReplica do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstanceFailoverReplica do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

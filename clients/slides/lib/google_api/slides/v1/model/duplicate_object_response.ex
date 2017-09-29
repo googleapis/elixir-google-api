@@ -20,9 +20,12 @@
 defmodule GoogleApi.Slides.V1.Model.DuplicateObjectResponse do
   @moduledoc """
   The response of duplicating an object.
+
+  ## Attributes
+
+  - objectId (String): The ID of the new duplicate object. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"objectId"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.DuplicateObjectResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.DuplicateObjectResponse do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -17,12 +17,19 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Model.RollingUpdate_policy do
+defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Model.RollingUpdatePolicy do
   @moduledoc """
   Parameters of the update process.
+
+  ## Attributes
+
+  - autoPauseAfterInstances (Integer): Number of instances to update before the updater pauses the rolling update. Defaults to: `null`.
+  - instanceStartupTimeoutSec (Integer): The maximum amount of time that the updater waits for a HEALTHY state after all of the update steps are complete. If the HEALTHY state is not received before the deadline, the instance update is considered a failure. Defaults to: `null`.
+  - maxNumConcurrentInstances (Integer): The maximum number of instances that can be updated simultaneously. An instance update is considered complete only after the instance is restarted and initialized. Defaults to: `null`.
+  - maxNumFailedInstances (Integer): The maximum number of instance updates that can fail before the group update is considered a failure. An instance update is considered failed if any of its update actions (e.g. Stop call on Instance resource in Rolling Reboot) failed with permanent failure, or if the instance is in an UNHEALTHY state after it finishes all of the update actions. Defaults to: `null`.
+  - minInstanceUpdateTimeSec (Integer): The minimum amount of time that the updater spends to update each instance. Update time is the time it takes to complete all update actions (e.g. Stop call on Instance resource in Rolling Reboot), reboot, and initialize. If the instance update finishes early, the updater pauses for the remainder of the time before it starts the next instance update. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"autoPauseAfterInstances",
     :"instanceStartupTimeoutSec",
@@ -32,9 +39,15 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Model.RollingUpdate_policy do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ReplicaPoolUpdater.V1beta1.Model.RollingUpdate_policy do
+defimpl Poison.Decoder, for: GoogleApi.ReplicaPoolUpdater.V1beta1.Model.RollingUpdatePolicy do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ReplicaPoolUpdater.V1beta1.Model.RollingUpdatePolicy do
+  def encode(value, options) do
+    GoogleApi.ReplicaPoolUpdater.V1beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

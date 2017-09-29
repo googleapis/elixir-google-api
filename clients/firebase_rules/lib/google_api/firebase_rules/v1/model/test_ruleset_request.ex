@@ -20,9 +20,13 @@
 defmodule GoogleApi.FirebaseRules.V1.Model.TestRulesetRequest do
   @moduledoc """
   The request for FirebaseRulesService.TestRuleset.
+
+  ## Attributes
+
+  - source (Source): Optional &#x60;Source&#x60; to be checked for correctness.  This field must not be set when the resource name refers to a &#x60;Ruleset&#x60;. Defaults to: `null`.
+  - testSuite (TestSuite): Inline &#x60;TestSuite&#x60; to run. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"source",
     :"testSuite"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.FirebaseRules.V1.Model.TestRulesetRequest
     value
     |> deserialize(:"source", :struct, GoogleApi.FirebaseRules.V1.Model.Source, options)
     |> deserialize(:"testSuite", :struct, GoogleApi.FirebaseRules.V1.Model.TestSuite, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.FirebaseRules.V1.Model.TestRulesetRequest do
+  def encode(value, options) do
+    GoogleApi.FirebaseRules.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

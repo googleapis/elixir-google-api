@@ -20,9 +20,13 @@
 defmodule GoogleApi.Sheets.V4.Model.FilterCriteria do
   @moduledoc """
   Criteria for showing/hiding rows in a filter or filter view.
+
+  ## Attributes
+
+  - condition (BooleanCondition): A condition that must be true for values to be shown. (This does not override hiddenValues -- if a value is listed there,  it will still be hidden.) Defaults to: `null`.
+  - hiddenValues (List[String]): Values that should be hidden. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"condition",
     :"hiddenValues"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.FilterCriteria do
   def decode(value, options) do
     value
     |> deserialize(:"condition", :struct, GoogleApi.Sheets.V4.Model.BooleanCondition, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.FilterCriteria do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

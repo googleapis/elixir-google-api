@@ -20,9 +20,14 @@
 defmodule GoogleApi.PlayMoviesPartner.V1.Model.ListOrdersResponse do
   @moduledoc """
   Response to the &#39;ListOrders&#39; method.
+
+  ## Attributes
+
+  - nextPageToken (String): See _List methods rules_ for info about this field. Defaults to: `null`.
+  - orders (List[Order]): List of Orders that match the request criteria. Defaults to: `null`.
+  - totalSize (Integer): See _List methods rules_ for more information about this field. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"nextPageToken",
     :"orders",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.PlayMoviesPartner.V1.Model.ListOrdersResp
   def decode(value, options) do
     value
     |> deserialize(:"orders", :list, GoogleApi.PlayMoviesPartner.V1.Model.Order, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.PlayMoviesPartner.V1.Model.ListOrdersResponse do
+  def encode(value, options) do
+    GoogleApi.PlayMoviesPartner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.ServiceUser.V1.Model.AuthorizationConfig do
   @moduledoc """
   Configuration of authorization.  This section determines the authorization provider, if unspecified, then no authorization check will be done.  Example:      experimental:       authorization:         provider: firebaserules.googleapis.com
+
+  ## Attributes
+
+  - provider (String): The name of the authorization provider, such as firebaserules.googleapis.com. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"provider"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceUser.V1.Model.AuthorizationConfig do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceUser.V1.Model.AuthorizationConfig do
+  def encode(value, options) do
+    GoogleApi.ServiceUser.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

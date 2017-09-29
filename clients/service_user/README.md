@@ -1,6 +1,6 @@
 # GoogleApi.ServiceUser.V1
 
-**TODO: Add description**
+Enables services that service consumers want to use on Google Cloud Platform, lists the available or enabled services, or disables services that service consumers no longer use.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_service_user` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_service_user, "~> 0.1.0"}]
+  [{:google_api_service_user, "~> 0.0.1"}]
 end
 ```
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.Sheets.V4.Model.DeleteEmbeddedObjectRequest do
   @moduledoc """
   Deletes the embedded object with the given ID.
+
+  ## Attributes
+
+  - objectId (Integer): The ID of the embedded object to delete. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"objectId"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DeleteEmbeddedObjectRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.DeleteEmbeddedObjectRequest do
+  def encode(value, options) do
+    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

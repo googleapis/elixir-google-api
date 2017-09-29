@@ -1,6 +1,6 @@
 # GoogleApi.KnowledgeGraphSearch.V1
 
-**TODO: Add description**
+Searches the Google Knowledge Graph for entities.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_knowledge_graph_search` to your list of dependencies in `m
 
 ```elixir
 def deps do
-  [{:google_api_knowledge_graph_search, "~> 0.1.0"}]
+  [{:google_api_knowledge_graph_search, "~> 0.0.1"}]
 end
 ```
 

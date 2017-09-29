@@ -20,9 +20,15 @@
 defmodule GoogleApi.Genomics.V1.Model.Experiment do
   @moduledoc """
   
+
+  ## Attributes
+
+  - instrumentModel (String): The instrument model used as part of this experiment. This maps to sequencing technology in the SAM spec. Defaults to: `null`.
+  - libraryId (String): A client-supplied library identifier; a library is a collection of DNA fragments which have been prepared for sequencing from a sample. This field is important for quality control as error or bias can be introduced during sample preparation. Defaults to: `null`.
+  - platformUnit (String): The platform unit used as part of this experiment, for example flowcell-barcode.lane for Illumina or slide for SOLiD. Corresponds to the @RG PU field in the SAM spec. Defaults to: `null`.
+  - sequencingCenter (String): The sequencing center used as part of this experiment. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"instrumentModel",
     :"libraryId",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.Experiment do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.Experiment do
+  def encode(value, options) do
+    GoogleApi.Genomics.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

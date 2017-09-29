@@ -20,9 +20,15 @@
 defmodule GoogleApi.ProximityBeacon.V1beta1.Model.BeaconAttachment do
   @moduledoc """
   Project-specific data associated with a beacon.
+
+  ## Attributes
+
+  - attachmentName (String): Resource name of this attachment. Attachment names have the format: &lt;code&gt;beacons/&lt;var&gt;beacon_id&lt;/var&gt;/attachments/&lt;var&gt;attachment_id&lt;/var&gt;&lt;/code&gt;. Leave this empty on creation. Defaults to: `null`.
+  - creationTimeMs (String): The UTC time when this attachment was created, in milliseconds since the UNIX epoch. Defaults to: `null`.
+  - data (String): An opaque data container for client-provided data. Must be [base64](http://tools.ietf.org/html/rfc4648#section-4) encoded in HTTP requests, and will be so encoded (with padding) in responses. Required. Defaults to: `null`.
+  - namespacedType (String): Specifies what kind of attachment this is. Tells a client how to interpret the &#x60;data&#x60; field. Format is &lt;var&gt;namespace/type&lt;/var&gt;. Namespace provides type separation between clients. Type describes the type of &#x60;data&#x60;, for use by the client when parsing the &#x60;data&#x60; field. Required. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"attachmentName",
     :"creationTimeMs",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.BeaconAttachment do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ProximityBeacon.V1beta1.Model.BeaconAttachment do
+  def encode(value, options) do
+    GoogleApi.ProximityBeacon.V1beta1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

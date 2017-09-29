@@ -20,9 +20,12 @@
 defmodule GoogleApi.TagManager.V2.Model.RevertBuiltInVariableResponse do
   @moduledoc """
   The result of reverting a built-in variable in a workspace.
+
+  ## Attributes
+
+  - enabled (Boolean): Whether the built-in variable is enabled after reversion. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"enabled"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.RevertBuiltInVariableResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.RevertBuiltInVariableResponse do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

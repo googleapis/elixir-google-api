@@ -20,9 +20,11 @@
 defmodule GoogleApi.Speech.V1.Model.CancelOperationRequest do
   @moduledoc """
   The request message for Operations.CancelOperation.
+
+  ## Attributes
+
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     
   ]
@@ -31,6 +33,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1.Model.CancelOperationRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Speech.V1.Model.CancelOperationRequest do
+  def encode(value, options) do
+    GoogleApi.Speech.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

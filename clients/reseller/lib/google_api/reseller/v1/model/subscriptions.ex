@@ -20,9 +20,14 @@
 defmodule GoogleApi.Reseller.V1.Model.Subscriptions do
   @moduledoc """
   JSON template for a subscription list.
+
+  ## Attributes
+
+  - kind (String): Identifies the resource as a collection of subscriptions. Value: reseller#subscriptions Defaults to: `null`.
+  - nextPageToken (String): The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results. Defaults to: `null`.
+  - subscriptions (List[Subscription]): The subscriptions in this page of results. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"nextPageToken",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Reseller.V1.Model.Subscriptions do
   def decode(value, options) do
     value
     |> deserialize(:"subscriptions", :list, GoogleApi.Reseller.V1.Model.Subscription, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Reseller.V1.Model.Subscriptions do
+  def encode(value, options) do
+    GoogleApi.Reseller.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

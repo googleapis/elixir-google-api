@@ -20,9 +20,16 @@
 defmodule GoogleApi.Games.V1.Model.SnapshotImage do
   @moduledoc """
   This is a JSON template for an image of a snapshot.
+
+  ## Attributes
+
+  - height (Integer): The height of the image. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#snapshotImage. Defaults to: `null`.
+  - mime_type (String): The MIME type of the image. Defaults to: `null`.
+  - url (String): The URL of the image. This URL may be invalidated at any time and should not be cached. Defaults to: `null`.
+  - width (Integer): The width of the image. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"height",
     :"kind",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.SnapshotImage do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.SnapshotImage do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

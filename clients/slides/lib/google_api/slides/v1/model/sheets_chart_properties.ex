@@ -20,9 +20,12 @@
 defmodule GoogleApi.Slides.V1.Model.SheetsChartProperties do
   @moduledoc """
   The properties of the SheetsChart.
+
+  ## Attributes
+
+  - chartImageProperties (ImageProperties): The properties of the embedded chart image. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"chartImageProperties"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.SheetsChartProperties do
   def decode(value, options) do
     value
     |> deserialize(:"chartImageProperties", :struct, GoogleApi.Slides.V1.Model.ImageProperties, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Slides.V1.Model.SheetsChartProperties do
+  def encode(value, options) do
+    GoogleApi.Slides.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

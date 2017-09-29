@@ -20,9 +20,16 @@
 defmodule GoogleApi.Games.V1.Model.QuestMilestone do
   @moduledoc """
   This is a JSON template for a Quest Milestone resource.
+
+  ## Attributes
+
+  - completionRewardData (String): The completion reward data of the milestone, represented as a Base64-encoded string. This is a developer-specified binary blob with size between 0 and 2 KB before encoding. Defaults to: `null`.
+  - criteria (List[QuestCriterion]): The criteria of the milestone. Defaults to: `null`.
+  - id (String): The milestone ID. Defaults to: `null`.
+  - kind (String): Uniquely identifies the type of this resource. Value is always the fixed string games#questMilestone. Defaults to: `null`.
+  - state (String): The current state of the milestone. Possible values are:   - \&quot;COMPLETED_NOT_CLAIMED\&quot; - The milestone is complete, but has not yet been claimed.  - \&quot;CLAIMED\&quot; - The milestone is complete and has been claimed.  - \&quot;NOT_COMPLETED\&quot; - The milestone has not yet been completed.  - \&quot;NOT_STARTED\&quot; - The milestone is for a quest that has not yet been accepted. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"completionRewardData",
     :"criteria",
@@ -37,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.QuestMilestone do
   def decode(value, options) do
     value
     |> deserialize(:"criteria", :list, GoogleApi.Games.V1.Model.QuestCriterion, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Games.V1.Model.QuestMilestone do
+  def encode(value, options) do
+    GoogleApi.Games.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

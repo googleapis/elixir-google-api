@@ -20,9 +20,35 @@
 defmodule GoogleApi.TagManager.V2.Model.Tag do
   @moduledoc """
   Represents a Google Tag Manager Tag.
+
+  ## Attributes
+
+  - accountId (String): GTM Account ID. Defaults to: `null`.
+  - blockingRuleId (List[String]): Blocking rule IDs. If any of the listed rules evaluate to true, the tag will not fire. Defaults to: `null`.
+  - blockingTriggerId (List[String]): Blocking trigger IDs. If any of the listed triggers evaluate to true, the tag will not fire. Defaults to: `null`.
+  - containerId (String): GTM Container ID. Defaults to: `null`.
+  - fingerprint (String): The fingerprint of the GTM Tag as computed at storage time. This value is recomputed whenever the tag is modified. Defaults to: `null`.
+  - firingRuleId (List[String]): Firing rule IDs. A tag will fire when any of the listed rules are true and all of its blockingRuleIds (if any specified) are false. Defaults to: `null`.
+  - firingTriggerId (List[String]): Firing trigger IDs. A tag will fire when any of the listed triggers are true and all of its blockingTriggerIds (if any specified) are false. Defaults to: `null`.
+  - liveOnly (Boolean): If set to true, this tag will only fire in the live environment (e.g. not in preview or debug mode). Defaults to: `null`.
+  - name (String): Tag display name. Defaults to: `null`.
+  - notes (String): User notes on how to apply this tag in the container. Defaults to: `null`.
+  - parameter (List[Parameter]): The tag&#39;s parameters. Defaults to: `null`.
+  - parentFolderId (String): Parent folder id. Defaults to: `null`.
+  - path (String): GTM Tag&#39;s API relative path. Defaults to: `null`.
+  - priority (Parameter): User defined numeric priority of the tag. Tags are fired asynchronously in order of priority. Tags with higher numeric value fire first. A tag&#39;s priority can be a positive or negative value. The default value is 0. Defaults to: `null`.
+  - scheduleEndMs (String): The end timestamp in milliseconds to schedule a tag. Defaults to: `null`.
+  - scheduleStartMs (String): The start timestamp in milliseconds to schedule a tag. Defaults to: `null`.
+  - setupTag (List[SetupTag]): The list of setup tags. Currently we only allow one. Defaults to: `null`.
+  - tagFiringOption (String): Option to fire this tag. Defaults to: `null`.
+    - Enum - one of [oncePerEvent, oncePerLoad, tagFiringOptionUnspecified, unlimited]
+  - tagId (String): The Tag ID uniquely identifies the GTM Tag. Defaults to: `null`.
+  - tagManagerUrl (String): Auto generated link to the tag manager UI Defaults to: `null`.
+  - teardownTag (List[TeardownTag]): The list of teardown tags. Currently we only allow one. Defaults to: `null`.
+  - type (String): GTM Tag Type. Defaults to: `null`.
+  - workspaceId (String): GTM Workspace ID. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accountId",
     :"blockingRuleId",
@@ -58,6 +84,12 @@ defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.Tag do
     |> deserialize(:"priority", :struct, GoogleApi.TagManager.V2.Model.Parameter, options)
     |> deserialize(:"setupTag", :list, GoogleApi.TagManager.V2.Model.SetupTag, options)
     |> deserialize(:"teardownTag", :list, GoogleApi.TagManager.V2.Model.TeardownTag, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.Tag do
+  def encode(value, options) do
+    GoogleApi.TagManager.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

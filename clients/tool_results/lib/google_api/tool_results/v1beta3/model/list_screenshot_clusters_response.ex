@@ -20,9 +20,12 @@
 defmodule GoogleApi.ToolResults.V1beta3.Model.ListScreenshotClustersResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - clusters (List[ScreenshotCluster]): The set of clustres associated with an execution Always set Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"clusters"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.ListScreenshotC
   def decode(value, options) do
     value
     |> deserialize(:"clusters", :list, GoogleApi.ToolResults.V1beta3.Model.ScreenshotCluster, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.ListScreenshotClustersResponse do
+  def encode(value, options) do
+    GoogleApi.ToolResults.V1beta3.Deserializer.serialize_non_nil(value, options)
   end
 end
 
