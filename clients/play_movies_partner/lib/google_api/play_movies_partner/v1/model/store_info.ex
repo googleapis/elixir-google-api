@@ -20,9 +20,37 @@
 defmodule GoogleApi.PlayMoviesPartner.V1.Model.StoreInfo do
   @moduledoc """
   Information about a playable sequence (video) associated with an Edit and available at the Google Play Store.  Internally, each StoreInfo is uniquely identified by a &#x60;video_id&#x60; and &#x60;country&#x60;.  Externally, Title-level EIDR or Edit-level EIDR, if provided, can also be used to identify a specific title or edit in a country.
+
+  ## Attributes
+
+  - audioTracks (List[String]): Audio tracks available for this Edit. Defaults to: `null`.
+  - country (String): Country where Edit is available in ISO 3166-1 alpha-2 country code. Example: \&quot;US\&quot;. Defaults to: `null`.
+  - editLevelEidr (String): Edit-level EIDR ID. Example: \&quot;10.5240/1489-49A2-3956-4B2D-FE16-6\&quot;. Defaults to: `null`.
+  - episodeNumber (String): The number assigned to the episode within a season. Only available on TV Edits. Example: \&quot;1\&quot;. Defaults to: `null`.
+  - hasAudio51 (Boolean): Whether the Edit has a 5.1 channel audio track. Defaults to: `null`.
+  - hasEstOffer (Boolean): Whether the Edit has a EST offer. Defaults to: `null`.
+  - hasHdOffer (Boolean): Whether the Edit has a HD offer. Defaults to: `null`.
+  - hasInfoCards (Boolean): Whether the Edit has info cards. Defaults to: `null`.
+  - hasSdOffer (Boolean): Whether the Edit has a SD offer. Defaults to: `null`.
+  - hasVodOffer (Boolean): Whether the Edit has a VOD offer. Defaults to: `null`.
+  - liveTime (String): Timestamp when the Edit went live on the Store. Defaults to: `null`.
+  - mid (String): Knowledge Graph ID associated to this Edit, if available. This ID links the Edit to its knowledge entity, externally accessible at http://freebase.com. In the absense of Title EIDR or Edit EIDR, this ID helps link together multiple Edits across countries. Example: &#39;/m/0ffx29&#39; Defaults to: `null`.
+  - name (String): Default Edit name, usually in the language of the country of origin. Example: \&quot;Googlers, The\&quot;. Defaults to: `null`.
+  - pphNames (List[String]): Name of the post-production houses that manage the Edit. Defaults to: `null`.
+  - seasonId (String): Google-generated ID identifying the season linked to the Edit. Only available for TV Edits. Example: &#39;ster23ex&#39; Defaults to: `null`.
+  - seasonName (String): Default Season name, usually in the language of the country of origin. Only available for TV Edits Example: \&quot;Googlers, The - A Brave New World\&quot;. Defaults to: `null`.
+  - seasonNumber (String): The number assigned to the season within a show. Only available on TV Edits. Example: \&quot;1\&quot;. Defaults to: `null`.
+  - showId (String): Google-generated ID identifying the show linked to the Edit. Only available for TV Edits. Example: &#39;et2hsue_x&#39; Defaults to: `null`.
+  - showName (String): Default Show name, usually in the language of the country of origin. Only available for TV Edits Example: \&quot;Googlers, The\&quot;. Defaults to: `null`.
+  - studioName (String): Name of the studio that owns the Edit ordered. Defaults to: `null`.
+  - subtitles (List[String]): Subtitles available for this Edit. Defaults to: `null`.
+  - titleLevelEidr (String): Title-level EIDR ID. Example: \&quot;10.5240/1489-49A2-3956-4B2D-FE16-5\&quot;. Defaults to: `null`.
+  - trailerId (String): Google-generated ID identifying the trailer linked to the Edit. Example: &#39;bhd_4e_cx&#39; Defaults to: `null`.
+  - type (String): Edit type, like Movie, Episode or Season. Defaults to: `null`.
+    - Enum - one of [TITLE_TYPE_UNSPECIFIED, MOVIE, SEASON, EPISODE, BUNDLE]
+  - videoId (String): Google-generated ID identifying the video linked to the Edit. Example: &#39;gtry456_xc&#39; Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"audioTracks",
     :"country",
@@ -55,6 +83,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.PlayMoviesPartner.V1.Model.StoreInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.PlayMoviesPartner.V1.Model.StoreInfo do
+  def encode(value, options) do
+    GoogleApi.PlayMoviesPartner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

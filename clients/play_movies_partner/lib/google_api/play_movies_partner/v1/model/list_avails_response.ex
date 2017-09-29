@@ -20,9 +20,14 @@
 defmodule GoogleApi.PlayMoviesPartner.V1.Model.ListAvailsResponse do
   @moduledoc """
   Response to the &#39;ListAvails&#39; method.
+
+  ## Attributes
+
+  - avails (List[Avail]): List of Avails that match the request criteria. Defaults to: `null`.
+  - nextPageToken (String): See _List methods rules_ for info about this field. Defaults to: `null`.
+  - totalSize (Integer): See _List methods rules_ for more information about this field. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"avails",
     :"nextPageToken",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.PlayMoviesPartner.V1.Model.ListAvailsResp
   def decode(value, options) do
     value
     |> deserialize(:"avails", :list, GoogleApi.PlayMoviesPartner.V1.Model.Avail, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.PlayMoviesPartner.V1.Model.ListAvailsResponse do
+  def encode(value, options) do
+    GoogleApi.PlayMoviesPartner.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -73,7 +73,10 @@ defmodule GoogleApi.PlayMoviesPartner.V1.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/v1/accounts/#{account_id}/avails/#{avail_id}")
+    |> url("/v1/accounts/{accountId}/avails/{availId}", %{
+         "accountId" => URI.encode_www_form(account_id),
+         "availId" => URI.encode_www_form(avail_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -144,7 +147,9 @@ defmodule GoogleApi.PlayMoviesPartner.V1.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/v1/accounts/#{account_id}/avails")
+    |> url("/v1/accounts/{accountId}/avails", %{
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -198,7 +203,10 @@ defmodule GoogleApi.PlayMoviesPartner.V1.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/v1/accounts/#{account_id}/orders/#{order_id}")
+    |> url("/v1/accounts/{accountId}/orders/{orderId}", %{
+         "accountId" => URI.encode_www_form(account_id),
+         "orderId" => URI.encode_www_form(order_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -267,7 +275,9 @@ defmodule GoogleApi.PlayMoviesPartner.V1.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/v1/accounts/#{account_id}/orders")
+    |> url("/v1/accounts/{accountId}/orders", %{
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -322,7 +332,11 @@ defmodule GoogleApi.PlayMoviesPartner.V1.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/v1/accounts/#{account_id}/storeInfos/#{video_id}/country/#{country}")
+    |> url("/v1/accounts/{accountId}/storeInfos/{videoId}/country/{country}", %{
+         "accountId" => URI.encode_www_form(account_id),
+         "videoId" => URI.encode_www_form(video_id),
+         "country" => URI.encode_www_form(country)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -395,7 +409,9 @@ defmodule GoogleApi.PlayMoviesPartner.V1.Api.Accounts do
     }
     %{}
     |> method(:get)
-    |> url("/v1/accounts/#{account_id}/storeInfos")
+    |> url("/v1/accounts/{accountId}/storeInfos", %{
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

@@ -1,6 +1,6 @@
 # GoogleApi.PlayMoviesPartner.V1
 
-**TODO: Add description**
+Gets the delivery status of titles for Google Play Movies Partners.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_play_movies_partner` to your list of dependencies in `mix.
 
 ```elixir
 def deps do
-  [{:google_api_play_movies_partner, "~> 0.1.0"}]
+  [{:google_api_play_movies_partner, "~> 0.0.1"}]
 end
 ```
 
