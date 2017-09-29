@@ -20,9 +20,13 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.SslCertDetail do
   @moduledoc """
   SslCertDetail.
+
+  ## Attributes
+
+  - certInfo (SslCert): The public information about the cert. Defaults to: `null`.
+  - certPrivateKey (String): The private key for the client cert, in pem format. Keep private in order to protect your security. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"certInfo",
     :"certPrivateKey"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.SslCertDetail do
   def decode(value, options) do
     value
     |> deserialize(:"certInfo", :struct, GoogleApi.SQLAdmin.V1beta4.Model.SslCert, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.SslCertDetail do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

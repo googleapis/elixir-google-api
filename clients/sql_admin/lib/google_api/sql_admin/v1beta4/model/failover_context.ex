@@ -20,9 +20,13 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.FailoverContext do
   @moduledoc """
   Database instance failover context.
+
+  ## Attributes
+
+  - kind (String): This is always sql#failoverContext. Defaults to: `null`.
+  - settingsVersion (String): The current settings version of this instance. Request will be rejected if this version doesn&#39;t match the current settings version. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"settingsVersion"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.FailoverContext do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.FailoverContext do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

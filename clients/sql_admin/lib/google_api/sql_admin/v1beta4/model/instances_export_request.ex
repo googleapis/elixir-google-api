@@ -20,9 +20,12 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesExportRequest do
   @moduledoc """
   Database instance export request.
+
+  ## Attributes
+
+  - exportContext (ExportContext): Contains details about the export operation. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"exportContext"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.InstancesExportReq
   def decode(value, options) do
     value
     |> deserialize(:"exportContext", :struct, GoogleApi.SQLAdmin.V1beta4.Model.ExportContext, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.InstancesExportRequest do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

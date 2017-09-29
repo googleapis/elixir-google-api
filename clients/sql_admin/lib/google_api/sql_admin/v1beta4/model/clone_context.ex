@@ -20,9 +20,14 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.CloneContext do
   @moduledoc """
   Database instance clone context.
+
+  ## Attributes
+
+  - binLogCoordinates (BinLogCoordinates): Binary log coordinates, if specified, indentify the the position up to which the source instance should be cloned. If not specified, the source instance is cloned up to the most recent binary log coordintes. Defaults to: `null`.
+  - destinationInstanceName (String): Name of the Cloud SQL instance to be created as a clone. Defaults to: `null`.
+  - kind (String): This is always sql#cloneContext. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"binLogCoordinates",
     :"destinationInstanceName",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.CloneContext do
   def decode(value, options) do
     value
     |> deserialize(:"binLogCoordinates", :struct, GoogleApi.SQLAdmin.V1beta4.Model.BinLogCoordinates, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.CloneContext do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

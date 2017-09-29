@@ -20,9 +20,12 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.SslCertsCreateEphemeralRequest do
   @moduledoc """
   SslCerts create ephemeral certificate request.
+
+  ## Attributes
+
+  - public_key (String): PEM encoded public key to include in the signed certificate. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"public_key"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.SslCertsCreateEphemeralRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.SslCertsCreateEphemeralRequest do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

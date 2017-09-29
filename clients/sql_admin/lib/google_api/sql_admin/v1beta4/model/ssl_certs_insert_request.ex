@@ -20,9 +20,12 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.SslCertsInsertRequest do
   @moduledoc """
   SslCerts insert request.
+
+  ## Attributes
+
+  - commonName (String): User supplied name. Must be a distinct name from the other certificates for this instance. New certificates will not be usable until the instance is restarted. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"commonName"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.SslCertsInsertRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.SslCertsInsertRequest do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

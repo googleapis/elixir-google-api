@@ -62,7 +62,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
     }
     %{}
     |> method(:delete)
-    |> url("/projects/#{project}/instances/#{instance}/databases/#{database}")
+    |> url("/projects/{project}/instances/{instance}/databases/{database}", %{
+         "project" => URI.encode_www_form(project),
+         "instance" => URI.encode_www_form(instance),
+         "database" => URI.encode_www_form(database)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -105,7 +109,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
     }
     %{}
     |> method(:get)
-    |> url("/projects/#{project}/instances/#{instance}/databases/#{database}")
+    |> url("/projects/{project}/instances/{instance}/databases/{database}", %{
+         "project" => URI.encode_www_form(project),
+         "instance" => URI.encode_www_form(instance),
+         "database" => URI.encode_www_form(database)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -149,7 +157,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
     }
     %{}
     |> method(:post)
-    |> url("/projects/#{project}/instances/#{instance}/databases")
+    |> url("/projects/{project}/instances/{instance}/databases", %{
+         "project" => URI.encode_www_form(project),
+         "instance" => URI.encode_www_form(instance)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -191,7 +202,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
     }
     %{}
     |> method(:get)
-    |> url("/projects/#{project}/instances/#{instance}/databases")
+    |> url("/projects/{project}/instances/{instance}/databases", %{
+         "project" => URI.encode_www_form(project),
+         "instance" => URI.encode_www_form(instance)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -236,7 +250,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
     }
     %{}
     |> method(:patch)
-    |> url("/projects/#{project}/instances/#{instance}/databases/#{database}")
+    |> url("/projects/{project}/instances/{instance}/databases/{database}", %{
+         "project" => URI.encode_www_form(project),
+         "instance" => URI.encode_www_form(instance),
+         "database" => URI.encode_www_form(database)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -281,7 +299,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
     }
     %{}
     |> method(:put)
-    |> url("/projects/#{project}/instances/#{instance}/databases/#{database}")
+    |> url("/projects/{project}/instances/{instance}/databases/{database}", %{
+         "project" => URI.encode_www_form(project),
+         "instance" => URI.encode_www_form(instance),
+         "database" => URI.encode_www_form(database)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

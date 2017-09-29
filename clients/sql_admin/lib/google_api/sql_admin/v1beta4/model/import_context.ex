@@ -20,9 +20,17 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.ImportContext do
   @moduledoc """
   Database instance import context.
+
+  ## Attributes
+
+  - csvImportOptions (ImportContextCsvImportOptions):  Defaults to: `null`.
+  - database (String): The database (for example, guestbook) to which the import is made. If fileType is SQL and no database is specified, it is assumed that the database is specified in the file to be imported. If fileType is CSV, it must be specified. Defaults to: `null`.
+  - fileType (String): The file type for the specified uri. SQL: The file contains SQL statements. CSV: The file contains CSV data. Defaults to: `null`.
+  - importUser (String): The PostgreSQL user for this import operation. Defaults to cloudsqlsuperuser. Used only for PostgreSQL instances. Defaults to: `null`.
+  - kind (String): This is always sql#importContext. Defaults to: `null`.
+  - uri (String): A path to the file in Google Cloud Storage from which the import is made. The URI is in the form gs://bucketName/fileName. Compressed gzip files (.gz) are supported when fileType is SQL. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"csvImportOptions",
     :"database",
@@ -37,7 +45,13 @@ defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.ImportContext do
   import GoogleApi.SQLAdmin.V1beta4.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"csvImportOptions", :struct, GoogleApi.SQLAdmin.V1beta4.Model.ImportContext_csvImportOptions, options)
+    |> deserialize(:"csvImportOptions", :struct, GoogleApi.SQLAdmin.V1beta4.Model.ImportContextCsvImportOptions, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.ImportContext do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

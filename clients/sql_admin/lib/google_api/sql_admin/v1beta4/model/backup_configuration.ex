@@ -20,9 +20,15 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupConfiguration do
   @moduledoc """
   Database instance backup configuration.
+
+  ## Attributes
+
+  - binaryLogEnabled (Boolean): Whether binary log is enabled. If backup configuration is disabled, binary log must be disabled as well. Defaults to: `null`.
+  - enabled (Boolean): Whether this configuration is enabled. Defaults to: `null`.
+  - kind (String): This is always sql#backupConfiguration. Defaults to: `null`.
+  - startTime (String): Start time for the daily backup configuration in UTC timezone in the 24 hour format - HH:MM. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"binaryLogEnabled",
     :"enabled",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.BackupConfiguration do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.BackupConfiguration do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

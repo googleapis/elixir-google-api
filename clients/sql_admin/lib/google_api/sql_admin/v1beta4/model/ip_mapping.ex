@@ -20,9 +20,14 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.IpMapping do
   @moduledoc """
   Database instance IP Mapping.
+
+  ## Attributes
+
+  - ipAddress (String): The IP address assigned. Defaults to: `null`.
+  - timeToRetire (DateTime): The due time for this IP to be retired in RFC 3339 format, for example 2012-11-15T16:19:00.094Z. This field is only available when the IP is scheduled to be retired. Defaults to: `null`.
+  - type (String): The type of this IP address. A PRIMARY address is an address that can accept incoming connections. An OUTGOING address is the source address of connections originating from the instance, if supported. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"ipAddress",
     :"timeToRetire",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.IpMapping do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.IpMapping do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

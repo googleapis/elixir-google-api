@@ -20,9 +20,13 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.OnPremisesConfiguration do
   @moduledoc """
   On-premises instance configuration.
+
+  ## Attributes
+
+  - hostPort (String): The host and port of the on-premises instance in host:port format Defaults to: `null`.
+  - kind (String): This is always sql#onPremisesConfiguration. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"hostPort",
     :"kind"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.OnPremisesConfiguration do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.OnPremisesConfiguration do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

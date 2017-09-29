@@ -61,7 +61,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Operations do
     }
     %{}
     |> method(:get)
-    |> url("/projects/#{project}/operations/#{operation}")
+    |> url("/projects/{project}/operations/{operation}", %{
+         "project" => URI.encode_www_form(project),
+         "operation" => URI.encode_www_form(operation)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -107,7 +110,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Operations do
     }
     %{}
     |> method(:get)
-    |> url("/projects/#{project}/operations")
+    |> url("/projects/{project}/operations", %{
+         "project" => URI.encode_www_form(project)
+       })
     |> add_param(:query, :"instance", instance)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])

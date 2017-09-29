@@ -20,9 +20,13 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.TruncateLogContext do
   @moduledoc """
   Database Instance truncate log context.
+
+  ## Attributes
+
+  - kind (String): This is always sql#truncateLogContext. Defaults to: `null`.
+  - logType (String): The type of log to truncate. Valid values are MYSQL_GENERAL_TABLE and MYSQL_SLOW_TABLE. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"logType"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.TruncateLogContext do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.TruncateLogContext do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

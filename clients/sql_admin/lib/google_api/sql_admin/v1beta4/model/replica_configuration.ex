@@ -20,9 +20,14 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.ReplicaConfiguration do
   @moduledoc """
   Read-replica configuration for connecting to the master.
+
+  ## Attributes
+
+  - failoverTarget (Boolean): Specifies if the replica is the failover target. If the field is set to true the replica will be designated as a failover replica. In case the master instance fails, the replica instance will be promoted as the new master instance. Only one replica can be specified as failover target, and the replica has to be in different zone with the master instance. Defaults to: `null`.
+  - kind (String): This is always sql#replicaConfiguration. Defaults to: `null`.
+  - mysqlReplicaConfiguration (MySqlReplicaConfiguration): MySQL specific configuration when replicating from a MySQL on-premises master. Replication configuration information such as the username, password, certificates, and keys are not stored in the instance metadata. The configuration information is used only to set up the replication connection and is stored by MySQL in a file named master.info in the data directory. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"failoverTarget",
     :"kind",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.ReplicaConfigurati
   def decode(value, options) do
     value
     |> deserialize(:"mysqlReplicaConfiguration", :struct, GoogleApi.SQLAdmin.V1beta4.Model.MySqlReplicaConfiguration, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.ReplicaConfiguration do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.UsersListResponse do
   @moduledoc """
   User list response.
+
+  ## Attributes
+
+  - items (List[User]): List of user resources in the instance. Defaults to: `null`.
+  - kind (String): This is always sql#usersList. Defaults to: `null`.
+  - nextPageToken (String): An identifier that uniquely identifies the operation. You can use this identifier to retrieve the Operations resource that has information about the operation. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"items",
     :"kind",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.UsersListResponse 
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.SQLAdmin.V1beta4.Model.User, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.UsersListResponse do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

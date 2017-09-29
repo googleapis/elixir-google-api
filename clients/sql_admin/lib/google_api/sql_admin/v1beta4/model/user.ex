@@ -20,9 +20,18 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.User do
   @moduledoc """
   A Cloud SQL user resource.
+
+  ## Attributes
+
+  - host (String): The host name from which the user can connect. For insert operations, host defaults to an empty string. For update operations, host is specified as part of the request URL. The host name cannot be updated after insertion. Defaults to: `null`.
+  - etag (String): HTTP 1.1 Entity tag for the resource. Defaults to: `null`.
+  - instance (String): The name of the Cloud SQL instance. This does not include the project ID. Can be omitted for update since it is already specified on the URL. Defaults to: `null`.
+  - kind (String): This is always sql#user. Defaults to: `null`.
+  - name (String): The name of the user in the Cloud SQL instance. Can be omitted for update since it is already specified on the URL. Defaults to: `null`.
+  - password (String): The password for the user. Defaults to: `null`.
+  - project (String): The project ID of the project containing the Cloud SQL database. The Google apps domain is prefixed if applicable. Can be omitted for update since it is already specified on the URL. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"host",
     :"etag",
@@ -37,6 +46,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.User do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.User do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,17 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContext do
   @moduledoc """
   Database instance export context.
+
+  ## Attributes
+
+  - csvExportOptions (ExportContextCsvExportOptions):  Defaults to: `null`.
+  - databases (List[String]): Databases (for example, guestbook) from which the export is made. If fileType is SQL and no database is specified, all databases are exported. If fileType is CSV, you can optionally specify at most one database to export. If csvExportOptions.selectQuery also specifies the database, this field will be ignored. Defaults to: `null`.
+  - fileType (String): The file type for the specified uri. SQL: The file contains SQL statements. CSV: The file contains CSV data. Defaults to: `null`.
+  - kind (String): This is always sql#exportContext. Defaults to: `null`.
+  - sqlExportOptions (ExportContextSqlExportOptions):  Defaults to: `null`.
+  - uri (String): The path to the file in Google Cloud Storage where the export will be stored. The URI is in the form gs://bucketName/fileName. If the file already exists, the operation fails. If fileType is SQL and the filename ends with .gz, the contents are compressed. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"csvExportOptions",
     :"databases",
@@ -37,8 +45,14 @@ defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.ExportContext do
   import GoogleApi.SQLAdmin.V1beta4.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"csvExportOptions", :struct, GoogleApi.SQLAdmin.V1beta4.Model.ExportContext_csvExportOptions, options)
-    |> deserialize(:"sqlExportOptions", :struct, GoogleApi.SQLAdmin.V1beta4.Model.ExportContext_sqlExportOptions, options)
+    |> deserialize(:"csvExportOptions", :struct, GoogleApi.SQLAdmin.V1beta4.Model.ExportContextCsvExportOptions, options)
+    |> deserialize(:"sqlExportOptions", :struct, GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptions, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.ExportContext do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

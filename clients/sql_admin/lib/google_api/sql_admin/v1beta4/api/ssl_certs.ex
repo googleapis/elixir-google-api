@@ -63,7 +63,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
     }
     %{}
     |> method(:post)
-    |> url("/projects/#{project}/instances/#{instance}/createEphemeral")
+    |> url("/projects/{project}/instances/{instance}/createEphemeral", %{
+         "project" => URI.encode_www_form(project),
+         "instance" => URI.encode_www_form(instance)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -106,7 +109,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
     }
     %{}
     |> method(:delete)
-    |> url("/projects/#{project}/instances/#{instance}/sslCerts/#{sha1_fingerprint}")
+    |> url("/projects/{project}/instances/{instance}/sslCerts/{sha1Fingerprint}", %{
+         "project" => URI.encode_www_form(project),
+         "instance" => URI.encode_www_form(instance),
+         "sha1Fingerprint" => URI.encode_www_form(sha1_fingerprint)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -149,7 +156,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
     }
     %{}
     |> method(:get)
-    |> url("/projects/#{project}/instances/#{instance}/sslCerts/#{sha1_fingerprint}")
+    |> url("/projects/{project}/instances/{instance}/sslCerts/{sha1Fingerprint}", %{
+         "project" => URI.encode_www_form(project),
+         "instance" => URI.encode_www_form(instance),
+         "sha1Fingerprint" => URI.encode_www_form(sha1_fingerprint)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -193,7 +204,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
     }
     %{}
     |> method(:post)
-    |> url("/projects/#{project}/instances/#{instance}/sslCerts")
+    |> url("/projects/{project}/instances/{instance}/sslCerts", %{
+         "project" => URI.encode_www_form(project),
+         "instance" => URI.encode_www_form(instance)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -235,7 +249,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
     }
     %{}
     |> method(:get)
-    |> url("/projects/#{project}/instances/#{instance}/sslCerts")
+    |> url("/projects/{project}/instances/{instance}/sslCerts", %{
+         "project" => URI.encode_www_form(project),
+         "instance" => URI.encode_www_form(instance)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

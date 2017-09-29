@@ -60,7 +60,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Tiers do
     }
     %{}
     |> method(:get)
-    |> url("/projects/#{project}/tiers")
+    |> url("/projects/{project}/tiers", %{
+         "project" => URI.encode_www_form(project)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

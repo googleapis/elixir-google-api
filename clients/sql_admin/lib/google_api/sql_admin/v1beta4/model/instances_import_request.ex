@@ -20,9 +20,12 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesImportRequest do
   @moduledoc """
   Database instance import request.
+
+  ## Attributes
+
+  - importContext (ImportContext): Contains details about the import operation. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"importContext"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.InstancesImportReq
   def decode(value, options) do
     value
     |> deserialize(:"importContext", :struct, GoogleApi.SQLAdmin.V1beta4.Model.ImportContext, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.InstancesImportRequest do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

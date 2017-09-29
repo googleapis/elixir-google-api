@@ -20,9 +20,13 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabasesListResponse do
   @moduledoc """
   Database list response.
+
+  ## Attributes
+
+  - items (List[Database]): List of database resources in the instance. Defaults to: `null`.
+  - kind (String): This is always sql#databasesList. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"items",
     :"kind"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.DatabasesListRespo
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.SQLAdmin.V1beta4.Model.Database, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.DatabasesListResponse do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

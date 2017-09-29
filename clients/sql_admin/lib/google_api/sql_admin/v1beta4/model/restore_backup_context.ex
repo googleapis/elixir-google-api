@@ -20,9 +20,14 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.RestoreBackupContext do
   @moduledoc """
   Database instance restore from backup context.
+
+  ## Attributes
+
+  - backupRunId (String): The ID of the backup run to restore from. Defaults to: `null`.
+  - instanceId (String): The ID of the instance that the backup was taken from. Defaults to: `null`.
+  - kind (String): This is always sql#restoreBackupContext. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"backupRunId",
     :"instanceId",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.RestoreBackupContext do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.RestoreBackupContext do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

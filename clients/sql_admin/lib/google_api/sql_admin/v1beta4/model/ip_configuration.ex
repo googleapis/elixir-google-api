@@ -20,9 +20,14 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.IpConfiguration do
   @moduledoc """
   IP Management configuration.
+
+  ## Attributes
+
+  - authorizedNetworks (List[AclEntry]): The list of external networks that are allowed to connect to the instance using the IP. In CIDR notation, also known as &#39;slash&#39; notation (e.g. 192.168.100.0/24). Defaults to: `null`.
+  - ipv4Enabled (Boolean): Whether the instance should be assigned an IP address or not. Defaults to: `null`.
+  - requireSsl (Boolean): Whether SSL connections over IP should be enforced or not. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"authorizedNetworks",
     :"ipv4Enabled",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.IpConfiguration do
   def decode(value, options) do
     value
     |> deserialize(:"authorizedNetworks", :list, GoogleApi.SQLAdmin.V1beta4.Model.AclEntry, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.IpConfiguration do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

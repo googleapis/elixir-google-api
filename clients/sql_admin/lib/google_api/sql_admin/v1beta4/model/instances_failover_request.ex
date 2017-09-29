@@ -20,9 +20,12 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesFailoverRequest do
   @moduledoc """
   Instance failover request.
+
+  ## Attributes
+
+  - failoverContext (FailoverContext): Failover Context. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"failoverContext"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.InstancesFailoverR
   def decode(value, options) do
     value
     |> deserialize(:"failoverContext", :struct, GoogleApi.SQLAdmin.V1beta4.Model.FailoverContext, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.InstancesFailoverRequest do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

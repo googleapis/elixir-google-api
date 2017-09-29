@@ -20,9 +20,22 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.MySqlReplicaConfiguration do
   @moduledoc """
   Read-replica configuration specific to MySQL databases.
+
+  ## Attributes
+
+  - caCertificate (String): PEM representation of the trusted CA&#39;s x509 certificate. Defaults to: `null`.
+  - clientCertificate (String): PEM representation of the slave&#39;s x509 certificate. Defaults to: `null`.
+  - clientKey (String): PEM representation of the slave&#39;s private key. The corresponsing public key is encoded in the client&#39;s certificate. Defaults to: `null`.
+  - connectRetryInterval (Integer): Seconds to wait between connect retries. MySQL&#39;s default is 60 seconds. Defaults to: `null`.
+  - dumpFilePath (String): Path to a SQL dump file in Google Cloud Storage from which the slave instance is to be created. The URI is in the form gs://bucketName/fileName. Compressed gzip files (.gz) are also supported. Dumps should have the binlog co-ordinates from which replication should begin. This can be accomplished by setting --master-data to 1 when using mysqldump. Defaults to: `null`.
+  - kind (String): This is always sql#mysqlReplicaConfiguration. Defaults to: `null`.
+  - masterHeartbeatPeriod (String): Interval in milliseconds between replication heartbeats. Defaults to: `null`.
+  - password (String): The password for the replication connection. Defaults to: `null`.
+  - sslCipher (String): A list of permissible ciphers to use for SSL encryption. Defaults to: `null`.
+  - username (String): The username for the replication connection. Defaults to: `null`.
+  - verifyServerCertificate (Boolean): Whether or not to check the master&#39;s Common Name value in the certificate that it sends during the SSL handshake. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"caCertificate",
     :"clientCertificate",
@@ -41,6 +54,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.MySqlReplicaConfiguration do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.MySqlReplicaConfiguration do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

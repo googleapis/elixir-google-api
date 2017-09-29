@@ -62,7 +62,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
     }
     %{}
     |> method(:delete)
-    |> url("/projects/#{project}/instances/#{instance}/backupRuns/#{id}")
+    |> url("/projects/{project}/instances/{instance}/backupRuns/{id}", %{
+         "project" => URI.encode_www_form(project),
+         "instance" => URI.encode_www_form(instance),
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -105,7 +109,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
     }
     %{}
     |> method(:get)
-    |> url("/projects/#{project}/instances/#{instance}/backupRuns/#{id}")
+    |> url("/projects/{project}/instances/{instance}/backupRuns/{id}", %{
+         "project" => URI.encode_www_form(project),
+         "instance" => URI.encode_www_form(instance),
+         "id" => URI.encode_www_form(id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -149,7 +157,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
     }
     %{}
     |> method(:post)
-    |> url("/projects/#{project}/instances/#{instance}/backupRuns")
+    |> url("/projects/{project}/instances/{instance}/backupRuns", %{
+         "project" => URI.encode_www_form(project),
+         "instance" => URI.encode_www_form(instance)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -195,7 +206,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
     }
     %{}
     |> method(:get)
-    |> url("/projects/#{project}/instances/#{instance}/backupRuns")
+    |> url("/projects/{project}/instances/{instance}/backupRuns", %{
+         "project" => URI.encode_www_form(project),
+         "instance" => URI.encode_www_form(instance)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

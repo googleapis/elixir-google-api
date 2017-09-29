@@ -17,20 +17,29 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContext_csvExportOptions do
+defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContextCsvExportOptions do
   @moduledoc """
   Options for exporting data as CSV.
+
+  ## Attributes
+
+  - selectQuery (String): The select query used to extract the data. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"selectQuery"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.ExportContext_csvExportOptions do
+defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.ExportContextCsvExportOptions do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.ExportContextCsvExportOptions do
+  def encode(value, options) do
+    GoogleApi.SQLAdmin.V1beta4.Deserializer.serialize_non_nil(value, options)
   end
 end
 
