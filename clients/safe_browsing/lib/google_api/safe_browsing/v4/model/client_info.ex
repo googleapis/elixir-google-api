@@ -20,9 +20,13 @@
 defmodule GoogleApi.SafeBrowsing.V4.Model.ClientInfo do
   @moduledoc """
   The client metadata associated with Safe Browsing API requests.
+
+  ## Attributes
+
+  - clientId (String): A client ID that (hopefully) uniquely identifies the client implementation of the Safe Browsing API. Defaults to: `null`.
+  - clientVersion (String): The version of the client implementation. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"clientId",
     :"clientVersion"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.ClientInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SafeBrowsing.V4.Model.ClientInfo do
+  def encode(value, options) do
+    GoogleApi.SafeBrowsing.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

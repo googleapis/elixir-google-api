@@ -20,9 +20,14 @@
 defmodule GoogleApi.SafeBrowsing.V4.Model.FindFullHashesResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - matches (List[ThreatMatch]): The full hashes that matched the requested prefixes. Defaults to: `null`.
+  - minimumWaitDuration (String): The minimum duration the client must wait before issuing any find hashes request. If this field is not set, clients can issue a request as soon as they want. Defaults to: `null`.
+  - negativeCacheDuration (String): For requested entities that did not match the threat list, how long to cache the response. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"matches",
     :"minimumWaitDuration",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.FindFullHashesRespo
   def decode(value, options) do
     value
     |> deserialize(:"matches", :list, GoogleApi.SafeBrowsing.V4.Model.ThreatMatch, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SafeBrowsing.V4.Model.FindFullHashesResponse do
+  def encode(value, options) do
+    GoogleApi.SafeBrowsing.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

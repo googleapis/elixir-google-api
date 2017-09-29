@@ -20,9 +20,14 @@
 defmodule GoogleApi.SafeBrowsing.V4.Model.ThreatEntry do
   @moduledoc """
   An individual threat; for example, a malicious URL or its hash representation. Only one of these fields should be set.
+
+  ## Attributes
+
+  - digest (String): The digest of an executable in SHA256 format. The API supports both binary and hex digests. For JSON requests, digests are base64-encoded. Defaults to: `null`.
+  - hash (String): A hash prefix, consisting of the most significant 4-32 bytes of a SHA256 hash. This field is in binary format. For JSON requests, hashes are base64-encoded. Defaults to: `null`.
+  - url (String): A URL. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"digest",
     :"hash",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.ThreatEntry do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SafeBrowsing.V4.Model.ThreatEntry do
+  def encode(value, options) do
+    GoogleApi.SafeBrowsing.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

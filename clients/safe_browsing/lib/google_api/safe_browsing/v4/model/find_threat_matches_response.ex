@@ -20,9 +20,12 @@
 defmodule GoogleApi.SafeBrowsing.V4.Model.FindThreatMatchesResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - matches (List[ThreatMatch]): The threat list matches. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"matches"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.FindThreatMatchesRe
   def decode(value, options) do
     value
     |> deserialize(:"matches", :list, GoogleApi.SafeBrowsing.V4.Model.ThreatMatch, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SafeBrowsing.V4.Model.FindThreatMatchesResponse do
+  def encode(value, options) do
+    GoogleApi.SafeBrowsing.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

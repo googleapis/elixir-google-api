@@ -20,9 +20,17 @@
 defmodule GoogleApi.SafeBrowsing.V4.Model.ThreatListDescriptor do
   @moduledoc """
   Describes an individual threat list. A list is defined by three parameters: the type of threat posed, the type of platform targeted by the threat, and the type of entries in the list.
+
+  ## Attributes
+
+  - platformType (String): The platform type targeted by the list&#39;s entries. Defaults to: `null`.
+    - Enum - one of [PLATFORM_TYPE_UNSPECIFIED, WINDOWS, LINUX, ANDROID, OSX, IOS, ANY_PLATFORM, ALL_PLATFORMS, CHROME]
+  - threatEntryType (String): The entry types contained in the list. Defaults to: `null`.
+    - Enum - one of [THREAT_ENTRY_TYPE_UNSPECIFIED, URL, EXECUTABLE, IP_RANGE, CHROME_EXTENSION, FILENAME, CERT]
+  - threatType (String): The threat type posed by the list&#39;s entries. Defaults to: `null`.
+    - Enum - one of [THREAT_TYPE_UNSPECIFIED, MALWARE, SOCIAL_ENGINEERING, UNWANTED_SOFTWARE, POTENTIALLY_HARMFUL_APPLICATION, SOCIAL_ENGINEERING_INTERNAL, API_ABUSE, MALICIOUS_BINARY, CSD_WHITELIST, CSD_DOWNLOAD_WHITELIST, CLIENT_INCIDENT, CLIENT_INCIDENT_WHITELIST, APK_MALWARE_OFFLINE, SUBRESOURCE_FILTER]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"platformType",
     :"threatEntryType",
@@ -33,6 +41,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.ThreatListDescriptor do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SafeBrowsing.V4.Model.ThreatListDescriptor do
+  def encode(value, options) do
+    GoogleApi.SafeBrowsing.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

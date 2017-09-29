@@ -20,9 +20,13 @@
 defmodule GoogleApi.SafeBrowsing.V4.Model.FetchThreatListUpdatesResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - listUpdateResponses (List[ListUpdateResponse]): The list updates requested by the clients. Defaults to: `null`.
+  - minimumWaitDuration (String): The minimum duration the client must wait before issuing any update request. If this field is not set clients may update as soon as they want. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"listUpdateResponses",
     :"minimumWaitDuration"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.FetchThreatListUpda
   def decode(value, options) do
     value
     |> deserialize(:"listUpdateResponses", :list, GoogleApi.SafeBrowsing.V4.Model.ListUpdateResponse, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SafeBrowsing.V4.Model.FetchThreatListUpdatesResponse do
+  def encode(value, options) do
+    GoogleApi.SafeBrowsing.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -1,6 +1,6 @@
 # GoogleApi.SafeBrowsing.V4
 
-**TODO: Add description**
+Enables client applications to check web resources (most commonly URLs) against Google-generated lists of unsafe web resources.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_safe_browsing` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_safe_browsing, "~> 0.1.0"}]
+  [{:google_api_safe_browsing, "~> 0.0.1"}]
 end
 ```
 

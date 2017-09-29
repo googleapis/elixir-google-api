@@ -20,9 +20,13 @@
 defmodule GoogleApi.SafeBrowsing.V4.Model.FindThreatMatchesRequest do
   @moduledoc """
   Request to check entries against lists.
+
+  ## Attributes
+
+  - client (ClientInfo): The client metadata. Defaults to: `null`.
+  - threatInfo (ThreatInfo): The lists and entries to be checked for matches. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"client",
     :"threatInfo"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.FindThreatMatchesRe
     value
     |> deserialize(:"client", :struct, GoogleApi.SafeBrowsing.V4.Model.ClientInfo, options)
     |> deserialize(:"threatInfo", :struct, GoogleApi.SafeBrowsing.V4.Model.ThreatInfo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SafeBrowsing.V4.Model.FindThreatMatchesRequest do
+  def encode(value, options) do
+    GoogleApi.SafeBrowsing.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

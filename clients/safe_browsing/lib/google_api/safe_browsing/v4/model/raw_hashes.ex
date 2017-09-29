@@ -20,9 +20,13 @@
 defmodule GoogleApi.SafeBrowsing.V4.Model.RawHashes do
   @moduledoc """
   The uncompressed threat entries in hash format of a particular prefix length. Hashes can be anywhere from 4 to 32 bytes in size. A large majority are 4 bytes, but some hashes are lengthened if they collide with the hash of a popular URL.  Used for sending ThreatEntrySet to clients that do not support compression, or when sending non-4-byte hashes to clients that do support compression.
+
+  ## Attributes
+
+  - prefixSize (Integer): The number of bytes for each prefix encoded below.  This field can be anywhere from 4 (shortest prefix) to 32 (full SHA256 hash). Defaults to: `null`.
+  - rawHashes (String): The hashes, in binary format, concatenated into one long string. Hashes are sorted in lexicographic order. For JSON API users, hashes are base64-encoded. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"prefixSize",
     :"rawHashes"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.RawHashes do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SafeBrowsing.V4.Model.RawHashes do
+  def encode(value, options) do
+    GoogleApi.SafeBrowsing.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

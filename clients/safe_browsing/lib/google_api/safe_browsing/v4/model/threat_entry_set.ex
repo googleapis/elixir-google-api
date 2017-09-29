@@ -20,9 +20,17 @@
 defmodule GoogleApi.SafeBrowsing.V4.Model.ThreatEntrySet do
   @moduledoc """
   A set of threats that should be added or removed from a client&#39;s local database.
+
+  ## Attributes
+
+  - compressionType (String): The compression type for the entries in this set. Defaults to: `null`.
+    - Enum - one of [COMPRESSION_TYPE_UNSPECIFIED, RAW, RICE]
+  - rawHashes (RawHashes): The raw SHA256-formatted entries. Defaults to: `null`.
+  - rawIndices (RawIndices): The raw removal indices for a local list. Defaults to: `null`.
+  - riceHashes (RiceDeltaEncoding): The encoded 4-byte prefixes of SHA256-formatted entries, using a Golomb-Rice encoding. The hashes are converted to uint32, sorted in ascending order, then delta encoded and stored as encoded_data. Defaults to: `null`.
+  - riceIndices (RiceDeltaEncoding): The encoded local, lexicographically-sorted list indices, using a Golomb-Rice encoding. Used for sending compressed removal indices. The removal indices (uint32) are sorted in ascending order, then delta encoded and stored as encoded_data. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"compressionType",
     :"rawHashes",
@@ -40,6 +48,12 @@ defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.ThreatEntrySet do
     |> deserialize(:"rawIndices", :struct, GoogleApi.SafeBrowsing.V4.Model.RawIndices, options)
     |> deserialize(:"riceHashes", :struct, GoogleApi.SafeBrowsing.V4.Model.RiceDeltaEncoding, options)
     |> deserialize(:"riceIndices", :struct, GoogleApi.SafeBrowsing.V4.Model.RiceDeltaEncoding, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SafeBrowsing.V4.Model.ThreatEntrySet do
+  def encode(value, options) do
+    GoogleApi.SafeBrowsing.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 

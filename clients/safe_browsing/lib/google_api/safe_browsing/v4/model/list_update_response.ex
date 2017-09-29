@@ -20,9 +20,23 @@
 defmodule GoogleApi.SafeBrowsing.V4.Model.ListUpdateResponse do
   @moduledoc """
   An update to an individual list.
+
+  ## Attributes
+
+  - additions (List[ThreatEntrySet]): A set of entries to add to a local threat type&#39;s list. Repeated to allow for a combination of compressed and raw data to be sent in a single response. Defaults to: `null`.
+  - checksum (Checksum): The expected SHA256 hash of the client state; that is, of the sorted list of all hashes present in the database after applying the provided update. If the client state doesn&#39;t match the expected state, the client must disregard this update and retry later. Defaults to: `null`.
+  - newClientState (String): The new client state, in encrypted format. Opaque to clients. Defaults to: `null`.
+  - platformType (String): The platform type for which data is returned. Defaults to: `null`.
+    - Enum - one of [PLATFORM_TYPE_UNSPECIFIED, WINDOWS, LINUX, ANDROID, OSX, IOS, ANY_PLATFORM, ALL_PLATFORMS, CHROME]
+  - removals (List[ThreatEntrySet]): A set of entries to remove from a local threat type&#39;s list. In practice, this field is empty or contains exactly one ThreatEntrySet. Defaults to: `null`.
+  - responseType (String): The type of response. This may indicate that an action is required by the client when the response is received. Defaults to: `null`.
+    - Enum - one of [RESPONSE_TYPE_UNSPECIFIED, PARTIAL_UPDATE, FULL_UPDATE]
+  - threatEntryType (String): The format of the threats. Defaults to: `null`.
+    - Enum - one of [THREAT_ENTRY_TYPE_UNSPECIFIED, URL, EXECUTABLE, IP_RANGE, CHROME_EXTENSION, FILENAME, CERT]
+  - threatType (String): The threat type for which data is returned. Defaults to: `null`.
+    - Enum - one of [THREAT_TYPE_UNSPECIFIED, MALWARE, SOCIAL_ENGINEERING, UNWANTED_SOFTWARE, POTENTIALLY_HARMFUL_APPLICATION, SOCIAL_ENGINEERING_INTERNAL, API_ABUSE, MALICIOUS_BINARY, CSD_WHITELIST, CSD_DOWNLOAD_WHITELIST, CLIENT_INCIDENT, CLIENT_INCIDENT_WHITELIST, APK_MALWARE_OFFLINE, SUBRESOURCE_FILTER]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"additions",
     :"checksum",
@@ -42,6 +56,12 @@ defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.ListUpdateResponse 
     |> deserialize(:"additions", :list, GoogleApi.SafeBrowsing.V4.Model.ThreatEntrySet, options)
     |> deserialize(:"checksum", :struct, GoogleApi.SafeBrowsing.V4.Model.Checksum, options)
     |> deserialize(:"removals", :list, GoogleApi.SafeBrowsing.V4.Model.ThreatEntrySet, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.SafeBrowsing.V4.Model.ListUpdateResponse do
+  def encode(value, options) do
+    GoogleApi.SafeBrowsing.V4.Deserializer.serialize_non_nil(value, options)
   end
 end
 
