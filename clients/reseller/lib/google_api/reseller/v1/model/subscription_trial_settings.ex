@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Reseller.V1.Model.Subscription_trialSettings do
+defmodule GoogleApi.Reseller.V1.Model.SubscriptionTrialSettings do
   @moduledoc """
   The G Suite annual commitment and flexible payment plans can be in a 30-day free trial. For more information, see the API concepts.
+
+  ## Attributes
+
+  - isInTrial (Boolean): Determines if a subscription&#39;s plan is in a 30-day free trial or not: - true — The plan is in trial. - false — The plan is not in trial. Defaults to: `null`.
+  - trialEndTime (String): Date when the trial ends. The value is in milliseconds using the UNIX Epoch format. See an example Epoch converter. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"isInTrial",
     :"trialEndTime"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Reseller.V1.Model.Subscription_trialSettings do
+defimpl Poison.Decoder, for: GoogleApi.Reseller.V1.Model.SubscriptionTrialSettings do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Reseller.V1.Model.SubscriptionTrialSettings do
+  def encode(value, options) do
+    GoogleApi.Reseller.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

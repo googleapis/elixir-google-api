@@ -60,7 +60,9 @@ defmodule GoogleApi.Reseller.V1.Api.Customers do
     }
     %{}
     |> method(:get)
-    |> url("/customers/#{customer_id}")
+    |> url("/customers/{customerId}", %{
+         "customerId" => URI.encode_www_form(customer_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -147,7 +149,9 @@ defmodule GoogleApi.Reseller.V1.Api.Customers do
     }
     %{}
     |> method(:patch)
-    |> url("/customers/#{customer_id}")
+    |> url("/customers/{customerId}", %{
+         "customerId" => URI.encode_www_form(customer_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -190,7 +194,9 @@ defmodule GoogleApi.Reseller.V1.Api.Customers do
     }
     %{}
     |> method(:put)
-    |> url("/customers/#{customer_id}")
+    |> url("/customers/{customerId}", %{
+         "customerId" => URI.encode_www_form(customer_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

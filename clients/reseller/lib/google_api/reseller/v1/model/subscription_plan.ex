@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Reseller.V1.Model.Subscription_plan do
+defmodule GoogleApi.Reseller.V1.Model.SubscriptionPlan do
   @moduledoc """
   The plan property is required. In this version of the API, the G Suite plans are the flexible plan, annual commitment plan, and the 30-day free trial plan. For more information about the API\&quot;s payment plans, see the API concepts.
+
+  ## Attributes
+
+  - commitmentInterval (SubscriptionPlanCommitmentInterval):  Defaults to: `null`.
+  - isCommitmentPlan (Boolean): The isCommitmentPlan property&#39;s boolean value identifies the plan as an annual commitment plan: - true — The subscription&#39;s plan is an annual commitment plan. - false — The plan is not an annual commitment plan. Defaults to: `null`.
+  - planName (String): The planName property is required. This is the name of the subscription&#39;s plan. For more information about the Google payment plans, see the API concepts.  Possible values are:   - ANNUAL_MONTHLY_PAY — The annual commitment plan with monthly payments   - ANNUAL_YEARLY_PAY — The annual commitment plan with yearly payments   - FLEXIBLE — The flexible plan   - TRIAL — The 30-day free trial plan. A subscription in trial will be suspended after the 30th free day if no payment plan is assigned. Calling changePlan will assign a payment plan to a trial but will not activate the plan. A trial will automatically begin its assigned payment plan after its 30th free day or immediately after calling startPaidService. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"commitmentInterval",
     :"isCommitmentPlan",
@@ -30,11 +35,17 @@ defmodule GoogleApi.Reseller.V1.Model.Subscription_plan do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Reseller.V1.Model.Subscription_plan do
+defimpl Poison.Decoder, for: GoogleApi.Reseller.V1.Model.SubscriptionPlan do
   import GoogleApi.Reseller.V1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"commitmentInterval", :struct, GoogleApi.Reseller.V1.Model.Subscription_plan_commitmentInterval, options)
+    |> deserialize(:"commitmentInterval", :struct, GoogleApi.Reseller.V1.Model.SubscriptionPlanCommitmentInterval, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Reseller.V1.Model.SubscriptionPlan do
+  def encode(value, options) do
+    GoogleApi.Reseller.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

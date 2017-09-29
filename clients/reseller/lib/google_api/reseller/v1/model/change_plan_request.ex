@@ -20,9 +20,16 @@
 defmodule GoogleApi.Reseller.V1.Model.ChangePlanRequest do
   @moduledoc """
   JSON template for the ChangePlan rpc request.
+
+  ## Attributes
+
+  - dealCode (String): Google-issued code (100 char max) for discounted pricing on subscription plans. Deal code must be included in changePlan request in order to receive discounted rate. This property is optional. If a deal code has already been added to a subscription, this property may be left empty and the existing discounted rate will still apply (if not empty, only provide the deal code that is already present on the subscription). If a deal code has never been added to a subscription and this property is left blank, regular pricing will apply. Defaults to: `null`.
+  - kind (String): Identifies the resource as a subscription change plan request. Value: subscriptions#changePlanRequest Defaults to: `null`.
+  - planName (String): The planName property is required. This is the name of the subscription&#39;s payment plan. For more information about the Google payment plans, see API concepts.  Possible values are:   - ANNUAL_MONTHLY_PAY - The annual commitment plan with monthly payments   - ANNUAL_YEARLY_PAY - The annual commitment plan with yearly payments   - FLEXIBLE - The flexible plan   - TRIAL - The 30-day free trial plan Defaults to: `null`.
+  - purchaseOrderId (String): This is an optional property. This purchase order (PO) information is for resellers to use for their company tracking usage. If a purchaseOrderId value is given it appears in the API responses and shows up in the invoice. The property accepts up to 80 plain text characters. Defaults to: `null`.
+  - seats (Seats): This is a required property. The seats property is the number of user seat licenses. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"dealCode",
     :"kind",
@@ -37,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.Reseller.V1.Model.ChangePlanRequest do
   def decode(value, options) do
     value
     |> deserialize(:"seats", :struct, GoogleApi.Reseller.V1.Model.Seats, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Reseller.V1.Model.ChangePlanRequest do
+  def encode(value, options) do
+    GoogleApi.Reseller.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
