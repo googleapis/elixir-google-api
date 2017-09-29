@@ -20,9 +20,12 @@
 defmodule GoogleApi.StreetViewPublish.V1.Model.BatchUpdatePhotosResponse do
   @moduledoc """
   Response to batch update of metadata of one or more Photos.
+
+  ## Attributes
+
+  - results (List[PhotoResponse]): List of results for each individual Photo updated, in the same order as the request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"results"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.StreetViewPublish.V1.Model.BatchUpdatePho
   def decode(value, options) do
     value
     |> deserialize(:"results", :list, GoogleApi.StreetViewPublish.V1.Model.PhotoResponse, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.StreetViewPublish.V1.Model.BatchUpdatePhotosResponse do
+  def encode(value, options) do
+    GoogleApi.StreetViewPublish.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

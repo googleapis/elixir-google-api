@@ -20,9 +20,12 @@
 defmodule GoogleApi.StreetViewPublish.V1.Model.UploadRef do
   @moduledoc """
   Upload reference for media files.
+
+  ## Attributes
+
+  - uploadUrl (String): Required. An upload reference should be unique for each user. It follows the form: \&quot;https://streetviewpublish.googleapis.com/media/user/{account_id}/photo/{upload_reference}\&quot; Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"uploadUrl"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.StreetViewPublish.V1.Model.UploadRef do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.StreetViewPublish.V1.Model.UploadRef do
+  def encode(value, options) do
+    GoogleApi.StreetViewPublish.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

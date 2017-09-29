@@ -20,9 +20,13 @@
 defmodule GoogleApi.StreetViewPublish.V1.Model.UpdatePhotoRequest do
   @moduledoc """
   Request to update the metadata of a Photo. Updating the pixels of a photo is not supported.
+
+  ## Attributes
+
+  - photo (Photo): Required. Photo object containing the new metadata. Defaults to: `null`.
+  - updateMask (String): Mask that identifies fields on the photo metadata to update. If not present, the old Photo metadata will be entirely replaced with the new Photo metadata in this request. The update fails if invalid fields are specified. Multiple fields can be specified in a comma-delimited list.  The following fields are valid:  * &#x60;pose.heading&#x60; * &#x60;pose.latLngPair&#x60; * &#x60;pose.pitch&#x60; * &#x60;pose.roll&#x60; * &#x60;pose.level&#x60; * &#x60;pose.altitude&#x60; * &#x60;connections&#x60; * &#x60;places&#x60;   &lt;aside class&#x3D;\&quot;note\&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Repeated fields in updateMask mean the entire set of repeated values will be replaced with the new contents. For example, if updateMask contains &#x60;connections&#x60; and &#x60;UpdatePhotoRequest.photo.connections&#x60; is empty, all connections will be removed.&lt;/aside&gt; Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"photo",
     :"updateMask"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.StreetViewPublish.V1.Model.UpdatePhotoReq
   def decode(value, options) do
     value
     |> deserialize(:"photo", :struct, GoogleApi.StreetViewPublish.V1.Model.Photo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.StreetViewPublish.V1.Model.UpdatePhotoRequest do
+  def encode(value, options) do
+    GoogleApi.StreetViewPublish.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

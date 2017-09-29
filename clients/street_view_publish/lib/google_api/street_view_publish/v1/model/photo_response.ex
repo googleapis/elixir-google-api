@@ -20,9 +20,13 @@
 defmodule GoogleApi.StreetViewPublish.V1.Model.PhotoResponse do
   @moduledoc """
   Response payload for a single Photo in batch operations including BatchGetPhotos and BatchUpdatePhotos.
+
+  ## Attributes
+
+  - photo (Photo): The Photo resource, if the request was successful. Defaults to: `null`.
+  - status (Status): The status for the operation to get or update a single photo in the batch request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"photo",
     :"status"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.StreetViewPublish.V1.Model.PhotoResponse 
     value
     |> deserialize(:"photo", :struct, GoogleApi.StreetViewPublish.V1.Model.Photo, options)
     |> deserialize(:"status", :struct, GoogleApi.StreetViewPublish.V1.Model.Status, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.StreetViewPublish.V1.Model.PhotoResponse do
+  def encode(value, options) do
+    GoogleApi.StreetViewPublish.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

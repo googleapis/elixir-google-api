@@ -20,9 +20,12 @@
 defmodule GoogleApi.StreetViewPublish.V1.Model.BatchUpdatePhotosRequest do
   @moduledoc """
   Request to update the metadata of photos. Updating the pixels of photos is not supported.
+
+  ## Attributes
+
+  - updatePhotoRequests (List[UpdatePhotoRequest]): Required. List of UpdatePhotoRequests. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"updatePhotoRequests"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.StreetViewPublish.V1.Model.BatchUpdatePho
   def decode(value, options) do
     value
     |> deserialize(:"updatePhotoRequests", :list, GoogleApi.StreetViewPublish.V1.Model.UpdatePhotoRequest, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.StreetViewPublish.V1.Model.BatchUpdatePhotosRequest do
+  def encode(value, options) do
+    GoogleApi.StreetViewPublish.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

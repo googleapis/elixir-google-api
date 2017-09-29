@@ -20,9 +20,12 @@
 defmodule GoogleApi.StreetViewPublish.V1.Model.Connection do
   @moduledoc """
   A connection is the link from a source photo to a destination photo.
+
+  ## Attributes
+
+  - target (PhotoId): Required. The destination of the connection from the containing photo to another photo. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"target"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.StreetViewPublish.V1.Model.Connection do
   def decode(value, options) do
     value
     |> deserialize(:"target", :struct, GoogleApi.StreetViewPublish.V1.Model.PhotoId, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.StreetViewPublish.V1.Model.Connection do
+  def encode(value, options) do
+    GoogleApi.StreetViewPublish.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

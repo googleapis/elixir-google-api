@@ -20,9 +20,12 @@
 defmodule GoogleApi.StreetViewPublish.V1.Model.BatchDeletePhotosRequest do
   @moduledoc """
   Request to delete multiple Photos.
+
+  ## Attributes
+
+  - photoIds (List[String]): Required. IDs of the Photos. For HTTP GET requests, the URL query parameter should be &#x60;photoIds&#x3D;&lt;id1&gt;&amp;photoIds&#x3D;&lt;id2&gt;&amp;...&#x60;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"photoIds"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.StreetViewPublish.V1.Model.BatchDeletePhotosRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.StreetViewPublish.V1.Model.BatchDeletePhotosRequest do
+  def encode(value, options) do
+    GoogleApi.StreetViewPublish.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

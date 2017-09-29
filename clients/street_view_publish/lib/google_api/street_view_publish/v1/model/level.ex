@@ -20,9 +20,13 @@
 defmodule GoogleApi.StreetViewPublish.V1.Model.Level do
   @moduledoc """
   Level information containing level number and its corresponding name.
+
+  ## Attributes
+
+  - name (String): Required. A name assigned to this Level, restricted to 3 characters. Consider how the elevator buttons would be labeled for this level if there was an elevator. Defaults to: `null`.
+  - number (Float): Floor number, used for ordering. 0 indicates the ground level, 1 indicates the first level above ground level, -1 indicates the first level under ground level. Non-integer values are OK. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name",
     :"number"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.StreetViewPublish.V1.Model.Level do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.StreetViewPublish.V1.Model.Level do
+  def encode(value, options) do
+    GoogleApi.StreetViewPublish.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.StreetViewPublish.V1.Model.Place do
   @moduledoc """
   Place metadata for an entity.
+
+  ## Attributes
+
+  - placeId (String): Required. Place identifier, as described in https://developers.google.com/places/place-id. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"placeId"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.StreetViewPublish.V1.Model.Place do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.StreetViewPublish.V1.Model.Place do
+  def encode(value, options) do
+    GoogleApi.StreetViewPublish.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
