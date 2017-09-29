@@ -20,9 +20,19 @@
 defmodule GoogleApi.Vault.V1.Model.Hold do
   @moduledoc """
   Represents a hold within Vault. A hold restricts purging of artifacts based on the combination of the query and accounts restrictions. A hold can be configured to either apply to an explicitly configured set of accounts, or can be applied to all members of an organizational unit.
+
+  ## Attributes
+
+  - accounts (List[HeldAccount]): If set, the hold applies to the enumerated accounts and org_unit must be empty. Defaults to: `null`.
+  - corpus (String): The corpus to be searched. Defaults to: `null`.
+    - Enum - one of [CORPUS_TYPE_UNSPECIFIED, DRIVE, MAIL, GROUPS]
+  - holdId (String): The unique immutable ID of the hold. Assigned during creation. Defaults to: `null`.
+  - name (String): The name of the hold. Defaults to: `null`.
+  - orgUnit (HeldOrgUnit): If set, the hold applies to all members of the organizational unit and accounts must be empty. This property is mutable. For groups holds, set the accounts field. Defaults to: `null`.
+  - query (CorpusQuery): The corpus-specific query. If set, the corpusQuery must match corpus type. Defaults to: `null`.
+  - updateTime (String): The last time this hold was modified. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accounts",
     :"corpus",
@@ -41,6 +51,12 @@ defimpl Poison.Decoder, for: GoogleApi.Vault.V1.Model.Hold do
     |> deserialize(:"accounts", :list, GoogleApi.Vault.V1.Model.HeldAccount, options)
     |> deserialize(:"orgUnit", :struct, GoogleApi.Vault.V1.Model.HeldOrgUnit, options)
     |> deserialize(:"query", :struct, GoogleApi.Vault.V1.Model.CorpusQuery, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Vault.V1.Model.Hold do
+  def encode(value, options) do
+    GoogleApi.Vault.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

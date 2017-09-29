@@ -20,9 +20,11 @@
 defmodule GoogleApi.Vault.V1.Model.CloseMatterRequest do
   @moduledoc """
   Close a matter by ID.
+
+  ## Attributes
+
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     
   ]
@@ -31,6 +33,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Vault.V1.Model.CloseMatterRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Vault.V1.Model.CloseMatterRequest do
+  def encode(value, options) do
+    GoogleApi.Vault.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

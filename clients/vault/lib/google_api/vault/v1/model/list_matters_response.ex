@@ -20,9 +20,13 @@
 defmodule GoogleApi.Vault.V1.Model.ListMattersResponse do
   @moduledoc """
   Provides the list of matters.
+
+  ## Attributes
+
+  - matters (List[Matter]): List of matters. Defaults to: `null`.
+  - nextPageToken (String): Page token to retrieve the next page of results in the list. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"matters",
     :"nextPageToken"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Vault.V1.Model.ListMattersResponse do
   def decode(value, options) do
     value
     |> deserialize(:"matters", :list, GoogleApi.Vault.V1.Model.Matter, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Vault.V1.Model.ListMattersResponse do
+  def encode(value, options) do
+    GoogleApi.Vault.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

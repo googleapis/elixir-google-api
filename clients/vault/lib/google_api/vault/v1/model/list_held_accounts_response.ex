@@ -20,9 +20,12 @@
 defmodule GoogleApi.Vault.V1.Model.ListHeldAccountsResponse do
   @moduledoc """
   Returns a list of held accounts for a hold.
+
+  ## Attributes
+
+  - accounts (List[HeldAccount]): The held accounts on a hold. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accounts"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Vault.V1.Model.ListHeldAccountsResponse d
   def decode(value, options) do
     value
     |> deserialize(:"accounts", :list, GoogleApi.Vault.V1.Model.HeldAccount, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Vault.V1.Model.ListHeldAccountsResponse do
+  def encode(value, options) do
+    GoogleApi.Vault.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

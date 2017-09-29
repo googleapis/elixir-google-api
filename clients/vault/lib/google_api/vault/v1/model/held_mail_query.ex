@@ -20,9 +20,14 @@
 defmodule GoogleApi.Vault.V1.Model.HeldMailQuery do
   @moduledoc """
   Query options for mail holds.
+
+  ## Attributes
+
+  - endTime (String): The end date range for the search query. These timestamps are in GMT and rounded down to the start of the given date. Defaults to: `null`.
+  - startTime (String): The start date range for the search query. These timestamps are in GMT and rounded down to the start of the given date. Defaults to: `null`.
+  - terms (String): The search terms for the hold. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"endTime",
     :"startTime",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Vault.V1.Model.HeldMailQuery do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Vault.V1.Model.HeldMailQuery do
+  def encode(value, options) do
+    GoogleApi.Vault.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.Vault.V1.Model.AddMatterPermissionsRequest do
   @moduledoc """
   Add an account with the permission specified. The role cannot be owner. If an account already has a role in the matter, it will be overwritten.
+
+  ## Attributes
+
+  - ccMe (Boolean): Only relevant if send_emails is true. True to CC requestor in the email message. False to not CC requestor. Defaults to: `null`.
+  - matterPermission (MatterPermission): The MatterPermission to add. Defaults to: `null`.
+  - sendEmails (Boolean): True to send notification email to the added account. False to not send notification email. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"ccMe",
     :"matterPermission",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Vault.V1.Model.AddMatterPermissionsReques
   def decode(value, options) do
     value
     |> deserialize(:"matterPermission", :struct, GoogleApi.Vault.V1.Model.MatterPermission, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Vault.V1.Model.AddMatterPermissionsRequest do
+  def encode(value, options) do
+    GoogleApi.Vault.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

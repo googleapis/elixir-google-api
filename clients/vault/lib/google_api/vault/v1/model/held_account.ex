@@ -20,9 +20,13 @@
 defmodule GoogleApi.Vault.V1.Model.HeldAccount do
   @moduledoc """
   An account being held in a particular hold. This structure is immutable. This can be either a single user or a google group, depending on the corpus.
+
+  ## Attributes
+
+  - accountId (String): The account&#39;s ID as provided by the &lt;a href&#x3D;\&quot;https://developers.google.com/admin-sdk/\&quot;&gt;Admin SDK&lt;/a&gt;. Defaults to: `null`.
+  - holdTime (String): When the account was put on hold. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accountId",
     :"holdTime"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Vault.V1.Model.HeldAccount do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Vault.V1.Model.HeldAccount do
+  def encode(value, options) do
+    GoogleApi.Vault.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

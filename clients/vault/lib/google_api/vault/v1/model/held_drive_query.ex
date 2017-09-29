@@ -20,9 +20,12 @@
 defmodule GoogleApi.Vault.V1.Model.HeldDriveQuery do
   @moduledoc """
   Query options for drive holds.
+
+  ## Attributes
+
+  - includeTeamDriveFiles (Boolean): If true, include files in Team Drives in the hold. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"includeTeamDriveFiles"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Vault.V1.Model.HeldDriveQuery do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Vault.V1.Model.HeldDriveQuery do
+  def encode(value, options) do
+    GoogleApi.Vault.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

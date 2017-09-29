@@ -20,9 +20,13 @@
 defmodule GoogleApi.Vault.V1.Model.ListHoldsResponse do
   @moduledoc """
   The holds for a matter.
+
+  ## Attributes
+
+  - holds (List[Hold]): The list of holds. Defaults to: `null`.
+  - nextPageToken (String): Page token to retrieve the next page of results in the list. If this is empty, then there are no more holds to list. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"holds",
     :"nextPageToken"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Vault.V1.Model.ListHoldsResponse do
   def decode(value, options) do
     value
     |> deserialize(:"holds", :list, GoogleApi.Vault.V1.Model.Hold, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Vault.V1.Model.ListHoldsResponse do
+  def encode(value, options) do
+    GoogleApi.Vault.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

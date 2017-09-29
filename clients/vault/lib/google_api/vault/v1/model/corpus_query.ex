@@ -20,9 +20,14 @@
 defmodule GoogleApi.Vault.V1.Model.CorpusQuery do
   @moduledoc """
   Corpus specific queries.
+
+  ## Attributes
+
+  - driveQuery (HeldDriveQuery): Details pertaining to Drive holds. If set, corpus must be Drive. Defaults to: `null`.
+  - groupsQuery (HeldGroupsQuery): Details pertaining to Groups holds. If set, corpus must be Groups. Defaults to: `null`.
+  - mailQuery (HeldMailQuery): Details pertaining to mail holds. If set, corpus must be mail. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"driveQuery",
     :"groupsQuery",
@@ -37,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Vault.V1.Model.CorpusQuery do
     |> deserialize(:"driveQuery", :struct, GoogleApi.Vault.V1.Model.HeldDriveQuery, options)
     |> deserialize(:"groupsQuery", :struct, GoogleApi.Vault.V1.Model.HeldGroupsQuery, options)
     |> deserialize(:"mailQuery", :struct, GoogleApi.Vault.V1.Model.HeldMailQuery, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Vault.V1.Model.CorpusQuery do
+  def encode(value, options) do
+    GoogleApi.Vault.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

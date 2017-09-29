@@ -74,7 +74,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     }
     %{}
     |> method(:post)
-    |> url("/v1/matters/#{matter_id}:addPermissions")
+    |> url("/v1/matters/{matterId}:addPermissions", %{
+         "matterId" => URI.encode_www_form(matter_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -129,7 +131,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     }
     %{}
     |> method(:post)
-    |> url("/v1/matters/#{matter_id}:close")
+    |> url("/v1/matters/{matterId}:close", %{
+         "matterId" => URI.encode_www_form(matter_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -236,7 +240,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/matters/#{matter_id}")
+    |> url("/v1/matters/{matterId}", %{
+         "matterId" => URI.encode_www_form(matter_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -291,7 +297,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     }
     %{}
     |> method(:get)
-    |> url("/v1/matters/#{matter_id}")
+    |> url("/v1/matters/{matterId}", %{
+         "matterId" => URI.encode_www_form(matter_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -347,7 +355,10 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     }
     %{}
     |> method(:post)
-    |> url("/v1/matters/#{matter_id}/holds/#{hold_id}/accounts")
+    |> url("/v1/matters/{matterId}/holds/{holdId}/accounts", %{
+         "matterId" => URI.encode_www_form(matter_id),
+         "holdId" => URI.encode_www_form(hold_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -402,7 +413,11 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/matters/#{matter_id}/holds/#{hold_id}/accounts/#{account_id}")
+    |> url("/v1/matters/{matterId}/holds/{holdId}/accounts/{accountId}", %{
+         "matterId" => URI.encode_www_form(matter_id),
+         "holdId" => URI.encode_www_form(hold_id),
+         "accountId" => URI.encode_www_form(account_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -456,7 +471,10 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     }
     %{}
     |> method(:get)
-    |> url("/v1/matters/#{matter_id}/holds/#{hold_id}/accounts")
+    |> url("/v1/matters/{matterId}/holds/{holdId}/accounts", %{
+         "matterId" => URI.encode_www_form(matter_id),
+         "holdId" => URI.encode_www_form(hold_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -511,7 +529,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     }
     %{}
     |> method(:post)
-    |> url("/v1/matters/#{matter_id}/holds")
+    |> url("/v1/matters/{matterId}/holds", %{
+         "matterId" => URI.encode_www_form(matter_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -565,7 +585,10 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     }
     %{}
     |> method(:delete)
-    |> url("/v1/matters/#{matter_id}/holds/#{hold_id}")
+    |> url("/v1/matters/{matterId}/holds/{holdId}", %{
+         "matterId" => URI.encode_www_form(matter_id),
+         "holdId" => URI.encode_www_form(hold_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -619,7 +642,10 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     }
     %{}
     |> method(:get)
-    |> url("/v1/matters/#{matter_id}/holds/#{hold_id}")
+    |> url("/v1/matters/{matterId}/holds/{holdId}", %{
+         "matterId" => URI.encode_www_form(matter_id),
+         "holdId" => URI.encode_www_form(hold_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -676,7 +702,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     }
     %{}
     |> method(:get)
-    |> url("/v1/matters/#{matter_id}/holds")
+    |> url("/v1/matters/{matterId}/holds", %{
+         "matterId" => URI.encode_www_form(matter_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -732,7 +760,10 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     }
     %{}
     |> method(:put)
-    |> url("/v1/matters/#{matter_id}/holds/#{hold_id}")
+    |> url("/v1/matters/{matterId}/holds/{holdId}", %{
+         "matterId" => URI.encode_www_form(matter_id),
+         "holdId" => URI.encode_www_form(hold_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -845,7 +876,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     }
     %{}
     |> method(:post)
-    |> url("/v1/matters/#{matter_id}:removePermissions")
+    |> url("/v1/matters/{matterId}:removePermissions", %{
+         "matterId" => URI.encode_www_form(matter_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -900,7 +933,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     }
     %{}
     |> method(:post)
-    |> url("/v1/matters/#{matter_id}:reopen")
+    |> url("/v1/matters/{matterId}:reopen", %{
+         "matterId" => URI.encode_www_form(matter_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -955,7 +990,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     }
     %{}
     |> method(:post)
-    |> url("/v1/matters/#{matter_id}:undelete")
+    |> url("/v1/matters/{matterId}:undelete", %{
+         "matterId" => URI.encode_www_form(matter_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -1010,7 +1047,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     }
     %{}
     |> method(:put)
-    |> url("/v1/matters/#{matter_id}")
+    |> url("/v1/matters/{matterId}", %{
+         "matterId" => URI.encode_www_form(matter_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
