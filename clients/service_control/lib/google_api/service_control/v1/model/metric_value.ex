@@ -20,9 +20,20 @@
 defmodule GoogleApi.ServiceControl.V1.Model.MetricValue do
   @moduledoc """
   Represents a single metric value.
+
+  ## Attributes
+
+  - boolValue (Boolean): A boolean value. Defaults to: `null`.
+  - distributionValue (Distribution): A distribution value. Defaults to: `null`.
+  - doubleValue (Float): A double precision floating point value. Defaults to: `null`.
+  - endTime (String): The end of the time period over which this metric value&#39;s measurement applies. Defaults to: `null`.
+  - int64Value (String): A signed 64-bit integer value. Defaults to: `null`.
+  - labels (Map[String, String]): The labels describing the metric value. See comments on google.api.servicecontrol.v1.Operation.labels for the overriding relationship. Defaults to: `null`.
+  - moneyValue (Money): A money value. Defaults to: `null`.
+  - startTime (String): The start of the time period over which this metric value&#39;s measurement applies. The time period has different semantics for different metric types (cumulative, delta, and gauge). See the metric definition documentation in the service configuration for details. Defaults to: `null`.
+  - stringValue (String): A text string value. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"boolValue",
     :"distributionValue",
@@ -42,6 +53,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.MetricValue do
     value
     |> deserialize(:"distributionValue", :struct, GoogleApi.ServiceControl.V1.Model.Distribution, options)
     |> deserialize(:"moneyValue", :struct, GoogleApi.ServiceControl.V1.Model.Money, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.MetricValue do
+  def encode(value, options) do
+    GoogleApi.ServiceControl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

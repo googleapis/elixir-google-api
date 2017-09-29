@@ -74,7 +74,9 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
     }
     %{}
     |> method(:post)
-    |> url("/v1/services/#{service_name}:allocateQuota")
+    |> url("/v1/services/{serviceName}:allocateQuota", %{
+         "serviceName" => URI.encode_www_form(service_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -129,7 +131,9 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
     }
     %{}
     |> method(:post)
-    |> url("/v1/services/#{service_name}:check")
+    |> url("/v1/services/{serviceName}:check", %{
+         "serviceName" => URI.encode_www_form(service_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -184,7 +188,9 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
     }
     %{}
     |> method(:post)
-    |> url("/v1/services/#{service_name}:endReconciliation")
+    |> url("/v1/services/{serviceName}:endReconciliation", %{
+         "serviceName" => URI.encode_www_form(service_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -239,7 +245,9 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
     }
     %{}
     |> method(:post)
-    |> url("/v1/services/#{service_name}:releaseQuota")
+    |> url("/v1/services/{serviceName}:releaseQuota", %{
+         "serviceName" => URI.encode_www_form(service_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -294,7 +302,9 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
     }
     %{}
     |> method(:post)
-    |> url("/v1/services/#{service_name}:report")
+    |> url("/v1/services/{serviceName}:report", %{
+         "serviceName" => URI.encode_www_form(service_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -349,7 +359,9 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
     }
     %{}
     |> method(:post)
-    |> url("/v1/services/#{service_name}:startReconciliation")
+    |> url("/v1/services/{serviceName}:startReconciliation", %{
+         "serviceName" => URI.encode_www_form(service_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

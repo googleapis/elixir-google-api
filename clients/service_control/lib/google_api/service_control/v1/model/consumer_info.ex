@@ -20,9 +20,12 @@
 defmodule GoogleApi.ServiceControl.V1.Model.ConsumerInfo do
   @moduledoc """
   &#x60;ConsumerInfo&#x60; provides information about the consumer project.
+
+  ## Attributes
+
+  - projectNumber (String): The Google cloud project number, e.g. 1234567890. A value of 0 indicates no project number is found. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"projectNumber"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.ConsumerInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.ConsumerInfo do
+  def encode(value, options) do
+    GoogleApi.ServiceControl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

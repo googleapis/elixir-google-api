@@ -20,9 +20,14 @@
 defmodule GoogleApi.ServiceControl.V1.Model.CheckError do
   @moduledoc """
   Defines the errors to be returned in google.api.servicecontrol.v1.CheckResponse.check_errors.
+
+  ## Attributes
+
+  - code (String): The error code. Defaults to: `null`.
+    - Enum - one of [ERROR_CODE_UNSPECIFIED, NOT_FOUND, PERMISSION_DENIED, RESOURCE_EXHAUSTED, BUDGET_EXCEEDED, DENIAL_OF_SERVICE_DETECTED, LOAD_SHEDDING, ABUSER_DETECTED, SERVICE_NOT_ACTIVATED, VISIBILITY_DENIED, BILLING_DISABLED, PROJECT_DELETED, PROJECT_INVALID, IP_ADDRESS_BLOCKED, REFERER_BLOCKED, CLIENT_APP_BLOCKED, API_TARGET_BLOCKED, API_KEY_INVALID, API_KEY_EXPIRED, API_KEY_NOT_FOUND, SPATULA_HEADER_INVALID, LOAS_ROLE_INVALID, NO_LOAS_PROJECT, LOAS_PROJECT_DISABLED, SECURITY_POLICY_VIOLATED, NAMESPACE_LOOKUP_UNAVAILABLE, SERVICE_STATUS_UNAVAILABLE, BILLING_STATUS_UNAVAILABLE, QUOTA_CHECK_UNAVAILABLE, LOAS_PROJECT_LOOKUP_UNAVAILABLE, CLOUD_RESOURCE_MANAGER_BACKEND_UNAVAILABLE, SECURITY_POLICY_BACKEND_UNAVAILABLE]
+  - detail (String): Free-form text providing details on the error cause of the error. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"code",
     :"detail"
@@ -32,6 +37,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.CheckError do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.CheckError do
+  def encode(value, options) do
+    GoogleApi.ServiceControl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

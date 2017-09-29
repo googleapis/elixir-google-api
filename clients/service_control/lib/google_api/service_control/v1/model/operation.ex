@@ -20,9 +20,25 @@
 defmodule GoogleApi.ServiceControl.V1.Model.Operation do
   @moduledoc """
   Represents information regarding an operation.
+
+  ## Attributes
+
+  - consumerId (String): Identity of the consumer who is using the service. This field should be filled in for the operations initiated by a consumer, but not for service-initiated operations that are not related to a specific consumer.  This can be in one of the following formats:   project:&lt;project_id&gt;,   project_number:&lt;project_number&gt;,   api_key:&lt;api_key&gt;. Defaults to: `null`.
+  - endTime (String): End time of the operation. Required when the operation is used in ServiceController.Report, but optional when the operation is used in ServiceController.Check. Defaults to: `null`.
+  - importance (String): DO NOT USE. This is an experimental field. Defaults to: `null`.
+    - Enum - one of [LOW, HIGH, DEBUG]
+  - labels (Map[String, String]): Labels describing the operation. Only the following labels are allowed:  - Labels describing monitored resources as defined in   the service configuration. - Default labels of metric values. When specified, labels defined in the   metric value override these default. - The following labels defined by Google Cloud Platform:     - &#x60;cloud.googleapis.com/location&#x60; describing the location where the        operation happened,     - &#x60;servicecontrol.googleapis.com/user_agent&#x60; describing the user agent        of the API request,     - &#x60;servicecontrol.googleapis.com/service_agent&#x60; describing the service        used to handle the API request (e.g. ESP),     - &#x60;servicecontrol.googleapis.com/platform&#x60; describing the platform        where the API is served (e.g. GAE, GCE, GKE). Defaults to: `null`.
+  - logEntries (List[LogEntry]): Represents information to be logged. Defaults to: `null`.
+  - metricValueSets (List[MetricValueSet]): Represents information about this operation. Each MetricValueSet corresponds to a metric defined in the service configuration. The data type used in the MetricValueSet must agree with the data type specified in the metric definition.  Within a single operation, it is not allowed to have more than one MetricValue instances that have the same metric names and identical label value combinations. If a request has such duplicated MetricValue instances, the entire request is rejected with an invalid argument error. Defaults to: `null`.
+  - operationId (String): Identity of the operation. This must be unique within the scope of the service that generated the operation. If the service calls Check() and Report() on the same operation, the two calls should carry the same id.  UUID version 4 is recommended, though not required. In scenarios where an operation is computed from existing information and an idempotent id is desirable for deduplication purpose, UUID version 5 is recommended. See RFC 4122 for details. Defaults to: `null`.
+  - operationName (String): Fully qualified name of the operation. Reserved for future use. Defaults to: `null`.
+  - quotaProperties (QuotaProperties): Represents the properties needed for quota check. Applicable only if this operation is for a quota check request. Defaults to: `null`.
+  - resourceContainer (String): The resource name of the parent of a resource in the resource hierarchy.  This can be in one of the following formats:     - “projects/&lt;project-id or project-number&gt;”     - “folders/&lt;folder-id&gt;”     - “organizations/&lt;organization-id&gt;” Defaults to: `null`.
+  - resourceContainers (List[String]): DO NOT USE. This field is not ready for use yet. Defaults to: `null`.
+  - startTime (String): Required. Start time of the operation. Defaults to: `null`.
+  - userLabels (Map[String, String]): User defined labels for the resource that this operation is associated with. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"consumerId",
     :"endTime",
@@ -47,6 +63,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.Operation do
     |> deserialize(:"logEntries", :list, GoogleApi.ServiceControl.V1.Model.LogEntry, options)
     |> deserialize(:"metricValueSets", :list, GoogleApi.ServiceControl.V1.Model.MetricValueSet, options)
     |> deserialize(:"quotaProperties", :struct, GoogleApi.ServiceControl.V1.Model.QuotaProperties, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.Operation do
+  def encode(value, options) do
+    GoogleApi.ServiceControl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

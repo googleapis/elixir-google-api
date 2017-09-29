@@ -20,9 +20,20 @@
 defmodule GoogleApi.ServiceControl.V1.Model.Distribution do
   @moduledoc """
   Distribution represents a frequency distribution of double-valued sample points. It contains the size of the population of sample points plus additional optional information:    - the arithmetic mean of the samples   - the minimum and maximum of the samples   - the sum-squared-deviation of the samples, used to compute variance   - a histogram of the values of the sample points
+
+  ## Attributes
+
+  - bucketCounts (List[String]): The number of samples in each histogram bucket. &#x60;bucket_counts&#x60; are optional. If present, they must sum to the &#x60;count&#x60; value.  The buckets are defined below in &#x60;bucket_option&#x60;. There are N buckets. &#x60;bucket_counts[0]&#x60; is the number of samples in the underflow bucket. &#x60;bucket_counts[1]&#x60; to &#x60;bucket_counts[N-1]&#x60; are the numbers of samples in each of the finite buckets. And &#x60;bucket_counts[N] is the number of samples in the overflow bucket. See the comments of &#x60;bucket_option&#x60; below for more details.  Any suffix of trailing zeros may be omitted. Defaults to: `null`.
+  - count (String): The total number of samples in the distribution. Must be &gt;&#x3D; 0. Defaults to: `null`.
+  - explicitBuckets (ExplicitBuckets): Buckets with arbitrary user-provided width. Defaults to: `null`.
+  - exponentialBuckets (ExponentialBuckets): Buckets with exponentially growing width. Defaults to: `null`.
+  - linearBuckets (LinearBuckets): Buckets with constant width. Defaults to: `null`.
+  - maximum (Float): The maximum of the population of values. Ignored if &#x60;count&#x60; is zero. Defaults to: `null`.
+  - mean (Float): The arithmetic mean of the samples in the distribution. If &#x60;count&#x60; is zero then this field must be zero. Defaults to: `null`.
+  - minimum (Float): The minimum of the population of values. Ignored if &#x60;count&#x60; is zero. Defaults to: `null`.
+  - sumOfSquaredDeviation (Float): The sum of squared deviations from the mean:   Sum[i&#x3D;1..count]((x_i - mean)^2) where each x_i is a sample values. If &#x60;count&#x60; is zero then this field must be zero, otherwise validation of the request fails. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bucketCounts",
     :"count",
@@ -43,6 +54,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.Distribution do
     |> deserialize(:"explicitBuckets", :struct, GoogleApi.ServiceControl.V1.Model.ExplicitBuckets, options)
     |> deserialize(:"exponentialBuckets", :struct, GoogleApi.ServiceControl.V1.Model.ExponentialBuckets, options)
     |> deserialize(:"linearBuckets", :struct, GoogleApi.ServiceControl.V1.Model.LinearBuckets, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.Distribution do
+  def encode(value, options) do
+    GoogleApi.ServiceControl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

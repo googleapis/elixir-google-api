@@ -20,9 +20,14 @@
 defmodule GoogleApi.ServiceControl.V1.Model.QuotaProperties do
   @moduledoc """
   Represents the properties needed for quota operations.
+
+  ## Attributes
+
+  - limitByIds (Map[String, String]): LimitType IDs that should be used for checking quota. Key in this map should be a valid LimitType string, and the value is the ID to be used. For example, an entry &lt;USER, 123&gt; will cause all user quota limits to use 123 as the user ID. See google/api/quota.proto for the definition of LimitType. CLIENT_PROJECT: Not supported. USER: Value of this entry will be used for enforcing user-level quota       limits. If none specified, caller IP passed in the       servicecontrol.googleapis.com/caller_ip label will be used instead.       If the server cannot resolve a value for this LimitType, an error       will be thrown. No validation will be performed on this ID. Deprecated: use servicecontrol.googleapis.com/user label to send user ID. Defaults to: `null`.
+  - quotaMode (String): Quota mode for this operation. Defaults to: `null`.
+    - Enum - one of [ACQUIRE, ACQUIRE_BEST_EFFORT, CHECK, RELEASE]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"limitByIds",
     :"quotaMode"
@@ -32,6 +37,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.QuotaProperties do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.QuotaProperties do
+  def encode(value, options) do
+    GoogleApi.ServiceControl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

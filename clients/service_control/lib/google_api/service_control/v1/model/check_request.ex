@@ -20,9 +20,15 @@
 defmodule GoogleApi.ServiceControl.V1.Model.CheckRequest do
   @moduledoc """
   Request message for the Check method.
+
+  ## Attributes
+
+  - operation (Operation): The operation to be checked. Defaults to: `null`.
+  - requestProjectSettings (Boolean): Requests the project settings to be returned as part of the check response. Defaults to: `null`.
+  - serviceConfigId (String): Specifies which version of service configuration should be used to process the request.  If unspecified or no matching version can be found, the latest one will be used. Defaults to: `null`.
+  - skipActivationCheck (Boolean): Indicates if service activation check should be skipped for this request. Default behavior is to perform the check and apply relevant quota. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"operation",
     :"requestProjectSettings",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.CheckRequest do
   def decode(value, options) do
     value
     |> deserialize(:"operation", :struct, GoogleApi.ServiceControl.V1.Model.Operation, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.CheckRequest do
+  def encode(value, options) do
+    GoogleApi.ServiceControl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

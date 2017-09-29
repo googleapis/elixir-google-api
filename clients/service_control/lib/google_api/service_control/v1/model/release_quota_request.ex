@@ -20,9 +20,13 @@
 defmodule GoogleApi.ServiceControl.V1.Model.ReleaseQuotaRequest do
   @moduledoc """
   Request message for the ReleaseQuota method.
+
+  ## Attributes
+
+  - releaseOperation (QuotaOperation): Operation that describes the quota release. Defaults to: `null`.
+  - serviceConfigId (String): Specifies which version of service configuration should be used to process the request. If unspecified or no matching version can be found, the latest one will be used. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"releaseOperation",
     :"serviceConfigId"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.ReleaseQuotaReque
   def decode(value, options) do
     value
     |> deserialize(:"releaseOperation", :struct, GoogleApi.ServiceControl.V1.Model.QuotaOperation, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.ReleaseQuotaRequest do
+  def encode(value, options) do
+    GoogleApi.ServiceControl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,16 @@
 defmodule GoogleApi.ServiceControl.V1.Model.CheckResponse do
   @moduledoc """
   Response message for the Check method.
+
+  ## Attributes
+
+  - checkErrors (List[CheckError]): Indicate the decision of the check.  If no check errors are present, the service should process the operation. Otherwise the service should use the list of errors to determine the appropriate action. Defaults to: `null`.
+  - checkInfo (CheckInfo): Feedback data returned from the server during processing a Check request. Defaults to: `null`.
+  - operationId (String): The same operation_id value used in the CheckRequest. Used for logging and diagnostics purposes. Defaults to: `null`.
+  - quotaInfo (QuotaInfo): Quota information for the check request associated with this response.  Defaults to: `null`.
+  - serviceConfigId (String): The actual config id used to process the request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"checkErrors",
     :"checkInfo",
@@ -39,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.CheckResponse do
     |> deserialize(:"checkErrors", :list, GoogleApi.ServiceControl.V1.Model.CheckError, options)
     |> deserialize(:"checkInfo", :struct, GoogleApi.ServiceControl.V1.Model.CheckInfo, options)
     |> deserialize(:"quotaInfo", :struct, GoogleApi.ServiceControl.V1.Model.QuotaInfo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.CheckResponse do
+  def encode(value, options) do
+    GoogleApi.ServiceControl.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
