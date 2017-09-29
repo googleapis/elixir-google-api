@@ -17,12 +17,18 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Plus.V1.Model.Activity_object_image do
+defmodule GoogleApi.Plus.V1.Model.ActivityObjectImage do
   @moduledoc """
   The preview image for photos or videos.
+
+  ## Attributes
+
+  - height (Integer): The height, in pixels, of the linked resource. Defaults to: `null`.
+  - type (String): Media type of the link. Defaults to: `null`.
+  - url (String): Image URL. Defaults to: `null`.
+  - width (Integer): The width, in pixels, of the linked resource. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"height",
     :"type",
@@ -31,9 +37,15 @@ defmodule GoogleApi.Plus.V1.Model.Activity_object_image do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Activity_object_image do
+defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.ActivityObjectImage do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.ActivityObjectImage do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

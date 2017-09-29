@@ -17,12 +17,20 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Plus.V1.Model.Activity_object_actor do
+defmodule GoogleApi.Plus.V1.Model.ActivityObjectActor do
   @moduledoc """
   If this activity&#39;s object is itself another activity, such as when a person reshares an activity, this property specifies the original activity&#39;s actor.
+
+  ## Attributes
+
+  - clientSpecificActorInfo (ActivityActorClientSpecificActorInfo):  Defaults to: `null`.
+  - displayName (String): The original actor&#39;s name, which is suitable for display. Defaults to: `null`.
+  - id (String): ID of the original actor. Defaults to: `null`.
+  - image (ActivityObjectActorImage):  Defaults to: `null`.
+  - url (String): A link to the original actor&#39;s Google profile. Defaults to: `null`.
+  - verification (ActivityActorVerification):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"clientSpecificActorInfo",
     :"displayName",
@@ -33,13 +41,19 @@ defmodule GoogleApi.Plus.V1.Model.Activity_object_actor do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Activity_object_actor do
+defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.ActivityObjectActor do
   import GoogleApi.Plus.V1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"clientSpecificActorInfo", :struct, GoogleApi.Plus.V1.Model.Activity_actor_clientSpecificActorInfo, options)
-    |> deserialize(:"image", :struct, GoogleApi.Plus.V1.Model.Activity_object_actor_image, options)
-    |> deserialize(:"verification", :struct, GoogleApi.Plus.V1.Model.Activity_actor_verification, options)
+    |> deserialize(:"clientSpecificActorInfo", :struct, GoogleApi.Plus.V1.Model.ActivityActorClientSpecificActorInfo, options)
+    |> deserialize(:"image", :struct, GoogleApi.Plus.V1.Model.ActivityObjectActorImage, options)
+    |> deserialize(:"verification", :struct, GoogleApi.Plus.V1.Model.ActivityActorVerification, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.ActivityObjectActor do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -17,20 +17,29 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Plus.V1.Model.Activity_actor_clientSpecificActorInfo_youtubeActorInfo do
+defmodule GoogleApi.Plus.V1.Model.ActivityActorClientSpecificActorInfoYoutubeActorInfo do
   @moduledoc """
   Actor info specific to YouTube clients.
+
+  ## Attributes
+
+  - channelId (String): ID of the YouTube channel owned by the Actor. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"channelId"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Activity_actor_clientSpecificActorInfo_youtubeActorInfo do
+defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.ActivityActorClientSpecificActorInfoYoutubeActorInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.ActivityActorClientSpecificActorInfoYoutubeActorInfo do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

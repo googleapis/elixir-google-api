@@ -1,6 +1,6 @@
 # GoogleApi.Plus.V1
 
-**TODO: Add description**
+Builds on top of the Google+ platform.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_plus` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_plus, "~> 0.1.0"}]
+  [{:google_api_plus, "~> 0.0.1"}]
 end
 ```
 

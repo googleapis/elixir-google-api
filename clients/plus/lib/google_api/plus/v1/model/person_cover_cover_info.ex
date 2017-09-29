@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Plus.V1.Model.Person_cover_coverInfo do
+defmodule GoogleApi.Plus.V1.Model.PersonCoverCoverInfo do
   @moduledoc """
   Extra information about the cover photo.
+
+  ## Attributes
+
+  - leftImageOffset (Integer): The difference between the left position of the cover image and the actual displayed cover image. Only valid for banner layout. Defaults to: `null`.
+  - topImageOffset (Integer): The difference between the top position of the cover image and the actual displayed cover image. Only valid for banner layout. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"leftImageOffset",
     :"topImageOffset"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Person_cover_coverInfo do
+defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.PersonCoverCoverInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.PersonCoverCoverInfo do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

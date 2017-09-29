@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Plus.V1.Model.Person_image do
+defmodule GoogleApi.Plus.V1.Model.PersonImage do
   @moduledoc """
   The representation of the person&#39;s profile photo.
+
+  ## Attributes
+
+  - isDefault (Boolean): Whether the person&#39;s profile photo is the default one Defaults to: `null`.
+  - url (String): The URL of the person&#39;s profile photo. To resize the image and crop it to a square, append the query string ?sz&#x3D;x, where x is the dimension in pixels of each side. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"isDefault",
     :"url"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Person_image do
+defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.PersonImage do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.PersonImage do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

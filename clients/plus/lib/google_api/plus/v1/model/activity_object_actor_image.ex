@@ -17,20 +17,29 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Plus.V1.Model.Activity_object_actor_image do
+defmodule GoogleApi.Plus.V1.Model.ActivityObjectActorImage do
   @moduledoc """
   The image representation of the original actor.
+
+  ## Attributes
+
+  - url (String): A URL that points to a thumbnail photo of the original actor. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"url"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Activity_object_actor_image do
+defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.ActivityObjectActorImage do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.ActivityObjectActorImage do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

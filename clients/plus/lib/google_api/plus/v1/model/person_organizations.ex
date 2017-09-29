@@ -17,12 +17,23 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Plus.V1.Model.Person_organizations do
+defmodule GoogleApi.Plus.V1.Model.PersonOrganizations do
   @moduledoc """
   
+
+  ## Attributes
+
+  - department (String): The department within the organization. Deprecated. Defaults to: `null`.
+  - description (String): A short description of the person&#39;s role in this organization. Deprecated. Defaults to: `null`.
+  - endDate (String): The date that the person left this organization. Defaults to: `null`.
+  - location (String): The location of this organization. Deprecated. Defaults to: `null`.
+  - name (String): The name of the organization. Defaults to: `null`.
+  - primary (Boolean): If \&quot;true\&quot;, indicates this organization is the person&#39;s primary one, which is typically interpreted as the current one. Defaults to: `null`.
+  - startDate (String): The date that the person joined this organization. Defaults to: `null`.
+  - title (String): The person&#39;s job title or role within the organization. Defaults to: `null`.
+  - type (String): The type of organization. Possible values include, but are not limited to, the following values:   - \&quot;work\&quot; - Work.  - \&quot;school\&quot; - School. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"department",
     :"description",
@@ -36,9 +47,15 @@ defmodule GoogleApi.Plus.V1.Model.Person_organizations do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Person_organizations do
+defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.PersonOrganizations do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.PersonOrganizations do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

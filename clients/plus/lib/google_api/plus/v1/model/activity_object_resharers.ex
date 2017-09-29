@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Plus.V1.Model.Activity_object_resharers do
+defmodule GoogleApi.Plus.V1.Model.ActivityObjectResharers do
   @moduledoc """
   People who reshared this activity.
+
+  ## Attributes
+
+  - selfLink (String): The URL for the collection of resharers. Defaults to: `null`.
+  - totalItems (Integer): Total number of people who reshared this activity. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"selfLink",
     :"totalItems"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Activity_object_resharers do
+defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.ActivityObjectResharers do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.ActivityObjectResharers do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

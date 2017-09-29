@@ -60,7 +60,9 @@ defmodule GoogleApi.Plus.V1.Api.Comments do
     }
     %{}
     |> method(:get)
-    |> url("/comments/#{comment_id}")
+    |> url("/comments/{commentId}", %{
+         "commentId" => URI.encode_www_form(comment_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -107,7 +109,9 @@ defmodule GoogleApi.Plus.V1.Api.Comments do
     }
     %{}
     |> method(:get)
-    |> url("/activities/#{activity_id}/comments")
+    |> url("/activities/{activityId}/comments", %{
+         "activityId" => URI.encode_www_form(activity_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

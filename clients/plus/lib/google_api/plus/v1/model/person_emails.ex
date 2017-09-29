@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Plus.V1.Model.Person_emails do
+defmodule GoogleApi.Plus.V1.Model.PersonEmails do
   @moduledoc """
   
+
+  ## Attributes
+
+  - type (String): The type of address. Possible values include, but are not limited to, the following values:   - \&quot;account\&quot; - Google account email address.  - \&quot;home\&quot; - Home email address.  - \&quot;work\&quot; - Work email address.  - \&quot;other\&quot; - Other. Defaults to: `null`.
+  - value (String): The email address. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"type",
     :"value"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Person_emails do
+defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.PersonEmails do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.PersonEmails do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

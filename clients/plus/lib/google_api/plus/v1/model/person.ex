@@ -20,9 +20,41 @@
 defmodule GoogleApi.Plus.V1.Model.Person do
   @moduledoc """
   
+
+  ## Attributes
+
+  - aboutMe (String): A short biography for this person. Defaults to: `null`.
+  - ageRange (PersonAgeRange):  Defaults to: `null`.
+  - birthday (String): The person&#39;s date of birth, represented as YYYY-MM-DD. Defaults to: `null`.
+  - braggingRights (String): The \&quot;bragging rights\&quot; line of this person. Defaults to: `null`.
+  - circledByCount (Integer): For followers who are visible, the number of people who have added this person or page to a circle. Defaults to: `null`.
+  - cover (PersonCover):  Defaults to: `null`.
+  - currentLocation (String): (this field is not currently used) Defaults to: `null`.
+  - displayName (String): The name of this person, which is suitable for display. Defaults to: `null`.
+  - domain (String): The hosted domain name for the user&#39;s Google Apps account. For instance, example.com. The plus.profile.emails.read or email scope is needed to get this domain name. Defaults to: `null`.
+  - emails (List[PersonEmails]): A list of email addresses that this person has, including their Google account email address, and the public verified email addresses on their Google+ profile. The plus.profile.emails.read scope is needed to retrieve these email addresses, or the email scope can be used to retrieve just the Google account email address. Defaults to: `null`.
+  - etag (String): ETag of this response for caching purposes. Defaults to: `null`.
+  - gender (String): The person&#39;s gender. Possible values include, but are not limited to, the following values:   - \&quot;male\&quot; - Male gender.  - \&quot;female\&quot; - Female gender.  - \&quot;other\&quot; - Other. Defaults to: `null`.
+  - id (String): The ID of this person. Defaults to: `null`.
+  - image (PersonImage):  Defaults to: `null`.
+  - isPlusUser (Boolean): Whether this user has signed up for Google+. Defaults to: `null`.
+  - kind (String): Identifies this resource as a person. Value: \&quot;plus#person\&quot;. Defaults to: `null`.
+  - language (String): The user&#39;s preferred language for rendering. Defaults to: `null`.
+  - name (PersonName):  Defaults to: `null`.
+  - nickname (String): The nickname of this person. Defaults to: `null`.
+  - objectType (String): Type of person within Google+. Possible values include, but are not limited to, the following values:   - \&quot;person\&quot; - represents an actual person.  - \&quot;page\&quot; - represents a page. Defaults to: `null`.
+  - occupation (String): The occupation of this person. Defaults to: `null`.
+  - organizations (List[PersonOrganizations]): A list of current or past organizations with which this person is associated. Defaults to: `null`.
+  - placesLived (List[PersonPlacesLived]): A list of places where this person has lived. Defaults to: `null`.
+  - plusOneCount (Integer): If a Google+ Page, the number of people who have +1&#39;d this page. Defaults to: `null`.
+  - relationshipStatus (String): The person&#39;s relationship status. Possible values include, but are not limited to, the following values:   - \&quot;single\&quot; - Person is single.  - \&quot;in_a_relationship\&quot; - Person is in a relationship.  - \&quot;engaged\&quot; - Person is engaged.  - \&quot;married\&quot; - Person is married.  - \&quot;its_complicated\&quot; - The relationship is complicated.  - \&quot;open_relationship\&quot; - Person is in an open relationship.  - \&quot;widowed\&quot; - Person is widowed.  - \&quot;in_domestic_partnership\&quot; - Person is in a domestic partnership.  - \&quot;in_civil_union\&quot; - Person is in a civil union. Defaults to: `null`.
+  - skills (String): The person&#39;s skills. Defaults to: `null`.
+  - tagline (String): The brief description (tagline) of this person. Defaults to: `null`.
+  - url (String): The URL of this person&#39;s profile. Defaults to: `null`.
+  - urls (List[PersonUrls]): A list of URLs for this person. Defaults to: `null`.
+  - verified (Boolean): Whether the person or Google+ Page has been verified. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"aboutMe",
     :"ageRange",
@@ -61,14 +93,20 @@ defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Person do
   import GoogleApi.Plus.V1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"ageRange", :struct, GoogleApi.Plus.V1.Model.Person_ageRange, options)
-    |> deserialize(:"cover", :struct, GoogleApi.Plus.V1.Model.Person_cover, options)
-    |> deserialize(:"emails", :list, GoogleApi.Plus.V1.Model.Person_emails, options)
-    |> deserialize(:"image", :struct, GoogleApi.Plus.V1.Model.Person_image, options)
-    |> deserialize(:"name", :struct, GoogleApi.Plus.V1.Model.Person_name, options)
-    |> deserialize(:"organizations", :list, GoogleApi.Plus.V1.Model.Person_organizations, options)
-    |> deserialize(:"placesLived", :list, GoogleApi.Plus.V1.Model.Person_placesLived, options)
-    |> deserialize(:"urls", :list, GoogleApi.Plus.V1.Model.Person_urls, options)
+    |> deserialize(:"ageRange", :struct, GoogleApi.Plus.V1.Model.PersonAgeRange, options)
+    |> deserialize(:"cover", :struct, GoogleApi.Plus.V1.Model.PersonCover, options)
+    |> deserialize(:"emails", :list, GoogleApi.Plus.V1.Model.PersonEmails, options)
+    |> deserialize(:"image", :struct, GoogleApi.Plus.V1.Model.PersonImage, options)
+    |> deserialize(:"name", :struct, GoogleApi.Plus.V1.Model.PersonName, options)
+    |> deserialize(:"organizations", :list, GoogleApi.Plus.V1.Model.PersonOrganizations, options)
+    |> deserialize(:"placesLived", :list, GoogleApi.Plus.V1.Model.PersonPlacesLived, options)
+    |> deserialize(:"urls", :list, GoogleApi.Plus.V1.Model.PersonUrls, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.Person do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

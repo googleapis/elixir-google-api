@@ -20,9 +20,14 @@
 defmodule GoogleApi.Plus.V1.Model.Acl do
   @moduledoc """
   
+
+  ## Attributes
+
+  - description (String): Description of the access granted, suitable for display. Defaults to: `null`.
+  - items (List[PlusAclentryResource]): The list of access entries. Defaults to: `null`.
+  - kind (String): Identifies this resource as a collection of access controls. Value: \&quot;plus#acl\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"description",
     :"items",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Acl do
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.Plus.V1.Model.PlusAclentryResource, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.Acl do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

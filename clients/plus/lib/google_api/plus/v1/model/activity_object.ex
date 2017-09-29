@@ -17,12 +17,24 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Plus.V1.Model.Activity_object do
+defmodule GoogleApi.Plus.V1.Model.ActivityObject do
   @moduledoc """
   The object of this activity.
+
+  ## Attributes
+
+  - actor (ActivityObjectActor):  Defaults to: `null`.
+  - attachments (List[ActivityObjectAttachments]): The media objects attached to this activity. Defaults to: `null`.
+  - content (String): The HTML-formatted content, which is suitable for display. Defaults to: `null`.
+  - id (String): The ID of the object. When resharing an activity, this is the ID of the activity that is being reshared. Defaults to: `null`.
+  - objectType (String): The type of the object. Possible values include, but are not limited to, the following values:   - \&quot;note\&quot; - Textual content.  - \&quot;activity\&quot; - A Google+ activity. Defaults to: `null`.
+  - originalContent (String): The content (text) as provided by the author, which is stored without any HTML formatting. When creating or updating an activity, this value must be supplied as plain text in the request. Defaults to: `null`.
+  - plusoners (ActivityObjectPlusoners):  Defaults to: `null`.
+  - replies (ActivityObjectReplies):  Defaults to: `null`.
+  - resharers (ActivityObjectResharers):  Defaults to: `null`.
+  - url (String): The URL that points to the linked resource. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"actor",
     :"attachments",
@@ -37,15 +49,21 @@ defmodule GoogleApi.Plus.V1.Model.Activity_object do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Activity_object do
+defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.ActivityObject do
   import GoogleApi.Plus.V1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"actor", :struct, GoogleApi.Plus.V1.Model.Activity_object_actor, options)
-    |> deserialize(:"attachments", :list, GoogleApi.Plus.V1.Model.Activity_object_attachments, options)
-    |> deserialize(:"plusoners", :struct, GoogleApi.Plus.V1.Model.Activity_object_plusoners, options)
-    |> deserialize(:"replies", :struct, GoogleApi.Plus.V1.Model.Activity_object_replies, options)
-    |> deserialize(:"resharers", :struct, GoogleApi.Plus.V1.Model.Activity_object_resharers, options)
+    |> deserialize(:"actor", :struct, GoogleApi.Plus.V1.Model.ActivityObjectActor, options)
+    |> deserialize(:"attachments", :list, GoogleApi.Plus.V1.Model.ActivityObjectAttachments, options)
+    |> deserialize(:"plusoners", :struct, GoogleApi.Plus.V1.Model.ActivityObjectPlusoners, options)
+    |> deserialize(:"replies", :struct, GoogleApi.Plus.V1.Model.ActivityObjectReplies, options)
+    |> deserialize(:"resharers", :struct, GoogleApi.Plus.V1.Model.ActivityObjectResharers, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.ActivityObject do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

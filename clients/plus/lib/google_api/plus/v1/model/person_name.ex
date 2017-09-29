@@ -17,12 +17,20 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Plus.V1.Model.Person_name do
+defmodule GoogleApi.Plus.V1.Model.PersonName do
   @moduledoc """
   An object representation of the individual components of a person&#39;s name.
+
+  ## Attributes
+
+  - familyName (String): The family name (last name) of this person. Defaults to: `null`.
+  - formatted (String): The full name of this person, including middle names, suffixes, etc. Defaults to: `null`.
+  - givenName (String): The given name (first name) of this person. Defaults to: `null`.
+  - honorificPrefix (String): The honorific prefixes (such as \&quot;Dr.\&quot; or \&quot;Mrs.\&quot;) for this person. Defaults to: `null`.
+  - honorificSuffix (String): The honorific suffixes (such as \&quot;Jr.\&quot;) for this person. Defaults to: `null`.
+  - middleName (String): The middle name of this person. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"familyName",
     :"formatted",
@@ -33,9 +41,15 @@ defmodule GoogleApi.Plus.V1.Model.Person_name do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Person_name do
+defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.PersonName do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.PersonName do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

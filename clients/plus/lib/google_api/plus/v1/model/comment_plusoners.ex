@@ -17,20 +17,29 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Plus.V1.Model.Comment_plusoners do
+defmodule GoogleApi.Plus.V1.Model.CommentPlusoners do
   @moduledoc """
   People who +1&#39;d this comment.
+
+  ## Attributes
+
+  - totalItems (Integer): Total number of people who +1&#39;d this comment. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"totalItems"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Comment_plusoners do
+defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.CommentPlusoners do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.CommentPlusoners do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

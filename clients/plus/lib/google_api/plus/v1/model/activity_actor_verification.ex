@@ -17,20 +17,29 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Plus.V1.Model.Activity_actor_verification do
+defmodule GoogleApi.Plus.V1.Model.ActivityActorVerification do
   @moduledoc """
   Verification status of actor.
+
+  ## Attributes
+
+  - adHocVerified (String): Verification for one-time or manual processes. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"adHocVerified"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Activity_actor_verification do
+defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.ActivityActorVerification do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.ActivityActorVerification do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

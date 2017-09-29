@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Plus.V1.Model.Person_cover do
+defmodule GoogleApi.Plus.V1.Model.PersonCover do
   @moduledoc """
   The cover photo content.
+
+  ## Attributes
+
+  - coverInfo (PersonCoverCoverInfo):  Defaults to: `null`.
+  - coverPhoto (PersonCoverCoverPhoto):  Defaults to: `null`.
+  - layout (String): The layout of the cover art. Possible values include, but are not limited to, the following values:   - \&quot;banner\&quot; - One large image banner. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"coverInfo",
     :"coverPhoto",
@@ -30,12 +35,18 @@ defmodule GoogleApi.Plus.V1.Model.Person_cover do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Person_cover do
+defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.PersonCover do
   import GoogleApi.Plus.V1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"coverInfo", :struct, GoogleApi.Plus.V1.Model.Person_cover_coverInfo, options)
-    |> deserialize(:"coverPhoto", :struct, GoogleApi.Plus.V1.Model.Person_cover_coverPhoto, options)
+    |> deserialize(:"coverInfo", :struct, GoogleApi.Plus.V1.Model.PersonCoverCoverInfo, options)
+    |> deserialize(:"coverPhoto", :struct, GoogleApi.Plus.V1.Model.PersonCoverCoverPhoto, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.PersonCover do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

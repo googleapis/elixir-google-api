@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Plus.V1.Model.Person_ageRange do
+defmodule GoogleApi.Plus.V1.Model.PersonAgeRange do
   @moduledoc """
   The age range of the person. Valid ranges are 17 or younger, 18 to 20, and 21 or older. Age is determined from the user&#39;s birthday using Western age reckoning.
+
+  ## Attributes
+
+  - max (Integer): The age range&#39;s upper bound, if any. Possible values include, but are not limited to, the following:   - \&quot;17\&quot; - for age 17  - \&quot;20\&quot; - for age 20 Defaults to: `null`.
+  - min (Integer): The age range&#39;s lower bound, if any. Possible values include, but are not limited to, the following:   - \&quot;21\&quot; - for age 21  - \&quot;18\&quot; - for age 18 Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"max",
     :"min"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.Person_ageRange do
+defimpl Poison.Decoder, for: GoogleApi.Plus.V1.Model.PersonAgeRange do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Plus.V1.Model.PersonAgeRange do
+  def encode(value, options) do
+    GoogleApi.Plus.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
