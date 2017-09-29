@@ -20,9 +20,23 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.SetAccountInfoResponse do
   @moduledoc """
   Respone of setting the account information.
+
+  ## Attributes
+
+  - displayName (String): The name of the user. Defaults to: `null`.
+  - email (String): The email of the user. Defaults to: `null`.
+  - emailVerified (Boolean): If email has been verified. Defaults to: `null`.
+  - expiresIn (String): If idToken is STS id token, then this field will be expiration time of STS id token in seconds. Defaults to: `null`.
+  - idToken (String): The Gitkit id token to login the newly sign up user. Defaults to: `null`.
+  - kind (String): The fixed string \&quot;identitytoolkit#SetAccountInfoResponse\&quot;. Defaults to: `null`.
+  - localId (String): The local ID of the user. Defaults to: `null`.
+  - newEmail (String): The new email the user attempts to change to. Defaults to: `null`.
+  - passwordHash (String): The user&#39;s hashed password. Defaults to: `null`.
+  - photoUrl (String): The photo url of the user. Defaults to: `null`.
+  - providerUserInfo (List[SetAccountInfoResponseProviderUserInfo]): The user&#39;s profiles at the associated IdPs. Defaults to: `null`.
+  - refreshToken (String): If idToken is STS id token, then this field will be refresh token. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"displayName",
     :"email",
@@ -43,7 +57,13 @@ defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.SetAccountInfoRe
   import GoogleApi.IdentityToolkit.V3.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"providerUserInfo", :list, GoogleApi.IdentityToolkit.V3.Model.SetAccountInfoResponse_providerUserInfo, options)
+    |> deserialize(:"providerUserInfo", :list, GoogleApi.IdentityToolkit.V3.Model.SetAccountInfoResponseProviderUserInfo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.SetAccountInfoResponse do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

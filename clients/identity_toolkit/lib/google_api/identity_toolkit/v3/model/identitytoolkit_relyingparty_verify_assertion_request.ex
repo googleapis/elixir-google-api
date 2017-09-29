@@ -20,9 +20,22 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyAssertionRequest do
   @moduledoc """
   Request to verify the IDP assertion.
+
+  ## Attributes
+
+  - autoCreate (Boolean): When it&#39;s true, automatically creates a new account if the user doesn&#39;t exist. When it&#39;s false, allows existing user to sign in normally and throws exception if the user doesn&#39;t exist. Defaults to: `null`.
+  - delegatedProjectNumber (String): GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration. Defaults to: `null`.
+  - idToken (String): The GITKit token of the authenticated user. Defaults to: `null`.
+  - instanceId (String): Instance id token of the app. Defaults to: `null`.
+  - pendingIdToken (String): The GITKit token for the non-trusted IDP pending to be confirmed by the user. Defaults to: `null`.
+  - postBody (String): The post body if the request is a HTTP POST. Defaults to: `null`.
+  - requestUri (String): The URI to which the IDP redirects the user back. It may contain federated login result params added by the IDP. Defaults to: `null`.
+  - returnIdpCredential (Boolean): Whether return 200 and IDP credential rather than throw exception when federated id is already linked. Defaults to: `null`.
+  - returnRefreshToken (Boolean): Whether to return refresh tokens. Defaults to: `null`.
+  - returnSecureToken (Boolean): Whether return sts id token and refresh token instead of gitkit token. Defaults to: `null`.
+  - sessionId (String): Session ID, which should match the one in previous createAuthUri request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"autoCreate",
     :"delegatedProjectNumber",
@@ -41,6 +54,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyAssertionRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyAssertionRequest do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

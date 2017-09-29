@@ -20,9 +20,22 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySetProjectConfigRequest do
   @moduledoc """
   Request to set the project configuration.
+
+  ## Attributes
+
+  - allowPasswordUser (Boolean): Whether to allow password user sign in or sign up. Defaults to: `null`.
+  - apiKey (String): Browser API key, needed when making http request to Apiary. Defaults to: `null`.
+  - authorizedDomains (List[String]): Authorized domains for widget redirect. Defaults to: `null`.
+  - changeEmailTemplate (EmailTemplate): Change email template. Defaults to: `null`.
+  - delegatedProjectNumber (String): GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration. Defaults to: `null`.
+  - enableAnonymousUser (Boolean): Whether to enable anonymous user. Defaults to: `null`.
+  - idpConfig (List[IdpConfig]): Oauth2 provider configuration. Defaults to: `null`.
+  - legacyResetPasswordTemplate (EmailTemplate): Legacy reset password email template. Defaults to: `null`.
+  - resetPasswordTemplate (EmailTemplate): Reset password email template. Defaults to: `null`.
+  - useEmailSending (Boolean): Whether to use email sending provided by Firebear. Defaults to: `null`.
+  - verifyEmailTemplate (EmailTemplate): Verify email template. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"allowPasswordUser",
     :"apiKey",
@@ -47,6 +60,12 @@ defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitR
     |> deserialize(:"legacyResetPasswordTemplate", :struct, GoogleApi.IdentityToolkit.V3.Model.EmailTemplate, options)
     |> deserialize(:"resetPasswordTemplate", :struct, GoogleApi.IdentityToolkit.V3.Model.EmailTemplate, options)
     |> deserialize(:"verifyEmailTemplate", :struct, GoogleApi.IdentityToolkit.V3.Model.EmailTemplate, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySetProjectConfigRequest do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

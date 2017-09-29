@@ -20,9 +20,14 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.DownloadAccountResponse do
   @moduledoc """
   Response of downloading accounts in batch.
+
+  ## Attributes
+
+  - kind (String): The fixed string \&quot;identitytoolkit#DownloadAccountResponse\&quot;. Defaults to: `null`.
+  - nextPageToken (String): The next page token. To be used in a subsequent request to return the next page of results. Defaults to: `null`.
+  - users (List[UserInfo]): The user accounts data. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"nextPageToken",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.DownloadAccountR
   def decode(value, options) do
     value
     |> deserialize(:"users", :list, GoogleApi.IdentityToolkit.V3.Model.UserInfo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.DownloadAccountResponse do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

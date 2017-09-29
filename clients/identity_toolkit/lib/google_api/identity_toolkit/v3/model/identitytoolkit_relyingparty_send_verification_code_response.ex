@@ -20,9 +20,12 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySendVerificationCodeResponse do
   @moduledoc """
   Response for Identitytoolkit-SendVerificationCode
+
+  ## Attributes
+
+  - sessionInfo (String): Encrypted session information Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"sessionInfo"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySendVerificationCodeResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySendVerificationCodeResponse do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

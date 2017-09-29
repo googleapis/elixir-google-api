@@ -20,9 +20,14 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyDeleteAccountRequest do
   @moduledoc """
   Request to delete account.
+
+  ## Attributes
+
+  - delegatedProjectNumber (String): GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration. Defaults to: `null`.
+  - idToken (String): The GITKit token or STS id token of the authenticated user. Defaults to: `null`.
+  - localId (String): The local ID of the user. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"delegatedProjectNumber",
     :"idToken",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyDeleteAccountRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyDeleteAccountRequest do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

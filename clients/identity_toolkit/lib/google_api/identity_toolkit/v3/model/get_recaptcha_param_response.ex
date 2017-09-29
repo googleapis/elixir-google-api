@@ -20,9 +20,14 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.GetRecaptchaParamResponse do
   @moduledoc """
   Response of getting recaptcha param.
+
+  ## Attributes
+
+  - kind (String): The fixed string \&quot;identitytoolkit#GetRecaptchaParamResponse\&quot;. Defaults to: `null`.
+  - recaptchaSiteKey (String): Site key registered at recaptcha. Defaults to: `null`.
+  - recaptchaStoken (String): The stoken field for the recaptcha widget, used to request captcha challenge. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"recaptchaSiteKey",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.GetRecaptchaParamResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.GetRecaptchaParamResponse do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

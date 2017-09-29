@@ -20,9 +20,50 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.VerifyAssertionResponse do
   @moduledoc """
   Response of verifying the IDP assertion.
+
+  ## Attributes
+
+  - action (String): The action code. Defaults to: `null`.
+  - appInstallationUrl (String): URL for OTA app installation. Defaults to: `null`.
+  - appScheme (String): The custom scheme used by mobile app. Defaults to: `null`.
+  - context (String): The opaque value used by the client to maintain context info between the authentication request and the IDP callback. Defaults to: `null`.
+  - dateOfBirth (String): The birth date of the IdP account. Defaults to: `null`.
+  - displayName (String): The display name of the user. Defaults to: `null`.
+  - email (String): The email returned by the IdP. NOTE: The federated login user may not own the email. Defaults to: `null`.
+  - emailRecycled (Boolean): It&#39;s true if the email is recycled. Defaults to: `null`.
+  - emailVerified (Boolean): The value is true if the IDP is also the email provider. It means the user owns the email. Defaults to: `null`.
+  - errorMessage (String): Client error code. Defaults to: `null`.
+  - expiresIn (String): If idToken is STS id token, then this field will be expiration time of STS id token in seconds. Defaults to: `null`.
+  - federatedId (String): The unique ID identifies the IdP account. Defaults to: `null`.
+  - firstName (String): The first name of the user. Defaults to: `null`.
+  - fullName (String): The full name of the user. Defaults to: `null`.
+  - idToken (String): The ID token. Defaults to: `null`.
+  - inputEmail (String): It&#39;s the identifier param in the createAuthUri request if the identifier is an email. It can be used to check whether the user input email is different from the asserted email. Defaults to: `null`.
+  - isNewUser (Boolean): True if it&#39;s a new user sign-in, false if it&#39;s a returning user. Defaults to: `null`.
+  - kind (String): The fixed string \&quot;identitytoolkit#VerifyAssertionResponse\&quot;. Defaults to: `null`.
+  - language (String): The language preference of the user. Defaults to: `null`.
+  - lastName (String): The last name of the user. Defaults to: `null`.
+  - localId (String): The RP local ID if it&#39;s already been mapped to the IdP account identified by the federated ID. Defaults to: `null`.
+  - needConfirmation (Boolean): Whether the assertion is from a non-trusted IDP and need account linking confirmation. Defaults to: `null`.
+  - needEmail (Boolean): Whether need client to supply email to complete the federated login flow. Defaults to: `null`.
+  - nickName (String): The nick name of the user. Defaults to: `null`.
+  - oauthAccessToken (String): The OAuth2 access token. Defaults to: `null`.
+  - oauthAuthorizationCode (String): The OAuth2 authorization code. Defaults to: `null`.
+  - oauthExpireIn (Integer): The lifetime in seconds of the OAuth2 access token. Defaults to: `null`.
+  - oauthIdToken (String): The OIDC id token. Defaults to: `null`.
+  - oauthRequestToken (String): The user approved request token for the OpenID OAuth extension. Defaults to: `null`.
+  - oauthScope (String): The scope for the OpenID OAuth extension. Defaults to: `null`.
+  - oauthTokenSecret (String): The OAuth1 access token secret. Defaults to: `null`.
+  - originalEmail (String): The original email stored in the mapping storage. It&#39;s returned when the federated ID is associated to a different email. Defaults to: `null`.
+  - photoUrl (String): The URI of the public accessible profiel picture. Defaults to: `null`.
+  - providerId (String): The IdP ID. For white listed IdPs it&#39;s a short domain name e.g. google.com, aol.com, live.net and yahoo.com. If the \&quot;providerId\&quot; param is set to OpenID OP identifer other than the whilte listed IdPs the OP identifier is returned. If the \&quot;identifier\&quot; param is federated ID in the createAuthUri request. The domain part of the federated ID is returned. Defaults to: `null`.
+  - rawUserInfo (String): Raw IDP-returned user info. Defaults to: `null`.
+  - refreshToken (String): If idToken is STS id token, then this field will be refresh token. Defaults to: `null`.
+  - screenName (String): The screen_name of a Twitter user or the login name at Github. Defaults to: `null`.
+  - timeZone (String): The timezone of the user. Defaults to: `null`.
+  - verifiedProvider (List[String]): When action is &#39;map&#39;, contains the idps which can be used for confirmation. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"action",
     :"appInstallationUrl",
@@ -69,6 +110,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.VerifyAssertionResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.VerifyAssertionResponse do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

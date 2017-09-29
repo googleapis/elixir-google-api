@@ -17,21 +17,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.IdentityToolkit.V3.Model.UploadAccountResponse_error do
+defmodule GoogleApi.IdentityToolkit.V3.Model.UploadAccountResponseError do
   @moduledoc """
   
+
+  ## Attributes
+
+  - index (Integer): The index of the malformed account, starting from 0. Defaults to: `null`.
+  - message (String): Detailed error message for the account info. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"index",
     :"message"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.UploadAccountResponse_error do
+defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.UploadAccountResponseError do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.UploadAccountResponseError do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

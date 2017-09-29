@@ -20,9 +20,19 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.CreateAuthUriResponse do
   @moduledoc """
   Response of creating the IDP authentication URL.
+
+  ## Attributes
+
+  - allProviders (List[String]): all providers the user has once used to do federated login Defaults to: `null`.
+  - authUri (String): The URI used by the IDP to authenticate the user. Defaults to: `null`.
+  - captchaRequired (Boolean): True if captcha is required. Defaults to: `null`.
+  - forExistingProvider (Boolean): True if the authUri is for user&#39;s existing provider. Defaults to: `null`.
+  - kind (String): The fixed string identitytoolkit#CreateAuthUriResponse\&quot;. Defaults to: `null`.
+  - providerId (String): The provider ID of the auth URI. Defaults to: `null`.
+  - registered (Boolean): Whether the user is registered if the identifier is an email. Defaults to: `null`.
+  - sessionId (String): Session ID which should be passed in the following verifyAssertion request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"allProviders",
     :"authUri",
@@ -38,6 +48,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.CreateAuthUriResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.CreateAuthUriResponse do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

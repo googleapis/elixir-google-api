@@ -20,9 +20,13 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.GetAccountInfoResponse do
   @moduledoc """
   Response of getting account information.
+
+  ## Attributes
+
+  - kind (String): The fixed string \&quot;identitytoolkit#GetAccountInfoResponse\&quot;. Defaults to: `null`.
+  - users (List[UserInfo]): The info of the users. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"users"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.GetAccountInfoRe
   def decode(value, options) do
     value
     |> deserialize(:"users", :list, GoogleApi.IdentityToolkit.V3.Model.UserInfo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.GetAccountInfoResponse do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

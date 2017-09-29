@@ -20,9 +20,17 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.IdpConfig do
   @moduledoc """
   Template for a single idp configuration.
+
+  ## Attributes
+
+  - clientId (String): OAuth2 client ID. Defaults to: `null`.
+  - enabled (Boolean): Whether this IDP is enabled. Defaults to: `null`.
+  - experimentPercent (Integer): Percent of users who will be prompted/redirected federated login for this IDP. Defaults to: `null`.
+  - provider (String): OAuth2 provider. Defaults to: `null`.
+  - secret (String): OAuth2 client secret. Defaults to: `null`.
+  - whitelistedAudiences (List[String]): Whitelisted client IDs for audience check. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"clientId",
     :"enabled",
@@ -36,6 +44,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.IdpConfig do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.IdpConfig do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

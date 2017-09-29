@@ -20,9 +20,15 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.ResetPasswordResponse do
   @moduledoc """
   Response of resetting the password.
+
+  ## Attributes
+
+  - email (String): The user&#39;s email. If the out-of-band code is for email recovery, the user&#39;s original email. Defaults to: `null`.
+  - kind (String): The fixed string \&quot;identitytoolkit#ResetPasswordResponse\&quot;. Defaults to: `null`.
+  - newEmail (String): If the out-of-band code is for email recovery, the user&#39;s new email. Defaults to: `null`.
+  - requestType (String): The request type. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"email",
     :"kind",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.ResetPasswordResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.ResetPasswordResponse do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

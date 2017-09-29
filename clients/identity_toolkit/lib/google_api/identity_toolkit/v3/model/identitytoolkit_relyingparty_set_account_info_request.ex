@@ -20,9 +20,34 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySetAccountInfoRequest do
   @moduledoc """
   Request to set the account information.
+
+  ## Attributes
+
+  - captchaChallenge (String): The captcha challenge. Defaults to: `null`.
+  - captchaResponse (String): Response to the captcha. Defaults to: `null`.
+  - createdAt (String): The timestamp when the account is created. Defaults to: `null`.
+  - customAttributes (String): The custom attributes to be set in the user&#39;s id token. Defaults to: `null`.
+  - delegatedProjectNumber (String): GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration. Defaults to: `null`.
+  - deleteAttribute (List[String]): The attributes users request to delete. Defaults to: `null`.
+  - deleteProvider (List[String]): The IDPs the user request to delete. Defaults to: `null`.
+  - disableUser (Boolean): Whether to disable the user. Defaults to: `null`.
+  - displayName (String): The name of the user. Defaults to: `null`.
+  - email (String): The email of the user. Defaults to: `null`.
+  - emailVerified (Boolean): Mark the email as verified or not. Defaults to: `null`.
+  - idToken (String): The GITKit token of the authenticated user. Defaults to: `null`.
+  - instanceId (String): Instance id token of the app. Defaults to: `null`.
+  - lastLoginAt (String): Last login timestamp. Defaults to: `null`.
+  - localId (String): The local ID of the user. Defaults to: `null`.
+  - oobCode (String): The out-of-band code of the change email request. Defaults to: `null`.
+  - password (String): The new password of the user. Defaults to: `null`.
+  - phoneNumber (String): Privileged caller can update user with specified phone number. Defaults to: `null`.
+  - photoUrl (String): The photo url of the user. Defaults to: `null`.
+  - provider (List[String]): The associated IDPs of the user. Defaults to: `null`.
+  - returnSecureToken (Boolean): Whether return sts id token and refresh token instead of gitkit token. Defaults to: `null`.
+  - upgradeToFederatedLogin (Boolean): Mark the user to upgrade to federated login. Defaults to: `null`.
+  - validSince (String): Timestamp in seconds for valid login token. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"captchaChallenge",
     :"captchaResponse",
@@ -53,6 +78,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySetAccountInfoRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySetAccountInfoRequest do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

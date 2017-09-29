@@ -20,9 +20,13 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySignOutUserRequest do
   @moduledoc """
   Request to sign out user.
+
+  ## Attributes
+
+  - instanceId (String): Instance id token of the app. Defaults to: `null`.
+  - localId (String): The local ID of the user. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"instanceId",
     :"localId"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySignOutUserRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySignOutUserRequest do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

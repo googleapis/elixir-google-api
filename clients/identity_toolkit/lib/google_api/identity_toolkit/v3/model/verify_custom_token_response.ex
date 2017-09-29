@@ -20,9 +20,16 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.VerifyCustomTokenResponse do
   @moduledoc """
   Response from verifying a custom token
+
+  ## Attributes
+
+  - expiresIn (String): If idToken is STS id token, then this field will be expiration time of STS id token in seconds. Defaults to: `null`.
+  - idToken (String): The GITKit token for authenticated user. Defaults to: `null`.
+  - isNewUser (Boolean): True if it&#39;s a new user sign-in, false if it&#39;s a returning user. Defaults to: `null`.
+  - kind (String): The fixed string \&quot;identitytoolkit#VerifyCustomTokenResponse\&quot;. Defaults to: `null`.
+  - refreshToken (String): If idToken is STS id token, then this field will be refresh token. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"expiresIn",
     :"idToken",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.VerifyCustomTokenResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.VerifyCustomTokenResponse do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

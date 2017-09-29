@@ -20,9 +20,20 @@
 defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyPasswordRequest do
   @moduledoc """
   Request to verify the password.
+
+  ## Attributes
+
+  - captchaChallenge (String): The captcha challenge. Defaults to: `null`.
+  - captchaResponse (String): Response to the captcha. Defaults to: `null`.
+  - delegatedProjectNumber (String): GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration. Defaults to: `null`.
+  - email (String): The email of the user. Defaults to: `null`.
+  - idToken (String): The GITKit token of the authenticated user. Defaults to: `null`.
+  - instanceId (String): Instance id token of the app. Defaults to: `null`.
+  - password (String): The password inputed by the user. Defaults to: `null`.
+  - pendingIdToken (String): The GITKit token for the non-trusted IDP, which is to be confirmed by the user. Defaults to: `null`.
+  - returnSecureToken (Boolean): Whether return sts id token and refresh token instead of gitkit token. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"captchaChallenge",
     :"captchaResponse",
@@ -39,6 +50,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyPasswordRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyPasswordRequest do
+  def encode(value, options) do
+    GoogleApi.IdentityToolkit.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 
