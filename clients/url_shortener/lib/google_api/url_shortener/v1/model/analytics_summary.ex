@@ -20,9 +20,16 @@
 defmodule GoogleApi.UrlShortener.V1.Model.AnalyticsSummary do
   @moduledoc """
   
+
+  ## Attributes
+
+  - allTime (AnalyticsSnapshot): Click analytics over all time. Defaults to: `null`.
+  - day (AnalyticsSnapshot): Click analytics over the last day. Defaults to: `null`.
+  - month (AnalyticsSnapshot): Click analytics over the last month. Defaults to: `null`.
+  - twoHours (AnalyticsSnapshot): Click analytics over the last two hours. Defaults to: `null`.
+  - week (AnalyticsSnapshot): Click analytics over the last week. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"allTime",
     :"day",
@@ -41,6 +48,12 @@ defimpl Poison.Decoder, for: GoogleApi.UrlShortener.V1.Model.AnalyticsSummary do
     |> deserialize(:"month", :struct, GoogleApi.UrlShortener.V1.Model.AnalyticsSnapshot, options)
     |> deserialize(:"twoHours", :struct, GoogleApi.UrlShortener.V1.Model.AnalyticsSnapshot, options)
     |> deserialize(:"week", :struct, GoogleApi.UrlShortener.V1.Model.AnalyticsSnapshot, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.UrlShortener.V1.Model.AnalyticsSummary do
+  def encode(value, options) do
+    GoogleApi.UrlShortener.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

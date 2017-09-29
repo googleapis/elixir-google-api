@@ -20,9 +20,13 @@
 defmodule GoogleApi.UrlShortener.V1.Model.StringCount do
   @moduledoc """
   
+
+  ## Attributes
+
+  - count (String): Number of clicks for this top entry, e.g. for this particular country or browser. Defaults to: `null`.
+  - id (String): Label assigned to this top entry, e.g. \&quot;US\&quot; or \&quot;Chrome\&quot;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"count",
     :"id"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.UrlShortener.V1.Model.StringCount do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.UrlShortener.V1.Model.StringCount do
+  def encode(value, options) do
+    GoogleApi.UrlShortener.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
