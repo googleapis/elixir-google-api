@@ -20,9 +20,14 @@
 defmodule GoogleApi.StorageTransfer.V1.Model.UpdateTransferJobRequest do
   @moduledoc """
   Request passed to UpdateTransferJob.
+
+  ## Attributes
+
+  - projectId (String): The ID of the Google Cloud Platform Console project that owns the job. Required. Defaults to: `null`.
+  - transferJob (TransferJob): The job to update. &#x60;transferJob&#x60; is expected to specify only three fields: &#x60;description&#x60;, &#x60;transferSpec&#x60;, and &#x60;status&#x60;.  An UpdateTransferJobRequest that specifies other fields will be rejected with an error &#x60;INVALID_ARGUMENT&#x60;. Required. Defaults to: `null`.
+  - updateTransferJobFieldMask (String): The field mask of the fields in &#x60;transferJob&#x60; that are to be updated in this request.  Fields in &#x60;transferJob&#x60; that can be updated are: &#x60;description&#x60;, &#x60;transferSpec&#x60;, and &#x60;status&#x60;.  To update the &#x60;transferSpec&#x60; of the job, a complete transfer specification has to be provided. An incomplete specification which misses any required fields will be rejected with the error &#x60;INVALID_ARGUMENT&#x60;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"projectId",
     :"transferJob",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.StorageTransfer.V1.Model.UpdateTransferJo
   def decode(value, options) do
     value
     |> deserialize(:"transferJob", :struct, GoogleApi.StorageTransfer.V1.Model.TransferJob, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.StorageTransfer.V1.Model.UpdateTransferJobRequest do
+  def encode(value, options) do
+    GoogleApi.StorageTransfer.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

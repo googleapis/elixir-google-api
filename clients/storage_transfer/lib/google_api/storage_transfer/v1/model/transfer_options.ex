@@ -20,9 +20,14 @@
 defmodule GoogleApi.StorageTransfer.V1.Model.TransferOptions do
   @moduledoc """
   TransferOptions uses three boolean parameters to define the actions to be performed on objects in a transfer.
+
+  ## Attributes
+
+  - deleteObjectsFromSourceAfterTransfer (Boolean): Whether objects should be deleted from the source after they are transferred to the sink.  Note that this option and &#x60;deleteObjectsUniqueInSink&#x60; are mutually exclusive. Defaults to: `null`.
+  - deleteObjectsUniqueInSink (Boolean): Whether objects that exist only in the sink should be deleted.  Note that this option and &#x60;deleteObjectsFromSourceAfterTransfer&#x60; are mutually exclusive. Defaults to: `null`.
+  - overwriteObjectsAlreadyExistingInSink (Boolean): Whether overwriting objects that already exist in the sink is allowed. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"deleteObjectsFromSourceAfterTransfer",
     :"deleteObjectsUniqueInSink",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.StorageTransfer.V1.Model.TransferOptions do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.StorageTransfer.V1.Model.TransferOptions do
+  def encode(value, options) do
+    GoogleApi.StorageTransfer.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

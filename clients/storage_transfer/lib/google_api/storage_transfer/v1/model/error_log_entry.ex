@@ -20,9 +20,13 @@
 defmodule GoogleApi.StorageTransfer.V1.Model.ErrorLogEntry do
   @moduledoc """
   An entry describing an error that has occurred.
+
+  ## Attributes
+
+  - errorDetails (List[String]): A list of messages that carry the error details. Defaults to: `null`.
+  - url (String): A URL that refers to the target (a data source, a data sink, or an object) with which the error is associated. Required. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"errorDetails",
     :"url"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.StorageTransfer.V1.Model.ErrorLogEntry do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.StorageTransfer.V1.Model.ErrorLogEntry do
+  def encode(value, options) do
+    GoogleApi.StorageTransfer.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

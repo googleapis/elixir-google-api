@@ -20,9 +20,15 @@
 defmodule GoogleApi.StorageTransfer.V1.Model.ErrorSummary do
   @moduledoc """
   A summary of errors by error code, plus a count and sample error log entries.
+
+  ## Attributes
+
+  - errorCode (String): Required. Defaults to: `null`.
+    - Enum - one of [OK, CANCELLED, UNKNOWN, INVALID_ARGUMENT, DEADLINE_EXCEEDED, NOT_FOUND, ALREADY_EXISTS, PERMISSION_DENIED, UNAUTHENTICATED, RESOURCE_EXHAUSTED, FAILED_PRECONDITION, ABORTED, OUT_OF_RANGE, UNIMPLEMENTED, INTERNAL, UNAVAILABLE, DATA_LOSS]
+  - errorCount (String): Count of this type of error. Required. Defaults to: `null`.
+  - errorLogEntries (List[ErrorLogEntry]): Error samples. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"errorCode",
     :"errorCount",
@@ -35,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.StorageTransfer.V1.Model.ErrorSummary do
   def decode(value, options) do
     value
     |> deserialize(:"errorLogEntries", :list, GoogleApi.StorageTransfer.V1.Model.ErrorLogEntry, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.StorageTransfer.V1.Model.ErrorSummary do
+  def encode(value, options) do
+    GoogleApi.StorageTransfer.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

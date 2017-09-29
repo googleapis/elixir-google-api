@@ -20,9 +20,15 @@
 defmodule GoogleApi.StorageTransfer.V1.Model.ObjectConditions do
   @moduledoc """
   Conditions that determine which objects will be transferred.
+
+  ## Attributes
+
+  - excludePrefixes (List[String]): &#x60;excludePrefixes&#x60; must follow the requirements described for &#x60;includePrefixes&#x60;.  The max size of &#x60;excludePrefixes&#x60; is 1000. Defaults to: `null`.
+  - includePrefixes (List[String]): If &#x60;includePrefixes&#x60; is specified, objects that satisfy the object conditions must have names that start with one of the &#x60;includePrefixes&#x60; and that do not start with any of the &#x60;excludePrefixes&#x60;. If &#x60;includePrefixes&#x60; is not specified, all objects except those that have names starting with one of the &#x60;excludePrefixes&#x60; must satisfy the object conditions.  Requirements:    * Each include-prefix and exclude-prefix can contain any sequence of     Unicode characters, of max length 1024 bytes when UTF8-encoded, and     must not contain Carriage Return or Line Feed characters.  Wildcard     matching and regular expression matching are not supported.    * Each include-prefix and exclude-prefix must omit the leading slash.     For example, to include the &#x60;requests.gz&#x60; object in a transfer from     &#x60;s3://my-aws-bucket/logs/y&#x3D;2015/requests.gz&#x60;, specify the include     prefix as &#x60;logs/y&#x3D;2015/requests.gz&#x60;.    * None of the include-prefix or the exclude-prefix values can be empty,     if specified.    * Each include-prefix must include a distinct portion of the object     namespace, i.e., no include-prefix may be a prefix of another     include-prefix.    * Each exclude-prefix must exclude a distinct portion of the object     namespace, i.e., no exclude-prefix may be a prefix of another     exclude-prefix.    * If &#x60;includePrefixes&#x60; is specified, then each exclude-prefix must start     with the value of a path explicitly included by &#x60;includePrefixes&#x60;.  The max size of &#x60;includePrefixes&#x60; is 1000. Defaults to: `null`.
+  - maxTimeElapsedSinceLastModification (String): &#x60;maxTimeElapsedSinceLastModification&#x60; is the complement to &#x60;minTimeElapsedSinceLastModification&#x60;. Defaults to: `null`.
+  - minTimeElapsedSinceLastModification (String): If unspecified, &#x60;minTimeElapsedSinceLastModification&#x60; takes a zero value and &#x60;maxTimeElapsedSinceLastModification&#x60; takes the maximum possible value of Duration. Objects that satisfy the object conditions must either have a &#x60;lastModificationTime&#x60; greater or equal to &#x60;NOW&#x60; - &#x60;maxTimeElapsedSinceLastModification&#x60; and less than &#x60;NOW&#x60; - &#x60;minTimeElapsedSinceLastModification&#x60;, or not have a &#x60;lastModificationTime&#x60;. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"excludePrefixes",
     :"includePrefixes",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.StorageTransfer.V1.Model.ObjectConditions do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.StorageTransfer.V1.Model.ObjectConditions do
+  def encode(value, options) do
+    GoogleApi.StorageTransfer.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

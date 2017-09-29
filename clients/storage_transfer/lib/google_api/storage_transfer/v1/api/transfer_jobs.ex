@@ -128,7 +128,9 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
     }
     %{}
     |> method(:get)
-    |> url("/v1/#{job_name}")
+    |> url("/v1/{+jobName}", %{
+         "jobName" => URI.encode_www_form(job_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -241,7 +243,9 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
     }
     %{}
     |> method(:patch)
-    |> url("/v1/#{job_name}")
+    |> url("/v1/{+jobName}", %{
+         "jobName" => URI.encode_www_form(job_name)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

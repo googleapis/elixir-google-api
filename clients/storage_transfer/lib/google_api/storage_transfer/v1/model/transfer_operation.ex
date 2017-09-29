@@ -20,9 +20,21 @@
 defmodule GoogleApi.StorageTransfer.V1.Model.TransferOperation do
   @moduledoc """
   A description of the execution of a transfer.
+
+  ## Attributes
+
+  - counters (TransferCounters): Information about the progress of the transfer operation. Defaults to: `null`.
+  - endTime (String): End time of this transfer execution. Defaults to: `null`.
+  - errorBreakdowns (List[ErrorSummary]): Summarizes errors encountered with sample error log entries. Defaults to: `null`.
+  - name (String): A globally unique ID assigned by the system. Defaults to: `null`.
+  - projectId (String): The ID of the Google Cloud Platform Console project that owns the operation. Required. Defaults to: `null`.
+  - startTime (String): Start time of this transfer execution. Defaults to: `null`.
+  - status (String): Status of the transfer operation. Defaults to: `null`.
+    - Enum - one of [STATUS_UNSPECIFIED, IN_PROGRESS, PAUSED, SUCCESS, FAILED, ABORTED]
+  - transferJobName (String): The name of the transfer job that triggers this transfer operation. Defaults to: `null`.
+  - transferSpec (TransferSpec): Transfer specification. Required. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"counters",
     :"endTime",
@@ -43,6 +55,12 @@ defimpl Poison.Decoder, for: GoogleApi.StorageTransfer.V1.Model.TransferOperatio
     |> deserialize(:"counters", :struct, GoogleApi.StorageTransfer.V1.Model.TransferCounters, options)
     |> deserialize(:"errorBreakdowns", :list, GoogleApi.StorageTransfer.V1.Model.ErrorSummary, options)
     |> deserialize(:"transferSpec", :struct, GoogleApi.StorageTransfer.V1.Model.TransferSpec, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.StorageTransfer.V1.Model.TransferOperation do
+  def encode(value, options) do
+    GoogleApi.StorageTransfer.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

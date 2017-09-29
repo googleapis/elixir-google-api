@@ -20,9 +20,13 @@
 defmodule GoogleApi.StorageTransfer.V1.Model.AwsAccessKey do
   @moduledoc """
   AWS access key (see [AWS Security Credentials](http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html)).
+
+  ## Attributes
+
+  - accessKeyId (String): AWS access key ID. Required. Defaults to: `null`.
+  - secretAccessKey (String): AWS secret access key. This field is not returned in RPC responses. Required. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"accessKeyId",
     :"secretAccessKey"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.StorageTransfer.V1.Model.AwsAccessKey do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.StorageTransfer.V1.Model.AwsAccessKey do
+  def encode(value, options) do
+    GoogleApi.StorageTransfer.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

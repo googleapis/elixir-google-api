@@ -20,9 +20,13 @@
 defmodule GoogleApi.StorageTransfer.V1.Model.AwsS3Data do
   @moduledoc """
   An AwsS3Data can be a data source, but not a data sink. In an AwsS3Data, an object&#39;s name is the S3 object&#39;s key name.
+
+  ## Attributes
+
+  - awsAccessKey (AwsAccessKey): AWS access key used to sign the API requests to the AWS S3 bucket. Permissions on the bucket must be granted to the access ID of the AWS access key. Required. Defaults to: `null`.
+  - bucketName (String): S3 Bucket name (see [Creating a bucket](http://docs.aws.amazon.com/AmazonS3/latest/dev/create-bucket-get-location-example.html)). Required. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"awsAccessKey",
     :"bucketName"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.StorageTransfer.V1.Model.AwsS3Data do
   def decode(value, options) do
     value
     |> deserialize(:"awsAccessKey", :struct, GoogleApi.StorageTransfer.V1.Model.AwsAccessKey, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.StorageTransfer.V1.Model.AwsS3Data do
+  def encode(value, options) do
+    GoogleApi.StorageTransfer.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,27 @@
 defmodule GoogleApi.StorageTransfer.V1.Model.TransferCounters do
   @moduledoc """
   A collection of counters that report the progress of a transfer operation.
+
+  ## Attributes
+
+  - bytesCopiedToSink (String): Bytes that are copied to the data sink. Defaults to: `null`.
+  - bytesDeletedFromSink (String): Bytes that are deleted from the data sink. Defaults to: `null`.
+  - bytesDeletedFromSource (String): Bytes that are deleted from the data source. Defaults to: `null`.
+  - bytesFailedToDeleteFromSink (String): Bytes that failed to be deleted from the data sink. Defaults to: `null`.
+  - bytesFoundFromSource (String): Bytes found in the data source that are scheduled to be transferred, which will be copied, excluded based on conditions, or skipped due to failures. Defaults to: `null`.
+  - bytesFoundOnlyFromSink (String): Bytes found only in the data sink that are scheduled to be deleted. Defaults to: `null`.
+  - bytesFromSourceFailed (String): Bytes in the data source that failed during the transfer. Defaults to: `null`.
+  - bytesFromSourceSkippedBySync (String): Bytes in the data source that are not transferred because they already exist in the data sink. Defaults to: `null`.
+  - objectsCopiedToSink (String): Objects that are copied to the data sink. Defaults to: `null`.
+  - objectsDeletedFromSink (String): Objects that are deleted from the data sink. Defaults to: `null`.
+  - objectsDeletedFromSource (String): Objects that are deleted from the data source. Defaults to: `null`.
+  - objectsFailedToDeleteFromSink (String): Objects that failed to be deleted from the data sink. Defaults to: `null`.
+  - objectsFoundFromSource (String): Objects found in the data source that are scheduled to be transferred, which will be copied, excluded based on conditions, or skipped due to failures. Defaults to: `null`.
+  - objectsFoundOnlyFromSink (String): Objects found only in the data sink that are scheduled to be deleted. Defaults to: `null`.
+  - objectsFromSourceFailed (String): Objects in the data source that failed during the transfer. Defaults to: `null`.
+  - objectsFromSourceSkippedBySync (String): Objects in the data source that are not transferred because they already exist in the data sink. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bytesCopiedToSink",
     :"bytesDeletedFromSink",
@@ -46,6 +64,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.StorageTransfer.V1.Model.TransferCounters do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.StorageTransfer.V1.Model.TransferCounters do
+  def encode(value, options) do
+    GoogleApi.StorageTransfer.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

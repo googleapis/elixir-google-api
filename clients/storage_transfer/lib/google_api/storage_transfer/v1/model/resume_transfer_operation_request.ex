@@ -20,9 +20,11 @@
 defmodule GoogleApi.StorageTransfer.V1.Model.ResumeTransferOperationRequest do
   @moduledoc """
   Request passed to ResumeTransferOperation.
+
+  ## Attributes
+
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     
   ]
@@ -31,6 +33,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.StorageTransfer.V1.Model.ResumeTransferOperationRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.StorageTransfer.V1.Model.ResumeTransferOperationRequest do
+  def encode(value, options) do
+    GoogleApi.StorageTransfer.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
