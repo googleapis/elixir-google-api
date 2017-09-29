@@ -20,9 +20,15 @@
 defmodule GoogleApi.Script.V1.Model.ExecutionRequest do
   @moduledoc """
   A request to run the function in a script. The script is identified by the specified &#x60;script_id&#x60;. Executing a function on a script returns results based on the implementation of the script.
+
+  ## Attributes
+
+  - parameters (List[ErrorUnknown]): The parameters to be passed to the function being executed. The object type for each parameter should match the expected type in Apps Script. Parameters cannot be Apps Script-specific object types (such as a &#x60;Document&#x60; or a &#x60;Calendar&#x60;); they can only be primitive types such as &#x60;string&#x60;, &#x60;number&#x60;, &#x60;array&#x60;, &#x60;object&#x60;, or &#x60;boolean&#x60;. Optional. Defaults to: `null`.
+  - devMode (Boolean): If &#x60;true&#x60; and the user is an owner of the script, the script runs at the most recently saved version rather than the version deployed for use with the Execution API. Optional; default is &#x60;false&#x60;. Defaults to: `null`.
+  - function (String): The name of the function to execute in the given script. The name does not include parentheses or parameters. Defaults to: `null`.
+  - sessionState (String): For Android add-ons only. An ID that represents the user&#39;s current session in the Android app for Google Docs or Sheets, included as extra data in the [&#x60;Intent&#x60;](https://developer.android.com/guide/components/intents-filters.html) that launches the add-on. When an Android add-on is run with a session state, it gains the privileges of a [bound](https://developers.google.com/apps-script/guides/bound) script &amp;mdash; that is, it can access information like the user&#39;s current cursor position (in Docs) or selected cell (in Sheets). To retrieve the state, call &#x60;Intent.getStringExtra(\&quot;com.google.android.apps.docs.addons.SessionState\&quot;)&#x60;. Optional. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"parameters",
     :"devMode",
@@ -35,7 +41,13 @@ defimpl Poison.Decoder, for: GoogleApi.Script.V1.Model.ExecutionRequest do
   import GoogleApi.Script.V1.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"parameters", :list, GoogleApi.Script.V1.Model., options)
+    |> deserialize(:"parameters", :list, nil, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Script.V1.Model.ExecutionRequest do
+  def encode(value, options) do
+    GoogleApi.Script.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

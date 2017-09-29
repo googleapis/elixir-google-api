@@ -20,9 +20,13 @@
 defmodule GoogleApi.Script.V1.Model.ScriptStackTraceElement do
   @moduledoc """
   A stack trace through the script that shows where the execution failed.
+
+  ## Attributes
+
+  - function (String): The name of the function that failed. Defaults to: `null`.
+  - lineNumber (Integer): The line number where the script failed. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"function",
     :"lineNumber"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Script.V1.Model.ScriptStackTraceElement do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Script.V1.Model.ScriptStackTraceElement do
+  def encode(value, options) do
+    GoogleApi.Script.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

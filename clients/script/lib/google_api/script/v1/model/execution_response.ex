@@ -20,9 +20,11 @@
 defmodule GoogleApi.Script.V1.Model.ExecutionResponse do
   @moduledoc """
   An object that provides the return value of a function executed through the Apps Script Execution API. If a &#x60;run&#x60; call succeeds and the script function returns successfully, the response body&#39;s &#x60;response&#x60; field contains this &#x60;ExecutionResponse&#x60; object.
+
+  ## Attributes
+
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     
   ]
@@ -31,6 +33,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Script.V1.Model.ExecutionResponse do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Script.V1.Model.ExecutionResponse do
+  def encode(value, options) do
+    GoogleApi.Script.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.Script.V1.Model.Operation do
   @moduledoc """
   The response will not arrive until the function finishes executing. The maximum runtime is listed in the guide to [limitations in Apps Script](https://developers.google.com/apps-script/guides/services/quotas#current_limitations). &lt;p&gt;If the script function returns successfully, the &#x60;response&#x60; field will contain an &#x60;ExecutionResponse&#x60; object with the function&#39;s return value in the object&#39;s &#x60;result&#x60; field.&lt;/p&gt; &lt;p&gt;If the script function (or Apps Script itself) throws an exception, the &#x60;error&#x60; field will contain a &#x60;Status&#x60; object. The &#x60;Status&#x60; object&#39;s &#x60;details&#x60; field will contain an array with a single &#x60;ExecutionError&#x60; object that provides information about the nature of the error.&lt;/p&gt; &lt;p&gt;If the &#x60;run&#x60; call itself fails (for example, because of a malformed request or an authorization error), the method will return an HTTP response code in the 4XX range with a different format for the response body. Client libraries will automatically convert a 4XX response into an exception class.&lt;/p&gt;
+
+  ## Attributes
+
+  - done (Boolean): This field is only used with asynchronous executions and indicates whether or not the script execution has completed. A completed execution has a populated response field containing the &#x60;ExecutionResponse&#x60; from function that was executed. Defaults to: `null`.
+  - error (Status): If a &#x60;run&#x60; call succeeds but the script function (or Apps Script itself) throws an exception, this field will contain a &#x60;Status&#x60; object. The &#x60;Status&#x60; object&#39;s &#x60;details&#x60; field will contain an array with a single &#x60;ExecutionError&#x60; object that provides information about the nature of the error. Defaults to: `null`.
+  - metadata (Object): This field is not used. Defaults to: `null`.
+  - response (Object): If the script function returns successfully, this field will contain an &#x60;ExecutionResponse&#x60; object with the function&#39;s return value as the object&#39;s &#x60;result&#x60; field. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"done",
     :"error",
@@ -38,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.Script.V1.Model.Operation do
     |> deserialize(:"error", :struct, GoogleApi.Script.V1.Model.Status, options)
     |> deserialize(:"metadata", :struct, GoogleApi.Script.V1.Model.Object, options)
     |> deserialize(:"response", :struct, GoogleApi.Script.V1.Model.Object, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Script.V1.Model.Operation do
+  def encode(value, options) do
+    GoogleApi.Script.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
