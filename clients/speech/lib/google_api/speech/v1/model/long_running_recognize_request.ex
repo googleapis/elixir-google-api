@@ -20,9 +20,13 @@
 defmodule GoogleApi.Speech.V1.Model.LongRunningRecognizeRequest do
   @moduledoc """
   The top-level message sent by the client for the &#x60;LongRunningRecognize&#x60; method.
+
+  ## Attributes
+
+  - audio (RecognitionAudio): *Required* The audio data to be recognized. Defaults to: `null`.
+  - config (RecognitionConfig): *Required* Provides information to the recognizer that specifies how to process the request. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"audio",
     :"config"
@@ -35,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.Speech.V1.Model.LongRunningRecognizeReque
     value
     |> deserialize(:"audio", :struct, GoogleApi.Speech.V1.Model.RecognitionAudio, options)
     |> deserialize(:"config", :struct, GoogleApi.Speech.V1.Model.RecognitionConfig, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Speech.V1.Model.LongRunningRecognizeRequest do
+  def encode(value, options) do
+    GoogleApi.Speech.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

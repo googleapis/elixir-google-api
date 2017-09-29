@@ -20,9 +20,12 @@
 defmodule GoogleApi.Speech.V1.Model.RecognizeResponse do
   @moduledoc """
   The only message returned to the client by the &#x60;Recognize&#x60; method. It contains the result as zero or more sequential &#x60;SpeechRecognitionResult&#x60; messages.
+
+  ## Attributes
+
+  - results (List[SpeechRecognitionResult]): *Output-only* Sequential list of transcription results corresponding to sequential portions of audio. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"results"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Speech.V1.Model.RecognizeResponse do
   def decode(value, options) do
     value
     |> deserialize(:"results", :list, GoogleApi.Speech.V1.Model.SpeechRecognitionResult, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Speech.V1.Model.RecognizeResponse do
+  def encode(value, options) do
+    GoogleApi.Speech.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,19 @@
 defmodule GoogleApi.Speech.V1.Model.RecognitionConfig do
   @moduledoc """
   Provides information to the recognizer that specifies how to process the request.
+
+  ## Attributes
+
+  - enableWordTimeOffsets (Boolean): *Optional* If &#x60;true&#x60;, the top result includes a list of words and the start and end time offsets (timestamps) for those words. If &#x60;false&#x60;, no word-level time offset information is returned. The default is &#x60;false&#x60;. Defaults to: `null`.
+  - encoding (String): *Required* Encoding of audio data sent in all &#x60;RecognitionAudio&#x60; messages. Defaults to: `null`.
+    - Enum - one of [ENCODING_UNSPECIFIED, LINEAR16, FLAC, MULAW, AMR, AMR_WB, OGG_OPUS, SPEEX_WITH_HEADER_BYTE]
+  - languageCode (String): *Required* The language of the supplied audio as a [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. Example: \&quot;en-US\&quot;. See [Language Support](https://cloud.google.com/speech/docs/languages) for a list of the currently supported language codes. Defaults to: `null`.
+  - maxAlternatives (Integer): *Optional* Maximum number of recognition hypotheses to be returned. Specifically, the maximum number of &#x60;SpeechRecognitionAlternative&#x60; messages within each &#x60;SpeechRecognitionResult&#x60;. The server may return fewer than &#x60;max_alternatives&#x60;. Valid values are &#x60;0&#x60;-&#x60;30&#x60;. A value of &#x60;0&#x60; or &#x60;1&#x60; will return a maximum of one. If omitted, will return a maximum of one. Defaults to: `null`.
+  - profanityFilter (Boolean): *Optional* If set to &#x60;true&#x60;, the server will attempt to filter out profanities, replacing all but the initial character in each filtered word with asterisks, e.g. \&quot;f***\&quot;. If set to &#x60;false&#x60; or omitted, profanities won&#39;t be filtered out. Defaults to: `null`.
+  - sampleRateHertz (Integer): *Required* Sample rate in Hertz of the audio data sent in all &#x60;RecognitionAudio&#x60; messages. Valid values are: 8000-48000. 16000 is optimal. For best results, set the sampling rate of the audio source to 16000 Hz. If that&#39;s not possible, use the native sample rate of the audio source (instead of re-sampling). Defaults to: `null`.
+  - speechContexts (List[SpeechContext]): *Optional* A means to provide context to assist the speech recognition. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"enableWordTimeOffsets",
     :"encoding",
@@ -39,6 +49,12 @@ defimpl Poison.Decoder, for: GoogleApi.Speech.V1.Model.RecognitionConfig do
   def decode(value, options) do
     value
     |> deserialize(:"speechContexts", :list, GoogleApi.Speech.V1.Model.SpeechContext, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Speech.V1.Model.RecognitionConfig do
+  def encode(value, options) do
+    GoogleApi.Speech.V1.Deserializer.serialize_non_nil(value, options)
   end
 end
 
