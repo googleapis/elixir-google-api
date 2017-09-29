@@ -20,9 +20,25 @@
 defmodule GoogleApi.Partners.V2.Model.UserProfile do
   @moduledoc """
   The profile information of a Partners user.
+
+  ## Attributes
+
+  - address (Location): The user&#39;s mailing address, contains multiple fields. Defaults to: `null`.
+  - adwordsManagerAccount (String): If the user has edit access to multiple accounts, the user can choose the preferred account and it is used when a personal account is needed. Can be empty. Defaults to: `null`.
+  - channels (List[String]): A list of ids representing which channels the user selected they were in. Defaults to: `null`.
+  - emailAddress (String): The email address the user has selected on the Partners site as primary. Defaults to: `null`.
+  - emailOptIns (OptIns): The list of opt-ins for the user, related to communication preferences. Defaults to: `null`.
+  - familyName (String): The user&#39;s family name. Defaults to: `null`.
+  - givenName (String): The user&#39;s given name. Defaults to: `null`.
+  - industries (List[String]): A list of ids representing which industries the user selected. Defaults to: `null`.
+  - jobFunctions (List[String]): A list of ids represnting which job categories the user selected. Defaults to: `null`.
+  - languages (List[String]): The list of languages this user understands. Defaults to: `null`.
+  - markets (List[String]): A list of ids representing which markets the user was interested in. Defaults to: `null`.
+  - phoneNumber (String): The user&#39;s phone number. Defaults to: `null`.
+  - primaryCountryCode (String): The user&#39;s primary country, an ISO 2-character code. Defaults to: `null`.
+  - profilePublic (Boolean): Whether the user&#39;s public profile is visible to anyone with the URL. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"address",
     :"adwordsManagerAccount",
@@ -47,6 +63,12 @@ defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.UserProfile do
     value
     |> deserialize(:"address", :struct, GoogleApi.Partners.V2.Model.Location, options)
     |> deserialize(:"emailOptIns", :struct, GoogleApi.Partners.V2.Model.OptIns, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.UserProfile do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

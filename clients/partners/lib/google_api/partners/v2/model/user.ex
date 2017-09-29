@@ -20,9 +20,22 @@
 defmodule GoogleApi.Partners.V2.Model.User do
   @moduledoc """
   A resource representing a user of the Partners platform.
+
+  ## Attributes
+
+  - availableAdwordsManagerAccounts (List[AdWordsManagerAccountInfo]): This is the list of AdWords Manager Accounts the user has edit access to. If the user has edit access to multiple accounts, the user can choose the preferred account and we use this when a personal account is needed. Can be empty meaning the user has access to no accounts. @OutputOnly Defaults to: `null`.
+  - certificationStatus (List[Certification]): The list of achieved certifications. These are calculated based on exam results and other requirements. @OutputOnly Defaults to: `null`.
+  - company (CompanyRelation): The company that the user is associated with. If not present, the user is not associated with any company. Defaults to: `null`.
+  - companyVerificationEmail (String): The email address used by the user used for company verification. @OutputOnly Defaults to: `null`.
+  - examStatus (List[ExamStatus]): The list of exams the user ever taken. For each type of exam, only one entry is listed. Defaults to: `null`.
+  - id (String): The ID of the user. Defaults to: `null`.
+  - internalId (String): The internal user ID. Only available for a whitelisted set of api clients. Defaults to: `null`.
+  - lastAccessTime (String): The most recent time the user interacted with the Partners site. @OutputOnly Defaults to: `null`.
+  - primaryEmails (List[String]): The list of emails the user has access to/can select as primary. @OutputOnly Defaults to: `null`.
+  - profile (UserProfile): The profile information of a Partners user, contains all the directly editable user information. Defaults to: `null`.
+  - publicProfile (PublicProfile): Information about a user&#39;s external public profile outside Google Partners. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"availableAdwordsManagerAccounts",
     :"certificationStatus",
@@ -48,6 +61,12 @@ defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.User do
     |> deserialize(:"examStatus", :list, GoogleApi.Partners.V2.Model.ExamStatus, options)
     |> deserialize(:"profile", :struct, GoogleApi.Partners.V2.Model.UserProfile, options)
     |> deserialize(:"publicProfile", :struct, GoogleApi.Partners.V2.Model.PublicProfile, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.User do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

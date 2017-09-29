@@ -20,9 +20,25 @@
 defmodule GoogleApi.Partners.V2.Model.HistoricalOffer do
   @moduledoc """
   Historical information about a Google Partners Offer.
+
+  ## Attributes
+
+  - adwordsUrl (String): Client&#39;s AdWords page URL. Defaults to: `null`.
+  - clientEmail (String): Email address for client. Defaults to: `null`.
+  - clientId (String): ID of client. Defaults to: `null`.
+  - clientName (String): Name of the client. Defaults to: `null`.
+  - creationTime (String): Time offer was first created. Defaults to: `null`.
+  - expirationTime (String): Time this offer expires. Defaults to: `null`.
+  - lastModifiedTime (String): Time last action was taken. Defaults to: `null`.
+  - offerCode (String): Offer code. Defaults to: `null`.
+  - offerCountryCode (String): Country Code for the offer country. Defaults to: `null`.
+  - offerType (String): Type of offer. Defaults to: `null`.
+    - Enum - one of [OFFER_TYPE_UNSPECIFIED, OFFER_TYPE_SPEND_X_GET_Y, OFFER_TYPE_VIDEO, OFFER_TYPE_SPEND_MATCH]
+  - senderName (String): Name (First + Last) of the partners user to whom the incentive is allocated. Defaults to: `null`.
+  - status (String): Status of the offer. Defaults to: `null`.
+    - Enum - one of [OFFER_STATUS_UNSPECIFIED, OFFER_STATUS_DISTRIBUTED, OFFER_STATUS_REDEEMED, OFFER_STATUS_AWARDED, OFFER_STATUS_EXPIRED]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"adwordsUrl",
     :"clientEmail",
@@ -42,6 +58,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.HistoricalOffer do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.HistoricalOffer do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

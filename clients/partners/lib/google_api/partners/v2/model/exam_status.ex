@@ -20,9 +20,18 @@
 defmodule GoogleApi.Partners.V2.Model.ExamStatus do
   @moduledoc """
   A user&#39;s information on a specific exam.
+
+  ## Attributes
+
+  - examType (String): The type of the exam. Defaults to: `null`.
+    - Enum - one of [CERTIFICATION_EXAM_TYPE_UNSPECIFIED, CET_ADWORDS_FUNDAMENTALS, CET_ADWORDS_ADVANCED_SEARCH, CET_ADWORDS_ADVANCED_DISPLAY, CET_VIDEO_ADS, CET_DOUBLECLICK, CET_ANALYTICS, CET_SHOPPING, CET_MOBILE, CET_DIGITAL_SALES, CET_MOBILE_SITES]
+  - expiration (String): Date this exam is due to expire. Defaults to: `null`.
+  - lastPassed (String): The date the user last passed this exam. Defaults to: `null`.
+  - passed (Boolean): Whether this exam has been passed and not expired. Defaults to: `null`.
+  - taken (String): The date the user last taken this exam. Defaults to: `null`.
+  - warning (Boolean): Whether this exam is in the state of warning. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"examType",
     :"expiration",
@@ -36,6 +45,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.ExamStatus do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.ExamStatus do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

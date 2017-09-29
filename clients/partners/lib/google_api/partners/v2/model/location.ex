@@ -20,9 +20,21 @@
 defmodule GoogleApi.Partners.V2.Model.Location do
   @moduledoc """
   A location with address and geographic coordinates. May optionally contain a detailed (multi-field) version of the address.
+
+  ## Attributes
+
+  - address (String): The single string version of the address. Defaults to: `null`.
+  - addressLine (List[String]): The following address lines represent the most specific part of any address. Defaults to: `null`.
+  - administrativeArea (String): Top-level administrative subdivision of this country. Defaults to: `null`.
+  - dependentLocality (String): Dependent locality or sublocality. Used for UK dependent localities, or neighborhoods or boroughs in other locations. Defaults to: `null`.
+  - languageCode (String): Language code of the address. Should be in BCP 47 format. Defaults to: `null`.
+  - latLng (LatLng): The latitude and longitude of the location, in degrees. Defaults to: `null`.
+  - locality (String): Generally refers to the city/town portion of an address. Defaults to: `null`.
+  - postalCode (String): Values are frequently alphanumeric. Defaults to: `null`.
+  - regionCode (String): CLDR (Common Locale Data Repository) region code . Defaults to: `null`.
+  - sortingCode (String): Use of this code is very country-specific, but will refer to a secondary classification code for sorting mail. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"address",
     :"addressLine",
@@ -42,6 +54,12 @@ defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.Location do
   def decode(value, options) do
     value
     |> deserialize(:"latLng", :struct, GoogleApi.Partners.V2.Model.LatLng, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.Location do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

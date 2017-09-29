@@ -20,9 +20,13 @@
 defmodule GoogleApi.Partners.V2.Model.TrafficSource do
   @moduledoc """
   Source of traffic for the current request.
+
+  ## Attributes
+
+  - trafficSourceId (String): Identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us. Defaults to: `null`.
+  - trafficSubId (String): Second level identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"trafficSourceId",
     :"trafficSubId"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.TrafficSource do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.TrafficSource do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

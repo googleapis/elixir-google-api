@@ -1,6 +1,6 @@
 # GoogleApi.Partners.V2
 
-**TODO: Add description**
+Searches certified companies and creates contact leads with them, and also audits the usage of clients.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_partners` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_partners, "~> 0.1.0"}]
+  [{:google_api_partners, "~> 0.0.1"}]
 end
 ```
 

@@ -20,9 +20,12 @@
 defmodule GoogleApi.Partners.V2.Model.LogUserEventResponse do
   @moduledoc """
   Response message for LogUserEvent.
+
+  ## Attributes
+
+  - responseMetadata (ResponseMetadata): Current response metadata. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"responseMetadata"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.LogUserEventResponse do
   def decode(value, options) do
     value
     |> deserialize(:"responseMetadata", :struct, GoogleApi.Partners.V2.Model.ResponseMetadata, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.LogUserEventResponse do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

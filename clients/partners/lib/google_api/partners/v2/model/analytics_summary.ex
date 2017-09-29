@@ -20,9 +20,14 @@
 defmodule GoogleApi.Partners.V2.Model.AnalyticsSummary do
   @moduledoc """
   Analytics aggregated data for a &#x60;Company&#x60; for a given date range.
+
+  ## Attributes
+
+  - contactsCount (Integer): Aggregated number of times users contacted the &#x60;Company&#x60; for given date range. Defaults to: `null`.
+  - profileViewsCount (Integer): Aggregated number of profile views for the &#x60;Company&#x60; for given date range. Defaults to: `null`.
+  - searchViewsCount (Integer): Aggregated number of times users saw the &#x60;Company&#x60; in Google Partners Search results for given date range. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"contactsCount",
     :"profileViewsCount",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.AnalyticsSummary do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.AnalyticsSummary do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

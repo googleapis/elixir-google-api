@@ -20,9 +20,14 @@
 defmodule GoogleApi.Partners.V2.Model.EventData do
   @moduledoc """
   Key value data pair for an event.
+
+  ## Attributes
+
+  - key (String): Data type. Defaults to: `null`.
+    - Enum - one of [EVENT_DATA_TYPE_UNSPECIFIED, ACTION, AGENCY_ID, AGENCY_NAME, AGENCY_PHONE_NUMBER, AGENCY_WEBSITE, BUDGET, CENTER_POINT, CERTIFICATION, COMMENT, COUNTRY, CURRENCY, CURRENTLY_VIEWED_AGENCY_ID, DISTANCE, DISTANCE_TYPE, EXAM, HISTORY_TOKEN, ID, INDUSTRY, INSIGHT_TAG, LANGUAGE, LOCATION, MARKETING_OPT_IN, QUERY, SEARCH_START_INDEX, SERVICE, SHOW_VOW, SOLUTION, TRAFFIC_SOURCE_ID, TRAFFIC_SUB_ID, VIEW_PORT, WEBSITE, DETAILS, EXPERIMENT_ID, GPS_MOTIVATION, URL, ELEMENT_FOCUS, PROGRESS]
+  - values (List[String]): Data values. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"key",
     :"values"
@@ -32,6 +37,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.EventData do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.EventData do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.Partners.V2.Model.AnalyticsDataPoint do
   @moduledoc """
   Details of the analytics events for a &#x60;Company&#x60; within a single day.
+
+  ## Attributes
+
+  - eventCount (Integer): Number of times the type of event occurred. Meaning depends on context (e.g. profile views, contacts, etc.). Defaults to: `null`.
+  - eventLocations (List[LatLng]): Location information of where these events occurred. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"eventCount",
     :"eventLocations"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.AnalyticsDataPoint do
   def decode(value, options) do
     value
     |> deserialize(:"eventLocations", :list, GoogleApi.Partners.V2.Model.LatLng, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.AnalyticsDataPoint do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

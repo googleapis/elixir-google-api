@@ -20,9 +20,37 @@
 defmodule GoogleApi.Partners.V2.Model.Company do
   @moduledoc """
   A company resource in the Google Partners API. Once certified, it qualifies for being searched by advertisers.
+
+  ## Attributes
+
+  - additionalWebsites (List[String]): URL of the company&#39;s additional websites used to verify the dynamic badges. These are stored as full URLs as entered by the user, but only the TLD will be used for the actual verification. Defaults to: `null`.
+  - autoApprovalEmailDomains (List[String]): Email domains that allow users with a matching email address to get auto-approved for associating with this company. Defaults to: `null`.
+  - badgeTier (String): Partner badge tier Defaults to: `null`.
+    - Enum - one of [BADGE_TIER_NONE, BADGE_TIER_REGULAR, BADGE_TIER_PREMIER]
+  - certificationStatuses (List[CertificationStatus]): The list of Google Partners certification statuses for the company. Defaults to: `null`.
+  - companyTypes (List[String]): Company type labels listed on the company&#39;s profile. Defaults to: `null`.
+    - Enum - one of 
+  - convertedMinMonthlyBudget (Money): The minimum monthly budget that the company accepts for partner business, converted to the requested currency code. Defaults to: `null`.
+  - id (String): The ID of the company. Defaults to: `null`.
+  - industries (List[String]): Industries the company can help with. Defaults to: `null`.
+    - Enum - one of 
+  - localizedInfos (List[LocalizedCompanyInfo]): The list of localized info for the company. Defaults to: `null`.
+  - locations (List[Location]): The list of all company locations. If set, must include the primary_location in the list. Defaults to: `null`.
+  - name (String): The name of the company. Defaults to: `null`.
+  - originalMinMonthlyBudget (Money): The unconverted minimum monthly budget that the company accepts for partner business. Defaults to: `null`.
+  - primaryAdwordsManagerAccountId (String): The Primary AdWords Manager Account id. Defaults to: `null`.
+  - primaryLanguageCode (String): The primary language code of the company, as defined by &lt;a href&#x3D;\&quot;https://tools.ietf.org/html/bcp47\&quot;&gt;BCP 47&lt;/a&gt; (IETF BCP 47, \&quot;Tags for Identifying Languages\&quot;). Defaults to: `null`.
+  - primaryLocation (Location): The primary location of the company. Defaults to: `null`.
+  - profileStatus (String): The public viewability status of the company&#39;s profile. Defaults to: `null`.
+    - Enum - one of [COMPANY_PROFILE_STATUS_UNSPECIFIED, HIDDEN, PUBLISHED, SEARCHABLE]
+  - publicProfile (PublicProfile): Basic information from the company&#39;s public profile. Defaults to: `null`.
+  - ranks (List[Rank]): Information related to the ranking of the company within the list of companies. Defaults to: `null`.
+  - services (List[String]): Services the company can help with. Defaults to: `null`.
+    - Enum - one of 
+  - specializationStatus (List[SpecializationStatus]): The list of Google Partners specialization statuses for the company. Defaults to: `null`.
+  - websiteUrl (String): URL of the company&#39;s website. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"additionalWebsites",
     :"autoApprovalEmailDomains",
@@ -61,6 +89,12 @@ defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.Company do
     |> deserialize(:"publicProfile", :struct, GoogleApi.Partners.V2.Model.PublicProfile, options)
     |> deserialize(:"ranks", :list, GoogleApi.Partners.V2.Model.Rank, options)
     |> deserialize(:"specializationStatus", :list, GoogleApi.Partners.V2.Model.SpecializationStatus, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.Company do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

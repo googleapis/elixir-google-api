@@ -20,9 +20,13 @@
 defmodule GoogleApi.Partners.V2.Model.RecaptchaChallenge do
   @moduledoc """
   &lt;a href&#x3D;\&quot;https://www.google.com/recaptcha/\&quot;&gt;reCaptcha&lt;/a&gt; challenge info.
+
+  ## Attributes
+
+  - id (String): The ID of the reCaptcha challenge. Defaults to: `null`.
+  - response (String): The response to the reCaptcha challenge. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"id",
     :"response"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.RecaptchaChallenge do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.RecaptchaChallenge do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

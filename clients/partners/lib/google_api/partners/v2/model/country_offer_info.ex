@@ -20,9 +20,16 @@
 defmodule GoogleApi.Partners.V2.Model.CountryOfferInfo do
   @moduledoc """
   Offer info by country.
+
+  ## Attributes
+
+  - getYAmount (String): (localized) Get Y amount for that country&#39;s offer. Defaults to: `null`.
+  - offerCountryCode (String): Country code for which offer codes may be requested. Defaults to: `null`.
+  - offerType (String): Type of offer country is eligible for. Defaults to: `null`.
+    - Enum - one of [OFFER_TYPE_UNSPECIFIED, OFFER_TYPE_SPEND_X_GET_Y, OFFER_TYPE_VIDEO, OFFER_TYPE_SPEND_MATCH]
+  - spendXAmount (String): (localized) Spend X amount for that country&#39;s offer. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"getYAmount",
     :"offerCountryCode",
@@ -34,6 +41,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.CountryOfferInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.CountryOfferInfo do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

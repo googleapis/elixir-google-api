@@ -20,9 +20,15 @@
 defmodule GoogleApi.Partners.V2.Model.ListOffersResponse do
   @moduledoc """
   Response for ListOffer.
+
+  ## Attributes
+
+  - availableOffers (List[AvailableOffer]): Available Offers to be distributed. Defaults to: `null`.
+  - noOfferReason (String): Reason why no Offers are available. Defaults to: `null`.
+    - Enum - one of [NO_OFFER_REASON_UNSPECIFIED, NO_OFFER_REASON_NO_MCC, NO_OFFER_REASON_LIMIT_REACHED, NO_OFFER_REASON_INELIGIBLE]
+  - responseMetadata (ResponseMetadata): Current response metadata. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"availableOffers",
     :"noOfferReason",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.ListOffersResponse do
     value
     |> deserialize(:"availableOffers", :list, GoogleApi.Partners.V2.Model.AvailableOffer, options)
     |> deserialize(:"responseMetadata", :struct, GoogleApi.Partners.V2.Model.ResponseMetadata, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.ListOffersResponse do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

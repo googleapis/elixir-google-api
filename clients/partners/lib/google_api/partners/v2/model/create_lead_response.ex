@@ -20,9 +20,15 @@
 defmodule GoogleApi.Partners.V2.Model.CreateLeadResponse do
   @moduledoc """
   Response message for CreateLead.
+
+  ## Attributes
+
+  - lead (Lead): Lead that was created depending on the outcome of &lt;a href&#x3D;\&quot;https://www.google.com/recaptcha/\&quot;&gt;reCaptcha&lt;/a&gt; validation. Defaults to: `null`.
+  - recaptchaStatus (String): The outcome of &lt;a href&#x3D;\&quot;https://www.google.com/recaptcha/\&quot;&gt;reCaptcha&lt;/a&gt; validation. Defaults to: `null`.
+    - Enum - one of [RECAPTCHA_STATUS_UNSPECIFIED, RS_NOT_NEEDED, RS_PASSED, RS_FAILED]
+  - responseMetadata (ResponseMetadata): Current response metadata. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"lead",
     :"recaptchaStatus",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.CreateLeadResponse do
     value
     |> deserialize(:"lead", :struct, GoogleApi.Partners.V2.Model.Lead, options)
     |> deserialize(:"responseMetadata", :struct, GoogleApi.Partners.V2.Model.ResponseMetadata, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.CreateLeadResponse do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

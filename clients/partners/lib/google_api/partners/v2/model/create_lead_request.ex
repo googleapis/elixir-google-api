@@ -20,9 +20,14 @@
 defmodule GoogleApi.Partners.V2.Model.CreateLeadRequest do
   @moduledoc """
   Request message for CreateLead.
+
+  ## Attributes
+
+  - lead (Lead): The lead resource. The &#x60;LeadType&#x60; must not be &#x60;LEAD_TYPE_UNSPECIFIED&#x60; and either &#x60;email&#x60; or &#x60;phone_number&#x60; must be provided. Defaults to: `null`.
+  - recaptchaChallenge (RecaptchaChallenge): &lt;a href&#x3D;\&quot;https://www.google.com/recaptcha/\&quot;&gt;reCaptcha&lt;/a&gt; challenge info. Defaults to: `null`.
+  - requestMetadata (RequestMetadata): Current request metadata. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"lead",
     :"recaptchaChallenge",
@@ -37,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.CreateLeadRequest do
     |> deserialize(:"lead", :struct, GoogleApi.Partners.V2.Model.Lead, options)
     |> deserialize(:"recaptchaChallenge", :struct, GoogleApi.Partners.V2.Model.RecaptchaChallenge, options)
     |> deserialize(:"requestMetadata", :struct, GoogleApi.Partners.V2.Model.RequestMetadata, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.CreateLeadRequest do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

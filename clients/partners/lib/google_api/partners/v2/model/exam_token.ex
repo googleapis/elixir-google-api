@@ -20,9 +20,15 @@
 defmodule GoogleApi.Partners.V2.Model.ExamToken do
   @moduledoc """
   A token that allows a user to take an exam.
+
+  ## Attributes
+
+  - examId (String): The id of the exam the token is for. Defaults to: `null`.
+  - examType (String): The type of the exam the token belongs to. Defaults to: `null`.
+    - Enum - one of [CERTIFICATION_EXAM_TYPE_UNSPECIFIED, CET_ADWORDS_FUNDAMENTALS, CET_ADWORDS_ADVANCED_SEARCH, CET_ADWORDS_ADVANCED_DISPLAY, CET_VIDEO_ADS, CET_DOUBLECLICK, CET_ANALYTICS, CET_SHOPPING, CET_MOBILE, CET_DIGITAL_SALES, CET_MOBILE_SITES]
+  - token (String): The token, only present if the user has access to the exam. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"examId",
     :"examType",
@@ -33,6 +39,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.ExamToken do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.ExamToken do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

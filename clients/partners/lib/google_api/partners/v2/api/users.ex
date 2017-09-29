@@ -88,7 +88,9 @@ defmodule GoogleApi.Partners.V2.Api.Users do
     }
     %{}
     |> method(:put)
-    |> url("/v2/users/#{user_id}/companyRelation")
+    |> url("/v2/users/{userId}/companyRelation", %{
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -155,7 +157,9 @@ defmodule GoogleApi.Partners.V2.Api.Users do
     }
     %{}
     |> method(:delete)
-    |> url("/v2/users/#{user_id}/companyRelation")
+    |> url("/v2/users/{userId}/companyRelation", %{
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -224,7 +228,9 @@ defmodule GoogleApi.Partners.V2.Api.Users do
     }
     %{}
     |> method(:get)
-    |> url("/v2/users/#{user_id}")
+    |> url("/v2/users/{userId}", %{
+         "userId" => URI.encode_www_form(user_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

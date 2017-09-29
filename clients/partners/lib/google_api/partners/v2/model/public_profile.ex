@@ -20,9 +20,16 @@
 defmodule GoogleApi.Partners.V2.Model.PublicProfile do
   @moduledoc """
   Basic information from a public profile.
+
+  ## Attributes
+
+  - displayImageUrl (String): The URL to the main display image of the public profile. Being deprecated. Defaults to: `null`.
+  - displayName (String): The display name of the public profile. Defaults to: `null`.
+  - id (String): The ID which can be used to retrieve more details about the public profile. Defaults to: `null`.
+  - profileImage (String): The URL to the main profile image of the public profile. Defaults to: `null`.
+  - url (String): The URL of the public profile. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"displayImageUrl",
     :"displayName",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.PublicProfile do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.PublicProfile do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

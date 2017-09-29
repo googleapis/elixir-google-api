@@ -20,9 +20,15 @@
 defmodule GoogleApi.Partners.V2.Model.ListAnalyticsResponse do
   @moduledoc """
   Response message for ListAnalytics.
+
+  ## Attributes
+
+  - analytics (List[Analytics]): The list of analytics. Sorted in ascending order of Analytics.event_date. Defaults to: `null`.
+  - analyticsSummary (AnalyticsSummary): Aggregated information across the response&#39;s analytics. Defaults to: `null`.
+  - nextPageToken (String): A token to retrieve next page of results. Pass this value in the &#x60;ListAnalyticsRequest.page_token&#x60; field in the subsequent call to ListAnalytics to retrieve the next page of results. Defaults to: `null`.
+  - responseMetadata (ResponseMetadata): Current response metadata. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"analytics",
     :"analyticsSummary",
@@ -38,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.ListAnalyticsResponse d
     |> deserialize(:"analytics", :list, GoogleApi.Partners.V2.Model.Analytics, options)
     |> deserialize(:"analyticsSummary", :struct, GoogleApi.Partners.V2.Model.AnalyticsSummary, options)
     |> deserialize(:"responseMetadata", :struct, GoogleApi.Partners.V2.Model.ResponseMetadata, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.ListAnalyticsResponse do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

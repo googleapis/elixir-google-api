@@ -20,9 +20,29 @@
 defmodule GoogleApi.Partners.V2.Model.Lead do
   @moduledoc """
   A lead resource that represents an advertiser contact for a &#x60;Company&#x60;. These are usually generated via Google Partner Search (the advertiser portal).
+
+  ## Attributes
+
+  - adwordsCustomerId (String): The AdWords Customer ID of the lead. Defaults to: `null`.
+  - comments (String): Comments lead source gave. Defaults to: `null`.
+  - createTime (String): Timestamp of when this lead was created. Defaults to: `null`.
+  - email (String): Email address of lead source. Defaults to: `null`.
+  - familyName (String): Last name of lead source. Defaults to: `null`.
+  - givenName (String): First name of lead source. Defaults to: `null`.
+  - gpsMotivations (List[String]): List of reasons for using Google Partner Search and creating a lead. Defaults to: `null`.
+    - Enum - one of 
+  - id (String): ID of the lead. Defaults to: `null`.
+  - languageCode (String): Language code of the lead&#39;s language preference, as defined by &lt;a href&#x3D;\&quot;https://tools.ietf.org/html/bcp47\&quot;&gt;BCP 47&lt;/a&gt; (IETF BCP 47, \&quot;Tags for Identifying Languages\&quot;). Defaults to: `null`.
+  - marketingOptIn (Boolean): Whether or not the lead signed up for marketing emails Defaults to: `null`.
+  - minMonthlyBudget (Money): The minimum monthly budget lead source is willing to spend. Defaults to: `null`.
+  - phoneNumber (String): Phone number of lead source. Defaults to: `null`.
+  - state (String): The lead&#39;s state in relation to the company. Defaults to: `null`.
+    - Enum - one of [LEAD_STATE_UNSPECIFIED, LEAD, CONTACTED, CLIENT, OTHER]
+  - type (String): Type of lead. Defaults to: `null`.
+    - Enum - one of [LEAD_TYPE_UNSPECIFIED, LT_GPS]
+  - websiteUrl (String): Website URL of lead source. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"adwordsCustomerId",
     :"comments",
@@ -47,6 +67,12 @@ defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.Lead do
   def decode(value, options) do
     value
     |> deserialize(:"minMonthlyBudget", :struct, GoogleApi.Partners.V2.Model.Money, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.Lead do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

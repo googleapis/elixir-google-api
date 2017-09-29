@@ -20,9 +20,15 @@
 defmodule GoogleApi.Partners.V2.Model.LocalizedCompanyInfo do
   @moduledoc """
   The localized company information.
+
+  ## Attributes
+
+  - countryCodes (List[String]): List of country codes for the localized company info. Defaults to: `null`.
+  - displayName (String): Localized display name. Defaults to: `null`.
+  - languageCode (String): Language code of the localized company info, as defined by &lt;a href&#x3D;\&quot;https://tools.ietf.org/html/bcp47\&quot;&gt;BCP 47&lt;/a&gt; (IETF BCP 47, \&quot;Tags for Identifying Languages\&quot;). Defaults to: `null`.
+  - overview (String): Localized brief description that the company uses to advertise themselves. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"countryCodes",
     :"displayName",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.LocalizedCompanyInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.LocalizedCompanyInfo do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,16 @@
 defmodule GoogleApi.Partners.V2.Model.CertificationStatus do
   @moduledoc """
   Google Partners certification status.
+
+  ## Attributes
+
+  - examStatuses (List[CertificationExamStatus]): List of certification exam statuses. Defaults to: `null`.
+  - isCertified (Boolean): Whether certification is passing. Defaults to: `null`.
+  - type (String): The type of the certification. Defaults to: `null`.
+    - Enum - one of [CERTIFICATION_TYPE_UNSPECIFIED, CT_ADWORDS, CT_YOUTUBE, CT_VIDEOADS, CT_ANALYTICS, CT_DOUBLECLICK, CT_SHOPPING, CT_MOBILE, CT_DIGITAL_SALES, CT_ADWORDS_SEARCH, CT_ADWORDS_DISPLAY, CT_MOBILE_SITES]
+  - userCount (Integer): Number of people who are certified, Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"examStatuses",
     :"isCertified",
@@ -36,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.CertificationStatus do
   def decode(value, options) do
     value
     |> deserialize(:"examStatuses", :list, GoogleApi.Partners.V2.Model.CertificationExamStatus, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.CertificationStatus do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

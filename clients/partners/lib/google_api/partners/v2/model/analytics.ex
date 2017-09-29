@@ -20,9 +20,15 @@
 defmodule GoogleApi.Partners.V2.Model.Analytics do
   @moduledoc """
   Analytics data for a &#x60;Company&#x60; within a single day.
+
+  ## Attributes
+
+  - contacts (AnalyticsDataPoint): Instances of users contacting the &#x60;Company&#x60; on the specified date. Defaults to: `null`.
+  - eventDate (DateTime): Date on which these events occurred. Defaults to: `null`.
+  - profileViews (AnalyticsDataPoint): Instances of users viewing the &#x60;Company&#x60; profile on the specified date. Defaults to: `null`.
+  - searchViews (AnalyticsDataPoint): Instances of users seeing the &#x60;Company&#x60; in Google Partners Search results on the specified date. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"contacts",
     :"eventDate",
@@ -38,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.Analytics do
     |> deserialize(:"contacts", :struct, GoogleApi.Partners.V2.Model.AnalyticsDataPoint, options)
     |> deserialize(:"profileViews", :struct, GoogleApi.Partners.V2.Model.AnalyticsDataPoint, options)
     |> deserialize(:"searchViews", :struct, GoogleApi.Partners.V2.Model.AnalyticsDataPoint, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.Analytics do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

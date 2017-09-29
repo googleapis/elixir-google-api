@@ -20,9 +20,17 @@
 defmodule GoogleApi.Partners.V2.Model.ListOffersHistoryResponse do
   @moduledoc """
   Response for ListOfferHistory.
+
+  ## Attributes
+
+  - canShowEntireCompany (Boolean): True if the user has the option to show entire company history. Defaults to: `null`.
+  - nextPageToken (String): Supply this token in a ListOffersHistoryRequest to retrieve the next page. Defaults to: `null`.
+  - offers (List[HistoricalOffer]): Historical offers meeting request. Defaults to: `null`.
+  - responseMetadata (ResponseMetadata): Current response metadata. Defaults to: `null`.
+  - showingEntireCompany (Boolean): True if this response is showing entire company history. Defaults to: `null`.
+  - totalResults (Integer): Number of results across all pages. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"canShowEntireCompany",
     :"nextPageToken",
@@ -39,6 +47,12 @@ defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.ListOffersHistoryRespon
     value
     |> deserialize(:"offers", :list, GoogleApi.Partners.V2.Model.HistoricalOffer, options)
     |> deserialize(:"responseMetadata", :struct, GoogleApi.Partners.V2.Model.ResponseMetadata, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.ListOffersHistoryResponse do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,21 @@
 defmodule GoogleApi.Partners.V2.Model.OfferCustomer do
   @moduledoc """
   Customers qualified for an offer.
+
+  ## Attributes
+
+  - adwordsUrl (String): URL to the customer&#39;s AdWords page. Defaults to: `null`.
+  - countryCode (String): Country code of the customer. Defaults to: `null`.
+  - creationTime (String): Time the customer was created. Defaults to: `null`.
+  - eligibilityDaysLeft (Integer): Days the customer is still eligible. Defaults to: `null`.
+  - externalCid (String): External CID for the customer. Defaults to: `null`.
+  - getYAmount (String): Formatted Get Y amount with currency code. Defaults to: `null`.
+  - name (String): Name of the customer. Defaults to: `null`.
+  - offerType (String): Type of the offer Defaults to: `null`.
+    - Enum - one of [OFFER_TYPE_UNSPECIFIED, OFFER_TYPE_SPEND_X_GET_Y, OFFER_TYPE_VIDEO, OFFER_TYPE_SPEND_MATCH]
+  - spendXAmount (String): Formatted Spend X amount with currency code. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"adwordsUrl",
     :"countryCode",
@@ -39,6 +51,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Partners.V2.Model.OfferCustomer do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Partners.V2.Model.OfferCustomer do
+  def encode(value, options) do
+    GoogleApi.Partners.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 
