@@ -39,5 +39,4 @@ defmodule GoogleApis.SwaggerConfig do
       packageName: GoogleApis.ApiConfig.app_name(api_config)
     }
   end
-
 end

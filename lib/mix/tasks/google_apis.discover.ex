@@ -23,5 +23,4 @@ defmodule Mix.Tasks.GoogleApis.Discover do
   def run(_) do
     GoogleApis.discover()
   end
-
 end

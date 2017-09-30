@@ -18,16 +18,16 @@ defmodule Mix.Tasks.GoogleApis.Build do
   @shortdoc "Create GoogleApi clients"
 
   def run([only]) do
-    apis = GoogleApis.ApiConfig.load(only)
-
-    Enum.each(apis, &GoogleApis.generate_config/1)
-    Enum.each(apis, &GoogleApis.generate_client/1)
+    only
+    |> GoogleApis.ApiConfig.load()
+    |> builder()
   end
   def run(_) do
-    apis = GoogleApis.ApiConfig.load_all()
+    builder(GoogleApis.ApiConfig.load_all())
+  end
 
+  defp builder(apis) do
     Enum.each(apis, &GoogleApis.generate_config/1)
     Enum.each(apis, &GoogleApis.generate_client/1)
   end
-
 end

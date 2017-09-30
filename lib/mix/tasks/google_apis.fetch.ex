@@ -18,11 +18,11 @@ defmodule Mix.Tasks.GoogleApis.Fetch do
   @shortdoc "Create GoogleApi clients"
 
   def run([only]) do
-    GoogleApis.ApiConfig.load(only)
+    only
+    |> GoogleApis.ApiConfig.load()
     |> Enum.each(&GoogleApis.fetch/1)
   end
   def run(_) do
-    GoogleApis.ApiConfig.load_all()
-    |> Enum.each(&GoogleApis.fetch/1)
+    Enum.each(GoogleApis.ApiConfig.load_all(), &GoogleApis.fetch/1)
   end
 end
