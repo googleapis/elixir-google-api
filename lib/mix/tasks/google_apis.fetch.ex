@@ -23,7 +23,7 @@ defmodule Mix.Tasks.GoogleApis.Fetch do
     |> Enum.each(&GoogleApis.fetch/1)
   end
   def run(_) do
-    max_concurrency = Application.get_env(:google_apis, :max_concurrency)
+    max_concurrency = Application.get_env(:google_apis, :max_concurrency, System.schedulers_online())
 
     GoogleApis.ApiConfig.load_all()
     |> Task.async_stream(&GoogleApis.fetch/1, [max_concurrency: max_concurrency, timeout: :infinity])

@@ -28,7 +28,7 @@ defmodule Mix.Tasks.GoogleApis.Build do
   end
 
   defp builder(apis) do
-    max_concurrency = Application.get_env(:google_apis, :max_concurrency)
+    max_concurrency = Application.get_env(:google_apis, :max_concurrency, System.schedulers_online())
 
     apis
     |> Enum.map(&Task.async(GoogleApis, :generate_config, [&1]))
