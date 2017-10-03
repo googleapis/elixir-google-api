@@ -22,12 +22,20 @@ defmodule Mix.Tasks.GoogleApis.Build do
     |> GoogleApis.ApiConfig.load()
     |> builder()
   end
+
   def run(_) do
     builder(GoogleApis.ApiConfig.load_all())
   end
 
   defp builder(apis) do
-    Enum.each(apis, &GoogleApis.generate_config/1)
-    Enum.each(apis, &GoogleApis.generate_client/1)
+    max_concurrency = Application.get_env(:google_apis, :max_concurrency)
+
+    apis
+    |> Enum.map(&Task.async(GoogleApis, :generate_config, [&1]))
+    |> Enum.map(&Task.await(&1, :infinity))
+
+    apis
+    |> Task.async_stream(&GoogleApis.generate_client/1, [max_concurrency: max_concurrency, timeout: :infinity])
+    |> Enum.to_list()
   end
 end
