@@ -47,5 +47,4 @@ defmodule GoogleApis.Discovery do
         err
     end
   end
-
 end

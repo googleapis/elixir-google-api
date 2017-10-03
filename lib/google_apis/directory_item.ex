@@ -18,5 +18,4 @@ defmodule GoogleApis.DirectoryItem do
 
   def preferred?(%{"preferred" => true}), do: true
   def preferred?(_), do: false
-
 end

@@ -18,12 +18,11 @@ defmodule Mix.Tasks.GoogleApis.Convert do
   @shortdoc "Convert GoogleApi discover definitions to OpenApi"
 
   def run([only]) do
-    GoogleApis.ApiConfig.load(only)
+    only
+    |> GoogleApis.ApiConfig.load()
     |> Enum.each(&GoogleApis.convert_spec/1)
   end
   def run(_) do
-    GoogleApis.ApiConfig.load_all()
-    |> Enum.each(&GoogleApis.convert_spec/1)
+    Enum.each(GoogleApis.ApiConfig.load_all(), &GoogleApis.convert_spec/1)
   end
-
 end

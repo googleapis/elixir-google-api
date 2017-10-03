@@ -31,5 +31,4 @@ defmodule GoogleApis.Generator.SwaggerCli do
   defp image() do
     Application.get_env(:google_apis, :swagger_cli_image)
   end
-
 end

@@ -33,10 +33,11 @@ defmodule GoogleApis do
     with %Tesla.Env{status: 200, body: body} <- Tesla.get(@discovery_url),
          {:ok, %{"items" => apis}}           <- Poison.decode(body)
     do
-      json = apis
-      |> Enum.filter(&GoogleApis.DirectoryItem.preferred?/1)
-      |> Enum.map(fn (api) -> Map.take(api, ["name", "discoveryRestUrl", "version"]) end)
-      |> Poison.encode!(pretty: true)
+      json =
+        apis
+        |> Enum.filter(&GoogleApis.DirectoryItem.preferred?/1)
+        |> Enum.map(&Map.take(&1, ["name", "discoveryRestUrl", "version"]))
+        |> Poison.encode!(pretty: true)
 
       file = Path.expand("./config/#{file}")
       File.write(file, json)
@@ -68,7 +69,7 @@ defmodule GoogleApis do
     file = ApiConfig.config_file(api_config)
     swagger_config = GoogleApis.SwaggerConfig.from_api_config(api_config)
 
-    File.mkdir_p(Path.dirname(file))
+    file |> Path.dirname() |> File.mkdir_p()
     File.write(file, Poison.encode!(swagger_config, pretty: true))
   end
 
@@ -76,5 +77,4 @@ defmodule GoogleApis do
     generator = Application.get_env(:google_apis, :client_generator)
     generator.generate_client(api_config)
   end
-
 end

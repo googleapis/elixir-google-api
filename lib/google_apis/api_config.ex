@@ -45,19 +45,17 @@ defmodule GoogleApis.ApiConfig do
   def module_version(%{version: version}) do
     version
     |> String.replace(".", "")
-    |> String.capitalize
+    |> String.capitalize()
   end
 
   def load_all() do
     "./config/apis.json"
-    |> Path.expand
-    |> File.read!
+    |> Path.expand()
+    |> File.read!()
     |> Poison.decode!(as: [%__MODULE__{}])
   end
 
   def load(name) do
-    load_all()
-    |> Enum.filter(fn (%__MODULE__{name: api_name}) -> api_name == name end)
+    Enum.filter(load_all(), fn %__MODULE__{name: api_name} -> api_name == name end)
   end
-
 end

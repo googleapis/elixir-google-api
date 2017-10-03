@@ -32,5 +32,4 @@ defmodule GoogleApis.Converter.ApiSpecConverter do
       {:error, reason} -> {:error, reason}
     end
   end
-
 end
