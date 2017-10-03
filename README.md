@@ -109,7 +109,7 @@ You can also limit which APIs to generate by providing an API name argument to
 the mix task:
 
 ```bash
-$> mix google_apis.generate CloudTrace
+$> mix google_apis.build CloudTrace
 ```
 
 ## Contributing
