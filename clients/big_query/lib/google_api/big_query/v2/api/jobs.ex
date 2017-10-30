@@ -61,7 +61,10 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
     }
     %{}
     |> method(:post)
-    |> url("/bigquery/v2/projects/#{project_id}/jobs/#{job_id}/cancel")
+    |> url("/bigquery/v2/projects/{projectId}/jobs/{jobId}/cancel", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "jobId" => URI.encode_www_form(job_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -103,7 +106,10 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
     }
     %{}
     |> method(:get)
-    |> url("/bigquery/v2/projects/#{project_id}/jobs/#{job_id}")
+    |> url("/bigquery/v2/projects/{projectId}/jobs/{jobId}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "jobId" => URI.encode_www_form(job_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -153,7 +159,10 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
     }
     %{}
     |> method(:get)
-    |> url("/bigquery/v2/projects/#{project_id}/queries/#{job_id}")
+    |> url("/bigquery/v2/projects/{projectId}/queries/{jobId}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "jobId" => URI.encode_www_form(job_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -196,7 +205,9 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
     }
     %{}
     |> method(:post)
-    |> url("/bigquery/v2/projects/#{project_id}/jobs")
+    |> url("/bigquery/v2/projects/{projectId}/jobs", %{
+         "projectId" => URI.encode_www_form(project_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -240,7 +251,9 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
     }
     %{}
     |> method(:post)
-    |> url("/resumable/upload/bigquery/v2/projects/#{project_id}/jobs")
+    |> url("/resumable/upload/bigquery/v2/projects/{projectId}/jobs", %{
+         "projectId" => URI.encode_www_form(project_id)
+       })
     |> add_param(:query, :"uploadType", upload_type)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -285,7 +298,9 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
     }
     %{}
     |> method(:post)
-    |> url("/upload/bigquery/v2/projects/#{project_id}/jobs")
+    |> url("/upload/bigquery/v2/projects/{projectId}/jobs", %{
+         "projectId" => URI.encode_www_form(project_id)
+       })
     |> add_param(:query, :"uploadType", upload_type)
     |> add_param(:body, :"metadata", metadata)
     |> add_param(:file, :"data", data)
@@ -339,7 +354,9 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
     }
     %{}
     |> method(:get)
-    |> url("/bigquery/v2/projects/#{project_id}/jobs")
+    |> url("/bigquery/v2/projects/{projectId}/jobs", %{
+         "projectId" => URI.encode_www_form(project_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -382,7 +399,9 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
     }
     %{}
     |> method(:post)
-    |> url("/bigquery/v2/projects/#{project_id}/queries")
+    |> url("/bigquery/v2/projects/{projectId}/queries", %{
+         "projectId" => URI.encode_www_form(project_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

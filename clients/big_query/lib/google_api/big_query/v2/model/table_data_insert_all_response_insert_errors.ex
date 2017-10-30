@@ -17,23 +17,33 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.BigQuery.V2.Model.TableDataInsertAllResponse_insertErrors do
+defmodule GoogleApi.BigQuery.V2.Model.TableDataInsertAllResponseInsertErrors do
   @moduledoc """
   
+
+  ## Attributes
+
+  - errors (List[ErrorProto]): Error information for the row indicated by the index property. Defaults to: `null`.
+  - index (Integer): The index of the row that error applies to. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"errors",
     :"index"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.TableDataInsertAllResponse_insertErrors do
+defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.TableDataInsertAllResponseInsertErrors do
   import GoogleApi.BigQuery.V2.Deserializer
   def decode(value, options) do
     value
     |> deserialize(:"errors", :list, GoogleApi.BigQuery.V2.Model.ErrorProto, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.TableDataInsertAllResponseInsertErrors do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

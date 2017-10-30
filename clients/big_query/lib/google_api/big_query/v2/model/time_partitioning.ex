@@ -20,9 +20,13 @@
 defmodule GoogleApi.BigQuery.V2.Model.TimePartitioning do
   @moduledoc """
   
+
+  ## Attributes
+
+  - expirationMs (String): [Optional] Number of milliseconds for which to keep the storage for a partition. Defaults to: `null`.
+  - type (String): [Required] The only type supported is DAY, which will generate one partition per day based on data loading time. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"expirationMs",
     :"type"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.TimePartitioning do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.TimePartitioning do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

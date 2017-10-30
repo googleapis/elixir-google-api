@@ -20,9 +20,18 @@
 defmodule GoogleApi.BigQuery.V2.Model.JobStatistics do
   @moduledoc """
   
+
+  ## Attributes
+
+  - creationTime (String): [Output-only] Creation time of this job, in milliseconds since the epoch. This field will be present on all jobs. Defaults to: `null`.
+  - endTime (String): [Output-only] End time of this job, in milliseconds since the epoch. This field will be present whenever a job is in the DONE state. Defaults to: `null`.
+  - extract (JobStatistics4): [Output-only] Statistics for an extract job. Defaults to: `null`.
+  - load (JobStatistics3): [Output-only] Statistics for a load job. Defaults to: `null`.
+  - query (JobStatistics2): [Output-only] Statistics for a query job. Defaults to: `null`.
+  - startTime (String): [Output-only] Start time of this job, in milliseconds since the epoch. This field will be present when the job transitions from the PENDING state to either RUNNING or DONE. Defaults to: `null`.
+  - totalBytesProcessed (String): [Output-only] [Deprecated] Use the bytes processed in the query statistics instead. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"creationTime",
     :"endTime",
@@ -41,6 +50,12 @@ defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.JobStatistics do
     |> deserialize(:"extract", :struct, GoogleApi.BigQuery.V2.Model.JobStatistics4, options)
     |> deserialize(:"load", :struct, GoogleApi.BigQuery.V2.Model.JobStatistics3, options)
     |> deserialize(:"query", :struct, GoogleApi.BigQuery.V2.Model.JobStatistics2, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.JobStatistics do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

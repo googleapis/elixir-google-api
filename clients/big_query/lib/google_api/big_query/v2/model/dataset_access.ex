@@ -17,12 +17,20 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.BigQuery.V2.Model.Dataset_access do
+defmodule GoogleApi.BigQuery.V2.Model.DatasetAccess do
   @moduledoc """
   
+
+  ## Attributes
+
+  - domain (String): [Pick one] A domain to grant access to. Any users signed in with the domain specified will be granted the specified access. Example: \&quot;example.com\&quot;. Defaults to: `null`.
+  - groupByEmail (String): [Pick one] An email address of a Google Group to grant access to. Defaults to: `null`.
+  - role (String): [Required] Describes the rights granted to the user specified by the other member of the access object. The following string values are supported: READER, WRITER, OWNER. Defaults to: `null`.
+  - specialGroup (String): [Pick one] A special group to grant access to. Possible values include: projectOwners: Owners of the enclosing project. projectReaders: Readers of the enclosing project. projectWriters: Writers of the enclosing project. allAuthenticatedUsers: All authenticated BigQuery users. Defaults to: `null`.
+  - userByEmail (String): [Pick one] An email address of a user to grant access to. For example: fred@example.com. Defaults to: `null`.
+  - view (TableReference): [Pick one] A view from a different dataset to grant access to. Queries executed against that view will have read access to tables in this dataset. The role field is not required when this field is set. If that view is updated by any user, access to the view needs to be granted again via an update operation. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"domain",
     :"groupByEmail",
@@ -33,11 +41,17 @@ defmodule GoogleApi.BigQuery.V2.Model.Dataset_access do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.Dataset_access do
+defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.DatasetAccess do
   import GoogleApi.BigQuery.V2.Deserializer
   def decode(value, options) do
     value
     |> deserialize(:"view", :struct, GoogleApi.BigQuery.V2.Model.TableReference, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.DatasetAccess do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

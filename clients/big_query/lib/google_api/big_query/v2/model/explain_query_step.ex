@@ -20,9 +20,13 @@
 defmodule GoogleApi.BigQuery.V2.Model.ExplainQueryStep do
   @moduledoc """
   
+
+  ## Attributes
+
+  - kind (String): Machine-readable operation type. Defaults to: `null`.
+  - substeps (List[String]): Human-readable stage descriptions. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"kind",
     :"substeps"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.ExplainQueryStep do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.ExplainQueryStep do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

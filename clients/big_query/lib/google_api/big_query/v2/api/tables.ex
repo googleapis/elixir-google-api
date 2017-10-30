@@ -62,7 +62,11 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
     }
     %{}
     |> method(:delete)
-    |> url("/bigquery/v2/projects/#{project_id}/datasets/#{dataset_id}/tables/#{table_id}")
+    |> url("/bigquery/v2/projects/{projectId}/datasets/{datasetId}/tables/{tableId}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "datasetId" => URI.encode_www_form(dataset_id),
+         "tableId" => URI.encode_www_form(table_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -107,7 +111,11 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
     }
     %{}
     |> method(:get)
-    |> url("/bigquery/v2/projects/#{project_id}/datasets/#{dataset_id}/tables/#{table_id}")
+    |> url("/bigquery/v2/projects/{projectId}/datasets/{datasetId}/tables/{tableId}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "datasetId" => URI.encode_www_form(dataset_id),
+         "tableId" => URI.encode_www_form(table_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -151,7 +159,10 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
     }
     %{}
     |> method(:post)
-    |> url("/bigquery/v2/projects/#{project_id}/datasets/#{dataset_id}/tables")
+    |> url("/bigquery/v2/projects/{projectId}/datasets/{datasetId}/tables", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "datasetId" => URI.encode_www_form(dataset_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -197,7 +208,10 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
     }
     %{}
     |> method(:get)
-    |> url("/bigquery/v2/projects/#{project_id}/datasets/#{dataset_id}/tables")
+    |> url("/bigquery/v2/projects/{projectId}/datasets/{datasetId}/tables", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "datasetId" => URI.encode_www_form(dataset_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -242,7 +256,11 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
     }
     %{}
     |> method(:patch)
-    |> url("/bigquery/v2/projects/#{project_id}/datasets/#{dataset_id}/tables/#{table_id}")
+    |> url("/bigquery/v2/projects/{projectId}/datasets/{datasetId}/tables/{tableId}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "datasetId" => URI.encode_www_form(dataset_id),
+         "tableId" => URI.encode_www_form(table_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -287,7 +305,11 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
     }
     %{}
     |> method(:put)
-    |> url("/bigquery/v2/projects/#{project_id}/datasets/#{dataset_id}/tables/#{table_id}")
+    |> url("/bigquery/v2/projects/{projectId}/datasets/{datasetId}/tables/{tableId}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "datasetId" => URI.encode_www_form(dataset_id),
+         "tableId" => URI.encode_www_form(table_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

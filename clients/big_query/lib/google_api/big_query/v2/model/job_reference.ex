@@ -20,9 +20,13 @@
 defmodule GoogleApi.BigQuery.V2.Model.JobReference do
   @moduledoc """
   
+
+  ## Attributes
+
+  - jobId (String): [Required] The ID of the job. The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-). The maximum length is 1,024 characters. Defaults to: `null`.
+  - projectId (String): [Required] The ID of the project containing this job. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"jobId",
     :"projectId"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.JobReference do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.JobReference do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

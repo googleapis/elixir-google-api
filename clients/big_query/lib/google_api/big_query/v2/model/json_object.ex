@@ -20,9 +20,11 @@
 defmodule GoogleApi.BigQuery.V2.Model.JsonObject do
   @moduledoc """
   Represents a single JSON object.
+
+  ## Attributes
+
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     
   ]
@@ -31,6 +33,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.JsonObject do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.JsonObject do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

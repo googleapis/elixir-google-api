@@ -20,9 +20,32 @@
 defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
   @moduledoc """
   
+
+  ## Attributes
+
+  - allowJaggedRows (Boolean): [Optional] Accept rows that are missing trailing optional columns. The missing values are treated as nulls. If false, records with missing trailing columns are treated as bad records, and if there are too many bad records, an invalid error is returned in the job result. The default value is false. Only applicable to CSV, ignored for other formats. Defaults to: `null`.
+  - allowQuotedNewlines (Boolean): Indicates if BigQuery should allow quoted data sections that contain newline characters in a CSV file. The default value is false. Defaults to: `null`.
+  - autodetect (Boolean): Indicates if we should automatically infer the options and schema for CSV and JSON sources. Defaults to: `null`.
+  - createDisposition (String): [Optional] Specifies whether the job is allowed to create new tables. The following values are supported: CREATE_IF_NEEDED: If the table does not exist, BigQuery creates the table. CREATE_NEVER: The table must already exist. If it does not, a &#39;notFound&#39; error is returned in the job result. The default value is CREATE_IF_NEEDED. Creation, truncation and append actions occur as one atomic update upon job completion. Defaults to: `null`.
+  - destinationTable (TableReference): [Required] The destination table to load the data into. Defaults to: `null`.
+  - encoding (String): [Optional] The character encoding of the data. The supported values are UTF-8 or ISO-8859-1. The default value is UTF-8. BigQuery decodes the data after the raw, binary data has been split using the values of the quote and fieldDelimiter properties. Defaults to: `null`.
+  - fieldDelimiter (String): [Optional] The separator for fields in a CSV file. The separator can be any ISO-8859-1 single-byte character. To use a character in the range 128-255, you must encode the character as UTF8. BigQuery converts the string to ISO-8859-1 encoding, and then uses the first byte of the encoded string to split the data in its raw, binary state. BigQuery also supports the escape sequence \&quot;\\t\&quot; to specify a tab separator. The default value is a comma (&#39;,&#39;). Defaults to: `null`.
+  - ignoreUnknownValues (Boolean): [Optional] Indicates if BigQuery should allow extra values that are not represented in the table schema. If true, the extra values are ignored. If false, records with extra columns are treated as bad records, and if there are too many bad records, an invalid error is returned in the job result. The default value is false. The sourceFormat property determines what BigQuery treats as an extra value: CSV: Trailing columns JSON: Named values that don&#39;t match any column names Defaults to: `null`.
+  - maxBadRecords (Integer): [Optional] The maximum number of bad records that BigQuery can ignore when running the job. If the number of bad records exceeds this value, an invalid error is returned in the job result. The default value is 0, which requires that all records are valid. Defaults to: `null`.
+  - nullMarker (String): [Optional] Specifies a string that represents a null value in a CSV file. For example, if you specify \&quot;\\N\&quot;, BigQuery interprets \&quot;\\N\&quot; as a null value when loading a CSV file. The default value is the empty string. If you set this property to a custom value, BigQuery throws an error if an empty string is present for all data types except for STRING and BYTE. For STRING and BYTE columns, BigQuery interprets the empty string as an empty value. Defaults to: `null`.
+  - projectionFields (List[String]): If sourceFormat is set to \&quot;DATASTORE_BACKUP\&quot;, indicates which entity properties to load into BigQuery from a Cloud Datastore backup. Property names are case sensitive and must be top-level properties. If no properties are specified, BigQuery loads all properties. If any named property isn&#39;t found in the Cloud Datastore backup, an invalid error is returned in the job result. Defaults to: `null`.
+  - quote (String): [Optional] The value that is used to quote data sections in a CSV file. BigQuery converts the string to ISO-8859-1 encoding, and then uses the first byte of the encoded string to split the data in its raw, binary state. The default value is a double-quote (&#39;\&quot;&#39;). If your data does not contain quoted sections, set the property value to an empty string. If your data contains quoted newline characters, you must also set the allowQuotedNewlines property to true. Defaults to: `null`.
+  - schema (TableSchema): [Optional] The schema for the destination table. The schema can be omitted if the destination table already exists, or if you&#39;re loading data from Google Cloud Datastore. Defaults to: `null`.
+  - schemaInline (String): [Deprecated] The inline schema. For CSV schemas, specify as \&quot;Field1:Type1[,Field2:Type2]*\&quot;. For example, \&quot;foo:STRING, bar:INTEGER, baz:FLOAT\&quot;. Defaults to: `null`.
+  - schemaInlineFormat (String): [Deprecated] The format of the schemaInline property. Defaults to: `null`.
+  - schemaUpdateOptions (List[String]): [Experimental] Allows the schema of the desitination table to be updated as a side effect of the load job if a schema is autodetected or supplied in the job configuration. Schema update options are supported in two cases: when writeDisposition is WRITE_APPEND; when writeDisposition is WRITE_TRUNCATE and the destination table is a partition of a table, specified by partition decorators. For normal tables, WRITE_TRUNCATE will always overwrite the schema. One or more of the following values are specified: ALLOW_FIELD_ADDITION: allow adding a nullable field to the schema. ALLOW_FIELD_RELAXATION: allow relaxing a required field in the original schema to nullable. Defaults to: `null`.
+  - skipLeadingRows (Integer): [Optional] The number of rows at the top of a CSV file that BigQuery will skip when loading the data. The default value is 0. This property is useful if you have header rows in the file that should be skipped. Defaults to: `null`.
+  - sourceFormat (String): [Optional] The format of the data files. For CSV files, specify \&quot;CSV\&quot;. For datastore backups, specify \&quot;DATASTORE_BACKUP\&quot;. For newline-delimited JSON, specify \&quot;NEWLINE_DELIMITED_JSON\&quot;. For Avro, specify \&quot;AVRO\&quot;. The default value is CSV. Defaults to: `null`.
+  - sourceUris (List[String]): [Required] The fully-qualified URIs that point to your data in Google Cloud. For Google Cloud Storage URIs: Each URI can contain one &#39;*&#39; wildcard character and it must come after the &#39;bucket&#39; name. Size limits related to load jobs apply to external data sources. For Google Cloud Bigtable URIs: Exactly one URI can be specified and it has be a fully specified and valid HTTPS URL for a Google Cloud Bigtable table. For Google Cloud Datastore backups: Exactly one URI can be specified. Also, the &#39;*&#39; wildcard character is not allowed. Defaults to: `null`.
+  - timePartitioning (TimePartitioning): [Experimental] If specified, configures time-based partitioning for the destination table. Defaults to: `null`.
+  - writeDisposition (String): [Optional] Specifies the action that occurs if the destination table already exists. The following values are supported: WRITE_TRUNCATE: If the table already exists, BigQuery overwrites the table data. WRITE_APPEND: If the table already exists, BigQuery appends the data to the table. WRITE_EMPTY: If the table already exists and contains data, a &#39;duplicate&#39; error is returned in the job result. The default value is WRITE_APPEND. Each action is atomic and only occurs if BigQuery is able to complete the job successfully. Creation, truncation and append actions occur as one atomic update upon job completion. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"allowJaggedRows",
     :"allowQuotedNewlines",
@@ -55,6 +78,12 @@ defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
     |> deserialize(:"destinationTable", :struct, GoogleApi.BigQuery.V2.Model.TableReference, options)
     |> deserialize(:"schema", :struct, GoogleApi.BigQuery.V2.Model.TableSchema, options)
     |> deserialize(:"timePartitioning", :struct, GoogleApi.BigQuery.V2.Model.TimePartitioning, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

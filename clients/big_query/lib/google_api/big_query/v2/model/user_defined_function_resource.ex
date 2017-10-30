@@ -20,9 +20,13 @@
 defmodule GoogleApi.BigQuery.V2.Model.UserDefinedFunctionResource do
   @moduledoc """
   
+
+  ## Attributes
+
+  - inlineCode (String): [Pick one] An inline resource that contains code for a user-defined function (UDF). Providing a inline code resource is equivalent to providing a URI for a file containing the same code. Defaults to: `null`.
+  - resourceUri (String): [Pick one] A code resource to load from a Google Cloud Storage URI (gs://bucket/path). Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"inlineCode",
     :"resourceUri"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.UserDefinedFunctionResource do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.UserDefinedFunctionResource do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

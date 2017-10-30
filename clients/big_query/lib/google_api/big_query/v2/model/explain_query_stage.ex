@@ -20,9 +20,35 @@
 defmodule GoogleApi.BigQuery.V2.Model.ExplainQueryStage do
   @moduledoc """
   
+
+  ## Attributes
+
+  - computeMsAvg (String): Milliseconds the average shard spent on CPU-bound tasks. Defaults to: `null`.
+  - computeMsMax (String): Milliseconds the slowest shard spent on CPU-bound tasks. Defaults to: `null`.
+  - computeRatioAvg (Float): Relative amount of time the average shard spent on CPU-bound tasks. Defaults to: `null`.
+  - computeRatioMax (Float): Relative amount of time the slowest shard spent on CPU-bound tasks. Defaults to: `null`.
+  - id (String): Unique ID for stage within plan. Defaults to: `null`.
+  - name (String): Human-readable name for stage. Defaults to: `null`.
+  - readMsAvg (String): Milliseconds the average shard spent reading input. Defaults to: `null`.
+  - readMsMax (String): Milliseconds the slowest shard spent reading input. Defaults to: `null`.
+  - readRatioAvg (Float): Relative amount of time the average shard spent reading input. Defaults to: `null`.
+  - readRatioMax (Float): Relative amount of time the slowest shard spent reading input. Defaults to: `null`.
+  - recordsRead (String): Number of records read into the stage. Defaults to: `null`.
+  - recordsWritten (String): Number of records written by the stage. Defaults to: `null`.
+  - shuffleOutputBytes (String): Total number of bytes written to shuffle. Defaults to: `null`.
+  - shuffleOutputBytesSpilled (String): Total number of bytes written to shuffle and spilled to disk. Defaults to: `null`.
+  - status (String): Current status for the stage. Defaults to: `null`.
+  - steps (List[ExplainQueryStep]): List of operations within the stage in dependency order (approximately chronological). Defaults to: `null`.
+  - waitMsAvg (String): Milliseconds the average shard spent waiting to be scheduled. Defaults to: `null`.
+  - waitMsMax (String): Milliseconds the slowest shard spent waiting to be scheduled. Defaults to: `null`.
+  - waitRatioAvg (Float): Relative amount of time the average shard spent waiting to be scheduled. Defaults to: `null`.
+  - waitRatioMax (Float): Relative amount of time the slowest shard spent waiting to be scheduled. Defaults to: `null`.
+  - writeMsAvg (String): Milliseconds the average shard spent on writing output. Defaults to: `null`.
+  - writeMsMax (String): Milliseconds the slowest shard spent on writing output. Defaults to: `null`.
+  - writeRatioAvg (Float): Relative amount of time the average shard spent on writing output. Defaults to: `null`.
+  - writeRatioMax (Float): Relative amount of time the slowest shard spent on writing output. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"computeMsAvg",
     :"computeMsMax",
@@ -56,6 +82,12 @@ defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.ExplainQueryStage do
   def decode(value, options) do
     value
     |> deserialize(:"steps", :list, GoogleApi.BigQuery.V2.Model.ExplainQueryStep, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.ExplainQueryStage do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

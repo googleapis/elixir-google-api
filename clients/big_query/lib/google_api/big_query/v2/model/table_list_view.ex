@@ -17,20 +17,29 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.BigQuery.V2.Model.TableList_view do
+defmodule GoogleApi.BigQuery.V2.Model.TableListView do
   @moduledoc """
   Additional details for a view.
+
+  ## Attributes
+
+  - useLegacySql (Boolean): True if view is defined in legacy SQL dialect, false if in standard SQL. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"useLegacySql"
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.TableList_view do
+defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.TableListView do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.TableListView do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

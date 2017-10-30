@@ -20,9 +20,16 @@
 defmodule GoogleApi.BigQuery.V2.Model.ProjectList do
   @moduledoc """
   
+
+  ## Attributes
+
+  - etag (String): A hash of the page of results Defaults to: `null`.
+  - kind (String): The type of list. Defaults to: `null`.
+  - nextPageToken (String): A token to request the next page of results. Defaults to: `null`.
+  - projects (List[ProjectListProjects]): Projects to which you have at least READ access. Defaults to: `null`.
+  - totalItems (Integer): The total number of projects in the list. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"kind",
@@ -36,7 +43,13 @@ defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.ProjectList do
   import GoogleApi.BigQuery.V2.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"projects", :list, GoogleApi.BigQuery.V2.Model.ProjectList_projects, options)
+    |> deserialize(:"projects", :list, GoogleApi.BigQuery.V2.Model.ProjectListProjects, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.ProjectList do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

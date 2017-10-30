@@ -20,9 +20,12 @@
 defmodule GoogleApi.BigQuery.V2.Model.ProjectReference do
   @moduledoc """
   
+
+  ## Attributes
+
+  - projectId (String): [Required] ID of the project. Can be either the numeric ID or the assigned ID of the project. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"projectId"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.ProjectReference do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.ProjectReference do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

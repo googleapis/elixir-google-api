@@ -20,9 +20,14 @@
 defmodule GoogleApi.BigQuery.V2.Model.QueryParameter do
   @moduledoc """
   
+
+  ## Attributes
+
+  - name (String): [Optional] If unset, this is a positional parameter. Otherwise, should be unique within a query. Defaults to: `null`.
+  - parameterType (QueryParameterType): [Required] The type of this parameter. Defaults to: `null`.
+  - parameterValue (QueryParameterValue): [Required] The value of this parameter. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"name",
     :"parameterType",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.QueryParameter do
     value
     |> deserialize(:"parameterType", :struct, GoogleApi.BigQuery.V2.Model.QueryParameterType, options)
     |> deserialize(:"parameterValue", :struct, GoogleApi.BigQuery.V2.Model.QueryParameterValue, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.QueryParameter do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

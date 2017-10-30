@@ -20,9 +20,14 @@
 defmodule GoogleApi.BigQuery.V2.Model.JobStatus do
   @moduledoc """
   
+
+  ## Attributes
+
+  - errorResult (ErrorProto): [Output-only] Final error result of the job. If present, indicates that the job has completed and was unsuccessful. Defaults to: `null`.
+  - errors (List[ErrorProto]): [Output-only] The first errors encountered during the running of the job. The final message includes the number of errors that caused the process to stop. Errors here do not necessarily mean that the job has completed or was unsuccessful. Defaults to: `null`.
+  - state (String): [Output-only] Running state of the job. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"errorResult",
     :"errors",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.JobStatus do
     value
     |> deserialize(:"errorResult", :struct, GoogleApi.BigQuery.V2.Model.ErrorProto, options)
     |> deserialize(:"errors", :list, GoogleApi.BigQuery.V2.Model.ErrorProto, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.JobStatus do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 
