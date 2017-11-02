@@ -24,14 +24,14 @@ defmodule GoogleApi.BigQuery.V2.Model.Job do
   ## Attributes
 
   - configuration (JobConfiguration): [Required] Describes the job configuration. Defaults to: `null`.
-  - etag (String): [Output-only] A hash of this resource. Defaults to: `null`.
-  - id (String): [Output-only] Opaque ID field of the job Defaults to: `null`.
+  - etag (String.t): [Output-only] A hash of this resource. Defaults to: `null`.
+  - id (String.t): [Output-only] Opaque ID field of the job Defaults to: `null`.
   - jobReference (JobReference): [Optional] Reference describing the unique-per-user name of the job. Defaults to: `null`.
-  - kind (String): [Output-only] The type of the resource. Defaults to: `null`.
-  - selfLink (String): [Output-only] A URL that can be used to access this resource again. Defaults to: `null`.
+  - kind (String.t): [Output-only] The type of the resource. Defaults to: `null`.
+  - selfLink (String.t): [Output-only] A URL that can be used to access this resource again. Defaults to: `null`.
   - statistics (JobStatistics): [Output-only] Information about the job, including starting time and ending time of the job. Defaults to: `null`.
   - status (JobStatus): [Output-only] The status of this job. Examine this value when polling an asynchronous job to see if the job is complete. Defaults to: `null`.
-  - user_email (String): [Output-only] Email address of the user who ran the job. Defaults to: `null`.
+  - user_email (String.t): [Output-only] Email address of the user who ran the job. Defaults to: `null`.
   """
 
   defstruct [

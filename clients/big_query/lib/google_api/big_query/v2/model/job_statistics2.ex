@@ -23,16 +23,16 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
 
   ## Attributes
 
-  - billingTier (Integer): [Output-only] Billing tier for the job. Defaults to: `null`.
-  - cacheHit (Boolean): [Output-only] Whether the query result was fetched from the query cache. Defaults to: `null`.
-  - numDmlAffectedRows (String): [Output-only] The number of rows affected by a DML statement. Present only for DML statements INSERT, UPDATE or DELETE. Defaults to: `null`.
-  - queryPlan (List[ExplainQueryStage]): [Output-only] Describes execution plan for the query. Defaults to: `null`.
-  - referencedTables (List[TableReference]): [Output-only, Experimental] Referenced tables for the job. Queries that reference more than 50 tables will not have a complete list. Defaults to: `null`.
+  - billingTier (integer()): [Output-only] Billing tier for the job. Defaults to: `null`.
+  - cacheHit (boolean()): [Output-only] Whether the query result was fetched from the query cache. Defaults to: `null`.
+  - numDmlAffectedRows (String.t): [Output-only] The number of rows affected by a DML statement. Present only for DML statements INSERT, UPDATE or DELETE. Defaults to: `null`.
+  - queryPlan ([ExplainQueryStage]): [Output-only] Describes execution plan for the query. Defaults to: `null`.
+  - referencedTables ([TableReference]): [Output-only, Experimental] Referenced tables for the job. Queries that reference more than 50 tables will not have a complete list. Defaults to: `null`.
   - schema (TableSchema): [Output-only, Experimental] The schema of the results. Present only for successful dry run of non-legacy SQL queries. Defaults to: `null`.
-  - statementType (String): [Output-only, Experimental] The type of query statement, if valid. Defaults to: `null`.
-  - totalBytesBilled (String): [Output-only] Total bytes billed for the job. Defaults to: `null`.
-  - totalBytesProcessed (String): [Output-only] Total bytes processed for the job. Defaults to: `null`.
-  - undeclaredQueryParameters (List[QueryParameter]): [Output-only, Experimental] Standard SQL only: list of undeclared query parameters detected during a dry run validation. Defaults to: `null`.
+  - statementType (String.t): [Output-only, Experimental] The type of query statement, if valid. Defaults to: `null`.
+  - totalBytesBilled (String.t): [Output-only] Total bytes billed for the job. Defaults to: `null`.
+  - totalBytesProcessed (String.t): [Output-only] Total bytes processed for the job. Defaults to: `null`.
+  - undeclaredQueryParameters ([QueryParameter]): [Output-only, Experimental] Standard SQL only: list of undeclared query parameters detected during a dry run validation. Defaults to: `null`.
   """
 
   defstruct [

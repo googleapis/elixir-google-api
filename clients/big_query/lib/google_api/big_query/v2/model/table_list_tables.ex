@@ -23,13 +23,13 @@ defmodule GoogleApi.BigQuery.V2.Model.TableListTables do
 
   ## Attributes
 
-  - friendlyName (String): The user-friendly name for this table. Defaults to: `null`.
-  - id (String): An opaque ID of the table Defaults to: `null`.
-  - kind (String): The resource type. Defaults to: `null`.
-  - labels (Map[String, String]): [Experimental] The labels associated with this table. You can use these to organize and group your tables. Defaults to: `null`.
+  - friendlyName (String.t): The user-friendly name for this table. Defaults to: `null`.
+  - id (String.t): An opaque ID of the table Defaults to: `null`.
+  - kind (String.t): The resource type. Defaults to: `null`.
+  - labels (%{optional(String.t) &#x3D;&gt; String.t}): [Experimental] The labels associated with this table. You can use these to organize and group your tables. Defaults to: `null`.
   - tableReference (TableReference): A reference uniquely identifying the table. Defaults to: `null`.
   - timePartitioning (TimePartitioning): [Experimental] The time-based partitioning for this table. Defaults to: `null`.
-  - type (String): The type of table. Possible values are: TABLE, VIEW. Defaults to: `null`.
+  - type (String.t): The type of table. Possible values are: TABLE, VIEW. Defaults to: `null`.
   - view (TableListView):  Defaults to: `null`.
   """
 

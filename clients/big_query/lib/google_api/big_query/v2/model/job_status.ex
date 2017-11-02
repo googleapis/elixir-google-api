@@ -24,8 +24,8 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatus do
   ## Attributes
 
   - errorResult (ErrorProto): [Output-only] Final error result of the job. If present, indicates that the job has completed and was unsuccessful. Defaults to: `null`.
-  - errors (List[ErrorProto]): [Output-only] The first errors encountered during the running of the job. The final message includes the number of errors that caused the process to stop. Errors here do not necessarily mean that the job has completed or was unsuccessful. Defaults to: `null`.
-  - state (String): [Output-only] Running state of the job. Defaults to: `null`.
+  - errors ([ErrorProto]): [Output-only] The first errors encountered during the running of the job. The final message includes the number of errors that caused the process to stop. Errors here do not necessarily mean that the job has completed or was unsuccessful. Defaults to: `null`.
+  - state (String.t): [Output-only] Running state of the job. Defaults to: `null`.
   """
 
   defstruct [

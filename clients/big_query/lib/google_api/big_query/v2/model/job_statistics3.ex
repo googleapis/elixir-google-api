@@ -23,11 +23,11 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics3 do
 
   ## Attributes
 
-  - badRecords (String): [Output-only] The number of bad records encountered. Note that if the job has failed because of more bad records encountered than the maximum allowed in the load job configuration, then this number can be less than the total number of bad records present in the input data. Defaults to: `null`.
-  - inputFileBytes (String): [Output-only] Number of bytes of source data in a load job. Defaults to: `null`.
-  - inputFiles (String): [Output-only] Number of source files in a load job. Defaults to: `null`.
-  - outputBytes (String): [Output-only] Size of the loaded data in bytes. Note that while a load job is in the running state, this value may change. Defaults to: `null`.
-  - outputRows (String): [Output-only] Number of rows imported in a load job. Note that while an import job is in the running state, this value may change. Defaults to: `null`.
+  - badRecords (String.t): [Output-only] The number of bad records encountered. Note that if the job has failed because of more bad records encountered than the maximum allowed in the load job configuration, then this number can be less than the total number of bad records present in the input data. Defaults to: `null`.
+  - inputFileBytes (String.t): [Output-only] Number of bytes of source data in a load job. Defaults to: `null`.
+  - inputFiles (String.t): [Output-only] Number of source files in a load job. Defaults to: `null`.
+  - outputBytes (String.t): [Output-only] Size of the loaded data in bytes. Note that while a load job is in the running state, this value may change. Defaults to: `null`.
+  - outputRows (String.t): [Output-only] Number of rows imported in a load job. Note that while an import job is in the running state, this value may change. Defaults to: `null`.
   """
 
   defstruct [

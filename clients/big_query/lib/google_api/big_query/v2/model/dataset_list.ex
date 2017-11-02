@@ -23,10 +23,10 @@ defmodule GoogleApi.BigQuery.V2.Model.DatasetList do
 
   ## Attributes
 
-  - datasets (List[DatasetListDatasets]): An array of the dataset resources in the project. Each resource contains basic information. For full information about a particular dataset resource, use the Datasets: get method. This property is omitted when there are no datasets in the project. Defaults to: `null`.
-  - etag (String): A hash value of the results page. You can use this property to determine if the page has changed since the last request. Defaults to: `null`.
-  - kind (String): The list type. This property always returns the value \&quot;bigquery#datasetList\&quot;. Defaults to: `null`.
-  - nextPageToken (String): A token that can be used to request the next results page. This property is omitted on the final results page. Defaults to: `null`.
+  - datasets ([DatasetListDatasets]): An array of the dataset resources in the project. Each resource contains basic information. For full information about a particular dataset resource, use the Datasets: get method. This property is omitted when there are no datasets in the project. Defaults to: `null`.
+  - etag (String.t): A hash value of the results page. You can use this property to determine if the page has changed since the last request. Defaults to: `null`.
+  - kind (String.t): The list type. This property always returns the value \&quot;bigquery#datasetList\&quot;. Defaults to: `null`.
+  - nextPageToken (String.t): A token that can be used to request the next results page. This property is omitted on the final results page. Defaults to: `null`.
   """
 
   defstruct [

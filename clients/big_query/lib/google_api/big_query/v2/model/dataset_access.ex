@@ -23,11 +23,11 @@ defmodule GoogleApi.BigQuery.V2.Model.DatasetAccess do
 
   ## Attributes
 
-  - domain (String): [Pick one] A domain to grant access to. Any users signed in with the domain specified will be granted the specified access. Example: \&quot;example.com\&quot;. Defaults to: `null`.
-  - groupByEmail (String): [Pick one] An email address of a Google Group to grant access to. Defaults to: `null`.
-  - role (String): [Required] Describes the rights granted to the user specified by the other member of the access object. The following string values are supported: READER, WRITER, OWNER. Defaults to: `null`.
-  - specialGroup (String): [Pick one] A special group to grant access to. Possible values include: projectOwners: Owners of the enclosing project. projectReaders: Readers of the enclosing project. projectWriters: Writers of the enclosing project. allAuthenticatedUsers: All authenticated BigQuery users. Defaults to: `null`.
-  - userByEmail (String): [Pick one] An email address of a user to grant access to. For example: fred@example.com. Defaults to: `null`.
+  - domain (String.t): [Pick one] A domain to grant access to. Any users signed in with the domain specified will be granted the specified access. Example: \&quot;example.com\&quot;. Defaults to: `null`.
+  - groupByEmail (String.t): [Pick one] An email address of a Google Group to grant access to. Defaults to: `null`.
+  - role (String.t): [Required] Describes the rights granted to the user specified by the other member of the access object. The following string values are supported: READER, WRITER, OWNER. Defaults to: `null`.
+  - specialGroup (String.t): [Pick one] A special group to grant access to. Possible values include: projectOwners: Owners of the enclosing project. projectReaders: Readers of the enclosing project. projectWriters: Writers of the enclosing project. allAuthenticatedUsers: All authenticated BigQuery users. Defaults to: `null`.
+  - userByEmail (String.t): [Pick one] An email address of a user to grant access to. For example: fred@example.com. Defaults to: `null`.
   - view (TableReference): [Pick one] A view from a different dataset to grant access to. Queries executed against that view will have read access to tables in this dataset. The role field is not required when this field is set. If that view is updated by any user, access to the view needs to be granted again via an update operation. Defaults to: `null`.
   """
 

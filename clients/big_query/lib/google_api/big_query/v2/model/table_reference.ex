@@ -23,9 +23,9 @@ defmodule GoogleApi.BigQuery.V2.Model.TableReference do
 
   ## Attributes
 
-  - datasetId (String): [Required] The ID of the dataset containing this table. Defaults to: `null`.
-  - projectId (String): [Required] The ID of the project containing this table. Defaults to: `null`.
-  - tableId (String): [Required] The ID of the table. The ID must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_). The maximum length is 1,024 characters. Defaults to: `null`.
+  - datasetId (String.t): [Required] The ID of the dataset containing this table. Defaults to: `null`.
+  - projectId (String.t): [Required] The ID of the project containing this table. Defaults to: `null`.
+  - tableId (String.t): [Required] The ID of the table. The ID must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_). The maximum length is 1,024 characters. Defaults to: `null`.
   """
 
   defstruct [

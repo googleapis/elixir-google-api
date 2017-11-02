@@ -23,11 +23,11 @@ defmodule GoogleApi.BigQuery.V2.Model.TableList do
 
   ## Attributes
 
-  - etag (String): A hash of this page of results. Defaults to: `null`.
-  - kind (String): The type of list. Defaults to: `null`.
-  - nextPageToken (String): A token to request the next page of results. Defaults to: `null`.
-  - tables (List[TableListTables]): Tables in the requested dataset. Defaults to: `null`.
-  - totalItems (Integer): The total number of tables in the dataset. Defaults to: `null`.
+  - etag (String.t): A hash of this page of results. Defaults to: `null`.
+  - kind (String.t): The type of list. Defaults to: `null`.
+  - nextPageToken (String.t): A token to request the next page of results. Defaults to: `null`.
+  - tables ([TableListTables]): Tables in the requested dataset. Defaults to: `null`.
+  - totalItems (integer()): The total number of tables in the dataset. Defaults to: `null`.
   """
 
   defstruct [

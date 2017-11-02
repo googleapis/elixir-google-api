@@ -23,7 +23,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableListView do
 
   ## Attributes
 
-  - useLegacySql (Boolean): True if view is defined in legacy SQL dialect, false if in standard SQL. Defaults to: `null`.
+  - useLegacySql (boolean()): True if view is defined in legacy SQL dialect, false if in standard SQL. Defaults to: `null`.
   """
 
   defstruct [

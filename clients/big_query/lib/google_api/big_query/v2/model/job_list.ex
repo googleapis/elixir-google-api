@@ -23,10 +23,10 @@ defmodule GoogleApi.BigQuery.V2.Model.JobList do
 
   ## Attributes
 
-  - etag (String): A hash of this page of results. Defaults to: `null`.
-  - jobs (List[JobListJobs]): List of jobs that were requested. Defaults to: `null`.
-  - kind (String): The resource type of the response. Defaults to: `null`.
-  - nextPageToken (String): A token to request the next page of results. Defaults to: `null`.
+  - etag (String.t): A hash of this page of results. Defaults to: `null`.
+  - jobs ([JobListJobs]): List of jobs that were requested. Defaults to: `null`.
+  - kind (String.t): The resource type of the response. Defaults to: `null`.
+  - nextPageToken (String.t): A token to request the next page of results. Defaults to: `null`.
   """
 
   defstruct [

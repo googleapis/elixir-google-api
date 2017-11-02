@@ -23,9 +23,9 @@ defmodule GoogleApi.BigQuery.V2.Model.Streamingbuffer do
 
   ## Attributes
 
-  - estimatedBytes (String): [Output-only] A lower-bound estimate of the number of bytes currently in the streaming buffer. Defaults to: `null`.
-  - estimatedRows (String): [Output-only] A lower-bound estimate of the number of rows currently in the streaming buffer. Defaults to: `null`.
-  - oldestEntryTime (String): [Output-only] Contains the timestamp of the oldest entry in the streaming buffer, in milliseconds since the epoch, if the streaming buffer is available. Defaults to: `null`.
+  - estimatedBytes (String.t): [Output-only] A lower-bound estimate of the number of bytes currently in the streaming buffer. Defaults to: `null`.
+  - estimatedRows (String.t): [Output-only] A lower-bound estimate of the number of rows currently in the streaming buffer. Defaults to: `null`.
+  - oldestEntryTime (String.t): [Output-only] Contains the timestamp of the oldest entry in the streaming buffer, in milliseconds since the epoch, if the streaming buffer is available. Defaults to: `null`.
   """
 
   defstruct [

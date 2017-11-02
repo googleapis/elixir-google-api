@@ -23,7 +23,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics4 do
 
   ## Attributes
 
-  - destinationUriFileCounts (List[String]): [Output-only] Number of files per destination URI or URI pattern specified in the extract configuration. These values will be in the same order as the URIs specified in the &#39;destinationUris&#39; field. Defaults to: `null`.
+  - destinationUriFileCounts ([String.t]): [Output-only] Number of files per destination URI or URI pattern specified in the extract configuration. These values will be in the same order as the URIs specified in the &#39;destinationUris&#39; field. Defaults to: `null`.
   """
 
   defstruct [

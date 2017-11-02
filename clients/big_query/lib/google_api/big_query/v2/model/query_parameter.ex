@@ -23,7 +23,7 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryParameter do
 
   ## Attributes
 
-  - name (String): [Optional] If unset, this is a positional parameter. Otherwise, should be unique within a query. Defaults to: `null`.
+  - name (String.t): [Optional] If unset, this is a positional parameter. Otherwise, should be unique within a query. Defaults to: `null`.
   - parameterType (QueryParameterType): [Required] The type of this parameter. Defaults to: `null`.
   - parameterValue (QueryParameterValue): [Required] The value of this parameter. Defaults to: `null`.
   """

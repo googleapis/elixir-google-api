@@ -23,8 +23,8 @@ defmodule GoogleApi.BigQuery.V2.Model.TimePartitioning do
 
   ## Attributes
 
-  - expirationMs (String): [Optional] Number of milliseconds for which to keep the storage for a partition. Defaults to: `null`.
-  - type (String): [Required] The only type supported is DAY, which will generate one partition per day based on data loading time. Defaults to: `null`.
+  - expirationMs (String.t): [Optional] Number of milliseconds for which to keep the storage for a partition. Defaults to: `null`.
+  - type (String.t): [Required] The only type supported is DAY, which will generate one partition per day based on data loading time. Defaults to: `null`.
   """
 
   defstruct [

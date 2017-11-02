@@ -23,26 +23,26 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
 
   ## Attributes
 
-  - creationTime (String): [Output-only] The time when this table was created, in milliseconds since the epoch. Defaults to: `null`.
-  - description (String): [Optional] A user-friendly description of this table. Defaults to: `null`.
-  - etag (String): [Output-only] A hash of this resource. Defaults to: `null`.
-  - expirationTime (String): [Optional] The time when this table expires, in milliseconds since the epoch. If not present, the table will persist indefinitely. Expired tables will be deleted and their storage reclaimed. Defaults to: `null`.
+  - creationTime (String.t): [Output-only] The time when this table was created, in milliseconds since the epoch. Defaults to: `null`.
+  - description (String.t): [Optional] A user-friendly description of this table. Defaults to: `null`.
+  - etag (String.t): [Output-only] A hash of this resource. Defaults to: `null`.
+  - expirationTime (String.t): [Optional] The time when this table expires, in milliseconds since the epoch. If not present, the table will persist indefinitely. Expired tables will be deleted and their storage reclaimed. Defaults to: `null`.
   - externalDataConfiguration (ExternalDataConfiguration): [Optional] Describes the data format, location, and other properties of a table stored outside of BigQuery. By defining these properties, the data source can then be queried as if it were a standard BigQuery table. Defaults to: `null`.
-  - friendlyName (String): [Optional] A descriptive name for this table. Defaults to: `null`.
-  - id (String): [Output-only] An opaque ID uniquely identifying the table. Defaults to: `null`.
-  - kind (String): [Output-only] The type of the resource. Defaults to: `null`.
-  - labels (Map[String, String]): [Experimental] The labels associated with this table. You can use these to organize and group your tables. Label keys and values can be no longer than 63 characters, can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. Label values are optional. Label keys must start with a letter and each label in the list must have a different key. Defaults to: `null`.
-  - lastModifiedTime (String): [Output-only] The time when this table was last modified, in milliseconds since the epoch. Defaults to: `null`.
-  - location (String): [Output-only] The geographic location where the table resides. This value is inherited from the dataset. Defaults to: `null`.
-  - numBytes (String): [Output-only] The size of this table in bytes, excluding any data in the streaming buffer. Defaults to: `null`.
-  - numLongTermBytes (String): [Output-only] The number of bytes in the table that are considered \&quot;long-term storage\&quot;. Defaults to: `null`.
-  - numRows (String): [Output-only] The number of rows of data in this table, excluding any data in the streaming buffer. Defaults to: `null`.
+  - friendlyName (String.t): [Optional] A descriptive name for this table. Defaults to: `null`.
+  - id (String.t): [Output-only] An opaque ID uniquely identifying the table. Defaults to: `null`.
+  - kind (String.t): [Output-only] The type of the resource. Defaults to: `null`.
+  - labels (%{optional(String.t) &#x3D;&gt; String.t}): [Experimental] The labels associated with this table. You can use these to organize and group your tables. Label keys and values can be no longer than 63 characters, can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. Label values are optional. Label keys must start with a letter and each label in the list must have a different key. Defaults to: `null`.
+  - lastModifiedTime (String.t): [Output-only] The time when this table was last modified, in milliseconds since the epoch. Defaults to: `null`.
+  - location (String.t): [Output-only] The geographic location where the table resides. This value is inherited from the dataset. Defaults to: `null`.
+  - numBytes (String.t): [Output-only] The size of this table in bytes, excluding any data in the streaming buffer. Defaults to: `null`.
+  - numLongTermBytes (String.t): [Output-only] The number of bytes in the table that are considered \&quot;long-term storage\&quot;. Defaults to: `null`.
+  - numRows (String.t): [Output-only] The number of rows of data in this table, excluding any data in the streaming buffer. Defaults to: `null`.
   - schema (TableSchema): [Optional] Describes the schema of this table. Defaults to: `null`.
-  - selfLink (String): [Output-only] A URL that can be used to access this resource again. Defaults to: `null`.
+  - selfLink (String.t): [Output-only] A URL that can be used to access this resource again. Defaults to: `null`.
   - streamingBuffer (Streamingbuffer): [Output-only] Contains information regarding this table&#39;s streaming buffer, if one is present. This field will be absent if the table is not being streamed to or if there is no data in the streaming buffer. Defaults to: `null`.
   - tableReference (TableReference): [Required] Reference describing the ID of this table. Defaults to: `null`.
   - timePartitioning (TimePartitioning): [Experimental] If specified, configures time-based partitioning for this table. Defaults to: `null`.
-  - type (String): [Output-only] Describes the table type. The following values are supported: TABLE: A normal BigQuery table. VIEW: A virtual table defined by a SQL query. EXTERNAL: A table that references data stored in an external storage system, such as Google Cloud Storage. The default value is TABLE. Defaults to: `null`.
+  - type (String.t): [Output-only] Describes the table type. The following values are supported: TABLE: A normal BigQuery table. VIEW: A virtual table defined by a SQL query. EXTERNAL: A table that references data stored in an external storage system, such as Google Cloud Storage. The default value is TABLE. Defaults to: `null`.
   - view (ViewDefinition): [Optional] The view definition. Defaults to: `null`.
   """
 

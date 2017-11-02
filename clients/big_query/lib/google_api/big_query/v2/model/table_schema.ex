@@ -23,7 +23,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableSchema do
 
   ## Attributes
 
-  - fields (List[TableFieldSchema]): Describes the fields in a table. Defaults to: `null`.
+  - fields ([TableFieldSchema]): Describes the fields in a table. Defaults to: `null`.
   """
 
   defstruct [

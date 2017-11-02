@@ -24,8 +24,8 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryParameterType do
   ## Attributes
 
   - arrayType (QueryParameterType): [Optional] The type of the array&#39;s elements, if this is an array. Defaults to: `null`.
-  - structTypes (List[QueryParameterTypeStructTypes]): [Optional] The types of the fields of this struct, in order, if this is a struct. Defaults to: `null`.
-  - type (String): [Required] The top level type of this field. Defaults to: `null`.
+  - structTypes ([QueryParameterTypeStructTypes]): [Optional] The types of the fields of this struct, in order, if this is a struct. Defaults to: `null`.
+  - type (String.t): [Required] The top level type of this field. Defaults to: `null`.
   """
 
   defstruct [

@@ -23,11 +23,11 @@ defmodule GoogleApi.BigQuery.V2.Model.TableFieldSchema do
 
   ## Attributes
 
-  - description (String): [Optional] The field description. The maximum length is 1,024 characters. Defaults to: `null`.
-  - fields (List[TableFieldSchema]): [Optional] Describes the nested schema fields if the type property is set to RECORD. Defaults to: `null`.
-  - mode (String): [Optional] The field mode. Possible values include NULLABLE, REQUIRED and REPEATED. The default value is NULLABLE. Defaults to: `null`.
-  - name (String): [Required] The field name. The name must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_), and must start with a letter or underscore. The maximum length is 128 characters. Defaults to: `null`.
-  - type (String): [Required] The field data type. Possible values include STRING, BYTES, INTEGER, INT64 (same as INTEGER), FLOAT, FLOAT64 (same as FLOAT), BOOLEAN, BOOL (same as BOOLEAN), TIMESTAMP, DATE, TIME, DATETIME, RECORD (where RECORD indicates that the field contains a nested schema) or STRUCT (same as RECORD). Defaults to: `null`.
+  - description (String.t): [Optional] The field description. The maximum length is 1,024 characters. Defaults to: `null`.
+  - fields ([TableFieldSchema]): [Optional] Describes the nested schema fields if the type property is set to RECORD. Defaults to: `null`.
+  - mode (String.t): [Optional] The field mode. Possible values include NULLABLE, REQUIRED and REPEATED. The default value is NULLABLE. Defaults to: `null`.
+  - name (String.t): [Required] The field name. The name must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_), and must start with a letter or underscore. The maximum length is 128 characters. Defaults to: `null`.
+  - type (String.t): [Required] The field data type. Possible values include STRING, BYTES, INTEGER, INT64 (same as INTEGER), FLOAT, FLOAT64 (same as FLOAT), BOOLEAN, BOOL (same as BOOLEAN), TIMESTAMP, DATE, TIME, DATETIME, RECORD (where RECORD indicates that the field contains a nested schema) or STRUCT (same as RECORD). Defaults to: `null`.
   """
 
   defstruct [

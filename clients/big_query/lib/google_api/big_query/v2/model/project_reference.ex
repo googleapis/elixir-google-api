@@ -23,7 +23,7 @@ defmodule GoogleApi.BigQuery.V2.Model.ProjectReference do
 
   ## Attributes
 
-  - projectId (String): [Required] ID of the project. Can be either the numeric ID or the assigned ID of the project. Defaults to: `null`.
+  - projectId (String.t): [Required] ID of the project. Can be either the numeric ID or the assigned ID of the project. Defaults to: `null`.
   """
 
   defstruct [

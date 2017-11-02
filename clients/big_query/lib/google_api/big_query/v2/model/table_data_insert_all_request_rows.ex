@@ -23,7 +23,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequestRows do
 
   ## Attributes
 
-  - insertId (String): [Optional] A unique ID for each row. BigQuery uses this property to detect duplicate insertion requests on a best-effort basis. Defaults to: `null`.
+  - insertId (String.t): [Optional] A unique ID for each row. BigQuery uses this property to detect duplicate insertion requests on a best-effort basis. Defaults to: `null`.
   - json (JsonObject): [Required] A JSON object that contains a row of data. The object&#39;s properties and values must match the destination table&#39;s schema. Defaults to: `null`.
   """
 

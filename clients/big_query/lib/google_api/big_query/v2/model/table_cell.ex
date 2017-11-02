@@ -23,10 +23,11 @@ defmodule GoogleApi.BigQuery.V2.Model.TableCell do
 
   ## Attributes
 
+  - v (String.t):  Defaults to: `null`.
   """
 
   defstruct [
-    
+    :"v"
   ]
 end
 

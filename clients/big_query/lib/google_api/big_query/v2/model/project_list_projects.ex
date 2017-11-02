@@ -23,10 +23,10 @@ defmodule GoogleApi.BigQuery.V2.Model.ProjectListProjects do
 
   ## Attributes
 
-  - friendlyName (String): A descriptive name for this project. Defaults to: `null`.
-  - id (String): An opaque ID of this project. Defaults to: `null`.
-  - kind (String): The resource type. Defaults to: `null`.
-  - numericId (String): The numeric ID of this project. Defaults to: `null`.
+  - friendlyName (String.t): A descriptive name for this project. Defaults to: `null`.
+  - id (String.t): An opaque ID of this project. Defaults to: `null`.
+  - kind (String.t): The resource type. Defaults to: `null`.
+  - numericId (String.t): The numeric ID of this project. Defaults to: `null`.
   - projectReference (ProjectReference): A unique reference to this project. Defaults to: `null`.
   """
 

@@ -23,8 +23,8 @@ defmodule GoogleApi.BigQuery.V2.Model.ExplainQueryStep do
 
   ## Attributes
 
-  - kind (String): Machine-readable operation type. Defaults to: `null`.
-  - substeps (List[String]): Human-readable stage descriptions. Defaults to: `null`.
+  - kind (String.t): Machine-readable operation type. Defaults to: `null`.
+  - substeps ([String.t]): Human-readable stage descriptions. Defaults to: `null`.
   """
 
   defstruct [

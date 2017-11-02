@@ -23,8 +23,8 @@ defmodule GoogleApi.BigQuery.V2.Model.TableDataInsertAllResponse do
 
   ## Attributes
 
-  - insertErrors (List[TableDataInsertAllResponseInsertErrors]): An array of errors for rows that were not inserted. Defaults to: `null`.
-  - kind (String): The resource type of the response. Defaults to: `null`.
+  - insertErrors ([TableDataInsertAllResponseInsertErrors]): An array of errors for rows that were not inserted. Defaults to: `null`.
+  - kind (String.t): The resource type of the response. Defaults to: `null`.
   """
 
   defstruct [

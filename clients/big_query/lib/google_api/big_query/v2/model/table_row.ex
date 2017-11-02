@@ -23,7 +23,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableRow do
 
   ## Attributes
 
-  - f (List[TableCell]): Represents a single row in the result set, consisting of one or more fields. Defaults to: `null`.
+  - f ([TableCell]): Represents a single row in the result set, consisting of one or more fields. Defaults to: `null`.
   """
 
   defstruct [

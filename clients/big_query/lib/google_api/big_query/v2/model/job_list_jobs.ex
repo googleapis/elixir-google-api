@@ -25,13 +25,13 @@ defmodule GoogleApi.BigQuery.V2.Model.JobListJobs do
 
   - configuration (JobConfiguration): [Full-projection-only] Specifies the job configuration. Defaults to: `null`.
   - errorResult (ErrorProto): A result object that will be present only if the job has failed. Defaults to: `null`.
-  - id (String): Unique opaque ID of the job. Defaults to: `null`.
+  - id (String.t): Unique opaque ID of the job. Defaults to: `null`.
   - jobReference (JobReference): Job reference uniquely identifying the job. Defaults to: `null`.
-  - kind (String): The resource type. Defaults to: `null`.
-  - state (String): Running state of the job. When the state is DONE, errorResult can be checked to determine whether the job succeeded or failed. Defaults to: `null`.
+  - kind (String.t): The resource type. Defaults to: `null`.
+  - state (String.t): Running state of the job. When the state is DONE, errorResult can be checked to determine whether the job succeeded or failed. Defaults to: `null`.
   - statistics (JobStatistics): [Output-only] Information about the job, including starting time and ending time of the job. Defaults to: `null`.
   - status (JobStatus): [Full-projection-only] Describes the state of the job. Defaults to: `null`.
-  - user_email (String): [Full-projection-only] Email address of the user who ran the job. Defaults to: `null`.
+  - user_email (String.t): [Full-projection-only] Email address of the user who ran the job. Defaults to: `null`.
   """
 
   defstruct [

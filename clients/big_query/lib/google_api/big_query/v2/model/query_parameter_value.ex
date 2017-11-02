@@ -23,9 +23,9 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryParameterValue do
 
   ## Attributes
 
-  - arrayValues (List[QueryParameterValue]): [Optional] The array values, if this is an array type. Defaults to: `null`.
-  - structValues (Map[String, QueryParameterValue]): [Optional] The struct field values, in order of the struct type&#39;s declaration. Defaults to: `null`.
-  - value (String): [Optional] The value of this value, if a simple scalar type. Defaults to: `null`.
+  - arrayValues ([QueryParameterValue]): [Optional] The array values, if this is an array type. Defaults to: `null`.
+  - structValues (%{optional(String.t) &#x3D;&gt; QueryParameterValue}): [Optional] The struct field values, in order of the struct type&#39;s declaration. Defaults to: `null`.
+  - value (String.t): [Optional] The value of this value, if a simple scalar type. Defaults to: `null`.
   """
 
   defstruct [

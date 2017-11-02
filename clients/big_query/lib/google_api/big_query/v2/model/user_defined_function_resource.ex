@@ -23,8 +23,8 @@ defmodule GoogleApi.BigQuery.V2.Model.UserDefinedFunctionResource do
 
   ## Attributes
 
-  - inlineCode (String): [Pick one] An inline resource that contains code for a user-defined function (UDF). Providing a inline code resource is equivalent to providing a URI for a file containing the same code. Defaults to: `null`.
-  - resourceUri (String): [Pick one] A code resource to load from a Google Cloud Storage URI (gs://bucket/path). Defaults to: `null`.
+  - inlineCode (String.t): [Pick one] An inline resource that contains code for a user-defined function (UDF). Providing a inline code resource is equivalent to providing a URI for a file containing the same code. Defaults to: `null`.
+  - resourceUri (String.t): [Pick one] A code resource to load from a Google Cloud Storage URI (gs://bucket/path). Defaults to: `null`.
   """
 
   defstruct [

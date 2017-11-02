@@ -23,8 +23,8 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryParameterTypeStructTypes do
 
   ## Attributes
 
-  - description (String): [Optional] Human-oriented description of the field. Defaults to: `null`.
-  - name (String): [Optional] The name of this field. Defaults to: `null`.
+  - description (String.t): [Optional] Human-oriented description of the field. Defaults to: `null`.
+  - name (String.t): [Optional] The name of this field. Defaults to: `null`.
   - type (QueryParameterType): [Required] The type of this field. Defaults to: `null`.
   """
 

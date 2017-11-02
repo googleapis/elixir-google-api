@@ -23,8 +23,8 @@ defmodule GoogleApi.BigQuery.V2.Model.TableDataInsertAllResponseInsertErrors do
 
   ## Attributes
 
-  - errors (List[ErrorProto]): Error information for the row indicated by the index property. Defaults to: `null`.
-  - index (Integer): The index of the row that error applies to. Defaults to: `null`.
+  - errors ([ErrorProto]): Error information for the row indicated by the index property. Defaults to: `null`.
+  - index (integer()): The index of the row that error applies to. Defaults to: `null`.
   """
 
   defstruct [

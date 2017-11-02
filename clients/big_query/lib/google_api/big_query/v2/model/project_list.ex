@@ -23,11 +23,11 @@ defmodule GoogleApi.BigQuery.V2.Model.ProjectList do
 
   ## Attributes
 
-  - etag (String): A hash of the page of results Defaults to: `null`.
-  - kind (String): The type of list. Defaults to: `null`.
-  - nextPageToken (String): A token to request the next page of results. Defaults to: `null`.
-  - projects (List[ProjectListProjects]): Projects to which you have at least READ access. Defaults to: `null`.
-  - totalItems (Integer): The total number of projects in the list. Defaults to: `null`.
+  - etag (String.t): A hash of the page of results Defaults to: `null`.
+  - kind (String.t): The type of list. Defaults to: `null`.
+  - nextPageToken (String.t): A token to request the next page of results. Defaults to: `null`.
+  - projects ([ProjectListProjects]): Projects to which you have at least READ access. Defaults to: `null`.
+  - totalItems (integer()): The total number of projects in the list. Defaults to: `null`.
   """
 
   defstruct [

@@ -23,11 +23,11 @@ defmodule GoogleApi.BigQuery.V2.Model.TableDataList do
 
   ## Attributes
 
-  - etag (String): A hash of this page of results. Defaults to: `null`.
-  - kind (String): The resource type of the response. Defaults to: `null`.
-  - pageToken (String): A token used for paging results. Providing this token instead of the startIndex parameter can help you retrieve stable results when an underlying table is changing. Defaults to: `null`.
-  - rows (List[TableRow]): Rows of results. Defaults to: `null`.
-  - totalRows (String): The total number of rows in the complete table. Defaults to: `null`.
+  - etag (String.t): A hash of this page of results. Defaults to: `null`.
+  - kind (String.t): The resource type of the response. Defaults to: `null`.
+  - pageToken (String.t): A token used for paging results. Providing this token instead of the startIndex parameter can help you retrieve stable results when an underlying table is changing. Defaults to: `null`.
+  - rows ([TableRow]): Rows of results. Defaults to: `null`.
+  - totalRows (String.t): The total number of rows in the complete table. Defaults to: `null`.
   """
 
   defstruct [

@@ -23,12 +23,12 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationExtract do
 
   ## Attributes
 
-  - compression (String): [Optional] The compression type to use for exported files. Possible values include GZIP and NONE. The default value is NONE. Defaults to: `null`.
-  - destinationFormat (String): [Optional] The exported file format. Possible values include CSV, NEWLINE_DELIMITED_JSON and AVRO. The default value is CSV. Tables with nested or repeated fields cannot be exported as CSV. Defaults to: `null`.
-  - destinationUri (String): [Pick one] DEPRECATED: Use destinationUris instead, passing only one URI as necessary. The fully-qualified Google Cloud Storage URI where the extracted table should be written. Defaults to: `null`.
-  - destinationUris (List[String]): [Pick one] A list of fully-qualified Google Cloud Storage URIs where the extracted table should be written. Defaults to: `null`.
-  - fieldDelimiter (String): [Optional] Delimiter to use between fields in the exported data. Default is &#39;,&#39; Defaults to: `null`.
-  - printHeader (Boolean): [Optional] Whether to print out a header row in the results. Default is true. Defaults to: `null`.
+  - compression (String.t): [Optional] The compression type to use for exported files. Possible values include GZIP and NONE. The default value is NONE. Defaults to: `null`.
+  - destinationFormat (String.t): [Optional] The exported file format. Possible values include CSV, NEWLINE_DELIMITED_JSON and AVRO. The default value is CSV. Tables with nested or repeated fields cannot be exported as CSV. Defaults to: `null`.
+  - destinationUri (String.t): [Pick one] DEPRECATED: Use destinationUris instead, passing only one URI as necessary. The fully-qualified Google Cloud Storage URI where the extracted table should be written. Defaults to: `null`.
+  - destinationUris ([String.t]): [Pick one] A list of fully-qualified Google Cloud Storage URIs where the extracted table should be written. Defaults to: `null`.
+  - fieldDelimiter (String.t): [Optional] Delimiter to use between fields in the exported data. Default is &#39;,&#39; Defaults to: `null`.
+  - printHeader (boolean()): [Optional] Whether to print out a header row in the results. Default is true. Defaults to: `null`.
   - sourceTable (TableReference): [Required] A reference to the table being exported. Defaults to: `null`.
   """
 
