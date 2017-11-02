@@ -38,7 +38,7 @@ defmodule GoogleApi.BigQuery.V2.Deserializer do
   def deserialize(model, _field, :map, nil, _options), do: model
   def deserialize(model, field, :map, mod, options) do
     model
-    |> Map.update!(field, &(Map.new(&1, fn {key, val} -> {key, Poison.Decode.decode(val, Keyword.merge(options, [as: struct(mod)]))} end)))
+    |> Map.update!(field, &(Map.new(&1 || %{}, fn {key, val} -> {key, Poison.Decode.decode(val, Keyword.merge(options, [as: struct(mod)]))} end)))
   end
   def deserialize(model, field, :date, _, _options) do
     case DateTime.from_iso8601(Map.get(model, field)) do
