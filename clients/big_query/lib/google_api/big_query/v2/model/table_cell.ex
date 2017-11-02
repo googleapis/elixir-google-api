@@ -20,17 +20,26 @@
 defmodule GoogleApi.BigQuery.V2.Model.TableCell do
   @moduledoc """
   
+
+  ## Attributes
+
+  - v (String.t):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
-    
+    :"v"
   ]
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.TableCell do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.TableCell do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

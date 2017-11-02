@@ -20,9 +20,12 @@
 defmodule GoogleApi.BigQuery.V2.Model.TableSchema do
   @moduledoc """
   
+
+  ## Attributes
+
+  - fields ([TableFieldSchema]): Describes the fields in a table. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"fields"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.TableSchema do
   def decode(value, options) do
     value
     |> deserialize(:"fields", :list, GoogleApi.BigQuery.V2.Model.TableFieldSchema, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.TableSchema do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

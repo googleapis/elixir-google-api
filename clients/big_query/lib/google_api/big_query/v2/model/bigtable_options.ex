@@ -20,9 +20,14 @@
 defmodule GoogleApi.BigQuery.V2.Model.BigtableOptions do
   @moduledoc """
   
+
+  ## Attributes
+
+  - columnFamilies ([BigtableColumnFamily]): [Optional] List of column families to expose in the table schema along with their types. This list restricts the column families that can be referenced in queries and specifies their value types. You can use this list to do type conversions - see the &#39;type&#39; field for more details. If you leave this list empty, all column families are present in the table schema and their values are read as BYTES. During a query only the column families referenced in that query are read from Bigtable. Defaults to: `null`.
+  - ignoreUnspecifiedColumnFamilies (boolean()): [Optional] If field is true, then the column families that are not specified in columnFamilies list are not exposed in the table schema. Otherwise, they are read with BYTES type values. The default value is false. Defaults to: `null`.
+  - readRowkeyAsString (boolean()): [Optional] If field is true, then the rowkey column families will be read and converted to string. Otherwise they are read with BYTES type values and users need to manually cast them with CAST if necessary. The default value is false. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"columnFamilies",
     :"ignoreUnspecifiedColumnFamilies",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.BigtableOptions do
   def decode(value, options) do
     value
     |> deserialize(:"columnFamilies", :list, GoogleApi.BigQuery.V2.Model.BigtableColumnFamily, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.BigtableOptions do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

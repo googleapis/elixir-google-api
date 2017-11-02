@@ -20,9 +20,16 @@
 defmodule GoogleApi.BigQuery.V2.Model.JobStatistics3 do
   @moduledoc """
   
+
+  ## Attributes
+
+  - badRecords (String.t): [Output-only] The number of bad records encountered. Note that if the job has failed because of more bad records encountered than the maximum allowed in the load job configuration, then this number can be less than the total number of bad records present in the input data. Defaults to: `null`.
+  - inputFileBytes (String.t): [Output-only] Number of bytes of source data in a load job. Defaults to: `null`.
+  - inputFiles (String.t): [Output-only] Number of source files in a load job. Defaults to: `null`.
+  - outputBytes (String.t): [Output-only] Size of the loaded data in bytes. Note that while a load job is in the running state, this value may change. Defaults to: `null`.
+  - outputRows (String.t): [Output-only] Number of rows imported in a load job. Note that while an import job is in the running state, this value may change. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"badRecords",
     :"inputFileBytes",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.JobStatistics3 do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.JobStatistics3 do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

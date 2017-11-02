@@ -20,9 +20,15 @@
 defmodule GoogleApi.BigQuery.V2.Model.DatasetList do
   @moduledoc """
   
+
+  ## Attributes
+
+  - datasets ([DatasetListDatasets]): An array of the dataset resources in the project. Each resource contains basic information. For full information about a particular dataset resource, use the Datasets: get method. This property is omitted when there are no datasets in the project. Defaults to: `null`.
+  - etag (String.t): A hash value of the results page. You can use this property to determine if the page has changed since the last request. Defaults to: `null`.
+  - kind (String.t): The list type. This property always returns the value \&quot;bigquery#datasetList\&quot;. Defaults to: `null`.
+  - nextPageToken (String.t): A token that can be used to request the next results page. This property is omitted on the final results page. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"datasets",
     :"etag",
@@ -35,7 +41,13 @@ defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.DatasetList do
   import GoogleApi.BigQuery.V2.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"datasets", :list, GoogleApi.BigQuery.V2.Model.DatasetList_datasets, options)
+    |> deserialize(:"datasets", :list, GoogleApi.BigQuery.V2.Model.DatasetListDatasets, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.DatasetList do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

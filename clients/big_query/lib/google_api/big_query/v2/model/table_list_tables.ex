@@ -17,12 +17,22 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.BigQuery.V2.Model.TableList_tables do
+defmodule GoogleApi.BigQuery.V2.Model.TableListTables do
   @moduledoc """
   
+
+  ## Attributes
+
+  - friendlyName (String.t): The user-friendly name for this table. Defaults to: `null`.
+  - id (String.t): An opaque ID of the table Defaults to: `null`.
+  - kind (String.t): The resource type. Defaults to: `null`.
+  - labels (%{optional(String.t) &#x3D;&gt; String.t}): [Experimental] The labels associated with this table. You can use these to organize and group your tables. Defaults to: `null`.
+  - tableReference (TableReference): A reference uniquely identifying the table. Defaults to: `null`.
+  - timePartitioning (TimePartitioning): [Experimental] The time-based partitioning for this table. Defaults to: `null`.
+  - type (String.t): The type of table. Possible values are: TABLE, VIEW. Defaults to: `null`.
+  - view (TableListView):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"friendlyName",
     :"id",
@@ -35,13 +45,19 @@ defmodule GoogleApi.BigQuery.V2.Model.TableList_tables do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.TableList_tables do
+defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.TableListTables do
   import GoogleApi.BigQuery.V2.Deserializer
   def decode(value, options) do
     value
     |> deserialize(:"tableReference", :struct, GoogleApi.BigQuery.V2.Model.TableReference, options)
     |> deserialize(:"timePartitioning", :struct, GoogleApi.BigQuery.V2.Model.TimePartitioning, options)
-    |> deserialize(:"view", :struct, GoogleApi.BigQuery.V2.Model.TableList_view, options)
+    |> deserialize(:"view", :struct, GoogleApi.BigQuery.V2.Model.TableListView, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.TableListTables do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

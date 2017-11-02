@@ -20,9 +20,13 @@
 defmodule GoogleApi.BigQuery.V2.Model.DatasetReference do
   @moduledoc """
   
+
+  ## Attributes
+
+  - datasetId (String.t): [Required] A unique ID for this dataset, without the project name. The ID must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_). The maximum length is 1,024 characters. Defaults to: `null`.
+  - projectId (String.t): [Optional] The ID of the project containing this dataset. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"datasetId",
     :"projectId"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.DatasetReference do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.DatasetReference do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

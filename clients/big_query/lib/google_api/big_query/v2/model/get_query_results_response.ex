@@ -20,9 +20,23 @@
 defmodule GoogleApi.BigQuery.V2.Model.GetQueryResultsResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - cacheHit (boolean()): Whether the query result was fetched from the query cache. Defaults to: `null`.
+  - errors ([ErrorProto]): [Output-only] The first errors or warnings encountered during the running of the job. The final message includes the number of errors that caused the process to stop. Errors here do not necessarily mean that the job has completed or was unsuccessful. Defaults to: `null`.
+  - etag (String.t): A hash of this response. Defaults to: `null`.
+  - jobComplete (boolean()): Whether the query has completed or not. If rows or totalRows are present, this will always be true. If this is false, totalRows will not be available. Defaults to: `null`.
+  - jobReference (JobReference): Reference to the BigQuery Job that was created to run the query. This field will be present even if the original request timed out, in which case GetQueryResults can be used to read the results once the query has completed. Since this API only returns the first page of results, subsequent pages can be fetched via the same mechanism (GetQueryResults). Defaults to: `null`.
+  - kind (String.t): The resource type of the response. Defaults to: `null`.
+  - numDmlAffectedRows (String.t): [Output-only] The number of rows affected by a DML statement. Present only for DML statements INSERT, UPDATE or DELETE. Defaults to: `null`.
+  - pageToken (String.t): A token used for paging results. Defaults to: `null`.
+  - rows ([TableRow]): An object with as many results as can be contained within the maximum permitted reply size. To get any additional rows, you can call GetQueryResults and specify the jobReference returned above. Present only when the query completes successfully. Defaults to: `null`.
+  - schema (TableSchema): The schema of the results. Present only when the query completes successfully. Defaults to: `null`.
+  - totalBytesProcessed (String.t): The total number of bytes processed for this query. Defaults to: `null`.
+  - totalRows (String.t): The total number of rows in the complete query result set, which can be more than the number of rows in this single page of results. Present only when the query completes successfully. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cacheHit",
     :"errors",
@@ -47,6 +61,12 @@ defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.GetQueryResultsResponse
     |> deserialize(:"jobReference", :struct, GoogleApi.BigQuery.V2.Model.JobReference, options)
     |> deserialize(:"rows", :list, GoogleApi.BigQuery.V2.Model.TableRow, options)
     |> deserialize(:"schema", :struct, GoogleApi.BigQuery.V2.Model.TableSchema, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.GetQueryResultsResponse do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

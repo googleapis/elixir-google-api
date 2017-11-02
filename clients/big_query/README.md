@@ -1,6 +1,6 @@
 # GoogleApi.BigQuery.V2
 
-**TODO: Add description**
+A data platform for customers to create, manage, share and query data.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_big_query` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_big_query, "~> 0.1.0"}]
+  [{:google_api_big_query, "~> 0.0.1"}]
 end
 ```
 

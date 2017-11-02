@@ -20,9 +20,16 @@
 defmodule GoogleApi.BigQuery.V2.Model.TableDataList do
   @moduledoc """
   
+
+  ## Attributes
+
+  - etag (String.t): A hash of this page of results. Defaults to: `null`.
+  - kind (String.t): The resource type of the response. Defaults to: `null`.
+  - pageToken (String.t): A token used for paging results. Providing this token instead of the startIndex parameter can help you retrieve stable results when an underlying table is changing. Defaults to: `null`.
+  - rows ([TableRow]): Rows of results. Defaults to: `null`.
+  - totalRows (String.t): The total number of rows in the complete table. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"kind",
@@ -37,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.TableDataList do
   def decode(value, options) do
     value
     |> deserialize(:"rows", :list, GoogleApi.BigQuery.V2.Model.TableRow, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.TableDataList do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

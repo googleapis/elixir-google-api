@@ -20,9 +20,13 @@
 defmodule GoogleApi.BigQuery.V2.Model.JobCancelResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - job (Job): The final state of the job. Defaults to: `null`.
+  - kind (String.t): The resource type of the response. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"job",
     :"kind"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.JobCancelResponse do
   def decode(value, options) do
     value
     |> deserialize(:"job", :struct, GoogleApi.BigQuery.V2.Model.Job, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.JobCancelResponse do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

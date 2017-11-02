@@ -20,9 +20,15 @@
 defmodule GoogleApi.BigQuery.V2.Model.JobList do
   @moduledoc """
   
+
+  ## Attributes
+
+  - etag (String.t): A hash of this page of results. Defaults to: `null`.
+  - jobs ([JobListJobs]): List of jobs that were requested. Defaults to: `null`.
+  - kind (String.t): The resource type of the response. Defaults to: `null`.
+  - nextPageToken (String.t): A token to request the next page of results. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"jobs",
@@ -35,7 +41,13 @@ defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.JobList do
   import GoogleApi.BigQuery.V2.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"jobs", :list, GoogleApi.BigQuery.V2.Model.JobList_jobs, options)
+    |> deserialize(:"jobs", :list, GoogleApi.BigQuery.V2.Model.JobListJobs, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.JobList do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

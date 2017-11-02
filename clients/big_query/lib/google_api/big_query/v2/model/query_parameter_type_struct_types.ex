@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.BigQuery.V2.Model.QueryParameterType_structTypes do
+defmodule GoogleApi.BigQuery.V2.Model.QueryParameterTypeStructTypes do
   @moduledoc """
   
+
+  ## Attributes
+
+  - description (String.t): [Optional] Human-oriented description of the field. Defaults to: `null`.
+  - name (String.t): [Optional] The name of this field. Defaults to: `null`.
+  - type (QueryParameterType): [Required] The type of this field. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"description",
     :"name",
@@ -30,11 +35,17 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryParameterType_structTypes do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.QueryParameterType_structTypes do
+defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.QueryParameterTypeStructTypes do
   import GoogleApi.BigQuery.V2.Deserializer
   def decode(value, options) do
     value
     |> deserialize(:"type", :struct, GoogleApi.BigQuery.V2.Model.QueryParameterType, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.QueryParameterTypeStructTypes do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

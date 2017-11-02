@@ -17,12 +17,19 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.BigQuery.V2.Model.DatasetList_datasets do
+defmodule GoogleApi.BigQuery.V2.Model.DatasetListDatasets do
   @moduledoc """
   
+
+  ## Attributes
+
+  - datasetReference (DatasetReference): The dataset reference. Use this property to access specific parts of the dataset&#39;s ID, such as project ID or dataset ID. Defaults to: `null`.
+  - friendlyName (String.t): A descriptive name for the dataset, if one exists. Defaults to: `null`.
+  - id (String.t): The fully-qualified, unique, opaque ID of the dataset. Defaults to: `null`.
+  - kind (String.t): The resource type. This property always returns the value \&quot;bigquery#dataset\&quot;. Defaults to: `null`.
+  - labels (%{optional(String.t) &#x3D;&gt; String.t}): The labels associated with this dataset. You can use these to organize and group your datasets. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"datasetReference",
     :"friendlyName",
@@ -32,11 +39,17 @@ defmodule GoogleApi.BigQuery.V2.Model.DatasetList_datasets do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.DatasetList_datasets do
+defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.DatasetListDatasets do
   import GoogleApi.BigQuery.V2.Deserializer
   def decode(value, options) do
     value
     |> deserialize(:"datasetReference", :struct, GoogleApi.BigQuery.V2.Model.DatasetReference, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.DatasetListDatasets do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.BigQuery.V2.Model.TableDataInsertAllResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - insertErrors ([TableDataInsertAllResponseInsertErrors]): An array of errors for rows that were not inserted. Defaults to: `null`.
+  - kind (String.t): The resource type of the response. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"insertErrors",
     :"kind"
@@ -33,7 +37,13 @@ defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.TableDataInsertAllRespo
   import GoogleApi.BigQuery.V2.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"insertErrors", :list, GoogleApi.BigQuery.V2.Model.TableDataInsertAllResponse_insertErrors, options)
+    |> deserialize(:"insertErrors", :list, GoogleApi.BigQuery.V2.Model.TableDataInsertAllResponseInsertErrors, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.TableDataInsertAllResponse do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

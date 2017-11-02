@@ -20,9 +20,24 @@
 defmodule GoogleApi.BigQuery.V2.Model.Dataset do
   @moduledoc """
   
+
+  ## Attributes
+
+  - access ([DatasetAccess]): [Optional] An array of objects that define dataset access for one or more entities. You can set this property when inserting or updating a dataset in order to control who is allowed to access the data. If unspecified at dataset creation time, BigQuery adds default dataset access for the following entities: access.specialGroup: projectReaders; access.role: READER; access.specialGroup: projectWriters; access.role: WRITER; access.specialGroup: projectOwners; access.role: OWNER; access.userByEmail: [dataset creator email]; access.role: OWNER; Defaults to: `null`.
+  - creationTime (String.t): [Output-only] The time when this dataset was created, in milliseconds since the epoch. Defaults to: `null`.
+  - datasetReference (DatasetReference): [Required] A reference that identifies the dataset. Defaults to: `null`.
+  - defaultTableExpirationMs (String.t): [Optional] The default lifetime of all tables in the dataset, in milliseconds. The minimum value is 3600000 milliseconds (one hour). Once this property is set, all newly-created tables in the dataset will have an expirationTime property set to the creation time plus the value in this property, and changing the value will only affect new tables, not existing ones. When the expirationTime for a given table is reached, that table will be deleted automatically. If a table&#39;s expirationTime is modified or removed before the table expires, or if you provide an explicit expirationTime when creating a table, that value takes precedence over the default expiration time indicated by this property. Defaults to: `null`.
+  - description (String.t): [Optional] A user-friendly description of the dataset. Defaults to: `null`.
+  - etag (String.t): [Output-only] A hash of the resource. Defaults to: `null`.
+  - friendlyName (String.t): [Optional] A descriptive name for the dataset. Defaults to: `null`.
+  - id (String.t): [Output-only] The fully-qualified unique name of the dataset in the format projectId:datasetId. The dataset name without the project name is given in the datasetId field. When creating a new dataset, leave this field blank, and instead specify the datasetId field. Defaults to: `null`.
+  - kind (String.t): [Output-only] The resource type. Defaults to: `null`.
+  - labels (%{optional(String.t) &#x3D;&gt; String.t}): The labels associated with this dataset. You can use these to organize and group your datasets. You can set this property when inserting or updating a dataset. See Labeling Datasets for more information. Defaults to: `null`.
+  - lastModifiedTime (String.t): [Output-only] The date when this dataset or any of its tables was last modified, in milliseconds since the epoch. Defaults to: `null`.
+  - location (String.t): The geographic location where the dataset should reside. Possible values include EU and US. The default value is US. Defaults to: `null`.
+  - selfLink (String.t): [Output-only] A URL that can be used to access the resource again. You can use this URL in Get or Update requests to the resource. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"access",
     :"creationTime",
@@ -44,8 +59,14 @@ defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.Dataset do
   import GoogleApi.BigQuery.V2.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"access", :list, GoogleApi.BigQuery.V2.Model.Dataset_access, options)
+    |> deserialize(:"access", :list, GoogleApi.BigQuery.V2.Model.DatasetAccess, options)
     |> deserialize(:"datasetReference", :struct, GoogleApi.BigQuery.V2.Model.DatasetReference, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.Dataset do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

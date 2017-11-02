@@ -20,9 +20,17 @@
 defmodule GoogleApi.BigQuery.V2.Model.JobConfiguration do
   @moduledoc """
   
+
+  ## Attributes
+
+  - copy (JobConfigurationTableCopy): [Pick one] Copies a table. Defaults to: `null`.
+  - dryRun (boolean()): [Optional] If set, don&#39;t actually run this job. A valid query will return a mostly empty response with some processing statistics, while an invalid query will return the same error it would if it wasn&#39;t a dry run. Behavior of non-query jobs is undefined. Defaults to: `null`.
+  - extract (JobConfigurationExtract): [Pick one] Configures an extract job. Defaults to: `null`.
+  - labels (%{optional(String.t) &#x3D;&gt; String.t}): [Experimental] The labels associated with this job. You can use these to organize and group your jobs. Label keys and values can be no longer than 63 characters, can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. Label values are optional. Label keys must start with a letter and each label in the list must have a different key. Defaults to: `null`.
+  - load (JobConfigurationLoad): [Pick one] Configures a load job. Defaults to: `null`.
+  - query (JobConfigurationQuery): [Pick one] Configures a query job. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"copy",
     :"dryRun",
@@ -41,6 +49,12 @@ defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.JobConfiguration do
     |> deserialize(:"extract", :struct, GoogleApi.BigQuery.V2.Model.JobConfigurationExtract, options)
     |> deserialize(:"load", :struct, GoogleApi.BigQuery.V2.Model.JobConfigurationLoad, options)
     |> deserialize(:"query", :struct, GoogleApi.BigQuery.V2.Model.JobConfigurationQuery, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.JobConfiguration do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

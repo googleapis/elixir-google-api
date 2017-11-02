@@ -32,17 +32,17 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
   ## Parameters
 
   - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
-  - project_id (String): Project ID of the dataset being deleted
-  - dataset_id (String): Dataset ID of dataset being deleted
+  - project_id (String.t): Project ID of the dataset being deleted
+  - dataset_id (String.t): Dataset ID of dataset being deleted
   - opts (KeywordList): [optional] Optional parameters
-    - :alt (String): Data format for the response.
-    - :fields (String): Selector specifying which fields to include in a partial response.
-    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String): OAuth 2.0 token for the current user.
-    - :pretty_print (Boolean): Returns response with indentations and line breaks.
-    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
-    - :delete_contents (Boolean): If True, delete all the tables in the dataset. If False and the dataset contains tables, the request will fail. Default is False
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :pretty_print (boolean()): Returns response with indentations and line breaks.
+    - :quota_user (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :delete_contents (boolean()): If True, delete all the tables in the dataset. If False and the dataset contains tables, the request will fail. Default is False
 
   ## Returns
 
@@ -63,7 +63,10 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
     }
     %{}
     |> method(:delete)
-    |> url("/bigquery/v2/projects/#{project_id}/datasets/#{dataset_id}")
+    |> url("/bigquery/v2/projects/{projectId}/datasets/{datasetId}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "datasetId" => URI.encode_www_form(dataset_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -76,16 +79,16 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
   ## Parameters
 
   - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
-  - project_id (String): Project ID of the requested dataset
-  - dataset_id (String): Dataset ID of the requested dataset
+  - project_id (String.t): Project ID of the requested dataset
+  - dataset_id (String.t): Dataset ID of the requested dataset
   - opts (KeywordList): [optional] Optional parameters
-    - :alt (String): Data format for the response.
-    - :fields (String): Selector specifying which fields to include in a partial response.
-    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String): OAuth 2.0 token for the current user.
-    - :pretty_print (Boolean): Returns response with indentations and line breaks.
-    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :pretty_print (boolean()): Returns response with indentations and line breaks.
+    - :quota_user (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
 
   ## Returns
 
@@ -105,7 +108,10 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
     }
     %{}
     |> method(:get)
-    |> url("/bigquery/v2/projects/#{project_id}/datasets/#{dataset_id}")
+    |> url("/bigquery/v2/projects/{projectId}/datasets/{datasetId}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "datasetId" => URI.encode_www_form(dataset_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -118,15 +124,15 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
   ## Parameters
 
   - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
-  - project_id (String): Project ID of the new dataset
+  - project_id (String.t): Project ID of the new dataset
   - opts (KeywordList): [optional] Optional parameters
-    - :alt (String): Data format for the response.
-    - :fields (String): Selector specifying which fields to include in a partial response.
-    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String): OAuth 2.0 token for the current user.
-    - :pretty_print (Boolean): Returns response with indentations and line breaks.
-    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :pretty_print (boolean()): Returns response with indentations and line breaks.
+    - :quota_user (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
     - :body (Dataset): 
 
   ## Returns
@@ -148,7 +154,9 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
     }
     %{}
     |> method(:post)
-    |> url("/bigquery/v2/projects/#{project_id}/datasets")
+    |> url("/bigquery/v2/projects/{projectId}/datasets", %{
+         "projectId" => URI.encode_www_form(project_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -161,19 +169,19 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
   ## Parameters
 
   - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
-  - project_id (String): Project ID of the datasets to be listed
+  - project_id (String.t): Project ID of the datasets to be listed
   - opts (KeywordList): [optional] Optional parameters
-    - :alt (String): Data format for the response.
-    - :fields (String): Selector specifying which fields to include in a partial response.
-    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String): OAuth 2.0 token for the current user.
-    - :pretty_print (Boolean): Returns response with indentations and line breaks.
-    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
-    - :all (Boolean): Whether to list all datasets, including hidden ones
-    - :filter (String): An expression for filtering the results of the request by label. The syntax is \&quot;labels.&lt;name&gt;[:&lt;value&gt;]\&quot;. Multiple filters can be ANDed together by connecting with a space. Example: \&quot;labels.department:receiving labels.active\&quot;. See Filtering datasets using labels for details.
-    - :max_results (Integer): The maximum number of results to return
-    - :page_token (String): Page token, returned by a previous call, to request the next page of results
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :pretty_print (boolean()): Returns response with indentations and line breaks.
+    - :quota_user (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :all (boolean()): Whether to list all datasets, including hidden ones
+    - :filter (String.t): An expression for filtering the results of the request by label. The syntax is \&quot;labels.&lt;name&gt;[:&lt;value&gt;]\&quot;. Multiple filters can be ANDed together by connecting with a space. Example: \&quot;labels.department:receiving labels.active\&quot;. See Filtering datasets using labels for details.
+    - :max_results (integer()): The maximum number of results to return
+    - :page_token (String.t): Page token, returned by a previous call, to request the next page of results
 
   ## Returns
 
@@ -197,7 +205,9 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
     }
     %{}
     |> method(:get)
-    |> url("/bigquery/v2/projects/#{project_id}/datasets")
+    |> url("/bigquery/v2/projects/{projectId}/datasets", %{
+         "projectId" => URI.encode_www_form(project_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -210,16 +220,16 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
   ## Parameters
 
   - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
-  - project_id (String): Project ID of the dataset being updated
-  - dataset_id (String): Dataset ID of the dataset being updated
+  - project_id (String.t): Project ID of the dataset being updated
+  - dataset_id (String.t): Dataset ID of the dataset being updated
   - opts (KeywordList): [optional] Optional parameters
-    - :alt (String): Data format for the response.
-    - :fields (String): Selector specifying which fields to include in a partial response.
-    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String): OAuth 2.0 token for the current user.
-    - :pretty_print (Boolean): Returns response with indentations and line breaks.
-    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :pretty_print (boolean()): Returns response with indentations and line breaks.
+    - :quota_user (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
     - :body (Dataset): 
 
   ## Returns
@@ -241,7 +251,10 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
     }
     %{}
     |> method(:patch)
-    |> url("/bigquery/v2/projects/#{project_id}/datasets/#{dataset_id}")
+    |> url("/bigquery/v2/projects/{projectId}/datasets/{datasetId}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "datasetId" => URI.encode_www_form(dataset_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
@@ -254,16 +267,16 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
   ## Parameters
 
   - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
-  - project_id (String): Project ID of the dataset being updated
-  - dataset_id (String): Dataset ID of the dataset being updated
+  - project_id (String.t): Project ID of the dataset being updated
+  - dataset_id (String.t): Dataset ID of the dataset being updated
   - opts (KeywordList): [optional] Optional parameters
-    - :alt (String): Data format for the response.
-    - :fields (String): Selector specifying which fields to include in a partial response.
-    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String): OAuth 2.0 token for the current user.
-    - :pretty_print (Boolean): Returns response with indentations and line breaks.
-    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :pretty_print (boolean()): Returns response with indentations and line breaks.
+    - :quota_user (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
     - :body (Dataset): 
 
   ## Returns
@@ -285,7 +298,10 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
     }
     %{}
     |> method(:put)
-    |> url("/bigquery/v2/projects/#{project_id}/datasets/#{dataset_id}")
+    |> url("/bigquery/v2/projects/{projectId}/datasets/{datasetId}", %{
+         "projectId" => URI.encode_www_form(project_id),
+         "datasetId" => URI.encode_www_form(dataset_id)
+       })
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

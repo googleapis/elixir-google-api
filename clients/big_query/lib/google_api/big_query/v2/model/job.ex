@@ -20,9 +20,20 @@
 defmodule GoogleApi.BigQuery.V2.Model.Job do
   @moduledoc """
   
+
+  ## Attributes
+
+  - configuration (JobConfiguration): [Required] Describes the job configuration. Defaults to: `null`.
+  - etag (String.t): [Output-only] A hash of this resource. Defaults to: `null`.
+  - id (String.t): [Output-only] Opaque ID field of the job Defaults to: `null`.
+  - jobReference (JobReference): [Optional] Reference describing the unique-per-user name of the job. Defaults to: `null`.
+  - kind (String.t): [Output-only] The type of the resource. Defaults to: `null`.
+  - selfLink (String.t): [Output-only] A URL that can be used to access this resource again. Defaults to: `null`.
+  - statistics (JobStatistics): [Output-only] Information about the job, including starting time and ending time of the job. Defaults to: `null`.
+  - status (JobStatus): [Output-only] The status of this job. Examine this value when polling an asynchronous job to see if the job is complete. Defaults to: `null`.
+  - user_email (String.t): [Output-only] Email address of the user who ran the job. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"configuration",
     :"etag",
@@ -44,6 +55,12 @@ defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.Job do
     |> deserialize(:"jobReference", :struct, GoogleApi.BigQuery.V2.Model.JobReference, options)
     |> deserialize(:"statistics", :struct, GoogleApi.BigQuery.V2.Model.JobStatistics, options)
     |> deserialize(:"status", :struct, GoogleApi.BigQuery.V2.Model.JobStatus, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.Job do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

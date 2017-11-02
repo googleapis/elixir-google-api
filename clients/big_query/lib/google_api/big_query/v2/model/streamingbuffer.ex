@@ -20,9 +20,14 @@
 defmodule GoogleApi.BigQuery.V2.Model.Streamingbuffer do
   @moduledoc """
   
+
+  ## Attributes
+
+  - estimatedBytes (String.t): [Output-only] A lower-bound estimate of the number of bytes currently in the streaming buffer. Defaults to: `null`.
+  - estimatedRows (String.t): [Output-only] A lower-bound estimate of the number of rows currently in the streaming buffer. Defaults to: `null`.
+  - oldestEntryTime (String.t): [Output-only] Contains the timestamp of the oldest entry in the streaming buffer, in milliseconds since the epoch, if the streaming buffer is available. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"estimatedBytes",
     :"estimatedRows",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.Streamingbuffer do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.Streamingbuffer do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

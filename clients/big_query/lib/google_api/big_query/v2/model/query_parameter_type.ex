@@ -20,9 +20,14 @@
 defmodule GoogleApi.BigQuery.V2.Model.QueryParameterType do
   @moduledoc """
   
+
+  ## Attributes
+
+  - arrayType (QueryParameterType): [Optional] The type of the array&#39;s elements, if this is an array. Defaults to: `null`.
+  - structTypes ([QueryParameterTypeStructTypes]): [Optional] The types of the fields of this struct, in order, if this is a struct. Defaults to: `null`.
+  - type (String.t): [Required] The top level type of this field. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"arrayType",
     :"structTypes",
@@ -35,7 +40,13 @@ defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.QueryParameterType do
   def decode(value, options) do
     value
     |> deserialize(:"arrayType", :struct, GoogleApi.BigQuery.V2.Model.QueryParameterType, options)
-    |> deserialize(:"structTypes", :list, GoogleApi.BigQuery.V2.Model.QueryParameterType_structTypes, options)
+    |> deserialize(:"structTypes", :list, GoogleApi.BigQuery.V2.Model.QueryParameterTypeStructTypes, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.QueryParameterType do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

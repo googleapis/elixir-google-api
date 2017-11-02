@@ -20,9 +20,21 @@
 defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
   @moduledoc """
   
+
+  ## Attributes
+
+  - billingTier (integer()): [Output-only] Billing tier for the job. Defaults to: `null`.
+  - cacheHit (boolean()): [Output-only] Whether the query result was fetched from the query cache. Defaults to: `null`.
+  - numDmlAffectedRows (String.t): [Output-only] The number of rows affected by a DML statement. Present only for DML statements INSERT, UPDATE or DELETE. Defaults to: `null`.
+  - queryPlan ([ExplainQueryStage]): [Output-only] Describes execution plan for the query. Defaults to: `null`.
+  - referencedTables ([TableReference]): [Output-only, Experimental] Referenced tables for the job. Queries that reference more than 50 tables will not have a complete list. Defaults to: `null`.
+  - schema (TableSchema): [Output-only, Experimental] The schema of the results. Present only for successful dry run of non-legacy SQL queries. Defaults to: `null`.
+  - statementType (String.t): [Output-only, Experimental] The type of query statement, if valid. Defaults to: `null`.
+  - totalBytesBilled (String.t): [Output-only] Total bytes billed for the job. Defaults to: `null`.
+  - totalBytesProcessed (String.t): [Output-only] Total bytes processed for the job. Defaults to: `null`.
+  - undeclaredQueryParameters ([QueryParameter]): [Output-only, Experimental] Standard SQL only: list of undeclared query parameters detected during a dry run validation. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"billingTier",
     :"cacheHit",
@@ -45,6 +57,12 @@ defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.JobStatistics2 do
     |> deserialize(:"referencedTables", :list, GoogleApi.BigQuery.V2.Model.TableReference, options)
     |> deserialize(:"schema", :struct, GoogleApi.BigQuery.V2.Model.TableSchema, options)
     |> deserialize(:"undeclaredQueryParameters", :list, GoogleApi.BigQuery.V2.Model.QueryParameter, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.JobStatistics2 do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

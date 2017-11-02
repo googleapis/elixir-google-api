@@ -17,12 +17,19 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.BigQuery.V2.Model.ProjectList_projects do
+defmodule GoogleApi.BigQuery.V2.Model.ProjectListProjects do
   @moduledoc """
   
+
+  ## Attributes
+
+  - friendlyName (String.t): A descriptive name for this project. Defaults to: `null`.
+  - id (String.t): An opaque ID of this project. Defaults to: `null`.
+  - kind (String.t): The resource type. Defaults to: `null`.
+  - numericId (String.t): The numeric ID of this project. Defaults to: `null`.
+  - projectReference (ProjectReference): A unique reference to this project. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"friendlyName",
     :"id",
@@ -32,11 +39,17 @@ defmodule GoogleApi.BigQuery.V2.Model.ProjectList_projects do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.ProjectList_projects do
+defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.ProjectListProjects do
   import GoogleApi.BigQuery.V2.Deserializer
   def decode(value, options) do
     value
     |> deserialize(:"projectReference", :struct, GoogleApi.BigQuery.V2.Model.ProjectReference, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.ProjectListProjects do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

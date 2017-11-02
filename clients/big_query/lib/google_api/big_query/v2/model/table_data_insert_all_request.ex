@@ -20,9 +20,16 @@
 defmodule GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequest do
   @moduledoc """
   
+
+  ## Attributes
+
+  - ignoreUnknownValues (boolean()): [Optional] Accept rows that contain values that do not match the schema. The unknown values are ignored. Default is false, which treats unknown values as errors. Defaults to: `null`.
+  - kind (String.t): The resource type of the response. Defaults to: `null`.
+  - rows ([TableDataInsertAllRequestRows]): The rows to insert. Defaults to: `null`.
+  - skipInvalidRows (boolean()): [Optional] Insert all valid rows of a request, even if invalid rows exist. The default value is false, which causes the entire request to fail if any invalid rows exist. Defaults to: `null`.
+  - templateSuffix (String.t): [Experimental] If specified, treats the destination table as a base template, and inserts the rows into an instance table named \&quot;{destination}{templateSuffix}\&quot;. BigQuery will manage creation of the instance table, using the schema of the base template table. See https://cloud.google.com/bigquery/streaming-data-into-bigquery#template-tables for considerations when working with templates tables. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"ignoreUnknownValues",
     :"kind",
@@ -36,7 +43,13 @@ defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.TableDataInsertAllReque
   import GoogleApi.BigQuery.V2.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"rows", :list, GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequest_rows, options)
+    |> deserialize(:"rows", :list, GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequestRows, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequest do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

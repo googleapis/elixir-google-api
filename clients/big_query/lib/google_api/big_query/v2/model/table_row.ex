@@ -20,9 +20,12 @@
 defmodule GoogleApi.BigQuery.V2.Model.TableRow do
   @moduledoc """
   
+
+  ## Attributes
+
+  - f ([TableCell]): Represents a single row in the result set, consisting of one or more fields. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"f"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.TableRow do
   def decode(value, options) do
     value
     |> deserialize(:"f", :list, GoogleApi.BigQuery.V2.Model.TableCell, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.TableRow do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

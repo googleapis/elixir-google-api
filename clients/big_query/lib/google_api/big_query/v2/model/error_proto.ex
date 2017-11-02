@@ -20,9 +20,15 @@
 defmodule GoogleApi.BigQuery.V2.Model.ErrorProto do
   @moduledoc """
   
+
+  ## Attributes
+
+  - debugInfo (String.t): Debugging information. This property is internal to Google and should not be used. Defaults to: `null`.
+  - location (String.t): Specifies where the error occurred, if present. Defaults to: `null`.
+  - message (String.t): A human-readable description of the error. Defaults to: `null`.
+  - reason (String.t): A short error code that summarizes the error. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"debugInfo",
     :"location",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.ErrorProto do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.ErrorProto do
+  def encode(value, options) do
+    GoogleApi.BigQuery.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 
