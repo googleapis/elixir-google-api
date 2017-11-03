@@ -9,7 +9,55 @@ The main folder contains the code necessary to generate these client libraries.
 **NOTE: These generated clients are under development and should be considered
 experimental!**
 
-## Setup
+
+## Usage
+
+All available Google API clients can be found [on hex.pm][hex_pm]. Add a client
+to your project's `mix.exs` under `deps`:
+
+```ex
+defmodule YourApplication.Mixfile do
+  use Mix.Project
+  #...
+
+  # Run "mix help deps" to learn about dependencies.
+  defp deps do
+    [
+      {:google_api_storage, "~> 0.0.1"},
+      {:goth, "~> 0.6.0"}
+    ]
+  end
+end
+```
+
+> Note the [goth][goth] package, which handles Google Authentication, is also
+> required.
+
+Next, run `mix deps.get` to pull down the dependencies:
+
+```sh
+$ mix deps.get
+```
+
+Now you can make an API call by obtaining an access token and using the
+generated modules.
+
+```ex
+# Obtain an access token using goth
+{:ok, token} = Goth.Token.for_scope("https://www.googleapis.com/auth/cloud-platform")
+conn = GoogleApi.Storage.V1.Connection.new(token.token)
+
+# Call the Storage V1 API (for example) to list buckets
+{:ok, response} = GoogleApi.Storage.V1.Api.Buckets.storage_buckets_list(conn, project_id)
+Enum.each(response.items, &IO.puts(&1.id))
+```
+
+Additional samples and tutorial apps can be found in the
+[elixir-samples repository][elixir-samples].
+
+## Generating Clients
+
+### Setup
 
 1. Install nodejs if not already installed.
 1. Install nodejs dependencies:
@@ -23,8 +71,6 @@ $> npm install
 ```bash
 $> mix deps.get
 ```
-
-## Generating Clients
 
 This project provides 4 mix tasks to componentize the build process:
 
@@ -129,3 +175,6 @@ This is not an officially supported Google product.
 [discovery-directory]: https://www.googleapis.com/discovery/v1/apis
 [api-spec-converter]: https://github.com/LucyBot-Inc/api-spec-converter
 [swagger-codegen]: https://github.com/swagger-api/swagger-codegen
+[hex_pm]: https://hex.pm/users/google-cloud
+[goth]: https://hex.pm/packages/goth
+[elixir-samples]: https://github.com/GoogleCloudPlatform/elixir-samples
