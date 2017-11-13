@@ -12,6 +12,8 @@ experimental!**
 
 ## Usage
 
+### Installation
+
 All available Google API clients can be found [on hex.pm][hex_pm]. Add a client
 to your project's `mix.exs` under `deps`:
 
@@ -42,6 +44,22 @@ $ mix deps.get
 Now you can make an API call by obtaining an access token and using the
 generated modules.
 
+### Obtaining an Access Token
+Authentication is typically done through [Application Default Credentials][adc]
+which means you do not have to change the code to authenticate as long as
+your environment has credentials. Start by creating a
+[Service Account key file][service_account_key_file]. This file can be used to
+authenticate to Google Cloud Platform services from any environment. To use
+the file, set the `GOOGLE_APPLICATION_CREDENTIALS` environment variable to
+the path to the key file, for example:
+
+    export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service_account.json
+
+If you are deploying to App Engine, Compute Engine, or Container Engine, your
+credentials will be available by default.
+
+### Making a Request
+
 ```ex
 # Obtain an access token using goth
 {:ok, token} = Goth.Token.for_scope("https://www.googleapis.com/auth/cloud-platform")
@@ -49,11 +67,15 @@ conn = GoogleApi.Storage.V1.Connection.new(token.token)
 
 # Call the Storage V1 API (for example) to list buckets
 {:ok, response} = GoogleApi.Storage.V1.Api.Buckets.storage_buckets_list(conn, project_id)
+
+# Print the response
 Enum.each(response.items, &IO.puts(&1.id))
 ```
 
-Additional samples and tutorial apps can be found in the
-[elixir-samples repository][elixir-samples].
+### What's Next?
+
+Take a look at our [elixir-samples repository][elixir-samples] repository for 
+examples of calling individual APIs and a getting started tutorial app.
 
 ## Generating Clients
 
@@ -172,6 +194,8 @@ Apache 2.0 - See [LICENSE](LICENSE) for more information.
 
 This is not an officially supported Google product.
 
+[adc]: https://cloud.google.com/docs/authentication#getting_credentials_for_server-centric_flow
+[service_account_key_file]: https://developers.google.com/identity/protocols/OAuth2ServiceAccount#creatinganaccount
 [discovery-directory]: https://www.googleapis.com/discovery/v1/apis
 [api-spec-converter]: https://github.com/LucyBot-Inc/api-spec-converter
 [swagger-codegen]: https://github.com/swagger-api/swagger-codegen
