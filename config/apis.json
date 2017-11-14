@@ -386,11 +386,6 @@
   },
   {
     "version": "v1",
-    "name": "PlayMoviesPartner",
-    "url": "https://playmoviespartner.googleapis.com/$discovery/rest?version=v1"
-  },
-  {
-    "version": "v1",
     "name": "Plus",
     "url": "https://www.googleapis.com/discovery/v1/apis/plus/v1/rest"
   },
@@ -413,11 +408,6 @@
     "version": "v1",
     "name": "PubSub",
     "url": "https://pubsub.googleapis.com/$discovery/rest?version=v1"
-  },
-  {
-    "version": "v1",
-    "name": "QPXExpress",
-    "url": "https://www.googleapis.com/discovery/v1/apis/qpxExpress/v1/rest"
   },
   {
     "version": "v1beta2",
