@@ -150,11 +150,6 @@
     "url": "https://cloudkms.googleapis.com/$discovery/rest?version=v1"
   },
   {
-    "version": "v2beta2",
-    "name": "CloudMonitoring",
-    "url": "https://www.googleapis.com/discovery/v1/apis/cloudmonitoring/v2beta2/rest"
-  },
-  {
     "version": "v1",
     "name": "CloudResourceManager",
     "url": "https://cloudresourcemanager.googleapis.com/$discovery/rest?version=v1"
