@@ -32,15 +32,15 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
   ## Parameters
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
-  - id (String): The id parameter specifies the comment ID for the resource that is being deleted.
+  - id (String.t): The id parameter specifies the comment ID for the resource that is being deleted.
   - opts (KeywordList): [optional] Optional parameters
-    - :alt (String): Data format for the response.
-    - :fields (String): Selector specifying which fields to include in a partial response.
-    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String): OAuth 2.0 token for the current user.
-    - :pretty_print (Boolean): Returns response with indentations and line breaks.
-    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :pretty_print (boolean()): Returns response with indentations and line breaks.
+    - :quota_user (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
 
   ## Returns
 
@@ -60,7 +60,7 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
     }
     %{}
     |> method(:delete)
-    |> url("/comments")
+    |> url("/youtube/v3/comments")
     |> add_param(:query, :"id", id)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -74,15 +74,15 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
   ## Parameters
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
-  - part (String): The part parameter identifies the properties that the API response will include. Set the parameter value to snippet. The snippet part has a quota cost of 2 units.
+  - part (String.t): The part parameter identifies the properties that the API response will include. Set the parameter value to snippet. The snippet part has a quota cost of 2 units.
   - opts (KeywordList): [optional] Optional parameters
-    - :alt (String): Data format for the response.
-    - :fields (String): Selector specifying which fields to include in a partial response.
-    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String): OAuth 2.0 token for the current user.
-    - :pretty_print (Boolean): Returns response with indentations and line breaks.
-    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :pretty_print (boolean()): Returns response with indentations and line breaks.
+    - :quota_user (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
     - :body (Comment): 
 
   ## Returns
@@ -104,7 +104,7 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
     }
     %{}
     |> method(:post)
-    |> url("/comments")
+    |> url("/youtube/v3/comments")
     |> add_param(:query, :"part", part)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -118,20 +118,20 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
   ## Parameters
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
-  - part (String): The part parameter specifies a comma-separated list of one or more comment resource properties that the API response will include.
+  - part (String.t): The part parameter specifies a comma-separated list of one or more comment resource properties that the API response will include.
   - opts (KeywordList): [optional] Optional parameters
-    - :alt (String): Data format for the response.
-    - :fields (String): Selector specifying which fields to include in a partial response.
-    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String): OAuth 2.0 token for the current user.
-    - :pretty_print (Boolean): Returns response with indentations and line breaks.
-    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
-    - :id (String): The id parameter specifies a comma-separated list of comment IDs for the resources that are being retrieved. In a comment resource, the id property specifies the comment&#39;s ID.
-    - :max_results (Integer): The maxResults parameter specifies the maximum number of items that should be returned in the result set.  Note: This parameter is not supported for use in conjunction with the id parameter.
-    - :page_token (String): The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken property identifies the next page of the result that can be retrieved.  Note: This parameter is not supported for use in conjunction with the id parameter.
-    - :parent_id (String): The parentId parameter specifies the ID of the comment for which replies should be retrieved.  Note: YouTube currently supports replies only for top-level comments. However, replies to replies may be supported in the future.
-    - :text_format (String): This parameter indicates whether the API should return comments formatted as HTML or as plain text.
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :pretty_print (boolean()): Returns response with indentations and line breaks.
+    - :quota_user (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :id (String.t): The id parameter specifies a comma-separated list of comment IDs for the resources that are being retrieved. In a comment resource, the id property specifies the comment&#39;s ID.
+    - :max_results (integer()): The maxResults parameter specifies the maximum number of items that should be returned in the result set.  Note: This parameter is not supported for use in conjunction with the id parameter.
+    - :page_token (String.t): The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken property identifies the next page of the result that can be retrieved.  Note: This parameter is not supported for use in conjunction with the id parameter.
+    - :parent_id (String.t): The parentId parameter specifies the ID of the comment for which replies should be retrieved.  Note: YouTube currently supports replies only for top-level comments. However, replies to replies may be supported in the future.
+    - :text_format (String.t): This parameter indicates whether the API should return comments formatted as HTML or as plain text.
 
   ## Returns
 
@@ -156,7 +156,7 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
     }
     %{}
     |> method(:get)
-    |> url("/comments")
+    |> url("/youtube/v3/comments")
     |> add_param(:query, :"part", part)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -170,15 +170,15 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
   ## Parameters
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
-  - id (String): The id parameter specifies a comma-separated list of IDs of comments that the caller believes should be classified as spam.
+  - id (String.t): The id parameter specifies a comma-separated list of IDs of comments that the caller believes should be classified as spam.
   - opts (KeywordList): [optional] Optional parameters
-    - :alt (String): Data format for the response.
-    - :fields (String): Selector specifying which fields to include in a partial response.
-    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String): OAuth 2.0 token for the current user.
-    - :pretty_print (Boolean): Returns response with indentations and line breaks.
-    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :pretty_print (boolean()): Returns response with indentations and line breaks.
+    - :quota_user (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
 
   ## Returns
 
@@ -198,7 +198,7 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
     }
     %{}
     |> method(:post)
-    |> url("/comments/markAsSpam")
+    |> url("/youtube/v3/comments/markAsSpam")
     |> add_param(:query, :"id", id)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -212,17 +212,17 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
   ## Parameters
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
-  - id (String): The id parameter specifies a comma-separated list of IDs that identify the comments for which you are updating the moderation status.
-  - moderation_status (String): Identifies the new moderation status of the specified comments.
+  - id (String.t): The id parameter specifies a comma-separated list of IDs that identify the comments for which you are updating the moderation status.
+  - moderation_status (String.t): Identifies the new moderation status of the specified comments.
   - opts (KeywordList): [optional] Optional parameters
-    - :alt (String): Data format for the response.
-    - :fields (String): Selector specifying which fields to include in a partial response.
-    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String): OAuth 2.0 token for the current user.
-    - :pretty_print (Boolean): Returns response with indentations and line breaks.
-    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
-    - :ban_author (Boolean): The banAuthor parameter lets you indicate that you want to automatically reject any additional comments written by the comment&#39;s author. Set the parameter value to true to ban the author.  Note: This parameter is only valid if the moderationStatus parameter is also set to rejected.
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :pretty_print (boolean()): Returns response with indentations and line breaks.
+    - :quota_user (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :ban_author (boolean()): The banAuthor parameter lets you indicate that you want to automatically reject any additional comments written by the comment&#39;s author. Set the parameter value to true to ban the author.  Note: This parameter is only valid if the moderationStatus parameter is also set to rejected.
 
   ## Returns
 
@@ -243,7 +243,7 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
     }
     %{}
     |> method(:post)
-    |> url("/comments/setModerationStatus")
+    |> url("/youtube/v3/comments/setModerationStatus")
     |> add_param(:query, :"id", id)
     |> add_param(:query, :"moderationStatus", moderation_status)
     |> add_optional_params(optional_params, opts)
@@ -258,15 +258,15 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
   ## Parameters
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
-  - part (String): The part parameter identifies the properties that the API response will include. You must at least include the snippet part in the parameter value since that part contains all of the properties that the API request can update.
+  - part (String.t): The part parameter identifies the properties that the API response will include. You must at least include the snippet part in the parameter value since that part contains all of the properties that the API request can update.
   - opts (KeywordList): [optional] Optional parameters
-    - :alt (String): Data format for the response.
-    - :fields (String): Selector specifying which fields to include in a partial response.
-    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String): OAuth 2.0 token for the current user.
-    - :pretty_print (Boolean): Returns response with indentations and line breaks.
-    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :pretty_print (boolean()): Returns response with indentations and line breaks.
+    - :quota_user (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
     - :body (Comment): 
 
   ## Returns
@@ -288,7 +288,7 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
     }
     %{}
     |> method(:put)
-    |> url("/comments")
+    |> url("/youtube/v3/comments")
     |> add_param(:query, :"part", part)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])

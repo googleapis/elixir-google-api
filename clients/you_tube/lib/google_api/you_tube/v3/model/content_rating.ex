@@ -19,10 +19,152 @@
 
 defmodule GoogleApi.YouTube.V3.Model.ContentRating do
   @moduledoc """
-  Ratings schemes. The country-specific ratings are mostly for movies and shows. NEXT_ID: 69
+  Ratings schemes. The country-specific ratings are mostly for movies and shows. NEXT_ID: 71
+
+  ## Attributes
+
+  - acbRating (String.t): The video&#39;s Australian Classification Board (ACB) or Australian Communications and Media Authority (ACMA) rating. ACMA ratings are used to classify children&#39;s television programming. Defaults to: `null`.
+    - Enum - one of [acbC, acbE, acbG, acbM, acbMa15plus, acbP, acbPg, acbR18plus, acbUnrated]
+  - agcomRating (String.t): The video&#39;s rating from Italy&#39;s Autorità per le Garanzie nelle Comunicazioni (AGCOM). Defaults to: `null`.
+    - Enum - one of [agcomT, agcomUnrated, agcomVm14, agcomVm18]
+  - anatelRating (String.t): The video&#39;s Anatel (Asociación Nacional de Televisión) rating for Chilean television. Defaults to: `null`.
+    - Enum - one of [anatelA, anatelF, anatelI, anatelI10, anatelI12, anatelI7, anatelR, anatelUnrated]
+  - bbfcRating (String.t): The video&#39;s British Board of Film Classification (BBFC) rating. Defaults to: `null`.
+    - Enum - one of [bbfc12, bbfc12a, bbfc15, bbfc18, bbfcPg, bbfcR18, bbfcU, bbfcUnrated]
+  - bfvcRating (String.t): The video&#39;s rating from Thailand&#39;s Board of Film and Video Censors. Defaults to: `null`.
+    - Enum - one of [bfvc13, bfvc15, bfvc18, bfvc20, bfvcB, bfvcE, bfvcG, bfvcUnrated]
+  - bmukkRating (String.t): The video&#39;s rating from the Austrian Board of Media Classification (Bundesministerium für Unterricht, Kunst und Kultur). Defaults to: `null`.
+    - Enum - one of [bmukk10, bmukk12, bmukk14, bmukk16, bmukk6, bmukk8, bmukkAa, bmukkUnrated]
+  - catvRating (String.t): Rating system for Canadian TV - Canadian TV Classification System The video&#39;s rating from the Canadian Radio-Television and Telecommunications Commission (CRTC) for Canadian English-language broadcasts. For more information, see the Canadian Broadcast Standards Council website. Defaults to: `null`.
+    - Enum - one of [catv14plus, catv18plus, catvC, catvC8, catvG, catvPg, catvUnrated]
+  - catvfrRating (String.t): The video&#39;s rating from the Canadian Radio-Television and Telecommunications Commission (CRTC) for Canadian French-language broadcasts. For more information, see the Canadian Broadcast Standards Council website. Defaults to: `null`.
+    - Enum - one of [catvfr13plus, catvfr16plus, catvfr18plus, catvfr8plus, catvfrG, catvfrUnrated]
+  - cbfcRating (String.t): The video&#39;s Central Board of Film Certification (CBFC - India) rating. Defaults to: `null`.
+    - Enum - one of [cbfcA, cbfcS, cbfcU, cbfcUA, cbfcUnrated]
+  - cccRating (String.t): The video&#39;s Consejo de Calificación Cinematográfica (Chile) rating. Defaults to: `null`.
+    - Enum - one of [ccc14, ccc18, ccc18s, ccc18v, ccc6, cccTe, cccUnrated]
+  - cceRating (String.t): The video&#39;s rating from Portugal&#39;s Comissão de Classificação de Espect´culos. Defaults to: `null`.
+    - Enum - one of [cceM12, cceM14, cceM16, cceM18, cceM4, cceM6, cceUnrated]
+  - chfilmRating (String.t): The video&#39;s rating in Switzerland. Defaults to: `null`.
+    - Enum - one of [chfilm0, chfilm12, chfilm16, chfilm18, chfilm6, chfilmUnrated]
+  - chvrsRating (String.t): The video&#39;s Canadian Home Video Rating System (CHVRS) rating. Defaults to: `null`.
+    - Enum - one of [chvrs14a, chvrs18a, chvrsE, chvrsG, chvrsPg, chvrsR, chvrsUnrated]
+  - cicfRating (String.t): The video&#39;s rating from the Commission de Contrôle des Films (Belgium). Defaults to: `null`.
+    - Enum - one of [cicfE, cicfKntEna, cicfKtEa, cicfUnrated]
+  - cnaRating (String.t): The video&#39;s rating from Romania&#39;s CONSILIUL NATIONAL AL AUDIOVIZUALULUI (CNA). Defaults to: `null`.
+    - Enum - one of [cna12, cna15, cna18, cna18plus, cnaAp, cnaUnrated]
+  - cncRating (String.t): Rating system in France - Commission de classification cinematographique Defaults to: `null`.
+    - Enum - one of [cnc10, cnc12, cnc16, cnc18, cncE, cncT, cncUnrated]
+  - csaRating (String.t): The video&#39;s rating from France&#39;s Conseil supérieur de l?audiovisuel, which rates broadcast content. Defaults to: `null`.
+    - Enum - one of [csa10, csa12, csa16, csa18, csaInterdiction, csaT, csaUnrated]
+  - cscfRating (String.t): The video&#39;s rating from Luxembourg&#39;s Commission de surveillance de la classification des films (CSCF). Defaults to: `null`.
+    - Enum - one of [cscf12, cscf16, cscf18, cscf6, cscf9, cscfA, cscfAl, cscfUnrated]
+  - czfilmRating (String.t): The video&#39;s rating in the Czech Republic. Defaults to: `null`.
+    - Enum - one of [czfilm12, czfilm14, czfilm18, czfilmU, czfilmUnrated]
+  - djctqRating (String.t): The video&#39;s Departamento de Justiça, Classificação, Qualificação e Títulos (DJCQT - Brazil) rating. Defaults to: `null`.
+    - Enum - one of [djctq10, djctq12, djctq14, djctq16, djctq18, djctqL, djctqUnrated]
+  - djctqRatingReasons ([String.t]): Reasons that explain why the video received its DJCQT (Brazil) rating. Defaults to: `null`.
+    - Enum - one of 
+  - ecbmctRating (String.t): Rating system in Turkey - Evaluation and Classification Board of the Ministry of Culture and Tourism Defaults to: `null`.
+    - Enum - one of [ecbmct13a, ecbmct13plus, ecbmct15a, ecbmct15plus, ecbmct18plus, ecbmct7a, ecbmct7plus, ecbmctG, ecbmctUnrated]
+  - eefilmRating (String.t): The video&#39;s rating in Estonia. Defaults to: `null`.
+    - Enum - one of [eefilmK12, eefilmK14, eefilmK16, eefilmK6, eefilmL, eefilmMs12, eefilmMs6, eefilmPere, eefilmUnrated]
+  - egfilmRating (String.t): The video&#39;s rating in Egypt. Defaults to: `null`.
+    - Enum - one of [egfilm18, egfilmBn, egfilmGn, egfilmUnrated]
+  - eirinRating (String.t): The video&#39;s Eirin (映倫) rating. Eirin is the Japanese rating system. Defaults to: `null`.
+    - Enum - one of [eirinG, eirinPg12, eirinR15plus, eirinR18plus, eirinUnrated]
+  - fcbmRating (String.t): The video&#39;s rating from Malaysia&#39;s Film Censorship Board. Defaults to: `null`.
+    - Enum - one of [fcbm18, fcbm18pa, fcbm18pl, fcbm18sg, fcbm18sx, fcbmP13, fcbmPg13, fcbmU, fcbmUnrated]
+  - fcoRating (String.t): The video&#39;s rating from Hong Kong&#39;s Office for Film, Newspaper and Article Administration. Defaults to: `null`.
+    - Enum - one of [fcoI, fcoIi, fcoIia, fcoIib, fcoIii, fcoUnrated]
+  - fmocRating (String.t): This property has been deprecated. Use the contentDetails.contentRating.cncRating instead. Defaults to: `null`.
+    - Enum - one of [fmoc10, fmoc12, fmoc16, fmoc18, fmocE, fmocU, fmocUnrated]
+  - fpbRating (String.t): The video&#39;s rating from South Africa&#39;s Film and Publication Board. Defaults to: `null`.
+    - Enum - one of [fpb10, fpb1012Pg, fpb13, fpb16, fpb18, fpb79Pg, fpbA, fpbPg, fpbUnrated, fpbX18, fpbXx]
+  - fpbRatingReasons ([String.t]): Reasons that explain why the video received its FPB (South Africa) rating. Defaults to: `null`.
+    - Enum - one of 
+  - fskRating (String.t): The video&#39;s Freiwillige Selbstkontrolle der Filmwirtschaft (FSK - Germany) rating. Defaults to: `null`.
+    - Enum - one of [fsk0, fsk12, fsk16, fsk18, fsk6, fskUnrated]
+  - grfilmRating (String.t): The video&#39;s rating in Greece. Defaults to: `null`.
+    - Enum - one of [grfilmE, grfilmK, grfilmK12, grfilmK13, grfilmK15, grfilmK17, grfilmK18, grfilmUnrated]
+  - icaaRating (String.t): The video&#39;s Instituto de la Cinematografía y de las Artes Audiovisuales (ICAA - Spain) rating. Defaults to: `null`.
+    - Enum - one of [icaa12, icaa13, icaa16, icaa18, icaa7, icaaApta, icaaUnrated, icaaX]
+  - ifcoRating (String.t): The video&#39;s Irish Film Classification Office (IFCO - Ireland) rating. See the IFCO website for more information. Defaults to: `null`.
+    - Enum - one of [ifco12, ifco12a, ifco15, ifco15a, ifco16, ifco18, ifcoG, ifcoPg, ifcoUnrated]
+  - ilfilmRating (String.t): The video&#39;s rating in Israel. Defaults to: `null`.
+    - Enum - one of [ilfilm12, ilfilm16, ilfilm18, ilfilmAa, ilfilmUnrated]
+  - incaaRating (String.t): The video&#39;s INCAA (Instituto Nacional de Cine y Artes Audiovisuales - Argentina) rating. Defaults to: `null`.
+    - Enum - one of [incaaAtp, incaaC, incaaSam13, incaaSam16, incaaSam18, incaaUnrated]
+  - kfcbRating (String.t): The video&#39;s rating from the Kenya Film Classification Board. Defaults to: `null`.
+    - Enum - one of [kfcb16plus, kfcbG, kfcbPg, kfcbR, kfcbUnrated]
+  - kijkwijzerRating (String.t): voor de Classificatie van Audiovisuele Media (Netherlands). Defaults to: `null`.
+    - Enum - one of [kijkwijzer12, kijkwijzer16, kijkwijzer18, kijkwijzer6, kijkwijzer9, kijkwijzerAl, kijkwijzerUnrated]
+  - kmrbRating (String.t): The video&#39;s Korea Media Rating Board (영상물등급위원회) rating. The KMRB rates videos in South Korea. Defaults to: `null`.
+    - Enum - one of [kmrb12plus, kmrb15plus, kmrbAll, kmrbR, kmrbTeenr, kmrbUnrated]
+  - lsfRating (String.t): The video&#39;s rating from Indonesia&#39;s Lembaga Sensor Film. Defaults to: `null`.
+    - Enum - one of [lsf13, lsf17, lsf21, lsfA, lsfBo, lsfD, lsfR, lsfSu, lsfUnrated]
+  - mccaaRating (String.t): The video&#39;s rating from Malta&#39;s Film Age-Classification Board. Defaults to: `null`.
+    - Enum - one of [mccaa12, mccaa12a, mccaa14, mccaa15, mccaa16, mccaa18, mccaaPg, mccaaU, mccaaUnrated]
+  - mccypRating (String.t): The video&#39;s rating from the Danish Film Institute&#39;s (Det Danske Filminstitut) Media Council for Children and Young People. Defaults to: `null`.
+    - Enum - one of [mccyp11, mccyp15, mccyp7, mccypA, mccypUnrated]
+  - mcstRating (String.t): The video&#39;s rating system for Vietnam - MCST Defaults to: `null`.
+    - Enum - one of [mcst0, mcst16plus, mcstC13, mcstC16, mcstC18, mcstGPg, mcstP, mcstUnrated]
+  - mdaRating (String.t): The video&#39;s rating from Singapore&#39;s Media Development Authority (MDA) and, specifically, it&#39;s Board of Film Censors (BFC). Defaults to: `null`.
+    - Enum - one of [mdaG, mdaM18, mdaNc16, mdaPg, mdaPg13, mdaR21, mdaUnrated]
+  - medietilsynetRating (String.t): The video&#39;s rating from Medietilsynet, the Norwegian Media Authority. Defaults to: `null`.
+    - Enum - one of [medietilsynet11, medietilsynet12, medietilsynet15, medietilsynet18, medietilsynet6, medietilsynet7, medietilsynet9, medietilsynetA, medietilsynetUnrated]
+  - mekuRating (String.t): The video&#39;s rating from Finland&#39;s Kansallinen Audiovisuaalinen Instituutti (National Audiovisual Institute). Defaults to: `null`.
+    - Enum - one of [meku12, meku16, meku18, meku7, mekuS, mekuUnrated]
+  - menaMpaaRating (String.t): The rating system for MENA countries, a clone of MPAA. It is needed to Defaults to: `null`.
+    - Enum - one of [menaMpaaG, menaMpaaPg, menaMpaaPg13, menaMpaaR, menaMpaaUnrated]
+  - mibacRating (String.t): The video&#39;s rating from the Ministero dei Beni e delle Attività Culturali e del Turismo (Italy). Defaults to: `null`.
+    - Enum - one of [mibacT, mibacUnrated, mibacVap, mibacVm12, mibacVm14, mibacVm18]
+  - mocRating (String.t): The video&#39;s Ministerio de Cultura (Colombia) rating. Defaults to: `null`.
+    - Enum - one of [moc12, moc15, moc18, moc7, mocBanned, mocE, mocT, mocUnrated, mocX]
+  - moctwRating (String.t): The video&#39;s rating from Taiwan&#39;s Ministry of Culture (文化部). Defaults to: `null`.
+    - Enum - one of [moctwG, moctwP, moctwPg, moctwR, moctwR12, moctwR15, moctwUnrated]
+  - mpaaRating (String.t): The video&#39;s Motion Picture Association of America (MPAA) rating. Defaults to: `null`.
+    - Enum - one of [mpaaG, mpaaNc17, mpaaPg, mpaaPg13, mpaaR, mpaaUnrated]
+  - mpaatRating (String.t): The rating system for trailer, DVD, and Ad in the US. See http://movielabs.com/md/ratings/v2.3/html/US_MPAAT_Ratings.html. Defaults to: `null`.
+    - Enum - one of [mpaatGb, mpaatRb]
+  - mtrcbRating (String.t): The video&#39;s rating from the Movie and Television Review and Classification Board (Philippines). Defaults to: `null`.
+    - Enum - one of [mtrcbG, mtrcbPg, mtrcbR13, mtrcbR16, mtrcbR18, mtrcbUnrated, mtrcbX]
+  - nbcRating (String.t): The video&#39;s rating from the Maldives National Bureau of Classification. Defaults to: `null`.
+    - Enum - one of [nbc12plus, nbc15plus, nbc18plus, nbc18plusr, nbcG, nbcPg, nbcPu, nbcUnrated]
+  - nbcplRating (String.t): The video&#39;s rating in Poland. Defaults to: `null`.
+    - Enum - one of [nbcpl18plus, nbcplI, nbcplIi, nbcplIii, nbcplIv, nbcplUnrated]
+  - nfrcRating (String.t): The video&#39;s rating from the Bulgarian National Film Center. Defaults to: `null`.
+    - Enum - one of [nfrcA, nfrcB, nfrcC, nfrcD, nfrcUnrated, nfrcX]
+  - nfvcbRating (String.t): The video&#39;s rating from Nigeria&#39;s National Film and Video Censors Board. Defaults to: `null`.
+    - Enum - one of [nfvcb12, nfvcb12a, nfvcb15, nfvcb18, nfvcbG, nfvcbPg, nfvcbRe, nfvcbUnrated]
+  - nkclvRating (String.t): The video&#39;s rating from the Nacionãlais Kino centrs (National Film Centre of Latvia). Defaults to: `null`.
+    - Enum - one of [nkclv12plus, nkclv18plus, nkclv7plus, nkclvU, nkclvUnrated]
+  - oflcRating (String.t): The video&#39;s Office of Film and Literature Classification (OFLC - New Zealand) rating. Defaults to: `null`.
+    - Enum - one of [oflcG, oflcM, oflcPg, oflcR13, oflcR15, oflcR16, oflcR18, oflcRp13, oflcRp16, oflcRp18, oflcUnrated]
+  - pefilmRating (String.t): The video&#39;s rating in Peru. Defaults to: `null`.
+    - Enum - one of [pefilm14, pefilm18, pefilmPg, pefilmPt, pefilmUnrated]
+  - rcnofRating (String.t): The video&#39;s rating from the Hungarian Nemzeti Filmiroda, the Rating Committee of the National Office of Film. Defaults to: `null`.
+    - Enum - one of [rcnofI, rcnofIi, rcnofIii, rcnofIv, rcnofUnrated, rcnofV, rcnofVi]
+  - resorteviolenciaRating (String.t): The video&#39;s rating in Venezuela. Defaults to: `null`.
+    - Enum - one of [resorteviolenciaA, resorteviolenciaB, resorteviolenciaC, resorteviolenciaD, resorteviolenciaE, resorteviolenciaUnrated]
+  - rtcRating (String.t): The video&#39;s General Directorate of Radio, Television and Cinematography (Mexico) rating. Defaults to: `null`.
+    - Enum - one of [rtcA, rtcAa, rtcB, rtcB15, rtcC, rtcD, rtcUnrated]
+  - rteRating (String.t): The video&#39;s rating from Ireland&#39;s Raidió Teilifís Éireann. Defaults to: `null`.
+    - Enum - one of [rteCh, rteGa, rteMa, rtePs, rteUnrated]
+  - russiaRating (String.t): The video&#39;s National Film Registry of the Russian Federation (MKRF - Russia) rating. Defaults to: `null`.
+    - Enum - one of [russia0, russia12, russia16, russia18, russia6, russiaUnrated]
+  - skfilmRating (String.t): The video&#39;s rating in Slovakia. Defaults to: `null`.
+    - Enum - one of [skfilmG, skfilmP2, skfilmP5, skfilmP8, skfilmUnrated]
+  - smaisRating (String.t): The video&#39;s rating in Iceland. Defaults to: `null`.
+    - Enum - one of [smais12, smais14, smais16, smais18, smais7, smaisL, smaisUnrated]
+  - smsaRating (String.t): The video&#39;s rating from Statens medieråd (Sweden&#39;s National Media Council). Defaults to: `null`.
+    - Enum - one of [smsa11, smsa15, smsa7, smsaA, smsaUnrated]
+  - tvpgRating (String.t): The video&#39;s TV Parental Guidelines (TVPG) rating. Defaults to: `null`.
+    - Enum - one of [pg14, tvpgG, tvpgMa, tvpgPg, tvpgUnrated, tvpgY, tvpgY7, tvpgY7Fv]
+  - ytRating (String.t): A rating that YouTube uses to identify age-restricted content. Defaults to: `null`.
+    - Enum - one of [ytAgeRestricted]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"acbRating",
     :"agcomRating",
@@ -70,10 +212,12 @@ defmodule GoogleApi.YouTube.V3.Model.ContentRating do
     :"mdaRating",
     :"medietilsynetRating",
     :"mekuRating",
+    :"menaMpaaRating",
     :"mibacRating",
     :"mocRating",
     :"moctwRating",
     :"mpaaRating",
+    :"mpaatRating",
     :"mtrcbRating",
     :"nbcRating",
     :"nbcplRating",
@@ -98,6 +242,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ContentRating do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ContentRating do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.YouTube.V3.Model.VideoFileDetailsAudioStream do
   @moduledoc """
   Information about an audio stream.
+
+  ## Attributes
+
+  - bitrateBps (String.t): The audio stream&#39;s bitrate, in bits per second. Defaults to: `null`.
+  - channelCount (integer()): The number of audio channels that the stream contains. Defaults to: `null`.
+  - codec (String.t): The audio codec that the stream uses. Defaults to: `null`.
+  - vendor (String.t): A value that uniquely identifies a video vendor. Typically, the value is a four-letter vendor code. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bitrateBps",
     :"channelCount",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoFileDetailsAudioStream do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoFileDetailsAudioStream do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

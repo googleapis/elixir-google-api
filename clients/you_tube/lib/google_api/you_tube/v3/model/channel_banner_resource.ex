@@ -20,9 +20,14 @@
 defmodule GoogleApi.YouTube.V3.Model.ChannelBannerResource do
   @moduledoc """
   A channel banner returned as the response to a channel_banner.insert call.
+
+  ## Attributes
+
+  - etag (String.t): Etag of this resource. Defaults to: `null`.
+  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;youtube#channelBannerResource\&quot;. Defaults to: `null`.
+  - url (String.t): The URL of this banner image. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"kind",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelBannerResource do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ChannelBannerResource do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

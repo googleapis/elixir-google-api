@@ -32,15 +32,15 @@ defmodule GoogleApi.YouTube.V3.Api.Activities do
   ## Parameters
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
-  - part (String): The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+  - part (String.t): The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
   - opts (KeywordList): [optional] Optional parameters
-    - :alt (String): Data format for the response.
-    - :fields (String): Selector specifying which fields to include in a partial response.
-    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String): OAuth 2.0 token for the current user.
-    - :pretty_print (Boolean): Returns response with indentations and line breaks.
-    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :pretty_print (boolean()): Returns response with indentations and line breaks.
+    - :quota_user (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
     - :body (Activity): 
 
   ## Returns
@@ -62,7 +62,7 @@ defmodule GoogleApi.YouTube.V3.Api.Activities do
     }
     %{}
     |> method(:post)
-    |> url("/activities")
+    |> url("/youtube/v3/activities")
     |> add_param(:query, :"part", part)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -76,23 +76,23 @@ defmodule GoogleApi.YouTube.V3.Api.Activities do
   ## Parameters
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
-  - part (String): The part parameter specifies a comma-separated list of one or more activity resource properties that the API response will include.  If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in an activity resource, the snippet property contains other properties that identify the type of activity, a display title for the activity, and so forth. If you set part&#x3D;snippet, the API response will also contain all of those nested properties.
+  - part (String.t): The part parameter specifies a comma-separated list of one or more activity resource properties that the API response will include.  If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in an activity resource, the snippet property contains other properties that identify the type of activity, a display title for the activity, and so forth. If you set part&#x3D;snippet, the API response will also contain all of those nested properties.
   - opts (KeywordList): [optional] Optional parameters
-    - :alt (String): Data format for the response.
-    - :fields (String): Selector specifying which fields to include in a partial response.
-    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String): OAuth 2.0 token for the current user.
-    - :pretty_print (Boolean): Returns response with indentations and line breaks.
-    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
-    - :channel_id (String): The channelId parameter specifies a unique YouTube channel ID. The API will then return a list of that channel&#39;s activities.
-    - :home (Boolean): Set this parameter&#39;s value to true to retrieve the activity feed that displays on the YouTube home page for the currently authenticated user.
-    - :max_results (Integer): The maxResults parameter specifies the maximum number of items that should be returned in the result set.
-    - :mine (Boolean): Set this parameter&#39;s value to true to retrieve a feed of the authenticated user&#39;s activities.
-    - :page_token (String): The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
-    - :published_after (String): The publishedAfter parameter specifies the earliest date and time that an activity could have occurred for that activity to be included in the API response. If the parameter value specifies a day, but not a time, then any activities that occurred that day will be included in the result set. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-    - :published_before (String): The publishedBefore parameter specifies the date and time before which an activity must have occurred for that activity to be included in the API response. If the parameter value specifies a day, but not a time, then any activities that occurred that day will be excluded from the result set. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-    - :region_code (String): The regionCode parameter instructs the API to return results for the specified country. The parameter value is an ISO 3166-1 alpha-2 country code. YouTube uses this value when the authorized user&#39;s previous activity on YouTube does not provide enough information to generate the activity feed.
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :pretty_print (boolean()): Returns response with indentations and line breaks.
+    - :quota_user (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :channel_id (String.t): The channelId parameter specifies a unique YouTube channel ID. The API will then return a list of that channel&#39;s activities.
+    - :home (boolean()): Set this parameter&#39;s value to true to retrieve the activity feed that displays on the YouTube home page for the currently authenticated user.
+    - :max_results (integer()): The maxResults parameter specifies the maximum number of items that should be returned in the result set.
+    - :mine (boolean()): Set this parameter&#39;s value to true to retrieve a feed of the authenticated user&#39;s activities.
+    - :page_token (String.t): The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
+    - :published_after (String.t): The publishedAfter parameter specifies the earliest date and time that an activity could have occurred for that activity to be included in the API response. If the parameter value specifies a day, but not a time, then any activities that occurred that day will be included in the result set. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
+    - :published_before (String.t): The publishedBefore parameter specifies the date and time before which an activity must have occurred for that activity to be included in the API response. If the parameter value specifies a day, but not a time, then any activities that occurred that day will be excluded from the result set. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
+    - :region_code (String.t): The regionCode parameter instructs the API to return results for the specified country. The parameter value is an ISO 3166-1 alpha-2 country code. YouTube uses this value when the authorized user&#39;s previous activity on YouTube does not provide enough information to generate the activity feed.
 
   ## Returns
 
@@ -120,7 +120,7 @@ defmodule GoogleApi.YouTube.V3.Api.Activities do
     }
     %{}
     |> method(:get)
-    |> url("/activities")
+    |> url("/youtube/v3/activities")
     |> add_param(:query, :"part", part)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])

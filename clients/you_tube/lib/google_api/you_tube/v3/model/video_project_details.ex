@@ -20,9 +20,12 @@
 defmodule GoogleApi.YouTube.V3.Model.VideoProjectDetails do
   @moduledoc """
   Project specific details about the content of a YouTube Video.
+
+  ## Attributes
+
+  - tags ([String.t]): A list of project tags associated with the video during the upload. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"tags"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoProjectDetails do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoProjectDetails do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

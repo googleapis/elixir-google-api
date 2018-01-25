@@ -20,9 +20,18 @@
 defmodule GoogleApi.YouTube.V3.Model.LiveStream do
   @moduledoc """
   A live stream describes a live ingestion point.
+
+  ## Attributes
+
+  - cdn (CdnSettings): The cdn object defines the live stream&#39;s content delivery network (CDN) settings. These settings provide details about the manner in which you stream your content to YouTube. Defaults to: `null`.
+  - contentDetails (LiveStreamContentDetails): The content_details object contains information about the stream, including the closed captions ingestion URL. Defaults to: `null`.
+  - etag (String.t): Etag of this resource. Defaults to: `null`.
+  - id (String.t): The ID that YouTube assigns to uniquely identify the stream. Defaults to: `null`.
+  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;youtube#liveStream\&quot;. Defaults to: `null`.
+  - snippet (LiveStreamSnippet): The snippet object contains basic details about the stream, including its channel, title, and description. Defaults to: `null`.
+  - status (LiveStreamStatus): The status object contains information about live stream&#39;s status. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cdn",
     :"contentDetails",
@@ -42,6 +51,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveStream do
     |> deserialize(:"contentDetails", :struct, GoogleApi.YouTube.V3.Model.LiveStreamContentDetails, options)
     |> deserialize(:"snippet", :struct, GoogleApi.YouTube.V3.Model.LiveStreamSnippet, options)
     |> deserialize(:"status", :struct, GoogleApi.YouTube.V3.Model.LiveStreamStatus, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveStream do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

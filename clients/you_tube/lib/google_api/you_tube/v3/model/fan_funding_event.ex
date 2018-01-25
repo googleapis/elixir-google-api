@@ -20,9 +20,15 @@
 defmodule GoogleApi.YouTube.V3.Model.FanFundingEvent do
   @moduledoc """
   A fanFundingEvent resource represents a fan funding event on a YouTube channel. Fan funding events occur when a user gives one-time monetary support to the channel owner.
+
+  ## Attributes
+
+  - etag (String.t): Etag of this resource. Defaults to: `null`.
+  - id (String.t): The ID that YouTube assigns to uniquely identify the fan funding event. Defaults to: `null`.
+  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;youtube#fanFundingEvent\&quot;. Defaults to: `null`.
+  - snippet (FanFundingEventSnippet): The snippet object contains basic details about the fan funding event. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"id",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.FanFundingEvent do
   def decode(value, options) do
     value
     |> deserialize(:"snippet", :struct, GoogleApi.YouTube.V3.Model.FanFundingEventSnippet, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.FanFundingEvent do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

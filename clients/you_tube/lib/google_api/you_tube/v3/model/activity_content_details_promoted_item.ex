@@ -20,9 +20,22 @@
 defmodule GoogleApi.YouTube.V3.Model.ActivityContentDetailsPromotedItem do
   @moduledoc """
   Details about a resource which is being promoted.
+
+  ## Attributes
+
+  - adTag (String.t): The URL the client should fetch to request a promoted item. Defaults to: `null`.
+  - clickTrackingUrl (String.t): The URL the client should ping to indicate that the user clicked through on this promoted item. Defaults to: `null`.
+  - creativeViewUrl (String.t): The URL the client should ping to indicate that the user was shown this promoted item. Defaults to: `null`.
+  - ctaType (String.t): The type of call-to-action, a message to the user indicating action that can be taken. Defaults to: `null`.
+    - Enum - one of [unspecified, visitAdvertiserSite]
+  - customCtaButtonText (String.t): The custom call-to-action button text. If specified, it will override the default button text for the cta_type. Defaults to: `null`.
+  - descriptionText (String.t): The text description to accompany the promoted item. Defaults to: `null`.
+  - destinationUrl (String.t): The URL the client should direct the user to, if the user chooses to visit the advertiser&#39;s website. Defaults to: `null`.
+  - forecastingUrl ([String.t]): The list of forecasting URLs. The client should ping all of these URLs when a promoted item is not available, to indicate that a promoted item could have been shown. Defaults to: `null`.
+  - impressionUrl ([String.t]): The list of impression URLs. The client should ping all of these URLs to indicate that the user was shown this promoted item. Defaults to: `null`.
+  - videoId (String.t): The ID that YouTube uses to uniquely identify the promoted video. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"adTag",
     :"clickTrackingUrl",
@@ -40,6 +53,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ActivityContentDetailsPromotedItem do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ActivityContentDetailsPromotedItem do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

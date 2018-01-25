@@ -20,9 +20,11 @@
 defmodule GoogleApi.YouTube.V3.Model.TokenPagination do
   @moduledoc """
   Stub token pagination template to suppress results.
+
+  ## Attributes
+
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     
   ]
@@ -31,6 +33,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.TokenPagination do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.TokenPagination do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -25,7 +25,7 @@ defmodule GoogleApi.YouTube.V3.Connection do
   use Tesla
 
   # Add any middleware here (authentication)
-  plug Tesla.Middleware.BaseUrl, "https://www.googleapis.com/youtube/v3"
+  plug Tesla.Middleware.BaseUrl, "https://www.googleapis.com"
   plug Tesla.Middleware.Headers, %{"User-Agent" => "Elixir"}
   plug Tesla.Middleware.EncodeJson
 

@@ -20,9 +20,16 @@
 defmodule GoogleApi.YouTube.V3.Model.VideoAbuseReport do
   @moduledoc """
   
+
+  ## Attributes
+
+  - comments (String.t): Additional comments regarding the abuse report. Defaults to: `null`.
+  - language (String.t): The language that the content was viewed in. Defaults to: `null`.
+  - reasonId (String.t): The high-level, or primary, reason that the content is abusive. The value is an abuse report reason ID. Defaults to: `null`.
+  - secondaryReasonId (String.t): The specific, or secondary, reason that this content is abusive (if available). The value is an abuse report reason ID that is a valid secondary reason for the primary reason. Defaults to: `null`.
+  - videoId (String.t): The ID that YouTube uses to uniquely identify the video. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"comments",
     :"language",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoAbuseReport do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoAbuseReport do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

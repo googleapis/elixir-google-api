@@ -20,9 +20,16 @@
 defmodule GoogleApi.YouTube.V3.Model.ThumbnailDetails do
   @moduledoc """
   Internal representation of thumbnails for a YouTube resource.
+
+  ## Attributes
+
+  - default (Thumbnail): The default image for this resource. Defaults to: `null`.
+  - high (Thumbnail): The high quality image for this resource. Defaults to: `null`.
+  - maxres (Thumbnail): The maximum resolution quality image for this resource. Defaults to: `null`.
+  - medium (Thumbnail): The medium quality image for this resource. Defaults to: `null`.
+  - standard (Thumbnail): The standard quality image for this resource. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"default",
     :"high",
@@ -41,6 +48,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ThumbnailDetails do
     |> deserialize(:"maxres", :struct, GoogleApi.YouTube.V3.Model.Thumbnail, options)
     |> deserialize(:"medium", :struct, GoogleApi.YouTube.V3.Model.Thumbnail, options)
     |> deserialize(:"standard", :struct, GoogleApi.YouTube.V3.Model.Thumbnail, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ThumbnailDetails do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

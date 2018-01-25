@@ -20,9 +20,19 @@
 defmodule GoogleApi.YouTube.V3.Model.SearchResultSnippet do
   @moduledoc """
   Basic details about a search result, including title, description and thumbnails of the item referenced by the search result.
+
+  ## Attributes
+
+  - channelId (String.t): The value that YouTube uses to uniquely identify the channel that published the resource that the search result identifies. Defaults to: `null`.
+  - channelTitle (String.t): The title of the channel that published the resource that the search result identifies. Defaults to: `null`.
+  - description (String.t): A description of the search result. Defaults to: `null`.
+  - liveBroadcastContent (String.t): It indicates if the resource (video or channel) has upcoming/active live broadcast content. Or it&#39;s \&quot;none\&quot; if there is not any upcoming/active live broadcasts. Defaults to: `null`.
+    - Enum - one of [live, none, upcoming]
+  - publishedAt (DateTime.t): The creation date and time of the resource that the search result identifies. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format. Defaults to: `null`.
+  - thumbnails (ThumbnailDetails): A map of thumbnail images associated with the search result. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail. Defaults to: `null`.
+  - title (String.t): The title of the search result. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"channelId",
     :"channelTitle",
@@ -39,6 +49,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.SearchResultSnippet do
   def decode(value, options) do
     value
     |> deserialize(:"thumbnails", :struct, GoogleApi.YouTube.V3.Model.ThumbnailDetails, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.SearchResultSnippet do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

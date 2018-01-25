@@ -20,9 +20,15 @@
 defmodule GoogleApi.YouTube.V3.Model.ChannelBrandingSettings do
   @moduledoc """
   Branding properties of a YouTube channel.
+
+  ## Attributes
+
+  - channel (ChannelSettings): Branding properties for the channel view. Defaults to: `null`.
+  - hints ([PropertyValue]): Additional experimental branding properties. Defaults to: `null`.
+  - image (ImageSettings): Branding properties for branding images. Defaults to: `null`.
+  - watch (WatchSettings): Branding properties for the watch page. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"channel",
     :"hints",
@@ -39,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelBrandingSettings 
     |> deserialize(:"hints", :list, GoogleApi.YouTube.V3.Model.PropertyValue, options)
     |> deserialize(:"image", :struct, GoogleApi.YouTube.V3.Model.ImageSettings, options)
     |> deserialize(:"watch", :struct, GoogleApi.YouTube.V3.Model.WatchSettings, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ChannelBrandingSettings do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

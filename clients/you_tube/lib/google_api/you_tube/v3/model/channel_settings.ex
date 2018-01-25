@@ -20,9 +20,25 @@
 defmodule GoogleApi.YouTube.V3.Model.ChannelSettings do
   @moduledoc """
   Branding properties for the channel view.
+
+  ## Attributes
+
+  - country (String.t): The country of the channel. Defaults to: `null`.
+  - defaultLanguage (String.t):  Defaults to: `null`.
+  - defaultTab (String.t): Which content tab users should see when viewing the channel. Defaults to: `null`.
+  - description (String.t): Specifies the channel description. Defaults to: `null`.
+  - featuredChannelsTitle (String.t): Title for the featured channels tab. Defaults to: `null`.
+  - featuredChannelsUrls ([String.t]): The list of featured channels. Defaults to: `null`.
+  - keywords (String.t): Lists keywords associated with the channel, comma-separated. Defaults to: `null`.
+  - moderateComments (boolean()): Whether user-submitted comments left on the channel page need to be approved by the channel owner to be publicly visible. Defaults to: `null`.
+  - profileColor (String.t): A prominent color that can be rendered on this channel page. Defaults to: `null`.
+  - showBrowseView (boolean()): Whether the tab to browse the videos should be displayed. Defaults to: `null`.
+  - showRelatedChannels (boolean()): Whether related channels should be proposed. Defaults to: `null`.
+  - title (String.t): Specifies the channel title. Defaults to: `null`.
+  - trackingAnalyticsAccountId (String.t): The ID for a Google Analytics account to track and measure traffic to the channels. Defaults to: `null`.
+  - unsubscribedTrailer (String.t): The trailer of the channel, for users that are not subscribers. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"country",
     :"defaultLanguage",
@@ -44,6 +60,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelSettings do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ChannelSettings do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

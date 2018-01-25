@@ -20,9 +20,15 @@
 defmodule GoogleApi.YouTube.V3.Model.I18nRegion do
   @moduledoc """
   A i18nRegion resource identifies a region where YouTube is available.
+
+  ## Attributes
+
+  - etag (String.t): Etag of this resource. Defaults to: `null`.
+  - id (String.t): The ID that YouTube uses to uniquely identify the i18n region. Defaults to: `null`.
+  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;youtube#i18nRegion\&quot;. Defaults to: `null`.
+  - snippet (I18nRegionSnippet): The snippet object contains basic details about the i18n region, such as region code and human-readable name. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"id",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.I18nRegion do
   def decode(value, options) do
     value
     |> deserialize(:"snippet", :struct, GoogleApi.YouTube.V3.Model.I18nRegionSnippet, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.I18nRegion do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

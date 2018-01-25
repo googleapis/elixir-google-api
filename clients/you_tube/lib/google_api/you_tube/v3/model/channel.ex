@@ -20,9 +20,25 @@
 defmodule GoogleApi.YouTube.V3.Model.Channel do
   @moduledoc """
   A channel resource contains information about a YouTube channel.
+
+  ## Attributes
+
+  - auditDetails (ChannelAuditDetails): The auditionDetails object encapsulates channel data that is relevant for YouTube Partners during the audition process. Defaults to: `null`.
+  - brandingSettings (ChannelBrandingSettings): The brandingSettings object encapsulates information about the branding of the channel. Defaults to: `null`.
+  - contentDetails (ChannelContentDetails): The contentDetails object encapsulates information about the channel&#39;s content. Defaults to: `null`.
+  - contentOwnerDetails (ChannelContentOwnerDetails): The contentOwnerDetails object encapsulates channel data that is relevant for YouTube Partners linked with the channel. Defaults to: `null`.
+  - conversionPings (ChannelConversionPings): The conversionPings object encapsulates information about conversion pings that need to be respected by the channel. Defaults to: `null`.
+  - etag (String.t): Etag of this resource. Defaults to: `null`.
+  - id (String.t): The ID that YouTube uses to uniquely identify the channel. Defaults to: `null`.
+  - invideoPromotion (InvideoPromotion): The invideoPromotion object encapsulates information about promotion campaign associated with the channel. Defaults to: `null`.
+  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;youtube#channel\&quot;. Defaults to: `null`.
+  - localizations (%{optional(String.t) &#x3D;&gt; ChannelLocalization}): Localizations for different languages Defaults to: `null`.
+  - snippet (ChannelSnippet): The snippet object contains basic details about the channel, such as its title, description, and thumbnail images. Defaults to: `null`.
+  - statistics (ChannelStatistics): The statistics object encapsulates statistics for the channel. Defaults to: `null`.
+  - status (ChannelStatus): The status object encapsulates information about the privacy status of the channel. Defaults to: `null`.
+  - topicDetails (ChannelTopicDetails): The topicDetails object encapsulates information about Freebase topics associated with the channel. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"auditDetails",
     :"brandingSettings",
@@ -56,6 +72,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.Channel do
     |> deserialize(:"statistics", :struct, GoogleApi.YouTube.V3.Model.ChannelStatistics, options)
     |> deserialize(:"status", :struct, GoogleApi.YouTube.V3.Model.ChannelStatus, options)
     |> deserialize(:"topicDetails", :struct, GoogleApi.YouTube.V3.Model.ChannelTopicDetails, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.Channel do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

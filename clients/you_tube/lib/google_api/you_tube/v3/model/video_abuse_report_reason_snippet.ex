@@ -20,9 +20,13 @@
 defmodule GoogleApi.YouTube.V3.Model.VideoAbuseReportReasonSnippet do
   @moduledoc """
   Basic details about a video category, such as its localized title.
+
+  ## Attributes
+
+  - label (String.t): The localized label belonging to this abuse report reason. Defaults to: `null`.
+  - secondaryReasons ([VideoAbuseReportSecondaryReason]): The secondary reasons associated with this reason, if any are available. (There might be 0 or more.) Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"label",
     :"secondaryReasons"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoAbuseReportReasonSn
   def decode(value, options) do
     value
     |> deserialize(:"secondaryReasons", :list, GoogleApi.YouTube.V3.Model.VideoAbuseReportSecondaryReason, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoAbuseReportReasonSnippet do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

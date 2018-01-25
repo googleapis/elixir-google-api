@@ -20,9 +20,13 @@
 defmodule GoogleApi.YouTube.V3.Model.PlaylistStatus do
   @moduledoc """
   
+
+  ## Attributes
+
+  - privacyStatus (String.t): The playlist&#39;s privacy status. Defaults to: `null`.
+    - Enum - one of [private, public, unlisted]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"privacyStatus"
   ]
@@ -31,6 +35,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.PlaylistStatus do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.PlaylistStatus do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

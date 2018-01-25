@@ -20,9 +20,14 @@
 defmodule GoogleApi.YouTube.V3.Model.VideoCategorySnippet do
   @moduledoc """
   Basic details about a video category, such as its localized title.
+
+  ## Attributes
+
+  - assignable (boolean()):  Defaults to: `null`.
+  - channelId (String.t): The YouTube channel that created the video category. Defaults to: `null`.
+  - title (String.t): The video category&#39;s title. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"assignable",
     :"channelId",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoCategorySnippet do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoCategorySnippet do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

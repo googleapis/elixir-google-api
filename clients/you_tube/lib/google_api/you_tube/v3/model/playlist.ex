@@ -20,9 +20,19 @@
 defmodule GoogleApi.YouTube.V3.Model.Playlist do
   @moduledoc """
   A playlist resource represents a YouTube playlist. A playlist is a collection of videos that can be viewed sequentially and shared with other users. A playlist can contain up to 200 videos, and YouTube does not limit the number of playlists that each user creates. By default, playlists are publicly visible to other users, but playlists can be public or private.  YouTube also uses playlists to identify special collections of videos for a channel, such as:   - uploaded videos  - favorite videos  - positively rated (liked) videos  - watch history  - watch later  To be more specific, these lists are associated with a channel, which is a collection of a person, group, or company&#39;s videos, playlists, and other YouTube information. You can retrieve the playlist IDs for each of these lists from the  channel resource for a given channel.  You can then use the   playlistItems.list method to retrieve any of those lists. You can also add or remove items from those lists by calling the   playlistItems.insert and   playlistItems.delete methods.
+
+  ## Attributes
+
+  - contentDetails (PlaylistContentDetails): The contentDetails object contains information like video count. Defaults to: `null`.
+  - etag (String.t): Etag of this resource. Defaults to: `null`.
+  - id (String.t): The ID that YouTube uses to uniquely identify the playlist. Defaults to: `null`.
+  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;youtube#playlist\&quot;. Defaults to: `null`.
+  - localizations (%{optional(String.t) &#x3D;&gt; PlaylistLocalization}): Localizations for different languages Defaults to: `null`.
+  - player (PlaylistPlayer): The player object contains information that you would use to play the playlist in an embedded player. Defaults to: `null`.
+  - snippet (PlaylistSnippet): The snippet object contains basic details about the playlist, such as its title and description. Defaults to: `null`.
+  - status (PlaylistStatus): The status object contains status information for the playlist. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"contentDetails",
     :"etag",
@@ -44,6 +54,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.Playlist do
     |> deserialize(:"player", :struct, GoogleApi.YouTube.V3.Model.PlaylistPlayer, options)
     |> deserialize(:"snippet", :struct, GoogleApi.YouTube.V3.Model.PlaylistSnippet, options)
     |> deserialize(:"status", :struct, GoogleApi.YouTube.V3.Model.PlaylistStatus, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.Playlist do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

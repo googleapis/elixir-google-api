@@ -20,9 +20,16 @@
 defmodule GoogleApi.YouTube.V3.Model.ChannelStatistics do
   @moduledoc """
   Statistics about a channel: number of subscribers, number of videos in the channel, etc.
+
+  ## Attributes
+
+  - commentCount (String.t): The number of comments for the channel. Defaults to: `null`.
+  - hiddenSubscriberCount (boolean()): Whether or not the number of subscribers is shown for this user. Defaults to: `null`.
+  - subscriberCount (String.t): The number of subscribers that the channel has. Defaults to: `null`.
+  - videoCount (String.t): The number of videos uploaded to the channel. Defaults to: `null`.
+  - viewCount (String.t): The number of times the channel has been viewed. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"commentCount",
     :"hiddenSubscriberCount",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelStatistics do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ChannelStatistics do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

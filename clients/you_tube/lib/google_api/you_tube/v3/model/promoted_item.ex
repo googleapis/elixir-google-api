@@ -20,9 +20,15 @@
 defmodule GoogleApi.YouTube.V3.Model.PromotedItem do
   @moduledoc """
   Describes a single promoted item.
+
+  ## Attributes
+
+  - customMessage (String.t): A custom message to display for this promotion. This field is currently ignored unless the promoted item is a website. Defaults to: `null`.
+  - id (PromotedItemId): Identifies the promoted item. Defaults to: `null`.
+  - promotedByContentOwner (boolean()): If true, the content owner&#39;s name will be used when displaying the promotion. This field can only be set when the update is made on behalf of the content owner. Defaults to: `null`.
+  - timing (InvideoTiming): The temporal position within the video where the promoted item will be displayed. If present, it overrides the default timing. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"customMessage",
     :"id",
@@ -37,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.PromotedItem do
     value
     |> deserialize(:"id", :struct, GoogleApi.YouTube.V3.Model.PromotedItemId, options)
     |> deserialize(:"timing", :struct, GoogleApi.YouTube.V3.Model.InvideoTiming, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.PromotedItem do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

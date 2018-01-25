@@ -32,18 +32,18 @@ defmodule GoogleApi.YouTube.V3.Api.GuideCategories do
   ## Parameters
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
-  - part (String): The part parameter specifies the guideCategory resource properties that the API response will include. Set the parameter value to snippet.
+  - part (String.t): The part parameter specifies the guideCategory resource properties that the API response will include. Set the parameter value to snippet.
   - opts (KeywordList): [optional] Optional parameters
-    - :alt (String): Data format for the response.
-    - :fields (String): Selector specifying which fields to include in a partial response.
-    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String): OAuth 2.0 token for the current user.
-    - :pretty_print (Boolean): Returns response with indentations and line breaks.
-    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
-    - :hl (String): The hl parameter specifies the language that will be used for text values in the API response.
-    - :id (String): The id parameter specifies a comma-separated list of the YouTube channel category ID(s) for the resource(s) that are being retrieved. In a guideCategory resource, the id property specifies the YouTube channel category ID.
-    - :region_code (String): The regionCode parameter instructs the API to return the list of guide categories available in the specified country. The parameter value is an ISO 3166-1 alpha-2 country code.
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :pretty_print (boolean()): Returns response with indentations and line breaks.
+    - :quota_user (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :hl (String.t): The hl parameter specifies the language that will be used for text values in the API response.
+    - :id (String.t): The id parameter specifies a comma-separated list of the YouTube channel category ID(s) for the resource(s) that are being retrieved. In a guideCategory resource, the id property specifies the YouTube channel category ID.
+    - :region_code (String.t): The regionCode parameter instructs the API to return the list of guide categories available in the specified country. The parameter value is an ISO 3166-1 alpha-2 country code.
 
   ## Returns
 
@@ -66,7 +66,7 @@ defmodule GoogleApi.YouTube.V3.Api.GuideCategories do
     }
     %{}
     |> method(:get)
-    |> url("/guideCategories")
+    |> url("/youtube/v3/guideCategories")
     |> add_param(:query, :"part", part)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])

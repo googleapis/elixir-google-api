@@ -32,15 +32,15 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatMessages do
   ## Parameters
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
-  - id (String): The id parameter specifies the YouTube chat message ID of the resource that is being deleted.
+  - id (String.t): The id parameter specifies the YouTube chat message ID of the resource that is being deleted.
   - opts (KeywordList): [optional] Optional parameters
-    - :alt (String): Data format for the response.
-    - :fields (String): Selector specifying which fields to include in a partial response.
-    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String): OAuth 2.0 token for the current user.
-    - :pretty_print (Boolean): Returns response with indentations and line breaks.
-    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :pretty_print (boolean()): Returns response with indentations and line breaks.
+    - :quota_user (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
 
   ## Returns
 
@@ -60,7 +60,7 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatMessages do
     }
     %{}
     |> method(:delete)
-    |> url("/liveChat/messages")
+    |> url("/youtube/v3/liveChat/messages")
     |> add_param(:query, :"id", id)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -74,15 +74,15 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatMessages do
   ## Parameters
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
-  - part (String): The part parameter serves two purposes. It identifies the properties that the write operation will set as well as the properties that the API response will include. Set the parameter value to snippet.
+  - part (String.t): The part parameter serves two purposes. It identifies the properties that the write operation will set as well as the properties that the API response will include. Set the parameter value to snippet.
   - opts (KeywordList): [optional] Optional parameters
-    - :alt (String): Data format for the response.
-    - :fields (String): Selector specifying which fields to include in a partial response.
-    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String): OAuth 2.0 token for the current user.
-    - :pretty_print (Boolean): Returns response with indentations and line breaks.
-    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :pretty_print (boolean()): Returns response with indentations and line breaks.
+    - :quota_user (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
     - :body (LiveChatMessage): 
 
   ## Returns
@@ -104,7 +104,7 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatMessages do
     }
     %{}
     |> method(:post)
-    |> url("/liveChat/messages")
+    |> url("/youtube/v3/liveChat/messages")
     |> add_param(:query, :"part", part)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
@@ -118,20 +118,20 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatMessages do
   ## Parameters
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
-  - live_chat_id (String): The liveChatId parameter specifies the ID of the chat whose messages will be returned.
-  - part (String): The part parameter specifies the liveChatComment resource parts that the API response will include. Supported values are id and snippet.
+  - live_chat_id (String.t): The liveChatId parameter specifies the ID of the chat whose messages will be returned.
+  - part (String.t): The part parameter specifies the liveChatComment resource parts that the API response will include. Supported values are id and snippet.
   - opts (KeywordList): [optional] Optional parameters
-    - :alt (String): Data format for the response.
-    - :fields (String): Selector specifying which fields to include in a partial response.
-    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String): OAuth 2.0 token for the current user.
-    - :pretty_print (Boolean): Returns response with indentations and line breaks.
-    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
-    - :hl (String): The hl parameter instructs the API to retrieve localized resource metadata for a specific application language that the YouTube website supports. The parameter value must be a language code included in the list returned by the i18nLanguages.list method.  If localized resource details are available in that language, the resource&#39;s snippet.localized object will contain the localized values. However, if localized details are not available, the snippet.localized object will contain resource details in the resource&#39;s default language.
-    - :max_results (Integer): The maxResults parameter specifies the maximum number of messages that should be returned in the result set.
-    - :page_token (String): The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken property identify other pages that could be retrieved.
-    - :profile_image_size (Integer): The profileImageSize parameter specifies the size of the user profile pictures that should be returned in the result set. Default: 88.
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :pretty_print (boolean()): Returns response with indentations and line breaks.
+    - :quota_user (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :hl (String.t): The hl parameter instructs the API to retrieve localized resource metadata for a specific application language that the YouTube website supports. The parameter value must be a language code included in the list returned by the i18nLanguages.list method.  If localized resource details are available in that language, the resource&#39;s snippet.localized object will contain the localized values. However, if localized details are not available, the snippet.localized object will contain resource details in the resource&#39;s default language.
+    - :max_results (integer()): The maxResults parameter specifies the maximum number of messages that should be returned in the result set.
+    - :page_token (String.t): The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken property identify other pages that could be retrieved.
+    - :profile_image_size (integer()): The profileImageSize parameter specifies the size of the user profile pictures that should be returned in the result set. Default: 88.
 
   ## Returns
 
@@ -155,7 +155,7 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatMessages do
     }
     %{}
     |> method(:get)
-    |> url("/liveChat/messages")
+    |> url("/youtube/v3/liveChat/messages")
     |> add_param(:query, :"liveChatId", live_chat_id)
     |> add_param(:query, :"part", part)
     |> add_optional_params(optional_params, opts)

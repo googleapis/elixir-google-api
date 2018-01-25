@@ -20,9 +20,17 @@
 defmodule GoogleApi.YouTube.V3.Model.CommentThreadSnippet do
   @moduledoc """
   Basic details about a comment thread.
+
+  ## Attributes
+
+  - canReply (boolean()): Whether the current viewer of the thread can reply to it. This is viewer specific - other viewers may see a different value for this field. Defaults to: `null`.
+  - channelId (String.t): The YouTube channel the comments in the thread refer to or the channel with the video the comments refer to. If video_id isn&#39;t set the comments refer to the channel itself. Defaults to: `null`.
+  - isPublic (boolean()): Whether the thread (and therefore all its comments) is visible to all YouTube users. Defaults to: `null`.
+  - topLevelComment (Comment): The top level comment of this thread. Defaults to: `null`.
+  - totalReplyCount (integer()): The total number of replies (not including the top level comment). Defaults to: `null`.
+  - videoId (String.t): The ID of the video the comments refer to, if any. No video_id implies a channel discussion comment. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"canReply",
     :"channelId",
@@ -38,6 +46,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.CommentThreadSnippet do
   def decode(value, options) do
     value
     |> deserialize(:"topLevelComment", :struct, GoogleApi.YouTube.V3.Model.Comment, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.CommentThreadSnippet do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

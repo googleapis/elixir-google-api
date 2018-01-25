@@ -20,9 +20,15 @@
 defmodule GoogleApi.YouTube.V3.Model.Caption do
   @moduledoc """
   A caption resource represents a YouTube caption track. A caption track is associated with exactly one YouTube video.
+
+  ## Attributes
+
+  - etag (String.t): Etag of this resource. Defaults to: `null`.
+  - id (String.t): The ID that YouTube uses to uniquely identify the caption track. Defaults to: `null`.
+  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;youtube#caption\&quot;. Defaults to: `null`.
+  - snippet (CaptionSnippet): The snippet object contains basic details about the caption. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"id",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.Caption do
   def decode(value, options) do
     value
     |> deserialize(:"snippet", :struct, GoogleApi.YouTube.V3.Model.CaptionSnippet, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.Caption do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

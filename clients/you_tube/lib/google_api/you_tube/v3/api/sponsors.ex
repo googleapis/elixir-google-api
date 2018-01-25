@@ -32,18 +32,18 @@ defmodule GoogleApi.YouTube.V3.Api.Sponsors do
   ## Parameters
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
-  - part (String): The part parameter specifies the sponsor resource parts that the API response will include. Supported values are id and snippet.
+  - part (String.t): The part parameter specifies the sponsor resource parts that the API response will include. Supported values are id and snippet.
   - opts (KeywordList): [optional] Optional parameters
-    - :alt (String): Data format for the response.
-    - :fields (String): Selector specifying which fields to include in a partial response.
-    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String): OAuth 2.0 token for the current user.
-    - :pretty_print (Boolean): Returns response with indentations and line breaks.
-    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :user_ip (String): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
-    - :filter (String): The filter parameter specifies which channel sponsors to return.
-    - :max_results (Integer): The maxResults parameter specifies the maximum number of items that should be returned in the result set.
-    - :page_token (String): The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :pretty_print (boolean()): Returns response with indentations and line breaks.
+    - :quota_user (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :user_ip (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :filter (String.t): The filter parameter specifies which channel sponsors to return.
+    - :max_results (integer()): The maxResults parameter specifies the maximum number of items that should be returned in the result set.
+    - :page_token (String.t): The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
 
   ## Returns
 
@@ -66,7 +66,7 @@ defmodule GoogleApi.YouTube.V3.Api.Sponsors do
     }
     %{}
     |> method(:get)
-    |> url("/sponsors")
+    |> url("/youtube/v3/sponsors")
     |> add_param(:query, :"part", part)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])

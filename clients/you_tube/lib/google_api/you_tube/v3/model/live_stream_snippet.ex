@@ -20,9 +20,16 @@
 defmodule GoogleApi.YouTube.V3.Model.LiveStreamSnippet do
   @moduledoc """
   
+
+  ## Attributes
+
+  - channelId (String.t): The ID that YouTube uses to uniquely identify the channel that is transmitting the stream. Defaults to: `null`.
+  - description (String.t): The stream&#39;s description. The value cannot be longer than 10000 characters. Defaults to: `null`.
+  - isDefaultStream (boolean()):  Defaults to: `null`.
+  - publishedAt (DateTime.t): The date and time that the stream was created. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format. Defaults to: `null`.
+  - title (String.t): The stream&#39;s title. The value must be between 1 and 128 characters long. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"channelId",
     :"description",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveStreamSnippet do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveStreamSnippet do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

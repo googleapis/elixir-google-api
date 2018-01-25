@@ -20,9 +20,14 @@
 defmodule GoogleApi.YouTube.V3.Model.LocalizedProperty do
   @moduledoc """
   
+
+  ## Attributes
+
+  - default (String.t):  Defaults to: `null`.
+  - defaultLanguage (LanguageTag): The language of the default property. Defaults to: `null`.
+  - localized ([LocalizedString]):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"default",
     :"defaultLanguage",
@@ -36,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LocalizedProperty do
     value
     |> deserialize(:"defaultLanguage", :struct, GoogleApi.YouTube.V3.Model.LanguageTag, options)
     |> deserialize(:"localized", :list, GoogleApi.YouTube.V3.Model.LocalizedString, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LocalizedProperty do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,18 @@
 defmodule GoogleApi.YouTube.V3.Model.LiveBroadcast do
   @moduledoc """
   A liveBroadcast resource represents an event that will be streamed, via live video, on YouTube.
+
+  ## Attributes
+
+  - contentDetails (LiveBroadcastContentDetails): The contentDetails object contains information about the event&#39;s video content, such as whether the content can be shown in an embedded video player or if it will be archived and therefore available for viewing after the event has concluded. Defaults to: `null`.
+  - etag (String.t): Etag of this resource. Defaults to: `null`.
+  - id (String.t): The ID that YouTube assigns to uniquely identify the broadcast. Defaults to: `null`.
+  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;youtube#liveBroadcast\&quot;. Defaults to: `null`.
+  - snippet (LiveBroadcastSnippet): The snippet object contains basic details about the event, including its title, description, start time, and end time. Defaults to: `null`.
+  - statistics (LiveBroadcastStatistics): The statistics object contains info about the event&#39;s current stats. These include concurrent viewers and total chat count. Statistics can change (in either direction) during the lifetime of an event. Statistics are only returned while the event is live. Defaults to: `null`.
+  - status (LiveBroadcastStatus): The status object contains information about the event&#39;s status. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"contentDetails",
     :"etag",
@@ -30,8 +39,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveBroadcast do
     :"kind",
     :"snippet",
     :"statistics",
-    :"status",
-    :"topicDetails"
+    :"status"
   ]
 end
 
@@ -43,7 +51,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveBroadcast do
     |> deserialize(:"snippet", :struct, GoogleApi.YouTube.V3.Model.LiveBroadcastSnippet, options)
     |> deserialize(:"statistics", :struct, GoogleApi.YouTube.V3.Model.LiveBroadcastStatistics, options)
     |> deserialize(:"status", :struct, GoogleApi.YouTube.V3.Model.LiveBroadcastStatus, options)
-    |> deserialize(:"topicDetails", :struct, GoogleApi.YouTube.V3.Model.LiveBroadcastTopicDetails, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveBroadcast do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,14 @@
 defmodule GoogleApi.YouTube.V3.Model.MonitorStreamInfo do
   @moduledoc """
   Settings and Info of the monitor stream
+
+  ## Attributes
+
+  - broadcastStreamDelayMs (integer()): If you have set the enableMonitorStream property to true, then this property determines the length of the live broadcast delay. Defaults to: `null`.
+  - embedHtml (String.t): HTML code that embeds a player that plays the monitor stream. Defaults to: `null`.
+  - enableMonitorStream (boolean()): This value determines whether the monitor stream is enabled for the broadcast. If the monitor stream is enabled, then YouTube will broadcast the event content on a special stream intended only for the broadcaster&#39;s consumption. The broadcaster can use the stream to review the event content and also to identify the optimal times to insert cuepoints.  You need to set this value to true if you intend to have a broadcast delay for your event.  Note: This property cannot be updated once the broadcast is in the testing or live state. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"broadcastStreamDelayMs",
     :"embedHtml",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.MonitorStreamInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.MonitorStreamInfo do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

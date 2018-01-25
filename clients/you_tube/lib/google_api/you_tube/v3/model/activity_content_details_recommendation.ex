@@ -20,9 +20,15 @@
 defmodule GoogleApi.YouTube.V3.Model.ActivityContentDetailsRecommendation do
   @moduledoc """
   Information that identifies the recommended resource.
+
+  ## Attributes
+
+  - reason (String.t): The reason that the resource is recommended to the user. Defaults to: `null`.
+    - Enum - one of [unspecified, videoFavorited, videoLiked, videoWatched]
+  - resourceId (ResourceId): The resourceId object contains information that identifies the recommended resource. Defaults to: `null`.
+  - seedResourceId (ResourceId): The seedResourceId object contains information about the resource that caused the recommendation. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"reason",
     :"resourceId",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ActivityContentDetailsRe
     value
     |> deserialize(:"resourceId", :struct, GoogleApi.YouTube.V3.Model.ResourceId, options)
     |> deserialize(:"seedResourceId", :struct, GoogleApi.YouTube.V3.Model.ResourceId, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ActivityContentDetailsRecommendation do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

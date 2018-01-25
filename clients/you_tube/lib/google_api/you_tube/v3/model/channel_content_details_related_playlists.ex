@@ -17,12 +17,19 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.YouTube.V3.Model.ChannelContentDetails_relatedPlaylists do
+defmodule GoogleApi.YouTube.V3.Model.ChannelContentDetailsRelatedPlaylists do
   @moduledoc """
   
+
+  ## Attributes
+
+  - favorites (String.t): The ID of the playlist that contains the channel\&quot;s favorite videos. Use the  playlistItems.insert and  playlistItems.delete to add or remove items from that list. Defaults to: `null`.
+  - likes (String.t): The ID of the playlist that contains the channel\&quot;s liked videos. Use the   playlistItems.insert and  playlistItems.delete to add or remove items from that list. Defaults to: `null`.
+  - uploads (String.t): The ID of the playlist that contains the channel\&quot;s uploaded videos. Use the  videos.insert method to upload new videos and the videos.delete method to delete previously uploaded videos. Defaults to: `null`.
+  - watchHistory (String.t): The ID of the playlist that contains the channel\&quot;s watch history. Use the  playlistItems.insert and  playlistItems.delete to add or remove items from that list. Defaults to: `null`.
+  - watchLater (String.t): The ID of the playlist that contains the channel\&quot;s watch later playlist. Use the playlistItems.insert and  playlistItems.delete to add or remove items from that list. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"favorites",
     :"likes",
@@ -32,9 +39,15 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelContentDetails_relatedPlaylists do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelContentDetails_relatedPlaylists do
+defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelContentDetailsRelatedPlaylists do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ChannelContentDetailsRelatedPlaylists do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

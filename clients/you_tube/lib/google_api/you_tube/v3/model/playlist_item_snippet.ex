@@ -20,9 +20,20 @@
 defmodule GoogleApi.YouTube.V3.Model.PlaylistItemSnippet do
   @moduledoc """
   Basic details about a playlist, including title, description and thumbnails.
+
+  ## Attributes
+
+  - channelId (String.t): The ID that YouTube uses to uniquely identify the user that added the item to the playlist. Defaults to: `null`.
+  - channelTitle (String.t): Channel title for the channel that the playlist item belongs to. Defaults to: `null`.
+  - description (String.t): The item&#39;s description. Defaults to: `null`.
+  - playlistId (String.t): The ID that YouTube uses to uniquely identify the playlist that the playlist item is in. Defaults to: `null`.
+  - position (integer()): The order in which the item appears in the playlist. The value uses a zero-based index, so the first item has a position of 0, the second item has a position of 1, and so forth. Defaults to: `null`.
+  - publishedAt (DateTime.t): The date and time that the item was added to the playlist. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format. Defaults to: `null`.
+  - resourceId (ResourceId): The id object contains information that can be used to uniquely identify the resource that is included in the playlist as the playlist item. Defaults to: `null`.
+  - thumbnails (ThumbnailDetails): A map of thumbnail images associated with the playlist item. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail. Defaults to: `null`.
+  - title (String.t): The item&#39;s title. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"channelId",
     :"channelTitle",
@@ -42,6 +53,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.PlaylistItemSnippet do
     value
     |> deserialize(:"resourceId", :struct, GoogleApi.YouTube.V3.Model.ResourceId, options)
     |> deserialize(:"thumbnails", :struct, GoogleApi.YouTube.V3.Model.ThumbnailDetails, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.PlaylistItemSnippet do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

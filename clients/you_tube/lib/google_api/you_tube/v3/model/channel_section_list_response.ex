@@ -20,9 +20,16 @@
 defmodule GoogleApi.YouTube.V3.Model.ChannelSectionListResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - etag (String.t): Etag of this resource. Defaults to: `null`.
+  - eventId (String.t): Serialized EventId of the request which produced this response. Defaults to: `null`.
+  - items ([ChannelSection]): A list of ChannelSections that match the request criteria. Defaults to: `null`.
+  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;youtube#channelSectionListResponse\&quot;. Defaults to: `null`.
+  - visitorId (String.t): The visitorId identifies the visitor. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"eventId",
@@ -37,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelSectionListRespon
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.YouTube.V3.Model.ChannelSection, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ChannelSectionListResponse do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,15 @@
 defmodule GoogleApi.YouTube.V3.Model.VideoAgeGating do
   @moduledoc """
   
+
+  ## Attributes
+
+  - alcoholContent (boolean()): Indicates whether or not the video has alcoholic beverage content. Only users of legal purchasing age in a particular country, as identified by ICAP, can view the content. Defaults to: `null`.
+  - restricted (boolean()): Age-restricted trailers. For redband trailers and adult-rated video-games. Only users aged 18+ can view the content. The the field is true the content is restricted to viewers aged 18+. Otherwise The field won&#39;t be present. Defaults to: `null`.
+  - videoGameRating (String.t): Video game rating, if any. Defaults to: `null`.
+    - Enum - one of [anyone, m15Plus, m16Plus, m17Plus]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"alcoholContent",
     :"restricted",
@@ -33,6 +39,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoAgeGating do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoAgeGating do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

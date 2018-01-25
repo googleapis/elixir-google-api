@@ -20,9 +20,13 @@
 defmodule GoogleApi.YouTube.V3.Model.PropertyValue do
   @moduledoc """
   A pair Property / Value.
+
+  ## Attributes
+
+  - property (String.t): A property. Defaults to: `null`.
+  - value (String.t): The property&#39;s value. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"property",
     :"value"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.PropertyValue do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.PropertyValue do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

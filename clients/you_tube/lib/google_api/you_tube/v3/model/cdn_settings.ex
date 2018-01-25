@@ -20,9 +20,19 @@
 defmodule GoogleApi.YouTube.V3.Model.CdnSettings do
   @moduledoc """
   Brief description of the live stream cdn settings.
+
+  ## Attributes
+
+  - format (String.t): The format of the video stream that you are sending to Youtube. Defaults to: `null`.
+  - frameRate (String.t): The frame rate of the inbound video data. Defaults to: `null`.
+    - Enum - one of [30fps, 60fps]
+  - ingestionInfo (IngestionInfo): The ingestionInfo object contains information that YouTube provides that you need to transmit your RTMP or HTTP stream to YouTube. Defaults to: `null`.
+  - ingestionType (String.t): The method or protocol used to transmit the video stream. Defaults to: `null`.
+    - Enum - one of [dash, rtmp]
+  - resolution (String.t): The resolution of the inbound video data. Defaults to: `null`.
+    - Enum - one of [1080p, 1440p, 2160p, 240p, 360p, 480p, 720p]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"format",
     :"frameRate",
@@ -37,6 +47,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.CdnSettings do
   def decode(value, options) do
     value
     |> deserialize(:"ingestionInfo", :struct, GoogleApi.YouTube.V3.Model.IngestionInfo, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.CdnSettings do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

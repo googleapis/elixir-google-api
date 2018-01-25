@@ -20,9 +20,15 @@
 defmodule GoogleApi.YouTube.V3.Model.ChannelAuditDetails do
   @moduledoc """
   The auditDetails object encapsulates channel data that is relevant for YouTube Partners during the audit process.
+
+  ## Attributes
+
+  - communityGuidelinesGoodStanding (boolean()): Whether or not the channel respects the community guidelines. Defaults to: `null`.
+  - contentIdClaimsGoodStanding (boolean()): Whether or not the channel has any unresolved claims. Defaults to: `null`.
+  - copyrightStrikesGoodStanding (boolean()): Whether or not the channel has any copyright strikes. Defaults to: `null`.
+  - overallGoodStanding (boolean()): Describes the general state of the channel. This field will always show if there are any issues whatsoever with the channel. Currently this field represents the result of the logical and operation over the community guidelines good standing, the copyright strikes good standing and the content ID claims good standing, but this may change in the future. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"communityGuidelinesGoodStanding",
     :"contentIdClaimsGoodStanding",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelAuditDetails do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ChannelAuditDetails do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

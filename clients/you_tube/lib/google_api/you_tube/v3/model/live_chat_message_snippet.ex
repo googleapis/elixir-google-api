@@ -20,9 +20,28 @@
 defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet do
   @moduledoc """
   
+
+  ## Attributes
+
+  - authorChannelId (String.t): The ID of the user that authored this message, this field is not always filled. textMessageEvent - the user that wrote the message fanFundingEvent - the user that funded the broadcast newSponsorEvent - the user that just became a sponsor messageDeletedEvent - the moderator that took the action messageRetractedEvent - the author that retracted their message userBannedEvent - the moderator that took the action superChatEvent - the user that made the purchase Defaults to: `null`.
+  - displayMessage (String.t): Contains a string that can be displayed to the user. If this field is not present the message is silent, at the moment only messages of type TOMBSTONE and CHAT_ENDED_EVENT are silent. Defaults to: `null`.
+  - fanFundingEventDetails (LiveChatFanFundingEventDetails): Details about the funding event, this is only set if the type is &#39;fanFundingEvent&#39;. Defaults to: `null`.
+  - hasDisplayContent (boolean()): Whether the message has display content that should be displayed to users. Defaults to: `null`.
+  - liveChatId (String.t):  Defaults to: `null`.
+  - messageDeletedDetails (LiveChatMessageDeletedDetails):  Defaults to: `null`.
+  - messageRetractedDetails (LiveChatMessageRetractedDetails):  Defaults to: `null`.
+  - pollClosedDetails (LiveChatPollClosedDetails):  Defaults to: `null`.
+  - pollEditedDetails (LiveChatPollEditedDetails):  Defaults to: `null`.
+  - pollOpenedDetails (LiveChatPollOpenedDetails):  Defaults to: `null`.
+  - pollVotedDetails (LiveChatPollVotedDetails):  Defaults to: `null`.
+  - publishedAt (DateTime.t): The date and time when the message was orignally published. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format. Defaults to: `null`.
+  - superChatDetails (LiveChatSuperChatDetails): Details about the Super Chat event, this is only set if the type is &#39;superChatEvent&#39;. Defaults to: `null`.
+  - textMessageDetails (LiveChatTextMessageDetails): Details about the text message, this is only set if the type is &#39;textMessageEvent&#39;. Defaults to: `null`.
+  - type (String.t): The type of message, this will always be present, it determines the contents of the message as well as which fields will be present. Defaults to: `null`.
+    - Enum - one of [chatEndedEvent, fanFundingEvent, messageDeletedEvent, messageRetractedEvent, newSponsorEvent, pollClosedEvent, pollEditedEvent, pollOpenedEvent, pollVotedEvent, sponsorOnlyModeEndedEvent, sponsorOnlyModeStartedEvent, superChatEvent, textMessageEvent, tombstone, userBannedEvent]
+  - userBannedDetails (LiveChatUserBannedMessageDetails):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"authorChannelId",
     :"displayMessage",
@@ -57,6 +76,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet d
     |> deserialize(:"superChatDetails", :struct, GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails, options)
     |> deserialize(:"textMessageDetails", :struct, GoogleApi.YouTube.V3.Model.LiveChatTextMessageDetails, options)
     |> deserialize(:"userBannedDetails", :struct, GoogleApi.YouTube.V3.Model.LiveChatUserBannedMessageDetails, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

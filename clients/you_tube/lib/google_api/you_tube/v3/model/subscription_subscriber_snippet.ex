@@ -20,9 +20,15 @@
 defmodule GoogleApi.YouTube.V3.Model.SubscriptionSubscriberSnippet do
   @moduledoc """
   Basic details about a subscription&#39;s subscriber including title, description, channel ID and thumbnails.
+
+  ## Attributes
+
+  - channelId (String.t): The channel ID of the subscriber. Defaults to: `null`.
+  - description (String.t): The description of the subscriber. Defaults to: `null`.
+  - thumbnails (ThumbnailDetails): Thumbnails for this subscriber. Defaults to: `null`.
+  - title (String.t): The title of the subscriber. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"channelId",
     :"description",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.SubscriptionSubscriberSn
   def decode(value, options) do
     value
     |> deserialize(:"thumbnails", :struct, GoogleApi.YouTube.V3.Model.ThumbnailDetails, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.SubscriptionSubscriberSnippet do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,16 @@
 defmodule GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails do
   @moduledoc """
   
+
+  ## Attributes
+
+  - amountDisplayString (String.t): A rendered string that displays the fund amount and currency to the user. Defaults to: `null`.
+  - amountMicros (String.t): The amount purchased by the user, in micros (1,750,000 micros &#x3D; 1.75). Defaults to: `null`.
+  - currency (String.t): The currency in which the purchase was made. Defaults to: `null`.
+  - tier (integer()): The tier in which the amount belongs to. Lower amounts belong to lower tiers. Starts at 1. Defaults to: `null`.
+  - userComment (String.t): The comment added by the user to this Super Chat event. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"amountDisplayString",
     :"amountMicros",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

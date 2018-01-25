@@ -20,9 +20,17 @@
 defmodule GoogleApi.YouTube.V3.Model.LiveStreamConfigurationIssue do
   @moduledoc """
   
+
+  ## Attributes
+
+  - description (String.t): The long-form description of the issue and how to resolve it. Defaults to: `null`.
+  - reason (String.t): The short-form reason for this issue. Defaults to: `null`.
+  - severity (String.t): How severe this issue is to the stream. Defaults to: `null`.
+    - Enum - one of [error, info, warning]
+  - type (String.t): The kind of error happening. Defaults to: `null`.
+    - Enum - one of [audioBitrateHigh, audioBitrateLow, audioBitrateMismatch, audioCodec, audioCodecMismatch, audioSampleRate, audioSampleRateMismatch, audioStereoMismatch, audioTooManyChannels, badContainer, bitrateHigh, bitrateLow, frameRateHigh, framerateMismatch, gopMismatch, gopSizeLong, gopSizeOver, gopSizeShort, interlacedVideo, multipleAudioStreams, multipleVideoStreams, noAudioStream, noVideoStream, openGop, resolutionMismatch, videoBitrateMismatch, videoCodec, videoCodecMismatch, videoIngestionFasterThanRealtime, videoIngestionStarved, videoInterlaceMismatch, videoProfileMismatch, videoResolutionSuboptimal, videoResolutionUnsupported]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"description",
     :"reason",
@@ -34,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveStreamConfigurationIssue do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveStreamConfigurationIssue do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,18 @@
 defmodule GoogleApi.YouTube.V3.Model.FanFundingEventSnippet do
   @moduledoc """
   
+
+  ## Attributes
+
+  - amountMicros (String.t): The amount of funding in micros of fund_currency. e.g., 1 is represented Defaults to: `null`.
+  - channelId (String.t): Channel id where the funding event occurred. Defaults to: `null`.
+  - commentText (String.t): The text contents of the comment left by the user. Defaults to: `null`.
+  - createdAt (DateTime.t): The date and time when the funding occurred. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format. Defaults to: `null`.
+  - currency (String.t): The currency in which the fund was made. ISO 4217. Defaults to: `null`.
+  - displayString (String.t): A rendered string that displays the fund amount and currency (e.g., \&quot;$1.00\&quot;). The string is rendered for the given language. Defaults to: `null`.
+  - supporterDetails (ChannelProfileDetails): Details about the supporter. Only filled if the event was made public by the user. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"amountMicros",
     :"channelId",
@@ -39,6 +48,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.FanFundingEventSnippet d
   def decode(value, options) do
     value
     |> deserialize(:"supporterDetails", :struct, GoogleApi.YouTube.V3.Model.ChannelProfileDetails, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.FanFundingEventSnippet do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

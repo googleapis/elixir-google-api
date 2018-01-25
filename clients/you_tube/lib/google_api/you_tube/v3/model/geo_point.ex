@@ -20,9 +20,14 @@
 defmodule GoogleApi.YouTube.V3.Model.GeoPoint do
   @moduledoc """
   Geographical coordinates of a point, in WGS84.
+
+  ## Attributes
+
+  - altitude (float()): Altitude above the reference ellipsoid, in meters. Defaults to: `null`.
+  - latitude (float()): Latitude in degrees. Defaults to: `null`.
+  - longitude (float()): Longitude in degrees. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"altitude",
     :"latitude",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.GeoPoint do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.GeoPoint do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

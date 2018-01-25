@@ -20,9 +20,16 @@
 defmodule GoogleApi.YouTube.V3.Model.LiveChatBanSnippet do
   @moduledoc """
   
+
+  ## Attributes
+
+  - banDurationSeconds (String.t): The duration of a ban, only filled if the ban has type TEMPORARY. Defaults to: `null`.
+  - bannedUserDetails (ChannelProfileDetails):  Defaults to: `null`.
+  - liveChatId (String.t): The chat this ban is pertinent to. Defaults to: `null`.
+  - type (String.t): The type of ban. Defaults to: `null`.
+    - Enum - one of [permanent, temporary]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"banDurationSeconds",
     :"bannedUserDetails",
@@ -36,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveChatBanSnippet do
   def decode(value, options) do
     value
     |> deserialize(:"bannedUserDetails", :struct, GoogleApi.YouTube.V3.Model.ChannelProfileDetails, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveChatBanSnippet do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

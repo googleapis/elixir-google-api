@@ -20,9 +20,15 @@
 defmodule GoogleApi.YouTube.V3.Model.SuperChatEvent do
   @moduledoc """
   A superChatEvent resource represents a Super Chat purchase on a YouTube channel.
+
+  ## Attributes
+
+  - etag (String.t): Etag of this resource. Defaults to: `null`.
+  - id (String.t): The ID that YouTube assigns to uniquely identify the Super Chat event. Defaults to: `null`.
+  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;youtube#superChatEvent\&quot;. Defaults to: `null`.
+  - snippet (SuperChatEventSnippet): The snippet object contains basic details about the Super Chat event. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"id",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.SuperChatEvent do
   def decode(value, options) do
     value
     |> deserialize(:"snippet", :struct, GoogleApi.YouTube.V3.Model.SuperChatEventSnippet, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.SuperChatEvent do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

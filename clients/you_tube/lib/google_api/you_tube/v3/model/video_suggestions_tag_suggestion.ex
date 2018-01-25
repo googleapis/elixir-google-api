@@ -20,9 +20,13 @@
 defmodule GoogleApi.YouTube.V3.Model.VideoSuggestionsTagSuggestion do
   @moduledoc """
   A single tag suggestion with it&#39;s relevance information.
+
+  ## Attributes
+
+  - categoryRestricts ([String.t]): A set of video categories for which the tag is relevant. You can use this information to display appropriate tag suggestions based on the video category that the video uploader associates with the video. By default, tag suggestions are relevant for all categories if there are no restricts defined for the keyword. Defaults to: `null`.
+  - tag (String.t): The keyword tag suggested for the video. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"categoryRestricts",
     :"tag"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoSuggestionsTagSuggestion do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoSuggestionsTagSuggestion do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

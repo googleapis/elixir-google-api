@@ -20,9 +20,16 @@
 defmodule GoogleApi.YouTube.V3.Model.PlaylistItemContentDetails do
   @moduledoc """
   
+
+  ## Attributes
+
+  - endAt (String.t): The time, measured in seconds from the start of the video, when the video should stop playing. (The playlist owner can specify the times when the video should start and stop playing when the video is played in the context of the playlist.) By default, assume that the video.endTime is the end of the video. Defaults to: `null`.
+  - note (String.t): A user-generated note for this item. Defaults to: `null`.
+  - startAt (String.t): The time, measured in seconds from the start of the video, when the video should start playing. (The playlist owner can specify the times when the video should start and stop playing when the video is played in the context of the playlist.) The default value is 0. Defaults to: `null`.
+  - videoId (String.t): The ID that YouTube uses to uniquely identify a video. To retrieve the video resource, set the id query parameter to this value in your API request. Defaults to: `null`.
+  - videoPublishedAt (DateTime.t): The date and time that the video was published to YouTube. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"endAt",
     :"note",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.PlaylistItemContentDetails do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.PlaylistItemContentDetails do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

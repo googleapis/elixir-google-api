@@ -20,9 +20,13 @@
 defmodule GoogleApi.YouTube.V3.Model.VideoLocalization do
   @moduledoc """
   Localized versions of certain video properties (e.g. title).
+
+  ## Attributes
+
+  - description (String.t): Localized version of the video&#39;s description. Defaults to: `null`.
+  - title (String.t): Localized version of the video&#39;s title. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"description",
     :"title"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoLocalization do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoLocalization do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

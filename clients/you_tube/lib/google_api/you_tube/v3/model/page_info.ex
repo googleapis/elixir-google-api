@@ -20,9 +20,13 @@
 defmodule GoogleApi.YouTube.V3.Model.PageInfo do
   @moduledoc """
   Paging details for lists of resources, including total number of items available and number of resources returned in a single page.
+
+  ## Attributes
+
+  - resultsPerPage (integer()): The number of results included in the API response. Defaults to: `null`.
+  - totalResults (integer()): The total number of results in the result set. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"resultsPerPage",
     :"totalResults"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.PageInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.PageInfo do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

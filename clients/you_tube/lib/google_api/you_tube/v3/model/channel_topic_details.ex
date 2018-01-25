@@ -20,9 +20,13 @@
 defmodule GoogleApi.YouTube.V3.Model.ChannelTopicDetails do
   @moduledoc """
   Freebase topic information related to the channel.
+
+  ## Attributes
+
+  - topicCategories ([String.t]): A list of Wikipedia URLs that describe the channel&#39;s content. Defaults to: `null`.
+  - topicIds ([String.t]): A list of Freebase topic IDs associated with the channel. You can retrieve information about each topic using the Freebase Topic API. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"topicCategories",
     :"topicIds"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelTopicDetails do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ChannelTopicDetails do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

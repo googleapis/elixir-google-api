@@ -20,9 +20,14 @@
 defmodule GoogleApi.YouTube.V3.Model.IngestionInfo do
   @moduledoc """
   Describes information necessary for ingesting an RTMP or an HTTP stream.
+
+  ## Attributes
+
+  - backupIngestionAddress (String.t): The backup ingestion URL that you should use to stream video to YouTube. You have the option of simultaneously streaming the content that you are sending to the ingestionAddress to this URL. Defaults to: `null`.
+  - ingestionAddress (String.t): The primary ingestion URL that you should use to stream video to YouTube. You must stream video to this URL.  Depending on which application or tool you use to encode your video stream, you may need to enter the stream URL and stream name separately or you may need to concatenate them in the following format:  STREAM_URL/STREAM_NAME Defaults to: `null`.
+  - streamName (String.t): The HTTP or RTMP stream name that YouTube assigns to the video stream. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"backupIngestionAddress",
     :"ingestionAddress",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.IngestionInfo do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.IngestionInfo do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

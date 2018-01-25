@@ -20,9 +20,16 @@
 defmodule GoogleApi.YouTube.V3.Model.I18nRegionListResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - etag (String.t): Etag of this resource. Defaults to: `null`.
+  - eventId (String.t): Serialized EventId of the request which produced this response. Defaults to: `null`.
+  - items ([I18nRegion]): A list of regions where YouTube is available. In this map, the i18n region ID is the map key, and its value is the corresponding i18nRegion resource. Defaults to: `null`.
+  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;youtube#i18nRegionListResponse\&quot;. Defaults to: `null`.
+  - visitorId (String.t): The visitorId identifies the visitor. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"eventId",
@@ -37,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.I18nRegionListResponse d
   def decode(value, options) do
     value
     |> deserialize(:"items", :list, GoogleApi.YouTube.V3.Model.I18nRegion, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.I18nRegionListResponse do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

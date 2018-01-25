@@ -20,9 +20,13 @@
 defmodule GoogleApi.YouTube.V3.Model.LiveChatPollVotedDetails do
   @moduledoc """
   
+
+  ## Attributes
+
+  - itemId (String.t): The poll item the user chose. Defaults to: `null`.
+  - pollId (String.t): The poll the user voted on. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"itemId",
     :"pollId"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveChatPollVotedDetails do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveChatPollVotedDetails do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,13 @@
 defmodule GoogleApi.YouTube.V3.Model.I18nLanguageSnippet do
   @moduledoc """
   Basic details about an i18n language, such as language code and human-readable name.
+
+  ## Attributes
+
+  - hl (String.t): A short BCP-47 code that uniquely identifies a language. Defaults to: `null`.
+  - name (String.t): The human-readable name of the language in the language itself. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"hl",
     :"name"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.I18nLanguageSnippet do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.I18nLanguageSnippet do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,33 @@
 defmodule GoogleApi.YouTube.V3.Model.ImageSettings do
   @moduledoc """
   Branding properties for images associated with the channel.
+
+  ## Attributes
+
+  - backgroundImageUrl (LocalizedProperty): The URL for the background image shown on the video watch page. The image should be 1200px by 615px, with a maximum file size of 128k. Defaults to: `null`.
+  - bannerExternalUrl (String.t): This is used only in update requests; if it&#39;s set, we use this URL to generate all of the above banner URLs. Defaults to: `null`.
+  - bannerImageUrl (String.t): Banner image. Desktop size (1060x175). Defaults to: `null`.
+  - bannerMobileExtraHdImageUrl (String.t): Banner image. Mobile size high resolution (1440x395). Defaults to: `null`.
+  - bannerMobileHdImageUrl (String.t): Banner image. Mobile size high resolution (1280x360). Defaults to: `null`.
+  - bannerMobileImageUrl (String.t): Banner image. Mobile size (640x175). Defaults to: `null`.
+  - bannerMobileLowImageUrl (String.t): Banner image. Mobile size low resolution (320x88). Defaults to: `null`.
+  - bannerMobileMediumHdImageUrl (String.t): Banner image. Mobile size medium/high resolution (960x263). Defaults to: `null`.
+  - bannerTabletExtraHdImageUrl (String.t): Banner image. Tablet size extra high resolution (2560x424). Defaults to: `null`.
+  - bannerTabletHdImageUrl (String.t): Banner image. Tablet size high resolution (2276x377). Defaults to: `null`.
+  - bannerTabletImageUrl (String.t): Banner image. Tablet size (1707x283). Defaults to: `null`.
+  - bannerTabletLowImageUrl (String.t): Banner image. Tablet size low resolution (1138x188). Defaults to: `null`.
+  - bannerTvHighImageUrl (String.t): Banner image. TV size high resolution (1920x1080). Defaults to: `null`.
+  - bannerTvImageUrl (String.t): Banner image. TV size extra high resolution (2120x1192). Defaults to: `null`.
+  - bannerTvLowImageUrl (String.t): Banner image. TV size low resolution (854x480). Defaults to: `null`.
+  - bannerTvMediumImageUrl (String.t): Banner image. TV size medium resolution (1280x720). Defaults to: `null`.
+  - largeBrandedBannerImageImapScript (LocalizedProperty): The image map script for the large banner image. Defaults to: `null`.
+  - largeBrandedBannerImageUrl (LocalizedProperty): The URL for the 854px by 70px image that appears below the video player in the expanded video view of the video watch page. Defaults to: `null`.
+  - smallBrandedBannerImageImapScript (LocalizedProperty): The image map script for the small banner image. Defaults to: `null`.
+  - smallBrandedBannerImageUrl (LocalizedProperty): The URL for the 640px by 70px banner image that appears below the video player in the default view of the video watch page. Defaults to: `null`.
+  - trackingImageUrl (String.t): The URL for a 1px by 1px tracking pixel that can be used to collect statistics for views of the channel or video pages. Defaults to: `null`.
+  - watchIconImageUrl (String.t): The URL for the image that appears above the top-left corner of the video player. This is a 25-pixel-high image with a flexible width that cannot exceed 170 pixels. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"backgroundImageUrl",
     :"bannerExternalUrl",
@@ -58,6 +82,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ImageSettings do
     |> deserialize(:"largeBrandedBannerImageUrl", :struct, GoogleApi.YouTube.V3.Model.LocalizedProperty, options)
     |> deserialize(:"smallBrandedBannerImageImapScript", :struct, GoogleApi.YouTube.V3.Model.LocalizedProperty, options)
     |> deserialize(:"smallBrandedBannerImageUrl", :struct, GoogleApi.YouTube.V3.Model.LocalizedProperty, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ImageSettings do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

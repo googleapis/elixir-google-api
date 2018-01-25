@@ -20,9 +20,21 @@
 defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageListResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - etag (String.t): Etag of this resource. Defaults to: `null`.
+  - eventId (String.t): Serialized EventId of the request which produced this response. Defaults to: `null`.
+  - items ([LiveChatMessage]): A list of live chat messages. Defaults to: `null`.
+  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;youtube#liveChatMessageListResponse\&quot;. Defaults to: `null`.
+  - nextPageToken (String.t): The token that can be used as the value of the pageToken parameter to retrieve the next page in the result set. Defaults to: `null`.
+  - offlineAt (DateTime.t): The date and time when the underlying stream went offline. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format. Defaults to: `null`.
+  - pageInfo (PageInfo):  Defaults to: `null`.
+  - pollingIntervalMillis (integer()): The amount of time the client should wait before polling again. Defaults to: `null`.
+  - tokenPagination (TokenPagination):  Defaults to: `null`.
+  - visitorId (String.t): The visitorId identifies the visitor. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"eventId",
@@ -44,6 +56,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveChatMessageListRespo
     |> deserialize(:"items", :list, GoogleApi.YouTube.V3.Model.LiveChatMessage, options)
     |> deserialize(:"pageInfo", :struct, GoogleApi.YouTube.V3.Model.PageInfo, options)
     |> deserialize(:"tokenPagination", :struct, GoogleApi.YouTube.V3.Model.TokenPagination, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveChatMessageListResponse do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

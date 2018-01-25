@@ -20,9 +20,15 @@
 defmodule GoogleApi.YouTube.V3.Model.VideoAbuseReportReason do
   @moduledoc """
   A videoAbuseReportReason resource identifies a reason that a video could be reported as abusive. Video abuse report reasons are used with video.ReportAbuse.
+
+  ## Attributes
+
+  - etag (String.t): Etag of this resource. Defaults to: `null`.
+  - id (String.t): The ID of this abuse report reason. Defaults to: `null`.
+  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;youtube#videoAbuseReportReason\&quot;. Defaults to: `null`.
+  - snippet (VideoAbuseReportReasonSnippet): The snippet object contains basic details about the abuse report reason. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"id",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoAbuseReportReason d
   def decode(value, options) do
     value
     |> deserialize(:"snippet", :struct, GoogleApi.YouTube.V3.Model.VideoAbuseReportReasonSnippet, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoAbuseReportReason do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

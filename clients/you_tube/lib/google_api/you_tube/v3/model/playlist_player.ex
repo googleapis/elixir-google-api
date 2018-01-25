@@ -20,9 +20,12 @@
 defmodule GoogleApi.YouTube.V3.Model.PlaylistPlayer do
   @moduledoc """
   
+
+  ## Attributes
+
+  - embedHtml (String.t): An &lt;iframe&gt; tag that embeds a player that will play the playlist. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"embedHtml"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.PlaylistPlayer do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.PlaylistPlayer do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

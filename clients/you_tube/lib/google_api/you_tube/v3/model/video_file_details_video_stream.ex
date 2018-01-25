@@ -20,9 +20,20 @@
 defmodule GoogleApi.YouTube.V3.Model.VideoFileDetailsVideoStream do
   @moduledoc """
   Information about a video stream.
+
+  ## Attributes
+
+  - aspectRatio (float()): The video content&#39;s display aspect ratio, which specifies the aspect ratio in which the video should be displayed. Defaults to: `null`.
+  - bitrateBps (String.t): The video stream&#39;s bitrate, in bits per second. Defaults to: `null`.
+  - codec (String.t): The video codec that the stream uses. Defaults to: `null`.
+  - frameRateFps (float()): The video stream&#39;s frame rate, in frames per second. Defaults to: `null`.
+  - heightPixels (integer()): The encoded video content&#39;s height in pixels. Defaults to: `null`.
+  - rotation (String.t): The amount that YouTube needs to rotate the original source content to properly display the video. Defaults to: `null`.
+    - Enum - one of [clockwise, counterClockwise, none, other, upsideDown]
+  - vendor (String.t): A value that uniquely identifies a video vendor. Typically, the value is a four-letter vendor code. Defaults to: `null`.
+  - widthPixels (integer()): The encoded video content&#39;s width in pixels. You can calculate the video&#39;s encoding aspect ratio as width_pixels / height_pixels. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"aspectRatio",
     :"bitrateBps",
@@ -38,6 +49,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoFileDetailsVideoStream do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoFileDetailsVideoStream do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

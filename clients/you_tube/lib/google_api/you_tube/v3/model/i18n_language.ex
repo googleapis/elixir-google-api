@@ -20,9 +20,15 @@
 defmodule GoogleApi.YouTube.V3.Model.I18nLanguage do
   @moduledoc """
   An i18nLanguage resource identifies a UI language currently supported by YouTube.
+
+  ## Attributes
+
+  - etag (String.t): Etag of this resource. Defaults to: `null`.
+  - id (String.t): The ID that YouTube uses to uniquely identify the i18n language. Defaults to: `null`.
+  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;youtube#i18nLanguage\&quot;. Defaults to: `null`.
+  - snippet (I18nLanguageSnippet): The snippet object contains basic details about the i18n language, such as language code and human-readable name. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"id",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.I18nLanguage do
   def decode(value, options) do
     value
     |> deserialize(:"snippet", :struct, GoogleApi.YouTube.V3.Model.I18nLanguageSnippet, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.I18nLanguage do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

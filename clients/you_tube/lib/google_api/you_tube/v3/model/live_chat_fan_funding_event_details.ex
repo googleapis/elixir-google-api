@@ -20,9 +20,15 @@
 defmodule GoogleApi.YouTube.V3.Model.LiveChatFanFundingEventDetails do
   @moduledoc """
   
+
+  ## Attributes
+
+  - amountDisplayString (String.t): A rendered string that displays the fund amount and currency to the user. Defaults to: `null`.
+  - amountMicros (String.t): The amount of the fund. Defaults to: `null`.
+  - currency (String.t): The currency in which the fund was made. Defaults to: `null`.
+  - userComment (String.t): The comment added by the user to this fan funding event. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"amountDisplayString",
     :"amountMicros",
@@ -34,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveChatFanFundingEventDetails do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveChatFanFundingEventDetails do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

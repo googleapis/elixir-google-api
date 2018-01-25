@@ -20,9 +20,15 @@
 defmodule GoogleApi.YouTube.V3.Model.InvideoTiming do
   @moduledoc """
   Describes a temporal position of a visual widget inside a video.
+
+  ## Attributes
+
+  - durationMs (String.t): Defines the duration in milliseconds for which the promotion should be displayed. If missing, the client should use the default. Defaults to: `null`.
+  - offsetMs (String.t): Defines the time at which the promotion will appear. Depending on the value of type the value of the offsetMs field will represent a time offset from the start or from the end of the video, expressed in milliseconds. Defaults to: `null`.
+  - type (String.t): Describes a timing type. If the value is offsetFromStart, then the offsetMs field represents an offset from the start of the video. If the value is offsetFromEnd, then the offsetMs field represents an offset from the end of the video. Defaults to: `null`.
+    - Enum - one of [offsetFromEnd, offsetFromStart]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"durationMs",
     :"offsetMs",
@@ -33,6 +39,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.InvideoTiming do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.InvideoTiming do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

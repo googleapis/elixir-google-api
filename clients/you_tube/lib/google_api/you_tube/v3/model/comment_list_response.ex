@@ -20,9 +20,19 @@
 defmodule GoogleApi.YouTube.V3.Model.CommentListResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - etag (String.t): Etag of this resource. Defaults to: `null`.
+  - eventId (String.t): Serialized EventId of the request which produced this response. Defaults to: `null`.
+  - items ([Comment]): A list of comments that match the request criteria. Defaults to: `null`.
+  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;youtube#commentListResponse\&quot;. Defaults to: `null`.
+  - nextPageToken (String.t): The token that can be used as the value of the pageToken parameter to retrieve the next page in the result set. Defaults to: `null`.
+  - pageInfo (PageInfo):  Defaults to: `null`.
+  - tokenPagination (TokenPagination):  Defaults to: `null`.
+  - visitorId (String.t): The visitorId identifies the visitor. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"eventId",
@@ -42,6 +52,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.CommentListResponse do
     |> deserialize(:"items", :list, GoogleApi.YouTube.V3.Model.Comment, options)
     |> deserialize(:"pageInfo", :struct, GoogleApi.YouTube.V3.Model.PageInfo, options)
     |> deserialize(:"tokenPagination", :struct, GoogleApi.YouTube.V3.Model.TokenPagination, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.CommentListResponse do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

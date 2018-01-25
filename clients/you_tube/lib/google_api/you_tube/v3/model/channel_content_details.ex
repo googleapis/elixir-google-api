@@ -20,9 +20,12 @@
 defmodule GoogleApi.YouTube.V3.Model.ChannelContentDetails do
   @moduledoc """
   Details about the content of a channel.
+
+  ## Attributes
+
+  - relatedPlaylists (ChannelContentDetailsRelatedPlaylists):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"relatedPlaylists"
   ]
@@ -32,7 +35,13 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelContentDetails do
   import GoogleApi.YouTube.V3.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"relatedPlaylists", :struct, GoogleApi.YouTube.V3.Model.ChannelContentDetails_relatedPlaylists, options)
+    |> deserialize(:"relatedPlaylists", :struct, GoogleApi.YouTube.V3.Model.ChannelContentDetailsRelatedPlaylists, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ChannelContentDetails do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

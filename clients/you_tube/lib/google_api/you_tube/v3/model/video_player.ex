@@ -20,9 +20,14 @@
 defmodule GoogleApi.YouTube.V3.Model.VideoPlayer do
   @moduledoc """
   Player to be used for a video playback.
+
+  ## Attributes
+
+  - embedHeight (String.t):  Defaults to: `null`.
+  - embedHtml (String.t): An &lt;iframe&gt; tag that embeds a player that will play the video. Defaults to: `null`.
+  - embedWidth (String.t): The embed width Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"embedHeight",
     :"embedHtml",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoPlayer do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoPlayer do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

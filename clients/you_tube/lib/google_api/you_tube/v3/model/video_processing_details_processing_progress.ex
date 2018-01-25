@@ -20,9 +20,14 @@
 defmodule GoogleApi.YouTube.V3.Model.VideoProcessingDetailsProcessingProgress do
   @moduledoc """
   Video processing progress and completion time estimate.
+
+  ## Attributes
+
+  - partsProcessed (String.t): The number of parts of the video that YouTube has already processed. You can estimate the percentage of the video that YouTube has already processed by calculating: 100 * parts_processed / parts_total  Note that since the estimated number of parts could increase without a corresponding increase in the number of parts that have already been processed, it is possible that the calculated progress could periodically decrease while YouTube processes a video. Defaults to: `null`.
+  - partsTotal (String.t): An estimate of the total number of parts that need to be processed for the video. The number may be updated with more precise estimates while YouTube processes the video. Defaults to: `null`.
+  - timeLeftMs (String.t): An estimate of the amount of time, in millseconds, that YouTube needs to finish processing the video. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"partsProcessed",
     :"partsTotal",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoProcessingDetailsProcessingProgress do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoProcessingDetailsProcessingProgress do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

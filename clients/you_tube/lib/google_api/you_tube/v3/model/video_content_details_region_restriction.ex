@@ -20,9 +20,13 @@
 defmodule GoogleApi.YouTube.V3.Model.VideoContentDetailsRegionRestriction do
   @moduledoc """
   DEPRECATED Region restriction of the video.
+
+  ## Attributes
+
+  - allowed ([String.t]): A list of region codes that identify countries where the video is viewable. If this property is present and a country is not listed in its value, then the video is blocked from appearing in that country. If this property is present and contains an empty list, the video is blocked in all countries. Defaults to: `null`.
+  - blocked ([String.t]): A list of region codes that identify countries where the video is blocked. If this property is present and a country is not listed in its value, then the video is viewable in that country. If this property is present and contains an empty list, the video is viewable in all countries. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"allowed",
     :"blocked"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoContentDetailsRegionRestriction do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoContentDetailsRegionRestriction do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

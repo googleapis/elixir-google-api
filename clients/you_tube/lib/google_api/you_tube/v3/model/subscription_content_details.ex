@@ -20,9 +20,15 @@
 defmodule GoogleApi.YouTube.V3.Model.SubscriptionContentDetails do
   @moduledoc """
   Details about the content to witch a subscription refers.
+
+  ## Attributes
+
+  - activityType (String.t): The type of activity this subscription is for (only uploads, everything). Defaults to: `null`.
+    - Enum - one of [all, uploads]
+  - newItemCount (integer()): The number of new items in the subscription since its content was last read. Defaults to: `null`.
+  - totalItemCount (integer()): The approximate number of items that the subscription points to. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"activityType",
     :"newItemCount",
@@ -33,6 +39,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.SubscriptionContentDetails do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.SubscriptionContentDetails do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

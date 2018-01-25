@@ -20,9 +20,15 @@
 defmodule GoogleApi.YouTube.V3.Model.SearchResult do
   @moduledoc """
   A search result contains information about a YouTube video, channel, or playlist that matches the search parameters specified in an API request. While a search result points to a uniquely identifiable resource, like a video, it does not have its own persistent data.
+
+  ## Attributes
+
+  - etag (String.t): Etag of this resource. Defaults to: `null`.
+  - id (ResourceId): The id object contains information that can be used to uniquely identify the resource that matches the search request. Defaults to: `null`.
+  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;youtube#searchResult\&quot;. Defaults to: `null`.
+  - snippet (SearchResultSnippet): The snippet object contains basic details about a search result, such as its title or description. For example, if the search result is a video, then the title will be the video&#39;s title and the description will be the video&#39;s description. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"id",
@@ -37,6 +43,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.SearchResult do
     value
     |> deserialize(:"id", :struct, GoogleApi.YouTube.V3.Model.ResourceId, options)
     |> deserialize(:"snippet", :struct, GoogleApi.YouTube.V3.Model.SearchResultSnippet, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.SearchResult do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

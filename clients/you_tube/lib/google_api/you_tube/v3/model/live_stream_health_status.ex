@@ -20,9 +20,15 @@
 defmodule GoogleApi.YouTube.V3.Model.LiveStreamHealthStatus do
   @moduledoc """
   
+
+  ## Attributes
+
+  - configurationIssues ([LiveStreamConfigurationIssue]): The configurations issues on this stream Defaults to: `null`.
+  - lastUpdateTimeSeconds (String.t): The last time this status was updated (in seconds) Defaults to: `null`.
+  - status (String.t): The status code of this stream Defaults to: `null`.
+    - Enum - one of [bad, good, noData, ok, revoked]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"configurationIssues",
     :"lastUpdateTimeSeconds",
@@ -35,6 +41,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveStreamHealthStatus d
   def decode(value, options) do
     value
     |> deserialize(:"configurationIssues", :list, GoogleApi.YouTube.V3.Model.LiveStreamConfigurationIssue, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveStreamHealthStatus do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

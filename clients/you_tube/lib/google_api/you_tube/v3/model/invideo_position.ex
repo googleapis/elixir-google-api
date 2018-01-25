@@ -20,9 +20,15 @@
 defmodule GoogleApi.YouTube.V3.Model.InvideoPosition do
   @moduledoc """
   Describes the spatial position of a visual widget inside a video. It is a union of various position types, out of which only will be set one.
+
+  ## Attributes
+
+  - cornerPosition (String.t): Describes in which corner of the video the visual widget will appear. Defaults to: `null`.
+    - Enum - one of [bottomLeft, bottomRight, topLeft, topRight]
+  - type (String.t): Defines the position type. Defaults to: `null`.
+    - Enum - one of [corner]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"cornerPosition",
     :"type"
@@ -32,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.InvideoPosition do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.InvideoPosition do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

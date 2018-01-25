@@ -20,9 +20,14 @@
 defmodule GoogleApi.YouTube.V3.Model.Thumbnail do
   @moduledoc """
   A thumbnail is an image representing a YouTube resource.
+
+  ## Attributes
+
+  - height (integer()): (Optional) Height of the thumbnail image. Defaults to: `null`.
+  - url (String.t): The thumbnail image&#39;s URL. Defaults to: `null`.
+  - width (integer()): (Optional) Width of the thumbnail image. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"height",
     :"url",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.Thumbnail do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.Thumbnail do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

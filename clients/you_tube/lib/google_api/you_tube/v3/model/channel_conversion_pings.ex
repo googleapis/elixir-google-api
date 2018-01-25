@@ -20,9 +20,12 @@
 defmodule GoogleApi.YouTube.V3.Model.ChannelConversionPings do
   @moduledoc """
   The conversionPings object encapsulates information about conversion pings that need to be respected by the channel.
+
+  ## Attributes
+
+  - pings ([ChannelConversionPing]): Pings that the app shall fire (authenticated by biscotti cookie). Each ping has a context, in which the app must fire the ping, and a url identifying the ping. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"pings"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelConversionPings d
   def decode(value, options) do
     value
     |> deserialize(:"pings", :list, GoogleApi.YouTube.V3.Model.ChannelConversionPing, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ChannelConversionPings do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

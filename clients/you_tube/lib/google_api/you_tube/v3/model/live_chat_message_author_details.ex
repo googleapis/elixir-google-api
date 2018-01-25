@@ -20,9 +20,19 @@
 defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageAuthorDetails do
   @moduledoc """
   
+
+  ## Attributes
+
+  - channelId (String.t): The YouTube channel ID. Defaults to: `null`.
+  - channelUrl (String.t): The channel&#39;s URL. Defaults to: `null`.
+  - displayName (String.t): The channel&#39;s display name. Defaults to: `null`.
+  - isChatModerator (boolean()): Whether the author is a moderator of the live chat. Defaults to: `null`.
+  - isChatOwner (boolean()): Whether the author is the owner of the live chat. Defaults to: `null`.
+  - isChatSponsor (boolean()): Whether the author is a sponsor of the live chat. Defaults to: `null`.
+  - isVerified (boolean()): Whether the author&#39;s identity has been verified by YouTube. Defaults to: `null`.
+  - profileImageUrl (String.t): The channels&#39;s avatar URL. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"channelId",
     :"channelUrl",
@@ -38,6 +48,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveChatMessageAuthorDetails do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveChatMessageAuthorDetails do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

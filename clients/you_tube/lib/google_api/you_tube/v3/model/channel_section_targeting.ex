@@ -20,9 +20,14 @@
 defmodule GoogleApi.YouTube.V3.Model.ChannelSectionTargeting do
   @moduledoc """
   ChannelSection targeting setting.
+
+  ## Attributes
+
+  - countries ([String.t]): The country the channel section is targeting. Defaults to: `null`.
+  - languages ([String.t]): The language the channel section is targeting. Defaults to: `null`.
+  - regions ([String.t]): The region the channel section is targeting. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"countries",
     :"languages",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelSectionTargeting do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ChannelSectionTargeting do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

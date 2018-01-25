@@ -20,9 +20,13 @@
 defmodule GoogleApi.YouTube.V3.Model.LiveBroadcastStatistics do
   @moduledoc """
   Statistics about the live broadcast. These represent a snapshot of the values at the time of the request. Statistics are only returned for live broadcasts.
+
+  ## Attributes
+
+  - concurrentViewers (String.t): The number of viewers currently watching the broadcast. The property and its value will be present if the broadcast has current viewers and the broadcast owner has not hidden the viewcount for the video. Note that YouTube stops tracking the number of concurrent viewers for a broadcast when the broadcast ends. So, this property would not identify the number of viewers watching an archived video of a live broadcast that already ended. Defaults to: `null`.
+  - totalChatCount (String.t): The total number of live chat messages currently on the broadcast. The property and its value will be present if the broadcast is public, has the live chat feature enabled, and has at least one message. Note that this field will not be filled after the broadcast ends. So this property would not identify the number of chat messages for an archived video of a completed live broadcast. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"concurrentViewers",
     :"totalChatCount"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveBroadcastStatistics do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveBroadcastStatistics do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

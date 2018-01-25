@@ -20,9 +20,13 @@
 defmodule GoogleApi.YouTube.V3.Model.LiveChatModeratorSnippet do
   @moduledoc """
   
+
+  ## Attributes
+
+  - liveChatId (String.t): The ID of the live chat this moderator can act on. Defaults to: `null`.
+  - moderatorDetails (ChannelProfileDetails): Details about the moderator. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"liveChatId",
     :"moderatorDetails"
@@ -34,6 +38,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveChatModeratorSnippet
   def decode(value, options) do
     value
     |> deserialize(:"moderatorDetails", :struct, GoogleApi.YouTube.V3.Model.ChannelProfileDetails, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveChatModeratorSnippet do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

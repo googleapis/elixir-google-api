@@ -20,9 +20,16 @@
 defmodule GoogleApi.YouTube.V3.Model.LiveChatMessage do
   @moduledoc """
   A liveChatMessage resource represents a chat message in a YouTube Live Chat.
+
+  ## Attributes
+
+  - authorDetails (LiveChatMessageAuthorDetails): The authorDetails object contains basic details about the user that posted this message. Defaults to: `null`.
+  - etag (String.t): Etag of this resource. Defaults to: `null`.
+  - id (String.t): The ID that YouTube assigns to uniquely identify the message. Defaults to: `null`.
+  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;youtube#liveChatMessage\&quot;. Defaults to: `null`.
+  - snippet (LiveChatMessageSnippet): The snippet object contains basic details about the message. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"authorDetails",
     :"etag",
@@ -38,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveChatMessage do
     value
     |> deserialize(:"authorDetails", :struct, GoogleApi.YouTube.V3.Model.LiveChatMessageAuthorDetails, options)
     |> deserialize(:"snippet", :struct, GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveChatMessage do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

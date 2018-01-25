@@ -20,9 +20,17 @@
 defmodule GoogleApi.YouTube.V3.Model.PlaylistItem do
   @moduledoc """
   A playlistItem resource identifies another resource, such as a video, that is included in a playlist. In addition, the playlistItem  resource contains details about the included resource that pertain specifically to how that resource is used in that playlist.  YouTube uses playlists to identify special collections of videos for a channel, such as:   - uploaded videos  - favorite videos  - positively rated (liked) videos  - watch history  - watch later  To be more specific, these lists are associated with a channel, which is a collection of a person, group, or company&#39;s videos, playlists, and other YouTube information.  You can retrieve the playlist IDs for each of these lists from the  channel resource  for a given channel. You can then use the   playlistItems.list method to retrieve any of those lists. You can also add or remove items from those lists by calling the   playlistItems.insert and   playlistItems.delete methods. For example, if a user gives a positive rating to a video, you would insert that video into the liked videos playlist for that user&#39;s channel.
+
+  ## Attributes
+
+  - contentDetails (PlaylistItemContentDetails): The contentDetails object is included in the resource if the included item is a YouTube video. The object contains additional information about the video. Defaults to: `null`.
+  - etag (String.t): Etag of this resource. Defaults to: `null`.
+  - id (String.t): The ID that YouTube uses to uniquely identify the playlist item. Defaults to: `null`.
+  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;youtube#playlistItem\&quot;. Defaults to: `null`.
+  - snippet (PlaylistItemSnippet): The snippet object contains basic details about the playlist item, such as its title and position in the playlist. Defaults to: `null`.
+  - status (PlaylistItemStatus): The status object contains information about the playlist item&#39;s privacy status. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"contentDetails",
     :"etag",
@@ -40,6 +48,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.PlaylistItem do
     |> deserialize(:"contentDetails", :struct, GoogleApi.YouTube.V3.Model.PlaylistItemContentDetails, options)
     |> deserialize(:"snippet", :struct, GoogleApi.YouTube.V3.Model.PlaylistItemSnippet, options)
     |> deserialize(:"status", :struct, GoogleApi.YouTube.V3.Model.PlaylistItemStatus, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.PlaylistItem do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

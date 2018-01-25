@@ -20,9 +20,14 @@
 defmodule GoogleApi.YouTube.V3.Model.VideoRecordingDetails do
   @moduledoc """
   Recording information associated with the video.
+
+  ## Attributes
+
+  - location (GeoPoint): The geolocation information associated with the video. Defaults to: `null`.
+  - locationDescription (String.t): The text description of the location where the video was recorded. Defaults to: `null`.
+  - recordingDate (DateTime.t): The date and time when the video was recorded. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sssZ) format. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"location",
     :"locationDescription",
@@ -35,6 +40,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoRecordingDetails do
   def decode(value, options) do
     value
     |> deserialize(:"location", :struct, GoogleApi.YouTube.V3.Model.GeoPoint, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoRecordingDetails do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

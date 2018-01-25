@@ -20,9 +20,18 @@
 defmodule GoogleApi.YouTube.V3.Model.ChannelSection do
   @moduledoc """
   
+
+  ## Attributes
+
+  - contentDetails (ChannelSectionContentDetails): The contentDetails object contains details about the channel section content, such as a list of playlists or channels featured in the section. Defaults to: `null`.
+  - etag (String.t): Etag of this resource. Defaults to: `null`.
+  - id (String.t): The ID that YouTube uses to uniquely identify the channel section. Defaults to: `null`.
+  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;youtube#channelSection\&quot;. Defaults to: `null`.
+  - localizations (%{optional(String.t) &#x3D;&gt; ChannelSectionLocalization}): Localizations for different languages Defaults to: `null`.
+  - snippet (ChannelSectionSnippet): The snippet object contains basic details about the channel section, such as its type, style and title. Defaults to: `null`.
+  - targeting (ChannelSectionTargeting): The targeting object contains basic targeting settings about the channel section. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"contentDetails",
     :"etag",
@@ -42,6 +51,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelSection do
     |> deserialize(:"localizations", :map, GoogleApi.YouTube.V3.Model.ChannelSectionLocalization, options)
     |> deserialize(:"snippet", :struct, GoogleApi.YouTube.V3.Model.ChannelSectionSnippet, options)
     |> deserialize(:"targeting", :struct, GoogleApi.YouTube.V3.Model.ChannelSectionTargeting, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ChannelSection do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

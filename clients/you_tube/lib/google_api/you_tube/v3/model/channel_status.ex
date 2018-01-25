@@ -20,9 +20,16 @@
 defmodule GoogleApi.YouTube.V3.Model.ChannelStatus do
   @moduledoc """
   JSON template for the status part of a channel.
+
+  ## Attributes
+
+  - isLinked (boolean()): If true, then the user is linked to either a YouTube username or G+ account. Otherwise, the user doesn&#39;t have a public YouTube identity. Defaults to: `null`.
+  - longUploadsStatus (String.t): The long uploads status of this channel. See Defaults to: `null`.
+    - Enum - one of [allowed, disallowed, eligible, longUploadsUnspecified]
+  - privacyStatus (String.t): Privacy status of the channel. Defaults to: `null`.
+    - Enum - one of [private, public, unlisted]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"isLinked",
     :"longUploadsStatus",
@@ -33,6 +40,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelStatus do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ChannelStatus do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

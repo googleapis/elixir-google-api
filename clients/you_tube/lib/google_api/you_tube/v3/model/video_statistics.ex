@@ -20,9 +20,16 @@
 defmodule GoogleApi.YouTube.V3.Model.VideoStatistics do
   @moduledoc """
   Statistics about the video, such as the number of times the video was viewed or liked.
+
+  ## Attributes
+
+  - commentCount (String.t): The number of comments for the video. Defaults to: `null`.
+  - dislikeCount (String.t): The number of users who have indicated that they disliked the video by giving it a negative rating. Defaults to: `null`.
+  - favoriteCount (String.t): The number of users who currently have the video marked as a favorite video. Defaults to: `null`.
+  - likeCount (String.t): The number of users who have indicated that they liked the video by giving it a positive rating. Defaults to: `null`.
+  - viewCount (String.t): The number of times the video has been viewed. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"commentCount",
     :"dislikeCount",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoStatistics do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoStatistics do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

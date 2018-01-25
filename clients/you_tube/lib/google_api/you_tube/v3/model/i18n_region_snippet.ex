@@ -20,9 +20,13 @@
 defmodule GoogleApi.YouTube.V3.Model.I18nRegionSnippet do
   @moduledoc """
   Basic details about an i18n region, such as region code and human-readable name.
+
+  ## Attributes
+
+  - gl (String.t): The region code as a 2-letter ISO country code. Defaults to: `null`.
+  - name (String.t): The human-readable name of the region. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"gl",
     :"name"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.I18nRegionSnippet do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.I18nRegionSnippet do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

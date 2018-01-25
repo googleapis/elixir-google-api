@@ -20,9 +20,12 @@
 defmodule GoogleApi.YouTube.V3.Model.VideoMonetizationDetails do
   @moduledoc """
   Details about monetization of a YouTube Video.
+
+  ## Attributes
+
+  - access (AccessPolicy): The value of access indicates whether the video can be monetized or not. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"access"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoMonetizationDetails
   def decode(value, options) do
     value
     |> deserialize(:"access", :struct, GoogleApi.YouTube.V3.Model.AccessPolicy, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoMonetizationDetails do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,16 @@
 defmodule GoogleApi.YouTube.V3.Model.Activity do
   @moduledoc """
   An activity resource contains information about an action that a particular channel, or user, has taken on YouTube.The actions reported in activity feeds include rating a video, sharing a video, marking a video as a favorite, commenting on a video, uploading a video, and so forth. Each activity resource identifies the type of action, the channel associated with the action, and the resource(s) associated with the action, such as the video that was rated or uploaded.
+
+  ## Attributes
+
+  - contentDetails (ActivityContentDetails): The contentDetails object contains information about the content associated with the activity. For example, if the snippet.type value is videoRated, then the contentDetails object&#39;s content identifies the rated video. Defaults to: `null`.
+  - etag (String.t): Etag of this resource. Defaults to: `null`.
+  - id (String.t): The ID that YouTube uses to uniquely identify the activity. Defaults to: `null`.
+  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;youtube#activity\&quot;. Defaults to: `null`.
+  - snippet (ActivitySnippet): The snippet object contains basic details about the activity, including the activity&#39;s type and group ID. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"contentDetails",
     :"etag",
@@ -38,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.Activity do
     value
     |> deserialize(:"contentDetails", :struct, GoogleApi.YouTube.V3.Model.ActivityContentDetails, options)
     |> deserialize(:"snippet", :struct, GoogleApi.YouTube.V3.Model.ActivitySnippet, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.Activity do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

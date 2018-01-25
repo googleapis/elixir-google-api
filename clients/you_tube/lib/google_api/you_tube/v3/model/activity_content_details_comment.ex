@@ -20,9 +20,12 @@
 defmodule GoogleApi.YouTube.V3.Model.ActivityContentDetailsComment do
   @moduledoc """
   Information about a resource that received a comment.
+
+  ## Attributes
+
+  - resourceId (ResourceId): The resourceId object contains information that identifies the resource associated with the comment. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"resourceId"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ActivityContentDetailsCo
   def decode(value, options) do
     value
     |> deserialize(:"resourceId", :struct, GoogleApi.YouTube.V3.Model.ResourceId, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ActivityContentDetailsComment do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

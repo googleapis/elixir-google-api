@@ -20,9 +20,22 @@
 defmodule GoogleApi.YouTube.V3.Model.ActivityContentDetails do
   @moduledoc """
   Details about the content of an activity: the video that was shared, the channel that was subscribed to, etc.
+
+  ## Attributes
+
+  - bulletin (ActivityContentDetailsBulletin): The bulletin object contains details about a channel bulletin post. This object is only present if the snippet.type is bulletin. Defaults to: `null`.
+  - channelItem (ActivityContentDetailsChannelItem): The channelItem object contains details about a resource which was added to a channel. This property is only present if the snippet.type is channelItem. Defaults to: `null`.
+  - comment (ActivityContentDetailsComment): The comment object contains information about a resource that received a comment. This property is only present if the snippet.type is comment. Defaults to: `null`.
+  - favorite (ActivityContentDetailsFavorite): The favorite object contains information about a video that was marked as a favorite video. This property is only present if the snippet.type is favorite. Defaults to: `null`.
+  - like (ActivityContentDetailsLike): The like object contains information about a resource that received a positive (like) rating. This property is only present if the snippet.type is like. Defaults to: `null`.
+  - playlistItem (ActivityContentDetailsPlaylistItem): The playlistItem object contains information about a new playlist item. This property is only present if the snippet.type is playlistItem. Defaults to: `null`.
+  - promotedItem (ActivityContentDetailsPromotedItem): The promotedItem object contains details about a resource which is being promoted. This property is only present if the snippet.type is promotedItem. Defaults to: `null`.
+  - recommendation (ActivityContentDetailsRecommendation): The recommendation object contains information about a recommended resource. This property is only present if the snippet.type is recommendation. Defaults to: `null`.
+  - social (ActivityContentDetailsSocial): The social object contains details about a social network post. This property is only present if the snippet.type is social. Defaults to: `null`.
+  - subscription (ActivityContentDetailsSubscription): The subscription object contains information about a channel that a user subscribed to. This property is only present if the snippet.type is subscription. Defaults to: `null`.
+  - upload (ActivityContentDetailsUpload): The upload object contains information about the uploaded video. This property is only present if the snippet.type is upload. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"bulletin",
     :"channelItem",
@@ -53,6 +66,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ActivityContentDetails d
     |> deserialize(:"social", :struct, GoogleApi.YouTube.V3.Model.ActivityContentDetailsSocial, options)
     |> deserialize(:"subscription", :struct, GoogleApi.YouTube.V3.Model.ActivityContentDetailsSubscription, options)
     |> deserialize(:"upload", :struct, GoogleApi.YouTube.V3.Model.ActivityContentDetailsUpload, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ActivityContentDetails do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

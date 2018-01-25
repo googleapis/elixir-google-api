@@ -20,9 +20,14 @@
 defmodule GoogleApi.YouTube.V3.Model.WatchSettings do
   @moduledoc """
   Branding properties for the watch. All deprecated.
+
+  ## Attributes
+
+  - backgroundColor (String.t): The text color for the video watch page&#39;s branded area. Defaults to: `null`.
+  - featuredPlaylistId (String.t): An ID that uniquely identifies a playlist that displays next to the video player. Defaults to: `null`.
+  - textColor (String.t): The background color for the video watch page&#39;s branded area. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"backgroundColor",
     :"featuredPlaylistId",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.WatchSettings do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.WatchSettings do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

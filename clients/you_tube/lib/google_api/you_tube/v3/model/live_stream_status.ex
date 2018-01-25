@@ -20,9 +20,14 @@
 defmodule GoogleApi.YouTube.V3.Model.LiveStreamStatus do
   @moduledoc """
   Brief description of the live stream status.
+
+  ## Attributes
+
+  - healthStatus (LiveStreamHealthStatus): The health status of the stream. Defaults to: `null`.
+  - streamStatus (String.t):  Defaults to: `null`.
+    - Enum - one of [active, created, error, inactive, ready]
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"healthStatus",
     :"streamStatus"
@@ -34,6 +39,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveStreamStatus do
   def decode(value, options) do
     value
     |> deserialize(:"healthStatus", :struct, GoogleApi.YouTube.V3.Model.LiveStreamHealthStatus, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveStreamStatus do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

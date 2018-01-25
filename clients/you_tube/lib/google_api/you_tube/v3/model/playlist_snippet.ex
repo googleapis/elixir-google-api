@@ -20,9 +20,20 @@
 defmodule GoogleApi.YouTube.V3.Model.PlaylistSnippet do
   @moduledoc """
   Basic details about a playlist, including title, description and thumbnails.
+
+  ## Attributes
+
+  - tags ([String.t]): Keyword tags associated with the playlist. Defaults to: `null`.
+  - channelId (String.t): The ID that YouTube uses to uniquely identify the channel that published the playlist. Defaults to: `null`.
+  - channelTitle (String.t): The channel title of the channel that the video belongs to. Defaults to: `null`.
+  - defaultLanguage (String.t): The language of the playlist&#39;s default title and description. Defaults to: `null`.
+  - description (String.t): The playlist&#39;s description. Defaults to: `null`.
+  - localized (PlaylistLocalization): Localized title and description, read-only. Defaults to: `null`.
+  - publishedAt (DateTime.t): The date and time that the playlist was created. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format. Defaults to: `null`.
+  - thumbnails (ThumbnailDetails): A map of thumbnail images associated with the playlist. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail. Defaults to: `null`.
+  - title (String.t): The playlist&#39;s title. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"tags",
     :"channelId",
@@ -42,6 +53,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.PlaylistSnippet do
     value
     |> deserialize(:"localized", :struct, GoogleApi.YouTube.V3.Model.PlaylistLocalization, options)
     |> deserialize(:"thumbnails", :struct, GoogleApi.YouTube.V3.Model.ThumbnailDetails, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.PlaylistSnippet do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

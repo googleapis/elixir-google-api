@@ -20,9 +20,12 @@
 defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageRetractedDetails do
   @moduledoc """
   
+
+  ## Attributes
+
+  - retractedMessageId (String.t):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"retractedMessageId"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveChatMessageRetractedDetails do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveChatMessageRetractedDetails do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

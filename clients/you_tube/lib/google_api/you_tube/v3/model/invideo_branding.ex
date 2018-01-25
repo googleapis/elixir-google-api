@@ -20,9 +20,16 @@
 defmodule GoogleApi.YouTube.V3.Model.InvideoBranding do
   @moduledoc """
   
+
+  ## Attributes
+
+  - imageBytes (binary()):  Defaults to: `null`.
+  - imageUrl (String.t):  Defaults to: `null`.
+  - position (InvideoPosition):  Defaults to: `null`.
+  - targetChannelId (String.t):  Defaults to: `null`.
+  - timing (InvideoTiming):  Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"imageBytes",
     :"imageUrl",
@@ -38,6 +45,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.InvideoBranding do
     value
     |> deserialize(:"position", :struct, GoogleApi.YouTube.V3.Model.InvideoPosition, options)
     |> deserialize(:"timing", :struct, GoogleApi.YouTube.V3.Model.InvideoTiming, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.InvideoBranding do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

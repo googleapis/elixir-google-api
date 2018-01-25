@@ -20,9 +20,13 @@
 defmodule GoogleApi.YouTube.V3.Model.ChannelContentOwnerDetails do
   @moduledoc """
   The contentOwnerDetails object encapsulates channel data that is relevant for YouTube Partners linked with the channel.
+
+  ## Attributes
+
+  - contentOwner (String.t): The ID of the content owner linked to the channel. Defaults to: `null`.
+  - timeLinked (DateTime.t): The date and time of when the channel was linked to the content owner. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"contentOwner",
     :"timeLinked"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelContentOwnerDetails do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ChannelContentOwnerDetails do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

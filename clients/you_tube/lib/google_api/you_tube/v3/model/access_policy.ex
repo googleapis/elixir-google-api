@@ -20,9 +20,13 @@
 defmodule GoogleApi.YouTube.V3.Model.AccessPolicy do
   @moduledoc """
   Rights management policy for YouTube resources.
+
+  ## Attributes
+
+  - allowed (boolean()): The value of allowed indicates whether the access to the policy is allowed or denied by default. Defaults to: `null`.
+  - exception ([String.t]): A list of region codes that identify countries where the default policy do not apply. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"allowed",
     :"exception"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.AccessPolicy do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.AccessPolicy do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

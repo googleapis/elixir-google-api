@@ -20,9 +20,15 @@
 defmodule GoogleApi.YouTube.V3.Model.GuideCategory do
   @moduledoc """
   A guideCategory resource identifies a category that YouTube algorithmically assigns based on a channel&#39;s content or other indicators, such as the channel&#39;s popularity. The list is similar to video categories, with the difference being that a video&#39;s uploader can assign a video category but only YouTube can assign a channel category.
+
+  ## Attributes
+
+  - etag (String.t): Etag of this resource. Defaults to: `null`.
+  - id (String.t): The ID that YouTube uses to uniquely identify the guide category. Defaults to: `null`.
+  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;youtube#guideCategory\&quot;. Defaults to: `null`.
+  - snippet (GuideCategorySnippet): The snippet object contains basic details about the category, such as its title. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"etag",
     :"id",
@@ -36,6 +42,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.GuideCategory do
   def decode(value, options) do
     value
     |> deserialize(:"snippet", :struct, GoogleApi.YouTube.V3.Model.GuideCategorySnippet, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.GuideCategory do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 

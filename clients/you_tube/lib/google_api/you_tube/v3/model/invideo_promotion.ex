@@ -20,9 +20,15 @@
 defmodule GoogleApi.YouTube.V3.Model.InvideoPromotion do
   @moduledoc """
   Describes an invideo promotion campaign consisting of multiple promoted items. A campaign belongs to a single channel_id.
+
+  ## Attributes
+
+  - defaultTiming (InvideoTiming): The default temporal position within the video where the promoted item will be displayed. Can be overriden by more specific timing in the item. Defaults to: `null`.
+  - items ([PromotedItem]): List of promoted items in decreasing priority. Defaults to: `null`.
+  - position (InvideoPosition): The spatial position within the video where the promoted item will be displayed. Defaults to: `null`.
+  - useSmartTiming (boolean()): Indicates whether the channel&#39;s promotional campaign uses \&quot;smart timing.\&quot; This feature attempts to show promotions at a point in the video when they are more likely to be clicked and less likely to disrupt the viewing experience. This feature also picks up a single promotion to show on each video. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"defaultTiming",
     :"items",
@@ -38,6 +44,12 @@ defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.InvideoPromotion do
     |> deserialize(:"defaultTiming", :struct, GoogleApi.YouTube.V3.Model.InvideoTiming, options)
     |> deserialize(:"items", :list, GoogleApi.YouTube.V3.Model.PromotedItem, options)
     |> deserialize(:"position", :struct, GoogleApi.YouTube.V3.Model.InvideoPosition, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.InvideoPromotion do
+  def encode(value, options) do
+    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
   end
 end
 
