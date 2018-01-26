@@ -111,7 +111,7 @@ defmodule GoogleApi.Translate.V2.Api.Translations do
     - :access_token (String.t): OAuth access token.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
     - :pp (boolean()): Pretty-print response.
-    - :body (TranslateTextRequest): 
+    - :body (TranslateTextRequest):
 
   ## Returns
 
@@ -145,6 +145,6 @@ defmodule GoogleApi.Translate.V2.Api.Translations do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%{"body" => %GoogleApi.Translate.V2.Model.TranslationsListResponse{}})
+    |> decode(%GoogleApi.Translate.V2.Model.TranslationsListResponse{}, true)
   end
 end

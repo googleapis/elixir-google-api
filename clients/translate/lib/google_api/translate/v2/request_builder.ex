@@ -23,6 +23,11 @@ defmodule GoogleApi.Translate.V2.RequestBuilder do
 
   @path_template_regex ~r/{(\+?[^}]+)}/i
 
+
+  defmodule DataWrapper do
+    defstruct [:data]
+  end
+
   @doc """
   Specify the request method when building a request
 
@@ -176,5 +181,20 @@ defmodule GoogleApi.Translate.V2.RequestBuilder do
 
   def decode(response, _struct) do
     {:error, response}
+  end
+
+  def decode(%Tesla.Env{status: 200, body: body}, struct, true) do
+    {:ok, %{data: data}} = Poison.decode(body, as: %GoogleApi.Translate.V2.RequestBuilder.DataWrapper{}, struct: struct)
+    {:ok, data}
+  end
+
+end
+
+defimpl Poison.Decoder, for: GoogleApi.Translate.V2.RequestBuilder.DataWrapper do
+  import GoogleApi.Translate.V2.Deserializer
+
+  def decode(value, options) do
+    value
+    |> deserialize(:data, :struct, options[:struct], options)
   end
 end
