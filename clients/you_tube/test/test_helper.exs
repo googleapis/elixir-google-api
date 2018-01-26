@@ -1,11 +1,11 @@
 ExUnit.start()
 
-defmodule GoogleApi.YouTube.TestHelper do
+defmodule GoogleApi.YouTube.V3.TestHelper do
 
   defmacro __using__(opts) do
     quote do
       use ExUnit.Case, unquote(opts)
-      import GoogleApi.YouTube.TestHelper
+      import GoogleApi.YouTube.V3.TestHelper
     end
   end
 
