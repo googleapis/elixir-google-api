@@ -31,19 +31,19 @@ defmodule GoogleApi.Translate.V2.Api.Detections do
 
   - connection (GoogleApi.Translate.V2.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :__/xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
-    - :quota_user (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :pp (boolean()): Pretty-print response.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :bearer_token (String.t): OAuth bearer token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :pretty_print (boolean()): Returns response with indentations and line breaks.
-    - :upload_type (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :callback (String.t): JSONP
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :pp (boolean()): Pretty-print response.
     - :body (DetectLanguageRequest): 
 
   ## Returns
@@ -55,6 +55,12 @@ defmodule GoogleApi.Translate.V2.Api.Detections do
           {:ok, GoogleApi.Translate.V2.Model.DetectionsListResponse.t()} | {:error, Tesla.Env.t()}
   def language_detections_detect(connection, opts \\ []) do
     optional_params = %{
+      :oauth_token => :query,
+      :bearer_token => :query,
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :"$.xgafv" => :query,
       :alt => :query,
@@ -62,12 +68,6 @@ defmodule GoogleApi.Translate.V2.Api.Detections do
       :access_token => :query,
       :quotaUser => :query,
       :pp => :query,
-      :oauth_token => :query,
-      :bearer_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
       :body => :body
     }
 
@@ -88,19 +88,19 @@ defmodule GoogleApi.Translate.V2.Api.Detections do
   - connection (GoogleApi.Translate.V2.Connection): Connection to server
   - q ([String.t]): The input text upon which to perform language detection. Repeat this parameter to perform language detection on multiple text inputs.
   - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :__/xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
-    - :quota_user (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :pp (boolean()): Pretty-print response.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :bearer_token (String.t): OAuth bearer token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :pretty_print (boolean()): Returns response with indentations and line breaks.
-    - :upload_type (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :callback (String.t): JSONP
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :pp (boolean()): Pretty-print response.
 
   ## Returns
 
@@ -111,19 +111,19 @@ defmodule GoogleApi.Translate.V2.Api.Detections do
           {:ok, GoogleApi.Translate.V2.Model.DetectionsListResponse.t()} | {:error, Tesla.Env.t()}
   def language_detections_list(connection, q, opts \\ []) do
     optional_params = %{
+      :oauth_token => :query,
+      :bearer_token => :query,
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :"$.xgafv" => :query,
       :alt => :query,
       :key => :query,
       :access_token => :query,
       :quotaUser => :query,
-      :pp => :query,
-      :oauth_token => :query,
-      :bearer_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query
+      :pp => :query
     }
 
     %{}
