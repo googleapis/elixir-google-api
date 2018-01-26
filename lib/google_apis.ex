@@ -79,4 +79,11 @@ defmodule GoogleApis do
     generator = Application.get_env(:google_apis, :client_generator)
     generator.generate_client(api_config)
   end
+
+  def format_client(api_config) do
+    name = GoogleApis.ApiConfig.library_name(api_config)
+
+    ["clients/#{name}/lib/**/*.{ex,exs}"]
+    |> Mix.Tasks.Format.run    
+  end
 end
