@@ -20,9 +20,13 @@
 defmodule GoogleApi.Translate.V2.Model.LanguagesResource do
   @moduledoc """
   
+
+  ## Attributes
+
+  - language (String.t): Supported language code, generally consisting of its ISO 639-1 identifier. (E.g. &#39;en&#39;, &#39;ja&#39;). In certain cases, BCP-47 codes including language + region identifiers are returned (e.g. &#39;zh-TW&#39; and &#39;zh-CH&#39;) Defaults to: `null`.
+  - name (String.t): Human readable name of the language localized to the target language. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"language",
     :"name"
@@ -32,6 +36,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Translate.V2.Model.LanguagesResource do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Translate.V2.Model.LanguagesResource do
+  def encode(value, options) do
+    GoogleApi.Translate.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

@@ -20,9 +20,16 @@
 defmodule GoogleApi.Translate.V2.Model.TranslateTextRequest do
   @moduledoc """
   The main translation request message for the Cloud Translation API.
+
+  ## Attributes
+
+  - format (String.t): The format of the source text, in either HTML (default) or plain-text. A value of \&quot;html\&quot; indicates HTML and a value of \&quot;text\&quot; indicates plain-text. Defaults to: `null`.
+  - model (String.t): The &#x60;model&#x60; type requested for this translation. Valid values are listed in public documentation. Defaults to: `null`.
+  - q ([String.t]): The input text to translate. Repeat this parameter to perform translation operations on multiple text inputs. Defaults to: `null`.
+  - source (String.t): The language of the source text, set to one of the language codes listed in Language Support. If the source language is not specified, the API will attempt to identify the source language automatically and return it within the response. Defaults to: `null`.
+  - target (String.t): The language to use for translation of the input text, set to one of the language codes listed in Language Support. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"format",
     :"model",
@@ -35,6 +42,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Translate.V2.Model.TranslateTextRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Translate.V2.Model.TranslateTextRequest do
+  def encode(value, options) do
+    GoogleApi.Translate.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

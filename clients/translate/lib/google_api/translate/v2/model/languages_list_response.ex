@@ -20,9 +20,12 @@
 defmodule GoogleApi.Translate.V2.Model.LanguagesListResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - languages ([LanguagesResource]): List of source/target languages supported by the translation API. If target parameter is unspecified, the list is sorted by the ASCII code point order of the language code. If target parameter is specified, the list is sorted by the collation order of the language name in the target language. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"languages"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Translate.V2.Model.LanguagesListResponse 
   def decode(value, options) do
     value
     |> deserialize(:"languages", :list, GoogleApi.Translate.V2.Model.LanguagesResource, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Translate.V2.Model.LanguagesListResponse do
+  def encode(value, options) do
+    GoogleApi.Translate.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

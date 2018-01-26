@@ -20,9 +20,12 @@
 defmodule GoogleApi.Translate.V2.Model.TranslationsListResponse do
   @moduledoc """
   The main language translation response message.
+
+  ## Attributes
+
+  - translations ([TranslationsResource]): Translations contains list of translation results of given text Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"translations"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Translate.V2.Model.TranslationsListRespon
   def decode(value, options) do
     value
     |> deserialize(:"translations", :list, GoogleApi.Translate.V2.Model.TranslationsResource, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Translate.V2.Model.TranslationsListResponse do
+  def encode(value, options) do
+    GoogleApi.Translate.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

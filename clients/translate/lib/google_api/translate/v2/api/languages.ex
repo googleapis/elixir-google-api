@@ -33,21 +33,21 @@ defmodule GoogleApi.Translate.V2.Api.Languages do
 
   - connection (GoogleApi.Translate.V2.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
-    - :quota_user (String): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :pp (Boolean): Pretty-print response.
-    - :oauth_token (String): OAuth 2.0 token for the current user.
-    - :bearer_token (String): OAuth bearer token.
-    - :upload_protocol (String): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :pretty_print (Boolean): Returns response with indentations and line breaks.
-    - :fields (String): Selector specifying which fields to include in a partial response.
-    - :upload_type (String): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :__/xgafv (String): V1 error format.
-    - :callback (String): JSONP
-    - :alt (String): Data format for response.
-    - :access_token (String): OAuth access token.
-    - :key (String): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :target (String): The language to use to return localized, human readable names of supported languages.
-    - :model (String): The model type for which supported languages should be returned.
+    - :quota_user (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :pp (boolean()): Pretty-print response.
+    - :bearer_token (String.t): OAuth bearer token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :pretty_print (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_type (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :__/xgafv (String.t): V1 error format.
+    - :callback (String.t): JSONP
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :target (String.t): The language to use to return localized, human readable names of supported languages.
+    - :model (String.t): The model type for which supported languages should be returned.
 
   ## Returns
 
@@ -59,8 +59,8 @@ defmodule GoogleApi.Translate.V2.Api.Languages do
     optional_params = %{
       :"quotaUser" => :query,
       :"pp" => :query,
-      :"oauth_token" => :query,
       :"bearer_token" => :query,
+      :"oauth_token" => :query,
       :"upload_protocol" => :query,
       :"prettyPrint" => :query,
       :"fields" => :query,
@@ -79,6 +79,6 @@ defmodule GoogleApi.Translate.V2.Api.Languages do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Translate.V2.Model.LanguagesListResponse{})
+    |> decode(%{"body" => %GoogleApi.Translate.V2.Model.LanguagesListResponse{}})
   end
 end
