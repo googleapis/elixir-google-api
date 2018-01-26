@@ -20,9 +20,11 @@
 defmodule GoogleApi.Translate.V2.Model.DetectionsResource do
   @moduledoc """
   An array of languages which we detect for the given text The most likely language list first.
+
+  ## Attributes
+
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     
   ]
@@ -31,6 +33,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Translate.V2.Model.DetectionsResource do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Translate.V2.Model.DetectionsResource do
+  def encode(value, options) do
+    GoogleApi.Translate.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

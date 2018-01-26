@@ -20,9 +20,12 @@
 defmodule GoogleApi.Translate.V2.Model.GetSupportedLanguagesRequest do
   @moduledoc """
   The request message for discovering supported languages.
+
+  ## Attributes
+
+  - target (String.t): The language to use to return localized, human readable names of supported languages. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"target"
   ]
@@ -31,6 +34,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Translate.V2.Model.GetSupportedLanguagesRequest do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Translate.V2.Model.GetSupportedLanguagesRequest do
+  def encode(value, options) do
+    GoogleApi.Translate.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 
