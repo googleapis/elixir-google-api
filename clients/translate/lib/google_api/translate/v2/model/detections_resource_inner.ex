@@ -17,12 +17,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Translate.V2.Model.DetectionsResource_inner do
+defmodule GoogleApi.Translate.V2.Model.DetectionsResourceInner do
   @moduledoc """
   
+
+  ## Attributes
+
+  - confidence (float()): The confidence of the detection result of this language. Defaults to: `null`.
+  - isReliable (boolean()): A boolean to indicate is the language detection result reliable. Defaults to: `null`.
+  - language (String.t): The language we detected. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"confidence",
     :"isReliable",
@@ -30,9 +35,15 @@ defmodule GoogleApi.Translate.V2.Model.DetectionsResource_inner do
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Translate.V2.Model.DetectionsResource_inner do
+defimpl Poison.Decoder, for: GoogleApi.Translate.V2.Model.DetectionsResourceInner do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Translate.V2.Model.DetectionsResourceInner do
+  def encode(value, options) do
+    GoogleApi.Translate.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

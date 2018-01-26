@@ -20,9 +20,12 @@
 defmodule GoogleApi.Translate.V2.Model.DetectionsListResponse do
   @moduledoc """
   
+
+  ## Attributes
+
+  - detections ([DetectionsResource]): A detections contains detection results of several text Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"detections"
   ]
@@ -33,6 +36,12 @@ defimpl Poison.Decoder, for: GoogleApi.Translate.V2.Model.DetectionsListResponse
   def decode(value, options) do
     value
     |> deserialize(:"detections", :list, GoogleApi.Translate.V2.Model.DetectionsResource, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Translate.V2.Model.DetectionsListResponse do
+  def encode(value, options) do
+    GoogleApi.Translate.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 

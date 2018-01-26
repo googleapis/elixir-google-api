@@ -15,13 +15,16 @@
 defmodule GoogleApis.Discovery do
   require Logger
 
+  def fetch(""), do: {:error, "No URL"}
   def fetch(url) do
     case Regex.run(~r/(https:\/\/.*\.googleapis.com\/\$discovery\/)([^?]*)(\?.*)?/, url) do
       [_, base, format, query] ->
         try_formats(base, query, ["GOOGLE_REST_SIMPLE_URI", format])
       nil ->
-        {:ok, body} = fetch_direct(url)
-        {:ok, {body, "default"}}
+        case fetch_direct(url) do
+          {:ok, body} -> {:ok, {body, "default"}}
+          error       -> error
+        end
     end
   end
 
@@ -36,6 +39,7 @@ defmodule GoogleApis.Discovery do
   end
 
   defp fetch_direct(url) do
+    Logger.info "FETCHING: #{url}"
     with %Tesla.Env{status: 200, body: body} <- Tesla.get(url)
     do
       Logger.info "FOUND: #{url}"

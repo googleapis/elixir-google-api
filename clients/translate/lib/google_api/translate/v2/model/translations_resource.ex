@@ -20,9 +20,14 @@
 defmodule GoogleApi.Translate.V2.Model.TranslationsResource do
   @moduledoc """
   
+
+  ## Attributes
+
+  - detectedSourceLanguage (String.t): The source language of the initial request, detected automatically, if no source language was passed within the initial request. If the source language was passed, auto-detection of the language will not occur and this field will be empty. Defaults to: `null`.
+  - model (String.t): The &#x60;model&#x60; type used for this translation. Valid values are listed in public documentation. Can be different from requested &#x60;model&#x60;. Present only if specific model type was explicitly requested. Defaults to: `null`.
+  - translatedText (String.t): Text translated into the target language. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
   defstruct [
     :"detectedSourceLanguage",
     :"model",
@@ -33,6 +38,12 @@ end
 defimpl Poison.Decoder, for: GoogleApi.Translate.V2.Model.TranslationsResource do
   def decode(value, _options) do
     value
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Translate.V2.Model.TranslationsResource do
+  def encode(value, options) do
+    GoogleApi.Translate.V2.Deserializer.serialize_non_nil(value, options)
   end
 end
 
