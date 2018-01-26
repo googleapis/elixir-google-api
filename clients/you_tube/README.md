@@ -1,6 +1,6 @@
 # GoogleApi.YouTube.V3
 
-**TODO: Add description**
+Supports core YouTube features, such as uploading videos, creating and managing playlists, searching for content, and much more.
 
 ## Installation
 
