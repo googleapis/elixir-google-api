@@ -30,7 +30,8 @@ defmodule GoogleApi.YouTube.V3.Mixfile do
   defp deps do
     [
       {:tesla, "~> 0.5"},
-      {:poison, ">= 1.0.0"}
+      {:poison, ">= 1.0.0"},
+      {:goth, "~> 0.4.0", only: [:dev, :test]}
     ]
   end
 end
