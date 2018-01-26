@@ -1,5 +1,5 @@
 defmodule GoogleApi.YouTube.VideoCategoriesTest do
-  use GoogleApi.YouTube.TestHelper
+  use GoogleApi.YouTube.V3.TestHelper
 
   test "video categories" do
     conn = GoogleApi.YouTube.V3.Connection.new(&for_scope/1)
