@@ -24,3 +24,4 @@
 mix.exs
 README.md
 config/config.exs
+test/test_helper.exs
