@@ -143,8 +143,7 @@ defmodule GoogleApi.Translate.V2.RequestBuilder do
   end
 
   def add_param(request, :form, name, value) do
-    request
-    |> Map.update(:body, %{name => value}, &Map.put(&1, name, value))
+    Map.update(request, :body, %{name => value}, &Map.put(&1, name, value))
   end
 
   def add_param(request, location, key, value) do
@@ -198,7 +197,6 @@ defimpl Poison.Decoder, for: GoogleApi.Translate.V2.RequestBuilder.DataWrapper d
   import GoogleApi.Translate.V2.Deserializer
 
   def decode(value, options) do
-    value
-    |> deserialize(:data, :struct, options[:struct], options)
+    deserialize(value, :data, :struct, options[:struct], options)
   end
 end
