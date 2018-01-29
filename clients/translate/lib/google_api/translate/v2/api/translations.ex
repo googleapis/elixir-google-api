@@ -46,10 +46,10 @@ defmodule GoogleApi.Translate.V2.Api.Translations do
     - :access_token (String.t): OAuth access token.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
     - :pp (boolean()): Pretty-print response.
-    - :source (String.t): The language of the source text, set to one of the language codes listed in Language Support. If the source language is not specified, the API will attempt to identify the source language automatically and return it within the response.
-    - :cid ([String.t]): The customization id for translate
     - :format (String.t): The format of the source text, in either HTML (default) or plain-text. A value of \&quot;html\&quot; indicates HTML and a value of \&quot;text\&quot; indicates plain-text.
     - :model (String.t): The &#x60;model&#x60; type requested for this translation. Valid values are listed in public documentation.
+    - :source (String.t): The language of the source text, set to one of the language codes listed in Language Support. If the source language is not specified, the API will attempt to identify the source language automatically and return it within the response.
+    - :cid ([String.t]): The customization id for translate
 
   ## Returns
 
@@ -74,10 +74,10 @@ defmodule GoogleApi.Translate.V2.Api.Translations do
       :access_token => :query,
       :quotaUser => :query,
       :pp => :query,
-      :source => :query,
-      :cid => :query,
       :format => :query,
-      :model => :query
+      :model => :query,
+      :source => :query,
+      :cid => :query
     }
 
     %{}
@@ -88,7 +88,7 @@ defmodule GoogleApi.Translate.V2.Api.Translations do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%{"body" => %GoogleApi.Translate.V2.Model.TranslationsListResponse{}})
+    |> decode(%GoogleApi.Translate.V2.Model.TranslationsListResponse{}, dataWrapped: true)
   end
 
   @doc """
@@ -145,6 +145,6 @@ defmodule GoogleApi.Translate.V2.Api.Translations do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%{"body" => %GoogleApi.Translate.V2.Model.TranslationsListResponse{}})
+    |> decode(%GoogleApi.Translate.V2.Model.TranslationsListResponse{}, dataWrapped: true)
   end
 end

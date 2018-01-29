@@ -25,7 +25,8 @@ defmodule GoogleApi.Translate.V2.Mixfile do
     [
       {:tesla, "~> 0.5"},
       {:poison, ">= 1.0.0"},
-      {:ex_doc, "~> 0.16", only: :dev}
+      {:ex_doc, "~> 0.16", only: :dev},
+      {:goth, "~> 0.4.0", only: [:dev, :test]}
     ]
   end
 

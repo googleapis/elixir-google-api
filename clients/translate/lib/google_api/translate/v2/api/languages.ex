@@ -44,8 +44,8 @@ defmodule GoogleApi.Translate.V2.Api.Languages do
     - :access_token (String.t): OAuth access token.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
     - :pp (boolean()): Pretty-print response.
-    - :model (String.t): The model type for which supported languages should be returned.
     - :target (String.t): The language to use to return localized, human readable names of supported languages.
+    - :model (String.t): The model type for which supported languages should be returned.
 
   ## Returns
 
@@ -69,8 +69,8 @@ defmodule GoogleApi.Translate.V2.Api.Languages do
       :access_token => :query,
       :quotaUser => :query,
       :pp => :query,
-      :model => :query,
-      :target => :query
+      :target => :query,
+      :model => :query
     }
 
     %{}
@@ -79,6 +79,6 @@ defmodule GoogleApi.Translate.V2.Api.Languages do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%{"body" => %GoogleApi.Translate.V2.Model.LanguagesListResponse{}})
+    |> decode(%GoogleApi.Translate.V2.Model.LanguagesListResponse{}, dataWrapped: true)
   end
 end

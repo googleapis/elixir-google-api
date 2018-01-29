@@ -77,7 +77,7 @@ defmodule GoogleApi.Translate.V2.Api.Detections do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%{"body" => %GoogleApi.Translate.V2.Model.DetectionsListResponse{}})
+    |> decode(%GoogleApi.Translate.V2.Model.DetectionsListResponse{}, dataWrapped: true)
   end
 
   @doc """
@@ -133,6 +133,6 @@ defmodule GoogleApi.Translate.V2.Api.Detections do
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode(%{"body" => %GoogleApi.Translate.V2.Model.DetectionsListResponse{}})
+    |> decode(%GoogleApi.Translate.V2.Model.DetectionsListResponse{}, dataWrapped: true)
   end
 end
