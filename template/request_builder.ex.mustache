@@ -6,6 +6,10 @@ defmodule {{moduleName}}.RequestBuilder do
 
   @path_template_regex ~r/{(\+?[^}]+)}/i
 
+  defmodule DataWrapper do
+    defstruct [:data]
+  end
+
   @doc """
   Specify the request method when building a request
 
@@ -138,5 +142,18 @@ defmodule {{moduleName}}.RequestBuilder do
   end
   def decode(response, _struct) do
     {:error, response}
+  end
+  def decode(%Tesla.Env{status: 200, body: body}, struct, dataWrapped: true) do
+    {:ok, %{data: data}} = Poison.decode(body, as: %{{moduleName}}.RequestBuilder.DataWrapper{}, struct: struct)
+    {:ok, data}
+  end
+end
+
+defimpl Poison.Decoder, for: {{moduleName}}.RequestBuilder.DataWrapper do
+  import {{moduleName}}.Deserializer
+
+  def decode(value, options) do
+    value
+    |> deserialize(:data, :struct, options[:struct], options)
   end
 end

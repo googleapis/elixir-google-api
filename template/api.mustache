@@ -54,7 +54,7 @@ defmodule {{moduleName}}.Api.{{classname}} do
 {{/hasOptionalParams}}
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
-    |> decode({{#vendorExtensions.x-dataWrapper}}%{"body" => {{/vendorExtensions.x-dataWrapper}}{{decodedStruct}}{{#vendorExtensions.x-dataWrapper}}}{{/vendorExtensions.x-dataWrapper}})
+    |> decode({{decodedStruct}}{{#vendorExtensions.x-dataWrapper}}, dataWrapped: true{{/vendorExtensions.x-dataWrapper}})
   end
   {{/operation}}
 {{/operations}}
