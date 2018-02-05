@@ -11,7 +11,8 @@ defmodule GoogleApi.Storage.StorageTest do
     obj = %Object{name: "README.md", bucket: @bucket_id}
     path = "README.md"
     {:ok, object} = GoogleApi.Storage.V1.Api.Objects.storage_objects_insert_simple(conn, @bucket_id, "multipart", obj, path)
-
+    |> IO.inspect
+    assert %Object{} = object
 
     # delete the file
     {:ok, _} = GoogleApi.Storage.V1.Api.Objects.storage_objects_delete(conn, @bucket_id, "README.md")

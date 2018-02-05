@@ -22,6 +22,7 @@ defmodule GoogleApi.Storage.V1.RequestBuilder do
   """
 
   @path_template_regex ~r/{(\+?[^}]+)}/i
+  @successful_request_response 200..299
 
   defmodule DataWrapper do
     defstruct [:data]
@@ -164,28 +165,42 @@ defmodule GoogleApi.Storage.V1.RequestBuilder do
   {:error, info} on failure
   """
   @spec decode(Tesla.Env.t()) :: {:ok, struct()} | {:error, Tesla.Env.t()}
-  def decode(%Tesla.Env{status: 200, body: body}), do: Poison.decode(body)
+  def decode(%Tesla.Env{status: status, body: body}) when status in @successful_request_response do
+    Poison.decode(body)
+  end
 
   def decode(response) do
     {:error, response}
   end
 
   @spec decode(Tesla.Env.t(), struct()) :: {:ok, struct()} | {:error, Tesla.Env.t()}
-  def decode(%Tesla.Env{status: 200} = env, false), do: {:ok, env}
+  def decode(%Tesla.Env{status: status} = env, _) when status not in @successful_request_response do
+    {:error, env}
+  end
 
-  def decode(%Tesla.Env{status: 200, body: body}, struct) do
+  def decode(%Tesla.Env{} = env, false) do
+    {:ok, env}
+  end
+
+  def decode(%Tesla.Env{body: body}, struct) do
     Poison.decode(body, as: struct)
   end
 
-  def decode(response, _struct) do
-    {:error, response}
+  def decode(env, _) do
+    {:error, env}
   end
 
-  def decode(%Tesla.Env{status: 200, body: body}, struct, dataWrapped: true) do
+  @spec decode(Tesla.Env.t(), struct(), keyword()) :: {:ok, struct()} | {:error, Tesla.Env.t()}
+  def decode(%Tesla.Env{status: status, body: body}, struct, dataWrapped: true)
+      when status in @successful_request_response do
     {:ok, %{data: data}} =
       Poison.decode(body, as: %GoogleApi.Storage.V1.RequestBuilder.DataWrapper{}, struct: struct)
 
     {:ok, data}
+  end
+
+  def decode(env, _, _) do
+    {:error, env}
   end
 end
 
