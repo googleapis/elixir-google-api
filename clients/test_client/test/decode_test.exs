@@ -25,6 +25,14 @@ defmodule DecodeTest do
     assert {:ok, %{"foo" => "bar"}} = RequestBuilder.decode(env)
   end
 
+  test "handles other 200 responses without body" do
+    env = %Tesla.Env{
+      status: 200,
+      body: nil
+    }
+    assert {:ok, nil} = RequestBuilder.decode(env)
+  end
+
   test "handles other 200 responses with struct" do
     env = %Tesla.Env{
       status: 200,
@@ -49,6 +57,14 @@ defmodule DecodeTest do
       body: "{\"foo\": \"bar\"}"
     }
     assert {:ok, %{"foo" => "bar"}} = RequestBuilder.decode(env)
+  end
+
+  test "handles other 2xx responses without body" do
+    env = %Tesla.Env{
+      status: 204,
+      body: nil
+    }
+    assert {:ok, nil} = RequestBuilder.decode(env)
   end
 
   test "handles other 2xx responses with struct" do
