@@ -52,4 +52,15 @@ defmodule DeserializerTest do
     assert %DateTime{} = updated2
   end
 
+  test "malformed date does not modify input" do
+    json = """
+    {
+      "timeCreated": "malformed",
+      "updated": "malformed"
+    }
+    """
+
+    assert {:ok, bucket} = Poison.decode(json, as: %Bucket{})
+    assert %Bucket{timeCreated: "malformed", updated: "malformed"} = bucket
+  end
 end
