@@ -100,6 +100,8 @@ defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.Bucket do
       GoogleApi.Storage.V1.Model.BucketRetentionPolicy,
       options
     )
+    |> deserialize(:timeCreated, :date, nil, options)
+    |> deserialize(:updated, :date, nil, options)
     |> deserialize(:versioning, :struct, GoogleApi.Storage.V1.Model.BucketVersioning, options)
     |> deserialize(:website, :struct, GoogleApi.Storage.V1.Model.BucketWebsite, options)
   end

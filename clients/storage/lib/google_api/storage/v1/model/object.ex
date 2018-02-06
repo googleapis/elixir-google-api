@@ -103,6 +103,11 @@ defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.Object do
       options
     )
     |> deserialize(:owner, :struct, GoogleApi.Storage.V1.Model.ObjectOwner, options)
+    |> deserialize(:retentionExpirationTime, :date, nil, options)
+    |> deserialize(:timeCreated, :date, nil, options)
+    |> deserialize(:timeDeleted, :date, nil, options)
+    |> deserialize(:timeStorageClassUpdated, :date, nil, options)
+    |> deserialize(:updated, :date, nil, options)
   end
 end
 

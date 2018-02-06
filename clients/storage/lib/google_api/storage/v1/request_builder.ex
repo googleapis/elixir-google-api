@@ -157,50 +157,42 @@ defmodule GoogleApi.Storage.V1.RequestBuilder do
   ## Parameters
 
   - env (Tesla.Env) - The response object
-  - struct - The shape of the struct to deserialize into
+  - struct (struct | false) - The shape of the struct to deserialize into. If false, returns the Tesla response.
+  - opts (KeywordList) - [optional] Optional parameters
+    - :dataWrapped (boolean()): If true, the remove the wrapping "data" field.
 
   ## Returns
 
   {:ok, struct} on success
   {:error, info} on failure
   """
-  @spec decode(Tesla.Env.t()) :: {:ok, struct()} | {:error, Tesla.Env.t()}
-  def decode(%Tesla.Env{status: status, body: body}) when status in @successful_request_response do
-    Poison.decode(body)
-  end
+  @spec decode(Tesla.Env.t(), struct() | false, keyword()) ::
+          {:ok, struct()} | {:error, Tesla.Env.t()}
+  def decode(env, struct \\ nil, opts \\ [])
 
-  def decode(response) do
-    {:error, response}
-  end
-
-  @spec decode(Tesla.Env.t(), struct()) :: {:ok, struct()} | {:error, Tesla.Env.t()}
-  def decode(%Tesla.Env{status: status} = env, _) when status not in @successful_request_response do
+  def decode(%Tesla.Env{status: status} = env, _struct, _opts)
+      when status not in @successful_request_response do
     {:error, env}
   end
 
-  def decode(%Tesla.Env{} = env, false) do
+  def decode(%Tesla.Env{} = env, false, _opts) do
     {:ok, env}
   end
 
-  def decode(%Tesla.Env{body: body}, struct) do
+  def decode(%Tesla.Env{body: nil}, _struct, _opts) do
+    {:ok, nil}
+  end
+
+  def decode(%Tesla.Env{body: body}, struct, dataWrapped: true) do
+    Poison.decode(body, as: %GoogleApi.Storage.V1.RequestBuilder.DataWrapper{}, struct: struct)
+    |> case do
+      {:ok, %{data: data}} -> {:ok, data}
+      error -> error
+    end
+  end
+
+  def decode(%Tesla.Env{body: body}, struct, _opts) do
     Poison.decode(body, as: struct)
-  end
-
-  def decode(env, _) do
-    {:error, env}
-  end
-
-  @spec decode(Tesla.Env.t(), struct(), keyword()) :: {:ok, struct()} | {:error, Tesla.Env.t()}
-  def decode(%Tesla.Env{status: status, body: body}, struct, dataWrapped: true)
-      when status in @successful_request_response do
-    {:ok, %{data: data}} =
-      Poison.decode(body, as: %GoogleApi.Storage.V1.RequestBuilder.DataWrapper{}, struct: struct)
-
-    {:ok, data}
-  end
-
-  def decode(env, _, _) do
-    {:error, env}
   end
 end
 
