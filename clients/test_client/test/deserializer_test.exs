@@ -15,6 +15,7 @@
 defmodule DeserializerTest do
   use ExUnit.Case
   alias GoogleApi.TestClient.V1.Model.PerformanceReport
+  alias GoogleApi.TestClient.V1.Model.Bucket
 
   test "deserialize array of anything" do
     json = """
@@ -33,6 +34,19 @@ defmodule DeserializerTest do
     assert 2 == Enum.count(rate)
     assert %{"foo" => "bar"} == Enum.at(rate, 0)
     assert [%{"asdf" => "qwer"}] == Enum.at(rate, 1)
+  end
+
+  test "deserialize date-time" do
+    json = """
+    {
+      "timeCreated": "2017-04-12T19:44:27.293Z",
+      "updated": null
+    }
+    """
+
+    assert {:ok, bucket} = Poison.decode(json, as: %Bucket{})
+    assert %Bucket{} = bucket
+    IO.inspect bucket
   end
 
 end
