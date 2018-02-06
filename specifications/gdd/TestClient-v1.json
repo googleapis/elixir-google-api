@@ -78,6 +78,23 @@
      }
     }
    }
+  },
+  "Bucket": {
+   "id": "Bucket",
+   "type": "object",
+   "description": "A bucket.",
+   "properties": {
+    "timeCreated": {
+     "type": "string",
+     "description": "The creation time of the bucket in RFC 3339 format.",
+     "format": "date"
+    },
+    "updated": {
+     "type": "string",
+     "description": "The modification time of the bucket in RFC 3339 format.",
+     "format": "date"
+    }
+   }
   }
  },
  "resources": {

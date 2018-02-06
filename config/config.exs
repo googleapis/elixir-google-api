@@ -32,4 +32,4 @@ use Mix.Config
 config :google_apis,
   spec_converter: GoogleApis.Converter.ApiSpecConverter,
   client_generator: GoogleApis.Generator.SwaggerCli,
-  swagger_cli_image: "swaggerapi/swagger-codegen-cli"
+  swagger_cli_image: "swaggerapi/swagger-codegen-cli:v2.3.1"
