@@ -9,7 +9,7 @@ by adding `google_api_cloud_resource_manager` to your list of dependencies in `m
 
 ```elixir
 def deps do
-  [{:google_api_cloud_resource_manager, "~> 0.1.0"}]
+  [{:google_api_cloud_resource_manager, "~> 0.0.1"}]
 end
 ```
 

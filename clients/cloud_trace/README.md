@@ -11,7 +11,7 @@ by adding `google_api_cloud_trace` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_cloud_trace, "~> 0.1.0"}]
+  [{:google_api_cloud_trace, "~> 0.0.1"}]
 end
 ```
 

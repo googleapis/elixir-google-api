@@ -10,7 +10,7 @@ by adding `google_api_cloud_error_reporting` to your list of dependencies in `mi
 
 ```elixir
 def deps do
-  [{:google_api_cloud_error_reporting, "~> 0.1.0"}]
+  [{:google_api_cloud_error_reporting, "~> 0.0.1"}]
 end
 ```
 

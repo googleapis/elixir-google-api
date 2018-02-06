@@ -9,7 +9,7 @@ by adding `google_api_video_intelligence` to your list of dependencies in `mix.e
 
 ```elixir
 def deps do
-  [{:google_api_video_intelligence, "~> 0.1.0"}]
+  [{:google_api_video_intelligence, "~> 0.0.1"}]
 end
 ```
 

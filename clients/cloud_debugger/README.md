@@ -9,7 +9,7 @@ by adding `google_api_cloud_debugger` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_cloud_debugger, "~> 0.1.0"}]
+  [{:google_api_cloud_debugger, "~> 0.0.1"}]
 end
 ```
 
