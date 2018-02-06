@@ -32,7 +32,7 @@ defmodule {{moduleName}}.Deserializer do
   defp parse_date(iso8601) do
     case DateTime.from_iso8601(iso8601) do
       {:ok, datetime, _offset} -> datetime
-      _ -> nil
+      _ -> iso8601
     end
   end
 
