@@ -9,7 +9,7 @@ by adding `google_api_machine_learning` to your list of dependencies in `mix.exs
 
 ```elixir
 def deps do
-  [{:google_api_machine_learning, "~> 0.1.0"}]
+  [{:google_api_machine_learning, "~> 0.0.1"}]
 end
 ```
 

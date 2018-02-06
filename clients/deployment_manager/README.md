@@ -9,7 +9,7 @@ by adding `google_api_deployment_manager` to your list of dependencies in `mix.e
 
 ```elixir
 def deps do
-  [{:google_api_deployment_manager, "~> 0.1.0"}]
+  [{:google_api_deployment_manager, "~> 0.0.1"}]
 end
 ```
 
