@@ -50,12 +50,17 @@ defmodule GoogleApi.Storage.V1.Deserializer do
   end
 
   def deserialize(model, field, :date, _, _options) do
-    case DateTime.from_iso8601(Map.get(model, field)) do
-      {:ok, datetime} ->
-        Map.put(model, field, datetime)
+    Map.update(model, field, nil, &parse_date/1)
+  end
 
-      _ ->
-        model
+  defp parse_date(nil) do
+    nil
+  end
+
+  defp parse_date(iso8601) do
+    case DateTime.from_iso8601(iso8601) do
+      {:ok, datetime, _offset} -> datetime
+      _ -> iso8601
     end
   end
 
