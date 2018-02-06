@@ -9,7 +9,7 @@ by adding `google_api_compute` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_compute, "~> 0.1.0"}]
+  [{:google_api_compute, "~> 0.0.1"}]
 end
 ```
 
