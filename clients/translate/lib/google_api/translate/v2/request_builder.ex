@@ -22,6 +22,7 @@ defmodule GoogleApi.Translate.V2.RequestBuilder do
   """
 
   @path_template_regex ~r/{(\+?[^}]+)}/i
+  @successful_request_response 200..299
 
   defmodule DataWrapper do
     defstruct [:data]
@@ -156,40 +157,42 @@ defmodule GoogleApi.Translate.V2.RequestBuilder do
   ## Parameters
 
   - env (Tesla.Env) - The response object
-  - struct - The shape of the struct to deserialize into
+  - struct (struct | false) - The shape of the struct to deserialize into. If false, returns the Tesla response.
+  - opts (KeywordList) - [optional] Optional parameters
+    - :dataWrapped (boolean()): If true, the remove the wrapping "data" field.
 
   ## Returns
 
   {:ok, struct} on success
   {:error, info} on failure
   """
-  @spec decode(Tesla.Env.t()) :: {:ok, struct()} | {:error, Tesla.Env.t()}
-  def decode(%Tesla.Env{status: 200, body: body}), do: Poison.decode(body)
+  @spec decode(Tesla.Env.t(), struct() | false, keyword()) ::
+          {:ok, struct()} | {:error, Tesla.Env.t()}
+  def decode(env, struct \\ nil, opts \\ [])
 
-  def decode(response) do
-    {:error, response}
+  def decode(%Tesla.Env{status: status} = env, _struct, _opts)
+      when status not in @successful_request_response do
+    {:error, env}
   end
 
-  @spec decode(Tesla.Env.t(), struct()) :: {:ok, struct()} | {:error, Tesla.Env.t()}
-  def decode(%Tesla.Env{status: 200} = env, false), do: {:ok, env}
+  def decode(%Tesla.Env{} = env, false, _opts) do
+    {:ok, env}
+  end
 
-  def decode(%Tesla.Env{status: 200, body: body}, struct) do
+  def decode(%Tesla.Env{body: nil}, _struct, _opts) do
+    {:ok, nil}
+  end
+
+  def decode(%Tesla.Env{body: body}, struct, dataWrapped: true) do
+    Poison.decode(body, as: %GoogleApi.Translate.V2.RequestBuilder.DataWrapper{}, struct: struct)
+    |> case do
+      {:ok, %{data: data}} -> {:ok, data}
+      error -> error
+    end
+  end
+
+  def decode(%Tesla.Env{body: body}, struct, _opts) do
     Poison.decode(body, as: struct)
-  end
-
-  def decode(response, _struct) do
-    {:error, response}
-  end
-
-  def decode(%Tesla.Env{status: 200, body: body}, struct, dataWrapped: true) do
-    {:ok, %{data: data}} =
-      Poison.decode(
-        body,
-        as: %GoogleApi.Translate.V2.RequestBuilder.DataWrapper{},
-        struct: struct
-      )
-
-    {:ok, data}
   end
 end
 
