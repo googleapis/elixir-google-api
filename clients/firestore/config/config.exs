@@ -8,15 +8,15 @@ use Mix.Config
 # if you want to provide default values for your application for
 # 3rd-party users, it should be done in your "mix.exs" file.
 
-# You can configure your application as:
+# You can configure for your application as:
 #
-#     config :google_cloud_firestore, key: :value
+#     config :google_cloud_firestore_api, key: :value
 #
-# and access this configuration in your application as:
+# And access this configuration in your application as:
 #
-#     Application.get_env(:google_cloud_firestore, :key)
+#     Application.get_env(:google_cloud_firestore_api, :key)
 #
-# You can also configure a 3rd-party app:
+# Or configure a 3rd-party app:
 #
 #     config :logger, level: :info
 #
