@@ -84,6 +84,6 @@ defmodule GoogleApis do
     name = GoogleApis.ApiConfig.library_name(api_config)
 
     ["clients/#{name}/lib/**/*.{ex,exs}"]
-    |> Mix.Tasks.Format.run    
+    |> Mix.Tasks.Format.run
   end
 end
