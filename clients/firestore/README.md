@@ -1,6 +1,6 @@
 # GoogleCloudFirestore
 
-**TODO: Add description**
+**Client to interact with Firestore, creating DB's, storing data, removing and updating data, and other Firestore functions.**
 
 ## Installation
 
