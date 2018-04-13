@@ -1,13 +1,19 @@
 defmodule GoogleApiFirestore.MixProject do
   use Mix.Project
 
+  @version "0.0.1"
+
   def project do
     [
       app: :google_api_firestore,
-      version: "0.1.0",
+      version: @version
       elixir: "~> 1.6",
+      build_embedded: Mix.env() == :prod
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      description: description(),
+      package: package(),
+      deps: deps(),
+      source_url: "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/firestore"
     ]
   end
 
@@ -21,8 +27,28 @@ defmodule GoogleApiFirestore.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"},
+      {:tesla, ">= 0.8.0 and <= 0.10.0"},
+      {:poison, ">= 1.0.0"},
+      {:ex_doc, ">= 0.16.0", only: :dev},
+      {:goth, "~> 0.8.0", only: :test}
+    ]
+  end
+
+  defp description() do
+    """
+    API for managing the Firestore cloud database.
+    """
+  end
+
+  defp package() do
+    [
+      files: ["lib", "mix.exs", "README*", "LICENSE"],
+      maintainers: ["Jeff Ching", "Shawn Campbell", "Carlo DiCelico"],
+      licenses: ["Apache 2.0"],
+      links: %{
+        "GitHub" => "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/firestore",
+        "Homepage" => "https://cloud.google.com/firestore"
+      }
     ]
   end
 end

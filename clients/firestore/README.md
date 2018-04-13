@@ -1,6 +1,6 @@
 # GoogleCloudFirestore
 
-**Client to interact with Firestore, creating DB's, storing data, removing and updating data, and other Firestore functions.**
+**Cloud Firestore is a NoSQL document database built for automatic scaling, high performance, and ease of application development.**
 
 ## Installation
 
@@ -10,7 +10,7 @@ by adding `google_cloud_firestore` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:google_cloud_firestore, "~> 0.1.0"}
+    {:google_cloud_firestore, "~> 0.0.1"}
   ]
 end
 ```
