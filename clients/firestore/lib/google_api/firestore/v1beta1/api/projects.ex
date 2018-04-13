@@ -1,4 +1,4 @@
-# Copyright 2017 Google Inc.
+# Copyright 2018 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -45,7 +45,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
     - :bearer_token (String.t): OAuth bearer token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :body (BatchGetDocumentsRequest): 
+    - :body (BatchGetDocumentsRequest):
 
   ## Returns
 
@@ -109,7 +109,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
     - :bearer_token (String.t): OAuth bearer token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :body (BeginTransactionRequest): 
+    - :body (BeginTransactionRequest):
 
   ## Returns
 
@@ -173,7 +173,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
     - :bearer_token (String.t): OAuth bearer token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :body (CommitRequest): 
+    - :body (CommitRequest):
 
   ## Returns
 
@@ -235,7 +235,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :mask.fieldPaths ([String.t]): The list of field paths in the mask. See Document.fields for a field path syntax reference.
     - :documentId (String.t): The client-assigned document ID to use for this document.  Optional. If not specified, an ID will be assigned by the service.
-    - :body (Document): 
+    - :body (Document):
 
   ## Returns
 
@@ -509,7 +509,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
     - :bearer_token (String.t): OAuth bearer token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :body (ListCollectionIdsRequest): 
+    - :body (ListCollectionIdsRequest):
 
   ## Returns
 
@@ -573,7 +573,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
     - :bearer_token (String.t): OAuth bearer token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :body (ListenRequest): 
+    - :body (ListenRequest):
 
   ## Returns
 
@@ -636,7 +636,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
     - :mask.fieldPaths ([String.t]): The list of field paths in the mask. See Document.fields for a field path syntax reference.
     - :currentDocument.updateTime (String.t): When set, the target document must exist and have been last updated at that time.
     - :currentDocument.exists (boolean()): When set to &#x60;true&#x60;, the target document must exist. When set to &#x60;false&#x60;, the target document must not exist.
-    - :body (Document): 
+    - :body (Document):
 
   ## Returns
 
@@ -699,7 +699,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
     - :bearer_token (String.t): OAuth bearer token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :body (RollbackRequest): 
+    - :body (RollbackRequest):
 
   ## Returns
 
@@ -758,7 +758,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
     - :bearer_token (String.t): OAuth bearer token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :body (RunQueryRequest): 
+    - :body (RunQueryRequest):
 
   ## Returns
 
@@ -821,7 +821,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
     - :bearer_token (String.t): OAuth bearer token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :body (WriteRequest): 
+    - :body (WriteRequest):
 
   ## Returns
 
@@ -880,7 +880,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
     - :bearer_token (String.t): OAuth bearer token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :body (Index): 
+    - :body (Index):
 
   ## Returns
 
@@ -941,7 +941,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :pageToken (String.t): The standard List page token.
     - :pageSize (integer()): The standard List page size.
-    - :filter (String.t): 
+    - :filter (String.t):
 
   ## Returns
 

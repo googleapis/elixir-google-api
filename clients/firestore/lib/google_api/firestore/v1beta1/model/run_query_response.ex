@@ -1,4 +1,4 @@
-# Copyright 2017 Google Inc.
+# Copyright 2018 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -41,15 +41,7 @@ defimpl Poison.Decoder, for: GoogleApi.Firestore.V1beta1.Model.RunQueryResponse 
 
   def decode(value, options) do
     value
-<<<<<<< HEAD
-    |> deserialize(:"document", :struct, GoogleApi.Firestore.V1beta1.Model.Document, options)
-    
-    
-    
-    
-=======
     |> deserialize(:document, :struct, GoogleApi.Firestore.V1beta1.Model.Document, options)
->>>>>>> 3af99303... add_firestore: run formatter on Firestore client
   end
 end
 
