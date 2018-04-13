@@ -6,9 +6,9 @@ defmodule GoogleApiFirestore.MixProject do
   def project do
     [
       app: :google_api_firestore,
-      version: @version
+      version: @version,
       elixir: "~> 1.6",
-      build_embedded: Mix.env() == :prod
+      build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
       description: description(),
       package: package(),
