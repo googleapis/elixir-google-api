@@ -13,7 +13,8 @@ defmodule GoogleApiFirestore.MixProject do
       description: description(),
       package: package(),
       deps: deps(),
-      source_url: "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/firestore"
+      source_url:
+        "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/firestore"
     ]
   end
 
@@ -46,7 +47,8 @@ defmodule GoogleApiFirestore.MixProject do
       maintainers: ["Jeff Ching", "Shawn Campbell", "Carlo DiCelico"],
       licenses: ["Apache 2.0"],
       links: %{
-        "GitHub" => "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/firestore",
+        "GitHub" =>
+          "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/firestore",
         "Homepage" => "https://cloud.google.com/firestore"
       }
     ]
