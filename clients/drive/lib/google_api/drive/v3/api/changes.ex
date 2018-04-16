@@ -1,4 +1,4 @@
-# Copyright 2017 Google Inc.
+# Copyright 2018 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -153,7 +153,7 @@ defmodule GoogleApi.Drive.V3.Api.Changes do
     - :spaces (String.t): A comma-separated list of spaces to query within the user corpus. Supported values are &#39;drive&#39;, &#39;appDataFolder&#39; and &#39;photos&#39;.
     - :supportsTeamDrives (boolean()): Whether the requesting application supports Team Drives.
     - :teamDriveId (String.t): The Team Drive from which changes will be returned. If specified the change IDs will be reflective of the Team Drive; use the combined Team Drive ID and change ID as an identifier.
-    - :resource (Channel): 
+    - :resource (Channel):
 
   ## Returns
 

@@ -1,4 +1,4 @@
-# Copyright 2017 Google Inc.
+# Copyright 2018 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -44,7 +44,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
     - :supportsTeamDrives (boolean()): Whether the requesting application supports Team Drives.
     - :transferOwnership (boolean()): Whether to transfer ownership to the specified user and downgrade the current owner to a writer. This parameter is required as an acknowledgement of the side effect.
     - :useDomainAdminAccess (boolean()): Whether the request should be treated as if it was issued by a domain administrator; if set to true, then the requester will be granted access if they are an administrator of the domain to which the item belongs.
-    - :body (Permission): 
+    - :body (Permission):
 
   ## Returns
 
@@ -256,7 +256,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
     - :supportsTeamDrives (boolean()): Whether the requesting application supports Team Drives.
     - :transferOwnership (boolean()): Whether to transfer ownership to the specified user and downgrade the current owner to a writer. This parameter is required as an acknowledgement of the side effect.
     - :useDomainAdminAccess (boolean()): Whether the request should be treated as if it was issued by a domain administrator; if set to true, then the requester will be granted access if they are an administrator of the domain to which the item belongs.
-    - :body (Permission): 
+    - :body (Permission):
 
   ## Returns
 

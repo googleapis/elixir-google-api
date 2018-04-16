@@ -1,4 +1,4 @@
-# Copyright 2017 Google Inc.
+# Copyright 2018 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ defmodule GoogleApi.Drive.V3.Api.Replies do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
     - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
-    - :body (Reply): 
+    - :body (Reply):
 
   ## Returns
 
@@ -243,7 +243,7 @@ defmodule GoogleApi.Drive.V3.Api.Replies do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
     - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
-    - :body (Reply): 
+    - :body (Reply):
 
   ## Returns
 
