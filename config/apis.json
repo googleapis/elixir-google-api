@@ -260,6 +260,11 @@
     "url": "https://firebaserules.googleapis.com/$discovery/rest?version=v1"
   },
   {
+    "version": "v1beta1",
+    "name": "Firestore",
+    "url": "https://firestore.googleapis.com/$discovery/rest?version=v1beta1"
+  },
+  {
     "version": "v1",
     "name": "Fitness",
     "url": "https://www.googleapis.com/discovery/v1/apis/fitness/v1/rest"
