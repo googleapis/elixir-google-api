@@ -43,7 +43,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
     - :keepRevisionForever (boolean()): Whether to set the &#39;keepForever&#39; field in the new head revision. This is only applicable to files with binary content in Drive.
     - :ocrLanguage (String.t): A language hint for OCR processing during image import (ISO 639-1 code).
     - :supportsTeamDrives (boolean()): Whether the requesting application supports Team Drives.
-    - :body (File): 
+    - :body (File):
 
   ## Returns
 
@@ -98,7 +98,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
     - :ocrLanguage (String.t): A language hint for OCR processing during image import (ISO 639-1 code).
     - :supportsTeamDrives (boolean()): Whether the requesting application supports Team Drives.
     - :useContentAsIndexableText (boolean()): Whether to use the uploaded content as indexable text.
-    - :body (File): 
+    - :body (File):
 
   ## Returns
 
@@ -153,7 +153,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
     - :ocrLanguage (String.t): A language hint for OCR processing during image import (ISO 639-1 code).
     - :supportsTeamDrives (boolean()): Whether the requesting application supports Team Drives.
     - :useContentAsIndexableText (boolean()): Whether to use the uploaded content as indexable text.
-    - :body (File): 
+    - :body (File):
 
   ## Returns
 
@@ -566,7 +566,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
     - :removeParents (String.t): A comma-separated list of parent IDs to remove.
     - :supportsTeamDrives (boolean()): Whether the requesting application supports Team Drives.
     - :useContentAsIndexableText (boolean()): Whether to use the uploaded content as indexable text.
-    - :body (File): 
+    - :body (File):
 
   ## Returns
 
@@ -626,7 +626,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
     - :removeParents (String.t): A comma-separated list of parent IDs to remove.
     - :supportsTeamDrives (boolean()): Whether the requesting application supports Team Drives.
     - :useContentAsIndexableText (boolean()): Whether to use the uploaded content as indexable text.
-    - :body (File): 
+    - :body (File):
 
   ## Returns
 
@@ -751,7 +751,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
     - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
     - :acknowledgeAbuse (boolean()): Whether the user is acknowledging the risk of downloading known malware or other abusive files. This is only applicable when alt&#x3D;media.
     - :supportsTeamDrives (boolean()): Whether the requesting application supports Team Drives.
-    - :resource (Channel): 
+    - :resource (Channel):
 
   ## Returns
 
