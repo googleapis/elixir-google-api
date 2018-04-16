@@ -45,6 +45,9 @@ Now you can make an API call by obtaining an access token and using the
 generated modules.
 
 ### Obtaining an Access Token
+
+#### Service Accounts
+
 Authentication is typically done through [Application Default Credentials][adc]
 which means you do not have to change the code to authenticate as long as
 your environment has credentials. Start by creating a
@@ -57,6 +60,39 @@ the path to the key file, for example:
 
 If you are deploying to App Engine, Compute Engine, or Container Engine, your
 credentials will be available by default.
+
+#### OAuth 2.0
+
+Many APIs (like Drive, Gmail, and YouTube) require you to use OAuth 2.0 to
+authorize requests on behalf of an authenticated user. For an example using
+the [oauth2-library][oauth2-library], see the [auth sample][auth-sample].
+
+We've also provided a mix task to fetch a token for testing. The following
+command requests a token for the Drive full access scope:
+
+```bash
+$ export GOOGLE_CLIENT_ID=[YOUR-OAUTH-CLIENT-ID]
+$ export GOOGLE_CLIENT_SECRET=[YOUR-OAUTH-CLIENT-SECRET]
+$ mix google_apis.auth https://www.googleapis.com/auth/drive
+Open the following link in your brower:
+https://accounts.google.com/o/oauth2/auth?[some-long-url]
+Enter verification code:
+```
+
+Once you've logged in and authorized the application, copy the code param from
+the web browser's url and paste into the console. The script will then fetch
+your OAuth access token.
+
+```bash
+Token: [your-oauth-token]
+```
+
+You can then use this token for your testing:
+
+```elixir
+connection = GoogleApis.Drive.V3.Connection.new("your-oauth-token")
+{:ok, file_list} = GoogleApi.Drive.V3.Api.Files.drive_files_list(conn)
+```
 
 ### Making a Request
 
@@ -74,7 +110,7 @@ Enum.each(response.items, &IO.puts(&1.id))
 
 ### What's Next?
 
-Take a look at our [elixir-samples repository][elixir-samples] repository for 
+Take a look at our [elixir-samples repository][elixir-samples] repository for
 examples of calling individual APIs and a getting started tutorial app.
 
 ## Generating Clients
@@ -202,3 +238,5 @@ This is not an officially supported Google product.
 [hex_pm]: https://hex.pm/users/google-cloud
 [goth]: https://hex.pm/packages/goth
 [elixir-samples]: https://github.com/GoogleCloudPlatform/elixir-samples
+[oauth2-library]: https://github.com/scrogson/oauth2
+[auth-sample]: https://github.com/GoogleCloudPlatform/elixir-samples/tree/master/auth
