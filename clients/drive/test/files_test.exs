@@ -16,26 +16,30 @@ defmodule GoogleApi.Drive.FilesTest do
   use GoogleApi.Drive.V3.TestHelper
   alias GoogleApi.Drive.V3.Connection
   alias GoogleApi.Drive.V3.Model.File
+  alias GoogleApi.Drive.V3.Model.FileList
   alias GoogleApi.Drive.V3.Api.Files
 
   test "upload file" do
     conn = Connection.new(token())
 
-    # insert a file
-    f = %File{
-      name: "README.md",
-    }
-    {:ok, file} = Files.drive_files_create_simple(conn, "multipart", f, "README.md")
+    assert {:ok, file} =
+             Files.drive_files_create_simple(
+               conn,
+               "multipart",
+               %File{
+                 name: "README.md"
+               },
+               "README.md"
+             )
+
+    assert %File{} = file
   end
 
   test "list files" do
     conn = Connection.new(token())
 
-    {:ok, file_list} = Files.drive_files_list(conn)
-    Enum.each(file_list.files, fn file ->
-      IO.inspect file.id
-      IO.inspect file.name
-    end)
+    assert {:ok, file_list} = Files.drive_files_list(conn)
+    assert %FileList{} = file_list
   end
 
   defp token do
