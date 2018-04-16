@@ -29,4 +29,4 @@ use Mix.Config
 #
 #     import_config "#{Mix.env}.exs"
 config :goth, 
-  json: System.get_env("GCP_CREDENTIALS") |> Path.expand |> File.read!le.read!
+  json: System.get_env("GCP_CREDENTIALS") |> Path.expand |> File.read!
