@@ -28,4 +28,5 @@ use Mix.Config
 # here (which is why it is important to import them last).
 #
 #     import_config "#{Mix.env}.exs"
-config :goth, json: {:system, "GCP_CREDENTIALS"}
+config :goth, 
+  json: System.get_env("GCP_CREDENTIALS") |> Path.expand |> File.read!
