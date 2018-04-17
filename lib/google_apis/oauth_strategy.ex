@@ -33,8 +33,8 @@ defmodule GoogleApis.OauthStrategy do
   end
 
   # you can pass options to the underlying http library via `opts` parameter
-  def get_token(client, params \\ [], headers \\ [], opts \\ []) do
-    OAuth2.Client.get_token(client, params, headers, opts)
+  def get_token!(client, params \\ [], headers \\ [], opts \\ []) do
+    OAuth2.Client.get_token!(client, params, headers, opts)
   end
 
   # Strategy Callbacks
