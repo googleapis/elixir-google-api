@@ -51,7 +51,8 @@ defmodule Mix.Tasks.GoogleApis.Auth do
          code <- get_verification_code(authorize_url),
          {:ok, oauth} <- OAuth2.Client.get_token(client, code: code)
     do
-      Mix.Shell.IO.info "Token: #{oauth.token.access_token}"
+      Mix.Shell.IO.info "Access Token:  #{oauth.token.access_token}"
+      Mix.Shell.IO.info "Refresh Token: #{oauth.token.refresh_token}"
     else
       {:error, %{body: %{"error" => error, "error_description" => description}}} ->
         Mix.Shell.IO.error "#{error} - #{description}"
