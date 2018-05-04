@@ -10,7 +10,7 @@ defmodule GoogleApi.Drive.V3.Mixfile do
      description: description(),
      package: package(),
      deps: deps(),
-     source_url: "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/FIXME"
+     source_url: "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/drive"
     ]
   end
 
@@ -38,7 +38,7 @@ defmodule GoogleApi.Drive.V3.Mixfile do
       maintainers: ["Jeff Ching"],
       licenses: ["Apache 2.0"],
       links: %{
-        "GitHub" => "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/FIXME",
+        "GitHub" => "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/drive",
         "Homepage" => "https://developers.google.com/drive/"
       }
     ]
