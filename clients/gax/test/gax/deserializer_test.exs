@@ -6,13 +6,13 @@ defmodule Gax.DeserializerTest do
   {
     "id": 4375893,
     "category": {
-      "id": 0,
+      "id": 111,
       "name": "household"
     },
     "name": "Fido",
     "tags": [
       {
-        "id": 0,
+        "id": 222,
         "name": "string"
       }
     ],
@@ -28,15 +28,11 @@ defmodule Gax.DeserializerTest do
 
   test "deserializes a has one relationship" do
     assert {:ok, %TestClient.Model.Pet{} = pet} = Poison.decode(@pet_json, as: %TestClient.Model.Pet{})
-    assert %TestClient.Model.Category{} = pet.category
-    assert 0 == pet.category.id
-    assert "household" == pet.category.name
+    assert %TestClient.Model.Category{id: 111, name: "household"} = pet.category
   end
 
   test "deserializes a has many relationship" do
     assert {:ok, %TestClient.Model.Pet{} = pet} = Poison.decode(@pet_json, as: %TestClient.Model.Pet{})
-    assert Enum.all?(pet.tags, fn tag ->
-      assert %TestClient.Model.Tag{} = tag
-    end)
+    assert [%TestClient.Model.Tag{id: 222, name: "string"}] = pet.tags
   end
 end

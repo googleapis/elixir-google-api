@@ -2,6 +2,12 @@ defmodule GoogleApi.Gax.Request do
 
   @path_template_regex ~r/{(\+?[^}]+)}/i
 
+  defstruct [:method, :url, :body, :form, :query]
+
+  def new do
+    %__MODULE__{}
+  end
+
   @doc """
   Specify the request method when building a request
 
@@ -123,12 +129,6 @@ defmodule GoogleApi.Gax.Request do
 
   def add_param(request, location, key, value) do
     Map.update(request, location, [{key, value}], &(&1 ++ [{key, value}]))
-  end
-
-  def execute(request, connection) do
-    request
-    |> Enum.into([])
-    |> (&Tesla.Connection.request(connection, &1)).()
   end
 
 end

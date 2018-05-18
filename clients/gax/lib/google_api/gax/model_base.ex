@@ -2,7 +2,6 @@ defmodule GoogleApi.Gax.ModelBase do
 
   defmacro __using__(_opts) do
     quote do
-      IO.inspect "importing #{unquote(__MODULE__)}"
       import unquote(__MODULE__)
 
       @fields []
@@ -13,8 +12,25 @@ defmodule GoogleApi.Gax.ModelBase do
 
   defmacro __before_compile__(_env) do
     quote do
-      IO.inspect @fields
       defstruct Keyword.keys(@fields)
+
+      def decode(value, _options) do
+        Enum.reduce(@fields, value, fn {field_name, opts}, v ->
+          if struct = Keyword.get(opts, :as) do
+            Map.update!(v, field_name, fn current ->
+              type = Keyword.get(opts, :type, :primitive)
+              struct = Keyword.get(opts, :as)
+              GoogleApi.Gax.ModelBase.decode(current, type, struct)
+            end)
+          else
+            v
+          end
+        end)
+      end
+
+      def encode(value, options) do
+        value
+      end
     end
   end
 
@@ -24,14 +40,16 @@ defmodule GoogleApi.Gax.ModelBase do
     end
   end
 
-  def decode(value, options) do
-    IO.inspect "decode in #{__MODULE__}"
+  def decode(value, _, nil) do
     value
   end
 
-  def encode(value, options) do
-    IO.inspect "encode in #{__MODULE__}"
-    value
+  def decode(value, :list, module) do
+    Poison.Decode.decode(value, as: [struct(module)])
+  end
+
+  def decode(value, _, module) do
+    Poison.Decode.decode(value, as: struct(module))
   end
 
 end
