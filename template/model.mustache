@@ -14,7 +14,7 @@
   """
 
   @type t :: %__MODULE__{
-    {{#vars}}{{baseName}}: {{#isPrimitiveType}}any(){{/isPrimitiveType}}{{^isPrimitiveType}}{{#isListContainer}}list({{moduleName}}.Model.{{items.datatype}}.t()){{/isListContainer}}{{^isListContainer}}{{#isMapContainer}}map(){{/isMapContainer}}{{^isMapContainer}}{{moduleName}}.Model.{{datatype}}.t(){{/isMapContainer}}{{/isListContainer}}{{/isPrimitiveType}}{{#hasMore}},
+    {{#vars}}{{baseName}}: {{#isPrimitiveType}}any(){{/isPrimitiveType}}{{^isPrimitiveType}}{{#isListContainer}}list({{#items.datatype}}{{moduleName}}.Model.{{items.datatype}}.t(){{/items.datatype}}{{^items.datatype}}any(){{/items.datatype}}){{/isListContainer}}{{^isListContainer}}{{#isMapContainer}}map(){{/isMapContainer}}{{^isMapContainer}}{{#isDate}}Date.t{{/isDate}}{{^isDate}}{{moduleName}}.Model.{{datatype}}.t(){{/isDate}}{{/isMapContainer}}{{/isListContainer}}{{/isPrimitiveType}}{{#hasMore}},
     {{/hasMore}}{{/vars}}
   }
 
