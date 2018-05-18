@@ -40,7 +40,7 @@ defmodule {{moduleName}}.RequestBuilder do
 
   Map
   """
-  @spec url(map(), String.t, Map.t) :: map()
+  @spec url(map(), String.t, map()) :: map()
   def url(request, u, replacements) do
     url(request, replace_path_template_vars(u, replacements))
   end

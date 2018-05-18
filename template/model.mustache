@@ -13,6 +13,11 @@
   {{/vars}}
   """
 
+  @type t :: %__MODULE__{
+    {{#vars}}{{baseName}}: {{#isPrimitiveType}}any(){{/isPrimitiveType}}{{^isPrimitiveType}}{{#isListContainer}}list({{moduleName}}.Model.{{items.datatype}}.t()){{/isListContainer}}{{^isListContainer}}{{#isMapContainer}}map(){{/isMapContainer}}{{^isMapContainer}}{{moduleName}}.Model.{{datatype}}.t(){{/isMapContainer}}{{/isListContainer}}{{/isPrimitiveType}}{{#hasMore}},
+    {{/hasMore}}{{/vars}}
+  }
+
   defstruct [
     {{#vars}}:"{{baseName}}"{{#hasMore}},
     {{/hasMore}}{{/vars}}
