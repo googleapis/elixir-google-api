@@ -8,14 +8,15 @@ defmodule GoogleApi.Gax.MixProject do
       app: :google_gax,
       version: @version,
       elixir: "~> 1.4",
-      build_embedded: Mix.env == :prod,
-      start_permanent: Mix.env == :prod,
+      build_embedded: Mix.env() == :prod,
+      start_permanent: Mix.env() == :prod,
       description: description(),
       package: package(),
       deps: deps(),
-      elixirc_paths: paths(Mix.env),
+      elixirc_paths: paths(Mix.env()),
       # consolidate_protocols: Mix.env != :test,
-      source_url: "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/compute"
+      source_url:
+        "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/compute"
     ]
   end
 
@@ -43,7 +44,8 @@ defmodule GoogleApi.Gax.MixProject do
       maintainers: ["Jeff Ching"],
       licenses: ["Apache 2.0"],
       links: %{
-        "GitHub" => "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/gax"
+        "GitHub" =>
+          "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/gax"
       }
     ]
   end

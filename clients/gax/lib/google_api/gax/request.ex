@@ -2,11 +2,15 @@ defmodule GoogleApi.Gax.Request do
 
   @path_template_regex ~r/{(\+?[^}]+)}/i
 
-  defstruct [:method, :url, :body, :form, :query]
+  defstruct [:method, :url, body: [], form: [], query: [], file: []]
 
+  @spec new() :: map()
   def new do
     %__MODULE__{}
   end
+
+  @spec method(map()) :: {:ok, atom()} | :error
+  def method(request), do: Map.fetch(request, :method)
 
   @doc """
   Specify the request method when building a request
@@ -22,8 +26,11 @@ defmodule GoogleApi.Gax.Request do
   """
   @spec method(map(), String.t()) :: map()
   def method(request, m) do
-    Map.put_new(request, :method, m)
+    Map.put(request, :method, m)
   end
+
+  @spec url(map()) :: {:ok, String.t()} | :error
+  def url(request), do: Map.fetch(request, :url)
 
   @doc """
   Specify the request method when building a request
@@ -43,10 +50,10 @@ defmodule GoogleApi.Gax.Request do
   end
 
   def url(request, u) do
-    Map.put_new(request, :url, u)
+    Map.put(request, :url, u)
   end
 
-  def replace_path_template_vars(u, replacements) do
+  defp replace_path_template_vars(u, replacements) do
     Regex.replace(@path_template_regex, u, fn _, var -> replacement_value(var, replacements) end)
   end
 
@@ -100,35 +107,8 @@ defmodule GoogleApi.Gax.Request do
 
   Map
   """
-  @spec add_param(map(), :atom, :atom, any()) :: map()
-  def add_param(request, :body, :body, value), do: Map.put(request, :body, value)
-
-  def add_param(request, :body, key, value) do
-    request
-    |> Map.put_new_lazy(:body, &Tesla.Multipart.new/0)
-    |> Map.update!(
-      :body,
-      &Tesla.Multipart.add_field(
-        &1,
-        key,
-        Poison.encode!(value),
-        headers: [{:"Content-Type", "application/json"}]
-      )
-    )
-  end
-
-  def add_param(request, :file, name, path) do
-    request
-    |> Map.put_new_lazy(:body, &Tesla.Multipart.new/0)
-    |> Map.update!(:body, &Tesla.Multipart.add_file(&1, path, name: name))
-  end
-
-  def add_param(request, :form, name, value) do
-    Map.update(request, :body, %{name => value}, &Map.put(&1, name, value))
-  end
-
+  @spec add_param(map(), :body | :form | :query | :headers, atom(), any()) :: map()
   def add_param(request, location, key, value) do
-    Map.update(request, location, [{key, value}], &(&1 ++ [{key, value}]))
+    Map.update!(request, location, &(&1 ++ [{key, value}]))
   end
-
 end

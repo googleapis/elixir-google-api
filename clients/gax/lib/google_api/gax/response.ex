@@ -1,5 +1,4 @@
 defmodule GoogleApi.Gax.Response do
-
   @successful_request_response 200..299
 
   alias GoogleApi.Gax.Model.DataWrapper
@@ -19,26 +18,25 @@ defmodule GoogleApi.Gax.Response do
   {:ok, struct} on success
   {:error, info} on failure
   """
-  @spec decode(Tesla.Env.t(), keyword()) ::
-          {:ok, struct()} | {:error, Tesla.Env.t()}
+  @spec decode(Tesla.Env.t(), keyword()) :: {:ok, struct()} | {:error, Tesla.Env.t()}
   def decode(env, opts \\ [])
 
-  def decode(%Tesla.Env{status: status} = env, _) when status not in @successful_request_response do
+  def decode(%Tesla.Env{status: status} = env, _)
+      when status not in @successful_request_response do
     {:error, env}
   end
 
   def decode(env = %Tesla.Env{body: body}, opts) do
-    if (Keyword.get(opts, :decode, true)) do
+    if Keyword.get(opts, :decode, true) do
       data_wrapped = Keyword.get(opts, :data_wrapped, false)
       struct = Keyword.get(opts, :struct, nil)
       do_decode(body, data_wrapped, struct)
     else
-      env
+      {:ok, env}
     end
   end
 
-  # If no body, then return ok and nil
-  defp do_decode(nil, _, _) do
+  defp do_decode(nil, _data_wrapped, _struct) do
     {:ok, nil}
   end
 
@@ -46,7 +44,7 @@ defmodule GoogleApi.Gax.Response do
     Poison.decode(body, as: %DataWrapper{}, struct: struct)
   end
 
-  defp do_decode(body, _, struct) do
+  defp do_decode(body, _data_wrapped, struct) do
     Poison.decode(body, as: struct)
   end
 end

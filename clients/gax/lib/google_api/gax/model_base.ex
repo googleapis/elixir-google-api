@@ -1,5 +1,4 @@
 defmodule GoogleApi.Gax.ModelBase do
-
   defmacro __using__(_opts) do
     quote do
       import unquote(__MODULE__)
@@ -51,5 +50,4 @@ defmodule GoogleApi.Gax.ModelBase do
   def decode(value, _, module) do
     Poison.Decode.decode(value, as: struct(module))
   end
-
 end

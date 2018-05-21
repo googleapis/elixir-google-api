@@ -1,8 +1,8 @@
 defmodule TestClient.Model.Tag do
   use GoogleApi.Gax.ModelBase
 
-  field :id
-  field :name
+  field(:id)
+  field(:name)
 end
 
 defimpl Poison.Decoder, for: TestClient.Model.Tag do

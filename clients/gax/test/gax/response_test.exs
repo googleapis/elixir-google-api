@@ -9,6 +9,7 @@ defmodule Gax.ResponseTest do
       status: 200,
       body: "{\"foo\": \"bar\"}"
     }
+
     assert {:ok, %{"foo" => "bar"}} = Response.decode(env)
   end
 
@@ -17,6 +18,7 @@ defmodule Gax.ResponseTest do
       status: 200,
       body: nil
     }
+
     assert {:ok, nil} = Response.decode(env)
   end
 
@@ -25,6 +27,7 @@ defmodule Gax.ResponseTest do
       status: 200,
       body: "{\"calloutStatusRate\": []}"
     }
+
     assert {:ok, report} = Response.decode(env, struct: %Pet{})
     assert %Pet{} = report
   end
@@ -34,6 +37,7 @@ defmodule Gax.ResponseTest do
       status: 200,
       body: "{\"data\": {\"calloutStatusRate\": []}}"
     }
+
     assert {:ok, report} = Response.decode(env, struct: %Pet{}, data_wrapped: true)
     assert %Pet{} = report
   end
@@ -43,6 +47,7 @@ defmodule Gax.ResponseTest do
       status: 204,
       body: "{\"foo\": \"bar\"}"
     }
+
     assert {:ok, %{"foo" => "bar"}} = Response.decode(env)
   end
 
@@ -51,6 +56,7 @@ defmodule Gax.ResponseTest do
       status: 204,
       body: nil
     }
+
     assert {:ok, nil} = Response.decode(env)
   end
 
@@ -59,6 +65,7 @@ defmodule Gax.ResponseTest do
       status: 204,
       body: "{\"calloutStatusRate\": []}"
     }
+
     assert {:ok, report} = Response.decode(env, struct: %Pet{})
     assert %Pet{} = report
   end
@@ -68,6 +75,7 @@ defmodule Gax.ResponseTest do
       status: 204,
       body: "{\"data\": {\"calloutStatusRate\": []}}"
     }
+
     assert {:ok, report} = Response.decode(env, struct: %Pet{}, data_wrapped: true)
     assert %Pet{} = report
   end
@@ -77,6 +85,7 @@ defmodule Gax.ResponseTest do
       status: 500,
       body: "{\"error\": \"some message\"}"
     }
+
     assert {:error, ^env} = Response.decode(env)
   end
 
@@ -85,6 +94,7 @@ defmodule Gax.ResponseTest do
       status: 500,
       body: "{\"error\": \"some message\"}"
     }
+
     assert {:error, ^env} = Response.decode(env, struct: %Pet{})
   end
 
@@ -93,6 +103,16 @@ defmodule Gax.ResponseTest do
       status: 500,
       body: "{\"error\": \"some message\"}"
     }
+
     assert {:error, ^env} = Response.decode(env, struct: %Pet{}, data_wrapped: true)
+  end
+
+  test "returns raw response" do
+    env = %Tesla.Env{
+      status: 200,
+      body: "{\"foo\": \"bar\"}"
+    }
+
+    assert {:ok, ^env} = Response.decode(env, decode: false)
   end
 end

@@ -5,5 +5,4 @@ defmodule Gax.ModelBaseTest do
   test "declares attributes" do
     assert %{id: nil, category: nil, name: nil, tags: nil, status: nil} = %TestClient.Model.Pet{}
   end
-
 end

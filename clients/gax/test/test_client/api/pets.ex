@@ -20,7 +20,7 @@ defmodule TestClient.Api.Pets do
     }
 
     request =
-      Request.new
+      Request.new()
       |> Request.method(:get)
       |> Request.url("/storage/v1/b")
       |> Request.add_param(:query, :project, project)
