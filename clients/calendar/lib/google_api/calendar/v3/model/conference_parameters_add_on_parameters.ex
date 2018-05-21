@@ -16,37 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Calendar.V3.Model.EventReminders do
+defmodule GoogleApi.Calendar.V3.Model.ConferenceParametersAddOnParameters do
   @moduledoc """
-  Information about the event&#39;s reminders for the authenticated user.
+
 
   ## Attributes
 
-  - overrides ([EventReminder]): If the event doesn&#39;t use the default reminders, this lists the reminders specific to the event, or, if not set, indicates that no reminders are set for this event. The maximum number of override reminders is 5. Defaults to: `null`.
-  - useDefault (boolean()): Whether the default reminders of the calendar apply to the event. Defaults to: `null`.
+  - parameters (%{optional(String.t) &#x3D;&gt; String.t}):  Defaults to: `null`.
   """
 
   @type t :: %__MODULE__{
-          overrides: list(GoogleApi.Calendar.V3.Model.EventReminder.t()),
-          useDefault: any()
+          parameters: any()
         }
 
   defstruct [
-    :overrides,
-    :useDefault
+    :parameters
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.EventReminders do
-  import GoogleApi.Calendar.V3.Deserializer
-
-  def decode(value, options) do
+defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.ConferenceParametersAddOnParameters do
+  def decode(value, _options) do
     value
-    |> deserialize(:overrides, :list, GoogleApi.Calendar.V3.Model.EventReminder, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.EventReminders do
+defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.ConferenceParametersAddOnParameters do
   def encode(value, options) do
     GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
   end
