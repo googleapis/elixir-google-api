@@ -49,7 +49,7 @@ defmodule Gax.RequestTest do
   test "adds optional parameters empty" do
     optional_params = %{
       :foo => :query,
-      :bar => :form
+      :bar => :body
     }
 
     input = []
@@ -58,13 +58,13 @@ defmodule Gax.RequestTest do
     |> Request.add_optional_params(optional_params, input)
 
     assert [] == request.query
-    assert [] == request.form
+    assert [] == request.body
   end
 
   test "adds optional parameters" do
     optional_params = %{
       :foo => :query,
-      :bar => :form
+      :bar => :body
     }
 
     input = [
@@ -76,7 +76,7 @@ defmodule Gax.RequestTest do
     |> Request.add_optional_params(optional_params, input)
 
     assert [foo: 'asdf'] == request.query
-    assert [bar: 'qwer'] == request.form
+    assert [bar: 'qwer'] == request.body
   end
 
   test "adds file by filename" do

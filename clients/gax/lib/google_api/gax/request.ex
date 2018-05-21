@@ -2,7 +2,7 @@ defmodule GoogleApi.Gax.Request do
 
   @path_template_regex ~r/{(\+?[^}]+)}/i
 
-  defstruct [:method, :url, body: [], form: [], query: [], file: []]
+  defstruct [:method, :url, body: [], query: [], file: [], header: []]
 
   @spec new() :: map()
   def new do
@@ -107,7 +107,7 @@ defmodule GoogleApi.Gax.Request do
 
   Map
   """
-  @spec add_param(map(), :body | :form | :query | :headers, atom(), any()) :: map()
+  @spec add_param(map(), :body | :query | :header | :file, atom(), any()) :: map()
   def add_param(request, location, key, value) do
     Map.update!(request, location, &(&1 ++ [{key, value}]))
   end
