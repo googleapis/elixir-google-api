@@ -23,7 +23,7 @@ defmodule {{moduleName}}.RequestBuilder do
 
   Map
   """
-  @spec method(map(), String.t) :: map()
+  @spec method(map(), atom()) :: map()
   def method(request, m) do
     Map.put_new(request, :method, m)
   end
@@ -40,7 +40,7 @@ defmodule {{moduleName}}.RequestBuilder do
 
   Map
   """
-  @spec url(map(), String.t, Map.t) :: map()
+  @spec url(map(), String.t, map()) :: map()
   def url(request, u, replacements) do
     url(request, replace_path_template_vars(u, replacements))
   end
@@ -71,7 +71,7 @@ defmodule {{moduleName}}.RequestBuilder do
 
   Map
   """
-  @spec add_optional_params(map(), %{optional(:atom) => :atom}, keyword()) :: map()
+  @spec add_optional_params(map(), map(), keyword()) :: map()
   def add_optional_params(request, _, []), do: request
   def add_optional_params(request, definitions, [{key, value} | tail]) do
     case definitions do
@@ -98,7 +98,7 @@ defmodule {{moduleName}}.RequestBuilder do
 
   Map
   """
-  @spec add_param(map(), :atom, :atom, any()) :: map()
+  @spec add_param(map(), atom(), atom(), any()) :: map()
   def add_param(request, :body, :body, value), do: Map.put(request, :body, value)
   def add_param(request, :body, key, value) do
     request
@@ -132,7 +132,7 @@ defmodule {{moduleName}}.RequestBuilder do
   {:ok, struct} on success
   {:error, info} on failure
   """
-  @spec decode(Tesla.Env.t(), struct() | false, keyword()) :: {:ok, struct()} | {:error, Tesla.Env.t}
+  @spec decode(Tesla.Env.t(), struct() | false | nil, keyword()) :: {:ok, struct()} | {:error, Tesla.Env.t}
   def decode(env, struct \\ nil, opts \\ [])
 
   def decode(%Tesla.Env{status: status} = env, _struct, _opts) when status not in @successful_request_response do

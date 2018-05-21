@@ -12,4 +12,4 @@ before_install:
 script:
   - mix test --include external
   - mix do google_apis.convert TestClient, google_apis.build TestClient
-  - cd clients/test_client && mix deps.get && mix test
+  - cd clients/test_client && mix deps.get && mix test && mix dialyzer
