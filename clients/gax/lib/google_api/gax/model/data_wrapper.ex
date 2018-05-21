@@ -1,12 +1,14 @@
 defmodule GoogleApi.Gax.Model.DataWrapper do
   defstruct [:data]
-end
-
-defimpl Poison.Decoder, for: GoogleApi.Gax.Internal.DataWrapper do
-  import GoogleApi.Gax.Deserializer
 
   def decode(value, options) do
-    # deserialize(value, :data, :struct, options[:struct], options)
-    value
+    struct = options[:struct]
+    Poison.Decode.decode(value.data, as: struct)
+  end
+end
+
+defimpl Poison.Decoder, for: GoogleApi.Gax.Model.DataWrapper do
+  def decode(value, options) do
+    GoogleApi.Gax.Model.DataWrapper.decode(value, options)
   end
 end
