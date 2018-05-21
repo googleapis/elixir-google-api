@@ -1,9 +1,11 @@
 defmodule {{moduleName}}.Mixfile do
   use Mix.Project
 
+  @version "0.0.1"
+
   def project do
     [app: :{{#underscored}}{{packageName}}{{/underscored}},
-     version: "0.0.1",
+     version: @version,
      elixir: "~> {{supportedElixirVersion}}",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
