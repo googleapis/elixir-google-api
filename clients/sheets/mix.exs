@@ -22,7 +22,8 @@ defmodule GoogleApi.Sheets.V4.Mixfile do
     [
       {:tesla, "~> 0.8"},
       {:poison, ">= 1.0.0"},
-      {:ex_doc, "~> 0.16", only: :dev}
+      {:ex_doc, "~> 0.16", only: :dev},
+      {:dialyxir, "~> 0.5", only: [:dev], runtime: false}
     ]
   end
 
