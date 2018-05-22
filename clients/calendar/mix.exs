@@ -1,9 +1,11 @@
 defmodule GoogleApi.Calendar.V3.Mixfile do
   use Mix.Project
 
+  @version "0.0.2"
+
   def project do
     [app: :google_api_calendar,
-     version: "0.0.1",
+     version: @version,
      elixir: "~> 1.4",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,

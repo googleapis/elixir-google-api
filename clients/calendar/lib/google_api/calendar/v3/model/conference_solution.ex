@@ -16,37 +16,40 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Calendar.V3.Model.EventReminders do
+defmodule GoogleApi.Calendar.V3.Model.ConferenceSolution do
   @moduledoc """
-  Information about the event&#39;s reminders for the authenticated user.
+
 
   ## Attributes
 
-  - overrides ([EventReminder]): If the event doesn&#39;t use the default reminders, this lists the reminders specific to the event, or, if not set, indicates that no reminders are set for this event. The maximum number of override reminders is 5. Defaults to: `null`.
-  - useDefault (boolean()): Whether the default reminders of the calendar apply to the event. Defaults to: `null`.
+  - iconUri (String.t): The user-visible icon for this solution. Defaults to: `null`.
+  - key (ConferenceSolutionKey): The key which can uniquely identify the conference solution for this event. Defaults to: `null`.
+  - name (String.t): The user-visible name of this solution. Not localized. Defaults to: `null`.
   """
 
   @type t :: %__MODULE__{
-          overrides: list(GoogleApi.Calendar.V3.Model.EventReminder.t()),
-          useDefault: any()
+          iconUri: any(),
+          key: GoogleApi.Calendar.V3.Model.ConferenceSolutionKey.t(),
+          name: any()
         }
 
   defstruct [
-    :overrides,
-    :useDefault
+    :iconUri,
+    :key,
+    :name
   ]
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.EventReminders do
+defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.ConferenceSolution do
   import GoogleApi.Calendar.V3.Deserializer
 
   def decode(value, options) do
     value
-    |> deserialize(:overrides, :list, GoogleApi.Calendar.V3.Model.EventReminder, options)
+    |> deserialize(:key, :struct, GoogleApi.Calendar.V3.Model.ConferenceSolutionKey, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.EventReminders do
+defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.ConferenceSolution do
   def encode(value, options) do
     GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
   end
