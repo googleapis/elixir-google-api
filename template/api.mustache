@@ -11,6 +11,7 @@ defmodule {{moduleName}}.Api.{{classname}} do
   {{#operation}}
 
   @doc """
+  {{this}}
   {{#summary}}
   {{summary}}
   {{/summary}}
@@ -56,7 +57,7 @@ defmodule {{moduleName}}.Api.{{classname}} do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode({{decodedStruct}}{{#vendorExtensions.x-dataWrapper}}, dataWrapped: true{{/vendorExtensions.x-dataWrapper}})
+    |> Response.decode({{^returnBaseType}}decode: false{{/returnBaseType}}{{#returnBaseType}}struct: {{decodedStruct}}{{/returnBaseType}}{{#vendorExtensions.x-dataWrapper}}, dataWrapped: true{{/vendorExtensions.x-dataWrapper}})
   end
   {{/operation}}
 {{/operations}}
