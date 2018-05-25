@@ -5,7 +5,7 @@ defmodule {{moduleName}}.Api.{{classname}} do
   """
 
   alias {{moduleName}}.Connection
-  import {{moduleName}}.RequestBuilder
+  alias GoogleApi.Gax.{Request, Response}
 
 {{#operations}}
   {{#operation}}
@@ -34,27 +34,29 @@ defmodule {{moduleName}}.Api.{{classname}} do
   def {{#underscored}}{{operationId}}{{/underscored}}(connection, {{#allParams}}{{#required}}{{#underscored}}{{paramName}}{{/underscored}}, {{/required}}{{/allParams}}{{^hasOptionalParams}}_{{/hasOptionalParams}}opts \\ []) do
 {{#hasOptionalParams}}
     optional_params = %{
-      {{#allParams}}{{^required}}{{^isPathParam}}:"{{baseName}}" => {{#isBodyParam}}:body{{/isBodyParam}}{{#isFormParam}}:form{{/isFormParam}}{{#isQueryParam}}:query{{/isQueryParam}}{{#isHeaderParam}}:headers{{/isHeaderParam}}{{/isPathParam}}{{#hasMore}},
+      {{#allParams}}{{^required}}{{^isPathParam}}:"{{baseName}}" => {{#isBodyParam}}:body{{/isBodyParam}}{{#isFormParam}}:body{{/isFormParam}}{{#isQueryParam}}:query{{/isQueryParam}}{{#isHeaderParam}}:header{{/isHeaderParam}}{{/isPathParam}}{{#hasMore}},
       {{/hasMore}}{{/required}}{{/allParams}}
     }
 {{/hasOptionalParams}}
-    %{}
-    |> method(:{{#underscored}}{{httpMethod}}{{/underscored}})
-    |> url("{{path}}"{{#hasPathParams}}, %{
+    request =
+      Request.new
+      |> Request.method(:{{#underscored}}{{httpMethod}}{{/underscored}})
+      |> Request.url("{{path}}"{{#hasPathParams}}, %{
 {{#pathParams}}         "{{baseName}}" => {{^vendorExtensions.x-allowedReserved}}{{#isString}}URI.encode_www_form({{/isString}}{{/vendorExtensions.x-allowedReserved}}{{#underscored}}{{paramName}}{{/underscored}}{{^vendorExtensions.x-allowedReserved}}{{#isString}}){{/isString}}{{/vendorExtensions.x-allowedReserved}}{{#hasMore}},{{/hasMore}}
 {{/pathParams}}       }{{/hasPathParams}})
 {{#allParams}}
 {{#required}}
-{{^isPathParam}}    |> add_param({{#isBodyParam}}:body{{/isBodyParam}}{{#isFormParam}}{{#isMultipart}}{{#isFile}}:file{{/isFile}}{{^isFile}}:form{{/isFile}}{{/isMultipart}}{{^isMultipart}}:form{{/isMultipart}}{{/isFormParam}}{{#isQueryParam}}:query{{/isQueryParam}}{{#isHeaderParam}}:headers{{/isHeaderParam}}, :"{{baseName}}", {{#underscored}}{{paramName}}{{/underscored}})
+{{^isPathParam}}      |> Request.add_param({{#isBodyParam}}:body{{/isBodyParam}}{{#isFormParam}}{{#isMultipart}}{{#isFile}}:file{{/isFile}}{{^isFile}}:body{{/isFile}}{{/isMultipart}}{{^isMultipart}}:body{{/isMultipart}}{{/isFormParam}}{{#isQueryParam}}:query{{/isQueryParam}}{{#isHeaderParam}}:header{{/isHeaderParam}}, :"{{baseName}}", {{#underscored}}{{paramName}}{{/underscored}})
 {{/isPathParam}}
 {{/required}}
 {{/allParams}}
 {{#hasOptionalParams}}
-    |> add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params, opts)
 {{/hasOptionalParams}}
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode({{decodedStruct}}{{#vendorExtensions.x-dataWrapper}}, dataWrapped: true{{/vendorExtensions.x-dataWrapper}})
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode({{decodedStruct}}{{#vendorExtensions.x-dataWrapper}}, dataWrapped: true{{/vendorExtensions.x-dataWrapper}})
   end
   {{/operation}}
 {{/operations}}

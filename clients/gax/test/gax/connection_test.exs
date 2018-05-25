@@ -57,7 +57,7 @@ defmodule Gax.ConnectionTest do
     |> Connection.build_request
 
     body = %Tesla.Multipart{} = Keyword.get(request, :body)
-    assert 3 == length(body.parts)
+    assert 4 == length(body.parts)
   end
 
 end

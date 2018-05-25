@@ -11,7 +11,9 @@ defmodule GoogleApi.Gax.Response do
   - env (Tesla.Env) - The response object
   - struct (struct | false) - The shape of the struct to deserialize into. If false, returns the Tesla response.
   - opts (KeywordList) - [optional] Optional parameters
-    - :dataWrapped (boolean()): If true, the remove the wrapping "data" field.
+    - :dataWrapped (boolean()): If true, the remove the wrapping "data" field. Defaults to false.
+    - :decode (boolean()): If false, returns the entire reponse. Defaults to true.
+    - :struct (module)
 
   ## Returns
 

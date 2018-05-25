@@ -1,8 +1,70 @@
 defmodule GoogleApi.Gax.Connection do
-  def execute(connection, request) do
-    request
-    |> build_request
-    |> (&Tesla.request(connection, &1)).()
+
+  defmacro __using__(opts) do
+    quote do
+      use Tesla
+
+      @scopes unquote(Keyword.get(opts, :scopes, []))
+
+      # Add any middleware here (authentication)
+      plug(Tesla.Middleware.BaseUrl, unquote(Keyword.get(opts, :base_url)))
+      plug(Tesla.Middleware.Headers, %{"User-Agent" => "Elixir"})
+      plug(Tesla.Middleware.EncodeJson)
+
+      @doc """
+      Configure a client connection using a provided OAuth2 token as a Bearer token
+
+      ## Parameters
+
+      - token (String): Bearer token
+
+      ## Returns
+
+      Tesla.Env.client
+      """
+      @spec new(String.t()) :: Tesla.Env.client()
+      def new(token) when is_binary(token) do
+        Tesla.build_client([
+          {Tesla.Middleware.Headers, %{"Authorization" => "Bearer #{token}"}}
+        ])
+      end
+
+      @doc """
+      Configure a client connection using a function which yields a Bearer token.
+
+      ## Parameters
+
+      - token_fetcher (function arity of 1): Callback which provides an OAuth2 token
+        given a list of scopes
+
+      ## Returns
+
+      Tesla.Env.client
+      """
+      @spec new((list(String.t()) -> String.t())) :: Tesla.Env.client()
+      def new(token_fetcher) when is_function(token_fetcher) do
+        token_fetcher.(@scopes)
+        |> new
+      end
+
+      @doc """
+      Configure an authless client connection
+
+      # Returns
+
+      Tesla.Env.client
+      """
+      @spec new() :: Tesla.Env.client()
+      def new do
+        Tesla.build_client([])
+      end
+
+      def execute(connection, request) do
+        request
+        |> GoogleApi.Gax.Connection.build_request
+        |> (&request(connection, &1)).()
+      end
+    end
   end
 
   @spec build_request(map()) :: keyword()
@@ -35,14 +97,11 @@ defmodule GoogleApi.Gax.Connection do
     Keyword.put(output, :body, body)
   end
   defp build_body(output, body_params, file_params) do
-    encoded_body =
-      body_params
-      |> Enum.into(%{})
-      |> Poison.encode!
+    body = Tesla.Multipart.new
 
-    body =
-      Tesla.Multipart.new
-      |> Tesla.Multipart.add_field(:body, encoded_body, headers: [{:"Content-Type", "application/json"}])
+    body = Enum.reduce(body_params, body, fn {body_name, data}, b ->
+      Tesla.Multipart.add_field(b, body_name, Poison.encode!(data), headers: [{:"Content-Type", "application/json"}])
+    end)
 
     body = Enum.reduce(file_params, body, fn {file_name, file_path}, b ->
       Tesla.Multipart.add_file(b, file_path, name: file_name)
