@@ -12,11 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-defmodule Gax.ModelBaseTest do
+defmodule Gax.DataWrapperTest do
   use ExUnit.Case
-  doctest GoogleApi.Gax.ModelBase
+  doctest GoogleApi.Gax.DataWrapper
 
-  test "declares attributes" do
-    assert %{id: nil, category: nil, name: nil, tags: nil, status: nil} = %TestClient.Model.Pet{}
-  end
 end

@@ -1,4 +1,31 @@
+# Copyright 2018 Google Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 defmodule GoogleApi.Gax.ModelBase do
+  @moduledoc """
+  This module helps you quickly and concisely define API models.
+
+  Example:
+
+      defmodule Pet do
+        use GoogleApi.Gax.ModelBase
+
+        field(:id)
+        field(:category, as: Category)
+        field(:tags, as: Tag, type: :list)
+      end
+  """
   defmacro __using__(_opts) do
     quote do
       import unquote(__MODULE__)
@@ -13,6 +40,10 @@ defmodule GoogleApi.Gax.ModelBase do
     quote do
       defstruct Keyword.keys(@fields)
 
+      @doc """
+      Unwrap a decoded JSON object into its complex fields.
+      """
+      @spec decode(struct(), keyword()) :: struct()
       def decode(value, _options) do
         Enum.reduce(@fields, value, fn {field_name, opts}, v ->
           if struct = Keyword.get(opts, :as) do
@@ -26,10 +57,6 @@ defmodule GoogleApi.Gax.ModelBase do
           end
         end)
       end
-
-      def encode(value, options) do
-        value
-      end
     end
   end
 
@@ -39,6 +66,10 @@ defmodule GoogleApi.Gax.ModelBase do
     end
   end
 
+  @doc """
+  Helper to decode model fields
+  """
+  @spec decode(struct(), :list | :primitive, nil | module()) :: struct()
   def decode(value, _, nil) do
     value
   end

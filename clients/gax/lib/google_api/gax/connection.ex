@@ -1,4 +1,21 @@
+# Copyright 2018 Google Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 defmodule GoogleApi.Gax.Connection do
+  @moduledoc """
+  This module helps define and configure server connection.
+  """
 
   defmacro __using__(opts) do
     quote do
@@ -22,7 +39,7 @@ defmodule GoogleApi.Gax.Connection do
 
       Tesla.Env.client
       """
-      @spec new(String.t()) :: Tesla.Env.client()
+      @spec new(String.t()) :: Tesla.Client.t()
       def new(token) when is_binary(token) do
         Tesla.build_client([
           {Tesla.Middleware.Headers, %{"Authorization" => "Bearer #{token}"}}
@@ -41,7 +58,7 @@ defmodule GoogleApi.Gax.Connection do
 
       Tesla.Env.client
       """
-      @spec new((list(String.t()) -> String.t())) :: Tesla.Env.client()
+      @spec new((list(String.t()) -> String.t())) :: Tesla.Client.t()
       def new(token_fetcher) when is_function(token_fetcher) do
         token_fetcher.(@scopes)
         |> new
@@ -52,13 +69,21 @@ defmodule GoogleApi.Gax.Connection do
 
       # Returns
 
-      Tesla.Env.client
+      Tesla.Client.t
       """
-      @spec new() :: Tesla.Env.client()
+      @spec new() :: Tesla.Client.t()
       def new do
         Tesla.build_client([])
       end
 
+      @doc """
+      Execute a request on this connection
+
+      # Returns
+
+      Tesla.Env
+      """
+      @spec execute(Tesla.Client.t(), GoogleApi.Gax.Request.t()) :: Tesla.Env.t()
       def execute(connection, request) do
         request
         |> GoogleApi.Gax.Connection.build_request
@@ -67,7 +92,11 @@ defmodule GoogleApi.Gax.Connection do
     end
   end
 
-  @spec build_request(map()) :: keyword()
+  @doc """
+  Converts a GoogleApi.Gax.Request struct into a keyword list to send via
+  Tesla.
+  """
+  @spec build_request(GoogleApi.Gax.Request.t()) :: keyword()
   def build_request(request) do
     [url: request.url, method: request.method]
     |> build_query(request.query)
