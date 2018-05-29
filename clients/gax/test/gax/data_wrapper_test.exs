@@ -15,5 +15,4 @@
 defmodule Gax.DataWrapperTest do
   use ExUnit.Case
   doctest GoogleApi.Gax.DataWrapper
-
 end

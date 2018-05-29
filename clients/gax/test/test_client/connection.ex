@@ -24,7 +24,7 @@ defmodule TestClient.Connection do
   use GoogleApi.Gax.Connection,
     scopes: [
       # Read data from example.com
-      "https://example.com/data.read-only",
+      "https://example.com/data.read-only"
     ],
     base_url: "https://example.com"
 end

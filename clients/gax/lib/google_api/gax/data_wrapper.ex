@@ -30,8 +30,8 @@ defmodule GoogleApi.Gax.DataWrapper do
   defstruct [:data]
 
   @type t :: %__MODULE__{
-    data: any()
-  }
+          data: any()
+        }
 
   @doc """
   Unwrap a data-wrapped JSON response.

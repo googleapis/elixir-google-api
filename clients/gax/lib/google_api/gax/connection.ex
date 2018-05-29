@@ -86,7 +86,7 @@ defmodule GoogleApi.Gax.Connection do
       @spec execute(Tesla.Client.t(), GoogleApi.Gax.Request.t()) :: Tesla.Env.t()
       def execute(connection, request) do
         request
-        |> GoogleApi.Gax.Connection.build_request
+        |> GoogleApi.Gax.Connection.build_request()
         |> (&request(connection, &1)).()
       end
     end
@@ -105,36 +105,49 @@ defmodule GoogleApi.Gax.Connection do
   end
 
   defp build_query(output, []), do: output
+
   defp build_query(output, query_params) do
     Keyword.put(output, :query, query_params)
   end
 
   defp build_headers(output, []), do: output
+
   defp build_headers(output, header_params) do
     Keyword.put(output, :headers, header_params)
   end
 
   defp build_body(output, [], []), do: output
+
   defp build_body(output, body_params, []) do
     Keyword.put(output, :body, body_params)
   end
+
   defp build_body(output, [], file_params) do
-    body = Enum.reduce(file_params, Tesla.Multipart.new, fn {file_name, file_path}, b ->
-      Tesla.Multipart.add_file(b, file_path, name: file_name)
-    end)
+    body =
+      Enum.reduce(file_params, Tesla.Multipart.new(), fn {file_name, file_path}, b ->
+        Tesla.Multipart.add_file(b, file_path, name: file_name)
+      end)
 
     Keyword.put(output, :body, body)
   end
+
   defp build_body(output, body_params, file_params) do
-    body = Tesla.Multipart.new
+    body = Tesla.Multipart.new()
 
-    body = Enum.reduce(body_params, body, fn {body_name, data}, b ->
-      Tesla.Multipart.add_field(b, body_name, Poison.encode!(data), headers: [{:"Content-Type", "application/json"}])
-    end)
+    body =
+      Enum.reduce(body_params, body, fn {body_name, data}, b ->
+        Tesla.Multipart.add_field(
+          b,
+          body_name,
+          Poison.encode!(data),
+          headers: [{:"Content-Type", "application/json"}]
+        )
+      end)
 
-    body = Enum.reduce(file_params, body, fn {file_name, file_path}, b ->
-      Tesla.Multipart.add_file(b, file_path, name: file_name)
-    end)
+    body =
+      Enum.reduce(file_params, body, fn {file_name, file_path}, b ->
+        Tesla.Multipart.add_file(b, file_path, name: file_name)
+      end)
 
     Keyword.put(output, :body, body)
   end
