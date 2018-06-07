@@ -74,6 +74,14 @@ defmodule GoogleApi.Gax.ModelBase do
     value
   end
 
+  def decode(value, :list, Date) do
+    Enum.map(value, &parse_date/1)
+  end
+
+  def decode(value, _, Date) do
+    parse_date(value)
+  end
+
   def decode(value, :list, module) do
     Poison.Decode.decode(value, as: [struct(module)])
   end
@@ -92,5 +100,13 @@ defmodule GoogleApi.Gax.ModelBase do
     |> Enum.filter(fn {_k, v} -> v != nil end)
     |> Enum.into(%{})
     |> Poison.Encoder.encode(options)
+  end
+
+  defp parse_date(nil), do: nil
+  defp parse_date(iso8601) do
+    case DateTime.from_iso8601(iso8601) do
+      {:ok, datetime, _offset} -> datetime
+      _ -> iso8601
+    end
   end
 end

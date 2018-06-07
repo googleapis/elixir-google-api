@@ -21,7 +21,7 @@
   }
 
   {{#vars}}
-  field(:"{{baseName}}"{{^isPrimitiveType}}{{#isContainer}}{{#items.datatype}}, as: {{moduleName}}.Model.{{items.datatype}}{{/items.datatype}}{{/isContainer}}{{^isContainer}}, as: {{#isDate}}Date{{/isDate}}{{#isDateTime}}Date{{/isDateTime}}{{^isDate}}{{^isDateTime}}{{moduleName}}.Model.{{datatype}}{{/isDateTime}}{{/isDate}}{{/isContainer}}{{/isPrimitiveType}}{{#isListContainer}}, type: :list{{/isListContainer}})
+  field(:"{{baseName}}"{{^isPrimitiveType}}{{#isContainer}}{{#items.datatype}}, as: {{moduleName}}.Model.{{items.datatype}}{{/items.datatype}}{{/isContainer}}{{^isContainer}}, as: {{#isDate}}Date{{/isDate}}{{^isDate}}{{^isDateTime}}{{moduleName}}.Model.{{datatype}}{{/isDateTime}}{{/isDate}}{{/isContainer}}{{/isPrimitiveType}}{{#isDateTime}}, as: Date{{/isDateTime}}{{#isListContainer}}, type: :list{{/isListContainer}})
   {{/vars}}
 end
 
