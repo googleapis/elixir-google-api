@@ -13,3 +13,4 @@ script:
   - mix test --include external
   - mix do google_apis.convert TestClient, google_apis.build TestClient
   - cd clients/test_client && mix deps.get && mix test && mix dialyzer
+  - cd clients/gax && mix deps.get && mix test && mix dialyzer
