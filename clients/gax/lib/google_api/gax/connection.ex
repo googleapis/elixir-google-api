@@ -118,8 +118,8 @@ defmodule GoogleApi.Gax.Connection do
 
   defp build_body(output, [], []), do: output
 
-  defp build_body(output, body_params, []) do
-    Keyword.put(output, :body, body_params)
+  defp build_body(output, [body: main_body], []) do
+    Keyword.put(output, :body, main_body)
   end
 
   defp build_body(output, [], file_params) do

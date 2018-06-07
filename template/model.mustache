@@ -31,4 +31,10 @@ defimpl Poison.Decoder, for: {{moduleName}}.Model.{{classname}} do
   end
 end
 
+defimpl Poison.Encoder, for: {{moduleName}}.Model.{{classname}} do
+  def encode(value, options) do
+    GoogleApi.Gax.ModelBase.encode(value, options)
+  end
+end
+
 {{/model}}{{/models}}

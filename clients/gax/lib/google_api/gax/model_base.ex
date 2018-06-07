@@ -81,4 +81,16 @@ defmodule GoogleApi.Gax.ModelBase do
   def decode(value, _, module) do
     Poison.Decode.decode(value, as: struct(module))
   end
+
+  @doc """
+  Helper to encode model into JSON
+  """
+  @spec encode(struct(), keyword()) :: String.t()
+  def encode(value, options) do
+    value
+    |> Map.from_struct
+    |> Enum.filter(fn {_k, v} -> v != nil end)
+    |> Enum.into(%{})
+    |> Poison.Encoder.encode(options)
+  end
 end
