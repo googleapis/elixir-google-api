@@ -43,7 +43,8 @@ defmodule Gax.ConnectionTest do
       |> Request.add_param(:body, :asdf, "qwer")
       |> Connection.build_request()
 
-    assert [foo: "bar", asdf: "qwer"] == Keyword.get(request, :body)
+    body = %Tesla.Multipart{} = Keyword.get(request, :body)
+    assert 2 == length(body.parts)
   end
 
   test "builds a request with a single file" do

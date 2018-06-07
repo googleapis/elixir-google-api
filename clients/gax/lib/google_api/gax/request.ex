@@ -73,7 +73,7 @@ defmodule GoogleApi.Gax.Request do
 
   Map
   """
-  @spec url(GoogleApi.Gax.Request.t(), String.t(), Map.t()) :: GoogleApi.Gax.Request.t()
+  @spec url(GoogleApi.Gax.Request.t(), String.t(), map()) :: GoogleApi.Gax.Request.t()
   def url(request, u, replacements) do
     url(request, replace_path_template_vars(u, replacements))
   end
