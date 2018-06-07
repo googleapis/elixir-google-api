@@ -4,6 +4,12 @@ elixir:
 otp_release:
   - 19.3
   - 20.0
+cache:
+  directories:
+    - _build
+    - deps
+    - node_modules
+    - $MIX_HOME
 services:
   - docker
 before_install:

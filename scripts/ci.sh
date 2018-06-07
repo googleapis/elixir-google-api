@@ -9,7 +9,7 @@ mix test --include external
 pushd clients/gax
 mix deps.get
 mix test
-mix dialyzer
+mix dialyzer --halt-exit-status
 popd
 
 # create the test client
@@ -17,5 +17,5 @@ mix do google_apis.convert TestClient, google_apis.build TestClient
 pushd clients/test_client
 mix deps.get
 mix test
-mix dialyzer
+mix dialyzer --halt-exit-status
 popd
