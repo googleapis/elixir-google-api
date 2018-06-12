@@ -24,7 +24,7 @@ defmodule GoogleApi.Gax.Request do
   @type param_location :: :body | :query | :header | :file
   @type method :: :head | :get | :delete | :trace | :options | :post | :put | :patch
   @type t :: %__MODULE__{
-          method: method,
+          method: method(),
           url: String.t(),
           body: keyword(),
           query: keyword(),
@@ -109,7 +109,7 @@ defmodule GoogleApi.Gax.Request do
   """
   @spec add_optional_params(
           GoogleApi.Gax.Request.t(),
-          %{optional(atom()) => param_location},
+          %{optional(atom()) => param_location()},
           keyword()
         ) :: GoogleApi.Gax.Request.t()
   def add_optional_params(request, _, []), do: request
@@ -140,7 +140,7 @@ defmodule GoogleApi.Gax.Request do
 
   Map
   """
-  @spec add_param(GoogleApi.Gax.Request.t(), param_location, atom(), any()) ::
+  @spec add_param(GoogleApi.Gax.Request.t(), param_location(), atom(), any()) ::
           GoogleApi.Gax.Request.t()
   def add_param(request, location, key, value) do
     Map.update!(request, location, &(&1 ++ [{key, value}]))
