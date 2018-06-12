@@ -16,7 +16,7 @@ defmodule GoogleApi.Gax.MixProject do
       elixirc_paths: paths(Mix.env()),
       # consolidate_protocols: Mix.env != :test,
       source_url:
-        "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/compute"
+        "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/gax"
     ]
   end
 
