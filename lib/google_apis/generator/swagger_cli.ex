@@ -23,12 +23,16 @@ defmodule GoogleApis.Generator.SwaggerCli do
                           "-l", "elixir",
                           "-i", "/local/specifications/openapi/#{filename}",
                           "-c", "/local/specifications/config/#{filename}",
-                          "-t", "/local/template",
+                          "-t", template_dir(),
                           "-o", "/local/clients/#{ApiConfig.library_name(api_config)}"])
     {:ok, ""}
   end
 
   defp image() do
     Application.get_env(:google_apis, :swagger_cli_image)
+  end
+
+  defp template_dir() do
+    Path.join("/local/template", Application.get_env(:google_apis, :template))
   end
 end

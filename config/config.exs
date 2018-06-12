@@ -34,4 +34,5 @@ config :google_apis,
   client_generator: GoogleApis.Generator.SwaggerCli,
   swagger_cli_image: "swaggerapi/swagger-codegen-cli:v2.3.1",
   oauth_client: System.get_env("GOOGLE_CLIENT_ID"),
-  oauth_secret: System.get_env("GOOGLE_CLIENT_SECRET")
+  oauth_secret: System.get_env("GOOGLE_CLIENT_SECRET"),
+  template: System.get_env("TEMPLATE") || "base"
