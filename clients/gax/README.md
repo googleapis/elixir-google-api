@@ -1,6 +1,6 @@
-# Gax
+# GoogleApi.Gax
 
-**TODO: Add description**
+Google API Extensions for Elixir
 
 ## Installation
 
@@ -10,8 +10,37 @@ by adding `gax` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:gax, "~> 0.1.0"}
+    {:gax, "~> 0.0.1"}
   ]
+end
+```
+
+## Usage
+
+This package is used to share common code between all of the Google Elixir
+client libraries.
+
+### GoogleApi.Gax.Connection
+
+This module is used to set up client connection options:
+
+```elixir
+defmodule MyConnection do
+  use GoogleApi.Gax.Connection, scopes: ["https://example.com/read"], base_url: "https://api.example.com"
+end
+```
+
+### GoogleApi.Gax.ModelBase
+
+This module is used to provide macros for helping to define your model structs:
+
+```elixir
+defmodule Pet do
+  use GoogleApi.Gax.ModelBase
+
+  field(:id)
+  field(:category, as: Category)
+  field(:tags, as: Tag, type: :list)
 end
 ```
 
