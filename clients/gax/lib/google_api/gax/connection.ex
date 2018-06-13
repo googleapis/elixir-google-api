@@ -83,7 +83,7 @@ defmodule GoogleApi.Gax.Connection do
 
       Tesla.Env
       """
-      @spec execute(Tesla.Client.t(), GoogleApi.Gax.Request.t()) :: Tesla.Env.t()
+      @spec execute(Tesla.Client.t(), GoogleApi.Gax.Request.t()) :: {:ok, Tesla.Env.t()}
       def execute(connection, request) do
         request
         |> GoogleApi.Gax.Connection.build_request()
