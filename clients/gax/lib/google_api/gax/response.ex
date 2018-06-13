@@ -26,7 +26,7 @@ defmodule GoogleApi.Gax.Response do
 
   ## Parameters
 
-  - env (Tesla.Env) - The response object
+  - response ({:ok, Tesla.Env} | {:error, reason}) - The response object
   - struct (struct | false) - The shape of the struct to deserialize into. If false, returns the Tesla response.
   - opts (KeywordList) - [optional] Optional parameters
     - :dataWrapped (boolean()): If true, the remove the wrapping "data" field. Defaults to false.
@@ -38,15 +38,17 @@ defmodule GoogleApi.Gax.Response do
   {:ok, struct} on success
   {:error, info} on failure
   """
-  @spec decode(Tesla.Env.t(), keyword()) :: {:ok, struct()} | {:error, Tesla.Env.t()}
+  @spec decode({:ok, Tesla.Env.t()}, keyword()) :: {:ok, struct()} | {:error, Tesla.Env.t()}
   def decode(env, opts \\ [])
 
-  def decode(%Tesla.Env{status: status} = env, _)
+  def decode({:error, reason}, _), do: {:error, reason}
+
+  def decode({:ok, %Tesla.Env{status: status} = env}, _)
       when status not in @successful_request_response do
     {:error, env}
   end
 
-  def decode(env = %Tesla.Env{body: body}, opts) do
+  def decode({:ok, %Tesla.Env{body: body} = env}, opts) do
     if Keyword.get(opts, :decode, true) do
       data_wrapped = Keyword.get(opts, :data_wrapped, false)
       struct = Keyword.get(opts, :struct, nil)

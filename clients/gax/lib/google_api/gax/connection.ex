@@ -25,8 +25,8 @@ defmodule GoogleApi.Gax.Connection do
 
       # Add any middleware here (authentication)
       plug(Tesla.Middleware.BaseUrl, Application.get_env(unquote(Keyword.get(opts, :otp_app)), :base_url, unquote(Keyword.get(opts, :base_url))))
-      plug(Tesla.Middleware.Headers, %{"User-Agent" => "Elixir"})
-      plug(Tesla.Middleware.EncodeJson)
+      plug(Tesla.Middleware.Headers, [%{"user-agent" => "Elixir"}])
+      plug(Tesla.Middleware.EncodeJson, engine: Poison)
 
       @doc """
       Configure a client connection using a provided OAuth2 token as a Bearer token
@@ -42,7 +42,7 @@ defmodule GoogleApi.Gax.Connection do
       @spec new(String.t()) :: Tesla.Client.t()
       def new(token) when is_binary(token) do
         Tesla.build_client([
-          {Tesla.Middleware.Headers, %{"Authorization" => "Bearer #{token}"}}
+          {Tesla.Middleware.Headers, [%{"authorization" => "Bearer #{token}"}]}
         ])
       end
 
