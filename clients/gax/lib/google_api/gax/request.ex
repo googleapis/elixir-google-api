@@ -55,7 +55,6 @@ defmodule GoogleApi.Gax.Request do
   @spec method(GoogleApi.Gax.Request.t(), atom()) :: GoogleApi.Gax.Request.t()
   def method(request, m) do
     %{request | method: m}
-    # Map.put(request, :method, m)
   end
 
   @spec url(GoogleApi.Gax.Request.t()) :: {:ok, String.t()} | :error
@@ -142,6 +141,12 @@ defmodule GoogleApi.Gax.Request do
   """
   @spec add_param(GoogleApi.Gax.Request.t(), param_location(), atom(), any()) ::
           GoogleApi.Gax.Request.t()
+  def add_param(request, :query, key, values) when is_list(values) do
+    Enum.reduce(values, request, fn value, req ->
+      add_param(req, :query, key, value)
+    end)
+  end
+
   def add_param(request, location, key, value) do
     Map.update!(request, location, &(&1 ++ [{key, value}]))
   end
