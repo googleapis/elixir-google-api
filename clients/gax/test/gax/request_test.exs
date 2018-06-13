@@ -59,10 +59,10 @@ defmodule Gax.RequestTest do
   test "adds parameter" do
     request =
       Request.new()
-      |> Request.add_param(:query, :foo, 'asdf')
-      |> Request.add_param(:query, :bar, 'qwer')
+      |> Request.add_param(:query, :foo, "asdf")
+      |> Request.add_param(:query, :bar, "qwer")
 
-    assert [foo: 'asdf', bar: 'qwer'] == request.query
+    assert [foo: "asdf", bar: "qwer"] == request.query
   end
 
   test "adds optional parameters empty" do
@@ -88,16 +88,16 @@ defmodule Gax.RequestTest do
     }
 
     input = [
-      foo: 'asdf',
-      bar: 'qwer'
+      foo: "asdf",
+      bar: "qwer"
     ]
 
     request =
       Request.new()
       |> Request.add_optional_params(optional_params, input)
 
-    assert [foo: 'asdf'] == request.query
-    assert [bar: 'qwer'] == request.body
+    assert [foo: "asdf"] == request.query
+    assert [bar: "qwer"] == request.body
   end
 
   test "adds file by filename" do
@@ -106,5 +106,21 @@ defmodule Gax.RequestTest do
       |> Request.add_param(:file, :"foo.json", "/path/to/file")
 
     assert [{:"foo.json", "/path/to/file"}] == request.file
+  end
+
+  test "list of query params" do
+    request =
+      Request.new()
+      |> Request.add_param(:query, :foo, ["bar1", "bar2"])
+
+    assert [foo: "bar1", foo: "bar2"] == request.query
+  end
+
+  test "simple query params" do
+    request =
+      Request.new()
+      |> Request.add_param(:query, :foo, "bar1")
+
+    assert [foo: "bar1"] == request.query
   end
 end
