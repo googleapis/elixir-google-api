@@ -24,7 +24,7 @@ defmodule GoogleApi.Gax.Connection do
       @scopes unquote(Keyword.get(opts, :scopes, []))
 
       # Add any middleware here (authentication)
-      plug(Tesla.Middleware.BaseUrl, unquote(Keyword.get(opts, :base_url)))
+      plug(Tesla.Middleware.BaseUrl, Application.get_env(unquote(Keyword.get(opts, :otp_app)), :base_url, unquote(Keyword.get(opts, :base_url))))
       plug(Tesla.Middleware.Headers, %{"User-Agent" => "Elixir"})
       plug(Tesla.Middleware.EncodeJson)
 
