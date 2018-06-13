@@ -32,7 +32,7 @@ defmodule GoogleApi.Gax.Request do
           header: keyword()
         }
 
-  @spec new() :: map()
+  @spec new() :: GoogleApi.Gax.Request.t()
   def new do
     %__MODULE__{}
   end
