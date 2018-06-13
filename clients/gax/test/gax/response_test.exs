@@ -24,7 +24,7 @@ defmodule Gax.ResponseTest do
       body: "{\"foo\": \"bar\"}"
     }
 
-    assert {:ok, %{"foo" => "bar"}} = Response.decode(env)
+    assert {:ok, %{"foo" => "bar"}} = Response.decode({:ok, env})
   end
 
   test "handles other 200 responses without body" do
@@ -33,7 +33,7 @@ defmodule Gax.ResponseTest do
       body: nil
     }
 
-    assert {:ok, nil} = Response.decode(env)
+    assert {:ok, nil} = Response.decode({:ok, env})
   end
 
   test "handles other 200 responses with struct" do
@@ -42,7 +42,7 @@ defmodule Gax.ResponseTest do
       body: "{\"calloutStatusRate\": []}"
     }
 
-    assert {:ok, report} = Response.decode(env, struct: %Pet{})
+    assert {:ok, report} = Response.decode({:ok, env}, struct: %Pet{})
     assert %Pet{} = report
   end
 
@@ -52,7 +52,7 @@ defmodule Gax.ResponseTest do
       body: "{\"data\": {\"calloutStatusRate\": []}}"
     }
 
-    assert {:ok, report} = Response.decode(env, struct: %Pet{}, data_wrapped: true)
+    assert {:ok, report} = Response.decode({:ok, env}, struct: %Pet{}, data_wrapped: true)
     assert %Pet{} = report
   end
 
@@ -62,7 +62,7 @@ defmodule Gax.ResponseTest do
       body: "{\"foo\": \"bar\"}"
     }
 
-    assert {:ok, %{"foo" => "bar"}} = Response.decode(env)
+    assert {:ok, %{"foo" => "bar"}} = Response.decode({:ok, env})
   end
 
   test "handles other 2xx responses without body" do
@@ -71,7 +71,7 @@ defmodule Gax.ResponseTest do
       body: nil
     }
 
-    assert {:ok, nil} = Response.decode(env)
+    assert {:ok, nil} = Response.decode({:ok, env})
   end
 
   test "handles other 2xx responses with struct" do
@@ -80,7 +80,7 @@ defmodule Gax.ResponseTest do
       body: "{\"calloutStatusRate\": []}"
     }
 
-    assert {:ok, report} = Response.decode(env, struct: %Pet{})
+    assert {:ok, report} = Response.decode({:ok, env}, struct: %Pet{})
     assert %Pet{} = report
   end
 
@@ -90,7 +90,7 @@ defmodule Gax.ResponseTest do
       body: "{\"data\": {\"calloutStatusRate\": []}}"
     }
 
-    assert {:ok, report} = Response.decode(env, struct: %Pet{}, data_wrapped: true)
+    assert {:ok, report} = Response.decode({:ok, env}, struct: %Pet{}, data_wrapped: true)
     assert %Pet{} = report
   end
 
@@ -100,7 +100,7 @@ defmodule Gax.ResponseTest do
       body: "{\"error\": \"some message\"}"
     }
 
-    assert {:error, ^env} = Response.decode(env)
+    assert {:error, ^env} = Response.decode({:ok, env})
   end
 
   test "handles error status with struct" do
@@ -109,7 +109,7 @@ defmodule Gax.ResponseTest do
       body: "{\"error\": \"some message\"}"
     }
 
-    assert {:error, ^env} = Response.decode(env, struct: %Pet{})
+    assert {:error, ^env} = Response.decode({:ok, env}, struct: %Pet{})
   end
 
   test "handles error status with data wrapped struct" do
@@ -118,7 +118,7 @@ defmodule Gax.ResponseTest do
       body: "{\"error\": \"some message\"}"
     }
 
-    assert {:error, ^env} = Response.decode(env, struct: %Pet{}, data_wrapped: true)
+    assert {:error, ^env} = Response.decode({:ok, env}, struct: %Pet{}, data_wrapped: true)
   end
 
   test "returns raw response" do
@@ -127,6 +127,6 @@ defmodule Gax.ResponseTest do
       body: "{\"foo\": \"bar\"}"
     }
 
-    assert {:ok, ^env} = Response.decode(env, decode: false)
+    assert {:ok, ^env} = Response.decode({:ok, env}, decode: false)
   end
 end
