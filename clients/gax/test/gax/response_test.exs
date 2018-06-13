@@ -1,28 +1,30 @@
-# Copyright 2017 Google Inc.
+# Copyright 2018 Google LLC
 #
-# Licensed under the Apache License, Version 2.0 (the "License");
+# Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
 #     http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
+# distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-defmodule DecodeTest do
+defmodule Gax.ResponseTest do
   use ExUnit.Case
-  alias GoogleApi.TestClient.V1.RequestBuilder
-  alias GoogleApi.TestClient.V1.Model.PerformanceReport
+  doctest GoogleApi.Gax.Response
+  alias GoogleApi.Gax.Response
+  alias TestClient.Model.Pet
 
   test "handles other 200 responses" do
     env = %Tesla.Env{
       status: 200,
       body: "{\"foo\": \"bar\"}"
     }
-    assert {:ok, %{"foo" => "bar"}} = RequestBuilder.decode(env)
+
+    assert {:ok, %{"foo" => "bar"}} = Response.decode(env)
   end
 
   test "handles other 200 responses without body" do
@@ -30,7 +32,8 @@ defmodule DecodeTest do
       status: 200,
       body: nil
     }
-    assert {:ok, nil} = RequestBuilder.decode(env)
+
+    assert {:ok, nil} = Response.decode(env)
   end
 
   test "handles other 200 responses with struct" do
@@ -38,8 +41,9 @@ defmodule DecodeTest do
       status: 200,
       body: "{\"calloutStatusRate\": []}"
     }
-    assert {:ok, report} = RequestBuilder.decode(env, %PerformanceReport{})
-    assert %PerformanceReport{} = report
+
+    assert {:ok, report} = Response.decode(env, struct: %Pet{})
+    assert %Pet{} = report
   end
 
   test "handles other 200 responses with data wrapped struct" do
@@ -47,8 +51,9 @@ defmodule DecodeTest do
       status: 200,
       body: "{\"data\": {\"calloutStatusRate\": []}}"
     }
-    assert {:ok, report} = RequestBuilder.decode(env, %PerformanceReport{}, dataWrapped: true)
-    assert %PerformanceReport{} = report
+
+    assert {:ok, report} = Response.decode(env, struct: %Pet{}, data_wrapped: true)
+    assert %Pet{} = report
   end
 
   test "handles other 2xx responses" do
@@ -56,7 +61,8 @@ defmodule DecodeTest do
       status: 204,
       body: "{\"foo\": \"bar\"}"
     }
-    assert {:ok, %{"foo" => "bar"}} = RequestBuilder.decode(env)
+
+    assert {:ok, %{"foo" => "bar"}} = Response.decode(env)
   end
 
   test "handles other 2xx responses without body" do
@@ -64,7 +70,8 @@ defmodule DecodeTest do
       status: 204,
       body: nil
     }
-    assert {:ok, nil} = RequestBuilder.decode(env)
+
+    assert {:ok, nil} = Response.decode(env)
   end
 
   test "handles other 2xx responses with struct" do
@@ -72,8 +79,9 @@ defmodule DecodeTest do
       status: 204,
       body: "{\"calloutStatusRate\": []}"
     }
-    assert {:ok, report} = RequestBuilder.decode(env, %PerformanceReport{})
-    assert %PerformanceReport{} = report
+
+    assert {:ok, report} = Response.decode(env, struct: %Pet{})
+    assert %Pet{} = report
   end
 
   test "handles other 2xx responses with data wrapped struct" do
@@ -81,8 +89,9 @@ defmodule DecodeTest do
       status: 204,
       body: "{\"data\": {\"calloutStatusRate\": []}}"
     }
-    assert {:ok, report} = RequestBuilder.decode(env, %PerformanceReport{}, dataWrapped: true)
-    assert %PerformanceReport{} = report
+
+    assert {:ok, report} = Response.decode(env, struct: %Pet{}, data_wrapped: true)
+    assert %Pet{} = report
   end
 
   test "handles error status" do
@@ -90,7 +99,8 @@ defmodule DecodeTest do
       status: 500,
       body: "{\"error\": \"some message\"}"
     }
-    assert {:error, ^env} = RequestBuilder.decode(env)
+
+    assert {:error, ^env} = Response.decode(env)
   end
 
   test "handles error status with struct" do
@@ -98,7 +108,8 @@ defmodule DecodeTest do
       status: 500,
       body: "{\"error\": \"some message\"}"
     }
-    assert {:error, ^env} = RequestBuilder.decode(env, %PerformanceReport{})
+
+    assert {:error, ^env} = Response.decode(env, struct: %Pet{})
   end
 
   test "handles error status with data wrapped struct" do
@@ -106,6 +117,16 @@ defmodule DecodeTest do
       status: 500,
       body: "{\"error\": \"some message\"}"
     }
-    assert {:error, ^env} = RequestBuilder.decode(env, %PerformanceReport{}, dataWrapped: true)
+
+    assert {:error, ^env} = Response.decode(env, struct: %Pet{}, data_wrapped: true)
+  end
+
+  test "returns raw response" do
+    env = %Tesla.Env{
+      status: 200,
+      body: "{\"foo\": \"bar\"}"
+    }
+
+    assert {:ok, ^env} = Response.decode(env, decode: false)
   end
 end

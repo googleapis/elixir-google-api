@@ -1,0 +1,17 @@
+{{>licenseInfo}}
+defmodule {{moduleName}}.Connection do
+  @moduledoc """
+  Handle Tesla connections for {{moduleName}}.
+  """
+
+  use GoogleApi.Gax.Connection, scopes: [
+{{#authMethods}}
+  {{#isOAuth}}
+    {{#scopes}}
+    "{{scope}}"{{#hasMore}},{{/hasMore}} {{#description}}# {{description}}{{/description}}
+    {{/scopes}}
+  {{/isOAuth}}
+{{/authMethods}}
+  ],
+  base_url: "{{{basePath}}}"
+end

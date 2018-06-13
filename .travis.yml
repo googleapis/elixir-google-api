@@ -4,12 +4,16 @@ elixir:
 otp_release:
   - 19.3
   - 20.0
+cache:
+  directories:
+    - _build
+    - deps
+    - node_modules
+    - $MIX_HOME
 services:
   - docker
 before_install:
   - npm install
   - docker pull swaggerapi/swagger-codegen-cli
 script:
-  - mix test --include external
-  - mix do google_apis.convert TestClient, google_apis.build TestClient
-  - cd clients/test_client && mix deps.get && mix test && mix dialyzer
+  - scripts/ci.sh

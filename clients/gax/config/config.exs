@@ -8,15 +8,15 @@ use Mix.Config
 # if you want to provide default values for your application for
 # 3rd-party users, it should be done in your "mix.exs" file.
 
-# You can configure for your application as:
+# You can configure your application as:
 #
-#     config :google_apis, key: :value
+#     config :gax, key: :value
 #
-# And access this configuration in your application as:
+# and access this configuration in your application as:
 #
-#     Application.get_env(:google_apis, :key)
+#     Application.get_env(:gax, :key)
 #
-# Or configure a 3rd-party app:
+# You can also configure a 3rd-party app:
 #
 #     config :logger, level: :info
 #
@@ -28,11 +28,3 @@ use Mix.Config
 # here (which is why it is important to import them last).
 #
 #     import_config "#{Mix.env}.exs"
-
-config :google_apis,
-  spec_converter: GoogleApis.Converter.ApiSpecConverter,
-  client_generator: GoogleApis.Generator.SwaggerCli,
-  swagger_cli_image: "swaggerapi/swagger-codegen-cli:v2.3.1",
-  oauth_client: System.get_env("GOOGLE_CLIENT_ID"),
-  oauth_secret: System.get_env("GOOGLE_CLIENT_SECRET"),
-  template: System.get_env("TEMPLATE") || "base"

@@ -10,11 +10,11 @@ use Mix.Config
 
 # You can configure for your application as:
 #
-#     config :google_apis, key: :value
+#     config :{{#underscored}}{{appName}}{{/underscored}}, key: :value
 #
 # And access this configuration in your application as:
 #
-#     Application.get_env(:google_apis, :key)
+#     Application.get_env(:{{#underscored}}{{appName}}{{/underscored}}, :key)
 #
 # Or configure a 3rd-party app:
 #
@@ -28,11 +28,3 @@ use Mix.Config
 # here (which is why it is important to import them last).
 #
 #     import_config "#{Mix.env}.exs"
-
-config :google_apis,
-  spec_converter: GoogleApis.Converter.ApiSpecConverter,
-  client_generator: GoogleApis.Generator.SwaggerCli,
-  swagger_cli_image: "swaggerapi/swagger-codegen-cli:v2.3.1",
-  oauth_client: System.get_env("GOOGLE_CLIENT_ID"),
-  oauth_secret: System.get_env("GOOGLE_CLIENT_SECRET"),
-  template: System.get_env("TEMPLATE") || "base"
