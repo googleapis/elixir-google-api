@@ -156,7 +156,7 @@ defmodule GoogleApi.Gax.Connection do
     Keyword.put(output, :body, body)
   end
 
-  @required_body_methods [:post, :put, :delete]
+  @required_body_methods [:post, :patch, :put, :delete]
 
   defp set_default_body(output, method) when method in @required_body_methods do
     Keyword.put(output, :body, "")
