@@ -116,7 +116,11 @@ defmodule GoogleApi.Gax.Connection do
     Keyword.put(output, :headers, header_params)
   end
 
-  defp build_body(output, [], []), do: output
+  # If no body or file fields and the request is a POST, set an empty body
+  defp build_body(output, [], []) do
+    method = Keyword.fetch!(output, :method)
+    set_default_body(output, method)
+  end
 
   defp build_body(output, [body: main_body], []) do
     Keyword.put(output, :body, main_body)
@@ -150,5 +154,14 @@ defmodule GoogleApi.Gax.Connection do
       end)
 
     Keyword.put(output, :body, body)
+  end
+
+  @required_body_methods [:post, :patch, :put, :delete]
+
+  defp set_default_body(output, method) when method in @required_body_methods do
+    Keyword.put(output, :body, "")
+  end
+  defp set_default_body(output, _) do
+    output
   end
 end
