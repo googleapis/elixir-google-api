@@ -96,13 +96,14 @@ defmodule GoogleApi.Gax.ModelBase do
   @spec encode(struct(), keyword()) :: String.t()
   def encode(value, options) do
     value
-    |> Map.from_struct
+    |> Map.from_struct()
     |> Enum.filter(fn {_k, v} -> v != nil end)
     |> Enum.into(%{})
     |> Poison.Encoder.encode(options)
   end
 
   defp parse_date(nil), do: nil
+
   defp parse_date(iso8601) do
     case DateTime.from_iso8601(iso8601) do
       {:ok, datetime, _offset} -> datetime

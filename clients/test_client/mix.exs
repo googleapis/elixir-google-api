@@ -22,8 +22,6 @@ defmodule GoogleApi.TestClient.V1.Mixfile do
 
   defp deps() do
     [
-      {:tesla, "~> 0.8"},
-      {:poison, ">= 1.0.0"},
       {:ex_doc, "~> 0.16", only: :dev},
       {:dialyxir, "~> 0.5", only: [:dev], runtime: false},
       {:google_gax, path: "../gax"}
