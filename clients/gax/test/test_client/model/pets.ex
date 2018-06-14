@@ -12,26 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-defmodule TestClient.Api.Pets do
-  alias TestClient.Connection
-  alias GoogleApi.Gax.{Request, Response}
+defmodule TestClient.Model.Pets do
+  use GoogleApi.Gax.ModelBase
 
-  def pets_list_by_store(connection, store, opts \\ []) do
-    optional_params = %{
-      :prettyPrint => :query,
-      :tags => :query
-    }
+  field(:pets, as: TestClient.Model.Pet, type: :list)
+end
 
-    request =
-      Request.new()
-      |> Request.method(:get)
-      |> Request.url("/v1/stores/{store}/pets", %{
-        "store" => URI.encode_www_form(store)
-      })
-      |> Request.add_optional_params(optional_params, opts)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(struct: %TestClient.Model.Pets{})
+defimpl Poison.Decoder, for: TestClient.Model.Pets do
+  def decode(value, options) do
+    TestClient.Model.Pets.decode(value, options)
   end
 end
