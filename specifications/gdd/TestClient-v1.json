@@ -1,167 +1,231 @@
 {
- "kind": "discovery#restDescription",
- "etag": "\"YWOzh2SDasdU84ArJnpYek-OMdg/nD15-sVgx0hSdEaD_RN4E40IFV8\"",
- "discoveryVersion": "v1",
- "id": "testclient:v1",
- "name": "testclient",
- "canonicalName": "Test Client",
- "version": "v1",
- "revision": "20170810",
- "title": "Test Client",
- "description": "Test client for testing generated clients",
- "ownerDomain": "google.com",
- "ownerName": "Google",
- "icons": {
-  "x16": "https://www.google.com/images/icons/product/doubleclick-16.gif",
-  "x32": "https://www.google.com/images/icons/product/doubleclick-32.gif"
- },
- "documentationLink": "https://github.com/GoogleCloudPlatform/elixir-google-api",
- "protocol": "rest",
- "baseUrl": "http://localhost:8080/",
- "basePath": "/",
- "rootUrl": "http://localhost:8080/",
- "servicePath": "",
- "batchPath": "batch",
- "parameters": {
-   "alt": {
-    "type": "string",
-    "description": "Data format for the response.",
-    "default": "json",
-    "enum": [
-     "json"
-    ],
-    "enumDescriptions": [
-     "Responses with Content-Type of application/json"
-    ],
-    "location": "query"
-   }
- },
- "auth": {
-  "oauth2": {
-   "scopes": {
-    "https://www.googleapis.com/auth/adexchange.buyer": {
-     "description": "Manage your Ad Exchange buyer account configuration"
-    }
-   }
-  }
- },
- "schemas": {
-  "PerformanceReport": {
-   "id": "PerformanceReport",
-   "type": "object",
-   "description": "The configuration data for an Ad Exchange performance report list.",
-   "properties": {
-    "calloutStatusRate": {
-     "type": "array",
-     "description": "Rate of various prefiltering statuses per match. Please refer to the callout-status-codes.txt file for different statuses.",
-     "items": {
-      "type": "any"
-     }
-    }
-   }
+  "kind": "discovery#restDescription",
+  "etag": "\"YWOzh2SDasdU84ArJnpYek-OMdg/nD15-sVgx0hSdEaD_RN4E40IFV8\"",
+  "discoveryVersion": "v1",
+  "id": "testclient:v1",
+  "name": "testclient",
+  "canonicalName": "Test Client",
+  "version": "v1",
+  "revision": "20170810",
+  "title": "Test Client",
+  "description": "Test client for testing generated clients",
+  "ownerDomain": "google.com",
+  "ownerName": "Google",
+  "icons": {
+    "x16": "https://www.google.com/images/icons/product/doubleclick-16.gif",
+    "x32": "https://www.google.com/images/icons/product/doubleclick-32.gif"
   },
-  "PerformanceReportList": {
-   "id": "PerformanceReportList",
-   "type": "object",
-   "description": "The configuration data for an Ad Exchange performance report list.",
-   "properties": {
-    "kind": {
-     "type": "string",
-     "description": "Resource type.",
-     "default": "adexchangebuyer#performanceReportList"
-    },
-    "performanceReport": {
-     "type": "array",
-     "description": "A list of performance reports relevant for the account.",
-     "items": {
-      "$ref": "PerformanceReport"
-     }
+  "documentationLink": "https://github.com/GoogleCloudPlatform/elixir-google-api",
+  "protocol": "rest",
+  "baseUrl": "http://localhost:8080/test/v1/",
+  "basePath": "/test/v1/",
+  "rootUrl": "http://localhost:8080/",
+  "servicePath": "test/v1/",
+  "batchPath": "batch",
+  "parameters": {
+    "alt": {
+      "type": "string",
+      "description": "Data format for the response.",
+      "default": "json",
+      "enum": [
+        "json"
+      ],
+      "enumDescriptions": [
+        "Responses with Content-Type of application/json"
+      ],
+      "location": "query"
     }
-   }
   },
-  "Bucket": {
-   "id": "Bucket",
-   "type": "object",
-   "description": "A bucket.",
-   "properties": {
-    "timeCreated": {
-     "type": "string",
-     "description": "The creation time of the bucket in RFC 3339 format.",
-     "format": "date"
-    },
-    "updated": {
-     "type": "string",
-     "description": "The modification time of the bucket in RFC 3339 format.",
-     "format": "date"
-    },
-    "updated2": {
-     "type": "string",
-     "description": "Another field with date-time format.",
-     "format": "date-time"
-    },
-    "updated3": {
-     "type": "string",
-     "description": "Another field with date-time format.",
-     "format": "date-time"
+  "auth": {
+    "oauth2": {
+      "scopes": {
+        "https://www.googleapis.com/auth/adexchange.buyer": {
+          "description": "Manage your Ad Exchange buyer account configuration"
+        }
+      }
     }
-   }
-  }
- },
- "resources": {
-  "performanceReport": {
-   "methods": {
-    "list": {
-     "id": "adexchangebuyer.performanceReport.list",
-     "path": "performancereport",
-     "httpMethod": "GET",
-     "description": "Retrieves the authenticated user's list of performance metrics.",
-     "parameters": {
-      "accountId": {
-        "type": "string",
-        "description": "The account id to get the reports.",
-        "required": true,
-        "format": "int64",
-        "location": "query"
-       },
-      "endDateTime": {
-        "type": "string",
-        "description": "The end time of the report in ISO 8601 timestamp format using UTC.",
-        "required": true,
-        "location": "query"
-       },
-      "maxResults": {
-        "type": "integer",
-        "description": "Maximum number of entries returned on one result page. If not set, the default is 100. Optional.",
-        "format": "uint32",
-        "minimum": "1",
-        "maximum": "1000",
-        "location": "query"
-       },
-      "pageToken": {
-        "type": "string",
-        "description": "A continuation token, used to page through performance reports. To retrieve the next page, set this parameter to the value of \"nextPageToken\" from the previous response. Optional.",
-        "location": "query"
-       },
-      "startDateTime": {
-        "type": "string",
-        "description": "The start time of the report in ISO 8601 timestamp format using UTC.",
-        "required": true,
-        "location": "query"
-       }
-     },
-     "parameterOrder": [
-      "accountId",
-      "endDateTime",
-      "startDateTime"
-     ],
-     "response": {
-      "$ref": "PerformanceReportList"
-     },
-     "scopes": [
-      "https://www.googleapis.com/auth/adexchange.buyer"
-     ]
+  },
+  "schemas": {
+    "Container": {
+      "id": "Container",
+      "type": "object",
+      "description": "A data structure to test simple types",
+      "properties": {
+        "stringVal": {
+          "type": "string",
+          "description": "A simple string"
+        },
+        "objectVal": {
+          "type": "object",
+          "description": "An inline object definition",
+          "properties": {
+            "field1": {
+              "type": "string",
+              "description": "Field 1 for internal type"
+            }
+          }
+        },
+        "booleanVal": {
+          "type": "boolean",
+          "description": "A simple boolean"
+        },
+        "arrayVal": {
+          "type": "array",
+          "description": "An array of strings",
+          "items": {
+            "type": "string"
+          }
+        },
+        "arrayRefVal": {
+          "type": "array",
+          "description": "An array of reference objects",
+          "items": {
+            "$ref": "Container"
+          }
+        },
+        "numberVal": {
+          "type": "number",
+          "description": "A simple number"
+        }
+      }
+    },
+    "DateContainer": {
+      "id": "DateContainer",
+      "type": "object",
+      "description": "A data structure to test different date types",
+      "properties": {
+        "dateVal": {
+          "type": "string",
+          "description": "A simple date field",
+          "format": "date"
+        },
+        "dateTimeVal": {
+          "type": "string",
+          "description": "A simple date-time field",
+          "format": "date-time"
+        },
+        "googleDateVal": {
+          "type": "string",
+          "description": "A google-datetime field",
+          "format": "google-datetime"
+        }
+      }
+    },
+    "Generic": {
+      "id": "Generic",
+      "type": "object",
+      "description": "A data structure to test different any types",
+      "properties": {
+        "any": {
+          "type": "any",
+          "description": "A generic field type"
+        },
+        "listOfAny": {
+          "type": "array",
+          "description": "Contains a list of anything",
+          "items": {
+            "type": "any"
+          }
+        },
+        "container": {
+          "description": "This field can contain anything",
+          "type": "object",
+          "additionalProperties": {
+            "description": "Properties of the object.",
+            "type": "any"
+          }
+        }
+      }
     }
-   }
+  },
+  "resources": {
+    "objects": {
+      "methods": {
+        "get": {
+          "id": "objects.get",
+          "path": "b/{bucket}/o/{id}",
+          "httpMethod": "GET",
+          "description": "Gets a single object by Id.",
+          "parameters": {
+            "bucket": {
+              "type": "string",
+              "description": "Name of the bucket where the object is stored",
+              "required": true,
+              "location": "path"
+            },
+            "id": {
+              "type": "integer",
+              "description": "The object id",
+              "required": true,
+              "format": "int32",
+              "location": "path"
+            },
+            "category": {
+              "type": "string",
+              "description": "The category of the items. Must match all.",
+              "repeated": true,
+              "location": "query"
+            }
+          },
+          "parameterOrder": [
+            "bucket",
+            "id"
+          ],
+          "response": {
+            "$ref": "Container"
+          },
+          "scopes": [
+            "https://example.com/objects.read"
+          ]
+        },
+        "insert": {
+          "id": "objects.insert",
+          "path": "b/{bucket}/o",
+          "httpMethod": "POST",
+          "description": "Stores a new object and metadata",
+          "parameters": {
+            "bucket": {
+              "type": "string",
+              "description": "Name of the bucket where the object is stored",
+              "required": true,
+              "location": "path"
+            },
+            "name": {
+              "type": "string",
+              "description": "Name of the object. Required when the object metadata is not otherwise provided.",
+              "location": "query"
+            }
+          },
+          "parameterOrder": [
+            "bucket"
+          ],
+          "request": {
+            "$ref": "Container"
+          },
+          "response": {
+            "$ref": "Container"
+          },
+          "scopes": [
+            "https://example.com/objects.insert"
+          ],
+          "supportsMediaUpload": true,
+          "mediaUpload": {
+            "accept": [
+              "*/*"
+            ],
+            "protocols": {
+              "simple": {
+                "multipart": true,
+                "path": "/upload/v1/b/{bucket}/o"
+              },
+              "resumable": {
+                "multipart": true,
+                "path": "/resumable/upload/v1/b/{bucket}/o"
+              }
+            }
+          }
+        }
+      }
+    }
   }
- }
 }
