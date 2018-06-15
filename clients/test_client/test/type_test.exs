@@ -15,7 +15,12 @@
 defmodule Gax.TypeTest do
   use ExUnit.Case, async: true
 
-  alias GoogleApi.TestClient.V1.Model.{Container,ContainerObjectVal,DateContainer}
+  alias GoogleApi.TestClient.V1.Model.{
+    Container,
+    ContainerObjectVal,
+    DateContainer,
+    GenericContainer
+  }
 
   test "decodes strings" do
     json = """
@@ -23,6 +28,7 @@ defmodule Gax.TypeTest do
       "stringVal": "some string"
     }
     """
+
     assert {:ok, container} = Poison.decode(json, as: %Container{})
     assert "some string" == container.stringVal
   end
@@ -33,6 +39,7 @@ defmodule Gax.TypeTest do
       "booleanVal": true
     }
     """
+
     assert {:ok, container} = Poison.decode(json, as: %Container{})
     assert true == container.booleanVal
   end
@@ -46,6 +53,7 @@ defmodule Gax.TypeTest do
       ]
     }
     """
+
     assert {:ok, container} = Poison.decode(json, as: %Container{})
     assert ["foo", "bar"] == container.arrayVal
   end
@@ -63,12 +71,15 @@ defmodule Gax.TypeTest do
       ]
     }
     """
+
     assert {:ok, container} = Poison.decode(json, as: %Container{})
     assert 2 == Enum.count(container.arrayRefVal)
-    assert ["obj1", "obj2"] == Enum.map(container.arrayRefVal, fn c ->
-      assert %Container{} = c
-      c.stringVal
-    end)
+
+    assert ["obj1", "obj2"] ==
+             Enum.map(container.arrayRefVal, fn c ->
+               assert %Container{} = c
+               c.stringVal
+             end)
   end
 
   test "decodes integers" do
@@ -77,6 +88,7 @@ defmodule Gax.TypeTest do
       "numberVal": 1234
     }
     """
+
     assert {:ok, container} = Poison.decode(json, as: %Container{})
     assert 1234 == container.numberVal
   end
@@ -87,6 +99,7 @@ defmodule Gax.TypeTest do
       "numberVal": 12.34
     }
     """
+
     assert {:ok, container} = Poison.decode(json, as: %Container{})
     assert 12.34 == container.numberVal
   end
@@ -99,6 +112,7 @@ defmodule Gax.TypeTest do
       }
     }
     """
+
     assert {:ok, container} = Poison.decode(json, as: %Container{})
     assert %Container{stringVal: "inner field"} = container.objectRefVal
   end
@@ -111,6 +125,7 @@ defmodule Gax.TypeTest do
       }
     }
     """
+
     assert {:ok, container} = Poison.decode(json, as: %Container{})
     assert %ContainerObjectVal{field1: "inner field"} = container.objectVal
   end
@@ -121,6 +136,7 @@ defmodule Gax.TypeTest do
       "dateTimeVal": "1985-04-12T23:20:50.52Z"
     }
     """
+
     assert {:ok, container} = Poison.decode(json, as: %DateContainer{})
     assert %DateTime{} = container.dateTimeVal
   end
@@ -131,6 +147,7 @@ defmodule Gax.TypeTest do
       "dateVal": "2018-06-15"
     }
     """
+
     assert {:ok, container} = Poison.decode(json, as: %DateContainer{})
     assert %Date{} = container.dateVal
   end
@@ -141,8 +158,99 @@ defmodule Gax.TypeTest do
       "googleDateVal": "2014-10-02T15:01:23.045123456Z"
     }
     """
+
     assert {:ok, container} = Poison.decode(json, as: %DateContainer{})
     assert %DateTime{} = container.googleDateVal
   end
 
+  test "decodes any type - int" do
+    json = """
+    {
+      "any": 1234
+    }
+    """
+
+    assert {:ok, container} = Poison.decode(json, as: %GenericContainer{})
+    assert 1234 == container.any
+  end
+
+  test "decodes any type - array" do
+    json = """
+    {
+      "any": ["dog", "cat"]
+    }
+    """
+
+    assert {:ok, container} = Poison.decode(json, as: %GenericContainer{})
+    assert ["dog", "cat"] == container.any
+  end
+
+  test "decodes any type - object" do
+    json = """
+    {
+      "any": {
+        "foo": "bar",
+        "categories": ["dog", "cat"]
+      }
+    }
+    """
+
+    assert {:ok, container} = Poison.decode(json, as: %GenericContainer{})
+    assert %{"foo" => "bar", "categories" => ["dog", "cat"]} == container.any
+  end
+
+  test "decodes list of any - string" do
+    json = """
+    {
+      "listOfAny": [
+        "dog",
+        "cat"
+      ]
+    }
+    """
+
+    assert {:ok, container} = Poison.decode(json, as: %GenericContainer{})
+    assert ["dog", "cat"] == container.listOfAny
+  end
+
+  test "decodes list of any - object" do
+    json = """
+    {
+      "listOfAny": [
+        {
+          "foo": "bar",
+          "categories": ["dog", "cat"]
+        },
+        {
+          "foo": "asdf",
+          "categories": ["bird", "reptile"]
+        }
+      ]
+    }
+    """
+
+    assert {:ok, container} = Poison.decode(json, as: %GenericContainer{})
+
+    assert [
+             %{"foo" => "bar", "categories" => ["dog", "cat"]},
+             %{"foo" => "asdf", "categories" => ["bird", "reptile"]}
+           ] == container.listOfAny
+  end
+
+  test "decodes list of any - mixed" do
+    json = """
+    {
+      "listOfAny": [
+        "dog",
+        {
+          "foo": "asdf",
+          "categories": ["bird", "reptile"]
+        }
+      ]
+    }
+    """
+
+    assert {:ok, container} = Poison.decode(json, as: %GenericContainer{})
+    assert ["dog", %{"foo" => "asdf", "categories" => ["bird", "reptile"]}] == container.listOfAny
+  end
 end

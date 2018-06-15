@@ -115,8 +115,8 @@
         }
       }
     },
-    "Generic": {
-      "id": "Generic",
+    "GenericContainer": {
+      "id": "GenericContainer",
       "type": "object",
       "description": "A data structure to test different any types",
       "properties": {
@@ -131,7 +131,7 @@
             "type": "any"
           }
         },
-        "container": {
+        "attributes": {
           "description": "This field can contain anything",
           "type": "object",
           "additionalProperties": {

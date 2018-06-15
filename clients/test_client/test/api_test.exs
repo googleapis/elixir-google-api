@@ -15,76 +15,74 @@
 defmodule Gax.ApiTest do
   use ExUnit.Case, async: true
 
-  alias GoogleApi.TestClient.V1.Model.{Container,ContainerObjectVal}
+  alias GoogleApi.TestClient.V1.Model.{Container, ContainerObjectVal}
   alias GoogleApi.TestClient.V1.Connection
   alias GoogleApi.TestClient.V1.Api.Objects, as: Api
 
   import Tesla.Mock
 
-  @container_json Poison.encode!(
-    %Container{
-      arrayRefVal: [
-        %Container{
-          arrayVal: ["foo", "bar"]
-        }
-      ],
-      arrayVal: ["qwer", "asdf"],
-      booleanVal: true,
-      numberVal: 1.234,
-      objectVal: %ContainerObjectVal{
-        field1: false
-      },
-      stringVal: "description"
-    }
-  )
+  @container_json Poison.encode!(%Container{
+                    arrayRefVal: [
+                      %Container{
+                        arrayVal: ["foo", "bar"]
+                      }
+                    ],
+                    arrayVal: ["qwer", "asdf"],
+                    booleanVal: true,
+                    numberVal: 1.234,
+                    objectVal: %ContainerObjectVal{
+                      field1: false
+                    },
+                    stringVal: "description"
+                  })
 
   test "basic request" do
-    mock fn
-      %{method: :get, url: "http://localhost:8080/test/v1/b/bucket-1/o/1234"} ->
-        %Tesla.Env{status: 200, body: @container_json}
-    end
+    mock(fn %{method: :get, url: "http://localhost:8080/test/v1/b/bucket-1/o/1234"} ->
+      %Tesla.Env{status: 200, body: @container_json}
+    end)
 
-    conn = Connection.new
+    conn = Connection.new()
     {:ok, obj} = Api.objects_get(conn, "bucket-1", 1234)
 
     assert %Container{} = obj
   end
 
   test "simple query param" do
-    mock fn
-      %{method: :get, url: "http://localhost:8080/test/v1/b/bucket-1/o/1234", query: [alt: "json"]} ->
-        %Tesla.Env{status: 200, body: @container_json}
-    end
+    mock(fn %{
+              method: :get,
+              url: "http://localhost:8080/test/v1/b/bucket-1/o/1234",
+              query: [alt: "json"]
+            } ->
+      %Tesla.Env{status: 200, body: @container_json}
+    end)
 
-    conn = Connection.new
-    {:ok, obj} = Api.objects_get(conn, "bucket-1", 1234, [
-      alt: "json"
-    ])
+    conn = Connection.new()
+    {:ok, obj} = Api.objects_get(conn, "bucket-1", 1234, alt: "json")
 
     assert %Container{} = obj
   end
 
   test "list query param" do
-    mock fn
-      %{method: :get, url: "http://localhost:8080/test/v1/b/bucket-1/o/1234", query: [category: "foo", category: "bar"]} ->
-        %Tesla.Env{status: 200, body: @container_json}
-    end
+    mock(fn %{
+              method: :get,
+              url: "http://localhost:8080/test/v1/b/bucket-1/o/1234",
+              query: [category: "foo", category: "bar"]
+            } ->
+      %Tesla.Env{status: 200, body: @container_json}
+    end)
 
-    conn = Connection.new
-    {:ok, obj} = Api.objects_get(conn, "bucket-1", 1234, [
-      category: ["foo", "bar"]
-    ])
+    conn = Connection.new()
+    {:ok, obj} = Api.objects_get(conn, "bucket-1", 1234, category: ["foo", "bar"])
 
     assert %Container{} = obj
   end
 
   test "no response" do
-    mock fn
-      %{method: :delete, url: "http://localhost:8080/test/v1/b/bucket-1/o/object-1"} ->
-        %Tesla.Env{status: 200, body: ""}
-    end
+    mock(fn %{method: :delete, url: "http://localhost:8080/test/v1/b/bucket-1/o/object-1"} ->
+      %Tesla.Env{status: 200, body: ""}
+    end)
 
-    conn = Connection.new
+    conn = Connection.new()
     {:ok, resp} = Api.objects_delete(conn, "bucket-1", "object-1")
 
     assert %Tesla.Env{status: 200, body: ""} = resp
@@ -94,46 +92,43 @@ defmodule Gax.ApiTest do
     container = %Container{stringVal: "foo"}
     upload_file = __ENV__.file
 
-    mock fn
-      %{method: :post, url: "http://localhost:8080/upload/v1/b/bucket-1/o", body: body} ->
-        assert %Tesla.Multipart{parts: [metadata, file]} = body
-        assert Poison.encode!(container) == metadata.body
-        assert ["Content-Type": "application/json"] == metadata.headers
+    mock(fn %{method: :post, url: "http://localhost:8080/upload/v1/b/bucket-1/o", body: body} ->
+      assert %Tesla.Multipart{parts: [metadata, file]} = body
+      assert Poison.encode!(container) == metadata.body
+      assert ["Content-Type": "application/json"] == metadata.headers
 
-        assert %File.Stream{} = file.body
+      assert %File.Stream{} = file.body
 
-        %Tesla.Env{status: 200, body: @container_json}
-    end
+      %Tesla.Env{status: 200, body: @container_json}
+    end)
 
-
-    conn = Connection.new
+    conn = Connection.new()
     {:ok, obj} = Api.objects_insert_simple(conn, "bucket-1", "multipart", container, upload_file)
 
     assert %Container{} = obj
   end
 
   test "integer in path" do
-    mock fn
-      %{method: :get, url: "http://localhost:8080/test/v1/b/bucket-1/o/1234"} ->
-        %Tesla.Env{status: 200, body: @container_json}
-    end
+    mock(fn %{method: :get, url: "http://localhost:8080/test/v1/b/bucket-1/o/1234"} ->
+      %Tesla.Env{status: 200, body: @container_json}
+    end)
 
-    conn = Connection.new
+    conn = Connection.new()
     {:ok, obj} = Api.objects_get(conn, "bucket-1", 1234)
 
     assert %Container{} = obj
   end
 
   test "path reserved expansion" do
-    mock fn
-      %{method: :post, url: "http://localhost:8080/test/v1/b/bucket-1/o:batchWrite"} ->
-        %Tesla.Env{status: 200, body: ""}
-    end
+    mock(fn %{method: :post, url: "http://localhost:8080/test/v1/b/bucket-1/o:batchWrite"} ->
+      %Tesla.Env{status: 200, body: ""}
+    end)
 
     container = %Container{
       stringVal: "some value"
     }
-    conn = Connection.new
+
+    conn = Connection.new()
     {:ok, resp} = Api.objects_batch_write(conn, "b/bucket-1", body: container)
 
     assert %Tesla.Env{status: 200, body: ""} = resp
