@@ -65,6 +65,10 @@
             }
           }
         },
+        "objectRefVal": {
+          "$ref": "Container",
+          "description": "A reference to an object definition."
+        },
         "booleanVal": {
           "type": "boolean",
           "description": "A simple boolean"
@@ -223,6 +227,52 @@
                 "path": "/resumable/upload/v1/b/{bucket}/o"
               }
             }
+          }
+        },
+        "delete": {
+          "id": "objects.delete",
+          "path": "b/{bucket}/o/{object}",
+          "httpMethod": "DELETE",
+          "description": "Deletes an object",
+          "parameters": {
+            "bucket": {
+              "type": "string",
+              "description": "Name of the bucket where the object is stored",
+              "required": true,
+              "location": "path"
+            },
+            "object": {
+              "type": "string",
+              "description": "object's id",
+              "required": true,
+              "location": "path"
+            }
+          },
+          "parameterOrder": [
+            "bucket",
+            "object"
+          ],
+          "scopes": [
+            "https://example.com/objects.insert"
+          ]
+        },
+        "batchWrite": {
+          "id": "objects.batchWrite",
+          "path": "{+name}/o:batchWrite",
+          "flatPath": "b/{bucket}/o:batchWrite",
+          "httpMethod": "POST",
+          "description": "Batch write object metadata",
+          "parameters": {
+            "name": {
+              "location": "path",
+              "description": "Required. The name of the bucket where the objects belong. The format is\n`b/[BUCKET]`",
+              "required": true,
+              "type": "string",
+              "pattern": "^b/[^/]+$"
+            }
+          },
+          "request": {
+            "$ref": "Container"
           }
         }
       }
