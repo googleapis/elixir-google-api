@@ -74,6 +74,14 @@ defmodule GoogleApi.Gax.ModelBase do
     value
   end
 
+  def decode(value, :list, DateTime) do
+    Enum.map(value, &parse_date_time/1)
+  end
+
+  def decode(value, _, DateTime) do
+    parse_date_time(value)
+  end
+
   def decode(value, :list, Date) do
     Enum.map(value, &parse_date/1)
   end
@@ -104,7 +112,16 @@ defmodule GoogleApi.Gax.ModelBase do
 
   defp parse_date(nil), do: nil
 
-  defp parse_date(iso8601) do
+  defp parse_date(ymd) do
+    case Date.from_iso8601(ymd) do
+      {:ok, date} -> date
+      _ -> ymd
+    end
+  end
+
+  defp parse_date_time(nil), do: nil
+
+  defp parse_date_time(iso8601) do
     case DateTime.from_iso8601(iso8601) do
       {:ok, datetime, _offset} -> datetime
       _ -> iso8601

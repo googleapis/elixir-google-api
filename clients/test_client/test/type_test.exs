@@ -15,7 +15,7 @@
 defmodule Gax.TypeTest do
   use ExUnit.Case, async: true
 
-  alias GoogleApi.TestClient.V1.Model.{Container,ContainerObjectVal}
+  alias GoogleApi.TestClient.V1.Model.{Container,ContainerObjectVal,DateContainer}
 
   test "decodes strings" do
     json = """
@@ -113,6 +113,36 @@ defmodule Gax.TypeTest do
     """
     assert {:ok, container} = Poison.decode(json, as: %Container{})
     assert %ContainerObjectVal{field1: "inner field"} = container.objectVal
+  end
+
+  test "decodes a date-time value" do
+    json = """
+    {
+      "dateTimeVal": "1985-04-12T23:20:50.52Z"
+    }
+    """
+    assert {:ok, container} = Poison.decode(json, as: %DateContainer{})
+    assert %DateTime{} = container.dateTimeVal
+  end
+
+  test "decodes a date value" do
+    json = """
+    {
+      "dateVal": "2018-06-15"
+    }
+    """
+    assert {:ok, container} = Poison.decode(json, as: %DateContainer{})
+    assert %Date{} = container.dateVal
+  end
+
+  test "decodes a google date-time value" do
+    json = """
+    {
+      "googleDateVal": "2014-10-02T15:01:23.045123456Z"
+    }
+    """
+    assert {:ok, container} = Poison.decode(json, as: %DateContainer{})
+    assert %DateTime{} = container.googleDateVal
   end
 
 end
