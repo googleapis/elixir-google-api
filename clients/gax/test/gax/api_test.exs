@@ -26,55 +26,59 @@ defmodule Gax.ApiTest do
   """
 
   test "basic request" do
-    mock fn
-      %{method: :get, url: "https://example.com/v1/stores/store-1/pets"} ->
-        %Tesla.Env{status: 200, body: @pets_json}
-    end
+    mock(fn %{method: :get, url: "https://example.com/v1/stores/store-1/pets"} ->
+      %Tesla.Env{status: 200, body: @pets_json}
+    end)
 
-    conn = TestClient.Connection.new
+    conn = TestClient.Connection.new()
     {:ok, pets} = TestClient.Api.Pets.pets_list_by_store(conn, "store-1")
 
     assert %TestClient.Model.Pets{} = pets
     assert 1 == Enum.count(pets.pets)
+
     assert Enum.all?(pets.pets, fn pet ->
-      assert %TestClient.Model.Pet{} = pet
-    end)
+             assert %TestClient.Model.Pet{} = pet
+           end)
   end
 
   test "simple query param" do
-    mock fn
-      %{method: :get, url: "https://example.com/v1/stores/store-1/pets", query: [prettyPrint: true]} ->
-        %Tesla.Env{status: 200, body: @pets_json}
-    end
+    mock(fn %{
+              method: :get,
+              url: "https://example.com/v1/stores/store-1/pets",
+              query: [prettyPrint: true]
+            } ->
+      %Tesla.Env{status: 200, body: @pets_json}
+    end)
 
-    conn = TestClient.Connection.new
-    {:ok, pets} = TestClient.Api.Pets.pets_list_by_store(conn, "store-1", [
-      prettyPrint: true
-    ])
+    conn = TestClient.Connection.new()
+    {:ok, pets} = TestClient.Api.Pets.pets_list_by_store(conn, "store-1", prettyPrint: true)
 
     assert %TestClient.Model.Pets{} = pets
     assert 1 == Enum.count(pets.pets)
+
     assert Enum.all?(pets.pets, fn pet ->
-      assert %TestClient.Model.Pet{} = pet
-    end)
+             assert %TestClient.Model.Pet{} = pet
+           end)
   end
 
   @tag :skip
   test "list query param" do
-    mock fn
-      %{method: :get, url: "https://example.com/v1/stores/store-1/pets", query: [tags: "dog", tags: "cat"]} ->
-        %Tesla.Env{status: 200, body: @pets_json}
-    end
+    mock(fn %{
+              method: :get,
+              url: "https://example.com/v1/stores/store-1/pets",
+              query: [tags: "dog", tags: "cat"]
+            } ->
+      %Tesla.Env{status: 200, body: @pets_json}
+    end)
 
-    conn = TestClient.Connection.new
-    {:ok, pets} = TestClient.Api.Pets.pets_list_by_store(conn, "store-1", [
-      tags: ["dog", "cat"]
-    ])
+    conn = TestClient.Connection.new()
+    {:ok, pets} = TestClient.Api.Pets.pets_list_by_store(conn, "store-1", tags: ["dog", "cat"])
 
     assert %TestClient.Model.Pets{} = pets
     assert 1 == Enum.count(pets.pets)
+
     assert Enum.all?(pets.pets, fn pet ->
-      assert %TestClient.Model.Pet{} = pet
-    end)
+             assert %TestClient.Model.Pet{} = pet
+           end)
   end
 end

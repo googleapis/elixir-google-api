@@ -253,4 +253,40 @@ defmodule Gax.TypeTest do
     assert {:ok, container} = Poison.decode(json, as: %GenericContainer{})
     assert ["dog", %{"foo" => "asdf", "categories" => ["bird", "reptile"]}] == container.listOfAny
   end
+
+  test "decodes map of anything" do
+    json = """
+    {
+      "attributes": {
+        "foo": "bar",
+        "asdf": 123
+      }
+    }
+    """
+
+    assert {:ok, container} = Poison.decode(json, as: %GenericContainer{})
+    assert %{"asdf" => 123, "foo" => "bar"} = container.attributes
+  end
+
+  test "decodes map of refs" do
+    json = """
+    {
+      "mapOfRefs": {
+        "foo": {
+          "stringVal": "some string"
+        },
+        "bar": {
+          "booleanVal": false
+        }
+      }
+    }
+    """
+
+    assert {:ok, container} = Poison.decode(json, as: %GenericContainer{})
+
+    assert %{
+             "foo" => %Container{stringVal: "some string"},
+             "bar" => %Container{booleanVal: false}
+           } = container.mapOfRefs
+  end
 end

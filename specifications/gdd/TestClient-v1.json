@@ -138,6 +138,14 @@
             "description": "Properties of the object.",
             "type": "any"
           }
+        },
+        "mapOfRefs": {
+          "description": "A map of references to objects",
+          "type": "object",
+          "additionalProperties": {
+            "description": "Object value of the map",
+            "$ref": "Container"
+          }
         }
       }
     }

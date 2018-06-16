@@ -69,7 +69,11 @@ defmodule GoogleApi.Gax.ModelBase do
   @doc """
   Helper to decode model fields
   """
-  @spec decode(struct(), :list | :primitive, nil | module()) :: struct()
+  @spec decode(struct(), :list | :map | :primitive, nil | module()) :: struct()
+  def decode(nil, _, _) do
+    nil
+  end
+
   def decode(value, _, nil) do
     value
   end
@@ -88,6 +92,14 @@ defmodule GoogleApi.Gax.ModelBase do
 
   def decode(value, _, Date) do
     parse_date(value)
+  end
+
+  def decode(value, :map, module) when not is_nil(value) do
+    value
+    |> Enum.map(fn {k, v} ->
+      {k, Poison.Decode.decode(v, as: struct(module))}
+    end)
+    |> Enum.into(%{})
   end
 
   def decode(value, :list, module) do
