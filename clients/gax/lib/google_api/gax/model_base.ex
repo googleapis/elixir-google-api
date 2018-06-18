@@ -69,9 +69,21 @@ defmodule GoogleApi.Gax.ModelBase do
   @doc """
   Helper to decode model fields
   """
-  @spec decode(struct(), :list | :primitive, nil | module()) :: struct()
+  @spec decode(struct(), :list | :map | :primitive, nil | module()) :: struct()
+  def decode(nil, _, _) do
+    nil
+  end
+
   def decode(value, _, nil) do
     value
+  end
+
+  def decode(value, :list, DateTime) do
+    Enum.map(value, &parse_date_time/1)
+  end
+
+  def decode(value, _, DateTime) do
+    parse_date_time(value)
   end
 
   def decode(value, :list, Date) do
@@ -80,6 +92,14 @@ defmodule GoogleApi.Gax.ModelBase do
 
   def decode(value, _, Date) do
     parse_date(value)
+  end
+
+  def decode(value, :map, module) when not is_nil(value) do
+    value
+    |> Enum.map(fn {k, v} ->
+      {k, Poison.Decode.decode(v, as: struct(module))}
+    end)
+    |> Enum.into(%{})
   end
 
   def decode(value, :list, module) do
@@ -104,7 +124,16 @@ defmodule GoogleApi.Gax.ModelBase do
 
   defp parse_date(nil), do: nil
 
-  defp parse_date(iso8601) do
+  defp parse_date(ymd) do
+    case Date.from_iso8601(ymd) do
+      {:ok, date} -> date
+      _ -> ymd
+    end
+  end
+
+  defp parse_date_time(nil), do: nil
+
+  defp parse_date_time(iso8601) do
     case DateTime.from_iso8601(iso8601) do
       {:ok, datetime, _offset} -> datetime
       _ -> iso8601

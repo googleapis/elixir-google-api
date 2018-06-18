@@ -16,12 +16,12 @@
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    {{#vars}}{{baseName}}: {{#isPrimitiveType}}any(){{/isPrimitiveType}}{{^isPrimitiveType}}{{#isListContainer}}list({{#items.datatype}}{{moduleName}}.Model.{{items.datatype}}.t(){{/items.datatype}}{{^items.datatype}}any(){{/items.datatype}}){{/isListContainer}}{{^isListContainer}}{{#isMapContainer}}map(){{/isMapContainer}}{{^isMapContainer}}{{#isDate}}Date.t{{/isDate}}{{^isDate}}{{moduleName}}.Model.{{datatype}}.t(){{/isDate}}{{/isMapContainer}}{{/isListContainer}}{{/isPrimitiveType}}{{#hasMore}},
+    {{#vars}}{{baseName}}: {{#isMapContainer}}map(){{/isMapContainer}}{{#isListContainer}}list({{#items}}{{#isPrimitiveType}}{{#isDateTime}}DateTime.t(){{/isDateTime}}{{^isDateTime}}any(){{/isDateTime}}{{/isPrimitiveType}}{{^isPrimitiveType}}{{#isDate}}Date.t(){{/isDate}}{{^isDate}}{{moduleName}}.Model.{{datatype}}.t(){{/isDate}}{{/isPrimitiveType}}{{/items}}){{/isListContainer}}{{^isContainer}}{{#isPrimitiveType}}{{#isDateTime}}DateTime.t(){{/isDateTime}}{{^isDateTime}}any(){{/isDateTime}}{{/isPrimitiveType}}{{^isPrimitiveType}}{{#isDate}}Date.t(){{/isDate}}{{^isDate}}{{moduleName}}.Model.{{datatype}}.t(){{/isDate}}{{/isPrimitiveType}}{{/isContainer}}{{#hasMore}},
     {{/hasMore}}{{/vars}}
   }
 
   {{#vars}}
-  field(:"{{baseName}}"{{^isPrimitiveType}}{{#isContainer}}{{#items.datatype}}, as: {{moduleName}}.Model.{{items.datatype}}{{/items.datatype}}{{/isContainer}}{{^isContainer}}, as: {{#isDate}}Date{{/isDate}}{{^isDate}}{{^isDateTime}}{{moduleName}}.Model.{{datatype}}{{/isDateTime}}{{/isDate}}{{/isContainer}}{{/isPrimitiveType}}{{#isDateTime}}, as: Date{{/isDateTime}}{{#isListContainer}}, type: :list{{/isListContainer}})
+  field(:"{{baseName}}"{{^isPrimitiveType}}{{#isContainer}}{{#items.datatype}}, as: {{moduleName}}.Model.{{items.datatype}}{{/items.datatype}}{{/isContainer}}{{^isContainer}}, as: {{#isDate}}Date{{/isDate}}{{^isDate}}{{^isDateTime}}{{moduleName}}.Model.{{datatype}}{{/isDateTime}}{{/isDate}}{{/isContainer}}{{/isPrimitiveType}}{{#isDateTime}}, as: DateTime{{/isDateTime}}{{#isListContainer}}, type: :list{{/isListContainer}}{{#isMapContainer}}, type: :map{{/isMapContainer}})
   {{/vars}}
 end
 

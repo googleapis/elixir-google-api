@@ -90,7 +90,9 @@ defmodule GoogleApi.Gax.Request do
   end
 
   defp replacement_value(name, replacements) do
-    Map.get(replacements, name, "")
+    replacements
+    |> Map.get(name, "")
+    |> to_string
   end
 
   @doc """

@@ -2,10 +2,10 @@
   "kind": "discovery#restDescription",
   "etag": "\"YWOzh2SDasdU84ArJnpYek-OMdg/nD15-sVgx0hSdEaD_RN4E40IFV8\"",
   "discoveryVersion": "v1",
-  "id": "testclient:v1",
+  "id": "testclient:v2",
   "name": "testclient",
   "canonicalName": "Test Client",
-  "version": "v1",
+  "version": "v2",
   "revision": "20170810",
   "title": "Test Client",
   "description": "Test client for testing generated clients",
@@ -17,11 +17,14 @@
   },
   "documentationLink": "https://github.com/GoogleCloudPlatform/elixir-google-api",
   "protocol": "rest",
-  "baseUrl": "http://localhost:8080/test/v1/",
-  "basePath": "/test/v1/",
+  "baseUrl": "http://localhost:8080/test/v2/",
+  "basePath": "/test/v2/",
   "rootUrl": "http://localhost:8080/",
-  "servicePath": "test/v1/",
+  "servicePath": "test/v2/",
   "batchPath": "batch",
+  "features": [
+    "dataWrapper"
+  ],
   "parameters": {
     "alt": {
       "type": "string",
@@ -228,11 +231,11 @@
             "protocols": {
               "simple": {
                 "multipart": true,
-                "path": "/upload/v1/b/{bucket}/o"
+                "path": "/upload/v2/b/{bucket}/o"
               },
               "resumable": {
                 "multipart": true,
-                "path": "/resumable/upload/v1/b/{bucket}/o"
+                "path": "/resumable/upload/v2/b/{bucket}/o"
               }
             }
           }

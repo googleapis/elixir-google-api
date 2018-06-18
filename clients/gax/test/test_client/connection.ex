@@ -26,5 +26,6 @@ defmodule TestClient.Connection do
       # Read data from example.com
       "https://example.com/data.read-only"
     ],
+    otp_app: :test_client,
     base_url: "https://example.com"
 end

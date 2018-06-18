@@ -8,15 +8,15 @@ use Mix.Config
 # if you want to provide default values for your application for
 # 3rd-party users, it should be done in your "mix.exs" file.
 
-# You can configure your application as:
+# You can configure for your application as:
 #
-#     config :gax, key: :value
+#     config :test_client, key: :value
 #
-# and access this configuration in your application as:
+# And access this configuration in your application as:
 #
-#     Application.get_env(:gax, :key)
+#     Application.get_env(:test_client, :key)
 #
-# You can also configure a 3rd-party app:
+# Or configure a 3rd-party app:
 #
 #     config :logger, level: :info
 #
@@ -27,5 +27,4 @@ use Mix.Config
 # Configuration from the imported file will override the ones defined
 # here (which is why it is important to import them last).
 #
-#     import_config "#{Mix.env}.exs"
-import_config "#{Mix.env()}.exs"
+import_config "#{Mix.env}.exs"
