@@ -282,6 +282,29 @@
           "request": {
             "$ref": "Container"
           }
+        },
+        "wrapped": {
+          "id": "objects.wrapped",
+          "path": "b/{bucket}/wrapped",
+          "httpMethod": "GET",
+          "description": "Fetch a data-wrapped object",
+          "parameters": {
+            "bucket": {
+              "type": "string",
+              "description": "Name of the bucket where the object is stored",
+              "required": true,
+              "location": "path"
+            }
+          },
+          "parameterOrder": [
+            "bucket"
+          ],
+          "response": {
+            "$ref": "Container"
+          },
+          "scopes": [
+            "https://example.com/objects.read"
+          ]
         }
       }
     }
