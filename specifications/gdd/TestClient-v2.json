@@ -1,0 +1,315 @@
+{
+  "kind": "discovery#restDescription",
+  "etag": "\"YWOzh2SDasdU84ArJnpYek-OMdg/nD15-sVgx0hSdEaD_RN4E40IFV8\"",
+  "discoveryVersion": "v1",
+  "id": "testclient:v2",
+  "name": "testclient",
+  "canonicalName": "Test Client",
+  "version": "v2",
+  "revision": "20170810",
+  "title": "Test Client",
+  "description": "Test client for testing generated clients",
+  "ownerDomain": "google.com",
+  "ownerName": "Google",
+  "icons": {
+    "x16": "https://www.google.com/images/icons/product/doubleclick-16.gif",
+    "x32": "https://www.google.com/images/icons/product/doubleclick-32.gif"
+  },
+  "documentationLink": "https://github.com/GoogleCloudPlatform/elixir-google-api",
+  "protocol": "rest",
+  "baseUrl": "http://localhost:8080/test/v2/",
+  "basePath": "/test/v2/",
+  "rootUrl": "http://localhost:8080/",
+  "servicePath": "test/v2/",
+  "batchPath": "batch",
+  "features": [
+    "dataWrapper"
+  ],
+  "parameters": {
+    "alt": {
+      "type": "string",
+      "description": "Data format for the response.",
+      "default": "json",
+      "enum": [
+        "json"
+      ],
+      "enumDescriptions": [
+        "Responses with Content-Type of application/json"
+      ],
+      "location": "query"
+    }
+  },
+  "auth": {
+    "oauth2": {
+      "scopes": {
+        "https://www.googleapis.com/auth/adexchange.buyer": {
+          "description": "Manage your Ad Exchange buyer account configuration"
+        }
+      }
+    }
+  },
+  "schemas": {
+    "Container": {
+      "id": "Container",
+      "type": "object",
+      "description": "A data structure to test simple types",
+      "properties": {
+        "stringVal": {
+          "type": "string",
+          "description": "A simple string"
+        },
+        "objectVal": {
+          "type": "object",
+          "description": "An inline object definition",
+          "properties": {
+            "field1": {
+              "type": "string",
+              "description": "Field 1 for internal type"
+            }
+          }
+        },
+        "objectRefVal": {
+          "$ref": "Container",
+          "description": "A reference to an object definition."
+        },
+        "booleanVal": {
+          "type": "boolean",
+          "description": "A simple boolean"
+        },
+        "arrayVal": {
+          "type": "array",
+          "description": "An array of strings",
+          "items": {
+            "type": "string"
+          }
+        },
+        "arrayRefVal": {
+          "type": "array",
+          "description": "An array of reference objects",
+          "items": {
+            "$ref": "Container"
+          }
+        },
+        "numberVal": {
+          "type": "number",
+          "description": "A simple number"
+        }
+      }
+    },
+    "DateContainer": {
+      "id": "DateContainer",
+      "type": "object",
+      "description": "A data structure to test different date types",
+      "properties": {
+        "dateVal": {
+          "type": "string",
+          "description": "A simple date field",
+          "format": "date"
+        },
+        "dateTimeVal": {
+          "type": "string",
+          "description": "A simple date-time field",
+          "format": "date-time"
+        },
+        "googleDateVal": {
+          "type": "string",
+          "description": "A google-datetime field",
+          "format": "google-datetime"
+        }
+      }
+    },
+    "GenericContainer": {
+      "id": "GenericContainer",
+      "type": "object",
+      "description": "A data structure to test different any types",
+      "properties": {
+        "any": {
+          "type": "any",
+          "description": "A generic field type"
+        },
+        "listOfAny": {
+          "type": "array",
+          "description": "Contains a list of anything",
+          "items": {
+            "type": "any"
+          }
+        },
+        "attributes": {
+          "description": "This field can contain anything",
+          "type": "object",
+          "additionalProperties": {
+            "description": "Properties of the object.",
+            "type": "any"
+          }
+        },
+        "mapOfRefs": {
+          "description": "A map of references to objects",
+          "type": "object",
+          "additionalProperties": {
+            "description": "Object value of the map",
+            "$ref": "Container"
+          }
+        }
+      }
+    }
+  },
+  "resources": {
+    "objects": {
+      "methods": {
+        "get": {
+          "id": "objects.get",
+          "path": "b/{bucket}/o/{id}",
+          "httpMethod": "GET",
+          "description": "Gets a single object by Id.",
+          "parameters": {
+            "bucket": {
+              "type": "string",
+              "description": "Name of the bucket where the object is stored",
+              "required": true,
+              "location": "path"
+            },
+            "id": {
+              "type": "integer",
+              "description": "The object id",
+              "required": true,
+              "format": "int32",
+              "location": "path"
+            },
+            "category": {
+              "type": "string",
+              "description": "The category of the items. Must match all.",
+              "repeated": true,
+              "location": "query"
+            }
+          },
+          "parameterOrder": [
+            "bucket",
+            "id"
+          ],
+          "response": {
+            "$ref": "Container"
+          },
+          "scopes": [
+            "https://example.com/objects.read"
+          ]
+        },
+        "insert": {
+          "id": "objects.insert",
+          "path": "b/{bucket}/o",
+          "httpMethod": "POST",
+          "description": "Stores a new object and metadata",
+          "parameters": {
+            "bucket": {
+              "type": "string",
+              "description": "Name of the bucket where the object is stored",
+              "required": true,
+              "location": "path"
+            },
+            "name": {
+              "type": "string",
+              "description": "Name of the object. Required when the object metadata is not otherwise provided.",
+              "location": "query"
+            }
+          },
+          "parameterOrder": [
+            "bucket"
+          ],
+          "request": {
+            "$ref": "Container"
+          },
+          "response": {
+            "$ref": "Container"
+          },
+          "scopes": [
+            "https://example.com/objects.insert"
+          ],
+          "supportsMediaUpload": true,
+          "mediaUpload": {
+            "accept": [
+              "*/*"
+            ],
+            "protocols": {
+              "simple": {
+                "multipart": true,
+                "path": "/upload/v2/b/{bucket}/o"
+              },
+              "resumable": {
+                "multipart": true,
+                "path": "/resumable/upload/v2/b/{bucket}/o"
+              }
+            }
+          }
+        },
+        "delete": {
+          "id": "objects.delete",
+          "path": "b/{bucket}/o/{object}",
+          "httpMethod": "DELETE",
+          "description": "Deletes an object",
+          "parameters": {
+            "bucket": {
+              "type": "string",
+              "description": "Name of the bucket where the object is stored",
+              "required": true,
+              "location": "path"
+            },
+            "object": {
+              "type": "string",
+              "description": "object's id",
+              "required": true,
+              "location": "path"
+            }
+          },
+          "parameterOrder": [
+            "bucket",
+            "object"
+          ],
+          "scopes": [
+            "https://example.com/objects.insert"
+          ]
+        },
+        "batchWrite": {
+          "id": "objects.batchWrite",
+          "path": "{+name}/o:batchWrite",
+          "flatPath": "b/{bucket}/o:batchWrite",
+          "httpMethod": "POST",
+          "description": "Batch write object metadata",
+          "parameters": {
+            "name": {
+              "location": "path",
+              "description": "Required. The name of the bucket where the objects belong. The format is\n`b/[BUCKET]`",
+              "required": true,
+              "type": "string",
+              "pattern": "^b/[^/]+$"
+            }
+          },
+          "request": {
+            "$ref": "Container"
+          }
+        },
+        "wrapped": {
+          "id": "objects.wrapped",
+          "path": "b/{bucket}/wrapped",
+          "httpMethod": "GET",
+          "description": "Fetch a data-wrapped object",
+          "parameters": {
+            "bucket": {
+              "type": "string",
+              "description": "Name of the bucket where the object is stored",
+              "required": true,
+              "location": "path"
+            }
+          },
+          "parameterOrder": [
+            "bucket"
+          ],
+          "response": {
+            "$ref": "Container"
+          },
+          "scopes": [
+            "https://example.com/objects.read"
+          ]
+        }
+      }
+    }
+  }
+}
