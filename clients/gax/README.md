@@ -10,7 +10,7 @@ by adding `gax` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:gax, "~> 0.0.1"}
+    {:gax, "~> 0.1.0"}
   ]
 end
 ```
