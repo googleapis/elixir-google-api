@@ -19,13 +19,30 @@ defmodule GoogleApis.Generator.SwaggerCli do
 
   def generate_client(api_config) do
     filename = ApiConfig.file(api_config)
-    System.cmd("docker", ["run", "--rm", "-v", "#{System.cwd()}:/local", image(), "generate",
-                          "-l", "elixir",
-                          "-i", "/local/specifications/openapi/#{filename}",
-                          "-c", "/local/specifications/config/#{filename}",
-                          "-t", template_dir(),
-                          "-o", "/local/clients/#{ApiConfig.library_name(api_config)}"])
-    {:ok, ""}
+    client_library_name = ApiConfig.library_name(api_config)
+    tmp_dir = Temp.path!("codegen-out-#{client_library_name}")
+    docker_args = [
+      "run",
+      "--rm",
+      "-v", "#{System.cwd()}:/local",
+      "-v", "#{tmp_dir}:/tmp/out",
+      image(), "generate",
+      "-l", "elixir",
+      "-i", "/local/specifications/openapi/#{filename}",
+      "-c", "/local/specifications/config/#{filename}",
+      "-t", template_dir(),
+      "-o", "/tmp/out/#{client_library_name}"
+    ]
+    with {_, 0} <- System.cmd("docker", docker_args, stderr_to_stdout: true),
+         {:ok, _} <- File.cp_r(Path.join(tmp_dir, client_library_name), Path.join([System.cwd(), "clients", client_library_name]))
+    do
+      {:ok, ""}
+    else
+      {:error, msg} ->
+        {:error, msg}
+      {output, exit_code} ->
+        {:error, "Exited with code #{exit_code}" <> output}
+    end
   end
 
   defp image() do
