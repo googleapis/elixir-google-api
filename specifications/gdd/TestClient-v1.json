@@ -148,6 +148,43 @@
           }
         }
       }
+    },
+    "NestedContainer": {
+      "id": "NestedContainer",
+      "type": "object",
+      "description": "Container that has lists of lists of data objects",
+      "properties": {
+        "rows": {
+          "type": "array",
+          "description": "A list of lists of data objects",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "A deeply nested object",
+              "properties": {
+                "nestedArrayValue": {
+                  "type": "array",
+                  "description": "An array value on a deeply nested object",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "stringVal": {
+                        "type": "string",
+                        "description": "A string value on a deeply nested object"
+                      }
+                    }
+                  }
+                },
+                "primitiveValue": {
+                  "type": "string",
+                  "description": "A primitive dimension value. A primitive metric value."
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "resources": {

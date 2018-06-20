@@ -19,7 +19,8 @@ defmodule Gax.TypeTest do
     Container,
     ContainerObjectVal,
     DateContainer,
-    GenericContainer
+    GenericContainer,
+    NestedContainer
   }
 
   test "decodes strings" do
@@ -288,5 +289,45 @@ defmodule Gax.TypeTest do
              "foo" => %Container{stringVal: "some string"},
              "bar" => %Container{booleanVal: false}
            } = container.mapOfRefs
+  end
+
+  test "decodes deeply nested containers" do
+    json = """
+    {
+      "rows": [
+        [
+          {
+            "nestedArrayValue": [
+              {"stringVal": "value1"},
+              {"stringVal": "value2"}
+            ]
+          },
+          {
+            "nestedArrayValue": [
+              {"stringVal": "value3"}
+            ]
+          }
+        ],
+        [
+          {
+            "nestedArrayValue": [
+              {"stringVal": "value4"},
+              {"stringVal": "value5"}
+            ]
+          },
+          {
+            "nestedArrayValue": [
+              {"stringVal": "value6"}
+            ]
+          }
+        ]
+      ]
+    }
+    """
+
+    assert {:ok, container} = Poison.decode(json, as: %NestedContainer{})
+
+    assert %NestedContainer{rows: rows} = container
+    assert 2 == Enum.count(rows)
   end
 end
