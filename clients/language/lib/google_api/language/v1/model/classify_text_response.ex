@@ -16,34 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Language.V1.Model.Sentence do
+defmodule GoogleApi.Language.V1.Model.ClassifyTextResponse do
   @moduledoc """
-  Represents a sentence in the input document.
+  The document classification response message.
 
   ## Attributes
 
-  - sentiment (Sentiment): For calls to AnalyzeSentiment or if AnnotateTextRequest.Features.extract_document_sentiment is set to true, this field will contain the sentiment for the sentence. Defaults to: `null`.
-  - text (TextSpan): The sentence text. Defaults to: `null`.
+  - categories ([ClassificationCategory]): Categories representing the input document. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sentiment => GoogleApi.Language.V1.Model.Sentiment.t(),
-          :text => GoogleApi.Language.V1.Model.TextSpan.t()
+          :categories => list(GoogleApi.Language.V1.Model.ClassificationCategory.t())
         }
 
-  field(:sentiment, as: GoogleApi.Language.V1.Model.Sentiment)
-  field(:text, as: GoogleApi.Language.V1.Model.TextSpan)
+  field(:categories, as: GoogleApi.Language.V1.Model.ClassificationCategory, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Language.V1.Model.Sentence do
+defimpl Poison.Decoder, for: GoogleApi.Language.V1.Model.ClassifyTextResponse do
   def decode(value, options) do
-    GoogleApi.Language.V1.Model.Sentence.decode(value, options)
+    GoogleApi.Language.V1.Model.ClassifyTextResponse.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Language.V1.Model.Sentence do
+defimpl Poison.Encoder, for: GoogleApi.Language.V1.Model.ClassifyTextResponse do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

@@ -16,34 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Language.V1.Model.Sentence do
+defmodule GoogleApi.Language.V1.Model.AnalyzeEntitySentimentResponse do
   @moduledoc """
-  Represents a sentence in the input document.
+  The entity-level sentiment analysis response message.
 
   ## Attributes
 
-  - sentiment (Sentiment): For calls to AnalyzeSentiment or if AnnotateTextRequest.Features.extract_document_sentiment is set to true, this field will contain the sentiment for the sentence. Defaults to: `null`.
-  - text (TextSpan): The sentence text. Defaults to: `null`.
+  - entities ([Entity]): The recognized entities in the input document with associated sentiments. Defaults to: `null`.
+  - language (String.t): The language of the text, which will be the same as the language specified in the request or, if not specified, the automatically-detected language. See Document.language field for more details. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sentiment => GoogleApi.Language.V1.Model.Sentiment.t(),
-          :text => GoogleApi.Language.V1.Model.TextSpan.t()
+          :entities => list(GoogleApi.Language.V1.Model.Entity.t()),
+          :language => any()
         }
 
-  field(:sentiment, as: GoogleApi.Language.V1.Model.Sentiment)
-  field(:text, as: GoogleApi.Language.V1.Model.TextSpan)
+  field(:entities, as: GoogleApi.Language.V1.Model.Entity, type: :list)
+  field(:language)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Language.V1.Model.Sentence do
+defimpl Poison.Decoder, for: GoogleApi.Language.V1.Model.AnalyzeEntitySentimentResponse do
   def decode(value, options) do
-    GoogleApi.Language.V1.Model.Sentence.decode(value, options)
+    GoogleApi.Language.V1.Model.AnalyzeEntitySentimentResponse.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Language.V1.Model.Sentence do
+defimpl Poison.Encoder, for: GoogleApi.Language.V1.Model.AnalyzeEntitySentimentResponse do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
