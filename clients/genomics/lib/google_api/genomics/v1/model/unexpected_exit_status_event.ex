@@ -16,34 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Genomics.V1.Model.CoverageBucket do
+defmodule GoogleApi.Genomics.V1.Model.UnexpectedExitStatusEvent do
   @moduledoc """
-  A bucket over which read coverage has been precomputed. A bucket corresponds to a specific range of the reference sequence.
+  This event is generated when the execution of a container results in a non-zero exit status that was not otherwise ignored.  Execution will continue, but only actions that are flagged as ALWAYS_RUN will be executed: other actions will be skipped.
 
   ## Attributes
 
-  - meanCoverage (float()): The average number of reads which are aligned to each individual reference base in this bucket. Defaults to: `null`.
-  - range (Range): The genomic coordinate range spanned by this bucket. Defaults to: `null`.
+  - actionId (integer()): The numeric ID of the action that started the container. Defaults to: `null`.
+  - exitStatus (integer()): The exit status of the container. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :meanCoverage => any(),
-          :range => GoogleApi.Genomics.V1.Model.Range.t()
+          :actionId => any(),
+          :exitStatus => any()
         }
 
-  field(:meanCoverage)
-  field(:range, as: GoogleApi.Genomics.V1.Model.Range)
+  field(:actionId)
+  field(:exitStatus)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.CoverageBucket do
+defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.UnexpectedExitStatusEvent do
   def decode(value, options) do
-    GoogleApi.Genomics.V1.Model.CoverageBucket.decode(value, options)
+    GoogleApi.Genomics.V1.Model.UnexpectedExitStatusEvent.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.CoverageBucket do
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.UnexpectedExitStatusEvent do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

@@ -16,34 +16,37 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Genomics.V1.Model.CoverageBucket do
+defmodule GoogleApi.Genomics.V1.Model.Event do
   @moduledoc """
-  A bucket over which read coverage has been precomputed. A bucket corresponds to a specific range of the reference sequence.
+  Event carries information about events that occur during pipeline execution.
 
   ## Attributes
 
-  - meanCoverage (float()): The average number of reads which are aligned to each individual reference base in this bucket. Defaults to: `null`.
-  - range (Range): The genomic coordinate range spanned by this bucket. Defaults to: `null`.
+  - description (String.t): A human readable description of the event.  Note that these strings may change at any time without notice.  Any application logic must use the information in the details field. Defaults to: `null`.
+  - details (%{optional(String.t) &#x3D;&gt; String.t}): Machine readable details about the event. Defaults to: `null`.
+  - timestamp (DateTime.t): The time that the event occurred. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :meanCoverage => any(),
-          :range => GoogleApi.Genomics.V1.Model.Range.t()
+          :description => any(),
+          :details => map(),
+          :timestamp => DateTime.t()
         }
 
-  field(:meanCoverage)
-  field(:range, as: GoogleApi.Genomics.V1.Model.Range)
+  field(:description)
+  field(:details, type: :map)
+  field(:timestamp, as: DateTime)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.CoverageBucket do
+defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.Event do
   def decode(value, options) do
-    GoogleApi.Genomics.V1.Model.CoverageBucket.decode(value, options)
+    GoogleApi.Genomics.V1.Model.Event.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.CoverageBucket do
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.Event do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

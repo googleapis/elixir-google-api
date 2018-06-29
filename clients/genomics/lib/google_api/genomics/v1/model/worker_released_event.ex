@@ -16,34 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Genomics.V1.Model.CoverageBucket do
+defmodule GoogleApi.Genomics.V1.Model.WorkerReleasedEvent do
   @moduledoc """
-  A bucket over which read coverage has been precomputed. A bucket corresponds to a specific range of the reference sequence.
+  This event is generated when the worker VM that was assigned to the pipeline has been released (i.e., deleted).
 
   ## Attributes
 
-  - meanCoverage (float()): The average number of reads which are aligned to each individual reference base in this bucket. Defaults to: `null`.
-  - range (Range): The genomic coordinate range spanned by this bucket. Defaults to: `null`.
+  - instance (String.t): The worker&#39;s instance name. Defaults to: `null`.
+  - zone (String.t): The zone the worker was running in. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :meanCoverage => any(),
-          :range => GoogleApi.Genomics.V1.Model.Range.t()
+          :instance => any(),
+          :zone => any()
         }
 
-  field(:meanCoverage)
-  field(:range, as: GoogleApi.Genomics.V1.Model.Range)
+  field(:instance)
+  field(:zone)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.CoverageBucket do
+defimpl Poison.Decoder, for: GoogleApi.Genomics.V1.Model.WorkerReleasedEvent do
   def decode(value, options) do
-    GoogleApi.Genomics.V1.Model.CoverageBucket.decode(value, options)
+    GoogleApi.Genomics.V1.Model.WorkerReleasedEvent.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.CoverageBucket do
+defimpl Poison.Encoder, for: GoogleApi.Genomics.V1.Model.WorkerReleasedEvent do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
