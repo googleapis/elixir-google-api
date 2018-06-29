@@ -16,67 +16,96 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.PageSpeedOnline.V2.Model.ResultPageStats do
+defmodule GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiPagespeedResponseV4PageStats do
   @moduledoc """
   Summary statistics for the page, such as number of JavaScript bytes, number of HTML bytes, etc.
 
   ## Attributes
 
+  - cms (String.t): Content management system (CMS) used for the page. Defaults to: `null`.
   - cssResponseBytes (String.t): Number of uncompressed response bytes for CSS resources on the page. Defaults to: `null`.
   - flashResponseBytes (String.t): Number of response bytes for flash resources on the page. Defaults to: `null`.
   - htmlResponseBytes (String.t): Number of uncompressed response bytes for the main HTML document and all iframes on the page. Defaults to: `null`.
   - imageResponseBytes (String.t): Number of response bytes for image resources on the page. Defaults to: `null`.
   - javascriptResponseBytes (String.t): Number of uncompressed response bytes for JS resources on the page. Defaults to: `null`.
+  - numRenderBlockingRoundTrips (integer()): The needed round trips to load render blocking resources Defaults to: `null`.
+  - numTotalRoundTrips (integer()): The needed round trips to load the full page Defaults to: `null`.
   - numberCssResources (integer()): Number of CSS resources referenced by the page. Defaults to: `null`.
   - numberHosts (integer()): Number of unique hosts referenced by the page. Defaults to: `null`.
   - numberJsResources (integer()): Number of JavaScript resources referenced by the page. Defaults to: `null`.
   - numberResources (integer()): Number of HTTP resources loaded by the page. Defaults to: `null`.
+  - numberRobotedResources (integer()): Number of roboted resources. Defaults to: `null`.
   - numberStaticResources (integer()): Number of static (i.e. cacheable) resources on the page. Defaults to: `null`.
+  - numberTransientFetchFailureResources (integer()): Number of transient-failed resources. Defaults to: `null`.
   - otherResponseBytes (String.t): Number of response bytes for other resources on the page. Defaults to: `null`.
+  - overTheWireResponseBytes (String.t): Number of over-the-wire bytes, uses the default gzip compression strategy as an estimation. Defaults to: `null`.
+  - robotedUrls ([String.t]): List of roboted urls. Defaults to: `null`.
   - textResponseBytes (String.t): Number of uncompressed response bytes for text resources not covered by other statistics (i.e non-HTML, non-script, non-CSS resources) on the page. Defaults to: `null`.
   - totalRequestBytes (String.t): Total size of all request bytes sent by the page. Defaults to: `null`.
+  - transientFetchFailureUrls ([String.t]): List of transient fetch failure urls. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cms => any(),
           :cssResponseBytes => any(),
           :flashResponseBytes => any(),
           :htmlResponseBytes => any(),
           :imageResponseBytes => any(),
           :javascriptResponseBytes => any(),
+          :numRenderBlockingRoundTrips => any(),
+          :numTotalRoundTrips => any(),
           :numberCssResources => any(),
           :numberHosts => any(),
           :numberJsResources => any(),
           :numberResources => any(),
+          :numberRobotedResources => any(),
           :numberStaticResources => any(),
+          :numberTransientFetchFailureResources => any(),
           :otherResponseBytes => any(),
+          :overTheWireResponseBytes => any(),
+          :robotedUrls => list(any()),
           :textResponseBytes => any(),
-          :totalRequestBytes => any()
+          :totalRequestBytes => any(),
+          :transientFetchFailureUrls => list(any())
         }
 
+  field(:cms)
   field(:cssResponseBytes)
   field(:flashResponseBytes)
   field(:htmlResponseBytes)
   field(:imageResponseBytes)
   field(:javascriptResponseBytes)
+  field(:numRenderBlockingRoundTrips)
+  field(:numTotalRoundTrips)
   field(:numberCssResources)
   field(:numberHosts)
   field(:numberJsResources)
   field(:numberResources)
+  field(:numberRobotedResources)
   field(:numberStaticResources)
+  field(:numberTransientFetchFailureResources)
   field(:otherResponseBytes)
+  field(:overTheWireResponseBytes)
+  field(:robotedUrls, type: :list)
   field(:textResponseBytes)
   field(:totalRequestBytes)
+  field(:transientFetchFailureUrls, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.ResultPageStats do
+defimpl Poison.Decoder,
+  for: GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiPagespeedResponseV4PageStats do
   def decode(value, options) do
-    GoogleApi.PageSpeedOnline.V2.Model.ResultPageStats.decode(value, options)
+    GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiPagespeedResponseV4PageStats.decode(
+      value,
+      options
+    )
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.PageSpeedOnline.V2.Model.ResultPageStats do
+defimpl Poison.Encoder,
+  for: GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiPagespeedResponseV4PageStats do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

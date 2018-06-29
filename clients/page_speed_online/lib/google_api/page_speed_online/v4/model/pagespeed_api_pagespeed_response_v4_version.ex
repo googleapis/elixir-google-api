@@ -16,7 +16,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.PageSpeedOnline.V2.Model.ResultVersion do
+defmodule GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiPagespeedResponseV4Version do
   @moduledoc """
   The version of PageSpeed used to generate these results.
 
@@ -37,13 +37,18 @@ defmodule GoogleApi.PageSpeedOnline.V2.Model.ResultVersion do
   field(:minor)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.ResultVersion do
+defimpl Poison.Decoder,
+  for: GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiPagespeedResponseV4Version do
   def decode(value, options) do
-    GoogleApi.PageSpeedOnline.V2.Model.ResultVersion.decode(value, options)
+    GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiPagespeedResponseV4Version.decode(
+      value,
+      options
+    )
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.PageSpeedOnline.V2.Model.ResultVersion do
+defimpl Poison.Encoder,
+  for: GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiPagespeedResponseV4Version do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

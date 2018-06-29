@@ -16,34 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2 do
+defmodule GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiFormatStringV4 do
   @moduledoc """
 
 
   ## Attributes
 
-  - args ([PagespeedApiFormatStringV2Args]): List of arguments for the format string. Defaults to: `null`.
+  - args ([PagespeedApiFormatStringV4Args]): List of arguments for the format string. Defaults to: `null`.
   - format (String.t): A localized format string with {{FOO}} placeholders, where &#39;FOO&#39; is the key of the argument whose value should be substituted. For HYPERLINK arguments, the format string will instead contain {{BEGIN_FOO}} and {{END_FOO}} for the argument with key &#39;FOO&#39;. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :args => list(GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2Args.t()),
+          :args => list(GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiFormatStringV4Args.t()),
           :format => any()
         }
 
-  field(:args, as: GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2Args, type: :list)
+  field(:args, as: GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiFormatStringV4Args, type: :list)
   field(:format)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2 do
+defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiFormatStringV4 do
   def decode(value, options) do
-    GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2.decode(value, options)
+    GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiFormatStringV4.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2 do
+defimpl Poison.Encoder, for: GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiFormatStringV4 do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
