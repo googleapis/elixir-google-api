@@ -16,34 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AndroidEnterprise.V1.Model.LocalizedText do
+defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductSigningCertificate do
   @moduledoc """
-  A localized string with its locale.
+
 
   ## Attributes
 
-  - locale (String.t): The BCP47 tag for a locale. (e.g. \&quot;en-US\&quot;, \&quot;de\&quot;). Defaults to: `null`.
-  - text (String.t): The text localized in the associated locale. Defaults to: `null`.
+  - certificateHashSha1 (String.t): The base64 urlsafe encoded SHA1 hash of the certificate. (This field is deprecated in favor of SHA2-256. It should not be used and may be removed at any time.) Defaults to: `null`.
+  - certificateHashSha256 (String.t): The base64 urlsafe encoded SHA2-256 hash of the certificate. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :locale => any(),
-          :text => any()
+          :certificateHashSha1 => any(),
+          :certificateHashSha256 => any()
         }
 
-  field(:locale)
-  field(:text)
+  field(:certificateHashSha1)
+  field(:certificateHashSha256)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.LocalizedText do
+defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.ProductSigningCertificate do
   def decode(value, options) do
-    GoogleApi.AndroidEnterprise.V1.Model.LocalizedText.decode(value, options)
+    GoogleApi.AndroidEnterprise.V1.Model.ProductSigningCertificate.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.LocalizedText do
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.ProductSigningCertificate do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

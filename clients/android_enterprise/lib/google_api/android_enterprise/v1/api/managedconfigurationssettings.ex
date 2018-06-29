@@ -16,22 +16,22 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AndroidEnterprise.V1.Api.Grouplicenseusers do
+defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationssettings do
   @moduledoc """
-  API calls for all endpoints tagged `Grouplicenseusers`.
+  API calls for all endpoints tagged `Managedconfigurationssettings`.
   """
 
   alias GoogleApi.AndroidEnterprise.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Retrieves the IDs of the users who have been granted entitlements under the license.
+  Lists all the managed configurations settings for the specified app. Only the ID and the name is set.
 
   ## Parameters
 
   - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
   - enterprise_id (String.t): The ID of the enterprise.
-  - group_license_id (String.t): The ID of the product the group license is for, e.g. \&quot;app:com.google.android.gm\&quot;.
+  - product_id (String.t): The ID of the product for which the managed configurations settings applies to.
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -43,21 +43,22 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Grouplicenseusers do
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidEnterprise.V1.Model.GroupLicenseUsersListResponse{}} on success
+  {:ok, %GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettingsListResponse{}} on success
   {:error, info} on failure
   """
-  @spec androidenterprise_grouplicenseusers_list(
+  @spec androidenterprise_managedconfigurationssettings_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AndroidEnterprise.V1.Model.GroupLicenseUsersListResponse.t()}
+          {:ok,
+           GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettingsListResponse.t()}
           | {:error, Tesla.Env.t()}
-  def androidenterprise_grouplicenseusers_list(
+  def androidenterprise_managedconfigurationssettings_list(
         connection,
         enterprise_id,
-        group_license_id,
+        product_id,
         opts \\ []
       ) do
     optional_params = %{
@@ -73,16 +74,19 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Grouplicenseusers do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/enterprises/{enterpriseId}/groupLicenses/{groupLicenseId}/users", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id),
-        "groupLicenseId" => URI.encode_www_form(group_license_id)
-      })
+      |> Request.url(
+        "/enterprises/{enterpriseId}/products/{productId}/managedConfigurationsSettings",
+        %{
+          "enterpriseId" => URI.encode_www_form(enterprise_id),
+          "productId" => URI.encode_www_form(product_id)
+        }
+      )
       |> Request.add_optional_params(optional_params, opts)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.AndroidEnterprise.V1.Model.GroupLicenseUsersListResponse{}
+      struct: %GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettingsListResponse{}
     )
   end
 end

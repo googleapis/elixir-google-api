@@ -16,41 +16,43 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration do
+defmodule GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettings do
   @moduledoc """
-  A managed configuration resource contains the set of managed properties defined by the app developer in the app&#39;s managed configurations schema, as well as any configuration variables defined for the user.
+  A managed configurations settings resource contains the set of managed properties that have been configured for an Android app to be applied to a set of users. The app&#39;s developer would have defined configurable properties in the managed configurations schema.
 
   ## Attributes
 
-  - configurationVariables (ConfigurationVariables): Contains the ID of the managed configuration profile and the set of configuration variables (if any) defined for the user. Defaults to: `null`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#managedConfiguration\&quot;. Defaults to: `null`.
+  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#managedConfigurationsSettings\&quot;. Defaults to: `null`.
+  - lastUpdatedTimestampMillis (String.t): The last updated time of the managed configuration settings in milliseconds since 1970-01-01T00:00:00Z. Defaults to: `null`.
   - managedProperty ([ManagedProperty]): The set of managed properties for this configuration. Defaults to: `null`.
-  - productId (String.t): The ID of the product that the managed configuration is for, e.g. \&quot;app:com.google.android.gm\&quot;. Defaults to: `null`.
+  - mcmId (String.t): The ID of the managed configurations settings. Defaults to: `null`.
+  - name (String.t): The name of the managed configurations settings. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :configurationVariables =>
-            GoogleApi.AndroidEnterprise.V1.Model.ConfigurationVariables.t(),
           :kind => any(),
+          :lastUpdatedTimestampMillis => any(),
           :managedProperty => list(GoogleApi.AndroidEnterprise.V1.Model.ManagedProperty.t()),
-          :productId => any()
+          :mcmId => any(),
+          :name => any()
         }
 
-  field(:configurationVariables, as: GoogleApi.AndroidEnterprise.V1.Model.ConfigurationVariables)
   field(:kind)
+  field(:lastUpdatedTimestampMillis)
   field(:managedProperty, as: GoogleApi.AndroidEnterprise.V1.Model.ManagedProperty, type: :list)
-  field(:productId)
+  field(:mcmId)
+  field(:name)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration do
+defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettings do
   def decode(value, options) do
-    GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration.decode(value, options)
+    GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettings.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration do
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettings do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
