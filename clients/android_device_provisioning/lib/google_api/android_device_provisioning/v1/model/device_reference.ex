@@ -16,37 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.UpdateMetadataArguments do
+defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceReference do
   @moduledoc """
-  Identifies metdata updates to one device.
+  A &#x60;DeviceReference&#x60; is an API abstraction that lets you supply a _device_ argument to a method using one of the following identifier types:  * A numeric API resource ID. * Real-world hardware IDs, such as IMEI number, belonging to the manufactured   device.  Methods that operate on devices take a &#x60;DeviceReference&#x60; as a parameter type because it&#39;s more flexible for the caller. To learn more about device identifiers, read [Identifiers](/zero-touch/guides/identifiers).
 
   ## Attributes
 
-  - deviceId (String.t): Device ID of the device. Defaults to: `null`.
-  - deviceIdentifier (DeviceIdentifier): Device identifier. Defaults to: `null`.
-  - deviceMetadata (DeviceMetadata): Required. The metadata to update. Defaults to: `null`.
+  - deviceId (String.t): The ID of the device. Defaults to: `null`.
+  - deviceIdentifier (DeviceIdentifier): The hardware IDs of the device. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :deviceId => any(),
-          :deviceIdentifier => GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t(),
-          :deviceMetadata => GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata.t()
+          :deviceIdentifier => GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t()
         }
 
   field(:deviceId)
   field(:deviceIdentifier, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier)
-  field(:deviceMetadata, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.UpdateMetadataArguments do
+defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceReference do
   def decode(value, options) do
-    GoogleApi.AndroidDeviceProvisioning.V1.Model.UpdateMetadataArguments.decode(value, options)
+    GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceReference.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.UpdateMetadataArguments do
+defimpl Poison.Encoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceReference do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

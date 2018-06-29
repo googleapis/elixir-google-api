@@ -16,13 +16,13 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse do
+defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListDevicesResponse do
   @moduledoc """
-  Response containing found devices.
+  Response message of customer&#39;s liting devices.
 
   ## Attributes
 
-  - devices ([Device]): Found devices. Defaults to: `null`.
+  - devices ([Device]): The customer&#39;s devices. Defaults to: `null`.
   - nextPageToken (String.t): A token used to access the next page of results. Omitted if no further results are available. Defaults to: `null`.
   """
 
@@ -38,9 +38,9 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdenti
 end
 
 defimpl Poison.Decoder,
-  for: GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse do
+  for: GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListDevicesResponse do
   def decode(value, options) do
-    GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse.decode(
+    GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListDevicesResponse.decode(
       value,
       options
     )
@@ -48,7 +48,7 @@ defimpl Poison.Decoder,
 end
 
 defimpl Poison.Encoder,
-  for: GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse do
+  for: GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListDevicesResponse do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

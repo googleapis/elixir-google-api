@@ -16,21 +16,21 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
+defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
   @moduledoc """
-  API calls for all endpoints tagged `Partners`.
+  API calls for all endpoints tagged `Customers`.
   """
 
   alias GoogleApi.AndroidDeviceProvisioning.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Creates a customer for zero-touch enrollment. After the method returns successfully, admin and owner roles can manage devices and EMM configs by calling API methods or using their zero-touch enrollment portal. The API doesn&#39;t notify the customer that they have access.
+  Creates a new configuration. Once created, a customer can apply the configuration to devices.
 
   ## Parameters
 
   - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
-  - parent (String.t): Required. The parent resource ID in the format &#x60;partners/[PARTNER_ID]&#x60; that identifies the reseller.
+  - parent (String.t): Required. The customer that manages the configuration. An API resource name in the format &#x60;customers/[CUSTOMER_ID]&#x60;.
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
@@ -43,21 +43,21 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :body (CreateCustomerRequest): 
+    - :body (Configuration): 
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidDeviceProvisioning.V1.Model.Company{}} on success
+  {:ok, %GoogleApi.AndroidDeviceProvisioning.V1.Model.Configuration{}} on success
   {:error, info} on failure
   """
-  @spec androiddeviceprovisioning_partners_customers_create(
+  @spec androiddeviceprovisioning_customers_configurations_create(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Company.t()}
+          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Configuration.t()}
           | {:error, Tesla.Env.t()}
-  def androiddeviceprovisioning_partners_customers_create(connection, parent, opts \\ []) do
+  def androiddeviceprovisioning_customers_configurations_create(connection, parent, opts \\ []) do
     optional_params = %{
       :upload_protocol => :query,
       :prettyPrint => :query,
@@ -76,23 +76,23 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/{+parent}/customers", %{
+      |> Request.url("/v1/{+parent}/configurations", %{
         "parent" => URI.encode_www_form(parent)
       })
       |> Request.add_optional_params(optional_params, opts)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.Company{})
+    |> Response.decode(struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.Configuration{})
   end
 
   @doc """
-  Lists the customers that are enrolled to the reseller identified by the &#x60;partnerId&#x60; argument. This list includes customers that the reseller created and customers that enrolled themselves using the portal.
+  Deletes an unused configuration. The API call fails if the customer has devices with the configuration applied.
 
   ## Parameters
 
   - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
-  - partner_id (String.t): Required. The ID of the reseller partner.
+  - name (String.t): Required. The configuration to delete. An API resource name in the format &#x60;customers/[CUSTOMER_ID]/configurations/[CONFIGURATION_ID]&#x60;. If the configuration is applied to any devices, the API call fails.
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
@@ -108,17 +108,77 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidDeviceProvisioning.V1.Model.ListCustomersResponse{}} on success
+  {:ok, %GoogleApi.AndroidDeviceProvisioning.V1.Model.Empty{}} on success
   {:error, info} on failure
   """
-  @spec androiddeviceprovisioning_partners_customers_list(
+  @spec androiddeviceprovisioning_customers_configurations_delete(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.ListCustomersResponse.t()}
+          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+  def androiddeviceprovisioning_customers_configurations_delete(connection, name, opts \\ []) do
+    optional_params = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode_www_form(name)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.Empty{})
+  end
+
+  @doc """
+  Lists a customer&#39;s configurations.
+
+  ## Parameters
+
+  - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
+  - parent (String.t): Required. The customer that manages the listed configurations. An API resource name in the format &#x60;customers/[CUSTOMER_ID]&#x60;.
+  - opts (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+
+  ## Returns
+
+  {:ok, %GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListConfigurationsResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec androiddeviceprovisioning_customers_configurations_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListConfigurationsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def androiddeviceprovisioning_partners_customers_list(connection, partner_id, opts \\ []) do
+  def androiddeviceprovisioning_customers_configurations_list(connection, parent, opts \\ []) do
     optional_params = %{
       :upload_protocol => :query,
       :prettyPrint => :query,
@@ -136,25 +196,25 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/partners/{+partnerId}/customers", %{
-        "partnerId" => URI.encode_www_form(partner_id)
+      |> Request.url("/v1/{+parent}/configurations", %{
+        "parent" => URI.encode_www_form(parent)
       })
       |> Request.add_optional_params(optional_params, opts)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.ListCustomersResponse{}
+      struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListConfigurationsResponse{}
     )
   end
 
   @doc """
-  Claims a device for a customer and adds it to zero-touch enrollment. If the device is already claimed by another customer, the call returns an error.
+  Updates a configuration&#39;s field values.
 
   ## Parameters
 
   - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
-  - partner_id (String.t): Required. The ID of the reseller partner.
+  - name (String.t): Output only. The API resource name in the format &#x60;customers/[CUSTOMER_ID]/configurations/[CONFIGURATION_ID]&#x60;. Assigned by the server.
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
@@ -167,21 +227,22 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :body (ClaimDeviceRequest): 
+    - :updateMask (String.t): Required. The field mask applied to the target &#x60;Configuration&#x60; before updating the fields. To learn more about using field masks, read [FieldMask](/protocol-buffers/docs/reference/google.protobuf#fieldmask) in the Protocol Buffers documentation.
+    - :body (Configuration): 
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidDeviceProvisioning.V1.Model.ClaimDeviceResponse{}} on success
+  {:ok, %GoogleApi.AndroidDeviceProvisioning.V1.Model.Configuration{}} on success
   {:error, info} on failure
   """
-  @spec androiddeviceprovisioning_partners_devices_claim(
+  @spec androiddeviceprovisioning_customers_configurations_patch(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.ClaimDeviceResponse.t()}
+          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Configuration.t()}
           | {:error, Tesla.Env.t()}
-  def androiddeviceprovisioning_partners_devices_claim(connection, partner_id, opts \\ []) do
+  def androiddeviceprovisioning_customers_configurations_patch(connection, name, opts \\ []) do
     optional_params = %{
       :upload_protocol => :query,
       :prettyPrint => :query,
@@ -194,31 +255,30 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
       :alt => :query,
       :access_token => :query,
       :key => :query,
+      :updateMask => :query,
       :body => :body
     }
 
     request =
       Request.new()
-      |> Request.method(:post)
-      |> Request.url("/v1/partners/{+partnerId}/devices:claim", %{
-        "partnerId" => URI.encode_www_form(partner_id)
+      |> Request.method(:patch)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode_www_form(name)
       })
       |> Request.add_optional_params(optional_params, opts)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(
-      struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.ClaimDeviceResponse{}
-    )
+    |> Response.decode(struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.Configuration{})
   end
 
   @doc """
-  Claims a batch of devices for a customer asynchronously. Adds the devices to zero-touch enrollment. To learn more, read [Long‑running batch operations](/zero-touch/guides/how-it-works#operations).
+  Applies a Configuration to the device to register the device for zero-touch enrollment. After applying a configuration to a device, the device automatically provisions itself on first boot, or next factory reset.
 
   ## Parameters
 
   - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
-  - partner_id (String.t): Required. The ID of the reseller partner.
+  - parent (String.t): Required. The customer managing the device. An API resource name in the format &#x60;customers/[CUSTOMER_ID]&#x60;.
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
@@ -231,286 +291,24 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :body (ClaimDevicesRequest): 
-
-  ## Returns
-
-  {:ok, %GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation{}} on success
-  {:error, info} on failure
-  """
-  @spec androiddeviceprovisioning_partners_devices_claim_async(
-          Tesla.Env.client(),
-          String.t(),
-          keyword()
-        ) ::
-          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation.t()}
-          | {:error, Tesla.Env.t()}
-  def androiddeviceprovisioning_partners_devices_claim_async(connection, partner_id, opts \\ []) do
-    optional_params = %{
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:post)
-      |> Request.url("/v1/partners/{+partnerId}/devices:claimAsync", %{
-        "partnerId" => URI.encode_www_form(partner_id)
-      })
-      |> Request.add_optional_params(optional_params, opts)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation{})
-  end
-
-  @doc """
-  Finds devices by hardware identifiers, such as IMEI.
-
-  ## Parameters
-
-  - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
-  - partner_id (String.t): Required. The ID of the reseller partner.
-  - opts (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :body (FindDevicesByDeviceIdentifierRequest): 
-
-  ## Returns
-
-  {:ok, %GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse{}} on success
-  {:error, info} on failure
-  """
-  @spec androiddeviceprovisioning_partners_devices_find_by_identifier(
-          Tesla.Env.client(),
-          String.t(),
-          keyword()
-        ) ::
-          {:ok,
-           GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse.t()}
-          | {:error, Tesla.Env.t()}
-  def androiddeviceprovisioning_partners_devices_find_by_identifier(
-        connection,
-        partner_id,
-        opts \\ []
-      ) do
-    optional_params = %{
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:post)
-      |> Request.url("/v1/partners/{+partnerId}/devices:findByIdentifier", %{
-        "partnerId" => URI.encode_www_form(partner_id)
-      })
-      |> Request.add_optional_params(optional_params, opts)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(
-      struct:
-        %GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse{}
-    )
-  end
-
-  @doc """
-  Finds devices claimed for customers. The results only contain devices registered to the reseller that&#39;s identified by the &#x60;partnerId&#x60; argument. The customer&#39;s devices purchased from other resellers don&#39;t appear in the results.
-
-  ## Parameters
-
-  - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
-  - partner_id (String.t): Required. The ID of the reseller partner.
-  - opts (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :body (FindDevicesByOwnerRequest): 
-
-  ## Returns
-
-  {:ok, %GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByOwnerResponse{}} on success
-  {:error, info} on failure
-  """
-  @spec androiddeviceprovisioning_partners_devices_find_by_owner(
-          Tesla.Env.client(),
-          String.t(),
-          keyword()
-        ) ::
-          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByOwnerResponse.t()}
-          | {:error, Tesla.Env.t()}
-  def androiddeviceprovisioning_partners_devices_find_by_owner(connection, partner_id, opts \\ []) do
-    optional_params = %{
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:post)
-      |> Request.url("/v1/partners/{+partnerId}/devices:findByOwner", %{
-        "partnerId" => URI.encode_www_form(partner_id)
-      })
-      |> Request.add_optional_params(optional_params, opts)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(
-      struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByOwnerResponse{}
-    )
-  end
-
-  @doc """
-  Updates reseller metadata associated with the device.
-
-  ## Parameters
-
-  - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
-  - metadata_owner_id (String.t): Required. The owner of the newly set metadata. Set this to the partner ID.
-  - device_id (String.t): Required. The ID of the reseller partner.
-  - opts (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :body (UpdateDeviceMetadataRequest): 
-
-  ## Returns
-
-  {:ok, %GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata{}} on success
-  {:error, info} on failure
-  """
-  @spec androiddeviceprovisioning_partners_devices_metadata(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword()
-        ) ::
-          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata.t()}
-          | {:error, Tesla.Env.t()}
-  def androiddeviceprovisioning_partners_devices_metadata(
-        connection,
-        metadata_owner_id,
-        device_id,
-        opts \\ []
-      ) do
-    optional_params = %{
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:post)
-      |> Request.url("/v1/partners/{+metadataOwnerId}/devices/{+deviceId}/metadata", %{
-        "metadataOwnerId" => URI.encode_www_form(metadata_owner_id),
-        "deviceId" => URI.encode_www_form(device_id)
-      })
-      |> Request.add_optional_params(optional_params, opts)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata{})
-  end
-
-  @doc """
-  Unclaims a device from a customer and removes it from zero-touch enrollment.
-
-  ## Parameters
-
-  - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
-  - partner_id (String.t): Required. The ID of the reseller partner.
-  - opts (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :body (UnclaimDeviceRequest): 
+    - :body (CustomerApplyConfigurationRequest): 
 
   ## Returns
 
   {:ok, %GoogleApi.AndroidDeviceProvisioning.V1.Model.Empty{}} on success
   {:error, info} on failure
   """
-  @spec androiddeviceprovisioning_partners_devices_unclaim(
+  @spec androiddeviceprovisioning_customers_devices_apply_configuration(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def androiddeviceprovisioning_partners_devices_unclaim(connection, partner_id, opts \\ []) do
+  def androiddeviceprovisioning_customers_devices_apply_configuration(
+        connection,
+        parent,
+        opts \\ []
+      ) do
     optional_params = %{
       :upload_protocol => :query,
       :prettyPrint => :query,
@@ -529,8 +327,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/partners/{+partnerId}/devices:unclaim", %{
-        "partnerId" => URI.encode_www_form(partner_id)
+      |> Request.url("/v1/{+parent}/devices:applyConfiguration", %{
+        "parent" => URI.encode_www_form(parent)
       })
       |> Request.add_optional_params(optional_params, opts)
 
@@ -540,12 +338,12 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
   end
 
   @doc """
-  Unclaims a batch of devices for a customer asynchronously. Removes the devices from zero-touch enrollment. To learn more, read [Long‑running batch operations](/zero-touch/guides/how-it-works#operations).
+  Gets the details of a device.
 
   ## Parameters
 
   - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
-  - partner_id (String.t): Required. The reseller partner ID.
+  - name (String.t): Required. The device to get. An API resource name in the format &#x60;customers/[CUSTOMER_ID]/devices/[DEVICE_ID]&#x60;.
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
@@ -558,21 +356,77 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :body (UnclaimDevicesRequest): 
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation{}} on success
+  {:ok, %GoogleApi.AndroidDeviceProvisioning.V1.Model.Device{}} on success
   {:error, info} on failure
   """
-  @spec androiddeviceprovisioning_partners_devices_unclaim_async(
+  @spec androiddeviceprovisioning_customers_devices_get(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Device.t()} | {:error, Tesla.Env.t()}
+  def androiddeviceprovisioning_customers_devices_get(connection, name, opts \\ []) do
+    optional_params = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode_www_form(name)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.Device{})
+  end
+
+  @doc """
+  Lists a customer&#39;s devices.
+
+  ## Parameters
+
+  - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
+  - parent (String.t): Required. The customer managing the devices. An API resource name in the format &#x60;customers/[CUSTOMER_ID]&#x60;.
+  - opts (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :pageToken (String.t): A token specifying which result page to return.
+    - :pageSize (String.t): The maximum number of devices to show in a page of results. Must be between 1 and 100 inclusive.
+
+  ## Returns
+
+  {:ok, %GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListDevicesResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec androiddeviceprovisioning_customers_devices_list(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation.t()}
+          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListDevicesResponse.t()}
           | {:error, Tesla.Env.t()}
-  def androiddeviceprovisioning_partners_devices_unclaim_async(connection, partner_id, opts \\ []) do
+  def androiddeviceprovisioning_customers_devices_list(connection, parent, opts \\ []) do
     optional_params = %{
       :upload_protocol => :query,
       :prettyPrint => :query,
@@ -585,29 +439,32 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
       :alt => :query,
       :access_token => :query,
       :key => :query,
-      :body => :body
+      :pageToken => :query,
+      :pageSize => :query
     }
 
     request =
       Request.new()
-      |> Request.method(:post)
-      |> Request.url("/v1/partners/{+partnerId}/devices:unclaimAsync", %{
-        "partnerId" => URI.encode_www_form(partner_id)
+      |> Request.method(:get)
+      |> Request.url("/v1/{+parent}/devices", %{
+        "parent" => URI.encode_www_form(parent)
       })
       |> Request.add_optional_params(optional_params, opts)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation{})
+    |> Response.decode(
+      struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListDevicesResponse{}
+    )
   end
 
   @doc """
-  Updates the reseller metadata attached to a batch of devices. This method updates devices asynchronously and returns an &#x60;Operation&#x60; that can be used to track progress. Read [Long‑running batch operations](/zero-touch/guides/how-it-works#operations).
+  Removes a configuration from device.
 
   ## Parameters
 
   - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
-  - partner_id (String.t): Required. The reseller partner ID.
+  - parent (String.t): Required. The customer managing the device in the format &#x60;customers/[CUSTOMER_ID]&#x60;.
   - opts (KeywordList): [optional] Optional parameters
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
@@ -620,23 +477,22 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :body (UpdateDeviceMetadataInBatchRequest): 
+    - :body (CustomerRemoveConfigurationRequest): 
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation{}} on success
+  {:ok, %GoogleApi.AndroidDeviceProvisioning.V1.Model.Empty{}} on success
   {:error, info} on failure
   """
-  @spec androiddeviceprovisioning_partners_devices_update_metadata_async(
+  @spec androiddeviceprovisioning_customers_devices_remove_configuration(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation.t()}
-          | {:error, Tesla.Env.t()}
-  def androiddeviceprovisioning_partners_devices_update_metadata_async(
+          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+  def androiddeviceprovisioning_customers_devices_remove_configuration(
         connection,
-        partner_id,
+        parent,
         opts \\ []
       ) do
     optional_params = %{
@@ -657,13 +513,191 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/partners/{+partnerId}/devices:updateMetadataAsync", %{
-        "partnerId" => URI.encode_www_form(partner_id)
+      |> Request.url("/v1/{+parent}/devices:removeConfiguration", %{
+        "parent" => URI.encode_www_form(parent)
       })
       |> Request.add_optional_params(optional_params, opts)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation{})
+    |> Response.decode(struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.Empty{})
+  end
+
+  @doc """
+  Unclaims a device from a customer and removes it from zero-touch enrollment.  After removing a device, a customer must contact their reseller to register the device into zero-touch enrollment again.
+
+  ## Parameters
+
+  - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
+  - parent (String.t): Required. The customer managing the device. An API resource name in the format &#x60;customers/[CUSTOMER_ID]&#x60;.
+  - opts (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :body (CustomerUnclaimDeviceRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.AndroidDeviceProvisioning.V1.Model.Empty{}} on success
+  {:error, info} on failure
+  """
+  @spec androiddeviceprovisioning_customers_devices_unclaim(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+  def androiddeviceprovisioning_customers_devices_unclaim(connection, parent, opts \\ []) do
+    optional_params = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+parent}/devices:unclaim", %{
+        "parent" => URI.encode_www_form(parent)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.Empty{})
+  end
+
+  @doc """
+  Lists the DPCs (device policy controllers) that support zero-touch enrollment.
+
+  ## Parameters
+
+  - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
+  - parent (String.t): Required. The customer that can use the DPCs in configurations. An API resource name in the format &#x60;customers/[CUSTOMER_ID]&#x60;.
+  - opts (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+
+  ## Returns
+
+  {:ok, %GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListDpcsResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec androiddeviceprovisioning_customers_dpcs_list(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListDpcsResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def androiddeviceprovisioning_customers_dpcs_list(connection, parent, opts \\ []) do
+    optional_params = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+parent}/dpcs", %{
+        "parent" => URI.encode_www_form(parent)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListDpcsResponse{}
+    )
+  end
+
+  @doc """
+  Lists the user&#39;s customer accounts.
+
+  ## Parameters
+
+  - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
+  - opts (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :pageSize (integer()): The maximum number of customers to show in a page of results. A number between 1 and 100 (inclusive).
+    - :pageToken (String.t): A token specifying which result page to return.
+
+  ## Returns
+
+  {:ok, %GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListCustomersResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec androiddeviceprovisioning_customers_list(Tesla.Env.client(), keyword()) ::
+          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListCustomersResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def androiddeviceprovisioning_customers_list(connection, opts \\ []) do
+    optional_params = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/customers")
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListCustomersResponse{}
+    )
   end
 end
