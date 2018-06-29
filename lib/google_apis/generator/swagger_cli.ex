@@ -76,7 +76,7 @@ defmodule GoogleApis.Generator.SwaggerCli do
 
     ignore_files = files_to_ignore(output_dir)
 
-    File.cp_r(src_dir, output_dir, fn src, dest ->
+    File.cp_r(src_dir, output_dir, fn _src, dest ->
       !MapSet.member?(ignore_files, dest)
     end)
   end
@@ -84,16 +84,18 @@ defmodule GoogleApis.Generator.SwaggerCli do
   defp files_to_ignore(output_dir) do
     ignore_file = Path.join(output_dir, ".swagger-codegen-ignore")
 
-    with {:ok, contents} <- File.read(ignore_file) do
-      contents
-      |> String.split("\n")
-      |> Enum.filter(&ignorable_file/1)
-      |> Enum.concat([".swagger-codegen-ignore"])
-      |> Enum.map(&Path.join(output_dir, &1))
-      |> Enum.reduce([], fn wildcard, acc -> acc ++ Path.wildcard(wildcard) end)
-      |> MapSet.new()
-    else
-      _ -> MapSet.new()
+    case File.read(ignore_file) do
+      {:ok, contents} ->
+        contents
+        |> String.split("\n")
+        |> Enum.filter(&ignorable_file/1)
+        |> Enum.concat([".swagger-codegen-ignore"])
+        |> Enum.map(&Path.join(output_dir, &1))
+        |> Enum.reduce([], fn wildcard, acc -> acc ++ Path.wildcard(wildcard) end)
+        |> MapSet.new()
+
+      _ ->
+        MapSet.new()
     end
   end
 
