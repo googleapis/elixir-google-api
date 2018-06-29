@@ -40,38 +40,57 @@ defmodule GoogleApi.YouTube.V3.Model.LiveBroadcastContentDetails do
     - Enum - one of [360, mesh, rectangular]
   - recordFromStart (boolean()): Automatically start recording after the event goes live. The default value for this property is true.    Important: You must also set the enableDvr property&#39;s value to true if you want the playback to be available immediately after the broadcast ends. If you set this property&#39;s value to true but do not also set the enableDvr property to true, there may be a delay of around one day before the archived video will be available for playback. Defaults to: `null`.
   - startWithSlate (boolean()): This setting indicates whether the broadcast should automatically begin with an in-stream slate when you update the broadcast&#39;s status to live. After updating the status, you then need to send a liveCuepoints.insert request that sets the cuepoint&#39;s eventState to end to remove the in-stream slate and make your broadcast stream visible to viewers. Defaults to: `null`.
+  - stereoLayout (String.t):  Defaults to: `null`.
+    - Enum - one of [left_right, mono, top_bottom]
   """
 
-  defstruct [
-    :boundStreamId,
-    :boundStreamLastUpdateTimeMs,
-    :closedCaptionsType,
-    :enableAutoStart,
-    :enableClosedCaptions,
-    :enableContentEncryption,
-    :enableDvr,
-    :enableEmbed,
-    :enableLowLatency,
-    :latencyPreference,
-    :mesh,
-    :monitorStream,
-    :projection,
-    :recordFromStart,
-    :startWithSlate
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :boundStreamId => any(),
+          :boundStreamLastUpdateTimeMs => DateTime.t(),
+          :closedCaptionsType => any(),
+          :enableAutoStart => any(),
+          :enableClosedCaptions => any(),
+          :enableContentEncryption => any(),
+          :enableDvr => any(),
+          :enableEmbed => any(),
+          :enableLowLatency => any(),
+          :latencyPreference => any(),
+          :mesh => any(),
+          :monitorStream => GoogleApi.YouTube.V3.Model.MonitorStreamInfo.t(),
+          :projection => any(),
+          :recordFromStart => any(),
+          :startWithSlate => any(),
+          :stereoLayout => any()
+        }
+
+  field(:boundStreamId)
+  field(:boundStreamLastUpdateTimeMs, as: DateTime)
+  field(:closedCaptionsType)
+  field(:enableAutoStart)
+  field(:enableClosedCaptions)
+  field(:enableContentEncryption)
+  field(:enableDvr)
+  field(:enableEmbed)
+  field(:enableLowLatency)
+  field(:latencyPreference)
+  field(:mesh)
+  field(:monitorStream, as: GoogleApi.YouTube.V3.Model.MonitorStreamInfo)
+  field(:projection)
+  field(:recordFromStart)
+  field(:startWithSlate)
+  field(:stereoLayout)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveBroadcastContentDetails do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:monitorStream, :struct, GoogleApi.YouTube.V3.Model.MonitorStreamInfo, options)
+    GoogleApi.YouTube.V3.Model.LiveBroadcastContentDetails.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveBroadcastContentDetails do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

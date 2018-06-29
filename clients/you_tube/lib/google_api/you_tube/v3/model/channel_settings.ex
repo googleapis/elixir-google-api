@@ -38,32 +38,49 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelSettings do
   - unsubscribedTrailer (String.t): The trailer of the channel, for users that are not subscribers. Defaults to: `null`.
   """
 
-  defstruct [
-    :country,
-    :defaultLanguage,
-    :defaultTab,
-    :description,
-    :featuredChannelsTitle,
-    :featuredChannelsUrls,
-    :keywords,
-    :moderateComments,
-    :profileColor,
-    :showBrowseView,
-    :showRelatedChannels,
-    :title,
-    :trackingAnalyticsAccountId,
-    :unsubscribedTrailer
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :country => any(),
+          :defaultLanguage => any(),
+          :defaultTab => any(),
+          :description => any(),
+          :featuredChannelsTitle => any(),
+          :featuredChannelsUrls => list(any()),
+          :keywords => any(),
+          :moderateComments => any(),
+          :profileColor => any(),
+          :showBrowseView => any(),
+          :showRelatedChannels => any(),
+          :title => any(),
+          :trackingAnalyticsAccountId => any(),
+          :unsubscribedTrailer => any()
+        }
+
+  field(:country)
+  field(:defaultLanguage)
+  field(:defaultTab)
+  field(:description)
+  field(:featuredChannelsTitle)
+  field(:featuredChannelsUrls, type: :list)
+  field(:keywords)
+  field(:moderateComments)
+  field(:profileColor)
+  field(:showBrowseView)
+  field(:showRelatedChannels)
+  field(:title)
+  field(:trackingAnalyticsAccountId)
+  field(:unsubscribedTrailer)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelSettings do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.ChannelSettings.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ChannelSettings do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

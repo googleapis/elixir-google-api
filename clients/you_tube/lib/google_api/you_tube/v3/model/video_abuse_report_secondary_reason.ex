@@ -26,20 +26,25 @@ defmodule GoogleApi.YouTube.V3.Model.VideoAbuseReportSecondaryReason do
   - label (String.t): The localized label for this abuse report secondary reason. Defaults to: `null`.
   """
 
-  defstruct [
-    :id,
-    :label
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :id => any(),
+          :label => any()
+        }
+
+  field(:id)
+  field(:label)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoAbuseReportSecondaryReason do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.VideoAbuseReportSecondaryReason.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoAbuseReportSecondaryReason do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

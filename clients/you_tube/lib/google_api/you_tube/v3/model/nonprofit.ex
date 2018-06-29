@@ -16,22 +16,35 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.YouTube.V3.Model.LiveBroadcastTopicDetails do
+defmodule GoogleApi.YouTube.V3.Model.Nonprofit do
   @moduledoc """
+  Nonprofit information.
 
+  ## Attributes
+
+  - nonprofitId (NonprofitId): Id of the nonprofit. Defaults to: `null`.
+  - nonprofitLegalName (String.t): Legal name of the nonprofit. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
-  defstruct [
-    :topics
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :nonprofitId => GoogleApi.YouTube.V3.Model.NonprofitId.t(),
+          :nonprofitLegalName => any()
+        }
+
+  field(:nonprofitId, as: GoogleApi.YouTube.V3.Model.NonprofitId)
+  field(:nonprofitLegalName)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveBroadcastTopicDetails do
-  import GoogleApi.YouTube.V3.Deserializer
-
+defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.Nonprofit do
   def decode(value, options) do
-    value
-    |> deserialize(:topics, :list, GoogleApi.YouTube.V3.Model.LiveBroadcastTopic, options)
+    GoogleApi.YouTube.V3.Model.Nonprofit.decode(value, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.Nonprofit do
+  def encode(value, options) do
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

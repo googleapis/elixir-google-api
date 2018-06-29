@@ -26,20 +26,25 @@ defmodule GoogleApi.YouTube.V3.Model.VideoLocalization do
   - title (String.t): Localized version of the video&#39;s title. Defaults to: `null`.
   """
 
-  defstruct [
-    :description,
-    :title
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :description => any(),
+          :title => any()
+        }
+
+  field(:description)
+  field(:title)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoLocalization do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.VideoLocalization.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoLocalization do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -33,26 +33,37 @@ defmodule GoogleApi.YouTube.V3.Model.VideoFileDetailsVideoStream do
   - widthPixels (integer()): The encoded video content&#39;s width in pixels. You can calculate the video&#39;s encoding aspect ratio as width_pixels / height_pixels. Defaults to: `null`.
   """
 
-  defstruct [
-    :aspectRatio,
-    :bitrateBps,
-    :codec,
-    :frameRateFps,
-    :heightPixels,
-    :rotation,
-    :vendor,
-    :widthPixels
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :aspectRatio => any(),
+          :bitrateBps => any(),
+          :codec => any(),
+          :frameRateFps => any(),
+          :heightPixels => any(),
+          :rotation => any(),
+          :vendor => any(),
+          :widthPixels => any()
+        }
+
+  field(:aspectRatio)
+  field(:bitrateBps)
+  field(:codec)
+  field(:frameRateFps)
+  field(:heightPixels)
+  field(:rotation)
+  field(:vendor)
+  field(:widthPixels)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoFileDetailsVideoStream do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.VideoFileDetailsVideoStream.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoFileDetailsVideoStream do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

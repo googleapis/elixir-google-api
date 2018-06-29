@@ -32,38 +32,37 @@ defmodule GoogleApi.YouTube.V3.Model.Playlist do
   - status (PlaylistStatus): The status object contains status information for the playlist. Defaults to: `null`.
   """
 
-  defstruct [
-    :contentDetails,
-    :etag,
-    :id,
-    :kind,
-    :localizations,
-    :player,
-    :snippet,
-    :status
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :contentDetails => GoogleApi.YouTube.V3.Model.PlaylistContentDetails.t(),
+          :etag => any(),
+          :id => any(),
+          :kind => any(),
+          :localizations => map(),
+          :player => GoogleApi.YouTube.V3.Model.PlaylistPlayer.t(),
+          :snippet => GoogleApi.YouTube.V3.Model.PlaylistSnippet.t(),
+          :status => GoogleApi.YouTube.V3.Model.PlaylistStatus.t()
+        }
+
+  field(:contentDetails, as: GoogleApi.YouTube.V3.Model.PlaylistContentDetails)
+  field(:etag)
+  field(:id)
+  field(:kind)
+  field(:localizations, as: GoogleApi.YouTube.V3.Model.PlaylistLocalization, type: :map)
+  field(:player, as: GoogleApi.YouTube.V3.Model.PlaylistPlayer)
+  field(:snippet, as: GoogleApi.YouTube.V3.Model.PlaylistSnippet)
+  field(:status, as: GoogleApi.YouTube.V3.Model.PlaylistStatus)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.Playlist do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :contentDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.PlaylistContentDetails,
-      options
-    )
-    |> deserialize(:localizations, :map, GoogleApi.YouTube.V3.Model.PlaylistLocalization, options)
-    |> deserialize(:player, :struct, GoogleApi.YouTube.V3.Model.PlaylistPlayer, options)
-    |> deserialize(:snippet, :struct, GoogleApi.YouTube.V3.Model.PlaylistSnippet, options)
-    |> deserialize(:status, :struct, GoogleApi.YouTube.V3.Model.PlaylistStatus, options)
+    GoogleApi.YouTube.V3.Model.Playlist.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.Playlist do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

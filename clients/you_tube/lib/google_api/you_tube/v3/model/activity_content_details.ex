@@ -35,92 +35,43 @@ defmodule GoogleApi.YouTube.V3.Model.ActivityContentDetails do
   - upload (ActivityContentDetailsUpload): The upload object contains information about the uploaded video. This property is only present if the snippet.type is upload. Defaults to: `null`.
   """
 
-  defstruct [
-    :bulletin,
-    :channelItem,
-    :comment,
-    :favorite,
-    :like,
-    :playlistItem,
-    :promotedItem,
-    :recommendation,
-    :social,
-    :subscription,
-    :upload
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :bulletin => GoogleApi.YouTube.V3.Model.ActivityContentDetailsBulletin.t(),
+          :channelItem => GoogleApi.YouTube.V3.Model.ActivityContentDetailsChannelItem.t(),
+          :comment => GoogleApi.YouTube.V3.Model.ActivityContentDetailsComment.t(),
+          :favorite => GoogleApi.YouTube.V3.Model.ActivityContentDetailsFavorite.t(),
+          :like => GoogleApi.YouTube.V3.Model.ActivityContentDetailsLike.t(),
+          :playlistItem => GoogleApi.YouTube.V3.Model.ActivityContentDetailsPlaylistItem.t(),
+          :promotedItem => GoogleApi.YouTube.V3.Model.ActivityContentDetailsPromotedItem.t(),
+          :recommendation => GoogleApi.YouTube.V3.Model.ActivityContentDetailsRecommendation.t(),
+          :social => GoogleApi.YouTube.V3.Model.ActivityContentDetailsSocial.t(),
+          :subscription => GoogleApi.YouTube.V3.Model.ActivityContentDetailsSubscription.t(),
+          :upload => GoogleApi.YouTube.V3.Model.ActivityContentDetailsUpload.t()
+        }
+
+  field(:bulletin, as: GoogleApi.YouTube.V3.Model.ActivityContentDetailsBulletin)
+  field(:channelItem, as: GoogleApi.YouTube.V3.Model.ActivityContentDetailsChannelItem)
+  field(:comment, as: GoogleApi.YouTube.V3.Model.ActivityContentDetailsComment)
+  field(:favorite, as: GoogleApi.YouTube.V3.Model.ActivityContentDetailsFavorite)
+  field(:like, as: GoogleApi.YouTube.V3.Model.ActivityContentDetailsLike)
+  field(:playlistItem, as: GoogleApi.YouTube.V3.Model.ActivityContentDetailsPlaylistItem)
+  field(:promotedItem, as: GoogleApi.YouTube.V3.Model.ActivityContentDetailsPromotedItem)
+  field(:recommendation, as: GoogleApi.YouTube.V3.Model.ActivityContentDetailsRecommendation)
+  field(:social, as: GoogleApi.YouTube.V3.Model.ActivityContentDetailsSocial)
+  field(:subscription, as: GoogleApi.YouTube.V3.Model.ActivityContentDetailsSubscription)
+  field(:upload, as: GoogleApi.YouTube.V3.Model.ActivityContentDetailsUpload)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ActivityContentDetails do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :bulletin,
-      :struct,
-      GoogleApi.YouTube.V3.Model.ActivityContentDetailsBulletin,
-      options
-    )
-    |> deserialize(
-      :channelItem,
-      :struct,
-      GoogleApi.YouTube.V3.Model.ActivityContentDetailsChannelItem,
-      options
-    )
-    |> deserialize(
-      :comment,
-      :struct,
-      GoogleApi.YouTube.V3.Model.ActivityContentDetailsComment,
-      options
-    )
-    |> deserialize(
-      :favorite,
-      :struct,
-      GoogleApi.YouTube.V3.Model.ActivityContentDetailsFavorite,
-      options
-    )
-    |> deserialize(:like, :struct, GoogleApi.YouTube.V3.Model.ActivityContentDetailsLike, options)
-    |> deserialize(
-      :playlistItem,
-      :struct,
-      GoogleApi.YouTube.V3.Model.ActivityContentDetailsPlaylistItem,
-      options
-    )
-    |> deserialize(
-      :promotedItem,
-      :struct,
-      GoogleApi.YouTube.V3.Model.ActivityContentDetailsPromotedItem,
-      options
-    )
-    |> deserialize(
-      :recommendation,
-      :struct,
-      GoogleApi.YouTube.V3.Model.ActivityContentDetailsRecommendation,
-      options
-    )
-    |> deserialize(
-      :social,
-      :struct,
-      GoogleApi.YouTube.V3.Model.ActivityContentDetailsSocial,
-      options
-    )
-    |> deserialize(
-      :subscription,
-      :struct,
-      GoogleApi.YouTube.V3.Model.ActivityContentDetailsSubscription,
-      options
-    )
-    |> deserialize(
-      :upload,
-      :struct,
-      GoogleApi.YouTube.V3.Model.ActivityContentDetailsUpload,
-      options
-    )
+    GoogleApi.YouTube.V3.Model.ActivityContentDetails.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ActivityContentDetails do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

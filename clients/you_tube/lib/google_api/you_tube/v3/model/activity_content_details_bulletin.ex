@@ -25,22 +25,23 @@ defmodule GoogleApi.YouTube.V3.Model.ActivityContentDetailsBulletin do
   - resourceId (ResourceId): The resourceId object contains information that identifies the resource associated with a bulletin post. Defaults to: `null`.
   """
 
-  defstruct [
-    :resourceId
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :resourceId => GoogleApi.YouTube.V3.Model.ResourceId.t()
+        }
+
+  field(:resourceId, as: GoogleApi.YouTube.V3.Model.ResourceId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ActivityContentDetailsBulletin do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:resourceId, :struct, GoogleApi.YouTube.V3.Model.ResourceId, options)
+    GoogleApi.YouTube.V3.Model.ActivityContentDetailsBulletin.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ActivityContentDetailsBulletin do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

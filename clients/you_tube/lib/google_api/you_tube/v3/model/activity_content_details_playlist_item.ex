@@ -27,24 +27,27 @@ defmodule GoogleApi.YouTube.V3.Model.ActivityContentDetailsPlaylistItem do
   - resourceId (ResourceId): The resourceId object contains information about the resource that was added to the playlist. Defaults to: `null`.
   """
 
-  defstruct [
-    :playlistId,
-    :playlistItemId,
-    :resourceId
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :playlistId => any(),
+          :playlistItemId => any(),
+          :resourceId => GoogleApi.YouTube.V3.Model.ResourceId.t()
+        }
+
+  field(:playlistId)
+  field(:playlistItemId)
+  field(:resourceId, as: GoogleApi.YouTube.V3.Model.ResourceId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ActivityContentDetailsPlaylistItem do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:resourceId, :struct, GoogleApi.YouTube.V3.Model.ResourceId, options)
+    GoogleApi.YouTube.V3.Model.ActivityContentDetailsPlaylistItem.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ActivityContentDetailsPlaylistItem do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

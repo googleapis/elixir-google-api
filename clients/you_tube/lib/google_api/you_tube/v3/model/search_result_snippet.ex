@@ -32,28 +32,35 @@ defmodule GoogleApi.YouTube.V3.Model.SearchResultSnippet do
   - title (String.t): The title of the search result. Defaults to: `null`.
   """
 
-  defstruct [
-    :channelId,
-    :channelTitle,
-    :description,
-    :liveBroadcastContent,
-    :publishedAt,
-    :thumbnails,
-    :title
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :channelId => any(),
+          :channelTitle => any(),
+          :description => any(),
+          :liveBroadcastContent => any(),
+          :publishedAt => DateTime.t(),
+          :thumbnails => GoogleApi.YouTube.V3.Model.ThumbnailDetails.t(),
+          :title => any()
+        }
+
+  field(:channelId)
+  field(:channelTitle)
+  field(:description)
+  field(:liveBroadcastContent)
+  field(:publishedAt, as: DateTime)
+  field(:thumbnails, as: GoogleApi.YouTube.V3.Model.ThumbnailDetails)
+  field(:title)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.SearchResultSnippet do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:thumbnails, :struct, GoogleApi.YouTube.V3.Model.ThumbnailDetails, options)
+    GoogleApi.YouTube.V3.Model.SearchResultSnippet.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.SearchResultSnippet do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

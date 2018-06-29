@@ -24,17 +24,19 @@ defmodule GoogleApi.YouTube.V3.Model.TokenPagination do
 
   """
 
-  defstruct []
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{}
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.TokenPagination do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.TokenPagination.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.TokenPagination do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

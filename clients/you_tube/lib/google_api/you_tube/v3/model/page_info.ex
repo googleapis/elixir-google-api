@@ -26,20 +26,25 @@ defmodule GoogleApi.YouTube.V3.Model.PageInfo do
   - totalResults (integer()): The total number of results in the result set. Defaults to: `null`.
   """
 
-  defstruct [
-    :resultsPerPage,
-    :totalResults
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :resultsPerPage => any(),
+          :totalResults => any()
+        }
+
+  field(:resultsPerPage)
+  field(:totalResults)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.PageInfo do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.PageInfo.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.PageInfo do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -41,31 +41,47 @@ defmodule GoogleApi.YouTube.V3.Model.CaptionSnippet do
   - videoId (String.t): The ID that YouTube uses to uniquely identify the video associated with the caption track. Defaults to: `null`.
   """
 
-  defstruct [
-    :audioTrackType,
-    :failureReason,
-    :isAutoSynced,
-    :isCC,
-    :isDraft,
-    :isEasyReader,
-    :isLarge,
-    :language,
-    :lastUpdated,
-    :name,
-    :status,
-    :trackKind,
-    :videoId
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :audioTrackType => any(),
+          :failureReason => any(),
+          :isAutoSynced => any(),
+          :isCC => any(),
+          :isDraft => any(),
+          :isEasyReader => any(),
+          :isLarge => any(),
+          :language => any(),
+          :lastUpdated => DateTime.t(),
+          :name => any(),
+          :status => any(),
+          :trackKind => any(),
+          :videoId => any()
+        }
+
+  field(:audioTrackType)
+  field(:failureReason)
+  field(:isAutoSynced)
+  field(:isCC)
+  field(:isDraft)
+  field(:isEasyReader)
+  field(:isLarge)
+  field(:language)
+  field(:lastUpdated, as: DateTime)
+  field(:name)
+  field(:status)
+  field(:trackKind)
+  field(:videoId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.CaptionSnippet do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.CaptionSnippet.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.CaptionSnippet do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

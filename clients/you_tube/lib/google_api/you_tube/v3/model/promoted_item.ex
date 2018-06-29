@@ -28,26 +28,29 @@ defmodule GoogleApi.YouTube.V3.Model.PromotedItem do
   - timing (InvideoTiming): The temporal position within the video where the promoted item will be displayed. If present, it overrides the default timing. Defaults to: `null`.
   """
 
-  defstruct [
-    :customMessage,
-    :id,
-    :promotedByContentOwner,
-    :timing
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :customMessage => any(),
+          :id => GoogleApi.YouTube.V3.Model.PromotedItemId.t(),
+          :promotedByContentOwner => any(),
+          :timing => GoogleApi.YouTube.V3.Model.InvideoTiming.t()
+        }
+
+  field(:customMessage)
+  field(:id, as: GoogleApi.YouTube.V3.Model.PromotedItemId)
+  field(:promotedByContentOwner)
+  field(:timing, as: GoogleApi.YouTube.V3.Model.InvideoTiming)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.PromotedItem do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:id, :struct, GoogleApi.YouTube.V3.Model.PromotedItemId, options)
-    |> deserialize(:timing, :struct, GoogleApi.YouTube.V3.Model.InvideoTiming, options)
+    GoogleApi.YouTube.V3.Model.PromotedItem.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.PromotedItem do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

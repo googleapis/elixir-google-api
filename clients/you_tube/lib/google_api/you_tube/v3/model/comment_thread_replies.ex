@@ -25,22 +25,23 @@ defmodule GoogleApi.YouTube.V3.Model.CommentThreadReplies do
   - comments ([Comment]): A limited number of replies. Unless the number of replies returned equals total_reply_count in the snippet the returned replies are only a subset of the total number of replies. Defaults to: `null`.
   """
 
-  defstruct [
-    :comments
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :comments => list(GoogleApi.YouTube.V3.Model.Comment.t())
+        }
+
+  field(:comments, as: GoogleApi.YouTube.V3.Model.Comment, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.CommentThreadReplies do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:comments, :list, GoogleApi.YouTube.V3.Model.Comment, options)
+    GoogleApi.YouTube.V3.Model.CommentThreadReplies.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.CommentThreadReplies do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

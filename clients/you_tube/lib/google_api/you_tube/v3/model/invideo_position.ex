@@ -28,20 +28,25 @@ defmodule GoogleApi.YouTube.V3.Model.InvideoPosition do
     - Enum - one of [corner]
   """
 
-  defstruct [
-    :cornerPosition,
-    :type
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :cornerPosition => any(),
+          :type => any()
+        }
+
+  field(:cornerPosition)
+  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.InvideoPosition do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.InvideoPosition.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.InvideoPosition do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

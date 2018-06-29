@@ -28,25 +28,29 @@ defmodule GoogleApi.YouTube.V3.Model.GuideCategory do
   - snippet (GuideCategorySnippet): The snippet object contains basic details about the category, such as its title. Defaults to: `null`.
   """
 
-  defstruct [
-    :etag,
-    :id,
-    :kind,
-    :snippet
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :etag => any(),
+          :id => any(),
+          :kind => any(),
+          :snippet => GoogleApi.YouTube.V3.Model.GuideCategorySnippet.t()
+        }
+
+  field(:etag)
+  field(:id)
+  field(:kind)
+  field(:snippet, as: GoogleApi.YouTube.V3.Model.GuideCategorySnippet)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.GuideCategory do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:snippet, :struct, GoogleApi.YouTube.V3.Model.GuideCategorySnippet, options)
+    GoogleApi.YouTube.V3.Model.GuideCategory.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.GuideCategory do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

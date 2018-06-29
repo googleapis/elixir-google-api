@@ -29,32 +29,31 @@ defmodule GoogleApi.YouTube.V3.Model.Activity do
   - snippet (ActivitySnippet): The snippet object contains basic details about the activity, including the activity&#39;s type and group ID. Defaults to: `null`.
   """
 
-  defstruct [
-    :contentDetails,
-    :etag,
-    :id,
-    :kind,
-    :snippet
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :contentDetails => GoogleApi.YouTube.V3.Model.ActivityContentDetails.t(),
+          :etag => any(),
+          :id => any(),
+          :kind => any(),
+          :snippet => GoogleApi.YouTube.V3.Model.ActivitySnippet.t()
+        }
+
+  field(:contentDetails, as: GoogleApi.YouTube.V3.Model.ActivityContentDetails)
+  field(:etag)
+  field(:id)
+  field(:kind)
+  field(:snippet, as: GoogleApi.YouTube.V3.Model.ActivitySnippet)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.Activity do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :contentDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.ActivityContentDetails,
-      options
-    )
-    |> deserialize(:snippet, :struct, GoogleApi.YouTube.V3.Model.ActivitySnippet, options)
+    GoogleApi.YouTube.V3.Model.Activity.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.Activity do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

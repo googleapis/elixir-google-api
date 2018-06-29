@@ -27,21 +27,27 @@ defmodule GoogleApi.YouTube.V3.Model.IngestionInfo do
   - streamName (String.t): The HTTP or RTMP stream name that YouTube assigns to the video stream. Defaults to: `null`.
   """
 
-  defstruct [
-    :backupIngestionAddress,
-    :ingestionAddress,
-    :streamName
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :backupIngestionAddress => any(),
+          :ingestionAddress => any(),
+          :streamName => any()
+        }
+
+  field(:backupIngestionAddress)
+  field(:ingestionAddress)
+  field(:streamName)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.IngestionInfo do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.IngestionInfo.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.IngestionInfo do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

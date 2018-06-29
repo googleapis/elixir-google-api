@@ -28,22 +28,29 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelAuditDetails do
   - overallGoodStanding (boolean()): Describes the general state of the channel. This field will always show if there are any issues whatsoever with the channel. Currently this field represents the result of the logical and operation over the community guidelines good standing, the copyright strikes good standing and the content ID claims good standing, but this may change in the future. Defaults to: `null`.
   """
 
-  defstruct [
-    :communityGuidelinesGoodStanding,
-    :contentIdClaimsGoodStanding,
-    :copyrightStrikesGoodStanding,
-    :overallGoodStanding
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :communityGuidelinesGoodStanding => any(),
+          :contentIdClaimsGoodStanding => any(),
+          :copyrightStrikesGoodStanding => any(),
+          :overallGoodStanding => any()
+        }
+
+  field(:communityGuidelinesGoodStanding)
+  field(:contentIdClaimsGoodStanding)
+  field(:copyrightStrikesGoodStanding)
+  field(:overallGoodStanding)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelAuditDetails do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.ChannelAuditDetails.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ChannelAuditDetails do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

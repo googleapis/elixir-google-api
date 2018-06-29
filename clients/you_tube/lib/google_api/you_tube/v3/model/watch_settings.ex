@@ -27,21 +27,27 @@ defmodule GoogleApi.YouTube.V3.Model.WatchSettings do
   - textColor (String.t): The background color for the video watch page&#39;s branded area. Defaults to: `null`.
   """
 
-  defstruct [
-    :backgroundColor,
-    :featuredPlaylistId,
-    :textColor
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :backgroundColor => any(),
+          :featuredPlaylistId => any(),
+          :textColor => any()
+        }
+
+  field(:backgroundColor)
+  field(:featuredPlaylistId)
+  field(:textColor)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.WatchSettings do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.WatchSettings.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.WatchSettings do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

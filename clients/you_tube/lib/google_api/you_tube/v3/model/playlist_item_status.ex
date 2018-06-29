@@ -23,22 +23,26 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistItemStatus do
   ## Attributes
 
   - privacyStatus (String.t): This resource&#39;s privacy status. Defaults to: `null`.
-    - Enum - one of [private, public, unlisted]
+    - Enum - one of [private, public, unlisted, unlisted_new]
   """
 
-  defstruct [
-    :privacyStatus
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :privacyStatus => any()
+        }
+
+  field(:privacyStatus)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.PlaylistItemStatus do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.PlaylistItemStatus.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.PlaylistItemStatus do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

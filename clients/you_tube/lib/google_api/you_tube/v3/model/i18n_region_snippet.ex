@@ -26,20 +26,25 @@ defmodule GoogleApi.YouTube.V3.Model.I18nRegionSnippet do
   - name (String.t): The human-readable name of the region. Defaults to: `null`.
   """
 
-  defstruct [
-    :gl,
-    :name
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :gl => any(),
+          :name => any()
+        }
+
+  field(:gl)
+  field(:name)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.I18nRegionSnippet do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.I18nRegionSnippet.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.I18nRegionSnippet do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

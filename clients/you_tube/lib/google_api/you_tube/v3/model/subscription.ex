@@ -30,39 +30,33 @@ defmodule GoogleApi.YouTube.V3.Model.Subscription do
   - subscriberSnippet (SubscriptionSubscriberSnippet): The subscriberSnippet object contains basic details about the sbuscriber. Defaults to: `null`.
   """
 
-  defstruct [
-    :contentDetails,
-    :etag,
-    :id,
-    :kind,
-    :snippet,
-    :subscriberSnippet
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :contentDetails => GoogleApi.YouTube.V3.Model.SubscriptionContentDetails.t(),
+          :etag => any(),
+          :id => any(),
+          :kind => any(),
+          :snippet => GoogleApi.YouTube.V3.Model.SubscriptionSnippet.t(),
+          :subscriberSnippet => GoogleApi.YouTube.V3.Model.SubscriptionSubscriberSnippet.t()
+        }
+
+  field(:contentDetails, as: GoogleApi.YouTube.V3.Model.SubscriptionContentDetails)
+  field(:etag)
+  field(:id)
+  field(:kind)
+  field(:snippet, as: GoogleApi.YouTube.V3.Model.SubscriptionSnippet)
+  field(:subscriberSnippet, as: GoogleApi.YouTube.V3.Model.SubscriptionSubscriberSnippet)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.Subscription do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :contentDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.SubscriptionContentDetails,
-      options
-    )
-    |> deserialize(:snippet, :struct, GoogleApi.YouTube.V3.Model.SubscriptionSnippet, options)
-    |> deserialize(
-      :subscriberSnippet,
-      :struct,
-      GoogleApi.YouTube.V3.Model.SubscriptionSubscriberSnippet,
-      options
-    )
+    GoogleApi.YouTube.V3.Model.Subscription.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.Subscription do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

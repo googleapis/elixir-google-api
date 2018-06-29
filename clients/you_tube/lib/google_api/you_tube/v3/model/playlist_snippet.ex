@@ -33,31 +33,39 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistSnippet do
   - title (String.t): The playlist&#39;s title. Defaults to: `null`.
   """
 
-  defstruct [
-    :tags,
-    :channelId,
-    :channelTitle,
-    :defaultLanguage,
-    :description,
-    :localized,
-    :publishedAt,
-    :thumbnails,
-    :title
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :tags => list(any()),
+          :channelId => any(),
+          :channelTitle => any(),
+          :defaultLanguage => any(),
+          :description => any(),
+          :localized => GoogleApi.YouTube.V3.Model.PlaylistLocalization.t(),
+          :publishedAt => DateTime.t(),
+          :thumbnails => GoogleApi.YouTube.V3.Model.ThumbnailDetails.t(),
+          :title => any()
+        }
+
+  field(:tags, type: :list)
+  field(:channelId)
+  field(:channelTitle)
+  field(:defaultLanguage)
+  field(:description)
+  field(:localized, as: GoogleApi.YouTube.V3.Model.PlaylistLocalization)
+  field(:publishedAt, as: DateTime)
+  field(:thumbnails, as: GoogleApi.YouTube.V3.Model.ThumbnailDetails)
+  field(:title)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.PlaylistSnippet do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:localized, :struct, GoogleApi.YouTube.V3.Model.PlaylistLocalization, options)
-    |> deserialize(:thumbnails, :struct, GoogleApi.YouTube.V3.Model.ThumbnailDetails, options)
+    GoogleApi.YouTube.V3.Model.PlaylistSnippet.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.PlaylistSnippet do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

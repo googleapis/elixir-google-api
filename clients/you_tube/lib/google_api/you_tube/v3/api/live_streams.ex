@@ -22,7 +22,7 @@ defmodule GoogleApi.YouTube.V3.Api.LiveStreams do
   """
 
   alias GoogleApi.YouTube.V3.Connection
-  import GoogleApi.YouTube.V3.RequestBuilder
+  alias GoogleApi.Gax.{Request, Response}
 
   @doc """
   Deletes a video stream.
@@ -37,8 +37,8 @@ defmodule GoogleApi.YouTube.V3.Api.LiveStreams do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :onBehalfOfContentOwner (String.t): Note: This parameter is intended exclusively for YouTube content partners.  The onBehalfOfContentOwner parameter indicates that the request&#39;s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
     - :onBehalfOfContentOwnerChannel (String.t): This parameter can only be used in a properly authorized request. Note: This parameter is intended exclusively for YouTube content partners.  The onBehalfOfContentOwnerChannel parameter specifies the YouTube channel ID of the channel to which a video is being added. This parameter is required when a request specifies a value for the onBehalfOfContentOwner parameter, and it can only be used in conjunction with that parameter. In addition, the request must be authorized using a CMS account that is linked to the content owner that the onBehalfOfContentOwner parameter specifies. Finally, the channel that the onBehalfOfContentOwnerChannel parameter value specifies must be linked to the content owner that the onBehalfOfContentOwner parameter specifies.  This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and perform actions on behalf of the channel specified in the parameter value, without having to provide authentication credentials for each separate channel.
 
@@ -62,14 +62,16 @@ defmodule GoogleApi.YouTube.V3.Api.LiveStreams do
       :onBehalfOfContentOwnerChannel => :query
     }
 
-    %{}
-    |> method(:delete)
-    |> url("/youtube/v3/liveStreams")
-    |> add_param(:query, :id, id)
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(false)
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/youtube/v3/liveStreams")
+      |> Request.add_param(:query, :id, id)
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(decode: false)
   end
 
   @doc """
@@ -85,8 +87,8 @@ defmodule GoogleApi.YouTube.V3.Api.LiveStreams do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :onBehalfOfContentOwner (String.t): Note: This parameter is intended exclusively for YouTube content partners.  The onBehalfOfContentOwner parameter indicates that the request&#39;s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
     - :onBehalfOfContentOwnerChannel (String.t): This parameter can only be used in a properly authorized request. Note: This parameter is intended exclusively for YouTube content partners.  The onBehalfOfContentOwnerChannel parameter specifies the YouTube channel ID of the channel to which a video is being added. This parameter is required when a request specifies a value for the onBehalfOfContentOwner parameter, and it can only be used in conjunction with that parameter. In addition, the request must be authorized using a CMS account that is linked to the content owner that the onBehalfOfContentOwner parameter specifies. Finally, the channel that the onBehalfOfContentOwnerChannel parameter value specifies must be linked to the content owner that the onBehalfOfContentOwner parameter specifies.  This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and perform actions on behalf of the channel specified in the parameter value, without having to provide authentication credentials for each separate channel.
     - :body (LiveStream): 
@@ -112,14 +114,16 @@ defmodule GoogleApi.YouTube.V3.Api.LiveStreams do
       :body => :body
     }
 
-    %{}
-    |> method(:post)
-    |> url("/youtube/v3/liveStreams")
-    |> add_param(:query, :part, part)
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.YouTube.V3.Model.LiveStream{})
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/youtube/v3/liveStreams")
+      |> Request.add_param(:query, :part, part)
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.LiveStream{})
   end
 
   @doc """
@@ -135,8 +139,8 @@ defmodule GoogleApi.YouTube.V3.Api.LiveStreams do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :id (String.t): The id parameter specifies a comma-separated list of YouTube stream IDs that identify the streams being retrieved. In a liveStream resource, the id property specifies the stream&#39;s ID.
     - :maxResults (integer()): The maxResults parameter specifies the maximum number of items that should be returned in the result set.
     - :mine (boolean()): The mine parameter can be used to instruct the API to only return streams owned by the authenticated user. Set the parameter value to true to only retrieve your own streams.
@@ -168,14 +172,16 @@ defmodule GoogleApi.YouTube.V3.Api.LiveStreams do
       :pageToken => :query
     }
 
-    %{}
-    |> method(:get)
-    |> url("/youtube/v3/liveStreams")
-    |> add_param(:query, :part, part)
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.YouTube.V3.Model.LiveStreamListResponse{})
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/youtube/v3/liveStreams")
+      |> Request.add_param(:query, :part, part)
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.LiveStreamListResponse{})
   end
 
   @doc """
@@ -191,8 +197,8 @@ defmodule GoogleApi.YouTube.V3.Api.LiveStreams do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :onBehalfOfContentOwner (String.t): Note: This parameter is intended exclusively for YouTube content partners.  The onBehalfOfContentOwner parameter indicates that the request&#39;s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
     - :onBehalfOfContentOwnerChannel (String.t): This parameter can only be used in a properly authorized request. Note: This parameter is intended exclusively for YouTube content partners.  The onBehalfOfContentOwnerChannel parameter specifies the YouTube channel ID of the channel to which a video is being added. This parameter is required when a request specifies a value for the onBehalfOfContentOwner parameter, and it can only be used in conjunction with that parameter. In addition, the request must be authorized using a CMS account that is linked to the content owner that the onBehalfOfContentOwner parameter specifies. Finally, the channel that the onBehalfOfContentOwnerChannel parameter value specifies must be linked to the content owner that the onBehalfOfContentOwner parameter specifies.  This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and perform actions on behalf of the channel specified in the parameter value, without having to provide authentication credentials for each separate channel.
     - :body (LiveStream): 
@@ -218,13 +224,15 @@ defmodule GoogleApi.YouTube.V3.Api.LiveStreams do
       :body => :body
     }
 
-    %{}
-    |> method(:put)
-    |> url("/youtube/v3/liveStreams")
-    |> add_param(:query, :part, part)
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.YouTube.V3.Model.LiveStream{})
+    request =
+      Request.new()
+      |> Request.method(:put)
+      |> Request.url("/youtube/v3/liveStreams")
+      |> Request.add_param(:query, :part, part)
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.LiveStream{})
   end
 end

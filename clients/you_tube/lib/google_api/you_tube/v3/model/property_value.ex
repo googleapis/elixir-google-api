@@ -26,20 +26,25 @@ defmodule GoogleApi.YouTube.V3.Model.PropertyValue do
   - value (String.t): The property&#39;s value. Defaults to: `null`.
   """
 
-  defstruct [
-    :property,
-    :value
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :property => any(),
+          :value => any()
+        }
+
+  field(:property)
+  field(:value)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.PropertyValue do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.PropertyValue.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.PropertyValue do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

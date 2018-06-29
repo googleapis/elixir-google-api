@@ -29,23 +29,31 @@ defmodule GoogleApi.YouTube.V3.Model.VideoAbuseReport do
   - videoId (String.t): The ID that YouTube uses to uniquely identify the video. Defaults to: `null`.
   """
 
-  defstruct [
-    :comments,
-    :language,
-    :reasonId,
-    :secondaryReasonId,
-    :videoId
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :comments => any(),
+          :language => any(),
+          :reasonId => any(),
+          :secondaryReasonId => any(),
+          :videoId => any()
+        }
+
+  field(:comments)
+  field(:language)
+  field(:reasonId)
+  field(:secondaryReasonId)
+  field(:videoId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoAbuseReport do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.VideoAbuseReport.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoAbuseReport do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

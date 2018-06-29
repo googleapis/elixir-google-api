@@ -22,7 +22,7 @@ defmodule GoogleApi.YouTube.V3.Api.Search do
   """
 
   alias GoogleApi.YouTube.V3.Connection
-  import GoogleApi.YouTube.V3.RequestBuilder
+  alias GoogleApi.Gax.{Request, Response}
 
   @doc """
   Returns a collection of search results that match the query parameters specified in the API request. By default, a search result set identifies matching video, channel, and playlist resources, but you can also configure queries to only retrieve a specific type of resource.
@@ -37,8 +37,8 @@ defmodule GoogleApi.YouTube.V3.Api.Search do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :channelId (String.t): The channelId parameter indicates that the API response should only contain resources created by the channel
     - :channelType (String.t): The channelType parameter lets you restrict a search to a particular type of channel.
     - :eventType (String.t): The eventType parameter restricts a search to broadcast events. If you specify a value for this parameter, you must also set the type parameter&#39;s value to video.
@@ -51,8 +51,8 @@ defmodule GoogleApi.YouTube.V3.Api.Search do
     - :onBehalfOfContentOwner (String.t): Note: This parameter is intended exclusively for YouTube content partners.  The onBehalfOfContentOwner parameter indicates that the request&#39;s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
     - :order (String.t): The order parameter specifies the method that will be used to order resources in the API response.
     - :pageToken (String.t): The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
-    - :publishedAfter (String.t): The publishedAfter parameter indicates that the API response should only contain resources created after the specified time. The value is an RFC 3339 formatted date-time value (1970-01-01T00:00:00Z).
-    - :publishedBefore (String.t): The publishedBefore parameter indicates that the API response should only contain resources created before the specified time. The value is an RFC 3339 formatted date-time value (1970-01-01T00:00:00Z).
+    - :publishedAfter (DateTime.t): The publishedAfter parameter indicates that the API response should only contain resources created after the specified time. The value is an RFC 3339 formatted date-time value (1970-01-01T00:00:00Z).
+    - :publishedBefore (DateTime.t): The publishedBefore parameter indicates that the API response should only contain resources created before the specified time. The value is an RFC 3339 formatted date-time value (1970-01-01T00:00:00Z).
     - :q (String.t): The q parameter specifies the query term to search for.  Your request can also use the Boolean NOT (-) and OR (|) operators to exclude videos or to find videos that are associated with one of several search terms. For example, to search for videos matching either \&quot;boating\&quot; or \&quot;sailing\&quot;, set the q parameter value to boating|sailing. Similarly, to search for videos matching either \&quot;boating\&quot; or \&quot;sailing\&quot; but not \&quot;fishing\&quot;, set the q parameter value to boating|sailing -fishing. Note that the pipe character must be URL-escaped when it is sent in your API request. The URL-escaped value for the pipe character is %7C.
     - :regionCode (String.t): The regionCode parameter instructs the API to return search results for the specified country. The parameter value is an ISO 3166-1 alpha-2 country code.
     - :relatedToVideoId (String.t): The relatedToVideoId parameter retrieves a list of videos that are related to the video that the parameter value identifies. The parameter value must be set to a YouTube video ID and, if you are using this parameter, the type parameter must be set to video.
@@ -118,13 +118,15 @@ defmodule GoogleApi.YouTube.V3.Api.Search do
       :videoType => :query
     }
 
-    %{}
-    |> method(:get)
-    |> url("/youtube/v3/search")
-    |> add_param(:query, :part, part)
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.YouTube.V3.Model.SearchListResponse{})
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/youtube/v3/search")
+      |> Request.add_param(:query, :part, part)
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.SearchListResponse{})
   end
 end

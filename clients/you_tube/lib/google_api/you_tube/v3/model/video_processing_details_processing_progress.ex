@@ -27,21 +27,27 @@ defmodule GoogleApi.YouTube.V3.Model.VideoProcessingDetailsProcessingProgress do
   - timeLeftMs (String.t): An estimate of the amount of time, in millseconds, that YouTube needs to finish processing the video. Defaults to: `null`.
   """
 
-  defstruct [
-    :partsProcessed,
-    :partsTotal,
-    :timeLeftMs
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :partsProcessed => any(),
+          :partsTotal => any(),
+          :timeLeftMs => any()
+        }
+
+  field(:partsProcessed)
+  field(:partsTotal)
+  field(:timeLeftMs)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoProcessingDetailsProcessingProgress do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.VideoProcessingDetailsProcessingProgress.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoProcessingDetailsProcessingProgress do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

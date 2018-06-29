@@ -25,19 +25,23 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelSectionLocalization do
   - title (String.t): The localized strings for channel section&#39;s title. Defaults to: `null`.
   """
 
-  defstruct [
-    :title
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :title => any()
+        }
+
+  field(:title)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelSectionLocalization do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.ChannelSectionLocalization.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ChannelSectionLocalization do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

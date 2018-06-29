@@ -30,34 +30,33 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistItem do
   - status (PlaylistItemStatus): The status object contains information about the playlist item&#39;s privacy status. Defaults to: `null`.
   """
 
-  defstruct [
-    :contentDetails,
-    :etag,
-    :id,
-    :kind,
-    :snippet,
-    :status
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :contentDetails => GoogleApi.YouTube.V3.Model.PlaylistItemContentDetails.t(),
+          :etag => any(),
+          :id => any(),
+          :kind => any(),
+          :snippet => GoogleApi.YouTube.V3.Model.PlaylistItemSnippet.t(),
+          :status => GoogleApi.YouTube.V3.Model.PlaylistItemStatus.t()
+        }
+
+  field(:contentDetails, as: GoogleApi.YouTube.V3.Model.PlaylistItemContentDetails)
+  field(:etag)
+  field(:id)
+  field(:kind)
+  field(:snippet, as: GoogleApi.YouTube.V3.Model.PlaylistItemSnippet)
+  field(:status, as: GoogleApi.YouTube.V3.Model.PlaylistItemStatus)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.PlaylistItem do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :contentDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.PlaylistItemContentDetails,
-      options
-    )
-    |> deserialize(:snippet, :struct, GoogleApi.YouTube.V3.Model.PlaylistItemSnippet, options)
-    |> deserialize(:status, :struct, GoogleApi.YouTube.V3.Model.PlaylistItemStatus, options)
+    GoogleApi.YouTube.V3.Model.PlaylistItem.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.PlaylistItem do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

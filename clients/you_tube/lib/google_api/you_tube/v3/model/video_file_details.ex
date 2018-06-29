@@ -34,41 +34,39 @@ defmodule GoogleApi.YouTube.V3.Model.VideoFileDetails do
   - videoStreams ([VideoFileDetailsVideoStream]): A list of video streams contained in the uploaded video file. Each item in the list contains detailed metadata about a video stream. Defaults to: `null`.
   """
 
-  defstruct [
-    :audioStreams,
-    :bitrateBps,
-    :container,
-    :creationTime,
-    :durationMs,
-    :fileName,
-    :fileSize,
-    :fileType,
-    :videoStreams
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :audioStreams => list(GoogleApi.YouTube.V3.Model.VideoFileDetailsAudioStream.t()),
+          :bitrateBps => any(),
+          :container => any(),
+          :creationTime => any(),
+          :durationMs => any(),
+          :fileName => any(),
+          :fileSize => any(),
+          :fileType => any(),
+          :videoStreams => list(GoogleApi.YouTube.V3.Model.VideoFileDetailsVideoStream.t())
+        }
+
+  field(:audioStreams, as: GoogleApi.YouTube.V3.Model.VideoFileDetailsAudioStream, type: :list)
+  field(:bitrateBps)
+  field(:container)
+  field(:creationTime)
+  field(:durationMs)
+  field(:fileName)
+  field(:fileSize)
+  field(:fileType)
+  field(:videoStreams, as: GoogleApi.YouTube.V3.Model.VideoFileDetailsVideoStream, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoFileDetails do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :audioStreams,
-      :list,
-      GoogleApi.YouTube.V3.Model.VideoFileDetailsAudioStream,
-      options
-    )
-    |> deserialize(
-      :videoStreams,
-      :list,
-      GoogleApi.YouTube.V3.Model.VideoFileDetailsVideoStream,
-      options
-    )
+    GoogleApi.YouTube.V3.Model.VideoFileDetails.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoFileDetails do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

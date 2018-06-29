@@ -28,22 +28,29 @@ defmodule GoogleApi.YouTube.V3.Model.ResourceId do
   - videoId (String.t): The ID that YouTube uses to uniquely identify the referred resource, if that resource is a video. This property is only present if the resourceId.kind value is youtube#video. Defaults to: `null`.
   """
 
-  defstruct [
-    :channelId,
-    :kind,
-    :playlistId,
-    :videoId
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :channelId => any(),
+          :kind => any(),
+          :playlistId => any(),
+          :videoId => any()
+        }
+
+  field(:channelId)
+  field(:kind)
+  field(:playlistId)
+  field(:videoId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ResourceId do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.ResourceId.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ResourceId do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

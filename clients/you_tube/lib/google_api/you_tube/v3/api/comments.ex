@@ -22,7 +22,7 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
   """
 
   alias GoogleApi.YouTube.V3.Connection
-  import GoogleApi.YouTube.V3.RequestBuilder
+  alias GoogleApi.Gax.{Request, Response}
 
   @doc """
   Deletes a comment.
@@ -37,8 +37,8 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
 
   ## Returns
 
@@ -58,14 +58,16 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
       :userIp => :query
     }
 
-    %{}
-    |> method(:delete)
-    |> url("/youtube/v3/comments")
-    |> add_param(:query, :id, id)
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(false)
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/youtube/v3/comments")
+      |> Request.add_param(:query, :id, id)
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(decode: false)
   end
 
   @doc """
@@ -81,8 +83,8 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :body (Comment): 
 
   ## Returns
@@ -104,14 +106,16 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
       :body => :body
     }
 
-    %{}
-    |> method(:post)
-    |> url("/youtube/v3/comments")
-    |> add_param(:query, :part, part)
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.YouTube.V3.Model.Comment{})
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/youtube/v3/comments")
+      |> Request.add_param(:query, :part, part)
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.Comment{})
   end
 
   @doc """
@@ -127,8 +131,8 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :id (String.t): The id parameter specifies a comma-separated list of comment IDs for the resources that are being retrieved. In a comment resource, the id property specifies the comment&#39;s ID.
     - :maxResults (integer()): The maxResults parameter specifies the maximum number of items that should be returned in the result set.  Note: This parameter is not supported for use in conjunction with the id parameter.
     - :pageToken (String.t): The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken property identifies the next page of the result that can be retrieved.  Note: This parameter is not supported for use in conjunction with the id parameter.
@@ -158,14 +162,16 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
       :textFormat => :query
     }
 
-    %{}
-    |> method(:get)
-    |> url("/youtube/v3/comments")
-    |> add_param(:query, :part, part)
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.YouTube.V3.Model.CommentListResponse{})
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/youtube/v3/comments")
+      |> Request.add_param(:query, :part, part)
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.CommentListResponse{})
   end
 
   @doc """
@@ -181,8 +187,8 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
 
   ## Returns
 
@@ -202,14 +208,16 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
       :userIp => :query
     }
 
-    %{}
-    |> method(:post)
-    |> url("/youtube/v3/comments/markAsSpam")
-    |> add_param(:query, :id, id)
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(false)
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/youtube/v3/comments/markAsSpam")
+      |> Request.add_param(:query, :id, id)
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(decode: false)
   end
 
   @doc """
@@ -226,8 +234,8 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :banAuthor (boolean()): The banAuthor parameter lets you indicate that you want to automatically reject any additional comments written by the comment&#39;s author. Set the parameter value to true to ban the author.  Note: This parameter is only valid if the moderationStatus parameter is also set to rejected.
 
   ## Returns
@@ -253,15 +261,17 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
       :banAuthor => :query
     }
 
-    %{}
-    |> method(:post)
-    |> url("/youtube/v3/comments/setModerationStatus")
-    |> add_param(:query, :id, id)
-    |> add_param(:query, :moderationStatus, moderation_status)
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(false)
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/youtube/v3/comments/setModerationStatus")
+      |> Request.add_param(:query, :id, id)
+      |> Request.add_param(:query, :moderationStatus, moderation_status)
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(decode: false)
   end
 
   @doc """
@@ -277,8 +287,8 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :body (Comment): 
 
   ## Returns
@@ -300,13 +310,15 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
       :body => :body
     }
 
-    %{}
-    |> method(:put)
-    |> url("/youtube/v3/comments")
-    |> add_param(:query, :part, part)
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.YouTube.V3.Model.Comment{})
+    request =
+      Request.new()
+      |> Request.method(:put)
+      |> Request.url("/youtube/v3/comments")
+      |> Request.add_param(:query, :part, part)
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.Comment{})
   end
 end

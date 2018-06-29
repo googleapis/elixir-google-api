@@ -23,33 +23,34 @@ defmodule GoogleApi.YouTube.V3.Model.SponsorSnippet do
   ## Attributes
 
   - channelId (String.t): The id of the channel being sponsored. Defaults to: `null`.
+  - cumulativeDurationMonths (integer()): The cumulative time a user has been a sponsor in months. Defaults to: `null`.
   - sponsorDetails (ChannelProfileDetails): Details about the sponsor. Defaults to: `null`.
   - sponsorSince (DateTime.t): The date and time when the user became a sponsor. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format. Defaults to: `null`.
   """
 
-  defstruct [
-    :channelId,
-    :sponsorDetails,
-    :sponsorSince
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :channelId => any(),
+          :cumulativeDurationMonths => any(),
+          :sponsorDetails => GoogleApi.YouTube.V3.Model.ChannelProfileDetails.t(),
+          :sponsorSince => DateTime.t()
+        }
+
+  field(:channelId)
+  field(:cumulativeDurationMonths)
+  field(:sponsorDetails, as: GoogleApi.YouTube.V3.Model.ChannelProfileDetails)
+  field(:sponsorSince, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.SponsorSnippet do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :sponsorDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.ChannelProfileDetails,
-      options
-    )
+    GoogleApi.YouTube.V3.Model.SponsorSnippet.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.SponsorSnippet do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

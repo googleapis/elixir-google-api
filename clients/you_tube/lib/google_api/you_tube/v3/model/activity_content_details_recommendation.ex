@@ -28,25 +28,27 @@ defmodule GoogleApi.YouTube.V3.Model.ActivityContentDetailsRecommendation do
   - seedResourceId (ResourceId): The seedResourceId object contains information about the resource that caused the recommendation. Defaults to: `null`.
   """
 
-  defstruct [
-    :reason,
-    :resourceId,
-    :seedResourceId
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :reason => any(),
+          :resourceId => GoogleApi.YouTube.V3.Model.ResourceId.t(),
+          :seedResourceId => GoogleApi.YouTube.V3.Model.ResourceId.t()
+        }
+
+  field(:reason)
+  field(:resourceId, as: GoogleApi.YouTube.V3.Model.ResourceId)
+  field(:seedResourceId, as: GoogleApi.YouTube.V3.Model.ResourceId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ActivityContentDetailsRecommendation do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:resourceId, :struct, GoogleApi.YouTube.V3.Model.ResourceId, options)
-    |> deserialize(:seedResourceId, :struct, GoogleApi.YouTube.V3.Model.ResourceId, options)
+    GoogleApi.YouTube.V3.Model.ActivityContentDetailsRecommendation.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ActivityContentDetailsRecommendation do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -29,27 +29,31 @@ defmodule GoogleApi.YouTube.V3.Model.InvideoBranding do
   - timing (InvideoTiming):  Defaults to: `null`.
   """
 
-  defstruct [
-    :imageBytes,
-    :imageUrl,
-    :position,
-    :targetChannelId,
-    :timing
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :imageBytes => any(),
+          :imageUrl => any(),
+          :position => GoogleApi.YouTube.V3.Model.InvideoPosition.t(),
+          :targetChannelId => any(),
+          :timing => GoogleApi.YouTube.V3.Model.InvideoTiming.t()
+        }
+
+  field(:imageBytes)
+  field(:imageUrl)
+  field(:position, as: GoogleApi.YouTube.V3.Model.InvideoPosition)
+  field(:targetChannelId)
+  field(:timing, as: GoogleApi.YouTube.V3.Model.InvideoTiming)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.InvideoBranding do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:position, :struct, GoogleApi.YouTube.V3.Model.InvideoPosition, options)
-    |> deserialize(:timing, :struct, GoogleApi.YouTube.V3.Model.InvideoTiming, options)
+    GoogleApi.YouTube.V3.Model.InvideoBranding.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.InvideoBranding do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

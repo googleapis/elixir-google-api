@@ -27,21 +27,27 @@ defmodule GoogleApi.YouTube.V3.Model.VideoCategorySnippet do
   - title (String.t): The video category&#39;s title. Defaults to: `null`.
   """
 
-  defstruct [
-    :assignable,
-    :channelId,
-    :title
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :assignable => any(),
+          :channelId => any(),
+          :title => any()
+        }
+
+  field(:assignable)
+  field(:channelId)
+  field(:title)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoCategorySnippet do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.VideoCategorySnippet.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoCategorySnippet do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

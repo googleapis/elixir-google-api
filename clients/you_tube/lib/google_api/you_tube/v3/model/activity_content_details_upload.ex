@@ -25,19 +25,23 @@ defmodule GoogleApi.YouTube.V3.Model.ActivityContentDetailsUpload do
   - videoId (String.t): The ID that YouTube uses to uniquely identify the uploaded video. Defaults to: `null`.
   """
 
-  defstruct [
-    :videoId
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :videoId => any()
+        }
+
+  field(:videoId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ActivityContentDetailsUpload do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.ActivityContentDetailsUpload.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ActivityContentDetailsUpload do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

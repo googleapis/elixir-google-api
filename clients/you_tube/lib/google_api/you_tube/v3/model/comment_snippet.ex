@@ -41,33 +41,51 @@ defmodule GoogleApi.YouTube.V3.Model.CommentSnippet do
     - Enum - one of [dislike, like, none, unspecified]
   """
 
-  defstruct [
-    :authorChannelId,
-    :authorChannelUrl,
-    :authorDisplayName,
-    :authorProfileImageUrl,
-    :canRate,
-    :channelId,
-    :likeCount,
-    :moderationStatus,
-    :parentId,
-    :publishedAt,
-    :textDisplay,
-    :textOriginal,
-    :updatedAt,
-    :videoId,
-    :viewerRating
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :authorChannelId => any(),
+          :authorChannelUrl => any(),
+          :authorDisplayName => any(),
+          :authorProfileImageUrl => any(),
+          :canRate => any(),
+          :channelId => any(),
+          :likeCount => any(),
+          :moderationStatus => any(),
+          :parentId => any(),
+          :publishedAt => DateTime.t(),
+          :textDisplay => any(),
+          :textOriginal => any(),
+          :updatedAt => DateTime.t(),
+          :videoId => any(),
+          :viewerRating => any()
+        }
+
+  field(:authorChannelId)
+  field(:authorChannelUrl)
+  field(:authorDisplayName)
+  field(:authorProfileImageUrl)
+  field(:canRate)
+  field(:channelId)
+  field(:likeCount)
+  field(:moderationStatus)
+  field(:parentId)
+  field(:publishedAt, as: DateTime)
+  field(:textDisplay)
+  field(:textOriginal)
+  field(:updatedAt, as: DateTime)
+  field(:videoId)
+  field(:viewerRating)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.CommentSnippet do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.CommentSnippet.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.CommentSnippet do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

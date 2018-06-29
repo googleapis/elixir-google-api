@@ -29,26 +29,31 @@ defmodule GoogleApi.YouTube.V3.Model.I18nLanguageListResponse do
   - visitorId (String.t): The visitorId identifies the visitor. Defaults to: `null`.
   """
 
-  defstruct [
-    :etag,
-    :eventId,
-    :items,
-    :kind,
-    :visitorId
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :etag => any(),
+          :eventId => any(),
+          :items => list(GoogleApi.YouTube.V3.Model.I18nLanguage.t()),
+          :kind => any(),
+          :visitorId => any()
+        }
+
+  field(:etag)
+  field(:eventId)
+  field(:items, as: GoogleApi.YouTube.V3.Model.I18nLanguage, type: :list)
+  field(:kind)
+  field(:visitorId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.I18nLanguageListResponse do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:items, :list, GoogleApi.YouTube.V3.Model.I18nLanguage, options)
+    GoogleApi.YouTube.V3.Model.I18nLanguageListResponse.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.I18nLanguageListResponse do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

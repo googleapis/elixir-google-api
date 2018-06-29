@@ -30,27 +30,33 @@ defmodule GoogleApi.YouTube.V3.Model.CommentThreadSnippet do
   - videoId (String.t): The ID of the video the comments refer to, if any. No video_id implies a channel discussion comment. Defaults to: `null`.
   """
 
-  defstruct [
-    :canReply,
-    :channelId,
-    :isPublic,
-    :topLevelComment,
-    :totalReplyCount,
-    :videoId
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :canReply => any(),
+          :channelId => any(),
+          :isPublic => any(),
+          :topLevelComment => GoogleApi.YouTube.V3.Model.Comment.t(),
+          :totalReplyCount => any(),
+          :videoId => any()
+        }
+
+  field(:canReply)
+  field(:channelId)
+  field(:isPublic)
+  field(:topLevelComment, as: GoogleApi.YouTube.V3.Model.Comment)
+  field(:totalReplyCount)
+  field(:videoId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.CommentThreadSnippet do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:topLevelComment, :struct, GoogleApi.YouTube.V3.Model.Comment, options)
+    GoogleApi.YouTube.V3.Model.CommentThreadSnippet.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.CommentThreadSnippet do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -46,72 +46,65 @@ defmodule GoogleApi.YouTube.V3.Model.ImageSettings do
   - watchIconImageUrl (String.t): The URL for the image that appears above the top-left corner of the video player. This is a 25-pixel-high image with a flexible width that cannot exceed 170 pixels. Defaults to: `null`.
   """
 
-  defstruct [
-    :backgroundImageUrl,
-    :bannerExternalUrl,
-    :bannerImageUrl,
-    :bannerMobileExtraHdImageUrl,
-    :bannerMobileHdImageUrl,
-    :bannerMobileImageUrl,
-    :bannerMobileLowImageUrl,
-    :bannerMobileMediumHdImageUrl,
-    :bannerTabletExtraHdImageUrl,
-    :bannerTabletHdImageUrl,
-    :bannerTabletImageUrl,
-    :bannerTabletLowImageUrl,
-    :bannerTvHighImageUrl,
-    :bannerTvImageUrl,
-    :bannerTvLowImageUrl,
-    :bannerTvMediumImageUrl,
-    :largeBrandedBannerImageImapScript,
-    :largeBrandedBannerImageUrl,
-    :smallBrandedBannerImageImapScript,
-    :smallBrandedBannerImageUrl,
-    :trackingImageUrl,
-    :watchIconImageUrl
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :backgroundImageUrl => GoogleApi.YouTube.V3.Model.LocalizedProperty.t(),
+          :bannerExternalUrl => any(),
+          :bannerImageUrl => any(),
+          :bannerMobileExtraHdImageUrl => any(),
+          :bannerMobileHdImageUrl => any(),
+          :bannerMobileImageUrl => any(),
+          :bannerMobileLowImageUrl => any(),
+          :bannerMobileMediumHdImageUrl => any(),
+          :bannerTabletExtraHdImageUrl => any(),
+          :bannerTabletHdImageUrl => any(),
+          :bannerTabletImageUrl => any(),
+          :bannerTabletLowImageUrl => any(),
+          :bannerTvHighImageUrl => any(),
+          :bannerTvImageUrl => any(),
+          :bannerTvLowImageUrl => any(),
+          :bannerTvMediumImageUrl => any(),
+          :largeBrandedBannerImageImapScript => GoogleApi.YouTube.V3.Model.LocalizedProperty.t(),
+          :largeBrandedBannerImageUrl => GoogleApi.YouTube.V3.Model.LocalizedProperty.t(),
+          :smallBrandedBannerImageImapScript => GoogleApi.YouTube.V3.Model.LocalizedProperty.t(),
+          :smallBrandedBannerImageUrl => GoogleApi.YouTube.V3.Model.LocalizedProperty.t(),
+          :trackingImageUrl => any(),
+          :watchIconImageUrl => any()
+        }
+
+  field(:backgroundImageUrl, as: GoogleApi.YouTube.V3.Model.LocalizedProperty)
+  field(:bannerExternalUrl)
+  field(:bannerImageUrl)
+  field(:bannerMobileExtraHdImageUrl)
+  field(:bannerMobileHdImageUrl)
+  field(:bannerMobileImageUrl)
+  field(:bannerMobileLowImageUrl)
+  field(:bannerMobileMediumHdImageUrl)
+  field(:bannerTabletExtraHdImageUrl)
+  field(:bannerTabletHdImageUrl)
+  field(:bannerTabletImageUrl)
+  field(:bannerTabletLowImageUrl)
+  field(:bannerTvHighImageUrl)
+  field(:bannerTvImageUrl)
+  field(:bannerTvLowImageUrl)
+  field(:bannerTvMediumImageUrl)
+  field(:largeBrandedBannerImageImapScript, as: GoogleApi.YouTube.V3.Model.LocalizedProperty)
+  field(:largeBrandedBannerImageUrl, as: GoogleApi.YouTube.V3.Model.LocalizedProperty)
+  field(:smallBrandedBannerImageImapScript, as: GoogleApi.YouTube.V3.Model.LocalizedProperty)
+  field(:smallBrandedBannerImageUrl, as: GoogleApi.YouTube.V3.Model.LocalizedProperty)
+  field(:trackingImageUrl)
+  field(:watchIconImageUrl)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ImageSettings do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :backgroundImageUrl,
-      :struct,
-      GoogleApi.YouTube.V3.Model.LocalizedProperty,
-      options
-    )
-    |> deserialize(
-      :largeBrandedBannerImageImapScript,
-      :struct,
-      GoogleApi.YouTube.V3.Model.LocalizedProperty,
-      options
-    )
-    |> deserialize(
-      :largeBrandedBannerImageUrl,
-      :struct,
-      GoogleApi.YouTube.V3.Model.LocalizedProperty,
-      options
-    )
-    |> deserialize(
-      :smallBrandedBannerImageImapScript,
-      :struct,
-      GoogleApi.YouTube.V3.Model.LocalizedProperty,
-      options
-    )
-    |> deserialize(
-      :smallBrandedBannerImageUrl,
-      :struct,
-      GoogleApi.YouTube.V3.Model.LocalizedProperty,
-      options
-    )
+    GoogleApi.YouTube.V3.Model.ImageSettings.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ImageSettings do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -25,22 +25,23 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelConversionPings do
   - pings ([ChannelConversionPing]): Pings that the app shall fire (authenticated by biscotti cookie). Each ping has a context, in which the app must fire the ping, and a url identifying the ping. Defaults to: `null`.
   """
 
-  defstruct [
-    :pings
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :pings => list(GoogleApi.YouTube.V3.Model.ChannelConversionPing.t())
+        }
+
+  field(:pings, as: GoogleApi.YouTube.V3.Model.ChannelConversionPing, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelConversionPings do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:pings, :list, GoogleApi.YouTube.V3.Model.ChannelConversionPing, options)
+    GoogleApi.YouTube.V3.Model.ChannelConversionPings.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ChannelConversionPings do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -28,22 +28,29 @@ defmodule GoogleApi.YouTube.V3.Model.VideoFileDetailsAudioStream do
   - vendor (String.t): A value that uniquely identifies a video vendor. Typically, the value is a four-letter vendor code. Defaults to: `null`.
   """
 
-  defstruct [
-    :bitrateBps,
-    :channelCount,
-    :codec,
-    :vendor
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :bitrateBps => any(),
+          :channelCount => any(),
+          :codec => any(),
+          :vendor => any()
+        }
+
+  field(:bitrateBps)
+  field(:channelCount)
+  field(:codec)
+  field(:vendor)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoFileDetailsAudioStream do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.VideoFileDetailsAudioStream.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoFileDetailsAudioStream do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

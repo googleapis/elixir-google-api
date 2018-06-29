@@ -26,28 +26,31 @@ defmodule GoogleApi.YouTube.V3.Model.VideoAbuseReportReasonSnippet do
   - secondaryReasons ([VideoAbuseReportSecondaryReason]): The secondary reasons associated with this reason, if any are available. (There might be 0 or more.) Defaults to: `null`.
   """
 
-  defstruct [
-    :label,
-    :secondaryReasons
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :label => any(),
+          :secondaryReasons =>
+            list(GoogleApi.YouTube.V3.Model.VideoAbuseReportSecondaryReason.t())
+        }
+
+  field(:label)
+
+  field(
+    :secondaryReasons,
+    as: GoogleApi.YouTube.V3.Model.VideoAbuseReportSecondaryReason,
+    type: :list
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoAbuseReportReasonSnippet do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :secondaryReasons,
-      :list,
-      GoogleApi.YouTube.V3.Model.VideoAbuseReportSecondaryReason,
-      options
-    )
+    GoogleApi.YouTube.V3.Model.VideoAbuseReportReasonSnippet.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoAbuseReportReasonSnippet do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

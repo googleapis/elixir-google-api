@@ -28,38 +28,47 @@ defmodule GoogleApi.YouTube.V3.Model.SuperChatEventSnippet do
   - createdAt (DateTime.t): The date and time when the event occurred. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format. Defaults to: `null`.
   - currency (String.t): The currency in which the purchase was made. ISO 4217. Defaults to: `null`.
   - displayString (String.t): A rendered string that displays the purchase amount and currency (e.g., \&quot;$1.00\&quot;). The string is rendered for the given language. Defaults to: `null`.
+  - isSuperChatForGood (boolean()): True if this event is a Super Chat for Good purchase. Defaults to: `null`.
   - messageType (integer()): The tier for the paid message, which is based on the amount of money spent to purchase the message. Defaults to: `null`.
+  - nonprofit (Nonprofit): If this event is a Super Chat for Good purchase, this field will contain information about the charity the purchase is donated to. Defaults to: `null`.
   - supporterDetails (ChannelProfileDetails): Details about the supporter. Defaults to: `null`.
   """
 
-  defstruct [
-    :amountMicros,
-    :channelId,
-    :commentText,
-    :createdAt,
-    :currency,
-    :displayString,
-    :messageType,
-    :supporterDetails
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :amountMicros => any(),
+          :channelId => any(),
+          :commentText => any(),
+          :createdAt => DateTime.t(),
+          :currency => any(),
+          :displayString => any(),
+          :isSuperChatForGood => any(),
+          :messageType => any(),
+          :nonprofit => GoogleApi.YouTube.V3.Model.Nonprofit.t(),
+          :supporterDetails => GoogleApi.YouTube.V3.Model.ChannelProfileDetails.t()
+        }
+
+  field(:amountMicros)
+  field(:channelId)
+  field(:commentText)
+  field(:createdAt, as: DateTime)
+  field(:currency)
+  field(:displayString)
+  field(:isSuperChatForGood)
+  field(:messageType)
+  field(:nonprofit, as: GoogleApi.YouTube.V3.Model.Nonprofit)
+  field(:supporterDetails, as: GoogleApi.YouTube.V3.Model.ChannelProfileDetails)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.SuperChatEventSnippet do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :supporterDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.ChannelProfileDetails,
-      options
-    )
+    GoogleApi.YouTube.V3.Model.SuperChatEventSnippet.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.SuperChatEventSnippet do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -22,7 +22,7 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatBans do
   """
 
   alias GoogleApi.YouTube.V3.Connection
-  import GoogleApi.YouTube.V3.RequestBuilder
+  alias GoogleApi.Gax.{Request, Response}
 
   @doc """
   Removes a chat ban.
@@ -37,8 +37,8 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatBans do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
 
   ## Returns
 
@@ -58,14 +58,16 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatBans do
       :userIp => :query
     }
 
-    %{}
-    |> method(:delete)
-    |> url("/youtube/v3/liveChat/bans")
-    |> add_param(:query, :id, id)
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(false)
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/youtube/v3/liveChat/bans")
+      |> Request.add_param(:query, :id, id)
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(decode: false)
   end
 
   @doc """
@@ -81,8 +83,8 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatBans do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :body (LiveChatBan): 
 
   ## Returns
@@ -104,13 +106,15 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatBans do
       :body => :body
     }
 
-    %{}
-    |> method(:post)
-    |> url("/youtube/v3/liveChat/bans")
-    |> add_param(:query, :part, part)
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.YouTube.V3.Model.LiveChatBan{})
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/youtube/v3/liveChat/bans")
+      |> Request.add_param(:query, :part, part)
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.LiveChatBan{})
   end
 end

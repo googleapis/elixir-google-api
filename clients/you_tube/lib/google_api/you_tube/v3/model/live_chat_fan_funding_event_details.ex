@@ -28,22 +28,29 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatFanFundingEventDetails do
   - userComment (String.t): The comment added by the user to this fan funding event. Defaults to: `null`.
   """
 
-  defstruct [
-    :amountDisplayString,
-    :amountMicros,
-    :currency,
-    :userComment
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :amountDisplayString => any(),
+          :amountMicros => any(),
+          :currency => any(),
+          :userComment => any()
+        }
+
+  field(:amountDisplayString)
+  field(:amountMicros)
+  field(:currency)
+  field(:userComment)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveChatFanFundingEventDetails do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.LiveChatFanFundingEventDetails.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveChatFanFundingEventDetails do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

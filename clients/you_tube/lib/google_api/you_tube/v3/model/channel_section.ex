@@ -31,46 +31,35 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelSection do
   - targeting (ChannelSectionTargeting): The targeting object contains basic targeting settings about the channel section. Defaults to: `null`.
   """
 
-  defstruct [
-    :contentDetails,
-    :etag,
-    :id,
-    :kind,
-    :localizations,
-    :snippet,
-    :targeting
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :contentDetails => GoogleApi.YouTube.V3.Model.ChannelSectionContentDetails.t(),
+          :etag => any(),
+          :id => any(),
+          :kind => any(),
+          :localizations => map(),
+          :snippet => GoogleApi.YouTube.V3.Model.ChannelSectionSnippet.t(),
+          :targeting => GoogleApi.YouTube.V3.Model.ChannelSectionTargeting.t()
+        }
+
+  field(:contentDetails, as: GoogleApi.YouTube.V3.Model.ChannelSectionContentDetails)
+  field(:etag)
+  field(:id)
+  field(:kind)
+  field(:localizations, as: GoogleApi.YouTube.V3.Model.ChannelSectionLocalization, type: :map)
+  field(:snippet, as: GoogleApi.YouTube.V3.Model.ChannelSectionSnippet)
+  field(:targeting, as: GoogleApi.YouTube.V3.Model.ChannelSectionTargeting)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelSection do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :contentDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.ChannelSectionContentDetails,
-      options
-    )
-    |> deserialize(
-      :localizations,
-      :map,
-      GoogleApi.YouTube.V3.Model.ChannelSectionLocalization,
-      options
-    )
-    |> deserialize(:snippet, :struct, GoogleApi.YouTube.V3.Model.ChannelSectionSnippet, options)
-    |> deserialize(
-      :targeting,
-      :struct,
-      GoogleApi.YouTube.V3.Model.ChannelSectionTargeting,
-      options
-    )
+    GoogleApi.YouTube.V3.Model.ChannelSection.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ChannelSection do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

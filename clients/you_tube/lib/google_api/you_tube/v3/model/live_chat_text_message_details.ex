@@ -25,19 +25,23 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatTextMessageDetails do
   - messageText (String.t): The user&#39;s message. Defaults to: `null`.
   """
 
-  defstruct [
-    :messageText
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :messageText => any()
+        }
+
+  field(:messageText)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveChatTextMessageDetails do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.LiveChatTextMessageDetails.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveChatTextMessageDetails do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

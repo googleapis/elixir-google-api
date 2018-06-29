@@ -37,38 +37,42 @@ defmodule GoogleApi.YouTube.V3.Model.VideoContentDetails do
   - regionRestriction (VideoContentDetailsRegionRestriction): The regionRestriction object contains information about the countries where a video is (or is not) viewable. The object will contain either the contentDetails.regionRestriction.allowed property or the contentDetails.regionRestriction.blocked property. Defaults to: `null`.
   """
 
-  defstruct [
-    :caption,
-    :contentRating,
-    :countryRestriction,
-    :definition,
-    :dimension,
-    :duration,
-    :hasCustomThumbnail,
-    :licensedContent,
-    :projection,
-    :regionRestriction
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :caption => any(),
+          :contentRating => GoogleApi.YouTube.V3.Model.ContentRating.t(),
+          :countryRestriction => GoogleApi.YouTube.V3.Model.AccessPolicy.t(),
+          :definition => any(),
+          :dimension => any(),
+          :duration => any(),
+          :hasCustomThumbnail => any(),
+          :licensedContent => any(),
+          :projection => any(),
+          :regionRestriction =>
+            GoogleApi.YouTube.V3.Model.VideoContentDetailsRegionRestriction.t()
+        }
+
+  field(:caption)
+  field(:contentRating, as: GoogleApi.YouTube.V3.Model.ContentRating)
+  field(:countryRestriction, as: GoogleApi.YouTube.V3.Model.AccessPolicy)
+  field(:definition)
+  field(:dimension)
+  field(:duration)
+  field(:hasCustomThumbnail)
+  field(:licensedContent)
+  field(:projection)
+  field(:regionRestriction, as: GoogleApi.YouTube.V3.Model.VideoContentDetailsRegionRestriction)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoContentDetails do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:contentRating, :struct, GoogleApi.YouTube.V3.Model.ContentRating, options)
-    |> deserialize(:countryRestriction, :struct, GoogleApi.YouTube.V3.Model.AccessPolicy, options)
-    |> deserialize(
-      :regionRestriction,
-      :struct,
-      GoogleApi.YouTube.V3.Model.VideoContentDetailsRegionRestriction,
-      options
-    )
+    GoogleApi.YouTube.V3.Model.VideoContentDetails.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoContentDetails do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

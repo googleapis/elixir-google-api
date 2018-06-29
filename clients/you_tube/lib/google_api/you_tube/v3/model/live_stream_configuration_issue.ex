@@ -30,22 +30,29 @@ defmodule GoogleApi.YouTube.V3.Model.LiveStreamConfigurationIssue do
     - Enum - one of [audioBitrateHigh, audioBitrateLow, audioBitrateMismatch, audioCodec, audioCodecMismatch, audioSampleRate, audioSampleRateMismatch, audioStereoMismatch, audioTooManyChannels, badContainer, bitrateHigh, bitrateLow, frameRateHigh, framerateMismatch, gopMismatch, gopSizeLong, gopSizeOver, gopSizeShort, interlacedVideo, multipleAudioStreams, multipleVideoStreams, noAudioStream, noVideoStream, openGop, resolutionMismatch, videoBitrateMismatch, videoCodec, videoCodecMismatch, videoIngestionFasterThanRealtime, videoIngestionStarved, videoInterlaceMismatch, videoProfileMismatch, videoResolutionSuboptimal, videoResolutionUnsupported]
   """
 
-  defstruct [
-    :description,
-    :reason,
-    :severity,
-    :type
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :description => any(),
+          :reason => any(),
+          :severity => any(),
+          :type => any()
+        }
+
+  field(:description)
+  field(:reason)
+  field(:severity)
+  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveStreamConfigurationIssue do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.LiveStreamConfigurationIssue.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveStreamConfigurationIssue do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

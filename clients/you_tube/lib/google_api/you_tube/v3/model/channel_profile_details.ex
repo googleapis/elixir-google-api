@@ -28,22 +28,29 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelProfileDetails do
   - profileImageUrl (String.t): The channels&#39;s avatar URL. Defaults to: `null`.
   """
 
-  defstruct [
-    :channelId,
-    :channelUrl,
-    :displayName,
-    :profileImageUrl
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :channelId => any(),
+          :channelUrl => any(),
+          :displayName => any(),
+          :profileImageUrl => any()
+        }
+
+  field(:channelId)
+  field(:channelUrl)
+  field(:displayName)
+  field(:profileImageUrl)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelProfileDetails do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.ChannelProfileDetails.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ChannelProfileDetails do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

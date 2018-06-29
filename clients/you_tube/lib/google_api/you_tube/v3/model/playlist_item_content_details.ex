@@ -29,23 +29,31 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistItemContentDetails do
   - videoPublishedAt (DateTime.t): The date and time that the video was published to YouTube. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format. Defaults to: `null`.
   """
 
-  defstruct [
-    :endAt,
-    :note,
-    :startAt,
-    :videoId,
-    :videoPublishedAt
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :endAt => any(),
+          :note => any(),
+          :startAt => any(),
+          :videoId => any(),
+          :videoPublishedAt => DateTime.t()
+        }
+
+  field(:endAt)
+  field(:note)
+  field(:startAt)
+  field(:videoId)
+  field(:videoPublishedAt, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.PlaylistItemContentDetails do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.PlaylistItemContentDetails.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.PlaylistItemContentDetails do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

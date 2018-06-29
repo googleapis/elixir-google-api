@@ -25,22 +25,23 @@ defmodule GoogleApi.YouTube.V3.Model.VideoMonetizationDetails do
   - access (AccessPolicy): The value of access indicates whether the video can be monetized or not. Defaults to: `null`.
   """
 
-  defstruct [
-    :access
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :access => GoogleApi.YouTube.V3.Model.AccessPolicy.t()
+        }
+
+  field(:access, as: GoogleApi.YouTube.V3.Model.AccessPolicy)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoMonetizationDetails do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:access, :struct, GoogleApi.YouTube.V3.Model.AccessPolicy, options)
+    GoogleApi.YouTube.V3.Model.VideoMonetizationDetails.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoMonetizationDetails do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

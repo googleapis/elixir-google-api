@@ -33,29 +33,37 @@ defmodule GoogleApi.YouTube.V3.Model.ActivitySnippet do
     - Enum - one of [bulletin, channelItem, comment, favorite, like, playlistItem, promotedItem, recommendation, social, subscription, upload]
   """
 
-  defstruct [
-    :channelId,
-    :channelTitle,
-    :description,
-    :groupId,
-    :publishedAt,
-    :thumbnails,
-    :title,
-    :type
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :channelId => any(),
+          :channelTitle => any(),
+          :description => any(),
+          :groupId => any(),
+          :publishedAt => DateTime.t(),
+          :thumbnails => GoogleApi.YouTube.V3.Model.ThumbnailDetails.t(),
+          :title => any(),
+          :type => any()
+        }
+
+  field(:channelId)
+  field(:channelTitle)
+  field(:description)
+  field(:groupId)
+  field(:publishedAt, as: DateTime)
+  field(:thumbnails, as: GoogleApi.YouTube.V3.Model.ThumbnailDetails)
+  field(:title)
+  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ActivitySnippet do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:thumbnails, :struct, GoogleApi.YouTube.V3.Model.ThumbnailDetails, options)
+    GoogleApi.YouTube.V3.Model.ActivitySnippet.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ActivitySnippet do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

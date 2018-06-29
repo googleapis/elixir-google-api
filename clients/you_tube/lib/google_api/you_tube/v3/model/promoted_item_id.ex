@@ -29,22 +29,29 @@ defmodule GoogleApi.YouTube.V3.Model.PromotedItemId do
   - websiteUrl (String.t): If the promoted item represents a website, this field represents the url pointing to the website. This field will be present only if type has the value website. Defaults to: `null`.
   """
 
-  defstruct [
-    :recentlyUploadedBy,
-    :type,
-    :videoId,
-    :websiteUrl
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :recentlyUploadedBy => any(),
+          :type => any(),
+          :videoId => any(),
+          :websiteUrl => any()
+        }
+
+  field(:recentlyUploadedBy)
+  field(:type)
+  field(:videoId)
+  field(:websiteUrl)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.PromotedItemId do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.PromotedItemId.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.PromotedItemId do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

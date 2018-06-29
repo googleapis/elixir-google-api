@@ -22,7 +22,7 @@ defmodule GoogleApi.YouTube.V3.Api.Watermarks do
   """
 
   alias GoogleApi.YouTube.V3.Connection
-  import GoogleApi.YouTube.V3.RequestBuilder
+  alias GoogleApi.Gax.{Request, Response}
 
   @doc """
   Uploads a watermark image to YouTube and sets it for a channel.
@@ -37,8 +37,8 @@ defmodule GoogleApi.YouTube.V3.Api.Watermarks do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :onBehalfOfContentOwner (String.t): Note: This parameter is intended exclusively for YouTube content partners.  The onBehalfOfContentOwner parameter indicates that the request&#39;s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
     - :body (InvideoBranding): 
 
@@ -62,14 +62,16 @@ defmodule GoogleApi.YouTube.V3.Api.Watermarks do
       :body => :body
     }
 
-    %{}
-    |> method(:post)
-    |> url("/youtube/v3/watermarks/set")
-    |> add_param(:query, :channelId, channel_id)
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(false)
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/youtube/v3/watermarks/set")
+      |> Request.add_param(:query, :channelId, channel_id)
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(decode: false)
   end
 
   @doc """
@@ -86,8 +88,8 @@ defmodule GoogleApi.YouTube.V3.Api.Watermarks do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :onBehalfOfContentOwner (String.t): Note: This parameter is intended exclusively for YouTube content partners.  The onBehalfOfContentOwner parameter indicates that the request&#39;s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
     - :body (InvideoBranding): 
 
@@ -111,15 +113,17 @@ defmodule GoogleApi.YouTube.V3.Api.Watermarks do
       :body => :body
     }
 
-    %{}
-    |> method(:post)
-    |> url("/resumable/upload/youtube/v3/watermarks/set")
-    |> add_param(:query, :channelId, channel_id)
-    |> add_param(:query, :uploadType, upload_type)
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(false)
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/resumable/upload/youtube/v3/watermarks/set")
+      |> Request.add_param(:query, :channelId, channel_id)
+      |> Request.add_param(:query, :uploadType, upload_type)
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(decode: false)
   end
 
   @doc """
@@ -138,8 +142,8 @@ defmodule GoogleApi.YouTube.V3.Api.Watermarks do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :onBehalfOfContentOwner (String.t): Note: This parameter is intended exclusively for YouTube content partners.  The onBehalfOfContentOwner parameter indicates that the request&#39;s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 
   ## Returns
@@ -174,17 +178,19 @@ defmodule GoogleApi.YouTube.V3.Api.Watermarks do
       :onBehalfOfContentOwner => :query
     }
 
-    %{}
-    |> method(:post)
-    |> url("/upload/youtube/v3/watermarks/set")
-    |> add_param(:query, :channelId, channel_id)
-    |> add_param(:query, :uploadType, upload_type)
-    |> add_param(:body, :metadata, metadata)
-    |> add_param(:file, :data, data)
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(false)
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/upload/youtube/v3/watermarks/set")
+      |> Request.add_param(:query, :channelId, channel_id)
+      |> Request.add_param(:query, :uploadType, upload_type)
+      |> Request.add_param(:body, :metadata, metadata)
+      |> Request.add_param(:file, :data, data)
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(decode: false)
   end
 
   @doc """
@@ -200,8 +206,8 @@ defmodule GoogleApi.YouTube.V3.Api.Watermarks do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :onBehalfOfContentOwner (String.t): Note: This parameter is intended exclusively for YouTube content partners.  The onBehalfOfContentOwner parameter indicates that the request&#39;s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 
   ## Returns
@@ -223,13 +229,15 @@ defmodule GoogleApi.YouTube.V3.Api.Watermarks do
       :onBehalfOfContentOwner => :query
     }
 
-    %{}
-    |> method(:post)
-    |> url("/youtube/v3/watermarks/unset")
-    |> add_param(:query, :channelId, channel_id)
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(false)
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/youtube/v3/watermarks/unset")
+      |> Request.add_param(:query, :channelId, channel_id)
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(decode: false)
   end
 end

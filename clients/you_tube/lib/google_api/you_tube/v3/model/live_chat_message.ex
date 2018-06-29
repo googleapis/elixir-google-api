@@ -29,32 +29,31 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessage do
   - snippet (LiveChatMessageSnippet): The snippet object contains basic details about the message. Defaults to: `null`.
   """
 
-  defstruct [
-    :authorDetails,
-    :etag,
-    :id,
-    :kind,
-    :snippet
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :authorDetails => GoogleApi.YouTube.V3.Model.LiveChatMessageAuthorDetails.t(),
+          :etag => any(),
+          :id => any(),
+          :kind => any(),
+          :snippet => GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet.t()
+        }
+
+  field(:authorDetails, as: GoogleApi.YouTube.V3.Model.LiveChatMessageAuthorDetails)
+  field(:etag)
+  field(:id)
+  field(:kind)
+  field(:snippet, as: GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveChatMessage do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :authorDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.LiveChatMessageAuthorDetails,
-      options
-    )
-    |> deserialize(:snippet, :struct, GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet, options)
+    GoogleApi.YouTube.V3.Model.LiveChatMessage.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveChatMessage do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

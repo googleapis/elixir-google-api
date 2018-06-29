@@ -26,20 +26,25 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelContentOwnerDetails do
   - timeLinked (DateTime.t): The date and time of when the channel was linked to the content owner. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format. Defaults to: `null`.
   """
 
-  defstruct [
-    :contentOwner,
-    :timeLinked
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :contentOwner => any(),
+          :timeLinked => DateTime.t()
+        }
+
+  field(:contentOwner)
+  field(:timeLinked, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelContentOwnerDetails do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.ChannelContentOwnerDetails.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ChannelContentOwnerDetails do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

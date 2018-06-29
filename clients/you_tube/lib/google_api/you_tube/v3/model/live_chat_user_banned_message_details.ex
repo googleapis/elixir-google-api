@@ -28,29 +28,27 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatUserBannedMessageDetails do
   - bannedUserDetails (ChannelProfileDetails): The details of the user that was banned. Defaults to: `null`.
   """
 
-  defstruct [
-    :banDurationSeconds,
-    :banType,
-    :bannedUserDetails
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :banDurationSeconds => any(),
+          :banType => any(),
+          :bannedUserDetails => GoogleApi.YouTube.V3.Model.ChannelProfileDetails.t()
+        }
+
+  field(:banDurationSeconds)
+  field(:banType)
+  field(:bannedUserDetails, as: GoogleApi.YouTube.V3.Model.ChannelProfileDetails)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveChatUserBannedMessageDetails do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :bannedUserDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.ChannelProfileDetails,
-      options
-    )
+    GoogleApi.YouTube.V3.Model.LiveChatUserBannedMessageDetails.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveChatUserBannedMessageDetails do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

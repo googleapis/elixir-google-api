@@ -28,26 +28,29 @@ defmodule GoogleApi.YouTube.V3.Model.SearchResult do
   - snippet (SearchResultSnippet): The snippet object contains basic details about a search result, such as its title or description. For example, if the search result is a video, then the title will be the video&#39;s title and the description will be the video&#39;s description. Defaults to: `null`.
   """
 
-  defstruct [
-    :etag,
-    :id,
-    :kind,
-    :snippet
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :etag => any(),
+          :id => GoogleApi.YouTube.V3.Model.ResourceId.t(),
+          :kind => any(),
+          :snippet => GoogleApi.YouTube.V3.Model.SearchResultSnippet.t()
+        }
+
+  field(:etag)
+  field(:id, as: GoogleApi.YouTube.V3.Model.ResourceId)
+  field(:kind)
+  field(:snippet, as: GoogleApi.YouTube.V3.Model.SearchResultSnippet)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.SearchResult do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:id, :struct, GoogleApi.YouTube.V3.Model.ResourceId, options)
-    |> deserialize(:snippet, :struct, GoogleApi.YouTube.V3.Model.SearchResultSnippet, options)
+    GoogleApi.YouTube.V3.Model.SearchResult.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.SearchResult do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

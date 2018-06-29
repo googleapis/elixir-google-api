@@ -33,31 +33,36 @@ defmodule GoogleApi.YouTube.V3.Model.VideoSuggestions do
   - tagSuggestions ([VideoSuggestionsTagSuggestion]): A list of keyword tags that could be added to the video&#39;s metadata to increase the likelihood that users will locate your video when searching or browsing on YouTube. Defaults to: `null`.
   """
 
-  defstruct [
-    :editorSuggestions,
-    :processingErrors,
-    :processingHints,
-    :processingWarnings,
-    :tagSuggestions
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :editorSuggestions => list(any()),
+          :processingErrors => list(any()),
+          :processingHints => list(any()),
+          :processingWarnings => list(any()),
+          :tagSuggestions => list(GoogleApi.YouTube.V3.Model.VideoSuggestionsTagSuggestion.t())
+        }
+
+  field(:editorSuggestions, type: :list)
+  field(:processingErrors, type: :list)
+  field(:processingHints, type: :list)
+  field(:processingWarnings, type: :list)
+
+  field(
+    :tagSuggestions,
+    as: GoogleApi.YouTube.V3.Model.VideoSuggestionsTagSuggestion,
+    type: :list
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoSuggestions do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :tagSuggestions,
-      :list,
-      GoogleApi.YouTube.V3.Model.VideoSuggestionsTagSuggestion,
-      options
-    )
+    GoogleApi.YouTube.V3.Model.VideoSuggestions.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoSuggestions do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end
