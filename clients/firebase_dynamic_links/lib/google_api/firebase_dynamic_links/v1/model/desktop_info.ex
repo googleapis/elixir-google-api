@@ -16,31 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.NavigationInfo do
+defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.DesktopInfo do
   @moduledoc """
-  Information of navigation behavior.
+  Desktop related attributes to the Dynamic Link.
 
   ## Attributes
 
-  - enableForcedRedirect (boolean()): If this option is on, FDL click will be forced to redirect rather than show an interstitial page. Defaults to: `null`.
+  - desktopFallbackLink (String.t): Link to open on desktop. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enableForcedRedirect => any()
+          :desktopFallbackLink => any()
         }
 
-  field(:enableForcedRedirect)
+  field(:desktopFallbackLink)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.NavigationInfo do
+defimpl Poison.Decoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.DesktopInfo do
   def decode(value, options) do
-    GoogleApi.FirebaseDynamicLinks.V1.Model.NavigationInfo.decode(value, options)
+    GoogleApi.FirebaseDynamicLinks.V1.Model.DesktopInfo.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.NavigationInfo do
+defimpl Poison.Encoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.DesktopInfo do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
