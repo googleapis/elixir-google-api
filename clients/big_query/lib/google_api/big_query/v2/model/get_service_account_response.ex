@@ -16,10 +16,35 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.BigQuery.V2.RequestBuilder do
+defmodule GoogleApi.BigQuery.V2.Model.GetServiceAccountResponse do
   @moduledoc """
-  Helper functions for building Tesla requests.
 
-  This module is no longer used. Please use GoogleApi.Gax.Request instead.
+
+  ## Attributes
+
+  - email (String.t): The service account email address. Defaults to: `null`.
+  - kind (String.t): The resource type of the response. Defaults to: `null`.
   """
+
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :email => any(),
+          :kind => any()
+        }
+
+  field(:email)
+  field(:kind)
+end
+
+defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.GetServiceAccountResponse do
+  def decode(value, options) do
+    GoogleApi.BigQuery.V2.Model.GetServiceAccountResponse.decode(value, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.GetServiceAccountResponse do
+  def encode(value, options) do
+    GoogleApi.Gax.ModelBase.encode(value, options)
+  end
 end

@@ -16,34 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequestRows do
+defmodule GoogleApi.BigQuery.V2.Model.Clustering do
   @moduledoc """
 
 
   ## Attributes
 
-  - insertId (String.t): [Optional] A unique ID for each row. BigQuery uses this property to detect duplicate insertion requests on a best-effort basis. Defaults to: `null`.
-  - json (JsonObject): [Required] A JSON object that contains a row of data. The object&#39;s properties and values must match the destination table&#39;s schema. Defaults to: `null`.
+  - fields ([String.t]): [Repeated] One or more fields on which data should be clustered. Only top-level, non-repeated, simple-type fields are supported. The order of the fields will determine how clusters will be generated, so it is important. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :insertId => any(),
-          :json => GoogleApi.BigQuery.V2.Model.JsonObject.t()
+          :fields => list(any())
         }
 
-  field(:insertId)
-  field(:json, as: GoogleApi.BigQuery.V2.Model.JsonObject)
+  field(:fields, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequestRows do
+defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.Clustering do
   def decode(value, options) do
-    GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequestRows.decode(value, options)
+    GoogleApi.BigQuery.V2.Model.Clustering.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequestRows do
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.Clustering do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
