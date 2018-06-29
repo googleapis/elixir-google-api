@@ -16,34 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Classroom.V1.Model.ListStudentSubmissionsResponse do
+defmodule GoogleApi.Classroom.V1.Model.ModifyIndividualStudentsOptions do
   @moduledoc """
-  Response when listing student submissions.
+  Contains fields to add or remove students from a course work or announcement where the &#x60;assigneeMode&#x60; is set to &#x60;INDIVIDUAL_STUDENTS&#x60;.
 
   ## Attributes
 
-  - nextPageToken (String.t): Token identifying the next page of results to return. If empty, no further results are available. Defaults to: `null`.
-  - studentSubmissions ([StudentSubmission]): Student work that matches the request. Defaults to: `null`.
+  - addStudentIds ([String.t]): Ids of students to be added as having access to this coursework/announcement. Defaults to: `null`.
+  - removeStudentIds ([String.t]): Ids of students to be removed from having access to this coursework/announcement. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => any(),
-          :studentSubmissions => list(GoogleApi.Classroom.V1.Model.StudentSubmission.t())
+          :addStudentIds => list(any()),
+          :removeStudentIds => list(any())
         }
 
-  field(:nextPageToken)
-  field(:studentSubmissions, as: GoogleApi.Classroom.V1.Model.StudentSubmission, type: :list)
+  field(:addStudentIds, type: :list)
+  field(:removeStudentIds, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.ListStudentSubmissionsResponse do
+defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.ModifyIndividualStudentsOptions do
   def decode(value, options) do
-    GoogleApi.Classroom.V1.Model.ListStudentSubmissionsResponse.decode(value, options)
+    GoogleApi.Classroom.V1.Model.ModifyIndividualStudentsOptions.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.ListStudentSubmissionsResponse do
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.ModifyIndividualStudentsOptions do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

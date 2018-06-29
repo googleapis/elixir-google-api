@@ -16,34 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Classroom.V1.Model.ListStudentSubmissionsResponse do
+defmodule GoogleApi.Classroom.V1.Model.IndividualStudentsOptions do
   @moduledoc """
-  Response when listing student submissions.
+  Assignee details about a coursework/announcement. This field is set if and only if &#x60;assigneeMode&#x60; is &#x60;INDIVIDUAL_STUDENTS&#x60;.
 
   ## Attributes
 
-  - nextPageToken (String.t): Token identifying the next page of results to return. If empty, no further results are available. Defaults to: `null`.
-  - studentSubmissions ([StudentSubmission]): Student work that matches the request. Defaults to: `null`.
+  - studentIds ([String.t]): Identifiers for the students that have access to the coursework/announcement. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => any(),
-          :studentSubmissions => list(GoogleApi.Classroom.V1.Model.StudentSubmission.t())
+          :studentIds => list(any())
         }
 
-  field(:nextPageToken)
-  field(:studentSubmissions, as: GoogleApi.Classroom.V1.Model.StudentSubmission, type: :list)
+  field(:studentIds, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.ListStudentSubmissionsResponse do
+defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.IndividualStudentsOptions do
   def decode(value, options) do
-    GoogleApi.Classroom.V1.Model.ListStudentSubmissionsResponse.decode(value, options)
+    GoogleApi.Classroom.V1.Model.IndividualStudentsOptions.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.ListStudentSubmissionsResponse do
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.IndividualStudentsOptions do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
