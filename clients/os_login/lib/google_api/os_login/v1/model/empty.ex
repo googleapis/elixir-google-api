@@ -16,31 +16,26 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.OSLogin.V1alpha.Model.ImportSshPublicKeyResponse do
+defmodule GoogleApi.OSLogin.V1.Model.Empty do
   @moduledoc """
-  A response message from importing an SSH public key.
+  A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance:      service Foo {       rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);     }  The JSON representation for &#x60;Empty&#x60; is empty JSON object &#x60;{}&#x60;.
 
   ## Attributes
 
-  - loginProfile (LoginProfile): The login profile information for the user. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{
-          :loginProfile => GoogleApi.OSLogin.V1alpha.Model.LoginProfile.t()
-        }
-
-  field(:loginProfile, as: GoogleApi.OSLogin.V1alpha.Model.LoginProfile)
+  @type t :: %__MODULE__{}
 end
 
-defimpl Poison.Decoder, for: GoogleApi.OSLogin.V1alpha.Model.ImportSshPublicKeyResponse do
+defimpl Poison.Decoder, for: GoogleApi.OSLogin.V1.Model.Empty do
   def decode(value, options) do
-    GoogleApi.OSLogin.V1alpha.Model.ImportSshPublicKeyResponse.decode(value, options)
+    GoogleApi.OSLogin.V1.Model.Empty.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.OSLogin.V1alpha.Model.ImportSshPublicKeyResponse do
+defimpl Poison.Encoder, for: GoogleApi.OSLogin.V1.Model.Empty do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

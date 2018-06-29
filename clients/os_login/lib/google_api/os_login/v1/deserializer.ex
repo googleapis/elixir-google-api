@@ -16,10 +16,10 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.OSLogin.V1alpha.RequestBuilder do
+defmodule GoogleApi.OSLogin.V1.Deserializer do
   @moduledoc """
-  Helper functions for building Tesla requests.
+  Helper functions for deserializing responses into models.
 
-  This module is no longer used. Please use GoogleApi.Gax.Request instead.
+  This module is no longer used. Please use GoogleApi.Gax.ModelBase instead.
   """
 end

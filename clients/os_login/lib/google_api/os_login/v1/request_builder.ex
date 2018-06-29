@@ -16,7 +16,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.OSLogin.V1alpha.RequestBuilder do
+defmodule GoogleApi.OSLogin.V1.RequestBuilder do
   @moduledoc """
   Helper functions for building Tesla requests.
 
