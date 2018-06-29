@@ -16,34 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AnalyticsReporting.V4.Model.DateRange do
+defmodule GoogleApi.AnalyticsReporting.V4.Model.ResourceQuotasRemaining do
   @moduledoc """
-  A contiguous set of days: startDate, startDate + 1 day, ..., endDate. The start and end dates are specified in [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) date format &#x60;YYYY-MM-DD&#x60;.
+  The resource quota tokens remaining for the property after the request is completed.
 
   ## Attributes
 
-  - endDate (String.t): The end date for the query in the format &#x60;YYYY-MM-DD&#x60;. Defaults to: `null`.
-  - startDate (String.t): The start date for the query in the format &#x60;YYYY-MM-DD&#x60;. Defaults to: `null`.
+  - dailyQuotaTokensRemaining (integer()): Daily resource quota remaining remaining. Defaults to: `null`.
+  - hourlyQuotaTokensRemaining (integer()): Hourly resource quota tokens remaining. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endDate => any(),
-          :startDate => any()
+          :dailyQuotaTokensRemaining => any(),
+          :hourlyQuotaTokensRemaining => any()
         }
 
-  field(:endDate)
-  field(:startDate)
+  field(:dailyQuotaTokensRemaining)
+  field(:hourlyQuotaTokensRemaining)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AnalyticsReporting.V4.Model.DateRange do
+defimpl Poison.Decoder, for: GoogleApi.AnalyticsReporting.V4.Model.ResourceQuotasRemaining do
   def decode(value, options) do
-    GoogleApi.AnalyticsReporting.V4.Model.DateRange.decode(value, options)
+    GoogleApi.AnalyticsReporting.V4.Model.ResourceQuotasRemaining.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.AnalyticsReporting.V4.Model.DateRange do
+defimpl Poison.Encoder, for: GoogleApi.AnalyticsReporting.V4.Model.ResourceQuotasRemaining do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
