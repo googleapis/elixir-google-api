@@ -16,16 +16,16 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.IAM.V1.Api.Permissions do
+defmodule GoogleApi.IAM.V1.Api.IamPolicies do
   @moduledoc """
-  API calls for all endpoints tagged `Permissions`.
+  API calls for all endpoints tagged `IamPolicies`.
   """
 
   alias GoogleApi.IAM.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Lists the permissions testable on a resource. A permission is testable if it can be tested for an identity on a resource.
+  Returns a list of services that support service level audit logging configuration for the given resource.
 
   ## Parameters
 
@@ -42,17 +42,17 @@ defmodule GoogleApi.IAM.V1.Api.Permissions do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :body (QueryTestablePermissionsRequest): 
+    - :body (QueryAuditableServicesRequest): 
 
   ## Returns
 
-  {:ok, %GoogleApi.IAM.V1.Model.QueryTestablePermissionsResponse{}} on success
+  {:ok, %GoogleApi.IAM.V1.Model.QueryAuditableServicesResponse{}} on success
   {:error, info} on failure
   """
-  @spec iam_permissions_query_testable_permissions(Tesla.Env.client(), keyword()) ::
-          {:ok, GoogleApi.IAM.V1.Model.QueryTestablePermissionsResponse.t()}
+  @spec iam_iam_policies_query_auditable_services(Tesla.Env.client(), keyword()) ::
+          {:ok, GoogleApi.IAM.V1.Model.QueryAuditableServicesResponse.t()}
           | {:error, Tesla.Env.t()}
-  def iam_permissions_query_testable_permissions(connection, opts \\ []) do
+  def iam_iam_policies_query_auditable_services(connection, opts \\ []) do
     optional_params = %{
       :callback => :query,
       :oauth_token => :query,
@@ -71,11 +71,11 @@ defmodule GoogleApi.IAM.V1.Api.Permissions do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/permissions:queryTestablePermissions")
+      |> Request.url("/v1/iamPolicies:queryAuditableServices")
       |> Request.add_optional_params(optional_params, opts)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IAM.V1.Model.QueryTestablePermissionsResponse{})
+    |> Response.decode(struct: %GoogleApi.IAM.V1.Model.QueryAuditableServicesResponse{})
   end
 end
