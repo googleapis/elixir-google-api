@@ -30,35 +30,31 @@ defmodule GoogleApi.Sheets.V4.Model.PieChartSpec do
   - threeDimensional (boolean()): True if the pie is three dimensional. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          domain: GoogleApi.Sheets.V4.Model.ChartData.t(),
-          legendPosition: any(),
-          pieHole: any(),
-          series: GoogleApi.Sheets.V4.Model.ChartData.t(),
-          threeDimensional: any()
+          :domain => GoogleApi.Sheets.V4.Model.ChartData.t(),
+          :legendPosition => any(),
+          :pieHole => any(),
+          :series => GoogleApi.Sheets.V4.Model.ChartData.t(),
+          :threeDimensional => any()
         }
 
-  defstruct [
-    :domain,
-    :legendPosition,
-    :pieHole,
-    :series,
-    :threeDimensional
-  ]
+  field(:domain, as: GoogleApi.Sheets.V4.Model.ChartData)
+  field(:legendPosition)
+  field(:pieHole)
+  field(:series, as: GoogleApi.Sheets.V4.Model.ChartData)
+  field(:threeDimensional)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.PieChartSpec do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:domain, :struct, GoogleApi.Sheets.V4.Model.ChartData, options)
-    |> deserialize(:series, :struct, GoogleApi.Sheets.V4.Model.ChartData, options)
+    GoogleApi.Sheets.V4.Model.PieChartSpec.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.PieChartSpec do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

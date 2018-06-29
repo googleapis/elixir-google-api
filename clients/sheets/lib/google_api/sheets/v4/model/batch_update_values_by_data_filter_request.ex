@@ -32,34 +32,31 @@ defmodule GoogleApi.Sheets.V4.Model.BatchUpdateValuesByDataFilterRequest do
     - Enum - one of [INPUT_VALUE_OPTION_UNSPECIFIED, RAW, USER_ENTERED]
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          data: list(GoogleApi.Sheets.V4.Model.DataFilterValueRange.t()),
-          includeValuesInResponse: any(),
-          responseDateTimeRenderOption: any(),
-          responseValueRenderOption: any(),
-          valueInputOption: any()
+          :data => list(GoogleApi.Sheets.V4.Model.DataFilterValueRange.t()),
+          :includeValuesInResponse => any(),
+          :responseDateTimeRenderOption => any(),
+          :responseValueRenderOption => any(),
+          :valueInputOption => any()
         }
 
-  defstruct [
-    :data,
-    :includeValuesInResponse,
-    :responseDateTimeRenderOption,
-    :responseValueRenderOption,
-    :valueInputOption
-  ]
+  field(:data, as: GoogleApi.Sheets.V4.Model.DataFilterValueRange, type: :list)
+  field(:includeValuesInResponse)
+  field(:responseDateTimeRenderOption)
+  field(:responseValueRenderOption)
+  field(:valueInputOption)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BatchUpdateValuesByDataFilterRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:data, :list, GoogleApi.Sheets.V4.Model.DataFilterValueRange, options)
+    GoogleApi.Sheets.V4.Model.BatchUpdateValuesByDataFilterRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BatchUpdateValuesByDataFilterRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

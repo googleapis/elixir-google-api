@@ -30,36 +30,33 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateValuesResponse do
   - updatedRows (integer()): The number of rows where at least one cell in the row was updated. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          spreadsheetId: any(),
-          updatedCells: any(),
-          updatedColumns: any(),
-          updatedData: GoogleApi.Sheets.V4.Model.ValueRange.t(),
-          updatedRange: any(),
-          updatedRows: any()
+          :spreadsheetId => any(),
+          :updatedCells => any(),
+          :updatedColumns => any(),
+          :updatedData => GoogleApi.Sheets.V4.Model.ValueRange.t(),
+          :updatedRange => any(),
+          :updatedRows => any()
         }
 
-  defstruct [
-    :spreadsheetId,
-    :updatedCells,
-    :updatedColumns,
-    :updatedData,
-    :updatedRange,
-    :updatedRows
-  ]
+  field(:spreadsheetId)
+  field(:updatedCells)
+  field(:updatedColumns)
+  field(:updatedData, as: GoogleApi.Sheets.V4.Model.ValueRange)
+  field(:updatedRange)
+  field(:updatedRows)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UpdateValuesResponse do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:updatedData, :struct, GoogleApi.Sheets.V4.Model.ValueRange, options)
+    GoogleApi.Sheets.V4.Model.UpdateValuesResponse.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UpdateValuesResponse do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

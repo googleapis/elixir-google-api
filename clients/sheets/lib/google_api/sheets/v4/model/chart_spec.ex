@@ -44,94 +44,59 @@ defmodule GoogleApi.Sheets.V4.Model.ChartSpec do
   - waterfallChart (WaterfallChartSpec): A waterfall chart specification. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          altText: any(),
-          backgroundColor: GoogleApi.Sheets.V4.Model.Color.t(),
-          basicChart: GoogleApi.Sheets.V4.Model.BasicChartSpec.t(),
-          bubbleChart: GoogleApi.Sheets.V4.Model.BubbleChartSpec.t(),
-          candlestickChart: GoogleApi.Sheets.V4.Model.CandlestickChartSpec.t(),
-          fontName: any(),
-          hiddenDimensionStrategy: any(),
-          histogramChart: GoogleApi.Sheets.V4.Model.HistogramChartSpec.t(),
-          maximized: any(),
-          orgChart: GoogleApi.Sheets.V4.Model.OrgChartSpec.t(),
-          pieChart: GoogleApi.Sheets.V4.Model.PieChartSpec.t(),
-          subtitle: any(),
-          subtitleTextFormat: GoogleApi.Sheets.V4.Model.TextFormat.t(),
-          subtitleTextPosition: GoogleApi.Sheets.V4.Model.TextPosition.t(),
-          title: any(),
-          titleTextFormat: GoogleApi.Sheets.V4.Model.TextFormat.t(),
-          titleTextPosition: GoogleApi.Sheets.V4.Model.TextPosition.t(),
-          treemapChart: GoogleApi.Sheets.V4.Model.TreemapChartSpec.t(),
-          waterfallChart: GoogleApi.Sheets.V4.Model.WaterfallChartSpec.t()
+          :altText => any(),
+          :backgroundColor => GoogleApi.Sheets.V4.Model.Color.t(),
+          :basicChart => GoogleApi.Sheets.V4.Model.BasicChartSpec.t(),
+          :bubbleChart => GoogleApi.Sheets.V4.Model.BubbleChartSpec.t(),
+          :candlestickChart => GoogleApi.Sheets.V4.Model.CandlestickChartSpec.t(),
+          :fontName => any(),
+          :hiddenDimensionStrategy => any(),
+          :histogramChart => GoogleApi.Sheets.V4.Model.HistogramChartSpec.t(),
+          :maximized => any(),
+          :orgChart => GoogleApi.Sheets.V4.Model.OrgChartSpec.t(),
+          :pieChart => GoogleApi.Sheets.V4.Model.PieChartSpec.t(),
+          :subtitle => any(),
+          :subtitleTextFormat => GoogleApi.Sheets.V4.Model.TextFormat.t(),
+          :subtitleTextPosition => GoogleApi.Sheets.V4.Model.TextPosition.t(),
+          :title => any(),
+          :titleTextFormat => GoogleApi.Sheets.V4.Model.TextFormat.t(),
+          :titleTextPosition => GoogleApi.Sheets.V4.Model.TextPosition.t(),
+          :treemapChart => GoogleApi.Sheets.V4.Model.TreemapChartSpec.t(),
+          :waterfallChart => GoogleApi.Sheets.V4.Model.WaterfallChartSpec.t()
         }
 
-  defstruct [
-    :altText,
-    :backgroundColor,
-    :basicChart,
-    :bubbleChart,
-    :candlestickChart,
-    :fontName,
-    :hiddenDimensionStrategy,
-    :histogramChart,
-    :maximized,
-    :orgChart,
-    :pieChart,
-    :subtitle,
-    :subtitleTextFormat,
-    :subtitleTextPosition,
-    :title,
-    :titleTextFormat,
-    :titleTextPosition,
-    :treemapChart,
-    :waterfallChart
-  ]
+  field(:altText)
+  field(:backgroundColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:basicChart, as: GoogleApi.Sheets.V4.Model.BasicChartSpec)
+  field(:bubbleChart, as: GoogleApi.Sheets.V4.Model.BubbleChartSpec)
+  field(:candlestickChart, as: GoogleApi.Sheets.V4.Model.CandlestickChartSpec)
+  field(:fontName)
+  field(:hiddenDimensionStrategy)
+  field(:histogramChart, as: GoogleApi.Sheets.V4.Model.HistogramChartSpec)
+  field(:maximized)
+  field(:orgChart, as: GoogleApi.Sheets.V4.Model.OrgChartSpec)
+  field(:pieChart, as: GoogleApi.Sheets.V4.Model.PieChartSpec)
+  field(:subtitle)
+  field(:subtitleTextFormat, as: GoogleApi.Sheets.V4.Model.TextFormat)
+  field(:subtitleTextPosition, as: GoogleApi.Sheets.V4.Model.TextPosition)
+  field(:title)
+  field(:titleTextFormat, as: GoogleApi.Sheets.V4.Model.TextFormat)
+  field(:titleTextPosition, as: GoogleApi.Sheets.V4.Model.TextPosition)
+  field(:treemapChart, as: GoogleApi.Sheets.V4.Model.TreemapChartSpec)
+  field(:waterfallChart, as: GoogleApi.Sheets.V4.Model.WaterfallChartSpec)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.ChartSpec do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:backgroundColor, :struct, GoogleApi.Sheets.V4.Model.Color, options)
-    |> deserialize(:basicChart, :struct, GoogleApi.Sheets.V4.Model.BasicChartSpec, options)
-    |> deserialize(:bubbleChart, :struct, GoogleApi.Sheets.V4.Model.BubbleChartSpec, options)
-    |> deserialize(
-      :candlestickChart,
-      :struct,
-      GoogleApi.Sheets.V4.Model.CandlestickChartSpec,
-      options
-    )
-    |> deserialize(
-      :histogramChart,
-      :struct,
-      GoogleApi.Sheets.V4.Model.HistogramChartSpec,
-      options
-    )
-    |> deserialize(:orgChart, :struct, GoogleApi.Sheets.V4.Model.OrgChartSpec, options)
-    |> deserialize(:pieChart, :struct, GoogleApi.Sheets.V4.Model.PieChartSpec, options)
-    |> deserialize(:subtitleTextFormat, :struct, GoogleApi.Sheets.V4.Model.TextFormat, options)
-    |> deserialize(
-      :subtitleTextPosition,
-      :struct,
-      GoogleApi.Sheets.V4.Model.TextPosition,
-      options
-    )
-    |> deserialize(:titleTextFormat, :struct, GoogleApi.Sheets.V4.Model.TextFormat, options)
-    |> deserialize(:titleTextPosition, :struct, GoogleApi.Sheets.V4.Model.TextPosition, options)
-    |> deserialize(:treemapChart, :struct, GoogleApi.Sheets.V4.Model.TreemapChartSpec, options)
-    |> deserialize(
-      :waterfallChart,
-      :struct,
-      GoogleApi.Sheets.V4.Model.WaterfallChartSpec,
-      options
-    )
+    GoogleApi.Sheets.V4.Model.ChartSpec.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.ChartSpec do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

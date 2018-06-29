@@ -29,34 +29,31 @@ defmodule GoogleApi.Sheets.V4.Model.OverlayPosition do
   - widthPixels (integer()): The width of the object, in pixels. Defaults to 600. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          anchorCell: GoogleApi.Sheets.V4.Model.GridCoordinate.t(),
-          heightPixels: any(),
-          offsetXPixels: any(),
-          offsetYPixels: any(),
-          widthPixels: any()
+          :anchorCell => GoogleApi.Sheets.V4.Model.GridCoordinate.t(),
+          :heightPixels => any(),
+          :offsetXPixels => any(),
+          :offsetYPixels => any(),
+          :widthPixels => any()
         }
 
-  defstruct [
-    :anchorCell,
-    :heightPixels,
-    :offsetXPixels,
-    :offsetYPixels,
-    :widthPixels
-  ]
+  field(:anchorCell, as: GoogleApi.Sheets.V4.Model.GridCoordinate)
+  field(:heightPixels)
+  field(:offsetXPixels)
+  field(:offsetYPixels)
+  field(:widthPixels)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.OverlayPosition do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:anchorCell, :struct, GoogleApi.Sheets.V4.Model.GridCoordinate, options)
+    GoogleApi.Sheets.V4.Model.OverlayPosition.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.OverlayPosition do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -26,23 +26,23 @@ defmodule GoogleApi.Sheets.V4.Model.TextPosition do
     - Enum - one of [HORIZONTAL_ALIGN_UNSPECIFIED, LEFT, CENTER, RIGHT]
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          horizontalAlignment: any()
+          :horizontalAlignment => any()
         }
 
-  defstruct [
-    :horizontalAlignment
-  ]
+  field(:horizontalAlignment)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.TextPosition do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Sheets.V4.Model.TextPosition.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.TextPosition do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

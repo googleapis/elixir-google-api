@@ -26,28 +26,25 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateFilterViewRequest do
   - filter (FilterView): The new properties of the filter view. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          fields: any(),
-          filter: GoogleApi.Sheets.V4.Model.FilterView.t()
+          :fields => any(),
+          :filter => GoogleApi.Sheets.V4.Model.FilterView.t()
         }
 
-  defstruct [
-    :fields,
-    :filter
-  ]
+  field(:fields)
+  field(:filter, as: GoogleApi.Sheets.V4.Model.FilterView)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UpdateFilterViewRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:filter, :struct, GoogleApi.Sheets.V4.Model.FilterView, options)
+    GoogleApi.Sheets.V4.Model.UpdateFilterViewRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UpdateFilterViewRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

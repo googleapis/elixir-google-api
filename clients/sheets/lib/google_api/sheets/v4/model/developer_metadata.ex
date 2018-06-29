@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Sheets.V4.Model.DeveloperMetadata do
   @moduledoc """
-  Developer metadata associated with a location or object in a spreadsheet. Developer metadata may be used to associate arbitrary data with various parts of a spreadsheet and will remain associated at those locations as they move around and the spreadsheet is edited.  For example, if developer metadata is associated with row 5 and another row is then subsequently inserted above row 5, that original metadata will still be associated with the row it was first associated with (what is now row 6). If the associated object is deleted its metadata will be deleted too.
+  Developer metadata associated with a location or object in a spreadsheet. Developer metadata may be used to associate arbitrary data with various parts of a spreadsheet and will remain associated at those locations as they move around and the spreadsheet is edited.  For example, if developer metadata is associated with row 5 and another row is then subsequently inserted above row 5, that original metadata will still be associated with the row it was first associated with (what is now row 6). If the associated object is deleted its metadata is deleted too.
 
   ## Attributes
 
@@ -30,39 +30,31 @@ defmodule GoogleApi.Sheets.V4.Model.DeveloperMetadata do
     - Enum - one of [DEVELOPER_METADATA_VISIBILITY_UNSPECIFIED, DOCUMENT, PROJECT]
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          location: GoogleApi.Sheets.V4.Model.DeveloperMetadataLocation.t(),
-          metadataId: any(),
-          metadataKey: any(),
-          metadataValue: any(),
-          visibility: any()
+          :location => GoogleApi.Sheets.V4.Model.DeveloperMetadataLocation.t(),
+          :metadataId => any(),
+          :metadataKey => any(),
+          :metadataValue => any(),
+          :visibility => any()
         }
 
-  defstruct [
-    :location,
-    :metadataId,
-    :metadataKey,
-    :metadataValue,
-    :visibility
-  ]
+  field(:location, as: GoogleApi.Sheets.V4.Model.DeveloperMetadataLocation)
+  field(:metadataId)
+  field(:metadataKey)
+  field(:metadataValue)
+  field(:visibility)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DeveloperMetadata do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :location,
-      :struct,
-      GoogleApi.Sheets.V4.Model.DeveloperMetadataLocation,
-      options
-    )
+    GoogleApi.Sheets.V4.Model.DeveloperMetadata.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.DeveloperMetadata do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

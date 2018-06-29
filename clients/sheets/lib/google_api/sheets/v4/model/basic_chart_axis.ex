@@ -29,33 +29,29 @@ defmodule GoogleApi.Sheets.V4.Model.BasicChartAxis do
   - titleTextPosition (TextPosition): The axis title text position. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          format: GoogleApi.Sheets.V4.Model.TextFormat.t(),
-          position: any(),
-          title: any(),
-          titleTextPosition: GoogleApi.Sheets.V4.Model.TextPosition.t()
+          :format => GoogleApi.Sheets.V4.Model.TextFormat.t(),
+          :position => any(),
+          :title => any(),
+          :titleTextPosition => GoogleApi.Sheets.V4.Model.TextPosition.t()
         }
 
-  defstruct [
-    :format,
-    :position,
-    :title,
-    :titleTextPosition
-  ]
+  field(:format, as: GoogleApi.Sheets.V4.Model.TextFormat)
+  field(:position)
+  field(:title)
+  field(:titleTextPosition, as: GoogleApi.Sheets.V4.Model.TextPosition)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BasicChartAxis do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:format, :struct, GoogleApi.Sheets.V4.Model.TextFormat, options)
-    |> deserialize(:titleTextPosition, :struct, GoogleApi.Sheets.V4.Model.TextPosition, options)
+    GoogleApi.Sheets.V4.Model.BasicChartAxis.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BasicChartAxis do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

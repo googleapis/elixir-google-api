@@ -26,28 +26,25 @@ defmodule GoogleApi.Sheets.V4.Model.MoveDimensionRequest do
   - source (DimensionRange): The source dimensions to move. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          destinationIndex: any(),
-          source: GoogleApi.Sheets.V4.Model.DimensionRange.t()
+          :destinationIndex => any(),
+          :source => GoogleApi.Sheets.V4.Model.DimensionRange.t()
         }
 
-  defstruct [
-    :destinationIndex,
-    :source
-  ]
+  field(:destinationIndex)
+  field(:source, as: GoogleApi.Sheets.V4.Model.DimensionRange)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.MoveDimensionRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:source, :struct, GoogleApi.Sheets.V4.Model.DimensionRange, options)
+    GoogleApi.Sheets.V4.Model.MoveDimensionRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.MoveDimensionRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -25,26 +25,23 @@ defmodule GoogleApi.Sheets.V4.Model.AddProtectedRangeRequest do
   - protectedRange (ProtectedRange): The protected range to be added. The protectedRangeId field is optional; if one is not set, an id will be randomly generated. (It is an error to specify the ID of a range that already exists.) Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          protectedRange: GoogleApi.Sheets.V4.Model.ProtectedRange.t()
+          :protectedRange => GoogleApi.Sheets.V4.Model.ProtectedRange.t()
         }
 
-  defstruct [
-    :protectedRange
-  ]
+  field(:protectedRange, as: GoogleApi.Sheets.V4.Model.ProtectedRange)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.AddProtectedRangeRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:protectedRange, :struct, GoogleApi.Sheets.V4.Model.ProtectedRange, options)
+    GoogleApi.Sheets.V4.Model.AddProtectedRangeRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.AddProtectedRangeRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

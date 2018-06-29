@@ -25,26 +25,23 @@ defmodule GoogleApi.Sheets.V4.Model.AutoResizeDimensionsRequest do
   - dimensions (DimensionRange): The dimensions to automatically resize. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          dimensions: GoogleApi.Sheets.V4.Model.DimensionRange.t()
+          :dimensions => GoogleApi.Sheets.V4.Model.DimensionRange.t()
         }
 
-  defstruct [
-    :dimensions
-  ]
+  field(:dimensions, as: GoogleApi.Sheets.V4.Model.DimensionRange)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.AutoResizeDimensionsRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:dimensions, :struct, GoogleApi.Sheets.V4.Model.DimensionRange, options)
+    GoogleApi.Sheets.V4.Model.AutoResizeDimensionsRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.AutoResizeDimensionsRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

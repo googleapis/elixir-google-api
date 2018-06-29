@@ -28,29 +28,29 @@ defmodule GoogleApi.Sheets.V4.Model.DuplicateSheetRequest do
   - sourceSheetId (integer()): The sheet to duplicate. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          insertSheetIndex: any(),
-          newSheetId: any(),
-          newSheetName: any(),
-          sourceSheetId: any()
+          :insertSheetIndex => any(),
+          :newSheetId => any(),
+          :newSheetName => any(),
+          :sourceSheetId => any()
         }
 
-  defstruct [
-    :insertSheetIndex,
-    :newSheetId,
-    :newSheetName,
-    :sourceSheetId
-  ]
+  field(:insertSheetIndex)
+  field(:newSheetId)
+  field(:newSheetName)
+  field(:sourceSheetId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DuplicateSheetRequest do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Sheets.V4.Model.DuplicateSheetRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.DuplicateSheetRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

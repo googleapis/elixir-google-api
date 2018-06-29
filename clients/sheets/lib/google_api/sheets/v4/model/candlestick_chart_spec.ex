@@ -26,29 +26,25 @@ defmodule GoogleApi.Sheets.V4.Model.CandlestickChartSpec do
   - domain (CandlestickDomain): The domain data (horizontal axis) for the candlestick chart.  String data will be treated as discrete labels, other data will be treated as continuous values. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          data: list(GoogleApi.Sheets.V4.Model.CandlestickData.t()),
-          domain: GoogleApi.Sheets.V4.Model.CandlestickDomain.t()
+          :data => list(GoogleApi.Sheets.V4.Model.CandlestickData.t()),
+          :domain => GoogleApi.Sheets.V4.Model.CandlestickDomain.t()
         }
 
-  defstruct [
-    :data,
-    :domain
-  ]
+  field(:data, as: GoogleApi.Sheets.V4.Model.CandlestickData, type: :list)
+  field(:domain, as: GoogleApi.Sheets.V4.Model.CandlestickDomain)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.CandlestickChartSpec do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:data, :list, GoogleApi.Sheets.V4.Model.CandlestickData, options)
-    |> deserialize(:domain, :struct, GoogleApi.Sheets.V4.Model.CandlestickDomain, options)
+    GoogleApi.Sheets.V4.Model.CandlestickChartSpec.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.CandlestickChartSpec do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -28,27 +28,27 @@ defmodule GoogleApi.Sheets.V4.Model.AppendDimensionRequest do
   - sheetId (integer()): The sheet to append rows or columns to. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          dimension: any(),
-          length: any(),
-          sheetId: any()
+          :dimension => any(),
+          :length => any(),
+          :sheetId => any()
         }
 
-  defstruct [
-    :dimension,
-    :length,
-    :sheetId
-  ]
+  field(:dimension)
+  field(:length)
+  field(:sheetId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.AppendDimensionRequest do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Sheets.V4.Model.AppendDimensionRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.AppendDimensionRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

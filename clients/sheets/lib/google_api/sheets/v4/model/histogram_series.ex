@@ -26,29 +26,25 @@ defmodule GoogleApi.Sheets.V4.Model.HistogramSeries do
   - data (ChartData): The data for this histogram series. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          barColor: GoogleApi.Sheets.V4.Model.Color.t(),
-          data: GoogleApi.Sheets.V4.Model.ChartData.t()
+          :barColor => GoogleApi.Sheets.V4.Model.Color.t(),
+          :data => GoogleApi.Sheets.V4.Model.ChartData.t()
         }
 
-  defstruct [
-    :barColor,
-    :data
-  ]
+  field(:barColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:data, as: GoogleApi.Sheets.V4.Model.ChartData)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.HistogramSeries do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:barColor, :struct, GoogleApi.Sheets.V4.Model.Color, options)
-    |> deserialize(:data, :struct, GoogleApi.Sheets.V4.Model.ChartData, options)
+    GoogleApi.Sheets.V4.Model.HistogramSeries.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.HistogramSeries do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -31,42 +31,34 @@ defmodule GoogleApi.Sheets.V4.Model.SpreadsheetProperties do
   - title (String.t): The title of the spreadsheet. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          autoRecalc: any(),
-          defaultFormat: GoogleApi.Sheets.V4.Model.CellFormat.t(),
-          iterativeCalculationSettings: GoogleApi.Sheets.V4.Model.IterativeCalculationSettings.t(),
-          locale: any(),
-          timeZone: any(),
-          title: any()
+          :autoRecalc => any(),
+          :defaultFormat => GoogleApi.Sheets.V4.Model.CellFormat.t(),
+          :iterativeCalculationSettings =>
+            GoogleApi.Sheets.V4.Model.IterativeCalculationSettings.t(),
+          :locale => any(),
+          :timeZone => any(),
+          :title => any()
         }
 
-  defstruct [
-    :autoRecalc,
-    :defaultFormat,
-    :iterativeCalculationSettings,
-    :locale,
-    :timeZone,
-    :title
-  ]
+  field(:autoRecalc)
+  field(:defaultFormat, as: GoogleApi.Sheets.V4.Model.CellFormat)
+  field(:iterativeCalculationSettings, as: GoogleApi.Sheets.V4.Model.IterativeCalculationSettings)
+  field(:locale)
+  field(:timeZone)
+  field(:title)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.SpreadsheetProperties do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:defaultFormat, :struct, GoogleApi.Sheets.V4.Model.CellFormat, options)
-    |> deserialize(
-      :iterativeCalculationSettings,
-      :struct,
-      GoogleApi.Sheets.V4.Model.IterativeCalculationSettings,
-      options
-    )
+    GoogleApi.Sheets.V4.Model.SpreadsheetProperties.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.SpreadsheetProperties do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

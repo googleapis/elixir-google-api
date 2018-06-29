@@ -24,19 +24,19 @@ defmodule GoogleApi.Sheets.V4.Model.ClearValuesRequest do
 
   """
 
-  @type t :: %__MODULE__{}
+  use GoogleApi.Gax.ModelBase
 
-  defstruct []
+  @type t :: %__MODULE__{}
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.ClearValuesRequest do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Sheets.V4.Model.ClearValuesRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.ClearValuesRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

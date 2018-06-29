@@ -27,31 +27,27 @@ defmodule GoogleApi.Sheets.V4.Model.RepeatCellRequest do
   - range (GridRange): The range to repeat the cell in. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          cell: GoogleApi.Sheets.V4.Model.CellData.t(),
-          fields: any(),
-          range: GoogleApi.Sheets.V4.Model.GridRange.t()
+          :cell => GoogleApi.Sheets.V4.Model.CellData.t(),
+          :fields => any(),
+          :range => GoogleApi.Sheets.V4.Model.GridRange.t()
         }
 
-  defstruct [
-    :cell,
-    :fields,
-    :range
-  ]
+  field(:cell, as: GoogleApi.Sheets.V4.Model.CellData)
+  field(:fields)
+  field(:range, as: GoogleApi.Sheets.V4.Model.GridRange)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.RepeatCellRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:cell, :struct, GoogleApi.Sheets.V4.Model.CellData, options)
-    |> deserialize(:range, :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
+    GoogleApi.Sheets.V4.Model.RepeatCellRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.RepeatCellRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

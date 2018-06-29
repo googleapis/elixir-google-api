@@ -25,23 +25,23 @@ defmodule GoogleApi.Sheets.V4.Model.BatchClearValuesRequest do
   - ranges ([String.t]): The ranges to clear, in A1 notation. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          ranges: any()
+          :ranges => list(any())
         }
 
-  defstruct [
-    :ranges
-  ]
+  field(:ranges, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BatchClearValuesRequest do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Sheets.V4.Model.BatchClearValuesRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BatchClearValuesRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -25,26 +25,23 @@ defmodule GoogleApi.Sheets.V4.Model.AddBandingRequest do
   - bandedRange (BandedRange): The banded range to add. The bandedRangeId field is optional; if one is not set, an id will be randomly generated. (It is an error to specify the ID of a range that already exists.) Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          bandedRange: GoogleApi.Sheets.V4.Model.BandedRange.t()
+          :bandedRange => GoogleApi.Sheets.V4.Model.BandedRange.t()
         }
 
-  defstruct [
-    :bandedRange
-  ]
+  field(:bandedRange, as: GoogleApi.Sheets.V4.Model.BandedRange)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.AddBandingRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:bandedRange, :struct, GoogleApi.Sheets.V4.Model.BandedRange, options)
+    GoogleApi.Sheets.V4.Model.AddBandingRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.AddBandingRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

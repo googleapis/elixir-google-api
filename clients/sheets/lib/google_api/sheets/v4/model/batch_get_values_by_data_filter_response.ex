@@ -26,28 +26,25 @@ defmodule GoogleApi.Sheets.V4.Model.BatchGetValuesByDataFilterResponse do
   - valueRanges ([MatchedValueRange]): The requested values with the list of data filters that matched them. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          spreadsheetId: any(),
-          valueRanges: list(GoogleApi.Sheets.V4.Model.MatchedValueRange.t())
+          :spreadsheetId => any(),
+          :valueRanges => list(GoogleApi.Sheets.V4.Model.MatchedValueRange.t())
         }
 
-  defstruct [
-    :spreadsheetId,
-    :valueRanges
-  ]
+  field(:spreadsheetId)
+  field(:valueRanges, as: GoogleApi.Sheets.V4.Model.MatchedValueRange, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BatchGetValuesByDataFilterResponse do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:valueRanges, :list, GoogleApi.Sheets.V4.Model.MatchedValueRange, options)
+    GoogleApi.Sheets.V4.Model.BatchGetValuesByDataFilterResponse.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BatchGetValuesByDataFilterResponse do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

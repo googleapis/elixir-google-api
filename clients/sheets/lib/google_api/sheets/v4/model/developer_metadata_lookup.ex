@@ -34,43 +34,35 @@ defmodule GoogleApi.Sheets.V4.Model.DeveloperMetadataLookup do
     - Enum - one of [DEVELOPER_METADATA_VISIBILITY_UNSPECIFIED, DOCUMENT, PROJECT]
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          locationMatchingStrategy: any(),
-          locationType: any(),
-          metadataId: any(),
-          metadataKey: any(),
-          metadataLocation: GoogleApi.Sheets.V4.Model.DeveloperMetadataLocation.t(),
-          metadataValue: any(),
-          visibility: any()
+          :locationMatchingStrategy => any(),
+          :locationType => any(),
+          :metadataId => any(),
+          :metadataKey => any(),
+          :metadataLocation => GoogleApi.Sheets.V4.Model.DeveloperMetadataLocation.t(),
+          :metadataValue => any(),
+          :visibility => any()
         }
 
-  defstruct [
-    :locationMatchingStrategy,
-    :locationType,
-    :metadataId,
-    :metadataKey,
-    :metadataLocation,
-    :metadataValue,
-    :visibility
-  ]
+  field(:locationMatchingStrategy)
+  field(:locationType)
+  field(:metadataId)
+  field(:metadataKey)
+  field(:metadataLocation, as: GoogleApi.Sheets.V4.Model.DeveloperMetadataLocation)
+  field(:metadataValue)
+  field(:visibility)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DeveloperMetadataLookup do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :metadataLocation,
-      :struct,
-      GoogleApi.Sheets.V4.Model.DeveloperMetadataLocation,
-      options
-    )
+    GoogleApi.Sheets.V4.Model.DeveloperMetadataLookup.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.DeveloperMetadataLookup do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

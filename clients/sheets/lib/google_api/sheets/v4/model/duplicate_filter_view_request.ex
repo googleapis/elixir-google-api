@@ -25,23 +25,23 @@ defmodule GoogleApi.Sheets.V4.Model.DuplicateFilterViewRequest do
   - filterId (integer()): The ID of the filter being duplicated. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          filterId: any()
+          :filterId => any()
         }
 
-  defstruct [
-    :filterId
-  ]
+  field(:filterId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DuplicateFilterViewRequest do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Sheets.V4.Model.DuplicateFilterViewRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.DuplicateFilterViewRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

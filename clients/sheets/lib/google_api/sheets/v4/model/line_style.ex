@@ -27,25 +27,25 @@ defmodule GoogleApi.Sheets.V4.Model.LineStyle do
   - width (integer()): The thickness of the line, in px. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          type: any(),
-          width: any()
+          :type => any(),
+          :width => any()
         }
 
-  defstruct [
-    :type,
-    :width
-  ]
+  field(:type)
+  field(:width)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.LineStyle do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Sheets.V4.Model.LineStyle.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.LineStyle do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

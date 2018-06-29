@@ -29,31 +29,31 @@ defmodule GoogleApi.Sheets.V4.Model.GridRange do
   - startRowIndex (integer()): The start row (inclusive) of the range, or not set if unbounded. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          endColumnIndex: any(),
-          endRowIndex: any(),
-          sheetId: any(),
-          startColumnIndex: any(),
-          startRowIndex: any()
+          :endColumnIndex => any(),
+          :endRowIndex => any(),
+          :sheetId => any(),
+          :startColumnIndex => any(),
+          :startRowIndex => any()
         }
 
-  defstruct [
-    :endColumnIndex,
-    :endRowIndex,
-    :sheetId,
-    :startColumnIndex,
-    :startRowIndex
-  ]
+  field(:endColumnIndex)
+  field(:endRowIndex)
+  field(:sheetId)
+  field(:startColumnIndex)
+  field(:startRowIndex)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.GridRange do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Sheets.V4.Model.GridRange.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.GridRange do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

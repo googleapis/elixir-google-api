@@ -28,29 +28,29 @@ defmodule GoogleApi.Sheets.V4.Model.Color do
   - red (float()): The amount of red in the color as a value in the interval [0, 1]. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          alpha: any(),
-          blue: any(),
-          green: any(),
-          red: any()
+          :alpha => any(),
+          :blue => any(),
+          :green => any(),
+          :red => any()
         }
 
-  defstruct [
-    :alpha,
-    :blue,
-    :green,
-    :red
-  ]
+  field(:alpha)
+  field(:blue)
+  field(:green)
+  field(:red)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.Color do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Sheets.V4.Model.Color.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.Color do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

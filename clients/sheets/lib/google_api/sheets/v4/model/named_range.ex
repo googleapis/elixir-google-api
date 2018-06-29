@@ -27,30 +27,27 @@ defmodule GoogleApi.Sheets.V4.Model.NamedRange do
   - range (GridRange): The range this represents. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          name: any(),
-          namedRangeId: any(),
-          range: GoogleApi.Sheets.V4.Model.GridRange.t()
+          :name => any(),
+          :namedRangeId => any(),
+          :range => GoogleApi.Sheets.V4.Model.GridRange.t()
         }
 
-  defstruct [
-    :name,
-    :namedRangeId,
-    :range
-  ]
+  field(:name)
+  field(:namedRangeId)
+  field(:range, as: GoogleApi.Sheets.V4.Model.GridRange)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.NamedRange do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:range, :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
+    GoogleApi.Sheets.V4.Model.NamedRange.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.NamedRange do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

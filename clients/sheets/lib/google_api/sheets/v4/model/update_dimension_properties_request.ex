@@ -27,31 +27,27 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateDimensionPropertiesRequest do
   - range (DimensionRange): The rows or columns to update. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          fields: any(),
-          properties: GoogleApi.Sheets.V4.Model.DimensionProperties.t(),
-          range: GoogleApi.Sheets.V4.Model.DimensionRange.t()
+          :fields => any(),
+          :properties => GoogleApi.Sheets.V4.Model.DimensionProperties.t(),
+          :range => GoogleApi.Sheets.V4.Model.DimensionRange.t()
         }
 
-  defstruct [
-    :fields,
-    :properties,
-    :range
-  ]
+  field(:fields)
+  field(:properties, as: GoogleApi.Sheets.V4.Model.DimensionProperties)
+  field(:range, as: GoogleApi.Sheets.V4.Model.DimensionRange)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UpdateDimensionPropertiesRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:properties, :struct, GoogleApi.Sheets.V4.Model.DimensionProperties, options)
-    |> deserialize(:range, :struct, GoogleApi.Sheets.V4.Model.DimensionRange, options)
+    GoogleApi.Sheets.V4.Model.UpdateDimensionPropertiesRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UpdateDimensionPropertiesRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

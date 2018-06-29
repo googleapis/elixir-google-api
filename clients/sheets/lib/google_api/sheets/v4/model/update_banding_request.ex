@@ -26,28 +26,25 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateBandingRequest do
   - fields (String.t): The fields that should be updated.  At least one field must be specified. The root &#x60;bandedRange&#x60; is implied and should not be specified. A single &#x60;\&quot;*\&quot;&#x60; can be used as short-hand for listing every field. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          bandedRange: GoogleApi.Sheets.V4.Model.BandedRange.t(),
-          fields: any()
+          :bandedRange => GoogleApi.Sheets.V4.Model.BandedRange.t(),
+          :fields => any()
         }
 
-  defstruct [
-    :bandedRange,
-    :fields
-  ]
+  field(:bandedRange, as: GoogleApi.Sheets.V4.Model.BandedRange)
+  field(:fields)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UpdateBandingRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:bandedRange, :struct, GoogleApi.Sheets.V4.Model.BandedRange, options)
+    GoogleApi.Sheets.V4.Model.UpdateBandingRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UpdateBandingRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

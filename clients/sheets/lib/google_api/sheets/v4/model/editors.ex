@@ -27,27 +27,27 @@ defmodule GoogleApi.Sheets.V4.Model.Editors do
   - users ([String.t]): The email addresses of users with edit access to the protected range. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          domainUsersCanEdit: any(),
-          groups: any(),
-          users: any()
+          :domainUsersCanEdit => any(),
+          :groups => list(any()),
+          :users => list(any())
         }
 
-  defstruct [
-    :domainUsersCanEdit,
-    :groups,
-    :users
-  ]
+  field(:domainUsersCanEdit)
+  field(:groups, type: :list)
+  field(:users, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.Editors do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Sheets.V4.Model.Editors.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.Editors do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

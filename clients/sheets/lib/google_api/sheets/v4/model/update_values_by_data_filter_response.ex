@@ -30,37 +30,33 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateValuesByDataFilterResponse do
   - updatedRows (integer()): The number of rows where at least one cell in the row was updated. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          dataFilter: GoogleApi.Sheets.V4.Model.DataFilter.t(),
-          updatedCells: any(),
-          updatedColumns: any(),
-          updatedData: GoogleApi.Sheets.V4.Model.ValueRange.t(),
-          updatedRange: any(),
-          updatedRows: any()
+          :dataFilter => GoogleApi.Sheets.V4.Model.DataFilter.t(),
+          :updatedCells => any(),
+          :updatedColumns => any(),
+          :updatedData => GoogleApi.Sheets.V4.Model.ValueRange.t(),
+          :updatedRange => any(),
+          :updatedRows => any()
         }
 
-  defstruct [
-    :dataFilter,
-    :updatedCells,
-    :updatedColumns,
-    :updatedData,
-    :updatedRange,
-    :updatedRows
-  ]
+  field(:dataFilter, as: GoogleApi.Sheets.V4.Model.DataFilter)
+  field(:updatedCells)
+  field(:updatedColumns)
+  field(:updatedData, as: GoogleApi.Sheets.V4.Model.ValueRange)
+  field(:updatedRange)
+  field(:updatedRows)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UpdateValuesByDataFilterResponse do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:dataFilter, :struct, GoogleApi.Sheets.V4.Model.DataFilter, options)
-    |> deserialize(:updatedData, :struct, GoogleApi.Sheets.V4.Model.ValueRange, options)
+    GoogleApi.Sheets.V4.Model.UpdateValuesByDataFilterResponse.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UpdateValuesByDataFilterResponse do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

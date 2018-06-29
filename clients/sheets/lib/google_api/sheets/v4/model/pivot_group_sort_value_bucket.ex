@@ -26,28 +26,25 @@ defmodule GoogleApi.Sheets.V4.Model.PivotGroupSortValueBucket do
   - valuesIndex (integer()): The offset in the PivotTable.values list which the values in this grouping should be sorted by. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          buckets: list(GoogleApi.Sheets.V4.Model.ExtendedValue.t()),
-          valuesIndex: any()
+          :buckets => list(GoogleApi.Sheets.V4.Model.ExtendedValue.t()),
+          :valuesIndex => any()
         }
 
-  defstruct [
-    :buckets,
-    :valuesIndex
-  ]
+  field(:buckets, as: GoogleApi.Sheets.V4.Model.ExtendedValue, type: :list)
+  field(:valuesIndex)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.PivotGroupSortValueBucket do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:buckets, :list, GoogleApi.Sheets.V4.Model.ExtendedValue, options)
+    GoogleApi.Sheets.V4.Model.PivotGroupSortValueBucket.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.PivotGroupSortValueBucket do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

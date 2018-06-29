@@ -25,26 +25,23 @@ defmodule GoogleApi.Sheets.V4.Model.AddChartRequest do
   - chart (EmbeddedChart): The chart that should be added to the spreadsheet, including the position where it should be placed. The chartId field is optional; if one is not set, an id will be randomly generated. (It is an error to specify the ID of a chart that already exists.) Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          chart: GoogleApi.Sheets.V4.Model.EmbeddedChart.t()
+          :chart => GoogleApi.Sheets.V4.Model.EmbeddedChart.t()
         }
 
-  defstruct [
-    :chart
-  ]
+  field(:chart, as: GoogleApi.Sheets.V4.Model.EmbeddedChart)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.AddChartRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:chart, :struct, GoogleApi.Sheets.V4.Model.EmbeddedChart, options)
+    GoogleApi.Sheets.V4.Model.AddChartRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.AddChartRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

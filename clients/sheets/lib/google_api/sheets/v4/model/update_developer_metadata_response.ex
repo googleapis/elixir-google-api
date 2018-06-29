@@ -25,31 +25,23 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateDeveloperMetadataResponse do
   - developerMetadata ([DeveloperMetadata]): The updated developer metadata. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          developerMetadata: list(GoogleApi.Sheets.V4.Model.DeveloperMetadata.t())
+          :developerMetadata => list(GoogleApi.Sheets.V4.Model.DeveloperMetadata.t())
         }
 
-  defstruct [
-    :developerMetadata
-  ]
+  field(:developerMetadata, as: GoogleApi.Sheets.V4.Model.DeveloperMetadata, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UpdateDeveloperMetadataResponse do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :developerMetadata,
-      :list,
-      GoogleApi.Sheets.V4.Model.DeveloperMetadata,
-      options
-    )
+    GoogleApi.Sheets.V4.Model.UpdateDeveloperMetadataResponse.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UpdateDeveloperMetadataResponse do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

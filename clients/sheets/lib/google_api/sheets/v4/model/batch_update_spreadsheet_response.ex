@@ -27,31 +27,27 @@ defmodule GoogleApi.Sheets.V4.Model.BatchUpdateSpreadsheetResponse do
   - updatedSpreadsheet (Spreadsheet): The spreadsheet after updates were applied. This is only set if [BatchUpdateSpreadsheetRequest.include_spreadsheet_in_response] is &#x60;true&#x60;. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          replies: list(GoogleApi.Sheets.V4.Model.Response.t()),
-          spreadsheetId: any(),
-          updatedSpreadsheet: GoogleApi.Sheets.V4.Model.Spreadsheet.t()
+          :replies => list(GoogleApi.Sheets.V4.Model.Response.t()),
+          :spreadsheetId => any(),
+          :updatedSpreadsheet => GoogleApi.Sheets.V4.Model.Spreadsheet.t()
         }
 
-  defstruct [
-    :replies,
-    :spreadsheetId,
-    :updatedSpreadsheet
-  ]
+  field(:replies, as: GoogleApi.Sheets.V4.Model.Response, type: :list)
+  field(:spreadsheetId)
+  field(:updatedSpreadsheet, as: GoogleApi.Sheets.V4.Model.Spreadsheet)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BatchUpdateSpreadsheetResponse do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:replies, :list, GoogleApi.Sheets.V4.Model.Response, options)
-    |> deserialize(:updatedSpreadsheet, :struct, GoogleApi.Sheets.V4.Model.Spreadsheet, options)
+    GoogleApi.Sheets.V4.Model.BatchUpdateSpreadsheetResponse.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BatchUpdateSpreadsheetResponse do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

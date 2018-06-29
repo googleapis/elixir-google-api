@@ -30,41 +30,33 @@ defmodule GoogleApi.Sheets.V4.Model.BatchUpdateValuesByDataFilterResponse do
   - totalUpdatedSheets (integer()): The total number of sheets where at least one cell in the sheet was updated. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          responses: list(GoogleApi.Sheets.V4.Model.UpdateValuesByDataFilterResponse.t()),
-          spreadsheetId: any(),
-          totalUpdatedCells: any(),
-          totalUpdatedColumns: any(),
-          totalUpdatedRows: any(),
-          totalUpdatedSheets: any()
+          :responses => list(GoogleApi.Sheets.V4.Model.UpdateValuesByDataFilterResponse.t()),
+          :spreadsheetId => any(),
+          :totalUpdatedCells => any(),
+          :totalUpdatedColumns => any(),
+          :totalUpdatedRows => any(),
+          :totalUpdatedSheets => any()
         }
 
-  defstruct [
-    :responses,
-    :spreadsheetId,
-    :totalUpdatedCells,
-    :totalUpdatedColumns,
-    :totalUpdatedRows,
-    :totalUpdatedSheets
-  ]
+  field(:responses, as: GoogleApi.Sheets.V4.Model.UpdateValuesByDataFilterResponse, type: :list)
+  field(:spreadsheetId)
+  field(:totalUpdatedCells)
+  field(:totalUpdatedColumns)
+  field(:totalUpdatedRows)
+  field(:totalUpdatedSheets)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BatchUpdateValuesByDataFilterResponse do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :responses,
-      :list,
-      GoogleApi.Sheets.V4.Model.UpdateValuesByDataFilterResponse,
-      options
-    )
+    GoogleApi.Sheets.V4.Model.BatchUpdateValuesByDataFilterResponse.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BatchUpdateValuesByDataFilterResponse do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

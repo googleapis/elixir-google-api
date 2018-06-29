@@ -22,33 +22,29 @@ defmodule GoogleApi.Sheets.V4.Model.BooleanRule do
 
   ## Attributes
 
-  - condition (BooleanCondition): The condition of the rule. If the condition evaluates to true, the format will be applied. Defaults to: `null`.
+  - condition (BooleanCondition): The condition of the rule. If the condition evaluates to true, the format is applied. Defaults to: `null`.
   - format (CellFormat): The format to apply. Conditional formatting can only apply a subset of formatting: bold, italic, strikethrough, foreground color &amp; background color. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          condition: GoogleApi.Sheets.V4.Model.BooleanCondition.t(),
-          format: GoogleApi.Sheets.V4.Model.CellFormat.t()
+          :condition => GoogleApi.Sheets.V4.Model.BooleanCondition.t(),
+          :format => GoogleApi.Sheets.V4.Model.CellFormat.t()
         }
 
-  defstruct [
-    :condition,
-    :format
-  ]
+  field(:condition, as: GoogleApi.Sheets.V4.Model.BooleanCondition)
+  field(:format, as: GoogleApi.Sheets.V4.Model.CellFormat)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BooleanRule do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:condition, :struct, GoogleApi.Sheets.V4.Model.BooleanCondition, options)
-    |> deserialize(:format, :struct, GoogleApi.Sheets.V4.Model.CellFormat, options)
+    GoogleApi.Sheets.V4.Model.BooleanRule.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BooleanRule do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

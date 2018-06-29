@@ -31,38 +31,35 @@ defmodule GoogleApi.Sheets.V4.Model.TextFormat do
   - underline (boolean()): True if the text is underlined. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          bold: any(),
-          fontFamily: any(),
-          fontSize: any(),
-          foregroundColor: GoogleApi.Sheets.V4.Model.Color.t(),
-          italic: any(),
-          strikethrough: any(),
-          underline: any()
+          :bold => any(),
+          :fontFamily => any(),
+          :fontSize => any(),
+          :foregroundColor => GoogleApi.Sheets.V4.Model.Color.t(),
+          :italic => any(),
+          :strikethrough => any(),
+          :underline => any()
         }
 
-  defstruct [
-    :bold,
-    :fontFamily,
-    :fontSize,
-    :foregroundColor,
-    :italic,
-    :strikethrough,
-    :underline
-  ]
+  field(:bold)
+  field(:fontFamily)
+  field(:fontSize)
+  field(:foregroundColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:italic)
+  field(:strikethrough)
+  field(:underline)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.TextFormat do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:foregroundColor, :struct, GoogleApi.Sheets.V4.Model.Color, options)
+    GoogleApi.Sheets.V4.Model.TextFormat.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.TextFormat do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

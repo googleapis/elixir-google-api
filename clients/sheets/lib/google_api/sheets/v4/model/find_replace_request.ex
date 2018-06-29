@@ -33,42 +33,39 @@ defmodule GoogleApi.Sheets.V4.Model.FindReplaceRequest do
   - sheetId (integer()): The sheet to find/replace over. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          allSheets: any(),
-          find: any(),
-          includeFormulas: any(),
-          matchCase: any(),
-          matchEntireCell: any(),
-          range: GoogleApi.Sheets.V4.Model.GridRange.t(),
-          replacement: any(),
-          searchByRegex: any(),
-          sheetId: any()
+          :allSheets => any(),
+          :find => any(),
+          :includeFormulas => any(),
+          :matchCase => any(),
+          :matchEntireCell => any(),
+          :range => GoogleApi.Sheets.V4.Model.GridRange.t(),
+          :replacement => any(),
+          :searchByRegex => any(),
+          :sheetId => any()
         }
 
-  defstruct [
-    :allSheets,
-    :find,
-    :includeFormulas,
-    :matchCase,
-    :matchEntireCell,
-    :range,
-    :replacement,
-    :searchByRegex,
-    :sheetId
-  ]
+  field(:allSheets)
+  field(:find)
+  field(:includeFormulas)
+  field(:matchCase)
+  field(:matchEntireCell)
+  field(:range, as: GoogleApi.Sheets.V4.Model.GridRange)
+  field(:replacement)
+  field(:searchByRegex)
+  field(:sheetId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.FindReplaceRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:range, :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
+    GoogleApi.Sheets.V4.Model.FindReplaceRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.FindReplaceRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

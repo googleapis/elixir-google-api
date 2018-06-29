@@ -26,28 +26,25 @@ defmodule GoogleApi.Sheets.V4.Model.AddConditionalFormatRuleRequest do
   - rule (ConditionalFormatRule): The rule to add. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          index: any(),
-          rule: GoogleApi.Sheets.V4.Model.ConditionalFormatRule.t()
+          :index => any(),
+          :rule => GoogleApi.Sheets.V4.Model.ConditionalFormatRule.t()
         }
 
-  defstruct [
-    :index,
-    :rule
-  ]
+  field(:index)
+  field(:rule, as: GoogleApi.Sheets.V4.Model.ConditionalFormatRule)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.AddConditionalFormatRuleRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:rule, :struct, GoogleApi.Sheets.V4.Model.ConditionalFormatRule, options)
+    GoogleApi.Sheets.V4.Model.AddConditionalFormatRuleRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.AddConditionalFormatRuleRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

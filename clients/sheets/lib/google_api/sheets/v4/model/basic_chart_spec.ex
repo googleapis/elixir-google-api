@@ -39,48 +39,43 @@ defmodule GoogleApi.Sheets.V4.Model.BasicChartSpec do
   - threeDimensional (boolean()): True to make the chart 3D. Applies to Bar and Column charts. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          axis: list(GoogleApi.Sheets.V4.Model.BasicChartAxis.t()),
-          chartType: any(),
-          compareMode: any(),
-          domains: list(GoogleApi.Sheets.V4.Model.BasicChartDomain.t()),
-          headerCount: any(),
-          interpolateNulls: any(),
-          legendPosition: any(),
-          lineSmoothing: any(),
-          series: list(GoogleApi.Sheets.V4.Model.BasicChartSeries.t()),
-          stackedType: any(),
-          threeDimensional: any()
+          :axis => list(GoogleApi.Sheets.V4.Model.BasicChartAxis.t()),
+          :chartType => any(),
+          :compareMode => any(),
+          :domains => list(GoogleApi.Sheets.V4.Model.BasicChartDomain.t()),
+          :headerCount => any(),
+          :interpolateNulls => any(),
+          :legendPosition => any(),
+          :lineSmoothing => any(),
+          :series => list(GoogleApi.Sheets.V4.Model.BasicChartSeries.t()),
+          :stackedType => any(),
+          :threeDimensional => any()
         }
 
-  defstruct [
-    :axis,
-    :chartType,
-    :compareMode,
-    :domains,
-    :headerCount,
-    :interpolateNulls,
-    :legendPosition,
-    :lineSmoothing,
-    :series,
-    :stackedType,
-    :threeDimensional
-  ]
+  field(:axis, as: GoogleApi.Sheets.V4.Model.BasicChartAxis, type: :list)
+  field(:chartType)
+  field(:compareMode)
+  field(:domains, as: GoogleApi.Sheets.V4.Model.BasicChartDomain, type: :list)
+  field(:headerCount)
+  field(:interpolateNulls)
+  field(:legendPosition)
+  field(:lineSmoothing)
+  field(:series, as: GoogleApi.Sheets.V4.Model.BasicChartSeries, type: :list)
+  field(:stackedType)
+  field(:threeDimensional)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BasicChartSpec do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:axis, :list, GoogleApi.Sheets.V4.Model.BasicChartAxis, options)
-    |> deserialize(:domains, :list, GoogleApi.Sheets.V4.Model.BasicChartDomain, options)
-    |> deserialize(:series, :list, GoogleApi.Sheets.V4.Model.BasicChartSeries, options)
+    GoogleApi.Sheets.V4.Model.BasicChartSpec.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BasicChartSpec do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

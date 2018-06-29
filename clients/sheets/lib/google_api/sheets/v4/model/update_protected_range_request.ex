@@ -26,28 +26,25 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateProtectedRangeRequest do
   - protectedRange (ProtectedRange): The protected range to update with the new properties. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          fields: any(),
-          protectedRange: GoogleApi.Sheets.V4.Model.ProtectedRange.t()
+          :fields => any(),
+          :protectedRange => GoogleApi.Sheets.V4.Model.ProtectedRange.t()
         }
 
-  defstruct [
-    :fields,
-    :protectedRange
-  ]
+  field(:fields)
+  field(:protectedRange, as: GoogleApi.Sheets.V4.Model.ProtectedRange)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UpdateProtectedRangeRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:protectedRange, :struct, GoogleApi.Sheets.V4.Model.ProtectedRange, options)
+    GoogleApi.Sheets.V4.Model.UpdateProtectedRangeRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UpdateProtectedRangeRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

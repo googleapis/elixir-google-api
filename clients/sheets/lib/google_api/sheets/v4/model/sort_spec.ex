@@ -27,25 +27,25 @@ defmodule GoogleApi.Sheets.V4.Model.SortSpec do
     - Enum - one of [SORT_ORDER_UNSPECIFIED, ASCENDING, DESCENDING]
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          dimensionIndex: any(),
-          sortOrder: any()
+          :dimensionIndex => any(),
+          :sortOrder => any()
         }
 
-  defstruct [
-    :dimensionIndex,
-    :sortOrder
-  ]
+  field(:dimensionIndex)
+  field(:sortOrder)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.SortSpec do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Sheets.V4.Model.SortSpec.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.SortSpec do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

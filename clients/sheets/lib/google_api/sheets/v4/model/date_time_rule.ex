@@ -26,23 +26,23 @@ defmodule GoogleApi.Sheets.V4.Model.DateTimeRule do
     - Enum - one of [DATE_TIME_RULE_TYPE_UNSPECIFIED, SECOND, MINUTE, HOUR, HOUR_MINUTE, HOUR_MINUTE_AMPM, DAY_OF_WEEK, DAY_OF_YEAR, DAY_OF_MONTH, DAY_MONTH, MONTH, QUARTER, YEAR, YEAR_MONTH, YEAR_QUARTER, YEAR_MONTH_DAY]
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          type: any()
+          :type => any()
         }
 
-  defstruct [
-    :type
-  ]
+  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DateTimeRule do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Sheets.V4.Model.DateTimeRule.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.DateTimeRule do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

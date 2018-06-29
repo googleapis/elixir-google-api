@@ -28,32 +28,29 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRuleRequest do
   - sheetId (integer()): The sheet of the rule to move.  Required if new_index is set, unused otherwise. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          index: any(),
-          newIndex: any(),
-          rule: GoogleApi.Sheets.V4.Model.ConditionalFormatRule.t(),
-          sheetId: any()
+          :index => any(),
+          :newIndex => any(),
+          :rule => GoogleApi.Sheets.V4.Model.ConditionalFormatRule.t(),
+          :sheetId => any()
         }
 
-  defstruct [
-    :index,
-    :newIndex,
-    :rule,
-    :sheetId
-  ]
+  field(:index)
+  field(:newIndex)
+  field(:rule, as: GoogleApi.Sheets.V4.Model.ConditionalFormatRule)
+  field(:sheetId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRuleRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:rule, :struct, GoogleApi.Sheets.V4.Model.ConditionalFormatRule, options)
+    GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRuleRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRuleRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

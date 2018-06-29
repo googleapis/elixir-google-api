@@ -22,7 +22,7 @@ defmodule GoogleApi.Sheets.V4.Model.Sheet do
 
   ## Attributes
 
-  - bandedRanges ([BandedRange]): The banded (i.e. alternating colors) ranges on this sheet. Defaults to: `null`.
+  - bandedRanges ([BandedRange]): The banded (alternating colors) ranges on this sheet. Defaults to: `null`.
   - basicFilter (BasicFilter): The filter on this sheet, if any. Defaults to: `null`.
   - charts ([EmbeddedChart]): The specifications of every chart on this sheet. Defaults to: `null`.
   - columnGroups ([DimensionGroup]): All column groups on this sheet, ordered by increasing range start index, then by group depth. Defaults to: `null`.
@@ -36,69 +36,45 @@ defmodule GoogleApi.Sheets.V4.Model.Sheet do
   - rowGroups ([DimensionGroup]): All row groups on this sheet, ordered by increasing range start index, then by group depth. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          bandedRanges: list(GoogleApi.Sheets.V4.Model.BandedRange.t()),
-          basicFilter: GoogleApi.Sheets.V4.Model.BasicFilter.t(),
-          charts: list(GoogleApi.Sheets.V4.Model.EmbeddedChart.t()),
-          columnGroups: list(GoogleApi.Sheets.V4.Model.DimensionGroup.t()),
-          conditionalFormats: list(GoogleApi.Sheets.V4.Model.ConditionalFormatRule.t()),
-          data: list(GoogleApi.Sheets.V4.Model.GridData.t()),
-          developerMetadata: list(GoogleApi.Sheets.V4.Model.DeveloperMetadata.t()),
-          filterViews: list(GoogleApi.Sheets.V4.Model.FilterView.t()),
-          merges: list(GoogleApi.Sheets.V4.Model.GridRange.t()),
-          properties: GoogleApi.Sheets.V4.Model.SheetProperties.t(),
-          protectedRanges: list(GoogleApi.Sheets.V4.Model.ProtectedRange.t()),
-          rowGroups: list(GoogleApi.Sheets.V4.Model.DimensionGroup.t())
+          :bandedRanges => list(GoogleApi.Sheets.V4.Model.BandedRange.t()),
+          :basicFilter => GoogleApi.Sheets.V4.Model.BasicFilter.t(),
+          :charts => list(GoogleApi.Sheets.V4.Model.EmbeddedChart.t()),
+          :columnGroups => list(GoogleApi.Sheets.V4.Model.DimensionGroup.t()),
+          :conditionalFormats => list(GoogleApi.Sheets.V4.Model.ConditionalFormatRule.t()),
+          :data => list(GoogleApi.Sheets.V4.Model.GridData.t()),
+          :developerMetadata => list(GoogleApi.Sheets.V4.Model.DeveloperMetadata.t()),
+          :filterViews => list(GoogleApi.Sheets.V4.Model.FilterView.t()),
+          :merges => list(GoogleApi.Sheets.V4.Model.GridRange.t()),
+          :properties => GoogleApi.Sheets.V4.Model.SheetProperties.t(),
+          :protectedRanges => list(GoogleApi.Sheets.V4.Model.ProtectedRange.t()),
+          :rowGroups => list(GoogleApi.Sheets.V4.Model.DimensionGroup.t())
         }
 
-  defstruct [
-    :bandedRanges,
-    :basicFilter,
-    :charts,
-    :columnGroups,
-    :conditionalFormats,
-    :data,
-    :developerMetadata,
-    :filterViews,
-    :merges,
-    :properties,
-    :protectedRanges,
-    :rowGroups
-  ]
+  field(:bandedRanges, as: GoogleApi.Sheets.V4.Model.BandedRange, type: :list)
+  field(:basicFilter, as: GoogleApi.Sheets.V4.Model.BasicFilter)
+  field(:charts, as: GoogleApi.Sheets.V4.Model.EmbeddedChart, type: :list)
+  field(:columnGroups, as: GoogleApi.Sheets.V4.Model.DimensionGroup, type: :list)
+  field(:conditionalFormats, as: GoogleApi.Sheets.V4.Model.ConditionalFormatRule, type: :list)
+  field(:data, as: GoogleApi.Sheets.V4.Model.GridData, type: :list)
+  field(:developerMetadata, as: GoogleApi.Sheets.V4.Model.DeveloperMetadata, type: :list)
+  field(:filterViews, as: GoogleApi.Sheets.V4.Model.FilterView, type: :list)
+  field(:merges, as: GoogleApi.Sheets.V4.Model.GridRange, type: :list)
+  field(:properties, as: GoogleApi.Sheets.V4.Model.SheetProperties)
+  field(:protectedRanges, as: GoogleApi.Sheets.V4.Model.ProtectedRange, type: :list)
+  field(:rowGroups, as: GoogleApi.Sheets.V4.Model.DimensionGroup, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.Sheet do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:bandedRanges, :list, GoogleApi.Sheets.V4.Model.BandedRange, options)
-    |> deserialize(:basicFilter, :struct, GoogleApi.Sheets.V4.Model.BasicFilter, options)
-    |> deserialize(:charts, :list, GoogleApi.Sheets.V4.Model.EmbeddedChart, options)
-    |> deserialize(:columnGroups, :list, GoogleApi.Sheets.V4.Model.DimensionGroup, options)
-    |> deserialize(
-      :conditionalFormats,
-      :list,
-      GoogleApi.Sheets.V4.Model.ConditionalFormatRule,
-      options
-    )
-    |> deserialize(:data, :list, GoogleApi.Sheets.V4.Model.GridData, options)
-    |> deserialize(
-      :developerMetadata,
-      :list,
-      GoogleApi.Sheets.V4.Model.DeveloperMetadata,
-      options
-    )
-    |> deserialize(:filterViews, :list, GoogleApi.Sheets.V4.Model.FilterView, options)
-    |> deserialize(:merges, :list, GoogleApi.Sheets.V4.Model.GridRange, options)
-    |> deserialize(:properties, :struct, GoogleApi.Sheets.V4.Model.SheetProperties, options)
-    |> deserialize(:protectedRanges, :list, GoogleApi.Sheets.V4.Model.ProtectedRange, options)
-    |> deserialize(:rowGroups, :list, GoogleApi.Sheets.V4.Model.DimensionGroup, options)
+    GoogleApi.Sheets.V4.Model.Sheet.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.Sheet do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -18,33 +18,30 @@
 
 defmodule GoogleApi.Sheets.V4.Model.ManualRule do
   @moduledoc """
-  Allows you to manually organize the values in a source data column into buckets with names of your choosing. For example, a pivot table that aggregates population by state:      +-------+-------------------+     | State | SUM of Population |     +-------+-------------------+     | AK    |               0.7 |     | AL    |               4.8 |     | AR    |               2.9 |     ...     +-------+-------------------+ could be turned into a pivot table that aggregates population by time zone by providing a list of groups (e.g. groupName &#x3D; &#39;Central&#39;, items &#x3D; [&#39;AL&#39;, &#39;AR&#39;, &#39;IA&#39;, ...]) to a manual group rule. Note that a similar effect could be achieved by adding a time zone column to the source data and adjusting the pivot table.      +-----------+-------------------+     | Time Zone | SUM of Population |     +-----------+-------------------+     | Central   |             106.3 |     | Eastern   |             151.9 |     | Mountain  |              17.4 |     ...     +-----------+-------------------+
+  Allows you to manually organize the values in a source data column into buckets with names of your choosing. For example, a pivot table that aggregates population by state:      +-------+-------------------+     | State | SUM of Population |     +-------+-------------------+     | AK    |               0.7 |     | AL    |               4.8 |     | AR    |               2.9 |     ...     +-------+-------------------+ could be turned into a pivot table that aggregates population by time zone by providing a list of groups (for example, groupName &#x3D; &#39;Central&#39;, items &#x3D; [&#39;AL&#39;, &#39;AR&#39;, &#39;IA&#39;, ...]) to a manual group rule. Note that a similar effect could be achieved by adding a time zone column to the source data and adjusting the pivot table.      +-----------+-------------------+     | Time Zone | SUM of Population |     +-----------+-------------------+     | Central   |             106.3 |     | Eastern   |             151.9 |     | Mountain  |              17.4 |     ...     +-----------+-------------------+
 
   ## Attributes
 
   - groups ([ManualRuleGroup]): The list of group names and the corresponding items from the source data that map to each group name. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          groups: list(GoogleApi.Sheets.V4.Model.ManualRuleGroup.t())
+          :groups => list(GoogleApi.Sheets.V4.Model.ManualRuleGroup.t())
         }
 
-  defstruct [
-    :groups
-  ]
+  field(:groups, as: GoogleApi.Sheets.V4.Model.ManualRuleGroup, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.ManualRule do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:groups, :list, GoogleApi.Sheets.V4.Model.ManualRuleGroup, options)
+    GoogleApi.Sheets.V4.Model.ManualRule.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.ManualRule do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

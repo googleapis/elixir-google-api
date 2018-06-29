@@ -29,32 +29,29 @@ defmodule GoogleApi.Sheets.V4.Model.DeveloperMetadataLocation do
   - spreadsheet (boolean()): True when metadata is associated with an entire spreadsheet. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          dimensionRange: GoogleApi.Sheets.V4.Model.DimensionRange.t(),
-          locationType: any(),
-          sheetId: any(),
-          spreadsheet: any()
+          :dimensionRange => GoogleApi.Sheets.V4.Model.DimensionRange.t(),
+          :locationType => any(),
+          :sheetId => any(),
+          :spreadsheet => any()
         }
 
-  defstruct [
-    :dimensionRange,
-    :locationType,
-    :sheetId,
-    :spreadsheet
-  ]
+  field(:dimensionRange, as: GoogleApi.Sheets.V4.Model.DimensionRange)
+  field(:locationType)
+  field(:sheetId)
+  field(:spreadsheet)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DeveloperMetadataLocation do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:dimensionRange, :struct, GoogleApi.Sheets.V4.Model.DimensionRange, options)
+    GoogleApi.Sheets.V4.Model.DeveloperMetadataLocation.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.DeveloperMetadataLocation do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

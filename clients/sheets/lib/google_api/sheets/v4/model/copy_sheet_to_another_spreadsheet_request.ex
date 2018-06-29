@@ -25,23 +25,23 @@ defmodule GoogleApi.Sheets.V4.Model.CopySheetToAnotherSpreadsheetRequest do
   - destinationSpreadsheetId (String.t): The ID of the spreadsheet to copy the sheet to. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          destinationSpreadsheetId: any()
+          :destinationSpreadsheetId => any()
         }
 
-  defstruct [
-    :destinationSpreadsheetId
-  ]
+  field(:destinationSpreadsheetId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.CopySheetToAnotherSpreadsheetRequest do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Sheets.V4.Model.CopySheetToAnotherSpreadsheetRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.CopySheetToAnotherSpreadsheetRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

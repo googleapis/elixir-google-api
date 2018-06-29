@@ -28,29 +28,29 @@ defmodule GoogleApi.Sheets.V4.Model.Padding do
   - top (integer()): The top padding of the cell. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          bottom: any(),
-          left: any(),
-          right: any(),
-          top: any()
+          :bottom => any(),
+          :left => any(),
+          :right => any(),
+          :top => any()
         }
 
-  defstruct [
-    :bottom,
-    :left,
-    :right,
-    :top
-  ]
+  field(:bottom)
+  field(:left)
+  field(:right)
+  field(:top)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.Padding do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Sheets.V4.Model.Padding.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.Padding do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

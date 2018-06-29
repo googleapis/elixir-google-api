@@ -27,27 +27,27 @@ defmodule GoogleApi.Sheets.V4.Model.GridCoordinate do
   - sheetId (integer()): The sheet this coordinate is on. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          columnIndex: any(),
-          rowIndex: any(),
-          sheetId: any()
+          :columnIndex => any(),
+          :rowIndex => any(),
+          :sheetId => any()
         }
 
-  defstruct [
-    :columnIndex,
-    :rowIndex,
-    :sheetId
-  ]
+  field(:columnIndex)
+  field(:rowIndex)
+  field(:sheetId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.GridCoordinate do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Sheets.V4.Model.GridCoordinate.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.GridCoordinate do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

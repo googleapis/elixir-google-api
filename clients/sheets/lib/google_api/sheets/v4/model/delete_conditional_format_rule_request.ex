@@ -26,25 +26,25 @@ defmodule GoogleApi.Sheets.V4.Model.DeleteConditionalFormatRuleRequest do
   - sheetId (integer()): The sheet the rule is being deleted from. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          index: any(),
-          sheetId: any()
+          :index => any(),
+          :sheetId => any()
         }
 
-  defstruct [
-    :index,
-    :sheetId
-  ]
+  field(:index)
+  field(:sheetId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DeleteConditionalFormatRuleRequest do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Sheets.V4.Model.DeleteConditionalFormatRuleRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.DeleteConditionalFormatRuleRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

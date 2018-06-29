@@ -26,28 +26,25 @@ defmodule GoogleApi.Sheets.V4.Model.TextFormatRun do
   - startIndex (integer()): The character index where this run starts. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          format: GoogleApi.Sheets.V4.Model.TextFormat.t(),
-          startIndex: any()
+          :format => GoogleApi.Sheets.V4.Model.TextFormat.t(),
+          :startIndex => any()
         }
 
-  defstruct [
-    :format,
-    :startIndex
-  ]
+  field(:format, as: GoogleApi.Sheets.V4.Model.TextFormat)
+  field(:startIndex)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.TextFormatRun do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:format, :struct, GoogleApi.Sheets.V4.Model.TextFormat, options)
+    GoogleApi.Sheets.V4.Model.TextFormatRun.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.TextFormatRun do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

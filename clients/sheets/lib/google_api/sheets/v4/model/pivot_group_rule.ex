@@ -27,32 +27,27 @@ defmodule GoogleApi.Sheets.V4.Model.PivotGroupRule do
   - manualRule (ManualRule): A ManualRule. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          dateTimeRule: GoogleApi.Sheets.V4.Model.DateTimeRule.t(),
-          histogramRule: GoogleApi.Sheets.V4.Model.HistogramRule.t(),
-          manualRule: GoogleApi.Sheets.V4.Model.ManualRule.t()
+          :dateTimeRule => GoogleApi.Sheets.V4.Model.DateTimeRule.t(),
+          :histogramRule => GoogleApi.Sheets.V4.Model.HistogramRule.t(),
+          :manualRule => GoogleApi.Sheets.V4.Model.ManualRule.t()
         }
 
-  defstruct [
-    :dateTimeRule,
-    :histogramRule,
-    :manualRule
-  ]
+  field(:dateTimeRule, as: GoogleApi.Sheets.V4.Model.DateTimeRule)
+  field(:histogramRule, as: GoogleApi.Sheets.V4.Model.HistogramRule)
+  field(:manualRule, as: GoogleApi.Sheets.V4.Model.ManualRule)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.PivotGroupRule do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:dateTimeRule, :struct, GoogleApi.Sheets.V4.Model.DateTimeRule, options)
-    |> deserialize(:histogramRule, :struct, GoogleApi.Sheets.V4.Model.HistogramRule, options)
-    |> deserialize(:manualRule, :struct, GoogleApi.Sheets.V4.Model.ManualRule, options)
+    GoogleApi.Sheets.V4.Model.PivotGroupRule.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.PivotGroupRule do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

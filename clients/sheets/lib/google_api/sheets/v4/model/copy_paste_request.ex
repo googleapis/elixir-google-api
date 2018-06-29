@@ -30,33 +30,29 @@ defmodule GoogleApi.Sheets.V4.Model.CopyPasteRequest do
   - source (GridRange): The source range to copy. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          destination: GoogleApi.Sheets.V4.Model.GridRange.t(),
-          pasteOrientation: any(),
-          pasteType: any(),
-          source: GoogleApi.Sheets.V4.Model.GridRange.t()
+          :destination => GoogleApi.Sheets.V4.Model.GridRange.t(),
+          :pasteOrientation => any(),
+          :pasteType => any(),
+          :source => GoogleApi.Sheets.V4.Model.GridRange.t()
         }
 
-  defstruct [
-    :destination,
-    :pasteOrientation,
-    :pasteType,
-    :source
-  ]
+  field(:destination, as: GoogleApi.Sheets.V4.Model.GridRange)
+  field(:pasteOrientation)
+  field(:pasteType)
+  field(:source, as: GoogleApi.Sheets.V4.Model.GridRange)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.CopyPasteRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:destination, :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
-    |> deserialize(:source, :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
+    GoogleApi.Sheets.V4.Model.CopyPasteRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.CopyPasteRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

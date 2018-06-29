@@ -28,30 +28,27 @@ defmodule GoogleApi.Sheets.V4.Model.SourceAndDestination do
   - source (GridRange): The location of the data to use as the source of the autofill. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          dimension: any(),
-          fillLength: any(),
-          source: GoogleApi.Sheets.V4.Model.GridRange.t()
+          :dimension => any(),
+          :fillLength => any(),
+          :source => GoogleApi.Sheets.V4.Model.GridRange.t()
         }
 
-  defstruct [
-    :dimension,
-    :fillLength,
-    :source
-  ]
+  field(:dimension)
+  field(:fillLength)
+  field(:source, as: GoogleApi.Sheets.V4.Model.GridRange)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.SourceAndDestination do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:source, :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
+    GoogleApi.Sheets.V4.Model.SourceAndDestination.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.SourceAndDestination do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

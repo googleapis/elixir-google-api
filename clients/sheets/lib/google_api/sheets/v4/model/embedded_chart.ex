@@ -27,31 +27,27 @@ defmodule GoogleApi.Sheets.V4.Model.EmbeddedChart do
   - spec (ChartSpec): The specification of the chart. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          chartId: any(),
-          position: GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition.t(),
-          spec: GoogleApi.Sheets.V4.Model.ChartSpec.t()
+          :chartId => any(),
+          :position => GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition.t(),
+          :spec => GoogleApi.Sheets.V4.Model.ChartSpec.t()
         }
 
-  defstruct [
-    :chartId,
-    :position,
-    :spec
-  ]
+  field(:chartId)
+  field(:position, as: GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition)
+  field(:spec, as: GoogleApi.Sheets.V4.Model.ChartSpec)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.EmbeddedChart do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:position, :struct, GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition, options)
-    |> deserialize(:spec, :struct, GoogleApi.Sheets.V4.Model.ChartSpec, options)
+    GoogleApi.Sheets.V4.Model.EmbeddedChart.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.EmbeddedChart do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

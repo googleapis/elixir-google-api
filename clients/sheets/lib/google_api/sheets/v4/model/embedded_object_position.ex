@@ -22,35 +22,32 @@ defmodule GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition do
 
   ## Attributes
 
-  - newSheet (boolean()): If true, the embedded object will be put on a new sheet whose ID is chosen for you. Used only when writing. Defaults to: `null`.
+  - newSheet (boolean()): If true, the embedded object is put on a new sheet whose ID is chosen for you. Used only when writing. Defaults to: `null`.
   - overlayPosition (OverlayPosition): The position at which the object is overlaid on top of a grid. Defaults to: `null`.
   - sheetId (integer()): The sheet this is on. Set only if the embedded object is on its own sheet. Must be non-negative. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          newSheet: any(),
-          overlayPosition: GoogleApi.Sheets.V4.Model.OverlayPosition.t(),
-          sheetId: any()
+          :newSheet => any(),
+          :overlayPosition => GoogleApi.Sheets.V4.Model.OverlayPosition.t(),
+          :sheetId => any()
         }
 
-  defstruct [
-    :newSheet,
-    :overlayPosition,
-    :sheetId
-  ]
+  field(:newSheet)
+  field(:overlayPosition, as: GoogleApi.Sheets.V4.Model.OverlayPosition)
+  field(:sheetId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:overlayPosition, :struct, GoogleApi.Sheets.V4.Model.OverlayPosition, options)
+    GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

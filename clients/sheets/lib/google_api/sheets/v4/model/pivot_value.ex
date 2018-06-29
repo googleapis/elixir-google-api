@@ -22,7 +22,7 @@ defmodule GoogleApi.Sheets.V4.Model.PivotValue do
 
   ## Attributes
 
-  - calculatedDisplayType (String.t): If specified, indicates that pivot values should be displayed as the result of a calculation with another pivot value. For example, if calculated_display_type is specified as PERCENT_OF_GRAND_TOTAL, all the pivot values will be displayed as the percentage of the grand total. In the Sheets UI, this is referred to as \&quot;Show As\&quot; in the value section of a pivot table. Defaults to: `null`.
+  - calculatedDisplayType (String.t): If specified, indicates that pivot values should be displayed as the result of a calculation with another pivot value. For example, if calculated_display_type is specified as PERCENT_OF_GRAND_TOTAL, all the pivot values are displayed as the percentage of the grand total. In the Sheets UI, this is referred to as \&quot;Show As\&quot; in the value section of a pivot table. Defaults to: `null`.
     - Enum - one of [PIVOT_VALUE_CALCULATED_DISPLAY_TYPE_UNSPECIFIED, PERCENT_OF_ROW_TOTAL, PERCENT_OF_COLUMN_TOTAL, PERCENT_OF_GRAND_TOTAL]
   - formula (String.t): A custom formula to calculate the value.  The formula must start with an &#x60;&#x3D;&#x60; character. Defaults to: `null`.
   - name (String.t): A name to use for the value. Defaults to: `null`.
@@ -31,31 +31,31 @@ defmodule GoogleApi.Sheets.V4.Model.PivotValue do
     - Enum - one of [PIVOT_STANDARD_VALUE_FUNCTION_UNSPECIFIED, SUM, COUNTA, COUNT, COUNTUNIQUE, AVERAGE, MAX, MIN, MEDIAN, PRODUCT, STDEV, STDEVP, VAR, VARP, CUSTOM]
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          calculatedDisplayType: any(),
-          formula: any(),
-          name: any(),
-          sourceColumnOffset: any(),
-          summarizeFunction: any()
+          :calculatedDisplayType => any(),
+          :formula => any(),
+          :name => any(),
+          :sourceColumnOffset => any(),
+          :summarizeFunction => any()
         }
 
-  defstruct [
-    :calculatedDisplayType,
-    :formula,
-    :name,
-    :sourceColumnOffset,
-    :summarizeFunction
-  ]
+  field(:calculatedDisplayType)
+  field(:formula)
+  field(:name)
+  field(:sourceColumnOffset)
+  field(:summarizeFunction)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.PivotValue do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Sheets.V4.Model.PivotValue.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.PivotValue do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

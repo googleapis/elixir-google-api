@@ -26,28 +26,25 @@ defmodule GoogleApi.Sheets.V4.Model.GetSpreadsheetByDataFilterRequest do
   - includeGridData (boolean()): True if grid data should be returned. This parameter is ignored if a field mask was set in the request. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          dataFilters: list(GoogleApi.Sheets.V4.Model.DataFilter.t()),
-          includeGridData: any()
+          :dataFilters => list(GoogleApi.Sheets.V4.Model.DataFilter.t()),
+          :includeGridData => any()
         }
 
-  defstruct [
-    :dataFilters,
-    :includeGridData
-  ]
+  field(:dataFilters, as: GoogleApi.Sheets.V4.Model.DataFilter, type: :list)
+  field(:includeGridData)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.GetSpreadsheetByDataFilterRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:dataFilters, :list, GoogleApi.Sheets.V4.Model.DataFilter, options)
+    GoogleApi.Sheets.V4.Model.GetSpreadsheetByDataFilterRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.GetSpreadsheetByDataFilterRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

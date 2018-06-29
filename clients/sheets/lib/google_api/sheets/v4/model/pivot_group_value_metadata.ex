@@ -26,28 +26,25 @@ defmodule GoogleApi.Sheets.V4.Model.PivotGroupValueMetadata do
   - value (ExtendedValue): The calculated value the metadata corresponds to. (Note that formulaValue is not valid,  because the values will be calculated.) Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          collapsed: any(),
-          value: GoogleApi.Sheets.V4.Model.ExtendedValue.t()
+          :collapsed => any(),
+          :value => GoogleApi.Sheets.V4.Model.ExtendedValue.t()
         }
 
-  defstruct [
-    :collapsed,
-    :value
-  ]
+  field(:collapsed)
+  field(:value, as: GoogleApi.Sheets.V4.Model.ExtendedValue)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.PivotGroupValueMetadata do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:value, :struct, GoogleApi.Sheets.V4.Model.ExtendedValue, options)
+    GoogleApi.Sheets.V4.Model.PivotGroupValueMetadata.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.PivotGroupValueMetadata do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

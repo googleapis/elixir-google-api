@@ -23,7 +23,7 @@ defmodule GoogleApi.Sheets.V4.Model.PivotTable do
   ## Attributes
 
   - columns ([PivotGroup]): Each column grouping in the pivot table. Defaults to: `null`.
-  - criteria (%{optional(String.t) &#x3D;&gt; PivotFilterCriteria}): An optional mapping of filters per source column offset.  The filters will be applied before aggregating data into the pivot table. The map&#39;s key is the column offset of the source range that you want to filter, and the value is the criteria for that column.  For example, if the source was &#x60;C10:E15&#x60;, a key of &#x60;0&#x60; will have the filter for column &#x60;C&#x60;, whereas the key &#x60;1&#x60; is for column &#x60;D&#x60;. Defaults to: `null`.
+  - criteria (%{optional(String.t) &#x3D;&gt; PivotFilterCriteria}): An optional mapping of filters per source column offset.  The filters are applied before aggregating data into the pivot table. The map&#39;s key is the column offset of the source range that you want to filter, and the value is the criteria for that column.  For example, if the source was &#x60;C10:E15&#x60;, a key of &#x60;0&#x60; will have the filter for column &#x60;C&#x60;, whereas the key &#x60;1&#x60; is for column &#x60;D&#x60;. Defaults to: `null`.
   - rows ([PivotGroup]): Each row grouping in the pivot table. Defaults to: `null`.
   - source (GridRange): The range the pivot table is reading data from. Defaults to: `null`.
   - valueLayout (String.t): Whether values should be listed horizontally (as columns) or vertically (as rows). Defaults to: `null`.
@@ -31,40 +31,33 @@ defmodule GoogleApi.Sheets.V4.Model.PivotTable do
   - values ([PivotValue]): A list of values to include in the pivot table. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          columns: list(GoogleApi.Sheets.V4.Model.PivotGroup.t()),
-          criteria: map(),
-          rows: list(GoogleApi.Sheets.V4.Model.PivotGroup.t()),
-          source: GoogleApi.Sheets.V4.Model.GridRange.t(),
-          valueLayout: any(),
-          values: list(GoogleApi.Sheets.V4.Model.PivotValue.t())
+          :columns => list(GoogleApi.Sheets.V4.Model.PivotGroup.t()),
+          :criteria => map(),
+          :rows => list(GoogleApi.Sheets.V4.Model.PivotGroup.t()),
+          :source => GoogleApi.Sheets.V4.Model.GridRange.t(),
+          :valueLayout => any(),
+          :values => list(GoogleApi.Sheets.V4.Model.PivotValue.t())
         }
 
-  defstruct [
-    :columns,
-    :criteria,
-    :rows,
-    :source,
-    :valueLayout,
-    :values
-  ]
+  field(:columns, as: GoogleApi.Sheets.V4.Model.PivotGroup, type: :list)
+  field(:criteria, as: GoogleApi.Sheets.V4.Model.PivotFilterCriteria, type: :map)
+  field(:rows, as: GoogleApi.Sheets.V4.Model.PivotGroup, type: :list)
+  field(:source, as: GoogleApi.Sheets.V4.Model.GridRange)
+  field(:valueLayout)
+  field(:values, as: GoogleApi.Sheets.V4.Model.PivotValue, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.PivotTable do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:columns, :list, GoogleApi.Sheets.V4.Model.PivotGroup, options)
-    |> deserialize(:criteria, :map, GoogleApi.Sheets.V4.Model.PivotFilterCriteria, options)
-    |> deserialize(:rows, :list, GoogleApi.Sheets.V4.Model.PivotGroup, options)
-    |> deserialize(:source, :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
-    |> deserialize(:values, :list, GoogleApi.Sheets.V4.Model.PivotValue, options)
+    GoogleApi.Sheets.V4.Model.PivotTable.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.PivotTable do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

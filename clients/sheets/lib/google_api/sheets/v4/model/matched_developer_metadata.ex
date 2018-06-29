@@ -26,34 +26,25 @@ defmodule GoogleApi.Sheets.V4.Model.MatchedDeveloperMetadata do
   - developerMetadata (DeveloperMetadata): The developer metadata matching the specified filters. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          dataFilters: list(GoogleApi.Sheets.V4.Model.DataFilter.t()),
-          developerMetadata: GoogleApi.Sheets.V4.Model.DeveloperMetadata.t()
+          :dataFilters => list(GoogleApi.Sheets.V4.Model.DataFilter.t()),
+          :developerMetadata => GoogleApi.Sheets.V4.Model.DeveloperMetadata.t()
         }
 
-  defstruct [
-    :dataFilters,
-    :developerMetadata
-  ]
+  field(:dataFilters, as: GoogleApi.Sheets.V4.Model.DataFilter, type: :list)
+  field(:developerMetadata, as: GoogleApi.Sheets.V4.Model.DeveloperMetadata)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.MatchedDeveloperMetadata do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:dataFilters, :list, GoogleApi.Sheets.V4.Model.DataFilter, options)
-    |> deserialize(
-      :developerMetadata,
-      :struct,
-      GoogleApi.Sheets.V4.Model.DeveloperMetadata,
-      options
-    )
+    GoogleApi.Sheets.V4.Model.MatchedDeveloperMetadata.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.MatchedDeveloperMetadata do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -27,32 +27,27 @@ defmodule GoogleApi.Sheets.V4.Model.GradientRule do
   - minpoint (InterpolationPoint): The starting interpolation point. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          maxpoint: GoogleApi.Sheets.V4.Model.InterpolationPoint.t(),
-          midpoint: GoogleApi.Sheets.V4.Model.InterpolationPoint.t(),
-          minpoint: GoogleApi.Sheets.V4.Model.InterpolationPoint.t()
+          :maxpoint => GoogleApi.Sheets.V4.Model.InterpolationPoint.t(),
+          :midpoint => GoogleApi.Sheets.V4.Model.InterpolationPoint.t(),
+          :minpoint => GoogleApi.Sheets.V4.Model.InterpolationPoint.t()
         }
 
-  defstruct [
-    :maxpoint,
-    :midpoint,
-    :minpoint
-  ]
+  field(:maxpoint, as: GoogleApi.Sheets.V4.Model.InterpolationPoint)
+  field(:midpoint, as: GoogleApi.Sheets.V4.Model.InterpolationPoint)
+  field(:minpoint, as: GoogleApi.Sheets.V4.Model.InterpolationPoint)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.GradientRule do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:maxpoint, :struct, GoogleApi.Sheets.V4.Model.InterpolationPoint, options)
-    |> deserialize(:midpoint, :struct, GoogleApi.Sheets.V4.Model.InterpolationPoint, options)
-    |> deserialize(:minpoint, :struct, GoogleApi.Sheets.V4.Model.InterpolationPoint, options)
+    GoogleApi.Sheets.V4.Model.GradientRule.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.GradientRule do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

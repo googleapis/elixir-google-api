@@ -26,28 +26,25 @@ defmodule GoogleApi.Sheets.V4.Model.BasicChartDomain do
   - reversed (boolean()): True to reverse the order of the domain values (horizontal axis). Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          domain: GoogleApi.Sheets.V4.Model.ChartData.t(),
-          reversed: any()
+          :domain => GoogleApi.Sheets.V4.Model.ChartData.t(),
+          :reversed => any()
         }
 
-  defstruct [
-    :domain,
-    :reversed
-  ]
+  field(:domain, as: GoogleApi.Sheets.V4.Model.ChartData)
+  field(:reversed)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BasicChartDomain do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:domain, :struct, GoogleApi.Sheets.V4.Model.ChartData, options)
+    GoogleApi.Sheets.V4.Model.BasicChartDomain.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BasicChartDomain do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

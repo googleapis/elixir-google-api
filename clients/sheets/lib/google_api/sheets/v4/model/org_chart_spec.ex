@@ -31,40 +31,33 @@ defmodule GoogleApi.Sheets.V4.Model.OrgChartSpec do
   - tooltips (ChartData): The data containing the tooltip for the corresponding node.  A blank value results in no tooltip being displayed for the node. This field is optional. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          labels: GoogleApi.Sheets.V4.Model.ChartData.t(),
-          nodeColor: GoogleApi.Sheets.V4.Model.Color.t(),
-          nodeSize: any(),
-          parentLabels: GoogleApi.Sheets.V4.Model.ChartData.t(),
-          selectedNodeColor: GoogleApi.Sheets.V4.Model.Color.t(),
-          tooltips: GoogleApi.Sheets.V4.Model.ChartData.t()
+          :labels => GoogleApi.Sheets.V4.Model.ChartData.t(),
+          :nodeColor => GoogleApi.Sheets.V4.Model.Color.t(),
+          :nodeSize => any(),
+          :parentLabels => GoogleApi.Sheets.V4.Model.ChartData.t(),
+          :selectedNodeColor => GoogleApi.Sheets.V4.Model.Color.t(),
+          :tooltips => GoogleApi.Sheets.V4.Model.ChartData.t()
         }
 
-  defstruct [
-    :labels,
-    :nodeColor,
-    :nodeSize,
-    :parentLabels,
-    :selectedNodeColor,
-    :tooltips
-  ]
+  field(:labels, as: GoogleApi.Sheets.V4.Model.ChartData)
+  field(:nodeColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:nodeSize)
+  field(:parentLabels, as: GoogleApi.Sheets.V4.Model.ChartData)
+  field(:selectedNodeColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:tooltips, as: GoogleApi.Sheets.V4.Model.ChartData)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.OrgChartSpec do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:labels, :struct, GoogleApi.Sheets.V4.Model.ChartData, options)
-    |> deserialize(:nodeColor, :struct, GoogleApi.Sheets.V4.Model.Color, options)
-    |> deserialize(:parentLabels, :struct, GoogleApi.Sheets.V4.Model.ChartData, options)
-    |> deserialize(:selectedNodeColor, :struct, GoogleApi.Sheets.V4.Model.Color, options)
-    |> deserialize(:tooltips, :struct, GoogleApi.Sheets.V4.Model.ChartData, options)
+    GoogleApi.Sheets.V4.Model.OrgChartSpec.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.OrgChartSpec do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

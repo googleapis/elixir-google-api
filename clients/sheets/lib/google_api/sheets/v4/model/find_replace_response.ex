@@ -29,31 +29,31 @@ defmodule GoogleApi.Sheets.V4.Model.FindReplaceResponse do
   - valuesChanged (integer()): The number of non-formula cells changed. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          formulasChanged: any(),
-          occurrencesChanged: any(),
-          rowsChanged: any(),
-          sheetsChanged: any(),
-          valuesChanged: any()
+          :formulasChanged => any(),
+          :occurrencesChanged => any(),
+          :rowsChanged => any(),
+          :sheetsChanged => any(),
+          :valuesChanged => any()
         }
 
-  defstruct [
-    :formulasChanged,
-    :occurrencesChanged,
-    :rowsChanged,
-    :sheetsChanged,
-    :valuesChanged
-  ]
+  field(:formulasChanged)
+  field(:occurrencesChanged)
+  field(:rowsChanged)
+  field(:sheetsChanged)
+  field(:valuesChanged)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.FindReplaceResponse do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Sheets.V4.Model.FindReplaceResponse.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.FindReplaceResponse do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

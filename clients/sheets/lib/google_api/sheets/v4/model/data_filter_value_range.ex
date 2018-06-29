@@ -28,30 +28,27 @@ defmodule GoogleApi.Sheets.V4.Model.DataFilterValueRange do
   - values ([[ErrorUnknown]]): The data to be written.  If the provided values exceed any of the ranges matched by the data filter then the request will fail.  If the provided values are less than the matched ranges only the specified values will be written, existing values in the matched ranges will remain unaffected. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          dataFilter: GoogleApi.Sheets.V4.Model.DataFilter.t(),
-          majorDimension: any(),
-          values: any()
+          :dataFilter => GoogleApi.Sheets.V4.Model.DataFilter.t(),
+          :majorDimension => any(),
+          :values => list()
         }
 
-  defstruct [
-    :dataFilter,
-    :majorDimension,
-    :values
-  ]
+  field(:dataFilter, as: GoogleApi.Sheets.V4.Model.DataFilter)
+  field(:majorDimension)
+  field(:values, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DataFilterValueRange do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:dataFilter, :struct, GoogleApi.Sheets.V4.Model.DataFilter, options)
+    GoogleApi.Sheets.V4.Model.DataFilterValueRange.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.DataFilterValueRange do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end
