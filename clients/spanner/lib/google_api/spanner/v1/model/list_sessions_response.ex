@@ -16,35 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Spanner.V1.Model.Database do
+defmodule GoogleApi.Spanner.V1.Model.ListSessionsResponse do
   @moduledoc """
-  A Cloud Spanner database.
+  The response for ListSessions.
 
   ## Attributes
 
-  - name (String.t): Required. The name of the database. Values are of the form &#x60;projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;&#x60;, where &#x60;&lt;database&gt;&#x60; is as specified in the &#x60;CREATE DATABASE&#x60; statement. This name can be passed to other API methods to identify the database. Defaults to: `null`.
-  - state (String.t): Output only. The current database state. Defaults to: `null`.
-    - Enum - one of [STATE_UNSPECIFIED, CREATING, READY]
+  - nextPageToken (String.t): &#x60;next_page_token&#x60; can be sent in a subsequent ListSessions call to fetch more of the matching sessions. Defaults to: `null`.
+  - sessions ([Session]): The list of requested sessions. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => any(),
-          :state => any()
+          :nextPageToken => any(),
+          :sessions => list(GoogleApi.Spanner.V1.Model.Session.t())
         }
 
-  field(:name)
-  field(:state)
+  field(:nextPageToken)
+  field(:sessions, as: GoogleApi.Spanner.V1.Model.Session, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.Database do
+defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.ListSessionsResponse do
   def decode(value, options) do
-    GoogleApi.Spanner.V1.Model.Database.decode(value, options)
+    GoogleApi.Spanner.V1.Model.ListSessionsResponse.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.Database do
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.ListSessionsResponse do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

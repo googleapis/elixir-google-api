@@ -16,35 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Spanner.V1.Model.Database do
+defmodule GoogleApi.Spanner.V1.Model.PartitionResponse do
   @moduledoc """
-  A Cloud Spanner database.
+  The response for PartitionQuery or PartitionRead
 
   ## Attributes
 
-  - name (String.t): Required. The name of the database. Values are of the form &#x60;projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;&#x60;, where &#x60;&lt;database&gt;&#x60; is as specified in the &#x60;CREATE DATABASE&#x60; statement. This name can be passed to other API methods to identify the database. Defaults to: `null`.
-  - state (String.t): Output only. The current database state. Defaults to: `null`.
-    - Enum - one of [STATE_UNSPECIFIED, CREATING, READY]
+  - partitions ([Partition]): Partitions created by this request. Defaults to: `null`.
+  - transaction (Transaction): Transaction created by this request. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => any(),
-          :state => any()
+          :partitions => list(GoogleApi.Spanner.V1.Model.Partition.t()),
+          :transaction => GoogleApi.Spanner.V1.Model.Transaction.t()
         }
 
-  field(:name)
-  field(:state)
+  field(:partitions, as: GoogleApi.Spanner.V1.Model.Partition, type: :list)
+  field(:transaction, as: GoogleApi.Spanner.V1.Model.Transaction)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.Database do
+defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.PartitionResponse do
   def decode(value, options) do
-    GoogleApi.Spanner.V1.Model.Database.decode(value, options)
+    GoogleApi.Spanner.V1.Model.PartitionResponse.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.Database do
+defimpl Poison.Encoder, for: GoogleApi.Spanner.V1.Model.PartitionResponse do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
