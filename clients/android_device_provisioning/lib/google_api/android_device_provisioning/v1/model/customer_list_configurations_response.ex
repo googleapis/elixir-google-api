@@ -16,31 +16,32 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse do
+defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListConfigurationsResponse do
   @moduledoc """
-  Response containing found devices.
+  Response message of customer&#39;s listing configuration.
 
   ## Attributes
 
-  - devices ([Device]): Found devices. Defaults to: `null`.
-  - nextPageToken (String.t): A token used to access the next page of results. Omitted if no further results are available. Defaults to: `null`.
+  - configurations ([Configuration]): The configurations. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :devices => list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Device.t()),
-          :nextPageToken => any()
+          :configurations => list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Configuration.t())
         }
 
-  field(:devices, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.Device, type: :list)
-  field(:nextPageToken)
+  field(
+    :configurations,
+    as: GoogleApi.AndroidDeviceProvisioning.V1.Model.Configuration,
+    type: :list
+  )
 end
 
 defimpl Poison.Decoder,
-  for: GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse do
+  for: GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListConfigurationsResponse do
   def decode(value, options) do
-    GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse.decode(
+    GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListConfigurationsResponse.decode(
       value,
       options
     )
@@ -48,7 +49,7 @@ defimpl Poison.Decoder,
 end
 
 defimpl Poison.Encoder,
-  for: GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse do
+  for: GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListConfigurationsResponse do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

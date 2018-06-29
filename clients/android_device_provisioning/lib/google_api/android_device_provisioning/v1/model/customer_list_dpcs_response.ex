@@ -16,39 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse do
+defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListDpcsResponse do
   @moduledoc """
-  Response containing found devices.
+  Response message of customer&#39;s listing DPCs.
 
   ## Attributes
 
-  - devices ([Device]): Found devices. Defaults to: `null`.
-  - nextPageToken (String.t): A token used to access the next page of results. Omitted if no further results are available. Defaults to: `null`.
+  - dpcs ([Dpc]): The list of DPCs available to the customer that support zero-touch enrollment. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :devices => list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Device.t()),
-          :nextPageToken => any()
+          :dpcs => list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Dpc.t())
         }
 
-  field(:devices, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.Device, type: :list)
-  field(:nextPageToken)
+  field(:dpcs, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.Dpc, type: :list)
 end
 
-defimpl Poison.Decoder,
-  for: GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse do
+defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListDpcsResponse do
   def decode(value, options) do
-    GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse.decode(
-      value,
-      options
-    )
+    GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListDpcsResponse.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder,
-  for: GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse do
+defimpl Poison.Encoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListDpcsResponse do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

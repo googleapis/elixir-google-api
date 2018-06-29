@@ -16,31 +16,28 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse do
+defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerUnclaimDeviceRequest do
   @moduledoc """
-  Response containing found devices.
+  Request message for customer to unclaim a device.
 
   ## Attributes
 
-  - devices ([Device]): Found devices. Defaults to: `null`.
-  - nextPageToken (String.t): A token used to access the next page of results. Omitted if no further results are available. Defaults to: `null`.
+  - device (DeviceReference): Required. The device to unclaim. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :devices => list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Device.t()),
-          :nextPageToken => any()
+          :device => GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceReference.t()
         }
 
-  field(:devices, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.Device, type: :list)
-  field(:nextPageToken)
+  field(:device, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceReference)
 end
 
 defimpl Poison.Decoder,
-  for: GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse do
+  for: GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerUnclaimDeviceRequest do
   def decode(value, options) do
-    GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse.decode(
+    GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerUnclaimDeviceRequest.decode(
       value,
       options
     )
@@ -48,7 +45,7 @@ defimpl Poison.Decoder,
 end
 
 defimpl Poison.Encoder,
-  for: GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse do
+  for: GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerUnclaimDeviceRequest do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

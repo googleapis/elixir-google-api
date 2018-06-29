@@ -16,31 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse do
+defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListCustomersResponse do
   @moduledoc """
-  Response containing found devices.
+  Response message for listing my customers.
 
   ## Attributes
 
-  - devices ([Device]): Found devices. Defaults to: `null`.
+  - customers ([Company]): The customer accounts the calling user is a member of. Defaults to: `null`.
   - nextPageToken (String.t): A token used to access the next page of results. Omitted if no further results are available. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :devices => list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Device.t()),
+          :customers => list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Company.t()),
           :nextPageToken => any()
         }
 
-  field(:devices, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.Device, type: :list)
+  field(:customers, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.Company, type: :list)
   field(:nextPageToken)
 end
 
 defimpl Poison.Decoder,
-  for: GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse do
+  for: GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListCustomersResponse do
   def decode(value, options) do
-    GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse.decode(
+    GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListCustomersResponse.decode(
       value,
       options
     )
@@ -48,7 +48,7 @@ defimpl Poison.Decoder,
 end
 
 defimpl Poison.Encoder,
-  for: GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse do
+  for: GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListCustomersResponse do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

@@ -16,39 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse do
+defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.CreateCustomerRequest do
   @moduledoc """
-  Response containing found devices.
+  Request message to create a customer.
 
   ## Attributes
 
-  - devices ([Device]): Found devices. Defaults to: `null`.
-  - nextPageToken (String.t): A token used to access the next page of results. Omitted if no further results are available. Defaults to: `null`.
+  - customer (Company): Required. The company data to populate the new customer. Must contain a value for &#x60;companyName&#x60; and at least one &#x60;owner_email&#x60; that&#39;s associated with a Google Account. The values for &#x60;companyId&#x60; and &#x60;name&#x60; must be empty. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :devices => list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Device.t()),
-          :nextPageToken => any()
+          :customer => GoogleApi.AndroidDeviceProvisioning.V1.Model.Company.t()
         }
 
-  field(:devices, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.Device, type: :list)
-  field(:nextPageToken)
+  field(:customer, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.Company)
 end
 
-defimpl Poison.Decoder,
-  for: GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse do
+defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.CreateCustomerRequest do
   def decode(value, options) do
-    GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse.decode(
-      value,
-      options
-    )
+    GoogleApi.AndroidDeviceProvisioning.V1.Model.CreateCustomerRequest.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder,
-  for: GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse do
+defimpl Poison.Encoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.CreateCustomerRequest do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
