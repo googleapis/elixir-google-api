@@ -1,11 +1,11 @@
 ExUnit.start()
 
-defmodule GoogleApi.TestClient.V1.TestHelper do
+defmodule GoogleApi.TestClient.V2.TestHelper do
 
   defmacro __using__(opts) do
     quote do
       use ExUnit.Case, unquote(opts)
-      import GoogleApi.TestClient.V1.TestHelper
+      import GoogleApi.TestClient.V2.TestHelper
     end
   end
 
