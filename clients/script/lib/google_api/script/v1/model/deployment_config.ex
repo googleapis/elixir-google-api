@@ -16,34 +16,40 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Script.V1.Model.ScriptStackTraceElement do
+defmodule GoogleApi.Script.V1.Model.DeploymentConfig do
   @moduledoc """
-  A stack trace through the script that shows where the execution failed.
+  Metadata the defines how a deployment is configured.
 
   ## Attributes
 
-  - function (String.t): The name of the function that failed. Defaults to: `null`.
-  - lineNumber (integer()): The line number where the script failed. Defaults to: `null`.
+  - description (String.t): The description for this deployment. Defaults to: `null`.
+  - manifestFileName (String.t): The manifest file name for this deployment. Defaults to: `null`.
+  - scriptId (String.t): The script project&#39;s Drive ID. Defaults to: `null`.
+  - versionNumber (integer()): The version number on which this deployment is based. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :function => any(),
-          :lineNumber => any()
+          :description => any(),
+          :manifestFileName => any(),
+          :scriptId => any(),
+          :versionNumber => any()
         }
 
-  field(:function)
-  field(:lineNumber)
+  field(:description)
+  field(:manifestFileName)
+  field(:scriptId)
+  field(:versionNumber)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Script.V1.Model.ScriptStackTraceElement do
+defimpl Poison.Decoder, for: GoogleApi.Script.V1.Model.DeploymentConfig do
   def decode(value, options) do
-    GoogleApi.Script.V1.Model.ScriptStackTraceElement.decode(value, options)
+    GoogleApi.Script.V1.Model.DeploymentConfig.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Script.V1.Model.ScriptStackTraceElement do
+defimpl Poison.Encoder, for: GoogleApi.Script.V1.Model.DeploymentConfig do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

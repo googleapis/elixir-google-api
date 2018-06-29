@@ -16,34 +16,26 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Script.V1.Model.ScriptStackTraceElement do
+defmodule GoogleApi.Script.V1.Model.Empty do
   @moduledoc """
-  A stack trace through the script that shows where the execution failed.
+  A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance:      service Foo {       rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);     }  The JSON representation for &#x60;Empty&#x60; is empty JSON object &#x60;{}&#x60;.
 
   ## Attributes
 
-  - function (String.t): The name of the function that failed. Defaults to: `null`.
-  - lineNumber (integer()): The line number where the script failed. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{
-          :function => any(),
-          :lineNumber => any()
-        }
-
-  field(:function)
-  field(:lineNumber)
+  @type t :: %__MODULE__{}
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Script.V1.Model.ScriptStackTraceElement do
+defimpl Poison.Decoder, for: GoogleApi.Script.V1.Model.Empty do
   def decode(value, options) do
-    GoogleApi.Script.V1.Model.ScriptStackTraceElement.decode(value, options)
+    GoogleApi.Script.V1.Model.Empty.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Script.V1.Model.ScriptStackTraceElement do
+defimpl Poison.Encoder, for: GoogleApi.Script.V1.Model.Empty do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

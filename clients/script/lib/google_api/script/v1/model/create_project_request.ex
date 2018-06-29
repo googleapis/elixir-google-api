@@ -16,34 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Script.V1.Model.ScriptStackTraceElement do
+defmodule GoogleApi.Script.V1.Model.CreateProjectRequest do
   @moduledoc """
-  A stack trace through the script that shows where the execution failed.
+  Request to create a script project.
 
   ## Attributes
 
-  - function (String.t): The name of the function that failed. Defaults to: `null`.
-  - lineNumber (integer()): The line number where the script failed. Defaults to: `null`.
+  - parentId (String.t): The Drive ID of a parent file that the created script project is bound to. This is usually the ID of a Google Doc, Google Sheet, Google Form, or Google Slides file. If not set, a standalone script project is created. Defaults to: `null`.
+  - title (String.t): The title for the project. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :function => any(),
-          :lineNumber => any()
+          :parentId => any(),
+          :title => any()
         }
 
-  field(:function)
-  field(:lineNumber)
+  field(:parentId)
+  field(:title)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Script.V1.Model.ScriptStackTraceElement do
+defimpl Poison.Decoder, for: GoogleApi.Script.V1.Model.CreateProjectRequest do
   def decode(value, options) do
-    GoogleApi.Script.V1.Model.ScriptStackTraceElement.decode(value, options)
+    GoogleApi.Script.V1.Model.CreateProjectRequest.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Script.V1.Model.ScriptStackTraceElement do
+defimpl Poison.Encoder, for: GoogleApi.Script.V1.Model.CreateProjectRequest do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
