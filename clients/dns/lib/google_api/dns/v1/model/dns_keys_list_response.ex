@@ -16,40 +16,40 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.DNS.V1.Model.ManagedZonesListResponse do
+defmodule GoogleApi.DNS.V1.Model.DnsKeysListResponse do
   @moduledoc """
-
+  The response to a request to enumerate DnsKeys in a ManagedZone.
 
   ## Attributes
 
+  - dnsKeys ([DnsKey]): The requested resources. Defaults to: `null`.
   - header (ResponseHeader):  Defaults to: `null`.
   - kind (String.t): Type of resource. Defaults to: `null`.
-  - managedZones ([ManagedZone]): The managed zone resources. Defaults to: `null`.
-  - nextPageToken (String.t): The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your page token.  In this way you can retrieve the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned will be an inconsistent view of the collection. There is no way to retrieve a consistent snapshot of a collection larger than the maximum page size. Defaults to: `null`.
+  - nextPageToken (String.t): The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your pagination token.  In this way you can retrieve the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned will be an inconsistent view of the collection. There is no way to retrieve a \&quot;snapshot\&quot; of collections larger than the maximum page size. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :dnsKeys => list(GoogleApi.DNS.V1.Model.DnsKey.t()),
           :header => GoogleApi.DNS.V1.Model.ResponseHeader.t(),
           :kind => any(),
-          :managedZones => list(GoogleApi.DNS.V1.Model.ManagedZone.t()),
           :nextPageToken => any()
         }
 
+  field(:dnsKeys, as: GoogleApi.DNS.V1.Model.DnsKey, type: :list)
   field(:header, as: GoogleApi.DNS.V1.Model.ResponseHeader)
   field(:kind)
-  field(:managedZones, as: GoogleApi.DNS.V1.Model.ManagedZone, type: :list)
   field(:nextPageToken)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.DNS.V1.Model.ManagedZonesListResponse do
+defimpl Poison.Decoder, for: GoogleApi.DNS.V1.Model.DnsKeysListResponse do
   def decode(value, options) do
-    GoogleApi.DNS.V1.Model.ManagedZonesListResponse.decode(value, options)
+    GoogleApi.DNS.V1.Model.DnsKeysListResponse.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.DNS.V1.Model.ManagedZonesListResponse do
+defimpl Poison.Encoder, for: GoogleApi.DNS.V1.Model.DnsKeysListResponse do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
