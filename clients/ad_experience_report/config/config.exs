@@ -10,11 +10,11 @@ use Mix.Config
 
 # You can configure for your application as:
 #
-#     config :google_ad_experience_report_api, key: :value
+#     config :ad_experience_report_api, key: :value
 #
 # And access this configuration in your application as:
 #
-#     Application.get_env(:google_ad_experience_report_api, :key)
+#     Application.get_env(:ad_experience_report_api, :key)
 #
 # Or configure a 3rd-party app:
 #
