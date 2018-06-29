@@ -16,43 +16,49 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.IdentityToolkit.V3.Model.VerifyCustomTokenResponse do
+defmodule GoogleApi.IdentityToolkit.V3.Model.EmailLinkSigninResponse do
   @moduledoc """
-  Response from verifying a custom token
+  Response of email signIn.
 
   ## Attributes
 
-  - expiresIn (String.t): If idToken is STS id token, then this field will be expiration time of STS id token in seconds. Defaults to: `null`.
-  - idToken (String.t): The GITKit token for authenticated user. Defaults to: `null`.
-  - isNewUser (boolean()): True if it&#39;s a new user sign-in, false if it&#39;s a returning user. Defaults to: `null`.
-  - kind (String.t): The fixed string \&quot;identitytoolkit#VerifyCustomTokenResponse\&quot;. Defaults to: `null`.
-  - refreshToken (String.t): If idToken is STS id token, then this field will be refresh token. Defaults to: `null`.
+  - email (String.t): The user&#39;s email. Defaults to: `null`.
+  - expiresIn (String.t): Expiration time of STS id token in seconds. Defaults to: `null`.
+  - idToken (String.t): The STS id token to login the newly signed in user. Defaults to: `null`.
+  - isNewUser (boolean()): Whether the user is new. Defaults to: `null`.
+  - kind (String.t): The fixed string \&quot;identitytoolkit#EmailLinkSigninResponse\&quot;. Defaults to: `null`.
+  - localId (String.t): The RP local ID of the user. Defaults to: `null`.
+  - refreshToken (String.t): The refresh token for the signed in user. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :email => any(),
           :expiresIn => any(),
           :idToken => any(),
           :isNewUser => any(),
           :kind => any(),
+          :localId => any(),
           :refreshToken => any()
         }
 
+  field(:email)
   field(:expiresIn)
   field(:idToken)
   field(:isNewUser)
   field(:kind)
+  field(:localId)
   field(:refreshToken)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.VerifyCustomTokenResponse do
+defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.EmailLinkSigninResponse do
   def decode(value, options) do
-    GoogleApi.IdentityToolkit.V3.Model.VerifyCustomTokenResponse.decode(value, options)
+    GoogleApi.IdentityToolkit.V3.Model.EmailLinkSigninResponse.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.VerifyCustomTokenResponse do
+defimpl Poison.Encoder, for: GoogleApi.IdentityToolkit.V3.Model.EmailLinkSigninResponse do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

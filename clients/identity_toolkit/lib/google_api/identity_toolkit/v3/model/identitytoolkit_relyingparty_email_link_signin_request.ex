@@ -16,31 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySignOutUserRequest do
+defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyEmailLinkSigninRequest do
   @moduledoc """
-  Request to sign out user.
+  Request to sign in with email.
 
   ## Attributes
 
-  - instanceId (String.t): Instance id token of the app. Defaults to: `null`.
-  - localId (String.t): The local ID of the user. Defaults to: `null`.
+  - email (String.t): The email address of the user. Defaults to: `null`.
+  - idToken (String.t): Token for linking flow. Defaults to: `null`.
+  - oobCode (String.t): The confirmation code. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :instanceId => any(),
-          :localId => any()
+          :email => any(),
+          :idToken => any(),
+          :oobCode => any()
         }
 
-  field(:instanceId)
-  field(:localId)
+  field(:email)
+  field(:idToken)
+  field(:oobCode)
 end
 
 defimpl Poison.Decoder,
-  for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySignOutUserRequest do
+  for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyEmailLinkSigninRequest do
   def decode(value, options) do
-    GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySignOutUserRequest.decode(
+    GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyEmailLinkSigninRequest.decode(
       value,
       options
     )
@@ -48,7 +51,7 @@ defimpl Poison.Decoder,
 end
 
 defimpl Poison.Encoder,
-  for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySignOutUserRequest do
+  for: GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyEmailLinkSigninRequest do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
