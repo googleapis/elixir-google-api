@@ -10,11 +10,11 @@ use Mix.Config
 
 # You can configure for your application as:
 #
-#     config :dlp_api, key: :value
+#     config :cloud_data_loss_prevention_(dlp)_api, key: :value
 #
 # And access this configuration in your application as:
 #
-#     Application.get_env(:dlp_api, :key)
+#     Application.get_env(:cloud_data_loss_prevention_(dlp)_api, :key)
 #
 # Or configure a 3rd-party app:
 #
