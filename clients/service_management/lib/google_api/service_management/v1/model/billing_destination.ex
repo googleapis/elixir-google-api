@@ -16,31 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ServiceManagement.V1.Model.SourceInfo do
+defmodule GoogleApi.ServiceManagement.V1.Model.BillingDestination do
   @moduledoc """
-  Source information used to create a Service Config
+  Configuration of a specific billing destination (Currently only support bill against consumer project).
 
   ## Attributes
 
-  - sourceFiles ([Object]): All files used during config generation. Defaults to: `null`.
+  - metrics ([String.t]): Names of the metrics to report to this billing destination. Each name must be defined in Service.metrics section. Defaults to: `null`.
+  - monitoredResource (String.t): The monitored resource type. The type must be defined in Service.monitored_resources section. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sourceFiles => list(GoogleApi.ServiceManagement.V1.Model.Object.t())
+          :metrics => list(any()),
+          :monitoredResource => any()
         }
 
-  field(:sourceFiles, as: GoogleApi.ServiceManagement.V1.Model.Object, type: :list)
+  field(:metrics, type: :list)
+  field(:monitoredResource)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.SourceInfo do
+defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.BillingDestination do
   def decode(value, options) do
-    GoogleApi.ServiceManagement.V1.Model.SourceInfo.decode(value, options)
+    GoogleApi.ServiceManagement.V1.Model.BillingDestination.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.SourceInfo do
+defimpl Poison.Encoder, for: GoogleApi.ServiceManagement.V1.Model.BillingDestination do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
