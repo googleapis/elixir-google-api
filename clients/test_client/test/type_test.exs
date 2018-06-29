@@ -329,5 +329,9 @@ defmodule Gax.TypeTest do
 
     assert %NestedContainer{rows: rows} = container
     assert 2 == Enum.count(rows)
+    assert Enum.all?(rows, fn row ->
+      assert 2 == Enum.count(row)
+      # TODO: ensure this deeply nested struct is generated and decoded
+    end)
   end
 end
