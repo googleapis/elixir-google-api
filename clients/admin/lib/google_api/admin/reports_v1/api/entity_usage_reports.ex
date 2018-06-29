@@ -16,20 +16,23 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Admin.Reports_v1.Api.Channels do
+defmodule GoogleApi.Admin.Reports_v1.Api.EntityUsageReports do
   @moduledoc """
-  API calls for all endpoints tagged `Channels`.
+  API calls for all endpoints tagged `EntityUsageReports`.
   """
 
   alias GoogleApi.Admin.Reports_v1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Stop watching resources through this channel
+  Retrieves a report which is a collection of properties / statistics for a set of objects.
 
   ## Parameters
 
   - connection (GoogleApi.Admin.Reports_v1.Connection): Connection to server
+  - entity_type (String.t): Type of object. Should be one of - gplus_communities.
+  - entity_key (String.t): Represents the key of object for which the data should be filtered.
+  - date (String.t): Represents the date in yyyy-mm-dd format for which the data is to be fetched.
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -38,15 +41,25 @@ defmodule GoogleApi.Admin.Reports_v1.Api.Channels do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :resource (Channel): 
+    - :customerId (String.t): Represents the customer for which the data is to be fetched.
+    - :filters (String.t): Represents the set of filters including parameter operator value.
+    - :maxResults (integer()): Maximum number of results to return. Maximum allowed is 1000
+    - :pageToken (String.t): Token to specify next page.
+    - :parameters (String.t): Represents the application name, parameter name pairs to fetch in csv as app_name1:param_name1, app_name2:param_name2.
 
   ## Returns
 
-  {:ok, %{}} on success
+  {:ok, %GoogleApi.Admin.Reports_v1.Model.UsageReports{}} on success
   {:error, info} on failure
   """
-  @spec admin_channels_stop(Tesla.Env.client(), keyword()) :: {:ok, nil} | {:error, Tesla.Env.t()}
-  def admin_channels_stop(connection, opts \\ []) do
+  @spec reports_entity_usage_reports_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Admin.Reports_v1.Model.UsageReports.t()} | {:error, Tesla.Env.t()}
+  def reports_entity_usage_reports_get(connection, entity_type, entity_key, date, opts \\ []) do
     optional_params = %{
       :alt => :query,
       :fields => :query,
@@ -55,17 +68,25 @@ defmodule GoogleApi.Admin.Reports_v1.Api.Channels do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
-      :resource => :body
+      :customerId => :query,
+      :filters => :query,
+      :maxResults => :query,
+      :pageToken => :query,
+      :parameters => :query
     }
 
     request =
       Request.new()
-      |> Request.method(:post)
-      |> Request.url("/admin/reports_v1/channels/stop")
+      |> Request.method(:get)
+      |> Request.url("/usage/{entityType}/{entityKey}/dates/{date}", %{
+        "entityType" => URI.encode_www_form(entity_type),
+        "entityKey" => URI.encode_www_form(entity_key),
+        "date" => URI.encode_www_form(date)
+      })
       |> Request.add_optional_params(optional_params, opts)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(struct: %GoogleApi.Admin.Reports_v1.Model.UsageReports{})
   end
 end
