@@ -16,34 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ServiceControl.V1.Model.EndReconciliationRequest do
+defmodule GoogleApi.ServiceControl.V1.Model.ResourceLocation do
   @moduledoc """
-  Request message for QuotaController.EndReconciliation.
+  Location information about a resource.
 
   ## Attributes
 
-  - reconciliationOperation (QuotaOperation): Operation that describes the quota reconciliation. Defaults to: `null`.
-  - serviceConfigId (String.t): Specifies which version of service configuration should be used to process the request. If unspecified or no matching version can be found, the latest one will be used. Defaults to: `null`.
+  - currentLocations ([String.t]): The locations of a resource after the execution of the operation. For example:      \&quot;europe-west1-a\&quot;     \&quot;us-east1\&quot;     \&quot;nam3\&quot; Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :reconciliationOperation => GoogleApi.ServiceControl.V1.Model.QuotaOperation.t(),
-          :serviceConfigId => any()
+          :currentLocations => list(any())
         }
 
-  field(:reconciliationOperation, as: GoogleApi.ServiceControl.V1.Model.QuotaOperation)
-  field(:serviceConfigId)
+  field(:currentLocations, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.EndReconciliationRequest do
+defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.ResourceLocation do
   def decode(value, options) do
-    GoogleApi.ServiceControl.V1.Model.EndReconciliationRequest.decode(value, options)
+    GoogleApi.ServiceControl.V1.Model.ResourceLocation.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.EndReconciliationRequest do
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.ResourceLocation do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

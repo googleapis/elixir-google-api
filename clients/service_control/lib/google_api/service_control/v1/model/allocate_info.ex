@@ -16,34 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ServiceControl.V1.Model.EndReconciliationRequest do
+defmodule GoogleApi.ServiceControl.V1.Model.AllocateInfo do
   @moduledoc """
-  Request message for QuotaController.EndReconciliation.
+
 
   ## Attributes
 
-  - reconciliationOperation (QuotaOperation): Operation that describes the quota reconciliation. Defaults to: `null`.
-  - serviceConfigId (String.t): Specifies which version of service configuration should be used to process the request. If unspecified or no matching version can be found, the latest one will be used. Defaults to: `null`.
+  - unusedArguments ([String.t]): A list of label keys that were unused by the server in processing the request. Thus, for similar requests repeated in a certain future time window, the caller can choose to ignore these labels in the requests to achieve better client-side cache hits and quota aggregation. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :reconciliationOperation => GoogleApi.ServiceControl.V1.Model.QuotaOperation.t(),
-          :serviceConfigId => any()
+          :unusedArguments => list(any())
         }
 
-  field(:reconciliationOperation, as: GoogleApi.ServiceControl.V1.Model.QuotaOperation)
-  field(:serviceConfigId)
+  field(:unusedArguments, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.EndReconciliationRequest do
+defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.AllocateInfo do
   def decode(value, options) do
-    GoogleApi.ServiceControl.V1.Model.EndReconciliationRequest.decode(value, options)
+    GoogleApi.ServiceControl.V1.Model.AllocateInfo.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.EndReconciliationRequest do
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.AllocateInfo do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
