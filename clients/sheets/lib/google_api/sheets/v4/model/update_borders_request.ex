@@ -31,44 +31,35 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateBordersRequest do
   - top (Border): The border to put at the top of the range. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          bottom: GoogleApi.Sheets.V4.Model.Border.t(),
-          innerHorizontal: GoogleApi.Sheets.V4.Model.Border.t(),
-          innerVertical: GoogleApi.Sheets.V4.Model.Border.t(),
-          left: GoogleApi.Sheets.V4.Model.Border.t(),
-          range: GoogleApi.Sheets.V4.Model.GridRange.t(),
-          right: GoogleApi.Sheets.V4.Model.Border.t(),
-          top: GoogleApi.Sheets.V4.Model.Border.t()
+          :bottom => GoogleApi.Sheets.V4.Model.Border.t(),
+          :innerHorizontal => GoogleApi.Sheets.V4.Model.Border.t(),
+          :innerVertical => GoogleApi.Sheets.V4.Model.Border.t(),
+          :left => GoogleApi.Sheets.V4.Model.Border.t(),
+          :range => GoogleApi.Sheets.V4.Model.GridRange.t(),
+          :right => GoogleApi.Sheets.V4.Model.Border.t(),
+          :top => GoogleApi.Sheets.V4.Model.Border.t()
         }
 
-  defstruct [
-    :bottom,
-    :innerHorizontal,
-    :innerVertical,
-    :left,
-    :range,
-    :right,
-    :top
-  ]
+  field(:bottom, as: GoogleApi.Sheets.V4.Model.Border)
+  field(:innerHorizontal, as: GoogleApi.Sheets.V4.Model.Border)
+  field(:innerVertical, as: GoogleApi.Sheets.V4.Model.Border)
+  field(:left, as: GoogleApi.Sheets.V4.Model.Border)
+  field(:range, as: GoogleApi.Sheets.V4.Model.GridRange)
+  field(:right, as: GoogleApi.Sheets.V4.Model.Border)
+  field(:top, as: GoogleApi.Sheets.V4.Model.Border)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UpdateBordersRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:bottom, :struct, GoogleApi.Sheets.V4.Model.Border, options)
-    |> deserialize(:innerHorizontal, :struct, GoogleApi.Sheets.V4.Model.Border, options)
-    |> deserialize(:innerVertical, :struct, GoogleApi.Sheets.V4.Model.Border, options)
-    |> deserialize(:left, :struct, GoogleApi.Sheets.V4.Model.Border, options)
-    |> deserialize(:range, :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
-    |> deserialize(:right, :struct, GoogleApi.Sheets.V4.Model.Border, options)
-    |> deserialize(:top, :struct, GoogleApi.Sheets.V4.Model.Border, options)
+    GoogleApi.Sheets.V4.Model.UpdateBordersRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UpdateBordersRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

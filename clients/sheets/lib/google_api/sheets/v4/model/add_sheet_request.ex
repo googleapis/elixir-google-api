@@ -25,26 +25,23 @@ defmodule GoogleApi.Sheets.V4.Model.AddSheetRequest do
   - properties (SheetProperties): The properties the new sheet should have. All properties are optional. The sheetId field is optional; if one is not set, an id will be randomly generated. (It is an error to specify the ID of a sheet that already exists.) Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          properties: GoogleApi.Sheets.V4.Model.SheetProperties.t()
+          :properties => GoogleApi.Sheets.V4.Model.SheetProperties.t()
         }
 
-  defstruct [
-    :properties
-  ]
+  field(:properties, as: GoogleApi.Sheets.V4.Model.SheetProperties)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.AddSheetRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:properties, :struct, GoogleApi.Sheets.V4.Model.SheetProperties, options)
+    GoogleApi.Sheets.V4.Model.AddSheetRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.AddSheetRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

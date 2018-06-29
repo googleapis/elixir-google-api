@@ -27,25 +27,25 @@ defmodule GoogleApi.Sheets.V4.Model.NumberFormat do
     - Enum - one of [NUMBER_FORMAT_TYPE_UNSPECIFIED, TEXT, NUMBER, PERCENT, CURRENCY, DATE, TIME, DATE_TIME, SCIENTIFIC]
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          pattern: any(),
-          type: any()
+          :pattern => any(),
+          :type => any()
         }
 
-  defstruct [
-    :pattern,
-    :type
-  ]
+  field(:pattern)
+  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.NumberFormat do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Sheets.V4.Model.NumberFormat.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.NumberFormat do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

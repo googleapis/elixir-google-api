@@ -31,38 +31,33 @@ defmodule GoogleApi.Sheets.V4.Model.WaterfallChartSpec do
     - Enum - one of [WATERFALL_STACKED_TYPE_UNSPECIFIED, STACKED, SEQUENTIAL]
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          connectorLineStyle: GoogleApi.Sheets.V4.Model.LineStyle.t(),
-          domain: GoogleApi.Sheets.V4.Model.WaterfallChartDomain.t(),
-          firstValueIsTotal: any(),
-          hideConnectorLines: any(),
-          series: list(GoogleApi.Sheets.V4.Model.WaterfallChartSeries.t()),
-          stackedType: any()
+          :connectorLineStyle => GoogleApi.Sheets.V4.Model.LineStyle.t(),
+          :domain => GoogleApi.Sheets.V4.Model.WaterfallChartDomain.t(),
+          :firstValueIsTotal => any(),
+          :hideConnectorLines => any(),
+          :series => list(GoogleApi.Sheets.V4.Model.WaterfallChartSeries.t()),
+          :stackedType => any()
         }
 
-  defstruct [
-    :connectorLineStyle,
-    :domain,
-    :firstValueIsTotal,
-    :hideConnectorLines,
-    :series,
-    :stackedType
-  ]
+  field(:connectorLineStyle, as: GoogleApi.Sheets.V4.Model.LineStyle)
+  field(:domain, as: GoogleApi.Sheets.V4.Model.WaterfallChartDomain)
+  field(:firstValueIsTotal)
+  field(:hideConnectorLines)
+  field(:series, as: GoogleApi.Sheets.V4.Model.WaterfallChartSeries, type: :list)
+  field(:stackedType)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.WaterfallChartSpec do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:connectorLineStyle, :struct, GoogleApi.Sheets.V4.Model.LineStyle, options)
-    |> deserialize(:domain, :struct, GoogleApi.Sheets.V4.Model.WaterfallChartDomain, options)
-    |> deserialize(:series, :list, GoogleApi.Sheets.V4.Model.WaterfallChartSeries, options)
+    GoogleApi.Sheets.V4.Model.WaterfallChartSpec.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.WaterfallChartSpec do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

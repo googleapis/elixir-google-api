@@ -30,58 +30,49 @@ defmodule GoogleApi.Sheets.V4.Model.BubbleChartSpec do
   - bubbleSizes (ChartData): The data contianing the bubble sizes.  Bubble sizes are used to draw the bubbles at different sizes relative to each other. If specified, group_ids must also be specified.  This field is optional. Defaults to: `null`.
   - bubbleTextStyle (TextFormat): The format of the text inside the bubbles. Underline and Strikethrough are not supported. Defaults to: `null`.
   - domain (ChartData): The data containing the bubble x-values.  These values locate the bubbles in the chart horizontally. Defaults to: `null`.
-  - groupIds (ChartData): The data containing the bubble group IDs. All bubbles with the same group ID will be drawn in the same color. If bubble_sizes is specified then this field must also be specified but may contain blank values. This field is optional. Defaults to: `null`.
+  - groupIds (ChartData): The data containing the bubble group IDs. All bubbles with the same group ID are drawn in the same color. If bubble_sizes is specified then this field must also be specified but may contain blank values. This field is optional. Defaults to: `null`.
   - legendPosition (String.t): Where the legend of the chart should be drawn. Defaults to: `null`.
     - Enum - one of [BUBBLE_CHART_LEGEND_POSITION_UNSPECIFIED, BOTTOM_LEGEND, LEFT_LEGEND, RIGHT_LEGEND, TOP_LEGEND, NO_LEGEND, INSIDE_LEGEND]
   - series (ChartData): The data contianing the bubble y-values.  These values locate the bubbles in the chart vertically. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          bubbleBorderColor: GoogleApi.Sheets.V4.Model.Color.t(),
-          bubbleLabels: GoogleApi.Sheets.V4.Model.ChartData.t(),
-          bubbleMaxRadiusSize: any(),
-          bubbleMinRadiusSize: any(),
-          bubbleOpacity: any(),
-          bubbleSizes: GoogleApi.Sheets.V4.Model.ChartData.t(),
-          bubbleTextStyle: GoogleApi.Sheets.V4.Model.TextFormat.t(),
-          domain: GoogleApi.Sheets.V4.Model.ChartData.t(),
-          groupIds: GoogleApi.Sheets.V4.Model.ChartData.t(),
-          legendPosition: any(),
-          series: GoogleApi.Sheets.V4.Model.ChartData.t()
+          :bubbleBorderColor => GoogleApi.Sheets.V4.Model.Color.t(),
+          :bubbleLabels => GoogleApi.Sheets.V4.Model.ChartData.t(),
+          :bubbleMaxRadiusSize => any(),
+          :bubbleMinRadiusSize => any(),
+          :bubbleOpacity => any(),
+          :bubbleSizes => GoogleApi.Sheets.V4.Model.ChartData.t(),
+          :bubbleTextStyle => GoogleApi.Sheets.V4.Model.TextFormat.t(),
+          :domain => GoogleApi.Sheets.V4.Model.ChartData.t(),
+          :groupIds => GoogleApi.Sheets.V4.Model.ChartData.t(),
+          :legendPosition => any(),
+          :series => GoogleApi.Sheets.V4.Model.ChartData.t()
         }
 
-  defstruct [
-    :bubbleBorderColor,
-    :bubbleLabels,
-    :bubbleMaxRadiusSize,
-    :bubbleMinRadiusSize,
-    :bubbleOpacity,
-    :bubbleSizes,
-    :bubbleTextStyle,
-    :domain,
-    :groupIds,
-    :legendPosition,
-    :series
-  ]
+  field(:bubbleBorderColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:bubbleLabels, as: GoogleApi.Sheets.V4.Model.ChartData)
+  field(:bubbleMaxRadiusSize)
+  field(:bubbleMinRadiusSize)
+  field(:bubbleOpacity)
+  field(:bubbleSizes, as: GoogleApi.Sheets.V4.Model.ChartData)
+  field(:bubbleTextStyle, as: GoogleApi.Sheets.V4.Model.TextFormat)
+  field(:domain, as: GoogleApi.Sheets.V4.Model.ChartData)
+  field(:groupIds, as: GoogleApi.Sheets.V4.Model.ChartData)
+  field(:legendPosition)
+  field(:series, as: GoogleApi.Sheets.V4.Model.ChartData)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BubbleChartSpec do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:bubbleBorderColor, :struct, GoogleApi.Sheets.V4.Model.Color, options)
-    |> deserialize(:bubbleLabels, :struct, GoogleApi.Sheets.V4.Model.ChartData, options)
-    |> deserialize(:bubbleSizes, :struct, GoogleApi.Sheets.V4.Model.ChartData, options)
-    |> deserialize(:bubbleTextStyle, :struct, GoogleApi.Sheets.V4.Model.TextFormat, options)
-    |> deserialize(:domain, :struct, GoogleApi.Sheets.V4.Model.ChartData, options)
-    |> deserialize(:groupIds, :struct, GoogleApi.Sheets.V4.Model.ChartData, options)
-    |> deserialize(:series, :struct, GoogleApi.Sheets.V4.Model.ChartData, options)
+    GoogleApi.Sheets.V4.Model.BubbleChartSpec.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BubbleChartSpec do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

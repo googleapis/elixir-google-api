@@ -28,30 +28,27 @@ defmodule GoogleApi.Sheets.V4.Model.TextToColumnsRequest do
   - source (GridRange): The source data range.  This must span exactly one column. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          delimiter: any(),
-          delimiterType: any(),
-          source: GoogleApi.Sheets.V4.Model.GridRange.t()
+          :delimiter => any(),
+          :delimiterType => any(),
+          :source => GoogleApi.Sheets.V4.Model.GridRange.t()
         }
 
-  defstruct [
-    :delimiter,
-    :delimiterType,
-    :source
-  ]
+  field(:delimiter)
+  field(:delimiterType)
+  field(:source, as: GoogleApi.Sheets.V4.Model.GridRange)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.TextToColumnsRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:source, :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
+    GoogleApi.Sheets.V4.Model.TextToColumnsRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.TextToColumnsRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

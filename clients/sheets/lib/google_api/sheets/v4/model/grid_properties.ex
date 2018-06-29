@@ -31,35 +31,35 @@ defmodule GoogleApi.Sheets.V4.Model.GridProperties do
   - rowGroupControlAfter (boolean()): True if the row grouping control toggle is shown after the group. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          columnCount: any(),
-          columnGroupControlAfter: any(),
-          frozenColumnCount: any(),
-          frozenRowCount: any(),
-          hideGridlines: any(),
-          rowCount: any(),
-          rowGroupControlAfter: any()
+          :columnCount => any(),
+          :columnGroupControlAfter => any(),
+          :frozenColumnCount => any(),
+          :frozenRowCount => any(),
+          :hideGridlines => any(),
+          :rowCount => any(),
+          :rowGroupControlAfter => any()
         }
 
-  defstruct [
-    :columnCount,
-    :columnGroupControlAfter,
-    :frozenColumnCount,
-    :frozenRowCount,
-    :hideGridlines,
-    :rowCount,
-    :rowGroupControlAfter
-  ]
+  field(:columnCount)
+  field(:columnGroupControlAfter)
+  field(:frozenColumnCount)
+  field(:frozenRowCount)
+  field(:hideGridlines)
+  field(:rowCount)
+  field(:rowGroupControlAfter)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.GridProperties do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Sheets.V4.Model.GridProperties.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.GridProperties do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

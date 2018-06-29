@@ -30,38 +30,33 @@ defmodule GoogleApi.Sheets.V4.Model.FilterView do
   - title (String.t): The name of the filter view. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          criteria: map(),
-          filterViewId: any(),
-          namedRangeId: any(),
-          range: GoogleApi.Sheets.V4.Model.GridRange.t(),
-          sortSpecs: list(GoogleApi.Sheets.V4.Model.SortSpec.t()),
-          title: any()
+          :criteria => map(),
+          :filterViewId => any(),
+          :namedRangeId => any(),
+          :range => GoogleApi.Sheets.V4.Model.GridRange.t(),
+          :sortSpecs => list(GoogleApi.Sheets.V4.Model.SortSpec.t()),
+          :title => any()
         }
 
-  defstruct [
-    :criteria,
-    :filterViewId,
-    :namedRangeId,
-    :range,
-    :sortSpecs,
-    :title
-  ]
+  field(:criteria, as: GoogleApi.Sheets.V4.Model.FilterCriteria, type: :map)
+  field(:filterViewId)
+  field(:namedRangeId)
+  field(:range, as: GoogleApi.Sheets.V4.Model.GridRange)
+  field(:sortSpecs, as: GoogleApi.Sheets.V4.Model.SortSpec, type: :list)
+  field(:title)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.FilterView do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:criteria, :map, GoogleApi.Sheets.V4.Model.FilterCriteria, options)
-    |> deserialize(:range, :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
-    |> deserialize(:sortSpecs, :list, GoogleApi.Sheets.V4.Model.SortSpec, options)
+    GoogleApi.Sheets.V4.Model.FilterView.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.FilterView do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

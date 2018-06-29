@@ -26,29 +26,25 @@ defmodule GoogleApi.Sheets.V4.Model.MatchedValueRange do
   - valueRange (ValueRange): The values matched by the DataFilter. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          dataFilters: list(GoogleApi.Sheets.V4.Model.DataFilter.t()),
-          valueRange: GoogleApi.Sheets.V4.Model.ValueRange.t()
+          :dataFilters => list(GoogleApi.Sheets.V4.Model.DataFilter.t()),
+          :valueRange => GoogleApi.Sheets.V4.Model.ValueRange.t()
         }
 
-  defstruct [
-    :dataFilters,
-    :valueRange
-  ]
+  field(:dataFilters, as: GoogleApi.Sheets.V4.Model.DataFilter, type: :list)
+  field(:valueRange, as: GoogleApi.Sheets.V4.Model.ValueRange)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.MatchedValueRange do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:dataFilters, :list, GoogleApi.Sheets.V4.Model.DataFilter, options)
-    |> deserialize(:valueRange, :struct, GoogleApi.Sheets.V4.Model.ValueRange, options)
+    GoogleApi.Sheets.V4.Model.MatchedValueRange.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.MatchedValueRange do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

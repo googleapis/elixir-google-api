@@ -30,34 +30,31 @@ defmodule GoogleApi.Sheets.V4.Model.HistogramChartSpec do
   - showItemDividers (boolean()): Whether horizontal divider lines should be displayed between items in each column. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          bucketSize: any(),
-          legendPosition: any(),
-          outlierPercentile: any(),
-          series: list(GoogleApi.Sheets.V4.Model.HistogramSeries.t()),
-          showItemDividers: any()
+          :bucketSize => any(),
+          :legendPosition => any(),
+          :outlierPercentile => any(),
+          :series => list(GoogleApi.Sheets.V4.Model.HistogramSeries.t()),
+          :showItemDividers => any()
         }
 
-  defstruct [
-    :bucketSize,
-    :legendPosition,
-    :outlierPercentile,
-    :series,
-    :showItemDividers
-  ]
+  field(:bucketSize)
+  field(:legendPosition)
+  field(:outlierPercentile)
+  field(:series, as: GoogleApi.Sheets.V4.Model.HistogramSeries, type: :list)
+  field(:showItemDividers)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.HistogramChartSpec do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:series, :list, GoogleApi.Sheets.V4.Model.HistogramSeries, options)
+    GoogleApi.Sheets.V4.Model.HistogramChartSpec.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.HistogramChartSpec do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

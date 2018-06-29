@@ -22,35 +22,32 @@ defmodule GoogleApi.Sheets.V4.Model.DimensionGroup do
 
   ## Attributes
 
-  - collapsed (boolean()): True if this group is collapsed. A collapsed group will remain collapsed if an overlapping group at a shallower depth is expanded.  collapsed &#x3D;&#x3D; true does not imply that all dimensions within the group are hidden, since a dimension&#39;s visibility can change independently from this group property. However, when this property is updated, all dimensions within it will be set to hidden if collapsed &#x3D;&#x3D; true, or set to visible if collapsed &#x3D;&#x3D; false. Defaults to: `null`.
+  - collapsed (boolean()): This field is true if this group is collapsed. A collapsed group remains collapsed if an overlapping group at a shallower depth is expanded.  A true value does not imply that all dimensions within the group are hidden, since a dimension&#39;s visibility can change independently from this group property. However, when this property is updated, all dimensions within it are set to hidden if this field is true, or set to visible if this field is false. Defaults to: `null`.
   - depth (integer()): The depth of the group, representing how many groups have a range that wholly contains the range of this group. Defaults to: `null`.
   - range (DimensionRange): The range over which this group exists. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          collapsed: any(),
-          depth: any(),
-          range: GoogleApi.Sheets.V4.Model.DimensionRange.t()
+          :collapsed => any(),
+          :depth => any(),
+          :range => GoogleApi.Sheets.V4.Model.DimensionRange.t()
         }
 
-  defstruct [
-    :collapsed,
-    :depth,
-    :range
-  ]
+  field(:collapsed)
+  field(:depth)
+  field(:range, as: GoogleApi.Sheets.V4.Model.DimensionRange)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DimensionGroup do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:range, :struct, GoogleApi.Sheets.V4.Model.DimensionRange, options)
+    GoogleApi.Sheets.V4.Model.DimensionGroup.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.DimensionGroup do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

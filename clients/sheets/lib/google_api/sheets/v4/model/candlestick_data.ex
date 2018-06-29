@@ -28,35 +28,29 @@ defmodule GoogleApi.Sheets.V4.Model.CandlestickData do
   - openSeries (CandlestickSeries): The range data (vertical axis) for the open/initial value for each candle. This is the bottom of the candle body.  If less than the close value the candle will be filled.  Otherwise the candle will be hollow. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          closeSeries: GoogleApi.Sheets.V4.Model.CandlestickSeries.t(),
-          highSeries: GoogleApi.Sheets.V4.Model.CandlestickSeries.t(),
-          lowSeries: GoogleApi.Sheets.V4.Model.CandlestickSeries.t(),
-          openSeries: GoogleApi.Sheets.V4.Model.CandlestickSeries.t()
+          :closeSeries => GoogleApi.Sheets.V4.Model.CandlestickSeries.t(),
+          :highSeries => GoogleApi.Sheets.V4.Model.CandlestickSeries.t(),
+          :lowSeries => GoogleApi.Sheets.V4.Model.CandlestickSeries.t(),
+          :openSeries => GoogleApi.Sheets.V4.Model.CandlestickSeries.t()
         }
 
-  defstruct [
-    :closeSeries,
-    :highSeries,
-    :lowSeries,
-    :openSeries
-  ]
+  field(:closeSeries, as: GoogleApi.Sheets.V4.Model.CandlestickSeries)
+  field(:highSeries, as: GoogleApi.Sheets.V4.Model.CandlestickSeries)
+  field(:lowSeries, as: GoogleApi.Sheets.V4.Model.CandlestickSeries)
+  field(:openSeries, as: GoogleApi.Sheets.V4.Model.CandlestickSeries)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.CandlestickData do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:closeSeries, :struct, GoogleApi.Sheets.V4.Model.CandlestickSeries, options)
-    |> deserialize(:highSeries, :struct, GoogleApi.Sheets.V4.Model.CandlestickSeries, options)
-    |> deserialize(:lowSeries, :struct, GoogleApi.Sheets.V4.Model.CandlestickSeries, options)
-    |> deserialize(:openSeries, :struct, GoogleApi.Sheets.V4.Model.CandlestickSeries, options)
+    GoogleApi.Sheets.V4.Model.CandlestickData.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.CandlestickData do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

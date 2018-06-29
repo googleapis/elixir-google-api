@@ -23,44 +23,34 @@ defmodule GoogleApi.Sheets.V4.Model.BandedRange do
   ## Attributes
 
   - bandedRangeId (integer()): The id of the banded range. Defaults to: `null`.
-  - columnProperties (BandingProperties): Properties for column bands. These properties will be applied on a column- by-column basis throughout all the columns in the range. At least one of row_properties or column_properties must be specified. Defaults to: `null`.
+  - columnProperties (BandingProperties): Properties for column bands. These properties are applied on a column- by-column basis throughout all the columns in the range. At least one of row_properties or column_properties must be specified. Defaults to: `null`.
   - range (GridRange): The range over which these properties are applied. Defaults to: `null`.
-  - rowProperties (BandingProperties): Properties for row bands. These properties will be applied on a row-by-row basis throughout all the rows in the range. At least one of row_properties or column_properties must be specified. Defaults to: `null`.
+  - rowProperties (BandingProperties): Properties for row bands. These properties are applied on a row-by-row basis throughout all the rows in the range. At least one of row_properties or column_properties must be specified. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          bandedRangeId: any(),
-          columnProperties: GoogleApi.Sheets.V4.Model.BandingProperties.t(),
-          range: GoogleApi.Sheets.V4.Model.GridRange.t(),
-          rowProperties: GoogleApi.Sheets.V4.Model.BandingProperties.t()
+          :bandedRangeId => any(),
+          :columnProperties => GoogleApi.Sheets.V4.Model.BandingProperties.t(),
+          :range => GoogleApi.Sheets.V4.Model.GridRange.t(),
+          :rowProperties => GoogleApi.Sheets.V4.Model.BandingProperties.t()
         }
 
-  defstruct [
-    :bandedRangeId,
-    :columnProperties,
-    :range,
-    :rowProperties
-  ]
+  field(:bandedRangeId)
+  field(:columnProperties, as: GoogleApi.Sheets.V4.Model.BandingProperties)
+  field(:range, as: GoogleApi.Sheets.V4.Model.GridRange)
+  field(:rowProperties, as: GoogleApi.Sheets.V4.Model.BandingProperties)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BandedRange do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :columnProperties,
-      :struct,
-      GoogleApi.Sheets.V4.Model.BandingProperties,
-      options
-    )
-    |> deserialize(:range, :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
-    |> deserialize(:rowProperties, :struct, GoogleApi.Sheets.V4.Model.BandingProperties, options)
+    GoogleApi.Sheets.V4.Model.BandedRange.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BandedRange do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

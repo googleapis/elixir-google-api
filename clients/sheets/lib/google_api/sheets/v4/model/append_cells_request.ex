@@ -27,30 +27,27 @@ defmodule GoogleApi.Sheets.V4.Model.AppendCellsRequest do
   - sheetId (integer()): The sheet ID to append the data to. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          fields: any(),
-          rows: list(GoogleApi.Sheets.V4.Model.RowData.t()),
-          sheetId: any()
+          :fields => any(),
+          :rows => list(GoogleApi.Sheets.V4.Model.RowData.t()),
+          :sheetId => any()
         }
 
-  defstruct [
-    :fields,
-    :rows,
-    :sheetId
-  ]
+  field(:fields)
+  field(:rows, as: GoogleApi.Sheets.V4.Model.RowData, type: :list)
+  field(:sheetId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.AppendCellsRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:rows, :list, GoogleApi.Sheets.V4.Model.RowData, options)
+    GoogleApi.Sheets.V4.Model.AppendCellsRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.AppendCellsRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

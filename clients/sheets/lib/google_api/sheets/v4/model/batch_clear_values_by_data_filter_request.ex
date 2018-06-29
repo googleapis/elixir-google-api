@@ -25,26 +25,23 @@ defmodule GoogleApi.Sheets.V4.Model.BatchClearValuesByDataFilterRequest do
   - dataFilters ([DataFilter]): The DataFilters used to determine which ranges to clear. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          dataFilters: list(GoogleApi.Sheets.V4.Model.DataFilter.t())
+          :dataFilters => list(GoogleApi.Sheets.V4.Model.DataFilter.t())
         }
 
-  defstruct [
-    :dataFilters
-  ]
+  field(:dataFilters, as: GoogleApi.Sheets.V4.Model.DataFilter, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BatchClearValuesByDataFilterRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:dataFilters, :list, GoogleApi.Sheets.V4.Model.DataFilter, options)
+    GoogleApi.Sheets.V4.Model.BatchClearValuesByDataFilterRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BatchClearValuesByDataFilterRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

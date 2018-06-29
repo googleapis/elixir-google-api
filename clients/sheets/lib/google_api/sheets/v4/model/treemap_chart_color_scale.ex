@@ -28,35 +28,29 @@ defmodule GoogleApi.Sheets.V4.Model.TreemapChartColorScale do
   - noDataColor (Color): The background color for cells that have no color data associated with them. Defaults to #000000 if not specified. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          maxValueColor: GoogleApi.Sheets.V4.Model.Color.t(),
-          midValueColor: GoogleApi.Sheets.V4.Model.Color.t(),
-          minValueColor: GoogleApi.Sheets.V4.Model.Color.t(),
-          noDataColor: GoogleApi.Sheets.V4.Model.Color.t()
+          :maxValueColor => GoogleApi.Sheets.V4.Model.Color.t(),
+          :midValueColor => GoogleApi.Sheets.V4.Model.Color.t(),
+          :minValueColor => GoogleApi.Sheets.V4.Model.Color.t(),
+          :noDataColor => GoogleApi.Sheets.V4.Model.Color.t()
         }
 
-  defstruct [
-    :maxValueColor,
-    :midValueColor,
-    :minValueColor,
-    :noDataColor
-  ]
+  field(:maxValueColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:midValueColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:minValueColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:noDataColor, as: GoogleApi.Sheets.V4.Model.Color)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.TreemapChartColorScale do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:maxValueColor, :struct, GoogleApi.Sheets.V4.Model.Color, options)
-    |> deserialize(:midValueColor, :struct, GoogleApi.Sheets.V4.Model.Color, options)
-    |> deserialize(:minValueColor, :struct, GoogleApi.Sheets.V4.Model.Color, options)
-    |> deserialize(:noDataColor, :struct, GoogleApi.Sheets.V4.Model.Color, options)
+    GoogleApi.Sheets.V4.Model.TreemapChartColorScale.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.TreemapChartColorScale do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

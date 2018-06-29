@@ -27,36 +27,27 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateDeveloperMetadataRequest do
   - fields (String.t): The fields that should be updated.  At least one field must be specified. The root &#x60;developerMetadata&#x60; is implied and should not be specified. A single &#x60;\&quot;*\&quot;&#x60; can be used as short-hand for listing every field. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          dataFilters: list(GoogleApi.Sheets.V4.Model.DataFilter.t()),
-          developerMetadata: GoogleApi.Sheets.V4.Model.DeveloperMetadata.t(),
-          fields: any()
+          :dataFilters => list(GoogleApi.Sheets.V4.Model.DataFilter.t()),
+          :developerMetadata => GoogleApi.Sheets.V4.Model.DeveloperMetadata.t(),
+          :fields => any()
         }
 
-  defstruct [
-    :dataFilters,
-    :developerMetadata,
-    :fields
-  ]
+  field(:dataFilters, as: GoogleApi.Sheets.V4.Model.DataFilter, type: :list)
+  field(:developerMetadata, as: GoogleApi.Sheets.V4.Model.DeveloperMetadata)
+  field(:fields)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UpdateDeveloperMetadataRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:dataFilters, :list, GoogleApi.Sheets.V4.Model.DataFilter, options)
-    |> deserialize(
-      :developerMetadata,
-      :struct,
-      GoogleApi.Sheets.V4.Model.DeveloperMetadata,
-      options
-    )
+    GoogleApi.Sheets.V4.Model.UpdateDeveloperMetadataRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UpdateDeveloperMetadataRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -25,26 +25,23 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionResponse do
   - position (EmbeddedObjectPosition): The new position of the embedded object. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          position: GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition.t()
+          :position => GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition.t()
         }
 
-  defstruct [
-    :position
-  ]
+  field(:position, as: GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionResponse do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:position, :struct, GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition, options)
+    GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionResponse.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionResponse do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

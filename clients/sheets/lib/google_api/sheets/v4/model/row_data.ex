@@ -25,26 +25,23 @@ defmodule GoogleApi.Sheets.V4.Model.RowData do
   - values ([CellData]): The values in the row, one per column. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          values: list(GoogleApi.Sheets.V4.Model.CellData.t())
+          :values => list(GoogleApi.Sheets.V4.Model.CellData.t())
         }
 
-  defstruct [
-    :values
-  ]
+  field(:values, as: GoogleApi.Sheets.V4.Model.CellData, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.RowData do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:values, :list, GoogleApi.Sheets.V4.Model.CellData, options)
+    GoogleApi.Sheets.V4.Model.RowData.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.RowData do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

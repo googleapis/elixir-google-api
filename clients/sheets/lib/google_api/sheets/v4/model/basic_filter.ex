@@ -27,32 +27,27 @@ defmodule GoogleApi.Sheets.V4.Model.BasicFilter do
   - sortSpecs ([SortSpec]): The sort order per column. Later specifications are used when values are equal in the earlier specifications. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          criteria: map(),
-          range: GoogleApi.Sheets.V4.Model.GridRange.t(),
-          sortSpecs: list(GoogleApi.Sheets.V4.Model.SortSpec.t())
+          :criteria => map(),
+          :range => GoogleApi.Sheets.V4.Model.GridRange.t(),
+          :sortSpecs => list(GoogleApi.Sheets.V4.Model.SortSpec.t())
         }
 
-  defstruct [
-    :criteria,
-    :range,
-    :sortSpecs
-  ]
+  field(:criteria, as: GoogleApi.Sheets.V4.Model.FilterCriteria, type: :map)
+  field(:range, as: GoogleApi.Sheets.V4.Model.GridRange)
+  field(:sortSpecs, as: GoogleApi.Sheets.V4.Model.SortSpec, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BasicFilter do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:criteria, :map, GoogleApi.Sheets.V4.Model.FilterCriteria, options)
-    |> deserialize(:range, :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
-    |> deserialize(:sortSpecs, :list, GoogleApi.Sheets.V4.Model.SortSpec, options)
+    GoogleApi.Sheets.V4.Model.BasicFilter.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BasicFilter do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

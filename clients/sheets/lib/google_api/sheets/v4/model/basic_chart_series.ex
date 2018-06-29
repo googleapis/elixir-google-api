@@ -22,7 +22,7 @@ defmodule GoogleApi.Sheets.V4.Model.BasicChartSeries do
 
   ## Attributes
 
-  - color (Color): The color for elements (i.e. bars, lines, points) associated with this series.  If empty, a default color will be used. Defaults to: `null`.
+  - color (Color): The color for elements (i.e. bars, lines, points) associated with this series.  If empty, a default color is used. Defaults to: `null`.
   - lineStyle (LineStyle): The line style of this series. Valid only if the chartType is AREA, LINE, or SCATTER. COMBO charts are also supported if the series chart type is AREA or LINE. Defaults to: `null`.
   - series (ChartData): The data being visualized in this chart series. Defaults to: `null`.
   - targetAxis (String.t): The minor axis that will specify the range of values for this series. For example, if charting stocks over time, the \&quot;Volume\&quot; series may want to be pinned to the right with the prices pinned to the left, because the scale of trading volume is different than the scale of prices. It is an error to specify an axis that isn&#39;t a valid minor axis for the chart&#39;s type. Defaults to: `null`.
@@ -31,36 +31,31 @@ defmodule GoogleApi.Sheets.V4.Model.BasicChartSeries do
     - Enum - one of [BASIC_CHART_TYPE_UNSPECIFIED, BAR, LINE, AREA, COLUMN, SCATTER, COMBO, STEPPED_AREA]
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          color: GoogleApi.Sheets.V4.Model.Color.t(),
-          lineStyle: GoogleApi.Sheets.V4.Model.LineStyle.t(),
-          series: GoogleApi.Sheets.V4.Model.ChartData.t(),
-          targetAxis: any(),
-          type: any()
+          :color => GoogleApi.Sheets.V4.Model.Color.t(),
+          :lineStyle => GoogleApi.Sheets.V4.Model.LineStyle.t(),
+          :series => GoogleApi.Sheets.V4.Model.ChartData.t(),
+          :targetAxis => any(),
+          :type => any()
         }
 
-  defstruct [
-    :color,
-    :lineStyle,
-    :series,
-    :targetAxis,
-    :type
-  ]
+  field(:color, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:lineStyle, as: GoogleApi.Sheets.V4.Model.LineStyle)
+  field(:series, as: GoogleApi.Sheets.V4.Model.ChartData)
+  field(:targetAxis)
+  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BasicChartSeries do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:color, :struct, GoogleApi.Sheets.V4.Model.Color, options)
-    |> deserialize(:lineStyle, :struct, GoogleApi.Sheets.V4.Model.LineStyle, options)
-    |> deserialize(:series, :struct, GoogleApi.Sheets.V4.Model.ChartData, options)
+    GoogleApi.Sheets.V4.Model.BasicChartSeries.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BasicChartSeries do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

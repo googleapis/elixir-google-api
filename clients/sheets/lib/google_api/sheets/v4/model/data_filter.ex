@@ -27,36 +27,27 @@ defmodule GoogleApi.Sheets.V4.Model.DataFilter do
   - gridRange (GridRange): Selects data that matches the range described by the GridRange. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          a1Range: any(),
-          developerMetadataLookup: GoogleApi.Sheets.V4.Model.DeveloperMetadataLookup.t(),
-          gridRange: GoogleApi.Sheets.V4.Model.GridRange.t()
+          :a1Range => any(),
+          :developerMetadataLookup => GoogleApi.Sheets.V4.Model.DeveloperMetadataLookup.t(),
+          :gridRange => GoogleApi.Sheets.V4.Model.GridRange.t()
         }
 
-  defstruct [
-    :a1Range,
-    :developerMetadataLookup,
-    :gridRange
-  ]
+  field(:a1Range)
+  field(:developerMetadataLookup, as: GoogleApi.Sheets.V4.Model.DeveloperMetadataLookup)
+  field(:gridRange, as: GoogleApi.Sheets.V4.Model.GridRange)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DataFilter do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :developerMetadataLookup,
-      :struct,
-      GoogleApi.Sheets.V4.Model.DeveloperMetadataLookup,
-      options
-    )
-    |> deserialize(:gridRange, :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
+    GoogleApi.Sheets.V4.Model.DataFilter.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.DataFilter do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -29,34 +29,31 @@ defmodule GoogleApi.Sheets.V4.Model.ExtendedValue do
   - stringValue (String.t): Represents a string value. Leading single quotes are not included. For example, if the user typed &#x60;&#39;123&#x60; into the UI, this would be represented as a &#x60;stringValue&#x60; of &#x60;\&quot;123\&quot;&#x60;. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          boolValue: any(),
-          errorValue: GoogleApi.Sheets.V4.Model.ErrorValue.t(),
-          formulaValue: any(),
-          numberValue: any(),
-          stringValue: any()
+          :boolValue => any(),
+          :errorValue => GoogleApi.Sheets.V4.Model.ErrorValue.t(),
+          :formulaValue => any(),
+          :numberValue => any(),
+          :stringValue => any()
         }
 
-  defstruct [
-    :boolValue,
-    :errorValue,
-    :formulaValue,
-    :numberValue,
-    :stringValue
-  ]
+  field(:boolValue)
+  field(:errorValue, as: GoogleApi.Sheets.V4.Model.ErrorValue)
+  field(:formulaValue)
+  field(:numberValue)
+  field(:stringValue)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.ExtendedValue do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:errorValue, :struct, GoogleApi.Sheets.V4.Model.ErrorValue, options)
+    GoogleApi.Sheets.V4.Model.ExtendedValue.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.ExtendedValue do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

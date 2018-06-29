@@ -25,26 +25,23 @@ defmodule GoogleApi.Sheets.V4.Model.UnmergeCellsRequest do
   - range (GridRange): The range within which all cells should be unmerged. If the range spans multiple merges, all will be unmerged. The range must not partially span any merge. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          range: GoogleApi.Sheets.V4.Model.GridRange.t()
+          :range => GoogleApi.Sheets.V4.Model.GridRange.t()
         }
 
-  defstruct [
-    :range
-  ]
+  field(:range, as: GoogleApi.Sheets.V4.Model.GridRange)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UnmergeCellsRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:range, :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
+    GoogleApi.Sheets.V4.Model.UnmergeCellsRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UnmergeCellsRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

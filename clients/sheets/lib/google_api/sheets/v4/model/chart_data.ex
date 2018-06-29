@@ -25,26 +25,23 @@ defmodule GoogleApi.Sheets.V4.Model.ChartData do
   - sourceRange (ChartSourceRange): The source ranges of the data. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          sourceRange: GoogleApi.Sheets.V4.Model.ChartSourceRange.t()
+          :sourceRange => GoogleApi.Sheets.V4.Model.ChartSourceRange.t()
         }
 
-  defstruct [
-    :sourceRange
-  ]
+  field(:sourceRange, as: GoogleApi.Sheets.V4.Model.ChartSourceRange)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.ChartData do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:sourceRange, :struct, GoogleApi.Sheets.V4.Model.ChartSourceRange, options)
+    GoogleApi.Sheets.V4.Model.ChartData.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.ChartData do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -29,29 +29,29 @@ defmodule GoogleApi.Sheets.V4.Model.DimensionRange do
   - startIndex (integer()): The start (inclusive) of the span, or not set if unbounded. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          dimension: any(),
-          endIndex: any(),
-          sheetId: any(),
-          startIndex: any()
+          :dimension => any(),
+          :endIndex => any(),
+          :sheetId => any(),
+          :startIndex => any()
         }
 
-  defstruct [
-    :dimension,
-    :endIndex,
-    :sheetId,
-    :startIndex
-  ]
+  field(:dimension)
+  field(:endIndex)
+  field(:sheetId)
+  field(:startIndex)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DimensionRange do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Sheets.V4.Model.DimensionRange.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.DimensionRange do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

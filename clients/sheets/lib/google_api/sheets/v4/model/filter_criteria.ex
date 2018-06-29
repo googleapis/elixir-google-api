@@ -26,28 +26,25 @@ defmodule GoogleApi.Sheets.V4.Model.FilterCriteria do
   - hiddenValues ([String.t]): Values that should be hidden. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          condition: GoogleApi.Sheets.V4.Model.BooleanCondition.t(),
-          hiddenValues: any()
+          :condition => GoogleApi.Sheets.V4.Model.BooleanCondition.t(),
+          :hiddenValues => list(any())
         }
 
-  defstruct [
-    :condition,
-    :hiddenValues
-  ]
+  field(:condition, as: GoogleApi.Sheets.V4.Model.BooleanCondition)
+  field(:hiddenValues, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.FilterCriteria do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:condition, :struct, GoogleApi.Sheets.V4.Model.BooleanCondition, options)
+    GoogleApi.Sheets.V4.Model.FilterCriteria.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.FilterCriteria do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

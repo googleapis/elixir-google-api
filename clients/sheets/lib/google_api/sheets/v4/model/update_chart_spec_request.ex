@@ -26,28 +26,25 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateChartSpecRequest do
   - spec (ChartSpec): The specification to apply to the chart. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          chartId: any(),
-          spec: GoogleApi.Sheets.V4.Model.ChartSpec.t()
+          :chartId => any(),
+          :spec => GoogleApi.Sheets.V4.Model.ChartSpec.t()
         }
 
-  defstruct [
-    :chartId,
-    :spec
-  ]
+  field(:chartId)
+  field(:spec, as: GoogleApi.Sheets.V4.Model.ChartSpec)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UpdateChartSpecRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:spec, :struct, GoogleApi.Sheets.V4.Model.ChartSpec, options)
+    GoogleApi.Sheets.V4.Model.UpdateChartSpecRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UpdateChartSpecRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

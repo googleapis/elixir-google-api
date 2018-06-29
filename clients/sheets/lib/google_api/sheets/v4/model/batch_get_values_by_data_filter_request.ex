@@ -31,32 +31,29 @@ defmodule GoogleApi.Sheets.V4.Model.BatchGetValuesByDataFilterRequest do
     - Enum - one of [FORMATTED_VALUE, UNFORMATTED_VALUE, FORMULA]
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          dataFilters: list(GoogleApi.Sheets.V4.Model.DataFilter.t()),
-          dateTimeRenderOption: any(),
-          majorDimension: any(),
-          valueRenderOption: any()
+          :dataFilters => list(GoogleApi.Sheets.V4.Model.DataFilter.t()),
+          :dateTimeRenderOption => any(),
+          :majorDimension => any(),
+          :valueRenderOption => any()
         }
 
-  defstruct [
-    :dataFilters,
-    :dateTimeRenderOption,
-    :majorDimension,
-    :valueRenderOption
-  ]
+  field(:dataFilters, as: GoogleApi.Sheets.V4.Model.DataFilter, type: :list)
+  field(:dateTimeRenderOption)
+  field(:majorDimension)
+  field(:valueRenderOption)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BatchGetValuesByDataFilterRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:dataFilters, :list, GoogleApi.Sheets.V4.Model.DataFilter, options)
+    GoogleApi.Sheets.V4.Model.BatchGetValuesByDataFilterRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BatchGetValuesByDataFilterRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

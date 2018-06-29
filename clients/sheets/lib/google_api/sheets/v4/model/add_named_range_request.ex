@@ -25,26 +25,23 @@ defmodule GoogleApi.Sheets.V4.Model.AddNamedRangeRequest do
   - namedRange (NamedRange): The named range to add. The namedRangeId field is optional; if one is not set, an id will be randomly generated. (It is an error to specify the ID of a range that already exists.) Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          namedRange: GoogleApi.Sheets.V4.Model.NamedRange.t()
+          :namedRange => GoogleApi.Sheets.V4.Model.NamedRange.t()
         }
 
-  defstruct [
-    :namedRange
-  ]
+  field(:namedRange, as: GoogleApi.Sheets.V4.Model.NamedRange)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.AddNamedRangeRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:namedRange, :struct, GoogleApi.Sheets.V4.Model.NamedRange, options)
+    GoogleApi.Sheets.V4.Model.AddNamedRangeRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.AddNamedRangeRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -26,29 +26,25 @@ defmodule GoogleApi.Sheets.V4.Model.ManualRuleGroup do
   - items ([ExtendedValue]): The items in the source data that should be placed into this group. Each item may be a string, number, or boolean. Items may appear in at most one group within a given ManualRule. Items that do not appear in any group will appear on their own. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          groupName: GoogleApi.Sheets.V4.Model.ExtendedValue.t(),
-          items: list(GoogleApi.Sheets.V4.Model.ExtendedValue.t())
+          :groupName => GoogleApi.Sheets.V4.Model.ExtendedValue.t(),
+          :items => list(GoogleApi.Sheets.V4.Model.ExtendedValue.t())
         }
 
-  defstruct [
-    :groupName,
-    :items
-  ]
+  field(:groupName, as: GoogleApi.Sheets.V4.Model.ExtendedValue)
+  field(:items, as: GoogleApi.Sheets.V4.Model.ExtendedValue, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.ManualRuleGroup do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:groupName, :struct, GoogleApi.Sheets.V4.Model.ExtendedValue, options)
-    |> deserialize(:items, :list, GoogleApi.Sheets.V4.Model.ExtendedValue, options)
+    GoogleApi.Sheets.V4.Model.ManualRuleGroup.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.ManualRuleGroup do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

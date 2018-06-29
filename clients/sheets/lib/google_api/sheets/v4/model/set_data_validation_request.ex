@@ -26,29 +26,25 @@ defmodule GoogleApi.Sheets.V4.Model.SetDataValidationRequest do
   - rule (DataValidationRule): The data validation rule to set on each cell in the range, or empty to clear the data validation in the range. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          range: GoogleApi.Sheets.V4.Model.GridRange.t(),
-          rule: GoogleApi.Sheets.V4.Model.DataValidationRule.t()
+          :range => GoogleApi.Sheets.V4.Model.GridRange.t(),
+          :rule => GoogleApi.Sheets.V4.Model.DataValidationRule.t()
         }
 
-  defstruct [
-    :range,
-    :rule
-  ]
+  field(:range, as: GoogleApi.Sheets.V4.Model.GridRange)
+  field(:rule, as: GoogleApi.Sheets.V4.Model.DataValidationRule)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.SetDataValidationRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:range, :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
-    |> deserialize(:rule, :struct, GoogleApi.Sheets.V4.Model.DataValidationRule, options)
+    GoogleApi.Sheets.V4.Model.SetDataValidationRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.SetDataValidationRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

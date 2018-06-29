@@ -26,25 +26,25 @@ defmodule GoogleApi.Sheets.V4.Model.ClearValuesResponse do
   - spreadsheetId (String.t): The spreadsheet the updates were applied to. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          clearedRange: any(),
-          spreadsheetId: any()
+          :clearedRange => any(),
+          :spreadsheetId => any()
         }
 
-  defstruct [
-    :clearedRange,
-    :spreadsheetId
-  ]
+  field(:clearedRange)
+  field(:spreadsheetId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.ClearValuesResponse do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Sheets.V4.Model.ClearValuesResponse.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.ClearValuesResponse do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

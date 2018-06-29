@@ -24,28 +24,28 @@ defmodule GoogleApi.Sheets.V4.Model.ConditionValue do
 
   - relativeDate (String.t): A relative date (based on the current date). Valid only if the type is DATE_BEFORE, DATE_AFTER, DATE_ON_OR_BEFORE or DATE_ON_OR_AFTER.  Relative dates are not supported in data validation. They are supported only in conditional formatting and conditional filters. Defaults to: `null`.
     - Enum - one of [RELATIVE_DATE_UNSPECIFIED, PAST_YEAR, PAST_MONTH, PAST_WEEK, YESTERDAY, TODAY, TOMORROW]
-  - userEnteredValue (String.t): A value the condition is based on. The value will be parsed as if the user typed into a cell. Formulas are supported (and must begin with an &#x60;&#x3D;&#x60; or a &#39;+&#39;). Defaults to: `null`.
+  - userEnteredValue (String.t): A value the condition is based on. The value is parsed as if the user typed into a cell. Formulas are supported (and must begin with an &#x60;&#x3D;&#x60; or a &#39;+&#39;). Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          relativeDate: any(),
-          userEnteredValue: any()
+          :relativeDate => any(),
+          :userEnteredValue => any()
         }
 
-  defstruct [
-    :relativeDate,
-    :userEnteredValue
-  ]
+  field(:relativeDate)
+  field(:userEnteredValue)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.ConditionValue do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Sheets.V4.Model.ConditionValue.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.ConditionValue do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

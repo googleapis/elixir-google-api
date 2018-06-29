@@ -27,25 +27,25 @@ defmodule GoogleApi.Sheets.V4.Model.ErrorValue do
     - Enum - one of [ERROR_TYPE_UNSPECIFIED, ERROR, NULL_VALUE, DIVIDE_BY_ZERO, VALUE, REF, NAME, NUM, N_A, LOADING]
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          message: any(),
-          type: any()
+          :message => any(),
+          :type => any()
         }
 
-  defstruct [
-    :message,
-    :type
-  ]
+  field(:message)
+  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.ErrorValue do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Sheets.V4.Model.ErrorValue.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.ErrorValue do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

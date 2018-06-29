@@ -27,35 +27,27 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionRequest do
   - objectId (integer()): The ID of the object to moved. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          fields: any(),
-          newPosition: GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition.t(),
-          objectId: any()
+          :fields => any(),
+          :newPosition => GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition.t(),
+          :objectId => any()
         }
 
-  defstruct [
-    :fields,
-    :newPosition,
-    :objectId
-  ]
+  field(:fields)
+  field(:newPosition, as: GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition)
+  field(:objectId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :newPosition,
-      :struct,
-      GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition,
-      options
-    )
+    GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

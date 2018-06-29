@@ -30,44 +30,33 @@ defmodule GoogleApi.Sheets.V4.Model.Spreadsheet do
   - spreadsheetUrl (String.t): The url of the spreadsheet. This field is read-only. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          developerMetadata: list(GoogleApi.Sheets.V4.Model.DeveloperMetadata.t()),
-          namedRanges: list(GoogleApi.Sheets.V4.Model.NamedRange.t()),
-          properties: GoogleApi.Sheets.V4.Model.SpreadsheetProperties.t(),
-          sheets: list(GoogleApi.Sheets.V4.Model.Sheet.t()),
-          spreadsheetId: any(),
-          spreadsheetUrl: any()
+          :developerMetadata => list(GoogleApi.Sheets.V4.Model.DeveloperMetadata.t()),
+          :namedRanges => list(GoogleApi.Sheets.V4.Model.NamedRange.t()),
+          :properties => GoogleApi.Sheets.V4.Model.SpreadsheetProperties.t(),
+          :sheets => list(GoogleApi.Sheets.V4.Model.Sheet.t()),
+          :spreadsheetId => any(),
+          :spreadsheetUrl => any()
         }
 
-  defstruct [
-    :developerMetadata,
-    :namedRanges,
-    :properties,
-    :sheets,
-    :spreadsheetId,
-    :spreadsheetUrl
-  ]
+  field(:developerMetadata, as: GoogleApi.Sheets.V4.Model.DeveloperMetadata, type: :list)
+  field(:namedRanges, as: GoogleApi.Sheets.V4.Model.NamedRange, type: :list)
+  field(:properties, as: GoogleApi.Sheets.V4.Model.SpreadsheetProperties)
+  field(:sheets, as: GoogleApi.Sheets.V4.Model.Sheet, type: :list)
+  field(:spreadsheetId)
+  field(:spreadsheetUrl)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.Spreadsheet do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :developerMetadata,
-      :list,
-      GoogleApi.Sheets.V4.Model.DeveloperMetadata,
-      options
-    )
-    |> deserialize(:namedRanges, :list, GoogleApi.Sheets.V4.Model.NamedRange, options)
-    |> deserialize(:properties, :struct, GoogleApi.Sheets.V4.Model.SpreadsheetProperties, options)
-    |> deserialize(:sheets, :list, GoogleApi.Sheets.V4.Model.Sheet, options)
+    GoogleApi.Sheets.V4.Model.Spreadsheet.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.Spreadsheet do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

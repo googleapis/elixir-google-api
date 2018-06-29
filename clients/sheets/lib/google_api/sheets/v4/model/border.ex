@@ -28,30 +28,27 @@ defmodule GoogleApi.Sheets.V4.Model.Border do
   - width (integer()): The width of the border, in pixels. Deprecated; the width is determined by the \&quot;style\&quot; field. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          color: GoogleApi.Sheets.V4.Model.Color.t(),
-          style: any(),
-          width: any()
+          :color => GoogleApi.Sheets.V4.Model.Color.t(),
+          :style => any(),
+          :width => any()
         }
 
-  defstruct [
-    :color,
-    :style,
-    :width
-  ]
+  field(:color, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:style)
+  field(:width)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.Border do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:color, :struct, GoogleApi.Sheets.V4.Model.Color, options)
+    GoogleApi.Sheets.V4.Model.Border.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.Border do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

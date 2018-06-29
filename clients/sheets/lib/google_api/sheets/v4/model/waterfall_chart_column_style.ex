@@ -26,28 +26,25 @@ defmodule GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle do
   - label (String.t): The label of the column&#39;s legend. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          color: GoogleApi.Sheets.V4.Model.Color.t(),
-          label: any()
+          :color => GoogleApi.Sheets.V4.Model.Color.t(),
+          :label => any()
         }
 
-  defstruct [
-    :color,
-    :label
-  ]
+  field(:color, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:label)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:color, :struct, GoogleApi.Sheets.V4.Model.Color, options)
+    GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

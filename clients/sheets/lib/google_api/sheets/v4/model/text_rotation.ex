@@ -26,25 +26,25 @@ defmodule GoogleApi.Sheets.V4.Model.TextRotation do
   - vertical (boolean()): If true, text reads top to bottom, but the orientation of individual characters is unchanged. For example:      | V |     | e |     | r |     | t |     | i |     | c |     | a |     | l | Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          angle: any(),
-          vertical: any()
+          :angle => any(),
+          :vertical => any()
         }
 
-  defstruct [
-    :angle,
-    :vertical
-  ]
+  field(:angle)
+  field(:vertical)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.TextRotation do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Sheets.V4.Model.TextRotation.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.TextRotation do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

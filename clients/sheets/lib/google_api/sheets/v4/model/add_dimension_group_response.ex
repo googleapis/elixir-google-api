@@ -25,26 +25,23 @@ defmodule GoogleApi.Sheets.V4.Model.AddDimensionGroupResponse do
   - dimensionGroups ([DimensionGroup]): All groups of a dimension after adding a group to that dimension. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          dimensionGroups: list(GoogleApi.Sheets.V4.Model.DimensionGroup.t())
+          :dimensionGroups => list(GoogleApi.Sheets.V4.Model.DimensionGroup.t())
         }
 
-  defstruct [
-    :dimensionGroups
-  ]
+  field(:dimensionGroups, as: GoogleApi.Sheets.V4.Model.DimensionGroup, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.AddDimensionGroupResponse do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:dimensionGroups, :list, GoogleApi.Sheets.V4.Model.DimensionGroup, options)
+    GoogleApi.Sheets.V4.Model.AddDimensionGroupResponse.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.AddDimensionGroupResponse do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

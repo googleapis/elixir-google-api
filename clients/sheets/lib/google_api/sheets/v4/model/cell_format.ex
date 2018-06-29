@@ -40,51 +40,43 @@ defmodule GoogleApi.Sheets.V4.Model.CellFormat do
     - Enum - one of [WRAP_STRATEGY_UNSPECIFIED, OVERFLOW_CELL, LEGACY_WRAP, CLIP, WRAP]
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          backgroundColor: GoogleApi.Sheets.V4.Model.Color.t(),
-          borders: GoogleApi.Sheets.V4.Model.Borders.t(),
-          horizontalAlignment: any(),
-          hyperlinkDisplayType: any(),
-          numberFormat: GoogleApi.Sheets.V4.Model.NumberFormat.t(),
-          padding: GoogleApi.Sheets.V4.Model.Padding.t(),
-          textDirection: any(),
-          textFormat: GoogleApi.Sheets.V4.Model.TextFormat.t(),
-          textRotation: GoogleApi.Sheets.V4.Model.TextRotation.t(),
-          verticalAlignment: any(),
-          wrapStrategy: any()
+          :backgroundColor => GoogleApi.Sheets.V4.Model.Color.t(),
+          :borders => GoogleApi.Sheets.V4.Model.Borders.t(),
+          :horizontalAlignment => any(),
+          :hyperlinkDisplayType => any(),
+          :numberFormat => GoogleApi.Sheets.V4.Model.NumberFormat.t(),
+          :padding => GoogleApi.Sheets.V4.Model.Padding.t(),
+          :textDirection => any(),
+          :textFormat => GoogleApi.Sheets.V4.Model.TextFormat.t(),
+          :textRotation => GoogleApi.Sheets.V4.Model.TextRotation.t(),
+          :verticalAlignment => any(),
+          :wrapStrategy => any()
         }
 
-  defstruct [
-    :backgroundColor,
-    :borders,
-    :horizontalAlignment,
-    :hyperlinkDisplayType,
-    :numberFormat,
-    :padding,
-    :textDirection,
-    :textFormat,
-    :textRotation,
-    :verticalAlignment,
-    :wrapStrategy
-  ]
+  field(:backgroundColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:borders, as: GoogleApi.Sheets.V4.Model.Borders)
+  field(:horizontalAlignment)
+  field(:hyperlinkDisplayType)
+  field(:numberFormat, as: GoogleApi.Sheets.V4.Model.NumberFormat)
+  field(:padding, as: GoogleApi.Sheets.V4.Model.Padding)
+  field(:textDirection)
+  field(:textFormat, as: GoogleApi.Sheets.V4.Model.TextFormat)
+  field(:textRotation, as: GoogleApi.Sheets.V4.Model.TextRotation)
+  field(:verticalAlignment)
+  field(:wrapStrategy)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.CellFormat do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:backgroundColor, :struct, GoogleApi.Sheets.V4.Model.Color, options)
-    |> deserialize(:borders, :struct, GoogleApi.Sheets.V4.Model.Borders, options)
-    |> deserialize(:numberFormat, :struct, GoogleApi.Sheets.V4.Model.NumberFormat, options)
-    |> deserialize(:padding, :struct, GoogleApi.Sheets.V4.Model.Padding, options)
-    |> deserialize(:textFormat, :struct, GoogleApi.Sheets.V4.Model.TextFormat, options)
-    |> deserialize(:textRotation, :struct, GoogleApi.Sheets.V4.Model.TextRotation, options)
+    GoogleApi.Sheets.V4.Model.CellFormat.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.CellFormat do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

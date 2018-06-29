@@ -30,60 +30,33 @@ defmodule GoogleApi.Sheets.V4.Model.WaterfallChartSeries do
   - subtotalColumnsStyle (WaterfallChartColumnStyle): Styles for all subtotal columns in this series. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          customSubtotals: list(GoogleApi.Sheets.V4.Model.WaterfallChartCustomSubtotal.t()),
-          data: GoogleApi.Sheets.V4.Model.ChartData.t(),
-          hideTrailingSubtotal: any(),
-          negativeColumnsStyle: GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle.t(),
-          positiveColumnsStyle: GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle.t(),
-          subtotalColumnsStyle: GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle.t()
+          :customSubtotals => list(GoogleApi.Sheets.V4.Model.WaterfallChartCustomSubtotal.t()),
+          :data => GoogleApi.Sheets.V4.Model.ChartData.t(),
+          :hideTrailingSubtotal => any(),
+          :negativeColumnsStyle => GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle.t(),
+          :positiveColumnsStyle => GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle.t(),
+          :subtotalColumnsStyle => GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle.t()
         }
 
-  defstruct [
-    :customSubtotals,
-    :data,
-    :hideTrailingSubtotal,
-    :negativeColumnsStyle,
-    :positiveColumnsStyle,
-    :subtotalColumnsStyle
-  ]
+  field(:customSubtotals, as: GoogleApi.Sheets.V4.Model.WaterfallChartCustomSubtotal, type: :list)
+  field(:data, as: GoogleApi.Sheets.V4.Model.ChartData)
+  field(:hideTrailingSubtotal)
+  field(:negativeColumnsStyle, as: GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle)
+  field(:positiveColumnsStyle, as: GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle)
+  field(:subtotalColumnsStyle, as: GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.WaterfallChartSeries do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :customSubtotals,
-      :list,
-      GoogleApi.Sheets.V4.Model.WaterfallChartCustomSubtotal,
-      options
-    )
-    |> deserialize(:data, :struct, GoogleApi.Sheets.V4.Model.ChartData, options)
-    |> deserialize(
-      :negativeColumnsStyle,
-      :struct,
-      GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle,
-      options
-    )
-    |> deserialize(
-      :positiveColumnsStyle,
-      :struct,
-      GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle,
-      options
-    )
-    |> deserialize(
-      :subtotalColumnsStyle,
-      :struct,
-      GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle,
-      options
-    )
+    GoogleApi.Sheets.V4.Model.WaterfallChartSeries.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.WaterfallChartSeries do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

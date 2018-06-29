@@ -25,31 +25,28 @@ defmodule GoogleApi.Sheets.V4.Model.SearchDeveloperMetadataResponse do
   - matchedDeveloperMetadata ([MatchedDeveloperMetadata]): The metadata matching the criteria of the search request. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          matchedDeveloperMetadata: list(GoogleApi.Sheets.V4.Model.MatchedDeveloperMetadata.t())
+          :matchedDeveloperMetadata =>
+            list(GoogleApi.Sheets.V4.Model.MatchedDeveloperMetadata.t())
         }
 
-  defstruct [
-    :matchedDeveloperMetadata
-  ]
+  field(
+    :matchedDeveloperMetadata,
+    as: GoogleApi.Sheets.V4.Model.MatchedDeveloperMetadata,
+    type: :list
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.SearchDeveloperMetadataResponse do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :matchedDeveloperMetadata,
-      :list,
-      GoogleApi.Sheets.V4.Model.MatchedDeveloperMetadata,
-      options
-    )
+    GoogleApi.Sheets.V4.Model.SearchDeveloperMetadataResponse.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.SearchDeveloperMetadataResponse do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -29,36 +29,31 @@ defmodule GoogleApi.Sheets.V4.Model.GridData do
   - startRow (integer()): The first row this GridData refers to, zero-based. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          columnMetadata: list(GoogleApi.Sheets.V4.Model.DimensionProperties.t()),
-          rowData: list(GoogleApi.Sheets.V4.Model.RowData.t()),
-          rowMetadata: list(GoogleApi.Sheets.V4.Model.DimensionProperties.t()),
-          startColumn: any(),
-          startRow: any()
+          :columnMetadata => list(GoogleApi.Sheets.V4.Model.DimensionProperties.t()),
+          :rowData => list(GoogleApi.Sheets.V4.Model.RowData.t()),
+          :rowMetadata => list(GoogleApi.Sheets.V4.Model.DimensionProperties.t()),
+          :startColumn => any(),
+          :startRow => any()
         }
 
-  defstruct [
-    :columnMetadata,
-    :rowData,
-    :rowMetadata,
-    :startColumn,
-    :startRow
-  ]
+  field(:columnMetadata, as: GoogleApi.Sheets.V4.Model.DimensionProperties, type: :list)
+  field(:rowData, as: GoogleApi.Sheets.V4.Model.RowData, type: :list)
+  field(:rowMetadata, as: GoogleApi.Sheets.V4.Model.DimensionProperties, type: :list)
+  field(:startColumn)
+  field(:startRow)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.GridData do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:columnMetadata, :list, GoogleApi.Sheets.V4.Model.DimensionProperties, options)
-    |> deserialize(:rowData, :list, GoogleApi.Sheets.V4.Model.RowData, options)
-    |> deserialize(:rowMetadata, :list, GoogleApi.Sheets.V4.Model.DimensionProperties, options)
+    GoogleApi.Sheets.V4.Model.GridData.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.GridData do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

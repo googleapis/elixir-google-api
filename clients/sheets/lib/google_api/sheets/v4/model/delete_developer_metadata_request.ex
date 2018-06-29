@@ -25,26 +25,23 @@ defmodule GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataRequest do
   - dataFilter (DataFilter): The data filter describing the criteria used to select which developer metadata entry to delete. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          dataFilter: GoogleApi.Sheets.V4.Model.DataFilter.t()
+          :dataFilter => GoogleApi.Sheets.V4.Model.DataFilter.t()
         }
 
-  defstruct [
-    :dataFilter
-  ]
+  field(:dataFilter, as: GoogleApi.Sheets.V4.Model.DataFilter)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:dataFilter, :struct, GoogleApi.Sheets.V4.Model.DataFilter, options)
+    GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

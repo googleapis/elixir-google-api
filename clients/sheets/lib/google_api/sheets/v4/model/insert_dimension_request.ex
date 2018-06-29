@@ -26,28 +26,25 @@ defmodule GoogleApi.Sheets.V4.Model.InsertDimensionRequest do
   - range (DimensionRange): The dimensions to insert.  Both the start and end indexes must be bounded. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          inheritFromBefore: any(),
-          range: GoogleApi.Sheets.V4.Model.DimensionRange.t()
+          :inheritFromBefore => any(),
+          :range => GoogleApi.Sheets.V4.Model.DimensionRange.t()
         }
 
-  defstruct [
-    :inheritFromBefore,
-    :range
-  ]
+  field(:inheritFromBefore)
+  field(:range, as: GoogleApi.Sheets.V4.Model.DimensionRange)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.InsertDimensionRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:range, :struct, GoogleApi.Sheets.V4.Model.DimensionRange, options)
+    GoogleApi.Sheets.V4.Model.InsertDimensionRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.InsertDimensionRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

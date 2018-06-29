@@ -28,33 +28,29 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRuleResponse do
   - oldRule (ConditionalFormatRule): The old (deleted) rule. Not set if a rule was moved (because it is the same as new_rule). Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          newIndex: any(),
-          newRule: GoogleApi.Sheets.V4.Model.ConditionalFormatRule.t(),
-          oldIndex: any(),
-          oldRule: GoogleApi.Sheets.V4.Model.ConditionalFormatRule.t()
+          :newIndex => any(),
+          :newRule => GoogleApi.Sheets.V4.Model.ConditionalFormatRule.t(),
+          :oldIndex => any(),
+          :oldRule => GoogleApi.Sheets.V4.Model.ConditionalFormatRule.t()
         }
 
-  defstruct [
-    :newIndex,
-    :newRule,
-    :oldIndex,
-    :oldRule
-  ]
+  field(:newIndex)
+  field(:newRule, as: GoogleApi.Sheets.V4.Model.ConditionalFormatRule)
+  field(:oldIndex)
+  field(:oldRule, as: GoogleApi.Sheets.V4.Model.ConditionalFormatRule)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRuleResponse do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:newRule, :struct, GoogleApi.Sheets.V4.Model.ConditionalFormatRule, options)
-    |> deserialize(:oldRule, :struct, GoogleApi.Sheets.V4.Model.ConditionalFormatRule, options)
+    GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRuleResponse.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRuleResponse do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

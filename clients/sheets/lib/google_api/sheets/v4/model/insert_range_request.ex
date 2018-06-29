@@ -27,28 +27,25 @@ defmodule GoogleApi.Sheets.V4.Model.InsertRangeRequest do
     - Enum - one of [DIMENSION_UNSPECIFIED, ROWS, COLUMNS]
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          range: GoogleApi.Sheets.V4.Model.GridRange.t(),
-          shiftDimension: any()
+          :range => GoogleApi.Sheets.V4.Model.GridRange.t(),
+          :shiftDimension => any()
         }
 
-  defstruct [
-    :range,
-    :shiftDimension
-  ]
+  field(:range, as: GoogleApi.Sheets.V4.Model.GridRange)
+  field(:shiftDimension)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.InsertRangeRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:range, :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
+    GoogleApi.Sheets.V4.Model.InsertRangeRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.InsertRangeRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

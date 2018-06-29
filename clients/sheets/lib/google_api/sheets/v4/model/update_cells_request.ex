@@ -28,34 +28,29 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateCellsRequest do
   - start (GridCoordinate): The coordinate to start writing data at. Any number of rows and columns (including a different number of columns per row) may be written. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          fields: any(),
-          range: GoogleApi.Sheets.V4.Model.GridRange.t(),
-          rows: list(GoogleApi.Sheets.V4.Model.RowData.t()),
-          start: GoogleApi.Sheets.V4.Model.GridCoordinate.t()
+          :fields => any(),
+          :range => GoogleApi.Sheets.V4.Model.GridRange.t(),
+          :rows => list(GoogleApi.Sheets.V4.Model.RowData.t()),
+          :start => GoogleApi.Sheets.V4.Model.GridCoordinate.t()
         }
 
-  defstruct [
-    :fields,
-    :range,
-    :rows,
-    :start
-  ]
+  field(:fields)
+  field(:range, as: GoogleApi.Sheets.V4.Model.GridRange)
+  field(:rows, as: GoogleApi.Sheets.V4.Model.RowData, type: :list)
+  field(:start, as: GoogleApi.Sheets.V4.Model.GridCoordinate)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UpdateCellsRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:range, :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
-    |> deserialize(:rows, :list, GoogleApi.Sheets.V4.Model.RowData, options)
-    |> deserialize(:start, :struct, GoogleApi.Sheets.V4.Model.GridCoordinate, options)
+    GoogleApi.Sheets.V4.Model.UpdateCellsRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UpdateCellsRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

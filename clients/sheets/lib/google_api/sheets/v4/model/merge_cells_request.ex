@@ -27,28 +27,25 @@ defmodule GoogleApi.Sheets.V4.Model.MergeCellsRequest do
   - range (GridRange): The range of cells to merge. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          mergeType: any(),
-          range: GoogleApi.Sheets.V4.Model.GridRange.t()
+          :mergeType => any(),
+          :range => GoogleApi.Sheets.V4.Model.GridRange.t()
         }
 
-  defstruct [
-    :mergeType,
-    :range
-  ]
+  field(:mergeType)
+  field(:range, as: GoogleApi.Sheets.V4.Model.GridRange)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.MergeCellsRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:range, :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
+    GoogleApi.Sheets.V4.Model.MergeCellsRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.MergeCellsRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

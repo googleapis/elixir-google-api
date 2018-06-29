@@ -25,23 +25,23 @@ defmodule GoogleApi.Sheets.V4.Model.PivotFilterCriteria do
   - visibleValues ([String.t]): Values that should be included.  Values not listed here are excluded. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          visibleValues: any()
+          :visibleValues => list(any())
         }
 
-  defstruct [
-    :visibleValues
-  ]
+  field(:visibleValues, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.PivotFilterCriteria do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Sheets.V4.Model.PivotFilterCriteria.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.PivotFilterCriteria do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

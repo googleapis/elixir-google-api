@@ -26,29 +26,25 @@ defmodule GoogleApi.Sheets.V4.Model.SortRangeRequest do
   - sortSpecs ([SortSpec]): The sort order per column. Later specifications are used when values are equal in the earlier specifications. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          range: GoogleApi.Sheets.V4.Model.GridRange.t(),
-          sortSpecs: list(GoogleApi.Sheets.V4.Model.SortSpec.t())
+          :range => GoogleApi.Sheets.V4.Model.GridRange.t(),
+          :sortSpecs => list(GoogleApi.Sheets.V4.Model.SortSpec.t())
         }
 
-  defstruct [
-    :range,
-    :sortSpecs
-  ]
+  field(:range, as: GoogleApi.Sheets.V4.Model.GridRange)
+  field(:sortSpecs, as: GoogleApi.Sheets.V4.Model.SortSpec, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.SortRangeRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:range, :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
-    |> deserialize(:sortSpecs, :list, GoogleApi.Sheets.V4.Model.SortSpec, options)
+    GoogleApi.Sheets.V4.Model.SortRangeRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.SortRangeRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -30,34 +30,31 @@ defmodule GoogleApi.Sheets.V4.Model.PasteDataRequest do
     - Enum - one of [PASTE_NORMAL, PASTE_VALUES, PASTE_FORMAT, PASTE_NO_BORDERS, PASTE_FORMULA, PASTE_DATA_VALIDATION, PASTE_CONDITIONAL_FORMATTING]
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          coordinate: GoogleApi.Sheets.V4.Model.GridCoordinate.t(),
-          data: any(),
-          delimiter: any(),
-          html: any(),
-          type: any()
+          :coordinate => GoogleApi.Sheets.V4.Model.GridCoordinate.t(),
+          :data => any(),
+          :delimiter => any(),
+          :html => any(),
+          :type => any()
         }
 
-  defstruct [
-    :coordinate,
-    :data,
-    :delimiter,
-    :html,
-    :type
-  ]
+  field(:coordinate, as: GoogleApi.Sheets.V4.Model.GridCoordinate)
+  field(:data)
+  field(:delimiter)
+  field(:html)
+  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.PasteDataRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:coordinate, :struct, GoogleApi.Sheets.V4.Model.GridCoordinate, options)
+    GoogleApi.Sheets.V4.Model.PasteDataRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.PasteDataRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

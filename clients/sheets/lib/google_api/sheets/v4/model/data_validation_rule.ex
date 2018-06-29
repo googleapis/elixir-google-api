@@ -28,32 +28,29 @@ defmodule GoogleApi.Sheets.V4.Model.DataValidationRule do
   - strict (boolean()): True if invalid data should be rejected. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          condition: GoogleApi.Sheets.V4.Model.BooleanCondition.t(),
-          inputMessage: any(),
-          showCustomUi: any(),
-          strict: any()
+          :condition => GoogleApi.Sheets.V4.Model.BooleanCondition.t(),
+          :inputMessage => any(),
+          :showCustomUi => any(),
+          :strict => any()
         }
 
-  defstruct [
-    :condition,
-    :inputMessage,
-    :showCustomUi,
-    :strict
-  ]
+  field(:condition, as: GoogleApi.Sheets.V4.Model.BooleanCondition)
+  field(:inputMessage)
+  field(:showCustomUi)
+  field(:strict)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DataValidationRule do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:condition, :struct, GoogleApi.Sheets.V4.Model.BooleanCondition, options)
+    GoogleApi.Sheets.V4.Model.DataValidationRule.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.DataValidationRule do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

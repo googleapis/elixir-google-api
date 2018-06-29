@@ -26,28 +26,25 @@ defmodule GoogleApi.Sheets.V4.Model.BatchGetValuesResponse do
   - valueRanges ([ValueRange]): The requested values. The order of the ValueRanges is the same as the order of the requested ranges. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          spreadsheetId: any(),
-          valueRanges: list(GoogleApi.Sheets.V4.Model.ValueRange.t())
+          :spreadsheetId => any(),
+          :valueRanges => list(GoogleApi.Sheets.V4.Model.ValueRange.t())
         }
 
-  defstruct [
-    :spreadsheetId,
-    :valueRanges
-  ]
+  field(:spreadsheetId)
+  field(:valueRanges, as: GoogleApi.Sheets.V4.Model.ValueRange, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BatchGetValuesResponse do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:valueRanges, :list, GoogleApi.Sheets.V4.Model.ValueRange, options)
+    GoogleApi.Sheets.V4.Model.BatchGetValuesResponse.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BatchGetValuesResponse do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

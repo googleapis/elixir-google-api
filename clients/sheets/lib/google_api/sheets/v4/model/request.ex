@@ -80,391 +80,162 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
   - updateSpreadsheetProperties (UpdateSpreadsheetPropertiesRequest): Updates the spreadsheet&#39;s properties. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          addBanding: GoogleApi.Sheets.V4.Model.AddBandingRequest.t(),
-          addChart: GoogleApi.Sheets.V4.Model.AddChartRequest.t(),
-          addConditionalFormatRule: GoogleApi.Sheets.V4.Model.AddConditionalFormatRuleRequest.t(),
-          addDimensionGroup: GoogleApi.Sheets.V4.Model.AddDimensionGroupRequest.t(),
-          addFilterView: GoogleApi.Sheets.V4.Model.AddFilterViewRequest.t(),
-          addNamedRange: GoogleApi.Sheets.V4.Model.AddNamedRangeRequest.t(),
-          addProtectedRange: GoogleApi.Sheets.V4.Model.AddProtectedRangeRequest.t(),
-          addSheet: GoogleApi.Sheets.V4.Model.AddSheetRequest.t(),
-          appendCells: GoogleApi.Sheets.V4.Model.AppendCellsRequest.t(),
-          appendDimension: GoogleApi.Sheets.V4.Model.AppendDimensionRequest.t(),
-          autoFill: GoogleApi.Sheets.V4.Model.AutoFillRequest.t(),
-          autoResizeDimensions: GoogleApi.Sheets.V4.Model.AutoResizeDimensionsRequest.t(),
-          clearBasicFilter: GoogleApi.Sheets.V4.Model.ClearBasicFilterRequest.t(),
-          copyPaste: GoogleApi.Sheets.V4.Model.CopyPasteRequest.t(),
-          createDeveloperMetadata: GoogleApi.Sheets.V4.Model.CreateDeveloperMetadataRequest.t(),
-          cutPaste: GoogleApi.Sheets.V4.Model.CutPasteRequest.t(),
-          deleteBanding: GoogleApi.Sheets.V4.Model.DeleteBandingRequest.t(),
-          deleteConditionalFormatRule:
+          :addBanding => GoogleApi.Sheets.V4.Model.AddBandingRequest.t(),
+          :addChart => GoogleApi.Sheets.V4.Model.AddChartRequest.t(),
+          :addConditionalFormatRule =>
+            GoogleApi.Sheets.V4.Model.AddConditionalFormatRuleRequest.t(),
+          :addDimensionGroup => GoogleApi.Sheets.V4.Model.AddDimensionGroupRequest.t(),
+          :addFilterView => GoogleApi.Sheets.V4.Model.AddFilterViewRequest.t(),
+          :addNamedRange => GoogleApi.Sheets.V4.Model.AddNamedRangeRequest.t(),
+          :addProtectedRange => GoogleApi.Sheets.V4.Model.AddProtectedRangeRequest.t(),
+          :addSheet => GoogleApi.Sheets.V4.Model.AddSheetRequest.t(),
+          :appendCells => GoogleApi.Sheets.V4.Model.AppendCellsRequest.t(),
+          :appendDimension => GoogleApi.Sheets.V4.Model.AppendDimensionRequest.t(),
+          :autoFill => GoogleApi.Sheets.V4.Model.AutoFillRequest.t(),
+          :autoResizeDimensions => GoogleApi.Sheets.V4.Model.AutoResizeDimensionsRequest.t(),
+          :clearBasicFilter => GoogleApi.Sheets.V4.Model.ClearBasicFilterRequest.t(),
+          :copyPaste => GoogleApi.Sheets.V4.Model.CopyPasteRequest.t(),
+          :createDeveloperMetadata => GoogleApi.Sheets.V4.Model.CreateDeveloperMetadataRequest.t(),
+          :cutPaste => GoogleApi.Sheets.V4.Model.CutPasteRequest.t(),
+          :deleteBanding => GoogleApi.Sheets.V4.Model.DeleteBandingRequest.t(),
+          :deleteConditionalFormatRule =>
             GoogleApi.Sheets.V4.Model.DeleteConditionalFormatRuleRequest.t(),
-          deleteDeveloperMetadata: GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataRequest.t(),
-          deleteDimension: GoogleApi.Sheets.V4.Model.DeleteDimensionRequest.t(),
-          deleteDimensionGroup: GoogleApi.Sheets.V4.Model.DeleteDimensionGroupRequest.t(),
-          deleteEmbeddedObject: GoogleApi.Sheets.V4.Model.DeleteEmbeddedObjectRequest.t(),
-          deleteFilterView: GoogleApi.Sheets.V4.Model.DeleteFilterViewRequest.t(),
-          deleteNamedRange: GoogleApi.Sheets.V4.Model.DeleteNamedRangeRequest.t(),
-          deleteProtectedRange: GoogleApi.Sheets.V4.Model.DeleteProtectedRangeRequest.t(),
-          deleteRange: GoogleApi.Sheets.V4.Model.DeleteRangeRequest.t(),
-          deleteSheet: GoogleApi.Sheets.V4.Model.DeleteSheetRequest.t(),
-          duplicateFilterView: GoogleApi.Sheets.V4.Model.DuplicateFilterViewRequest.t(),
-          duplicateSheet: GoogleApi.Sheets.V4.Model.DuplicateSheetRequest.t(),
-          findReplace: GoogleApi.Sheets.V4.Model.FindReplaceRequest.t(),
-          insertDimension: GoogleApi.Sheets.V4.Model.InsertDimensionRequest.t(),
-          insertRange: GoogleApi.Sheets.V4.Model.InsertRangeRequest.t(),
-          mergeCells: GoogleApi.Sheets.V4.Model.MergeCellsRequest.t(),
-          moveDimension: GoogleApi.Sheets.V4.Model.MoveDimensionRequest.t(),
-          pasteData: GoogleApi.Sheets.V4.Model.PasteDataRequest.t(),
-          randomizeRange: GoogleApi.Sheets.V4.Model.RandomizeRangeRequest.t(),
-          repeatCell: GoogleApi.Sheets.V4.Model.RepeatCellRequest.t(),
-          setBasicFilter: GoogleApi.Sheets.V4.Model.SetBasicFilterRequest.t(),
-          setDataValidation: GoogleApi.Sheets.V4.Model.SetDataValidationRequest.t(),
-          sortRange: GoogleApi.Sheets.V4.Model.SortRangeRequest.t(),
-          textToColumns: GoogleApi.Sheets.V4.Model.TextToColumnsRequest.t(),
-          unmergeCells: GoogleApi.Sheets.V4.Model.UnmergeCellsRequest.t(),
-          updateBanding: GoogleApi.Sheets.V4.Model.UpdateBandingRequest.t(),
-          updateBorders: GoogleApi.Sheets.V4.Model.UpdateBordersRequest.t(),
-          updateCells: GoogleApi.Sheets.V4.Model.UpdateCellsRequest.t(),
-          updateChartSpec: GoogleApi.Sheets.V4.Model.UpdateChartSpecRequest.t(),
-          updateConditionalFormatRule:
+          :deleteDeveloperMetadata => GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataRequest.t(),
+          :deleteDimension => GoogleApi.Sheets.V4.Model.DeleteDimensionRequest.t(),
+          :deleteDimensionGroup => GoogleApi.Sheets.V4.Model.DeleteDimensionGroupRequest.t(),
+          :deleteEmbeddedObject => GoogleApi.Sheets.V4.Model.DeleteEmbeddedObjectRequest.t(),
+          :deleteFilterView => GoogleApi.Sheets.V4.Model.DeleteFilterViewRequest.t(),
+          :deleteNamedRange => GoogleApi.Sheets.V4.Model.DeleteNamedRangeRequest.t(),
+          :deleteProtectedRange => GoogleApi.Sheets.V4.Model.DeleteProtectedRangeRequest.t(),
+          :deleteRange => GoogleApi.Sheets.V4.Model.DeleteRangeRequest.t(),
+          :deleteSheet => GoogleApi.Sheets.V4.Model.DeleteSheetRequest.t(),
+          :duplicateFilterView => GoogleApi.Sheets.V4.Model.DuplicateFilterViewRequest.t(),
+          :duplicateSheet => GoogleApi.Sheets.V4.Model.DuplicateSheetRequest.t(),
+          :findReplace => GoogleApi.Sheets.V4.Model.FindReplaceRequest.t(),
+          :insertDimension => GoogleApi.Sheets.V4.Model.InsertDimensionRequest.t(),
+          :insertRange => GoogleApi.Sheets.V4.Model.InsertRangeRequest.t(),
+          :mergeCells => GoogleApi.Sheets.V4.Model.MergeCellsRequest.t(),
+          :moveDimension => GoogleApi.Sheets.V4.Model.MoveDimensionRequest.t(),
+          :pasteData => GoogleApi.Sheets.V4.Model.PasteDataRequest.t(),
+          :randomizeRange => GoogleApi.Sheets.V4.Model.RandomizeRangeRequest.t(),
+          :repeatCell => GoogleApi.Sheets.V4.Model.RepeatCellRequest.t(),
+          :setBasicFilter => GoogleApi.Sheets.V4.Model.SetBasicFilterRequest.t(),
+          :setDataValidation => GoogleApi.Sheets.V4.Model.SetDataValidationRequest.t(),
+          :sortRange => GoogleApi.Sheets.V4.Model.SortRangeRequest.t(),
+          :textToColumns => GoogleApi.Sheets.V4.Model.TextToColumnsRequest.t(),
+          :unmergeCells => GoogleApi.Sheets.V4.Model.UnmergeCellsRequest.t(),
+          :updateBanding => GoogleApi.Sheets.V4.Model.UpdateBandingRequest.t(),
+          :updateBorders => GoogleApi.Sheets.V4.Model.UpdateBordersRequest.t(),
+          :updateCells => GoogleApi.Sheets.V4.Model.UpdateCellsRequest.t(),
+          :updateChartSpec => GoogleApi.Sheets.V4.Model.UpdateChartSpecRequest.t(),
+          :updateConditionalFormatRule =>
             GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRuleRequest.t(),
-          updateDeveloperMetadata: GoogleApi.Sheets.V4.Model.UpdateDeveloperMetadataRequest.t(),
-          updateDimensionGroup: GoogleApi.Sheets.V4.Model.UpdateDimensionGroupRequest.t(),
-          updateDimensionProperties:
+          :updateDeveloperMetadata => GoogleApi.Sheets.V4.Model.UpdateDeveloperMetadataRequest.t(),
+          :updateDimensionGroup => GoogleApi.Sheets.V4.Model.UpdateDimensionGroupRequest.t(),
+          :updateDimensionProperties =>
             GoogleApi.Sheets.V4.Model.UpdateDimensionPropertiesRequest.t(),
-          updateEmbeddedObjectPosition:
+          :updateEmbeddedObjectPosition =>
             GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionRequest.t(),
-          updateFilterView: GoogleApi.Sheets.V4.Model.UpdateFilterViewRequest.t(),
-          updateNamedRange: GoogleApi.Sheets.V4.Model.UpdateNamedRangeRequest.t(),
-          updateProtectedRange: GoogleApi.Sheets.V4.Model.UpdateProtectedRangeRequest.t(),
-          updateSheetProperties: GoogleApi.Sheets.V4.Model.UpdateSheetPropertiesRequest.t(),
-          updateSpreadsheetProperties:
+          :updateFilterView => GoogleApi.Sheets.V4.Model.UpdateFilterViewRequest.t(),
+          :updateNamedRange => GoogleApi.Sheets.V4.Model.UpdateNamedRangeRequest.t(),
+          :updateProtectedRange => GoogleApi.Sheets.V4.Model.UpdateProtectedRangeRequest.t(),
+          :updateSheetProperties => GoogleApi.Sheets.V4.Model.UpdateSheetPropertiesRequest.t(),
+          :updateSpreadsheetProperties =>
             GoogleApi.Sheets.V4.Model.UpdateSpreadsheetPropertiesRequest.t()
         }
 
-  defstruct [
-    :addBanding,
-    :addChart,
-    :addConditionalFormatRule,
-    :addDimensionGroup,
-    :addFilterView,
-    :addNamedRange,
-    :addProtectedRange,
-    :addSheet,
-    :appendCells,
-    :appendDimension,
-    :autoFill,
-    :autoResizeDimensions,
-    :clearBasicFilter,
-    :copyPaste,
-    :createDeveloperMetadata,
-    :cutPaste,
-    :deleteBanding,
+  field(:addBanding, as: GoogleApi.Sheets.V4.Model.AddBandingRequest)
+  field(:addChart, as: GoogleApi.Sheets.V4.Model.AddChartRequest)
+  field(:addConditionalFormatRule, as: GoogleApi.Sheets.V4.Model.AddConditionalFormatRuleRequest)
+  field(:addDimensionGroup, as: GoogleApi.Sheets.V4.Model.AddDimensionGroupRequest)
+  field(:addFilterView, as: GoogleApi.Sheets.V4.Model.AddFilterViewRequest)
+  field(:addNamedRange, as: GoogleApi.Sheets.V4.Model.AddNamedRangeRequest)
+  field(:addProtectedRange, as: GoogleApi.Sheets.V4.Model.AddProtectedRangeRequest)
+  field(:addSheet, as: GoogleApi.Sheets.V4.Model.AddSheetRequest)
+  field(:appendCells, as: GoogleApi.Sheets.V4.Model.AppendCellsRequest)
+  field(:appendDimension, as: GoogleApi.Sheets.V4.Model.AppendDimensionRequest)
+  field(:autoFill, as: GoogleApi.Sheets.V4.Model.AutoFillRequest)
+  field(:autoResizeDimensions, as: GoogleApi.Sheets.V4.Model.AutoResizeDimensionsRequest)
+  field(:clearBasicFilter, as: GoogleApi.Sheets.V4.Model.ClearBasicFilterRequest)
+  field(:copyPaste, as: GoogleApi.Sheets.V4.Model.CopyPasteRequest)
+  field(:createDeveloperMetadata, as: GoogleApi.Sheets.V4.Model.CreateDeveloperMetadataRequest)
+  field(:cutPaste, as: GoogleApi.Sheets.V4.Model.CutPasteRequest)
+  field(:deleteBanding, as: GoogleApi.Sheets.V4.Model.DeleteBandingRequest)
+
+  field(
     :deleteConditionalFormatRule,
-    :deleteDeveloperMetadata,
-    :deleteDimension,
-    :deleteDimensionGroup,
-    :deleteEmbeddedObject,
-    :deleteFilterView,
-    :deleteNamedRange,
-    :deleteProtectedRange,
-    :deleteRange,
-    :deleteSheet,
-    :duplicateFilterView,
-    :duplicateSheet,
-    :findReplace,
-    :insertDimension,
-    :insertRange,
-    :mergeCells,
-    :moveDimension,
-    :pasteData,
-    :randomizeRange,
-    :repeatCell,
-    :setBasicFilter,
-    :setDataValidation,
-    :sortRange,
-    :textToColumns,
-    :unmergeCells,
-    :updateBanding,
-    :updateBorders,
-    :updateCells,
-    :updateChartSpec,
+    as: GoogleApi.Sheets.V4.Model.DeleteConditionalFormatRuleRequest
+  )
+
+  field(:deleteDeveloperMetadata, as: GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataRequest)
+  field(:deleteDimension, as: GoogleApi.Sheets.V4.Model.DeleteDimensionRequest)
+  field(:deleteDimensionGroup, as: GoogleApi.Sheets.V4.Model.DeleteDimensionGroupRequest)
+  field(:deleteEmbeddedObject, as: GoogleApi.Sheets.V4.Model.DeleteEmbeddedObjectRequest)
+  field(:deleteFilterView, as: GoogleApi.Sheets.V4.Model.DeleteFilterViewRequest)
+  field(:deleteNamedRange, as: GoogleApi.Sheets.V4.Model.DeleteNamedRangeRequest)
+  field(:deleteProtectedRange, as: GoogleApi.Sheets.V4.Model.DeleteProtectedRangeRequest)
+  field(:deleteRange, as: GoogleApi.Sheets.V4.Model.DeleteRangeRequest)
+  field(:deleteSheet, as: GoogleApi.Sheets.V4.Model.DeleteSheetRequest)
+  field(:duplicateFilterView, as: GoogleApi.Sheets.V4.Model.DuplicateFilterViewRequest)
+  field(:duplicateSheet, as: GoogleApi.Sheets.V4.Model.DuplicateSheetRequest)
+  field(:findReplace, as: GoogleApi.Sheets.V4.Model.FindReplaceRequest)
+  field(:insertDimension, as: GoogleApi.Sheets.V4.Model.InsertDimensionRequest)
+  field(:insertRange, as: GoogleApi.Sheets.V4.Model.InsertRangeRequest)
+  field(:mergeCells, as: GoogleApi.Sheets.V4.Model.MergeCellsRequest)
+  field(:moveDimension, as: GoogleApi.Sheets.V4.Model.MoveDimensionRequest)
+  field(:pasteData, as: GoogleApi.Sheets.V4.Model.PasteDataRequest)
+  field(:randomizeRange, as: GoogleApi.Sheets.V4.Model.RandomizeRangeRequest)
+  field(:repeatCell, as: GoogleApi.Sheets.V4.Model.RepeatCellRequest)
+  field(:setBasicFilter, as: GoogleApi.Sheets.V4.Model.SetBasicFilterRequest)
+  field(:setDataValidation, as: GoogleApi.Sheets.V4.Model.SetDataValidationRequest)
+  field(:sortRange, as: GoogleApi.Sheets.V4.Model.SortRangeRequest)
+  field(:textToColumns, as: GoogleApi.Sheets.V4.Model.TextToColumnsRequest)
+  field(:unmergeCells, as: GoogleApi.Sheets.V4.Model.UnmergeCellsRequest)
+  field(:updateBanding, as: GoogleApi.Sheets.V4.Model.UpdateBandingRequest)
+  field(:updateBorders, as: GoogleApi.Sheets.V4.Model.UpdateBordersRequest)
+  field(:updateCells, as: GoogleApi.Sheets.V4.Model.UpdateCellsRequest)
+  field(:updateChartSpec, as: GoogleApi.Sheets.V4.Model.UpdateChartSpecRequest)
+
+  field(
     :updateConditionalFormatRule,
-    :updateDeveloperMetadata,
-    :updateDimensionGroup,
+    as: GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRuleRequest
+  )
+
+  field(:updateDeveloperMetadata, as: GoogleApi.Sheets.V4.Model.UpdateDeveloperMetadataRequest)
+  field(:updateDimensionGroup, as: GoogleApi.Sheets.V4.Model.UpdateDimensionGroupRequest)
+
+  field(
     :updateDimensionProperties,
+    as: GoogleApi.Sheets.V4.Model.UpdateDimensionPropertiesRequest
+  )
+
+  field(
     :updateEmbeddedObjectPosition,
-    :updateFilterView,
-    :updateNamedRange,
-    :updateProtectedRange,
-    :updateSheetProperties,
-    :updateSpreadsheetProperties
-  ]
+    as: GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionRequest
+  )
+
+  field(:updateFilterView, as: GoogleApi.Sheets.V4.Model.UpdateFilterViewRequest)
+  field(:updateNamedRange, as: GoogleApi.Sheets.V4.Model.UpdateNamedRangeRequest)
+  field(:updateProtectedRange, as: GoogleApi.Sheets.V4.Model.UpdateProtectedRangeRequest)
+  field(:updateSheetProperties, as: GoogleApi.Sheets.V4.Model.UpdateSheetPropertiesRequest)
+
+  field(
+    :updateSpreadsheetProperties,
+    as: GoogleApi.Sheets.V4.Model.UpdateSpreadsheetPropertiesRequest
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.Request do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:addBanding, :struct, GoogleApi.Sheets.V4.Model.AddBandingRequest, options)
-    |> deserialize(:addChart, :struct, GoogleApi.Sheets.V4.Model.AddChartRequest, options)
-    |> deserialize(
-      :addConditionalFormatRule,
-      :struct,
-      GoogleApi.Sheets.V4.Model.AddConditionalFormatRuleRequest,
-      options
-    )
-    |> deserialize(
-      :addDimensionGroup,
-      :struct,
-      GoogleApi.Sheets.V4.Model.AddDimensionGroupRequest,
-      options
-    )
-    |> deserialize(
-      :addFilterView,
-      :struct,
-      GoogleApi.Sheets.V4.Model.AddFilterViewRequest,
-      options
-    )
-    |> deserialize(
-      :addNamedRange,
-      :struct,
-      GoogleApi.Sheets.V4.Model.AddNamedRangeRequest,
-      options
-    )
-    |> deserialize(
-      :addProtectedRange,
-      :struct,
-      GoogleApi.Sheets.V4.Model.AddProtectedRangeRequest,
-      options
-    )
-    |> deserialize(:addSheet, :struct, GoogleApi.Sheets.V4.Model.AddSheetRequest, options)
-    |> deserialize(:appendCells, :struct, GoogleApi.Sheets.V4.Model.AppendCellsRequest, options)
-    |> deserialize(
-      :appendDimension,
-      :struct,
-      GoogleApi.Sheets.V4.Model.AppendDimensionRequest,
-      options
-    )
-    |> deserialize(:autoFill, :struct, GoogleApi.Sheets.V4.Model.AutoFillRequest, options)
-    |> deserialize(
-      :autoResizeDimensions,
-      :struct,
-      GoogleApi.Sheets.V4.Model.AutoResizeDimensionsRequest,
-      options
-    )
-    |> deserialize(
-      :clearBasicFilter,
-      :struct,
-      GoogleApi.Sheets.V4.Model.ClearBasicFilterRequest,
-      options
-    )
-    |> deserialize(:copyPaste, :struct, GoogleApi.Sheets.V4.Model.CopyPasteRequest, options)
-    |> deserialize(
-      :createDeveloperMetadata,
-      :struct,
-      GoogleApi.Sheets.V4.Model.CreateDeveloperMetadataRequest,
-      options
-    )
-    |> deserialize(:cutPaste, :struct, GoogleApi.Sheets.V4.Model.CutPasteRequest, options)
-    |> deserialize(
-      :deleteBanding,
-      :struct,
-      GoogleApi.Sheets.V4.Model.DeleteBandingRequest,
-      options
-    )
-    |> deserialize(
-      :deleteConditionalFormatRule,
-      :struct,
-      GoogleApi.Sheets.V4.Model.DeleteConditionalFormatRuleRequest,
-      options
-    )
-    |> deserialize(
-      :deleteDeveloperMetadata,
-      :struct,
-      GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataRequest,
-      options
-    )
-    |> deserialize(
-      :deleteDimension,
-      :struct,
-      GoogleApi.Sheets.V4.Model.DeleteDimensionRequest,
-      options
-    )
-    |> deserialize(
-      :deleteDimensionGroup,
-      :struct,
-      GoogleApi.Sheets.V4.Model.DeleteDimensionGroupRequest,
-      options
-    )
-    |> deserialize(
-      :deleteEmbeddedObject,
-      :struct,
-      GoogleApi.Sheets.V4.Model.DeleteEmbeddedObjectRequest,
-      options
-    )
-    |> deserialize(
-      :deleteFilterView,
-      :struct,
-      GoogleApi.Sheets.V4.Model.DeleteFilterViewRequest,
-      options
-    )
-    |> deserialize(
-      :deleteNamedRange,
-      :struct,
-      GoogleApi.Sheets.V4.Model.DeleteNamedRangeRequest,
-      options
-    )
-    |> deserialize(
-      :deleteProtectedRange,
-      :struct,
-      GoogleApi.Sheets.V4.Model.DeleteProtectedRangeRequest,
-      options
-    )
-    |> deserialize(:deleteRange, :struct, GoogleApi.Sheets.V4.Model.DeleteRangeRequest, options)
-    |> deserialize(:deleteSheet, :struct, GoogleApi.Sheets.V4.Model.DeleteSheetRequest, options)
-    |> deserialize(
-      :duplicateFilterView,
-      :struct,
-      GoogleApi.Sheets.V4.Model.DuplicateFilterViewRequest,
-      options
-    )
-    |> deserialize(
-      :duplicateSheet,
-      :struct,
-      GoogleApi.Sheets.V4.Model.DuplicateSheetRequest,
-      options
-    )
-    |> deserialize(:findReplace, :struct, GoogleApi.Sheets.V4.Model.FindReplaceRequest, options)
-    |> deserialize(
-      :insertDimension,
-      :struct,
-      GoogleApi.Sheets.V4.Model.InsertDimensionRequest,
-      options
-    )
-    |> deserialize(:insertRange, :struct, GoogleApi.Sheets.V4.Model.InsertRangeRequest, options)
-    |> deserialize(:mergeCells, :struct, GoogleApi.Sheets.V4.Model.MergeCellsRequest, options)
-    |> deserialize(
-      :moveDimension,
-      :struct,
-      GoogleApi.Sheets.V4.Model.MoveDimensionRequest,
-      options
-    )
-    |> deserialize(:pasteData, :struct, GoogleApi.Sheets.V4.Model.PasteDataRequest, options)
-    |> deserialize(
-      :randomizeRange,
-      :struct,
-      GoogleApi.Sheets.V4.Model.RandomizeRangeRequest,
-      options
-    )
-    |> deserialize(:repeatCell, :struct, GoogleApi.Sheets.V4.Model.RepeatCellRequest, options)
-    |> deserialize(
-      :setBasicFilter,
-      :struct,
-      GoogleApi.Sheets.V4.Model.SetBasicFilterRequest,
-      options
-    )
-    |> deserialize(
-      :setDataValidation,
-      :struct,
-      GoogleApi.Sheets.V4.Model.SetDataValidationRequest,
-      options
-    )
-    |> deserialize(:sortRange, :struct, GoogleApi.Sheets.V4.Model.SortRangeRequest, options)
-    |> deserialize(
-      :textToColumns,
-      :struct,
-      GoogleApi.Sheets.V4.Model.TextToColumnsRequest,
-      options
-    )
-    |> deserialize(:unmergeCells, :struct, GoogleApi.Sheets.V4.Model.UnmergeCellsRequest, options)
-    |> deserialize(
-      :updateBanding,
-      :struct,
-      GoogleApi.Sheets.V4.Model.UpdateBandingRequest,
-      options
-    )
-    |> deserialize(
-      :updateBorders,
-      :struct,
-      GoogleApi.Sheets.V4.Model.UpdateBordersRequest,
-      options
-    )
-    |> deserialize(:updateCells, :struct, GoogleApi.Sheets.V4.Model.UpdateCellsRequest, options)
-    |> deserialize(
-      :updateChartSpec,
-      :struct,
-      GoogleApi.Sheets.V4.Model.UpdateChartSpecRequest,
-      options
-    )
-    |> deserialize(
-      :updateConditionalFormatRule,
-      :struct,
-      GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRuleRequest,
-      options
-    )
-    |> deserialize(
-      :updateDeveloperMetadata,
-      :struct,
-      GoogleApi.Sheets.V4.Model.UpdateDeveloperMetadataRequest,
-      options
-    )
-    |> deserialize(
-      :updateDimensionGroup,
-      :struct,
-      GoogleApi.Sheets.V4.Model.UpdateDimensionGroupRequest,
-      options
-    )
-    |> deserialize(
-      :updateDimensionProperties,
-      :struct,
-      GoogleApi.Sheets.V4.Model.UpdateDimensionPropertiesRequest,
-      options
-    )
-    |> deserialize(
-      :updateEmbeddedObjectPosition,
-      :struct,
-      GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionRequest,
-      options
-    )
-    |> deserialize(
-      :updateFilterView,
-      :struct,
-      GoogleApi.Sheets.V4.Model.UpdateFilterViewRequest,
-      options
-    )
-    |> deserialize(
-      :updateNamedRange,
-      :struct,
-      GoogleApi.Sheets.V4.Model.UpdateNamedRangeRequest,
-      options
-    )
-    |> deserialize(
-      :updateProtectedRange,
-      :struct,
-      GoogleApi.Sheets.V4.Model.UpdateProtectedRangeRequest,
-      options
-    )
-    |> deserialize(
-      :updateSheetProperties,
-      :struct,
-      GoogleApi.Sheets.V4.Model.UpdateSheetPropertiesRequest,
-      options
-    )
-    |> deserialize(
-      :updateSpreadsheetProperties,
-      :struct,
-      GoogleApi.Sheets.V4.Model.UpdateSpreadsheetPropertiesRequest,
-      options
-    )
+    GoogleApi.Sheets.V4.Model.Request.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.Request do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

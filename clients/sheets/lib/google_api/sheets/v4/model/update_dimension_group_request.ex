@@ -26,28 +26,25 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateDimensionGroupRequest do
   - fields (String.t): The fields that should be updated.  At least one field must be specified. The root &#x60;dimensionGroup&#x60; is implied and should not be specified. A single &#x60;\&quot;*\&quot;&#x60; can be used as short-hand for listing every field. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          dimensionGroup: GoogleApi.Sheets.V4.Model.DimensionGroup.t(),
-          fields: any()
+          :dimensionGroup => GoogleApi.Sheets.V4.Model.DimensionGroup.t(),
+          :fields => any()
         }
 
-  defstruct [
-    :dimensionGroup,
-    :fields
-  ]
+  field(:dimensionGroup, as: GoogleApi.Sheets.V4.Model.DimensionGroup)
+  field(:fields)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UpdateDimensionGroupRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:dimensionGroup, :struct, GoogleApi.Sheets.V4.Model.DimensionGroup, options)
+    GoogleApi.Sheets.V4.Model.UpdateDimensionGroupRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UpdateDimensionGroupRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

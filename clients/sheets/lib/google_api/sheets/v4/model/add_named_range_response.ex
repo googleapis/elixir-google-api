@@ -25,26 +25,23 @@ defmodule GoogleApi.Sheets.V4.Model.AddNamedRangeResponse do
   - namedRange (NamedRange): The named range to add. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          namedRange: GoogleApi.Sheets.V4.Model.NamedRange.t()
+          :namedRange => GoogleApi.Sheets.V4.Model.NamedRange.t()
         }
 
-  defstruct [
-    :namedRange
-  ]
+  field(:namedRange, as: GoogleApi.Sheets.V4.Model.NamedRange)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.AddNamedRangeResponse do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:namedRange, :struct, GoogleApi.Sheets.V4.Model.NamedRange, options)
+    GoogleApi.Sheets.V4.Model.AddNamedRangeResponse.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.AddNamedRangeResponse do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

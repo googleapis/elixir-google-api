@@ -26,28 +26,25 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateNamedRangeRequest do
   - namedRange (NamedRange): The named range to update with the new properties. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          fields: any(),
-          namedRange: GoogleApi.Sheets.V4.Model.NamedRange.t()
+          :fields => any(),
+          :namedRange => GoogleApi.Sheets.V4.Model.NamedRange.t()
         }
 
-  defstruct [
-    :fields,
-    :namedRange
-  ]
+  field(:fields)
+  field(:namedRange, as: GoogleApi.Sheets.V4.Model.NamedRange)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.UpdateNamedRangeRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:namedRange, :struct, GoogleApi.Sheets.V4.Model.NamedRange, options)
+    GoogleApi.Sheets.V4.Model.UpdateNamedRangeRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.UpdateNamedRangeRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

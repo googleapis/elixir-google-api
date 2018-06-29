@@ -26,25 +26,25 @@ defmodule GoogleApi.Sheets.V4.Model.IterativeCalculationSettings do
   - maxIterations (integer()): When iterative calculation is enabled, the maximum number of calculation rounds to perform. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          convergenceThreshold: any(),
-          maxIterations: any()
+          :convergenceThreshold => any(),
+          :maxIterations => any()
         }
 
-  defstruct [
-    :convergenceThreshold,
-    :maxIterations
-  ]
+  field(:convergenceThreshold)
+  field(:maxIterations)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.IterativeCalculationSettings do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Sheets.V4.Model.IterativeCalculationSettings.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.IterativeCalculationSettings do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

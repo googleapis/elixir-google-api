@@ -27,36 +27,27 @@ defmodule GoogleApi.Sheets.V4.Model.AutoFillRequest do
   - useAlternateSeries (boolean()): True if we should generate data with the \&quot;alternate\&quot; series. This differs based on the type and amount of source data. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          range: GoogleApi.Sheets.V4.Model.GridRange.t(),
-          sourceAndDestination: GoogleApi.Sheets.V4.Model.SourceAndDestination.t(),
-          useAlternateSeries: any()
+          :range => GoogleApi.Sheets.V4.Model.GridRange.t(),
+          :sourceAndDestination => GoogleApi.Sheets.V4.Model.SourceAndDestination.t(),
+          :useAlternateSeries => any()
         }
 
-  defstruct [
-    :range,
-    :sourceAndDestination,
-    :useAlternateSeries
-  ]
+  field(:range, as: GoogleApi.Sheets.V4.Model.GridRange)
+  field(:sourceAndDestination, as: GoogleApi.Sheets.V4.Model.SourceAndDestination)
+  field(:useAlternateSeries)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.AutoFillRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:range, :struct, GoogleApi.Sheets.V4.Model.GridRange, options)
-    |> deserialize(
-      :sourceAndDestination,
-      :struct,
-      GoogleApi.Sheets.V4.Model.SourceAndDestination,
-      options
-    )
+    GoogleApi.Sheets.V4.Model.AutoFillRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.AutoFillRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

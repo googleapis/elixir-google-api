@@ -27,28 +27,25 @@ defmodule GoogleApi.Sheets.V4.Model.BooleanCondition do
   - values ([ConditionValue]): The values of the condition. The number of supported values depends on the condition type.  Some support zero values, others one or two values, and ConditionType.ONE_OF_LIST supports an arbitrary number of values. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          type: any(),
-          values: list(GoogleApi.Sheets.V4.Model.ConditionValue.t())
+          :type => any(),
+          :values => list(GoogleApi.Sheets.V4.Model.ConditionValue.t())
         }
 
-  defstruct [
-    :type,
-    :values
-  ]
+  field(:type)
+  field(:values, as: GoogleApi.Sheets.V4.Model.ConditionValue, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BooleanCondition do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:values, :list, GoogleApi.Sheets.V4.Model.ConditionValue, options)
+    GoogleApi.Sheets.V4.Model.BooleanCondition.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BooleanCondition do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -41,142 +41,75 @@ defmodule GoogleApi.Sheets.V4.Model.Response do
   - updateEmbeddedObjectPosition (UpdateEmbeddedObjectPositionResponse): A reply from updating an embedded object&#39;s position. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          addBanding: GoogleApi.Sheets.V4.Model.AddBandingResponse.t(),
-          addChart: GoogleApi.Sheets.V4.Model.AddChartResponse.t(),
-          addDimensionGroup: GoogleApi.Sheets.V4.Model.AddDimensionGroupResponse.t(),
-          addFilterView: GoogleApi.Sheets.V4.Model.AddFilterViewResponse.t(),
-          addNamedRange: GoogleApi.Sheets.V4.Model.AddNamedRangeResponse.t(),
-          addProtectedRange: GoogleApi.Sheets.V4.Model.AddProtectedRangeResponse.t(),
-          addSheet: GoogleApi.Sheets.V4.Model.AddSheetResponse.t(),
-          createDeveloperMetadata: GoogleApi.Sheets.V4.Model.CreateDeveloperMetadataResponse.t(),
-          deleteConditionalFormatRule:
+          :addBanding => GoogleApi.Sheets.V4.Model.AddBandingResponse.t(),
+          :addChart => GoogleApi.Sheets.V4.Model.AddChartResponse.t(),
+          :addDimensionGroup => GoogleApi.Sheets.V4.Model.AddDimensionGroupResponse.t(),
+          :addFilterView => GoogleApi.Sheets.V4.Model.AddFilterViewResponse.t(),
+          :addNamedRange => GoogleApi.Sheets.V4.Model.AddNamedRangeResponse.t(),
+          :addProtectedRange => GoogleApi.Sheets.V4.Model.AddProtectedRangeResponse.t(),
+          :addSheet => GoogleApi.Sheets.V4.Model.AddSheetResponse.t(),
+          :createDeveloperMetadata =>
+            GoogleApi.Sheets.V4.Model.CreateDeveloperMetadataResponse.t(),
+          :deleteConditionalFormatRule =>
             GoogleApi.Sheets.V4.Model.DeleteConditionalFormatRuleResponse.t(),
-          deleteDeveloperMetadata: GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataResponse.t(),
-          deleteDimensionGroup: GoogleApi.Sheets.V4.Model.DeleteDimensionGroupResponse.t(),
-          duplicateFilterView: GoogleApi.Sheets.V4.Model.DuplicateFilterViewResponse.t(),
-          duplicateSheet: GoogleApi.Sheets.V4.Model.DuplicateSheetResponse.t(),
-          findReplace: GoogleApi.Sheets.V4.Model.FindReplaceResponse.t(),
-          updateConditionalFormatRule:
+          :deleteDeveloperMetadata =>
+            GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataResponse.t(),
+          :deleteDimensionGroup => GoogleApi.Sheets.V4.Model.DeleteDimensionGroupResponse.t(),
+          :duplicateFilterView => GoogleApi.Sheets.V4.Model.DuplicateFilterViewResponse.t(),
+          :duplicateSheet => GoogleApi.Sheets.V4.Model.DuplicateSheetResponse.t(),
+          :findReplace => GoogleApi.Sheets.V4.Model.FindReplaceResponse.t(),
+          :updateConditionalFormatRule =>
             GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRuleResponse.t(),
-          updateDeveloperMetadata: GoogleApi.Sheets.V4.Model.UpdateDeveloperMetadataResponse.t(),
-          updateEmbeddedObjectPosition:
+          :updateDeveloperMetadata =>
+            GoogleApi.Sheets.V4.Model.UpdateDeveloperMetadataResponse.t(),
+          :updateEmbeddedObjectPosition =>
             GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionResponse.t()
         }
 
-  defstruct [
-    :addBanding,
-    :addChart,
-    :addDimensionGroup,
-    :addFilterView,
-    :addNamedRange,
-    :addProtectedRange,
-    :addSheet,
-    :createDeveloperMetadata,
+  field(:addBanding, as: GoogleApi.Sheets.V4.Model.AddBandingResponse)
+  field(:addChart, as: GoogleApi.Sheets.V4.Model.AddChartResponse)
+  field(:addDimensionGroup, as: GoogleApi.Sheets.V4.Model.AddDimensionGroupResponse)
+  field(:addFilterView, as: GoogleApi.Sheets.V4.Model.AddFilterViewResponse)
+  field(:addNamedRange, as: GoogleApi.Sheets.V4.Model.AddNamedRangeResponse)
+  field(:addProtectedRange, as: GoogleApi.Sheets.V4.Model.AddProtectedRangeResponse)
+  field(:addSheet, as: GoogleApi.Sheets.V4.Model.AddSheetResponse)
+  field(:createDeveloperMetadata, as: GoogleApi.Sheets.V4.Model.CreateDeveloperMetadataResponse)
+
+  field(
     :deleteConditionalFormatRule,
-    :deleteDeveloperMetadata,
-    :deleteDimensionGroup,
-    :duplicateFilterView,
-    :duplicateSheet,
-    :findReplace,
+    as: GoogleApi.Sheets.V4.Model.DeleteConditionalFormatRuleResponse
+  )
+
+  field(:deleteDeveloperMetadata, as: GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataResponse)
+  field(:deleteDimensionGroup, as: GoogleApi.Sheets.V4.Model.DeleteDimensionGroupResponse)
+  field(:duplicateFilterView, as: GoogleApi.Sheets.V4.Model.DuplicateFilterViewResponse)
+  field(:duplicateSheet, as: GoogleApi.Sheets.V4.Model.DuplicateSheetResponse)
+  field(:findReplace, as: GoogleApi.Sheets.V4.Model.FindReplaceResponse)
+
+  field(
     :updateConditionalFormatRule,
-    :updateDeveloperMetadata,
-    :updateEmbeddedObjectPosition
-  ]
+    as: GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRuleResponse
+  )
+
+  field(:updateDeveloperMetadata, as: GoogleApi.Sheets.V4.Model.UpdateDeveloperMetadataResponse)
+
+  field(
+    :updateEmbeddedObjectPosition,
+    as: GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionResponse
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.Response do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:addBanding, :struct, GoogleApi.Sheets.V4.Model.AddBandingResponse, options)
-    |> deserialize(:addChart, :struct, GoogleApi.Sheets.V4.Model.AddChartResponse, options)
-    |> deserialize(
-      :addDimensionGroup,
-      :struct,
-      GoogleApi.Sheets.V4.Model.AddDimensionGroupResponse,
-      options
-    )
-    |> deserialize(
-      :addFilterView,
-      :struct,
-      GoogleApi.Sheets.V4.Model.AddFilterViewResponse,
-      options
-    )
-    |> deserialize(
-      :addNamedRange,
-      :struct,
-      GoogleApi.Sheets.V4.Model.AddNamedRangeResponse,
-      options
-    )
-    |> deserialize(
-      :addProtectedRange,
-      :struct,
-      GoogleApi.Sheets.V4.Model.AddProtectedRangeResponse,
-      options
-    )
-    |> deserialize(:addSheet, :struct, GoogleApi.Sheets.V4.Model.AddSheetResponse, options)
-    |> deserialize(
-      :createDeveloperMetadata,
-      :struct,
-      GoogleApi.Sheets.V4.Model.CreateDeveloperMetadataResponse,
-      options
-    )
-    |> deserialize(
-      :deleteConditionalFormatRule,
-      :struct,
-      GoogleApi.Sheets.V4.Model.DeleteConditionalFormatRuleResponse,
-      options
-    )
-    |> deserialize(
-      :deleteDeveloperMetadata,
-      :struct,
-      GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataResponse,
-      options
-    )
-    |> deserialize(
-      :deleteDimensionGroup,
-      :struct,
-      GoogleApi.Sheets.V4.Model.DeleteDimensionGroupResponse,
-      options
-    )
-    |> deserialize(
-      :duplicateFilterView,
-      :struct,
-      GoogleApi.Sheets.V4.Model.DuplicateFilterViewResponse,
-      options
-    )
-    |> deserialize(
-      :duplicateSheet,
-      :struct,
-      GoogleApi.Sheets.V4.Model.DuplicateSheetResponse,
-      options
-    )
-    |> deserialize(:findReplace, :struct, GoogleApi.Sheets.V4.Model.FindReplaceResponse, options)
-    |> deserialize(
-      :updateConditionalFormatRule,
-      :struct,
-      GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRuleResponse,
-      options
-    )
-    |> deserialize(
-      :updateDeveloperMetadata,
-      :struct,
-      GoogleApi.Sheets.V4.Model.UpdateDeveloperMetadataResponse,
-      options
-    )
-    |> deserialize(
-      :updateEmbeddedObjectPosition,
-      :struct,
-      GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionResponse,
-      options
-    )
+    GoogleApi.Sheets.V4.Model.Response.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.Response do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -27,27 +27,27 @@ defmodule GoogleApi.Sheets.V4.Model.WaterfallChartCustomSubtotal do
   - subtotalIndex (integer()): The 0-based index of a data point within the series. If data_is_subtotal is true, the data point at this index is the subtotal. Otherwise, the subtotal appears after the data point with this index. A series can have multiple subtotals at arbitrary indices, but subtotals do not affect the indices of the data points. For example, if a series has three data points, their indices will always be 0, 1, and 2, regardless of how many subtotals exist on the series or what data points they are associated with. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          dataIsSubtotal: any(),
-          label: any(),
-          subtotalIndex: any()
+          :dataIsSubtotal => any(),
+          :label => any(),
+          :subtotalIndex => any()
         }
 
-  defstruct [
-    :dataIsSubtotal,
-    :label,
-    :subtotalIndex
-  ]
+  field(:dataIsSubtotal)
+  field(:label)
+  field(:subtotalIndex)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.WaterfallChartCustomSubtotal do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Sheets.V4.Model.WaterfallChartCustomSubtotal.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.WaterfallChartCustomSubtotal do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

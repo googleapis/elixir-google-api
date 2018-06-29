@@ -28,32 +28,29 @@ defmodule GoogleApi.Sheets.V4.Model.BatchUpdateSpreadsheetRequest do
   - responseRanges ([String.t]): Limits the ranges included in the response spreadsheet. Meaningful only if include_spreadsheet_response is &#39;true&#39;. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          includeSpreadsheetInResponse: any(),
-          requests: list(GoogleApi.Sheets.V4.Model.Request.t()),
-          responseIncludeGridData: any(),
-          responseRanges: any()
+          :includeSpreadsheetInResponse => any(),
+          :requests => list(GoogleApi.Sheets.V4.Model.Request.t()),
+          :responseIncludeGridData => any(),
+          :responseRanges => list(any())
         }
 
-  defstruct [
-    :includeSpreadsheetInResponse,
-    :requests,
-    :responseIncludeGridData,
-    :responseRanges
-  ]
+  field(:includeSpreadsheetInResponse)
+  field(:requests, as: GoogleApi.Sheets.V4.Model.Request, type: :list)
+  field(:responseIncludeGridData)
+  field(:responseRanges, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BatchUpdateSpreadsheetRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:requests, :list, GoogleApi.Sheets.V4.Model.Request, options)
+    GoogleApi.Sheets.V4.Model.BatchUpdateSpreadsheetRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.BatchUpdateSpreadsheetRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

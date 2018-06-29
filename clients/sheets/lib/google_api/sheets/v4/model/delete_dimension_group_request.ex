@@ -18,33 +18,30 @@
 
 defmodule GoogleApi.Sheets.V4.Model.DeleteDimensionGroupRequest do
   @moduledoc """
-  Deletes a group over the specified range by decrementing the depth of the dimensions in the range.  For example, assume the sheet has a depth-1 group over B:E and a depth-2 group over C:D. Deleting a group over D:E would leave the sheet with a depth-1 group over B:D and a depth-2 group over C:C.
+  Deletes a group over the specified range by decrementing the depth of the dimensions in the range.  For example, assume the sheet has a depth-1 group over B:E and a depth-2 group over C:D. Deleting a group over D:E leaves the sheet with a depth-1 group over B:D and a depth-2 group over C:C.
 
   ## Attributes
 
   - range (DimensionRange): The range of the group to be deleted. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          range: GoogleApi.Sheets.V4.Model.DimensionRange.t()
+          :range => GoogleApi.Sheets.V4.Model.DimensionRange.t()
         }
 
-  defstruct [
-    :range
-  ]
+  field(:range, as: GoogleApi.Sheets.V4.Model.DimensionRange)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DeleteDimensionGroupRequest do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:range, :struct, GoogleApi.Sheets.V4.Model.DimensionRange, options)
+    GoogleApi.Sheets.V4.Model.DeleteDimensionGroupRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.DeleteDimensionGroupRequest do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

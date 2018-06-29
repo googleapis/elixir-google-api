@@ -28,27 +28,27 @@ defmodule GoogleApi.Sheets.V4.Model.ValueRange do
   - values ([[ErrorUnknown]]): The data that was read or to be written.  This is an array of arrays, the outer array representing all the data and each inner array representing a major dimension. Each item in the inner array corresponds with one cell.  For output, empty trailing rows and columns will not be included.  For input, supported value types are: bool, string, and double. Null values will be skipped. To set a cell to an empty value, set the string value to an empty string. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          majorDimension: any(),
-          range: any(),
-          values: any()
+          :majorDimension => any(),
+          :range => any(),
+          :values => list()
         }
 
-  defstruct [
-    :majorDimension,
-    :range,
-    :values
-  ]
+  field(:majorDimension)
+  field(:range)
+  field(:values, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.ValueRange do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Sheets.V4.Model.ValueRange.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.ValueRange do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

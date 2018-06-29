@@ -24,7 +24,7 @@ defmodule GoogleApi.Sheets.V4.Model.PivotGroup do
 
   - groupRule (PivotGroupRule): The group rule to apply to this row/column group. Defaults to: `null`.
   - label (String.t): The labels to use for the row/column groups which can be customized. For example, in the following pivot table, the row label is &#x60;Region&#x60; (which could be renamed to &#x60;State&#x60;) and the column label is &#x60;Product&#x60; (which could be renamed &#x60;Item&#x60;). Pivot tables created before December 2017 do not have header labels. If you&#39;d like to add header labels to an existing pivot table, please delete the existing pivot table and then create a new pivot table with same parameters.      +--------------+---------+-------+     | SUM of Units | Product |       |     | Region       | Pen     | Paper |     +--------------+---------+-------+     | New York     |     345 |    98 |     | Oregon       |     234 |   123 |     | Tennessee    |     531 |   415 |     +--------------+---------+-------+     | Grand Total  |    1110 |   636 |     +--------------+---------+-------+ Defaults to: `null`.
-  - repeatHeadings (boolean()): True if the headings in this pivot group should be repeated. This is only valid for row groupings and will be ignored by columns.  By default, we minimize repitition of headings by not showing higher level headings where they are the same. For example, even though the third row below corresponds to \&quot;Q1 Mar\&quot;, \&quot;Q1\&quot; is not shown because it is redundant with previous rows. Setting repeat_headings to true would cause \&quot;Q1\&quot; to be repeated for \&quot;Feb\&quot; and \&quot;Mar\&quot;.      +--------------+     | Q1     | Jan |     |        | Feb |     |        | Mar |     +--------+-----+     | Q1 Total     |     +--------------+ Defaults to: `null`.
+  - repeatHeadings (boolean()): True if the headings in this pivot group should be repeated. This is only valid for row groupings and is ignored by columns.  By default, we minimize repitition of headings by not showing higher level headings where they are the same. For example, even though the third row below corresponds to \&quot;Q1 Mar\&quot;, \&quot;Q1\&quot; is not shown because it is redundant with previous rows. Setting repeat_headings to true would cause \&quot;Q1\&quot; to be repeated for \&quot;Feb\&quot; and \&quot;Mar\&quot;.      +--------------+     | Q1     | Jan |     |        | Feb |     |        | Mar |     +--------+-----+     | Q1 Total     |     +--------------+ Defaults to: `null`.
   - showTotals (boolean()): True if the pivot table should include the totals for this grouping. Defaults to: `null`.
   - sortOrder (String.t): The order the values in this group should be sorted. Defaults to: `null`.
     - Enum - one of [SORT_ORDER_UNSPECIFIED, ASCENDING, DESCENDING]
@@ -33,52 +33,37 @@ defmodule GoogleApi.Sheets.V4.Model.PivotGroup do
   - valueMetadata ([PivotGroupValueMetadata]): Metadata about values in the grouping. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          groupRule: GoogleApi.Sheets.V4.Model.PivotGroupRule.t(),
-          label: any(),
-          repeatHeadings: any(),
-          showTotals: any(),
-          sortOrder: any(),
-          sourceColumnOffset: any(),
-          valueBucket: GoogleApi.Sheets.V4.Model.PivotGroupSortValueBucket.t(),
-          valueMetadata: list(GoogleApi.Sheets.V4.Model.PivotGroupValueMetadata.t())
+          :groupRule => GoogleApi.Sheets.V4.Model.PivotGroupRule.t(),
+          :label => any(),
+          :repeatHeadings => any(),
+          :showTotals => any(),
+          :sortOrder => any(),
+          :sourceColumnOffset => any(),
+          :valueBucket => GoogleApi.Sheets.V4.Model.PivotGroupSortValueBucket.t(),
+          :valueMetadata => list(GoogleApi.Sheets.V4.Model.PivotGroupValueMetadata.t())
         }
 
-  defstruct [
-    :groupRule,
-    :label,
-    :repeatHeadings,
-    :showTotals,
-    :sortOrder,
-    :sourceColumnOffset,
-    :valueBucket,
-    :valueMetadata
-  ]
+  field(:groupRule, as: GoogleApi.Sheets.V4.Model.PivotGroupRule)
+  field(:label)
+  field(:repeatHeadings)
+  field(:showTotals)
+  field(:sortOrder)
+  field(:sourceColumnOffset)
+  field(:valueBucket, as: GoogleApi.Sheets.V4.Model.PivotGroupSortValueBucket)
+  field(:valueMetadata, as: GoogleApi.Sheets.V4.Model.PivotGroupValueMetadata, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.PivotGroup do
-  import GoogleApi.Sheets.V4.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:groupRule, :struct, GoogleApi.Sheets.V4.Model.PivotGroupRule, options)
-    |> deserialize(
-      :valueBucket,
-      :struct,
-      GoogleApi.Sheets.V4.Model.PivotGroupSortValueBucket,
-      options
-    )
-    |> deserialize(
-      :valueMetadata,
-      :list,
-      GoogleApi.Sheets.V4.Model.PivotGroupValueMetadata,
-      options
-    )
+    GoogleApi.Sheets.V4.Model.PivotGroup.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Sheets.V4.Model.PivotGroup do
   def encode(value, options) do
-    GoogleApi.Sheets.V4.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end
