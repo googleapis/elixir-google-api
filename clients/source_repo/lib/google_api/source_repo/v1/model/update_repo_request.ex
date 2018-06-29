@@ -16,34 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.SourceRepo.V1.Model.SetIamPolicyRequest do
+defmodule GoogleApi.SourceRepo.V1.Model.UpdateRepoRequest do
   @moduledoc """
-  Request message for &#x60;SetIamPolicy&#x60; method.
+  Request for UpdateRepo.
 
   ## Attributes
 
-  - policy (Policy): REQUIRED: The complete policy to be applied to the &#x60;resource&#x60;. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud Platform services (such as Projects) might reject them. Defaults to: `null`.
-  - updateMask (String.t): OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only the fields in the mask will be modified. If no mask is provided, the following default mask is used: paths: \&quot;bindings, etag\&quot; This field is only used by Cloud IAM. Defaults to: `null`.
+  - repo (Repo): The new configuration for the repository. Defaults to: `null`.
+  - updateMask (String.t): A FieldMask specifying which fields of the repo to modify. Only the fields in the mask will be modified. If no mask is provided, this request is no-op. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :policy => GoogleApi.SourceRepo.V1.Model.Policy.t(),
+          :repo => GoogleApi.SourceRepo.V1.Model.Repo.t(),
           :updateMask => any()
         }
 
-  field(:policy, as: GoogleApi.SourceRepo.V1.Model.Policy)
+  field(:repo, as: GoogleApi.SourceRepo.V1.Model.Repo)
   field(:updateMask)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.SourceRepo.V1.Model.SetIamPolicyRequest do
+defimpl Poison.Decoder, for: GoogleApi.SourceRepo.V1.Model.UpdateRepoRequest do
   def decode(value, options) do
-    GoogleApi.SourceRepo.V1.Model.SetIamPolicyRequest.decode(value, options)
+    GoogleApi.SourceRepo.V1.Model.UpdateRepoRequest.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.SourceRepo.V1.Model.SetIamPolicyRequest do
+defimpl Poison.Encoder, for: GoogleApi.SourceRepo.V1.Model.UpdateRepoRequest do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
