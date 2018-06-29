@@ -16,20 +16,23 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Logging.V2.Api.Entries do
+defmodule GoogleApi.Logging.V2.Api.Logs do
   @moduledoc """
-  API calls for all endpoints tagged `Entries`.
+  API calls for all endpoints tagged `Logs`.
   """
 
   alias GoogleApi.Logging.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Lists log entries. Use this method to retrieve log entries from Stackdriver Logging. For ways to export log entries, see Exporting Logs.
+  Deletes all the log entries in a log. The log reappears if it receives new entries. Log entries written shortly before the delete operation might not be deleted.
 
   ## Parameters
 
   - connection (GoogleApi.Logging.V2.Connection): Connection to server
+  - v2_id (String.t): Part of &#x60;logName&#x60;. Required. The resource name of the log to delete: \&quot;projects/[PROJECT_ID]/logs/[LOG_ID]\&quot; \&quot;organizations/[ORGANIZATION_ID]/logs/[LOG_ID]\&quot; \&quot;billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]\&quot; \&quot;folders/[FOLDER_ID]/logs/[LOG_ID]\&quot; [LOG_ID] must be URL-encoded. For example, \&quot;projects/my-project-id/logs/syslog\&quot;, \&quot;organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity\&quot;. For more information about log names, see LogEntry.
+  - v2_id1 (String.t): Part of &#x60;logName&#x60;. See documentation of &#x60;v2Id&#x60;.
+  - logs_id (String.t): Part of &#x60;logName&#x60;. See documentation of &#x60;v2Id&#x60;.
   - opts (KeywordList): [optional] Optional parameters
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -42,16 +45,15 @@ defmodule GoogleApi.Logging.V2.Api.Entries do
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :body (ListLogEntriesRequest): 
 
   ## Returns
 
-  {:ok, %GoogleApi.Logging.V2.Model.ListLogEntriesResponse{}} on success
+  {:ok, %GoogleApi.Logging.V2.Model.Empty{}} on success
   {:error, info} on failure
   """
-  @spec logging_entries_list(Tesla.Env.client(), keyword()) ::
-          {:ok, GoogleApi.Logging.V2.Model.ListLogEntriesResponse.t()} | {:error, Tesla.Env.t()}
-  def logging_entries_list(connection, opts \\ []) do
+  @spec logging_logs_delete(Tesla.Env.client(), String.t(), String.t(), String.t(), keyword()) ::
+          {:ok, GoogleApi.Logging.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
+  def logging_logs_delete(connection, v2_id, v2_id1, logs_id, opts \\ []) do
     optional_params = %{
       :access_token => :query,
       :key => :query,
@@ -63,27 +65,32 @@ defmodule GoogleApi.Logging.V2.Api.Entries do
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :body => :body
+      :alt => :query
     }
 
     request =
       Request.new()
-      |> Request.method(:post)
-      |> Request.url("/v2/entries:list")
+      |> Request.method(:delete)
+      |> Request.url("/v2/{v2Id}/{v2Id1}/logs/{logsId}", %{
+        "v2Id" => URI.encode_www_form(v2_id),
+        "v2Id1" => URI.encode_www_form(v2_id1),
+        "logsId" => URI.encode_www_form(logs_id)
+      })
       |> Request.add_optional_params(optional_params, opts)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Logging.V2.Model.ListLogEntriesResponse{})
+    |> Response.decode(struct: %GoogleApi.Logging.V2.Model.Empty{})
   end
 
   @doc """
-  Writes log entries to Stackdriver Logging. This API method is the only way to send log entries to Stackdriver Logging. This method is used, directly or indirectly, by the Stackdriver Logging agent (fluentd) and all logging libraries configured to use Stackdriver Logging. A single request may contain log entries for a maximum of 1000 different resources (projects, organizations, billing accounts or folders)
+  Lists the logs in projects, organizations, folders, or billing accounts. Only logs that have entries are listed.
 
   ## Parameters
 
   - connection (GoogleApi.Logging.V2.Connection): Connection to server
+  - v2_id (String.t): Part of &#x60;parent&#x60;. Required. The resource name that owns the logs: \&quot;projects/[PROJECT_ID]\&quot; \&quot;organizations/[ORGANIZATION_ID]\&quot; \&quot;billingAccounts/[BILLING_ACCOUNT_ID]\&quot; \&quot;folders/[FOLDER_ID]\&quot; 
+  - v2_id1 (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;v2Id&#x60;.
   - opts (KeywordList): [optional] Optional parameters
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -96,16 +103,17 @@ defmodule GoogleApi.Logging.V2.Api.Entries do
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :body (WriteLogEntriesRequest): 
+    - :pageSize (integer()): Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of nextPageToken in the response indicates that more results might be available.
+    - :pageToken (String.t): Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
 
   ## Returns
 
-  {:ok, %GoogleApi.Logging.V2.Model.WriteLogEntriesResponse{}} on success
+  {:ok, %GoogleApi.Logging.V2.Model.ListLogsResponse{}} on success
   {:error, info} on failure
   """
-  @spec logging_entries_write(Tesla.Env.client(), keyword()) ::
-          {:ok, GoogleApi.Logging.V2.Model.WriteLogEntriesResponse.t()} | {:error, Tesla.Env.t()}
-  def logging_entries_write(connection, opts \\ []) do
+  @spec logging_logs_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, GoogleApi.Logging.V2.Model.ListLogsResponse.t()} | {:error, Tesla.Env.t()}
+  def logging_logs_list(connection, v2_id, v2_id1, opts \\ []) do
     optional_params = %{
       :access_token => :query,
       :key => :query,
@@ -118,17 +126,21 @@ defmodule GoogleApi.Logging.V2.Api.Entries do
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
-      :body => :body
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
       Request.new()
-      |> Request.method(:post)
-      |> Request.url("/v2/entries:write")
+      |> Request.method(:get)
+      |> Request.url("/v2/{v2Id}/{v2Id1}/logs", %{
+        "v2Id" => URI.encode_www_form(v2_id),
+        "v2Id1" => URI.encode_www_form(v2_id1)
+      })
       |> Request.add_optional_params(optional_params, opts)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Logging.V2.Model.WriteLogEntriesResponse{})
+    |> Response.decode(struct: %GoogleApi.Logging.V2.Model.ListLogsResponse{})
   end
 end
