@@ -16,31 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.TagManager.V2.Model.RevertVariableResponse do
+defmodule GoogleApi.TagManager.V2.Model.ZoneBoundary do
   @moduledoc """
-  The result of reverting a variable in a workspace.
+  Represents a Zone&#39;s boundaries.
 
   ## Attributes
 
-  - variable (Variable): Variable as it appears in the latest container version since the last workspace synchronization operation. If no variable is present, that means the variable was deleted in the latest container version. Defaults to: `null`.
+  - condition ([Condition]): The conditions that, when conjoined, make up the boundary. Defaults to: `null`.
+  - customEvaluationTriggerId ([String.t]): Custom evaluation trigger IDs. A zone will evaluate its boundary conditions when any of the listed triggers are true. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :variable => GoogleApi.TagManager.V2.Model.Variable.t()
+          :condition => list(GoogleApi.TagManager.V2.Model.Condition.t()),
+          :customEvaluationTriggerId => list(any())
         }
 
-  field(:variable, as: GoogleApi.TagManager.V2.Model.Variable)
+  field(:condition, as: GoogleApi.TagManager.V2.Model.Condition, type: :list)
+  field(:customEvaluationTriggerId, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.RevertVariableResponse do
+defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.ZoneBoundary do
   def decode(value, options) do
-    GoogleApi.TagManager.V2.Model.RevertVariableResponse.decode(value, options)
+    GoogleApi.TagManager.V2.Model.ZoneBoundary.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.RevertVariableResponse do
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.ZoneBoundary do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

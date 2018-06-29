@@ -16,31 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.TagManager.V2.Model.RevertVariableResponse do
+defmodule GoogleApi.TagManager.V2.Model.ZoneChildContainer do
   @moduledoc """
-  The result of reverting a variable in a workspace.
+  Represents a child container of a Zone.
 
   ## Attributes
 
-  - variable (Variable): Variable as it appears in the latest container version since the last workspace synchronization operation. If no variable is present, that means the variable was deleted in the latest container version. Defaults to: `null`.
+  - nickname (String.t): The zone&#39;s nickname for the child container. Defaults to: `null`.
+  - publicId (String.t): The child container&#39;s public id. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :variable => GoogleApi.TagManager.V2.Model.Variable.t()
+          :nickname => any(),
+          :publicId => any()
         }
 
-  field(:variable, as: GoogleApi.TagManager.V2.Model.Variable)
+  field(:nickname)
+  field(:publicId)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.RevertVariableResponse do
+defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.ZoneChildContainer do
   def decode(value, options) do
-    GoogleApi.TagManager.V2.Model.RevertVariableResponse.decode(value, options)
+    GoogleApi.TagManager.V2.Model.ZoneChildContainer.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.RevertVariableResponse do
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.ZoneChildContainer do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

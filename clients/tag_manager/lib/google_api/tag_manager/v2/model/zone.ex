@@ -16,55 +16,64 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.TagManager.V2.Model.Folder do
+defmodule GoogleApi.TagManager.V2.Model.Zone do
   @moduledoc """
-  Represents a Google Tag Manager Folder.
+  Represents a Google Tag Manager Zone&#39;s contents.
 
   ## Attributes
 
   - accountId (String.t): GTM Account ID. Defaults to: `null`.
+  - boundary (ZoneBoundary): This Zone&#39;s boundary. Defaults to: `null`.
+  - childContainer ([ZoneChildContainer]): Containers that are children of this Zone. Defaults to: `null`.
   - containerId (String.t): GTM Container ID. Defaults to: `null`.
-  - fingerprint (String.t): The fingerprint of the GTM Folder as computed at storage time. This value is recomputed whenever the folder is modified. Defaults to: `null`.
-  - folderId (String.t): The Folder ID uniquely identifies the GTM Folder. Defaults to: `null`.
-  - name (String.t): Folder display name. Defaults to: `null`.
-  - notes (String.t): User notes on how to apply this folder in the container. Defaults to: `null`.
-  - path (String.t): GTM Folder&#39;s API relative path. Defaults to: `null`.
+  - fingerprint (String.t): The fingerprint of the GTM Zone as computed at storage time. This value is recomputed whenever the zone is modified. Defaults to: `null`.
+  - name (String.t): Zone display name. Defaults to: `null`.
+  - notes (String.t): User notes on how to apply this zone in the container. Defaults to: `null`.
+  - path (String.t): GTM Zone&#39;s API relative path. Defaults to: `null`.
   - tagManagerUrl (String.t): Auto generated link to the tag manager UI Defaults to: `null`.
+  - typeRestriction (ZoneTypeRestriction): This Zone&#39;s type restrictions. Defaults to: `null`.
   - workspaceId (String.t): GTM Workspace ID. Defaults to: `null`.
+  - zoneId (String.t): The Zone ID uniquely identifies the GTM Zone. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :accountId => any(),
+          :boundary => GoogleApi.TagManager.V2.Model.ZoneBoundary.t(),
+          :childContainer => list(GoogleApi.TagManager.V2.Model.ZoneChildContainer.t()),
           :containerId => any(),
           :fingerprint => any(),
-          :folderId => any(),
           :name => any(),
           :notes => any(),
           :path => any(),
           :tagManagerUrl => any(),
-          :workspaceId => any()
+          :typeRestriction => GoogleApi.TagManager.V2.Model.ZoneTypeRestriction.t(),
+          :workspaceId => any(),
+          :zoneId => any()
         }
 
   field(:accountId)
+  field(:boundary, as: GoogleApi.TagManager.V2.Model.ZoneBoundary)
+  field(:childContainer, as: GoogleApi.TagManager.V2.Model.ZoneChildContainer, type: :list)
   field(:containerId)
   field(:fingerprint)
-  field(:folderId)
   field(:name)
   field(:notes)
   field(:path)
   field(:tagManagerUrl)
+  field(:typeRestriction, as: GoogleApi.TagManager.V2.Model.ZoneTypeRestriction)
   field(:workspaceId)
+  field(:zoneId)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.Folder do
+defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.Zone do
   def decode(value, options) do
-    GoogleApi.TagManager.V2.Model.Folder.decode(value, options)
+    GoogleApi.TagManager.V2.Model.Zone.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.Folder do
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.Zone do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
