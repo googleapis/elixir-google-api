@@ -16,34 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.YouTubeReporting.V1.Model.ListJobsResponse do
+defmodule GoogleApi.YouTubeReporting.V1.Model.GdataDiffUploadResponse do
   @moduledoc """
-  Response message for ReportingService.ListJobs.
+  gdata
 
   ## Attributes
 
-  - jobs ([Job]): The list of jobs. Defaults to: `null`.
-  - nextPageToken (String.t): A token to retrieve next page of results. Pass this value in the ListJobsRequest.page_token field in the subsequent call to &#x60;ListJobs&#x60; method to retrieve the next page of results. Defaults to: `null`.
+  - objectVersion (String.t): gdata Defaults to: `null`.
+  - originalObject (GdataCompositeMedia): gdata Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :jobs => list(GoogleApi.YouTubeReporting.V1.Model.Job.t()),
-          :nextPageToken => any()
+          :objectVersion => any(),
+          :originalObject => GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia.t()
         }
 
-  field(:jobs, as: GoogleApi.YouTubeReporting.V1.Model.Job, type: :list)
-  field(:nextPageToken)
+  field(:objectVersion)
+  field(:originalObject, as: GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.YouTubeReporting.V1.Model.ListJobsResponse do
+defimpl Poison.Decoder, for: GoogleApi.YouTubeReporting.V1.Model.GdataDiffUploadResponse do
   def decode(value, options) do
-    GoogleApi.YouTubeReporting.V1.Model.ListJobsResponse.decode(value, options)
+    GoogleApi.YouTubeReporting.V1.Model.GdataDiffUploadResponse.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.YouTubeReporting.V1.Model.ListJobsResponse do
+defimpl Poison.Encoder, for: GoogleApi.YouTubeReporting.V1.Model.GdataDiffUploadResponse do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
