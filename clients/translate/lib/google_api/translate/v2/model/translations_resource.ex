@@ -27,21 +27,27 @@ defmodule GoogleApi.Translate.V2.Model.TranslationsResource do
   - translatedText (String.t): Text translated into the target language. Defaults to: `null`.
   """
 
-  defstruct [
-    :detectedSourceLanguage,
-    :model,
-    :translatedText
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :detectedSourceLanguage => any(),
+          :model => any(),
+          :translatedText => any()
+        }
+
+  field(:detectedSourceLanguage)
+  field(:model)
+  field(:translatedText)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Translate.V2.Model.TranslationsResource do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Translate.V2.Model.TranslationsResource.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Translate.V2.Model.TranslationsResource do
   def encode(value, options) do
-    GoogleApi.Translate.V2.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

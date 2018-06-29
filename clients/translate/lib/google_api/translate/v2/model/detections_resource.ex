@@ -24,17 +24,19 @@ defmodule GoogleApi.Translate.V2.Model.DetectionsResource do
 
   """
 
-  defstruct []
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{}
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Translate.V2.Model.DetectionsResource do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Translate.V2.Model.DetectionsResource.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Translate.V2.Model.DetectionsResource do
   def encode(value, options) do
-    GoogleApi.Translate.V2.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -29,23 +29,31 @@ defmodule GoogleApi.Translate.V2.Model.TranslateTextRequest do
   - target (String.t): The language to use for translation of the input text, set to one of the language codes listed in Language Support. Defaults to: `null`.
   """
 
-  defstruct [
-    :format,
-    :model,
-    :q,
-    :source,
-    :target
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :format => any(),
+          :model => any(),
+          :q => list(any()),
+          :source => any(),
+          :target => any()
+        }
+
+  field(:format)
+  field(:model)
+  field(:q, type: :list)
+  field(:source)
+  field(:target)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Translate.V2.Model.TranslateTextRequest do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Translate.V2.Model.TranslateTextRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Translate.V2.Model.TranslateTextRequest do
   def encode(value, options) do
-    GoogleApi.Translate.V2.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

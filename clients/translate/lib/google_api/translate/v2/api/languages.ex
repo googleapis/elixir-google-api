@@ -22,7 +22,7 @@ defmodule GoogleApi.Translate.V2.Api.Languages do
   """
 
   alias GoogleApi.Translate.V2.Connection
-  import GoogleApi.Translate.V2.RequestBuilder
+  alias GoogleApi.Gax.{Request, Response}
 
   @doc """
   Returns a list of supported languages for translation.
@@ -31,21 +31,21 @@ defmodule GoogleApi.Translate.V2.Api.Languages do
 
   - connection (GoogleApi.Translate.V2.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :bearer_token (String.t): OAuth bearer token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
     - :pp (boolean()): Pretty-print response.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :bearer_token (String.t): OAuth bearer token.
-    - :target (String.t): The language to use to return localized, human readable names of supported languages.
     - :model (String.t): The model type for which supported languages should be returned.
+    - :target (String.t): The language to use to return localized, human readable names of supported languages.
 
   ## Returns
 
@@ -56,29 +56,34 @@ defmodule GoogleApi.Translate.V2.Api.Languages do
           {:ok, GoogleApi.Translate.V2.Model.LanguagesListResponse.t()} | {:error, Tesla.Env.t()}
   def language_languages_list(connection, opts \\ []) do
     optional_params = %{
+      :oauth_token => :query,
+      :bearer_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
-      :fields => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :"$.xgafv" => :query,
       :alt => :query,
-      :access_token => :query,
       :key => :query,
+      :access_token => :query,
       :quotaUser => :query,
       :pp => :query,
-      :oauth_token => :query,
-      :bearer_token => :query,
-      :target => :query,
-      :model => :query
+      :model => :query,
+      :target => :query
     }
 
-    %{}
-    |> method(:get)
-    |> url("/v2/languages")
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Translate.V2.Model.LanguagesListResponse{}, dataWrapped: true)
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/languages")
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      struct: %GoogleApi.Translate.V2.Model.LanguagesListResponse{},
+      data_wrapped: true
+    )
   end
 end

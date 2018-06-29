@@ -25,22 +25,23 @@ defmodule GoogleApi.Translate.V2.Model.LanguagesListResponse do
   - languages ([LanguagesResource]): List of source/target languages supported by the translation API. If target parameter is unspecified, the list is sorted by the ASCII code point order of the language code. If target parameter is specified, the list is sorted by the collation order of the language name in the target language. Defaults to: `null`.
   """
 
-  defstruct [
-    :languages
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :languages => list(GoogleApi.Translate.V2.Model.LanguagesResource.t())
+        }
+
+  field(:languages, as: GoogleApi.Translate.V2.Model.LanguagesResource, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Translate.V2.Model.LanguagesListResponse do
-  import GoogleApi.Translate.V2.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:languages, :list, GoogleApi.Translate.V2.Model.LanguagesResource, options)
+    GoogleApi.Translate.V2.Model.LanguagesListResponse.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Translate.V2.Model.LanguagesListResponse do
   def encode(value, options) do
-    GoogleApi.Translate.V2.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end
