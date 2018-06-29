@@ -16,31 +16,41 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.SafeBrowsing.V4.Model.RawIndices do
+defmodule GoogleApi.SafeBrowsing.V4.Model.ThreatSource do
   @moduledoc """
-  A set of raw indices to remove from a local list.
+  A single resource related to a threat hit.
 
   ## Attributes
 
-  - indices ([integer()]): The indices to remove from a lexicographically-sorted local list. Defaults to: `null`.
+  - referrer (String.t): Referrer of the resource. Only set if the referrer is available. Defaults to: `null`.
+  - remoteIp (String.t): The remote IP of the resource in ASCII format. Either IPv4 or IPv6. Defaults to: `null`.
+  - type (String.t): The type of source reported. Defaults to: `null`.
+    - Enum - one of [THREAT_SOURCE_TYPE_UNSPECIFIED, MATCHING_URL, TAB_URL, TAB_REDIRECT, TAB_RESOURCE]
+  - url (String.t): The URL of the resource. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :indices => list(any())
+          :referrer => any(),
+          :remoteIp => any(),
+          :type => any(),
+          :url => any()
         }
 
-  field(:indices, type: :list)
+  field(:referrer)
+  field(:remoteIp)
+  field(:type)
+  field(:url)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.RawIndices do
+defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.ThreatSource do
   def decode(value, options) do
-    GoogleApi.SafeBrowsing.V4.Model.RawIndices.decode(value, options)
+    GoogleApi.SafeBrowsing.V4.Model.ThreatSource.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.SafeBrowsing.V4.Model.RawIndices do
+defimpl Poison.Encoder, for: GoogleApi.SafeBrowsing.V4.Model.ThreatSource do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

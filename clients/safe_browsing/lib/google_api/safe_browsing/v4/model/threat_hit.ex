@@ -16,40 +16,48 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.SafeBrowsing.V4.Model.ThreatListDescriptor do
+defmodule GoogleApi.SafeBrowsing.V4.Model.ThreatHit do
   @moduledoc """
-  Describes an individual threat list. A list is defined by three parameters: the type of threat posed, the type of platform targeted by the threat, and the type of entries in the list.
+
 
   ## Attributes
 
-  - platformType (String.t): The platform type targeted by the list&#39;s entries. Defaults to: `null`.
+  - clientInfo (ClientInfo): Client-reported identification. Defaults to: `null`.
+  - entry (ThreatEntry): The threat entry responsible for the hit. Full hash should be reported for hash-based hits. Defaults to: `null`.
+  - platformType (String.t): The platform type reported. Defaults to: `null`.
     - Enum - one of [PLATFORM_TYPE_UNSPECIFIED, WINDOWS, LINUX, ANDROID, OSX, IOS, ANY_PLATFORM, ALL_PLATFORMS, CHROME]
-  - threatEntryType (String.t): The entry types contained in the list. Defaults to: `null`.
-    - Enum - one of [THREAT_ENTRY_TYPE_UNSPECIFIED, URL, EXECUTABLE, IP_RANGE, CHROME_EXTENSION, FILENAME, CERT]
-  - threatType (String.t): The threat type posed by the list&#39;s entries. Defaults to: `null`.
+  - resources ([ThreatSource]): The resources related to the threat hit. Defaults to: `null`.
+  - threatType (String.t): The threat type reported. Defaults to: `null`.
     - Enum - one of [THREAT_TYPE_UNSPECIFIED, MALWARE, SOCIAL_ENGINEERING, UNWANTED_SOFTWARE, POTENTIALLY_HARMFUL_APPLICATION, SOCIAL_ENGINEERING_INTERNAL, API_ABUSE, MALICIOUS_BINARY, CSD_WHITELIST, CSD_DOWNLOAD_WHITELIST, CLIENT_INCIDENT, CLIENT_INCIDENT_WHITELIST, APK_MALWARE_OFFLINE, SUBRESOURCE_FILTER, SUSPICIOUS, TRICK_TO_BILL]
+  - userInfo (UserInfo): Details about the user that encountered the threat. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :clientInfo => GoogleApi.SafeBrowsing.V4.Model.ClientInfo.t(),
+          :entry => GoogleApi.SafeBrowsing.V4.Model.ThreatEntry.t(),
           :platformType => any(),
-          :threatEntryType => any(),
-          :threatType => any()
+          :resources => list(GoogleApi.SafeBrowsing.V4.Model.ThreatSource.t()),
+          :threatType => any(),
+          :userInfo => GoogleApi.SafeBrowsing.V4.Model.UserInfo.t()
         }
 
+  field(:clientInfo, as: GoogleApi.SafeBrowsing.V4.Model.ClientInfo)
+  field(:entry, as: GoogleApi.SafeBrowsing.V4.Model.ThreatEntry)
   field(:platformType)
-  field(:threatEntryType)
+  field(:resources, as: GoogleApi.SafeBrowsing.V4.Model.ThreatSource, type: :list)
   field(:threatType)
+  field(:userInfo, as: GoogleApi.SafeBrowsing.V4.Model.UserInfo)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.ThreatListDescriptor do
+defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.ThreatHit do
   def decode(value, options) do
-    GoogleApi.SafeBrowsing.V4.Model.ThreatListDescriptor.decode(value, options)
+    GoogleApi.SafeBrowsing.V4.Model.ThreatHit.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.SafeBrowsing.V4.Model.ThreatListDescriptor do
+defimpl Poison.Encoder, for: GoogleApi.SafeBrowsing.V4.Model.ThreatHit do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

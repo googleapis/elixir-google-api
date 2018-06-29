@@ -16,31 +16,26 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.SafeBrowsing.V4.Model.RawIndices do
+defmodule GoogleApi.SafeBrowsing.V4.Model.Empty do
   @moduledoc """
-  A set of raw indices to remove from a local list.
+  A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance:      service Foo {       rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);     }  The JSON representation for &#x60;Empty&#x60; is empty JSON object &#x60;{}&#x60;.
 
   ## Attributes
 
-  - indices ([integer()]): The indices to remove from a lexicographically-sorted local list. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{
-          :indices => list(any())
-        }
-
-  field(:indices, type: :list)
+  @type t :: %__MODULE__{}
 end
 
-defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.RawIndices do
+defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.Empty do
   def decode(value, options) do
-    GoogleApi.SafeBrowsing.V4.Model.RawIndices.decode(value, options)
+    GoogleApi.SafeBrowsing.V4.Model.Empty.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.SafeBrowsing.V4.Model.RawIndices do
+defimpl Poison.Encoder, for: GoogleApi.SafeBrowsing.V4.Model.Empty do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
