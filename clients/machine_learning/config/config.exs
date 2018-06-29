@@ -10,11 +10,11 @@ use Mix.Config
 
 # You can configure for your application as:
 #
-#     config :google_cloud_machine_learning_engine, key: :value
+#     config :cloud_machine_learning_engine, key: :value
 #
 # And access this configuration in your application as:
 #
-#     Application.get_env(:google_cloud_machine_learning_engine, :key)
+#     Application.get_env(:cloud_machine_learning_engine, :key)
 #
 # Or configure a 3rd-party app:
 #

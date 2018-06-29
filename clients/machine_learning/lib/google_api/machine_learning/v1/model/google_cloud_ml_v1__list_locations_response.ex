@@ -16,44 +16,36 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.MachineLearning.V1.Model.GoogleLongrunningListOperationsResponse do
+defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1ListLocationsResponse do
   @moduledoc """
-  The response message for Operations.ListOperations.
+
 
   ## Attributes
 
-  - nextPageToken (String.t): The standard List next-page token. Defaults to: `null`.
-  - operations ([GoogleLongrunningOperation]): A list of operations that matches the specified filter in the request. Defaults to: `null`.
+  - locations ([GoogleCloudMlV1Location]): Locations where at least one type of CMLE capability is available. Defaults to: `null`.
+  - nextPageToken (String.t): Optional. Pass this token as the &#x60;page_token&#x60; field of the request for a subsequent call. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => any(),
-          :operations => list(GoogleApi.MachineLearning.V1.Model.GoogleLongrunningOperation.t())
+          :locations => list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1Location.t()),
+          :nextPageToken => any()
         }
 
+  field(:locations, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1Location, type: :list)
   field(:nextPageToken)
-
-  field(
-    :operations,
-    as: GoogleApi.MachineLearning.V1.Model.GoogleLongrunningOperation,
-    type: :list
-  )
 end
 
 defimpl Poison.Decoder,
-  for: GoogleApi.MachineLearning.V1.Model.GoogleLongrunningListOperationsResponse do
+  for: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1ListLocationsResponse do
   def decode(value, options) do
-    GoogleApi.MachineLearning.V1.Model.GoogleLongrunningListOperationsResponse.decode(
-      value,
-      options
-    )
+    GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1ListLocationsResponse.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder,
-  for: GoogleApi.MachineLearning.V1.Model.GoogleLongrunningListOperationsResponse do
+  for: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1ListLocationsResponse do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
