@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -27,21 +27,27 @@ defmodule GoogleApi.Drive.V3.Model.FileVideoMediaMetadata do
   - width (integer()): The width of the video in pixels. Defaults to: `null`.
   """
 
-  defstruct [
-    :durationMillis,
-    :height,
-    :width
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :durationMillis => any(),
+          :height => any(),
+          :width => any()
+        }
+
+  field(:durationMillis)
+  field(:height)
+  field(:width)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Drive.V3.Model.FileVideoMediaMetadata do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Drive.V3.Model.FileVideoMediaMetadata.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Drive.V3.Model.FileVideoMediaMetadata do
   def encode(value, options) do
-    GoogleApi.Drive.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

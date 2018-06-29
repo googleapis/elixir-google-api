@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -27,21 +27,27 @@ defmodule GoogleApi.Drive.V3.Model.FileImageMediaMetadataLocation do
   - longitude (float()): The longitude stored in the image. Defaults to: `null`.
   """
 
-  defstruct [
-    :altitude,
-    :latitude,
-    :longitude
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :altitude => any(),
+          :latitude => any(),
+          :longitude => any()
+        }
+
+  field(:altitude)
+  field(:latitude)
+  field(:longitude)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Drive.V3.Model.FileImageMediaMetadataLocation do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Drive.V3.Model.FileImageMediaMetadataLocation.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Drive.V3.Model.FileImageMediaMetadataLocation do
   def encode(value, options) do
-    GoogleApi.Drive.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

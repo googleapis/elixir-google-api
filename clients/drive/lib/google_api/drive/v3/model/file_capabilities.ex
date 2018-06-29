@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -41,35 +41,55 @@ defmodule GoogleApi.Drive.V3.Model.FileCapabilities do
   - canUntrash (boolean()): Whether the current user can restore this file from trash. Defaults to: `null`.
   """
 
-  defstruct [
-    :canAddChildren,
-    :canChangeViewersCanCopyContent,
-    :canComment,
-    :canCopy,
-    :canDelete,
-    :canDownload,
-    :canEdit,
-    :canListChildren,
-    :canMoveItemIntoTeamDrive,
-    :canMoveTeamDriveItem,
-    :canReadRevisions,
-    :canReadTeamDrive,
-    :canRemoveChildren,
-    :canRename,
-    :canShare,
-    :canTrash,
-    :canUntrash
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :canAddChildren => any(),
+          :canChangeViewersCanCopyContent => any(),
+          :canComment => any(),
+          :canCopy => any(),
+          :canDelete => any(),
+          :canDownload => any(),
+          :canEdit => any(),
+          :canListChildren => any(),
+          :canMoveItemIntoTeamDrive => any(),
+          :canMoveTeamDriveItem => any(),
+          :canReadRevisions => any(),
+          :canReadTeamDrive => any(),
+          :canRemoveChildren => any(),
+          :canRename => any(),
+          :canShare => any(),
+          :canTrash => any(),
+          :canUntrash => any()
+        }
+
+  field(:canAddChildren)
+  field(:canChangeViewersCanCopyContent)
+  field(:canComment)
+  field(:canCopy)
+  field(:canDelete)
+  field(:canDownload)
+  field(:canEdit)
+  field(:canListChildren)
+  field(:canMoveItemIntoTeamDrive)
+  field(:canMoveTeamDriveItem)
+  field(:canReadRevisions)
+  field(:canReadTeamDrive)
+  field(:canRemoveChildren)
+  field(:canRename)
+  field(:canShare)
+  field(:canTrash)
+  field(:canUntrash)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Drive.V3.Model.FileCapabilities do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Drive.V3.Model.FileCapabilities.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Drive.V3.Model.FileCapabilities do
   def encode(value, options) do
-    GoogleApi.Drive.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

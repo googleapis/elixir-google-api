@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -26,20 +26,25 @@ defmodule GoogleApi.Drive.V3.Model.FileContentHintsThumbnail do
   - mimeType (String.t): The MIME type of the thumbnail. Defaults to: `null`.
   """
 
-  defstruct [
-    :image,
-    :mimeType
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :image => any(),
+          :mimeType => any()
+        }
+
+  field(:image)
+  field(:mimeType)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Drive.V3.Model.FileContentHintsThumbnail do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Drive.V3.Model.FileContentHintsThumbnail.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Drive.V3.Model.FileContentHintsThumbnail do
   def encode(value, options) do
-    GoogleApi.Drive.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end
