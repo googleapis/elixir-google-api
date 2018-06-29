@@ -16,26 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Datastore.V1.Model.ReadOnly do
+defmodule GoogleApi.Datastore.V1.Model.ReserveIdsRequest do
   @moduledoc """
-  Options specific to read-only transactions.
+  The request for Datastore.ReserveIds.
 
   ## Attributes
 
+  - databaseId (String.t): If not empty, the ID of the database against which to make the request. Defaults to: `null`.
+  - keys ([Key]): A list of keys with complete key paths whose numeric IDs should not be auto-allocated. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :databaseId => any(),
+          :keys => list(GoogleApi.Datastore.V1.Model.Key.t())
+        }
+
+  field(:databaseId)
+  field(:keys, as: GoogleApi.Datastore.V1.Model.Key, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.ReadOnly do
+defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.ReserveIdsRequest do
   def decode(value, options) do
-    GoogleApi.Datastore.V1.Model.ReadOnly.decode(value, options)
+    GoogleApi.Datastore.V1.Model.ReserveIdsRequest.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.ReadOnly do
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.ReserveIdsRequest do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
