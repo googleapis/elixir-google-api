@@ -16,44 +16,39 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.MachineLearning.V1.Model.GoogleLongrunningListOperationsResponse do
+defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1Location do
   @moduledoc """
-  The response message for Operations.ListOperations.
+
 
   ## Attributes
 
-  - nextPageToken (String.t): The standard List next-page token. Defaults to: `null`.
-  - operations ([GoogleLongrunningOperation]): A list of operations that matches the specified filter in the request. Defaults to: `null`.
+  - capabilities ([GoogleCloudMlV1Capability]): Capabilities available in the location. Defaults to: `null`.
+  - name (String.t):  Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => any(),
-          :operations => list(GoogleApi.MachineLearning.V1.Model.GoogleLongrunningOperation.t())
+          :capabilities => list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1Capability.t()),
+          :name => any()
         }
 
-  field(:nextPageToken)
-
   field(
-    :operations,
-    as: GoogleApi.MachineLearning.V1.Model.GoogleLongrunningOperation,
+    :capabilities,
+    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1Capability,
     type: :list
   )
+
+  field(:name)
 end
 
-defimpl Poison.Decoder,
-  for: GoogleApi.MachineLearning.V1.Model.GoogleLongrunningListOperationsResponse do
+defimpl Poison.Decoder, for: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1Location do
   def decode(value, options) do
-    GoogleApi.MachineLearning.V1.Model.GoogleLongrunningListOperationsResponse.decode(
-      value,
-      options
-    )
+    GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1Location.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder,
-  for: GoogleApi.MachineLearning.V1.Model.GoogleLongrunningListOperationsResponse do
+defimpl Poison.Encoder, for: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1Location do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
