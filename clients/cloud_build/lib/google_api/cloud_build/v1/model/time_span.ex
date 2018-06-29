@@ -16,35 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudBuild.V1.Model.Hash do
+defmodule GoogleApi.CloudBuild.V1.Model.TimeSpan do
   @moduledoc """
-  Container message for hash values.
+  Start and end times for a build execution phase.
 
   ## Attributes
 
-  - type (String.t): The type of hash that was performed. Defaults to: `null`.
-    - Enum - one of [NONE, SHA256, MD5]
-  - value (binary()): The hash value. Defaults to: `null`.
+  - endTime (DateTime.t): End of time span. Defaults to: `null`.
+  - startTime (DateTime.t): Start of time span. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :type => any(),
-          :value => any()
+          :endTime => DateTime.t(),
+          :startTime => DateTime.t()
         }
 
-  field(:type)
-  field(:value)
+  field(:endTime, as: DateTime)
+  field(:startTime, as: DateTime)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudBuild.V1.Model.Hash do
+defimpl Poison.Decoder, for: GoogleApi.CloudBuild.V1.Model.TimeSpan do
   def decode(value, options) do
-    GoogleApi.CloudBuild.V1.Model.Hash.decode(value, options)
+    GoogleApi.CloudBuild.V1.Model.TimeSpan.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudBuild.V1.Model.Hash do
+defimpl Poison.Encoder, for: GoogleApi.CloudBuild.V1.Model.TimeSpan do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
