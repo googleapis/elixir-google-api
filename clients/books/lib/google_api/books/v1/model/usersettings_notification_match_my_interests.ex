@@ -16,34 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Books.V1.Model.VolumeSaleInfoListPrice do
+defmodule GoogleApi.Books.V1.Model.UsersettingsNotificationMatchMyInterests do
   @moduledoc """
-  Suggested retail price. (In LITE projection.)
+
 
   ## Attributes
 
-  - amount (float()): Amount in the currency listed below. (In LITE projection.) Defaults to: `null`.
-  - currencyCode (String.t): An ISO 4217, three-letter currency code. (In LITE projection.) Defaults to: `null`.
+  - opted_state (String.t):  Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :amount => any(),
-          :currencyCode => any()
+          :opted_state => any()
         }
 
-  field(:amount)
-  field(:currencyCode)
+  field(:opted_state)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Books.V1.Model.VolumeSaleInfoListPrice do
+defimpl Poison.Decoder, for: GoogleApi.Books.V1.Model.UsersettingsNotificationMatchMyInterests do
   def decode(value, options) do
-    GoogleApi.Books.V1.Model.VolumeSaleInfoListPrice.decode(value, options)
+    GoogleApi.Books.V1.Model.UsersettingsNotificationMatchMyInterests.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Books.V1.Model.VolumeSaleInfoListPrice do
+defimpl Poison.Encoder, for: GoogleApi.Books.V1.Model.UsersettingsNotificationMatchMyInterests do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

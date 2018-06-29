@@ -16,16 +16,16 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Books.V1.Api.Promooffer do
+defmodule GoogleApi.Books.V1.Api.Familysharing do
   @moduledoc """
-  API calls for all endpoints tagged `Promooffer`.
+  API calls for all endpoints tagged `Familysharing`.
   """
 
   alias GoogleApi.Books.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-
+  Gets information regarding the family that the user is part of.
 
   ## Parameters
 
@@ -38,23 +38,16 @@ defmodule GoogleApi.Books.V1.Api.Promooffer do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :androidId (String.t): device android_id
-    - :device (String.t): device device
-    - :manufacturer (String.t): device manufacturer
-    - :model (String.t): device model
-    - :offerId (String.t): 
-    - :product (String.t): device product
-    - :serial (String.t): device serial
-    - :volumeId (String.t): Volume id to exercise the offer
+    - :source (String.t): String to identify the originator of this request.
 
   ## Returns
 
-  {:ok, %{}} on success
+  {:ok, %GoogleApi.Books.V1.Model.FamilyInfo{}} on success
   {:error, info} on failure
   """
-  @spec books_promooffer_accept(Tesla.Env.client(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
-  def books_promooffer_accept(connection, opts \\ []) do
+  @spec books_familysharing_get_family_info(Tesla.Env.client(), keyword()) ::
+          {:ok, GoogleApi.Books.V1.Model.FamilyInfo.t()} | {:error, Tesla.Env.t()}
+  def books_familysharing_get_family_info(connection, opts \\ []) do
     optional_params = %{
       :alt => :query,
       :fields => :query,
@@ -63,20 +56,63 @@ defmodule GoogleApi.Books.V1.Api.Promooffer do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
-      :androidId => :query,
-      :device => :query,
-      :manufacturer => :query,
-      :model => :query,
-      :offerId => :query,
-      :product => :query,
-      :serial => :query,
+      :source => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/familysharing/getFamilyInfo")
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Books.V1.Model.FamilyInfo{})
+  end
+
+  @doc """
+  Initiates sharing of the content with the user&#39;s family. Empty response indicates success.
+
+  ## Parameters
+
+  - connection (GoogleApi.Books.V1.Connection): Connection to server
+  - opts (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :docId (String.t): The docid to share.
+    - :source (String.t): String to identify the originator of this request.
+    - :volumeId (String.t): The volume to share.
+
+  ## Returns
+
+  {:ok, %{}} on success
+  {:error, info} on failure
+  """
+  @spec books_familysharing_share(Tesla.Env.client(), keyword()) ::
+          {:ok, nil} | {:error, Tesla.Env.t()}
+  def books_familysharing_share(connection, opts \\ []) do
+    optional_params = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query,
+      :docId => :query,
+      :source => :query,
       :volumeId => :query
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/promooffer/accept")
+      |> Request.url("/familysharing/share")
       |> Request.add_optional_params(optional_params, opts)
 
     connection
@@ -85,7 +121,7 @@ defmodule GoogleApi.Books.V1.Api.Promooffer do
   end
 
   @doc """
-
+  Initiates revoking content that has already been shared with the user&#39;s family. Empty response indicates success.
 
   ## Parameters
 
@@ -98,22 +134,18 @@ defmodule GoogleApi.Books.V1.Api.Promooffer do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :androidId (String.t): device android_id
-    - :device (String.t): device device
-    - :manufacturer (String.t): device manufacturer
-    - :model (String.t): device model
-    - :offerId (String.t): Offer to dimiss
-    - :product (String.t): device product
-    - :serial (String.t): device serial
+    - :docId (String.t): The docid to unshare.
+    - :source (String.t): String to identify the originator of this request.
+    - :volumeId (String.t): The volume to unshare.
 
   ## Returns
 
   {:ok, %{}} on success
   {:error, info} on failure
   """
-  @spec books_promooffer_dismiss(Tesla.Env.client(), keyword()) ::
+  @spec books_familysharing_unshare(Tesla.Env.client(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def books_promooffer_dismiss(connection, opts \\ []) do
+  def books_familysharing_unshare(connection, opts \\ []) do
     optional_params = %{
       :alt => :query,
       :fields => :query,
@@ -122,79 +154,19 @@ defmodule GoogleApi.Books.V1.Api.Promooffer do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
-      :androidId => :query,
-      :device => :query,
-      :manufacturer => :query,
-      :model => :query,
-      :offerId => :query,
-      :product => :query,
-      :serial => :query
+      :docId => :query,
+      :source => :query,
+      :volumeId => :query
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/promooffer/dismiss")
+      |> Request.url("/familysharing/unshare")
       |> Request.add_optional_params(optional_params, opts)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(decode: false)
-  end
-
-  @doc """
-  Returns a list of promo offers available to the user
-
-  ## Parameters
-
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :androidId (String.t): device android_id
-    - :device (String.t): device device
-    - :manufacturer (String.t): device manufacturer
-    - :model (String.t): device model
-    - :product (String.t): device product
-    - :serial (String.t): device serial
-
-  ## Returns
-
-  {:ok, %GoogleApi.Books.V1.Model.Offers{}} on success
-  {:error, info} on failure
-  """
-  @spec books_promooffer_get(Tesla.Env.client(), keyword()) ::
-          {:ok, GoogleApi.Books.V1.Model.Offers.t()} | {:error, Tesla.Env.t()}
-  def books_promooffer_get(connection, opts \\ []) do
-    optional_params = %{
-      :alt => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :userIp => :query,
-      :androidId => :query,
-      :device => :query,
-      :manufacturer => :query,
-      :model => :query,
-      :product => :query,
-      :serial => :query
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:get)
-      |> Request.url("/promooffer/get")
-      |> Request.add_optional_params(optional_params, opts)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Books.V1.Model.Offers{})
   end
 end
