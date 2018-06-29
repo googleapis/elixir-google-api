@@ -16,7 +16,7 @@
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    {{#vars}}{{baseName}}: {{#isMapContainer}}map(){{/isMapContainer}}{{#isListContainer}}list({{#items}}{{#isPrimitiveType}}{{#isDateTime}}DateTime.t(){{/isDateTime}}{{^isDateTime}}any(){{/isDateTime}}{{/isPrimitiveType}}{{^isPrimitiveType}}{{#isDate}}Date.t(){{/isDate}}{{^isDate}}{{moduleName}}.Model.{{datatype}}.t(){{/isDate}}{{/isPrimitiveType}}{{/items}}){{/isListContainer}}{{^isContainer}}{{#isPrimitiveType}}{{#isDateTime}}DateTime.t(){{/isDateTime}}{{^isDateTime}}any(){{/isDateTime}}{{/isPrimitiveType}}{{^isPrimitiveType}}{{#isDate}}Date.t(){{/isDate}}{{^isDate}}{{moduleName}}.Model.{{datatype}}.t(){{/isDate}}{{/isPrimitiveType}}{{/isContainer}}{{#hasMore}},
+    {{#vars}}:"{{baseName}}" => {{#isMapContainer}}map(){{/isMapContainer}}{{#isListContainer}}list({{#items}}{{^isContainer}}{{#isPrimitiveType}}{{#isDateTime}}DateTime.t(){{/isDateTime}}{{^isDateTime}}any(){{/isDateTime}}{{/isPrimitiveType}}{{^isPrimitiveType}}{{#isDate}}Date.t(){{/isDate}}{{^isDate}}{{^isMapContainer}}{{moduleName}}.Model.{{datatype}}.t(){{/isMapContainer}}{{/isDate}}{{/isPrimitiveType}}{{/isContainer}}{{/items}}){{/isListContainer}}{{^isContainer}}{{#isPrimitiveType}}{{#isDateTime}}DateTime.t(){{/isDateTime}}{{^isDateTime}}any(){{/isDateTime}}{{/isPrimitiveType}}{{^isPrimitiveType}}{{#isDate}}Date.t(){{/isDate}}{{^isDate}}{{moduleName}}.Model.{{datatype}}.t(){{/isDate}}{{/isPrimitiveType}}{{/isContainer}}{{#hasMore}},
     {{/hasMore}}{{/vars}}
   }
 
