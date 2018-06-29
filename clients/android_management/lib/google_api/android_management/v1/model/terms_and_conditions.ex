@@ -16,34 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AndroidManagement.V1.Model.SignupUrl do
+defmodule GoogleApi.AndroidManagement.V1.Model.TermsAndConditions do
   @moduledoc """
-  An enterprise signup URL.
+  A terms and conditions page to be accepted during provisioning.
 
   ## Attributes
 
-  - name (String.t): The name of the resource. Use this value in the signupUrl field when calling enterprises.create to complete the enterprise signup flow. Defaults to: `null`.
-  - url (String.t): A URL where an enterprise admin can register their enterprise. The page can&#39;t be rendered in an iframe. Defaults to: `null`.
+  - content (UserFacingMessage): A well-formatted HTML string. It will be parsed on the client with android.text.Html#fromHtml. Defaults to: `null`.
+  - header (UserFacingMessage): A short header which appears above the HTML content. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => any(),
-          :url => any()
+          :content => GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t(),
+          :header => GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t()
         }
 
-  field(:name)
-  field(:url)
+  field(:content, as: GoogleApi.AndroidManagement.V1.Model.UserFacingMessage)
+  field(:header, as: GoogleApi.AndroidManagement.V1.Model.UserFacingMessage)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.SignupUrl do
+defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.TermsAndConditions do
   def decode(value, options) do
-    GoogleApi.AndroidManagement.V1.Model.SignupUrl.decode(value, options)
+    GoogleApi.AndroidManagement.V1.Model.TermsAndConditions.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.SignupUrl do
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.TermsAndConditions do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

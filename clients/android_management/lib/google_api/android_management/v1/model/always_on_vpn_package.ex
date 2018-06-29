@@ -16,34 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AndroidManagement.V1.Model.SignupUrl do
+defmodule GoogleApi.AndroidManagement.V1.Model.AlwaysOnVpnPackage do
   @moduledoc """
-  An enterprise signup URL.
+  Configuration for an always-on VPN connection.
 
   ## Attributes
 
-  - name (String.t): The name of the resource. Use this value in the signupUrl field when calling enterprises.create to complete the enterprise signup flow. Defaults to: `null`.
-  - url (String.t): A URL where an enterprise admin can register their enterprise. The page can&#39;t be rendered in an iframe. Defaults to: `null`.
+  - lockdownEnabled (boolean()): Disallows networking when the VPN is not connected. Defaults to: `null`.
+  - packageName (String.t): The package name of the VPN app. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => any(),
-          :url => any()
+          :lockdownEnabled => any(),
+          :packageName => any()
         }
 
-  field(:name)
-  field(:url)
+  field(:lockdownEnabled)
+  field(:packageName)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.SignupUrl do
+defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.AlwaysOnVpnPackage do
   def decode(value, options) do
-    GoogleApi.AndroidManagement.V1.Model.SignupUrl.decode(value, options)
+    GoogleApi.AndroidManagement.V1.Model.AlwaysOnVpnPackage.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.SignupUrl do
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.AlwaysOnVpnPackage do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

@@ -16,34 +16,35 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AndroidManagement.V1.Model.SignupUrl do
+defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationEvent do
   @moduledoc """
-  An enterprise signup URL.
+  An app-related event.
 
   ## Attributes
 
-  - name (String.t): The name of the resource. Use this value in the signupUrl field when calling enterprises.create to complete the enterprise signup flow. Defaults to: `null`.
-  - url (String.t): A URL where an enterprise admin can register their enterprise. The page can&#39;t be rendered in an iframe. Defaults to: `null`.
+  - createTime (DateTime.t): The creation time of the event. Defaults to: `null`.
+  - eventType (String.t): App event type. Defaults to: `null`.
+    - Enum - one of [APPLICATION_EVENT_TYPE_UNSPECIFIED, INSTALLED, CHANGED, DATA_CLEARED, REMOVED, REPLACED, RESTARTED, PINNED, UNPINNED]
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => any(),
-          :url => any()
+          :createTime => DateTime.t(),
+          :eventType => any()
         }
 
-  field(:name)
-  field(:url)
+  field(:createTime, as: DateTime)
+  field(:eventType)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.SignupUrl do
+defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.ApplicationEvent do
   def decode(value, options) do
-    GoogleApi.AndroidManagement.V1.Model.SignupUrl.decode(value, options)
+    GoogleApi.AndroidManagement.V1.Model.ApplicationEvent.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.SignupUrl do
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.ApplicationEvent do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
