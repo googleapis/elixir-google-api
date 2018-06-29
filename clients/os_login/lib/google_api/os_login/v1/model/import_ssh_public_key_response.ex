@@ -16,37 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.OSLogin.V1alpha.Model.SshPublicKey do
+defmodule GoogleApi.OSLogin.V1.Model.ImportSshPublicKeyResponse do
   @moduledoc """
-  The SSH public key information associated with a Google account.
+  A response message for importing an SSH public key.
 
   ## Attributes
 
-  - expirationTimeUsec (String.t): An expiration time in microseconds since epoch. Defaults to: `null`.
-  - fingerprint (String.t): Output only. The SHA-256 fingerprint of the SSH public key. Defaults to: `null`.
-  - key (String.t): Public key text in SSH format, defined by &lt;a href&#x3D;\&quot;https://www.ietf.org/rfc/rfc4253.txt\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC4253&lt;/a&gt; section 6.6. Defaults to: `null`.
+  - loginProfile (LoginProfile): The login profile information for the user. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :expirationTimeUsec => any(),
-          :fingerprint => any(),
-          :key => any()
+          :loginProfile => GoogleApi.OSLogin.V1.Model.LoginProfile.t()
         }
 
-  field(:expirationTimeUsec)
-  field(:fingerprint)
-  field(:key)
+  field(:loginProfile, as: GoogleApi.OSLogin.V1.Model.LoginProfile)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.OSLogin.V1alpha.Model.SshPublicKey do
+defimpl Poison.Decoder, for: GoogleApi.OSLogin.V1.Model.ImportSshPublicKeyResponse do
   def decode(value, options) do
-    GoogleApi.OSLogin.V1alpha.Model.SshPublicKey.decode(value, options)
+    GoogleApi.OSLogin.V1.Model.ImportSshPublicKeyResponse.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.OSLogin.V1alpha.Model.SshPublicKey do
+defimpl Poison.Encoder, for: GoogleApi.OSLogin.V1.Model.ImportSshPublicKeyResponse do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

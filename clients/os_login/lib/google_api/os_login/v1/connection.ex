@@ -16,10 +16,18 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.OSLogin.V1alpha.RequestBuilder do
+defmodule GoogleApi.OSLogin.V1.Connection do
   @moduledoc """
-  Helper functions for building Tesla requests.
-
-  This module is no longer used. Please use GoogleApi.Gax.Request instead.
+  Handle Tesla connections for GoogleApi.OSLogin.V1.
   """
+
+  use GoogleApi.Gax.Connection,
+    scopes: [
+      # View and manage your data across Google Cloud Platform services
+      "https://www.googleapis.com/auth/cloud-platform",
+      # View and manage your Google Compute Engine resources
+      "https://www.googleapis.com/auth/compute"
+    ],
+    otp_app: :google_api_os_login,
+    base_url: "https://oslogin.googleapis.com"
 end

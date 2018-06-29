@@ -16,37 +16,37 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.OSLogin.V1alpha.Model.SshPublicKey do
+defmodule GoogleApi.OSLogin.V1.Model.LoginProfile do
   @moduledoc """
-  The SSH public key information associated with a Google account.
+  The user profile information used for logging in to a virtual machine on Google Compute Engine.
 
   ## Attributes
 
-  - expirationTimeUsec (String.t): An expiration time in microseconds since epoch. Defaults to: `null`.
-  - fingerprint (String.t): Output only. The SHA-256 fingerprint of the SSH public key. Defaults to: `null`.
-  - key (String.t): Public key text in SSH format, defined by &lt;a href&#x3D;\&quot;https://www.ietf.org/rfc/rfc4253.txt\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC4253&lt;/a&gt; section 6.6. Defaults to: `null`.
+  - name (String.t): A unique user ID. Defaults to: `null`.
+  - posixAccounts ([PosixAccount]): The list of POSIX accounts associated with the user. Defaults to: `null`.
+  - sshPublicKeys (%{optional(String.t) &#x3D;&gt; SshPublicKey}): A map from SSH public key fingerprint to the associated key object. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :expirationTimeUsec => any(),
-          :fingerprint => any(),
-          :key => any()
+          :name => any(),
+          :posixAccounts => list(GoogleApi.OSLogin.V1.Model.PosixAccount.t()),
+          :sshPublicKeys => map()
         }
 
-  field(:expirationTimeUsec)
-  field(:fingerprint)
-  field(:key)
+  field(:name)
+  field(:posixAccounts, as: GoogleApi.OSLogin.V1.Model.PosixAccount, type: :list)
+  field(:sshPublicKeys, as: GoogleApi.OSLogin.V1.Model.SshPublicKey, type: :map)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.OSLogin.V1alpha.Model.SshPublicKey do
+defimpl Poison.Decoder, for: GoogleApi.OSLogin.V1.Model.LoginProfile do
   def decode(value, options) do
-    GoogleApi.OSLogin.V1alpha.Model.SshPublicKey.decode(value, options)
+    GoogleApi.OSLogin.V1.Model.LoginProfile.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.OSLogin.V1alpha.Model.SshPublicKey do
+defimpl Poison.Encoder, for: GoogleApi.OSLogin.V1.Model.LoginProfile do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

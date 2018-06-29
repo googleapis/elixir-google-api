@@ -16,7 +16,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.OSLogin.V1alpha.Model.SshPublicKey do
+defmodule GoogleApi.OSLogin.V1.Model.SshPublicKey do
   @moduledoc """
   The SSH public key information associated with a Google account.
 
@@ -40,13 +40,13 @@ defmodule GoogleApi.OSLogin.V1alpha.Model.SshPublicKey do
   field(:key)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.OSLogin.V1alpha.Model.SshPublicKey do
+defimpl Poison.Decoder, for: GoogleApi.OSLogin.V1.Model.SshPublicKey do
   def decode(value, options) do
-    GoogleApi.OSLogin.V1alpha.Model.SshPublicKey.decode(value, options)
+    GoogleApi.OSLogin.V1.Model.SshPublicKey.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.OSLogin.V1alpha.Model.SshPublicKey do
+defimpl Poison.Encoder, for: GoogleApi.OSLogin.V1.Model.SshPublicKey do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
