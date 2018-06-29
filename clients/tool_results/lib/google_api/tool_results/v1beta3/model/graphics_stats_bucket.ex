@@ -16,34 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ToolResults.V1beta3.Model.ProjectSettings do
+defmodule GoogleApi.ToolResults.V1beta3.Model.GraphicsStatsBucket do
   @moduledoc """
-  Per-project settings for the Tool Results service.
+
 
   ## Attributes
 
-  - defaultBucket (String.t): The name of the Google Cloud Storage bucket to which results are written.  By default, this is unset.  In update request: optional In response: optional Defaults to: `null`.
-  - name (String.t): The name of the project&#39;s settings.  Always of the form: projects/{project-id}/settings  In update request: never set In response: always set Defaults to: `null`.
+  - frameCount (String.t): Number of frames in the bucket. Defaults to: `null`.
+  - renderMillis (String.t): Lower bound of render time in milliseconds. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :defaultBucket => any(),
-          :name => any()
+          :frameCount => any(),
+          :renderMillis => any()
         }
 
-  field(:defaultBucket)
-  field(:name)
+  field(:frameCount)
+  field(:renderMillis)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.ProjectSettings do
+defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.GraphicsStatsBucket do
   def decode(value, options) do
-    GoogleApi.ToolResults.V1beta3.Model.ProjectSettings.decode(value, options)
+    GoogleApi.ToolResults.V1beta3.Model.GraphicsStatsBucket.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.ProjectSettings do
+defimpl Poison.Encoder, for: GoogleApi.ToolResults.V1beta3.Model.GraphicsStatsBucket do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
