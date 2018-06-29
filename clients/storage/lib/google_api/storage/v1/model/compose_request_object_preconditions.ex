@@ -25,19 +25,23 @@ defmodule GoogleApi.Storage.V1.Model.ComposeRequestObjectPreconditions do
   - ifGenerationMatch (String.t): Only perform the composition if the generation of the source object that would be used matches this value. If this value and a generation are both specified, they must be the same value or the call will fail. Defaults to: `null`.
   """
 
-  defstruct [
-    :ifGenerationMatch
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :ifGenerationMatch => any()
+        }
+
+  field(:ifGenerationMatch)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.ComposeRequestObjectPreconditions do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Storage.V1.Model.ComposeRequestObjectPreconditions.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Storage.V1.Model.ComposeRequestObjectPreconditions do
   def encode(value, options) do
-    GoogleApi.Storage.V1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

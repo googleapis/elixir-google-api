@@ -26,20 +26,25 @@ defmodule GoogleApi.Storage.V1.Model.PolicyBindings do
   - role (String.t): The role to which members belong. Two types of roles are supported: new IAM roles, which grant permissions that do not map directly to those provided by ACLs, and legacy IAM roles, which do map directly to ACL permissions. All roles are of the format roles/storage.specificRole. The new IAM roles are:   - roles/storage.admin — Full control of Google Cloud Storage resources.   - roles/storage.objectViewer — Read-Only access to Google Cloud Storage objects.   - roles/storage.objectCreator — Access to create objects in Google Cloud Storage.   - roles/storage.objectAdmin — Full control of Google Cloud Storage objects.   The legacy IAM roles are:   - roles/storage.legacyObjectReader — Read-only access to objects without listing. Equivalent to an ACL entry on an object with the READER role.   - roles/storage.legacyObjectOwner — Read/write access to existing objects without listing. Equivalent to an ACL entry on an object with the OWNER role.   - roles/storage.legacyBucketReader — Read access to buckets with object listing. Equivalent to an ACL entry on a bucket with the READER role.   - roles/storage.legacyBucketWriter — Read access to buckets with object listing/creation/deletion. Equivalent to an ACL entry on a bucket with the WRITER role.   - roles/storage.legacyBucketOwner — Read and write access to existing buckets with object listing/creation/deletion. Equivalent to an ACL entry on a bucket with the OWNER role. Defaults to: `null`.
   """
 
-  defstruct [
-    :members,
-    :role
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :members => list(any()),
+          :role => any()
+        }
+
+  field(:members, type: :list)
+  field(:role)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.PolicyBindings do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Storage.V1.Model.PolicyBindings.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Storage.V1.Model.PolicyBindings do
   def encode(value, options) do
-    GoogleApi.Storage.V1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

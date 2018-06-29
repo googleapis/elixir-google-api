@@ -26,20 +26,25 @@ defmodule GoogleApi.Storage.V1.Model.BucketAccessControlProjectTeam do
   - team (String.t): The team. Defaults to: `null`.
   """
 
-  defstruct [
-    :projectNumber,
-    :team
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :projectNumber => any(),
+          :team => any()
+        }
+
+  field(:projectNumber)
+  field(:team)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.BucketAccessControlProjectTeam do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Storage.V1.Model.BucketAccessControlProjectTeam.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Storage.V1.Model.BucketAccessControlProjectTeam do
   def encode(value, options) do
-    GoogleApi.Storage.V1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

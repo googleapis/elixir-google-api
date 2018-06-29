@@ -34,28 +34,41 @@ defmodule GoogleApi.Storage.V1.Model.Channel do
   - type (String.t): The type of delivery mechanism used for this channel. Defaults to: `null`.
   """
 
-  defstruct [
-    :address,
-    :expiration,
-    :id,
-    :kind,
-    :params,
-    :payload,
-    :resourceId,
-    :resourceUri,
-    :token,
-    :type
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :address => any(),
+          :expiration => any(),
+          :id => any(),
+          :kind => any(),
+          :params => map(),
+          :payload => any(),
+          :resourceId => any(),
+          :resourceUri => any(),
+          :token => any(),
+          :type => any()
+        }
+
+  field(:address)
+  field(:expiration)
+  field(:id)
+  field(:kind)
+  field(:params, type: :map)
+  field(:payload)
+  field(:resourceId)
+  field(:resourceUri)
+  field(:token)
+  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.Channel do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Storage.V1.Model.Channel.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Storage.V1.Model.Channel do
   def encode(value, options) do
-    GoogleApi.Storage.V1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

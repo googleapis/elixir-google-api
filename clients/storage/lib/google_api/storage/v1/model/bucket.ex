@@ -25,7 +25,7 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
   - acl ([BucketAccessControl]): Access controls on the bucket. Defaults to: `null`.
   - billing (BucketBilling):  Defaults to: `null`.
   - cors ([BucketCors]): The bucket&#39;s Cross-Origin Resource Sharing (CORS) configuration. Defaults to: `null`.
-  - defaultEventBasedHold (boolean()): Defines the default value for Event-Based hold on newly created objects in this bucket. Event-Based hold is a way to retain objects indefinitely until an event occurs, signified by the hold&#39;s release. After being released, such objects will be subject to bucket-level retention (if any). One sample use case of this flag is for banks to hold loan documents for at least 3 years after loan is paid in full. Here bucket-level retention is 3 years and the event is loan being paid in full. In this example these objects will be held intact for any number of years until the event has occurred (hold is released) and then 3 more years after that. Objects under Event-Based hold cannot be deleted, overwritten or archived until the hold is removed. Defaults to: `null`.
+  - defaultEventBasedHold (boolean()): The default value for event-based hold on newly created objects in this bucket. Event-based hold is a way to retain objects indefinitely until an event occurs, signified by the hold&#39;s release. After being released, such objects will be subject to bucket-level retention (if any). One sample use case of this flag is for banks to hold loan documents for at least 3 years after loan is paid in full. Here, bucket-level retention is 3 years and the event is loan being paid in full. In this example, these objects will be held intact for any number of years until the event has occurred (event-based hold on the object is released) and then 3 more years after that. That means retention duration of the objects begins from the moment event-based hold transitioned from true to false. Objects under event-based hold cannot be deleted, overwritten or archived until the hold is removed. Defaults to: `null`.
   - defaultObjectAcl ([ObjectAccessControl]): Default access controls to apply to new objects when no ACL is provided. Defaults to: `null`.
   - encryption (BucketEncryption):  Defaults to: `null`.
   - etag (String.t): HTTP 1.1 Entity tag for the bucket. Defaults to: `null`.
@@ -48,67 +48,69 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
   - website (BucketWebsite):  Defaults to: `null`.
   """
 
-  defstruct [
-    :acl,
-    :billing,
-    :cors,
-    :defaultEventBasedHold,
-    :defaultObjectAcl,
-    :encryption,
-    :etag,
-    :id,
-    :kind,
-    :labels,
-    :lifecycle,
-    :location,
-    :logging,
-    :metageneration,
-    :name,
-    :owner,
-    :projectNumber,
-    :retentionPolicy,
-    :selfLink,
-    :storageClass,
-    :timeCreated,
-    :updated,
-    :versioning,
-    :website
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :acl => list(GoogleApi.Storage.V1.Model.BucketAccessControl.t()),
+          :billing => GoogleApi.Storage.V1.Model.BucketBilling.t(),
+          :cors => list(GoogleApi.Storage.V1.Model.BucketCors.t()),
+          :defaultEventBasedHold => any(),
+          :defaultObjectAcl => list(GoogleApi.Storage.V1.Model.ObjectAccessControl.t()),
+          :encryption => GoogleApi.Storage.V1.Model.BucketEncryption.t(),
+          :etag => any(),
+          :id => any(),
+          :kind => any(),
+          :labels => map(),
+          :lifecycle => GoogleApi.Storage.V1.Model.BucketLifecycle.t(),
+          :location => any(),
+          :logging => GoogleApi.Storage.V1.Model.BucketLogging.t(),
+          :metageneration => any(),
+          :name => any(),
+          :owner => GoogleApi.Storage.V1.Model.BucketOwner.t(),
+          :projectNumber => any(),
+          :retentionPolicy => GoogleApi.Storage.V1.Model.BucketRetentionPolicy.t(),
+          :selfLink => any(),
+          :storageClass => any(),
+          :timeCreated => DateTime.t(),
+          :updated => DateTime.t(),
+          :versioning => GoogleApi.Storage.V1.Model.BucketVersioning.t(),
+          :website => GoogleApi.Storage.V1.Model.BucketWebsite.t()
+        }
+
+  field(:acl, as: GoogleApi.Storage.V1.Model.BucketAccessControl, type: :list)
+  field(:billing, as: GoogleApi.Storage.V1.Model.BucketBilling)
+  field(:cors, as: GoogleApi.Storage.V1.Model.BucketCors, type: :list)
+  field(:defaultEventBasedHold)
+  field(:defaultObjectAcl, as: GoogleApi.Storage.V1.Model.ObjectAccessControl, type: :list)
+  field(:encryption, as: GoogleApi.Storage.V1.Model.BucketEncryption)
+  field(:etag)
+  field(:id)
+  field(:kind)
+  field(:labels, type: :map)
+  field(:lifecycle, as: GoogleApi.Storage.V1.Model.BucketLifecycle)
+  field(:location)
+  field(:logging, as: GoogleApi.Storage.V1.Model.BucketLogging)
+  field(:metageneration)
+  field(:name)
+  field(:owner, as: GoogleApi.Storage.V1.Model.BucketOwner)
+  field(:projectNumber)
+  field(:retentionPolicy, as: GoogleApi.Storage.V1.Model.BucketRetentionPolicy)
+  field(:selfLink)
+  field(:storageClass)
+  field(:timeCreated, as: DateTime)
+  field(:updated, as: DateTime)
+  field(:versioning, as: GoogleApi.Storage.V1.Model.BucketVersioning)
+  field(:website, as: GoogleApi.Storage.V1.Model.BucketWebsite)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.Bucket do
-  import GoogleApi.Storage.V1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:acl, :list, GoogleApi.Storage.V1.Model.BucketAccessControl, options)
-    |> deserialize(:billing, :struct, GoogleApi.Storage.V1.Model.BucketBilling, options)
-    |> deserialize(:cors, :list, GoogleApi.Storage.V1.Model.BucketCors, options)
-    |> deserialize(
-      :defaultObjectAcl,
-      :list,
-      GoogleApi.Storage.V1.Model.ObjectAccessControl,
-      options
-    )
-    |> deserialize(:encryption, :struct, GoogleApi.Storage.V1.Model.BucketEncryption, options)
-    |> deserialize(:lifecycle, :struct, GoogleApi.Storage.V1.Model.BucketLifecycle, options)
-    |> deserialize(:logging, :struct, GoogleApi.Storage.V1.Model.BucketLogging, options)
-    |> deserialize(:owner, :struct, GoogleApi.Storage.V1.Model.BucketOwner, options)
-    |> deserialize(
-      :retentionPolicy,
-      :struct,
-      GoogleApi.Storage.V1.Model.BucketRetentionPolicy,
-      options
-    )
-    |> deserialize(:timeCreated, :date, nil, options)
-    |> deserialize(:updated, :date, nil, options)
-    |> deserialize(:versioning, :struct, GoogleApi.Storage.V1.Model.BucketVersioning, options)
-    |> deserialize(:website, :struct, GoogleApi.Storage.V1.Model.BucketWebsite, options)
+    GoogleApi.Storage.V1.Model.Bucket.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Storage.V1.Model.Bucket do
   def encode(value, options) do
-    GoogleApi.Storage.V1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

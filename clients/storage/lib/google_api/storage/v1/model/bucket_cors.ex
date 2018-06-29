@@ -28,22 +28,29 @@ defmodule GoogleApi.Storage.V1.Model.BucketCors do
   - responseHeader ([String.t]): The list of HTTP headers other than the simple response headers to give permission for the user-agent to share across domains. Defaults to: `null`.
   """
 
-  defstruct [
-    :maxAgeSeconds,
-    :method,
-    :origin,
-    :responseHeader
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :maxAgeSeconds => any(),
+          :method => list(any()),
+          :origin => list(any()),
+          :responseHeader => list(any())
+        }
+
+  field(:maxAgeSeconds)
+  field(:method, type: :list)
+  field(:origin, type: :list)
+  field(:responseHeader, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.BucketCors do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Storage.V1.Model.BucketCors.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Storage.V1.Model.BucketCors do
   def encode(value, options) do
-    GoogleApi.Storage.V1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

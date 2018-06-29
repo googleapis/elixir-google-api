@@ -28,25 +28,29 @@ defmodule GoogleApi.Storage.V1.Model.Objects do
   - prefixes ([String.t]): The list of prefixes of objects matching-but-not-listed up to and including the requested delimiter. Defaults to: `null`.
   """
 
-  defstruct [
-    :items,
-    :kind,
-    :nextPageToken,
-    :prefixes
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :items => list(GoogleApi.Storage.V1.Model.Object.t()),
+          :kind => any(),
+          :nextPageToken => any(),
+          :prefixes => list(any())
+        }
+
+  field(:items, as: GoogleApi.Storage.V1.Model.Object, type: :list)
+  field(:kind)
+  field(:nextPageToken)
+  field(:prefixes, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.Objects do
-  import GoogleApi.Storage.V1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:items, :list, GoogleApi.Storage.V1.Model.Object, options)
+    GoogleApi.Storage.V1.Model.Objects.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Storage.V1.Model.Objects do
   def encode(value, options) do
-    GoogleApi.Storage.V1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

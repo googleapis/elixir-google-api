@@ -29,26 +29,31 @@ defmodule GoogleApi.Storage.V1.Model.BucketLifecycleCondition do
   - numNewerVersions (integer()): Relevant only for versioned objects. If the value is N, this condition is satisfied when there are at least N versions (including the live version) newer than this version of the object. Defaults to: `null`.
   """
 
-  defstruct [
-    :age,
-    :createdBefore,
-    :isLive,
-    :matchesStorageClass,
-    :numNewerVersions
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :age => any(),
+          :createdBefore => Date.t(),
+          :isLive => any(),
+          :matchesStorageClass => list(any()),
+          :numNewerVersions => any()
+        }
+
+  field(:age)
+  field(:createdBefore, as: Date)
+  field(:isLive)
+  field(:matchesStorageClass, type: :list)
+  field(:numNewerVersions)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.BucketLifecycleCondition do
-  import GoogleApi.Storage.V1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:createdBefore, :date, nil, options)
+    GoogleApi.Storage.V1.Model.BucketLifecycleCondition.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Storage.V1.Model.BucketLifecycleCondition do
   def encode(value, options) do
-    GoogleApi.Storage.V1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

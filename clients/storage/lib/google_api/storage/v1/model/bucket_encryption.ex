@@ -18,26 +18,30 @@
 
 defmodule GoogleApi.Storage.V1.Model.BucketEncryption do
   @moduledoc """
-  Encryption configuration used by default for newly inserted objects, when no encryption config is specified.
+  Encryption configuration for a bucket.
 
   ## Attributes
 
-  - defaultKmsKeyName (String.t): A Cloud KMS key that will be used to encrypt objects inserted into this bucket, if no encryption method is specified. Limited availability; usable only by enabled projects. Defaults to: `null`.
+  - defaultKmsKeyName (String.t): A Cloud KMS key that will be used to encrypt objects inserted into this bucket, if no encryption method is specified. Defaults to: `null`.
   """
 
-  defstruct [
-    :defaultKmsKeyName
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :defaultKmsKeyName => any()
+        }
+
+  field(:defaultKmsKeyName)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.BucketEncryption do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Storage.V1.Model.BucketEncryption.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Storage.V1.Model.BucketEncryption do
   def encode(value, options) do
-    GoogleApi.Storage.V1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

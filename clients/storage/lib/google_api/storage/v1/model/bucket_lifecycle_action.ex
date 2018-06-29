@@ -26,20 +26,25 @@ defmodule GoogleApi.Storage.V1.Model.BucketLifecycleAction do
   - type (String.t): Type of the action. Currently, only Delete and SetStorageClass are supported. Defaults to: `null`.
   """
 
-  defstruct [
-    :storageClass,
-    :type
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :storageClass => any(),
+          :type => any()
+        }
+
+  field(:storageClass)
+  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.BucketLifecycleAction do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Storage.V1.Model.BucketLifecycleAction.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Storage.V1.Model.BucketLifecycleAction do
   def encode(value, options) do
-    GoogleApi.Storage.V1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -33,27 +33,39 @@ defmodule GoogleApi.Storage.V1.Model.Notification do
   - topic (String.t): The Cloud PubSub topic to which this subscription publishes. Formatted as: &#39;//pubsub.googleapis.com/projects/{project-identifier}/topics/{my-topic}&#39; Defaults to: `null`.
   """
 
-  defstruct [
-    :custom_attributes,
-    :etag,
-    :event_types,
-    :id,
-    :kind,
-    :object_name_prefix,
-    :payload_format,
-    :selfLink,
-    :topic
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :custom_attributes => map(),
+          :etag => any(),
+          :event_types => list(any()),
+          :id => any(),
+          :kind => any(),
+          :object_name_prefix => any(),
+          :payload_format => any(),
+          :selfLink => any(),
+          :topic => any()
+        }
+
+  field(:custom_attributes, type: :map)
+  field(:etag)
+  field(:event_types, type: :list)
+  field(:id)
+  field(:kind)
+  field(:object_name_prefix)
+  field(:payload_format)
+  field(:selfLink)
+  field(:topic)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.Notification do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Storage.V1.Model.Notification.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Storage.V1.Model.Notification do
   def encode(value, options) do
-    GoogleApi.Storage.V1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

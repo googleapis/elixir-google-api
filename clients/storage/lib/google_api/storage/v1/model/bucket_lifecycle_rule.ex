@@ -26,29 +26,25 @@ defmodule GoogleApi.Storage.V1.Model.BucketLifecycleRule do
   - condition (BucketLifecycleCondition):  Defaults to: `null`.
   """
 
-  defstruct [
-    :action,
-    :condition
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :action => GoogleApi.Storage.V1.Model.BucketLifecycleAction.t(),
+          :condition => GoogleApi.Storage.V1.Model.BucketLifecycleCondition.t()
+        }
+
+  field(:action, as: GoogleApi.Storage.V1.Model.BucketLifecycleAction)
+  field(:condition, as: GoogleApi.Storage.V1.Model.BucketLifecycleCondition)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.BucketLifecycleRule do
-  import GoogleApi.Storage.V1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:action, :struct, GoogleApi.Storage.V1.Model.BucketLifecycleAction, options)
-    |> deserialize(
-      :condition,
-      :struct,
-      GoogleApi.Storage.V1.Model.BucketLifecycleCondition,
-      options
-    )
+    GoogleApi.Storage.V1.Model.BucketLifecycleRule.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Storage.V1.Model.BucketLifecycleRule do
   def encode(value, options) do
-    GoogleApi.Storage.V1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

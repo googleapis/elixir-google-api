@@ -1,7 +1,7 @@
 defmodule GoogleApi.Storage.V1.Mixfile do
   use Mix.Project
 
-  @version "0.0.2"
+  @version "0.1.0"
 
   def project() do
     [
@@ -23,8 +23,7 @@ defmodule GoogleApi.Storage.V1.Mixfile do
 
   defp deps() do
     [
-      {:tesla, "~> 0.8"},
-      {:poison, ">= 1.0.0"},
+      {:google_gax, "~> 0.1.0"},
       {:ex_doc, "~> 0.16", only: :dev},
       {:goth, "~> 0.4.0", only: [:dev, :test]}
     ]

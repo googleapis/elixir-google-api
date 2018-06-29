@@ -28,25 +28,29 @@ defmodule GoogleApi.Storage.V1.Model.Policy do
   - resourceId (String.t): The ID of the resource to which this policy belongs. Will be of the form projects/_/buckets/bucket for buckets, and projects/_/buckets/bucket/objects/object for objects. A specific generation may be specified by appending #generationNumber to the end of the object name, e.g. projects/_/buckets/my-bucket/objects/data.txt#17. The current generation can be denoted with #0. This field is ignored on input. Defaults to: `null`.
   """
 
-  defstruct [
-    :bindings,
-    :etag,
-    :kind,
-    :resourceId
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :bindings => list(GoogleApi.Storage.V1.Model.PolicyBindings.t()),
+          :etag => any(),
+          :kind => any(),
+          :resourceId => any()
+        }
+
+  field(:bindings, as: GoogleApi.Storage.V1.Model.PolicyBindings, type: :list)
+  field(:etag)
+  field(:kind)
+  field(:resourceId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.Policy do
-  import GoogleApi.Storage.V1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:bindings, :list, GoogleApi.Storage.V1.Model.PolicyBindings, options)
+    GoogleApi.Storage.V1.Model.Policy.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Storage.V1.Model.Policy do
   def encode(value, options) do
-    GoogleApi.Storage.V1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

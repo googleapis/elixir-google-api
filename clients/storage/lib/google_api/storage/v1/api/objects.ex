@@ -22,7 +22,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
   """
 
   alias GoogleApi.Storage.V1.Connection
-  import GoogleApi.Storage.V1.RequestBuilder
+  alias GoogleApi.Gax.{Request, Response}
 
   @doc """
   Concatenates a list of existing objects into a new object in the same bucket.
@@ -38,8 +38,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :destinationPredefinedAcl (String.t): Apply a predefined set of access controls to the destination object.
     - :ifGenerationMatch (String.t): Makes the operation conditional on whether the object&#39;s current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
     - :ifMetagenerationMatch (String.t): Makes the operation conditional on whether the object&#39;s current metageneration matches the given value.
@@ -71,16 +71,18 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :body => :body
     }
 
-    %{}
-    |> method(:post)
-    |> url("/storage/v1/b/{destinationBucket}/o/{destinationObject}/compose", %{
-      "destinationBucket" => URI.encode_www_form(destination_bucket),
-      "destinationObject" => URI.encode_www_form(destination_object)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Storage.V1.Model.Object{})
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/storage/v1/b/{destinationBucket}/o/{destinationObject}/compose", %{
+        "destinationBucket" => URI.encode_www_form(destination_bucket),
+        "destinationObject" => URI.encode_www_form(destination_object)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.Object{})
   end
 
   @doc """
@@ -99,8 +101,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :destinationPredefinedAcl (String.t): Apply a predefined set of access controls to the destination object.
     - :ifGenerationMatch (String.t): Makes the operation conditional on whether the destination object&#39;s current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
     - :ifGenerationNotMatch (String.t): Makes the operation conditional on whether the destination object&#39;s current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object.
@@ -159,21 +161,23 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :body => :body
     }
 
-    %{}
-    |> method(:post)
-    |> url(
-      "/storage/v1/b/{sourceBucket}/o/{sourceObject}/copyTo/b/{destinationBucket}/o/{destinationObject}",
-      %{
-        "sourceBucket" => URI.encode_www_form(source_bucket),
-        "sourceObject" => URI.encode_www_form(source_object),
-        "destinationBucket" => URI.encode_www_form(destination_bucket),
-        "destinationObject" => URI.encode_www_form(destination_object)
-      }
-    )
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Storage.V1.Model.Object{})
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/storage/v1/b/{sourceBucket}/o/{sourceObject}/copyTo/b/{destinationBucket}/o/{destinationObject}",
+        %{
+          "sourceBucket" => URI.encode_www_form(source_bucket),
+          "sourceObject" => URI.encode_www_form(source_object),
+          "destinationBucket" => URI.encode_www_form(destination_bucket),
+          "destinationObject" => URI.encode_www_form(destination_object)
+        }
+      )
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.Object{})
   end
 
   @doc """
@@ -190,8 +194,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :generation (String.t): If present, permanently deletes a specific revision of this object (as opposed to the latest version, the default).
     - :ifGenerationMatch (String.t): Makes the operation conditional on whether the object&#39;s current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
     - :ifGenerationNotMatch (String.t): Makes the operation conditional on whether the object&#39;s current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object.
@@ -223,16 +227,18 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :userProject => :query
     }
 
-    %{}
-    |> method(:delete)
-    |> url("/storage/v1/b/{bucket}/o/{object}", %{
-      "bucket" => URI.encode_www_form(bucket),
-      "object" => URI.encode_www_form(object)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(false)
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/storage/v1/b/{bucket}/o/{object}", %{
+        "bucket" => URI.encode_www_form(bucket),
+        "object" => URI.encode_www_form(object)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(decode: false)
   end
 
   @doc """
@@ -249,8 +255,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :generation (String.t): If present, selects a specific revision of this object (as opposed to the latest version, the default).
     - :ifGenerationMatch (String.t): Makes the operation conditional on whether the object&#39;s current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
     - :ifGenerationNotMatch (String.t): Makes the operation conditional on whether the object&#39;s current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object.
@@ -284,16 +290,18 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :userProject => :query
     }
 
-    %{}
-    |> method(:get)
-    |> url("/storage/v1/b/{bucket}/o/{object}", %{
-      "bucket" => URI.encode_www_form(bucket),
-      "object" => URI.encode_www_form(object)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Storage.V1.Model.Object{})
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/storage/v1/b/{bucket}/o/{object}", %{
+        "bucket" => URI.encode_www_form(bucket),
+        "object" => URI.encode_www_form(object)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.Object{})
   end
 
   @doc """
@@ -310,8 +318,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :generation (String.t): If present, selects a specific revision of this object (as opposed to the latest version, the default).
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
 
@@ -335,16 +343,18 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :userProject => :query
     }
 
-    %{}
-    |> method(:get)
-    |> url("/storage/v1/b/{bucket}/o/{object}/iam", %{
-      "bucket" => URI.encode_www_form(bucket),
-      "object" => URI.encode_www_form(object)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Storage.V1.Model.Policy{})
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/storage/v1/b/{bucket}/o/{object}/iam", %{
+        "bucket" => URI.encode_www_form(bucket),
+        "object" => URI.encode_www_form(object)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.Policy{})
   end
 
   @doc """
@@ -360,8 +370,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :contentEncoding (String.t): If set, sets the contentEncoding property of the final object to this value. Setting this parameter is equivalent to setting the contentEncoding metadata property. This can be useful when uploading an object with uploadType&#x3D;media to indicate the encoding of the content being uploaded.
     - :ifGenerationMatch (String.t): Makes the operation conditional on whether the object&#39;s current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
     - :ifGenerationNotMatch (String.t): Makes the operation conditional on whether the object&#39;s current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object.
@@ -403,15 +413,17 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :body => :body
     }
 
-    %{}
-    |> method(:post)
-    |> url("/storage/v1/b/{bucket}/o", %{
-      "bucket" => URI.encode_www_form(bucket)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Storage.V1.Model.Object{})
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/storage/v1/b/{bucket}/o", %{
+        "bucket" => URI.encode_www_form(bucket)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.Object{})
   end
 
   @doc """
@@ -428,8 +440,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :contentEncoding (String.t): If set, sets the contentEncoding property of the final object to this value. Setting this parameter is equivalent to setting the contentEncoding metadata property. This can be useful when uploading an object with uploadType&#x3D;media to indicate the encoding of the content being uploaded.
     - :ifGenerationMatch (String.t): Makes the operation conditional on whether the object&#39;s current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
     - :ifGenerationNotMatch (String.t): Makes the operation conditional on whether the object&#39;s current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object.
@@ -471,16 +483,18 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :body => :body
     }
 
-    %{}
-    |> method(:post)
-    |> url("/resumable/upload/storage/v1/b/{bucket}/o", %{
-      "bucket" => URI.encode_www_form(bucket)
-    })
-    |> add_param(:query, :uploadType, upload_type)
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(false)
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/resumable/upload/storage/v1/b/{bucket}/o", %{
+        "bucket" => URI.encode_www_form(bucket)
+      })
+      |> Request.add_param(:query, :uploadType, upload_type)
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(decode: false)
   end
 
   @doc """
@@ -499,8 +513,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :contentEncoding (String.t): If set, sets the contentEncoding property of the final object to this value. Setting this parameter is equivalent to setting the contentEncoding metadata property. This can be useful when uploading an object with uploadType&#x3D;media to indicate the encoding of the content being uploaded.
     - :ifGenerationMatch (String.t): Makes the operation conditional on whether the object&#39;s current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
     - :ifGenerationNotMatch (String.t): Makes the operation conditional on whether the object&#39;s current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object.
@@ -546,18 +560,20 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :userProject => :query
     }
 
-    %{}
-    |> method(:post)
-    |> url("/upload/storage/v1/b/{bucket}/o", %{
-      "bucket" => URI.encode_www_form(bucket)
-    })
-    |> add_param(:query, :uploadType, upload_type)
-    |> add_param(:body, :metadata, metadata)
-    |> add_param(:file, :data, data)
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Storage.V1.Model.Object{})
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/upload/storage/v1/b/{bucket}/o", %{
+        "bucket" => URI.encode_www_form(bucket)
+      })
+      |> Request.add_param(:query, :uploadType, upload_type)
+      |> Request.add_param(:body, :metadata, metadata)
+      |> Request.add_param(:file, :data, data)
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.Object{})
   end
 
   @doc """
@@ -573,9 +589,10 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :delimiter (String.t): Returns results in a directory-like mode. items will contain only objects whose names, aside from the prefix, do not contain delimiter. Objects whose names, aside from the prefix, contain delimiter will have their name, truncated after the delimiter, returned in prefixes. Duplicate prefixes are omitted.
+    - :includeTrailingDelimiter (boolean()): If true, objects that end in exactly one instance of delimiter will have their metadata included in items in addition to prefixes.
     - :maxResults (integer()): Maximum number of items plus prefixes to return in a single page of responses. As duplicate prefixes are omitted, fewer total results may be returned than requested. The service will use this parameter or 1,000 items, whichever is smaller.
     - :pageToken (String.t): A previously-returned page token representing part of the larger set of results to view.
     - :prefix (String.t): Filter results to objects whose names begin with this prefix.
@@ -600,6 +617,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :quotaUser => :query,
       :userIp => :query,
       :delimiter => :query,
+      :includeTrailingDelimiter => :query,
       :maxResults => :query,
       :pageToken => :query,
       :prefix => :query,
@@ -608,15 +626,17 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :versions => :query
     }
 
-    %{}
-    |> method(:get)
-    |> url("/storage/v1/b/{bucket}/o", %{
-      "bucket" => URI.encode_www_form(bucket)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Storage.V1.Model.Objects{})
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/storage/v1/b/{bucket}/o", %{
+        "bucket" => URI.encode_www_form(bucket)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.Objects{})
   end
 
   @doc """
@@ -633,8 +653,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :generation (String.t): If present, selects a specific revision of this object (as opposed to the latest version, the default).
     - :ifGenerationMatch (String.t): Makes the operation conditional on whether the object&#39;s current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
     - :ifGenerationNotMatch (String.t): Makes the operation conditional on whether the object&#39;s current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object.
@@ -672,16 +692,18 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :body => :body
     }
 
-    %{}
-    |> method(:patch)
-    |> url("/storage/v1/b/{bucket}/o/{object}", %{
-      "bucket" => URI.encode_www_form(bucket),
-      "object" => URI.encode_www_form(object)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Storage.V1.Model.Object{})
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/storage/v1/b/{bucket}/o/{object}", %{
+        "bucket" => URI.encode_www_form(bucket),
+        "object" => URI.encode_www_form(object)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.Object{})
   end
 
   @doc """
@@ -700,8 +722,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :destinationKmsKeyName (String.t): Resource name of the Cloud KMS key, of the form projects/my-project/locations/global/keyRings/my-kr/cryptoKeys/my-key, that will be used to encrypt the object. Overrides the object metadata&#39;s kms_key_name value, if any.
     - :destinationPredefinedAcl (String.t): Apply a predefined set of access controls to the destination object.
     - :ifGenerationMatch (String.t): Makes the operation conditional on whether the object&#39;s current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
@@ -766,21 +788,23 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :body => :body
     }
 
-    %{}
-    |> method(:post)
-    |> url(
-      "/storage/v1/b/{sourceBucket}/o/{sourceObject}/rewriteTo/b/{destinationBucket}/o/{destinationObject}",
-      %{
-        "sourceBucket" => URI.encode_www_form(source_bucket),
-        "sourceObject" => URI.encode_www_form(source_object),
-        "destinationBucket" => URI.encode_www_form(destination_bucket),
-        "destinationObject" => URI.encode_www_form(destination_object)
-      }
-    )
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Storage.V1.Model.RewriteResponse{})
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/storage/v1/b/{sourceBucket}/o/{sourceObject}/rewriteTo/b/{destinationBucket}/o/{destinationObject}",
+        %{
+          "sourceBucket" => URI.encode_www_form(source_bucket),
+          "sourceObject" => URI.encode_www_form(source_object),
+          "destinationBucket" => URI.encode_www_form(destination_bucket),
+          "destinationObject" => URI.encode_www_form(destination_object)
+        }
+      )
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.RewriteResponse{})
   end
 
   @doc """
@@ -797,8 +821,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :generation (String.t): If present, selects a specific revision of this object (as opposed to the latest version, the default).
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
     - :body (Policy): 
@@ -824,16 +848,18 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :body => :body
     }
 
-    %{}
-    |> method(:put)
-    |> url("/storage/v1/b/{bucket}/o/{object}/iam", %{
-      "bucket" => URI.encode_www_form(bucket),
-      "object" => URI.encode_www_form(object)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Storage.V1.Model.Policy{})
+    request =
+      Request.new()
+      |> Request.method(:put)
+      |> Request.url("/storage/v1/b/{bucket}/o/{object}/iam", %{
+        "bucket" => URI.encode_www_form(bucket),
+        "object" => URI.encode_www_form(object)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.Policy{})
   end
 
   @doc """
@@ -851,8 +877,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :generation (String.t): If present, selects a specific revision of this object (as opposed to the latest version, the default).
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
 
@@ -883,17 +909,19 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :userProject => :query
     }
 
-    %{}
-    |> method(:get)
-    |> url("/storage/v1/b/{bucket}/o/{object}/iam/testPermissions", %{
-      "bucket" => URI.encode_www_form(bucket),
-      "object" => URI.encode_www_form(object)
-    })
-    |> add_param(:query, :permissions, permissions)
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Storage.V1.Model.TestIamPermissionsResponse{})
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/storage/v1/b/{bucket}/o/{object}/iam/testPermissions", %{
+        "bucket" => URI.encode_www_form(bucket),
+        "object" => URI.encode_www_form(object)
+      })
+      |> Request.add_param(:query, :permissions, permissions)
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.TestIamPermissionsResponse{})
   end
 
   @doc """
@@ -910,8 +938,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :generation (String.t): If present, selects a specific revision of this object (as opposed to the latest version, the default).
     - :ifGenerationMatch (String.t): Makes the operation conditional on whether the object&#39;s current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
     - :ifGenerationNotMatch (String.t): Makes the operation conditional on whether the object&#39;s current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object.
@@ -949,16 +977,18 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :body => :body
     }
 
-    %{}
-    |> method(:put)
-    |> url("/storage/v1/b/{bucket}/o/{object}", %{
-      "bucket" => URI.encode_www_form(bucket),
-      "object" => URI.encode_www_form(object)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Storage.V1.Model.Object{})
+    request =
+      Request.new()
+      |> Request.method(:put)
+      |> Request.url("/storage/v1/b/{bucket}/o/{object}", %{
+        "bucket" => URI.encode_www_form(bucket),
+        "object" => URI.encode_www_form(object)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.Object{})
   end
 
   @doc """
@@ -974,9 +1004,10 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :delimiter (String.t): Returns results in a directory-like mode. items will contain only objects whose names, aside from the prefix, do not contain delimiter. Objects whose names, aside from the prefix, contain delimiter will have their name, truncated after the delimiter, returned in prefixes. Duplicate prefixes are omitted.
+    - :includeTrailingDelimiter (boolean()): If true, objects that end in exactly one instance of delimiter will have their metadata included in items in addition to prefixes.
     - :maxResults (integer()): Maximum number of items plus prefixes to return in a single page of responses. As duplicate prefixes are omitted, fewer total results may be returned than requested. The service will use this parameter or 1,000 items, whichever is smaller.
     - :pageToken (String.t): A previously-returned page token representing part of the larger set of results to view.
     - :prefix (String.t): Filter results to objects whose names begin with this prefix.
@@ -1002,6 +1033,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :quotaUser => :query,
       :userIp => :query,
       :delimiter => :query,
+      :includeTrailingDelimiter => :query,
       :maxResults => :query,
       :pageToken => :query,
       :prefix => :query,
@@ -1011,14 +1043,16 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :resource => :body
     }
 
-    %{}
-    |> method(:post)
-    |> url("/storage/v1/b/{bucket}/o/watch", %{
-      "bucket" => URI.encode_www_form(bucket)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Storage.V1.Model.Channel{})
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/storage/v1/b/{bucket}/o/watch", %{
+        "bucket" => URI.encode_www_form(bucket)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.Channel{})
   end
 end
