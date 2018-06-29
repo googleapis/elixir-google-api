@@ -16,31 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.TagManager.V2.Model.RevertVariableResponse do
+defmodule GoogleApi.TagManager.V2.Model.ZoneTypeRestriction do
   @moduledoc """
-  The result of reverting a variable in a workspace.
+  Represents a Zone&#39;s type restrictions.
 
   ## Attributes
 
-  - variable (Variable): Variable as it appears in the latest container version since the last workspace synchronization operation. If no variable is present, that means the variable was deleted in the latest container version. Defaults to: `null`.
+  - enable (boolean()): True if type restrictions have been enabled for this Zone. Defaults to: `null`.
+  - whitelistedTypeId ([String.t]): List of type public ids that have been whitelisted for use in this Zone. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :variable => GoogleApi.TagManager.V2.Model.Variable.t()
+          :enable => any(),
+          :whitelistedTypeId => list(any())
         }
 
-  field(:variable, as: GoogleApi.TagManager.V2.Model.Variable)
+  field(:enable)
+  field(:whitelistedTypeId, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.RevertVariableResponse do
+defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.ZoneTypeRestriction do
   def decode(value, options) do
-    GoogleApi.TagManager.V2.Model.RevertVariableResponse.decode(value, options)
+    GoogleApi.TagManager.V2.Model.ZoneTypeRestriction.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.RevertVariableResponse do
+defimpl Poison.Encoder, for: GoogleApi.TagManager.V2.Model.ZoneTypeRestriction do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
