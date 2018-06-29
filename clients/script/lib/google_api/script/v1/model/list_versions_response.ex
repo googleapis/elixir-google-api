@@ -16,34 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Script.V1.Model.ScriptStackTraceElement do
+defmodule GoogleApi.Script.V1.Model.ListVersionsResponse do
   @moduledoc """
-  A stack trace through the script that shows where the execution failed.
+  Response with the list of the versions for the specified script project.
 
   ## Attributes
 
-  - function (String.t): The name of the function that failed. Defaults to: `null`.
-  - lineNumber (integer()): The line number where the script failed. Defaults to: `null`.
+  - nextPageToken (String.t): The token use to fetch the next page of records. if not exist in the response, that means no more versions to list. Defaults to: `null`.
+  - versions ([Version]): The list of versions. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :function => any(),
-          :lineNumber => any()
+          :nextPageToken => any(),
+          :versions => list(GoogleApi.Script.V1.Model.Version.t())
         }
 
-  field(:function)
-  field(:lineNumber)
+  field(:nextPageToken)
+  field(:versions, as: GoogleApi.Script.V1.Model.Version, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Script.V1.Model.ScriptStackTraceElement do
+defimpl Poison.Decoder, for: GoogleApi.Script.V1.Model.ListVersionsResponse do
   def decode(value, options) do
-    GoogleApi.Script.V1.Model.ScriptStackTraceElement.decode(value, options)
+    GoogleApi.Script.V1.Model.ListVersionsResponse.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Script.V1.Model.ScriptStackTraceElement do
+defimpl Poison.Encoder, for: GoogleApi.Script.V1.Model.ListVersionsResponse do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

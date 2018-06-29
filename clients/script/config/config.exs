@@ -10,11 +10,11 @@ use Mix.Config
 
 # You can configure for your application as:
 #
-#     config :google_apps_script_execution_api, key: :value
+#     config :apps_script_api, key: :value
 #
 # And access this configuration in your application as:
 #
-#     Application.get_env(:google_apps_script_execution_api, :key)
+#     Application.get_env(:apps_script_api, :key)
 #
 # Or configure a 3rd-party app:
 #
