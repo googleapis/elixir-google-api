@@ -16,34 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Classroom.V1.Model.ListStudentSubmissionsResponse do
+defmodule GoogleApi.Classroom.V1.Model.CloudPubsubTopic do
   @moduledoc """
-  Response when listing student submissions.
+  A reference to a Cloud Pub/Sub topic.  To register for notifications, the owner of the topic must grant &#x60;classroom-notifications@system.gserviceaccount.com&#x60; the  &#x60;projects.topics.publish&#x60; permission.
 
   ## Attributes
 
-  - nextPageToken (String.t): Token identifying the next page of results to return. If empty, no further results are available. Defaults to: `null`.
-  - studentSubmissions ([StudentSubmission]): Student work that matches the request. Defaults to: `null`.
+  - topicName (String.t): The &#x60;name&#x60; field of a Cloud Pub/Sub [Topic](https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.topics#Topic). Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => any(),
-          :studentSubmissions => list(GoogleApi.Classroom.V1.Model.StudentSubmission.t())
+          :topicName => any()
         }
 
-  field(:nextPageToken)
-  field(:studentSubmissions, as: GoogleApi.Classroom.V1.Model.StudentSubmission, type: :list)
+  field(:topicName)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.ListStudentSubmissionsResponse do
+defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.CloudPubsubTopic do
   def decode(value, options) do
-    GoogleApi.Classroom.V1.Model.ListStudentSubmissionsResponse.decode(value, options)
+    GoogleApi.Classroom.V1.Model.CloudPubsubTopic.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.ListStudentSubmissionsResponse do
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.CloudPubsubTopic do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

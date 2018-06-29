@@ -16,34 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Classroom.V1.Model.ListStudentSubmissionsResponse do
+defmodule GoogleApi.Classroom.V1.Model.ListAnnouncementsResponse do
   @moduledoc """
-  Response when listing student submissions.
+  Response when listing course work.
 
   ## Attributes
 
+  - announcements ([Announcement]): Announcement items that match the request. Defaults to: `null`.
   - nextPageToken (String.t): Token identifying the next page of results to return. If empty, no further results are available. Defaults to: `null`.
-  - studentSubmissions ([StudentSubmission]): Student work that matches the request. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => any(),
-          :studentSubmissions => list(GoogleApi.Classroom.V1.Model.StudentSubmission.t())
+          :announcements => list(GoogleApi.Classroom.V1.Model.Announcement.t()),
+          :nextPageToken => any()
         }
 
+  field(:announcements, as: GoogleApi.Classroom.V1.Model.Announcement, type: :list)
   field(:nextPageToken)
-  field(:studentSubmissions, as: GoogleApi.Classroom.V1.Model.StudentSubmission, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.ListStudentSubmissionsResponse do
+defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.ListAnnouncementsResponse do
   def decode(value, options) do
-    GoogleApi.Classroom.V1.Model.ListStudentSubmissionsResponse.decode(value, options)
+    GoogleApi.Classroom.V1.Model.ListAnnouncementsResponse.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.ListStudentSubmissionsResponse do
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.ListAnnouncementsResponse do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
