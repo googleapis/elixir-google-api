@@ -16,34 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Logging.V2.Model.ListSinksResponse do
+defmodule GoogleApi.Logging.V2.Model.Explicit do
   @moduledoc """
-  Result returned from ListSinks.
+  Specifies a set of buckets with arbitrary widths.There are size(bounds) + 1 (&#x3D; N) buckets. Bucket i has the following boundaries:Upper bound (0 &lt;&#x3D; i &lt; N-1): boundsi  Lower bound (1 &lt;&#x3D; i &lt; N); boundsi - 1The bounds field must contain at least one element. If bounds has only one element, then there are no finite buckets, and that single element is the common boundary of the overflow and underflow buckets.
 
   ## Attributes
 
-  - nextPageToken (String.t): If there might be more results than appear in this response, then nextPageToken is included. To get the next set of results, call the same method again using the value of nextPageToken as pageToken. Defaults to: `null`.
-  - sinks ([LogSink]): A list of sinks. Defaults to: `null`.
+  - bounds ([float()]): The values must be monotonically increasing. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => any(),
-          :sinks => list(GoogleApi.Logging.V2.Model.LogSink.t())
+          :bounds => list(any())
         }
 
-  field(:nextPageToken)
-  field(:sinks, as: GoogleApi.Logging.V2.Model.LogSink, type: :list)
+  field(:bounds, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Logging.V2.Model.ListSinksResponse do
+defimpl Poison.Decoder, for: GoogleApi.Logging.V2.Model.Explicit do
   def decode(value, options) do
-    GoogleApi.Logging.V2.Model.ListSinksResponse.decode(value, options)
+    GoogleApi.Logging.V2.Model.Explicit.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Logging.V2.Model.ListSinksResponse do
+defimpl Poison.Encoder, for: GoogleApi.Logging.V2.Model.Explicit do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

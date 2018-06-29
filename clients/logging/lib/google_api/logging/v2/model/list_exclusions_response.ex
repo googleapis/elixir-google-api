@@ -16,34 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Logging.V2.Model.ListSinksResponse do
+defmodule GoogleApi.Logging.V2.Model.ListExclusionsResponse do
   @moduledoc """
-  Result returned from ListSinks.
+  Result returned from ListExclusions.
 
   ## Attributes
 
+  - exclusions ([LogExclusion]): A list of exclusions. Defaults to: `null`.
   - nextPageToken (String.t): If there might be more results than appear in this response, then nextPageToken is included. To get the next set of results, call the same method again using the value of nextPageToken as pageToken. Defaults to: `null`.
-  - sinks ([LogSink]): A list of sinks. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => any(),
-          :sinks => list(GoogleApi.Logging.V2.Model.LogSink.t())
+          :exclusions => list(GoogleApi.Logging.V2.Model.LogExclusion.t()),
+          :nextPageToken => any()
         }
 
+  field(:exclusions, as: GoogleApi.Logging.V2.Model.LogExclusion, type: :list)
   field(:nextPageToken)
-  field(:sinks, as: GoogleApi.Logging.V2.Model.LogSink, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Logging.V2.Model.ListSinksResponse do
+defimpl Poison.Decoder, for: GoogleApi.Logging.V2.Model.ListExclusionsResponse do
   def decode(value, options) do
-    GoogleApi.Logging.V2.Model.ListSinksResponse.decode(value, options)
+    GoogleApi.Logging.V2.Model.ListExclusionsResponse.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Logging.V2.Model.ListSinksResponse do
+defimpl Poison.Encoder, for: GoogleApi.Logging.V2.Model.ListExclusionsResponse do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
