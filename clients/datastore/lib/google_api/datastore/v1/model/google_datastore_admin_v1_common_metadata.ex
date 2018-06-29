@@ -16,7 +16,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1CommonMetadata do
+defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1CommonMetadata do
   @moduledoc """
   Metadata common to all Datastore Admin operations.
 
@@ -48,15 +48,13 @@ defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1CommonMetadata
   field(:state)
 end
 
-defimpl Poison.Decoder,
-  for: GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1CommonMetadata do
+defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1CommonMetadata do
   def decode(value, options) do
-    GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1CommonMetadata.decode(value, options)
+    GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1CommonMetadata.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder,
-  for: GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1CommonMetadata do
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1CommonMetadata do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

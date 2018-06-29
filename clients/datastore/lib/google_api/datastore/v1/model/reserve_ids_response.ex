@@ -16,9 +16,9 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Datastore.V1.Model.ReadOnly do
+defmodule GoogleApi.Datastore.V1.Model.ReserveIdsResponse do
   @moduledoc """
-  Options specific to read-only transactions.
+  The response for Datastore.ReserveIds.
 
   ## Attributes
 
@@ -29,13 +29,13 @@ defmodule GoogleApi.Datastore.V1.Model.ReadOnly do
   @type t :: %__MODULE__{}
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.ReadOnly do
+defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.ReserveIdsResponse do
   def decode(value, options) do
-    GoogleApi.Datastore.V1.Model.ReadOnly.decode(value, options)
+    GoogleApi.Datastore.V1.Model.ReserveIdsResponse.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.ReadOnly do
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.ReserveIdsResponse do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

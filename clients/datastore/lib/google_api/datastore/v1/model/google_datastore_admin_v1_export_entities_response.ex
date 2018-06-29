@@ -16,26 +16,36 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Datastore.V1.Model.ReadOnly do
+defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1ExportEntitiesResponse do
   @moduledoc """
-  Options specific to read-only transactions.
+  The response for google.datastore.admin.v1.DatastoreAdmin.ExportEntities.
 
   ## Attributes
 
+  - outputUrl (String.t): Location of the output metadata file. This can be used to begin an import into Cloud Datastore (this project or another project). See google.datastore.admin.v1.ImportEntitiesRequest.input_url. Only present if the operation completed successfully. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :outputUrl => any()
+        }
+
+  field(:outputUrl)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.ReadOnly do
+defimpl Poison.Decoder,
+  for: GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1ExportEntitiesResponse do
   def decode(value, options) do
-    GoogleApi.Datastore.V1.Model.ReadOnly.decode(value, options)
+    GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1ExportEntitiesResponse.decode(
+      value,
+      options
+    )
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.ReadOnly do
+defimpl Poison.Encoder,
+  for: GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1ExportEntitiesResponse do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

@@ -16,7 +16,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1EntityFilter do
+defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1EntityFilter do
   @moduledoc """
   Identifies a subset of entities in a project. This is specified as combinations of kinds and namespaces (either or both of which may be all, as described in the following examples). Example usage:  Entire project:   kinds&#x3D;[], namespace_ids&#x3D;[]  Kinds Foo and Bar in all namespaces:   kinds&#x3D;[&#39;Foo&#39;, &#39;Bar&#39;], namespace_ids&#x3D;[]  Kinds Foo and Bar only in the default namespace:   kinds&#x3D;[&#39;Foo&#39;, &#39;Bar&#39;], namespace_ids&#x3D;[&#39;&#39;]  Kinds Foo and Bar in both the default and Baz namespaces:   kinds&#x3D;[&#39;Foo&#39;, &#39;Bar&#39;], namespace_ids&#x3D;[&#39;&#39;, &#39;Baz&#39;]  The entire Baz namespace:   kinds&#x3D;[], namespace_ids&#x3D;[&#39;Baz&#39;]
 
@@ -37,13 +37,13 @@ defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1EntityFilter d
   field(:namespaceIds, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1EntityFilter do
+defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1EntityFilter do
   def decode(value, options) do
-    GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1EntityFilter.decode(value, options)
+    GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1EntityFilter.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1EntityFilter do
+defimpl Poison.Encoder, for: GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1EntityFilter do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
