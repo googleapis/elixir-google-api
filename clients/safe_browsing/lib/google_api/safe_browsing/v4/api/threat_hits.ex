@@ -16,21 +16,20 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.SafeBrowsing.V4.Api.EncodedFullHashes do
+defmodule GoogleApi.SafeBrowsing.V4.Api.ThreatHits do
   @moduledoc """
-  API calls for all endpoints tagged `EncodedFullHashes`.
+  API calls for all endpoints tagged `ThreatHits`.
   """
 
   alias GoogleApi.SafeBrowsing.V4.Connection
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-
+  Reports a Safe Browsing threat list hit to Google. Only projects with TRUSTED_REPORTER visibility can use this method.
 
   ## Parameters
 
   - connection (GoogleApi.SafeBrowsing.V4.Connection): Connection to server
-  - encoded_request (binary()): A serialized FindFullHashesRequest proto.
   - opts (KeywordList): [optional] Optional parameters
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
@@ -43,18 +42,16 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.EncodedFullHashes do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :clientId (String.t): A client ID that (hopefully) uniquely identifies the client implementation of the Safe Browsing API.
-    - :clientVersion (String.t): The version of the client implementation.
+    - :body (ThreatHit): 
 
   ## Returns
 
-  {:ok, %GoogleApi.SafeBrowsing.V4.Model.FindFullHashesResponse{}} on success
+  {:ok, %GoogleApi.SafeBrowsing.V4.Model.Empty{}} on success
   {:error, info} on failure
   """
-  @spec safebrowsing_encoded_full_hashes_get(Tesla.Env.client(), binary(), keyword()) ::
-          {:ok, GoogleApi.SafeBrowsing.V4.Model.FindFullHashesResponse.t()}
-          | {:error, Tesla.Env.t()}
-  def safebrowsing_encoded_full_hashes_get(connection, encoded_request, opts \\ []) do
+  @spec safebrowsing_threat_hits_create(Tesla.Env.client(), keyword()) ::
+          {:ok, GoogleApi.SafeBrowsing.V4.Model.Empty.t()} | {:error, Tesla.Env.t()}
+  def safebrowsing_threat_hits_create(connection, opts \\ []) do
     optional_params = %{
       :fields => :query,
       :uploadType => :query,
@@ -67,20 +64,17 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.EncodedFullHashes do
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :clientId => :query,
-      :clientVersion => :query
+      :body => :body
     }
 
     request =
       Request.new()
-      |> Request.method(:get)
-      |> Request.url("/v4/encodedFullHashes/{encodedRequest}", %{
-        "encodedRequest" => encoded_request
-      })
+      |> Request.method(:post)
+      |> Request.url("/v4/threatHits")
       |> Request.add_optional_params(optional_params, opts)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SafeBrowsing.V4.Model.FindFullHashesResponse{})
+    |> Response.decode(struct: %GoogleApi.SafeBrowsing.V4.Model.Empty{})
   end
 end

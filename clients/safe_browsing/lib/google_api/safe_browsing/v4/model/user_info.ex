@@ -16,31 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.SafeBrowsing.V4.Model.RawIndices do
+defmodule GoogleApi.SafeBrowsing.V4.Model.UserInfo do
   @moduledoc """
-  A set of raw indices to remove from a local list.
+  Details about the user that encountered the threat.
 
   ## Attributes
 
-  - indices ([integer()]): The indices to remove from a lexicographically-sorted local list. Defaults to: `null`.
+  - regionCode (String.t): The UN M.49 region code associated with the user&#39;s location. Defaults to: `null`.
+  - userId (binary()): Unique user identifier defined by the client. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :indices => list(any())
+          :regionCode => any(),
+          :userId => any()
         }
 
-  field(:indices, type: :list)
+  field(:regionCode)
+  field(:userId)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.RawIndices do
+defimpl Poison.Decoder, for: GoogleApi.SafeBrowsing.V4.Model.UserInfo do
   def decode(value, options) do
-    GoogleApi.SafeBrowsing.V4.Model.RawIndices.decode(value, options)
+    GoogleApi.SafeBrowsing.V4.Model.UserInfo.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.SafeBrowsing.V4.Model.RawIndices do
+defimpl Poison.Encoder, for: GoogleApi.SafeBrowsing.V4.Model.UserInfo do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
