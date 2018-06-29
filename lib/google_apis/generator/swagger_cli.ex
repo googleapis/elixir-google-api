@@ -13,35 +13,19 @@
 # limitations under the License.
 
 defmodule GoogleApis.Generator.SwaggerCli do
-
   @behaviour GoogleApis.Generator
   alias GoogleApis.ApiConfig
 
   def generate_client(api_config) do
     filename = ApiConfig.file(api_config)
     client_library_name = ApiConfig.library_name(api_config)
-    tmp_dir = Temp.path!("codegen-out-#{client_library_name}")
-    docker_args = [
-      "run",
-      "--rm",
-      "-v", "#{System.cwd()}:/local",
-      "-v", "#{tmp_dir}:/tmp/out",
-      image(), "generate",
-      "-l", "elixir",
-      "-i", "/local/specifications/openapi/#{filename}",
-      "-c", "/local/specifications/config/#{filename}",
-      "-t", template_dir(),
-      "-o", "/tmp/out/#{client_library_name}"
-    ]
-    with {_, 0} <- System.cmd("docker", docker_args, stderr_to_stdout: true),
-         {:ok, _} <- File.cp_r(Path.join(tmp_dir, client_library_name), Path.join([System.cwd(), "clients", client_library_name]))
-    do
-      {:ok, ""}
+
+    with {:ok, tmp_dir} <- generate_code(filename, client_library_name),
+         {:ok, files} <- copy_code(tmp_dir, client_library_name) do
+      {:ok, files}
     else
       {:error, msg} ->
         {:error, msg}
-      {output, exit_code} ->
-        {:error, "Exited with code #{exit_code}" <> output}
     end
   end
 
@@ -51,5 +35,69 @@ defmodule GoogleApis.Generator.SwaggerCli do
 
   defp template_dir() do
     Path.join("/local/template", Application.get_env(:google_apis, :template))
+  end
+
+  defp generate_code(filename, client_library_name) do
+    tmp_dir = Temp.path!("codegen-out-#{client_library_name}")
+
+    docker_args = [
+      "run",
+      "--rm",
+      "-v",
+      "#{System.cwd()}:/local",
+      "-v",
+      "#{tmp_dir}:/tmp/out",
+      image(),
+      "generate",
+      "-l",
+      "elixir",
+      "-i",
+      "/local/specifications/openapi/#{filename}",
+      "-c",
+      "/local/specifications/config/#{filename}",
+      "-t",
+      template_dir(),
+      "-o",
+      "/tmp/out/#{client_library_name}"
+    ]
+
+    case System.cmd("docker", docker_args, stderr_to_stdout: true) do
+      {_, 0} ->
+        {:ok, tmp_dir}
+
+      {output, exit_code} ->
+        {:error, "Exited with code #{exit_code}" <> output}
+    end
+  end
+
+  defp copy_code(tmp_dir, client_library_name) do
+    output_dir = Path.join([System.cwd(), "clients", client_library_name])
+    src_dir = Path.join(tmp_dir, client_library_name)
+
+    ignore_files = files_to_ignore(output_dir)
+
+    File.cp_r(src_dir, output_dir, fn src, dest ->
+      !MapSet.member?(ignore_files, dest)
+    end)
+  end
+
+  defp files_to_ignore(output_dir) do
+    ignore_file = Path.join(output_dir, ".swagger-codegen-ignore")
+
+    with {:ok, contents} <- File.read(ignore_file) do
+      contents
+      |> String.split("\n")
+      |> Enum.filter(&ignorable_file/1)
+      |> Enum.concat([".swagger-codegen-ignore"])
+      |> Enum.map(&Path.join(output_dir, &1))
+      |> Enum.reduce([], fn wildcard, acc -> acc ++ Path.wildcard(wildcard) end)
+      |> MapSet.new()
+    else
+      _ -> MapSet.new()
+    end
+  end
+
+  defp ignorable_file(filename) do
+    String.strip(filename) != "" && !String.match?(filename, ~r/^\s*#/)
   end
 end
