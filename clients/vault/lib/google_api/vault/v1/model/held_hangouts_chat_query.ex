@@ -16,37 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Vault.V1.Model.HeldMailQuery do
+defmodule GoogleApi.Vault.V1.Model.HeldHangoutsChatQuery do
   @moduledoc """
-  Query options for mail holds.
+  Query options for hangouts chat holds.
 
   ## Attributes
 
-  - endTime (DateTime.t): The end time range for the search query. These timestamps are in GMT and rounded down to the start of the given date. Defaults to: `null`.
-  - startTime (DateTime.t): The start time range for the search query. These timestamps are in GMT and rounded down to the start of the given date. Defaults to: `null`.
-  - terms (String.t): The search terms for the hold. Defaults to: `null`.
+  - includeRooms (boolean()): If true, include rooms the user has participated in. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endTime => DateTime.t(),
-          :startTime => DateTime.t(),
-          :terms => any()
+          :includeRooms => any()
         }
 
-  field(:endTime, as: DateTime)
-  field(:startTime, as: DateTime)
-  field(:terms)
+  field(:includeRooms)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Vault.V1.Model.HeldMailQuery do
+defimpl Poison.Decoder, for: GoogleApi.Vault.V1.Model.HeldHangoutsChatQuery do
   def decode(value, options) do
-    GoogleApi.Vault.V1.Model.HeldMailQuery.decode(value, options)
+    GoogleApi.Vault.V1.Model.HeldHangoutsChatQuery.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Vault.V1.Model.HeldMailQuery do
+defimpl Poison.Encoder, for: GoogleApi.Vault.V1.Model.HeldHangoutsChatQuery do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
