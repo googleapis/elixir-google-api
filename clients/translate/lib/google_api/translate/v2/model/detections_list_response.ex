@@ -25,22 +25,23 @@ defmodule GoogleApi.Translate.V2.Model.DetectionsListResponse do
   - detections ([DetectionsResource]): A detections contains detection results of several text Defaults to: `null`.
   """
 
-  defstruct [
-    :detections
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :detections => list(GoogleApi.Translate.V2.Model.DetectionsResource.t())
+        }
+
+  field(:detections, as: GoogleApi.Translate.V2.Model.DetectionsResource, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Translate.V2.Model.DetectionsListResponse do
-  import GoogleApi.Translate.V2.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:detections, :list, GoogleApi.Translate.V2.Model.DetectionsResource, options)
+    GoogleApi.Translate.V2.Model.DetectionsListResponse.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Translate.V2.Model.DetectionsListResponse do
   def encode(value, options) do
-    GoogleApi.Translate.V2.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

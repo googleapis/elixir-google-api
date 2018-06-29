@@ -27,21 +27,27 @@ defmodule GoogleApi.Translate.V2.Model.DetectionsResourceInner do
   - language (String.t): The language we detected. Defaults to: `null`.
   """
 
-  defstruct [
-    :confidence,
-    :isReliable,
-    :language
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :confidence => any(),
+          :isReliable => any(),
+          :language => any()
+        }
+
+  field(:confidence)
+  field(:isReliable)
+  field(:language)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Translate.V2.Model.DetectionsResourceInner do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Translate.V2.Model.DetectionsResourceInner.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Translate.V2.Model.DetectionsResourceInner do
   def encode(value, options) do
-    GoogleApi.Translate.V2.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

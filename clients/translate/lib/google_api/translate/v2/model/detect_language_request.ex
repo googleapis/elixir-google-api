@@ -25,19 +25,23 @@ defmodule GoogleApi.Translate.V2.Model.DetectLanguageRequest do
   - q ([String.t]): The input text upon which to perform language detection. Repeat this parameter to perform language detection on multiple text inputs. Defaults to: `null`.
   """
 
-  defstruct [
-    :q
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :q => list(any())
+        }
+
+  field(:q, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Translate.V2.Model.DetectLanguageRequest do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Translate.V2.Model.DetectLanguageRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Translate.V2.Model.DetectLanguageRequest do
   def encode(value, options) do
-    GoogleApi.Translate.V2.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

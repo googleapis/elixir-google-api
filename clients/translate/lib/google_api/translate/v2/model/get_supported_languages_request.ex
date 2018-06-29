@@ -25,19 +25,23 @@ defmodule GoogleApi.Translate.V2.Model.GetSupportedLanguagesRequest do
   - target (String.t): The language to use to return localized, human readable names of supported languages. Defaults to: `null`.
   """
 
-  defstruct [
-    :target
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :target => any()
+        }
+
+  field(:target)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Translate.V2.Model.GetSupportedLanguagesRequest do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Translate.V2.Model.GetSupportedLanguagesRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Translate.V2.Model.GetSupportedLanguagesRequest do
   def encode(value, options) do
-    GoogleApi.Translate.V2.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end
