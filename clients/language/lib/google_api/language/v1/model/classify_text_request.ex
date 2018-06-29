@@ -16,10 +16,32 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Language.V1.RequestBuilder do
+defmodule GoogleApi.Language.V1.Model.ClassifyTextRequest do
   @moduledoc """
-  Helper functions for building Tesla requests.
+  The document classification request message.
 
-  This module is no longer used. Please use GoogleApi.Gax.Request instead.
+  ## Attributes
+
+  - document (Document): Input document. Defaults to: `null`.
   """
+
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :document => GoogleApi.Language.V1.Model.Document.t()
+        }
+
+  field(:document, as: GoogleApi.Language.V1.Model.Document)
+end
+
+defimpl Poison.Decoder, for: GoogleApi.Language.V1.Model.ClassifyTextRequest do
+  def decode(value, options) do
+    GoogleApi.Language.V1.Model.ClassifyTextRequest.decode(value, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.Language.V1.Model.ClassifyTextRequest do
+  def encode(value, options) do
+    GoogleApi.Gax.ModelBase.encode(value, options)
+  end
 end

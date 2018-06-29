@@ -16,34 +16,35 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Language.V1.Model.Sentence do
+defmodule GoogleApi.Language.V1.Model.AnalyzeEntitySentimentRequest do
   @moduledoc """
-  Represents a sentence in the input document.
+  The entity-level sentiment analysis request message.
 
   ## Attributes
 
-  - sentiment (Sentiment): For calls to AnalyzeSentiment or if AnnotateTextRequest.Features.extract_document_sentiment is set to true, this field will contain the sentiment for the sentence. Defaults to: `null`.
-  - text (TextSpan): The sentence text. Defaults to: `null`.
+  - document (Document): Input document. Defaults to: `null`.
+  - encodingType (String.t): The encoding type used by the API to calculate offsets. Defaults to: `null`.
+    - Enum - one of [NONE, UTF8, UTF16, UTF32]
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sentiment => GoogleApi.Language.V1.Model.Sentiment.t(),
-          :text => GoogleApi.Language.V1.Model.TextSpan.t()
+          :document => GoogleApi.Language.V1.Model.Document.t(),
+          :encodingType => any()
         }
 
-  field(:sentiment, as: GoogleApi.Language.V1.Model.Sentiment)
-  field(:text, as: GoogleApi.Language.V1.Model.TextSpan)
+  field(:document, as: GoogleApi.Language.V1.Model.Document)
+  field(:encodingType)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Language.V1.Model.Sentence do
+defimpl Poison.Decoder, for: GoogleApi.Language.V1.Model.AnalyzeEntitySentimentRequest do
   def decode(value, options) do
-    GoogleApi.Language.V1.Model.Sentence.decode(value, options)
+    GoogleApi.Language.V1.Model.AnalyzeEntitySentimentRequest.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Language.V1.Model.Sentence do
+defimpl Poison.Encoder, for: GoogleApi.Language.V1.Model.AnalyzeEntitySentimentRequest do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
