@@ -10,11 +10,11 @@ use Mix.Config
 
 # You can configure for your application as:
 #
-#     config :google_proximity_beacon_api, key: :value
+#     config :proximity_beacon_api, key: :value
 #
 # And access this configuration in your application as:
 #
-#     Application.get_env(:google_proximity_beacon_api, :key)
+#     Application.get_env(:proximity_beacon_api, :key)
 #
 # Or configure a 3rd-party app:
 #
