@@ -16,34 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudBilling.V1.Model.ListServicesResponse do
+defmodule GoogleApi.CloudBilling.V1.Model.TestIamPermissionsRequest do
   @moduledoc """
-  Response message for &#x60;ListServices&#x60;.
+  Request message for &#x60;TestIamPermissions&#x60; method.
 
   ## Attributes
 
-  - nextPageToken (String.t): A token to retrieve the next page of results. To retrieve the next page, call &#x60;ListServices&#x60; again with the &#x60;page_token&#x60; field set to this value. This field is empty if there are no more results to retrieve. Defaults to: `null`.
-  - services ([Service]): A list of services. Defaults to: `null`.
+  - permissions ([String.t]): The set of permissions to check for the &#x60;resource&#x60;. Permissions with wildcards (such as &#39;*&#39; or &#39;storage.*&#39;) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions). Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => any(),
-          :services => list(GoogleApi.CloudBilling.V1.Model.Service.t())
+          :permissions => list(any())
         }
 
-  field(:nextPageToken)
-  field(:services, as: GoogleApi.CloudBilling.V1.Model.Service, type: :list)
+  field(:permissions, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudBilling.V1.Model.ListServicesResponse do
+defimpl Poison.Decoder, for: GoogleApi.CloudBilling.V1.Model.TestIamPermissionsRequest do
   def decode(value, options) do
-    GoogleApi.CloudBilling.V1.Model.ListServicesResponse.decode(value, options)
+    GoogleApi.CloudBilling.V1.Model.TestIamPermissionsRequest.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudBilling.V1.Model.ListServicesResponse do
+defimpl Poison.Encoder, for: GoogleApi.CloudBilling.V1.Model.TestIamPermissionsRequest do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
