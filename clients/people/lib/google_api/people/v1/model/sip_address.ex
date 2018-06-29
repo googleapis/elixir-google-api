@@ -16,34 +16,40 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.People.V1.Model.Locale do
+defmodule GoogleApi.People.V1.Model.SipAddress do
   @moduledoc """
-  A person&#39;s locale preference.
+  A person&#39;s SIP address. Session Initial Protocol addresses are used for VoIP communications to make voice or video calls over the internet.
 
   ## Attributes
 
-  - metadata (FieldMetadata): Metadata about the locale. Defaults to: `null`.
-  - value (String.t): The well-formed [IETF BCP 47](https://tools.ietf.org/html/bcp47) language tag representing the locale. Defaults to: `null`.
+  - formattedType (String.t): The read-only type of the SIP address translated and formatted in the viewer&#39;s account locale or the &#x60;Accept-Language&#x60; HTTP header locale. Defaults to: `null`.
+  - metadata (FieldMetadata): Metadata about the SIP address. Defaults to: `null`.
+  - type (String.t): The type of the SIP address. The type can be custom or or one of these predefined values:  * &#x60;home&#x60; * &#x60;work&#x60; * &#x60;mobile&#x60; * &#x60;other&#x60; Defaults to: `null`.
+  - value (String.t): The SIP address in the [RFC 3261 19.1](https://tools.ietf.org/html/rfc3261#section-19.1) SIP URI format. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :formattedType => any(),
           :metadata => GoogleApi.People.V1.Model.FieldMetadata.t(),
+          :type => any(),
           :value => any()
         }
 
+  field(:formattedType)
   field(:metadata, as: GoogleApi.People.V1.Model.FieldMetadata)
+  field(:type)
   field(:value)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.People.V1.Model.Locale do
+defimpl Poison.Decoder, for: GoogleApi.People.V1.Model.SipAddress do
   def decode(value, options) do
-    GoogleApi.People.V1.Model.Locale.decode(value, options)
+    GoogleApi.People.V1.Model.SipAddress.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.People.V1.Model.Locale do
+defimpl Poison.Encoder, for: GoogleApi.People.V1.Model.SipAddress do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

@@ -16,31 +16,37 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.People.V1.Model.GetPeopleResponse do
+defmodule GoogleApi.People.V1.Model.UserDefined do
   @moduledoc """
-
+  Arbitrary user data that is populated by the end users.
 
   ## Attributes
 
-  - responses ([PersonResponse]): The response for each requested resource name. Defaults to: `null`.
+  - key (String.t): The end user specified key of the user defined data. Defaults to: `null`.
+  - metadata (FieldMetadata): Metadata about the user defined data. Defaults to: `null`.
+  - value (String.t): The end user specified value of the user defined data. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :responses => list(GoogleApi.People.V1.Model.PersonResponse.t())
+          :key => any(),
+          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t(),
+          :value => any()
         }
 
-  field(:responses, as: GoogleApi.People.V1.Model.PersonResponse, type: :list)
+  field(:key)
+  field(:metadata, as: GoogleApi.People.V1.Model.FieldMetadata)
+  field(:value)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.People.V1.Model.GetPeopleResponse do
+defimpl Poison.Decoder, for: GoogleApi.People.V1.Model.UserDefined do
   def decode(value, options) do
-    GoogleApi.People.V1.Model.GetPeopleResponse.decode(value, options)
+    GoogleApi.People.V1.Model.UserDefined.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.People.V1.Model.GetPeopleResponse do
+defimpl Poison.Encoder, for: GoogleApi.People.V1.Model.UserDefined do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
