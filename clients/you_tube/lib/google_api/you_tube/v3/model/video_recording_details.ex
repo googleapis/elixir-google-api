@@ -27,24 +27,27 @@ defmodule GoogleApi.YouTube.V3.Model.VideoRecordingDetails do
   - recordingDate (DateTime.t): The date and time when the video was recorded. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sssZ) format. Defaults to: `null`.
   """
 
-  defstruct [
-    :location,
-    :locationDescription,
-    :recordingDate
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :location => GoogleApi.YouTube.V3.Model.GeoPoint.t(),
+          :locationDescription => any(),
+          :recordingDate => DateTime.t()
+        }
+
+  field(:location, as: GoogleApi.YouTube.V3.Model.GeoPoint)
+  field(:locationDescription)
+  field(:recordingDate, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoRecordingDetails do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:location, :struct, GoogleApi.YouTube.V3.Model.GeoPoint, options)
+    GoogleApi.YouTube.V3.Model.VideoRecordingDetails.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoRecordingDetails do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -26,20 +26,25 @@ defmodule GoogleApi.YouTube.V3.Model.AccessPolicy do
   - exception ([String.t]): A list of region codes that identify countries where the default policy do not apply. Defaults to: `null`.
   """
 
-  defstruct [
-    :allowed,
-    :exception
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :allowed => any(),
+          :exception => list(any())
+        }
+
+  field(:allowed)
+  field(:exception, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.AccessPolicy do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.AccessPolicy.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.AccessPolicy do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

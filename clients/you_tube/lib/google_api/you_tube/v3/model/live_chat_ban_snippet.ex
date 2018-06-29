@@ -29,30 +29,29 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatBanSnippet do
     - Enum - one of [permanent, temporary]
   """
 
-  defstruct [
-    :banDurationSeconds,
-    :bannedUserDetails,
-    :liveChatId,
-    :type
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :banDurationSeconds => any(),
+          :bannedUserDetails => GoogleApi.YouTube.V3.Model.ChannelProfileDetails.t(),
+          :liveChatId => any(),
+          :type => any()
+        }
+
+  field(:banDurationSeconds)
+  field(:bannedUserDetails, as: GoogleApi.YouTube.V3.Model.ChannelProfileDetails)
+  field(:liveChatId)
+  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveChatBanSnippet do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :bannedUserDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.ChannelProfileDetails,
-      options
-    )
+    GoogleApi.YouTube.V3.Model.LiveChatBanSnippet.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveChatBanSnippet do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -28,28 +28,29 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelBrandingSettings do
   - watch (WatchSettings): Branding properties for the watch page. Defaults to: `null`.
   """
 
-  defstruct [
-    :channel,
-    :hints,
-    :image,
-    :watch
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :channel => GoogleApi.YouTube.V3.Model.ChannelSettings.t(),
+          :hints => list(GoogleApi.YouTube.V3.Model.PropertyValue.t()),
+          :image => GoogleApi.YouTube.V3.Model.ImageSettings.t(),
+          :watch => GoogleApi.YouTube.V3.Model.WatchSettings.t()
+        }
+
+  field(:channel, as: GoogleApi.YouTube.V3.Model.ChannelSettings)
+  field(:hints, as: GoogleApi.YouTube.V3.Model.PropertyValue, type: :list)
+  field(:image, as: GoogleApi.YouTube.V3.Model.ImageSettings)
+  field(:watch, as: GoogleApi.YouTube.V3.Model.WatchSettings)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelBrandingSettings do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:channel, :struct, GoogleApi.YouTube.V3.Model.ChannelSettings, options)
-    |> deserialize(:hints, :list, GoogleApi.YouTube.V3.Model.PropertyValue, options)
-    |> deserialize(:image, :struct, GoogleApi.YouTube.V3.Model.ImageSettings, options)
-    |> deserialize(:watch, :struct, GoogleApi.YouTube.V3.Model.WatchSettings, options)
+    GoogleApi.YouTube.V3.Model.ChannelBrandingSettings.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ChannelBrandingSettings do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

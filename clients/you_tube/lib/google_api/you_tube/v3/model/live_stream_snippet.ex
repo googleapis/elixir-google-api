@@ -29,23 +29,31 @@ defmodule GoogleApi.YouTube.V3.Model.LiveStreamSnippet do
   - title (String.t): The stream&#39;s title. The value must be between 1 and 128 characters long. Defaults to: `null`.
   """
 
-  defstruct [
-    :channelId,
-    :description,
-    :isDefaultStream,
-    :publishedAt,
-    :title
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :channelId => any(),
+          :description => any(),
+          :isDefaultStream => any(),
+          :publishedAt => DateTime.t(),
+          :title => any()
+        }
+
+  field(:channelId)
+  field(:description)
+  field(:isDefaultStream)
+  field(:publishedAt, as: DateTime)
+  field(:title)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveStreamSnippet do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.LiveStreamSnippet.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveStreamSnippet do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

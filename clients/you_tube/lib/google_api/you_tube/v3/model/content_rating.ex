@@ -91,7 +91,7 @@ defmodule GoogleApi.YouTube.V3.Model.ContentRating do
   - ifcoRating (String.t): The video&#39;s Irish Film Classification Office (IFCO - Ireland) rating. See the IFCO website for more information. Defaults to: `null`.
     - Enum - one of [ifco12, ifco12a, ifco15, ifco15a, ifco16, ifco18, ifcoG, ifcoPg, ifcoUnrated]
   - ilfilmRating (String.t): The video&#39;s rating in Israel. Defaults to: `null`.
-    - Enum - one of [ilfilm12, ilfilm16, ilfilm18, ilfilmAa, ilfilmUnrated]
+    - Enum - one of [ilfilm12, ilfilm14, ilfilm16, ilfilm18, ilfilmAa, ilfilmUnrated]
   - incaaRating (String.t): The video&#39;s INCAA (Instituto Nacional de Cine y Artes Audiovisuales - Argentina) rating. Defaults to: `null`.
     - Enum - one of [incaaAtp, incaaC, incaaSam13, incaaSam16, incaaSam18, incaaUnrated]
   - kfcbRating (String.t): The video&#39;s rating from the Kenya Film Classification Board. Defaults to: `null`.
@@ -164,88 +164,161 @@ defmodule GoogleApi.YouTube.V3.Model.ContentRating do
     - Enum - one of [ytAgeRestricted]
   """
 
-  defstruct [
-    :acbRating,
-    :agcomRating,
-    :anatelRating,
-    :bbfcRating,
-    :bfvcRating,
-    :bmukkRating,
-    :catvRating,
-    :catvfrRating,
-    :cbfcRating,
-    :cccRating,
-    :cceRating,
-    :chfilmRating,
-    :chvrsRating,
-    :cicfRating,
-    :cnaRating,
-    :cncRating,
-    :csaRating,
-    :cscfRating,
-    :czfilmRating,
-    :djctqRating,
-    :djctqRatingReasons,
-    :ecbmctRating,
-    :eefilmRating,
-    :egfilmRating,
-    :eirinRating,
-    :fcbmRating,
-    :fcoRating,
-    :fmocRating,
-    :fpbRating,
-    :fpbRatingReasons,
-    :fskRating,
-    :grfilmRating,
-    :icaaRating,
-    :ifcoRating,
-    :ilfilmRating,
-    :incaaRating,
-    :kfcbRating,
-    :kijkwijzerRating,
-    :kmrbRating,
-    :lsfRating,
-    :mccaaRating,
-    :mccypRating,
-    :mcstRating,
-    :mdaRating,
-    :medietilsynetRating,
-    :mekuRating,
-    :menaMpaaRating,
-    :mibacRating,
-    :mocRating,
-    :moctwRating,
-    :mpaaRating,
-    :mpaatRating,
-    :mtrcbRating,
-    :nbcRating,
-    :nbcplRating,
-    :nfrcRating,
-    :nfvcbRating,
-    :nkclvRating,
-    :oflcRating,
-    :pefilmRating,
-    :rcnofRating,
-    :resorteviolenciaRating,
-    :rtcRating,
-    :rteRating,
-    :russiaRating,
-    :skfilmRating,
-    :smaisRating,
-    :smsaRating,
-    :tvpgRating,
-    :ytRating
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :acbRating => any(),
+          :agcomRating => any(),
+          :anatelRating => any(),
+          :bbfcRating => any(),
+          :bfvcRating => any(),
+          :bmukkRating => any(),
+          :catvRating => any(),
+          :catvfrRating => any(),
+          :cbfcRating => any(),
+          :cccRating => any(),
+          :cceRating => any(),
+          :chfilmRating => any(),
+          :chvrsRating => any(),
+          :cicfRating => any(),
+          :cnaRating => any(),
+          :cncRating => any(),
+          :csaRating => any(),
+          :cscfRating => any(),
+          :czfilmRating => any(),
+          :djctqRating => any(),
+          :djctqRatingReasons => list(any()),
+          :ecbmctRating => any(),
+          :eefilmRating => any(),
+          :egfilmRating => any(),
+          :eirinRating => any(),
+          :fcbmRating => any(),
+          :fcoRating => any(),
+          :fmocRating => any(),
+          :fpbRating => any(),
+          :fpbRatingReasons => list(any()),
+          :fskRating => any(),
+          :grfilmRating => any(),
+          :icaaRating => any(),
+          :ifcoRating => any(),
+          :ilfilmRating => any(),
+          :incaaRating => any(),
+          :kfcbRating => any(),
+          :kijkwijzerRating => any(),
+          :kmrbRating => any(),
+          :lsfRating => any(),
+          :mccaaRating => any(),
+          :mccypRating => any(),
+          :mcstRating => any(),
+          :mdaRating => any(),
+          :medietilsynetRating => any(),
+          :mekuRating => any(),
+          :menaMpaaRating => any(),
+          :mibacRating => any(),
+          :mocRating => any(),
+          :moctwRating => any(),
+          :mpaaRating => any(),
+          :mpaatRating => any(),
+          :mtrcbRating => any(),
+          :nbcRating => any(),
+          :nbcplRating => any(),
+          :nfrcRating => any(),
+          :nfvcbRating => any(),
+          :nkclvRating => any(),
+          :oflcRating => any(),
+          :pefilmRating => any(),
+          :rcnofRating => any(),
+          :resorteviolenciaRating => any(),
+          :rtcRating => any(),
+          :rteRating => any(),
+          :russiaRating => any(),
+          :skfilmRating => any(),
+          :smaisRating => any(),
+          :smsaRating => any(),
+          :tvpgRating => any(),
+          :ytRating => any()
+        }
+
+  field(:acbRating)
+  field(:agcomRating)
+  field(:anatelRating)
+  field(:bbfcRating)
+  field(:bfvcRating)
+  field(:bmukkRating)
+  field(:catvRating)
+  field(:catvfrRating)
+  field(:cbfcRating)
+  field(:cccRating)
+  field(:cceRating)
+  field(:chfilmRating)
+  field(:chvrsRating)
+  field(:cicfRating)
+  field(:cnaRating)
+  field(:cncRating)
+  field(:csaRating)
+  field(:cscfRating)
+  field(:czfilmRating)
+  field(:djctqRating)
+  field(:djctqRatingReasons, type: :list)
+  field(:ecbmctRating)
+  field(:eefilmRating)
+  field(:egfilmRating)
+  field(:eirinRating)
+  field(:fcbmRating)
+  field(:fcoRating)
+  field(:fmocRating)
+  field(:fpbRating)
+  field(:fpbRatingReasons, type: :list)
+  field(:fskRating)
+  field(:grfilmRating)
+  field(:icaaRating)
+  field(:ifcoRating)
+  field(:ilfilmRating)
+  field(:incaaRating)
+  field(:kfcbRating)
+  field(:kijkwijzerRating)
+  field(:kmrbRating)
+  field(:lsfRating)
+  field(:mccaaRating)
+  field(:mccypRating)
+  field(:mcstRating)
+  field(:mdaRating)
+  field(:medietilsynetRating)
+  field(:mekuRating)
+  field(:menaMpaaRating)
+  field(:mibacRating)
+  field(:mocRating)
+  field(:moctwRating)
+  field(:mpaaRating)
+  field(:mpaatRating)
+  field(:mtrcbRating)
+  field(:nbcRating)
+  field(:nbcplRating)
+  field(:nfrcRating)
+  field(:nfvcbRating)
+  field(:nkclvRating)
+  field(:oflcRating)
+  field(:pefilmRating)
+  field(:rcnofRating)
+  field(:resorteviolenciaRating)
+  field(:rtcRating)
+  field(:rteRating)
+  field(:russiaRating)
+  field(:skfilmRating)
+  field(:smaisRating)
+  field(:smsaRating)
+  field(:tvpgRating)
+  field(:ytRating)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ContentRating do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.ContentRating.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ContentRating do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -27,21 +27,27 @@ defmodule GoogleApi.YouTube.V3.Model.Thumbnail do
   - width (integer()): (Optional) Width of the thumbnail image. Defaults to: `null`.
   """
 
-  defstruct [
-    :height,
-    :url,
-    :width
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :height => any(),
+          :url => any(),
+          :width => any()
+        }
+
+  field(:height)
+  field(:url)
+  field(:width)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.Thumbnail do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.Thumbnail.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.Thumbnail do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

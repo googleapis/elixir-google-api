@@ -31,41 +31,35 @@ defmodule GoogleApi.YouTube.V3.Model.LiveBroadcast do
   - status (LiveBroadcastStatus): The status object contains information about the event&#39;s status. Defaults to: `null`.
   """
 
-  defstruct [
-    :contentDetails,
-    :etag,
-    :id,
-    :kind,
-    :snippet,
-    :statistics,
-    :status
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :contentDetails => GoogleApi.YouTube.V3.Model.LiveBroadcastContentDetails.t(),
+          :etag => any(),
+          :id => any(),
+          :kind => any(),
+          :snippet => GoogleApi.YouTube.V3.Model.LiveBroadcastSnippet.t(),
+          :statistics => GoogleApi.YouTube.V3.Model.LiveBroadcastStatistics.t(),
+          :status => GoogleApi.YouTube.V3.Model.LiveBroadcastStatus.t()
+        }
+
+  field(:contentDetails, as: GoogleApi.YouTube.V3.Model.LiveBroadcastContentDetails)
+  field(:etag)
+  field(:id)
+  field(:kind)
+  field(:snippet, as: GoogleApi.YouTube.V3.Model.LiveBroadcastSnippet)
+  field(:statistics, as: GoogleApi.YouTube.V3.Model.LiveBroadcastStatistics)
+  field(:status, as: GoogleApi.YouTube.V3.Model.LiveBroadcastStatus)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveBroadcast do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :contentDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.LiveBroadcastContentDetails,
-      options
-    )
-    |> deserialize(:snippet, :struct, GoogleApi.YouTube.V3.Model.LiveBroadcastSnippet, options)
-    |> deserialize(
-      :statistics,
-      :struct,
-      GoogleApi.YouTube.V3.Model.LiveBroadcastStatistics,
-      options
-    )
-    |> deserialize(:status, :struct, GoogleApi.YouTube.V3.Model.LiveBroadcastStatus, options)
+    GoogleApi.YouTube.V3.Model.LiveBroadcast.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveBroadcast do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

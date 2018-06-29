@@ -25,22 +25,23 @@ defmodule GoogleApi.YouTube.V3.Model.ActivityContentDetailsSubscription do
   - resourceId (ResourceId): The resourceId object contains information that identifies the resource that the user subscribed to. Defaults to: `null`.
   """
 
-  defstruct [
-    :resourceId
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :resourceId => GoogleApi.YouTube.V3.Model.ResourceId.t()
+        }
+
+  field(:resourceId, as: GoogleApi.YouTube.V3.Model.ResourceId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ActivityContentDetailsSubscription do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:resourceId, :struct, GoogleApi.YouTube.V3.Model.ResourceId, options)
+    GoogleApi.YouTube.V3.Model.ActivityContentDetailsSubscription.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ActivityContentDetailsSubscription do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

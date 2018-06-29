@@ -26,24 +26,30 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelStatus do
   - longUploadsStatus (String.t): The long uploads status of this channel. See Defaults to: `null`.
     - Enum - one of [allowed, disallowed, eligible, longUploadsUnspecified]
   - privacyStatus (String.t): Privacy status of the channel. Defaults to: `null`.
-    - Enum - one of [private, public, unlisted]
+    - Enum - one of [private, public, unlisted, unlisted_new]
   """
 
-  defstruct [
-    :isLinked,
-    :longUploadsStatus,
-    :privacyStatus
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :isLinked => any(),
+          :longUploadsStatus => any(),
+          :privacyStatus => any()
+        }
+
+  field(:isLinked)
+  field(:longUploadsStatus)
+  field(:privacyStatus)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelStatus do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.ChannelStatus.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ChannelStatus do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

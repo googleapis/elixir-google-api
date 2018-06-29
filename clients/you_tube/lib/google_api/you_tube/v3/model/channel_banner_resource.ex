@@ -27,21 +27,27 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelBannerResource do
   - url (String.t): The URL of this banner image. Defaults to: `null`.
   """
 
-  defstruct [
-    :etag,
-    :kind,
-    :url
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :etag => any(),
+          :kind => any(),
+          :url => any()
+        }
+
+  field(:etag)
+  field(:kind)
+  field(:url)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelBannerResource do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.ChannelBannerResource.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ChannelBannerResource do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

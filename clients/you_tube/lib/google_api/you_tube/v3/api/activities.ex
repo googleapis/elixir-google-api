@@ -22,7 +22,7 @@ defmodule GoogleApi.YouTube.V3.Api.Activities do
   """
 
   alias GoogleApi.YouTube.V3.Connection
-  import GoogleApi.YouTube.V3.RequestBuilder
+  alias GoogleApi.Gax.{Request, Response}
 
   @doc """
   Posts a bulletin for a specific channel. (The user submitting the request must be authorized to act on the channel&#39;s behalf.)  Note: Even though an activity resource can contain information about actions like a user rating a video or marking a video as a favorite, you need to use other API methods to generate those activity resources. For example, you would use the API&#39;s videos.rate() method to rate a video and the playlistItems.insert() method to mark a video as a favorite.
@@ -37,8 +37,8 @@ defmodule GoogleApi.YouTube.V3.Api.Activities do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :body (Activity): 
 
   ## Returns
@@ -60,14 +60,16 @@ defmodule GoogleApi.YouTube.V3.Api.Activities do
       :body => :body
     }
 
-    %{}
-    |> method(:post)
-    |> url("/youtube/v3/activities")
-    |> add_param(:query, :part, part)
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.YouTube.V3.Model.Activity{})
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/youtube/v3/activities")
+      |> Request.add_param(:query, :part, part)
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.Activity{})
   end
 
   @doc """
@@ -83,15 +85,15 @@ defmodule GoogleApi.YouTube.V3.Api.Activities do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :channelId (String.t): The channelId parameter specifies a unique YouTube channel ID. The API will then return a list of that channel&#39;s activities.
     - :home (boolean()): Set this parameter&#39;s value to true to retrieve the activity feed that displays on the YouTube home page for the currently authenticated user.
     - :maxResults (integer()): The maxResults parameter specifies the maximum number of items that should be returned in the result set.
     - :mine (boolean()): Set this parameter&#39;s value to true to retrieve a feed of the authenticated user&#39;s activities.
     - :pageToken (String.t): The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
-    - :publishedAfter (String.t): The publishedAfter parameter specifies the earliest date and time that an activity could have occurred for that activity to be included in the API response. If the parameter value specifies a day, but not a time, then any activities that occurred that day will be included in the result set. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-    - :publishedBefore (String.t): The publishedBefore parameter specifies the date and time before which an activity must have occurred for that activity to be included in the API response. If the parameter value specifies a day, but not a time, then any activities that occurred that day will be excluded from the result set. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
+    - :publishedAfter (DateTime.t): The publishedAfter parameter specifies the earliest date and time that an activity could have occurred for that activity to be included in the API response. If the parameter value specifies a day, but not a time, then any activities that occurred that day will be included in the result set. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
+    - :publishedBefore (DateTime.t): The publishedBefore parameter specifies the date and time before which an activity must have occurred for that activity to be included in the API response. If the parameter value specifies a day, but not a time, then any activities that occurred that day will be excluded from the result set. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
     - :regionCode (String.t): The regionCode parameter instructs the API to return results for the specified country. The parameter value is an ISO 3166-1 alpha-2 country code. YouTube uses this value when the authorized user&#39;s previous activity on YouTube does not provide enough information to generate the activity feed.
 
   ## Returns
@@ -120,13 +122,15 @@ defmodule GoogleApi.YouTube.V3.Api.Activities do
       :regionCode => :query
     }
 
-    %{}
-    |> method(:get)
-    |> url("/youtube/v3/activities")
-    |> add_param(:query, :part, part)
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.YouTube.V3.Model.ActivityListResponse{})
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/youtube/v3/activities")
+      |> Request.add_param(:query, :part, part)
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.ActivityListResponse{})
   end
 end

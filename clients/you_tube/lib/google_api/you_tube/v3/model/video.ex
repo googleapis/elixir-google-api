@@ -32,7 +32,7 @@ defmodule GoogleApi.YouTube.V3.Model.Video do
   - localizations (%{optional(String.t) &#x3D;&gt; VideoLocalization}): List with all localizations. Defaults to: `null`.
   - monetizationDetails (VideoMonetizationDetails): The monetizationDetails object encapsulates information about the monetization status of the video. Defaults to: `null`.
   - player (VideoPlayer): The player object contains information that you would use to play the video in an embedded player. Defaults to: `null`.
-  - processingDetails (VideoProcessingDetails): The processingProgress object encapsulates information about YouTube&#39;s progress in processing the uploaded video file. The properties in the object identify the current processing status and an estimate of the time remaining until YouTube finishes processing the video. This part also indicates whether different types of data or content, such as file details or thumbnail images, are available for the video.  The processingProgress object is designed to be polled so that the video uploaded can track the progress that YouTube has made in processing the uploaded video file. This data can only be retrieved by the video owner. Defaults to: `null`.
+  - processingDetails (VideoProcessingDetails): The processingDetails object encapsulates information about YouTube&#39;s progress in processing the uploaded video file. The properties in the object identify the current processing status and an estimate of the time remaining until YouTube finishes processing the video. This part also indicates whether different types of data or content, such as file details or thumbnail images, are available for the video.  The processingProgress object is designed to be polled so that the video uploaded can track the progress that YouTube has made in processing the uploaded video file. This data can only be retrieved by the video owner. Defaults to: `null`.
   - projectDetails (VideoProjectDetails): The projectDetails object contains information about the project specific video metadata. Defaults to: `null`.
   - recordingDetails (VideoRecordingDetails): The recordingDetails object encapsulates information about the location, date and address where the video was recorded. Defaults to: `null`.
   - snippet (VideoSnippet): The snippet object contains basic details about the video, such as its title, description, and category. Defaults to: `null`.
@@ -42,83 +42,57 @@ defmodule GoogleApi.YouTube.V3.Model.Video do
   - topicDetails (VideoTopicDetails): The topicDetails object encapsulates information about Freebase topics associated with the video. Defaults to: `null`.
   """
 
-  defstruct [
-    :ageGating,
-    :contentDetails,
-    :etag,
-    :fileDetails,
-    :id,
-    :kind,
-    :liveStreamingDetails,
-    :localizations,
-    :monetizationDetails,
-    :player,
-    :processingDetails,
-    :projectDetails,
-    :recordingDetails,
-    :snippet,
-    :statistics,
-    :status,
-    :suggestions,
-    :topicDetails
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :ageGating => GoogleApi.YouTube.V3.Model.VideoAgeGating.t(),
+          :contentDetails => GoogleApi.YouTube.V3.Model.VideoContentDetails.t(),
+          :etag => any(),
+          :fileDetails => GoogleApi.YouTube.V3.Model.VideoFileDetails.t(),
+          :id => any(),
+          :kind => any(),
+          :liveStreamingDetails => GoogleApi.YouTube.V3.Model.VideoLiveStreamingDetails.t(),
+          :localizations => map(),
+          :monetizationDetails => GoogleApi.YouTube.V3.Model.VideoMonetizationDetails.t(),
+          :player => GoogleApi.YouTube.V3.Model.VideoPlayer.t(),
+          :processingDetails => GoogleApi.YouTube.V3.Model.VideoProcessingDetails.t(),
+          :projectDetails => GoogleApi.YouTube.V3.Model.VideoProjectDetails.t(),
+          :recordingDetails => GoogleApi.YouTube.V3.Model.VideoRecordingDetails.t(),
+          :snippet => GoogleApi.YouTube.V3.Model.VideoSnippet.t(),
+          :statistics => GoogleApi.YouTube.V3.Model.VideoStatistics.t(),
+          :status => GoogleApi.YouTube.V3.Model.VideoStatus.t(),
+          :suggestions => GoogleApi.YouTube.V3.Model.VideoSuggestions.t(),
+          :topicDetails => GoogleApi.YouTube.V3.Model.VideoTopicDetails.t()
+        }
+
+  field(:ageGating, as: GoogleApi.YouTube.V3.Model.VideoAgeGating)
+  field(:contentDetails, as: GoogleApi.YouTube.V3.Model.VideoContentDetails)
+  field(:etag)
+  field(:fileDetails, as: GoogleApi.YouTube.V3.Model.VideoFileDetails)
+  field(:id)
+  field(:kind)
+  field(:liveStreamingDetails, as: GoogleApi.YouTube.V3.Model.VideoLiveStreamingDetails)
+  field(:localizations, as: GoogleApi.YouTube.V3.Model.VideoLocalization, type: :map)
+  field(:monetizationDetails, as: GoogleApi.YouTube.V3.Model.VideoMonetizationDetails)
+  field(:player, as: GoogleApi.YouTube.V3.Model.VideoPlayer)
+  field(:processingDetails, as: GoogleApi.YouTube.V3.Model.VideoProcessingDetails)
+  field(:projectDetails, as: GoogleApi.YouTube.V3.Model.VideoProjectDetails)
+  field(:recordingDetails, as: GoogleApi.YouTube.V3.Model.VideoRecordingDetails)
+  field(:snippet, as: GoogleApi.YouTube.V3.Model.VideoSnippet)
+  field(:statistics, as: GoogleApi.YouTube.V3.Model.VideoStatistics)
+  field(:status, as: GoogleApi.YouTube.V3.Model.VideoStatus)
+  field(:suggestions, as: GoogleApi.YouTube.V3.Model.VideoSuggestions)
+  field(:topicDetails, as: GoogleApi.YouTube.V3.Model.VideoTopicDetails)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.Video do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:ageGating, :struct, GoogleApi.YouTube.V3.Model.VideoAgeGating, options)
-    |> deserialize(
-      :contentDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.VideoContentDetails,
-      options
-    )
-    |> deserialize(:fileDetails, :struct, GoogleApi.YouTube.V3.Model.VideoFileDetails, options)
-    |> deserialize(
-      :liveStreamingDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.VideoLiveStreamingDetails,
-      options
-    )
-    |> deserialize(:localizations, :map, GoogleApi.YouTube.V3.Model.VideoLocalization, options)
-    |> deserialize(
-      :monetizationDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.VideoMonetizationDetails,
-      options
-    )
-    |> deserialize(:player, :struct, GoogleApi.YouTube.V3.Model.VideoPlayer, options)
-    |> deserialize(
-      :processingDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.VideoProcessingDetails,
-      options
-    )
-    |> deserialize(
-      :projectDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.VideoProjectDetails,
-      options
-    )
-    |> deserialize(
-      :recordingDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.VideoRecordingDetails,
-      options
-    )
-    |> deserialize(:snippet, :struct, GoogleApi.YouTube.V3.Model.VideoSnippet, options)
-    |> deserialize(:statistics, :struct, GoogleApi.YouTube.V3.Model.VideoStatistics, options)
-    |> deserialize(:status, :struct, GoogleApi.YouTube.V3.Model.VideoStatus, options)
-    |> deserialize(:suggestions, :struct, GoogleApi.YouTube.V3.Model.VideoSuggestions, options)
-    |> deserialize(:topicDetails, :struct, GoogleApi.YouTube.V3.Model.VideoTopicDetails, options)
+    GoogleApi.YouTube.V3.Model.Video.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.Video do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

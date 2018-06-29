@@ -27,24 +27,27 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatPollOpenedDetails do
   - prompt (String.t):  Defaults to: `null`.
   """
 
-  defstruct [
-    :id,
-    :items,
-    :prompt
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :id => any(),
+          :items => list(GoogleApi.YouTube.V3.Model.LiveChatPollItem.t()),
+          :prompt => any()
+        }
+
+  field(:id)
+  field(:items, as: GoogleApi.YouTube.V3.Model.LiveChatPollItem, type: :list)
+  field(:prompt)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveChatPollOpenedDetails do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:items, :list, GoogleApi.YouTube.V3.Model.LiveChatPollItem, options)
+    GoogleApi.YouTube.V3.Model.LiveChatPollOpenedDetails.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveChatPollOpenedDetails do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

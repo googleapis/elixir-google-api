@@ -25,27 +25,24 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelContentDetails do
   - relatedPlaylists (ChannelContentDetailsRelatedPlaylists):  Defaults to: `null`.
   """
 
-  defstruct [
-    :relatedPlaylists
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :relatedPlaylists =>
+            GoogleApi.YouTube.V3.Model.ChannelContentDetailsRelatedPlaylists.t()
+        }
+
+  field(:relatedPlaylists, as: GoogleApi.YouTube.V3.Model.ChannelContentDetailsRelatedPlaylists)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelContentDetails do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :relatedPlaylists,
-      :struct,
-      GoogleApi.YouTube.V3.Model.ChannelContentDetailsRelatedPlaylists,
-      options
-    )
+    GoogleApi.YouTube.V3.Model.ChannelContentDetails.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ChannelContentDetails do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

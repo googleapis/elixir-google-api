@@ -26,20 +26,25 @@ defmodule GoogleApi.YouTube.V3.Model.VideoContentDetailsRegionRestriction do
   - blocked ([String.t]): A list of region codes that identify countries where the video is blocked. If this property is present and a country is not listed in its value, then the video is viewable in that country. If this property is present and contains an empty list, the video is viewable in all countries. Defaults to: `null`.
   """
 
-  defstruct [
-    :allowed,
-    :blocked
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :allowed => list(any()),
+          :blocked => list(any())
+        }
+
+  field(:allowed, type: :list)
+  field(:blocked, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoContentDetailsRegionRestriction do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.VideoContentDetailsRegionRestriction.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoContentDetailsRegionRestriction do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

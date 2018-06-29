@@ -22,7 +22,7 @@ defmodule GoogleApi.YouTube.V3.Api.VideoCategories do
   """
 
   alias GoogleApi.YouTube.V3.Connection
-  import GoogleApi.YouTube.V3.RequestBuilder
+  alias GoogleApi.Gax.{Request, Response}
 
   @doc """
   Returns a list of categories that can be associated with YouTube videos.
@@ -37,8 +37,8 @@ defmodule GoogleApi.YouTube.V3.Api.VideoCategories do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :hl (String.t): The hl parameter specifies the language that should be used for text values in the API response.
     - :id (String.t): The id parameter specifies a comma-separated list of video category IDs for the resources that you are retrieving.
     - :regionCode (String.t): The regionCode parameter instructs the API to return the list of video categories available in the specified country. The parameter value is an ISO 3166-1 alpha-2 country code.
@@ -65,13 +65,15 @@ defmodule GoogleApi.YouTube.V3.Api.VideoCategories do
       :regionCode => :query
     }
 
-    %{}
-    |> method(:get)
-    |> url("/youtube/v3/videoCategories")
-    |> add_param(:query, :part, part)
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.YouTube.V3.Model.VideoCategoryListResponse{})
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/youtube/v3/videoCategories")
+      |> Request.add_param(:query, :part, part)
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.VideoCategoryListResponse{})
   end
 end

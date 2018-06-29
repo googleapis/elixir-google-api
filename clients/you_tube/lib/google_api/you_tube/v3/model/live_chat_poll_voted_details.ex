@@ -26,20 +26,25 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatPollVotedDetails do
   - pollId (String.t): The poll the user voted on. Defaults to: `null`.
   """
 
-  defstruct [
-    :itemId,
-    :pollId
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :itemId => any(),
+          :pollId => any()
+        }
+
+  field(:itemId)
+  field(:pollId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveChatPollVotedDetails do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.LiveChatPollVotedDetails.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveChatPollVotedDetails do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

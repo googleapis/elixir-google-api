@@ -26,20 +26,25 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistLocalization do
   - title (String.t): The localized strings for playlist&#39;s title. Defaults to: `null`.
   """
 
-  defstruct [
-    :description,
-    :title
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :description => any(),
+          :title => any()
+        }
+
+  field(:description)
+  field(:title)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.PlaylistLocalization do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.PlaylistLocalization.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.PlaylistLocalization do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

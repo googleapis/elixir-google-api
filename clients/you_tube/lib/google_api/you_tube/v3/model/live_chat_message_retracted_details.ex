@@ -25,19 +25,23 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageRetractedDetails do
   - retractedMessageId (String.t):  Defaults to: `null`.
   """
 
-  defstruct [
-    :retractedMessageId
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :retractedMessageId => any()
+        }
+
+  field(:retractedMessageId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveChatMessageRetractedDetails do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.LiveChatMessageRetractedDetails.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveChatMessageRetractedDetails do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

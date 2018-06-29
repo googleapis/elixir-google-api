@@ -26,20 +26,25 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelTopicDetails do
   - topicIds ([String.t]): A list of Freebase topic IDs associated with the channel. You can retrieve information about each topic using the Freebase Topic API. Defaults to: `null`.
   """
 
-  defstruct [
-    :topicCategories,
-    :topicIds
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :topicCategories => list(any()),
+          :topicIds => list(any())
+        }
+
+  field(:topicCategories, type: :list)
+  field(:topicIds, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelTopicDetails do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.ChannelTopicDetails.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ChannelTopicDetails do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -26,28 +26,25 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatModeratorSnippet do
   - moderatorDetails (ChannelProfileDetails): Details about the moderator. Defaults to: `null`.
   """
 
-  defstruct [
-    :liveChatId,
-    :moderatorDetails
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :liveChatId => any(),
+          :moderatorDetails => GoogleApi.YouTube.V3.Model.ChannelProfileDetails.t()
+        }
+
+  field(:liveChatId)
+  field(:moderatorDetails, as: GoogleApi.YouTube.V3.Model.ChannelProfileDetails)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveChatModeratorSnippet do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :moderatorDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.ChannelProfileDetails,
-      options
-    )
+    GoogleApi.YouTube.V3.Model.LiveChatModeratorSnippet.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveChatModeratorSnippet do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

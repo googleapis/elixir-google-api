@@ -32,31 +32,37 @@ defmodule GoogleApi.YouTube.V3.Model.CommentThreadListResponse do
   - visitorId (String.t): The visitorId identifies the visitor. Defaults to: `null`.
   """
 
-  defstruct [
-    :etag,
-    :eventId,
-    :items,
-    :kind,
-    :nextPageToken,
-    :pageInfo,
-    :tokenPagination,
-    :visitorId
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :etag => any(),
+          :eventId => any(),
+          :items => list(GoogleApi.YouTube.V3.Model.CommentThread.t()),
+          :kind => any(),
+          :nextPageToken => any(),
+          :pageInfo => GoogleApi.YouTube.V3.Model.PageInfo.t(),
+          :tokenPagination => GoogleApi.YouTube.V3.Model.TokenPagination.t(),
+          :visitorId => any()
+        }
+
+  field(:etag)
+  field(:eventId)
+  field(:items, as: GoogleApi.YouTube.V3.Model.CommentThread, type: :list)
+  field(:kind)
+  field(:nextPageToken)
+  field(:pageInfo, as: GoogleApi.YouTube.V3.Model.PageInfo)
+  field(:tokenPagination, as: GoogleApi.YouTube.V3.Model.TokenPagination)
+  field(:visitorId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.CommentThreadListResponse do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:items, :list, GoogleApi.YouTube.V3.Model.CommentThread, options)
-    |> deserialize(:pageInfo, :struct, GoogleApi.YouTube.V3.Model.PageInfo, options)
-    |> deserialize(:tokenPagination, :struct, GoogleApi.YouTube.V3.Model.TokenPagination, options)
+    GoogleApi.YouTube.V3.Model.CommentThreadListResponse.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.CommentThreadListResponse do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

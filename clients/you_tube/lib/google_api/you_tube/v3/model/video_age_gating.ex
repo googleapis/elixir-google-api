@@ -28,21 +28,27 @@ defmodule GoogleApi.YouTube.V3.Model.VideoAgeGating do
     - Enum - one of [anyone, m15Plus, m16Plus, m17Plus]
   """
 
-  defstruct [
-    :alcoholContent,
-    :restricted,
-    :videoGameRating
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :alcoholContent => any(),
+          :restricted => any(),
+          :videoGameRating => any()
+        }
+
+  field(:alcoholContent)
+  field(:restricted)
+  field(:videoGameRating)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoAgeGating do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.VideoAgeGating.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoAgeGating do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

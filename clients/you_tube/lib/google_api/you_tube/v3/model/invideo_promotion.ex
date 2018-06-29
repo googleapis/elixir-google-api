@@ -28,27 +28,29 @@ defmodule GoogleApi.YouTube.V3.Model.InvideoPromotion do
   - useSmartTiming (boolean()): Indicates whether the channel&#39;s promotional campaign uses \&quot;smart timing.\&quot; This feature attempts to show promotions at a point in the video when they are more likely to be clicked and less likely to disrupt the viewing experience. This feature also picks up a single promotion to show on each video. Defaults to: `null`.
   """
 
-  defstruct [
-    :defaultTiming,
-    :items,
-    :position,
-    :useSmartTiming
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :defaultTiming => GoogleApi.YouTube.V3.Model.InvideoTiming.t(),
+          :items => list(GoogleApi.YouTube.V3.Model.PromotedItem.t()),
+          :position => GoogleApi.YouTube.V3.Model.InvideoPosition.t(),
+          :useSmartTiming => any()
+        }
+
+  field(:defaultTiming, as: GoogleApi.YouTube.V3.Model.InvideoTiming)
+  field(:items, as: GoogleApi.YouTube.V3.Model.PromotedItem, type: :list)
+  field(:position, as: GoogleApi.YouTube.V3.Model.InvideoPosition)
+  field(:useSmartTiming)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.InvideoPromotion do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:defaultTiming, :struct, GoogleApi.YouTube.V3.Model.InvideoTiming, options)
-    |> deserialize(:items, :list, GoogleApi.YouTube.V3.Model.PromotedItem, options)
-    |> deserialize(:position, :struct, GoogleApi.YouTube.V3.Model.InvideoPosition, options)
+    GoogleApi.YouTube.V3.Model.InvideoPromotion.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.InvideoPromotion do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

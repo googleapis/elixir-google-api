@@ -32,26 +32,37 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageAuthorDetails do
   - profileImageUrl (String.t): The channels&#39;s avatar URL. Defaults to: `null`.
   """
 
-  defstruct [
-    :channelId,
-    :channelUrl,
-    :displayName,
-    :isChatModerator,
-    :isChatOwner,
-    :isChatSponsor,
-    :isVerified,
-    :profileImageUrl
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :channelId => any(),
+          :channelUrl => any(),
+          :displayName => any(),
+          :isChatModerator => any(),
+          :isChatOwner => any(),
+          :isChatSponsor => any(),
+          :isVerified => any(),
+          :profileImageUrl => any()
+        }
+
+  field(:channelId)
+  field(:channelUrl)
+  field(:displayName)
+  field(:isChatModerator)
+  field(:isChatOwner)
+  field(:isChatSponsor)
+  field(:isVerified)
+  field(:profileImageUrl)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveChatMessageAuthorDetails do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.LiveChatMessageAuthorDetails.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveChatMessageAuthorDetails do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

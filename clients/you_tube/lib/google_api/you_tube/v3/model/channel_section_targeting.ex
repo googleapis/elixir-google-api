@@ -27,21 +27,27 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelSectionTargeting do
   - regions ([String.t]): The region the channel section is targeting. Defaults to: `null`.
   """
 
-  defstruct [
-    :countries,
-    :languages,
-    :regions
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :countries => list(any()),
+          :languages => list(any()),
+          :regions => list(any())
+        }
+
+  field(:countries, type: :list)
+  field(:languages, type: :list)
+  field(:regions, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelSectionTargeting do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.ChannelSectionTargeting.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ChannelSectionTargeting do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

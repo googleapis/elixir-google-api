@@ -21,73 +21,21 @@ defmodule GoogleApi.YouTube.V3.Connection do
   Handle Tesla connections for GoogleApi.YouTube.V3.
   """
 
-  use Tesla
-
-  # Add any middleware here (authentication)
-  plug(Tesla.Middleware.BaseUrl, "https://www.googleapis.com")
-  plug(Tesla.Middleware.Headers, %{"User-Agent" => "Elixir"})
-  plug(Tesla.Middleware.EncodeJson)
-
-  @scopes [
-    # Manage your YouTube account
-    "https://www.googleapis.com/auth/youtube",
-    # Manage your YouTube account
-    "https://www.googleapis.com/auth/youtube.force-ssl",
-    # View your YouTube account
-    "https://www.googleapis.com/auth/youtube.readonly",
-    # Manage your YouTube videos
-    "https://www.googleapis.com/auth/youtube.upload",
-    # View and manage your assets and associated content on YouTube
-    "https://www.googleapis.com/auth/youtubepartner",
-    # View private information of your YouTube channel relevant during the audit process with a YouTube partner
-    "https://www.googleapis.com/auth/youtubepartner-channel-audit"
-  ]
-
-  @doc """
-  Configure a client connection using a provided OAuth2 token as a Bearer token
-
-  ## Parameters
-
-  - token (String): Bearer token
-
-  ## Returns
-
-  Tesla.Env.client
-  """
-  @spec new(String.t()) :: Tesla.Env.client()
-  def new(token) when is_binary(token) do
-    Tesla.build_client([
-      {Tesla.Middleware.Headers, %{"Authorization" => "Bearer #{token}"}}
-    ])
-  end
-
-  @doc """
-  Configure a client connection using a function which yields a Bearer token.
-
-  ## Parameters
-
-  - token_fetcher (function arity of 1): Callback which provides an OAuth2 token
-    given a list of scopes
-
-  ## Returns
-
-  Tesla.Env.client
-  """
-  @spec new((list(String.t()) -> String.t())) :: Tesla.Env.client()
-  def new(token_fetcher) when is_function(token_fetcher) do
-    token_fetcher.(@scopes)
-    |> new
-  end
-
-  @doc """
-  Configure an authless client connection
-
-  # Returns
-
-  Tesla.Env.client
-  """
-  @spec new() :: Tesla.Env.client()
-  def new do
-    Tesla.build_client([])
-  end
+  use GoogleApi.Gax.Connection,
+    scopes: [
+      # Manage your YouTube account
+      "https://www.googleapis.com/auth/youtube",
+      # Manage your YouTube account
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      # View your YouTube account
+      "https://www.googleapis.com/auth/youtube.readonly",
+      # Manage your YouTube videos
+      "https://www.googleapis.com/auth/youtube.upload",
+      # View and manage your assets and associated content on YouTube
+      "https://www.googleapis.com/auth/youtubepartner",
+      # View private information of your YouTube channel relevant during the audit process with a YouTube partner
+      "https://www.googleapis.com/auth/youtubepartner-channel-audit"
+    ],
+    otp_app: :google_api_you_tube,
+    base_url: "https://www.googleapis.com"
 end

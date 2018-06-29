@@ -27,21 +27,27 @@ defmodule GoogleApi.YouTube.V3.Model.MonitorStreamInfo do
   - enableMonitorStream (boolean()): This value determines whether the monitor stream is enabled for the broadcast. If the monitor stream is enabled, then YouTube will broadcast the event content on a special stream intended only for the broadcaster&#39;s consumption. The broadcaster can use the stream to review the event content and also to identify the optimal times to insert cuepoints.  You need to set this value to true if you intend to have a broadcast delay for your event.  Note: This property cannot be updated once the broadcast is in the testing or live state. Defaults to: `null`.
   """
 
-  defstruct [
-    :broadcastStreamDelayMs,
-    :embedHtml,
-    :enableMonitorStream
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :broadcastStreamDelayMs => any(),
+          :embedHtml => any(),
+          :enableMonitorStream => any()
+        }
+
+  field(:broadcastStreamDelayMs)
+  field(:embedHtml)
+  field(:enableMonitorStream)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.MonitorStreamInfo do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.MonitorStreamInfo.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.MonitorStreamInfo do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

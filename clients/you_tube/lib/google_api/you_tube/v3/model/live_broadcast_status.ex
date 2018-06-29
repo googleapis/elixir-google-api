@@ -27,27 +27,34 @@ defmodule GoogleApi.YouTube.V3.Model.LiveBroadcastStatus do
   - liveBroadcastPriority (String.t): Priority of the live broadcast event (internal state). Defaults to: `null`.
     - Enum - one of [high, low, normal]
   - privacyStatus (String.t): The broadcast&#39;s privacy status. Note that the broadcast represents exactly one YouTube video, so the privacy settings are identical to those supported for videos. In addition, you can set this field by modifying the broadcast resource or by setting the privacyStatus field of the corresponding video resource. Defaults to: `null`.
-    - Enum - one of [private, public, unlisted]
+    - Enum - one of [private, public, unlisted, unlisted_new]
   - recordingStatus (String.t): The broadcast&#39;s recording status. Defaults to: `null`.
     - Enum - one of [notRecording, recorded, recording]
   """
 
-  defstruct [
-    :lifeCycleStatus,
-    :liveBroadcastPriority,
-    :privacyStatus,
-    :recordingStatus
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :lifeCycleStatus => any(),
+          :liveBroadcastPriority => any(),
+          :privacyStatus => any(),
+          :recordingStatus => any()
+        }
+
+  field(:lifeCycleStatus)
+  field(:liveBroadcastPriority)
+  field(:privacyStatus)
+  field(:recordingStatus)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveBroadcastStatus do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.LiveBroadcastStatus.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveBroadcastStatus do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

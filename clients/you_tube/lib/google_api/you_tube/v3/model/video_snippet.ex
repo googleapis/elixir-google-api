@@ -37,34 +37,45 @@ defmodule GoogleApi.YouTube.V3.Model.VideoSnippet do
   - title (String.t): The video&#39;s title. Defaults to: `null`.
   """
 
-  defstruct [
-    :tags,
-    :categoryId,
-    :channelId,
-    :channelTitle,
-    :defaultAudioLanguage,
-    :defaultLanguage,
-    :description,
-    :liveBroadcastContent,
-    :localized,
-    :publishedAt,
-    :thumbnails,
-    :title
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :tags => list(any()),
+          :categoryId => any(),
+          :channelId => any(),
+          :channelTitle => any(),
+          :defaultAudioLanguage => any(),
+          :defaultLanguage => any(),
+          :description => any(),
+          :liveBroadcastContent => any(),
+          :localized => GoogleApi.YouTube.V3.Model.VideoLocalization.t(),
+          :publishedAt => DateTime.t(),
+          :thumbnails => GoogleApi.YouTube.V3.Model.ThumbnailDetails.t(),
+          :title => any()
+        }
+
+  field(:tags, type: :list)
+  field(:categoryId)
+  field(:channelId)
+  field(:channelTitle)
+  field(:defaultAudioLanguage)
+  field(:defaultLanguage)
+  field(:description)
+  field(:liveBroadcastContent)
+  field(:localized, as: GoogleApi.YouTube.V3.Model.VideoLocalization)
+  field(:publishedAt, as: DateTime)
+  field(:thumbnails, as: GoogleApi.YouTube.V3.Model.ThumbnailDetails)
+  field(:title)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoSnippet do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:localized, :struct, GoogleApi.YouTube.V3.Model.VideoLocalization, options)
-    |> deserialize(:thumbnails, :struct, GoogleApi.YouTube.V3.Model.ThumbnailDetails, options)
+    GoogleApi.YouTube.V3.Model.VideoSnippet.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoSnippet do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

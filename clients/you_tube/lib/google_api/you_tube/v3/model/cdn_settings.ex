@@ -32,26 +32,31 @@ defmodule GoogleApi.YouTube.V3.Model.CdnSettings do
     - Enum - one of [1080p, 1440p, 2160p, 240p, 360p, 480p, 720p, variable]
   """
 
-  defstruct [
-    :format,
-    :frameRate,
-    :ingestionInfo,
-    :ingestionType,
-    :resolution
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :format => any(),
+          :frameRate => any(),
+          :ingestionInfo => GoogleApi.YouTube.V3.Model.IngestionInfo.t(),
+          :ingestionType => any(),
+          :resolution => any()
+        }
+
+  field(:format)
+  field(:frameRate)
+  field(:ingestionInfo, as: GoogleApi.YouTube.V3.Model.IngestionInfo)
+  field(:ingestionType)
+  field(:resolution)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.CdnSettings do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:ingestionInfo, :struct, GoogleApi.YouTube.V3.Model.IngestionInfo, options)
+    GoogleApi.YouTube.V3.Model.CdnSettings.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.CdnSettings do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

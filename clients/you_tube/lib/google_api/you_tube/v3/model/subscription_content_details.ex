@@ -28,21 +28,27 @@ defmodule GoogleApi.YouTube.V3.Model.SubscriptionContentDetails do
   - totalItemCount (integer()): The approximate number of items that the subscription points to. Defaults to: `null`.
   """
 
-  defstruct [
-    :activityType,
-    :newItemCount,
-    :totalItemCount
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :activityType => any(),
+          :newItemCount => any(),
+          :totalItemCount => any()
+        }
+
+  field(:activityType)
+  field(:newItemCount)
+  field(:totalItemCount)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.SubscriptionContentDetails do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.SubscriptionContentDetails.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.SubscriptionContentDetails do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

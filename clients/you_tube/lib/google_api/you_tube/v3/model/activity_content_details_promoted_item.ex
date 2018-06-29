@@ -35,28 +35,41 @@ defmodule GoogleApi.YouTube.V3.Model.ActivityContentDetailsPromotedItem do
   - videoId (String.t): The ID that YouTube uses to uniquely identify the promoted video. Defaults to: `null`.
   """
 
-  defstruct [
-    :adTag,
-    :clickTrackingUrl,
-    :creativeViewUrl,
-    :ctaType,
-    :customCtaButtonText,
-    :descriptionText,
-    :destinationUrl,
-    :forecastingUrl,
-    :impressionUrl,
-    :videoId
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :adTag => any(),
+          :clickTrackingUrl => any(),
+          :creativeViewUrl => any(),
+          :ctaType => any(),
+          :customCtaButtonText => any(),
+          :descriptionText => any(),
+          :destinationUrl => any(),
+          :forecastingUrl => list(any()),
+          :impressionUrl => list(any()),
+          :videoId => any()
+        }
+
+  field(:adTag)
+  field(:clickTrackingUrl)
+  field(:creativeViewUrl)
+  field(:ctaType)
+  field(:customCtaButtonText)
+  field(:descriptionText)
+  field(:destinationUrl)
+  field(:forecastingUrl, type: :list)
+  field(:impressionUrl, type: :list)
+  field(:videoId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ActivityContentDetailsPromotedItem do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.ActivityContentDetailsPromotedItem.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ActivityContentDetailsPromotedItem do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

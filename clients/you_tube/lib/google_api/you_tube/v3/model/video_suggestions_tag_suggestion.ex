@@ -26,20 +26,25 @@ defmodule GoogleApi.YouTube.V3.Model.VideoSuggestionsTagSuggestion do
   - tag (String.t): The keyword tag suggested for the video. Defaults to: `null`.
   """
 
-  defstruct [
-    :categoryRestricts,
-    :tag
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :categoryRestricts => list(any()),
+          :tag => any()
+        }
+
+  field(:categoryRestricts, type: :list)
+  field(:tag)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoSuggestionsTagSuggestion do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.VideoSuggestionsTagSuggestion.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoSuggestionsTagSuggestion do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

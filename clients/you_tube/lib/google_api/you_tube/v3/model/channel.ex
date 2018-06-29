@@ -38,80 +38,49 @@ defmodule GoogleApi.YouTube.V3.Model.Channel do
   - topicDetails (ChannelTopicDetails): The topicDetails object encapsulates information about Freebase topics associated with the channel. Defaults to: `null`.
   """
 
-  defstruct [
-    :auditDetails,
-    :brandingSettings,
-    :contentDetails,
-    :contentOwnerDetails,
-    :conversionPings,
-    :etag,
-    :id,
-    :invideoPromotion,
-    :kind,
-    :localizations,
-    :snippet,
-    :statistics,
-    :status,
-    :topicDetails
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :auditDetails => GoogleApi.YouTube.V3.Model.ChannelAuditDetails.t(),
+          :brandingSettings => GoogleApi.YouTube.V3.Model.ChannelBrandingSettings.t(),
+          :contentDetails => GoogleApi.YouTube.V3.Model.ChannelContentDetails.t(),
+          :contentOwnerDetails => GoogleApi.YouTube.V3.Model.ChannelContentOwnerDetails.t(),
+          :conversionPings => GoogleApi.YouTube.V3.Model.ChannelConversionPings.t(),
+          :etag => any(),
+          :id => any(),
+          :invideoPromotion => GoogleApi.YouTube.V3.Model.InvideoPromotion.t(),
+          :kind => any(),
+          :localizations => map(),
+          :snippet => GoogleApi.YouTube.V3.Model.ChannelSnippet.t(),
+          :statistics => GoogleApi.YouTube.V3.Model.ChannelStatistics.t(),
+          :status => GoogleApi.YouTube.V3.Model.ChannelStatus.t(),
+          :topicDetails => GoogleApi.YouTube.V3.Model.ChannelTopicDetails.t()
+        }
+
+  field(:auditDetails, as: GoogleApi.YouTube.V3.Model.ChannelAuditDetails)
+  field(:brandingSettings, as: GoogleApi.YouTube.V3.Model.ChannelBrandingSettings)
+  field(:contentDetails, as: GoogleApi.YouTube.V3.Model.ChannelContentDetails)
+  field(:contentOwnerDetails, as: GoogleApi.YouTube.V3.Model.ChannelContentOwnerDetails)
+  field(:conversionPings, as: GoogleApi.YouTube.V3.Model.ChannelConversionPings)
+  field(:etag)
+  field(:id)
+  field(:invideoPromotion, as: GoogleApi.YouTube.V3.Model.InvideoPromotion)
+  field(:kind)
+  field(:localizations, as: GoogleApi.YouTube.V3.Model.ChannelLocalization, type: :map)
+  field(:snippet, as: GoogleApi.YouTube.V3.Model.ChannelSnippet)
+  field(:statistics, as: GoogleApi.YouTube.V3.Model.ChannelStatistics)
+  field(:status, as: GoogleApi.YouTube.V3.Model.ChannelStatus)
+  field(:topicDetails, as: GoogleApi.YouTube.V3.Model.ChannelTopicDetails)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.Channel do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :auditDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.ChannelAuditDetails,
-      options
-    )
-    |> deserialize(
-      :brandingSettings,
-      :struct,
-      GoogleApi.YouTube.V3.Model.ChannelBrandingSettings,
-      options
-    )
-    |> deserialize(
-      :contentDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.ChannelContentDetails,
-      options
-    )
-    |> deserialize(
-      :contentOwnerDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.ChannelContentOwnerDetails,
-      options
-    )
-    |> deserialize(
-      :conversionPings,
-      :struct,
-      GoogleApi.YouTube.V3.Model.ChannelConversionPings,
-      options
-    )
-    |> deserialize(
-      :invideoPromotion,
-      :struct,
-      GoogleApi.YouTube.V3.Model.InvideoPromotion,
-      options
-    )
-    |> deserialize(:localizations, :map, GoogleApi.YouTube.V3.Model.ChannelLocalization, options)
-    |> deserialize(:snippet, :struct, GoogleApi.YouTube.V3.Model.ChannelSnippet, options)
-    |> deserialize(:statistics, :struct, GoogleApi.YouTube.V3.Model.ChannelStatistics, options)
-    |> deserialize(:status, :struct, GoogleApi.YouTube.V3.Model.ChannelStatus, options)
-    |> deserialize(
-      :topicDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.ChannelTopicDetails,
-      options
-    )
+    GoogleApi.YouTube.V3.Model.Channel.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.Channel do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

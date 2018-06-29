@@ -27,20 +27,25 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelConversionPing do
   - conversionUrl (String.t): The url (without the schema) that the player shall send the ping to. It&#39;s at caller&#39;s descretion to decide which schema to use (http vs https) Example of a returned url: //googleads.g.doubleclick.net/pagead/ viewthroughconversion/962985656/?data&#x3D;path%3DtHe_path%3Btype%3D cview%3Butuid%3DGISQtTNGYqaYl4sKxoVvKA&amp;labe&#x3D;default The caller must append biscotti authentication (ms param in case of mobile, for example) to this ping. Defaults to: `null`.
   """
 
-  defstruct [
-    :context,
-    :conversionUrl
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :context => any(),
+          :conversionUrl => any()
+        }
+
+  field(:context)
+  field(:conversionUrl)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelConversionPing do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.ChannelConversionPing.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ChannelConversionPing do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

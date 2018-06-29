@@ -29,23 +29,31 @@ defmodule GoogleApi.YouTube.V3.Model.VideoStatistics do
   - viewCount (String.t): The number of times the video has been viewed. Defaults to: `null`.
   """
 
-  defstruct [
-    :commentCount,
-    :dislikeCount,
-    :favoriteCount,
-    :likeCount,
-    :viewCount
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :commentCount => any(),
+          :dislikeCount => any(),
+          :favoriteCount => any(),
+          :likeCount => any(),
+          :viewCount => any()
+        }
+
+  field(:commentCount)
+  field(:dislikeCount)
+  field(:favoriteCount)
+  field(:likeCount)
+  field(:viewCount)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoStatistics do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.VideoStatistics.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoStatistics do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

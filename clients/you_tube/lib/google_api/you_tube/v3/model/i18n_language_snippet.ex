@@ -26,20 +26,25 @@ defmodule GoogleApi.YouTube.V3.Model.I18nLanguageSnippet do
   - name (String.t): The human-readable name of the language in the language itself. Defaults to: `null`.
   """
 
-  defstruct [
-    :hl,
-    :name
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :hl => any(),
+          :name => any()
+        }
+
+  field(:hl)
+  field(:name)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.I18nLanguageSnippet do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.I18nLanguageSnippet.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.I18nLanguageSnippet do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

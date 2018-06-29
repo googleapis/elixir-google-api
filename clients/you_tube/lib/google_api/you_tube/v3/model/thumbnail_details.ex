@@ -29,30 +29,31 @@ defmodule GoogleApi.YouTube.V3.Model.ThumbnailDetails do
   - standard (Thumbnail): The standard quality image for this resource. Defaults to: `null`.
   """
 
-  defstruct [
-    :default,
-    :high,
-    :maxres,
-    :medium,
-    :standard
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :default => GoogleApi.YouTube.V3.Model.Thumbnail.t(),
+          :high => GoogleApi.YouTube.V3.Model.Thumbnail.t(),
+          :maxres => GoogleApi.YouTube.V3.Model.Thumbnail.t(),
+          :medium => GoogleApi.YouTube.V3.Model.Thumbnail.t(),
+          :standard => GoogleApi.YouTube.V3.Model.Thumbnail.t()
+        }
+
+  field(:default, as: GoogleApi.YouTube.V3.Model.Thumbnail)
+  field(:high, as: GoogleApi.YouTube.V3.Model.Thumbnail)
+  field(:maxres, as: GoogleApi.YouTube.V3.Model.Thumbnail)
+  field(:medium, as: GoogleApi.YouTube.V3.Model.Thumbnail)
+  field(:standard, as: GoogleApi.YouTube.V3.Model.Thumbnail)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ThumbnailDetails do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:default, :struct, GoogleApi.YouTube.V3.Model.Thumbnail, options)
-    |> deserialize(:high, :struct, GoogleApi.YouTube.V3.Model.Thumbnail, options)
-    |> deserialize(:maxres, :struct, GoogleApi.YouTube.V3.Model.Thumbnail, options)
-    |> deserialize(:medium, :struct, GoogleApi.YouTube.V3.Model.Thumbnail, options)
-    |> deserialize(:standard, :struct, GoogleApi.YouTube.V3.Model.Thumbnail, options)
+    GoogleApi.YouTube.V3.Model.ThumbnailDetails.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ThumbnailDetails do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -41,96 +41,54 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet do
   - userBannedDetails (LiveChatUserBannedMessageDetails):  Defaults to: `null`.
   """
 
-  defstruct [
-    :authorChannelId,
-    :displayMessage,
-    :fanFundingEventDetails,
-    :hasDisplayContent,
-    :liveChatId,
-    :messageDeletedDetails,
-    :messageRetractedDetails,
-    :pollClosedDetails,
-    :pollEditedDetails,
-    :pollOpenedDetails,
-    :pollVotedDetails,
-    :publishedAt,
-    :superChatDetails,
-    :textMessageDetails,
-    :type,
-    :userBannedDetails
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :authorChannelId => any(),
+          :displayMessage => any(),
+          :fanFundingEventDetails => GoogleApi.YouTube.V3.Model.LiveChatFanFundingEventDetails.t(),
+          :hasDisplayContent => any(),
+          :liveChatId => any(),
+          :messageDeletedDetails => GoogleApi.YouTube.V3.Model.LiveChatMessageDeletedDetails.t(),
+          :messageRetractedDetails =>
+            GoogleApi.YouTube.V3.Model.LiveChatMessageRetractedDetails.t(),
+          :pollClosedDetails => GoogleApi.YouTube.V3.Model.LiveChatPollClosedDetails.t(),
+          :pollEditedDetails => GoogleApi.YouTube.V3.Model.LiveChatPollEditedDetails.t(),
+          :pollOpenedDetails => GoogleApi.YouTube.V3.Model.LiveChatPollOpenedDetails.t(),
+          :pollVotedDetails => GoogleApi.YouTube.V3.Model.LiveChatPollVotedDetails.t(),
+          :publishedAt => DateTime.t(),
+          :superChatDetails => GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails.t(),
+          :textMessageDetails => GoogleApi.YouTube.V3.Model.LiveChatTextMessageDetails.t(),
+          :type => any(),
+          :userBannedDetails => GoogleApi.YouTube.V3.Model.LiveChatUserBannedMessageDetails.t()
+        }
+
+  field(:authorChannelId)
+  field(:displayMessage)
+  field(:fanFundingEventDetails, as: GoogleApi.YouTube.V3.Model.LiveChatFanFundingEventDetails)
+  field(:hasDisplayContent)
+  field(:liveChatId)
+  field(:messageDeletedDetails, as: GoogleApi.YouTube.V3.Model.LiveChatMessageDeletedDetails)
+  field(:messageRetractedDetails, as: GoogleApi.YouTube.V3.Model.LiveChatMessageRetractedDetails)
+  field(:pollClosedDetails, as: GoogleApi.YouTube.V3.Model.LiveChatPollClosedDetails)
+  field(:pollEditedDetails, as: GoogleApi.YouTube.V3.Model.LiveChatPollEditedDetails)
+  field(:pollOpenedDetails, as: GoogleApi.YouTube.V3.Model.LiveChatPollOpenedDetails)
+  field(:pollVotedDetails, as: GoogleApi.YouTube.V3.Model.LiveChatPollVotedDetails)
+  field(:publishedAt, as: DateTime)
+  field(:superChatDetails, as: GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails)
+  field(:textMessageDetails, as: GoogleApi.YouTube.V3.Model.LiveChatTextMessageDetails)
+  field(:type)
+  field(:userBannedDetails, as: GoogleApi.YouTube.V3.Model.LiveChatUserBannedMessageDetails)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :fanFundingEventDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.LiveChatFanFundingEventDetails,
-      options
-    )
-    |> deserialize(
-      :messageDeletedDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.LiveChatMessageDeletedDetails,
-      options
-    )
-    |> deserialize(
-      :messageRetractedDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.LiveChatMessageRetractedDetails,
-      options
-    )
-    |> deserialize(
-      :pollClosedDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.LiveChatPollClosedDetails,
-      options
-    )
-    |> deserialize(
-      :pollEditedDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.LiveChatPollEditedDetails,
-      options
-    )
-    |> deserialize(
-      :pollOpenedDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.LiveChatPollOpenedDetails,
-      options
-    )
-    |> deserialize(
-      :pollVotedDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.LiveChatPollVotedDetails,
-      options
-    )
-    |> deserialize(
-      :superChatDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails,
-      options
-    )
-    |> deserialize(
-      :textMessageDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.LiveChatTextMessageDetails,
-      options
-    )
-    |> deserialize(
-      :userBannedDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.LiveChatUserBannedMessageDetails,
-      options
-    )
+    GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

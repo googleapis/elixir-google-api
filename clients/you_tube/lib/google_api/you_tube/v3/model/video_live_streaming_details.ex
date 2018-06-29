@@ -30,24 +30,33 @@ defmodule GoogleApi.YouTube.V3.Model.VideoLiveStreamingDetails do
   - scheduledStartTime (DateTime.t): The time that the broadcast is scheduled to begin. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format. Defaults to: `null`.
   """
 
-  defstruct [
-    :activeLiveChatId,
-    :actualEndTime,
-    :actualStartTime,
-    :concurrentViewers,
-    :scheduledEndTime,
-    :scheduledStartTime
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :activeLiveChatId => any(),
+          :actualEndTime => DateTime.t(),
+          :actualStartTime => DateTime.t(),
+          :concurrentViewers => any(),
+          :scheduledEndTime => DateTime.t(),
+          :scheduledStartTime => DateTime.t()
+        }
+
+  field(:activeLiveChatId)
+  field(:actualEndTime, as: DateTime)
+  field(:actualStartTime, as: DateTime)
+  field(:concurrentViewers)
+  field(:scheduledEndTime, as: DateTime)
+  field(:scheduledStartTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoLiveStreamingDetails do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.VideoLiveStreamingDetails.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoLiveStreamingDetails do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

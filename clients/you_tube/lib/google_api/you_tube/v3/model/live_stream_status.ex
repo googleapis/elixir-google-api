@@ -27,28 +27,25 @@ defmodule GoogleApi.YouTube.V3.Model.LiveStreamStatus do
     - Enum - one of [active, created, error, inactive, ready]
   """
 
-  defstruct [
-    :healthStatus,
-    :streamStatus
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :healthStatus => GoogleApi.YouTube.V3.Model.LiveStreamHealthStatus.t(),
+          :streamStatus => any()
+        }
+
+  field(:healthStatus, as: GoogleApi.YouTube.V3.Model.LiveStreamHealthStatus)
+  field(:streamStatus)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveStreamStatus do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :healthStatus,
-      :struct,
-      GoogleApi.YouTube.V3.Model.LiveStreamHealthStatus,
-      options
-    )
+    GoogleApi.YouTube.V3.Model.LiveStreamStatus.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveStreamStatus do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

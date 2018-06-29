@@ -34,34 +34,43 @@ defmodule GoogleApi.YouTube.V3.Model.VideoProcessingDetails do
   - thumbnailsAvailability (String.t): This value indicates whether thumbnail images have been generated for the video. Defaults to: `null`.
   """
 
-  defstruct [
-    :editorSuggestionsAvailability,
-    :fileDetailsAvailability,
-    :processingFailureReason,
-    :processingIssuesAvailability,
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :editorSuggestionsAvailability => any(),
+          :fileDetailsAvailability => any(),
+          :processingFailureReason => any(),
+          :processingIssuesAvailability => any(),
+          :processingProgress =>
+            GoogleApi.YouTube.V3.Model.VideoProcessingDetailsProcessingProgress.t(),
+          :processingStatus => any(),
+          :tagSuggestionsAvailability => any(),
+          :thumbnailsAvailability => any()
+        }
+
+  field(:editorSuggestionsAvailability)
+  field(:fileDetailsAvailability)
+  field(:processingFailureReason)
+  field(:processingIssuesAvailability)
+
+  field(
     :processingProgress,
-    :processingStatus,
-    :tagSuggestionsAvailability,
-    :thumbnailsAvailability
-  ]
+    as: GoogleApi.YouTube.V3.Model.VideoProcessingDetailsProcessingProgress
+  )
+
+  field(:processingStatus)
+  field(:tagSuggestionsAvailability)
+  field(:thumbnailsAvailability)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoProcessingDetails do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :processingProgress,
-      :struct,
-      GoogleApi.YouTube.V3.Model.VideoProcessingDetailsProcessingProgress,
-      options
-    )
+    GoogleApi.YouTube.V3.Model.VideoProcessingDetails.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoProcessingDetails do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

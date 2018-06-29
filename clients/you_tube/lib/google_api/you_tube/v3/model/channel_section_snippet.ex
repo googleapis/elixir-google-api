@@ -33,33 +33,35 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelSectionSnippet do
     - Enum - one of [allPlaylists, channelsectionTypeUndefined, completedEvents, likedPlaylists, likes, liveEvents, multipleChannels, multiplePlaylists, popularUploads, postedPlaylists, postedVideos, recentActivity, recentPosts, recentUploads, singlePlaylist, subscriptions, upcomingEvents]
   """
 
-  defstruct [
-    :channelId,
-    :defaultLanguage,
-    :localized,
-    :position,
-    :style,
-    :title,
-    :type
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :channelId => any(),
+          :defaultLanguage => any(),
+          :localized => GoogleApi.YouTube.V3.Model.ChannelSectionLocalization.t(),
+          :position => any(),
+          :style => any(),
+          :title => any(),
+          :type => any()
+        }
+
+  field(:channelId)
+  field(:defaultLanguage)
+  field(:localized, as: GoogleApi.YouTube.V3.Model.ChannelSectionLocalization)
+  field(:position)
+  field(:style)
+  field(:title)
+  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelSectionSnippet do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :localized,
-      :struct,
-      GoogleApi.YouTube.V3.Model.ChannelSectionLocalization,
-      options
-    )
+    GoogleApi.YouTube.V3.Model.ChannelSectionSnippet.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ChannelSectionSnippet do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

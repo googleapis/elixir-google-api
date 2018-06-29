@@ -26,20 +26,25 @@ defmodule GoogleApi.YouTube.V3.Model.LiveBroadcastStatistics do
   - totalChatCount (String.t): The total number of live chat messages currently on the broadcast. The property and its value will be present if the broadcast is public, has the live chat feature enabled, and has at least one message. Note that this field will not be filled after the broadcast ends. So this property would not identify the number of chat messages for an archived video of a completed live broadcast. Defaults to: `null`.
   """
 
-  defstruct [
-    :concurrentViewers,
-    :totalChatCount
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :concurrentViewers => any(),
+          :totalChatCount => any()
+        }
+
+  field(:concurrentViewers)
+  field(:totalChatCount)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveBroadcastStatistics do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.LiveBroadcastStatistics.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveBroadcastStatistics do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -30,26 +30,31 @@ defmodule GoogleApi.YouTube.V3.Model.ActivityContentDetailsSocial do
     - Enum - one of [facebook, googlePlus, twitter, unspecified]
   """
 
-  defstruct [
-    :author,
-    :imageUrl,
-    :referenceUrl,
-    :resourceId,
-    :type
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :author => any(),
+          :imageUrl => any(),
+          :referenceUrl => any(),
+          :resourceId => GoogleApi.YouTube.V3.Model.ResourceId.t(),
+          :type => any()
+        }
+
+  field(:author)
+  field(:imageUrl)
+  field(:referenceUrl)
+  field(:resourceId, as: GoogleApi.YouTube.V3.Model.ResourceId)
+  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ActivityContentDetailsSocial do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:resourceId, :struct, GoogleApi.YouTube.V3.Model.ResourceId, options)
+    GoogleApi.YouTube.V3.Model.ActivityContentDetailsSocial.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ActivityContentDetailsSocial do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

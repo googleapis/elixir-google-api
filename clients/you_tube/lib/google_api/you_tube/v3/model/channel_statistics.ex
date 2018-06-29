@@ -29,23 +29,31 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelStatistics do
   - viewCount (String.t): The number of times the channel has been viewed. Defaults to: `null`.
   """
 
-  defstruct [
-    :commentCount,
-    :hiddenSubscriberCount,
-    :subscriberCount,
-    :videoCount,
-    :viewCount
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :commentCount => any(),
+          :hiddenSubscriberCount => any(),
+          :subscriberCount => any(),
+          :videoCount => any(),
+          :viewCount => any()
+        }
+
+  field(:commentCount)
+  field(:hiddenSubscriberCount)
+  field(:subscriberCount)
+  field(:videoCount)
+  field(:viewCount)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelStatistics do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.ChannelStatistics.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.ChannelStatistics do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

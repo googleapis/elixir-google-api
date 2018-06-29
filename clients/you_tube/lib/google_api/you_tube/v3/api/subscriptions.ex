@@ -22,7 +22,7 @@ defmodule GoogleApi.YouTube.V3.Api.Subscriptions do
   """
 
   alias GoogleApi.YouTube.V3.Connection
-  import GoogleApi.YouTube.V3.RequestBuilder
+  alias GoogleApi.Gax.{Request, Response}
 
   @doc """
   Deletes a subscription.
@@ -37,8 +37,8 @@ defmodule GoogleApi.YouTube.V3.Api.Subscriptions do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
 
   ## Returns
 
@@ -58,14 +58,16 @@ defmodule GoogleApi.YouTube.V3.Api.Subscriptions do
       :userIp => :query
     }
 
-    %{}
-    |> method(:delete)
-    |> url("/youtube/v3/subscriptions")
-    |> add_param(:query, :id, id)
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(false)
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/youtube/v3/subscriptions")
+      |> Request.add_param(:query, :id, id)
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(decode: false)
   end
 
   @doc """
@@ -81,8 +83,8 @@ defmodule GoogleApi.YouTube.V3.Api.Subscriptions do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :body (Subscription): 
 
   ## Returns
@@ -104,14 +106,16 @@ defmodule GoogleApi.YouTube.V3.Api.Subscriptions do
       :body => :body
     }
 
-    %{}
-    |> method(:post)
-    |> url("/youtube/v3/subscriptions")
-    |> add_param(:query, :part, part)
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.YouTube.V3.Model.Subscription{})
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/youtube/v3/subscriptions")
+      |> Request.add_param(:query, :part, part)
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.Subscription{})
   end
 
   @doc """
@@ -127,8 +131,8 @@ defmodule GoogleApi.YouTube.V3.Api.Subscriptions do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :channelId (String.t): The channelId parameter specifies a YouTube channel ID. The API will only return that channel&#39;s subscriptions.
     - :forChannelId (String.t): The forChannelId parameter specifies a comma-separated list of channel IDs. The API response will then only contain subscriptions matching those channels.
     - :id (String.t): The id parameter specifies a comma-separated list of the YouTube subscription ID(s) for the resource(s) that are being retrieved. In a subscription resource, the id property specifies the YouTube subscription ID.
@@ -170,13 +174,15 @@ defmodule GoogleApi.YouTube.V3.Api.Subscriptions do
       :pageToken => :query
     }
 
-    %{}
-    |> method(:get)
-    |> url("/youtube/v3/subscriptions")
-    |> add_param(:query, :part, part)
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.YouTube.V3.Model.SubscriptionListResponse{})
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/youtube/v3/subscriptions")
+      |> Request.add_param(:query, :part, part)
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.SubscriptionListResponse{})
   end
 end

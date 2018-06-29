@@ -28,30 +28,29 @@ defmodule GoogleApi.YouTube.V3.Model.VideoAbuseReportReason do
   - snippet (VideoAbuseReportReasonSnippet): The snippet object contains basic details about the abuse report reason. Defaults to: `null`.
   """
 
-  defstruct [
-    :etag,
-    :id,
-    :kind,
-    :snippet
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :etag => any(),
+          :id => any(),
+          :kind => any(),
+          :snippet => GoogleApi.YouTube.V3.Model.VideoAbuseReportReasonSnippet.t()
+        }
+
+  field(:etag)
+  field(:id)
+  field(:kind)
+  field(:snippet, as: GoogleApi.YouTube.V3.Model.VideoAbuseReportReasonSnippet)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoAbuseReportReason do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :snippet,
-      :struct,
-      GoogleApi.YouTube.V3.Model.VideoAbuseReportReasonSnippet,
-      options
-    )
+    GoogleApi.YouTube.V3.Model.VideoAbuseReportReason.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoAbuseReportReason do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

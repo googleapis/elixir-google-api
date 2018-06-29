@@ -31,36 +31,35 @@ defmodule GoogleApi.YouTube.V3.Model.LiveStream do
   - status (LiveStreamStatus): The status object contains information about live stream&#39;s status. Defaults to: `null`.
   """
 
-  defstruct [
-    :cdn,
-    :contentDetails,
-    :etag,
-    :id,
-    :kind,
-    :snippet,
-    :status
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :cdn => GoogleApi.YouTube.V3.Model.CdnSettings.t(),
+          :contentDetails => GoogleApi.YouTube.V3.Model.LiveStreamContentDetails.t(),
+          :etag => any(),
+          :id => any(),
+          :kind => any(),
+          :snippet => GoogleApi.YouTube.V3.Model.LiveStreamSnippet.t(),
+          :status => GoogleApi.YouTube.V3.Model.LiveStreamStatus.t()
+        }
+
+  field(:cdn, as: GoogleApi.YouTube.V3.Model.CdnSettings)
+  field(:contentDetails, as: GoogleApi.YouTube.V3.Model.LiveStreamContentDetails)
+  field(:etag)
+  field(:id)
+  field(:kind)
+  field(:snippet, as: GoogleApi.YouTube.V3.Model.LiveStreamSnippet)
+  field(:status, as: GoogleApi.YouTube.V3.Model.LiveStreamStatus)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveStream do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:cdn, :struct, GoogleApi.YouTube.V3.Model.CdnSettings, options)
-    |> deserialize(
-      :contentDetails,
-      :struct,
-      GoogleApi.YouTube.V3.Model.LiveStreamContentDetails,
-      options
-    )
-    |> deserialize(:snippet, :struct, GoogleApi.YouTube.V3.Model.LiveStreamSnippet, options)
-    |> deserialize(:status, :struct, GoogleApi.YouTube.V3.Model.LiveStreamStatus, options)
+    GoogleApi.YouTube.V3.Model.LiveStream.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveStream do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

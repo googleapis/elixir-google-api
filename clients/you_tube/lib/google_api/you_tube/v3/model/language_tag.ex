@@ -25,19 +25,23 @@ defmodule GoogleApi.YouTube.V3.Model.LanguageTag do
   - value (String.t):  Defaults to: `null`.
   """
 
-  defstruct [
-    :value
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :value => any()
+        }
+
+  field(:value)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LanguageTag do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.LanguageTag.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LanguageTag do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

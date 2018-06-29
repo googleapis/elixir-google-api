@@ -22,7 +22,7 @@ defmodule GoogleApi.YouTube.V3.Api.Channels do
   """
 
   alias GoogleApi.YouTube.V3.Connection
-  import GoogleApi.YouTube.V3.RequestBuilder
+  alias GoogleApi.Gax.{Request, Response}
 
   @doc """
   Returns a collection of zero or more channel resources that match the request criteria.
@@ -37,8 +37,8 @@ defmodule GoogleApi.YouTube.V3.Api.Channels do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :categoryId (String.t): The categoryId parameter specifies a YouTube guide category, thereby requesting YouTube channels associated with that category.
     - :forUsername (String.t): The forUsername parameter specifies a YouTube username, thereby requesting the channel associated with that username.
     - :hl (String.t): The hl parameter should be used for filter out the properties that are not in the given language. Used for the brandingSettings part.
@@ -78,14 +78,16 @@ defmodule GoogleApi.YouTube.V3.Api.Channels do
       :pageToken => :query
     }
 
-    %{}
-    |> method(:get)
-    |> url("/youtube/v3/channels")
-    |> add_param(:query, :part, part)
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.YouTube.V3.Model.ChannelListResponse{})
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/youtube/v3/channels")
+      |> Request.add_param(:query, :part, part)
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.ChannelListResponse{})
   end
 
   @doc """
@@ -101,8 +103,8 @@ defmodule GoogleApi.YouTube.V3.Api.Channels do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :userIp (String.t): IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :onBehalfOfContentOwner (String.t): The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with needs to be linked to the specified YouTube content owner.
     - :body (Channel): 
 
@@ -126,13 +128,15 @@ defmodule GoogleApi.YouTube.V3.Api.Channels do
       :body => :body
     }
 
-    %{}
-    |> method(:put)
-    |> url("/youtube/v3/channels")
-    |> add_param(:query, :part, part)
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.YouTube.V3.Model.Channel{})
+    request =
+      Request.new()
+      |> Request.method(:put)
+      |> Request.url("/youtube/v3/channels")
+      |> Request.add_param(:query, :part, part)
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.Channel{})
   end
 end

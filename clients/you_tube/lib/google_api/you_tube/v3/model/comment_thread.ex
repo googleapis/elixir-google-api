@@ -29,27 +29,31 @@ defmodule GoogleApi.YouTube.V3.Model.CommentThread do
   - snippet (CommentThreadSnippet): The snippet object contains basic details about the comment thread and also the top level comment. Defaults to: `null`.
   """
 
-  defstruct [
-    :etag,
-    :id,
-    :kind,
-    :replies,
-    :snippet
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :etag => any(),
+          :id => any(),
+          :kind => any(),
+          :replies => GoogleApi.YouTube.V3.Model.CommentThreadReplies.t(),
+          :snippet => GoogleApi.YouTube.V3.Model.CommentThreadSnippet.t()
+        }
+
+  field(:etag)
+  field(:id)
+  field(:kind)
+  field(:replies, as: GoogleApi.YouTube.V3.Model.CommentThreadReplies)
+  field(:snippet, as: GoogleApi.YouTube.V3.Model.CommentThreadSnippet)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.CommentThread do
-  import GoogleApi.YouTube.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:replies, :struct, GoogleApi.YouTube.V3.Model.CommentThreadReplies, options)
-    |> deserialize(:snippet, :struct, GoogleApi.YouTube.V3.Model.CommentThreadSnippet, options)
+    GoogleApi.YouTube.V3.Model.CommentThread.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.CommentThread do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

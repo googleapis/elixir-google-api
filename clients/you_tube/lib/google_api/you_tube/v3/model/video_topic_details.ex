@@ -27,21 +27,27 @@ defmodule GoogleApi.YouTube.V3.Model.VideoTopicDetails do
   - topicIds ([String.t]): A list of Freebase topic IDs that are centrally associated with the video. These are topics that are centrally featured in the video, and it can be said that the video is mainly about each of these. You can retrieve information about each topic using the Freebase Topic API. Defaults to: `null`.
   """
 
-  defstruct [
-    :relevantTopicIds,
-    :topicCategories,
-    :topicIds
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :relevantTopicIds => list(any()),
+          :topicCategories => list(any()),
+          :topicIds => list(any())
+        }
+
+  field(:relevantTopicIds, type: :list)
+  field(:topicCategories, type: :list)
+  field(:topicIds, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoTopicDetails do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.YouTube.V3.Model.VideoTopicDetails.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.VideoTopicDetails do
   def encode(value, options) do
-    GoogleApi.YouTube.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end
