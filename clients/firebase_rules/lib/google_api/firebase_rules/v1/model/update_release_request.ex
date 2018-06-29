@@ -16,31 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.FirebaseRules.V1.Model.Source do
+defmodule GoogleApi.FirebaseRules.V1.Model.UpdateReleaseRequest do
   @moduledoc """
-  &#x60;Source&#x60; is one or more &#x60;File&#x60; messages comprising a logical set of rules.
+  The request for FirebaseRulesService.UpdateReleasePatch.
 
   ## Attributes
 
-  - files ([File]): &#x60;File&#x60; set constituting the &#x60;Source&#x60; bundle. Defaults to: `null`.
+  - release (Release): &#x60;Release&#x60; to update. Defaults to: `null`.
+  - updateMask (String.t): Specifies which fields to update. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :files => list(GoogleApi.FirebaseRules.V1.Model.File.t())
+          :release => GoogleApi.FirebaseRules.V1.Model.Release.t(),
+          :updateMask => any()
         }
 
-  field(:files, as: GoogleApi.FirebaseRules.V1.Model.File, type: :list)
+  field(:release, as: GoogleApi.FirebaseRules.V1.Model.Release)
+  field(:updateMask)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.FirebaseRules.V1.Model.Source do
+defimpl Poison.Decoder, for: GoogleApi.FirebaseRules.V1.Model.UpdateReleaseRequest do
   def decode(value, options) do
-    GoogleApi.FirebaseRules.V1.Model.Source.decode(value, options)
+    GoogleApi.FirebaseRules.V1.Model.UpdateReleaseRequest.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.FirebaseRules.V1.Model.Source do
+defimpl Poison.Encoder, for: GoogleApi.FirebaseRules.V1.Model.UpdateReleaseRequest do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
