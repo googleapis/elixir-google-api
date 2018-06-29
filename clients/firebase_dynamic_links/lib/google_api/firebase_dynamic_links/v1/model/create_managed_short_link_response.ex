@@ -16,39 +16,39 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.CreateShortDynamicLinkResponse do
+defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.CreateManagedShortLinkResponse do
   @moduledoc """
   Response to create a short Dynamic Link.
 
   ## Attributes
 
+  - managedShortLink (ManagedShortLink): Short Dynamic Link value. e.g. https://abcd.app.goo.gl/wxyz Defaults to: `null`.
   - previewLink (String.t): Preview link to show the link flow chart. (debug info.) Defaults to: `null`.
-  - shortLink (String.t): Short Dynamic Link value. e.g. https://abcd.app.goo.gl/wxyz Defaults to: `null`.
   - warning ([DynamicLinkWarning]): Information about potential warnings on link creation. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :managedShortLink => GoogleApi.FirebaseDynamicLinks.V1.Model.ManagedShortLink.t(),
           :previewLink => any(),
-          :shortLink => any(),
           :warning => list(GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkWarning.t())
         }
 
+  field(:managedShortLink, as: GoogleApi.FirebaseDynamicLinks.V1.Model.ManagedShortLink)
   field(:previewLink)
-  field(:shortLink)
   field(:warning, as: GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkWarning, type: :list)
 end
 
 defimpl Poison.Decoder,
-  for: GoogleApi.FirebaseDynamicLinks.V1.Model.CreateShortDynamicLinkResponse do
+  for: GoogleApi.FirebaseDynamicLinks.V1.Model.CreateManagedShortLinkResponse do
   def decode(value, options) do
-    GoogleApi.FirebaseDynamicLinks.V1.Model.CreateShortDynamicLinkResponse.decode(value, options)
+    GoogleApi.FirebaseDynamicLinks.V1.Model.CreateManagedShortLinkResponse.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder,
-  for: GoogleApi.FirebaseDynamicLinks.V1.Model.CreateShortDynamicLinkResponse do
+  for: GoogleApi.FirebaseDynamicLinks.V1.Model.CreateManagedShortLinkResponse do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

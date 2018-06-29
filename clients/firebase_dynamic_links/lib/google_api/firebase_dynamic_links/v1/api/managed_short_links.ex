@@ -16,16 +16,16 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.FirebaseDynamicLinks.V1.Api.ShortLinks do
+defmodule GoogleApi.FirebaseDynamicLinks.V1.Api.ManagedShortLinks do
   @moduledoc """
-  API calls for all endpoints tagged `ShortLinks`.
+  API calls for all endpoints tagged `ManagedShortLinks`.
   """
 
   alias GoogleApi.FirebaseDynamicLinks.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Creates a short Dynamic Link given either a valid long Dynamic Link or details such as Dynamic Link domain, Android and iOS app information. The created short Dynamic Link will not expire.  Repeated calls with the same long Dynamic Link or Dynamic Link information will produce the same short Dynamic Link.  The Dynamic Link domain in the request must be owned by requester&#39;s Firebase project.
+  Creates a managed short Dynamic Link given either a valid long Dynamic Link or details such as Dynamic Link domain, Android and iOS app information. The created short Dynamic Link will not expire.  This differs from CreateShortDynamicLink in the following ways:   - The request will also contain a name for the link (non unique name     for the front end).   - The response must be authenticated with an auth token (generated with     the admin service account).   - The link will appear in the FDL list of links in the console front end.  The Dynamic Link domain in the request must be owned by requester&#39;s Firebase project.
 
   ## Parameters
 
@@ -42,17 +42,17 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Api.ShortLinks do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :body (CreateShortDynamicLinkRequest): 
+    - :body (CreateManagedShortLinkRequest): 
 
   ## Returns
 
-  {:ok, %GoogleApi.FirebaseDynamicLinks.V1.Model.CreateShortDynamicLinkResponse{}} on success
+  {:ok, %GoogleApi.FirebaseDynamicLinks.V1.Model.CreateManagedShortLinkResponse{}} on success
   {:error, info} on failure
   """
-  @spec firebasedynamiclinks_short_links_create(Tesla.Env.client(), keyword()) ::
-          {:ok, GoogleApi.FirebaseDynamicLinks.V1.Model.CreateShortDynamicLinkResponse.t()}
+  @spec firebasedynamiclinks_managed_short_links_create(Tesla.Env.client(), keyword()) ::
+          {:ok, GoogleApi.FirebaseDynamicLinks.V1.Model.CreateManagedShortLinkResponse.t()}
           | {:error, Tesla.Env.t()}
-  def firebasedynamiclinks_short_links_create(connection, opts \\ []) do
+  def firebasedynamiclinks_managed_short_links_create(connection, opts \\ []) do
     optional_params = %{
       :fields => :query,
       :uploadType => :query,
@@ -71,13 +71,13 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Api.ShortLinks do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/shortLinks")
+      |> Request.url("/v1/managedShortLinks:create")
       |> Request.add_optional_params(optional_params, opts)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.FirebaseDynamicLinks.V1.Model.CreateShortDynamicLinkResponse{}
+      struct: %GoogleApi.FirebaseDynamicLinks.V1.Model.CreateManagedShortLinkResponse{}
     )
   end
 end
