@@ -16,37 +16,37 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsForUserListResponse do
+defmodule GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettingsListResponse do
   @moduledoc """
-  The managed configuration resources for the user.
+  The managed configurations settings for a product.
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#managedConfigurationsForUserListResponse\&quot;. Defaults to: `null`.
-  - managedConfigurationForUser ([ManagedConfiguration]): A managed configuration for an app for a specific user. Defaults to: `null`.
+  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#managedConfigurationsSettingsListResponse\&quot;. Defaults to: `null`.
+  - managedConfigurationsSettings ([ManagedConfigurationsSettings]): A managed configurations settings for an app that may be assigned to a group of users in an enterprise. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :kind => any(),
-          :managedConfigurationForUser =>
-            list(GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration.t())
+          :managedConfigurationsSettings =>
+            list(GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettings.t())
         }
 
   field(:kind)
 
   field(
-    :managedConfigurationForUser,
-    as: GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration,
+    :managedConfigurationsSettings,
+    as: GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettings,
     type: :list
   )
 end
 
 defimpl Poison.Decoder,
-  for: GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsForUserListResponse do
+  for: GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettingsListResponse do
   def decode(value, options) do
-    GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsForUserListResponse.decode(
+    GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettingsListResponse.decode(
       value,
       options
     )
@@ -54,7 +54,7 @@ defimpl Poison.Decoder,
 end
 
 defimpl Poison.Encoder,
-  for: GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsForUserListResponse do
+  for: GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettingsListResponse do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

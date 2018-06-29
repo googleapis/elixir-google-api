@@ -16,34 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AndroidEnterprise.V1.Model.LocalizedText do
+defmodule GoogleApi.AndroidEnterprise.V1.Model.MaintenanceWindow do
   @moduledoc """
-  A localized string with its locale.
+  Maintenance window for managed Google Play Accounts. This allows Play store to update the apps on the foreground in the designated window.
 
   ## Attributes
 
-  - locale (String.t): The BCP47 tag for a locale. (e.g. \&quot;en-US\&quot;, \&quot;de\&quot;). Defaults to: `null`.
-  - text (String.t): The text localized in the associated locale. Defaults to: `null`.
+  - durationMs (String.t): Duration of the maintenance window, in milliseconds. The duration must be between 30 minutes and 24 hours (inclusive). Defaults to: `null`.
+  - startTimeAfterMidnightMs (String.t): Start time of the maintenance window, in milliseconds after midnight on the device. Windows can span midnight. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :locale => any(),
-          :text => any()
+          :durationMs => any(),
+          :startTimeAfterMidnightMs => any()
         }
 
-  field(:locale)
-  field(:text)
+  field(:durationMs)
+  field(:startTimeAfterMidnightMs)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.LocalizedText do
+defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.MaintenanceWindow do
   def decode(value, options) do
-    GoogleApi.AndroidEnterprise.V1.Model.LocalizedText.decode(value, options)
+    GoogleApi.AndroidEnterprise.V1.Model.MaintenanceWindow.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.LocalizedText do
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.MaintenanceWindow do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

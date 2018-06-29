@@ -16,34 +16,37 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AndroidEnterprise.V1.Model.AuthenticationToken do
+defmodule GoogleApi.AndroidEnterprise.V1.Model.VariableSet do
   @moduledoc """
-  An AuthenticationToken is used by the EMM&#39;s device policy client on a device to provision the given EMM-managed user on that device.
+  A variable set is a key-value pair of EMM-provided placeholders and its corresponding value, which is attributed to a user. For example, $FIRSTNAME could be a placeholder, and its value could be Alice. Placeholders should start with a &#39;$&#39; sign and should be alphanumeric only.
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#authenticationToken\&quot;. Defaults to: `null`.
-  - token (String.t): The authentication token to be passed to the device policy client on the device where it can be used to provision the account for which this token was generated. Defaults to: `null`.
+  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#variableSet\&quot;. Defaults to: `null`.
+  - placeholder (String.t): The placeholder string; defined by EMM. Defaults to: `null`.
+  - userValue (String.t): The value of the placeholder, specific to the user. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :kind => any(),
-          :token => any()
+          :placeholder => any(),
+          :userValue => any()
         }
 
   field(:kind)
-  field(:token)
+  field(:placeholder)
+  field(:userValue)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.AuthenticationToken do
+defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.VariableSet do
   def decode(value, options) do
-    GoogleApi.AndroidEnterprise.V1.Model.AuthenticationToken.decode(value, options)
+    GoogleApi.AndroidEnterprise.V1.Model.VariableSet.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.AuthenticationToken do
+defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.VariableSet do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
