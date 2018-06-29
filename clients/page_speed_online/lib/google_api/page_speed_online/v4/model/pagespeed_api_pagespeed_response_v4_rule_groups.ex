@@ -16,34 +16,39 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.PageSpeedOnline.V2.Model.ResultVersion do
+defmodule GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiPagespeedResponseV4RuleGroups do
   @moduledoc """
-  The version of PageSpeed used to generate these results.
+  The name of this rule group: one of \&quot;SPEED\&quot;, \&quot;USABILITY\&quot;, or \&quot;SECURITY\&quot;.
 
   ## Attributes
 
-  - major (integer()): The major version number of PageSpeed used to generate these results. Defaults to: `null`.
-  - minor (integer()): The minor version number of PageSpeed used to generate these results. Defaults to: `null`.
+  - pass (boolean()):  Defaults to: `null`.
+  - score (integer()): The score (0-100) for this rule group, which indicates how much better a page could be in that category (e.g. how much faster, or how much more usable, or how much more secure). A high score indicates little room for improvement, while a lower score indicates more room for improvement. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :major => any(),
-          :minor => any()
+          :pass => any(),
+          :score => any()
         }
 
-  field(:major)
-  field(:minor)
+  field(:pass)
+  field(:score)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.ResultVersion do
+defimpl Poison.Decoder,
+  for: GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiPagespeedResponseV4RuleGroups do
   def decode(value, options) do
-    GoogleApi.PageSpeedOnline.V2.Model.ResultVersion.decode(value, options)
+    GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiPagespeedResponseV4RuleGroups.decode(
+      value,
+      options
+    )
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.PageSpeedOnline.V2.Model.ResultVersion do
+defimpl Poison.Encoder,
+  for: GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiPagespeedResponseV4RuleGroups do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

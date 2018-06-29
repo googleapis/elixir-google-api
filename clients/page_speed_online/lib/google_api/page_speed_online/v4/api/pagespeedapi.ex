@@ -16,12 +16,12 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.PageSpeedOnline.V2.Api.Pagespeedapi do
+defmodule GoogleApi.PageSpeedOnline.V4.Api.Pagespeedapi do
   @moduledoc """
   API calls for all endpoints tagged `Pagespeedapi`.
   """
 
-  alias GoogleApi.PageSpeedOnline.V2.Connection
+  alias GoogleApi.PageSpeedOnline.V4.Connection
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
@@ -29,7 +29,7 @@ defmodule GoogleApi.PageSpeedOnline.V2.Api.Pagespeedapi do
 
   ## Parameters
 
-  - connection (GoogleApi.PageSpeedOnline.V2.Connection): Connection to server
+  - connection (GoogleApi.PageSpeedOnline.V4.Connection): Connection to server
   - url (String.t): The URL to fetch and analyze
   - opts (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
@@ -43,15 +43,19 @@ defmodule GoogleApi.PageSpeedOnline.V2.Api.Pagespeedapi do
     - :locale (String.t): The locale used to localize formatted results
     - :rule ([String.t]): A PageSpeed rule to run; if none are given, all rules are run
     - :screenshot (boolean()): Indicates if binary data containing a screenshot should be included
-    - :strategy (String.t): The analysis strategy to use
+    - :snapshots (boolean()): Indicates if binary data containing snapshot images should be included
+    - :strategy (String.t): The analysis strategy (desktop or mobile) to use, and desktop is the default
+    - :utm_campaign (String.t): Campaign name for analytics.
+    - :utm_source (String.t): Campaign source for analytics.
 
   ## Returns
 
-  {:ok, %GoogleApi.PageSpeedOnline.V2.Model.Result{}} on success
+  {:ok, %GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiPagespeedResponseV4{}} on success
   {:error, info} on failure
   """
   @spec pagespeedonline_pagespeedapi_runpagespeed(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.PageSpeedOnline.V2.Model.Result.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiPagespeedResponseV4.t()}
+          | {:error, Tesla.Env.t()}
   def pagespeedonline_pagespeedapi_runpagespeed(connection, url, opts \\ []) do
     optional_params = %{
       :alt => :query,
@@ -65,7 +69,10 @@ defmodule GoogleApi.PageSpeedOnline.V2.Api.Pagespeedapi do
       :locale => :query,
       :rule => :query,
       :screenshot => :query,
-      :strategy => :query
+      :snapshots => :query,
+      :strategy => :query,
+      :utm_campaign => :query,
+      :utm_source => :query
     }
 
     request =
@@ -77,6 +84,8 @@ defmodule GoogleApi.PageSpeedOnline.V2.Api.Pagespeedapi do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PageSpeedOnline.V2.Model.Result{})
+    |> Response.decode(
+      struct: %GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiPagespeedResponseV4{}
+    )
   end
 end

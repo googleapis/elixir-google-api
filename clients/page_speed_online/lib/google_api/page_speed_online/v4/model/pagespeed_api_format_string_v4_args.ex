@@ -16,15 +16,15 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2Args do
+defmodule GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiFormatStringV4Args do
   @moduledoc """
 
 
   ## Attributes
 
   - key (String.t): The placeholder key for this arg, as a string. Defaults to: `null`.
-  - rects ([PagespeedApiFormatStringV2Rects]): The screen rectangles being referred to, with dimensions measured in CSS pixels. This is only ever used for SNAPSHOT_RECT arguments. If this is absent for a SNAPSHOT_RECT argument, it means that that argument refers to the entire snapshot. Defaults to: `null`.
-  - secondary_rects ([PagespeedApiFormatStringV2Rects]): Secondary screen rectangles being referred to, with dimensions measured in CSS pixels. This is only ever used for SNAPSHOT_RECT arguments. Defaults to: `null`.
+  - rects ([PagespeedApiFormatStringV4Rects]): The screen rectangles being referred to, with dimensions measured in CSS pixels. This is only ever used for SNAPSHOT_RECT arguments. If this is absent for a SNAPSHOT_RECT argument, it means that that argument refers to the entire snapshot. Defaults to: `null`.
+  - secondary_rects ([PagespeedApiFormatStringV4Rects]): Secondary screen rectangles being referred to, with dimensions measured in CSS pixels. This is only ever used for SNAPSHOT_RECT arguments. Defaults to: `null`.
   - type (String.t): Type of argument. One of URL, STRING_LITERAL, INT_LITERAL, BYTES, DURATION, VERBATIM_STRING, PERCENTAGE, HYPERLINK, or SNAPSHOT_RECT. Defaults to: `null`.
   - value (String.t): Argument value, as a localized string. Defaults to: `null`.
   """
@@ -33,9 +33,9 @@ defmodule GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2Args do
 
   @type t :: %__MODULE__{
           :key => any(),
-          :rects => list(GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2Rects.t()),
+          :rects => list(GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiFormatStringV4Rects.t()),
           :secondary_rects =>
-            list(GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2Rects.t()),
+            list(GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiFormatStringV4Rects.t()),
           :type => any(),
           :value => any()
         }
@@ -44,13 +44,13 @@ defmodule GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2Args do
 
   field(
     :rects,
-    as: GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2Rects,
+    as: GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiFormatStringV4Rects,
     type: :list
   )
 
   field(
     :secondary_rects,
-    as: GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2Rects,
+    as: GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiFormatStringV4Rects,
     type: :list
   )
 
@@ -58,13 +58,13 @@ defmodule GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2Args do
   field(:value)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2Args do
+defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiFormatStringV4Args do
   def decode(value, options) do
-    GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2Args.decode(value, options)
+    GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiFormatStringV4Args.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2Args do
+defimpl Poison.Encoder, for: GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiFormatStringV4Args do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

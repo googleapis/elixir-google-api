@@ -16,7 +16,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.PageSpeedOnline.V2.RequestBuilder do
+defmodule GoogleApi.PageSpeedOnline.V4.RequestBuilder do
   @moduledoc """
   Helper functions for building Tesla requests.
 

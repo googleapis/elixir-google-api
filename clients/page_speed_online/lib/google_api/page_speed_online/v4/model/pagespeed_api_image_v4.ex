@@ -16,7 +16,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiImageV2 do
+defmodule GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiImageV4 do
   @moduledoc """
 
 
@@ -26,7 +26,7 @@ defmodule GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiImageV2 do
   - height (integer()): Height of screenshot in pixels. Defaults to: `null`.
   - key (String.t): Unique string key, if any, identifying this image. Defaults to: `null`.
   - mime_type (String.t): Mime type of image data (e.g. \&quot;image/jpeg\&quot;). Defaults to: `null`.
-  - page_rect (PagespeedApiImageV2PageRect):  Defaults to: `null`.
+  - page_rect (PagespeedApiFormatStringV4Rects):  Defaults to: `null`.
   - width (integer()): Width of screenshot in pixels. Defaults to: `null`.
   """
 
@@ -37,7 +37,7 @@ defmodule GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiImageV2 do
           :height => any(),
           :key => any(),
           :mime_type => any(),
-          :page_rect => GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiImageV2PageRect.t(),
+          :page_rect => GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiFormatStringV4Rects.t(),
           :width => any()
         }
 
@@ -45,17 +45,17 @@ defmodule GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiImageV2 do
   field(:height)
   field(:key)
   field(:mime_type)
-  field(:page_rect, as: GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiImageV2PageRect)
+  field(:page_rect, as: GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiFormatStringV4Rects)
   field(:width)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiImageV2 do
+defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiImageV4 do
   def decode(value, options) do
-    GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiImageV2.decode(value, options)
+    GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiImageV4.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiImageV2 do
+defimpl Poison.Encoder, for: GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiImageV4 do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

@@ -16,10 +16,13 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.PageSpeedOnline.V2.RequestBuilder do
+defmodule GoogleApi.PageSpeedOnline.V4.Connection do
   @moduledoc """
-  Helper functions for building Tesla requests.
-
-  This module is no longer used. Please use GoogleApi.Gax.Request instead.
+  Handle Tesla connections for GoogleApi.PageSpeedOnline.V4.
   """
+
+  use GoogleApi.Gax.Connection,
+    scopes: [],
+    otp_app: :google_api_page_speed_online,
+    base_url: "https://www.googleapis.com/pagespeedonline/v4"
 end
