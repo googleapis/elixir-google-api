@@ -16,31 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.FirebaseRules.V1.Model.Source do
+defmodule GoogleApi.FirebaseRules.V1.Model.VisitedExpression do
   @moduledoc """
-  &#x60;Source&#x60; is one or more &#x60;File&#x60; messages comprising a logical set of rules.
+  Store the position and access outcome for an expression visited in rules.
 
   ## Attributes
 
-  - files ([File]): &#x60;File&#x60; set constituting the &#x60;Source&#x60; bundle. Defaults to: `null`.
+  - sourcePosition (SourcePosition): Position in the &#x60;Source&#x60; or &#x60;Ruleset&#x60; where an expression was visited. Defaults to: `null`.
+  - value (String.t): The evaluated value for the visited expression, e.g. true/false Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :files => list(GoogleApi.FirebaseRules.V1.Model.File.t())
+          :sourcePosition => GoogleApi.FirebaseRules.V1.Model.SourcePosition.t(),
+          :value => any()
         }
 
-  field(:files, as: GoogleApi.FirebaseRules.V1.Model.File, type: :list)
+  field(:sourcePosition, as: GoogleApi.FirebaseRules.V1.Model.SourcePosition)
+  field(:value)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.FirebaseRules.V1.Model.Source do
+defimpl Poison.Decoder, for: GoogleApi.FirebaseRules.V1.Model.VisitedExpression do
   def decode(value, options) do
-    GoogleApi.FirebaseRules.V1.Model.Source.decode(value, options)
+    GoogleApi.FirebaseRules.V1.Model.VisitedExpression.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.FirebaseRules.V1.Model.Source do
+defimpl Poison.Encoder, for: GoogleApi.FirebaseRules.V1.Model.VisitedExpression do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
