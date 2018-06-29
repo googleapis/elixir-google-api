@@ -16,34 +16,37 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Dataproc.V1.Model.ManagedGroupConfig do
+defmodule GoogleApi.Dataproc.V1.Model.ClusterOperation do
   @moduledoc """
-  Specifies the resources used to actively manage an instance group.
+  The cluster operation triggered by a workflow.
 
   ## Attributes
 
-  - instanceGroupManagerName (String.t): Output only. The name of the Instance Group Manager for this group. Defaults to: `null`.
-  - instanceTemplateName (String.t): Output only. The name of the Instance Template used for the Managed Instance Group. Defaults to: `null`.
+  - done (boolean()): Output only. Indicates the operation is done. Defaults to: `null`.
+  - error (String.t): Output only. Error, if operation failed. Defaults to: `null`.
+  - operationId (String.t): Output only. The id of the cluster operation. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :instanceGroupManagerName => any(),
-          :instanceTemplateName => any()
+          :done => any(),
+          :error => any(),
+          :operationId => any()
         }
 
-  field(:instanceGroupManagerName)
-  field(:instanceTemplateName)
+  field(:done)
+  field(:error)
+  field(:operationId)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.ManagedGroupConfig do
+defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.ClusterOperation do
   def decode(value, options) do
-    GoogleApi.Dataproc.V1.Model.ManagedGroupConfig.decode(value, options)
+    GoogleApi.Dataproc.V1.Model.ClusterOperation.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Dataproc.V1.Model.ManagedGroupConfig do
+defimpl Poison.Encoder, for: GoogleApi.Dataproc.V1.Model.ClusterOperation do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

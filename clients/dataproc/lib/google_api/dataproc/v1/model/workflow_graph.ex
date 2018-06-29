@@ -16,34 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Dataproc.V1.Model.ManagedGroupConfig do
+defmodule GoogleApi.Dataproc.V1.Model.WorkflowGraph do
   @moduledoc """
-  Specifies the resources used to actively manage an instance group.
+  The workflow graph.
 
   ## Attributes
 
-  - instanceGroupManagerName (String.t): Output only. The name of the Instance Group Manager for this group. Defaults to: `null`.
-  - instanceTemplateName (String.t): Output only. The name of the Instance Template used for the Managed Instance Group. Defaults to: `null`.
+  - nodes ([WorkflowNode]): Output only. The workflow nodes. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :instanceGroupManagerName => any(),
-          :instanceTemplateName => any()
+          :nodes => list(GoogleApi.Dataproc.V1.Model.WorkflowNode.t())
         }
 
-  field(:instanceGroupManagerName)
-  field(:instanceTemplateName)
+  field(:nodes, as: GoogleApi.Dataproc.V1.Model.WorkflowNode, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.ManagedGroupConfig do
+defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.WorkflowGraph do
   def decode(value, options) do
-    GoogleApi.Dataproc.V1.Model.ManagedGroupConfig.decode(value, options)
+    GoogleApi.Dataproc.V1.Model.WorkflowGraph.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Dataproc.V1.Model.ManagedGroupConfig do
+defimpl Poison.Encoder, for: GoogleApi.Dataproc.V1.Model.WorkflowGraph do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
