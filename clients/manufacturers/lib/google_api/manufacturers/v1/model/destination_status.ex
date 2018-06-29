@@ -16,26 +16,35 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Manufacturers.V1.Model.Empty do
+defmodule GoogleApi.Manufacturers.V1.Model.DestinationStatus do
   @moduledoc """
-  A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance:      service Foo {       rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);     }  The JSON representation for &#x60;Empty&#x60; is empty JSON object &#x60;{}&#x60;.
+  The destination status.
 
   ## Attributes
 
+  - destination (String.t): The name of the destination. Defaults to: `null`.
+  - status (String.t): The status of the destination. Defaults to: `null`.
+    - Enum - one of [UNKNOWN, ACTIVE, PENDING, DISAPPROVED]
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :destination => any(),
+          :status => any()
+        }
+
+  field(:destination)
+  field(:status)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Manufacturers.V1.Model.Empty do
+defimpl Poison.Decoder, for: GoogleApi.Manufacturers.V1.Model.DestinationStatus do
   def decode(value, options) do
-    GoogleApi.Manufacturers.V1.Model.Empty.decode(value, options)
+    GoogleApi.Manufacturers.V1.Model.DestinationStatus.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Manufacturers.V1.Model.Empty do
+defimpl Poison.Encoder, for: GoogleApi.Manufacturers.V1.Model.DestinationStatus do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
