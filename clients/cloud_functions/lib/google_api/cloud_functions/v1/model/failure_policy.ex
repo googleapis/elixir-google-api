@@ -16,34 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudFunctions.V1.Model.ListOperationsResponse do
+defmodule GoogleApi.CloudFunctions.V1.Model.FailurePolicy do
   @moduledoc """
-  The response message for Operations.ListOperations.
+  Describes the policy in case of function&#39;s execution failure. If empty, then defaults to ignoring failures (i.e. not retrying them).
 
   ## Attributes
 
-  - nextPageToken (String.t): The standard List next-page token. Defaults to: `null`.
-  - operations ([Operation]): A list of operations that matches the specified filter in the request. Defaults to: `null`.
+  - retry (Retry): If specified, then the function will be retried in case of a failure. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => any(),
-          :operations => list(GoogleApi.CloudFunctions.V1.Model.Operation.t())
+          :retry => GoogleApi.CloudFunctions.V1.Model.Retry.t()
         }
 
-  field(:nextPageToken)
-  field(:operations, as: GoogleApi.CloudFunctions.V1.Model.Operation, type: :list)
+  field(:retry, as: GoogleApi.CloudFunctions.V1.Model.Retry)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudFunctions.V1.Model.ListOperationsResponse do
+defimpl Poison.Decoder, for: GoogleApi.CloudFunctions.V1.Model.FailurePolicy do
   def decode(value, options) do
-    GoogleApi.CloudFunctions.V1.Model.ListOperationsResponse.decode(value, options)
+    GoogleApi.CloudFunctions.V1.Model.FailurePolicy.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudFunctions.V1.Model.ListOperationsResponse do
+defimpl Poison.Encoder, for: GoogleApi.CloudFunctions.V1.Model.FailurePolicy do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
