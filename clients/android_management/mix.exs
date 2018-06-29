@@ -1,9 +1,11 @@
 defmodule GoogleApi.AndroidManagement.V1.Mixfile do
   use Mix.Project
 
+  @version "0.0.1"
+
   def project do
     [app: :google_api_android_management,
-     version: "0.0.1",
+     version: @version,
      elixir: "~> 1.4",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
@@ -20,8 +22,7 @@ defmodule GoogleApi.AndroidManagement.V1.Mixfile do
 
   defp deps() do
     [
-      {:tesla, "~> 0.8"},
-      {:poison, ">= 1.0.0"},
+      {:google_gax, "~> 0.1.0"},
       {:ex_doc, "~> 0.16", only: :dev}
     ]
   end

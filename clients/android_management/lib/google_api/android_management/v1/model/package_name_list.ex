@@ -16,34 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AndroidManagement.V1.Model.SignupUrl do
+defmodule GoogleApi.AndroidManagement.V1.Model.PackageNameList do
   @moduledoc """
-  An enterprise signup URL.
+  A list of package names.
 
   ## Attributes
 
-  - name (String.t): The name of the resource. Use this value in the signupUrl field when calling enterprises.create to complete the enterprise signup flow. Defaults to: `null`.
-  - url (String.t): A URL where an enterprise admin can register their enterprise. The page can&#39;t be rendered in an iframe. Defaults to: `null`.
+  - packageNames ([String.t]): A list of package names. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => any(),
-          :url => any()
+          :packageNames => list(any())
         }
 
-  field(:name)
-  field(:url)
+  field(:packageNames, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.SignupUrl do
+defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.PackageNameList do
   def decode(value, options) do
-    GoogleApi.AndroidManagement.V1.Model.SignupUrl.decode(value, options)
+    GoogleApi.AndroidManagement.V1.Model.PackageNameList.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.SignupUrl do
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.PackageNameList do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
