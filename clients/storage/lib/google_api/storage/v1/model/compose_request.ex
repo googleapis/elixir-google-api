@@ -27,30 +27,27 @@ defmodule GoogleApi.Storage.V1.Model.ComposeRequest do
   - sourceObjects ([ComposeRequestSourceObjects]): The list of source objects that will be concatenated into a single object. Defaults to: `null`.
   """
 
-  defstruct [
-    :destination,
-    :kind,
-    :sourceObjects
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :destination => GoogleApi.Storage.V1.Model.Object.t(),
+          :kind => any(),
+          :sourceObjects => list(GoogleApi.Storage.V1.Model.ComposeRequestSourceObjects.t())
+        }
+
+  field(:destination, as: GoogleApi.Storage.V1.Model.Object)
+  field(:kind)
+  field(:sourceObjects, as: GoogleApi.Storage.V1.Model.ComposeRequestSourceObjects, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.ComposeRequest do
-  import GoogleApi.Storage.V1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:destination, :struct, GoogleApi.Storage.V1.Model.Object, options)
-    |> deserialize(
-      :sourceObjects,
-      :list,
-      GoogleApi.Storage.V1.Model.ComposeRequestSourceObjects,
-      options
-    )
+    GoogleApi.Storage.V1.Model.ComposeRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Storage.V1.Model.ComposeRequest do
   def encode(value, options) do
-    GoogleApi.Storage.V1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

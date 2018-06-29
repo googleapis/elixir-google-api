@@ -25,22 +25,23 @@ defmodule GoogleApi.Storage.V1.Model.BucketLifecycle do
   - rule ([BucketLifecycleRule]): A lifecycle management rule, which is made of an action to take and the condition(s) under which the action will be taken. Defaults to: `null`.
   """
 
-  defstruct [
-    :rule
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :rule => list(GoogleApi.Storage.V1.Model.BucketLifecycleRule.t())
+        }
+
+  field(:rule, as: GoogleApi.Storage.V1.Model.BucketLifecycleRule, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.BucketLifecycle do
-  import GoogleApi.Storage.V1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:rule, :list, GoogleApi.Storage.V1.Model.BucketLifecycleRule, options)
+    GoogleApi.Storage.V1.Model.BucketLifecycle.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Storage.V1.Model.BucketLifecycle do
   def encode(value, options) do
-    GoogleApi.Storage.V1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

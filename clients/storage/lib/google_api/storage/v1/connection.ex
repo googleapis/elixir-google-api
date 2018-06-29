@@ -21,71 +21,19 @@ defmodule GoogleApi.Storage.V1.Connection do
   Handle Tesla connections for GoogleApi.Storage.V1.
   """
 
-  use Tesla
-
-  # Add any middleware here (authentication)
-  plug(Tesla.Middleware.BaseUrl, "https://www.googleapis.com")
-  plug(Tesla.Middleware.Headers, %{"User-Agent" => "Elixir"})
-  plug(Tesla.Middleware.EncodeJson)
-
-  @scopes [
-    # View and manage your data across Google Cloud Platform services
-    "https://www.googleapis.com/auth/cloud-platform",
-    # View your data across Google Cloud Platform services
-    "https://www.googleapis.com/auth/cloud-platform.read-only",
-    # Manage your data and permissions in Google Cloud Storage
-    "https://www.googleapis.com/auth/devstorage.full_control",
-    # View your data in Google Cloud Storage
-    "https://www.googleapis.com/auth/devstorage.read_only",
-    # Manage your data in Google Cloud Storage
-    "https://www.googleapis.com/auth/devstorage.read_write"
-  ]
-
-  @doc """
-  Configure a client connection using a provided OAuth2 token as a Bearer token
-
-  ## Parameters
-
-  - token (String): Bearer token
-
-  ## Returns
-
-  Tesla.Env.client
-  """
-  @spec new(String.t()) :: Tesla.Env.client()
-  def new(token) when is_binary(token) do
-    Tesla.build_client([
-      {Tesla.Middleware.Headers, %{"Authorization" => "Bearer #{token}"}}
-    ])
-  end
-
-  @doc """
-  Configure a client connection using a function which yields a Bearer token.
-
-  ## Parameters
-
-  - token_fetcher (function arity of 1): Callback which provides an OAuth2 token
-    given a list of scopes
-
-  ## Returns
-
-  Tesla.Env.client
-  """
-  @spec new((list(String.t()) -> String.t())) :: Tesla.Env.client()
-  def new(token_fetcher) when is_function(token_fetcher) do
-    token_fetcher.(@scopes)
-    |> new
-  end
-
-  @doc """
-  Configure an authless client connection
-
-  # Returns
-
-  Tesla.Env.client
-  """
-  @spec new() :: Tesla.Env.client()
-  def new do
-    Tesla.build_client([])
-  end
+  use GoogleApi.Gax.Connection,
+    scopes: [
+      # View and manage your data across Google Cloud Platform services
+      "https://www.googleapis.com/auth/cloud-platform",
+      # View your data across Google Cloud Platform services
+      "https://www.googleapis.com/auth/cloud-platform.read-only",
+      # Manage your data and permissions in Google Cloud Storage
+      "https://www.googleapis.com/auth/devstorage.full_control",
+      # View your data in Google Cloud Storage
+      "https://www.googleapis.com/auth/devstorage.read_only",
+      # Manage your data in Google Cloud Storage
+      "https://www.googleapis.com/auth/devstorage.read_write"
+    ],
+    otp_app: :google_api_storage,
+    base_url: "https://www.googleapis.com"
 end

@@ -26,20 +26,25 @@ defmodule GoogleApi.Storage.V1.Model.BucketOwner do
   - entityId (String.t): The ID for the entity. Defaults to: `null`.
   """
 
-  defstruct [
-    :entity,
-    :entityId
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :entity => any(),
+          :entityId => any()
+        }
+
+  field(:entity)
+  field(:entityId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.BucketOwner do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Storage.V1.Model.BucketOwner.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Storage.V1.Model.BucketOwner do
   def encode(value, options) do
-    GoogleApi.Storage.V1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

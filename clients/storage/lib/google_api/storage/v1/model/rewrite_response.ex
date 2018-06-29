@@ -30,27 +30,33 @@ defmodule GoogleApi.Storage.V1.Model.RewriteResponse do
   - totalBytesRewritten (String.t): The total bytes written so far, which can be used to provide a waiting user with a progress indicator. This property is always present in the response. Defaults to: `null`.
   """
 
-  defstruct [
-    :done,
-    :kind,
-    :objectSize,
-    :resource,
-    :rewriteToken,
-    :totalBytesRewritten
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :done => any(),
+          :kind => any(),
+          :objectSize => any(),
+          :resource => GoogleApi.Storage.V1.Model.Object.t(),
+          :rewriteToken => any(),
+          :totalBytesRewritten => any()
+        }
+
+  field(:done)
+  field(:kind)
+  field(:objectSize)
+  field(:resource, as: GoogleApi.Storage.V1.Model.Object)
+  field(:rewriteToken)
+  field(:totalBytesRewritten)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.RewriteResponse do
-  import GoogleApi.Storage.V1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:resource, :struct, GoogleApi.Storage.V1.Model.Object, options)
+    GoogleApi.Storage.V1.Model.RewriteResponse.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Storage.V1.Model.RewriteResponse do
   def encode(value, options) do
-    GoogleApi.Storage.V1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

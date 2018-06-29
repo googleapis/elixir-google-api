@@ -26,23 +26,25 @@ defmodule GoogleApi.Storage.V1.Model.BucketAccessControls do
   - kind (String.t): The kind of item this is. For lists of bucket access control entries, this is always storage#bucketAccessControls. Defaults to: `null`.
   """
 
-  defstruct [
-    :items,
-    :kind
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :items => list(GoogleApi.Storage.V1.Model.BucketAccessControl.t()),
+          :kind => any()
+        }
+
+  field(:items, as: GoogleApi.Storage.V1.Model.BucketAccessControl, type: :list)
+  field(:kind)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.BucketAccessControls do
-  import GoogleApi.Storage.V1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:items, :list, GoogleApi.Storage.V1.Model.BucketAccessControl, options)
+    GoogleApi.Storage.V1.Model.BucketAccessControls.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Storage.V1.Model.BucketAccessControls do
   def encode(value, options) do
-    GoogleApi.Storage.V1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

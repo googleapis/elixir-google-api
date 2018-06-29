@@ -26,20 +26,25 @@ defmodule GoogleApi.Storage.V1.Model.ObjectCustomerEncryption do
   - keySha256 (String.t): SHA256 hash value of the encryption key. Defaults to: `null`.
   """
 
-  defstruct [
-    :encryptionAlgorithm,
-    :keySha256
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :encryptionAlgorithm => any(),
+          :keySha256 => any()
+        }
+
+  field(:encryptionAlgorithm)
+  field(:keySha256)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.ObjectCustomerEncryption do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Storage.V1.Model.ObjectCustomerEncryption.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Storage.V1.Model.ObjectCustomerEncryption do
   def encode(value, options) do
-    GoogleApi.Storage.V1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

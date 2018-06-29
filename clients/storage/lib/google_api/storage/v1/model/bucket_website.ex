@@ -26,20 +26,25 @@ defmodule GoogleApi.Storage.V1.Model.BucketWebsite do
   - notFoundPage (String.t): If the requested object path is missing, and any mainPageSuffix object is missing, if applicable, the service will return the named object from this bucket as the content for a 404 Not Found result. Defaults to: `null`.
   """
 
-  defstruct [
-    :mainPageSuffix,
-    :notFoundPage
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :mainPageSuffix => any(),
+          :notFoundPage => any()
+        }
+
+  field(:mainPageSuffix)
+  field(:notFoundPage)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.BucketWebsite do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Storage.V1.Model.BucketWebsite.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Storage.V1.Model.BucketWebsite do
   def encode(value, options) do
-    GoogleApi.Storage.V1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

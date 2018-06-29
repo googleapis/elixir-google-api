@@ -25,19 +25,23 @@ defmodule GoogleApi.Storage.V1.Model.BucketBilling do
   - requesterPays (boolean()): When set to true, Requester Pays is enabled for this bucket. Defaults to: `null`.
   """
 
-  defstruct [
-    :requesterPays
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :requesterPays => any()
+        }
+
+  field(:requesterPays)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.BucketBilling do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Storage.V1.Model.BucketBilling.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Storage.V1.Model.BucketBilling do
   def encode(value, options) do
-    GoogleApi.Storage.V1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

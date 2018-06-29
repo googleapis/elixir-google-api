@@ -26,20 +26,25 @@ defmodule GoogleApi.Storage.V1.Model.ServiceAccount do
   - kind (String.t): The kind of item this is. For notifications, this is always storage#notification. Defaults to: `null`.
   """
 
-  defstruct [
-    :email_address,
-    :kind
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :email_address => any(),
+          :kind => any()
+        }
+
+  field(:email_address)
+  field(:kind)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.ServiceAccount do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Storage.V1.Model.ServiceAccount.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Storage.V1.Model.ServiceAccount do
   def encode(value, options) do
-    GoogleApi.Storage.V1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

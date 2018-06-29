@@ -27,24 +27,27 @@ defmodule GoogleApi.Storage.V1.Model.Buckets do
   - nextPageToken (String.t): The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results. Defaults to: `null`.
   """
 
-  defstruct [
-    :items,
-    :kind,
-    :nextPageToken
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :items => list(GoogleApi.Storage.V1.Model.Bucket.t()),
+          :kind => any(),
+          :nextPageToken => any()
+        }
+
+  field(:items, as: GoogleApi.Storage.V1.Model.Bucket, type: :list)
+  field(:kind)
+  field(:nextPageToken)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.Buckets do
-  import GoogleApi.Storage.V1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:items, :list, GoogleApi.Storage.V1.Model.Bucket, options)
+    GoogleApi.Storage.V1.Model.Buckets.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Storage.V1.Model.Buckets do
   def encode(value, options) do
-    GoogleApi.Storage.V1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

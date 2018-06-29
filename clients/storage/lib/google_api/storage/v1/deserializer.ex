@@ -18,57 +18,8 @@
 
 defmodule GoogleApi.Storage.V1.Deserializer do
   @moduledoc """
-  Helper functions for deserializing responses into models
+  Helper functions for deserializing responses into models.
+
+  This module is no longer used. Please use GoogleApi.Gax.ModelBase instead.
   """
-
-  @doc """
-  Update the provided model with a deserialization of a nested value
-  """
-  @spec deserialize(struct(), :atom, :atom, struct(), keyword()) :: struct()
-  def deserialize(model, _field, :list, nil, _options), do: model
-
-  def deserialize(model, field, :list, mod, options) do
-    model
-    |> Map.update!(field, &Poison.Decode.decode(&1, Keyword.merge(options, as: [struct(mod)])))
-  end
-
-  def deserialize(model, field, :struct, mod, options) do
-    model
-    |> Map.update!(field, &Poison.Decode.decode(&1, Keyword.merge(options, as: struct(mod))))
-  end
-
-  def deserialize(model, _field, :map, nil, _options), do: model
-
-  def deserialize(model, field, :map, mod, options) do
-    model
-    |> Map.update!(
-      field,
-      &Map.new(&1 || %{}, fn {key, val} ->
-        {key, Poison.Decode.decode(val, Keyword.merge(options, as: struct(mod)))}
-      end)
-    )
-  end
-
-  def deserialize(model, field, :date, _, _options) do
-    Map.update(model, field, nil, &parse_date/1)
-  end
-
-  defp parse_date(nil) do
-    nil
-  end
-
-  defp parse_date(iso8601) do
-    case DateTime.from_iso8601(iso8601) do
-      {:ok, datetime, _offset} -> datetime
-      _ -> iso8601
-    end
-  end
-
-  def serialize_non_nil(model, options) do
-    model
-    |> Map.from_struct()
-    |> Enum.filter(fn {_k, v} -> v != nil end)
-    |> Enum.into(%{})
-    |> Poison.Encoder.encode(options)
-  end
 end

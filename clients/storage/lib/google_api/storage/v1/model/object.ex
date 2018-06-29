@@ -33,7 +33,7 @@ defmodule GoogleApi.Storage.V1.Model.Object do
   - crc32c (String.t): CRC32c checksum, as described in RFC 4960, Appendix B; encoded using base64 in big-endian byte order. For more information about using the CRC32c checksum, see Hashes and ETags: Best Practices. Defaults to: `null`.
   - customerEncryption (ObjectCustomerEncryption):  Defaults to: `null`.
   - etag (String.t): HTTP 1.1 Entity tag for the object. Defaults to: `null`.
-  - eventBasedHold (boolean()): Defines the Event-Based hold for an object. Event-Based hold is a way to retain objects indefinitely until an event occurs, signified by the hold&#39;s release. After being released, such objects will be subject to bucket-level retention (if any). One sample use case of this flag is for banks to hold loan documents for at least 3 years after loan is paid in full. Here bucket-level retention is 3 years and the event is loan being paid in full. In this example these objects will be held intact for any number of years until the event has occurred (hold is released) and then 3 more years after that. Defaults to: `null`.
+  - eventBasedHold (boolean()): Whether an object is under event-based hold. Event-based hold is a way to retain objects until an event occurs, which is signified by the hold&#39;s release (i.e. this value is set to false). After being released (set to false), such objects will be subject to bucket-level retention (if any). One sample use case of this flag is for banks to hold loan documents for at least 3 years after loan is paid in full. Here, bucket-level retention is 3 years and the event is the loan being paid in full. In this example, these objects will be held intact for any number of years until the event has occurred (event-based hold on the object is released) and then 3 more years after that. That means retention duration of the objects begins from the moment event-based hold transitioned from true to false. Defaults to: `null`.
   - generation (String.t): The content generation of this object. Used for object versioning. Defaults to: `null`.
   - id (String.t): The ID of the object, including the bucket name, object name, and generation number. Defaults to: `null`.
   - kind (String.t): The kind of item this is. For objects, this is always storage#object. Defaults to: `null`.
@@ -44,75 +44,94 @@ defmodule GoogleApi.Storage.V1.Model.Object do
   - metageneration (String.t): The version of the metadata for this object at this generation. Used for preconditions and for detecting changes in metadata. A metageneration number is only meaningful in the context of a particular generation of a particular object. Defaults to: `null`.
   - name (String.t): The name of the object. Required if not specified by URL parameter. Defaults to: `null`.
   - owner (ObjectOwner):  Defaults to: `null`.
-  - retentionExpirationTime (DateTime.t): Specifies the earliest time that the object&#39;s retention period expires. This value is server-determined and is in RFC 3339 format. Note 1: This field is not provided for objects with an active Event-Based hold, since retention expiration is unknown until the hold is removed. Note 2: This value can be provided even when TemporaryHold is set (so that the user can reason about policy without having to first unset the TemporaryHold). Defaults to: `null`.
+  - retentionExpirationTime (DateTime.t): A server-determined value that specifies the earliest time that the object&#39;s retention period expires. This value is in RFC 3339 format. Note 1: This field is not provided for objects with an active event-based hold, since retention expiration is unknown until the hold is removed. Note 2: This value can be provided even when temporary hold is set (so that the user can reason about policy without having to first unset the temporary hold). Defaults to: `null`.
   - selfLink (String.t): The link to this object. Defaults to: `null`.
   - size (String.t): Content-Length of the data in bytes. Defaults to: `null`.
   - storageClass (String.t): Storage class of the object. Defaults to: `null`.
-  - temporaryHold (boolean()): Defines the temporary hold for an object. This flag is used to enforce a temporary hold on an object. While it is set to true, the object is protected against deletion and overwrites. A common use case of this flag is regulatory investigations where objects need to be retained while the investigation is ongoing. Defaults to: `null`.
+  - temporaryHold (boolean()): Whether an object is under temporary hold. While this flag is set to true, the object is protected against deletion and overwrites. A common use case of this flag is regulatory investigations where objects need to be retained while the investigation is ongoing. Note that unlike event-based hold, temporary hold does not impact retention expiration time of an object. Defaults to: `null`.
   - timeCreated (DateTime.t): The creation time of the object in RFC 3339 format. Defaults to: `null`.
   - timeDeleted (DateTime.t): The deletion time of the object in RFC 3339 format. Will be returned if and only if this version of the object has been deleted. Defaults to: `null`.
   - timeStorageClassUpdated (DateTime.t): The time at which the object&#39;s storage class was last changed. When the object is initially created, it will be set to timeCreated. Defaults to: `null`.
   - updated (DateTime.t): The modification time of the object metadata in RFC 3339 format. Defaults to: `null`.
   """
 
-  defstruct [
-    :acl,
-    :bucket,
-    :cacheControl,
-    :componentCount,
-    :contentDisposition,
-    :contentEncoding,
-    :contentLanguage,
-    :contentType,
-    :crc32c,
-    :customerEncryption,
-    :etag,
-    :eventBasedHold,
-    :generation,
-    :id,
-    :kind,
-    :kmsKeyName,
-    :md5Hash,
-    :mediaLink,
-    :metadata,
-    :metageneration,
-    :name,
-    :owner,
-    :retentionExpirationTime,
-    :selfLink,
-    :size,
-    :storageClass,
-    :temporaryHold,
-    :timeCreated,
-    :timeDeleted,
-    :timeStorageClassUpdated,
-    :updated
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :acl => list(GoogleApi.Storage.V1.Model.ObjectAccessControl.t()),
+          :bucket => any(),
+          :cacheControl => any(),
+          :componentCount => any(),
+          :contentDisposition => any(),
+          :contentEncoding => any(),
+          :contentLanguage => any(),
+          :contentType => any(),
+          :crc32c => any(),
+          :customerEncryption => GoogleApi.Storage.V1.Model.ObjectCustomerEncryption.t(),
+          :etag => any(),
+          :eventBasedHold => any(),
+          :generation => any(),
+          :id => any(),
+          :kind => any(),
+          :kmsKeyName => any(),
+          :md5Hash => any(),
+          :mediaLink => any(),
+          :metadata => map(),
+          :metageneration => any(),
+          :name => any(),
+          :owner => GoogleApi.Storage.V1.Model.ObjectOwner.t(),
+          :retentionExpirationTime => DateTime.t(),
+          :selfLink => any(),
+          :size => any(),
+          :storageClass => any(),
+          :temporaryHold => any(),
+          :timeCreated => DateTime.t(),
+          :timeDeleted => DateTime.t(),
+          :timeStorageClassUpdated => DateTime.t(),
+          :updated => DateTime.t()
+        }
+
+  field(:acl, as: GoogleApi.Storage.V1.Model.ObjectAccessControl, type: :list)
+  field(:bucket)
+  field(:cacheControl)
+  field(:componentCount)
+  field(:contentDisposition)
+  field(:contentEncoding)
+  field(:contentLanguage)
+  field(:contentType)
+  field(:crc32c)
+  field(:customerEncryption, as: GoogleApi.Storage.V1.Model.ObjectCustomerEncryption)
+  field(:etag)
+  field(:eventBasedHold)
+  field(:generation)
+  field(:id)
+  field(:kind)
+  field(:kmsKeyName)
+  field(:md5Hash)
+  field(:mediaLink)
+  field(:metadata, type: :map)
+  field(:metageneration)
+  field(:name)
+  field(:owner, as: GoogleApi.Storage.V1.Model.ObjectOwner)
+  field(:retentionExpirationTime, as: DateTime)
+  field(:selfLink)
+  field(:size)
+  field(:storageClass)
+  field(:temporaryHold)
+  field(:timeCreated, as: DateTime)
+  field(:timeDeleted, as: DateTime)
+  field(:timeStorageClassUpdated, as: DateTime)
+  field(:updated, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.Object do
-  import GoogleApi.Storage.V1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:acl, :list, GoogleApi.Storage.V1.Model.ObjectAccessControl, options)
-    |> deserialize(
-      :customerEncryption,
-      :struct,
-      GoogleApi.Storage.V1.Model.ObjectCustomerEncryption,
-      options
-    )
-    |> deserialize(:owner, :struct, GoogleApi.Storage.V1.Model.ObjectOwner, options)
-    |> deserialize(:retentionExpirationTime, :date, nil, options)
-    |> deserialize(:timeCreated, :date, nil, options)
-    |> deserialize(:timeDeleted, :date, nil, options)
-    |> deserialize(:timeStorageClassUpdated, :date, nil, options)
-    |> deserialize(:updated, :date, nil, options)
+    GoogleApi.Storage.V1.Model.Object.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Storage.V1.Model.Object do
   def encode(value, options) do
-    GoogleApi.Storage.V1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

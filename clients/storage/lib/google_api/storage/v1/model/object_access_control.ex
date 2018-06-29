@@ -37,39 +37,47 @@ defmodule GoogleApi.Storage.V1.Model.ObjectAccessControl do
   - selfLink (String.t): The link to this access-control entry. Defaults to: `null`.
   """
 
-  defstruct [
-    :bucket,
-    :domain,
-    :email,
-    :entity,
-    :entityId,
-    :etag,
-    :generation,
-    :id,
-    :kind,
-    :object,
-    :projectTeam,
-    :role,
-    :selfLink
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :bucket => any(),
+          :domain => any(),
+          :email => any(),
+          :entity => any(),
+          :entityId => any(),
+          :etag => any(),
+          :generation => any(),
+          :id => any(),
+          :kind => any(),
+          :object => any(),
+          :projectTeam => GoogleApi.Storage.V1.Model.BucketAccessControlProjectTeam.t(),
+          :role => any(),
+          :selfLink => any()
+        }
+
+  field(:bucket)
+  field(:domain)
+  field(:email)
+  field(:entity)
+  field(:entityId)
+  field(:etag)
+  field(:generation)
+  field(:id)
+  field(:kind)
+  field(:object)
+  field(:projectTeam, as: GoogleApi.Storage.V1.Model.BucketAccessControlProjectTeam)
+  field(:role)
+  field(:selfLink)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.ObjectAccessControl do
-  import GoogleApi.Storage.V1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :projectTeam,
-      :struct,
-      GoogleApi.Storage.V1.Model.BucketAccessControlProjectTeam,
-      options
-    )
+    GoogleApi.Storage.V1.Model.ObjectAccessControl.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Storage.V1.Model.ObjectAccessControl do
   def encode(value, options) do
-    GoogleApi.Storage.V1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end
