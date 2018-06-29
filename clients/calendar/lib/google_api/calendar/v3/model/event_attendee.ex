@@ -34,41 +34,41 @@ defmodule GoogleApi.Calendar.V3.Model.EventAttendee do
   - self (boolean()): Whether this entry represents the calendar on which this copy of the event appears. Read-only. The default is False. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          additionalGuests: any(),
-          comment: any(),
-          displayName: any(),
-          email: any(),
-          id: any(),
-          optional: any(),
-          organizer: any(),
-          resource: any(),
-          responseStatus: any(),
-          self: any()
+          :additionalGuests => any(),
+          :comment => any(),
+          :displayName => any(),
+          :email => any(),
+          :id => any(),
+          :optional => any(),
+          :organizer => any(),
+          :resource => any(),
+          :responseStatus => any(),
+          :self => any()
         }
 
-  defstruct [
-    :additionalGuests,
-    :comment,
-    :displayName,
-    :email,
-    :id,
-    :optional,
-    :organizer,
-    :resource,
-    :responseStatus,
-    :self
-  ]
+  field(:additionalGuests)
+  field(:comment)
+  field(:displayName)
+  field(:email)
+  field(:id)
+  field(:optional)
+  field(:organizer)
+  field(:resource)
+  field(:responseStatus)
+  field(:self)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.EventAttendee do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Calendar.V3.Model.EventAttendee.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.EventAttendee do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

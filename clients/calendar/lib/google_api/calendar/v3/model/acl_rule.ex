@@ -29,34 +29,31 @@ defmodule GoogleApi.Calendar.V3.Model.AclRule do
   - scope (AclRuleScope):  Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          etag: any(),
-          id: any(),
-          kind: any(),
-          role: any(),
-          scope: GoogleApi.Calendar.V3.Model.AclRuleScope.t()
+          :etag => any(),
+          :id => any(),
+          :kind => any(),
+          :role => any(),
+          :scope => GoogleApi.Calendar.V3.Model.AclRuleScope.t()
         }
 
-  defstruct [
-    :etag,
-    :id,
-    :kind,
-    :role,
-    :scope
-  ]
+  field(:etag)
+  field(:id)
+  field(:kind)
+  field(:role)
+  field(:scope, as: GoogleApi.Calendar.V3.Model.AclRuleScope)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.AclRule do
-  import GoogleApi.Calendar.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:scope, :struct, GoogleApi.Calendar.V3.Model.AclRuleScope, options)
+    GoogleApi.Calendar.V3.Model.AclRule.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.AclRule do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -29,37 +29,31 @@ defmodule GoogleApi.Calendar.V3.Model.FreeBusyResponse do
   - timeMin (DateTime.t): The start of the interval. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          calendars: map(),
-          groups: map(),
-          kind: any(),
-          timeMax: any(),
-          timeMin: any()
+          :calendars => map(),
+          :groups => map(),
+          :kind => any(),
+          :timeMax => DateTime.t(),
+          :timeMin => DateTime.t()
         }
 
-  defstruct [
-    :calendars,
-    :groups,
-    :kind,
-    :timeMax,
-    :timeMin
-  ]
+  field(:calendars, as: GoogleApi.Calendar.V3.Model.FreeBusyCalendar, type: :map)
+  field(:groups, as: GoogleApi.Calendar.V3.Model.FreeBusyGroup, type: :map)
+  field(:kind)
+  field(:timeMax, as: DateTime)
+  field(:timeMin, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.FreeBusyResponse do
-  import GoogleApi.Calendar.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:calendars, :map, GoogleApi.Calendar.V3.Model.FreeBusyCalendar, options)
-    |> deserialize(:groups, :map, GoogleApi.Calendar.V3.Model.FreeBusyGroup, options)
-    |> deserialize(:timeMax, :date, nil, options)
-    |> deserialize(:timeMin, :date, nil, options)
+    GoogleApi.Calendar.V3.Model.FreeBusyResponse.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.FreeBusyResponse do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

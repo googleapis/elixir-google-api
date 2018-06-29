@@ -1,7 +1,7 @@
 defmodule GoogleApi.Calendar.V3.Mixfile do
   use Mix.Project
 
-  @version "0.0.2"
+  @version "0.1.0"
 
   def project do
     [app: :google_api_calendar,
@@ -22,8 +22,7 @@ defmodule GoogleApi.Calendar.V3.Mixfile do
 
   defp deps() do
     [
-      {:tesla, "~> 0.8"},
-      {:poison, ">= 1.0.0"},
+      {:google_gax, "~> 0.1.0"},
       {:ex_doc, "~> 0.16", only: :dev}
     ]
   end

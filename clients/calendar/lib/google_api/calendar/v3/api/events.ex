@@ -22,7 +22,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   """
 
   alias GoogleApi.Calendar.V3.Connection
-  import GoogleApi.Calendar.V3.RequestBuilder
+  alias GoogleApi.Gax.{Request, Response}
 
   @doc """
   Deletes an event.
@@ -61,16 +61,18 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       :sendNotifications => :query
     }
 
-    %{}
-    |> method(:delete)
-    |> url("/calendars/{calendarId}/events/{eventId}", %{
-      "calendarId" => URI.encode_www_form(calendar_id),
-      "eventId" => URI.encode_www_form(event_id)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(false)
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/calendars/{calendarId}/events/{eventId}", %{
+        "calendarId" => URI.encode_www_form(calendar_id),
+        "eventId" => URI.encode_www_form(event_id)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(decode: false)
   end
 
   @doc """
@@ -114,16 +116,18 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       :timeZone => :query
     }
 
-    %{}
-    |> method(:get)
-    |> url("/calendars/{calendarId}/events/{eventId}", %{
-      "calendarId" => URI.encode_www_form(calendar_id),
-      "eventId" => URI.encode_www_form(event_id)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Calendar.V3.Model.Event{})
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/calendars/{calendarId}/events/{eventId}", %{
+        "calendarId" => URI.encode_www_form(calendar_id),
+        "eventId" => URI.encode_www_form(event_id)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.Event{})
   end
 
   @doc """
@@ -166,15 +170,17 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       :body => :body
     }
 
-    %{}
-    |> method(:post)
-    |> url("/calendars/{calendarId}/events/import", %{
-      "calendarId" => URI.encode_www_form(calendar_id)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Calendar.V3.Model.Event{})
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/calendars/{calendarId}/events/import", %{
+        "calendarId" => URI.encode_www_form(calendar_id)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.Event{})
   end
 
   @doc """
@@ -221,15 +227,17 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       :body => :body
     }
 
-    %{}
-    |> method(:post)
-    |> url("/calendars/{calendarId}/events", %{
-      "calendarId" => URI.encode_www_form(calendar_id)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Calendar.V3.Model.Event{})
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/calendars/{calendarId}/events", %{
+        "calendarId" => URI.encode_www_form(calendar_id)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.Event{})
   end
 
   @doc """
@@ -254,8 +262,8 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
     - :originalStart (String.t): The original start time of the instance in the result. Optional.
     - :pageToken (String.t): Token specifying which result page to return. Optional.
     - :showDeleted (boolean()): Whether to include deleted events (with status equals \&quot;cancelled\&quot;) in the result. Cancelled instances of recurring events will still be included if singleEvents is False. Optional. The default is False.
-    - :timeMax (String.t): Upper bound (exclusive) for an event&#39;s start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset.
-    - :timeMin (String.t): Lower bound (inclusive) for an event&#39;s end time to filter by. Optional. The default is not to filter by end time. Must be an RFC3339 timestamp with mandatory time zone offset.
+    - :timeMax (DateTime.t): Upper bound (exclusive) for an event&#39;s start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset.
+    - :timeMin (DateTime.t): Lower bound (inclusive) for an event&#39;s end time to filter by. Optional. The default is not to filter by end time. Must be an RFC3339 timestamp with mandatory time zone offset.
     - :timeZone (String.t): Time zone used in the response. Optional. The default is the time zone of the calendar.
 
   ## Returns
@@ -285,16 +293,18 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       :timeZone => :query
     }
 
-    %{}
-    |> method(:get)
-    |> url("/calendars/{calendarId}/events/{eventId}/instances", %{
-      "calendarId" => URI.encode_www_form(calendar_id),
-      "eventId" => URI.encode_www_form(event_id)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Calendar.V3.Model.Events{})
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/calendars/{calendarId}/events/{eventId}/instances", %{
+        "calendarId" => URI.encode_www_form(calendar_id),
+        "eventId" => URI.encode_www_form(event_id)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.Events{})
   end
 
   @doc """
@@ -325,10 +335,10 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
     - :showHiddenInvitations (boolean()): Whether to include hidden invitations in the result. Optional. The default is False.
     - :singleEvents (boolean()): Whether to expand recurring events into instances and only return single one-off events and instances of recurring events, but not the underlying recurring events themselves. Optional. The default is False.
     - :syncToken (String.t): Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. All events deleted since the previous list request will always be in the result set and it is not allowed to set showDeleted to False. There are several query parameters that cannot be specified together with nextSyncToken to ensure consistency of the client state.  These are:  - iCalUID  - orderBy  - privateExtendedProperty  - q  - sharedExtendedProperty  - timeMin  - timeMax  - updatedMin If the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken. Learn more about incremental synchronization. Optional. The default is to return all entries.
-    - :timeMax (String.t): Upper bound (exclusive) for an event&#39;s start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset, e.g., 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but will be ignored. If timeMin is set, timeMax must be greater than timeMin.
-    - :timeMin (String.t): Lower bound (inclusive) for an event&#39;s end time to filter by. Optional. The default is not to filter by end time. Must be an RFC3339 timestamp with mandatory time zone offset, e.g., 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but will be ignored. If timeMax is set, timeMin must be smaller than timeMax.
+    - :timeMax (DateTime.t): Upper bound (exclusive) for an event&#39;s start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset, e.g., 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but will be ignored. If timeMin is set, timeMax must be greater than timeMin.
+    - :timeMin (DateTime.t): Lower bound (inclusive) for an event&#39;s end time to filter by. Optional. The default is not to filter by end time. Must be an RFC3339 timestamp with mandatory time zone offset, e.g., 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but will be ignored. If timeMax is set, timeMin must be smaller than timeMax.
     - :timeZone (String.t): Time zone used in the response. Optional. The default is the time zone of the calendar.
-    - :updatedMin (String.t): Lower bound for an event&#39;s last modification time (as a RFC3339 timestamp) to filter by. When specified, entries deleted since this time will always be included regardless of showDeleted. Optional. The default is not to filter by last modification time.
+    - :updatedMin (DateTime.t): Lower bound for an event&#39;s last modification time (as a RFC3339 timestamp) to filter by. When specified, entries deleted since this time will always be included regardless of showDeleted. Optional. The default is not to filter by last modification time.
 
   ## Returns
 
@@ -365,15 +375,17 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       :updatedMin => :query
     }
 
-    %{}
-    |> method(:get)
-    |> url("/calendars/{calendarId}/events", %{
-      "calendarId" => URI.encode_www_form(calendar_id)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Calendar.V3.Model.Events{})
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/calendars/{calendarId}/events", %{
+        "calendarId" => URI.encode_www_form(calendar_id)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.Events{})
   end
 
   @doc """
@@ -414,17 +426,19 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       :sendNotifications => :query
     }
 
-    %{}
-    |> method(:post)
-    |> url("/calendars/{calendarId}/events/{eventId}/move", %{
-      "calendarId" => URI.encode_www_form(calendar_id),
-      "eventId" => URI.encode_www_form(event_id)
-    })
-    |> add_param(:query, :destination, destination)
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Calendar.V3.Model.Event{})
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/calendars/{calendarId}/events/{eventId}/move", %{
+        "calendarId" => URI.encode_www_form(calendar_id),
+        "eventId" => URI.encode_www_form(event_id)
+      })
+      |> Request.add_param(:query, :destination, destination)
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.Event{})
   end
 
   @doc """
@@ -474,16 +488,18 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       :body => :body
     }
 
-    %{}
-    |> method(:patch)
-    |> url("/calendars/{calendarId}/events/{eventId}", %{
-      "calendarId" => URI.encode_www_form(calendar_id),
-      "eventId" => URI.encode_www_form(event_id)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Calendar.V3.Model.Event{})
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/calendars/{calendarId}/events/{eventId}", %{
+        "calendarId" => URI.encode_www_form(calendar_id),
+        "eventId" => URI.encode_www_form(event_id)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.Event{})
   end
 
   @doc """
@@ -523,16 +539,18 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       :sendNotifications => :query
     }
 
-    %{}
-    |> method(:post)
-    |> url("/calendars/{calendarId}/events/quickAdd", %{
-      "calendarId" => URI.encode_www_form(calendar_id)
-    })
-    |> add_param(:query, :text, text)
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Calendar.V3.Model.Event{})
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/calendars/{calendarId}/events/quickAdd", %{
+        "calendarId" => URI.encode_www_form(calendar_id)
+      })
+      |> Request.add_param(:query, :text, text)
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.Event{})
   end
 
   @doc """
@@ -582,16 +600,18 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       :body => :body
     }
 
-    %{}
-    |> method(:put)
-    |> url("/calendars/{calendarId}/events/{eventId}", %{
-      "calendarId" => URI.encode_www_form(calendar_id),
-      "eventId" => URI.encode_www_form(event_id)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Calendar.V3.Model.Event{})
+    request =
+      Request.new()
+      |> Request.method(:put)
+      |> Request.url("/calendars/{calendarId}/events/{eventId}", %{
+        "calendarId" => URI.encode_www_form(calendar_id),
+        "eventId" => URI.encode_www_form(event_id)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.Event{})
   end
 
   @doc """
@@ -622,10 +642,10 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
     - :showHiddenInvitations (boolean()): Whether to include hidden invitations in the result. Optional. The default is False.
     - :singleEvents (boolean()): Whether to expand recurring events into instances and only return single one-off events and instances of recurring events, but not the underlying recurring events themselves. Optional. The default is False.
     - :syncToken (String.t): Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. All events deleted since the previous list request will always be in the result set and it is not allowed to set showDeleted to False. There are several query parameters that cannot be specified together with nextSyncToken to ensure consistency of the client state.  These are:  - iCalUID  - orderBy  - privateExtendedProperty  - q  - sharedExtendedProperty  - timeMin  - timeMax  - updatedMin If the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken. Learn more about incremental synchronization. Optional. The default is to return all entries.
-    - :timeMax (String.t): Upper bound (exclusive) for an event&#39;s start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset, e.g., 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but will be ignored. If timeMin is set, timeMax must be greater than timeMin.
-    - :timeMin (String.t): Lower bound (inclusive) for an event&#39;s end time to filter by. Optional. The default is not to filter by end time. Must be an RFC3339 timestamp with mandatory time zone offset, e.g., 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but will be ignored. If timeMax is set, timeMin must be smaller than timeMax.
+    - :timeMax (DateTime.t): Upper bound (exclusive) for an event&#39;s start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset, e.g., 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but will be ignored. If timeMin is set, timeMax must be greater than timeMin.
+    - :timeMin (DateTime.t): Lower bound (inclusive) for an event&#39;s end time to filter by. Optional. The default is not to filter by end time. Must be an RFC3339 timestamp with mandatory time zone offset, e.g., 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but will be ignored. If timeMax is set, timeMin must be smaller than timeMax.
     - :timeZone (String.t): Time zone used in the response. Optional. The default is the time zone of the calendar.
-    - :updatedMin (String.t): Lower bound for an event&#39;s last modification time (as a RFC3339 timestamp) to filter by. When specified, entries deleted since this time will always be included regardless of showDeleted. Optional. The default is not to filter by last modification time.
+    - :updatedMin (DateTime.t): Lower bound for an event&#39;s last modification time (as a RFC3339 timestamp) to filter by. When specified, entries deleted since this time will always be included regardless of showDeleted. Optional. The default is not to filter by last modification time.
     - :resource (Channel): 
 
   ## Returns
@@ -664,14 +684,16 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       :resource => :body
     }
 
-    %{}
-    |> method(:post)
-    |> url("/calendars/{calendarId}/events/watch", %{
-      "calendarId" => URI.encode_www_form(calendar_id)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Calendar.V3.Model.Channel{})
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/calendars/{calendarId}/events/watch", %{
+        "calendarId" => URI.encode_www_form(calendar_id)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.Channel{})
   end
 end

@@ -43,75 +43,65 @@ defmodule GoogleApi.Calendar.V3.Model.CalendarListEntry do
   - timeZone (String.t): The time zone of the calendar. Optional. Read-only. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          accessRole: any(),
-          backgroundColor: any(),
-          colorId: any(),
-          conferenceProperties: GoogleApi.Calendar.V3.Model.ConferenceProperties.t(),
-          defaultReminders: list(GoogleApi.Calendar.V3.Model.EventReminder.t()),
-          deleted: any(),
-          description: any(),
-          etag: any(),
-          foregroundColor: any(),
-          hidden: any(),
-          id: any(),
-          kind: any(),
-          location: any(),
-          notificationSettings:
+          :accessRole => any(),
+          :backgroundColor => any(),
+          :colorId => any(),
+          :conferenceProperties => GoogleApi.Calendar.V3.Model.ConferenceProperties.t(),
+          :defaultReminders => list(GoogleApi.Calendar.V3.Model.EventReminder.t()),
+          :deleted => any(),
+          :description => any(),
+          :etag => any(),
+          :foregroundColor => any(),
+          :hidden => any(),
+          :id => any(),
+          :kind => any(),
+          :location => any(),
+          :notificationSettings =>
             GoogleApi.Calendar.V3.Model.CalendarListEntryNotificationSettings.t(),
-          primary: any(),
-          selected: any(),
-          summary: any(),
-          summaryOverride: any(),
-          timeZone: any()
+          :primary => any(),
+          :selected => any(),
+          :summary => any(),
+          :summaryOverride => any(),
+          :timeZone => any()
         }
 
-  defstruct [
-    :accessRole,
-    :backgroundColor,
-    :colorId,
-    :conferenceProperties,
-    :defaultReminders,
-    :deleted,
-    :description,
-    :etag,
-    :foregroundColor,
-    :hidden,
-    :id,
-    :kind,
-    :location,
+  field(:accessRole)
+  field(:backgroundColor)
+  field(:colorId)
+  field(:conferenceProperties, as: GoogleApi.Calendar.V3.Model.ConferenceProperties)
+  field(:defaultReminders, as: GoogleApi.Calendar.V3.Model.EventReminder, type: :list)
+  field(:deleted)
+  field(:description)
+  field(:etag)
+  field(:foregroundColor)
+  field(:hidden)
+  field(:id)
+  field(:kind)
+  field(:location)
+
+  field(
     :notificationSettings,
-    :primary,
-    :selected,
-    :summary,
-    :summaryOverride,
-    :timeZone
-  ]
+    as: GoogleApi.Calendar.V3.Model.CalendarListEntryNotificationSettings
+  )
+
+  field(:primary)
+  field(:selected)
+  field(:summary)
+  field(:summaryOverride)
+  field(:timeZone)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.CalendarListEntry do
-  import GoogleApi.Calendar.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :conferenceProperties,
-      :struct,
-      GoogleApi.Calendar.V3.Model.ConferenceProperties,
-      options
-    )
-    |> deserialize(:defaultReminders, :list, GoogleApi.Calendar.V3.Model.EventReminder, options)
-    |> deserialize(
-      :notificationSettings,
-      :struct,
-      GoogleApi.Calendar.V3.Model.CalendarListEntryNotificationSettings,
-      options
-    )
+    GoogleApi.Calendar.V3.Model.CalendarListEntry.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.CalendarListEntry do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

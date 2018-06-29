@@ -27,30 +27,27 @@ defmodule GoogleApi.Calendar.V3.Model.ConferenceSolution do
   - name (String.t): The user-visible name of this solution. Not localized. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          iconUri: any(),
-          key: GoogleApi.Calendar.V3.Model.ConferenceSolutionKey.t(),
-          name: any()
+          :iconUri => any(),
+          :key => GoogleApi.Calendar.V3.Model.ConferenceSolutionKey.t(),
+          :name => any()
         }
 
-  defstruct [
-    :iconUri,
-    :key,
-    :name
-  ]
+  field(:iconUri)
+  field(:key, as: GoogleApi.Calendar.V3.Model.ConferenceSolutionKey)
+  field(:name)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.ConferenceSolution do
-  import GoogleApi.Calendar.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:key, :struct, GoogleApi.Calendar.V3.Model.ConferenceSolutionKey, options)
+    GoogleApi.Calendar.V3.Model.ConferenceSolution.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.ConferenceSolution do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

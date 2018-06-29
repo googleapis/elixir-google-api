@@ -25,23 +25,23 @@ defmodule GoogleApi.Calendar.V3.Model.ConferenceRequestStatus do
   - statusCode (String.t): The current status of the conference create request. Read-only. The possible values are:   - \&quot;pending\&quot;: the conference create request is still being processed. - \&quot;success\&quot;: the conference create request succeeded, the entry points are populated. - \&quot;failure\&quot;: the conference create request failed, there are no entry points. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          statusCode: any()
+          :statusCode => any()
         }
 
-  defstruct [
-    :statusCode
-  ]
+  field(:statusCode)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.ConferenceRequestStatus do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Calendar.V3.Model.ConferenceRequestStatus.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.ConferenceRequestStatus do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

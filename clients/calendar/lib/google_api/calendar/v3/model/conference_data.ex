@@ -31,56 +31,35 @@ defmodule GoogleApi.Calendar.V3.Model.ConferenceData do
   - signature (String.t): The signature of the conference data. Genereated on server side. Must be preserved while copying the conference data between events, otherwise the conference data will not be copied. Unset for a conference with a failed create request. Optional for a conference with a pending create request. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          parameters: GoogleApi.Calendar.V3.Model.ConferenceParameters.t(),
-          conferenceId: any(),
-          conferenceSolution: GoogleApi.Calendar.V3.Model.ConferenceSolution.t(),
-          createRequest: GoogleApi.Calendar.V3.Model.CreateConferenceRequest.t(),
-          entryPoints: list(GoogleApi.Calendar.V3.Model.EntryPoint.t()),
-          notes: any(),
-          signature: any()
+          :parameters => GoogleApi.Calendar.V3.Model.ConferenceParameters.t(),
+          :conferenceId => any(),
+          :conferenceSolution => GoogleApi.Calendar.V3.Model.ConferenceSolution.t(),
+          :createRequest => GoogleApi.Calendar.V3.Model.CreateConferenceRequest.t(),
+          :entryPoints => list(GoogleApi.Calendar.V3.Model.EntryPoint.t()),
+          :notes => any(),
+          :signature => any()
         }
 
-  defstruct [
-    :parameters,
-    :conferenceId,
-    :conferenceSolution,
-    :createRequest,
-    :entryPoints,
-    :notes,
-    :signature
-  ]
+  field(:parameters, as: GoogleApi.Calendar.V3.Model.ConferenceParameters)
+  field(:conferenceId)
+  field(:conferenceSolution, as: GoogleApi.Calendar.V3.Model.ConferenceSolution)
+  field(:createRequest, as: GoogleApi.Calendar.V3.Model.CreateConferenceRequest)
+  field(:entryPoints, as: GoogleApi.Calendar.V3.Model.EntryPoint, type: :list)
+  field(:notes)
+  field(:signature)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.ConferenceData do
-  import GoogleApi.Calendar.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :parameters,
-      :struct,
-      GoogleApi.Calendar.V3.Model.ConferenceParameters,
-      options
-    )
-    |> deserialize(
-      :conferenceSolution,
-      :struct,
-      GoogleApi.Calendar.V3.Model.ConferenceSolution,
-      options
-    )
-    |> deserialize(
-      :createRequest,
-      :struct,
-      GoogleApi.Calendar.V3.Model.CreateConferenceRequest,
-      options
-    )
-    |> deserialize(:entryPoints, :list, GoogleApi.Calendar.V3.Model.EntryPoint, options)
+    GoogleApi.Calendar.V3.Model.ConferenceData.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.ConferenceData do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

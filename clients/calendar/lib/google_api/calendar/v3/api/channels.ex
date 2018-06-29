@@ -22,7 +22,7 @@ defmodule GoogleApi.Calendar.V3.Api.Channels do
   """
 
   alias GoogleApi.Calendar.V3.Connection
-  import GoogleApi.Calendar.V3.RequestBuilder
+  alias GoogleApi.Gax.{Request, Response}
 
   @doc """
   Stop watching resources through this channel
@@ -59,12 +59,14 @@ defmodule GoogleApi.Calendar.V3.Api.Channels do
       :resource => :body
     }
 
-    %{}
-    |> method(:post)
-    |> url("/channels/stop")
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(false)
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/channels/stop")
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(decode: false)
   end
 end

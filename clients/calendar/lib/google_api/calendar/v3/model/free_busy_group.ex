@@ -26,28 +26,25 @@ defmodule GoogleApi.Calendar.V3.Model.FreeBusyGroup do
   - errors ([Error]): Optional error(s) (if computation for the group failed). Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          calendars: any(),
-          errors: list(GoogleApi.Calendar.V3.Model.Error.t())
+          :calendars => list(any()),
+          :errors => list(GoogleApi.Calendar.V3.Model.Error.t())
         }
 
-  defstruct [
-    :calendars,
-    :errors
-  ]
+  field(:calendars, type: :list)
+  field(:errors, as: GoogleApi.Calendar.V3.Model.Error, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.FreeBusyGroup do
-  import GoogleApi.Calendar.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:errors, :list, GoogleApi.Calendar.V3.Model.Error, options)
+    GoogleApi.Calendar.V3.Model.FreeBusyGroup.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.FreeBusyGroup do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

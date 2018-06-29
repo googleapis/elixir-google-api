@@ -25,23 +25,23 @@ defmodule GoogleApi.Calendar.V3.Model.ConferenceSolutionKey do
   - type (String.t): The conference solution type. If a client encounters an unfamiliar or empty type, it should still be able to display the entry points. However, it should disallow modifications. The possible values are:   - \&quot;eventHangout\&quot; for Hangouts for consumers (http://hangouts.google.com) - \&quot;eventNamedHangout\&quot; for classic Hangouts for G Suite users (http://hangouts.google.com) - \&quot;hangoutsMeet\&quot; for Hangouts Meet (http://meet.google.com) Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          type: any()
+          :type => any()
         }
 
-  defstruct [
-    :type
-  ]
+  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.ConferenceSolutionKey do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Calendar.V3.Model.ConferenceSolutionKey.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.ConferenceSolutionKey do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

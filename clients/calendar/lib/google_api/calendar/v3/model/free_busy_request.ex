@@ -30,38 +30,33 @@ defmodule GoogleApi.Calendar.V3.Model.FreeBusyRequest do
   - timeZone (String.t): Time zone used in the response. Optional. The default is UTC. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          calendarExpansionMax: any(),
-          groupExpansionMax: any(),
-          items: list(GoogleApi.Calendar.V3.Model.FreeBusyRequestItem.t()),
-          timeMax: any(),
-          timeMin: any(),
-          timeZone: any()
+          :calendarExpansionMax => any(),
+          :groupExpansionMax => any(),
+          :items => list(GoogleApi.Calendar.V3.Model.FreeBusyRequestItem.t()),
+          :timeMax => DateTime.t(),
+          :timeMin => DateTime.t(),
+          :timeZone => any()
         }
 
-  defstruct [
-    :calendarExpansionMax,
-    :groupExpansionMax,
-    :items,
-    :timeMax,
-    :timeMin,
-    :timeZone
-  ]
+  field(:calendarExpansionMax)
+  field(:groupExpansionMax)
+  field(:items, as: GoogleApi.Calendar.V3.Model.FreeBusyRequestItem, type: :list)
+  field(:timeMax, as: DateTime)
+  field(:timeMin, as: DateTime)
+  field(:timeZone)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.FreeBusyRequest do
-  import GoogleApi.Calendar.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:items, :list, GoogleApi.Calendar.V3.Model.FreeBusyRequestItem, options)
-    |> deserialize(:timeMax, :date, nil, options)
-    |> deserialize(:timeMin, :date, nil, options)
+    GoogleApi.Calendar.V3.Model.FreeBusyRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.FreeBusyRequest do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

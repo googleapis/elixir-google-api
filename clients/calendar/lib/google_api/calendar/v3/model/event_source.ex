@@ -26,25 +26,25 @@ defmodule GoogleApi.Calendar.V3.Model.EventSource do
   - url (String.t): URL of the source pointing to a resource. The URL scheme must be HTTP or HTTPS. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          title: any(),
-          url: any()
+          :title => any(),
+          :url => any()
         }
 
-  defstruct [
-    :title,
-    :url
-  ]
+  field(:title)
+  field(:url)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.EventSource do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Calendar.V3.Model.EventSource.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.EventSource do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

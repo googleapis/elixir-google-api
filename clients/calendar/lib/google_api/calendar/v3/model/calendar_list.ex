@@ -29,34 +29,31 @@ defmodule GoogleApi.Calendar.V3.Model.CalendarList do
   - nextSyncToken (String.t): Token used at a later point in time to retrieve only the entries that have changed since this result was returned. Omitted if further results are available, in which case nextPageToken is provided. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          etag: any(),
-          items: list(GoogleApi.Calendar.V3.Model.CalendarListEntry.t()),
-          kind: any(),
-          nextPageToken: any(),
-          nextSyncToken: any()
+          :etag => any(),
+          :items => list(GoogleApi.Calendar.V3.Model.CalendarListEntry.t()),
+          :kind => any(),
+          :nextPageToken => any(),
+          :nextSyncToken => any()
         }
 
-  defstruct [
-    :etag,
-    :items,
-    :kind,
-    :nextPageToken,
-    :nextSyncToken
-  ]
+  field(:etag)
+  field(:items, as: GoogleApi.Calendar.V3.Model.CalendarListEntry, type: :list)
+  field(:kind)
+  field(:nextPageToken)
+  field(:nextSyncToken)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.CalendarList do
-  import GoogleApi.Calendar.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:items, :list, GoogleApi.Calendar.V3.Model.CalendarListEntry, options)
+    GoogleApi.Calendar.V3.Model.CalendarList.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.CalendarList do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

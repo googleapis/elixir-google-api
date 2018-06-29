@@ -26,25 +26,25 @@ defmodule GoogleApi.Calendar.V3.Model.ColorDefinition do
   - foreground (String.t): The foreground color that can be used to write on top of a background with &#39;background&#39; color. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          background: any(),
-          foreground: any()
+          :background => any(),
+          :foreground => any()
         }
 
-  defstruct [
-    :background,
-    :foreground
-  ]
+  field(:background)
+  field(:foreground)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.ColorDefinition do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Calendar.V3.Model.ColorDefinition.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.ColorDefinition do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

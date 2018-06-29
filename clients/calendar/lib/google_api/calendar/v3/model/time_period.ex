@@ -26,25 +26,25 @@ defmodule GoogleApi.Calendar.V3.Model.TimePeriod do
   - start (DateTime.t): The (inclusive) start of the time period. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          end: any(),
-          start: any()
+          :end => DateTime.t(),
+          :start => DateTime.t()
         }
 
-  defstruct [
-    :end,
-    :start
-  ]
+  field(:end, as: DateTime)
+  field(:start, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.TimePeriod do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Calendar.V3.Model.TimePeriod.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.TimePeriod do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -25,31 +25,23 @@ defmodule GoogleApi.Calendar.V3.Model.CalendarListEntryNotificationSettings do
   - notifications ([CalendarNotification]): The list of notifications set for this calendar. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          notifications: list(GoogleApi.Calendar.V3.Model.CalendarNotification.t())
+          :notifications => list(GoogleApi.Calendar.V3.Model.CalendarNotification.t())
         }
 
-  defstruct [
-    :notifications
-  ]
+  field(:notifications, as: GoogleApi.Calendar.V3.Model.CalendarNotification, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.CalendarListEntryNotificationSettings do
-  import GoogleApi.Calendar.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :notifications,
-      :list,
-      GoogleApi.Calendar.V3.Model.CalendarNotification,
-      options
-    )
+    GoogleApi.Calendar.V3.Model.CalendarListEntryNotificationSettings.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.CalendarListEntryNotificationSettings do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

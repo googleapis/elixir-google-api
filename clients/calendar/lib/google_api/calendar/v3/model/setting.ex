@@ -28,29 +28,29 @@ defmodule GoogleApi.Calendar.V3.Model.Setting do
   - value (String.t): Value of the user setting. The format of the value depends on the ID of the setting. It must always be a UTF-8 string of length up to 1024 characters. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          etag: any(),
-          id: any(),
-          kind: any(),
-          value: any()
+          :etag => any(),
+          :id => any(),
+          :kind => any(),
+          :value => any()
         }
 
-  defstruct [
-    :etag,
-    :id,
-    :kind,
-    :value
-  ]
+  field(:etag)
+  field(:id)
+  field(:kind)
+  field(:value)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.Setting do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Calendar.V3.Model.Setting.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.Setting do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

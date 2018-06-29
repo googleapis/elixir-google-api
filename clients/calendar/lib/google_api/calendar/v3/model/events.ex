@@ -35,48 +35,43 @@ defmodule GoogleApi.Calendar.V3.Model.Events do
   - updated (DateTime.t): Last modification time of the calendar (as a RFC3339 timestamp). Read-only. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          accessRole: any(),
-          defaultReminders: list(GoogleApi.Calendar.V3.Model.EventReminder.t()),
-          description: any(),
-          etag: any(),
-          items: list(GoogleApi.Calendar.V3.Model.Event.t()),
-          kind: any(),
-          nextPageToken: any(),
-          nextSyncToken: any(),
-          summary: any(),
-          timeZone: any(),
-          updated: any()
+          :accessRole => any(),
+          :defaultReminders => list(GoogleApi.Calendar.V3.Model.EventReminder.t()),
+          :description => any(),
+          :etag => any(),
+          :items => list(GoogleApi.Calendar.V3.Model.Event.t()),
+          :kind => any(),
+          :nextPageToken => any(),
+          :nextSyncToken => any(),
+          :summary => any(),
+          :timeZone => any(),
+          :updated => DateTime.t()
         }
 
-  defstruct [
-    :accessRole,
-    :defaultReminders,
-    :description,
-    :etag,
-    :items,
-    :kind,
-    :nextPageToken,
-    :nextSyncToken,
-    :summary,
-    :timeZone,
-    :updated
-  ]
+  field(:accessRole)
+  field(:defaultReminders, as: GoogleApi.Calendar.V3.Model.EventReminder, type: :list)
+  field(:description)
+  field(:etag)
+  field(:items, as: GoogleApi.Calendar.V3.Model.Event, type: :list)
+  field(:kind)
+  field(:nextPageToken)
+  field(:nextSyncToken)
+  field(:summary)
+  field(:timeZone)
+  field(:updated, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.Events do
-  import GoogleApi.Calendar.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:defaultReminders, :list, GoogleApi.Calendar.V3.Model.EventReminder, options)
-    |> deserialize(:items, :list, GoogleApi.Calendar.V3.Model.Event, options)
-    |> deserialize(:updated, :date, nil, options)
+    GoogleApi.Calendar.V3.Model.Events.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.Events do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

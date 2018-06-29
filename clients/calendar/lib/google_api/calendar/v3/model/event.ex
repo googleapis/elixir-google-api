@@ -62,123 +62,97 @@ defmodule GoogleApi.Calendar.V3.Model.Event do
   - visibility (String.t): Visibility of the event. Optional. Possible values are:   - \&quot;default\&quot; - Uses the default visibility for events on the calendar. This is the default value.  - \&quot;public\&quot; - The event is public and event details are visible to all readers of the calendar.  - \&quot;private\&quot; - The event is private and only event attendees may view event details.  - \&quot;confidential\&quot; - The event is private. This value is provided for compatibility reasons. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          anyoneCanAddSelf: any(),
-          attachments: list(GoogleApi.Calendar.V3.Model.EventAttachment.t()),
-          attendees: list(GoogleApi.Calendar.V3.Model.EventAttendee.t()),
-          attendeesOmitted: any(),
-          colorId: any(),
-          conferenceData: GoogleApi.Calendar.V3.Model.ConferenceData.t(),
-          created: any(),
-          creator: GoogleApi.Calendar.V3.Model.EventCreator.t(),
-          description: any(),
-          end: GoogleApi.Calendar.V3.Model.EventDateTime.t(),
-          endTimeUnspecified: any(),
-          etag: any(),
-          extendedProperties: GoogleApi.Calendar.V3.Model.EventExtendedProperties.t(),
-          gadget: GoogleApi.Calendar.V3.Model.EventGadget.t(),
-          guestsCanInviteOthers: any(),
-          guestsCanModify: any(),
-          guestsCanSeeOtherGuests: any(),
-          hangoutLink: any(),
-          htmlLink: any(),
-          iCalUID: any(),
-          id: any(),
-          kind: any(),
-          location: any(),
-          locked: any(),
-          organizer: GoogleApi.Calendar.V3.Model.EventOrganizer.t(),
-          originalStartTime: GoogleApi.Calendar.V3.Model.EventDateTime.t(),
-          privateCopy: any(),
-          recurrence: any(),
-          recurringEventId: any(),
-          reminders: GoogleApi.Calendar.V3.Model.EventReminders.t(),
-          sequence: any(),
-          source: GoogleApi.Calendar.V3.Model.EventSource.t(),
-          start: GoogleApi.Calendar.V3.Model.EventDateTime.t(),
-          status: any(),
-          summary: any(),
-          transparency: any(),
-          updated: any(),
-          visibility: any()
+          :anyoneCanAddSelf => any(),
+          :attachments => list(GoogleApi.Calendar.V3.Model.EventAttachment.t()),
+          :attendees => list(GoogleApi.Calendar.V3.Model.EventAttendee.t()),
+          :attendeesOmitted => any(),
+          :colorId => any(),
+          :conferenceData => GoogleApi.Calendar.V3.Model.ConferenceData.t(),
+          :created => DateTime.t(),
+          :creator => GoogleApi.Calendar.V3.Model.EventCreator.t(),
+          :description => any(),
+          :end => GoogleApi.Calendar.V3.Model.EventDateTime.t(),
+          :endTimeUnspecified => any(),
+          :etag => any(),
+          :extendedProperties => GoogleApi.Calendar.V3.Model.EventExtendedProperties.t(),
+          :gadget => GoogleApi.Calendar.V3.Model.EventGadget.t(),
+          :guestsCanInviteOthers => any(),
+          :guestsCanModify => any(),
+          :guestsCanSeeOtherGuests => any(),
+          :hangoutLink => any(),
+          :htmlLink => any(),
+          :iCalUID => any(),
+          :id => any(),
+          :kind => any(),
+          :location => any(),
+          :locked => any(),
+          :organizer => GoogleApi.Calendar.V3.Model.EventOrganizer.t(),
+          :originalStartTime => GoogleApi.Calendar.V3.Model.EventDateTime.t(),
+          :privateCopy => any(),
+          :recurrence => list(any()),
+          :recurringEventId => any(),
+          :reminders => GoogleApi.Calendar.V3.Model.EventReminders.t(),
+          :sequence => any(),
+          :source => GoogleApi.Calendar.V3.Model.EventSource.t(),
+          :start => GoogleApi.Calendar.V3.Model.EventDateTime.t(),
+          :status => any(),
+          :summary => any(),
+          :transparency => any(),
+          :updated => DateTime.t(),
+          :visibility => any()
         }
 
-  defstruct [
-    :anyoneCanAddSelf,
-    :attachments,
-    :attendees,
-    :attendeesOmitted,
-    :colorId,
-    :conferenceData,
-    :created,
-    :creator,
-    :description,
-    :end,
-    :endTimeUnspecified,
-    :etag,
-    :extendedProperties,
-    :gadget,
-    :guestsCanInviteOthers,
-    :guestsCanModify,
-    :guestsCanSeeOtherGuests,
-    :hangoutLink,
-    :htmlLink,
-    :iCalUID,
-    :id,
-    :kind,
-    :location,
-    :locked,
-    :organizer,
-    :originalStartTime,
-    :privateCopy,
-    :recurrence,
-    :recurringEventId,
-    :reminders,
-    :sequence,
-    :source,
-    :start,
-    :status,
-    :summary,
-    :transparency,
-    :updated,
-    :visibility
-  ]
+  field(:anyoneCanAddSelf)
+  field(:attachments, as: GoogleApi.Calendar.V3.Model.EventAttachment, type: :list)
+  field(:attendees, as: GoogleApi.Calendar.V3.Model.EventAttendee, type: :list)
+  field(:attendeesOmitted)
+  field(:colorId)
+  field(:conferenceData, as: GoogleApi.Calendar.V3.Model.ConferenceData)
+  field(:created, as: DateTime)
+  field(:creator, as: GoogleApi.Calendar.V3.Model.EventCreator)
+  field(:description)
+  field(:end, as: GoogleApi.Calendar.V3.Model.EventDateTime)
+  field(:endTimeUnspecified)
+  field(:etag)
+  field(:extendedProperties, as: GoogleApi.Calendar.V3.Model.EventExtendedProperties)
+  field(:gadget, as: GoogleApi.Calendar.V3.Model.EventGadget)
+  field(:guestsCanInviteOthers)
+  field(:guestsCanModify)
+  field(:guestsCanSeeOtherGuests)
+  field(:hangoutLink)
+  field(:htmlLink)
+  field(:iCalUID)
+  field(:id)
+  field(:kind)
+  field(:location)
+  field(:locked)
+  field(:organizer, as: GoogleApi.Calendar.V3.Model.EventOrganizer)
+  field(:originalStartTime, as: GoogleApi.Calendar.V3.Model.EventDateTime)
+  field(:privateCopy)
+  field(:recurrence, type: :list)
+  field(:recurringEventId)
+  field(:reminders, as: GoogleApi.Calendar.V3.Model.EventReminders)
+  field(:sequence)
+  field(:source, as: GoogleApi.Calendar.V3.Model.EventSource)
+  field(:start, as: GoogleApi.Calendar.V3.Model.EventDateTime)
+  field(:status)
+  field(:summary)
+  field(:transparency)
+  field(:updated, as: DateTime)
+  field(:visibility)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.Event do
-  import GoogleApi.Calendar.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:attachments, :list, GoogleApi.Calendar.V3.Model.EventAttachment, options)
-    |> deserialize(:attendees, :list, GoogleApi.Calendar.V3.Model.EventAttendee, options)
-    |> deserialize(:conferenceData, :struct, GoogleApi.Calendar.V3.Model.ConferenceData, options)
-    |> deserialize(:created, :date, nil, options)
-    |> deserialize(:creator, :struct, GoogleApi.Calendar.V3.Model.EventCreator, options)
-    |> deserialize(:end, :struct, GoogleApi.Calendar.V3.Model.EventDateTime, options)
-    |> deserialize(
-      :extendedProperties,
-      :struct,
-      GoogleApi.Calendar.V3.Model.EventExtendedProperties,
-      options
-    )
-    |> deserialize(:gadget, :struct, GoogleApi.Calendar.V3.Model.EventGadget, options)
-    |> deserialize(:organizer, :struct, GoogleApi.Calendar.V3.Model.EventOrganizer, options)
-    |> deserialize(
-      :originalStartTime,
-      :struct,
-      GoogleApi.Calendar.V3.Model.EventDateTime,
-      options
-    )
-    |> deserialize(:reminders, :struct, GoogleApi.Calendar.V3.Model.EventReminders, options)
-    |> deserialize(:source, :struct, GoogleApi.Calendar.V3.Model.EventSource, options)
-    |> deserialize(:start, :struct, GoogleApi.Calendar.V3.Model.EventDateTime, options)
-    |> deserialize(:updated, :date, nil, options)
+    GoogleApi.Calendar.V3.Model.Event.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.Event do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -22,7 +22,7 @@ defmodule GoogleApi.Calendar.V3.Api.Settings do
   """
 
   alias GoogleApi.Calendar.V3.Connection
-  import GoogleApi.Calendar.V3.RequestBuilder
+  alias GoogleApi.Gax.{Request, Response}
 
   @doc """
   Returns a single user setting.
@@ -58,15 +58,17 @@ defmodule GoogleApi.Calendar.V3.Api.Settings do
       :userIp => :query
     }
 
-    %{}
-    |> method(:get)
-    |> url("/users/me/settings/{setting}", %{
-      "setting" => URI.encode_www_form(setting)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Calendar.V3.Model.Setting{})
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/users/me/settings/{setting}", %{
+        "setting" => URI.encode_www_form(setting)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.Setting{})
   end
 
   @doc """
@@ -108,13 +110,15 @@ defmodule GoogleApi.Calendar.V3.Api.Settings do
       :syncToken => :query
     }
 
-    %{}
-    |> method(:get)
-    |> url("/users/me/settings")
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Calendar.V3.Model.Settings{})
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/users/me/settings")
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.Settings{})
   end
 
   @doc """
@@ -158,12 +162,14 @@ defmodule GoogleApi.Calendar.V3.Api.Settings do
       :resource => :body
     }
 
-    %{}
-    |> method(:post)
-    |> url("/users/me/settings/watch")
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Calendar.V3.Model.Channel{})
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/users/me/settings/watch")
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.Channel{})
   end
 end
