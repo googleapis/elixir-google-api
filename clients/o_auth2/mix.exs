@@ -1,9 +1,11 @@
 defmodule GoogleApi.OAuth2.V2.Mixfile do
   use Mix.Project
 
+  @version "0.1.0"
+
   def project do
     [app: :google_api_o_auth2,
-     version: "0.0.1",
+     version: @version,
      elixir: "~> 1.4",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
@@ -20,9 +22,9 @@ defmodule GoogleApi.OAuth2.V2.Mixfile do
 
   defp deps() do
     [
-      {:tesla, "~> 0.8"},
-      {:poison, ">= 1.0.0"},
-      {:ex_doc, "~> 0.16", only: :dev}
+      {:google_gax, "~> 0.1.0"},
+      {:ex_doc, "~> 0.16", only: :dev},
+      {:goth, "~> 0.8.0", only: [:dev, :test]}
     ]
   end
 
