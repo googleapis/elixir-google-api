@@ -16,31 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Container.V1.Model.LegacyAbac do
+defmodule GoogleApi.Container.V1.Model.DailyMaintenanceWindow do
   @moduledoc """
-  Configuration for the legacy Attribute Based Access Control authorization mode.
+  Time window specified for daily maintenance operations.
 
   ## Attributes
 
-  - enabled (boolean()): Whether the ABAC authorizer is enabled for this cluster. When enabled, identities in the system, including service accounts, nodes, and controllers, will have statically granted permissions beyond those provided by the RBAC configuration or IAM. Defaults to: `null`.
+  - duration (String.t): [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario. Duration will be in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) format \&quot;PTnHnMnS\&quot;. Defaults to: `null`.
+  - startTime (String.t): Time within the maintenance window to start the maintenance operations. Time format should be in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) format \&quot;HH:MM”, where HH : [00-23] and MM : [00-59] GMT. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enabled => any()
+          :duration => any(),
+          :startTime => any()
         }
 
-  field(:enabled)
+  field(:duration)
+  field(:startTime)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.LegacyAbac do
+defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.DailyMaintenanceWindow do
   def decode(value, options) do
-    GoogleApi.Container.V1.Model.LegacyAbac.decode(value, options)
+    GoogleApi.Container.V1.Model.DailyMaintenanceWindow.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.LegacyAbac do
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.DailyMaintenanceWindow do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

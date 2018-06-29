@@ -16,31 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Container.V1.Model.LegacyAbac do
+defmodule GoogleApi.Container.V1.Model.NetworkPolicyConfig do
   @moduledoc """
-  Configuration for the legacy Attribute Based Access Control authorization mode.
+  Configuration for NetworkPolicy. This only tracks whether the addon is enabled or not on the Master, it does not track whether network policy is enabled for the nodes.
 
   ## Attributes
 
-  - enabled (boolean()): Whether the ABAC authorizer is enabled for this cluster. When enabled, identities in the system, including service accounts, nodes, and controllers, will have statically granted permissions beyond those provided by the RBAC configuration or IAM. Defaults to: `null`.
+  - disabled (boolean()): Whether NetworkPolicy is enabled for this cluster. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enabled => any()
+          :disabled => any()
         }
 
-  field(:enabled)
+  field(:disabled)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.LegacyAbac do
+defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.NetworkPolicyConfig do
   def decode(value, options) do
-    GoogleApi.Container.V1.Model.LegacyAbac.decode(value, options)
+    GoogleApi.Container.V1.Model.NetworkPolicyConfig.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.LegacyAbac do
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.NetworkPolicyConfig do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
