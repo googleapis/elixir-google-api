@@ -16,34 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AdExchangeBuyer.V14.Model.AccountsList do
+defmodule GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDemogAgeCriteria do
   @moduledoc """
-  An account feed lists Ad Exchange buyer accounts that the user has access to. Each entry in the feed corresponds to a single buyer account.
+
 
   ## Attributes
 
-  - items ([Account]): A list of accounts. Defaults to: `null`.
-  - kind (String.t): Resource type. Defaults to: `null`.
+  - demogAgeCriteriaIds ([String.t]):  Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.AdExchangeBuyer.V14.Model.Account.t()),
-          :kind => any()
+          :demogAgeCriteriaIds => list(any())
         }
 
-  field(:items, as: GoogleApi.AdExchangeBuyer.V14.Model.Account, type: :list)
-  field(:kind)
+  field(:demogAgeCriteriaIds, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.AccountsList do
+defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDemogAgeCriteria do
   def decode(value, options) do
-    GoogleApi.AdExchangeBuyer.V14.Model.AccountsList.decode(value, options)
+    GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDemogAgeCriteria.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.AccountsList do
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDemogAgeCriteria do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
