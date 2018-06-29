@@ -16,40 +16,40 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Fitness.V1.Model.ListSessionsResponse do
+defmodule GoogleApi.Fitness.V1.Model.ListDataPointChangesResponse do
   @moduledoc """
 
 
   ## Attributes
 
-  - deletedSession ([Session]): If includeDeleted is set to true in the request, this list will contain sessions deleted with original end times that are within the startTime and endTime frame. Defaults to: `null`.
-  - hasMoreData (boolean()): Flag to indicate server has more data to transfer Defaults to: `null`.
+  - dataSourceId (String.t): The data stream ID of the data source with data point changes. Defaults to: `null`.
+  - deletedDataPoint ([DataPoint]): Deleted data points for the user. Note, for modifications this should be parsed before handling insertions. Defaults to: `null`.
+  - insertedDataPoint ([DataPoint]): Inserted data points for the user. Defaults to: `null`.
   - nextPageToken (String.t): The continuation token, which is used to page through large result sets. Provide this value in a subsequent request to return the next page of results. Defaults to: `null`.
-  - session ([Session]): Sessions with an end time that is between startTime and endTime of the request. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deletedSession => list(GoogleApi.Fitness.V1.Model.Session.t()),
-          :hasMoreData => any(),
-          :nextPageToken => any(),
-          :session => list(GoogleApi.Fitness.V1.Model.Session.t())
+          :dataSourceId => any(),
+          :deletedDataPoint => list(GoogleApi.Fitness.V1.Model.DataPoint.t()),
+          :insertedDataPoint => list(GoogleApi.Fitness.V1.Model.DataPoint.t()),
+          :nextPageToken => any()
         }
 
-  field(:deletedSession, as: GoogleApi.Fitness.V1.Model.Session, type: :list)
-  field(:hasMoreData)
+  field(:dataSourceId)
+  field(:deletedDataPoint, as: GoogleApi.Fitness.V1.Model.DataPoint, type: :list)
+  field(:insertedDataPoint, as: GoogleApi.Fitness.V1.Model.DataPoint, type: :list)
   field(:nextPageToken)
-  field(:session, as: GoogleApi.Fitness.V1.Model.Session, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Fitness.V1.Model.ListSessionsResponse do
+defimpl Poison.Decoder, for: GoogleApi.Fitness.V1.Model.ListDataPointChangesResponse do
   def decode(value, options) do
-    GoogleApi.Fitness.V1.Model.ListSessionsResponse.decode(value, options)
+    GoogleApi.Fitness.V1.Model.ListDataPointChangesResponse.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Fitness.V1.Model.ListSessionsResponse do
+defimpl Poison.Encoder, for: GoogleApi.Fitness.V1.Model.ListDataPointChangesResponse do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
