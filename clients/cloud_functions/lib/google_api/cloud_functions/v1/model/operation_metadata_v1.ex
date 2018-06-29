@@ -16,7 +16,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudFunctions.V1.Model.OperationMetadataV1Beta2 do
+defmodule GoogleApi.CloudFunctions.V1.Model.OperationMetadataV1 do
   @moduledoc """
   Metadata describing an Operation
 
@@ -47,13 +47,13 @@ defmodule GoogleApi.CloudFunctions.V1.Model.OperationMetadataV1Beta2 do
   field(:versionId)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudFunctions.V1.Model.OperationMetadataV1Beta2 do
+defimpl Poison.Decoder, for: GoogleApi.CloudFunctions.V1.Model.OperationMetadataV1 do
   def decode(value, options) do
-    GoogleApi.CloudFunctions.V1.Model.OperationMetadataV1Beta2.decode(value, options)
+    GoogleApi.CloudFunctions.V1.Model.OperationMetadataV1.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudFunctions.V1.Model.OperationMetadataV1Beta2 do
+defimpl Poison.Encoder, for: GoogleApi.CloudFunctions.V1.Model.OperationMetadataV1 do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

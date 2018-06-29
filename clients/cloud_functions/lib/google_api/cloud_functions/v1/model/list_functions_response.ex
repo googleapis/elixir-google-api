@@ -16,34 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudFunctions.V1.Model.ListOperationsResponse do
+defmodule GoogleApi.CloudFunctions.V1.Model.ListFunctionsResponse do
   @moduledoc """
-  The response message for Operations.ListOperations.
+  Response for the &#x60;ListFunctions&#x60; method.
 
   ## Attributes
 
-  - nextPageToken (String.t): The standard List next-page token. Defaults to: `null`.
-  - operations ([Operation]): A list of operations that matches the specified filter in the request. Defaults to: `null`.
+  - functions ([CloudFunction]): The functions that match the request. Defaults to: `null`.
+  - nextPageToken (String.t): If not empty, indicates that there may be more functions that match the request; this value should be passed in a new google.cloud.functions.v1.ListFunctionsRequest to get more functions. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => any(),
-          :operations => list(GoogleApi.CloudFunctions.V1.Model.Operation.t())
+          :functions => list(GoogleApi.CloudFunctions.V1.Model.CloudFunction.t()),
+          :nextPageToken => any()
         }
 
+  field(:functions, as: GoogleApi.CloudFunctions.V1.Model.CloudFunction, type: :list)
   field(:nextPageToken)
-  field(:operations, as: GoogleApi.CloudFunctions.V1.Model.Operation, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudFunctions.V1.Model.ListOperationsResponse do
+defimpl Poison.Decoder, for: GoogleApi.CloudFunctions.V1.Model.ListFunctionsResponse do
   def decode(value, options) do
-    GoogleApi.CloudFunctions.V1.Model.ListOperationsResponse.decode(value, options)
+    GoogleApi.CloudFunctions.V1.Model.ListFunctionsResponse.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudFunctions.V1.Model.ListOperationsResponse do
+defimpl Poison.Encoder, for: GoogleApi.CloudFunctions.V1.Model.ListFunctionsResponse do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
