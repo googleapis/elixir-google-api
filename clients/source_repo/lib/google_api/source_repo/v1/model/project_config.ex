@@ -16,31 +16,37 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.SourceRepo.V1.Model.TestIamPermissionsResponse do
+defmodule GoogleApi.SourceRepo.V1.Model.ProjectConfig do
   @moduledoc """
-  Response message for &#x60;TestIamPermissions&#x60; method.
+  Cloud Source Repositories configuration of a project.
 
   ## Attributes
 
-  - permissions ([String.t]): A subset of &#x60;TestPermissionsRequest.permissions&#x60; that the caller is allowed. Defaults to: `null`.
+  - enablePrivateKeyCheck (boolean()): Reject a Git push that contains a private key. Defaults to: `null`.
+  - name (String.t): The name of the project. Values are of the form &#x60;projects/&lt;project&gt;&#x60;. Defaults to: `null`.
+  - pubsubConfigs (%{optional(String.t) &#x3D;&gt; PubsubConfig}): How this project publishes a change in the repositories through Cloud Pub/Sub. Keyed by the topic names. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :permissions => list(any())
+          :enablePrivateKeyCheck => any(),
+          :name => any(),
+          :pubsubConfigs => map()
         }
 
-  field(:permissions, type: :list)
+  field(:enablePrivateKeyCheck)
+  field(:name)
+  field(:pubsubConfigs, as: GoogleApi.SourceRepo.V1.Model.PubsubConfig, type: :map)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.SourceRepo.V1.Model.TestIamPermissionsResponse do
+defimpl Poison.Decoder, for: GoogleApi.SourceRepo.V1.Model.ProjectConfig do
   def decode(value, options) do
-    GoogleApi.SourceRepo.V1.Model.TestIamPermissionsResponse.decode(value, options)
+    GoogleApi.SourceRepo.V1.Model.ProjectConfig.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.SourceRepo.V1.Model.TestIamPermissionsResponse do
+defimpl Poison.Encoder, for: GoogleApi.SourceRepo.V1.Model.ProjectConfig do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
