@@ -16,34 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ServiceControl.V1.Model.EndReconciliationRequest do
+defmodule GoogleApi.ServiceControl.V1.Model.ResourceInfo do
   @moduledoc """
-  Request message for QuotaController.EndReconciliation.
+  Describes a resource associated with this operation.
 
   ## Attributes
 
-  - reconciliationOperation (QuotaOperation): Operation that describes the quota reconciliation. Defaults to: `null`.
-  - serviceConfigId (String.t): Specifies which version of service configuration should be used to process the request. If unspecified or no matching version can be found, the latest one will be used. Defaults to: `null`.
+  - resourceContainer (String.t): The identifier of the parent of this resource instance. Must be in one of the following formats:     - “projects/&lt;project-id or project-number&gt;”     - “folders/&lt;folder-id&gt;”     - “organizations/&lt;organization-id&gt;” Defaults to: `null`.
+  - resourceName (String.t): Name of the resource. This is used for auditing purposes. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :reconciliationOperation => GoogleApi.ServiceControl.V1.Model.QuotaOperation.t(),
-          :serviceConfigId => any()
+          :resourceContainer => any(),
+          :resourceName => any()
         }
 
-  field(:reconciliationOperation, as: GoogleApi.ServiceControl.V1.Model.QuotaOperation)
-  field(:serviceConfigId)
+  field(:resourceContainer)
+  field(:resourceName)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.EndReconciliationRequest do
+defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.ResourceInfo do
   def decode(value, options) do
-    GoogleApi.ServiceControl.V1.Model.EndReconciliationRequest.decode(value, options)
+    GoogleApi.ServiceControl.V1.Model.ResourceInfo.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.EndReconciliationRequest do
+defimpl Poison.Encoder, for: GoogleApi.ServiceControl.V1.Model.ResourceInfo do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
