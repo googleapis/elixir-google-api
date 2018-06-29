@@ -16,34 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.IAM.V1.Model.QueryTestablePermissionsResponse do
+defmodule GoogleApi.IAM.V1.Model.QueryAuditableServicesResponse do
   @moduledoc """
-  The response containing permissions which can be tested on a resource.
+  A response containing a list of auditable services for a resource.
 
   ## Attributes
 
-  - nextPageToken (String.t): To retrieve the next page of results, set &#x60;QueryTestableRolesRequest.page_token&#x60; to this value. Defaults to: `null`.
-  - permissions ([Permission]): The Permissions testable on the requested resource. Defaults to: `null`.
+  - services ([AuditableService]): The auditable services for a resource. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => any(),
-          :permissions => list(GoogleApi.IAM.V1.Model.Permission.t())
+          :services => list(GoogleApi.IAM.V1.Model.AuditableService.t())
         }
 
-  field(:nextPageToken)
-  field(:permissions, as: GoogleApi.IAM.V1.Model.Permission, type: :list)
+  field(:services, as: GoogleApi.IAM.V1.Model.AuditableService, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.IAM.V1.Model.QueryTestablePermissionsResponse do
+defimpl Poison.Decoder, for: GoogleApi.IAM.V1.Model.QueryAuditableServicesResponse do
   def decode(value, options) do
-    GoogleApi.IAM.V1.Model.QueryTestablePermissionsResponse.decode(value, options)
+    GoogleApi.IAM.V1.Model.QueryAuditableServicesResponse.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.IAM.V1.Model.QueryTestablePermissionsResponse do
+defimpl Poison.Encoder, for: GoogleApi.IAM.V1.Model.QueryAuditableServicesResponse do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

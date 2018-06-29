@@ -1,7 +1,7 @@
 defmodule GoogleApi.IAM.V1.Mixfile do
   use Mix.Project
 
-  @version "0.0.1"
+  @version "0.1.0"
 
   def project() do
     [
@@ -23,8 +23,7 @@ defmodule GoogleApi.IAM.V1.Mixfile do
 
   defp deps() do
     [
-      {:tesla, "~> 0.5"},
-      {:poison, ">= 1.0.0"},
+      {:google_gax, "~> 0.1.0"},
       {:ex_doc, "~> 0.16", only: :dev}
     ]
   end
