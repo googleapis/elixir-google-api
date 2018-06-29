@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ defmodule GoogleApi.Firestore.V1beta1.Model.Value do
 
   ## Attributes
 
-  - arrayValue (ArrayValue): An array value.  Cannot contain another array value. Defaults to: `null`.
+  - arrayValue (ArrayValue): An array value.  Cannot directly contain another array value, though can contain an map which contains another array. Defaults to: `null`.
   - booleanValue (boolean()): A boolean value. Defaults to: `null`.
   - bytesValue (binary()): A bytes value.  Must not exceed 1 MiB - 89 bytes. Only the first 1,500 bytes are considered by queries. Defaults to: `null`.
   - doubleValue (float()): A double value. Defaults to: `null`.
@@ -33,37 +33,46 @@ defmodule GoogleApi.Firestore.V1beta1.Model.Value do
     - Enum - one of [NULL_VALUE]
   - referenceValue (String.t): A reference to a document. For example: &#x60;projects/{project_id}/databases/{database_id}/documents/{document_path}&#x60;. Defaults to: `null`.
   - stringValue (String.t): A string value.  The string, represented as UTF-8, must not exceed 1 MiB - 89 bytes. Only the first 1,500 bytes of the UTF-8 representation are considered by queries. Defaults to: `null`.
-  - timestampValue (String.t): A timestamp value.  Precise only to microseconds. When stored, any additional precision is rounded down. Defaults to: `null`.
+  - timestampValue (DateTime.t): A timestamp value.  Precise only to microseconds. When stored, any additional precision is rounded down. Defaults to: `null`.
   """
 
-  defstruct [
-    :arrayValue,
-    :booleanValue,
-    :bytesValue,
-    :doubleValue,
-    :geoPointValue,
-    :integerValue,
-    :mapValue,
-    :nullValue,
-    :referenceValue,
-    :stringValue,
-    :timestampValue
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :arrayValue => GoogleApi.Firestore.V1beta1.Model.ArrayValue.t(),
+          :booleanValue => any(),
+          :bytesValue => any(),
+          :doubleValue => any(),
+          :geoPointValue => GoogleApi.Firestore.V1beta1.Model.LatLng.t(),
+          :integerValue => any(),
+          :mapValue => GoogleApi.Firestore.V1beta1.Model.MapValue.t(),
+          :nullValue => any(),
+          :referenceValue => any(),
+          :stringValue => any(),
+          :timestampValue => DateTime.t()
+        }
+
+  field(:arrayValue, as: GoogleApi.Firestore.V1beta1.Model.ArrayValue)
+  field(:booleanValue)
+  field(:bytesValue)
+  field(:doubleValue)
+  field(:geoPointValue, as: GoogleApi.Firestore.V1beta1.Model.LatLng)
+  field(:integerValue)
+  field(:mapValue, as: GoogleApi.Firestore.V1beta1.Model.MapValue)
+  field(:nullValue)
+  field(:referenceValue)
+  field(:stringValue)
+  field(:timestampValue, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1beta1.Model.Value do
-  import GoogleApi.Firestore.V1beta1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:arrayValue, :struct, GoogleApi.Firestore.V1beta1.Model.ArrayValue, options)
-    |> deserialize(:geoPointValue, :struct, GoogleApi.Firestore.V1beta1.Model.LatLng, options)
-    |> deserialize(:mapValue, :struct, GoogleApi.Firestore.V1beta1.Model.MapValue, options)
+    GoogleApi.Firestore.V1beta1.Model.Value.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Firestore.V1beta1.Model.Value do
   def encode(value, options) do
-    GoogleApi.Firestore.V1beta1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

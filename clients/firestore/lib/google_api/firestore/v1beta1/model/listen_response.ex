@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -29,50 +29,31 @@ defmodule GoogleApi.Firestore.V1beta1.Model.ListenResponse do
   - targetChange (TargetChange): Targets have changed. Defaults to: `null`.
   """
 
-  defstruct [
-    :documentChange,
-    :documentDelete,
-    :documentRemove,
-    :filter,
-    :targetChange
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :documentChange => GoogleApi.Firestore.V1beta1.Model.DocumentChange.t(),
+          :documentDelete => GoogleApi.Firestore.V1beta1.Model.DocumentDelete.t(),
+          :documentRemove => GoogleApi.Firestore.V1beta1.Model.DocumentRemove.t(),
+          :filter => GoogleApi.Firestore.V1beta1.Model.ExistenceFilter.t(),
+          :targetChange => GoogleApi.Firestore.V1beta1.Model.TargetChange.t()
+        }
+
+  field(:documentChange, as: GoogleApi.Firestore.V1beta1.Model.DocumentChange)
+  field(:documentDelete, as: GoogleApi.Firestore.V1beta1.Model.DocumentDelete)
+  field(:documentRemove, as: GoogleApi.Firestore.V1beta1.Model.DocumentRemove)
+  field(:filter, as: GoogleApi.Firestore.V1beta1.Model.ExistenceFilter)
+  field(:targetChange, as: GoogleApi.Firestore.V1beta1.Model.TargetChange)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1beta1.Model.ListenResponse do
-  import GoogleApi.Firestore.V1beta1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :documentChange,
-      :struct,
-      GoogleApi.Firestore.V1beta1.Model.DocumentChange,
-      options
-    )
-    |> deserialize(
-      :documentDelete,
-      :struct,
-      GoogleApi.Firestore.V1beta1.Model.DocumentDelete,
-      options
-    )
-    |> deserialize(
-      :documentRemove,
-      :struct,
-      GoogleApi.Firestore.V1beta1.Model.DocumentRemove,
-      options
-    )
-    |> deserialize(:filter, :struct, GoogleApi.Firestore.V1beta1.Model.ExistenceFilter, options)
-    |> deserialize(
-      :targetChange,
-      :struct,
-      GoogleApi.Firestore.V1beta1.Model.TargetChange,
-      options
-    )
+    GoogleApi.Firestore.V1beta1.Model.ListenResponse.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Firestore.V1beta1.Model.ListenResponse do
   def encode(value, options) do
-    GoogleApi.Firestore.V1beta1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

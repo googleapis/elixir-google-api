@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -28,25 +28,27 @@ defmodule GoogleApi.Firestore.V1beta1.Model.FieldFilter do
   - value (Value): The value to compare to. Defaults to: `null`.
   """
 
-  defstruct [
-    :field,
-    :op,
-    :value
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :field => GoogleApi.Firestore.V1beta1.Model.FieldReference.t(),
+          :op => any(),
+          :value => GoogleApi.Firestore.V1beta1.Model.Value.t()
+        }
+
+  field(:field, as: GoogleApi.Firestore.V1beta1.Model.FieldReference)
+  field(:op)
+  field(:value, as: GoogleApi.Firestore.V1beta1.Model.Value)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1beta1.Model.FieldFilter do
-  import GoogleApi.Firestore.V1beta1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:field, :struct, GoogleApi.Firestore.V1beta1.Model.FieldReference, options)
-    |> deserialize(:value, :struct, GoogleApi.Firestore.V1beta1.Model.Value, options)
+    GoogleApi.Firestore.V1beta1.Model.FieldFilter.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Firestore.V1beta1.Model.FieldFilter do
   def encode(value, options) do
-    GoogleApi.Firestore.V1beta1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

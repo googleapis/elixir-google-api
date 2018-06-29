@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -25,22 +25,23 @@ defmodule GoogleApi.Firestore.V1beta1.Model.MapValue do
   - fields (%{optional(String.t) &#x3D;&gt; Value}): The map&#39;s fields.  The map keys represent field names. Field names matching the regular expression &#x60;__.*__&#x60; are reserved. Reserved field names are forbidden except in certain documented contexts. The map keys, represented as UTF-8, must not exceed 1,500 bytes and cannot be empty. Defaults to: `null`.
   """
 
-  defstruct [
-    :fields
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :fields => map()
+        }
+
+  field(:fields, as: GoogleApi.Firestore.V1beta1.Model.Value, type: :map)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1beta1.Model.MapValue do
-  import GoogleApi.Firestore.V1beta1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:fields, :map, GoogleApi.Firestore.V1beta1.Model.Value, options)
+    GoogleApi.Firestore.V1beta1.Model.MapValue.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Firestore.V1beta1.Model.MapValue do
   def encode(value, options) do
-    GoogleApi.Firestore.V1beta1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -26,28 +26,25 @@ defmodule GoogleApi.Firestore.V1beta1.Model.QueryTarget do
   - structuredQuery (StructuredQuery): A structured query. Defaults to: `null`.
   """
 
-  defstruct [
-    :parent,
-    :structuredQuery
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :parent => any(),
+          :structuredQuery => GoogleApi.Firestore.V1beta1.Model.StructuredQuery.t()
+        }
+
+  field(:parent)
+  field(:structuredQuery, as: GoogleApi.Firestore.V1beta1.Model.StructuredQuery)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1beta1.Model.QueryTarget do
-  import GoogleApi.Firestore.V1beta1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :structuredQuery,
-      :struct,
-      GoogleApi.Firestore.V1beta1.Model.StructuredQuery,
-      options
-    )
+    GoogleApi.Firestore.V1beta1.Model.QueryTarget.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Firestore.V1beta1.Model.QueryTarget do
   def encode(value, options) do
-    GoogleApi.Firestore.V1beta1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -27,23 +27,25 @@ defmodule GoogleApi.Firestore.V1beta1.Model.CompositeFilter do
     - Enum - one of [OPERATOR_UNSPECIFIED, AND]
   """
 
-  defstruct [
-    :filters,
-    :op
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :filters => list(GoogleApi.Firestore.V1beta1.Model.Filter.t()),
+          :op => any()
+        }
+
+  field(:filters, as: GoogleApi.Firestore.V1beta1.Model.Filter, type: :list)
+  field(:op)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1beta1.Model.CompositeFilter do
-  import GoogleApi.Firestore.V1beta1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:filters, :list, GoogleApi.Firestore.V1beta1.Model.Filter, options)
+    GoogleApi.Firestore.V1beta1.Model.CompositeFilter.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Firestore.V1beta1.Model.CompositeFilter do
   def encode(value, options) do
-    GoogleApi.Firestore.V1beta1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end
