@@ -16,34 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.PubSub.V1.Model.ReceivedMessage do
+defmodule GoogleApi.PubSub.V1.Model.UpdateSubscriptionRequest do
   @moduledoc """
-  A message and its corresponding acknowledgment ID.
+  Request for the UpdateSubscription method.
 
   ## Attributes
 
-  - ackId (String.t): This ID can be used to acknowledge the received message. Defaults to: `null`.
-  - message (PubsubMessage): The message. Defaults to: `null`.
+  - subscription (Subscription): The updated subscription object. Defaults to: `null`.
+  - updateMask (String.t): Indicates which fields in the provided subscription to update. Must be specified and non-empty. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ackId => any(),
-          :message => GoogleApi.PubSub.V1.Model.PubsubMessage.t()
+          :subscription => GoogleApi.PubSub.V1.Model.Subscription.t(),
+          :updateMask => any()
         }
 
-  field(:ackId)
-  field(:message, as: GoogleApi.PubSub.V1.Model.PubsubMessage)
+  field(:subscription, as: GoogleApi.PubSub.V1.Model.Subscription)
+  field(:updateMask)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.PubSub.V1.Model.ReceivedMessage do
+defimpl Poison.Decoder, for: GoogleApi.PubSub.V1.Model.UpdateSubscriptionRequest do
   def decode(value, options) do
-    GoogleApi.PubSub.V1.Model.ReceivedMessage.decode(value, options)
+    GoogleApi.PubSub.V1.Model.UpdateSubscriptionRequest.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.PubSub.V1.Model.ReceivedMessage do
+defimpl Poison.Encoder, for: GoogleApi.PubSub.V1.Model.UpdateSubscriptionRequest do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

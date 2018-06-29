@@ -16,34 +16,26 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.PubSub.V1.Model.ReceivedMessage do
+defmodule GoogleApi.PubSub.V1.Model.SeekResponse do
   @moduledoc """
-  A message and its corresponding acknowledgment ID.
+
 
   ## Attributes
 
-  - ackId (String.t): This ID can be used to acknowledge the received message. Defaults to: `null`.
-  - message (PubsubMessage): The message. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{
-          :ackId => any(),
-          :message => GoogleApi.PubSub.V1.Model.PubsubMessage.t()
-        }
-
-  field(:ackId)
-  field(:message, as: GoogleApi.PubSub.V1.Model.PubsubMessage)
+  @type t :: %__MODULE__{}
 end
 
-defimpl Poison.Decoder, for: GoogleApi.PubSub.V1.Model.ReceivedMessage do
+defimpl Poison.Decoder, for: GoogleApi.PubSub.V1.Model.SeekResponse do
   def decode(value, options) do
-    GoogleApi.PubSub.V1.Model.ReceivedMessage.decode(value, options)
+    GoogleApi.PubSub.V1.Model.SeekResponse.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.PubSub.V1.Model.ReceivedMessage do
+defimpl Poison.Encoder, for: GoogleApi.PubSub.V1.Model.SeekResponse do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

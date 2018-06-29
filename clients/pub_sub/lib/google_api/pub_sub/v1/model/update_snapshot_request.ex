@@ -16,34 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.PubSub.V1.Model.ReceivedMessage do
+defmodule GoogleApi.PubSub.V1.Model.UpdateSnapshotRequest do
   @moduledoc """
-  A message and its corresponding acknowledgment ID.
+  Request for the UpdateSnapshot method.&lt;br&gt;&lt;br&gt; &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy.
 
   ## Attributes
 
-  - ackId (String.t): This ID can be used to acknowledge the received message. Defaults to: `null`.
-  - message (PubsubMessage): The message. Defaults to: `null`.
+  - snapshot (Snapshot): The updated snapshot object. Defaults to: `null`.
+  - updateMask (String.t): Indicates which fields in the provided snapshot to update. Must be specified and non-empty. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ackId => any(),
-          :message => GoogleApi.PubSub.V1.Model.PubsubMessage.t()
+          :snapshot => GoogleApi.PubSub.V1.Model.Snapshot.t(),
+          :updateMask => any()
         }
 
-  field(:ackId)
-  field(:message, as: GoogleApi.PubSub.V1.Model.PubsubMessage)
+  field(:snapshot, as: GoogleApi.PubSub.V1.Model.Snapshot)
+  field(:updateMask)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.PubSub.V1.Model.ReceivedMessage do
+defimpl Poison.Decoder, for: GoogleApi.PubSub.V1.Model.UpdateSnapshotRequest do
   def decode(value, options) do
-    GoogleApi.PubSub.V1.Model.ReceivedMessage.decode(value, options)
+    GoogleApi.PubSub.V1.Model.UpdateSnapshotRequest.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.PubSub.V1.Model.ReceivedMessage do
+defimpl Poison.Encoder, for: GoogleApi.PubSub.V1.Model.UpdateSnapshotRequest do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

@@ -16,34 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.PubSub.V1.Model.ListSubscriptionsResponse do
+defmodule GoogleApi.PubSub.V1.Model.ListSnapshotsResponse do
   @moduledoc """
-  Response for the &#x60;ListSubscriptions&#x60; method.
+  Response for the &#x60;ListSnapshots&#x60; method.&lt;br&gt;&lt;br&gt; &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy.
 
   ## Attributes
 
-  - nextPageToken (String.t): If not empty, indicates that there may be more subscriptions that match the request; this value should be passed in a new &#x60;ListSubscriptionsRequest&#x60; to get more subscriptions. Defaults to: `null`.
-  - subscriptions ([Subscription]): The subscriptions that match the request. Defaults to: `null`.
+  - nextPageToken (String.t): If not empty, indicates that there may be more snapshot that match the request; this value should be passed in a new &#x60;ListSnapshotsRequest&#x60;. Defaults to: `null`.
+  - snapshots ([Snapshot]): The resulting snapshots. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :nextPageToken => any(),
-          :subscriptions => list(GoogleApi.PubSub.V1.Model.Subscription.t())
+          :snapshots => list(GoogleApi.PubSub.V1.Model.Snapshot.t())
         }
 
   field(:nextPageToken)
-  field(:subscriptions, as: GoogleApi.PubSub.V1.Model.Subscription, type: :list)
+  field(:snapshots, as: GoogleApi.PubSub.V1.Model.Snapshot, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.PubSub.V1.Model.ListSubscriptionsResponse do
+defimpl Poison.Decoder, for: GoogleApi.PubSub.V1.Model.ListSnapshotsResponse do
   def decode(value, options) do
-    GoogleApi.PubSub.V1.Model.ListSubscriptionsResponse.decode(value, options)
+    GoogleApi.PubSub.V1.Model.ListSnapshotsResponse.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.PubSub.V1.Model.ListSubscriptionsResponse do
+defimpl Poison.Encoder, for: GoogleApi.PubSub.V1.Model.ListSnapshotsResponse do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
