@@ -26,25 +26,25 @@ defmodule GoogleApi.Calendar.V3.Model.EventExtendedProperties do
   - shared (%{optional(String.t) &#x3D;&gt; String.t}): Properties that are shared between copies of the event on other attendees&#39; calendars. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          private: any(),
-          shared: any()
+          :private => map(),
+          :shared => map()
         }
 
-  defstruct [
-    :private,
-    :shared
-  ]
+  field(:private, type: :map)
+  field(:shared, type: :map)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.EventExtendedProperties do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Calendar.V3.Model.EventExtendedProperties.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.EventExtendedProperties do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

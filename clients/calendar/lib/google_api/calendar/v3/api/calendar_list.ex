@@ -22,7 +22,7 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
   """
 
   alias GoogleApi.Calendar.V3.Connection
-  import GoogleApi.Calendar.V3.RequestBuilder
+  alias GoogleApi.Gax.{Request, Response}
 
   @doc """
   Deletes an entry on the user&#39;s calendar list.
@@ -58,15 +58,17 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
       :userIp => :query
     }
 
-    %{}
-    |> method(:delete)
-    |> url("/users/me/calendarList/{calendarId}", %{
-      "calendarId" => URI.encode_www_form(calendar_id)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(false)
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/users/me/calendarList/{calendarId}", %{
+        "calendarId" => URI.encode_www_form(calendar_id)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(decode: false)
   end
 
   @doc """
@@ -103,15 +105,17 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
       :userIp => :query
     }
 
-    %{}
-    |> method(:get)
-    |> url("/users/me/calendarList/{calendarId}", %{
-      "calendarId" => URI.encode_www_form(calendar_id)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Calendar.V3.Model.CalendarListEntry{})
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/users/me/calendarList/{calendarId}", %{
+        "calendarId" => URI.encode_www_form(calendar_id)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.CalendarListEntry{})
   end
 
   @doc """
@@ -151,13 +155,15 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
       :body => :body
     }
 
-    %{}
-    |> method(:post)
-    |> url("/users/me/calendarList")
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Calendar.V3.Model.CalendarListEntry{})
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/users/me/calendarList")
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.CalendarListEntry{})
   end
 
   @doc """
@@ -205,13 +211,15 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
       :syncToken => :query
     }
 
-    %{}
-    |> method(:get)
-    |> url("/users/me/calendarList")
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Calendar.V3.Model.CalendarList{})
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/users/me/calendarList")
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.CalendarList{})
   end
 
   @doc """
@@ -252,15 +260,17 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
       :body => :body
     }
 
-    %{}
-    |> method(:patch)
-    |> url("/users/me/calendarList/{calendarId}", %{
-      "calendarId" => URI.encode_www_form(calendar_id)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Calendar.V3.Model.CalendarListEntry{})
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/users/me/calendarList/{calendarId}", %{
+        "calendarId" => URI.encode_www_form(calendar_id)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.CalendarListEntry{})
   end
 
   @doc """
@@ -301,15 +311,17 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
       :body => :body
     }
 
-    %{}
-    |> method(:put)
-    |> url("/users/me/calendarList/{calendarId}", %{
-      "calendarId" => URI.encode_www_form(calendar_id)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Calendar.V3.Model.CalendarListEntry{})
+    request =
+      Request.new()
+      |> Request.method(:put)
+      |> Request.url("/users/me/calendarList/{calendarId}", %{
+        "calendarId" => URI.encode_www_form(calendar_id)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.CalendarListEntry{})
   end
 
   @doc """
@@ -359,12 +371,14 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
       :resource => :body
     }
 
-    %{}
-    |> method(:post)
-    |> url("/users/me/calendarList/watch")
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Calendar.V3.Model.Channel{})
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/users/me/calendarList/watch")
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.Channel{})
   end
 end

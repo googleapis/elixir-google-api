@@ -26,25 +26,25 @@ defmodule GoogleApi.Calendar.V3.Model.CalendarNotification do
   - type (String.t): The type of notification. Possible values are:   - \&quot;eventCreation\&quot; - Notification sent when a new event is put on the calendar.  - \&quot;eventChange\&quot; - Notification sent when an event is changed.  - \&quot;eventCancellation\&quot; - Notification sent when an event is cancelled.  - \&quot;eventResponse\&quot; - Notification sent when an event is changed.  - \&quot;agenda\&quot; - An agenda with the events of the day (sent out in the morning). Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          method: any(),
-          type: any()
+          :method => any(),
+          :type => any()
         }
 
-  defstruct [
-    :method,
-    :type
-  ]
+  field(:method)
+  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.CalendarNotification do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Calendar.V3.Model.CalendarNotification.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.CalendarNotification do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

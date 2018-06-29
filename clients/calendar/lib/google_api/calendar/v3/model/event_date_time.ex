@@ -27,31 +27,27 @@ defmodule GoogleApi.Calendar.V3.Model.EventDateTime do
   - timeZone (String.t): The time zone in which the time is specified. (Formatted as an IANA Time Zone Database name, e.g. \&quot;Europe/Zurich\&quot;.) For recurring events this field is required and specifies the time zone in which the recurrence is expanded. For single events this field is optional and indicates a custom time zone for the event start/end. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          date: Date.t(),
-          dateTime: any(),
-          timeZone: any()
+          :date => Date.t(),
+          :dateTime => DateTime.t(),
+          :timeZone => any()
         }
 
-  defstruct [
-    :date,
-    :dateTime,
-    :timeZone
-  ]
+  field(:date, as: Date)
+  field(:dateTime, as: DateTime)
+  field(:timeZone)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.EventDateTime do
-  import GoogleApi.Calendar.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:date, :date, nil, options)
-    |> deserialize(:dateTime, :date, nil, options)
+    GoogleApi.Calendar.V3.Model.EventDateTime.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.EventDateTime do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

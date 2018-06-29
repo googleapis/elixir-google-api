@@ -32,37 +32,37 @@ defmodule GoogleApi.Calendar.V3.Model.EventGadget do
   - width (integer()): The gadget&#39;s width in pixels. The width must be an integer greater than 0. Optional. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          display: any(),
-          height: any(),
-          iconLink: any(),
-          link: any(),
-          preferences: any(),
-          title: any(),
-          type: any(),
-          width: any()
+          :display => any(),
+          :height => any(),
+          :iconLink => any(),
+          :link => any(),
+          :preferences => map(),
+          :title => any(),
+          :type => any(),
+          :width => any()
         }
 
-  defstruct [
-    :display,
-    :height,
-    :iconLink,
-    :link,
-    :preferences,
-    :title,
-    :type,
-    :width
-  ]
+  field(:display)
+  field(:height)
+  field(:iconLink)
+  field(:link)
+  field(:preferences, type: :map)
+  field(:title)
+  field(:type)
+  field(:width)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.EventGadget do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Calendar.V3.Model.EventGadget.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.EventGadget do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

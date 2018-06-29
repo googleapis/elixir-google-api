@@ -25,23 +25,23 @@ defmodule GoogleApi.Calendar.V3.Model.ConferenceProperties do
   - allowedConferenceSolutionTypes ([String.t]): The types of conference solutions that are supported for this calendar. The possible values are:   - \&quot;eventHangout\&quot;  - \&quot;eventNamedHangout\&quot;  - \&quot;hangoutsMeet\&quot;  Optional. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          allowedConferenceSolutionTypes: any()
+          :allowedConferenceSolutionTypes => list(any())
         }
 
-  defstruct [
-    :allowedConferenceSolutionTypes
-  ]
+  field(:allowedConferenceSolutionTypes, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.ConferenceProperties do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Calendar.V3.Model.ConferenceProperties.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.ConferenceProperties do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

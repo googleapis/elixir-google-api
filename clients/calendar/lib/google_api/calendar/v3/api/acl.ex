@@ -22,7 +22,7 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
   """
 
   alias GoogleApi.Calendar.V3.Connection
-  import GoogleApi.Calendar.V3.RequestBuilder
+  alias GoogleApi.Gax.{Request, Response}
 
   @doc """
   Deletes an access control rule.
@@ -59,16 +59,18 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
       :userIp => :query
     }
 
-    %{}
-    |> method(:delete)
-    |> url("/calendars/{calendarId}/acl/{ruleId}", %{
-      "calendarId" => URI.encode_www_form(calendar_id),
-      "ruleId" => URI.encode_www_form(rule_id)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(false)
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/calendars/{calendarId}/acl/{ruleId}", %{
+        "calendarId" => URI.encode_www_form(calendar_id),
+        "ruleId" => URI.encode_www_form(rule_id)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(decode: false)
   end
 
   @doc """
@@ -106,16 +108,18 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
       :userIp => :query
     }
 
-    %{}
-    |> method(:get)
-    |> url("/calendars/{calendarId}/acl/{ruleId}", %{
-      "calendarId" => URI.encode_www_form(calendar_id),
-      "ruleId" => URI.encode_www_form(rule_id)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Calendar.V3.Model.AclRule{})
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/calendars/{calendarId}/acl/{ruleId}", %{
+        "calendarId" => URI.encode_www_form(calendar_id),
+        "ruleId" => URI.encode_www_form(rule_id)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.AclRule{})
   end
 
   @doc """
@@ -156,15 +160,17 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
       :body => :body
     }
 
-    %{}
-    |> method(:post)
-    |> url("/calendars/{calendarId}/acl", %{
-      "calendarId" => URI.encode_www_form(calendar_id)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Calendar.V3.Model.AclRule{})
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/calendars/{calendarId}/acl", %{
+        "calendarId" => URI.encode_www_form(calendar_id)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.AclRule{})
   end
 
   @doc """
@@ -209,15 +215,17 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
       :syncToken => :query
     }
 
-    %{}
-    |> method(:get)
-    |> url("/calendars/{calendarId}/acl", %{
-      "calendarId" => URI.encode_www_form(calendar_id)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Calendar.V3.Model.Acl{})
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/calendars/{calendarId}/acl", %{
+        "calendarId" => URI.encode_www_form(calendar_id)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.Acl{})
   end
 
   @doc """
@@ -259,16 +267,18 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
       :body => :body
     }
 
-    %{}
-    |> method(:patch)
-    |> url("/calendars/{calendarId}/acl/{ruleId}", %{
-      "calendarId" => URI.encode_www_form(calendar_id),
-      "ruleId" => URI.encode_www_form(rule_id)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Calendar.V3.Model.AclRule{})
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/calendars/{calendarId}/acl/{ruleId}", %{
+        "calendarId" => URI.encode_www_form(calendar_id),
+        "ruleId" => URI.encode_www_form(rule_id)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.AclRule{})
   end
 
   @doc """
@@ -310,16 +320,18 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
       :body => :body
     }
 
-    %{}
-    |> method(:put)
-    |> url("/calendars/{calendarId}/acl/{ruleId}", %{
-      "calendarId" => URI.encode_www_form(calendar_id),
-      "ruleId" => URI.encode_www_form(rule_id)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Calendar.V3.Model.AclRule{})
+    request =
+      Request.new()
+      |> Request.method(:put)
+      |> Request.url("/calendars/{calendarId}/acl/{ruleId}", %{
+        "calendarId" => URI.encode_www_form(calendar_id),
+        "ruleId" => URI.encode_www_form(rule_id)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.AclRule{})
   end
 
   @doc """
@@ -366,14 +378,16 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
       :resource => :body
     }
 
-    %{}
-    |> method(:post)
-    |> url("/calendars/{calendarId}/acl/watch", %{
-      "calendarId" => URI.encode_www_form(calendar_id)
-    })
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Calendar.V3.Model.Channel{})
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/calendars/{calendarId}/acl/watch", %{
+        "calendarId" => URI.encode_www_form(calendar_id)
+      })
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.Channel{})
   end
 end

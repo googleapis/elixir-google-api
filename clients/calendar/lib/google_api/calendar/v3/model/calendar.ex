@@ -32,45 +32,37 @@ defmodule GoogleApi.Calendar.V3.Model.Calendar do
   - timeZone (String.t): The time zone of the calendar. (Formatted as an IANA Time Zone Database name, e.g. \&quot;Europe/Zurich\&quot;.) Optional. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          conferenceProperties: GoogleApi.Calendar.V3.Model.ConferenceProperties.t(),
-          description: any(),
-          etag: any(),
-          id: any(),
-          kind: any(),
-          location: any(),
-          summary: any(),
-          timeZone: any()
+          :conferenceProperties => GoogleApi.Calendar.V3.Model.ConferenceProperties.t(),
+          :description => any(),
+          :etag => any(),
+          :id => any(),
+          :kind => any(),
+          :location => any(),
+          :summary => any(),
+          :timeZone => any()
         }
 
-  defstruct [
-    :conferenceProperties,
-    :description,
-    :etag,
-    :id,
-    :kind,
-    :location,
-    :summary,
-    :timeZone
-  ]
+  field(:conferenceProperties, as: GoogleApi.Calendar.V3.Model.ConferenceProperties)
+  field(:description)
+  field(:etag)
+  field(:id)
+  field(:kind)
+  field(:location)
+  field(:summary)
+  field(:timeZone)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.Calendar do
-  import GoogleApi.Calendar.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :conferenceProperties,
-      :struct,
-      GoogleApi.Calendar.V3.Model.ConferenceProperties,
-      options
-    )
+    GoogleApi.Calendar.V3.Model.Calendar.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.Calendar do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -28,34 +28,29 @@ defmodule GoogleApi.Calendar.V3.Model.Colors do
   - updated (DateTime.t): Last modification time of the color palette (as a RFC3339 timestamp). Read-only. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          calendar: map(),
-          event: map(),
-          kind: any(),
-          updated: any()
+          :calendar => map(),
+          :event => map(),
+          :kind => any(),
+          :updated => DateTime.t()
         }
 
-  defstruct [
-    :calendar,
-    :event,
-    :kind,
-    :updated
-  ]
+  field(:calendar, as: GoogleApi.Calendar.V3.Model.ColorDefinition, type: :map)
+  field(:event, as: GoogleApi.Calendar.V3.Model.ColorDefinition, type: :map)
+  field(:kind)
+  field(:updated, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.Colors do
-  import GoogleApi.Calendar.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:calendar, :map, GoogleApi.Calendar.V3.Model.ColorDefinition, options)
-    |> deserialize(:event, :map, GoogleApi.Calendar.V3.Model.ColorDefinition, options)
-    |> deserialize(:updated, :date, nil, options)
+    GoogleApi.Calendar.V3.Model.Colors.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.Colors do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

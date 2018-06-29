@@ -25,31 +25,23 @@ defmodule GoogleApi.Calendar.V3.Model.ConferenceParameters do
   - addOnParameters (ConferenceParametersAddOnParameters): Additional add-on specific data. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          addOnParameters: GoogleApi.Calendar.V3.Model.ConferenceParametersAddOnParameters.t()
+          :addOnParameters => GoogleApi.Calendar.V3.Model.ConferenceParametersAddOnParameters.t()
         }
 
-  defstruct [
-    :addOnParameters
-  ]
+  field(:addOnParameters, as: GoogleApi.Calendar.V3.Model.ConferenceParametersAddOnParameters)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.ConferenceParameters do
-  import GoogleApi.Calendar.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :addOnParameters,
-      :struct,
-      GoogleApi.Calendar.V3.Model.ConferenceParametersAddOnParameters,
-      options
-    )
+    GoogleApi.Calendar.V3.Model.ConferenceParameters.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.ConferenceParameters do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -22,7 +22,7 @@ defmodule GoogleApi.Calendar.V3.Api.Colors do
   """
 
   alias GoogleApi.Calendar.V3.Connection
-  import GoogleApi.Calendar.V3.RequestBuilder
+  alias GoogleApi.Gax.{Request, Response}
 
   @doc """
   Returns the color definitions for calendars and events.
@@ -57,12 +57,14 @@ defmodule GoogleApi.Calendar.V3.Api.Colors do
       :userIp => :query
     }
 
-    %{}
-    |> method(:get)
-    |> url("/colors")
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Calendar.V3.Model.Colors{})
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/colors")
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.Colors{})
   end
 end

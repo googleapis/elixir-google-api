@@ -25,23 +25,23 @@ defmodule GoogleApi.Calendar.V3.Model.ConferenceParametersAddOnParameters do
   - parameters (%{optional(String.t) &#x3D;&gt; String.t}):  Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          parameters: any()
+          :parameters => map()
         }
 
-  defstruct [
-    :parameters
-  ]
+  field(:parameters, type: :map)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.ConferenceParametersAddOnParameters do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Calendar.V3.Model.ConferenceParametersAddOnParameters.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.ConferenceParametersAddOnParameters do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

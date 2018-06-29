@@ -26,25 +26,25 @@ defmodule GoogleApi.Calendar.V3.Model.AclRuleScope do
   - value (String.t): The email address of a user or group, or the name of a domain, depending on the scope type. Omitted for type \&quot;default\&quot;. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          type: any(),
-          value: any()
+          :type => any(),
+          :value => any()
         }
 
-  defstruct [
-    :type,
-    :value
-  ]
+  field(:type)
+  field(:value)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.AclRuleScope do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Calendar.V3.Model.AclRuleScope.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.AclRuleScope do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

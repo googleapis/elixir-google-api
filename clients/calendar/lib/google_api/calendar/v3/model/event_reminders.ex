@@ -26,28 +26,25 @@ defmodule GoogleApi.Calendar.V3.Model.EventReminders do
   - useDefault (boolean()): Whether the default reminders of the calendar apply to the event. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          overrides: list(GoogleApi.Calendar.V3.Model.EventReminder.t()),
-          useDefault: any()
+          :overrides => list(GoogleApi.Calendar.V3.Model.EventReminder.t()),
+          :useDefault => any()
         }
 
-  defstruct [
-    :overrides,
-    :useDefault
-  ]
+  field(:overrides, as: GoogleApi.Calendar.V3.Model.EventReminder, type: :list)
+  field(:useDefault)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.EventReminders do
-  import GoogleApi.Calendar.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:overrides, :list, GoogleApi.Calendar.V3.Model.EventReminder, options)
+    GoogleApi.Calendar.V3.Model.EventReminders.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.EventReminders do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

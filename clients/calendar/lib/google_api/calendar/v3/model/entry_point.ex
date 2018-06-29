@@ -32,37 +32,37 @@ defmodule GoogleApi.Calendar.V3.Model.EntryPoint do
   - uri (String.t): The URI of the entry point. The maximum length is 1300 characters. Format:   - for video, http: or https: schema is required. - for phone, tel: schema is required. The URI should include the entire dial sequence (e.g., tel:+12345678900,,,123456789;1234). - for sip, sip: schema is required, e.g., sip:12345678@myprovider.com. - for more, http: or https: schema is required. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          accessCode: any(),
-          entryPointType: any(),
-          label: any(),
-          meetingCode: any(),
-          passcode: any(),
-          password: any(),
-          pin: any(),
-          uri: any()
+          :accessCode => any(),
+          :entryPointType => any(),
+          :label => any(),
+          :meetingCode => any(),
+          :passcode => any(),
+          :password => any(),
+          :pin => any(),
+          :uri => any()
         }
 
-  defstruct [
-    :accessCode,
-    :entryPointType,
-    :label,
-    :meetingCode,
-    :passcode,
-    :password,
-    :pin,
-    :uri
-  ]
+  field(:accessCode)
+  field(:entryPointType)
+  field(:label)
+  field(:meetingCode)
+  field(:passcode)
+  field(:password)
+  field(:pin)
+  field(:uri)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.EntryPoint do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Calendar.V3.Model.EntryPoint.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.EntryPoint do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

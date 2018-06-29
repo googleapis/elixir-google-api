@@ -28,29 +28,29 @@ defmodule GoogleApi.Calendar.V3.Model.EventCreator do
   - self (boolean()): Whether the creator corresponds to the calendar on which this copy of the event appears. Read-only. The default is False. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          displayName: any(),
-          email: any(),
-          id: any(),
-          self: any()
+          :displayName => any(),
+          :email => any(),
+          :id => any(),
+          :self => any()
         }
 
-  defstruct [
-    :displayName,
-    :email,
-    :id,
-    :self
-  ]
+  field(:displayName)
+  field(:email)
+  field(:id)
+  field(:self)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.EventCreator do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Calendar.V3.Model.EventCreator.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.EventCreator do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

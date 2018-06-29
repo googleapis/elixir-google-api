@@ -29,31 +29,31 @@ defmodule GoogleApi.Calendar.V3.Model.EventAttachment do
   - title (String.t): Attachment title. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          fileId: any(),
-          fileUrl: any(),
-          iconLink: any(),
-          mimeType: any(),
-          title: any()
+          :fileId => any(),
+          :fileUrl => any(),
+          :iconLink => any(),
+          :mimeType => any(),
+          :title => any()
         }
 
-  defstruct [
-    :fileId,
-    :fileUrl,
-    :iconLink,
-    :mimeType,
-    :title
-  ]
+  field(:fileId)
+  field(:fileUrl)
+  field(:iconLink)
+  field(:mimeType)
+  field(:title)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.EventAttachment do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Calendar.V3.Model.EventAttachment.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.EventAttachment do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

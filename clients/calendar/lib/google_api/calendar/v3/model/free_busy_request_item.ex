@@ -25,23 +25,23 @@ defmodule GoogleApi.Calendar.V3.Model.FreeBusyRequestItem do
   - id (String.t): The identifier of a calendar or a group. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          id: any()
+          :id => any()
         }
 
-  defstruct [
-    :id
-  ]
+  field(:id)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.FreeBusyRequestItem do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Calendar.V3.Model.FreeBusyRequestItem.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.FreeBusyRequestItem do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

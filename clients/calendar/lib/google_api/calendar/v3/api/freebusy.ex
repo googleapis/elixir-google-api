@@ -22,7 +22,7 @@ defmodule GoogleApi.Calendar.V3.Api.Freebusy do
   """
 
   alias GoogleApi.Calendar.V3.Connection
-  import GoogleApi.Calendar.V3.RequestBuilder
+  alias GoogleApi.Gax.{Request, Response}
 
   @doc """
   Returns free/busy information for a set of calendars.
@@ -59,12 +59,14 @@ defmodule GoogleApi.Calendar.V3.Api.Freebusy do
       :body => :body
     }
 
-    %{}
-    |> method(:post)
-    |> url("/freeBusy")
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> decode(%GoogleApi.Calendar.V3.Model.FreeBusyResponse{})
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/freeBusy")
+      |> Request.add_optional_params(optional_params, opts)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.FreeBusyResponse{})
   end
 end

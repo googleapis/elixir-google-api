@@ -27,36 +27,27 @@ defmodule GoogleApi.Calendar.V3.Model.CreateConferenceRequest do
   - status (ConferenceRequestStatus): The status of the conference create request. Defaults to: `null`.
   """
 
+  use GoogleApi.Gax.ModelBase
+
   @type t :: %__MODULE__{
-          conferenceSolutionKey: GoogleApi.Calendar.V3.Model.ConferenceSolutionKey.t(),
-          requestId: any(),
-          status: GoogleApi.Calendar.V3.Model.ConferenceRequestStatus.t()
+          :conferenceSolutionKey => GoogleApi.Calendar.V3.Model.ConferenceSolutionKey.t(),
+          :requestId => any(),
+          :status => GoogleApi.Calendar.V3.Model.ConferenceRequestStatus.t()
         }
 
-  defstruct [
-    :conferenceSolutionKey,
-    :requestId,
-    :status
-  ]
+  field(:conferenceSolutionKey, as: GoogleApi.Calendar.V3.Model.ConferenceSolutionKey)
+  field(:requestId)
+  field(:status, as: GoogleApi.Calendar.V3.Model.ConferenceRequestStatus)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Calendar.V3.Model.CreateConferenceRequest do
-  import GoogleApi.Calendar.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :conferenceSolutionKey,
-      :struct,
-      GoogleApi.Calendar.V3.Model.ConferenceSolutionKey,
-      options
-    )
-    |> deserialize(:status, :struct, GoogleApi.Calendar.V3.Model.ConferenceRequestStatus, options)
+    GoogleApi.Calendar.V3.Model.CreateConferenceRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Calendar.V3.Model.CreateConferenceRequest do
   def encode(value, options) do
-    GoogleApi.Calendar.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end
