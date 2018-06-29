@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -45,47 +45,63 @@ defmodule GoogleApi.Drive.V3.Model.FileImageMediaMetadata do
   - width (integer()): The width of the image in pixels. Defaults to: `null`.
   """
 
-  defstruct [
-    :aperture,
-    :cameraMake,
-    :cameraModel,
-    :colorSpace,
-    :exposureBias,
-    :exposureMode,
-    :exposureTime,
-    :flashUsed,
-    :focalLength,
-    :height,
-    :isoSpeed,
-    :lens,
-    :location,
-    :maxApertureValue,
-    :meteringMode,
-    :rotation,
-    :sensor,
-    :subjectDistance,
-    :time,
-    :whiteBalance,
-    :width
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :aperture => any(),
+          :cameraMake => any(),
+          :cameraModel => any(),
+          :colorSpace => any(),
+          :exposureBias => any(),
+          :exposureMode => any(),
+          :exposureTime => any(),
+          :flashUsed => any(),
+          :focalLength => any(),
+          :height => any(),
+          :isoSpeed => any(),
+          :lens => any(),
+          :location => GoogleApi.Drive.V3.Model.FileImageMediaMetadataLocation.t(),
+          :maxApertureValue => any(),
+          :meteringMode => any(),
+          :rotation => any(),
+          :sensor => any(),
+          :subjectDistance => any(),
+          :time => any(),
+          :whiteBalance => any(),
+          :width => any()
+        }
+
+  field(:aperture)
+  field(:cameraMake)
+  field(:cameraModel)
+  field(:colorSpace)
+  field(:exposureBias)
+  field(:exposureMode)
+  field(:exposureTime)
+  field(:flashUsed)
+  field(:focalLength)
+  field(:height)
+  field(:isoSpeed)
+  field(:lens)
+  field(:location, as: GoogleApi.Drive.V3.Model.FileImageMediaMetadataLocation)
+  field(:maxApertureValue)
+  field(:meteringMode)
+  field(:rotation)
+  field(:sensor)
+  field(:subjectDistance)
+  field(:time)
+  field(:whiteBalance)
+  field(:width)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Drive.V3.Model.FileImageMediaMetadata do
-  import GoogleApi.Drive.V3.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :location,
-      :struct,
-      GoogleApi.Drive.V3.Model.FileImageMediaMetadataLocation,
-      options
-    )
+    GoogleApi.Drive.V3.Model.FileImageMediaMetadata.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Drive.V3.Model.FileImageMediaMetadata do
   def encode(value, options) do
-    GoogleApi.Drive.V3.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

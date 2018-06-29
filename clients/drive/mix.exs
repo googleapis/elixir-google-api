@@ -1,16 +1,18 @@
 defmodule GoogleApi.Drive.V3.Mixfile do
   use Mix.Project
 
+  @version "0.1.0"
+
   def project do
     [app: :google_api_drive,
-     version: "0.0.1",
+     version: @version,
      elixir: "~> 1.4",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      description: description(),
      package: package(),
      deps: deps(),
-     source_url: "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/drive"
+     source_url: "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/FIXME"
     ]
   end
 
@@ -20,9 +22,9 @@ defmodule GoogleApi.Drive.V3.Mixfile do
 
   defp deps() do
     [
-      {:tesla, "~> 0.8"},
-      {:poison, ">= 1.0.0"},
-      {:ex_doc, "~> 0.16", only: :dev}
+      {:google_gax, "~> 0.1"},
+      {:ex_doc, "~> 0.16", only: :dev},
+      {:dialyxir, "~> 0.5", only: [:dev], runtime: false}
     ]
   end
 
@@ -38,7 +40,7 @@ defmodule GoogleApi.Drive.V3.Mixfile do
       maintainers: ["Jeff Ching"],
       licenses: ["Apache 2.0"],
       links: %{
-        "GitHub" => "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/drive",
+        "GitHub" => "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/FIXME",
         "Homepage" => "https://developers.google.com/drive/"
       }
     ]
