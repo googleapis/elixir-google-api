@@ -16,34 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequestRows do
+defmodule GoogleApi.BigQuery.V2.Model.DestinationTableProperties do
   @moduledoc """
 
 
   ## Attributes
 
-  - insertId (String.t): [Optional] A unique ID for each row. BigQuery uses this property to detect duplicate insertion requests on a best-effort basis. Defaults to: `null`.
-  - json (JsonObject): [Required] A JSON object that contains a row of data. The object&#39;s properties and values must match the destination table&#39;s schema. Defaults to: `null`.
+  - description (String.t): [Optional] The description for the destination table. This will only be used if the destination table is newly created. If the table already exists and a value different than the current description is provided, the job will fail. Defaults to: `null`.
+  - friendlyName (String.t): [Optional] The friendly name for the destination table. This will only be used if the destination table is newly created. If the table already exists and a value different than the current friendly name is provided, the job will fail. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :insertId => any(),
-          :json => GoogleApi.BigQuery.V2.Model.JsonObject.t()
+          :description => any(),
+          :friendlyName => any()
         }
 
-  field(:insertId)
-  field(:json, as: GoogleApi.BigQuery.V2.Model.JsonObject)
+  field(:description)
+  field(:friendlyName)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequestRows do
+defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.DestinationTableProperties do
   def decode(value, options) do
-    GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequestRows.decode(value, options)
+    GoogleApi.BigQuery.V2.Model.DestinationTableProperties.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequestRows do
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.DestinationTableProperties do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

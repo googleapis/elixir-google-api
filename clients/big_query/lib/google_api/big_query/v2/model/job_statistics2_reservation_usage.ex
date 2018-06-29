@@ -16,34 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequestRows do
+defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2ReservationUsage do
   @moduledoc """
 
 
   ## Attributes
 
-  - insertId (String.t): [Optional] A unique ID for each row. BigQuery uses this property to detect duplicate insertion requests on a best-effort basis. Defaults to: `null`.
-  - json (JsonObject): [Required] A JSON object that contains a row of data. The object&#39;s properties and values must match the destination table&#39;s schema. Defaults to: `null`.
+  - name (String.t): [Output-only] Reservation name or \&quot;unreserved\&quot; for on-demand resources usage. Defaults to: `null`.
+  - slotMs (String.t): [Output-only] Slot-milliseconds the job spent in the given reservation. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :insertId => any(),
-          :json => GoogleApi.BigQuery.V2.Model.JsonObject.t()
+          :name => any(),
+          :slotMs => any()
         }
 
-  field(:insertId)
-  field(:json, as: GoogleApi.BigQuery.V2.Model.JsonObject)
+  field(:name)
+  field(:slotMs)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequestRows do
+defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.JobStatistics2ReservationUsage do
   def decode(value, options) do
-    GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequestRows.decode(value, options)
+    GoogleApi.BigQuery.V2.Model.JobStatistics2ReservationUsage.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequestRows do
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.JobStatistics2ReservationUsage do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

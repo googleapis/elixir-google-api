@@ -16,34 +16,37 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequestRows do
+defmodule GoogleApi.BigQuery.V2.Model.ModelDefinitionModelOptions do
   @moduledoc """
-
+  [Output-only, Beta] Model options used for the first training run. These options are immutable for subsequent training runs. Default values are used for any options not specified in the input query.
 
   ## Attributes
 
-  - insertId (String.t): [Optional] A unique ID for each row. BigQuery uses this property to detect duplicate insertion requests on a best-effort basis. Defaults to: `null`.
-  - json (JsonObject): [Required] A JSON object that contains a row of data. The object&#39;s properties and values must match the destination table&#39;s schema. Defaults to: `null`.
+  - labels ([String.t]):  Defaults to: `null`.
+  - lossType (String.t):  Defaults to: `null`.
+  - modelType (String.t):  Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :insertId => any(),
-          :json => GoogleApi.BigQuery.V2.Model.JsonObject.t()
+          :labels => list(any()),
+          :lossType => any(),
+          :modelType => any()
         }
 
-  field(:insertId)
-  field(:json, as: GoogleApi.BigQuery.V2.Model.JsonObject)
+  field(:labels, type: :list)
+  field(:lossType)
+  field(:modelType)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequestRows do
+defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.ModelDefinitionModelOptions do
   def decode(value, options) do
-    GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequestRows.decode(value, options)
+    GoogleApi.BigQuery.V2.Model.ModelDefinitionModelOptions.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequestRows do
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.ModelDefinitionModelOptions do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

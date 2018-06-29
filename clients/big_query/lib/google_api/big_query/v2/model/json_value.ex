@@ -16,10 +16,27 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.BigQuery.V2.RequestBuilder do
+defmodule GoogleApi.BigQuery.V2.Model.JsonValue do
   @moduledoc """
-  Helper functions for building Tesla requests.
 
-  This module is no longer used. Please use GoogleApi.Gax.Request instead.
+
+  ## Attributes
+
   """
+
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{}
+end
+
+defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.JsonValue do
+  def decode(value, options) do
+    GoogleApi.BigQuery.V2.Model.JsonValue.decode(value, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.JsonValue do
+  def encode(value, options) do
+    GoogleApi.Gax.ModelBase.encode(value, options)
+  end
 end
