@@ -16,31 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Container.V1.Model.LegacyAbac do
+defmodule GoogleApi.Container.V1.Model.MaintenancePolicy do
   @moduledoc """
-  Configuration for the legacy Attribute Based Access Control authorization mode.
+  MaintenancePolicy defines the maintenance policy to be used for the cluster.
 
   ## Attributes
 
-  - enabled (boolean()): Whether the ABAC authorizer is enabled for this cluster. When enabled, identities in the system, including service accounts, nodes, and controllers, will have statically granted permissions beyond those provided by the RBAC configuration or IAM. Defaults to: `null`.
+  - window (MaintenanceWindow): Specifies the maintenance window in which maintenance may be performed. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enabled => any()
+          :window => GoogleApi.Container.V1.Model.MaintenanceWindow.t()
         }
 
-  field(:enabled)
+  field(:window, as: GoogleApi.Container.V1.Model.MaintenanceWindow)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.LegacyAbac do
+defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.MaintenancePolicy do
   def decode(value, options) do
-    GoogleApi.Container.V1.Model.LegacyAbac.decode(value, options)
+    GoogleApi.Container.V1.Model.MaintenancePolicy.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.LegacyAbac do
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.MaintenancePolicy do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
