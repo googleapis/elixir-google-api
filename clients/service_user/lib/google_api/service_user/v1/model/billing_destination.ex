@@ -16,31 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ServiceUser.V1.Model.Experimental do
+defmodule GoogleApi.ServiceUser.V1.Model.BillingDestination do
   @moduledoc """
-  Experimental service configuration. These configuration options can only be used by whitelisted users.
+  Configuration of a specific billing destination (Currently only support bill against consumer project).
 
   ## Attributes
 
-  - authorization (AuthorizationConfig): Authorization configuration. Defaults to: `null`.
+  - metrics ([String.t]): Names of the metrics to report to this billing destination. Each name must be defined in Service.metrics section. Defaults to: `null`.
+  - monitoredResource (String.t): The monitored resource type. The type must be defined in Service.monitored_resources section. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :authorization => GoogleApi.ServiceUser.V1.Model.AuthorizationConfig.t()
+          :metrics => list(any()),
+          :monitoredResource => any()
         }
 
-  field(:authorization, as: GoogleApi.ServiceUser.V1.Model.AuthorizationConfig)
+  field(:metrics, type: :list)
+  field(:monitoredResource)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ServiceUser.V1.Model.Experimental do
+defimpl Poison.Decoder, for: GoogleApi.ServiceUser.V1.Model.BillingDestination do
   def decode(value, options) do
-    GoogleApi.ServiceUser.V1.Model.Experimental.decode(value, options)
+    GoogleApi.ServiceUser.V1.Model.BillingDestination.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.ServiceUser.V1.Model.Experimental do
+defimpl Poison.Encoder, for: GoogleApi.ServiceUser.V1.Model.BillingDestination do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
