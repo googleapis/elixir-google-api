@@ -16,34 +16,37 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.SQLAdmin.V1beta4.Model.TruncateLogContext do
+defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesListServerCasResponse do
   @moduledoc """
-  Database Instance truncate log context.
+  Instances ListServerCas response.
 
   ## Attributes
 
-  - kind (String.t): This is always sql#truncateLogContext. Defaults to: `null`.
-  - logType (String.t): The type of log to truncate. Valid values are MYSQL_GENERAL_TABLE and MYSQL_SLOW_TABLE. Defaults to: `null`.
+  - activeVersion (String.t):  Defaults to: `null`.
+  - certs ([SslCert]): List of server CA certificates for the instance. Defaults to: `null`.
+  - kind (String.t): This is always sql#instancesListServerCas. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => any(),
-          :logType => any()
+          :activeVersion => any(),
+          :certs => list(GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t()),
+          :kind => any()
         }
 
+  field(:activeVersion)
+  field(:certs, as: GoogleApi.SQLAdmin.V1beta4.Model.SslCert, type: :list)
   field(:kind)
-  field(:logType)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.TruncateLogContext do
+defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.InstancesListServerCasResponse do
   def decode(value, options) do
-    GoogleApi.SQLAdmin.V1beta4.Model.TruncateLogContext.decode(value, options)
+    GoogleApi.SQLAdmin.V1beta4.Model.InstancesListServerCasResponse.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.TruncateLogContext do
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.InstancesListServerCasResponse do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

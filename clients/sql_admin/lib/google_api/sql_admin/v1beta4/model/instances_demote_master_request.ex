@@ -16,34 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.SQLAdmin.V1beta4.Model.TruncateLogContext do
+defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesDemoteMasterRequest do
   @moduledoc """
-  Database Instance truncate log context.
+  Database demote master request.
 
   ## Attributes
 
-  - kind (String.t): This is always sql#truncateLogContext. Defaults to: `null`.
-  - logType (String.t): The type of log to truncate. Valid values are MYSQL_GENERAL_TABLE and MYSQL_SLOW_TABLE. Defaults to: `null`.
+  - demoteMasterContext (DemoteMasterContext): Contains details about the demoteMaster operation. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => any(),
-          :logType => any()
+          :demoteMasterContext => GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterContext.t()
         }
 
-  field(:kind)
-  field(:logType)
+  field(:demoteMasterContext, as: GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterContext)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.TruncateLogContext do
+defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.InstancesDemoteMasterRequest do
   def decode(value, options) do
-    GoogleApi.SQLAdmin.V1beta4.Model.TruncateLogContext.decode(value, options)
+    GoogleApi.SQLAdmin.V1beta4.Model.InstancesDemoteMasterRequest.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.TruncateLogContext do
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.InstancesDemoteMasterRequest do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
