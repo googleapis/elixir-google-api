@@ -16,34 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.SQLAdmin.V1beta4.Model.TruncateLogContext do
+defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesRotateServerCaRequest do
   @moduledoc """
-  Database Instance truncate log context.
+  Rotate Server CA request.
 
   ## Attributes
 
-  - kind (String.t): This is always sql#truncateLogContext. Defaults to: `null`.
-  - logType (String.t): The type of log to truncate. Valid values are MYSQL_GENERAL_TABLE and MYSQL_SLOW_TABLE. Defaults to: `null`.
+  - rotateServerCaContext (RotateServerCaContext): Contains details about the rotate server CA operation. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => any(),
-          :logType => any()
+          :rotateServerCaContext => GoogleApi.SQLAdmin.V1beta4.Model.RotateServerCaContext.t()
         }
 
-  field(:kind)
-  field(:logType)
+  field(:rotateServerCaContext, as: GoogleApi.SQLAdmin.V1beta4.Model.RotateServerCaContext)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.TruncateLogContext do
+defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.InstancesRotateServerCaRequest do
   def decode(value, options) do
-    GoogleApi.SQLAdmin.V1beta4.Model.TruncateLogContext.decode(value, options)
+    GoogleApi.SQLAdmin.V1beta4.Model.InstancesRotateServerCaRequest.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.TruncateLogContext do
+defimpl Poison.Encoder, for: GoogleApi.SQLAdmin.V1beta4.Model.InstancesRotateServerCaRequest do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
