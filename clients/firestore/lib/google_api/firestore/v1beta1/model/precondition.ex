@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -23,23 +23,28 @@ defmodule GoogleApi.Firestore.V1beta1.Model.Precondition do
   ## Attributes
 
   - exists (boolean()): When set to &#x60;true&#x60;, the target document must exist. When set to &#x60;false&#x60;, the target document must not exist. Defaults to: `null`.
-  - updateTime (String.t): When set, the target document must exist and have been last updated at that time. Defaults to: `null`.
+  - updateTime (DateTime.t): When set, the target document must exist and have been last updated at that time. Defaults to: `null`.
   """
 
-  defstruct [
-    :exists,
-    :updateTime
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :exists => any(),
+          :updateTime => DateTime.t()
+        }
+
+  field(:exists)
+  field(:updateTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1beta1.Model.Precondition do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Firestore.V1beta1.Model.Precondition.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Firestore.V1beta1.Model.Precondition do
   def encode(value, options) do
-    GoogleApi.Firestore.V1beta1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

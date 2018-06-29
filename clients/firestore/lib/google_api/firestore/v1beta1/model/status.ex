@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -27,24 +27,27 @@ defmodule GoogleApi.Firestore.V1beta1.Model.Status do
   - message (String.t): A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. Defaults to: `null`.
   """
 
-  defstruct [
-    :code,
-    :details,
-    :message
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :code => any(),
+          :details => list(GoogleApi.Firestore.V1beta1.Model.Object.t()),
+          :message => any()
+        }
+
+  field(:code)
+  field(:details, as: GoogleApi.Firestore.V1beta1.Model.Object, type: :list)
+  field(:message)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1beta1.Model.Status do
-  import GoogleApi.Firestore.V1beta1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:details, :list, GoogleApi.Firestore.V1beta1.Model.Object, options)
+    GoogleApi.Firestore.V1beta1.Model.Status.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Firestore.V1beta1.Model.Status do
   def encode(value, options) do
-    GoogleApi.Firestore.V1beta1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

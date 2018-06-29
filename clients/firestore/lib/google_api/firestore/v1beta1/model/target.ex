@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -25,38 +25,38 @@ defmodule GoogleApi.Firestore.V1beta1.Model.Target do
   - documents (DocumentsTarget): A target specified by a set of document names. Defaults to: `null`.
   - once (boolean()): If the target should be removed once it is current and consistent. Defaults to: `null`.
   - query (QueryTarget): A target specified by a query. Defaults to: `null`.
-  - readTime (String.t): Start listening after a specific &#x60;read_time&#x60;.  The client must know the state of matching documents at this time. Defaults to: `null`.
+  - readTime (DateTime.t): Start listening after a specific &#x60;read_time&#x60;.  The client must know the state of matching documents at this time. Defaults to: `null`.
   - resumeToken (binary()): A resume token from a prior TargetChange for an identical target.  Using a resume token with a different target is unsupported and may fail. Defaults to: `null`.
   - targetId (integer()): A client provided target ID.  If not set, the server will assign an ID for the target.  Used for resuming a target without changing IDs. The IDs can either be client-assigned or be server-assigned in a previous stream. All targets with client provided IDs must be added before adding a target that needs a server-assigned id. Defaults to: `null`.
   """
 
-  defstruct [
-    :documents,
-    :once,
-    :query,
-    :readTime,
-    :resumeToken,
-    :targetId
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :documents => GoogleApi.Firestore.V1beta1.Model.DocumentsTarget.t(),
+          :once => any(),
+          :query => GoogleApi.Firestore.V1beta1.Model.QueryTarget.t(),
+          :readTime => DateTime.t(),
+          :resumeToken => any(),
+          :targetId => any()
+        }
+
+  field(:documents, as: GoogleApi.Firestore.V1beta1.Model.DocumentsTarget)
+  field(:once)
+  field(:query, as: GoogleApi.Firestore.V1beta1.Model.QueryTarget)
+  field(:readTime, as: DateTime)
+  field(:resumeToken)
+  field(:targetId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1beta1.Model.Target do
-  import GoogleApi.Firestore.V1beta1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :documents,
-      :struct,
-      GoogleApi.Firestore.V1beta1.Model.DocumentsTarget,
-      options
-    )
-    |> deserialize(:query, :struct, GoogleApi.Firestore.V1beta1.Model.QueryTarget, options)
+    GoogleApi.Firestore.V1beta1.Model.Target.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Firestore.V1beta1.Model.Target do
   def encode(value, options) do
-    GoogleApi.Firestore.V1beta1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

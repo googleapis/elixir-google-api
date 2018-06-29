@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -26,23 +26,25 @@ defmodule GoogleApi.Firestore.V1beta1.Model.ListDocumentsResponse do
   - nextPageToken (String.t): The next page token. Defaults to: `null`.
   """
 
-  defstruct [
-    :documents,
-    :nextPageToken
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :documents => list(GoogleApi.Firestore.V1beta1.Model.Document.t()),
+          :nextPageToken => any()
+        }
+
+  field(:documents, as: GoogleApi.Firestore.V1beta1.Model.Document, type: :list)
+  field(:nextPageToken)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1beta1.Model.ListDocumentsResponse do
-  import GoogleApi.Firestore.V1beta1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:documents, :list, GoogleApi.Firestore.V1beta1.Model.Document, options)
+    GoogleApi.Firestore.V1beta1.Model.ListDocumentsResponse.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Firestore.V1beta1.Model.ListDocumentsResponse do
   def encode(value, options) do
-    GoogleApi.Firestore.V1beta1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

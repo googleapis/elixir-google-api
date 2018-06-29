@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -23,26 +23,28 @@ defmodule GoogleApi.Firestore.V1beta1.Model.WriteResult do
   ## Attributes
 
   - transformResults ([Value]): The results of applying each DocumentTransform.FieldTransform, in the same order. Defaults to: `null`.
-  - updateTime (String.t): The last update time of the document after applying the write. Not set after a &#x60;delete&#x60;.  If the write did not actually change the document, this will be the previous update_time. Defaults to: `null`.
+  - updateTime (DateTime.t): The last update time of the document after applying the write. Not set after a &#x60;delete&#x60;.  If the write did not actually change the document, this will be the previous update_time. Defaults to: `null`.
   """
 
-  defstruct [
-    :transformResults,
-    :updateTime
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :transformResults => list(GoogleApi.Firestore.V1beta1.Model.Value.t()),
+          :updateTime => DateTime.t()
+        }
+
+  field(:transformResults, as: GoogleApi.Firestore.V1beta1.Model.Value, type: :list)
+  field(:updateTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1beta1.Model.WriteResult do
-  import GoogleApi.Firestore.V1beta1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:transformResults, :list, GoogleApi.Firestore.V1beta1.Model.Value, options)
+    GoogleApi.Firestore.V1beta1.Model.WriteResult.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Firestore.V1beta1.Model.WriteResult do
   def encode(value, options) do
-    GoogleApi.Firestore.V1beta1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

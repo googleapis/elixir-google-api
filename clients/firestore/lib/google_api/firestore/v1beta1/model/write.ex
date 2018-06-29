@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -29,39 +29,31 @@ defmodule GoogleApi.Firestore.V1beta1.Model.Write do
   - updateMask (DocumentMask): The fields to update in this write.  This field can be set only when the operation is &#x60;update&#x60;. If the mask is not set for an &#x60;update&#x60; and the document exists, any existing data will be overwritten. If the mask is set and the document on the server has fields not covered by the mask, they are left unchanged. Fields referenced in the mask, but not present in the input document, are deleted from the document on the server. The field paths in this mask must not contain a reserved field name. Defaults to: `null`.
   """
 
-  defstruct [
-    :currentDocument,
-    :delete,
-    :transform,
-    :update,
-    :updateMask
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :currentDocument => GoogleApi.Firestore.V1beta1.Model.Precondition.t(),
+          :delete => any(),
+          :transform => GoogleApi.Firestore.V1beta1.Model.DocumentTransform.t(),
+          :update => GoogleApi.Firestore.V1beta1.Model.Document.t(),
+          :updateMask => GoogleApi.Firestore.V1beta1.Model.DocumentMask.t()
+        }
+
+  field(:currentDocument, as: GoogleApi.Firestore.V1beta1.Model.Precondition)
+  field(:delete)
+  field(:transform, as: GoogleApi.Firestore.V1beta1.Model.DocumentTransform)
+  field(:update, as: GoogleApi.Firestore.V1beta1.Model.Document)
+  field(:updateMask, as: GoogleApi.Firestore.V1beta1.Model.DocumentMask)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1beta1.Model.Write do
-  import GoogleApi.Firestore.V1beta1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :currentDocument,
-      :struct,
-      GoogleApi.Firestore.V1beta1.Model.Precondition,
-      options
-    )
-    |> deserialize(
-      :transform,
-      :struct,
-      GoogleApi.Firestore.V1beta1.Model.DocumentTransform,
-      options
-    )
-    |> deserialize(:update, :struct, GoogleApi.Firestore.V1beta1.Model.Document, options)
-    |> deserialize(:updateMask, :struct, GoogleApi.Firestore.V1beta1.Model.DocumentMask, options)
+    GoogleApi.Firestore.V1beta1.Model.Write.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Firestore.V1beta1.Model.Write do
   def encode(value, options) do
-    GoogleApi.Firestore.V1beta1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

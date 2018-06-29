@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -22,22 +22,26 @@ defmodule GoogleApi.Firestore.V1beta1.Model.ReadOnly do
 
   ## Attributes
 
-  - readTime (String.t): Reads documents at the given time. This may not be older than 60 seconds. Defaults to: `null`.
+  - readTime (DateTime.t): Reads documents at the given time. This may not be older than 60 seconds. Defaults to: `null`.
   """
 
-  defstruct [
-    :readTime
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :readTime => DateTime.t()
+        }
+
+  field(:readTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1beta1.Model.ReadOnly do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Firestore.V1beta1.Model.ReadOnly.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Firestore.V1beta1.Model.ReadOnly do
   def encode(value, options) do
-    GoogleApi.Firestore.V1beta1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

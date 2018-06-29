@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -24,23 +24,28 @@ defmodule GoogleApi.Firestore.V1beta1.Model.IndexField do
 
   - fieldPath (String.t): The path of the field. Must match the field path specification described by google.firestore.v1beta1.Document.fields. Special field path &#x60;__name__&#x60; may be used by itself or at the end of a path. &#x60;__type__&#x60; may be used only at the end of path. Defaults to: `null`.
   - mode (String.t): The field&#39;s mode. Defaults to: `null`.
-    - Enum - one of [MODE_UNSPECIFIED, ASCENDING, DESCENDING]
+    - Enum - one of [MODE_UNSPECIFIED, ASCENDING, DESCENDING, ARRAY_CONTAINS]
   """
 
-  defstruct [
-    :fieldPath,
-    :mode
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :fieldPath => any(),
+          :mode => any()
+        }
+
+  field(:fieldPath)
+  field(:mode)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1beta1.Model.IndexField do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Firestore.V1beta1.Model.IndexField.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Firestore.V1beta1.Model.IndexField do
   def encode(value, options) do
-    GoogleApi.Firestore.V1beta1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

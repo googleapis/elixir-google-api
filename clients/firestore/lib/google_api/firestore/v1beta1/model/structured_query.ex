@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -32,34 +32,37 @@ defmodule GoogleApi.Firestore.V1beta1.Model.StructuredQuery do
   - where (Filter): The filter to apply. Defaults to: `null`.
   """
 
-  defstruct [
-    :endAt,
-    :from,
-    :limit,
-    :offset,
-    :orderBy,
-    :select,
-    :startAt,
-    :where
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :endAt => GoogleApi.Firestore.V1beta1.Model.Cursor.t(),
+          :from => list(GoogleApi.Firestore.V1beta1.Model.CollectionSelector.t()),
+          :limit => any(),
+          :offset => any(),
+          :orderBy => list(GoogleApi.Firestore.V1beta1.Model.Order.t()),
+          :select => GoogleApi.Firestore.V1beta1.Model.Projection.t(),
+          :startAt => GoogleApi.Firestore.V1beta1.Model.Cursor.t(),
+          :where => GoogleApi.Firestore.V1beta1.Model.Filter.t()
+        }
+
+  field(:endAt, as: GoogleApi.Firestore.V1beta1.Model.Cursor)
+  field(:from, as: GoogleApi.Firestore.V1beta1.Model.CollectionSelector, type: :list)
+  field(:limit)
+  field(:offset)
+  field(:orderBy, as: GoogleApi.Firestore.V1beta1.Model.Order, type: :list)
+  field(:select, as: GoogleApi.Firestore.V1beta1.Model.Projection)
+  field(:startAt, as: GoogleApi.Firestore.V1beta1.Model.Cursor)
+  field(:where, as: GoogleApi.Firestore.V1beta1.Model.Filter)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1beta1.Model.StructuredQuery do
-  import GoogleApi.Firestore.V1beta1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:endAt, :struct, GoogleApi.Firestore.V1beta1.Model.Cursor, options)
-    |> deserialize(:from, :list, GoogleApi.Firestore.V1beta1.Model.CollectionSelector, options)
-    |> deserialize(:orderBy, :list, GoogleApi.Firestore.V1beta1.Model.Order, options)
-    |> deserialize(:select, :struct, GoogleApi.Firestore.V1beta1.Model.Projection, options)
-    |> deserialize(:startAt, :struct, GoogleApi.Firestore.V1beta1.Model.Cursor, options)
-    |> deserialize(:where, :struct, GoogleApi.Firestore.V1beta1.Model.Filter, options)
+    GoogleApi.Firestore.V1beta1.Model.StructuredQuery.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Firestore.V1beta1.Model.StructuredQuery do
   def encode(value, options) do
-    GoogleApi.Firestore.V1beta1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

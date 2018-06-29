@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -27,20 +27,25 @@ defmodule GoogleApi.Firestore.V1beta1.Model.FieldTransform do
     - Enum - one of [SERVER_VALUE_UNSPECIFIED, REQUEST_TIME]
   """
 
-  defstruct [
-    :fieldPath,
-    :setToServerValue
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :fieldPath => any(),
+          :setToServerValue => any()
+        }
+
+  field(:fieldPath)
+  field(:setToServerValue)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1beta1.Model.FieldTransform do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Firestore.V1beta1.Model.FieldTransform.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Firestore.V1beta1.Model.FieldTransform do
   def encode(value, options) do
-    GoogleApi.Firestore.V1beta1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

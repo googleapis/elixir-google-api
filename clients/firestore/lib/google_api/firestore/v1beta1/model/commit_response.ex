@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -22,27 +22,29 @@ defmodule GoogleApi.Firestore.V1beta1.Model.CommitResponse do
 
   ## Attributes
 
-  - commitTime (String.t): The time at which the commit occurred. Defaults to: `null`.
+  - commitTime (DateTime.t): The time at which the commit occurred. Defaults to: `null`.
   - writeResults ([WriteResult]): The result of applying the writes.  This i-th write result corresponds to the i-th write in the request. Defaults to: `null`.
   """
 
-  defstruct [
-    :commitTime,
-    :writeResults
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :commitTime => DateTime.t(),
+          :writeResults => list(GoogleApi.Firestore.V1beta1.Model.WriteResult.t())
+        }
+
+  field(:commitTime, as: DateTime)
+  field(:writeResults, as: GoogleApi.Firestore.V1beta1.Model.WriteResult, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1beta1.Model.CommitResponse do
-  import GoogleApi.Firestore.V1beta1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:writeResults, :list, GoogleApi.Firestore.V1beta1.Model.WriteResult, options)
+    GoogleApi.Firestore.V1beta1.Model.CommitResponse.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Firestore.V1beta1.Model.CommitResponse do
   def encode(value, options) do
-    GoogleApi.Firestore.V1beta1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -26,20 +26,25 @@ defmodule GoogleApi.Firestore.V1beta1.Model.CollectionSelector do
   - collectionId (String.t): The collection ID. When set, selects only collections with this ID. Defaults to: `null`.
   """
 
-  defstruct [
-    :allDescendants,
-    :collectionId
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :allDescendants => any(),
+          :collectionId => any()
+        }
+
+  field(:allDescendants)
+  field(:collectionId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1beta1.Model.CollectionSelector do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Firestore.V1beta1.Model.CollectionSelector.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Firestore.V1beta1.Model.CollectionSelector do
   def encode(value, options) do
-    GoogleApi.Firestore.V1beta1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

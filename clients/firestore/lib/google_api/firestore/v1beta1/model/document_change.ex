@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -27,24 +27,27 @@ defmodule GoogleApi.Firestore.V1beta1.Model.DocumentChange do
   - targetIds ([integer()]): A set of target IDs of targets that match this document. Defaults to: `null`.
   """
 
-  defstruct [
-    :document,
-    :removedTargetIds,
-    :targetIds
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :document => GoogleApi.Firestore.V1beta1.Model.Document.t(),
+          :removedTargetIds => list(any()),
+          :targetIds => list(any())
+        }
+
+  field(:document, as: GoogleApi.Firestore.V1beta1.Model.Document)
+  field(:removedTargetIds, type: :list)
+  field(:targetIds, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1beta1.Model.DocumentChange do
-  import GoogleApi.Firestore.V1beta1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:document, :struct, GoogleApi.Firestore.V1beta1.Model.Document, options)
+    GoogleApi.Firestore.V1beta1.Model.DocumentChange.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Firestore.V1beta1.Model.DocumentChange do
   def encode(value, options) do
-    GoogleApi.Firestore.V1beta1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

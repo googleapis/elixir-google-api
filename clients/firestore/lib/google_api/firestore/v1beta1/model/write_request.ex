@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -28,25 +28,29 @@ defmodule GoogleApi.Firestore.V1beta1.Model.WriteRequest do
   - writes ([Write]): The writes to apply.  Always executed atomically and in order. This must be empty on the first request. This may be empty on the last request. This must not be empty on all other requests. Defaults to: `null`.
   """
 
-  defstruct [
-    :labels,
-    :streamId,
-    :streamToken,
-    :writes
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :labels => map(),
+          :streamId => any(),
+          :streamToken => any(),
+          :writes => list(GoogleApi.Firestore.V1beta1.Model.Write.t())
+        }
+
+  field(:labels, type: :map)
+  field(:streamId)
+  field(:streamToken)
+  field(:writes, as: GoogleApi.Firestore.V1beta1.Model.Write, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1beta1.Model.WriteRequest do
-  import GoogleApi.Firestore.V1beta1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:writes, :list, GoogleApi.Firestore.V1beta1.Model.Write, options)
+    GoogleApi.Firestore.V1beta1.Model.WriteRequest.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Firestore.V1beta1.Model.WriteRequest do
   def encode(value, options) do
-    GoogleApi.Firestore.V1beta1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -22,31 +22,35 @@ defmodule GoogleApi.Firestore.V1beta1.Model.WriteResponse do
 
   ## Attributes
 
-  - commitTime (String.t): The time at which the commit occurred. Defaults to: `null`.
+  - commitTime (DateTime.t): The time at which the commit occurred. Defaults to: `null`.
   - streamId (String.t): The ID of the stream. Only set on the first message, when a new stream was created. Defaults to: `null`.
   - streamToken (binary()): A token that represents the position of this response in the stream. This can be used by a client to resume the stream at this point.  This field is always set. Defaults to: `null`.
   - writeResults ([WriteResult]): The result of applying the writes.  This i-th write result corresponds to the i-th write in the request. Defaults to: `null`.
   """
 
-  defstruct [
-    :commitTime,
-    :streamId,
-    :streamToken,
-    :writeResults
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :commitTime => DateTime.t(),
+          :streamId => any(),
+          :streamToken => any(),
+          :writeResults => list(GoogleApi.Firestore.V1beta1.Model.WriteResult.t())
+        }
+
+  field(:commitTime, as: DateTime)
+  field(:streamId)
+  field(:streamToken)
+  field(:writeResults, as: GoogleApi.Firestore.V1beta1.Model.WriteResult, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1beta1.Model.WriteResponse do
-  import GoogleApi.Firestore.V1beta1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:writeResults, :list, GoogleApi.Firestore.V1beta1.Model.WriteResult, options)
+    GoogleApi.Firestore.V1beta1.Model.WriteResponse.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Firestore.V1beta1.Model.WriteResponse do
   def encode(value, options) do
-    GoogleApi.Firestore.V1beta1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

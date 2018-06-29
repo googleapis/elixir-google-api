@@ -1,7 +1,7 @@
 defmodule GoogleApiFirestore.MixProject do
   use Mix.Project
 
-  @version "0.0.1"
+  @version "0.1.0"
 
   def project do
     [
@@ -28,8 +28,7 @@ defmodule GoogleApiFirestore.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:tesla, ">= 0.8.0 and <= 0.10.0"},
-      {:poison, ">= 1.0.0"},
+      {:google_gax, "~> 0.1.0"},
       {:ex_doc, ">= 0.16.0", only: :dev},
       {:goth, "~> 0.8.0", only: :test}
     ]

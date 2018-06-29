@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -23,30 +23,34 @@ defmodule GoogleApi.Firestore.V1beta1.Model.RunQueryResponse do
   ## Attributes
 
   - document (Document): A query result. Not set when reporting partial progress. Defaults to: `null`.
-  - readTime (String.t): The time at which the document was read. This may be monotonically increasing; in this case, the previous documents in the result stream are guaranteed not to have changed between their &#x60;read_time&#x60; and this one.  If the query returns no results, a response with &#x60;read_time&#x60; and no &#x60;document&#x60; will be sent, and this represents the time at which the query was run. Defaults to: `null`.
+  - readTime (DateTime.t): The time at which the document was read. This may be monotonically increasing; in this case, the previous documents in the result stream are guaranteed not to have changed between their &#x60;read_time&#x60; and this one.  If the query returns no results, a response with &#x60;read_time&#x60; and no &#x60;document&#x60; will be sent, and this represents the time at which the query was run. Defaults to: `null`.
   - skippedResults (integer()): The number of results that have been skipped due to an offset between the last response and the current response. Defaults to: `null`.
   - transaction (binary()): The transaction that was started as part of this request. Can only be set in the first response, and only if RunQueryRequest.new_transaction was set in the request. If set, no other fields will be set in this response. Defaults to: `null`.
   """
 
-  defstruct [
-    :document,
-    :readTime,
-    :skippedResults,
-    :transaction
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :document => GoogleApi.Firestore.V1beta1.Model.Document.t(),
+          :readTime => DateTime.t(),
+          :skippedResults => any(),
+          :transaction => any()
+        }
+
+  field(:document, as: GoogleApi.Firestore.V1beta1.Model.Document)
+  field(:readTime, as: DateTime)
+  field(:skippedResults)
+  field(:transaction)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1beta1.Model.RunQueryResponse do
-  import GoogleApi.Firestore.V1beta1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:document, :struct, GoogleApi.Firestore.V1beta1.Model.Document, options)
+    GoogleApi.Firestore.V1beta1.Model.RunQueryResponse.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Firestore.V1beta1.Model.RunQueryResponse do
   def encode(value, options) do
-    GoogleApi.Firestore.V1beta1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

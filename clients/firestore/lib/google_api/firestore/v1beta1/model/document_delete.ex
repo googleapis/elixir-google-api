@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -23,25 +23,31 @@ defmodule GoogleApi.Firestore.V1beta1.Model.DocumentDelete do
   ## Attributes
 
   - document (String.t): The resource name of the Document that was deleted. Defaults to: `null`.
-  - readTime (String.t): The read timestamp at which the delete was observed.  Greater or equal to the &#x60;commit_time&#x60; of the delete. Defaults to: `null`.
+  - readTime (DateTime.t): The read timestamp at which the delete was observed.  Greater or equal to the &#x60;commit_time&#x60; of the delete. Defaults to: `null`.
   - removedTargetIds ([integer()]): A set of target IDs for targets that previously matched this entity. Defaults to: `null`.
   """
 
-  defstruct [
-    :document,
-    :readTime,
-    :removedTargetIds
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :document => any(),
+          :readTime => DateTime.t(),
+          :removedTargetIds => list(any())
+        }
+
+  field(:document)
+  field(:readTime, as: DateTime)
+  field(:removedTargetIds, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1beta1.Model.DocumentDelete do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.Firestore.V1beta1.Model.DocumentDelete.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Firestore.V1beta1.Model.DocumentDelete do
   def encode(value, options) do
-    GoogleApi.Firestore.V1beta1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

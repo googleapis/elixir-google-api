@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -25,22 +25,23 @@ defmodule GoogleApi.Firestore.V1beta1.Model.Projection do
   - fields ([FieldReference]): The fields to return.  If empty, all fields are returned. To only return the name of the document, use &#x60;[&#39;__name__&#39;]&#x60;. Defaults to: `null`.
   """
 
-  defstruct [
-    :fields
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :fields => list(GoogleApi.Firestore.V1beta1.Model.FieldReference.t())
+        }
+
+  field(:fields, as: GoogleApi.Firestore.V1beta1.Model.FieldReference, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1beta1.Model.Projection do
-  import GoogleApi.Firestore.V1beta1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:fields, :list, GoogleApi.Firestore.V1beta1.Model.FieldReference, options)
+    GoogleApi.Firestore.V1beta1.Model.Projection.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Firestore.V1beta1.Model.Projection do
   def encode(value, options) do
-    GoogleApi.Firestore.V1beta1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

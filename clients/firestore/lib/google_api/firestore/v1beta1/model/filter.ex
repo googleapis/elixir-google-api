@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -27,31 +27,27 @@ defmodule GoogleApi.Firestore.V1beta1.Model.Filter do
   - unaryFilter (UnaryFilter): A filter that takes exactly one argument. Defaults to: `null`.
   """
 
-  defstruct [
-    :compositeFilter,
-    :fieldFilter,
-    :unaryFilter
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :compositeFilter => GoogleApi.Firestore.V1beta1.Model.CompositeFilter.t(),
+          :fieldFilter => GoogleApi.Firestore.V1beta1.Model.FieldFilter.t(),
+          :unaryFilter => GoogleApi.Firestore.V1beta1.Model.UnaryFilter.t()
+        }
+
+  field(:compositeFilter, as: GoogleApi.Firestore.V1beta1.Model.CompositeFilter)
+  field(:fieldFilter, as: GoogleApi.Firestore.V1beta1.Model.FieldFilter)
+  field(:unaryFilter, as: GoogleApi.Firestore.V1beta1.Model.UnaryFilter)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1beta1.Model.Filter do
-  import GoogleApi.Firestore.V1beta1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(
-      :compositeFilter,
-      :struct,
-      GoogleApi.Firestore.V1beta1.Model.CompositeFilter,
-      options
-    )
-    |> deserialize(:fieldFilter, :struct, GoogleApi.Firestore.V1beta1.Model.FieldFilter, options)
-    |> deserialize(:unaryFilter, :struct, GoogleApi.Firestore.V1beta1.Model.UnaryFilter, options)
+    GoogleApi.Firestore.V1beta1.Model.Filter.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Firestore.V1beta1.Model.Filter do
   def encode(value, options) do
-    GoogleApi.Firestore.V1beta1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

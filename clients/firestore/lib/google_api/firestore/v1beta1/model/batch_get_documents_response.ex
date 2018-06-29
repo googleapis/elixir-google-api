@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -24,29 +24,33 @@ defmodule GoogleApi.Firestore.V1beta1.Model.BatchGetDocumentsResponse do
 
   - found (Document): A document that was requested. Defaults to: `null`.
   - missing (String.t): A document name that was requested but does not exist. In the format: &#x60;projects/{project_id}/databases/{database_id}/documents/{document_path}&#x60;. Defaults to: `null`.
-  - readTime (String.t): The time at which the document was read. This may be monotically increasing, in this case the previous documents in the result stream are guaranteed not to have changed between their read_time and this one. Defaults to: `null`.
+  - readTime (DateTime.t): The time at which the document was read. This may be monotically increasing, in this case the previous documents in the result stream are guaranteed not to have changed between their read_time and this one. Defaults to: `null`.
   - transaction (binary()): The transaction that was started as part of this request. Will only be set in the first response, and only if BatchGetDocumentsRequest.new_transaction was set in the request. Defaults to: `null`.
   """
 
-  defstruct [
-    :found,
-    :missing,
-    :readTime,
-    :transaction
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :found => GoogleApi.Firestore.V1beta1.Model.Document.t(),
+          :missing => any(),
+          :readTime => DateTime.t(),
+          :transaction => any()
+        }
+
+  field(:found, as: GoogleApi.Firestore.V1beta1.Model.Document)
+  field(:missing)
+  field(:readTime, as: DateTime)
+  field(:transaction)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1beta1.Model.BatchGetDocumentsResponse do
-  import GoogleApi.Firestore.V1beta1.Deserializer
-
   def decode(value, options) do
-    value
-    |> deserialize(:found, :struct, GoogleApi.Firestore.V1beta1.Model.Document, options)
+    GoogleApi.Firestore.V1beta1.Model.BatchGetDocumentsResponse.decode(value, options)
   end
 end
 
 defimpl Poison.Encoder, for: GoogleApi.Firestore.V1beta1.Model.BatchGetDocumentsResponse do
   def encode(value, options) do
-    GoogleApi.Firestore.V1beta1.Deserializer.serialize_non_nil(value, options)
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end
