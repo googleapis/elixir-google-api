@@ -1,6 +1,6 @@
 # GoogleApi.CloudShell.V1
 
-Allows users to start, configure, and connect to interactive shell sessions running in the cloud. 
+Allows users to start, configure, and connect to interactive shell sessions running in the cloud.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_cloud_shell` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_cloud_shell, "~> 0.0.1"}]
+  [{:google_api_cloud_shell, "~> 0.1.0"}]
 end
 ```
 
