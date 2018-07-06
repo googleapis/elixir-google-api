@@ -22,7 +22,7 @@ defmodule {{moduleName}}.Api.{{classname}} do
 
   - connection ({{moduleName}}.Connection): Connection to server
 {{#allParams}}{{#required}}  - {{#underscored}}{{paramName}}{{/underscored}} ({{dataType}}): {{description}}
-{{/required}}{{/allParams}}  - opts (KeywordList): [optional] Optional parameters
+{{/required}}{{/allParams}}  - optional_params (KeywordList): [optional] Optional parameters
 {{#allParams}}{{^required}}    - :{{baseName}} ({{dataType}}): {{description}}
 {{/required}}{{/allParams}}
   ## Returns
@@ -31,9 +31,9 @@ defmodule {{moduleName}}.Api.{{classname}} do
   {:error, info} on failure
   """
   {{typespec}}
-  def {{#underscored}}{{operationId}}{{/underscored}}(connection, {{#allParams}}{{#required}}{{#underscored}}{{paramName}}{{/underscored}}, {{/required}}{{/allParams}}{{^hasOptionalParams}}_{{/hasOptionalParams}}opts \\ []) do
+  def {{#underscored}}{{operationId}}{{/underscored}}(connection, {{#allParams}}{{#required}}{{#underscored}}{{paramName}}{{/underscored}}, {{/required}}{{/allParams}}{{^hasOptionalParams}}_{{/hasOptionalParams}}optional_params \\ [], opts \\ []) do
 {{#hasOptionalParams}}
-    optional_params = %{
+    optional_params_config = %{
       {{#allParams}}{{^required}}{{^isPathParam}}:"{{baseName}}" => {{#isBodyParam}}:body{{/isBodyParam}}{{#isFormParam}}:body{{/isFormParam}}{{#isQueryParam}}:query{{/isQueryParam}}{{#isHeaderParam}}:header{{/isHeaderParam}}{{/isPathParam}}{{#hasMore}},
       {{/hasMore}}{{/required}}{{/allParams}}
     }
@@ -51,12 +51,12 @@ defmodule {{moduleName}}.Api.{{classname}} do
 {{/required}}
 {{/allParams}}
 {{#hasOptionalParams}}
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 {{/hasOptionalParams}}
 
     connection
     |> Connection.execute(request)
-    |> Response.decode({{^returnBaseType}}decode: false{{/returnBaseType}}{{#returnBaseType}}struct: {{decodedStruct}}{{/returnBaseType}}{{#vendorExtensions.x-dataWrapper}}, data_wrapped: true{{/vendorExtensions.x-dataWrapper}})
+    |> Response.decode(opts ++ [{{^returnBaseType}}decode: false{{/returnBaseType}}{{#returnBaseType}}struct: {{decodedStruct}}{{/returnBaseType}}{{#vendorExtensions.x-dataWrapper}}, data_wrapped: true{{/vendorExtensions.x-dataWrapper}}])
   end
   {{/operation}}
 {{/operations}}

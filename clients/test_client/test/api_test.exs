@@ -133,4 +133,15 @@ defmodule Gax.ApiTest do
 
     assert %Tesla.Env{status: 200, body: ""} = resp
   end
+
+  test "skip decode" do
+    mock(fn %{method: :get, url: "http://localhost:8080/test/v1/b/bucket-1/o/1234"} ->
+      %Tesla.Env{status: 200, body: @container_json}
+    end)
+
+    conn = Connection.new()
+    {:ok, env} = Api.objects_get(conn, "bucket-1", 1234, [], decode: false)
+
+    assert %Tesla.Env{} = env
+  end
 end
