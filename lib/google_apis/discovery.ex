@@ -65,7 +65,7 @@ defmodule GoogleApis.Discovery do
       Logger.info "FOUND: #{url}"
       {:ok, body}
     else
-      {:error, %Tesla.Env{status: status}} ->
+      {:ok, %Tesla.Env{status: status}} ->
         {:error, "Error received status: #{status} from discovery endpoint"}
       err ->
         err
