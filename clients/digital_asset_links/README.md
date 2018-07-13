@@ -9,7 +9,7 @@ by adding `google_api_digital_asset_links` to your list of dependencies in `mix.
 
 ```elixir
 def deps do
-  [{:google_api_digital_asset_links, "~> 0.0.1"}]
+  [{:google_api_digital_asset_links, "~> 0.1.0"}]
 end
 ```
 
