@@ -9,7 +9,7 @@ by adding `google_api_composer` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_composer, "~> 0.0.1"}]
+  [{:google_api_composer, "~> 0.1.0"}]
 end
 ```
 
