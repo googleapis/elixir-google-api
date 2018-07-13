@@ -1,6 +1,6 @@
 # GoogleApi.CloudIot.V1
 
-Registers and manages IoT (Internet of Things) devices that connect to the Google Cloud Platform. 
+Registers and manages IoT (Internet of Things) devices that connect to the Google Cloud Platform.
 
 ## Installation
 
@@ -9,7 +9,7 @@ by adding `google_api_cloud_iot` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_cloud_iot, "~> 0.0.1"}]
+  [{:google_api_cloud_iot, "~> 0.1.0"}]
 end
 ```
 
