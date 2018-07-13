@@ -60,12 +60,12 @@ defmodule GoogleApis.Discovery do
 
   defp fetch_direct(url) do
     Logger.info "FETCHING: #{url}"
-    with %Tesla.Env{status: 200, body: body} <- Tesla.get(url)
+    with {:ok, %Tesla.Env{status: 200, body: body}} <- Tesla.get(url)
     do
       Logger.info "FOUND: #{url}"
       {:ok, body}
     else
-      %Tesla.Env{status: status} ->
+      {:error, %Tesla.Env{status: status}} ->
         {:error, "Error received status: #{status} from discovery endpoint"}
       err ->
         err
