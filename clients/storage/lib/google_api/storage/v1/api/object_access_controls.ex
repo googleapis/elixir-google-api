@@ -43,6 +43,8 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :generation (String.t): If present, selects a specific revision of this object (as opposed to the latest version, the default).
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -110,6 +112,8 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :generation (String.t): If present, selects a specific revision of this object (as opposed to the latest version, the default).
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -177,6 +181,8 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
     - :generation (String.t): If present, selects a specific revision of this object (as opposed to the latest version, the default).
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
     - :body (ObjectAccessControl): 
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -241,6 +247,8 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :generation (String.t): If present, selects a specific revision of this object (as opposed to the latest version, the default).
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -302,6 +310,8 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
     - :generation (String.t): If present, selects a specific revision of this object (as opposed to the latest version, the default).
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
     - :body (ObjectAccessControl): 
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -371,6 +381,8 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
     - :generation (String.t): If present, selects a specific revision of this object (as opposed to the latest version, the default).
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
     - :body (ObjectAccessControl): 
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 

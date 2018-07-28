@@ -40,6 +40,8 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :userProject (String.t): The project to be billed for this request.
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 

@@ -42,6 +42,8 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
     - :ifMetagenerationMatch (String.t): If set, only deletes the bucket if its metageneration matches this value.
     - :ifMetagenerationNotMatch (String.t): If set, only deletes the bucket if its metageneration does not match this value.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -96,6 +98,8 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
     - :ifMetagenerationNotMatch (String.t): Makes the return of the bucket metadata conditional on whether the bucket&#39;s current metageneration does not match the given value.
     - :projection (String.t): Set of properties to return. Defaults to noAcl.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -148,6 +152,8 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -201,6 +207,8 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
     - :projection (String.t): Set of properties to return. Defaults to noAcl, unless the bucket resource specifies acl or defaultObjectAcl properties, when it defaults to full.
     - :userProject (String.t): The project to be billed for this request.
     - :body (Bucket): 
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -257,6 +265,8 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
     - :prefix (String.t): Filter results to buckets whose names begin with this prefix.
     - :projection (String.t): Set of properties to return. Defaults to noAcl.
     - :userProject (String.t): The project to be billed for this request.
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -310,6 +320,8 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -376,6 +388,8 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
     - :projection (String.t): Set of properties to return. Defaults to full.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
     - :body (Bucket): 
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -432,6 +446,8 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
     - :body (Policy): 
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -483,6 +499,8 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -551,6 +569,8 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
     - :projection (String.t): Set of properties to return. Defaults to full.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
     - :body (Bucket): 
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 

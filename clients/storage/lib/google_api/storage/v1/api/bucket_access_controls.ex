@@ -41,6 +41,8 @@ defmodule GoogleApi.Storage.V1.Api.BucketAccessControls do
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -102,6 +104,8 @@ defmodule GoogleApi.Storage.V1.Api.BucketAccessControls do
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -159,6 +163,8 @@ defmodule GoogleApi.Storage.V1.Api.BucketAccessControls do
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
     - :body (BucketAccessControl): 
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -209,6 +215,8 @@ defmodule GoogleApi.Storage.V1.Api.BucketAccessControls do
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -260,6 +268,8 @@ defmodule GoogleApi.Storage.V1.Api.BucketAccessControls do
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
     - :body (BucketAccessControl): 
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -323,6 +333,8 @@ defmodule GoogleApi.Storage.V1.Api.BucketAccessControls do
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
     - :body (BucketAccessControl): 
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 

@@ -39,6 +39,8 @@ defmodule GoogleApi.Storage.V1.Api.Channels do
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :resource (Channel): 
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 

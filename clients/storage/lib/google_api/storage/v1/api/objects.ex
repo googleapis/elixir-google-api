@@ -46,6 +46,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :kmsKeyName (String.t): Resource name of the Cloud KMS key, of the form projects/my-project/locations/global/keyRings/my-kr/cryptoKeys/my-key, that will be used to encrypt the object. Overrides the object metadata&#39;s kms_key_name value, if any.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
     - :body (ComposeRequest): 
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -122,6 +124,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :sourceGeneration (String.t): If present, selects a specific revision of the source object (as opposed to the latest version, the default).
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
     - :body (Object): 
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -209,6 +213,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :ifMetagenerationMatch (String.t): Makes the operation conditional on whether the object&#39;s current metageneration matches the given value.
     - :ifMetagenerationNotMatch (String.t): Makes the operation conditional on whether the object&#39;s current metageneration does not match the given value.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -271,6 +277,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :ifMetagenerationNotMatch (String.t): Makes the operation conditional on whether the object&#39;s current metageneration does not match the given value.
     - :projection (String.t): Set of properties to return. Defaults to noAcl.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -329,6 +337,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :generation (String.t): If present, selects a specific revision of this object (as opposed to the latest version, the default).
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -396,6 +406,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :projection (String.t): Set of properties to return. Defaults to noAcl, unless the object resource specifies the acl property, when it defaults to full.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
     - :body (Object): 
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -466,6 +478,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :projection (String.t): Set of properties to return. Defaults to noAcl, unless the object resource specifies the acl property, when it defaults to full.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
     - :body (Object): 
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -544,6 +558,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :predefinedAcl (String.t): Apply a predefined set of access controls to this object.
     - :projection (String.t): Set of properties to return. Defaults to noAcl, unless the object resource specifies the acl property, when it defaults to full.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -626,6 +642,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :projection (String.t): Set of properties to return. Defaults to noAcl.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
     - :versions (boolean()): If true, lists all versions of an object as distinct results. The default is false. For more information, see Object Versioning.
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -691,6 +709,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :projection (String.t): Set of properties to return. Defaults to full.
     - :userProject (String.t): The project to be billed for this request, for Requester Pays buckets.
     - :body (Object): 
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -767,6 +787,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :sourceGeneration (String.t): If present, selects a specific revision of the source object (as opposed to the latest version, the default).
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
     - :body (Object): 
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -854,6 +876,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :generation (String.t): If present, selects a specific revision of this object (as opposed to the latest version, the default).
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
     - :body (Policy): 
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -915,6 +939,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :generation (String.t): If present, selects a specific revision of this object (as opposed to the latest version, the default).
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -990,6 +1016,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :projection (String.t): Set of properties to return. Defaults to full.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
     - :body (Object): 
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 
@@ -1056,6 +1084,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
     - :versions (boolean()): If true, lists all versions of an object as distinct results. The default is false. For more information, see Object Versioning.
     - :resource (Channel): 
+  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
 
   ## Returns
 

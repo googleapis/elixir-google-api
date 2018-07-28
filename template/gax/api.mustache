@@ -24,7 +24,9 @@ defmodule {{moduleName}}.Api.{{classname}} do
 {{#allParams}}{{#required}}  - {{#underscored}}{{paramName}}{{/underscored}} ({{dataType}}): {{description}}
 {{/required}}{{/allParams}}  - optional_params (KeywordList): [optional] Optional parameters
 {{#allParams}}{{^required}}    - :{{baseName}} ({{dataType}}): {{description}}
-{{/required}}{{/allParams}}
+{{/required}}{{/allParams}}  - opts (KeywordList): [optional] Optional client parameters
+    - :decode (boolean): If set to false, skip decoding the response
+
   ## Returns
 
   {:ok, {{#isListContainer}}[%{{returnBaseType}}{}, ...]{{/isListContainer}}{{#isMapContainer}}%{}{{/isMapContainer}}{{^returnType}}%{}{{/returnType}}{{#returnSimpleType}}%{{#returnType}}{{#isMapContainer}}{{/isMapContainer}}{{moduleName}}.Model.{{{returnType}}}{{/returnType}}{}{{/returnSimpleType}}} on success
