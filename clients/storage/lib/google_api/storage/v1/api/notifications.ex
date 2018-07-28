@@ -32,7 +32,7 @@ defmodule GoogleApi.Storage.V1.Api.Notifications do
   - connection (GoogleApi.Storage.V1.Connection): Connection to server
   - bucket (String.t): The parent bucket of the notification.
   - notification (String.t): ID of the notification to delete.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -49,8 +49,14 @@ defmodule GoogleApi.Storage.V1.Api.Notifications do
   """
   @spec storage_notifications_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def storage_notifications_delete(connection, bucket, notification, opts \\ []) do
-    optional_params = %{
+  def storage_notifications_delete(
+        connection,
+        bucket,
+        notification,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -68,11 +74,11 @@ defmodule GoogleApi.Storage.V1.Api.Notifications do
         "bucket" => URI.encode_www_form(bucket),
         "notification" => URI.encode_www_form(notification)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -83,7 +89,7 @@ defmodule GoogleApi.Storage.V1.Api.Notifications do
   - connection (GoogleApi.Storage.V1.Connection): Connection to server
   - bucket (String.t): The parent bucket of the notification.
   - notification (String.t): Notification ID
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -100,8 +106,14 @@ defmodule GoogleApi.Storage.V1.Api.Notifications do
   """
   @spec storage_notifications_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Storage.V1.Model.Notification.t()} | {:error, Tesla.Env.t()}
-  def storage_notifications_get(connection, bucket, notification, opts \\ []) do
-    optional_params = %{
+  def storage_notifications_get(
+        connection,
+        bucket,
+        notification,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -119,11 +131,11 @@ defmodule GoogleApi.Storage.V1.Api.Notifications do
         "bucket" => URI.encode_www_form(bucket),
         "notification" => URI.encode_www_form(notification)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.Notification{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Storage.V1.Model.Notification{}])
   end
 
   @doc """
@@ -133,7 +145,7 @@ defmodule GoogleApi.Storage.V1.Api.Notifications do
 
   - connection (GoogleApi.Storage.V1.Connection): Connection to server
   - bucket (String.t): The parent bucket of the notification.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -151,8 +163,8 @@ defmodule GoogleApi.Storage.V1.Api.Notifications do
   """
   @spec storage_notifications_insert(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Storage.V1.Model.Notification.t()} | {:error, Tesla.Env.t()}
-  def storage_notifications_insert(connection, bucket, opts \\ []) do
-    optional_params = %{
+  def storage_notifications_insert(connection, bucket, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -170,11 +182,11 @@ defmodule GoogleApi.Storage.V1.Api.Notifications do
       |> Request.url("/storage/v1/b/{bucket}/notificationConfigs", %{
         "bucket" => URI.encode_www_form(bucket)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.Notification{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Storage.V1.Model.Notification{}])
   end
 
   @doc """
@@ -184,7 +196,7 @@ defmodule GoogleApi.Storage.V1.Api.Notifications do
 
   - connection (GoogleApi.Storage.V1.Connection): Connection to server
   - bucket (String.t): Name of a Google Cloud Storage bucket.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -201,8 +213,8 @@ defmodule GoogleApi.Storage.V1.Api.Notifications do
   """
   @spec storage_notifications_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Storage.V1.Model.Notifications.t()} | {:error, Tesla.Env.t()}
-  def storage_notifications_list(connection, bucket, opts \\ []) do
-    optional_params = %{
+  def storage_notifications_list(connection, bucket, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -219,10 +231,10 @@ defmodule GoogleApi.Storage.V1.Api.Notifications do
       |> Request.url("/storage/v1/b/{bucket}/notificationConfigs", %{
         "bucket" => URI.encode_www_form(bucket)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.Notifications{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Storage.V1.Model.Notifications{}])
   end
 end
