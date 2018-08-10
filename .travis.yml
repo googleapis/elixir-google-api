@@ -7,6 +7,8 @@ otp_release:
 cache:
   directories:
     - _build
+    - clients/gax/_build
+    - clients/test_client/_build
     - deps
     - node_modules
     - $MIX_HOME
@@ -16,4 +18,4 @@ before_install:
   - npm install
   - docker pull swaggerapi/swagger-codegen-cli
 script:
-  - scripts/ci.sh
+  - travis_wait 30 scripts/ci.sh
