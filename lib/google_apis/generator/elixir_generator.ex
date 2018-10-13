@@ -23,21 +23,26 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     EEx.function_from_file(:def, :model, Path.expand("./template/elixir/model.ex.eex"), [:model, :namespace])
   end
 
-  defmodule Field do
-    defstruct [:name, :required, :collection_type, :type, :typespec]
-  end
-
   defmodule Model do
     defstruct [:name, :schema]
 
     def filename(model) do
-      "#{String.underscore(model)}.ex"
+      "#{Macro.underscore(model.name)}.ex"
     end
   end
 
   def generate_client(api_config) do
     filename = ApiConfig.file(api_config)
     client_library_name = ApiConfig.library_name(api_config)
+    namespace = ApiConfig.library_namespace(api_config)
+    base_dir = Path.join([
+      "clients",
+      client_library_name,
+      "lib",
+      "google_api",
+      client_library_name,
+      String.downcase(ApiConfig.module_version(api_config))
+    ])
 
     rest_description =
       api_config
@@ -45,8 +50,19 @@ defmodule GoogleApis.Generator.ElixirGenerator do
       |> File.read!
       |> Poison.decode!(as: %GoogleApi.Discovery.V1.Model.RestDescription{})
 
-    schemas = all_models(rest_description)
-    |> IO.inspect
+    models = all_models(rest_description)
+
+    models
+    |> Enum.each(fn model ->
+      File.write!(
+        Path.join([base_dir, "model", Model.filename(model)]),
+        Renderer.model(model, namespace)
+      )
+    end)
+  end
+
+  defp render_model(model) do
+
   end
 
   def all_models(rest_description) do
