@@ -46,5 +46,5 @@ end
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/gax](https://hexdocs.pm/gax).
+be found at [https://hexdocs.pm/google_gax](https://hexdocs.pm/google_gax).
 

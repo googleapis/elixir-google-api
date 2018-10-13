@@ -40,33 +40,31 @@ defmodule GoogleApis.Generator.SwaggerCli do
   defp generate_code(filename, client_library_name) do
     tmp_dir = Temp.path!("codegen-out-#{client_library_name}")
 
-    docker_args = [
-      "run",
-      "--rm",
-      "-v",
-      "#{System.cwd()}:/local",
-      "-v",
-      "#{tmp_dir}:/tmp/out",
-      image(),
-      "generate",
-      "-l",
-      "elixir",
-      "-i",
-      "/local/specifications/openapi/#{filename}",
-      "-c",
-      "/local/specifications/config/#{filename}",
-      "-t",
-      template_dir(),
-      "-o",
-      "/tmp/out/#{client_library_name}"
-    ]
+    with {:ok, volume_name} <- run_docker_command("volume create"),
+         {:ok, container} <-
+           run_docker_command("container create -v #{volume_name}:/data #{image()}"),
+         {:ok, _} <- run_docker_command("cp . #{container}:/data"),
+         {:ok, _} <- run_docker_command("rm #{container}"),
+         generate_command =
+           "run --rm -v #{volume_name}:/local -v #{tmp_dir}:/tmp/out #{image()} generate -l elixir -i /local/specifications/openapi/#{
+             filename
+           } -c /local/specifications/config/#{filename} -t #{template_dir()} -o /tmp/out/#{
+             client_library_name
+           }",
+         {:ok, _} <- run_docker_command(generate_command) do
+      {:ok, tmp_dir}
+    else
+      err -> err
+    end
+  end
 
-    case System.cmd("docker", docker_args, stderr_to_stdout: true) do
-      {_, 0} ->
-        {:ok, tmp_dir}
+  defp run_docker_command(command) do
+    case System.cmd("docker", String.split(command), stderr_to_stdout: true) do
+      {output, 0} ->
+        {:ok, String.trim_trailing(output)}
 
       {output, exit_code} ->
-        {:error, "Exited with code #{exit_code}" <> output}
+        {:error, "Exited with code #{exit_code}: " <> output}
     end
   end
 
@@ -100,6 +98,6 @@ defmodule GoogleApis.Generator.SwaggerCli do
   end
 
   defp ignorable_file(filename) do
-    String.strip(filename) != "" && !String.match?(filename, ~r/^\s*#/)
+    String.trim(filename) != "" && !String.match?(filename, ~r/^\s*#/)
   end
 end

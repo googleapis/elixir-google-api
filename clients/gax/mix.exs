@@ -1,7 +1,7 @@
 defmodule GoogleApi.Gax.MixProject do
   use Mix.Project
 
-  @version "0.1.1"
+  @version "0.1.2"
 
   def project do
     [
@@ -27,7 +27,7 @@ defmodule GoogleApi.Gax.MixProject do
   defp deps() do
     [
       {:tesla, "~> 1.0"},
-      {:poison, ">= 1.0.0"},
+      {:poison, ">= 1.0.0 and < 4.0.0"},
       {:ex_doc, "~> 0.16", only: :dev},
       {:dialyxir, "~> 0.5", only: [:dev], runtime: false}
     ]
