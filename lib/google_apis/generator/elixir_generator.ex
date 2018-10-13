@@ -29,6 +29,28 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     def filename(model) do
       "#{Macro.underscore(model.name)}.ex"
     end
+
+    def attribute_description(field_name, schema) do
+      "#{field_name} (#{typespec(schema)}): #{schema.description}  Defaults to `#{value_string(schema.default)}`."
+    end
+
+    def typespec(%{type: "array", items: items}), do: "list(#{typespec(items)})"
+    def typespec(%{"$ref": ref}) when not is_nil(ref), do: "#{ref}.t"
+    def typespec(%{type: int}) when int in ["int", "integer"], do: "integer()"
+    def typespec(%{type: "string", format: date_or_time}) when date_or_time in ["date", "date-time", "time"], do: "DateTime.t"
+    def typespec(%{type: "string"}), do: "String.t"
+    def typespec(%{type: "boolean"}), do: "boolean()"
+    def typespec(%{type: "number", format: "double"}), do: "float()"
+    def typespec(%{type: "number"}), do: "number()"
+    def typespec(%{type: "any"}), do: "any()"
+    def typespec(%{type: "object"}), do: "any()" # FIXME
+    def typespec(spec) do
+      "String.t"
+    end
+
+    def value_string(nil), do: "nil"
+    def value_string(""), do: "\"\""
+    def value_string(default), do: "#{default}"
   end
 
   def generate_client(api_config) do
@@ -59,10 +81,6 @@ defmodule GoogleApis.Generator.ElixirGenerator do
         Renderer.model(model, namespace)
       )
     end)
-  end
-
-  defp render_model(model) do
-
   end
 
   def all_models(rest_description) do
