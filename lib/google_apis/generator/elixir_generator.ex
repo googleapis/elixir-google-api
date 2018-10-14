@@ -18,13 +18,59 @@ defmodule GoogleApis.Generator.ElixirGenerator do
 
   alias GoogleApi.Discovery.V1.Model.JsonSchema
 
+  defmodule Token do
+    defstruct [
+      :filename,
+      :library_name,
+      :namespace,
+      :base_dir,
+      :rest_description,
+      :models
+    ]
+
+    def build(api_config) do
+      filename = ApiConfig.file(api_config)
+      library_name = ApiConfig.library_name(api_config)
+      namespace = ApiConfig.library_namespace(api_config)
+      base_dir = Path.join([
+        "clients",
+        library_name,
+        "lib",
+        "google_api",
+        library_name,
+        String.downcase(ApiConfig.module_version(api_config))
+      ])
+      rest_description =
+        api_config
+        |> ApiConfig.google_spec_file
+        |> File.read!
+        |> Poison.decode!(as: %GoogleApi.Discovery.V1.Model.RestDescription{})
+
+      %__MODULE__{
+        filename: filename,
+        library_name: library_name,
+        namespace: namespace,
+        base_dir: base_dir,
+        rest_description: rest_description
+      }
+    end
+  end
+
   defmodule Renderer do
     require EEx
     EEx.function_from_file(:def, :model, Path.expand("./template/elixir/model.ex.eex"), [:model, :namespace])
   end
 
+  defmodule Property do
+    defstruct [:name, :description, :type, :struct, :typespec, :required, :default]
+
+    def full_description(property) do
+      "#{property.name} (#{property.typespec}): #{property.description}"
+    end
+  end
+
   defmodule Model do
-    defstruct [:name, :schema]
+    defstruct [:name, :description, :properties, :typespec, :schema]
 
     def filename(model) do
       "#{Macro.underscore(model.name)}.ex"
@@ -43,41 +89,46 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     def typespec(%{type: "number", format: "double"}), do: "float()"
     def typespec(%{type: "number"}), do: "number()"
     def typespec(%{type: "any"}), do: "any()"
-    def typespec(%{type: "object"}), do: "any()" # FIXME
+    def typespec(%{type: "object", full_name: full_name}) do
+      IO.inspect full_name
+       "#{full_name}.t()"
+    end
+    def typespec(%{type: "object"} = schema) do
+      IO.inspect "unknown object with properties: #{Enum.join(Map.keys(schema.properties), ", ")}"
+      IO.inspect Map.keys(schema)
+       "any()" # FIXME
+    end
     def typespec(spec) do
       "String.t"
     end
 
     def value_string(nil), do: "nil"
     def value_string(""), do: "\"\""
-    def value_string(default), do: "#{default}"
+    def value_string(value), do: "#{value}"
   end
 
   def generate_client(api_config) do
-    filename = ApiConfig.file(api_config)
-    client_library_name = ApiConfig.library_name(api_config)
-    namespace = ApiConfig.library_namespace(api_config)
-    base_dir = Path.join([
-      "clients",
-      client_library_name,
-      "lib",
-      "google_api",
-      client_library_name,
-      String.downcase(ApiConfig.module_version(api_config))
-    ])
+    token =
+      Token.build(api_config)
+      |> load_models
+      |> update_model_properties
+      |> write_model_files
+  end
 
-    rest_description =
-      api_config
-      |> ApiConfig.google_spec_file
-      |> File.read!
-      |> Poison.decode!(as: %GoogleApi.Discovery.V1.Model.RestDescription{})
+  def load_models(token = %{rest_description: rest_description}) do
+    Map.put(token, :models, all_models(rest_description))
+  end
 
-    models = all_models(rest_description)
+  def update_model_properties(token) do
+    token
+  end
 
+  def write_model_files(%{models: models, namespace: namespace, base_dir: base_dir}) do
     models
+    |> Enum.take(1)
     |> Enum.each(fn model ->
       File.write!(
-        Path.join([base_dir, "model", Model.filename(model)]),
+        Path.join([base_dir, "model", Model.filename(model)]) |> IO.inspect,
         Renderer.model(model, namespace)
       )
     end)
@@ -90,10 +141,19 @@ defmodule GoogleApis.Generator.ElixirGenerator do
 
   defp all_schemas(context, {name, schema = %JsonSchema{type: "object", properties: properties}}) when not is_nil(properties) do
     full_name = "#{context}#{Macro.camelize(name)}"
-    [%Model{name: full_name, schema: schema} | Enum.flat_map(schema.properties, &(all_schemas(full_name, &1)))]
+
+    property_models = Enum.flat_map(properties, &(all_schemas(full_name, &1)))
+
+    model = %Model{
+      name: full_name,
+      description: schema.description,
+      properties: [],
+      schema: schema
+    }
+
+    [model | property_models]
   end
   defp all_schemas(_context, {_name, _schema}) do
     []
   end
-
 end
