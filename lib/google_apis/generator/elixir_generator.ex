@@ -18,14 +18,24 @@ defmodule GoogleApis.Generator.ElixirGenerator do
 
   alias GoogleApi.Discovery.V1.Model.JsonSchema
 
+  defmodule Property do
+    defstruct [:name, :description, :type, :struct, :typespec, :required, :default]
+
+    def full_description(property) do
+      "#{property.name} (#{property.typespec}): #{property.description}"
+    end
+  end
+
   defmodule Token do
+    alias GoogleApis.Generator.ElixirGenerator.Property
+
     defstruct [
       :filename,
       :library_name,
       :namespace,
       :base_dir,
       :rest_description,
-      :models
+      :models_by_name
     ]
 
     def build(api_config) do
@@ -54,6 +64,56 @@ defmodule GoogleApis.Generator.ElixirGenerator do
         rest_description: rest_description
       }
     end
+
+    def build_property(token, model, name, schema) do
+      {type, struct, typespec} = determine_type(token, model, name, schema)
+      %Property{
+        name: name,
+        description: schema.description,
+        required: schema.required,
+        default: schema.default,
+        struct: struct,
+        type: type,
+        typespec: typespec
+      }
+    end
+
+    defp determine_type(token, model, name, %{type: "array", items: items}) do
+      {_type, struct, typespec} = determine_type(token, model, name, items)
+      {"array", struct, "list(#{typespec})"}
+    end
+    defp determine_type(_token, _model, _name, %{"$ref": ref}) when not is_nil(ref) do
+      {"object", nil, "#{ref}.t"}
+    end
+    defp determine_type(_token, _model, _name, %{type: int}) when int in ["int", "integer"] do
+      {"integer", nil, "integer()"}
+    end
+    defp determine_type(_token, _model, _name, %{type: "string", format: date_or_time}) when date_or_time in ["date", "date-time", "time"] do
+      {"datetime", nil, "DateTime.t"}
+    end
+    defp determine_type(_token, _model, _name, %{type: "string"}) do
+      {"string", nil, "String.t"}
+    end
+    defp determine_type(_token, _model, _name, %{type: "boolean"}) do
+      {"boolean", nil, "boolean()"}
+    end
+    defp determine_type(_token, _model, _name, %{type: "number", format: "double"}) do
+      {"float", nil, "float()"}
+    end
+    defp determine_type(_token, _model, _name, %{type: "number"}) do
+      {"number", nil, "number()"}
+    end
+    defp determine_type(_token, _model, _name, %{type: "any"}) do
+      {"any", nil, "any()"}
+    end
+    defp determine_type(token, model, name, %{type: "object"} = schema) do
+      full_name = "#{model.name}#{Macro.camelize(name)}"
+      struct = "#{token.namespace}.Model.#{full_name}"
+      {"object", struct, "#{struct}.t"}
+    end
+    defp determine_type(_token, _model, _name, _schema) do
+      {"string", nil, "String.t"}
+    end
   end
 
   defmodule Renderer do
@@ -61,45 +121,12 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     EEx.function_from_file(:def, :model, Path.expand("./template/elixir/model.ex.eex"), [:model, :namespace])
   end
 
-  defmodule Property do
-    defstruct [:name, :description, :type, :struct, :typespec, :required, :default]
-
-    def full_description(property) do
-      "#{property.name} (#{property.typespec}): #{property.description}"
-    end
-  end
 
   defmodule Model do
-    defstruct [:name, :description, :properties, :typespec, :schema]
+    defstruct [:name, :description, :properties, :schema]
 
     def filename(model) do
       "#{Macro.underscore(model.name)}.ex"
-    end
-
-    def attribute_description(field_name, schema) do
-      "#{field_name} (#{typespec(schema)}): #{schema.description}  Defaults to `#{value_string(schema.default)}`."
-    end
-
-    def typespec(%{type: "array", items: items}), do: "list(#{typespec(items)})"
-    def typespec(%{"$ref": ref}) when not is_nil(ref), do: "#{ref}.t"
-    def typespec(%{type: int}) when int in ["int", "integer"], do: "integer()"
-    def typespec(%{type: "string", format: date_or_time}) when date_or_time in ["date", "date-time", "time"], do: "DateTime.t"
-    def typespec(%{type: "string"}), do: "String.t"
-    def typespec(%{type: "boolean"}), do: "boolean()"
-    def typespec(%{type: "number", format: "double"}), do: "float()"
-    def typespec(%{type: "number"}), do: "number()"
-    def typespec(%{type: "any"}), do: "any()"
-    def typespec(%{type: "object", full_name: full_name}) do
-      IO.inspect full_name
-       "#{full_name}.t()"
-    end
-    def typespec(%{type: "object"} = schema) do
-      IO.inspect "unknown object with properties: #{Enum.join(Map.keys(schema.properties), ", ")}"
-      IO.inspect Map.keys(schema)
-       "any()" # FIXME
-    end
-    def typespec(spec) do
-      "String.t"
     end
 
     def value_string(nil), do: "nil"
@@ -115,12 +142,23 @@ defmodule GoogleApis.Generator.ElixirGenerator do
       |> write_model_files
   end
 
-  def load_models(token = %{rest_description: rest_description}) do
-    Map.put(token, :models, all_models(rest_description))
+  def load_models(token) do
+    models = all_models(token.rest_description)
+
+    token
+    |> Map.put(:models, models)
+    |> Map.put(:models_by_name, Enum.reduce(models, %{}, fn model, acc -> Map.put(acc, model.name, model) end))
   end
 
   def update_model_properties(token) do
-    token
+    Map.update!(token, :models, fn models ->
+      models
+      |> Enum.map(fn model ->
+        Map.put(model, :properties, Enum.map(model.schema.properties, fn {name, property} ->
+          Token.build_property(token, model, name, property)
+        end))
+      end)
+    end)
   end
 
   def write_model_files(%{models: models, namespace: namespace, base_dir: base_dir}) do
