@@ -106,7 +106,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     defp determine_type(_token, _model, _name, %{type: "any"}) do
       {"any", nil, "any()"}
     end
-    defp determine_type(token, model, name, %{type: "object"} = schema) do
+    defp determine_type(token, model, name, %{type: "object"}) do
       full_name = "#{model.name}#{Macro.camelize(name)}"
       struct = "#{token.namespace}.Model.#{full_name}"
       {"object", struct, "#{struct}.t"}
@@ -121,7 +121,6 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     EEx.function_from_file(:def, :model, Path.expand("./template/elixir/model.ex.eex"), [:model, :namespace])
   end
 
-
   defmodule Model do
     defstruct [:name, :description, :properties, :schema]
 
@@ -135,11 +134,10 @@ defmodule GoogleApis.Generator.ElixirGenerator do
   end
 
   def generate_client(api_config) do
-    token =
-      Token.build(api_config)
-      |> load_models
-      |> update_model_properties
-      |> write_model_files
+    Token.build(api_config)
+    |> load_models
+    |> update_model_properties
+    |> write_model_files
   end
 
   def load_models(token) do
@@ -165,8 +163,10 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     models
     |> Enum.take(1)
     |> Enum.each(fn model ->
+      path = Path.join([base_dir, "model", Model.filename(model)])
+      IO.puts "Writing #{model.name} to #{path}."
       File.write!(
-        Path.join([base_dir, "model", Model.filename(model)]) |> IO.inspect,
+        path,
         Renderer.model(model, namespace)
       )
     end)
