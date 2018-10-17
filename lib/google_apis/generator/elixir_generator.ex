@@ -208,6 +208,42 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     end)
   end
 
+  def all_apis(%{resources: resources}) do
+    resources
+    |> Enum.map(fn {name, resource} ->
+      name = Macro.camelize(name)
+      methods = resource.methods || []
+      %Api{
+        name: name,
+        description: "API calls for all endpoints tagged `#{name}`.",
+        endpoints: Enum.map(methods, fn {_, method} ->
+          parameters = method.parameters || []
+          required_parameters =
+            parameters
+            |> Enum.filter(fn {name, parameter} -> parameter.required end)
+            |> Enum.map(fn {name, parameter} ->
+              %Parameter{
+                name: name,
+                description: parameter.description,
+                location: parameter.location,
+                typespec: "String.t"
+              }
+            end)
+          %Endpoint{
+            name: String.replace(method.id, ".", "_"),
+            description: method.description,
+            method: String.downcase(method.httpMethod),
+            path: method.path,
+            required_parameters: required_parameters,
+            optional_parameters: [],
+            typespec: "String.t",
+            return: ""
+          }
+        end)
+      }
+    end)
+  end
+
   def all_apis(rest_description) do
     [
       %Api{
