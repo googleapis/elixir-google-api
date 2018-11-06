@@ -15,7 +15,10 @@
 
 set -eo pipefail
 
+pushd $(dirname "$0")/..
+
 # run generator tests
+mix deps.get
 mix test --include external
 
 # run gax tests
@@ -31,4 +34,6 @@ pushd clients/test_client
 mix deps.get
 mix test
 mix dialyzer --halt-exit-status
+popd
+
 popd
