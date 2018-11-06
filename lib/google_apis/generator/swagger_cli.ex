@@ -51,7 +51,8 @@ defmodule GoogleApis.Generator.SwaggerCli do
            } -c /local/specifications/config/#{filename} -t #{template_dir()} -o /tmp/out/#{
              client_library_name
            }",
-         {:ok, _} <- run_docker_command(generate_command) do
+         {:ok, output} <- run_docker_command(generate_command) do
+      IO.inspect output
       {:ok, tmp_dir}
     else
       err -> err
