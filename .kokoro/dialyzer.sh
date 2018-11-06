@@ -19,16 +19,10 @@ pushd $(dirname "$0")/..
 
 npm install
 
-# run generator tests
-if [ "${TEST_GENERATOR}" == "true" ]; then
-    mix deps.get
-    mix test --include external
-fi
-
 # run gax tests
 pushd clients/gax
 mix deps.get
-mix test
+mix dialyzer --halt-exit-status
 popd
 
 # create the test client
@@ -36,7 +30,7 @@ if [ "${TEST_GENERATOR}" == "true" ]; then
     TEMPLATE=gax mix do google_apis.convert TestClient, google_apis.build TestClient
     pushd clients/test_client
     mix deps.get
-    mix test
+    mix dialyzer --halt-exit-status
     popd
 fi
 
