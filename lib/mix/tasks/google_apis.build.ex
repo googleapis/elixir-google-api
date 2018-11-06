@@ -27,7 +27,12 @@ defmodule Mix.Tasks.GoogleApis.Build do
   end
 
   defp builder(apis) do
-    Enum.each(apis, &GoogleApis.generate_config/1)
-    Enum.each(apis, &GoogleApis.generate_client/1)
+    Enum.each(apis, &build/1)
+  end
+
+  def build(api) do
+    GoogleApis.generate_config(api)
+    GoogleApis.generate_client(api)
+    |> IO.inspect
   end
 end
