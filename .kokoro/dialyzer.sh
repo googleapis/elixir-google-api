@@ -1,4 +1,5 @@
-# Copyright 2017 Google Inc.
+#!/usr/bin/env bash
+# Copyright 2018 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,26 +13,28 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-defmodule Mix.Tasks.GoogleApis.Build do
-  use Mix.Task
+set -eo pipefail
 
-  @shortdoc "Create GoogleApi clients"
+pushd $(dirname "$0")/..
 
-  def run([only]) do
-    only
-    |> GoogleApis.ApiConfig.load()
-    |> builder()
-  end
-  def run(_) do
-    builder(GoogleApis.ApiConfig.load_all())
-  end
+npm install
+mkdir .cache
+export TEMPDIR=$(pwd)/.cache
+export TEMPLATE=gax
 
-  defp builder(apis) do
-    Enum.each(apis, &build/1)
-  end
+# run gax tests
+pushd clients/gax
+mix deps.get
+mix dialyzer --halt-exit-status
+popd
 
-  def build(api) do
-    GoogleApis.generate_config(api)
-    GoogleApis.generate_client(api)
-  end
-end
+# create the test client
+mix deps.get
+mix do google_apis.convert TestClient, google_apis.build TestClient
+
+pushd clients/test_client
+mix deps.get
+mix dialyzer --halt-exit-status
+popd
+
+popd
