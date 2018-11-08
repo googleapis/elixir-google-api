@@ -31,7 +31,7 @@ repository = git.clone(repository_url, depth=1)
 
 image = "gcr.io/cloud-devrel-kokoro-resources/elixir16"
 generate_command = "scripts/generate_client.sh"
-command = f"docker run --rm -v{repository}:/workspace -w /workspace {image} {generate_command}"
+command = f"docker run --rm -v{repository}:/workspace -v/var/run/docker.sock:/var/run/docker.sock -w /workspace {image} {generate_command}"
 
 if len(sys.argv) == 2:
     command = command + " " + sys.argv[1]
