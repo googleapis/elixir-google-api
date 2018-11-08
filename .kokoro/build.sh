@@ -34,7 +34,7 @@ popd
 # create the test client
 if [ "${TEST_GENERATOR}" == "true" ]; then
     mkdir .cache
-    TEMPDIR=.cache TEMPLATE=gax mix do google_apis.convert TestClient, google_apis.build TestClient
+    TEMPDIR=$(pwd)/.cache TEMPLATE=gax mix do google_apis.convert TestClient, google_apis.build TestClient
     pushd clients/test_client
     mix deps.get
     mix test
