@@ -39,20 +39,22 @@ defmodule GoogleApis.Generator.SwaggerCli do
 
   defp generate_code(filename, client_library_name) do
     tmp_dir = temp_path(client_library_name, Application.get_env(:google_apis, :tempdir))
+    File.mkdir_p!(tmp_dir)
 
     with {:ok, volume_name} <- run_docker_command("volume create"),
          {:ok, _} <- run_docker_command("pull #{image()}"),
          {:ok, container} <-
            run_docker_command("container create -v #{volume_name}:/data #{image()}"),
          {:ok, _} <- run_docker_command("cp . #{container}:/data"),
-         {:ok, _} <- run_docker_command("rm #{container}"),
          generate_command =
-           "run --rm -v #{volume_name}:/local -v #{tmp_dir}:/tmp/out #{image()} generate -l elixir -i /local/specifications/openapi/#{
+           "run --rm -v #{volume_name}:/local #{image()} generate -l elixir -i /local/specifications/openapi/#{
              filename
-           } -c /local/specifications/config/#{filename} -t #{template_dir()} -o /tmp/out/#{
+           } -c /local/specifications/config/#{filename} -t #{template_dir()} -o /local/#{
              client_library_name
            }",
-         {:ok, _} <- run_docker_command(generate_command) do
+         {:ok, _} <- run_docker_command(generate_command),
+         {:ok, _} <- run_docker_command("cp #{container}:/data/#{client_library_name} #{tmp_dir}"),
+         {:ok, _} <- run_docker_command("rm #{container}") do
       {:ok, tmp_dir}
     else
       err -> err
