@@ -41,6 +41,8 @@ defmodule GoogleApis.Generator.SwaggerCli do
     tmp_dir = Temp.path!("codegen-out-#{client_library_name}")
 
     with {:ok, volume_name} <- run_docker_command("volume create"),
+         {:ok, output} <- run_docker_command("pull #{image()}"),
+         IO.inspect(output),
          {:ok, container} <-
            run_docker_command("container create -v #{volume_name}:/data #{image()}"),
          {:ok, output} <- run_docker_command("cp . #{container}:/data"),
