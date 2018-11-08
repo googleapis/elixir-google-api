@@ -38,7 +38,8 @@ defmodule GoogleApis.Generator.SwaggerCli do
   end
 
   defp generate_code(filename, client_library_name) do
-    tmp_dir = Temp.path!("codegen-out-#{client_library_name}")
+    tmp_dir = temp_path(client_library_name, Application.get_env(:google_apis, :tempdir))
+    IO.inspect "=================#{tmp_dir}"
 
     with {:ok, volume_name} <- run_docker_command("volume create"),
          {:ok, output} <- run_docker_command("pull #{image()}"),
@@ -60,6 +61,13 @@ defmodule GoogleApis.Generator.SwaggerCli do
     else
       err -> err
     end
+  end
+
+  defp temp_path(client_library_name, nil) do
+    Temp.path!("codegen-out-#{client_library_name}")
+  end
+  defp temp_path(client_library_name, basedir) do
+    Temp.path!(prefix: "codegen-out-#{client_library_name}", basedir: basedir)
   end
 
   defp run_docker_command(command) do
