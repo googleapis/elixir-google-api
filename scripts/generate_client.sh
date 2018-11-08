@@ -17,6 +17,10 @@ set -eo pipefail
 
 pushd $(dirname "$0")/../
 
+export TEMPLATE=gax
+mkdir .cache
+export TEMPDIR=$(pwd)/.cache
+
 # install npm dependencies
 npm install
 
