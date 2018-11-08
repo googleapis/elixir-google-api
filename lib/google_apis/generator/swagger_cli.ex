@@ -67,6 +67,7 @@ defmodule GoogleApis.Generator.SwaggerCli do
         {:ok, String.trim_trailing(output)}
 
       {output, exit_code} ->
+        IO.inspect output
         {:error, "Exited with code #{exit_code}: " <> output}
     end
   end
