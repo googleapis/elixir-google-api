@@ -33,6 +33,5 @@ defmodule Mix.Tasks.GoogleApis.Build do
   def build(api) do
     GoogleApis.generate_config(api)
     GoogleApis.generate_client(api)
-    |> IO.inspect
   end
 end

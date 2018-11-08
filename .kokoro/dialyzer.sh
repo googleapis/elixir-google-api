@@ -18,6 +18,9 @@ set -eo pipefail
 pushd $(dirname "$0")/..
 
 npm install
+mkdir .cache
+export TEMPDIR=$(pwd)/.cache
+export TEMPLATE=gax
 
 # run gax tests
 pushd clients/gax
@@ -26,13 +29,12 @@ mix dialyzer --halt-exit-status
 popd
 
 # create the test client
-if [ "${TEST_GENERATOR}" == "true" ]; then
-    mix deps.get
-    TEMPLATE=gax mix do google_apis.convert TestClient, google_apis.build TestClient
-    pushd clients/test_client
-    mix deps.get
-    mix dialyzer --halt-exit-status
-    popd
-fi
+mix deps.get
+mix google_apis.convert TestClient, google_apis.build TestClient
+
+pushd clients/test_client
+mix deps.get
+mix dialyzer --halt-exit-status
+popd
 
 popd
