@@ -43,7 +43,8 @@ defmodule GoogleApis.Generator.SwaggerCli do
     with {:ok, volume_name} <- run_docker_command("volume create"),
          {:ok, container} <-
            run_docker_command("container create -v #{volume_name}:/data #{image()}"),
-         {:ok, _} <- run_docker_command("cp . #{container}:/data"),
+         {:ok, output} <- run_docker_command("cp . #{container}:/data"),
+         IO.inspect output,
          {:ok, _} <- run_docker_command("rm #{container}"),
          generate_command =
            "run --rm -v #{volume_name}:/local -v #{tmp_dir}:/tmp/out #{image()} generate -l elixir -i /local/specifications/openapi/#{
