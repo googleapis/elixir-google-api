@@ -22,6 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.CustomerEncryptionKey do
 
   ## Attributes
 
+  - kmsKeyName (String.t): The name of the encryption key that is stored in Google Cloud KMS. Defaults to: `null`.
   - rawKey (String.t): Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource. Defaults to: `null`.
   - sha256 (String.t): [Output only] The RFC 4648 base64 encoded SHA-256 hash of the customer-supplied encryption key that protects this resource. Defaults to: `null`.
   """
@@ -29,10 +30,12 @@ defmodule GoogleApi.Compute.V1.Model.CustomerEncryptionKey do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :kmsKeyName => any(),
           :rawKey => any(),
           :sha256 => any()
         }
 
+  field(:kmsKeyName)
   field(:rawKey)
   field(:sha256)
 end

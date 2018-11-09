@@ -30,7 +30,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   ## Parameters
 
   - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -47,8 +47,12 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   """
   @spec androidenterprise_enterprises_acknowledge_notification_set(Tesla.Env.client(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def androidenterprise_enterprises_acknowledge_notification_set(connection, opts \\ []) do
-    optional_params = %{
+  def androidenterprise_enterprises_acknowledge_notification_set(
+        connection,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -63,11 +67,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/enterprises/acknowledgeNotificationSet")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -76,7 +80,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   ## Parameters
 
   - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -94,8 +98,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   """
   @spec androidenterprise_enterprises_complete_signup(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.Enterprise.t()} | {:error, Tesla.Env.t()}
-  def androidenterprise_enterprises_complete_signup(connection, opts \\ []) do
-    optional_params = %{
+  def androidenterprise_enterprises_complete_signup(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -111,11 +115,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/enterprises/completeSignup")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidEnterprise.V1.Model.Enterprise{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.Enterprise{}])
   end
 
   @doc """
@@ -125,7 +129,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
 
   - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
   - enterprise_id (String.t): The ID of the enterprise.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -143,8 +147,13 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   @spec androidenterprise_enterprises_create_web_token(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebToken.t()}
           | {:error, Tesla.Env.t()}
-  def androidenterprise_enterprises_create_web_token(connection, enterprise_id, opts \\ []) do
-    optional_params = %{
+  def androidenterprise_enterprises_create_web_token(
+        connection,
+        enterprise_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -161,58 +170,13 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       |> Request.url("/enterprises/{enterpriseId}/createWebToken", %{
         "enterpriseId" => URI.encode_www_form(enterprise_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebToken{})
-  end
-
-  @doc """
-  Deletes the binding between the EMM and enterprise. This is now deprecated. Use this method only to unenroll customers that were previously enrolled with the insert call, then enroll them again with the enroll call.
-
-  ## Parameters
-
-  - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
-  - enterprise_id (String.t): The ID of the enterprise.
-  - opts (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-
-  ## Returns
-
-  {:ok, %{}} on success
-  {:error, info} on failure
-  """
-  @spec androidenterprise_enterprises_delete(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
-  def androidenterprise_enterprises_delete(connection, enterprise_id, opts \\ []) do
-    optional_params = %{
-      :alt => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :userIp => :query
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:delete)
-      |> Request.url("/enterprises/{enterpriseId}", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id)
-      })
-      |> Request.add_optional_params(optional_params, opts)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebToken{}]
+    )
   end
 
   @doc """
@@ -222,7 +186,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
 
   - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
   - token (String.t): The token provided by the enterprise to register the EMM.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -239,8 +203,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   """
   @spec androidenterprise_enterprises_enroll(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.Enterprise.t()} | {:error, Tesla.Env.t()}
-  def androidenterprise_enterprises_enroll(connection, token, opts \\ []) do
-    optional_params = %{
+  def androidenterprise_enterprises_enroll(connection, token, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -256,11 +220,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       |> Request.method(:post)
       |> Request.url("/enterprises/enroll")
       |> Request.add_param(:query, :token, token)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidEnterprise.V1.Model.Enterprise{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.Enterprise{}])
   end
 
   @doc """
@@ -269,7 +233,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   ## Parameters
 
   - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -286,8 +250,12 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   """
   @spec androidenterprise_enterprises_generate_signup_url(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.SignupInfo.t()} | {:error, Tesla.Env.t()}
-  def androidenterprise_enterprises_generate_signup_url(connection, opts \\ []) do
-    optional_params = %{
+  def androidenterprise_enterprises_generate_signup_url(
+        connection,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -302,11 +270,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/enterprises/signupUrl")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidEnterprise.V1.Model.SignupInfo{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.SignupInfo{}])
   end
 
   @doc """
@@ -316,7 +284,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
 
   - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
   - enterprise_id (String.t): The ID of the enterprise.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -332,8 +300,13 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   """
   @spec androidenterprise_enterprises_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.Enterprise.t()} | {:error, Tesla.Env.t()}
-  def androidenterprise_enterprises_get(connection, enterprise_id, opts \\ []) do
-    optional_params = %{
+  def androidenterprise_enterprises_get(
+        connection,
+        enterprise_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -349,11 +322,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       |> Request.url("/enterprises/{enterpriseId}", %{
         "enterpriseId" => URI.encode_www_form(enterprise_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidEnterprise.V1.Model.Enterprise{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.Enterprise{}])
   end
 
   @doc """
@@ -363,7 +336,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
 
   - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
   - enterprise_id (String.t): The ID of the enterprise.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -387,9 +360,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   def androidenterprise_enterprises_get_android_device_policy_config(
         connection,
         enterprise_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -405,11 +379,13 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       |> Request.url("/enterprises/{enterpriseId}/androidDevicePolicyConfig", %{
         "enterpriseId" => URI.encode_www_form(enterprise_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidEnterprise.V1.Model.AndroidDevicePolicyConfig{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.AndroidDevicePolicyConfig{}]
+    )
   end
 
   @doc """
@@ -419,7 +395,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
 
   - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
   - enterprise_id (String.t): The ID of the enterprise.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -440,8 +416,13 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.ServiceAccount.t()} | {:error, Tesla.Env.t()}
-  def androidenterprise_enterprises_get_service_account(connection, enterprise_id, opts \\ []) do
-    optional_params = %{
+  def androidenterprise_enterprises_get_service_account(
+        connection,
+        enterprise_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -458,11 +439,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       |> Request.url("/enterprises/{enterpriseId}/serviceAccount", %{
         "enterpriseId" => URI.encode_www_form(enterprise_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidEnterprise.V1.Model.ServiceAccount{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.ServiceAccount{}])
   end
 
   @doc """
@@ -472,7 +453,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
 
   - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
   - enterprise_id (String.t): The ID of the enterprise.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -488,8 +469,13 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   """
   @spec androidenterprise_enterprises_get_store_layout(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.StoreLayout.t()} | {:error, Tesla.Env.t()}
-  def androidenterprise_enterprises_get_store_layout(connection, enterprise_id, opts \\ []) do
-    optional_params = %{
+  def androidenterprise_enterprises_get_store_layout(
+        connection,
+        enterprise_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -505,59 +491,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       |> Request.url("/enterprises/{enterpriseId}/storeLayout", %{
         "enterpriseId" => URI.encode_www_form(enterprise_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidEnterprise.V1.Model.StoreLayout{})
-  end
-
-  @doc """
-  Establishes the binding between the EMM and an enterprise. This is now deprecated; use enroll instead.
-
-  ## Parameters
-
-  - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
-  - token (String.t): The token provided by the enterprise to register the EMM.
-  - opts (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (Enterprise): 
-
-  ## Returns
-
-  {:ok, %GoogleApi.AndroidEnterprise.V1.Model.Enterprise{}} on success
-  {:error, info} on failure
-  """
-  @spec androidenterprise_enterprises_insert(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AndroidEnterprise.V1.Model.Enterprise.t()} | {:error, Tesla.Env.t()}
-  def androidenterprise_enterprises_insert(connection, token, opts \\ []) do
-    optional_params = %{
-      :alt => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :userIp => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:post)
-      |> Request.url("/enterprises")
-      |> Request.add_param(:query, :token, token)
-      |> Request.add_optional_params(optional_params, opts)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidEnterprise.V1.Model.Enterprise{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.StoreLayout{}])
   end
 
   @doc """
@@ -567,7 +505,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
 
   - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
   - domain (String.t): The exact primary domain name of the enterprise to look up.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -584,8 +522,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   @spec androidenterprise_enterprises_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.EnterprisesListResponse.t()}
           | {:error, Tesla.Env.t()}
-  def androidenterprise_enterprises_list(connection, domain, opts \\ []) do
-    optional_params = %{
+  def androidenterprise_enterprises_list(connection, domain, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -600,11 +538,13 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       |> Request.method(:get)
       |> Request.url("/enterprises")
       |> Request.add_param(:query, :domain, domain)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidEnterprise.V1.Model.EnterprisesListResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.EnterprisesListResponse{}]
+    )
   end
 
   @doc """
@@ -613,7 +553,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   ## Parameters
 
   - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -631,8 +571,12 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   @spec androidenterprise_enterprises_pull_notification_set(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.NotificationSet.t()}
           | {:error, Tesla.Env.t()}
-  def androidenterprise_enterprises_pull_notification_set(connection, opts \\ []) do
-    optional_params = %{
+  def androidenterprise_enterprises_pull_notification_set(
+        connection,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -647,11 +591,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/enterprises/pullNotificationSet")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidEnterprise.V1.Model.NotificationSet{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.NotificationSet{}])
   end
 
   @doc """
@@ -661,7 +605,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
 
   - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
   - enterprise_id (String.t): The ID of the enterprise.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -686,9 +630,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   def androidenterprise_enterprises_send_test_push_notification(
         connection,
         enterprise_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -704,12 +649,16 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       |> Request.url("/enterprises/{enterpriseId}/sendTestPushNotification", %{
         "enterpriseId" => URI.encode_www_form(enterprise_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.AndroidEnterprise.V1.Model.EnterprisesSendTestPushNotificationResponse{}
+      opts ++
+        [
+          struct:
+            %GoogleApi.AndroidEnterprise.V1.Model.EnterprisesSendTestPushNotificationResponse{}
+        ]
     )
   end
 
@@ -720,7 +669,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
 
   - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
   - enterprise_id (String.t): The ID of the enterprise.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -738,8 +687,13 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   @spec androidenterprise_enterprises_set_account(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.EnterpriseAccount.t()}
           | {:error, Tesla.Env.t()}
-  def androidenterprise_enterprises_set_account(connection, enterprise_id, opts \\ []) do
-    optional_params = %{
+  def androidenterprise_enterprises_set_account(
+        connection,
+        enterprise_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -756,11 +710,13 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       |> Request.url("/enterprises/{enterpriseId}/account", %{
         "enterpriseId" => URI.encode_www_form(enterprise_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidEnterprise.V1.Model.EnterpriseAccount{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.EnterpriseAccount{}]
+    )
   end
 
   @doc """
@@ -770,7 +726,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
 
   - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
   - enterprise_id (String.t): The ID of the enterprise.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -795,9 +751,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   def androidenterprise_enterprises_set_android_device_policy_config(
         connection,
         enterprise_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -814,11 +771,13 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       |> Request.url("/enterprises/{enterpriseId}/androidDevicePolicyConfig", %{
         "enterpriseId" => URI.encode_www_form(enterprise_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidEnterprise.V1.Model.AndroidDevicePolicyConfig{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.AndroidDevicePolicyConfig{}]
+    )
   end
 
   @doc """
@@ -828,7 +787,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
 
   - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
   - enterprise_id (String.t): The ID of the enterprise.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -845,8 +804,13 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   """
   @spec androidenterprise_enterprises_set_store_layout(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.StoreLayout.t()} | {:error, Tesla.Env.t()}
-  def androidenterprise_enterprises_set_store_layout(connection, enterprise_id, opts \\ []) do
-    optional_params = %{
+  def androidenterprise_enterprises_set_store_layout(
+        connection,
+        enterprise_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -863,11 +827,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       |> Request.url("/enterprises/{enterpriseId}/storeLayout", %{
         "enterpriseId" => URI.encode_www_form(enterprise_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidEnterprise.V1.Model.StoreLayout{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.StoreLayout{}])
   end
 
   @doc """
@@ -877,7 +841,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
 
   - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
   - enterprise_id (String.t): The ID of the enterprise.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -893,8 +857,13 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   """
   @spec androidenterprise_enterprises_unenroll(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def androidenterprise_enterprises_unenroll(connection, enterprise_id, opts \\ []) do
-    optional_params = %{
+  def androidenterprise_enterprises_unenroll(
+        connection,
+        enterprise_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -910,10 +879,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       |> Request.url("/enterprises/{enterpriseId}/unenroll", %{
         "enterpriseId" => URI.encode_www_form(enterprise_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 end

@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Slides.V1.Model.TableRange do
   @moduledoc """
-  A table range represents a reference to a subset of a table.  It&#39;s important to note that the cells specified by a table range do not necessarily form a rectangle. For example, let&#39;s say we have a 3 x 3 table where all the cells of the last row are merged together. The table looks like this:                [             ]  A table range with location &#x3D; (0, 0), row span &#x3D; 3 and column span &#x3D; 2 specifies the following cells:     x     x    [      x      ]
+  A table range represents a reference to a subset of a table.  It&#39;s important to note that the cells specified by a table range do not necessarily form a rectangle. For example, let&#39;s say we have a 3 x 3 table where all the cells of the last row are merged together. The table looks like this:                      [             ]  A table range with location &#x3D; (0, 0), row span &#x3D; 3 and column span &#x3D; 2 specifies the following cells:        x     x       [      x      ]
 
   ## Attributes
 

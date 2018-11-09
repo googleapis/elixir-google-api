@@ -31,7 +31,7 @@ defmodule GoogleApi.YouTubeAnalytics.V1.Api.Groups do
 
   - connection (GoogleApi.YouTubeAnalytics.V1.Connection): Connection to server
   - id (String.t): The id parameter specifies the YouTube group ID for the group that is being deleted.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,8 @@ defmodule GoogleApi.YouTubeAnalytics.V1.Api.Groups do
   """
   @spec youtube_analytics_groups_delete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def youtube_analytics_groups_delete(connection, id, opts \\ []) do
-    optional_params = %{
+  def youtube_analytics_groups_delete(connection, id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -65,11 +65,11 @@ defmodule GoogleApi.YouTubeAnalytics.V1.Api.Groups do
       |> Request.method(:delete)
       |> Request.url("/groups")
       |> Request.add_param(:query, :id, id)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -78,7 +78,7 @@ defmodule GoogleApi.YouTubeAnalytics.V1.Api.Groups do
   ## Parameters
 
   - connection (GoogleApi.YouTubeAnalytics.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -96,8 +96,8 @@ defmodule GoogleApi.YouTubeAnalytics.V1.Api.Groups do
   """
   @spec youtube_analytics_groups_insert(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.YouTubeAnalytics.V1.Model.Group.t()} | {:error, Tesla.Env.t()}
-  def youtube_analytics_groups_insert(connection, opts \\ []) do
-    optional_params = %{
+  def youtube_analytics_groups_insert(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -113,11 +113,11 @@ defmodule GoogleApi.YouTubeAnalytics.V1.Api.Groups do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/groups")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.YouTubeAnalytics.V1.Model.Group{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTubeAnalytics.V1.Model.Group{}])
   end
 
   @doc """
@@ -126,7 +126,7 @@ defmodule GoogleApi.YouTubeAnalytics.V1.Api.Groups do
   ## Parameters
 
   - connection (GoogleApi.YouTubeAnalytics.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -147,8 +147,8 @@ defmodule GoogleApi.YouTubeAnalytics.V1.Api.Groups do
   @spec youtube_analytics_groups_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.YouTubeAnalytics.V1.Model.GroupListResponse.t()}
           | {:error, Tesla.Env.t()}
-  def youtube_analytics_groups_list(connection, opts \\ []) do
-    optional_params = %{
+  def youtube_analytics_groups_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -166,11 +166,11 @@ defmodule GoogleApi.YouTubeAnalytics.V1.Api.Groups do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/groups")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.YouTubeAnalytics.V1.Model.GroupListResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTubeAnalytics.V1.Model.GroupListResponse{}])
   end
 
   @doc """
@@ -179,7 +179,7 @@ defmodule GoogleApi.YouTubeAnalytics.V1.Api.Groups do
   ## Parameters
 
   - connection (GoogleApi.YouTubeAnalytics.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -197,8 +197,8 @@ defmodule GoogleApi.YouTubeAnalytics.V1.Api.Groups do
   """
   @spec youtube_analytics_groups_update(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.YouTubeAnalytics.V1.Model.Group.t()} | {:error, Tesla.Env.t()}
-  def youtube_analytics_groups_update(connection, opts \\ []) do
-    optional_params = %{
+  def youtube_analytics_groups_update(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -214,10 +214,10 @@ defmodule GoogleApi.YouTubeAnalytics.V1.Api.Groups do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/groups")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.YouTubeAnalytics.V1.Model.Group{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTubeAnalytics.V1.Model.Group{}])
   end
 end

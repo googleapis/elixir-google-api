@@ -18,12 +18,12 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.RelativeDateRange do
   @moduledoc """
-  A relative date range, specified by an offset and a duration. The supported range of dates begins 30 days before today and ends today. I.e. the limits for these values are: offset_days &gt;&#x3D; 0 duration_days &gt;&#x3D; 1 offset_days + duration_days &lt;&#x3D; 30
+  A relative date range, specified by an offset and a duration. The supported range of dates begins 30 days before today and ends today, i.e., the limits for these values are: offset_days &gt;&#x3D; 0 duration_days &gt;&#x3D; 1 offset_days + duration_days &lt;&#x3D; 30
 
   ## Attributes
 
-  - durationDays (integer()): The number of days in the requested date range. E.g. for a range spanning today, 1. For a range spanning the last 7 days, 7. Defaults to: `null`.
-  - offsetDays (integer()): The end date of the filter set, specified as the number of days before today. E.g. for a range where the last date is today, 0. Defaults to: `null`.
+  - durationDays (integer()): The number of days in the requested date range, e.g., for a range spanning today: 1. For a range spanning the last 7 days: 7. Defaults to: `null`.
+  - offsetDays (integer()): The end date of the filter set, specified as the number of days before today, e.g., for a range where the last date is today: 0. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

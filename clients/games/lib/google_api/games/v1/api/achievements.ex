@@ -32,7 +32,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
   - connection (GoogleApi.Games.V1.Connection): Connection to server
   - achievement_id (String.t): The ID of the achievement used by this method.
   - steps_to_increment (integer()): The number of steps to increment.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -50,8 +50,14 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
   @spec games_achievements_increment(Tesla.Env.client(), String.t(), integer(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.AchievementIncrementResponse.t()}
           | {:error, Tesla.Env.t()}
-  def games_achievements_increment(connection, achievement_id, steps_to_increment, opts \\ []) do
-    optional_params = %{
+  def games_achievements_increment(
+        connection,
+        achievement_id,
+        steps_to_increment,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -69,11 +75,11 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
         "achievementId" => URI.encode_www_form(achievement_id)
       })
       |> Request.add_param(:query, :stepsToIncrement, steps_to_increment)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.AchievementIncrementResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.AchievementIncrementResponse{}])
   end
 
   @doc """
@@ -83,7 +89,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
   - player_id (String.t): A player ID. A value of me may be used in place of the authenticated player&#39;s ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -104,8 +110,8 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
   @spec games_achievements_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.PlayerAchievementListResponse.t()}
           | {:error, Tesla.Env.t()}
-  def games_achievements_list(connection, player_id, opts \\ []) do
-    optional_params = %{
+  def games_achievements_list(connection, player_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -125,11 +131,13 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
       |> Request.url("/players/{playerId}/achievements", %{
         "playerId" => URI.encode_www_form(player_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.PlayerAchievementListResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Games.V1.Model.PlayerAchievementListResponse{}]
+    )
   end
 
   @doc """
@@ -139,7 +147,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
   - achievement_id (String.t): The ID of the achievement used by this method.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -155,8 +163,8 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
   """
   @spec games_achievements_reveal(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.AchievementRevealResponse.t()} | {:error, Tesla.Env.t()}
-  def games_achievements_reveal(connection, achievement_id, opts \\ []) do
-    optional_params = %{
+  def games_achievements_reveal(connection, achievement_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -172,11 +180,11 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
       |> Request.url("/achievements/{achievementId}/reveal", %{
         "achievementId" => URI.encode_www_form(achievement_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.AchievementRevealResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.AchievementRevealResponse{}])
   end
 
   @doc """
@@ -187,7 +195,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
   - connection (GoogleApi.Games.V1.Connection): Connection to server
   - achievement_id (String.t): The ID of the achievement used by this method.
   - steps (integer()): The minimum value to set the steps to.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -209,8 +217,14 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
         ) ::
           {:ok, GoogleApi.Games.V1.Model.AchievementSetStepsAtLeastResponse.t()}
           | {:error, Tesla.Env.t()}
-  def games_achievements_set_steps_at_least(connection, achievement_id, steps, opts \\ []) do
-    optional_params = %{
+  def games_achievements_set_steps_at_least(
+        connection,
+        achievement_id,
+        steps,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -227,11 +241,13 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
         "achievementId" => URI.encode_www_form(achievement_id)
       })
       |> Request.add_param(:query, :steps, steps)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.AchievementSetStepsAtLeastResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Games.V1.Model.AchievementSetStepsAtLeastResponse{}]
+    )
   end
 
   @doc """
@@ -241,7 +257,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
   - achievement_id (String.t): The ID of the achievement used by this method.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -249,6 +265,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :builtinGameId (String.t): Override used only by built-in games in Play Games application.
 
   ## Returns
 
@@ -257,15 +274,16 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
   """
   @spec games_achievements_unlock(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.AchievementUnlockResponse.t()} | {:error, Tesla.Env.t()}
-  def games_achievements_unlock(connection, achievement_id, opts \\ []) do
-    optional_params = %{
+  def games_achievements_unlock(connection, achievement_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :userIp => :query,
+      :builtinGameId => :query
     }
 
     request =
@@ -274,11 +292,11 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
       |> Request.url("/achievements/{achievementId}/unlock", %{
         "achievementId" => URI.encode_www_form(achievement_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.AchievementUnlockResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.AchievementUnlockResponse{}])
   end
 
   @doc """
@@ -287,7 +305,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
   ## Parameters
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -295,6 +313,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :builtinGameId (String.t): Override used only by built-in games in Play Games application.
     - :body (AchievementUpdateMultipleRequest): 
 
   ## Returns
@@ -305,8 +324,8 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
   @spec games_achievements_update_multiple(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.AchievementUpdateMultipleResponse.t()}
           | {:error, Tesla.Env.t()}
-  def games_achievements_update_multiple(connection, opts \\ []) do
-    optional_params = %{
+  def games_achievements_update_multiple(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -314,6 +333,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :builtinGameId => :query,
       :body => :body
     }
 
@@ -321,10 +341,12 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/achievements/updateMultiple")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.AchievementUpdateMultipleResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Games.V1.Model.AchievementUpdateMultipleResponse{}]
+    )
   end
 end

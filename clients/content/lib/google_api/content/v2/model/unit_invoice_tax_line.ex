@@ -22,9 +22,9 @@ defmodule GoogleApi.Content.V2.Model.UnitInvoiceTaxLine do
 
   ## Attributes
 
-  - taxAmount (Price): Tax amount for the tax type. Defaults to: `null`.
-  - taxName (String.t): Optional name of the tax type. Defaults to: `null`.
-  - taxType (String.t): Type of the tax. Defaults to: `null`.
+  - taxAmount (Price): [required] Tax amount for the tax type. Defaults to: `null`.
+  - taxName (String.t): Optional name of the tax type. This should only be provided if taxType is otherFeeTax. Defaults to: `null`.
+  - taxType (String.t): [required] Type of the tax. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

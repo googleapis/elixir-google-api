@@ -31,7 +31,7 @@ defmodule GoogleApi.Plus.V1.Api.Activities do
 
   - connection (GoogleApi.Plus.V1.Connection): Connection to server
   - activity_id (String.t): The ID of the activity to get.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -47,8 +47,8 @@ defmodule GoogleApi.Plus.V1.Api.Activities do
   """
   @spec plus_activities_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Plus.V1.Model.Activity.t()} | {:error, Tesla.Env.t()}
-  def plus_activities_get(connection, activity_id, opts \\ []) do
-    optional_params = %{
+  def plus_activities_get(connection, activity_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -64,11 +64,11 @@ defmodule GoogleApi.Plus.V1.Api.Activities do
       |> Request.url("/activities/{activityId}", %{
         "activityId" => URI.encode_www_form(activity_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Plus.V1.Model.Activity{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Plus.V1.Model.Activity{}])
   end
 
   @doc """
@@ -79,7 +79,7 @@ defmodule GoogleApi.Plus.V1.Api.Activities do
   - connection (GoogleApi.Plus.V1.Connection): Connection to server
   - user_id (String.t): The ID of the user to get activities for. The special value \&quot;me\&quot; can be used to indicate the authenticated user.
   - collection (String.t): The collection of activities to list.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -97,8 +97,8 @@ defmodule GoogleApi.Plus.V1.Api.Activities do
   """
   @spec plus_activities_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Plus.V1.Model.ActivityFeed.t()} | {:error, Tesla.Env.t()}
-  def plus_activities_list(connection, user_id, collection, opts \\ []) do
-    optional_params = %{
+  def plus_activities_list(connection, user_id, collection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -117,11 +117,11 @@ defmodule GoogleApi.Plus.V1.Api.Activities do
         "userId" => URI.encode_www_form(user_id),
         "collection" => URI.encode_www_form(collection)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Plus.V1.Model.ActivityFeed{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Plus.V1.Model.ActivityFeed{}])
   end
 
   @doc """
@@ -131,7 +131,7 @@ defmodule GoogleApi.Plus.V1.Api.Activities do
 
   - connection (GoogleApi.Plus.V1.Connection): Connection to server
   - query (String.t): Full-text search query string.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -151,8 +151,8 @@ defmodule GoogleApi.Plus.V1.Api.Activities do
   """
   @spec plus_activities_search(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Plus.V1.Model.ActivityFeed.t()} | {:error, Tesla.Env.t()}
-  def plus_activities_search(connection, query, opts \\ []) do
-    optional_params = %{
+  def plus_activities_search(connection, query, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -171,10 +171,10 @@ defmodule GoogleApi.Plus.V1.Api.Activities do
       |> Request.method(:get)
       |> Request.url("/activities")
       |> Request.add_param(:query, :query, query)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Plus.V1.Model.ActivityFeed{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Plus.V1.Model.ActivityFeed{}])
   end
 end

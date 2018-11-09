@@ -25,6 +25,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesListResponse do
   - items ([DatabaseInstance]): List of database instance resources. Defaults to: `null`.
   - kind (String.t): This is always sql#instancesList. Defaults to: `null`.
   - nextPageToken (String.t): The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results. Defaults to: `null`.
+  - warnings ([ApiWarning]): List of warnings that ocurred while handling the request. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,12 +33,14 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesListResponse do
   @type t :: %__MODULE__{
           :items => list(GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance.t()),
           :kind => any(),
-          :nextPageToken => any()
+          :nextPageToken => any(),
+          :warnings => list(GoogleApi.SQLAdmin.V1beta4.Model.ApiWarning.t())
         }
 
   field(:items, as: GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance, type: :list)
   field(:kind)
   field(:nextPageToken)
+  field(:warnings, as: GoogleApi.SQLAdmin.V1beta4.Model.ApiWarning, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.InstancesListResponse do

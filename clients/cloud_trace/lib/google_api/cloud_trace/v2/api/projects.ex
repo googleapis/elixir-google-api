@@ -31,18 +31,18 @@ defmodule GoogleApi.CloudTrace.V2.Api.Projects do
 
   - connection (GoogleApi.CloudTrace.V2.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. Required. The name of the project where the spans belong. The format is &#x60;projects/[PROJECT_ID]&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (BatchWriteSpansRequest): 
 
   ## Returns
@@ -52,19 +52,24 @@ defmodule GoogleApi.CloudTrace.V2.Api.Projects do
   """
   @spec cloudtrace_projects_traces_batch_write(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudTrace.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def cloudtrace_projects_traces_batch_write(connection, projects_id, opts \\ []) do
-    optional_params = %{
+  def cloudtrace_projects_traces_batch_write(
+        connection,
+        projects_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
       :key => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :fields => :query,
-      :uploadType => :query,
       :body => :body
     }
 
@@ -74,11 +79,11 @@ defmodule GoogleApi.CloudTrace.V2.Api.Projects do
       |> Request.url("/v2/projects/{projectsId}/traces:batchWrite", %{
         "projectsId" => URI.encode_www_form(projects_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudTrace.V2.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudTrace.V2.Model.Empty{}])
   end
 
   @doc """
@@ -90,18 +95,18 @@ defmodule GoogleApi.CloudTrace.V2.Api.Projects do
   - projects_id (String.t): Part of &#x60;name&#x60;. The resource name of the span in the following format:      projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/SPAN_ID is a unique identifier for a trace within a project; it is a 32-character hexadecimal encoding of a 16-byte array.  [SPAN_ID] is a unique identifier for a span within a trace; it is a 16-character hexadecimal encoding of an 8-byte array.
   - traces_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - spans_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (Span): 
 
   ## Returns
@@ -121,20 +126,21 @@ defmodule GoogleApi.CloudTrace.V2.Api.Projects do
         projects_id,
         traces_id,
         spans_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
       :key => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :fields => :query,
-      :uploadType => :query,
       :body => :body
     }
 
@@ -146,10 +152,10 @@ defmodule GoogleApi.CloudTrace.V2.Api.Projects do
         "tracesId" => URI.encode_www_form(traces_id),
         "spansId" => URI.encode_www_form(spans_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudTrace.V2.Model.Span{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudTrace.V2.Model.Span{}])
   end
 end

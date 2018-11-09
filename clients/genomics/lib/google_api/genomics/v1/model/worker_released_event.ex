@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Genomics.V1.Model.WorkerReleasedEvent do
   @moduledoc """
-  This event is generated when the worker VM that was assigned to the pipeline has been released (i.e., deleted).
+  An event generated when the worker VM that was assigned to the pipeline has been released (deleted).
 
   ## Attributes
 

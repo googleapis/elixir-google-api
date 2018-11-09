@@ -31,7 +31,7 @@ defmodule GoogleApi.YouTube.V3.Api.Thumbnails do
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
   - video_id (String.t): The videoId parameter specifies a YouTube video ID for which the custom video thumbnail is being provided.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,8 @@ defmodule GoogleApi.YouTube.V3.Api.Thumbnails do
   """
   @spec youtube_thumbnails_set(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.ThumbnailSetResponse.t()} | {:error, Tesla.Env.t()}
-  def youtube_thumbnails_set(connection, video_id, opts \\ []) do
-    optional_params = %{
+  def youtube_thumbnails_set(connection, video_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -65,11 +65,11 @@ defmodule GoogleApi.YouTube.V3.Api.Thumbnails do
       |> Request.method(:post)
       |> Request.url("/youtube/v3/thumbnails/set")
       |> Request.add_param(:query, :videoId, video_id)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.ThumbnailSetResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTube.V3.Model.ThumbnailSetResponse{}])
   end
 
   @doc """
@@ -80,7 +80,7 @@ defmodule GoogleApi.YouTube.V3.Api.Thumbnails do
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
   - video_id (String.t): The videoId parameter specifies a YouTube video ID for which the custom video thumbnail is being provided.
   - upload_type (String.t): Upload type. Must be \&quot;resumable\&quot;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -97,8 +97,14 @@ defmodule GoogleApi.YouTube.V3.Api.Thumbnails do
   """
   @spec youtube_thumbnails_set_resumable(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def youtube_thumbnails_set_resumable(connection, video_id, upload_type, opts \\ []) do
-    optional_params = %{
+  def youtube_thumbnails_set_resumable(
+        connection,
+        video_id,
+        upload_type,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -115,11 +121,11 @@ defmodule GoogleApi.YouTube.V3.Api.Thumbnails do
       |> Request.url("/resumable/upload/youtube/v3/thumbnails/set")
       |> Request.add_param(:query, :videoId, video_id)
       |> Request.add_param(:query, :uploadType, upload_type)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -131,7 +137,7 @@ defmodule GoogleApi.YouTube.V3.Api.Thumbnails do
   - video_id (String.t): The videoId parameter specifies a YouTube video ID for which the custom video thumbnail is being provided.
   - upload_type (String.t): Upload type. Must be \&quot;multipart\&quot;.
   - data (String.t): The file to upload.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -153,8 +159,15 @@ defmodule GoogleApi.YouTube.V3.Api.Thumbnails do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.YouTube.V3.Model.ThumbnailSetResponse.t()} | {:error, Tesla.Env.t()}
-  def youtube_thumbnails_set_simple(connection, video_id, upload_type, data, opts \\ []) do
-    optional_params = %{
+  def youtube_thumbnails_set_simple(
+        connection,
+        video_id,
+        upload_type,
+        data,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -172,10 +185,10 @@ defmodule GoogleApi.YouTube.V3.Api.Thumbnails do
       |> Request.add_param(:query, :videoId, video_id)
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_param(:file, :data, data)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.ThumbnailSetResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTube.V3.Model.ThumbnailSetResponse{}])
   end
 end

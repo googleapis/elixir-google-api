@@ -22,11 +22,11 @@ defmodule GoogleApi.Calendar.V3.Model.FreeBusyRequest do
 
   ## Attributes
 
-  - calendarExpansionMax (integer()): Maximal number of calendars for which FreeBusy information is to be provided. Optional. Defaults to: `null`.
-  - groupExpansionMax (integer()): Maximal number of calendar identifiers to be provided for a single group. Optional. An error will be returned for a group with more members than this value. Defaults to: `null`.
+  - calendarExpansionMax (integer()): Maximal number of calendars for which FreeBusy information is to be provided. Optional. Maximum value is 50. Defaults to: `null`.
+  - groupExpansionMax (integer()): Maximal number of calendar identifiers to be provided for a single group. Optional. An error is returned for a group with more members than this value. Maximum value is 100. Defaults to: `null`.
   - items ([FreeBusyRequestItem]): List of calendars and/or groups to query. Defaults to: `null`.
-  - timeMax (DateTime.t): The end of the interval for the query. Defaults to: `null`.
-  - timeMin (DateTime.t): The start of the interval for the query. Defaults to: `null`.
+  - timeMax (DateTime.t): The end of the interval for the query formatted as per RFC3339. Defaults to: `null`.
+  - timeMin (DateTime.t): The start of the interval for the query formatted as per RFC3339. Defaults to: `null`.
   - timeZone (String.t): Time zone used in the response. Optional. The default is UTC. Defaults to: `null`.
   """
 

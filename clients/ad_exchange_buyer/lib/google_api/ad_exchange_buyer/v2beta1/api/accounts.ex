@@ -31,18 +31,18 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
 
   - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
   - account_id (String.t): Unique numerical account ID for the buyer of which the client buyer is a customer; the sponsor buyer to create a client for. (required)
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (Client): 
 
   ## Returns
@@ -52,19 +52,24 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   """
   @spec adexchangebuyer2_accounts_clients_create(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Client.t()} | {:error, Tesla.Env.t()}
-  def adexchangebuyer2_accounts_clients_create(connection, account_id, opts \\ []) do
-    optional_params = %{
+  def adexchangebuyer2_accounts_clients_create(
+        connection,
+        account_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
       :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -74,11 +79,11 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       |> Request.url("/v2beta1/accounts/{accountId}/clients", %{
         "accountId" => URI.encode_www_form(account_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.Client{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.Client{}])
   end
 
   @doc """
@@ -89,18 +94,18 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
   - account_id (String.t): Numerical account ID of the client&#39;s sponsor buyer. (required)
   - client_account_id (String.t): Numerical account ID of the client buyer to retrieve. (required)
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
 
   ## Returns
 
@@ -113,19 +118,25 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Client.t()} | {:error, Tesla.Env.t()}
-  def adexchangebuyer2_accounts_clients_get(connection, account_id, client_account_id, opts \\ []) do
-    optional_params = %{
+  def adexchangebuyer2_accounts_clients_get(
+        connection,
+        account_id,
+        client_account_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query
+      :fields => :query
     }
 
     request =
@@ -135,11 +146,11 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "accountId" => URI.encode_www_form(account_id),
         "clientAccountId" => URI.encode_www_form(client_account_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.Client{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.Client{}])
   end
 
   @doc """
@@ -150,18 +161,18 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
   - account_id (String.t): Numerical account ID of the client&#39;s sponsor buyer. (required)
   - client_account_id (String.t): Numerical account ID of the client buyer that the user should be associated with. (required)
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (ClientUserInvitation): 
 
   ## Returns
@@ -181,20 +192,21 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         connection,
         account_id,
         client_account_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
       :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -205,11 +217,13 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "accountId" => URI.encode_www_form(account_id),
         "clientAccountId" => URI.encode_www_form(client_account_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.ClientUserInvitation{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.ClientUserInvitation{}]
+    )
   end
 
   @doc """
@@ -221,18 +235,18 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - account_id (String.t): Numerical account ID of the client&#39;s sponsor buyer. (required)
   - client_account_id (String.t): Numerical account ID of the client buyer that the user invitation to be retrieved is associated with. (required)
   - invitation_id (String.t): Numerical identifier of the user invitation to retrieve. (required)
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
 
   ## Returns
 
@@ -253,20 +267,21 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         account_id,
         client_account_id,
         invitation_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query
+      :fields => :query
     }
 
     request =
@@ -280,11 +295,13 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
           "invitationId" => URI.encode_www_form(invitation_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.ClientUserInvitation{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.ClientUserInvitation{}]
+    )
   end
 
   @doc """
@@ -295,20 +312,20 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
   - account_id (String.t): Numerical account ID of the client&#39;s sponsor buyer. (required)
   - client_account_id (String.t): Numerical account ID of the client buyer to list invitations for. (required) You must either specify a string representation of a numerical account identifier or the &#x60;-&#x60; character to list all the invitations for all the clients of a given sponsor buyer.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :pageToken (String.t): A token identifying a page of results the server should return. Typically, this is the value of ListClientUserInvitationsResponse.nextPageToken returned from the previous call to the clients.invitations.list method.
     - :pageSize (integer()): Requested page size. Server may return fewer clients than requested. If unspecified, server will pick an appropriate default.
+    - :pageToken (String.t): A token identifying a page of results the server should return. Typically, this is the value of ListClientUserInvitationsResponse.nextPageToken returned from the previous call to the clients.invitations.list method.
 
   ## Returns
 
@@ -327,22 +344,23 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         connection,
         account_id,
         client_account_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
       :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -352,12 +370,13 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "accountId" => URI.encode_www_form(account_id),
         "clientAccountId" => URI.encode_www_form(client_account_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListClientUserInvitationsResponse{}
+      opts ++
+        [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListClientUserInvitationsResponse{}]
     )
   end
 
@@ -368,21 +387,21 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
 
   - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
   - account_id (String.t): Unique numerical account ID of the sponsor buyer to list the clients for.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
+    - :pageSize (integer()): Requested page size. The server may return fewer clients than requested. If unspecified, the server will pick an appropriate default.
     - :pageToken (String.t): A token identifying a page of results the server should return. Typically, this is the value of ListClientsResponse.nextPageToken returned from the previous call to the accounts.clients.list method.
     - :partnerClientId (String.t): Optional unique identifier (from the standpoint of an Ad Exchange sponsor buyer partner) of the client to return. If specified, at most one client will be returned in the response.
-    - :pageSize (integer()): Requested page size. The server may return fewer clients than requested. If unspecified, the server will pick an appropriate default.
 
   ## Returns
 
@@ -392,22 +411,27 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   @spec adexchangebuyer2_accounts_clients_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListClientsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def adexchangebuyer2_accounts_clients_list(connection, account_id, opts \\ []) do
-    optional_params = %{
+  def adexchangebuyer2_accounts_clients_list(
+        connection,
+        account_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
       :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
+      :pageSize => :query,
       :pageToken => :query,
-      :partnerClientId => :query,
-      :pageSize => :query
+      :partnerClientId => :query
     }
 
     request =
@@ -416,11 +440,13 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       |> Request.url("/v2beta1/accounts/{accountId}/clients", %{
         "accountId" => URI.encode_www_form(account_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListClientsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListClientsResponse{}]
+    )
   end
 
   @doc """
@@ -431,18 +457,18 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
   - account_id (String.t): Unique numerical account ID for the buyer of which the client buyer is a customer; the sponsor buyer to update a client for. (required)
   - client_account_id (String.t): Unique numerical account ID of the client to update. (required)
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (Client): 
 
   ## Returns
@@ -460,20 +486,21 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         connection,
         account_id,
         client_account_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
       :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -484,11 +511,11 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "accountId" => URI.encode_www_form(account_id),
         "clientAccountId" => URI.encode_www_form(client_account_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.Client{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.Client{}])
   end
 
   @doc """
@@ -500,18 +527,18 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - account_id (String.t): Numerical account ID of the client&#39;s sponsor buyer. (required)
   - client_account_id (String.t): Numerical account ID of the client buyer that the user to be retrieved is associated with. (required)
   - user_id (String.t): Numerical identifier of the user to retrieve. (required)
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
 
   ## Returns
 
@@ -531,20 +558,21 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         account_id,
         client_account_id,
         user_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query
+      :fields => :query
     }
 
     request =
@@ -555,11 +583,11 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "clientAccountId" => URI.encode_www_form(client_account_id),
         "userId" => URI.encode_www_form(user_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.ClientUser{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.ClientUser{}])
   end
 
   @doc """
@@ -570,20 +598,20 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
   - account_id (String.t): Numerical account ID of the sponsor buyer of the client to list users for. (required)
   - client_account_id (String.t): The account ID of the client buyer to list users for. (required) You must specify either a string representation of a numerical account identifier or the &#x60;-&#x60; character to list all the client users for all the clients of a given sponsor buyer.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :pageToken (String.t): A token identifying a page of results the server should return. Typically, this is the value of ListClientUsersResponse.nextPageToken returned from the previous call to the accounts.clients.users.list method.
     - :pageSize (integer()): Requested page size. The server may return fewer clients than requested. If unspecified, the server will pick an appropriate default.
+    - :pageToken (String.t): A token identifying a page of results the server should return. Typically, this is the value of ListClientUsersResponse.nextPageToken returned from the previous call to the accounts.clients.users.list method.
 
   ## Returns
 
@@ -602,22 +630,23 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         connection,
         account_id,
         client_account_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
       :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -627,11 +656,13 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "accountId" => URI.encode_www_form(account_id),
         "clientAccountId" => URI.encode_www_form(client_account_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListClientUsersResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListClientUsersResponse{}]
+    )
   end
 
   @doc """
@@ -643,18 +674,18 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - account_id (String.t): Numerical account ID of the client&#39;s sponsor buyer. (required)
   - client_account_id (String.t): Numerical account ID of the client buyer that the user to be retrieved is associated with. (required)
   - user_id (String.t): Numerical identifier of the user to retrieve. (required)
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (ClientUser): 
 
   ## Returns
@@ -675,20 +706,21 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         account_id,
         client_account_id,
         user_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
       :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -700,11 +732,11 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "clientAccountId" => URI.encode_www_form(client_account_id),
         "userId" => URI.encode_www_form(user_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.ClientUser{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.ClientUser{}])
   end
 
   @doc """
@@ -714,18 +746,18 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
 
   - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
   - account_id (String.t): The account that this creative belongs to. Can be used to filter the response of the creatives.list method.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :duplicateIdMode (String.t): Indicates if multiple creatives can share an ID or not. Default is NO_DUPLICATES (one ID per creative).
     - :body (Creative): 
 
@@ -736,19 +768,24 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   """
   @spec adexchangebuyer2_accounts_creatives_create(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Creative.t()} | {:error, Tesla.Env.t()}
-  def adexchangebuyer2_accounts_creatives_create(connection, account_id, opts \\ []) do
-    optional_params = %{
+  def adexchangebuyer2_accounts_creatives_create(
+        connection,
+        account_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
       :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :duplicateIdMode => :query,
       :body => :body
     }
@@ -759,11 +796,11 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       |> Request.url("/v2beta1/accounts/{accountId}/creatives", %{
         "accountId" => URI.encode_www_form(account_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.Creative{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.Creative{}])
   end
 
   @doc """
@@ -774,18 +811,18 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
   - account_id (String.t): The account the creative belongs to.
   - creative_id (String.t): The ID of the creative associated with the deal.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (AddDealAssociationRequest): 
 
   ## Returns
@@ -803,20 +840,21 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         connection,
         account_id,
         creative_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
       :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -830,11 +868,11 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
           "creativeId" => URI.encode_www_form(creative_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.Empty{}])
   end
 
   @doc """
@@ -845,21 +883,21 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
   - account_id (String.t): The account to list the associations from. Specify \&quot;-\&quot; to list all creatives the current user has access to.
   - creative_id (String.t): The creative ID to list the associations from. Specify \&quot;-\&quot; to list all creatives under the above account.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :pageToken (String.t): A token identifying a page of results the server should return. Typically, this is the value of ListDealAssociationsResponse.next_page_token returned from the previous call to &#39;ListDealAssociations&#39; method.
     - :pageSize (integer()): Requested page size. Server may return fewer associations than requested. If unspecified, server will pick an appropriate default.
     - :query (String.t): An optional query string to filter deal associations. If no filter is specified, all associations will be returned. Supported queries are: &lt;ul&gt; &lt;li&gt;accountId&#x3D;&lt;i&gt;account_id_string&lt;/i&gt; &lt;li&gt;creativeId&#x3D;&lt;i&gt;creative_id_string&lt;/i&gt; &lt;li&gt;dealsId&#x3D;&lt;i&gt;deals_id_string&lt;/i&gt; &lt;li&gt;dealsStatus:{approved, conditionally_approved, disapproved,                   not_checked} &lt;li&gt;openAuctionStatus:{approved, conditionally_approved, disapproved,                          not_checked} &lt;/ul&gt; Example: &#39;dealsId&#x3D;12345 AND dealsStatus:disapproved&#39;
+    - :pageToken (String.t): A token identifying a page of results the server should return. Typically, this is the value of ListDealAssociationsResponse.next_page_token returned from the previous call to &#39;ListDealAssociations&#39; method.
 
   ## Returns
 
@@ -878,23 +916,24 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         connection,
         account_id,
         creative_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
       :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :pageToken => :query,
       :pageSize => :query,
-      :query => :query
+      :query => :query,
+      :pageToken => :query
     }
 
     request =
@@ -904,12 +943,12 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "accountId" => URI.encode_www_form(account_id),
         "creativeId" => URI.encode_www_form(creative_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListDealAssociationsResponse{}
+      opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListDealAssociationsResponse{}]
     )
   end
 
@@ -921,18 +960,18 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
   - account_id (String.t): The account the creative belongs to.
   - creative_id (String.t): The ID of the creative associated with the deal.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (RemoveDealAssociationRequest): 
 
   ## Returns
@@ -950,20 +989,21 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         connection,
         account_id,
         creative_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
       :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -977,11 +1017,11 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
           "creativeId" => URI.encode_www_form(creative_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.Empty{}])
   end
 
   @doc """
@@ -992,18 +1032,18 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
   - account_id (String.t): The account the creative belongs to.
   - creative_id (String.t): The ID of the creative to retrieve.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
 
   ## Returns
 
@@ -1016,19 +1056,25 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Creative.t()} | {:error, Tesla.Env.t()}
-  def adexchangebuyer2_accounts_creatives_get(connection, account_id, creative_id, opts \\ []) do
-    optional_params = %{
+  def adexchangebuyer2_accounts_creatives_get(
+        connection,
+        account_id,
+        creative_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query
+      :fields => :query
     }
 
     request =
@@ -1038,11 +1084,11 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "accountId" => URI.encode_www_form(account_id),
         "creativeId" => URI.encode_www_form(creative_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.Creative{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.Creative{}])
   end
 
   @doc """
@@ -1052,21 +1098,21 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
 
   - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
   - account_id (String.t): The account to list the creatives from. Specify \&quot;-\&quot; to list all creatives the current user has access to.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :pageToken (String.t): A token identifying a page of results the server should return. Typically, this is the value of ListCreativesResponse.next_page_token returned from the previous call to &#39;ListCreatives&#39; method.
     - :pageSize (integer()): Requested page size. The server may return fewer creatives than requested (due to timeout constraint) even if more are available via another call. If unspecified, server will pick an appropriate default. Acceptable values are 1 to 1000, inclusive.
     - :query (String.t): An optional query string to filter creatives. If no filter is specified, all active creatives will be returned. &lt;p&gt;Supported queries are: &lt;ul&gt; &lt;li&gt;accountId&#x3D;&lt;i&gt;account_id_string&lt;/i&gt; &lt;li&gt;creativeId&#x3D;&lt;i&gt;creative_id_string&lt;/i&gt; &lt;li&gt;dealsStatus: {approved, conditionally_approved, disapproved,                    not_checked} &lt;li&gt;openAuctionStatus: {approved, conditionally_approved, disapproved,                           not_checked} &lt;li&gt;attribute: {a numeric attribute from the list of attributes} &lt;li&gt;disapprovalReason: {a reason from DisapprovalReason} &lt;/ul&gt; Example: &#39;accountId&#x3D;12345 AND (dealsStatus:disapproved AND disapprovalReason:unacceptable_content) OR attribute:47&#39;
+    - :pageToken (String.t): A token identifying a page of results the server should return. Typically, this is the value of ListCreativesResponse.next_page_token returned from the previous call to &#39;ListCreatives&#39; method.
 
   ## Returns
 
@@ -1076,22 +1122,27 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   @spec adexchangebuyer2_accounts_creatives_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListCreativesResponse.t()}
           | {:error, Tesla.Env.t()}
-  def adexchangebuyer2_accounts_creatives_list(connection, account_id, opts \\ []) do
-    optional_params = %{
+  def adexchangebuyer2_accounts_creatives_list(
+        connection,
+        account_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
       :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :pageToken => :query,
       :pageSize => :query,
-      :query => :query
+      :query => :query,
+      :pageToken => :query
     }
 
     request =
@@ -1100,11 +1151,13 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       |> Request.url("/v2beta1/accounts/{accountId}/creatives", %{
         "accountId" => URI.encode_www_form(account_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListCreativesResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListCreativesResponse{}]
+    )
   end
 
   @doc """
@@ -1115,18 +1168,18 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
   - account_id (String.t): The account of the creative to stop notifications for.
   - creative_id (String.t): The creative ID of the creative to stop notifications for. Specify \&quot;-\&quot; to specify stopping account level notifications.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (StopWatchingCreativeRequest): 
 
   ## Returns
@@ -1144,20 +1197,21 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         connection,
         account_id,
         creative_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
       :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -1168,11 +1222,11 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "accountId" => URI.encode_www_form(account_id),
         "creativeId" => URI.encode_www_form(creative_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.Empty{}])
   end
 
   @doc """
@@ -1183,18 +1237,18 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
   - account_id (String.t): The account that this creative belongs to. Can be used to filter the response of the creatives.list method.
   - creative_id (String.t): The buyer-defined creative ID of this creative. Can be used to filter the response of the creatives.list method.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (Creative): 
 
   ## Returns
@@ -1208,19 +1262,25 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Creative.t()} | {:error, Tesla.Env.t()}
-  def adexchangebuyer2_accounts_creatives_update(connection, account_id, creative_id, opts \\ []) do
-    optional_params = %{
+  def adexchangebuyer2_accounts_creatives_update(
+        connection,
+        account_id,
+        creative_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
       :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -1231,11 +1291,11 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "accountId" => URI.encode_www_form(account_id),
         "creativeId" => URI.encode_www_form(creative_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.Creative{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.Creative{}])
   end
 
   @doc """
@@ -1246,18 +1306,18 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
   - account_id (String.t): The account of the creative to watch.
   - creative_id (String.t): The creative ID to watch for status changes. Specify \&quot;-\&quot; to watch all creatives under the above account. If both creative-level and account-level notifications are sent, only a single notification will be sent to the creative-level notification topic.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (WatchCreativeRequest): 
 
   ## Returns
@@ -1271,19 +1331,25 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def adexchangebuyer2_accounts_creatives_watch(connection, account_id, creative_id, opts \\ []) do
-    optional_params = %{
+  def adexchangebuyer2_accounts_creatives_watch(
+        connection,
+        account_id,
+        creative_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
       :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -1294,10 +1360,1046 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "accountId" => URI.encode_www_form(account_id),
         "creativeId" => URI.encode_www_form(creative_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.Empty{}])
+  end
+
+  @doc """
+  List finalized proposals, regardless if a proposal is being renegotiated. A filter expression (PQL query) may be specified to filter the results. The notes will not be returned.
+
+  ## Parameters
+
+  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
+  - account_id (String.t): Account ID of the buyer.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :pageSize (integer()): Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+    - :filterSyntax (String.t): Syntax the filter is written in. Current implementation defaults to PQL but in the future it will be LIST_FILTER.
+    - :filter (String.t): An optional PQL filter query used to query for proposals.  Nested repeated fields, such as proposal.deals.targetingCriterion, cannot be filtered.
+    - :pageToken (String.t): The page token as returned from ListProposalsResponse.
+
+  ## Returns
+
+  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListProposalsResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec adexchangebuyer2_accounts_finalized_proposals_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListProposalsResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def adexchangebuyer2_accounts_finalized_proposals_list(
+        connection,
+        account_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :key => :query,
+      :access_token => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
+      :pageSize => :query,
+      :filterSyntax => :query,
+      :filter => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2beta1/accounts/{accountId}/finalizedProposals", %{
+        "accountId" => URI.encode_www_form(account_id)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListProposalsResponse{}]
+    )
+  end
+
+  @doc """
+  Gets the requested product by ID.
+
+  ## Parameters
+
+  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
+  - account_id (String.t): Account ID of the buyer.
+  - product_id (String.t): The ID for the product to get the head revision for.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+
+  ## Returns
+
+  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.Product{}} on success
+  {:error, info} on failure
+  """
+  @spec adexchangebuyer2_accounts_products_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Product.t()} | {:error, Tesla.Env.t()}
+  def adexchangebuyer2_accounts_products_get(
+        connection,
+        account_id,
+        product_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :key => :query,
+      :access_token => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2beta1/accounts/{accountId}/products/{productId}", %{
+        "accountId" => URI.encode_www_form(account_id),
+        "productId" => URI.encode_www_form(product_id)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.Product{}])
+  end
+
+  @doc """
+  List all products visible to the buyer (optionally filtered by the specified PQL query).
+
+  ## Parameters
+
+  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
+  - account_id (String.t): Account ID of the buyer.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :filter (String.t): An optional PQL query used to query for products. See https://developers.google.com/ad-manager/docs/pqlreference for documentation about PQL and examples.  Nested repeated fields, such as product.targetingCriterion.inclusions, cannot be filtered.
+    - :pageToken (String.t): The page token as returned from ListProductsResponse.
+    - :pageSize (integer()): Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+
+  ## Returns
+
+  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListProductsResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec adexchangebuyer2_accounts_products_list(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListProductsResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def adexchangebuyer2_accounts_products_list(
+        connection,
+        account_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :key => :query,
+      :access_token => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
+      :filter => :query,
+      :pageToken => :query,
+      :pageSize => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2beta1/accounts/{accountId}/products", %{
+        "accountId" => URI.encode_www_form(account_id)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListProductsResponse{}]
+    )
+  end
+
+  @doc """
+  Mark the proposal as accepted at the given revision number. If the number does not match the server&#39;s revision number an &#x60;ABORTED&#x60; error message will be returned. This call updates the proposal_state from &#x60;PROPOSED&#x60; to &#x60;BUYER_ACCEPTED&#x60;, or from &#x60;SELLER_ACCEPTED&#x60; to &#x60;FINALIZED&#x60;.
+
+  ## Parameters
+
+  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
+  - account_id (String.t): Account ID of the buyer.
+  - proposal_id (String.t): The ID of the proposal to accept.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :body (AcceptProposalRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal{}} on success
+  {:error, info} on failure
+  """
+  @spec adexchangebuyer2_accounts_proposals_accept(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal.t()} | {:error, Tesla.Env.t()}
+  def adexchangebuyer2_accounts_proposals_accept(
+        connection,
+        account_id,
+        proposal_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :key => :query,
+      :access_token => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2beta1/accounts/{accountId}/proposals/{proposalId}:accept", %{
+        "accountId" => URI.encode_www_form(account_id),
+        "proposalId" => URI.encode_www_form(proposal_id)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal{}])
+  end
+
+  @doc """
+  Create a new note and attach it to the proposal. The note is assigned a unique ID by the server. The proposal revision number will not increase when associated with a new note.
+
+  ## Parameters
+
+  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
+  - account_id (String.t): Account ID of the buyer.
+  - proposal_id (String.t): The ID of the proposal to attach the note to.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :body (AddNoteRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.Note{}} on success
+  {:error, info} on failure
+  """
+  @spec adexchangebuyer2_accounts_proposals_add_note(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Note.t()} | {:error, Tesla.Env.t()}
+  def adexchangebuyer2_accounts_proposals_add_note(
+        connection,
+        account_id,
+        proposal_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :key => :query,
+      :access_token => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2beta1/accounts/{accountId}/proposals/{proposalId}:addNote", %{
+        "accountId" => URI.encode_www_form(account_id),
+        "proposalId" => URI.encode_www_form(proposal_id)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.Note{}])
+  end
+
+  @doc """
+  Cancel an ongoing negotiation on a proposal. This does not cancel or end serving for the deals if the proposal has been finalized, but only cancels a negotiation unilaterally.
+
+  ## Parameters
+
+  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
+  - account_id (String.t): Account ID of the buyer.
+  - proposal_id (String.t): The ID of the proposal to cancel negotiation for.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :body (CancelNegotiationRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal{}} on success
+  {:error, info} on failure
+  """
+  @spec adexchangebuyer2_accounts_proposals_cancel_negotiation(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal.t()} | {:error, Tesla.Env.t()}
+  def adexchangebuyer2_accounts_proposals_cancel_negotiation(
+        connection,
+        account_id,
+        proposal_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :key => :query,
+      :access_token => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2beta1/accounts/{accountId}/proposals/{proposalId}:cancelNegotiation", %{
+        "accountId" => URI.encode_www_form(account_id),
+        "proposalId" => URI.encode_www_form(proposal_id)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal{}])
+  end
+
+  @doc """
+  Update the given proposal to indicate that setup has been completed. This method is called by the buyer when the line items have been created on their end for a finalized proposal and all the required creatives have been uploaded using the creatives API. This call updates the &#x60;is_setup_completed&#x60; bit on the proposal and also notifies the seller. The server will advance the revision number of the most recent proposal.
+
+  ## Parameters
+
+  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
+  - account_id (String.t): Account ID of the buyer.
+  - proposal_id (String.t): The ID of the proposal to mark as setup completed.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :body (CompleteSetupRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal{}} on success
+  {:error, info} on failure
+  """
+  @spec adexchangebuyer2_accounts_proposals_complete_setup(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal.t()} | {:error, Tesla.Env.t()}
+  def adexchangebuyer2_accounts_proposals_complete_setup(
+        connection,
+        account_id,
+        proposal_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :key => :query,
+      :access_token => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2beta1/accounts/{accountId}/proposals/{proposalId}:completeSetup", %{
+        "accountId" => URI.encode_www_form(account_id),
+        "proposalId" => URI.encode_www_form(proposal_id)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal{}])
+  end
+
+  @doc """
+  Create the given proposal. Each created proposal and any deals it contains are assigned a unique ID by the server.
+
+  ## Parameters
+
+  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
+  - account_id (String.t): Account ID of the buyer.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :body (Proposal): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal{}} on success
+  {:error, info} on failure
+  """
+  @spec adexchangebuyer2_accounts_proposals_create(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal.t()} | {:error, Tesla.Env.t()}
+  def adexchangebuyer2_accounts_proposals_create(
+        connection,
+        account_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :key => :query,
+      :access_token => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2beta1/accounts/{accountId}/proposals", %{
+        "accountId" => URI.encode_www_form(account_id)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal{}])
+  end
+
+  @doc """
+  Gets a proposal given its ID. The proposal is returned at its head revision.
+
+  ## Parameters
+
+  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
+  - account_id (String.t): Account ID of the buyer.
+  - proposal_id (String.t): The unique ID of the proposal
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+
+  ## Returns
+
+  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal{}} on success
+  {:error, info} on failure
+  """
+  @spec adexchangebuyer2_accounts_proposals_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal.t()} | {:error, Tesla.Env.t()}
+  def adexchangebuyer2_accounts_proposals_get(
+        connection,
+        account_id,
+        proposal_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :key => :query,
+      :access_token => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2beta1/accounts/{accountId}/proposals/{proposalId}", %{
+        "accountId" => URI.encode_www_form(account_id),
+        "proposalId" => URI.encode_www_form(proposal_id)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal{}])
+  end
+
+  @doc """
+  List proposals. A filter expression (PQL query) may be specified to filter the results. To retrieve all finalized proposals, regardless if a proposal is being renegotiated, see the FinalizedProposals resource. Note that Bidder/ChildSeat relationships differ from the usual behavior. A Bidder account can only see its child seats&#39; proposals by specifying the ChildSeat&#39;s accountId in the request path.
+
+  ## Parameters
+
+  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
+  - account_id (String.t): Account ID of the buyer.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :pageSize (integer()): Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+    - :filterSyntax (String.t): Syntax the filter is written in. Current implementation defaults to PQL but in the future it will be LIST_FILTER.
+    - :filter (String.t): An optional PQL filter query used to query for proposals.  Nested repeated fields, such as proposal.deals.targetingCriterion, cannot be filtered.
+    - :pageToken (String.t): The page token as returned from ListProposalsResponse.
+
+  ## Returns
+
+  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListProposalsResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec adexchangebuyer2_accounts_proposals_list(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListProposalsResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def adexchangebuyer2_accounts_proposals_list(
+        connection,
+        account_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :key => :query,
+      :access_token => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
+      :pageSize => :query,
+      :filterSyntax => :query,
+      :filter => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2beta1/accounts/{accountId}/proposals", %{
+        "accountId" => URI.encode_www_form(account_id)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListProposalsResponse{}]
+    )
+  end
+
+  @doc """
+  Update the given proposal to pause serving. This method will set the &#x60;DealServingMetadata.DealPauseStatus.has_buyer_paused&#x60; bit to true for all deals in the proposal.  It is a no-op to pause an already-paused proposal. It is an error to call PauseProposal for a proposal that is not finalized or renegotiating.
+
+  ## Parameters
+
+  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
+  - account_id (String.t): Account ID of the buyer.
+  - proposal_id (String.t): The ID of the proposal to pause.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :body (PauseProposalRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal{}} on success
+  {:error, info} on failure
+  """
+  @spec adexchangebuyer2_accounts_proposals_pause(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal.t()} | {:error, Tesla.Env.t()}
+  def adexchangebuyer2_accounts_proposals_pause(
+        connection,
+        account_id,
+        proposal_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :key => :query,
+      :access_token => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2beta1/accounts/{accountId}/proposals/{proposalId}:pause", %{
+        "accountId" => URI.encode_www_form(account_id),
+        "proposalId" => URI.encode_www_form(proposal_id)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal{}])
+  end
+
+  @doc """
+  Update the given proposal to resume serving. This method will set the &#x60;DealServingMetadata.DealPauseStatus.has_buyer_paused&#x60; bit to false for all deals in the proposal.  Note that if the &#x60;has_seller_paused&#x60; bit is also set, serving will not resume until the seller also resumes.  It is a no-op to resume an already-running proposal. It is an error to call ResumeProposal for a proposal that is not finalized or renegotiating.
+
+  ## Parameters
+
+  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
+  - account_id (String.t): Account ID of the buyer.
+  - proposal_id (String.t): The ID of the proposal to resume.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :body (ResumeProposalRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal{}} on success
+  {:error, info} on failure
+  """
+  @spec adexchangebuyer2_accounts_proposals_resume(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal.t()} | {:error, Tesla.Env.t()}
+  def adexchangebuyer2_accounts_proposals_resume(
+        connection,
+        account_id,
+        proposal_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :key => :query,
+      :access_token => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2beta1/accounts/{accountId}/proposals/{proposalId}:resume", %{
+        "accountId" => URI.encode_www_form(account_id),
+        "proposalId" => URI.encode_www_form(proposal_id)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal{}])
+  end
+
+  @doc """
+  Update the given proposal at the client known revision number. If the server revision has advanced since the passed-in &#x60;proposal.proposal_revision&#x60;, an &#x60;ABORTED&#x60; error message will be returned. Only the buyer-modifiable fields of the proposal will be updated.  Note that the deals in the proposal will be updated to match the passed-in copy. If a passed-in deal does not have a &#x60;deal_id&#x60;, the server will assign a new unique ID and create the deal. If passed-in deal has a &#x60;deal_id&#x60;, it will be updated to match the passed-in copy. Any existing deals not present in the passed-in proposal will be deleted. It is an error to pass in a deal with a &#x60;deal_id&#x60; not present at head.
+
+  ## Parameters
+
+  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
+  - account_id (String.t): Account ID of the buyer.
+  - proposal_id (String.t): The unique ID of the proposal.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :body (Proposal): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal{}} on success
+  {:error, info} on failure
+  """
+  @spec adexchangebuyer2_accounts_proposals_update(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal.t()} | {:error, Tesla.Env.t()}
+  def adexchangebuyer2_accounts_proposals_update(
+        connection,
+        account_id,
+        proposal_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :key => :query,
+      :access_token => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:put)
+      |> Request.url("/v2beta1/accounts/{accountId}/proposals/{proposalId}", %{
+        "accountId" => URI.encode_www_form(account_id),
+        "proposalId" => URI.encode_www_form(proposal_id)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal{}])
+  end
+
+  @doc """
+  Gets the requested publisher profile by id.
+
+  ## Parameters
+
+  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
+  - account_id (String.t): Account ID of the buyer.
+  - publisher_profile_id (String.t): The id for the publisher profile to get.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+
+  ## Returns
+
+  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.PublisherProfile{}} on success
+  {:error, info} on failure
+  """
+  @spec adexchangebuyer2_accounts_publisher_profiles_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.PublisherProfile.t()}
+          | {:error, Tesla.Env.t()}
+  def adexchangebuyer2_accounts_publisher_profiles_get(
+        connection,
+        account_id,
+        publisher_profile_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :key => :query,
+      :access_token => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2beta1/accounts/{accountId}/publisherProfiles/{publisherProfileId}", %{
+        "accountId" => URI.encode_www_form(account_id),
+        "publisherProfileId" => URI.encode_www_form(publisher_profile_id)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.PublisherProfile{}]
+    )
+  end
+
+  @doc """
+  List all publisher profiles visible to the buyer
+
+  ## Parameters
+
+  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
+  - account_id (String.t): Account ID of the buyer.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :pageToken (String.t): The page token as return from ListPublisherProfilesResponse.
+    - :pageSize (integer()): Specify the number of results to include per page.
+
+  ## Returns
+
+  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListPublisherProfilesResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec adexchangebuyer2_accounts_publisher_profiles_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListPublisherProfilesResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def adexchangebuyer2_accounts_publisher_profiles_list(
+        connection,
+        account_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :key => :query,
+      :access_token => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
+      :pageToken => :query,
+      :pageSize => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2beta1/accounts/{accountId}/publisherProfiles", %{
+        "accountId" => URI.encode_www_form(account_id)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListPublisherProfilesResponse{}]
+    )
   end
 end

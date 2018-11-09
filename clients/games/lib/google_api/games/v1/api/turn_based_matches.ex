@@ -31,7 +31,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
   - match_id (String.t): The ID of the match.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -47,8 +47,8 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
   """
   @spec games_turn_based_matches_cancel(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def games_turn_based_matches_cancel(connection, match_id, opts \\ []) do
-    optional_params = %{
+  def games_turn_based_matches_cancel(connection, match_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -64,11 +64,11 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
       |> Request.url("/turnbasedmatches/{matchId}/cancel", %{
         "matchId" => URI.encode_www_form(match_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -77,7 +77,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
   ## Parameters
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -95,8 +95,8 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
   """
   @spec games_turn_based_matches_create(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.TurnBasedMatch.t()} | {:error, Tesla.Env.t()}
-  def games_turn_based_matches_create(connection, opts \\ []) do
-    optional_params = %{
+  def games_turn_based_matches_create(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -112,11 +112,11 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/turnbasedmatches/create")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.TurnBasedMatch{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.TurnBasedMatch{}])
   end
 
   @doc """
@@ -126,7 +126,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
   - match_id (String.t): The ID of the match.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -143,8 +143,8 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
   """
   @spec games_turn_based_matches_decline(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.TurnBasedMatch.t()} | {:error, Tesla.Env.t()}
-  def games_turn_based_matches_decline(connection, match_id, opts \\ []) do
-    optional_params = %{
+  def games_turn_based_matches_decline(connection, match_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -161,11 +161,11 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
       |> Request.url("/turnbasedmatches/{matchId}/decline", %{
         "matchId" => URI.encode_www_form(match_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.TurnBasedMatch{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.TurnBasedMatch{}])
   end
 
   @doc """
@@ -175,7 +175,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
   - match_id (String.t): The ID of the match.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -191,8 +191,8 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
   """
   @spec games_turn_based_matches_dismiss(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def games_turn_based_matches_dismiss(connection, match_id, opts \\ []) do
-    optional_params = %{
+  def games_turn_based_matches_dismiss(connection, match_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -208,11 +208,11 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
       |> Request.url("/turnbasedmatches/{matchId}/dismiss", %{
         "matchId" => URI.encode_www_form(match_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -222,7 +222,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
   - match_id (String.t): The ID of the match.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -240,8 +240,8 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
   """
   @spec games_turn_based_matches_finish(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.TurnBasedMatch.t()} | {:error, Tesla.Env.t()}
-  def games_turn_based_matches_finish(connection, match_id, opts \\ []) do
-    optional_params = %{
+  def games_turn_based_matches_finish(connection, match_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -259,11 +259,11 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
       |> Request.url("/turnbasedmatches/{matchId}/finish", %{
         "matchId" => URI.encode_www_form(match_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.TurnBasedMatch{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.TurnBasedMatch{}])
   end
 
   @doc """
@@ -273,7 +273,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
   - match_id (String.t): The ID of the match.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -291,8 +291,8 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
   """
   @spec games_turn_based_matches_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.TurnBasedMatch.t()} | {:error, Tesla.Env.t()}
-  def games_turn_based_matches_get(connection, match_id, opts \\ []) do
-    optional_params = %{
+  def games_turn_based_matches_get(connection, match_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -310,11 +310,11 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
       |> Request.url("/turnbasedmatches/{matchId}", %{
         "matchId" => URI.encode_www_form(match_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.TurnBasedMatch{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.TurnBasedMatch{}])
   end
 
   @doc """
@@ -324,7 +324,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
   - match_id (String.t): The ID of the match.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -341,8 +341,8 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
   """
   @spec games_turn_based_matches_join(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.TurnBasedMatch.t()} | {:error, Tesla.Env.t()}
-  def games_turn_based_matches_join(connection, match_id, opts \\ []) do
-    optional_params = %{
+  def games_turn_based_matches_join(connection, match_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -359,11 +359,11 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
       |> Request.url("/turnbasedmatches/{matchId}/join", %{
         "matchId" => URI.encode_www_form(match_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.TurnBasedMatch{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.TurnBasedMatch{}])
   end
 
   @doc """
@@ -373,7 +373,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
   - match_id (String.t): The ID of the match.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -390,8 +390,8 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
   """
   @spec games_turn_based_matches_leave(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.TurnBasedMatch.t()} | {:error, Tesla.Env.t()}
-  def games_turn_based_matches_leave(connection, match_id, opts \\ []) do
-    optional_params = %{
+  def games_turn_based_matches_leave(connection, match_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -408,11 +408,11 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
       |> Request.url("/turnbasedmatches/{matchId}/leave", %{
         "matchId" => URI.encode_www_form(match_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.TurnBasedMatch{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.TurnBasedMatch{}])
   end
 
   @doc """
@@ -423,7 +423,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
   - connection (GoogleApi.Games.V1.Connection): Connection to server
   - match_id (String.t): The ID of the match.
   - match_version (integer()): The version of the match being updated.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -441,8 +441,14 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
   """
   @spec games_turn_based_matches_leave_turn(Tesla.Env.client(), String.t(), integer(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.TurnBasedMatch.t()} | {:error, Tesla.Env.t()}
-  def games_turn_based_matches_leave_turn(connection, match_id, match_version, opts \\ []) do
-    optional_params = %{
+  def games_turn_based_matches_leave_turn(
+        connection,
+        match_id,
+        match_version,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -461,11 +467,11 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
         "matchId" => URI.encode_www_form(match_id)
       })
       |> Request.add_param(:query, :matchVersion, match_version)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.TurnBasedMatch{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.TurnBasedMatch{}])
   end
 
   @doc """
@@ -474,7 +480,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
   ## Parameters
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -495,8 +501,8 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
   """
   @spec games_turn_based_matches_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.TurnBasedMatchList.t()} | {:error, Tesla.Env.t()}
-  def games_turn_based_matches_list(connection, opts \\ []) do
-    optional_params = %{
+  def games_turn_based_matches_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -515,11 +521,11 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/turnbasedmatches")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.TurnBasedMatchList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.TurnBasedMatchList{}])
   end
 
   @doc """
@@ -529,7 +535,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
   - match_id (String.t): The ID of the match.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -547,8 +553,8 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
   """
   @spec games_turn_based_matches_rematch(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.TurnBasedMatchRematch.t()} | {:error, Tesla.Env.t()}
-  def games_turn_based_matches_rematch(connection, match_id, opts \\ []) do
-    optional_params = %{
+  def games_turn_based_matches_rematch(connection, match_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -566,11 +572,11 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
       |> Request.url("/turnbasedmatches/{matchId}/rematch", %{
         "matchId" => URI.encode_www_form(match_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.TurnBasedMatchRematch{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.TurnBasedMatchRematch{}])
   end
 
   @doc """
@@ -579,7 +585,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
   ## Parameters
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -600,8 +606,8 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
   """
   @spec games_turn_based_matches_sync(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.TurnBasedMatchSync.t()} | {:error, Tesla.Env.t()}
-  def games_turn_based_matches_sync(connection, opts \\ []) do
-    optional_params = %{
+  def games_turn_based_matches_sync(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -620,11 +626,11 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/turnbasedmatches/sync")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.TurnBasedMatchSync{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.TurnBasedMatchSync{}])
   end
 
   @doc """
@@ -634,7 +640,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
   - match_id (String.t): The ID of the match.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -652,8 +658,8 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
   """
   @spec games_turn_based_matches_take_turn(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.TurnBasedMatch.t()} | {:error, Tesla.Env.t()}
-  def games_turn_based_matches_take_turn(connection, match_id, opts \\ []) do
-    optional_params = %{
+  def games_turn_based_matches_take_turn(connection, match_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -671,10 +677,10 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
       |> Request.url("/turnbasedmatches/{matchId}/turn", %{
         "matchId" => URI.encode_www_form(match_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.TurnBasedMatch{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.TurnBasedMatch{}])
   end
 end

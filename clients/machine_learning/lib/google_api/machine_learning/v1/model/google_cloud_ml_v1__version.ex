@@ -27,11 +27,13 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1Version do
   - deploymentUri (String.t): Required. The Google Cloud Storage location of the trained model used to create the version. See the [guide to model deployment](/ml-engine/docs/tensorflow/deploying-models) for more information.  When passing Version to [projects.models.versions.create](/ml-engine/reference/rest/v1/projects.models.versions/create) the model service uses the specified location as the source of the model. Once deployed, the model version is hosted by the prediction service, so this location is useful only as a historical record. The total number of model files can&#39;t exceed 1000. Defaults to: `null`.
   - description (String.t): Optional. The description specified for the version when it was created. Defaults to: `null`.
   - errorMessage (String.t): Output only. The details of a failure or a cancellation. Defaults to: `null`.
-  - framework (String.t): Optional. The machine learning framework Cloud ML Engine uses to train this version of the model. Valid values are &#x60;TENSORFLOW&#x60;, &#x60;SCIKIT_LEARN&#x60;, and &#x60;XGBOOST&#x60;. If you do not specify a framework, Cloud ML Engine uses TensorFlow. If you choose &#x60;SCIKIT_LEARN&#x60; or &#x60;XGBOOST&#x60;, you must also set the runtime version of the model to 1.4 or greater. Defaults to: `null`.
+  - etag (binary()): &#x60;etag&#x60; is used for optimistic concurrency control as a way to help prevent simultaneous updates of a model from overwriting each other. It is strongly suggested that systems make use of the &#x60;etag&#x60; in the read-modify-write cycle to perform model updates in order to avoid race conditions: An &#x60;etag&#x60; is returned in the response to &#x60;GetVersion&#x60;, and systems are expected to put that etag in the request to &#x60;UpdateVersion&#x60; to ensure that their change will be applied to the model as intended. Defaults to: `null`.
+  - framework (String.t): Optional. The machine learning framework Cloud ML Engine uses to train this version of the model. Valid values are &#x60;TENSORFLOW&#x60;, &#x60;SCIKIT_LEARN&#x60;, &#x60;XGBOOST&#x60;. If you do not specify a framework, Cloud ML Engine will analyze files in the deployment_uri to determine a framework. If you choose &#x60;SCIKIT_LEARN&#x60; or &#x60;XGBOOST&#x60;, you must also set the runtime version of the model to 1.4 or greater. Defaults to: `null`.
     - Enum - one of [FRAMEWORK_UNSPECIFIED, TENSORFLOW, SCIKIT_LEARN, XGBOOST]
   - isDefault (boolean()): Output only. If true, this version will be used to handle prediction requests that do not specify a version.  You can change the default version by calling [projects.methods.versions.setDefault](/ml-engine/reference/rest/v1/projects.models.versions/setDefault). Defaults to: `null`.
+  - labels (%{optional(String.t) &#x3D;&gt; String.t}): Optional. One or more labels that you can add, to organize your model versions. Each label is a key-value pair, where both the key and the value are arbitrary strings that you supply. For more information, see the documentation on &lt;a href&#x3D;\&quot;/ml-engine/docs/tensorflow/resource-labels\&quot;&gt;using labels&lt;/a&gt;. Defaults to: `null`.
   - lastUseTime (DateTime.t): Output only. The time the version was last used for prediction. Defaults to: `null`.
-  - machineType (String.t): Optional. The type of machine on which to serve the model. Currently only applies to online prediction service. Naming design doc for CMLE online prediction Machine Types: https://docs.google.com/document/d/1V3tko3VJ64PcpsmNxCXiPoPGccL9_K8gX1YjC8UofzQ/edit#heading&#x3D;h.7lvy6owfx4eh. The following are currently supported and will be deprecated in Beta release.   mls1-highmem-1    1 core    2 Gb RAM   mls1-highcpu-4    4 core    2 Gb RAM The following are available in Beta:   mls1-c1-m2        1 core    2 Gb RAM   Default   mls1-c4-m2        4 core    2 Gb RAM Defaults to: `null`.
+  - machineType (String.t): Optional. The type of machine on which to serve the model. Currently only applies to online prediction service. The following are currently supported and will be deprecated in Beta release.   mls1-highmem-1    1 core    2 Gb RAM   mls1-highcpu-4    4 core    2 Gb RAM The following are available in Beta:   mls1-c1-m2        1 core    2 Gb RAM   Default   mls1-c4-m2        4 core    2 Gb RAM Defaults to: `null`.
   - manualScaling (GoogleCloudMlV1ManualScaling): Manually select the number of nodes to use for serving the model. You should generally use &#x60;auto_scaling&#x60; with an appropriate &#x60;min_nodes&#x60; instead, but this option is available if you want more predictable billing. Beware that latency and error rates will increase if the traffic exceeds that capability of the system to serve it based on the selected number of nodes. Defaults to: `null`.
   - name (String.t): Required.The name specified for the version when it was created.  The version name must be unique within the model it is created in. Defaults to: `null`.
   - pythonVersion (String.t): Optional. The version of Python used in prediction. If not set, the default version is &#39;2.7&#39;. Python &#39;3.5&#39; is available when &#x60;runtime_version&#x60; is set to &#39;1.4&#39; and above. Python &#39;2.7&#39; works with all supported runtime versions. Defaults to: `null`.
@@ -48,8 +50,10 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1Version do
           :deploymentUri => any(),
           :description => any(),
           :errorMessage => any(),
+          :etag => any(),
           :framework => any(),
           :isDefault => any(),
+          :labels => map(),
           :lastUseTime => DateTime.t(),
           :machineType => any(),
           :manualScaling => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1ManualScaling.t(),
@@ -64,8 +68,10 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1Version do
   field(:deploymentUri)
   field(:description)
   field(:errorMessage)
+  field(:etag)
   field(:framework)
   field(:isDefault)
+  field(:labels, type: :map)
   field(:lastUseTime, as: DateTime)
   field(:machineType)
   field(:manualScaling, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1ManualScaling)

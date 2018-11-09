@@ -23,7 +23,13 @@ defmodule GoogleApi.Content.V2.Model.Inventory do
   ## Attributes
 
   - availability (String.t): The availability of the product. Defaults to: `null`.
+  - customLabel0 (String.t): Custom label 0 for custom grouping of items in a Shopping campaign. Only supported for online products. Defaults to: `null`.
+  - customLabel1 (String.t): Custom label 1 for custom grouping of items in a Shopping campaign. Only supported for online products. Defaults to: `null`.
+  - customLabel2 (String.t): Custom label 2 for custom grouping of items in a Shopping campaign. Only supported for online products. Defaults to: `null`.
+  - customLabel3 (String.t): Custom label 3 for custom grouping of items in a Shopping campaign. Only supported for online products. Defaults to: `null`.
+  - customLabel4 (String.t): Custom label 3 for custom grouping of items in a Shopping campaign. Only supported for online products. Defaults to: `null`.
   - installment (Installment): Number and amount of installments to pay for an item. Brazil only. Defaults to: `null`.
+  - instoreProductLocation (String.t): The instore product location. Supported only for local products. Defaults to: `null`.
   - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;content#inventory\&quot;. Defaults to: `null`.
   - loyaltyPoints (LoyaltyPoints): Loyalty points that users receive after purchasing the item. Japan only. Defaults to: `null`.
   - pickup (InventoryPickup): Store pickup information. Only supported for local inventory. Not setting pickup means \&quot;don&#39;t update\&quot; while setting it to the empty value ({} in JSON) means \&quot;delete\&quot;. Otherwise, pickupMethod and pickupSla must be set together, unless pickupMethod is \&quot;not supported\&quot;. Defaults to: `null`.
@@ -31,14 +37,20 @@ defmodule GoogleApi.Content.V2.Model.Inventory do
   - quantity (integer()): The quantity of the product. Must be equal to or greater than zero. Supported only for local products. Defaults to: `null`.
   - salePrice (Price): The sale price of the product. Mandatory if sale_price_effective_date is defined. Defaults to: `null`.
   - salePriceEffectiveDate (String.t): A date range represented by a pair of ISO 8601 dates separated by a space, comma, or slash. Both dates might be specified as &#39;null&#39; if undecided. Defaults to: `null`.
-  - sellOnGoogleQuantity (integer()): The quantity of the product that is reserved for sell-on-google ads. Supported only for online products. Defaults to: `null`.
+  - sellOnGoogleQuantity (integer()): The quantity of the product that is available for selling on Google. Supported only for online products. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :availability => any(),
+          :customLabel0 => any(),
+          :customLabel1 => any(),
+          :customLabel2 => any(),
+          :customLabel3 => any(),
+          :customLabel4 => any(),
           :installment => GoogleApi.Content.V2.Model.Installment.t(),
+          :instoreProductLocation => any(),
           :kind => any(),
           :loyaltyPoints => GoogleApi.Content.V2.Model.LoyaltyPoints.t(),
           :pickup => GoogleApi.Content.V2.Model.InventoryPickup.t(),
@@ -50,7 +62,13 @@ defmodule GoogleApi.Content.V2.Model.Inventory do
         }
 
   field(:availability)
+  field(:customLabel0)
+  field(:customLabel1)
+  field(:customLabel2)
+  field(:customLabel3)
+  field(:customLabel4)
   field(:installment, as: GoogleApi.Content.V2.Model.Installment)
+  field(:instoreProductLocation)
   field(:kind)
   field(:loyaltyPoints, as: GoogleApi.Content.V2.Model.LoyaltyPoints)
   field(:pickup, as: GoogleApi.Content.V2.Model.InventoryPickup)

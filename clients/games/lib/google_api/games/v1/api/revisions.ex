@@ -31,7 +31,7 @@ defmodule GoogleApi.Games.V1.Api.Revisions do
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
   - client_revision (String.t): The revision of the client SDK used by your application. Format: [PLATFORM_TYPE]:[VERSION_NUMBER]. Possible values of PLATFORM_TYPE are:   - \&quot;ANDROID\&quot; - Client is running the Android SDK.  - \&quot;IOS\&quot; - Client is running the iOS SDK.  - \&quot;WEB_APP\&quot; - Client is running as a Web App.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -47,8 +47,8 @@ defmodule GoogleApi.Games.V1.Api.Revisions do
   """
   @spec games_revisions_check(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.RevisionCheckResponse.t()} | {:error, Tesla.Env.t()}
-  def games_revisions_check(connection, client_revision, opts \\ []) do
-    optional_params = %{
+  def games_revisions_check(connection, client_revision, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -63,10 +63,10 @@ defmodule GoogleApi.Games.V1.Api.Revisions do
       |> Request.method(:get)
       |> Request.url("/revisions/check")
       |> Request.add_param(:query, :clientRevision, client_revision)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.RevisionCheckResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.RevisionCheckResponse{}])
   end
 end

@@ -25,6 +25,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1OperationMetadata do
   - createTime (DateTime.t): The time the operation was submitted. Defaults to: `null`.
   - endTime (DateTime.t): The time operation processing completed. Defaults to: `null`.
   - isCancellationRequested (boolean()): Indicates whether a request to cancel this operation has been made. Defaults to: `null`.
+  - labels (%{optional(String.t) &#x3D;&gt; String.t}): The user labels, inherited from the model or the model version being operated on. Defaults to: `null`.
   - modelName (String.t): Contains the name of the model associated with the operation. Defaults to: `null`.
   - operationType (String.t): The operation type. Defaults to: `null`.
     - Enum - one of [OPERATION_TYPE_UNSPECIFIED, CREATE_VERSION, DELETE_VERSION, DELETE_MODEL, UPDATE_MODEL, UPDATE_VERSION, UPDATE_CONFIG]
@@ -39,6 +40,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1OperationMetadata do
           :createTime => DateTime.t(),
           :endTime => DateTime.t(),
           :isCancellationRequested => any(),
+          :labels => map(),
           :modelName => any(),
           :operationType => any(),
           :projectNumber => any(),
@@ -49,6 +51,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1OperationMetadata do
   field(:createTime, as: DateTime)
   field(:endTime, as: DateTime)
   field(:isCancellationRequested)
+  field(:labels, type: :map)
   field(:modelName)
   field(:operationType)
   field(:projectNumber)

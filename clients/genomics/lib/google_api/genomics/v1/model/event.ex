@@ -18,13 +18,13 @@
 
 defmodule GoogleApi.Genomics.V1.Model.Event do
   @moduledoc """
-  Event carries information about events that occur during pipeline execution.
+  Carries information about events that occur during pipeline execution.
 
   ## Attributes
 
-  - description (String.t): A human readable description of the event.  Note that these strings may change at any time without notice.  Any application logic must use the information in the details field. Defaults to: `null`.
-  - details (%{optional(String.t) &#x3D;&gt; String.t}): Machine readable details about the event. Defaults to: `null`.
-  - timestamp (DateTime.t): The time that the event occurred. Defaults to: `null`.
+  - description (String.t): A human-readable description of the event. Note that these strings can change at any time without notice. Any application logic must use the information in the &#x60;details&#x60; field. Defaults to: `null`.
+  - details (%{optional(String.t) &#x3D;&gt; String.t}): Machine-readable details about the event. Defaults to: `null`.
+  - timestamp (DateTime.t): The time at which the event occurred. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

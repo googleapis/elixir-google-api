@@ -24,7 +24,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpec do
 
   - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#administratorWebTokenSpec\&quot;. Defaults to: `null`.
   - parent (String.t): The URI of the parent frame hosting the iframe. To prevent XSS, the iframe may not be hosted at other URIs. This URI must be https. Defaults to: `null`.
-  - permission ([String.t]): The list of permissions the admin is granted within the iframe. The admin will only be allowed to view an iframe if they have all of the permissions associated with it. The only valid value is \&quot;approveApps\&quot; that will allow the admin to access the iframe in \&quot;approve\&quot; mode. Defaults to: `null`.
+  - permission ([String.t]): Deprecated. Use PlaySearch.approveApps. Defaults to: `null`.
+  - playSearch (AdministratorWebTokenSpecPlaySearch): Options for displaying the managed Play Search apps page. Defaults to: `null`.
+  - privateApps (AdministratorWebTokenSpecPrivateApps): Options for displaying the Private Apps page. Defaults to: `null`.
+  - storeBuilder (AdministratorWebTokenSpecStoreBuilder): Options for displaying the Organize apps page. Defaults to: `null`.
+  - webApps (AdministratorWebTokenSpecWebApps): Options for displaying the Web Apps page. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,12 +36,32 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpec do
   @type t :: %__MODULE__{
           :kind => any(),
           :parent => any(),
-          :permission => list(any())
+          :permission => list(any()),
+          :playSearch =>
+            GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecPlaySearch.t(),
+          :privateApps =>
+            GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecPrivateApps.t(),
+          :storeBuilder =>
+            GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecStoreBuilder.t(),
+          :webApps => GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecWebApps.t()
         }
 
   field(:kind)
   field(:parent)
   field(:permission, type: :list)
+  field(:playSearch, as: GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecPlaySearch)
+
+  field(
+    :privateApps,
+    as: GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecPrivateApps
+  )
+
+  field(
+    :storeBuilder,
+    as: GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecStoreBuilder
+  )
+
+  field(:webApps, as: GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecWebApps)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpec do

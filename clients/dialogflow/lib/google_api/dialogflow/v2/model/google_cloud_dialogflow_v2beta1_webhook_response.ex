@@ -22,6 +22,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1WebhookRespo
 
   ## Attributes
 
+  - endInteraction (boolean()): Optional. Indicates that this intent ends an interaction. Some integrations (e.g., Actions on Google or Dialogflow phone gateway) use this information to close interaction with an end user. Default is false. Defaults to: `null`.
   - followupEventInput (GoogleCloudDialogflowV2beta1EventInput): Optional. Makes the platform immediately invoke another &#x60;DetectIntent&#x60; call internally with the specified event as input. Defaults to: `null`.
   - fulfillmentMessages ([GoogleCloudDialogflowV2beta1IntentMessage]): Optional. The collection of rich messages to present to the user. This value is passed directly to &#x60;QueryResult.fulfillment_messages&#x60;. Defaults to: `null`.
   - fulfillmentText (String.t): Optional. The text to be shown on the screen. This value is passed directly to &#x60;QueryResult.fulfillment_text&#x60;. Defaults to: `null`.
@@ -33,6 +34,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1WebhookRespo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :endInteraction => any(),
           :followupEventInput =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1EventInput.t(),
           :fulfillmentMessages =>
@@ -43,6 +45,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1WebhookRespo
           :payload => map(),
           :source => any()
         }
+
+  field(:endInteraction)
 
   field(
     :followupEventInput,

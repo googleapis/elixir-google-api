@@ -22,7 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendServiceGroupHealth do
 
   ## Attributes
 
-  - healthStatus ([HealthStatus]):  Defaults to: `null`.
+  - healthStatus ([HealthStatus]): Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks. Defaults to: `null`.
   - kind (String.t): [Output Only] Type of resource. Always compute#backendServiceGroupHealth for the health of backend services. Defaults to: `null`.
   """
 

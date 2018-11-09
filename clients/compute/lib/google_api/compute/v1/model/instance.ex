@@ -22,7 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
 
   ## Attributes
 
-  - tags (Tags): A list of tags to apply to this instance. Tags are used to identify valid sources or targets for network firewalls and are specified by the client during instance creation. The tags can be later modified by the setTags method. Each tag within the list must comply with RFC1035. Defaults to: `null`.
+  - tags (Tags): Tags to apply to this instance. Tags are used to identify valid sources or targets for network firewalls and are specified by the client during instance creation. The tags can be later modified by the setTags method. Each tag within the list must comply with RFC1035. Multiple tags can be specified via the &#39;tags.items&#39; field. Defaults to: `null`.
   - canIpForward (boolean()): Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, see Enabling IP Forwarding. Defaults to: `null`.
   - cpuPlatform (String.t): [Output Only] The CPU platform used by this instance. Defaults to: `null`.
   - creationTimestamp (String.t): [Output Only] Creation timestamp in RFC3339 text format. Defaults to: `null`.

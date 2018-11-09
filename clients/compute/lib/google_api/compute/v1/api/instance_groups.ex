@@ -33,7 +33,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone where the instance group is located.
   - instance_group (String.t): The name of the instance group where you are adding instances.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -56,8 +56,15 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_instance_groups_add_instances(connection, project, zone, instance_group, opts \\ []) do
-    optional_params = %{
+  def compute_instance_groups_add_instances(
+        connection,
+        project,
+        zone,
+        instance_group,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -77,11 +84,11 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
         "zone" => URI.encode_www_form(zone),
         "instanceGroup" => URI.encode_www_form(instance_group)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -91,7 +98,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -112,8 +119,13 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
   @spec compute_instance_groups_aggregated_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.InstanceGroupAggregatedList.t()}
           | {:error, Tesla.Env.t()}
-  def compute_instance_groups_aggregated_list(connection, project, opts \\ []) do
-    optional_params = %{
+  def compute_instance_groups_aggregated_list(
+        connection,
+        project,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -133,11 +145,13 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
       |> Request.url("/{project}/aggregated/instanceGroups", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.InstanceGroupAggregatedList{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Compute.V1.Model.InstanceGroupAggregatedList{}]
+    )
   end
 
   @doc """
@@ -149,7 +163,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone where the instance group is located.
   - instance_group (String.t): The name of the instance group to delete.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -171,8 +185,15 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_instance_groups_delete(connection, project, zone, instance_group, opts \\ []) do
-    optional_params = %{
+  def compute_instance_groups_delete(
+        connection,
+        project,
+        zone,
+        instance_group,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -191,11 +212,11 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
         "zone" => URI.encode_www_form(zone),
         "instanceGroup" => URI.encode_www_form(instance_group)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -207,7 +228,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone where the instance group is located.
   - instance_group (String.t): The name of the instance group.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -228,8 +249,15 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.InstanceGroup.t()} | {:error, Tesla.Env.t()}
-  def compute_instance_groups_get(connection, project, zone, instance_group, opts \\ []) do
-    optional_params = %{
+  def compute_instance_groups_get(
+        connection,
+        project,
+        zone,
+        instance_group,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -247,11 +275,11 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
         "zone" => URI.encode_www_form(zone),
         "instanceGroup" => URI.encode_www_form(instance_group)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.InstanceGroup{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.InstanceGroup{}])
   end
 
   @doc """
@@ -262,7 +290,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone where you want to create the instance group.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -280,8 +308,8 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
   """
   @spec compute_instance_groups_insert(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_instance_groups_insert(connection, project, zone, opts \\ []) do
-    optional_params = %{
+  def compute_instance_groups_insert(connection, project, zone, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -300,11 +328,11 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
         "project" => URI.encode_www_form(project),
         "zone" => URI.encode_www_form(zone)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -315,7 +343,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone where the instance group is located.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -335,8 +363,8 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
   """
   @spec compute_instance_groups_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.InstanceGroupList.t()} | {:error, Tesla.Env.t()}
-  def compute_instance_groups_list(connection, project, zone, opts \\ []) do
-    optional_params = %{
+  def compute_instance_groups_list(connection, project, zone, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -357,11 +385,11 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
         "project" => URI.encode_www_form(project),
         "zone" => URI.encode_www_form(zone)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.InstanceGroupList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.InstanceGroupList{}])
   end
 
   @doc """
@@ -373,7 +401,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone where the instance group is located.
   - instance_group (String.t): The name of the instance group from which you want to generate a list of included instances.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -406,9 +434,10 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
         project,
         zone,
         instance_group,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -431,11 +460,13 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
         "zone" => URI.encode_www_form(zone),
         "instanceGroup" => URI.encode_www_form(instance_group)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.InstanceGroupsListInstances{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Compute.V1.Model.InstanceGroupsListInstances{}]
+    )
   end
 
   @doc """
@@ -447,7 +478,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone where the instance group is located.
   - instance_group (String.t): The name of the instance group where the specified instances will be removed.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -475,9 +506,10 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
         project,
         zone,
         instance_group,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -497,11 +529,11 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
         "zone" => URI.encode_www_form(zone),
         "instanceGroup" => URI.encode_www_form(instance_group)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -513,7 +545,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone where the instance group is located.
   - instance_group (String.t): The name of the instance group where the named ports are updated.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -541,9 +573,10 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
         project,
         zone,
         instance_group,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -563,10 +596,10 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
         "zone" => URI.encode_www_form(zone),
         "instanceGroup" => URI.encode_www_form(instance_group)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 end

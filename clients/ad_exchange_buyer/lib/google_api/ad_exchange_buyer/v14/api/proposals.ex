@@ -31,7 +31,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
 
   - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
   - proposal_id (String.t): Id of the proposal to retrieve.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -47,8 +47,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
   """
   @spec adexchangebuyer_proposals_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Proposal.t()} | {:error, Tesla.Env.t()}
-  def adexchangebuyer_proposals_get(connection, proposal_id, opts \\ []) do
-    optional_params = %{
+  def adexchangebuyer_proposals_get(connection, proposal_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -64,11 +64,11 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
       |> Request.url("/proposals/{proposalId}", %{
         "proposalId" => URI.encode_www_form(proposal_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V14.Model.Proposal{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V14.Model.Proposal{}])
   end
 
   @doc """
@@ -77,7 +77,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
   ## Parameters
 
   - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -95,8 +95,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
   @spec adexchangebuyer_proposals_insert(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.CreateOrdersResponse.t()}
           | {:error, Tesla.Env.t()}
-  def adexchangebuyer_proposals_insert(connection, opts \\ []) do
-    optional_params = %{
+  def adexchangebuyer_proposals_insert(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -111,11 +111,13 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/proposals/insert")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V14.Model.CreateOrdersResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AdExchangeBuyer.V14.Model.CreateOrdersResponse{}]
+    )
   end
 
   @doc """
@@ -127,7 +129,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
   - proposal_id (String.t): The proposal id to update.
   - revision_number (String.t): The last known revision number to update. If the head revision in the marketplace database has since changed, an error will be thrown. The caller should then fetch the latest proposal at head revision and retry the update at that revision.
   - update_action (String.t): The proposed action to take on the proposal. This field is required and it must be set when updating a proposal.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -154,9 +156,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
         proposal_id,
         revision_number,
         update_action,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -175,11 +178,11 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
         "revisionNumber" => URI.encode_www_form(revision_number),
         "updateAction" => URI.encode_www_form(update_action)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V14.Model.Proposal{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V14.Model.Proposal{}])
   end
 
   @doc """
@@ -188,7 +191,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
   ## Parameters
 
   - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -206,8 +209,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
   @spec adexchangebuyer_proposals_search(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.GetOrdersResponse.t()}
           | {:error, Tesla.Env.t()}
-  def adexchangebuyer_proposals_search(connection, opts \\ []) do
-    optional_params = %{
+  def adexchangebuyer_proposals_search(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -222,11 +225,11 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/proposals/search")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V14.Model.GetOrdersResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V14.Model.GetOrdersResponse{}])
   end
 
   @doc """
@@ -236,7 +239,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
 
   - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
   - proposal_id (String.t): The proposal id for which the setup is complete
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -252,8 +255,13 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
   """
   @spec adexchangebuyer_proposals_setupcomplete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def adexchangebuyer_proposals_setupcomplete(connection, proposal_id, opts \\ []) do
-    optional_params = %{
+  def adexchangebuyer_proposals_setupcomplete(
+        connection,
+        proposal_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -269,11 +277,11 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
       |> Request.url("/proposals/{proposalId}/setupcomplete", %{
         "proposalId" => URI.encode_www_form(proposal_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -285,7 +293,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
   - proposal_id (String.t): The proposal id to update.
   - revision_number (String.t): The last known revision number to update. If the head revision in the marketplace database has since changed, an error will be thrown. The caller should then fetch the latest proposal at head revision and retry the update at that revision.
   - update_action (String.t): The proposed action to take on the proposal. This field is required and it must be set when updating a proposal.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -312,9 +320,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
         proposal_id,
         revision_number,
         update_action,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -333,10 +342,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
         "revisionNumber" => URI.encode_www_form(revision_number),
         "updateAction" => URI.encode_www_form(update_action)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V14.Model.Proposal{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V14.Model.Proposal{}])
   end
 end

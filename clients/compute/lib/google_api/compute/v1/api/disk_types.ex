@@ -31,7 +31,7 @@ defmodule GoogleApi.Compute.V1.Api.DiskTypes do
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -51,8 +51,8 @@ defmodule GoogleApi.Compute.V1.Api.DiskTypes do
   """
   @spec compute_disk_types_aggregated_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.DiskTypeAggregatedList.t()} | {:error, Tesla.Env.t()}
-  def compute_disk_types_aggregated_list(connection, project, opts \\ []) do
-    optional_params = %{
+  def compute_disk_types_aggregated_list(connection, project, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -72,11 +72,11 @@ defmodule GoogleApi.Compute.V1.Api.DiskTypes do
       |> Request.url("/{project}/aggregated/diskTypes", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.DiskTypeAggregatedList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.DiskTypeAggregatedList{}])
   end
 
   @doc """
@@ -88,7 +88,7 @@ defmodule GoogleApi.Compute.V1.Api.DiskTypes do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone for this request.
   - disk_type (String.t): Name of the disk type to return.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -104,8 +104,15 @@ defmodule GoogleApi.Compute.V1.Api.DiskTypes do
   """
   @spec compute_disk_types_get(Tesla.Env.client(), String.t(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.DiskType.t()} | {:error, Tesla.Env.t()}
-  def compute_disk_types_get(connection, project, zone, disk_type, opts \\ []) do
-    optional_params = %{
+  def compute_disk_types_get(
+        connection,
+        project,
+        zone,
+        disk_type,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -123,11 +130,11 @@ defmodule GoogleApi.Compute.V1.Api.DiskTypes do
         "zone" => URI.encode_www_form(zone),
         "diskType" => URI.encode_www_form(disk_type)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.DiskType{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.DiskType{}])
   end
 
   @doc """
@@ -138,7 +145,7 @@ defmodule GoogleApi.Compute.V1.Api.DiskTypes do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -158,8 +165,8 @@ defmodule GoogleApi.Compute.V1.Api.DiskTypes do
   """
   @spec compute_disk_types_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.DiskTypeList.t()} | {:error, Tesla.Env.t()}
-  def compute_disk_types_list(connection, project, zone, opts \\ []) do
-    optional_params = %{
+  def compute_disk_types_list(connection, project, zone, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -180,10 +187,10 @@ defmodule GoogleApi.Compute.V1.Api.DiskTypes do
         "project" => URI.encode_www_form(project),
         "zone" => URI.encode_www_form(zone)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.DiskTypeList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.DiskTypeList{}])
   end
 end

@@ -22,12 +22,13 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics do
 
   ## Attributes
 
-  - completionRatio (float()): [Experimental] [Output-only] Job progress (0.0 -&gt; 1.0) for LOAD and EXTRACT jobs. Defaults to: `null`.
+  - completionRatio (float()): [TrustedTester] [Output-only] Job progress (0.0 -&gt; 1.0) for LOAD and EXTRACT jobs. Defaults to: `null`.
   - creationTime (String.t): [Output-only] Creation time of this job, in milliseconds since the epoch. This field will be present on all jobs. Defaults to: `null`.
   - endTime (String.t): [Output-only] End time of this job, in milliseconds since the epoch. This field will be present whenever a job is in the DONE state. Defaults to: `null`.
   - extract (JobStatistics4): [Output-only] Statistics for an extract job. Defaults to: `null`.
   - load (JobStatistics3): [Output-only] Statistics for a load job. Defaults to: `null`.
   - query (JobStatistics2): [Output-only] Statistics for a query job. Defaults to: `null`.
+  - quotaDeferments ([String.t]): [Output-only] Quotas which delayed this job&#39;s start time. Defaults to: `null`.
   - startTime (String.t): [Output-only] Start time of this job, in milliseconds since the epoch. This field will be present when the job transitions from the PENDING state to either RUNNING or DONE. Defaults to: `null`.
   - totalBytesProcessed (String.t): [Output-only] [Deprecated] Use the bytes processed in the query statistics instead. Defaults to: `null`.
   """
@@ -41,6 +42,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics do
           :extract => GoogleApi.BigQuery.V2.Model.JobStatistics4.t(),
           :load => GoogleApi.BigQuery.V2.Model.JobStatistics3.t(),
           :query => GoogleApi.BigQuery.V2.Model.JobStatistics2.t(),
+          :quotaDeferments => list(any()),
           :startTime => any(),
           :totalBytesProcessed => any()
         }
@@ -51,6 +53,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics do
   field(:extract, as: GoogleApi.BigQuery.V2.Model.JobStatistics4)
   field(:load, as: GoogleApi.BigQuery.V2.Model.JobStatistics3)
   field(:query, as: GoogleApi.BigQuery.V2.Model.JobStatistics2)
+  field(:quotaDeferments, type: :list)
   field(:startTime)
   field(:totalBytesProcessed)
 end

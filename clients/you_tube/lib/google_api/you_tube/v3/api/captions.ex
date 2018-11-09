@@ -31,7 +31,7 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
   - id (String.t): The id parameter identifies the caption track that is being deleted. The value is a caption track ID as identified by the id property in a caption resource.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -49,8 +49,8 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   """
   @spec youtube_captions_delete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def youtube_captions_delete(connection, id, opts \\ []) do
-    optional_params = %{
+  def youtube_captions_delete(connection, id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -67,11 +67,11 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
       |> Request.method(:delete)
       |> Request.url("/youtube/v3/captions")
       |> Request.add_param(:query, :id, id)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -81,7 +81,7 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
   - id (String.t): The id parameter identifies the caption track that is being retrieved. The value is a caption track ID as identified by the id property in a caption resource.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -101,8 +101,8 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   """
   @spec youtube_captions_download(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def youtube_captions_download(connection, id, opts \\ []) do
-    optional_params = %{
+  def youtube_captions_download(connection, id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -122,11 +122,11 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
       |> Request.url("/youtube/v3/captions/{id}", %{
         "id" => URI.encode_www_form(id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -136,7 +136,7 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
   - part (String.t): The part parameter specifies the caption resource parts that the API response will include. Set the parameter value to snippet.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -156,8 +156,8 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   """
   @spec youtube_captions_insert(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.Caption.t()} | {:error, Tesla.Env.t()}
-  def youtube_captions_insert(connection, part, opts \\ []) do
-    optional_params = %{
+  def youtube_captions_insert(connection, part, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -176,11 +176,11 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
       |> Request.method(:post)
       |> Request.url("/youtube/v3/captions")
       |> Request.add_param(:query, :part, part)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.Caption{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTube.V3.Model.Caption{}])
   end
 
   @doc """
@@ -191,7 +191,7 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
   - part (String.t): The part parameter specifies the caption resource parts that the API response will include. Set the parameter value to snippet.
   - upload_type (String.t): Upload type. Must be \&quot;resumable\&quot;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -211,8 +211,14 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   """
   @spec youtube_captions_insert_resumable(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def youtube_captions_insert_resumable(connection, part, upload_type, opts \\ []) do
-    optional_params = %{
+  def youtube_captions_insert_resumable(
+        connection,
+        part,
+        upload_type,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -232,11 +238,11 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
       |> Request.url("/resumable/upload/youtube/v3/captions")
       |> Request.add_param(:query, :part, part)
       |> Request.add_param(:query, :uploadType, upload_type)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -249,7 +255,7 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   - upload_type (String.t): Upload type. Must be \&quot;multipart\&quot;.
   - metadata (Caption): Caption metadata.
   - data (String.t): The file to upload.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -274,8 +280,16 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.YouTube.V3.Model.Caption.t()} | {:error, Tesla.Env.t()}
-  def youtube_captions_insert_simple(connection, part, upload_type, metadata, data, opts \\ []) do
-    optional_params = %{
+  def youtube_captions_insert_simple(
+        connection,
+        part,
+        upload_type,
+        metadata,
+        data,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -296,11 +310,11 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_param(:body, :metadata, metadata)
       |> Request.add_param(:file, :data, data)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.Caption{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTube.V3.Model.Caption{}])
   end
 
   @doc """
@@ -311,7 +325,7 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
   - part (String.t): The part parameter specifies a comma-separated list of one or more caption resource parts that the API response will include. The part names that you can include in the parameter value are id and snippet.
   - video_id (String.t): The videoId parameter specifies the YouTube video ID of the video for which the API should return caption tracks.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -330,8 +344,8 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   """
   @spec youtube_captions_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.CaptionListResponse.t()} | {:error, Tesla.Env.t()}
-  def youtube_captions_list(connection, part, video_id, opts \\ []) do
-    optional_params = %{
+  def youtube_captions_list(connection, part, video_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -350,11 +364,11 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
       |> Request.url("/youtube/v3/captions")
       |> Request.add_param(:query, :part, part)
       |> Request.add_param(:query, :videoId, video_id)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.CaptionListResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTube.V3.Model.CaptionListResponse{}])
   end
 
   @doc """
@@ -364,7 +378,7 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
   - part (String.t): The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include. Set the property value to snippet if you are updating the track&#39;s draft status. Otherwise, set the property value to id.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -384,8 +398,8 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   """
   @spec youtube_captions_update(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.Caption.t()} | {:error, Tesla.Env.t()}
-  def youtube_captions_update(connection, part, opts \\ []) do
-    optional_params = %{
+  def youtube_captions_update(connection, part, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -404,11 +418,11 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
       |> Request.method(:put)
       |> Request.url("/youtube/v3/captions")
       |> Request.add_param(:query, :part, part)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.Caption{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTube.V3.Model.Caption{}])
   end
 
   @doc """
@@ -419,7 +433,7 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
   - part (String.t): The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include. Set the property value to snippet if you are updating the track&#39;s draft status. Otherwise, set the property value to id.
   - upload_type (String.t): Upload type. Must be \&quot;resumable\&quot;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -439,8 +453,14 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   """
   @spec youtube_captions_update_resumable(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def youtube_captions_update_resumable(connection, part, upload_type, opts \\ []) do
-    optional_params = %{
+  def youtube_captions_update_resumable(
+        connection,
+        part,
+        upload_type,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -460,11 +480,11 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
       |> Request.url("/resumable/upload/youtube/v3/captions")
       |> Request.add_param(:query, :part, part)
       |> Request.add_param(:query, :uploadType, upload_type)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -477,7 +497,7 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   - upload_type (String.t): Upload type. Must be \&quot;multipart\&quot;.
   - metadata (Caption): Caption metadata.
   - data (String.t): The file to upload.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -502,8 +522,16 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.YouTube.V3.Model.Caption.t()} | {:error, Tesla.Env.t()}
-  def youtube_captions_update_simple(connection, part, upload_type, metadata, data, opts \\ []) do
-    optional_params = %{
+  def youtube_captions_update_simple(
+        connection,
+        part,
+        upload_type,
+        metadata,
+        data,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -524,10 +552,10 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_param(:body, :metadata, metadata)
       |> Request.add_param(:file, :data, data)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.Caption{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTube.V3.Model.Caption{}])
   end
 end

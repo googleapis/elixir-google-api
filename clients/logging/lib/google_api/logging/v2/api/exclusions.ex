@@ -32,12 +32,12 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
   - connection (GoogleApi.Logging.V2.Connection): Connection to server
   - v2_id (String.t): Part of &#x60;parent&#x60;. Required. The parent resource in which to create the exclusion: \&quot;projects/[PROJECT_ID]\&quot; \&quot;organizations/[ORGANIZATION_ID]\&quot; \&quot;billingAccounts/[BILLING_ACCOUNT_ID]\&quot; \&quot;folders/[FOLDER_ID]\&quot; Examples: \&quot;projects/my-logging-project\&quot;, \&quot;organizations/123456789\&quot;.
   - v2_id1 (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;v2Id&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -53,13 +53,13 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
   """
   @spec logging_exclusions_create(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()} | {:error, Tesla.Env.t()}
-  def logging_exclusions_create(connection, v2_id, v2_id1, opts \\ []) do
-    optional_params = %{
+  def logging_exclusions_create(connection, v2_id, v2_id1, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :access_token => :query,
       :key => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -76,11 +76,11 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
         "v2Id" => URI.encode_www_form(v2_id),
         "v2Id1" => URI.encode_www_form(v2_id1)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Logging.V2.Model.LogExclusion{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Logging.V2.Model.LogExclusion{}])
   end
 
   @doc """
@@ -92,12 +92,12 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
   - v2_id (String.t): Part of &#x60;name&#x60;. Required. The resource name of an existing exclusion to delete: \&quot;projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]\&quot; \&quot;organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]\&quot; \&quot;billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]\&quot; \&quot;folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]\&quot; Example: \&quot;projects/my-project-id/exclusions/my-exclusion-id\&quot;.
   - v2_id1 (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;v2Id&#x60;.
   - exclusions_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;v2Id&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -117,13 +117,20 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Logging.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def logging_exclusions_delete(connection, v2_id, v2_id1, exclusions_id, opts \\ []) do
-    optional_params = %{
+  def logging_exclusions_delete(
+        connection,
+        v2_id,
+        v2_id1,
+        exclusions_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :access_token => :query,
       :key => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -140,11 +147,11 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
         "v2Id1" => URI.encode_www_form(v2_id1),
         "exclusionsId" => URI.encode_www_form(exclusions_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Logging.V2.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Logging.V2.Model.Empty{}])
   end
 
   @doc """
@@ -156,12 +163,12 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
   - v2_id (String.t): Part of &#x60;name&#x60;. Required. The resource name of an existing exclusion: \&quot;projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]\&quot; \&quot;organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]\&quot; \&quot;billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]\&quot; \&quot;folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]\&quot; Example: \&quot;projects/my-project-id/exclusions/my-exclusion-id\&quot;.
   - v2_id1 (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;v2Id&#x60;.
   - exclusions_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;v2Id&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -176,13 +183,20 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
   """
   @spec logging_exclusions_get(Tesla.Env.client(), String.t(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()} | {:error, Tesla.Env.t()}
-  def logging_exclusions_get(connection, v2_id, v2_id1, exclusions_id, opts \\ []) do
-    optional_params = %{
+  def logging_exclusions_get(
+        connection,
+        v2_id,
+        v2_id1,
+        exclusions_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :access_token => :query,
       :key => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -199,11 +213,11 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
         "v2Id1" => URI.encode_www_form(v2_id1),
         "exclusionsId" => URI.encode_www_form(exclusions_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Logging.V2.Model.LogExclusion{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Logging.V2.Model.LogExclusion{}])
   end
 
   @doc """
@@ -214,12 +228,12 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
   - connection (GoogleApi.Logging.V2.Connection): Connection to server
   - v2_id (String.t): Part of &#x60;parent&#x60;. Required. The parent resource whose exclusions are to be listed. \&quot;projects/[PROJECT_ID]\&quot; \&quot;organizations/[ORGANIZATION_ID]\&quot; \&quot;billingAccounts/[BILLING_ACCOUNT_ID]\&quot; \&quot;folders/[FOLDER_ID]\&quot; 
   - v2_id1 (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;v2Id&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -236,13 +250,13 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
   """
   @spec logging_exclusions_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.ListExclusionsResponse.t()} | {:error, Tesla.Env.t()}
-  def logging_exclusions_list(connection, v2_id, v2_id1, opts \\ []) do
-    optional_params = %{
+  def logging_exclusions_list(connection, v2_id, v2_id1, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :access_token => :query,
       :key => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -260,11 +274,11 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
         "v2Id" => URI.encode_www_form(v2_id),
         "v2Id1" => URI.encode_www_form(v2_id1)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Logging.V2.Model.ListExclusionsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Logging.V2.Model.ListExclusionsResponse{}])
   end
 
   @doc """
@@ -276,12 +290,12 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
   - v2_id (String.t): Part of &#x60;name&#x60;. Required. The resource name of the exclusion to update: \&quot;projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]\&quot; \&quot;organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]\&quot; \&quot;billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]\&quot; \&quot;folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]\&quot; Example: \&quot;projects/my-project-id/exclusions/my-exclusion-id\&quot;.
   - v2_id1 (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;v2Id&#x60;.
   - exclusions_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;v2Id&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -303,13 +317,20 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()} | {:error, Tesla.Env.t()}
-  def logging_exclusions_patch(connection, v2_id, v2_id1, exclusions_id, opts \\ []) do
-    optional_params = %{
+  def logging_exclusions_patch(
+        connection,
+        v2_id,
+        v2_id1,
+        exclusions_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :access_token => :query,
       :key => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -328,10 +349,10 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
         "v2Id1" => URI.encode_www_form(v2_id1),
         "exclusionsId" => URI.encode_www_form(exclusions_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Logging.V2.Model.LogExclusion{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Logging.V2.Model.LogExclusion{}])
   end
 end

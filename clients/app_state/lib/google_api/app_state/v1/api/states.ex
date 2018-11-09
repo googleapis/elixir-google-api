@@ -31,7 +31,7 @@ defmodule GoogleApi.AppState.V1.Api.States do
 
   - connection (GoogleApi.AppState.V1.Connection): Connection to server
   - state_key (integer()): The key for the data to be retrieved.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,8 @@ defmodule GoogleApi.AppState.V1.Api.States do
   """
   @spec appstate_states_clear(Tesla.Env.client(), integer(), keyword()) ::
           {:ok, GoogleApi.AppState.V1.Model.WriteResult.t()} | {:error, Tesla.Env.t()}
-  def appstate_states_clear(connection, state_key, opts \\ []) do
-    optional_params = %{
+  def appstate_states_clear(connection, state_key, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -66,11 +66,11 @@ defmodule GoogleApi.AppState.V1.Api.States do
       |> Request.url("/states/{stateKey}/clear", %{
         "stateKey" => state_key
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppState.V1.Model.WriteResult{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppState.V1.Model.WriteResult{}])
   end
 
   @doc """
@@ -80,7 +80,7 @@ defmodule GoogleApi.AppState.V1.Api.States do
 
   - connection (GoogleApi.AppState.V1.Connection): Connection to server
   - state_key (integer()): The key for the data to be retrieved.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -96,8 +96,8 @@ defmodule GoogleApi.AppState.V1.Api.States do
   """
   @spec appstate_states_delete(Tesla.Env.client(), integer(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def appstate_states_delete(connection, state_key, opts \\ []) do
-    optional_params = %{
+  def appstate_states_delete(connection, state_key, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -113,11 +113,11 @@ defmodule GoogleApi.AppState.V1.Api.States do
       |> Request.url("/states/{stateKey}", %{
         "stateKey" => state_key
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -127,7 +127,7 @@ defmodule GoogleApi.AppState.V1.Api.States do
 
   - connection (GoogleApi.AppState.V1.Connection): Connection to server
   - state_key (integer()): The key for the data to be retrieved.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -143,8 +143,8 @@ defmodule GoogleApi.AppState.V1.Api.States do
   """
   @spec appstate_states_get(Tesla.Env.client(), integer(), keyword()) ::
           {:ok, GoogleApi.AppState.V1.Model.GetResponse.t()} | {:error, Tesla.Env.t()}
-  def appstate_states_get(connection, state_key, opts \\ []) do
-    optional_params = %{
+  def appstate_states_get(connection, state_key, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -160,11 +160,11 @@ defmodule GoogleApi.AppState.V1.Api.States do
       |> Request.url("/states/{stateKey}", %{
         "stateKey" => state_key
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppState.V1.Model.GetResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppState.V1.Model.GetResponse{}])
   end
 
   @doc """
@@ -173,7 +173,7 @@ defmodule GoogleApi.AppState.V1.Api.States do
   ## Parameters
 
   - connection (GoogleApi.AppState.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -190,8 +190,8 @@ defmodule GoogleApi.AppState.V1.Api.States do
   """
   @spec appstate_states_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.AppState.V1.Model.ListResponse.t()} | {:error, Tesla.Env.t()}
-  def appstate_states_list(connection, opts \\ []) do
-    optional_params = %{
+  def appstate_states_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -206,11 +206,11 @@ defmodule GoogleApi.AppState.V1.Api.States do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/states")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppState.V1.Model.ListResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppState.V1.Model.ListResponse{}])
   end
 
   @doc """
@@ -220,7 +220,7 @@ defmodule GoogleApi.AppState.V1.Api.States do
 
   - connection (GoogleApi.AppState.V1.Connection): Connection to server
   - state_key (integer()): The key for the data to be retrieved.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -238,8 +238,8 @@ defmodule GoogleApi.AppState.V1.Api.States do
   """
   @spec appstate_states_update(Tesla.Env.client(), integer(), keyword()) ::
           {:ok, GoogleApi.AppState.V1.Model.WriteResult.t()} | {:error, Tesla.Env.t()}
-  def appstate_states_update(connection, state_key, opts \\ []) do
-    optional_params = %{
+  def appstate_states_update(connection, state_key, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -257,10 +257,10 @@ defmodule GoogleApi.AppState.V1.Api.States do
       |> Request.url("/states/{stateKey}", %{
         "stateKey" => state_key
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppState.V1.Model.WriteResult{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppState.V1.Model.WriteResult{}])
   end
 end

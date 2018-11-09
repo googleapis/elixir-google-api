@@ -22,6 +22,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.Pose do
 
   ## Attributes
 
+  - accuracyMeters (float()): The estimated horizontal accuracy of this pose in meters with 68% confidence (one standard deviation). For example, on Android, this value is available from this method: https://developer.android.com/reference/android/location/Location#getAccuracy(). Other platforms have different methods of obtaining similar accuracy estimations. Defaults to: `null`.
   - altitude (float()): Altitude of the pose in meters above WGS84 ellipsoid. NaN indicates an unmeasured quantity. Defaults to: `null`.
   - heading (float()): Compass heading, measured at the center of the photo in degrees clockwise from North. Value must be &gt;&#x3D;0 and &lt;360. NaN indicates an unmeasured quantity. Defaults to: `null`.
   - latLngPair (LatLng): Latitude and longitude pair of the pose, as explained here: https://cloud.google.com/datastore/docs/reference/rest/Shared.Types/LatLng When creating a Photo, if the latitude and longitude pair are not provided here, the geolocation from the exif header will be used. If the latitude and longitude pair is not provided and cannot be found in the exif header, the create photo process will fail. Defaults to: `null`.
@@ -33,6 +34,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.Pose do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :accuracyMeters => any(),
           :altitude => any(),
           :heading => any(),
           :latLngPair => GoogleApi.StreetViewPublish.V1.Model.LatLng.t(),
@@ -41,6 +43,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.Pose do
           :roll => any()
         }
 
+  field(:accuracyMeters)
   field(:altitude)
   field(:heading)
   field(:latLngPair, as: GoogleApi.StreetViewPublish.V1.Model.LatLng)

@@ -23,18 +23,15 @@ defmodule GoogleApi.Content.V2.Model.AccountsLinkResponse do
   ## Attributes
 
   - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;content#accountsLinkResponse\&quot;. Defaults to: `null`.
-  - linkStatus (String.t): Current status of the requested link. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => any(),
-          :linkStatus => any()
+          :kind => any()
         }
 
   field(:kind)
-  field(:linkStatus)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.AccountsLinkResponse do

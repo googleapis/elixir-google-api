@@ -32,7 +32,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
   - connection (GoogleApi.Webmaster.V3.Connection): Connection to server
   - site_url (String.t): The site&#39;s URL, including protocol. For example: http://www.example.com/
   - feedpath (String.t): The URL of the actual sitemap. For example: http://www.example.com/sitemap.xml
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,14 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
   """
   @spec webmasters_sitemaps_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def webmasters_sitemaps_delete(connection, site_url, feedpath, opts \\ []) do
-    optional_params = %{
+  def webmasters_sitemaps_delete(
+        connection,
+        site_url,
+        feedpath,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -66,11 +72,11 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
         "siteUrl" => URI.encode_www_form(site_url),
         "feedpath" => URI.encode_www_form(feedpath)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -81,7 +87,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
   - connection (GoogleApi.Webmaster.V3.Connection): Connection to server
   - site_url (String.t): The site&#39;s URL, including protocol. For example: http://www.example.com/
   - feedpath (String.t): The URL of the actual sitemap. For example: http://www.example.com/sitemap.xml
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -97,8 +103,8 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
   """
   @spec webmasters_sitemaps_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Webmaster.V3.Model.WmxSitemap.t()} | {:error, Tesla.Env.t()}
-  def webmasters_sitemaps_get(connection, site_url, feedpath, opts \\ []) do
-    optional_params = %{
+  def webmasters_sitemaps_get(connection, site_url, feedpath, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -115,11 +121,11 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
         "siteUrl" => URI.encode_www_form(site_url),
         "feedpath" => URI.encode_www_form(feedpath)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Webmaster.V3.Model.WmxSitemap{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Webmaster.V3.Model.WmxSitemap{}])
   end
 
   @doc """
@@ -129,7 +135,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
 
   - connection (GoogleApi.Webmaster.V3.Connection): Connection to server
   - site_url (String.t): The site&#39;s URL, including protocol. For example: http://www.example.com/
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -146,8 +152,8 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
   """
   @spec webmasters_sitemaps_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Webmaster.V3.Model.SitemapsListResponse.t()} | {:error, Tesla.Env.t()}
-  def webmasters_sitemaps_list(connection, site_url, opts \\ []) do
-    optional_params = %{
+  def webmasters_sitemaps_list(connection, site_url, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -164,11 +170,11 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
       |> Request.url("/sites/{siteUrl}/sitemaps", %{
         "siteUrl" => URI.encode_www_form(site_url)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Webmaster.V3.Model.SitemapsListResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Webmaster.V3.Model.SitemapsListResponse{}])
   end
 
   @doc """
@@ -179,7 +185,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
   - connection (GoogleApi.Webmaster.V3.Connection): Connection to server
   - site_url (String.t): The site&#39;s URL, including protocol. For example: http://www.example.com/
   - feedpath (String.t): The URL of the sitemap to add. For example: http://www.example.com/sitemap.xml
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -195,8 +201,14 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
   """
   @spec webmasters_sitemaps_submit(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def webmasters_sitemaps_submit(connection, site_url, feedpath, opts \\ []) do
-    optional_params = %{
+  def webmasters_sitemaps_submit(
+        connection,
+        site_url,
+        feedpath,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -213,10 +225,10 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
         "siteUrl" => URI.encode_www_form(site_url),
         "feedpath" => URI.encode_www_form(feedpath)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 end

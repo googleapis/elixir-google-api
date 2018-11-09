@@ -22,8 +22,8 @@ defmodule GoogleApi.Content.V2.Model.Amount do
 
   ## Attributes
 
-  - pretax (Price): Value before taxes. Defaults to: `null`.
-  - tax (Price): Tax value. Defaults to: `null`.
+  - pretax (Price): [required] Value before taxes. Defaults to: `null`.
+  - tax (Price): [required] Tax value. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,22 +22,16 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.StackTrace do
 
   ## Attributes
 
-  - clusterId (String.t): Exception cluster ID Defaults to: `null`.
   - exception (String.t): The stack trace message.  Required Defaults to: `null`.
-  - reportId (String.t): Exception report ID Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusterId => any(),
-          :exception => any(),
-          :reportId => any()
+          :exception => any()
         }
 
-  field(:clusterId)
   field(:exception)
-  field(:reportId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.StackTrace do

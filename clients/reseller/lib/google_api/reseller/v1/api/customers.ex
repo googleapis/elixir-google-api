@@ -31,7 +31,7 @@ defmodule GoogleApi.Reseller.V1.Api.Customers do
 
   - connection (GoogleApi.Reseller.V1.Connection): Connection to server
   - customer_id (String.t): Either the customer&#39;s primary domain name or the customer&#39;s unique identifier. If using the domain name, we do not recommend using a customerId as a key for persistent data. If the domain name for a customerId is changed, the Google system automatically updates.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -47,8 +47,8 @@ defmodule GoogleApi.Reseller.V1.Api.Customers do
   """
   @spec reseller_customers_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Reseller.V1.Model.Customer.t()} | {:error, Tesla.Env.t()}
-  def reseller_customers_get(connection, customer_id, opts \\ []) do
-    optional_params = %{
+  def reseller_customers_get(connection, customer_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -64,11 +64,11 @@ defmodule GoogleApi.Reseller.V1.Api.Customers do
       |> Request.url("/customers/{customerId}", %{
         "customerId" => URI.encode_www_form(customer_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Reseller.V1.Model.Customer{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Reseller.V1.Model.Customer{}])
   end
 
   @doc """
@@ -77,7 +77,7 @@ defmodule GoogleApi.Reseller.V1.Api.Customers do
   ## Parameters
 
   - connection (GoogleApi.Reseller.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -95,8 +95,8 @@ defmodule GoogleApi.Reseller.V1.Api.Customers do
   """
   @spec reseller_customers_insert(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Reseller.V1.Model.Customer.t()} | {:error, Tesla.Env.t()}
-  def reseller_customers_insert(connection, opts \\ []) do
-    optional_params = %{
+  def reseller_customers_insert(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -112,11 +112,11 @@ defmodule GoogleApi.Reseller.V1.Api.Customers do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/customers")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Reseller.V1.Model.Customer{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Reseller.V1.Model.Customer{}])
   end
 
   @doc """
@@ -126,7 +126,7 @@ defmodule GoogleApi.Reseller.V1.Api.Customers do
 
   - connection (GoogleApi.Reseller.V1.Connection): Connection to server
   - customer_id (String.t): Either the customer&#39;s primary domain name or the customer&#39;s unique identifier. If using the domain name, we do not recommend using a customerId as a key for persistent data. If the domain name for a customerId is changed, the Google system automatically updates.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -143,8 +143,8 @@ defmodule GoogleApi.Reseller.V1.Api.Customers do
   """
   @spec reseller_customers_patch(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Reseller.V1.Model.Customer.t()} | {:error, Tesla.Env.t()}
-  def reseller_customers_patch(connection, customer_id, opts \\ []) do
-    optional_params = %{
+  def reseller_customers_patch(connection, customer_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -161,11 +161,11 @@ defmodule GoogleApi.Reseller.V1.Api.Customers do
       |> Request.url("/customers/{customerId}", %{
         "customerId" => URI.encode_www_form(customer_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Reseller.V1.Model.Customer{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Reseller.V1.Model.Customer{}])
   end
 
   @doc """
@@ -175,7 +175,7 @@ defmodule GoogleApi.Reseller.V1.Api.Customers do
 
   - connection (GoogleApi.Reseller.V1.Connection): Connection to server
   - customer_id (String.t): Either the customer&#39;s primary domain name or the customer&#39;s unique identifier. If using the domain name, we do not recommend using a customerId as a key for persistent data. If the domain name for a customerId is changed, the Google system automatically updates.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -192,8 +192,8 @@ defmodule GoogleApi.Reseller.V1.Api.Customers do
   """
   @spec reseller_customers_update(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Reseller.V1.Model.Customer.t()} | {:error, Tesla.Env.t()}
-  def reseller_customers_update(connection, customer_id, opts \\ []) do
-    optional_params = %{
+  def reseller_customers_update(connection, customer_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -210,10 +210,10 @@ defmodule GoogleApi.Reseller.V1.Api.Customers do
       |> Request.url("/customers/{customerId}", %{
         "customerId" => URI.encode_www_form(customer_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Reseller.V1.Model.Customer{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Reseller.V1.Model.Customer{}])
   end
 end

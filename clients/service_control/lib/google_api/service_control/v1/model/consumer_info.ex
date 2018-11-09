@@ -18,20 +18,27 @@
 
 defmodule GoogleApi.ServiceControl.V1.Model.ConsumerInfo do
   @moduledoc """
-  &#x60;ConsumerInfo&#x60; provides information about the consumer project.
+  &#x60;ConsumerInfo&#x60; provides information about the consumer.
 
   ## Attributes
 
-  - projectNumber (String.t): The Google cloud project number, e.g. 1234567890. A value of 0 indicates no project number is found. Defaults to: `null`.
+  - consumerNumber (String.t): The consumer identity number, can be Google cloud project number, folder number or organization number e.g. 1234567890. A value of 0 indicates no consumer number is found. Defaults to: `null`.
+  - projectNumber (String.t): The Google cloud project number, e.g. 1234567890. A value of 0 indicates no project number is found.  NOTE: This field is deprecated after Chemist support flexible consumer id. New code should not depend on this field anymore. Defaults to: `null`.
+  - type (String.t):  Defaults to: `null`.
+    - Enum - one of [CONSUMER_TYPE_UNSPECIFIED, PROJECT, FOLDER, ORGANIZATION]
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :projectNumber => any()
+          :consumerNumber => any(),
+          :projectNumber => any(),
+          :type => any()
         }
 
+  field(:consumerNumber)
   field(:projectNumber)
+  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.ConsumerInfo do

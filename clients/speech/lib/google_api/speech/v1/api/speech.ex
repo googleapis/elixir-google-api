@@ -30,15 +30,15 @@ defmodule GoogleApi.Speech.V1.Api.Speech do
   ## Parameters
 
   - connection (GoogleApi.Speech.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+  - optional_params (KeywordList): [optional] Optional parameters
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
@@ -51,16 +51,16 @@ defmodule GoogleApi.Speech.V1.Api.Speech do
   """
   @spec speech_speech_longrunningrecognize(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Speech.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def speech_speech_longrunningrecognize(connection, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
+  def speech_speech_longrunningrecognize(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :key => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
@@ -71,11 +71,11 @@ defmodule GoogleApi.Speech.V1.Api.Speech do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/speech:longrunningrecognize")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Speech.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V1.Model.Operation{}])
   end
 
   @doc """
@@ -84,15 +84,15 @@ defmodule GoogleApi.Speech.V1.Api.Speech do
   ## Parameters
 
   - connection (GoogleApi.Speech.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+  - optional_params (KeywordList): [optional] Optional parameters
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
@@ -105,16 +105,16 @@ defmodule GoogleApi.Speech.V1.Api.Speech do
   """
   @spec speech_speech_recognize(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Speech.V1.Model.RecognizeResponse.t()} | {:error, Tesla.Env.t()}
-  def speech_speech_recognize(connection, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
+  def speech_speech_recognize(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :key => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
@@ -125,10 +125,10 @@ defmodule GoogleApi.Speech.V1.Api.Speech do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/speech:recognize")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Speech.V1.Model.RecognizeResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V1.Model.RecognizeResponse{}])
   end
 end

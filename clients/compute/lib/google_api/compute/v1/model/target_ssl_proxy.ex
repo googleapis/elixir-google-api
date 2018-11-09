@@ -31,7 +31,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetSslProxy do
     - Enum - one of [NONE, PROXY_V1]
   - selfLink (String.t): [Output Only] Server-defined URL for the resource. Defaults to: `null`.
   - service (String.t): URL to the BackendService resource. Defaults to: `null`.
-  - sslCertificates ([String.t]): URLs to SslCertificate resources that are used to authenticate connections to Backends. Currently exactly one SSL certificate must be specified. Defaults to: `null`.
+  - sslCertificates ([String.t]): URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. Defaults to: `null`.
   - sslPolicy (String.t): URL of SslPolicy resource that will be associated with the TargetSslProxy resource. If not set, the TargetSslProxy resource will not have any SSL policy configured. Defaults to: `null`.
   """
 

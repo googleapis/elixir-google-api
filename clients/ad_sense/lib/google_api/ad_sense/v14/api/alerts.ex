@@ -31,7 +31,7 @@ defmodule GoogleApi.AdSense.V14.Api.Alerts do
 
   - connection (GoogleApi.AdSense.V14.Connection): Connection to server
   - alert_id (String.t): Alert to delete.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -47,8 +47,8 @@ defmodule GoogleApi.AdSense.V14.Api.Alerts do
   """
   @spec adsense_alerts_delete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def adsense_alerts_delete(connection, alert_id, opts \\ []) do
-    optional_params = %{
+  def adsense_alerts_delete(connection, alert_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -64,11 +64,11 @@ defmodule GoogleApi.AdSense.V14.Api.Alerts do
       |> Request.url("/alerts/{alertId}", %{
         "alertId" => URI.encode_www_form(alert_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -77,7 +77,7 @@ defmodule GoogleApi.AdSense.V14.Api.Alerts do
   ## Parameters
 
   - connection (GoogleApi.AdSense.V14.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -94,8 +94,8 @@ defmodule GoogleApi.AdSense.V14.Api.Alerts do
   """
   @spec adsense_alerts_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.Alerts.t()} | {:error, Tesla.Env.t()}
-  def adsense_alerts_list(connection, opts \\ []) do
-    optional_params = %{
+  def adsense_alerts_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -110,10 +110,10 @@ defmodule GoogleApi.AdSense.V14.Api.Alerts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/alerts")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdSense.V14.Model.Alerts{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdSense.V14.Model.Alerts{}])
   end
 end

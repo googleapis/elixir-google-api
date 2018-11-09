@@ -31,18 +31,18 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
 
   - connection (GoogleApi.IAM.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;parent&#x60;. The resource name of the parent resource in one of the following formats: &#x60;organizations/{ORGANIZATION_ID}&#x60; &#x60;projects/{PROJECT_ID}&#x60;
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (CreateRoleRequest): 
 
   ## Returns
@@ -52,19 +52,19 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   """
   @spec iam_projects_roles_create(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.IAM.V1.Model.Role.t()} | {:error, Tesla.Env.t()}
-  def iam_projects_roles_create(connection, projects_id, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def iam_projects_roles_create(connection, projects_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
+      :quotaUser => :query,
       :uploadType => :query,
+      :fields => :query,
       :body => :body
     }
 
@@ -74,11 +74,11 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectsId}/roles", %{
         "projectsId" => URI.encode_www_form(projects_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IAM.V1.Model.Role{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.Role{}])
   end
 
   @doc """
@@ -89,18 +89,18 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   - connection (GoogleApi.IAM.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The resource name of the role in one of the following formats: &#x60;organizations/{ORGANIZATION_ID}/roles/{ROLE_NAME}&#x60; &#x60;projects/{PROJECT_ID}/roles/{ROLE_NAME}&#x60;
   - roles_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :etag (binary()): Used to perform a consistent read-modify-write.
 
   ## Returns
@@ -110,19 +110,25 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   """
   @spec iam_projects_roles_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.IAM.V1.Model.Role.t()} | {:error, Tesla.Env.t()}
-  def iam_projects_roles_delete(connection, projects_id, roles_id, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def iam_projects_roles_delete(
+        connection,
+        projects_id,
+        roles_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
+      :quotaUser => :query,
       :uploadType => :query,
+      :fields => :query,
       :etag => :query
     }
 
@@ -133,11 +139,11 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "rolesId" => URI.encode_www_form(roles_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IAM.V1.Model.Role{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.Role{}])
   end
 
   @doc """
@@ -148,18 +154,18 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   - connection (GoogleApi.IAM.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The resource name of the role in one of the following formats: &#x60;roles/{ROLE_NAME}&#x60; &#x60;organizations/{ORGANIZATION_ID}/roles/{ROLE_NAME}&#x60; &#x60;projects/{PROJECT_ID}/roles/{ROLE_NAME}&#x60;
   - roles_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
 
   ## Returns
 
@@ -168,19 +174,19 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   """
   @spec iam_projects_roles_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.IAM.V1.Model.Role.t()} | {:error, Tesla.Env.t()}
-  def iam_projects_roles_get(connection, projects_id, roles_id, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def iam_projects_roles_get(connection, projects_id, roles_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query
+      :quotaUser => :query,
+      :uploadType => :query,
+      :fields => :query
     }
 
     request =
@@ -190,11 +196,11 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "rolesId" => URI.encode_www_form(roles_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IAM.V1.Model.Role{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.Role{}])
   end
 
   @doc """
@@ -204,18 +210,18 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
 
   - connection (GoogleApi.IAM.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;parent&#x60;. The resource name of the parent resource in one of the following formats: &#x60;&#x60; (empty string) -- this refers to curated roles. &#x60;organizations/{ORGANIZATION_ID}&#x60; &#x60;projects/{PROJECT_ID}&#x60;
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :pageSize (integer()): Optional limit on the number of roles to include in the response.
     - :view (String.t): Optional view for the returned Role objects.
     - :showDeleted (boolean()): Include Roles that have been deleted.
@@ -228,19 +234,19 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   """
   @spec iam_projects_roles_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.IAM.V1.Model.ListRolesResponse.t()} | {:error, Tesla.Env.t()}
-  def iam_projects_roles_list(connection, projects_id, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def iam_projects_roles_list(connection, projects_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
+      :quotaUser => :query,
       :uploadType => :query,
+      :fields => :query,
       :pageSize => :query,
       :view => :query,
       :showDeleted => :query,
@@ -253,11 +259,11 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectsId}/roles", %{
         "projectsId" => URI.encode_www_form(projects_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IAM.V1.Model.ListRolesResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.ListRolesResponse{}])
   end
 
   @doc """
@@ -268,18 +274,18 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   - connection (GoogleApi.IAM.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The resource name of the role in one of the following formats: &#x60;roles/{ROLE_NAME}&#x60; &#x60;organizations/{ORGANIZATION_ID}/roles/{ROLE_NAME}&#x60; &#x60;projects/{PROJECT_ID}/roles/{ROLE_NAME}&#x60;
   - roles_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :updateMask (String.t): A mask describing which fields in the Role have changed.
     - :body (Role): 
 
@@ -290,19 +296,25 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   """
   @spec iam_projects_roles_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.IAM.V1.Model.Role.t()} | {:error, Tesla.Env.t()}
-  def iam_projects_roles_patch(connection, projects_id, roles_id, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def iam_projects_roles_patch(
+        connection,
+        projects_id,
+        roles_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
+      :quotaUser => :query,
       :uploadType => :query,
+      :fields => :query,
       :updateMask => :query,
       :body => :body
     }
@@ -314,11 +326,11 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "rolesId" => URI.encode_www_form(roles_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IAM.V1.Model.Role{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.Role{}])
   end
 
   @doc """
@@ -329,18 +341,18 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   - connection (GoogleApi.IAM.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The resource name of the role in one of the following formats: &#x60;organizations/{ORGANIZATION_ID}/roles/{ROLE_NAME}&#x60; &#x60;projects/{PROJECT_ID}/roles/{ROLE_NAME}&#x60;
   - roles_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (UndeleteRoleRequest): 
 
   ## Returns
@@ -350,19 +362,25 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   """
   @spec iam_projects_roles_undelete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.IAM.V1.Model.Role.t()} | {:error, Tesla.Env.t()}
-  def iam_projects_roles_undelete(connection, projects_id, roles_id, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def iam_projects_roles_undelete(
+        connection,
+        projects_id,
+        roles_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
+      :quotaUser => :query,
       :uploadType => :query,
+      :fields => :query,
       :body => :body
     }
 
@@ -373,11 +391,11 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "rolesId" => URI.encode_www_form(roles_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IAM.V1.Model.Role{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.Role{}])
   end
 
   @doc """
@@ -387,18 +405,18 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
 
   - connection (GoogleApi.IAM.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. Required. The resource name of the project associated with the service accounts, such as &#x60;projects/my-project-123&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (CreateServiceAccountRequest): 
 
   ## Returns
@@ -408,19 +426,24 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   """
   @spec iam_projects_service_accounts_create(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.IAM.V1.Model.ServiceAccount.t()} | {:error, Tesla.Env.t()}
-  def iam_projects_service_accounts_create(connection, projects_id, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def iam_projects_service_accounts_create(
+        connection,
+        projects_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
+      :quotaUser => :query,
       :uploadType => :query,
+      :fields => :query,
       :body => :body
     }
 
@@ -430,11 +453,11 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectsId}/serviceAccounts", %{
         "projectsId" => URI.encode_www_form(projects_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IAM.V1.Model.ServiceAccount{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.ServiceAccount{}])
   end
 
   @doc """
@@ -445,18 +468,18 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   - connection (GoogleApi.IAM.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The resource name of the service account in the following format: &#x60;projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}&#x60;. Using &#x60;-&#x60; as a wildcard for the &#x60;PROJECT_ID&#x60; will infer the project from the account. The &#x60;ACCOUNT&#x60; value can be the &#x60;email&#x60; address or the &#x60;unique_id&#x60; of the service account.
   - service_accounts_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
 
   ## Returns
 
@@ -473,20 +496,21 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         connection,
         projects_id,
         service_accounts_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query
+      :quotaUser => :query,
+      :uploadType => :query,
+      :fields => :query
     }
 
     request =
@@ -496,11 +520,11 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "serviceAccountsId" => URI.encode_www_form(service_accounts_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IAM.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.Empty{}])
   end
 
   @doc """
@@ -511,18 +535,18 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   - connection (GoogleApi.IAM.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The resource name of the service account in the following format: &#x60;projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}&#x60;. Using &#x60;-&#x60; as a wildcard for the &#x60;PROJECT_ID&#x60; will infer the project from the account. The &#x60;ACCOUNT&#x60; value can be the &#x60;email&#x60; address or the &#x60;unique_id&#x60; of the service account.
   - service_accounts_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
 
   ## Returns
 
@@ -531,19 +555,25 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   """
   @spec iam_projects_service_accounts_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.IAM.V1.Model.ServiceAccount.t()} | {:error, Tesla.Env.t()}
-  def iam_projects_service_accounts_get(connection, projects_id, service_accounts_id, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def iam_projects_service_accounts_get(
+        connection,
+        projects_id,
+        service_accounts_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query
+      :quotaUser => :query,
+      :uploadType => :query,
+      :fields => :query
     }
 
     request =
@@ -553,11 +583,11 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "serviceAccountsId" => URI.encode_www_form(service_accounts_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IAM.V1.Model.ServiceAccount{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.ServiceAccount{}])
   end
 
   @doc """
@@ -568,18 +598,18 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   - connection (GoogleApi.IAM.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   - service_accounts_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
 
   ## Returns
 
@@ -596,20 +626,21 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         connection,
         projects_id,
         service_accounts_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query
+      :quotaUser => :query,
+      :uploadType => :query,
+      :fields => :query
     }
 
     request =
@@ -622,11 +653,11 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
           "serviceAccountsId" => URI.encode_www_form(service_accounts_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IAM.V1.Model.Policy{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.Policy{}])
   end
 
   @doc """
@@ -637,18 +668,18 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   - connection (GoogleApi.IAM.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The resource name of the service account in the following format: &#x60;projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}&#x60;. Using &#x60;-&#x60; as a wildcard for the &#x60;PROJECT_ID&#x60; will infer the project from the account. The &#x60;ACCOUNT&#x60; value can be the &#x60;email&#x60; address or the &#x60;unique_id&#x60; of the service account.
   - service_accounts_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (CreateServiceAccountKeyRequest): 
 
   ## Returns
@@ -666,20 +697,21 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         connection,
         projects_id,
         service_accounts_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
+      :quotaUser => :query,
       :uploadType => :query,
+      :fields => :query,
       :body => :body
     }
 
@@ -690,11 +722,11 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "serviceAccountsId" => URI.encode_www_form(service_accounts_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IAM.V1.Model.ServiceAccountKey{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.ServiceAccountKey{}])
   end
 
   @doc """
@@ -706,18 +738,18 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;name&#x60;. The resource name of the service account key in the following format: &#x60;projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}&#x60;. Using &#x60;-&#x60; as a wildcard for the &#x60;PROJECT_ID&#x60; will infer the project from the account. The &#x60;ACCOUNT&#x60; value can be the &#x60;email&#x60; address or the &#x60;unique_id&#x60; of the service account.
   - service_accounts_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - keys_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
 
   ## Returns
 
@@ -736,20 +768,21 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         projects_id,
         service_accounts_id,
         keys_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query
+      :quotaUser => :query,
+      :uploadType => :query,
+      :fields => :query
     }
 
     request =
@@ -763,11 +796,11 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
           "keysId" => URI.encode_www_form(keys_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IAM.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.Empty{}])
   end
 
   @doc """
@@ -779,18 +812,18 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;name&#x60;. The resource name of the service account key in the following format: &#x60;projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}&#x60;.  Using &#x60;-&#x60; as a wildcard for the &#x60;PROJECT_ID&#x60; will infer the project from the account. The &#x60;ACCOUNT&#x60; value can be the &#x60;email&#x60; address or the &#x60;unique_id&#x60; of the service account.
   - service_accounts_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - keys_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :publicKeyType (String.t): The output format of the public key requested. X509_PEM is the default output format.
 
   ## Returns
@@ -810,20 +843,21 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         projects_id,
         service_accounts_id,
         keys_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
+      :quotaUser => :query,
       :uploadType => :query,
+      :fields => :query,
       :publicKeyType => :query
     }
 
@@ -838,11 +872,11 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
           "keysId" => URI.encode_www_form(keys_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IAM.V1.Model.ServiceAccountKey{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.ServiceAccountKey{}])
   end
 
   @doc """
@@ -853,18 +887,18 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   - connection (GoogleApi.IAM.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The resource name of the service account in the following format: &#x60;projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}&#x60;.  Using &#x60;-&#x60; as a wildcard for the &#x60;PROJECT_ID&#x60;, will infer the project from the account. The &#x60;ACCOUNT&#x60; value can be the &#x60;email&#x60; address or the &#x60;unique_id&#x60; of the service account.
   - service_accounts_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :keyTypes ([String.t]): Filters the types of keys the user wants to include in the list response. Duplicate key types are not allowed. If no key type is provided, all keys are returned.
 
   ## Returns
@@ -884,20 +918,21 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         connection,
         projects_id,
         service_accounts_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
+      :quotaUser => :query,
       :uploadType => :query,
+      :fields => :query,
       :keyTypes => :query
     }
 
@@ -908,11 +943,11 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "serviceAccountsId" => URI.encode_www_form(service_accounts_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IAM.V1.Model.ListServiceAccountKeysResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.ListServiceAccountKeysResponse{}])
   end
 
   @doc """
@@ -922,20 +957,20 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
 
   - connection (GoogleApi.IAM.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. Required. The resource name of the project associated with the service accounts, such as &#x60;projects/my-project-123&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageSize (integer()): Optional limit on the number of service accounts to include in the response. Further accounts can subsequently be obtained by including the ListServiceAccountsResponse.next_page_token in a subsequent request.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :pageToken (String.t): Optional pagination token returned in an earlier ListServiceAccountsResponse.next_page_token.
+    - :pageSize (integer()): Optional limit on the number of service accounts to include in the response. Further accounts can subsequently be obtained by including the ListServiceAccountsResponse.next_page_token in a subsequent request.
 
   ## Returns
 
@@ -944,21 +979,26 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   """
   @spec iam_projects_service_accounts_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.IAM.V1.Model.ListServiceAccountsResponse.t()} | {:error, Tesla.Env.t()}
-  def iam_projects_service_accounts_list(connection, projects_id, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def iam_projects_service_accounts_list(
+        connection,
+        projects_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
+      :quotaUser => :query,
       :uploadType => :query,
-      :pageSize => :query,
-      :pageToken => :query
+      :fields => :query,
+      :pageToken => :query,
+      :pageSize => :query
     }
 
     request =
@@ -967,11 +1007,11 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectsId}/serviceAccounts", %{
         "projectsId" => URI.encode_www_form(projects_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IAM.V1.Model.ListServiceAccountsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.ListServiceAccountsResponse{}])
   end
 
   @doc """
@@ -982,18 +1022,18 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   - connection (GoogleApi.IAM.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   - service_accounts_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (SetIamPolicyRequest): 
 
   ## Returns
@@ -1011,20 +1051,21 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         connection,
         projects_id,
         service_accounts_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
+      :quotaUser => :query,
       :uploadType => :query,
+      :fields => :query,
       :body => :body
     }
 
@@ -1038,11 +1079,11 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
           "serviceAccountsId" => URI.encode_www_form(service_accounts_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IAM.V1.Model.Policy{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.Policy{}])
   end
 
   @doc """
@@ -1053,18 +1094,18 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   - connection (GoogleApi.IAM.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The resource name of the service account in the following format: &#x60;projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}&#x60;. Using &#x60;-&#x60; as a wildcard for the &#x60;PROJECT_ID&#x60; will infer the project from the account. The &#x60;ACCOUNT&#x60; value can be the &#x60;email&#x60; address or the &#x60;unique_id&#x60; of the service account.
   - service_accounts_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (SignBlobRequest): 
 
   ## Returns
@@ -1082,20 +1123,21 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         connection,
         projects_id,
         service_accounts_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
+      :quotaUser => :query,
       :uploadType => :query,
+      :fields => :query,
       :body => :body
     }
 
@@ -1106,11 +1148,11 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "serviceAccountsId" => URI.encode_www_form(service_accounts_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IAM.V1.Model.SignBlobResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.SignBlobResponse{}])
   end
 
   @doc """
@@ -1121,18 +1163,18 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   - connection (GoogleApi.IAM.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The resource name of the service account in the following format: &#x60;projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}&#x60;. Using &#x60;-&#x60; as a wildcard for the &#x60;PROJECT_ID&#x60; will infer the project from the account. The &#x60;ACCOUNT&#x60; value can be the &#x60;email&#x60; address or the &#x60;unique_id&#x60; of the service account.
   - service_accounts_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (SignJwtRequest): 
 
   ## Returns
@@ -1150,20 +1192,21 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         connection,
         projects_id,
         service_accounts_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
+      :quotaUser => :query,
       :uploadType => :query,
+      :fields => :query,
       :body => :body
     }
 
@@ -1174,11 +1217,11 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "serviceAccountsId" => URI.encode_www_form(service_accounts_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IAM.V1.Model.SignJwtResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.SignJwtResponse{}])
   end
 
   @doc """
@@ -1189,18 +1232,18 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   - connection (GoogleApi.IAM.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   - service_accounts_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (TestIamPermissionsRequest): 
 
   ## Returns
@@ -1219,20 +1262,21 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         connection,
         projects_id,
         service_accounts_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
+      :quotaUser => :query,
       :uploadType => :query,
+      :fields => :query,
       :body => :body
     }
 
@@ -1246,11 +1290,11 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
           "serviceAccountsId" => URI.encode_www_form(service_accounts_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IAM.V1.Model.TestIamPermissionsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.TestIamPermissionsResponse{}])
   end
 
   @doc """
@@ -1261,18 +1305,18 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   - connection (GoogleApi.IAM.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The resource name of the service account in the following format: &#x60;projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}&#x60;.  Requests using &#x60;-&#x60; as a wildcard for the &#x60;PROJECT_ID&#x60; will infer the project from the &#x60;account&#x60; and the &#x60;ACCOUNT&#x60; value can be the &#x60;email&#x60; address or the &#x60;unique_id&#x60; of the service account.  In responses the resource name will always be in the format &#x60;projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}&#x60;.
   - service_accounts_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (ServiceAccount): 
 
   ## Returns
@@ -1290,20 +1334,21 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         connection,
         projects_id,
         service_accounts_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
+      :quotaUser => :query,
       :uploadType => :query,
+      :fields => :query,
       :body => :body
     }
 
@@ -1314,10 +1359,10 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "serviceAccountsId" => URI.encode_www_form(service_accounts_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IAM.V1.Model.ServiceAccount{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.ServiceAccount{}])
   end
 end

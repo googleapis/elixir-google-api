@@ -28,9 +28,10 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy do
     - Enum - one of 
   - disabled (boolean()): Whether the app is disabled. When disabled, the app data is still preserved. Defaults to: `null`.
   - installType (String.t): The type of installation to perform. Defaults to: `null`.
-    - Enum - one of [INSTALL_TYPE_UNSPECIFIED, PREINSTALLED, FORCE_INSTALLED, AVAILABLE]
+    - Enum - one of [INSTALL_TYPE_UNSPECIFIED, PREINSTALLED, FORCE_INSTALLED, BLOCKED, AVAILABLE]
   - lockTaskAllowed (boolean()): Whether the app is allowed to lock itself in full-screen mode. Defaults to: `null`.
   - managedConfiguration (%{optional(String.t) &#x3D;&gt; String.t}): Managed configuration applied to the app. The format for the configuration is dictated by the ManagedProperty values supported by the app. Each field name in the managed configuration must match the key field of the ManagedProperty. The field value must be compatible with the type of the ManagedProperty: &lt;table&gt; &lt;tr&gt;&lt;td&gt;&lt;i&gt;type&lt;/i&gt;&lt;/td&gt;&lt;td&gt;&lt;i&gt;JSON value&lt;/i&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td&gt;BOOL&lt;/td&gt;&lt;td&gt;true or false&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td&gt;STRING&lt;/td&gt;&lt;td&gt;string&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td&gt;INTEGER&lt;/td&gt;&lt;td&gt;number&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td&gt;CHOICE&lt;/td&gt;&lt;td&gt;string&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td&gt;MULTISELECT&lt;/td&gt;&lt;td&gt;array of strings&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td&gt;HIDDEN&lt;/td&gt;&lt;td&gt;string&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td&gt;BUNDLE_ARRAY&lt;/td&gt;&lt;td&gt;array of objects&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt; Defaults to: `null`.
+  - managedConfigurationTemplate (ManagedConfigurationTemplate): The managed configurations template for the app, saved from the managed configurations iframe. This field is ignored if managed_configuration is set. Defaults to: `null`.
   - minimumVersionCode (integer()): The minimum version of the app that runs on the device. If set, the device attempts to update the app to at least this version code. If the app is not up-to-date, the device will contain a NonComplianceDetail with non_compliance_reason set to APP_NOT_UPDATED. The app must already be published to Google Play with a version code greater than or equal to this value. At most 20 apps may specify a minimum version code per policy. Defaults to: `null`.
   - packageName (String.t): The package name of the app. For example, com.google.android.youtube for the YouTube app. Defaults to: `null`.
   - permissionGrants ([PermissionGrant]): Explicit permission grants or denials for the app. These values override the default_permission_policy and permission_grants which apply to all apps. Defaults to: `null`.
@@ -45,6 +46,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy do
           :installType => any(),
           :lockTaskAllowed => any(),
           :managedConfiguration => map(),
+          :managedConfigurationTemplate =>
+            GoogleApi.AndroidManagement.V1.Model.ManagedConfigurationTemplate.t(),
           :minimumVersionCode => any(),
           :packageName => any(),
           :permissionGrants => list(GoogleApi.AndroidManagement.V1.Model.PermissionGrant.t())
@@ -56,6 +59,12 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy do
   field(:installType)
   field(:lockTaskAllowed)
   field(:managedConfiguration, type: :map)
+
+  field(
+    :managedConfigurationTemplate,
+    as: GoogleApi.AndroidManagement.V1.Model.ManagedConfigurationTemplate
+  )
+
   field(:minimumVersionCode)
   field(:packageName)
   field(:permissionGrants, as: GoogleApi.AndroidManagement.V1.Model.PermissionGrant, type: :list)

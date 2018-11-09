@@ -22,15 +22,21 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.Place do
 
   ## Attributes
 
+  - languageCode (String.t): Output-only. The language_code that the name is localized with. This should be the language_code specified in the request, but may be a fallback. Defaults to: `null`.
+  - name (String.t): Output-only. The name of the place, localized to the language_code. Defaults to: `null`.
   - placeId (String.t): Place identifier, as described in https://developers.google.com/places/place-id. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :languageCode => any(),
+          :name => any(),
           :placeId => any()
         }
 
+  field(:languageCode)
+  field(:name)
   field(:placeId)
 end
 

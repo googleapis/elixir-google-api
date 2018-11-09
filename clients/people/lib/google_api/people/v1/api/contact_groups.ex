@@ -30,20 +30,20 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   ## Parameters
 
   - connection (GoogleApi.People.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :maxMembers (integer()): Specifies the maximum number of members to return for each group.
     - :resourceNames ([String.t]): The resource names of the contact groups to get.
+    - :maxMembers (integer()): Specifies the maximum number of members to return for each group.
 
   ## Returns
 
@@ -53,32 +53,34 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   @spec people_contact_groups_batch_get(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.People.V1.Model.BatchGetContactGroupsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def people_contact_groups_batch_get(connection, opts \\ []) do
-    optional_params = %{
-      :fields => :query,
+  def people_contact_groups_batch_get(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :maxMembers => :query,
-      :resourceNames => :query
+      :resourceNames => :query,
+      :maxMembers => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/contactGroups:batchGet")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.People.V1.Model.BatchGetContactGroupsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.People.V1.Model.BatchGetContactGroupsResponse{}]
+    )
   end
 
   @doc """
@@ -87,18 +89,18 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   ## Parameters
 
   - connection (GoogleApi.People.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :body (CreateContactGroupRequest): 
 
   ## Returns
@@ -108,19 +110,19 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   """
   @spec people_contact_groups_create(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.People.V1.Model.ContactGroup.t()} | {:error, Tesla.Env.t()}
-  def people_contact_groups_create(connection, opts \\ []) do
-    optional_params = %{
-      :fields => :query,
+  def people_contact_groups_create(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :body => :body
     }
 
@@ -128,11 +130,11 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/contactGroups")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.People.V1.Model.ContactGroup{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.People.V1.Model.ContactGroup{}])
   end
 
   @doc """
@@ -142,18 +144,18 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
 
   - connection (GoogleApi.People.V1.Connection): Connection to server
   - contact_groups_id (String.t): Part of &#x60;resourceName&#x60;. The resource name of the contact group to delete.
-  - opts (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :deleteContacts (boolean()): Set to true to also delete the contacts in the specified group.
 
   ## Returns
@@ -163,19 +165,24 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   """
   @spec people_contact_groups_delete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.People.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def people_contact_groups_delete(connection, contact_groups_id, opts \\ []) do
-    optional_params = %{
-      :fields => :query,
+  def people_contact_groups_delete(
+        connection,
+        contact_groups_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :deleteContacts => :query
     }
 
@@ -185,11 +192,11 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
       |> Request.url("/v1/contactGroups/{contactGroupsId}", %{
         "contactGroupsId" => URI.encode_www_form(contact_groups_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.People.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.People.V1.Model.Empty{}])
   end
 
   @doc """
@@ -199,18 +206,18 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
 
   - connection (GoogleApi.People.V1.Connection): Connection to server
   - contact_groups_id (String.t): Part of &#x60;resourceName&#x60;. The resource name of the contact group to get.
-  - opts (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :maxMembers (integer()): Specifies the maximum number of members to return.
 
   ## Returns
@@ -220,19 +227,19 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   """
   @spec people_contact_groups_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.People.V1.Model.ContactGroup.t()} | {:error, Tesla.Env.t()}
-  def people_contact_groups_get(connection, contact_groups_id, opts \\ []) do
-    optional_params = %{
-      :fields => :query,
+  def people_contact_groups_get(connection, contact_groups_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :maxMembers => :query
     }
 
@@ -242,11 +249,11 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
       |> Request.url("/v1/contactGroups/{contactGroupsId}", %{
         "contactGroupsId" => URI.encode_www_form(contact_groups_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.People.V1.Model.ContactGroup{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.People.V1.Model.ContactGroup{}])
   end
 
   @doc """
@@ -255,21 +262,21 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   ## Parameters
 
   - connection (GoogleApi.People.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :pageSize (integer()): The maximum number of resources to return.
     - :syncToken (String.t): A sync token, returned by a previous call to &#x60;contactgroups.list&#x60;. Only resources changed since the sync token was created will be returned.
     - :pageToken (String.t): The next_page_token value returned from a previous call to [ListContactGroups](/people/api/rest/v1/contactgroups/list). Requests the next page of resources.
+    - :pageSize (integer()): The maximum number of resources to return.
 
   ## Returns
 
@@ -278,33 +285,33 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   """
   @spec people_contact_groups_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.People.V1.Model.ListContactGroupsResponse.t()} | {:error, Tesla.Env.t()}
-  def people_contact_groups_list(connection, opts \\ []) do
-    optional_params = %{
-      :fields => :query,
+  def people_contact_groups_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :pageSize => :query,
       :syncToken => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :pageSize => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/contactGroups")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.People.V1.Model.ListContactGroupsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.People.V1.Model.ListContactGroupsResponse{}])
   end
 
   @doc """
@@ -314,18 +321,18 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
 
   - connection (GoogleApi.People.V1.Connection): Connection to server
   - contact_groups_id (String.t): Part of &#x60;resourceName&#x60;. The resource name of the contact group to modify.
-  - opts (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :body (ModifyContactGroupMembersRequest): 
 
   ## Returns
@@ -336,19 +343,24 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   @spec people_contact_groups_members_modify(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.People.V1.Model.ModifyContactGroupMembersResponse.t()}
           | {:error, Tesla.Env.t()}
-  def people_contact_groups_members_modify(connection, contact_groups_id, opts \\ []) do
-    optional_params = %{
-      :fields => :query,
+  def people_contact_groups_members_modify(
+        connection,
+        contact_groups_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :body => :body
     }
 
@@ -358,11 +370,13 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
       |> Request.url("/v1/contactGroups/{contactGroupsId}/members:modify", %{
         "contactGroupsId" => URI.encode_www_form(contact_groups_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.People.V1.Model.ModifyContactGroupMembersResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.People.V1.Model.ModifyContactGroupMembersResponse{}]
+    )
   end
 
   @doc """
@@ -372,18 +386,18 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
 
   - connection (GoogleApi.People.V1.Connection): Connection to server
   - contact_groups_id (String.t): Part of &#x60;contactGroup.resourceName&#x60;. The resource name for the contact group, assigned by the server. An ASCII string, in the form of &#x60;contactGroups/&#x60;&lt;var&gt;contact_group_id&lt;/var&gt;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :body (UpdateContactGroupRequest): 
 
   ## Returns
@@ -393,19 +407,24 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   """
   @spec people_contact_groups_update(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.People.V1.Model.ContactGroup.t()} | {:error, Tesla.Env.t()}
-  def people_contact_groups_update(connection, contact_groups_id, opts \\ []) do
-    optional_params = %{
-      :fields => :query,
+  def people_contact_groups_update(
+        connection,
+        contact_groups_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :body => :body
     }
 
@@ -415,10 +434,10 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
       |> Request.url("/v1/contactGroups/{contactGroupsId}", %{
         "contactGroupsId" => URI.encode_www_form(contact_groups_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.People.V1.Model.ContactGroup{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.People.V1.Model.ContactGroup{}])
   end
 end

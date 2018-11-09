@@ -32,7 +32,7 @@ defmodule GoogleApi.Compute.V1.Api.Regions do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - region (String.t): Name of the region resource to return.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,8 @@ defmodule GoogleApi.Compute.V1.Api.Regions do
   """
   @spec compute_regions_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Region.t()} | {:error, Tesla.Env.t()}
-  def compute_regions_get(connection, project, region, opts \\ []) do
-    optional_params = %{
+  def compute_regions_get(connection, project, region, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -66,11 +66,11 @@ defmodule GoogleApi.Compute.V1.Api.Regions do
         "project" => URI.encode_www_form(project),
         "region" => URI.encode_www_form(region)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Region{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Region{}])
   end
 
   @doc """
@@ -80,7 +80,7 @@ defmodule GoogleApi.Compute.V1.Api.Regions do
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -100,8 +100,8 @@ defmodule GoogleApi.Compute.V1.Api.Regions do
   """
   @spec compute_regions_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.RegionList.t()} | {:error, Tesla.Env.t()}
-  def compute_regions_list(connection, project, opts \\ []) do
-    optional_params = %{
+  def compute_regions_list(connection, project, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -121,10 +121,10 @@ defmodule GoogleApi.Compute.V1.Api.Regions do
       |> Request.url("/{project}/regions", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.RegionList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.RegionList{}])
   end
 end

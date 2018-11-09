@@ -30,20 +30,18 @@ defmodule GoogleApi.AdExperienceReport.V1.Api.ViolatingSites do
   ## Parameters
 
   - connection (GoogleApi.AdExperienceReport.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :bearer_token (String.t): OAuth bearer token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :pp (boolean()): Pretty-print response.
 
   ## Returns
 
@@ -53,31 +51,31 @@ defmodule GoogleApi.AdExperienceReport.V1.Api.ViolatingSites do
   @spec adexperiencereport_violating_sites_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.AdExperienceReport.V1.Model.ViolatingSitesResponse.t()}
           | {:error, Tesla.Env.t()}
-  def adexperiencereport_violating_sites_list(connection, opts \\ []) do
-    optional_params = %{
-      :oauth_token => :query,
-      :bearer_token => :query,
+  def adexperiencereport_violating_sites_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
+      :quotaUser => :query,
       :prettyPrint => :query,
       :uploadType => :query,
       :fields => :query,
-      :"$.xgafv" => :query,
       :callback => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
-      :quotaUser => :query,
-      :pp => :query
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/violatingSites")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExperienceReport.V1.Model.ViolatingSitesResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AdExperienceReport.V1.Model.ViolatingSitesResponse{}]
+    )
   end
 end

@@ -31,7 +31,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
 
   - connection (GoogleApi.ToolResults.V1beta3.Connection): Connection to server
   - project_id (String.t): A Project id.  Required.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -47,8 +47,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
   """
   @spec toolresults_projects_get_settings(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.ProjectSettings.t()} | {:error, Tesla.Env.t()}
-  def toolresults_projects_get_settings(connection, project_id, opts \\ []) do
-    optional_params = %{
+  def toolresults_projects_get_settings(connection, project_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -64,11 +64,11 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       |> Request.url("/{projectId}/settings", %{
         "projectId" => URI.encode_www_form(project_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ToolResults.V1beta3.Model.ProjectSettings{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ToolResults.V1beta3.Model.ProjectSettings{}])
   end
 
   @doc """
@@ -78,7 +78,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
 
   - connection (GoogleApi.ToolResults.V1beta3.Connection): Connection to server
   - project_id (String.t): A Project id.  Required.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -96,8 +96,13 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
   """
   @spec toolresults_projects_histories_create(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.History.t()} | {:error, Tesla.Env.t()}
-  def toolresults_projects_histories_create(connection, project_id, opts \\ []) do
-    optional_params = %{
+  def toolresults_projects_histories_create(
+        connection,
+        project_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -115,11 +120,11 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       |> Request.url("/{projectId}/histories", %{
         "projectId" => URI.encode_www_form(project_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ToolResults.V1beta3.Model.History{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ToolResults.V1beta3.Model.History{}])
   end
 
   @doc """
@@ -132,7 +137,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
   - history_id (String.t): A History id.  Required.
   - execution_id (String.t): An Execution id.  Required.
   - cluster_id (String.t): A Cluster id  Required.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -162,9 +167,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
         history_id,
         execution_id,
         cluster_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -186,11 +192,11 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           "clusterId" => URI.encode_www_form(cluster_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ToolResults.V1beta3.Model.ScreenshotCluster{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ToolResults.V1beta3.Model.ScreenshotCluster{}])
   end
 
   @doc """
@@ -202,7 +208,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
   - project_id (String.t): A Project id.  Required.
   - history_id (String.t): A History id.  Required.
   - execution_id (String.t): An Execution id.  Required.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -230,9 +236,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
         project_id,
         history_id,
         execution_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -250,12 +257,12 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
         "historyId" => URI.encode_www_form(history_id),
         "executionId" => URI.encode_www_form(execution_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.ToolResults.V1beta3.Model.ListScreenshotClustersResponse{}
+      opts ++ [struct: %GoogleApi.ToolResults.V1beta3.Model.ListScreenshotClustersResponse{}]
     )
   end
 
@@ -267,7 +274,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
   - connection (GoogleApi.ToolResults.V1beta3.Connection): Connection to server
   - project_id (String.t): A Project id.  Required.
   - history_id (String.t): A History id.  Required.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -293,9 +300,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
         connection,
         project_id,
         history_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -314,11 +322,11 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
         "projectId" => URI.encode_www_form(project_id),
         "historyId" => URI.encode_www_form(history_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ToolResults.V1beta3.Model.Execution{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ToolResults.V1beta3.Model.Execution{}])
   end
 
   @doc """
@@ -330,7 +338,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
   - project_id (String.t): A Project id.  Required.
   - history_id (String.t): A History id.  Required.
   - execution_id (String.t): An Execution id.  Required.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -356,9 +364,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
         project_id,
         history_id,
         execution_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -376,22 +385,22 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
         "historyId" => URI.encode_www_form(history_id),
         "executionId" => URI.encode_www_form(execution_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ToolResults.V1beta3.Model.Execution{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ToolResults.V1beta3.Model.Execution{}])
   end
 
   @doc """
-  Lists Histories for a given Project.  The executions are sorted by creation_time in descending order. The execution_id key will be used to order the executions with the same creation_time.  May return any of the following canonical error codes:  - PERMISSION_DENIED - if the user is not authorized to read project - INVALID_ARGUMENT - if the request is malformed - NOT_FOUND - if the containing History does not exist
+  Lists Executions for a given History.  The executions are sorted by creation_time in descending order. The execution_id key will be used to order the executions with the same creation_time.  May return any of the following canonical error codes:  - PERMISSION_DENIED - if the user is not authorized to read project - INVALID_ARGUMENT - if the request is malformed - NOT_FOUND - if the containing History does not exist
 
   ## Parameters
 
   - connection (GoogleApi.ToolResults.V1beta3.Connection): Connection to server
   - project_id (String.t): A Project id.  Required.
   - history_id (String.t): A History id.  Required.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -419,9 +428,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
         connection,
         project_id,
         history_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -440,11 +450,13 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
         "projectId" => URI.encode_www_form(project_id),
         "historyId" => URI.encode_www_form(history_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ToolResults.V1beta3.Model.ListExecutionsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.ToolResults.V1beta3.Model.ListExecutionsResponse{}]
+    )
   end
 
   @doc """
@@ -456,7 +468,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
   - project_id (String.t): A Project id. Required.
   - history_id (String.t): Required.
   - execution_id (String.t): Required.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -484,9 +496,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
         project_id,
         history_id,
         execution_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -506,11 +519,11 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
         "historyId" => URI.encode_www_form(history_id),
         "executionId" => URI.encode_www_form(execution_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ToolResults.V1beta3.Model.Execution{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ToolResults.V1beta3.Model.Execution{}])
   end
 
   @doc """
@@ -522,7 +535,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
   - project_id (String.t): A Project id.  Required.
   - history_id (String.t): A History id.  Required.
   - execution_id (String.t): A Execution id.  Required.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -550,9 +563,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
         project_id,
         history_id,
         execution_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -572,11 +586,11 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
         "historyId" => URI.encode_www_form(history_id),
         "executionId" => URI.encode_www_form(execution_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ToolResults.V1beta3.Model.Step{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ToolResults.V1beta3.Model.Step{}])
   end
 
   @doc """
@@ -589,7 +603,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
   - history_id (String.t): A History id.  Required.
   - execution_id (String.t): A Execution id.  Required.
   - step_id (String.t): A Step id.  Required.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -617,9 +631,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
         history_id,
         execution_id,
         step_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -641,11 +656,11 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           "stepId" => URI.encode_www_form(step_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ToolResults.V1beta3.Model.Step{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ToolResults.V1beta3.Model.Step{}])
   end
 
   @doc """
@@ -658,7 +673,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
   - history_id (String.t): A tool results history ID.
   - execution_id (String.t): A tool results execution ID.
   - step_id (String.t): A tool results step ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -688,9 +703,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
         history_id,
         execution_id,
         step_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -712,11 +728,13 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           "stepId" => URI.encode_www_form(step_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ToolResults.V1beta3.Model.PerfMetricsSummary{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.ToolResults.V1beta3.Model.PerfMetricsSummary{}]
+    )
   end
 
   @doc """
@@ -728,7 +746,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
   - project_id (String.t): A Project id.  Required.
   - history_id (String.t): A History id.  Required.
   - execution_id (String.t): A Execution id.  Required.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -758,9 +776,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
         project_id,
         history_id,
         execution_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -780,11 +799,11 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
         "historyId" => URI.encode_www_form(history_id),
         "executionId" => URI.encode_www_form(execution_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ToolResults.V1beta3.Model.ListStepsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ToolResults.V1beta3.Model.ListStepsResponse{}])
   end
 
   @doc """
@@ -797,7 +816,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
   - history_id (String.t): A History id.  Required.
   - execution_id (String.t): A Execution id.  Required.
   - step_id (String.t): A Step id.  Required.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -827,9 +846,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
         history_id,
         execution_id,
         step_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -853,11 +873,11 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           "stepId" => URI.encode_www_form(step_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ToolResults.V1beta3.Model.Step{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ToolResults.V1beta3.Model.Step{}])
   end
 
   @doc """
@@ -870,7 +890,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
   - history_id (String.t): A tool results history ID.
   - execution_id (String.t): A tool results execution ID.
   - step_id (String.t): A tool results step ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -901,9 +921,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
         history_id,
         execution_id,
         step_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -926,11 +947,13 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           "stepId" => URI.encode_www_form(step_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ToolResults.V1beta3.Model.PerfMetricsSummary{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.ToolResults.V1beta3.Model.PerfMetricsSummary{}]
+    )
   end
 
   @doc """
@@ -943,7 +966,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
   - history_id (String.t): A tool results history ID.
   - execution_id (String.t): A tool results execution ID.
   - step_id (String.t): A tool results step ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -974,9 +997,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
         history_id,
         execution_id,
         step_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -999,11 +1023,11 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           "stepId" => URI.encode_www_form(step_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ToolResults.V1beta3.Model.PerfSampleSeries{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ToolResults.V1beta3.Model.PerfSampleSeries{}])
   end
 
   @doc """
@@ -1017,7 +1041,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
   - execution_id (String.t): A tool results execution ID.
   - step_id (String.t): A tool results step ID.
   - sample_series_id (String.t): A sample series id
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1049,9 +1073,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
         execution_id,
         step_id,
         sample_series_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1074,11 +1099,11 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           "sampleSeriesId" => URI.encode_www_form(sample_series_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ToolResults.V1beta3.Model.PerfSampleSeries{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ToolResults.V1beta3.Model.PerfSampleSeries{}])
   end
 
   @doc """
@@ -1091,7 +1116,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
   - history_id (String.t): A tool results history ID.
   - execution_id (String.t): A tool results execution ID.
   - step_id (String.t): A tool results step ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1122,9 +1147,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
         history_id,
         execution_id,
         step_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1147,12 +1173,12 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           "stepId" => URI.encode_www_form(step_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.ToolResults.V1beta3.Model.ListPerfSampleSeriesResponse{}
+      opts ++ [struct: %GoogleApi.ToolResults.V1beta3.Model.ListPerfSampleSeriesResponse{}]
     )
   end
 
@@ -1167,7 +1193,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
   - execution_id (String.t): A tool results execution ID.
   - step_id (String.t): A tool results step ID.
   - sample_series_id (String.t): A sample series id
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1200,9 +1226,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
         execution_id,
         step_id,
         sample_series_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1226,12 +1253,12 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           "sampleSeriesId" => URI.encode_www_form(sample_series_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.ToolResults.V1beta3.Model.BatchCreatePerfSamplesResponse{}
+      opts ++ [struct: %GoogleApi.ToolResults.V1beta3.Model.BatchCreatePerfSamplesResponse{}]
     )
   end
 
@@ -1246,7 +1273,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
   - execution_id (String.t): A tool results execution ID.
   - step_id (String.t): A tool results step ID.
   - sample_series_id (String.t): A sample series id
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1280,9 +1307,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
         execution_id,
         step_id,
         sample_series_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1307,11 +1335,13 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           "sampleSeriesId" => URI.encode_www_form(sample_series_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ToolResults.V1beta3.Model.ListPerfSamplesResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.ToolResults.V1beta3.Model.ListPerfSamplesResponse{}]
+    )
   end
 
   @doc """
@@ -1324,7 +1354,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
   - history_id (String.t): A History id.  Required.
   - execution_id (String.t): A Execution id.  Required.
   - step_id (String.t): A Step id. Note: This step must include a TestExecutionStep.  Required.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1353,9 +1383,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
         history_id,
         execution_id,
         step_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1378,11 +1409,11 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           "stepId" => URI.encode_www_form(step_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ToolResults.V1beta3.Model.Step{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ToolResults.V1beta3.Model.Step{}])
   end
 
   @doc """
@@ -1395,7 +1426,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
   - history_id (String.t): A History id.  Required.
   - execution_id (String.t): An Execution id.  Required.
   - step_id (String.t): A Step id.  Required.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1427,9 +1458,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
         history_id,
         execution_id,
         step_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1453,11 +1485,13 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           "stepId" => URI.encode_www_form(step_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ToolResults.V1beta3.Model.ListStepThumbnailsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.ToolResults.V1beta3.Model.ListStepThumbnailsResponse{}]
+    )
   end
 
   @doc """
@@ -1468,7 +1502,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
   - connection (GoogleApi.ToolResults.V1beta3.Connection): Connection to server
   - project_id (String.t): A Project id.  Required.
   - history_id (String.t): A History id.  Required.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1484,8 +1518,14 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
   """
   @spec toolresults_projects_histories_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.History.t()} | {:error, Tesla.Env.t()}
-  def toolresults_projects_histories_get(connection, project_id, history_id, opts \\ []) do
-    optional_params = %{
+  def toolresults_projects_histories_get(
+        connection,
+        project_id,
+        history_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1502,11 +1542,11 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
         "projectId" => URI.encode_www_form(project_id),
         "historyId" => URI.encode_www_form(history_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ToolResults.V1beta3.Model.History{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ToolResults.V1beta3.Model.History{}])
   end
 
   @doc """
@@ -1516,7 +1556,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
 
   - connection (GoogleApi.ToolResults.V1beta3.Connection): Connection to server
   - project_id (String.t): A Project id.  Required.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1536,8 +1576,13 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
   @spec toolresults_projects_histories_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.ListHistoriesResponse.t()}
           | {:error, Tesla.Env.t()}
-  def toolresults_projects_histories_list(connection, project_id, opts \\ []) do
-    optional_params = %{
+  def toolresults_projects_histories_list(
+        connection,
+        project_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1556,11 +1601,13 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       |> Request.url("/{projectId}/histories", %{
         "projectId" => URI.encode_www_form(project_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ToolResults.V1beta3.Model.ListHistoriesResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.ToolResults.V1beta3.Model.ListHistoriesResponse{}]
+    )
   end
 
   @doc """
@@ -1570,7 +1617,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
 
   - connection (GoogleApi.ToolResults.V1beta3.Connection): Connection to server
   - project_id (String.t): A Project id.  Required.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1586,8 +1633,13 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
   """
   @spec toolresults_projects_initialize_settings(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.ProjectSettings.t()} | {:error, Tesla.Env.t()}
-  def toolresults_projects_initialize_settings(connection, project_id, opts \\ []) do
-    optional_params = %{
+  def toolresults_projects_initialize_settings(
+        connection,
+        project_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1603,10 +1655,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       |> Request.url("/{projectId}:initializeSettings", %{
         "projectId" => URI.encode_www_form(project_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ToolResults.V1beta3.Model.ProjectSettings{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ToolResults.V1beta3.Model.ProjectSettings{}])
   end
 end

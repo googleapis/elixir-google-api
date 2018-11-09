@@ -31,7 +31,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Products do
 
   - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
   - product_id (String.t): The id for the product to get the head revision for.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -47,8 +47,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Products do
   """
   @spec adexchangebuyer_products_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Product.t()} | {:error, Tesla.Env.t()}
-  def adexchangebuyer_products_get(connection, product_id, opts \\ []) do
-    optional_params = %{
+  def adexchangebuyer_products_get(connection, product_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -64,11 +64,11 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Products do
       |> Request.url("/products/{productId}", %{
         "productId" => URI.encode_www_form(product_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V14.Model.Product{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V14.Model.Product{}])
   end
 
   @doc """
@@ -77,7 +77,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Products do
   ## Parameters
 
   - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -95,8 +95,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Products do
   @spec adexchangebuyer_products_search(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.GetOffersResponse.t()}
           | {:error, Tesla.Env.t()}
-  def adexchangebuyer_products_search(connection, opts \\ []) do
-    optional_params = %{
+  def adexchangebuyer_products_search(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -111,10 +111,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Products do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/products/search")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V14.Model.GetOffersResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V14.Model.GetOffersResponse{}])
   end
 end

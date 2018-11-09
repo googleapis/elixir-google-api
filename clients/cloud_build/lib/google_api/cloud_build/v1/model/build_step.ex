@@ -28,12 +28,13 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildStep do
   - env ([String.t]): A list of environment variable definitions to be used when running a step.  The elements are of the form \&quot;KEY&#x3D;VALUE\&quot; for the environment variable \&quot;KEY\&quot; being given the value \&quot;VALUE\&quot;. Defaults to: `null`.
   - id (String.t): Unique identifier for this build step, used in &#x60;wait_for&#x60; to reference this build step as a dependency. Defaults to: `null`.
   - name (String.t): Required. The name of the container image that will run this particular build step.  If the image is available in the host&#39;s Docker daemon&#39;s cache, it will be run directly. If not, the host will attempt to pull the image first, using the builder service account&#39;s credentials if necessary.  The Docker daemon&#39;s cache will already have the latest versions of all of the officially supported build steps ([https://github.com/GoogleCloudPlatform/cloud-builders](https://github.com/GoogleCloudPlatform/cloud-builders)). The Docker daemon will also have cached many of the layers for some popular images, like \&quot;ubuntu\&quot;, \&quot;debian\&quot;, but they will be refreshed at the time you attempt to use them.  If you built an image in a previous build step, it will be stored in the host&#39;s Docker daemon&#39;s cache and is available to use as the name for a later build step. Defaults to: `null`.
+  - pullTiming (TimeSpan): Output only. Stores timing information for pulling this build step&#39;s builder image only. Defaults to: `null`.
   - secretEnv ([String.t]): A list of environment variables which are encrypted using a Cloud Key Management Service crypto key. These values must be specified in the build&#39;s &#x60;Secret&#x60;. Defaults to: `null`.
   - status (String.t): Output only. Status of the build step. At this time, build step status is only updated on build completion; step status is not updated in real-time as the build progresses. Defaults to: `null`.
     - Enum - one of [STATUS_UNKNOWN, QUEUED, WORKING, SUCCESS, FAILURE, INTERNAL_ERROR, TIMEOUT, CANCELLED]
   - timeout (String.t): Time limit for executing this build step. If not defined, the step has no time limit and will be allowed to continue to run until either it completes or the build itself times out. Defaults to: `null`.
   - timing (TimeSpan): Output only. Stores timing information for executing this build step. Defaults to: `null`.
-  - volumes ([Volume]): List of volumes to mount into the build step.  Each volume will be created as an empty volume prior to execution of the build step. Upon completion of the build, volumes and their contents will be discarded.  Using a named volume in only one step is not valid as it is indicative of a mis-configured build request. Defaults to: `null`.
+  - volumes ([Volume]): List of volumes to mount into the build step.  Each volume is created as an empty volume prior to execution of the build step. Upon completion of the build, volumes and their contents are discarded.  Using a named volume in only one step is not valid as it is indicative of a build request with an incorrect configuration. Defaults to: `null`.
   - waitFor ([String.t]): The ID(s) of the step(s) that this build step depends on. This build step will not start until all the build steps in &#x60;wait_for&#x60; have completed successfully. If &#x60;wait_for&#x60; is empty, this build step will start when all previous build steps in the &#x60;Build.Steps&#x60; list have completed successfully. Defaults to: `null`.
   """
 
@@ -46,6 +47,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildStep do
           :env => list(any()),
           :id => any(),
           :name => any(),
+          :pullTiming => GoogleApi.CloudBuild.V1.Model.TimeSpan.t(),
           :secretEnv => list(any()),
           :status => any(),
           :timeout => any(),
@@ -60,6 +62,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildStep do
   field(:env, type: :list)
   field(:id)
   field(:name)
+  field(:pullTiming, as: GoogleApi.CloudBuild.V1.Model.TimeSpan)
   field(:secretEnv, type: :list)
   field(:status)
   field(:timeout)

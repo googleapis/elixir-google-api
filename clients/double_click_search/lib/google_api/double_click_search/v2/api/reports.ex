@@ -30,7 +30,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Reports do
   ## Parameters
 
   - connection (GoogleApi.DoubleClickSearch.V2.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -47,8 +47,8 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Reports do
   """
   @spec doubleclicksearch_reports_generate(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.DoubleClickSearch.V2.Model.Report.t()} | {:error, Tesla.Env.t()}
-  def doubleclicksearch_reports_generate(connection, opts \\ []) do
-    optional_params = %{
+  def doubleclicksearch_reports_generate(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -63,11 +63,11 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Reports do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/reports/generate")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.DoubleClickSearch.V2.Model.Report{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.DoubleClickSearch.V2.Model.Report{}])
   end
 
   @doc """
@@ -77,7 +77,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Reports do
 
   - connection (GoogleApi.DoubleClickSearch.V2.Connection): Connection to server
   - report_id (String.t): ID of the report request being polled.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -93,8 +93,8 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Reports do
   """
   @spec doubleclicksearch_reports_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.DoubleClickSearch.V2.Model.Report.t()} | {:error, Tesla.Env.t()}
-  def doubleclicksearch_reports_get(connection, report_id, opts \\ []) do
-    optional_params = %{
+  def doubleclicksearch_reports_get(connection, report_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -110,11 +110,11 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Reports do
       |> Request.url("/reports/{reportId}", %{
         "reportId" => URI.encode_www_form(report_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.DoubleClickSearch.V2.Model.Report{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.DoubleClickSearch.V2.Model.Report{}])
   end
 
   @doc """
@@ -125,7 +125,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Reports do
   - connection (GoogleApi.DoubleClickSearch.V2.Connection): Connection to server
   - report_id (String.t): ID of the report.
   - report_fragment (integer()): The index of the report fragment to download.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -141,8 +141,14 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Reports do
   """
   @spec doubleclicksearch_reports_get_file(Tesla.Env.client(), String.t(), integer(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def doubleclicksearch_reports_get_file(connection, report_id, report_fragment, opts \\ []) do
-    optional_params = %{
+  def doubleclicksearch_reports_get_file(
+        connection,
+        report_id,
+        report_fragment,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -159,11 +165,11 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Reports do
         "reportId" => URI.encode_www_form(report_id),
         "reportFragment" => report_fragment
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -172,7 +178,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Reports do
   ## Parameters
 
   - connection (GoogleApi.DoubleClickSearch.V2.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -189,8 +195,8 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Reports do
   """
   @spec doubleclicksearch_reports_request(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.DoubleClickSearch.V2.Model.Report.t()} | {:error, Tesla.Env.t()}
-  def doubleclicksearch_reports_request(connection, opts \\ []) do
-    optional_params = %{
+  def doubleclicksearch_reports_request(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -205,10 +211,10 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Reports do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/reports")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.DoubleClickSearch.V2.Model.Report{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.DoubleClickSearch.V2.Model.Report{}])
   end
 end

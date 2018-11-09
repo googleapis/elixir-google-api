@@ -18,12 +18,12 @@
 
 defmodule GoogleApi.Speech.V1.Model.RecognitionAudio do
   @moduledoc """
-  Contains audio data in the encoding specified in the &#x60;RecognitionConfig&#x60;. Either &#x60;content&#x60; or &#x60;uri&#x60; must be supplied. Supplying both or neither returns google.rpc.Code.INVALID_ARGUMENT. See [audio limits](https://cloud.google.com/speech/limits#content).
+  Contains audio data in the encoding specified in the &#x60;RecognitionConfig&#x60;. Either &#x60;content&#x60; or &#x60;uri&#x60; must be supplied. Supplying both or neither returns google.rpc.Code.INVALID_ARGUMENT. See [content limits](/speech-to-text/quotas#content).
 
   ## Attributes
 
   - content (binary()): The audio data bytes encoded as specified in &#x60;RecognitionConfig&#x60;. Note: as with all bytes fields, protobuffers use a pure binary representation, whereas JSON representations use base64. Defaults to: `null`.
-  - uri (String.t): URI that points to a file that contains audio data bytes as specified in &#x60;RecognitionConfig&#x60;. Currently, only Google Cloud Storage URIs are supported, which must be specified in the following format: &#x60;gs://bucket_name/object_name&#x60; (other URI formats return google.rpc.Code.INVALID_ARGUMENT). For more information, see [Request URIs](https://cloud.google.com/storage/docs/reference-uris). Defaults to: `null`.
+  - uri (String.t): URI that points to a file that contains audio data bytes as specified in &#x60;RecognitionConfig&#x60;. The file must not be compressed (for example, gzip). Currently, only Google Cloud Storage URIs are supported, which must be specified in the following format: &#x60;gs://bucket_name/object_name&#x60; (other URI formats return google.rpc.Code.INVALID_ARGUMENT). For more information, see [Request URIs](https://cloud.google.com/storage/docs/reference-uris). Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

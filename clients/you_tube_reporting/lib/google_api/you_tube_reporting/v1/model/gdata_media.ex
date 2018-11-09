@@ -73,7 +73,8 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.GdataMedia do
             GoogleApi.YouTubeReporting.V1.Model.GdataDiffDownloadResponse.t(),
           :diffUploadRequest => GoogleApi.YouTubeReporting.V1.Model.GdataDiffUploadRequest.t(),
           :diffUploadResponse => GoogleApi.YouTubeReporting.V1.Model.GdataDiffUploadResponse.t(),
-          :diffVersionResponse => GoogleApi.YouTubeReporting.V1.Model.GdataDiffVersionResponse.t(),
+          :diffVersionResponse =>
+            GoogleApi.YouTubeReporting.V1.Model.GdataDiffVersionResponse.t(),
           :downloadParameters => GoogleApi.YouTubeReporting.V1.Model.GdataDownloadParameters.t(),
           :filename => any(),
           :hash => any(),

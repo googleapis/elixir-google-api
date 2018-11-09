@@ -36,7 +36,8 @@ defmodule GoogleApi.Books.V1.Model.UsersettingsNotification do
             GoogleApi.Books.V1.Model.UsersettingsNotificationMatchMyInterests.t(),
           :moreFromAuthors =>
             GoogleApi.Books.V1.Model.UsersettingsNotificationMatchMyInterests.t(),
-          :moreFromSeries => GoogleApi.Books.V1.Model.UsersettingsNotificationMatchMyInterests.t(),
+          :moreFromSeries =>
+            GoogleApi.Books.V1.Model.UsersettingsNotificationMatchMyInterests.t(),
           :priceDrop => GoogleApi.Books.V1.Model.UsersettingsNotificationMatchMyInterests.t(),
           :rewardExpirations =>
             GoogleApi.Books.V1.Model.UsersettingsNotificationMatchMyInterests.t()

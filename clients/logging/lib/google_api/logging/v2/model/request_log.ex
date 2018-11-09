@@ -50,6 +50,7 @@ defmodule GoogleApi.Logging.V2.Model.RequestLog do
   - taskName (String.t): Task name of the request, in the case of an offline request. Defaults to: `null`.
   - taskQueueName (String.t): Queue name of the request, in the case of an offline request. Defaults to: `null`.
   - traceId (String.t): Stackdriver Trace identifier for this request. Defaults to: `null`.
+  - traceSampled (boolean()): If true, the value in the &#39;trace_id&#39; field was sampled for storage in a trace backend. Defaults to: `null`.
   - urlMapEntry (String.t): File or class that handled the request. Defaults to: `null`.
   - userAgent (String.t): User agent that made the request. Defaults to: `null`.
   - versionId (String.t): Version of the application that handled this request. Defaults to: `null`.
@@ -87,6 +88,7 @@ defmodule GoogleApi.Logging.V2.Model.RequestLog do
           :taskName => any(),
           :taskQueueName => any(),
           :traceId => any(),
+          :traceSampled => any(),
           :urlMapEntry => any(),
           :userAgent => any(),
           :versionId => any(),
@@ -121,6 +123,7 @@ defmodule GoogleApi.Logging.V2.Model.RequestLog do
   field(:taskName)
   field(:taskQueueName)
   field(:traceId)
+  field(:traceSampled)
   field(:urlMapEntry)
   field(:userAgent)
   field(:versionId)

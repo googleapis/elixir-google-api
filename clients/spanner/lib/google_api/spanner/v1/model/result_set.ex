@@ -24,7 +24,7 @@ defmodule GoogleApi.Spanner.V1.Model.ResultSet do
 
   - metadata (ResultSetMetadata): Metadata about the result set, such as row type information. Defaults to: `null`.
   - rows ([[ErrorUnknown]]): Each element in &#x60;rows&#x60; is a row whose format is defined by metadata.row_type. The ith element in each row matches the ith field in metadata.row_type. Elements are encoded based on type as described here. Defaults to: `null`.
-  - stats (ResultSetStats): Query plan and execution statistics for the SQL statement that produced this result set. These can be requested by setting ExecuteSqlRequest.query_mode. Defaults to: `null`.
+  - stats (ResultSetStats): Query plan and execution statistics for the SQL statement that produced this result set. These can be requested by setting ExecuteSqlRequest.query_mode. DML statements always produce stats containing the number of rows modified, unless executed using the ExecuteSqlRequest.QueryMode.PLAN ExecuteSqlRequest.query_mode. Other fields may or may not be populated, based on the ExecuteSqlRequest.query_mode. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -29,6 +29,7 @@ defmodule GoogleApi.Compute.V1.Model.Firewall do
   - destinationRanges ([String.t]): If destination ranges are specified, the firewall will apply only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported. Defaults to: `null`.
   - direction (String.t): Direction of traffic to which this firewall applies; default is INGRESS. Note: For INGRESS traffic, it is NOT supported to specify destinationRanges; For EGRESS traffic, it is NOT supported to specify sourceRanges OR sourceTags. Defaults to: `null`.
     - Enum - one of [EGRESS, INGRESS]
+  - disabled (boolean()): Denotes whether the firewall rule is disabled, i.e not applied to the network it is associated with. When set to true, the firewall rule is not enforced and the network behaves as if it did not exist. If this is unspecified, the firewall rule will be enabled. Defaults to: `null`.
   - id (String.t): [Output Only] The unique identifier for the resource. This identifier is defined by the server. Defaults to: `null`.
   - kind (String.t): [Output Only] Type of the resource. Always compute#firewall for firewall rules. Defaults to: `null`.
   - name (String.t): Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression &#x60;[a-z]([-a-z0-9]*[a-z0-9])?&#x60; which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. Defaults to: `null`.
@@ -51,6 +52,7 @@ defmodule GoogleApi.Compute.V1.Model.Firewall do
           :description => any(),
           :destinationRanges => list(any()),
           :direction => any(),
+          :disabled => any(),
           :id => any(),
           :kind => any(),
           :name => any(),
@@ -70,6 +72,7 @@ defmodule GoogleApi.Compute.V1.Model.Firewall do
   field(:description)
   field(:destinationRanges, type: :list)
   field(:direction)
+  field(:disabled)
   field(:id)
   field(:kind)
   field(:name)

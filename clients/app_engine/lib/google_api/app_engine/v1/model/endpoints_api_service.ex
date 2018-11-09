@@ -23,6 +23,7 @@ defmodule GoogleApi.AppEngine.V1.Model.EndpointsApiService do
   ## Attributes
 
   - configId (String.t): Endpoints service configuration ID as specified by the Service Management API. For example \&quot;2016-09-19r1\&quot;.By default, the rollout strategy for Endpoints is RolloutStrategy.FIXED. This means that Endpoints starts up with a particular configuration ID. When a new configuration is rolled out, Endpoints must be given the new configuration ID. The config_id field is used to give the configuration ID and is required in this case.Endpoints also has a rollout strategy called RolloutStrategy.MANAGED. When using this, Endpoints fetches the latest configuration and does not need the configuration ID. In this case, config_id must be omitted. Defaults to: `null`.
+  - disableTraceSampling (boolean()): Enable or disable trace sampling. By default, this is set to false for enabled. Defaults to: `null`.
   - name (String.t): Endpoints service name which is the name of the \&quot;service\&quot; resource in the Service Management API. For example \&quot;myapi.endpoints.myproject.cloud.goog\&quot; Defaults to: `null`.
   - rolloutStrategy (String.t): Endpoints rollout strategy. If FIXED, config_id must be specified. If MANAGED, config_id must be omitted. Defaults to: `null`.
     - Enum - one of [UNSPECIFIED_ROLLOUT_STRATEGY, FIXED, MANAGED]
@@ -32,11 +33,13 @@ defmodule GoogleApi.AppEngine.V1.Model.EndpointsApiService do
 
   @type t :: %__MODULE__{
           :configId => any(),
+          :disableTraceSampling => any(),
           :name => any(),
           :rolloutStrategy => any()
         }
 
   field(:configId)
+  field(:disableTraceSampling)
   field(:name)
   field(:rolloutStrategy)
 end

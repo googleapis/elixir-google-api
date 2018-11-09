@@ -22,7 +22,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1ExportAgentR
 
   ## Attributes
 
-  - agentContent (binary()): The exported agent.  Example for how to export an agent to a zip file via a command line: &lt;pre&gt;curl \\   &#39;https://dialogflow.googleapis.com/v2beta1/projects/&amp;lt;project_name&amp;gt;/agent:export&#39;\\   -X POST \\   -H &#39;Authorization: Bearer &#39;$(gcloud auth print-access-token) \\   -H &#39;Accept: application/json&#39; \\   -H &#39;Content-Type: application/json&#39; \\   --compressed \\   --data-binary &#39;{}&#39; \\ | grep agentContent | sed -e &#39;s/.*\&quot;agentContent\&quot;: \&quot;\\([^\&quot;]*\\)\&quot;.*/\\1/&#39; \\ | base64 --decode &gt; &amp;lt;agent zip file&amp;gt;&lt;/pre&gt; Defaults to: `null`.
+  - agentContent (binary()): The exported agent.  Example for how to export an agent to a zip file via a command line: &lt;pre&gt;curl \\   &#39;https://dialogflow.googleapis.com/v2beta1/projects/&amp;lt;project_name&amp;gt;/agent:export&#39;\\   -X POST \\   -H &#39;Authorization: Bearer &#39;$(gcloud auth application-default   print-access-token) \\   -H &#39;Accept: application/json&#39; \\   -H &#39;Content-Type: application/json&#39; \\   --compressed \\   --data-binary &#39;{}&#39; \\ | grep agentContent | sed -e &#39;s/.*\&quot;agentContent\&quot;: \&quot;\\([^\&quot;]*\\)\&quot;.*/\\1/&#39; \\ | base64 --decode &gt; &amp;lt;agent zip file&amp;gt;&lt;/pre&gt; Defaults to: `null`.
   - agentUri (String.t): The URI to a file containing the exported agent. This field is populated only if &#x60;agent_uri&#x60; is specified in &#x60;ExportAgentRequest&#x60;. Defaults to: `null`.
   """
 

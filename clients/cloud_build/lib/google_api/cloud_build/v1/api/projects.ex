@@ -32,18 +32,18 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   - connection (GoogleApi.CloudBuild.V1.Connection): Connection to server
   - project_id (String.t): ID of the project.
   - id (String.t): ID of the build.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (CancelBuildRequest): 
 
   ## Returns
@@ -53,19 +53,25 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   """
   @spec cloudbuild_projects_builds_cancel(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudBuild.V1.Model.Build.t()} | {:error, Tesla.Env.t()}
-  def cloudbuild_projects_builds_cancel(connection, project_id, id, opts \\ []) do
-    optional_params = %{
-      :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
+  def cloudbuild_projects_builds_cancel(
+        connection,
+        project_id,
+        id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
       :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -76,11 +82,11 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
         "projectId" => URI.encode_www_form(project_id),
         "id" => URI.encode_www_form(id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudBuild.V1.Model.Build{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudBuild.V1.Model.Build{}])
   end
 
   @doc """
@@ -90,18 +96,18 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
 
   - connection (GoogleApi.CloudBuild.V1.Connection): Connection to server
   - project_id (String.t): ID of the project.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (Build): 
 
   ## Returns
@@ -111,19 +117,19 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   """
   @spec cloudbuild_projects_builds_create(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudBuild.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def cloudbuild_projects_builds_create(connection, project_id, opts \\ []) do
-    optional_params = %{
-      :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
+  def cloudbuild_projects_builds_create(connection, project_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
       :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -133,11 +139,11 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectId}/builds", %{
         "projectId" => URI.encode_www_form(project_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudBuild.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudBuild.V1.Model.Operation{}])
   end
 
   @doc """
@@ -148,18 +154,18 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   - connection (GoogleApi.CloudBuild.V1.Connection): Connection to server
   - project_id (String.t): ID of the project.
   - id (String.t): ID of the build.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -168,19 +174,25 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   """
   @spec cloudbuild_projects_builds_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudBuild.V1.Model.Build.t()} | {:error, Tesla.Env.t()}
-  def cloudbuild_projects_builds_get(connection, project_id, id, opts \\ []) do
-    optional_params = %{
-      :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
+  def cloudbuild_projects_builds_get(
+        connection,
+        project_id,
+        id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :callback => :query,
-      :alt => :query
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query
     }
 
     request =
@@ -190,11 +202,11 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
         "projectId" => URI.encode_www_form(project_id),
         "id" => URI.encode_www_form(id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudBuild.V1.Model.Build{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudBuild.V1.Model.Build{}])
   end
 
   @doc """
@@ -204,21 +216,21 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
 
   - connection (GoogleApi.CloudBuild.V1.Connection): Connection to server
   - project_id (String.t): ID of the project.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :pageToken (String.t): Token to provide to skip to a particular spot in the list.
     - :pageSize (integer()): Number of results to return in the list.
     - :filter (String.t): The raw filter text to constrain the results.
-    - :pageToken (String.t): Token to provide to skip to a particular spot in the list.
 
   ## Returns
 
@@ -227,22 +239,22 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   """
   @spec cloudbuild_projects_builds_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudBuild.V1.Model.ListBuildsResponse.t()} | {:error, Tesla.Env.t()}
-  def cloudbuild_projects_builds_list(connection, project_id, opts \\ []) do
-    optional_params = %{
-      :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
+  def cloudbuild_projects_builds_list(connection, project_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
       :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :pageToken => :query,
       :pageSize => :query,
-      :filter => :query,
-      :pageToken => :query
+      :filter => :query
     }
 
     request =
@@ -251,11 +263,11 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectId}/builds", %{
         "projectId" => URI.encode_www_form(project_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudBuild.V1.Model.ListBuildsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudBuild.V1.Model.ListBuildsResponse{}])
   end
 
   @doc """
@@ -266,18 +278,18 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   - connection (GoogleApi.CloudBuild.V1.Connection): Connection to server
   - project_id (String.t): ID of the project.
   - id (String.t): Build ID of the original build.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (RetryBuildRequest): 
 
   ## Returns
@@ -287,19 +299,25 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   """
   @spec cloudbuild_projects_builds_retry(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudBuild.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def cloudbuild_projects_builds_retry(connection, project_id, id, opts \\ []) do
-    optional_params = %{
-      :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
+  def cloudbuild_projects_builds_retry(
+        connection,
+        project_id,
+        id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
       :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -310,11 +328,11 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
         "projectId" => URI.encode_www_form(project_id),
         "id" => URI.encode_www_form(id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudBuild.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudBuild.V1.Model.Operation{}])
   end
 
   @doc """
@@ -324,18 +342,18 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
 
   - connection (GoogleApi.CloudBuild.V1.Connection): Connection to server
   - project_id (String.t): ID of the project for which to configure automatic builds.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (BuildTrigger): 
 
   ## Returns
@@ -345,19 +363,24 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   """
   @spec cloudbuild_projects_triggers_create(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudBuild.V1.Model.BuildTrigger.t()} | {:error, Tesla.Env.t()}
-  def cloudbuild_projects_triggers_create(connection, project_id, opts \\ []) do
-    optional_params = %{
-      :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
+  def cloudbuild_projects_triggers_create(
+        connection,
+        project_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
       :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -367,11 +390,11 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectId}/triggers", %{
         "projectId" => URI.encode_www_form(project_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudBuild.V1.Model.BuildTrigger{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudBuild.V1.Model.BuildTrigger{}])
   end
 
   @doc """
@@ -382,18 +405,18 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   - connection (GoogleApi.CloudBuild.V1.Connection): Connection to server
   - project_id (String.t): ID of the project that owns the trigger.
   - trigger_id (String.t): ID of the &#x60;BuildTrigger&#x60; to delete.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -402,19 +425,25 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   """
   @spec cloudbuild_projects_triggers_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudBuild.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def cloudbuild_projects_triggers_delete(connection, project_id, trigger_id, opts \\ []) do
-    optional_params = %{
-      :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
+  def cloudbuild_projects_triggers_delete(
+        connection,
+        project_id,
+        trigger_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :callback => :query,
-      :alt => :query
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query
     }
 
     request =
@@ -424,11 +453,11 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
         "projectId" => URI.encode_www_form(project_id),
         "triggerId" => URI.encode_www_form(trigger_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudBuild.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudBuild.V1.Model.Empty{}])
   end
 
   @doc """
@@ -439,18 +468,18 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   - connection (GoogleApi.CloudBuild.V1.Connection): Connection to server
   - project_id (String.t): ID of the project that owns the trigger.
   - trigger_id (String.t): ID of the &#x60;BuildTrigger&#x60; to get.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -459,19 +488,25 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   """
   @spec cloudbuild_projects_triggers_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudBuild.V1.Model.BuildTrigger.t()} | {:error, Tesla.Env.t()}
-  def cloudbuild_projects_triggers_get(connection, project_id, trigger_id, opts \\ []) do
-    optional_params = %{
-      :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
+  def cloudbuild_projects_triggers_get(
+        connection,
+        project_id,
+        trigger_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :callback => :query,
-      :alt => :query
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query
     }
 
     request =
@@ -481,11 +516,11 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
         "projectId" => URI.encode_www_form(project_id),
         "triggerId" => URI.encode_www_form(trigger_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudBuild.V1.Model.BuildTrigger{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudBuild.V1.Model.BuildTrigger{}])
   end
 
   @doc """
@@ -495,18 +530,18 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
 
   - connection (GoogleApi.CloudBuild.V1.Connection): Connection to server
   - project_id (String.t): ID of the project for which to list BuildTriggers.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -516,19 +551,19 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_triggers_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudBuild.V1.Model.ListBuildTriggersResponse.t()}
           | {:error, Tesla.Env.t()}
-  def cloudbuild_projects_triggers_list(connection, project_id, opts \\ []) do
-    optional_params = %{
-      :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
+  def cloudbuild_projects_triggers_list(connection, project_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :callback => :query,
-      :alt => :query
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query
     }
 
     request =
@@ -537,11 +572,13 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectId}/triggers", %{
         "projectId" => URI.encode_www_form(project_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudBuild.V1.Model.ListBuildTriggersResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CloudBuild.V1.Model.ListBuildTriggersResponse{}]
+    )
   end
 
   @doc """
@@ -552,18 +589,18 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   - connection (GoogleApi.CloudBuild.V1.Connection): Connection to server
   - project_id (String.t): ID of the project that owns the trigger.
   - trigger_id (String.t): ID of the &#x60;BuildTrigger&#x60; to update.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (BuildTrigger): 
 
   ## Returns
@@ -573,19 +610,25 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   """
   @spec cloudbuild_projects_triggers_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudBuild.V1.Model.BuildTrigger.t()} | {:error, Tesla.Env.t()}
-  def cloudbuild_projects_triggers_patch(connection, project_id, trigger_id, opts \\ []) do
-    optional_params = %{
-      :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
+  def cloudbuild_projects_triggers_patch(
+        connection,
+        project_id,
+        trigger_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
       :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -596,11 +639,11 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
         "projectId" => URI.encode_www_form(project_id),
         "triggerId" => URI.encode_www_form(trigger_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudBuild.V1.Model.BuildTrigger{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudBuild.V1.Model.BuildTrigger{}])
   end
 
   @doc """
@@ -611,18 +654,18 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   - connection (GoogleApi.CloudBuild.V1.Connection): Connection to server
   - project_id (String.t): ID of the project.
   - trigger_id (String.t): ID of the trigger.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (RepoSource): 
 
   ## Returns
@@ -632,19 +675,25 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   """
   @spec cloudbuild_projects_triggers_run(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudBuild.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def cloudbuild_projects_triggers_run(connection, project_id, trigger_id, opts \\ []) do
-    optional_params = %{
-      :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
+  def cloudbuild_projects_triggers_run(
+        connection,
+        project_id,
+        trigger_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
       :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -655,10 +704,10 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
         "projectId" => URI.encode_www_form(project_id),
         "triggerId" => URI.encode_www_form(trigger_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudBuild.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudBuild.V1.Model.Operation{}])
   end
 end

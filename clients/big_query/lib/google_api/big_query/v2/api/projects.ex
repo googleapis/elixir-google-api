@@ -31,7 +31,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Projects do
 
   - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
   - project_id (String.t): Project ID for which the service account is requested.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,13 @@ defmodule GoogleApi.BigQuery.V2.Api.Projects do
   @spec bigquery_projects_get_service_account(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.BigQuery.V2.Model.GetServiceAccountResponse.t()}
           | {:error, Tesla.Env.t()}
-  def bigquery_projects_get_service_account(connection, project_id, opts \\ []) do
-    optional_params = %{
+  def bigquery_projects_get_service_account(
+        connection,
+        project_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -65,11 +70,11 @@ defmodule GoogleApi.BigQuery.V2.Api.Projects do
       |> Request.url("/bigquery/v2/projects/{projectId}/serviceAccount", %{
         "projectId" => URI.encode_www_form(project_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.BigQuery.V2.Model.GetServiceAccountResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.BigQuery.V2.Model.GetServiceAccountResponse{}])
   end
 
   @doc """
@@ -78,7 +83,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Projects do
   ## Parameters
 
   - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -96,8 +101,8 @@ defmodule GoogleApi.BigQuery.V2.Api.Projects do
   """
   @spec bigquery_projects_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.BigQuery.V2.Model.ProjectList.t()} | {:error, Tesla.Env.t()}
-  def bigquery_projects_list(connection, opts \\ []) do
-    optional_params = %{
+  def bigquery_projects_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -113,10 +118,10 @@ defmodule GoogleApi.BigQuery.V2.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/bigquery/v2/projects")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.BigQuery.V2.Model.ProjectList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.BigQuery.V2.Model.ProjectList{}])
   end
 end

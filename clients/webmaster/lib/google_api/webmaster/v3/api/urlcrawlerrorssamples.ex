@@ -34,7 +34,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Urlcrawlerrorssamples do
   - url (String.t): The relative path (without the site) of the sample URL. It must be one of the URLs returned by list(). For example, for the URL https://www.example.com/pagename on the site https://www.example.com/, the url value is pagename
   - category (String.t): The crawl error category. For example: authPermissions
   - platform (String.t): The user agent type (platform) that made the request. For example: web
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -63,9 +63,10 @@ defmodule GoogleApi.Webmaster.V3.Api.Urlcrawlerrorssamples do
         url,
         category,
         platform,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -84,11 +85,11 @@ defmodule GoogleApi.Webmaster.V3.Api.Urlcrawlerrorssamples do
       })
       |> Request.add_param(:query, :category, category)
       |> Request.add_param(:query, :platform, platform)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Webmaster.V3.Model.UrlCrawlErrorsSample{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Webmaster.V3.Model.UrlCrawlErrorsSample{}])
   end
 
   @doc """
@@ -100,7 +101,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Urlcrawlerrorssamples do
   - site_url (String.t): The site&#39;s URL, including protocol. For example: http://www.example.com/
   - category (String.t): The crawl error category. For example: authPermissions
   - platform (String.t): The user agent type (platform) that made the request. For example: web
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -123,8 +124,15 @@ defmodule GoogleApi.Webmaster.V3.Api.Urlcrawlerrorssamples do
         ) ::
           {:ok, GoogleApi.Webmaster.V3.Model.UrlCrawlErrorsSamplesListResponse.t()}
           | {:error, Tesla.Env.t()}
-  def webmasters_urlcrawlerrorssamples_list(connection, site_url, category, platform, opts \\ []) do
-    optional_params = %{
+  def webmasters_urlcrawlerrorssamples_list(
+        connection,
+        site_url,
+        category,
+        platform,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -142,11 +150,13 @@ defmodule GoogleApi.Webmaster.V3.Api.Urlcrawlerrorssamples do
       })
       |> Request.add_param(:query, :category, category)
       |> Request.add_param(:query, :platform, platform)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Webmaster.V3.Model.UrlCrawlErrorsSamplesListResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Webmaster.V3.Model.UrlCrawlErrorsSamplesListResponse{}]
+    )
   end
 
   @doc """
@@ -159,7 +169,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Urlcrawlerrorssamples do
   - url (String.t): The relative path (without the site) of the sample URL. It must be one of the URLs returned by list(). For example, for the URL https://www.example.com/pagename on the site https://www.example.com/, the url value is pagename
   - category (String.t): The crawl error category. For example: authPermissions
   - platform (String.t): The user agent type (platform) that made the request. For example: web
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -187,9 +197,10 @@ defmodule GoogleApi.Webmaster.V3.Api.Urlcrawlerrorssamples do
         url,
         category,
         platform,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -208,10 +219,10 @@ defmodule GoogleApi.Webmaster.V3.Api.Urlcrawlerrorssamples do
       })
       |> Request.add_param(:query, :category, category)
       |> Request.add_param(:query, :platform, platform)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 end

@@ -32,7 +32,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
   - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
   - project (String.t): Project ID of the Cloud SQL project.
   - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -49,8 +49,14 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
   """
   @spec sql_ssl_certs_create_ephemeral(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t()} | {:error, Tesla.Env.t()}
-  def sql_ssl_certs_create_ephemeral(connection, project, instance, opts \\ []) do
-    optional_params = %{
+  def sql_ssl_certs_create_ephemeral(
+        connection,
+        project,
+        instance,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -68,11 +74,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
         "project" => URI.encode_www_form(project),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SQLAdmin.V1beta4.Model.SslCert{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SQLAdmin.V1beta4.Model.SslCert{}])
   end
 
   @doc """
@@ -84,7 +90,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
   - project (String.t): Project ID of the project that contains the instance.
   - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
   - sha1_fingerprint (String.t): Sha1 FingerPrint.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -100,8 +106,15 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
   """
   @spec sql_ssl_certs_delete(Tesla.Env.client(), String.t(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def sql_ssl_certs_delete(connection, project, instance, sha1_fingerprint, opts \\ []) do
-    optional_params = %{
+  def sql_ssl_certs_delete(
+        connection,
+        project,
+        instance,
+        sha1_fingerprint,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -119,11 +132,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
         "instance" => URI.encode_www_form(instance),
         "sha1Fingerprint" => URI.encode_www_form(sha1_fingerprint)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}])
   end
 
   @doc """
@@ -135,7 +148,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
   - project (String.t): Project ID of the project that contains the instance.
   - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
   - sha1_fingerprint (String.t): Sha1 FingerPrint.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -151,8 +164,15 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
   """
   @spec sql_ssl_certs_get(Tesla.Env.client(), String.t(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t()} | {:error, Tesla.Env.t()}
-  def sql_ssl_certs_get(connection, project, instance, sha1_fingerprint, opts \\ []) do
-    optional_params = %{
+  def sql_ssl_certs_get(
+        connection,
+        project,
+        instance,
+        sha1_fingerprint,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -170,11 +190,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
         "instance" => URI.encode_www_form(instance),
         "sha1Fingerprint" => URI.encode_www_form(sha1_fingerprint)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SQLAdmin.V1beta4.Model.SslCert{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SQLAdmin.V1beta4.Model.SslCert{}])
   end
 
   @doc """
@@ -185,7 +205,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
   - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
   - project (String.t): Project ID of the project that contains the instance.
   - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -203,8 +223,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
   @spec sql_ssl_certs_insert(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.SslCertsInsertResponse.t()}
           | {:error, Tesla.Env.t()}
-  def sql_ssl_certs_insert(connection, project, instance, opts \\ []) do
-    optional_params = %{
+  def sql_ssl_certs_insert(connection, project, instance, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -222,11 +242,13 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
         "project" => URI.encode_www_form(project),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SQLAdmin.V1beta4.Model.SslCertsInsertResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.SQLAdmin.V1beta4.Model.SslCertsInsertResponse{}]
+    )
   end
 
   @doc """
@@ -237,7 +259,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
   - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
   - project (String.t): Project ID of the project that contains the instance.
   - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -254,8 +276,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
   @spec sql_ssl_certs_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.SslCertsListResponse.t()}
           | {:error, Tesla.Env.t()}
-  def sql_ssl_certs_list(connection, project, instance, opts \\ []) do
-    optional_params = %{
+  def sql_ssl_certs_list(connection, project, instance, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -272,10 +294,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
         "project" => URI.encode_www_form(project),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SQLAdmin.V1beta4.Model.SslCertsListResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SQLAdmin.V1beta4.Model.SslCertsListResponse{}])
   end
 end

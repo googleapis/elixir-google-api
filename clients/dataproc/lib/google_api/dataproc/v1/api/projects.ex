@@ -25,6 +25,760 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
+  Creates new workflow template.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;parent&#x60;. Required. The \&quot;resource name\&quot; of the region, as described in https://cloud.google.com/apis/design/resource_names of the form projects/{project_id}/regions/{region}
+  - locations_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :body (WorkflowTemplate): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataproc.V1.Model.WorkflowTemplate{}} on success
+  {:error, info} on failure
+  """
+  @spec dataproc_projects_locations_workflow_templates_create(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.WorkflowTemplate.t()} | {:error, Tesla.Env.t()}
+  def dataproc_projects_locations_workflow_templates_create(
+        connection,
+        projects_id,
+        locations_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/workflowTemplates", %{
+        "projectsId" => URI.encode_www_form(projects_id),
+        "locationsId" => URI.encode_www_form(locations_id)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.WorkflowTemplate{}])
+  end
+
+  @doc """
+  Deletes a workflow template. It does not cancel in-progress workflows.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;name&#x60;. Required. The \&quot;resource name\&quot; of the workflow template, as described in https://cloud.google.com/apis/design/resource_names of the form projects/{project_id}/regions/{region}/workflowTemplates/{template_id}
+  - locations_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - workflow_templates_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :version (integer()): Optional. The version of workflow template to delete. If specified, will only delete the template if the current server version matches specified version.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataproc.V1.Model.Empty{}} on success
+  {:error, info} on failure
+  """
+  @spec dataproc_projects_locations_workflow_templates_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+  def dataproc_projects_locations_workflow_templates_delete(
+        connection,
+        projects_id,
+        locations_id,
+        workflow_templates_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :version => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/workflowTemplates/{workflowTemplatesId}",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "locationsId" => URI.encode_www_form(locations_id),
+          "workflowTemplatesId" => URI.encode_www_form(workflow_templates_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Empty{}])
+  end
+
+  @doc """
+  Retrieves the latest workflow template.Can retrieve previously instantiated template by specifying optional version parameter.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;name&#x60;. Required. The \&quot;resource name\&quot; of the workflow template, as described in https://cloud.google.com/apis/design/resource_names of the form projects/{project_id}/regions/{region}/workflowTemplates/{template_id}
+  - locations_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - workflow_templates_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :version (integer()): Optional. The version of workflow template to retrieve. Only previously instatiated versions can be retrieved.If unspecified, retrieves the current version.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataproc.V1.Model.WorkflowTemplate{}} on success
+  {:error, info} on failure
+  """
+  @spec dataproc_projects_locations_workflow_templates_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.WorkflowTemplate.t()} | {:error, Tesla.Env.t()}
+  def dataproc_projects_locations_workflow_templates_get(
+        connection,
+        projects_id,
+        locations_id,
+        workflow_templates_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :version => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/workflowTemplates/{workflowTemplatesId}",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "locationsId" => URI.encode_www_form(locations_id),
+          "workflowTemplatesId" => URI.encode_www_form(workflow_templates_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.WorkflowTemplate{}])
+  end
+
+  @doc """
+  Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
+  - locations_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - workflow_templates_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :body (GetIamPolicyRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataproc.V1.Model.Policy{}} on success
+  {:error, info} on failure
+  """
+  @spec dataproc_projects_locations_workflow_templates_get_iam_policy(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+  def dataproc_projects_locations_workflow_templates_get_iam_policy(
+        connection,
+        projects_id,
+        locations_id,
+        workflow_templates_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/workflowTemplates/{workflowTemplatesId}:getIamPolicy",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "locationsId" => URI.encode_www_form(locations_id),
+          "workflowTemplatesId" => URI.encode_www_form(workflow_templates_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Policy{}])
+  end
+
+  @doc """
+  Instantiates a template and begins execution.The returned Operation can be used to track execution of workflow by polling operations.get. The Operation will complete when entire workflow is finished.The running workflow can be aborted via operations.cancel. This will cause any inflight jobs to be cancelled and workflow-owned clusters to be deleted.The Operation.metadata will be WorkflowMetadata.On successful completion, Operation.response will be Empty.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;name&#x60;. Required. The \&quot;resource name\&quot; of the workflow template, as described in https://cloud.google.com/apis/design/resource_names of the form projects/{project_id}/regions/{region}/workflowTemplates/{template_id}
+  - locations_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - workflow_templates_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :body (InstantiateWorkflowTemplateRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataproc.V1.Model.Operation{}} on success
+  {:error, info} on failure
+  """
+  @spec dataproc_projects_locations_workflow_templates_instantiate(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+  def dataproc_projects_locations_workflow_templates_instantiate(
+        connection,
+        projects_id,
+        locations_id,
+        workflow_templates_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/workflowTemplates/{workflowTemplatesId}:instantiate",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "locationsId" => URI.encode_www_form(locations_id),
+          "workflowTemplatesId" => URI.encode_www_form(workflow_templates_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Instantiates a template and begins execution.This method is equivalent to executing the sequence CreateWorkflowTemplate, InstantiateWorkflowTemplate, DeleteWorkflowTemplate.The returned Operation can be used to track execution of workflow by polling operations.get. The Operation will complete when entire workflow is finished.The running workflow can be aborted via operations.cancel. This will cause any inflight jobs to be cancelled and workflow-owned clusters to be deleted.The Operation.metadata will be WorkflowMetadata.On successful completion, Operation.response will be Empty.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;parent&#x60;. Required. The \&quot;resource name\&quot; of the workflow template region, as described in https://cloud.google.com/apis/design/resource_names of the form projects/{project_id}/regions/{region}
+  - locations_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :requestId (String.t): Optional. A tag that prevents multiple concurrent workflow instances with the same tag from running. This mitigates risk of concurrent instances started due to retries.It is recommended to always set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The tag must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters.
+    - :body (WorkflowTemplate): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataproc.V1.Model.Operation{}} on success
+  {:error, info} on failure
+  """
+  @spec dataproc_projects_locations_workflow_templates_instantiate_inline(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+  def dataproc_projects_locations_workflow_templates_instantiate_inline(
+        connection,
+        projects_id,
+        locations_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :requestId => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/workflowTemplates:instantiateInline",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "locationsId" => URI.encode_www_form(locations_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Lists workflows that match the specified filter in the request.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;parent&#x60;. Required. The \&quot;resource name\&quot; of the region, as described in https://cloud.google.com/apis/design/resource_names of the form projects/{project_id}/regions/{region}
+  - locations_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :pageToken (String.t): Optional. The page token, returned by a previous call, to request the next page of results.
+    - :pageSize (integer()): Optional. The maximum number of results to return in each response.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataproc.V1.Model.ListWorkflowTemplatesResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec dataproc_projects_locations_workflow_templates_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.ListWorkflowTemplatesResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def dataproc_projects_locations_workflow_templates_list(
+        connection,
+        projects_id,
+        locations_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :pageToken => :query,
+      :pageSize => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/workflowTemplates", %{
+        "projectsId" => URI.encode_www_form(projects_id),
+        "locationsId" => URI.encode_www_form(locations_id)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dataproc.V1.Model.ListWorkflowTemplatesResponse{}]
+    )
+  end
+
+  @doc """
+  Sets the access control policy on the specified resource. Replaces any existing policy.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
+  - locations_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - workflow_templates_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :body (SetIamPolicyRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataproc.V1.Model.Policy{}} on success
+  {:error, info} on failure
+  """
+  @spec dataproc_projects_locations_workflow_templates_set_iam_policy(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+  def dataproc_projects_locations_workflow_templates_set_iam_policy(
+        connection,
+        projects_id,
+        locations_id,
+        workflow_templates_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/workflowTemplates/{workflowTemplatesId}:setIamPolicy",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "locationsId" => URI.encode_www_form(locations_id),
+          "workflowTemplatesId" => URI.encode_www_form(workflow_templates_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Policy{}])
+  end
+
+  @doc """
+  Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a NOT_FOUND error.Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \&quot;fail open\&quot; without warning.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
+  - locations_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - workflow_templates_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :body (TestIamPermissionsRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataproc.V1.Model.TestIamPermissionsResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec dataproc_projects_locations_workflow_templates_test_iam_permissions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.TestIamPermissionsResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def dataproc_projects_locations_workflow_templates_test_iam_permissions(
+        connection,
+        projects_id,
+        locations_id,
+        workflow_templates_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/workflowTemplates/{workflowTemplatesId}:testIamPermissions",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "locationsId" => URI.encode_www_form(locations_id),
+          "workflowTemplatesId" => URI.encode_www_form(workflow_templates_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dataproc.V1.Model.TestIamPermissionsResponse{}]
+    )
+  end
+
+  @doc """
+  Updates (replaces) workflow template. The updated template must contain version that matches the current server version.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;template.name&#x60;. Output only. The \&quot;resource name\&quot; of the template, as described in https://cloud.google.com/apis/design/resource_names of the form projects/{project_id}/regions/{region}/workflowTemplates/{template_id}
+  - locations_id (String.t): Part of &#x60;template.name&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - workflow_templates_id (String.t): Part of &#x60;template.name&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :body (WorkflowTemplate): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataproc.V1.Model.WorkflowTemplate{}} on success
+  {:error, info} on failure
+  """
+  @spec dataproc_projects_locations_workflow_templates_update(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.WorkflowTemplate.t()} | {:error, Tesla.Env.t()}
+  def dataproc_projects_locations_workflow_templates_update(
+        connection,
+        projects_id,
+        locations_id,
+        workflow_templates_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:put)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/workflowTemplates/{workflowTemplatesId}",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "locationsId" => URI.encode_www_form(locations_id),
+          "workflowTemplatesId" => URI.encode_www_form(workflow_templates_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.WorkflowTemplate{}])
+  end
+
+  @doc """
   Creates a cluster in a project.
 
   ## Parameters
@@ -32,18 +786,18 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
   - project_id (String.t): Required. The ID of the Google Cloud Platform project that the cluster belongs to.
   - region (String.t): Required. The Cloud Dataproc region in which to handle the request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :requestId (String.t): Optional. A unique id used to identify the request. If the server receives two CreateClusterRequest requests with the same id, then the second request will be ignored and the first google.longrunning.Operation created and stored in the backend is returned.It is recommended to always set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters.
     - :body (Cluster): 
 
@@ -58,19 +812,25 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def dataproc_projects_regions_clusters_create(connection, project_id, region, opts \\ []) do
-    optional_params = %{
+  def dataproc_projects_regions_clusters_create(
+        connection,
+        project_id,
+        region,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
       :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
       :requestId => :query,
       :body => :body
     }
@@ -82,11 +842,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "projectId" => URI.encode_www_form(project_id),
         "region" => URI.encode_www_form(region)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Dataproc.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Operation{}])
   end
 
   @doc """
@@ -98,18 +858,18 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   - project_id (String.t): Required. The ID of the Google Cloud Platform project that the cluster belongs to.
   - region (String.t): Required. The Cloud Dataproc region in which to handle the request.
   - cluster_name (String.t): Required. The cluster name.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :requestId (String.t): Optional. A unique id used to identify the request. If the server receives two DeleteClusterRequest requests with the same id, then the second request will be ignored and the first google.longrunning.Operation created and stored in the backend is returned.It is recommended to always set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters.
     - :clusterUuid (String.t): Optional. Specifying the cluster_uuid means the RPC should fail (with error NOT_FOUND) if cluster with specified UUID does not exist.
 
@@ -130,20 +890,21 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         project_id,
         region,
         cluster_name,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
       :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
       :requestId => :query,
       :clusterUuid => :query
     }
@@ -156,11 +917,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "region" => URI.encode_www_form(region),
         "clusterName" => URI.encode_www_form(cluster_name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Dataproc.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Operation{}])
   end
 
   @doc """
@@ -172,18 +933,18 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   - project_id (String.t): Required. The ID of the Google Cloud Platform project that the cluster belongs to.
   - region (String.t): Required. The Cloud Dataproc region in which to handle the request.
   - cluster_name (String.t): Required. The cluster name.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (DiagnoseClusterRequest): 
 
   ## Returns
@@ -203,20 +964,21 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         project_id,
         region,
         cluster_name,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
       :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
       :body => :body
     }
 
@@ -231,11 +993,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           "clusterName" => URI.encode_www_form(cluster_name)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Dataproc.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Operation{}])
   end
 
   @doc """
@@ -247,18 +1009,18 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   - project_id (String.t): Required. The ID of the Google Cloud Platform project that the cluster belongs to.
   - region (String.t): Required. The Cloud Dataproc region in which to handle the request.
   - cluster_name (String.t): Required. The cluster name.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -277,20 +1039,21 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         project_id,
         region,
         cluster_name,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query
+      :key => :query
     }
 
     request =
@@ -301,11 +1064,87 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "region" => URI.encode_www_form(region),
         "clusterName" => URI.encode_www_form(cluster_name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Dataproc.V1.Model.Cluster{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Cluster{}])
+  end
+
+  @doc """
+  Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
+  - regions_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - clusters_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :body (GetIamPolicyRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataproc.V1.Model.Policy{}} on success
+  {:error, info} on failure
+  """
+  @spec dataproc_projects_regions_clusters_get_iam_policy(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+  def dataproc_projects_regions_clusters_get_iam_policy(
+        connection,
+        projects_id,
+        regions_id,
+        clusters_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/regions/{regionsId}/clusters/{clustersId}:getIamPolicy",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "regionsId" => URI.encode_www_form(regions_id),
+          "clustersId" => URI.encode_www_form(clusters_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Policy{}])
   end
 
   @doc """
@@ -316,18 +1155,18 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
   - project_id (String.t): Required. The ID of the Google Cloud Platform project that the cluster belongs to.
   - region (String.t): Required. The Cloud Dataproc region in which to handle the request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :filter (String.t): Optional. A filter constraining the clusters to list. Filters are case-sensitive and have the following syntax:field &#x3D; value AND field &#x3D; value ...where field is one of status.state, clusterName, or labels.[KEY], and [KEY] is a label key. value can be * to match all values. status.state can be one of the following: ACTIVE, INACTIVE, CREATING, RUNNING, ERROR, DELETING, or UPDATING. ACTIVE contains the CREATING, UPDATING, and RUNNING states. INACTIVE contains the DELETING and ERROR states. clusterName is the name of the cluster provided at creation time. Only the logical AND operator is supported; space-separated items are treated as having an implicit AND operator.Example filter:status.state &#x3D; ACTIVE AND clusterName &#x3D; mycluster AND labels.env &#x3D; staging AND labels.starred &#x3D; *
     - :pageToken (String.t): Optional. The standard List page token.
     - :pageSize (integer()): Optional. The standard List page size.
@@ -343,19 +1182,25 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Dataproc.V1.Model.ListClustersResponse.t()} | {:error, Tesla.Env.t()}
-  def dataproc_projects_regions_clusters_list(connection, project_id, region, opts \\ []) do
-    optional_params = %{
+  def dataproc_projects_regions_clusters_list(
+        connection,
+        project_id,
+        region,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
       :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
       :filter => :query,
       :pageToken => :query,
       :pageSize => :query
@@ -368,11 +1213,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "projectId" => URI.encode_www_form(project_id),
         "region" => URI.encode_www_form(region)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Dataproc.V1.Model.ListClustersResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.ListClustersResponse{}])
   end
 
   @doc """
@@ -384,21 +1229,21 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   - project_id (String.t): Required. The ID of the Google Cloud Platform project the cluster belongs to.
   - region (String.t): Required. The Cloud Dataproc region in which to handle the request.
   - cluster_name (String.t): Required. The cluster name.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :requestId (String.t): Optional. A unique id used to identify the request. If the server receives two UpdateClusterRequest requests with the same id, then the second request will be ignored and the first google.longrunning.Operation created and stored in the backend is returned.It is recommended to always set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters.
     - :updateMask (String.t): Required. Specifies the path, relative to Cluster, of the field to update. For example, to change the number of workers in a cluster to 5, the update_mask parameter would be specified as config.worker_config.num_instances, and the PATCH request body would specify the new value, as follows: {   \&quot;config\&quot;:{     \&quot;workerConfig\&quot;:{       \&quot;numInstances\&quot;:\&quot;5\&quot;     }   } } Similarly, to change the number of preemptible workers in a cluster to 5, the update_mask parameter would be config.secondary_worker_config.num_instances, and the PATCH request body would be set as follows: {   \&quot;config\&quot;:{     \&quot;secondaryWorkerConfig\&quot;:{       \&quot;numInstances\&quot;:\&quot;5\&quot;     }   } } &lt;strong&gt;Note:&lt;/strong&gt; Currently, only the following fields can be updated:&lt;table&gt;  &lt;tbody&gt;  &lt;tr&gt;  &lt;td&gt;&lt;strong&gt;Mask&lt;/strong&gt;&lt;/td&gt;  &lt;td&gt;&lt;strong&gt;Purpose&lt;/strong&gt;&lt;/td&gt;  &lt;/tr&gt;  &lt;tr&gt;  &lt;td&gt;&lt;strong&gt;&lt;em&gt;labels&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;  &lt;td&gt;Update labels&lt;/td&gt;  &lt;/tr&gt;  &lt;tr&gt;  &lt;td&gt;&lt;strong&gt;&lt;em&gt;config.worker_config.num_instances&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;  &lt;td&gt;Resize primary worker group&lt;/td&gt;  &lt;/tr&gt;  &lt;tr&gt;  &lt;td&gt;&lt;strong&gt;&lt;em&gt;config.secondary_worker_config.num_instances&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;  &lt;td&gt;Resize secondary worker group&lt;/td&gt;  &lt;/tr&gt;  &lt;/tbody&gt;  &lt;/table&gt;
     - :gracefulDecommissionTimeout (String.t): Optional. Timeout for graceful YARN decomissioning. Graceful decommissioning allows removing nodes from the cluster without interrupting jobs in progress. Timeout specifies how long to wait for jobs in progress to finish before forcefully removing nodes (and potentially interrupting jobs). Default timeout is 0 (for forceful decommission), and the maximum allowed timeout is 1 day.Only supported on Dataproc image versions 1.2 and higher.
-    - :requestId (String.t): Optional. A unique id used to identify the request. If the server receives two UpdateClusterRequest requests with the same id, then the second request will be ignored and the first google.longrunning.Operation created and stored in the backend is returned.It is recommended to always set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters.
     - :body (Cluster): 
 
   ## Returns
@@ -418,23 +1263,24 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         project_id,
         region,
         cluster_name,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
       :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
+      :requestId => :query,
       :updateMask => :query,
       :gracefulDecommissionTimeout => :query,
-      :requestId => :query,
       :body => :body
     }
 
@@ -446,11 +1292,167 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "region" => URI.encode_www_form(region),
         "clusterName" => URI.encode_www_form(cluster_name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Dataproc.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Sets the access control policy on the specified resource. Replaces any existing policy.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
+  - regions_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - clusters_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :body (SetIamPolicyRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataproc.V1.Model.Policy{}} on success
+  {:error, info} on failure
+  """
+  @spec dataproc_projects_regions_clusters_set_iam_policy(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+  def dataproc_projects_regions_clusters_set_iam_policy(
+        connection,
+        projects_id,
+        regions_id,
+        clusters_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/regions/{regionsId}/clusters/{clustersId}:setIamPolicy",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "regionsId" => URI.encode_www_form(regions_id),
+          "clustersId" => URI.encode_www_form(clusters_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Policy{}])
+  end
+
+  @doc """
+  Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a NOT_FOUND error.Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \&quot;fail open\&quot; without warning.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
+  - regions_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - clusters_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :body (TestIamPermissionsRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataproc.V1.Model.TestIamPermissionsResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec dataproc_projects_regions_clusters_test_iam_permissions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.TestIamPermissionsResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def dataproc_projects_regions_clusters_test_iam_permissions(
+        connection,
+        projects_id,
+        regions_id,
+        clusters_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/regions/{regionsId}/clusters/{clustersId}:testIamPermissions",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "regionsId" => URI.encode_www_form(regions_id),
+          "clustersId" => URI.encode_www_form(clusters_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dataproc.V1.Model.TestIamPermissionsResponse{}]
+    )
   end
 
   @doc """
@@ -462,18 +1464,18 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   - project_id (String.t): Required. The ID of the Google Cloud Platform project that the job belongs to.
   - region (String.t): Required. The Cloud Dataproc region in which to handle the request.
   - job_id (String.t): Required. The job ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (CancelJobRequest): 
 
   ## Returns
@@ -488,19 +1490,26 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Dataproc.V1.Model.Job.t()} | {:error, Tesla.Env.t()}
-  def dataproc_projects_regions_jobs_cancel(connection, project_id, region, job_id, opts \\ []) do
-    optional_params = %{
+  def dataproc_projects_regions_jobs_cancel(
+        connection,
+        project_id,
+        region,
+        job_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
       :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
       :body => :body
     }
 
@@ -512,11 +1521,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "region" => URI.encode_www_form(region),
         "jobId" => URI.encode_www_form(job_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Dataproc.V1.Model.Job{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Job{}])
   end
 
   @doc """
@@ -528,18 +1537,18 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   - project_id (String.t): Required. The ID of the Google Cloud Platform project that the job belongs to.
   - region (String.t): Required. The Cloud Dataproc region in which to handle the request.
   - job_id (String.t): Required. The job ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -553,19 +1562,26 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def dataproc_projects_regions_jobs_delete(connection, project_id, region, job_id, opts \\ []) do
-    optional_params = %{
+  def dataproc_projects_regions_jobs_delete(
+        connection,
+        project_id,
+        region,
+        job_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query
+      :key => :query
     }
 
     request =
@@ -576,11 +1592,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "region" => URI.encode_www_form(region),
         "jobId" => URI.encode_www_form(job_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Dataproc.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Empty{}])
   end
 
   @doc """
@@ -592,18 +1608,18 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   - project_id (String.t): Required. The ID of the Google Cloud Platform project that the job belongs to.
   - region (String.t): Required. The Cloud Dataproc region in which to handle the request.
   - job_id (String.t): Required. The job ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -617,19 +1633,26 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Dataproc.V1.Model.Job.t()} | {:error, Tesla.Env.t()}
-  def dataproc_projects_regions_jobs_get(connection, project_id, region, job_id, opts \\ []) do
-    optional_params = %{
+  def dataproc_projects_regions_jobs_get(
+        connection,
+        project_id,
+        region,
+        job_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query
+      :key => :query
     }
 
     request =
@@ -640,11 +1663,87 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "region" => URI.encode_www_form(region),
         "jobId" => URI.encode_www_form(job_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Dataproc.V1.Model.Job{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Job{}])
+  end
+
+  @doc """
+  Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
+  - regions_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - jobs_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :body (GetIamPolicyRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataproc.V1.Model.Policy{}} on success
+  {:error, info} on failure
+  """
+  @spec dataproc_projects_regions_jobs_get_iam_policy(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+  def dataproc_projects_regions_jobs_get_iam_policy(
+        connection,
+        projects_id,
+        regions_id,
+        jobs_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/regions/{regionsId}/jobs/{jobsId}:getIamPolicy",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "regionsId" => URI.encode_www_form(regions_id),
+          "jobsId" => URI.encode_www_form(jobs_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Policy{}])
   end
 
   @doc """
@@ -655,23 +1754,23 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
   - project_id (String.t): Required. The ID of the Google Cloud Platform project that the job belongs to.
   - region (String.t): Required. The Cloud Dataproc region in which to handle the request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageSize (integer()): Optional. The number of results to return in each response.
     - :clusterName (String.t): Optional. If set, the returned jobs list includes only jobs that were submitted to the named cluster.
     - :filter (String.t): Optional. A filter constraining the jobs to list. Filters are case-sensitive and have the following syntax:field &#x3D; value AND field &#x3D; value ...where field is status.state or labels.[KEY], and [KEY] is a label key. value can be * to match all values. status.state can be either ACTIVE or NON_ACTIVE. Only the logical AND operator is supported; space-separated items are treated as having an implicit AND operator.Example filter:status.state &#x3D; ACTIVE AND labels.env &#x3D; staging AND labels.starred &#x3D; *
     - :jobStateMatcher (String.t): Optional. Specifies enumerated categories of jobs to list. (default &#x3D; match ALL jobs).If filter is provided, jobStateMatcher will be ignored.
     - :pageToken (String.t): Optional. The page token, returned by a previous call, to request the next page of results.
+    - :pageSize (integer()): Optional. The number of results to return in each response.
 
   ## Returns
 
@@ -680,24 +1779,30 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   """
   @spec dataproc_projects_regions_jobs_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Dataproc.V1.Model.ListJobsResponse.t()} | {:error, Tesla.Env.t()}
-  def dataproc_projects_regions_jobs_list(connection, project_id, region, opts \\ []) do
-    optional_params = %{
+  def dataproc_projects_regions_jobs_list(
+        connection,
+        project_id,
+        region,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
       :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :pageSize => :query,
       :clusterName => :query,
       :filter => :query,
       :jobStateMatcher => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :pageSize => :query
     }
 
     request =
@@ -707,11 +1812,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "projectId" => URI.encode_www_form(project_id),
         "region" => URI.encode_www_form(region)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Dataproc.V1.Model.ListJobsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.ListJobsResponse{}])
   end
 
   @doc """
@@ -723,18 +1828,18 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   - project_id (String.t): Required. The ID of the Google Cloud Platform project that the job belongs to.
   - region (String.t): Required. The Cloud Dataproc region in which to handle the request.
   - job_id (String.t): Required. The job ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :updateMask (String.t): Required. Specifies the path, relative to &lt;code&gt;Job&lt;/code&gt;, of the field to update. For example, to update the labels of a Job the &lt;code&gt;update_mask&lt;/code&gt; parameter would be specified as &lt;code&gt;labels&lt;/code&gt;, and the PATCH request body would specify the new value. &lt;strong&gt;Note:&lt;/strong&gt; Currently, &lt;code&gt;labels&lt;/code&gt; is the only field that can be updated.
     - :body (Job): 
 
@@ -750,19 +1855,26 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Dataproc.V1.Model.Job.t()} | {:error, Tesla.Env.t()}
-  def dataproc_projects_regions_jobs_patch(connection, project_id, region, job_id, opts \\ []) do
-    optional_params = %{
+  def dataproc_projects_regions_jobs_patch(
+        connection,
+        project_id,
+        region,
+        job_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
       :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
       :updateMask => :query,
       :body => :body
     }
@@ -775,11 +1887,87 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "region" => URI.encode_www_form(region),
         "jobId" => URI.encode_www_form(job_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Dataproc.V1.Model.Job{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Job{}])
+  end
+
+  @doc """
+  Sets the access control policy on the specified resource. Replaces any existing policy.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
+  - regions_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - jobs_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :body (SetIamPolicyRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataproc.V1.Model.Policy{}} on success
+  {:error, info} on failure
+  """
+  @spec dataproc_projects_regions_jobs_set_iam_policy(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+  def dataproc_projects_regions_jobs_set_iam_policy(
+        connection,
+        projects_id,
+        regions_id,
+        jobs_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/regions/{regionsId}/jobs/{jobsId}:setIamPolicy",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "regionsId" => URI.encode_www_form(regions_id),
+          "jobsId" => URI.encode_www_form(jobs_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Policy{}])
   end
 
   @doc """
@@ -790,18 +1978,18 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
   - project_id (String.t): Required. The ID of the Google Cloud Platform project that the job belongs to.
   - region (String.t): Required. The Cloud Dataproc region in which to handle the request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (SubmitJobRequest): 
 
   ## Returns
@@ -815,19 +2003,25 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Dataproc.V1.Model.Job.t()} | {:error, Tesla.Env.t()}
-  def dataproc_projects_regions_jobs_submit(connection, project_id, region, opts \\ []) do
-    optional_params = %{
+  def dataproc_projects_regions_jobs_submit(
+        connection,
+        project_id,
+        region,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
       :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
       :body => :body
     }
 
@@ -838,11 +2032,91 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "projectId" => URI.encode_www_form(project_id),
         "region" => URI.encode_www_form(region)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Dataproc.V1.Model.Job{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Job{}])
+  end
+
+  @doc """
+  Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a NOT_FOUND error.Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \&quot;fail open\&quot; without warning.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
+  - regions_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - jobs_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :body (TestIamPermissionsRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataproc.V1.Model.TestIamPermissionsResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec dataproc_projects_regions_jobs_test_iam_permissions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.TestIamPermissionsResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def dataproc_projects_regions_jobs_test_iam_permissions(
+        connection,
+        projects_id,
+        regions_id,
+        jobs_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/regions/{regionsId}/jobs/{jobsId}:testIamPermissions",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "regionsId" => URI.encode_www_form(regions_id),
+          "jobsId" => URI.encode_www_form(jobs_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dataproc.V1.Model.TestIamPermissionsResponse{}]
+    )
   end
 
   @doc """
@@ -854,18 +2128,18 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;name&#x60;. The name of the operation resource to be cancelled.
   - regions_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - operations_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -884,20 +2158,21 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         projects_id,
         regions_id,
         operations_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query
+      :key => :query
     }
 
     request =
@@ -911,11 +2186,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           "operationsId" => URI.encode_www_form(operations_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Dataproc.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Empty{}])
   end
 
   @doc """
@@ -927,18 +2202,18 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;name&#x60;. The name of the operation resource to be deleted.
   - regions_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - operations_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -957,20 +2232,21 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         projects_id,
         regions_id,
         operations_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query
+      :key => :query
     }
 
     request =
@@ -981,11 +2257,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "regionsId" => URI.encode_www_form(regions_id),
         "operationsId" => URI.encode_www_form(operations_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Dataproc.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Empty{}])
   end
 
   @doc """
@@ -997,18 +2273,18 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;name&#x60;. The name of the operation resource.
   - regions_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - operations_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -1027,20 +2303,21 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         projects_id,
         regions_id,
         operations_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query
+      :key => :query
     }
 
     request =
@@ -1051,11 +2328,87 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "regionsId" => URI.encode_www_form(regions_id),
         "operationsId" => URI.encode_www_form(operations_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Dataproc.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
+  - regions_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - operations_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :body (GetIamPolicyRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataproc.V1.Model.Policy{}} on success
+  {:error, info} on failure
+  """
+  @spec dataproc_projects_regions_operations_get_iam_policy(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+  def dataproc_projects_regions_operations_get_iam_policy(
+        connection,
+        projects_id,
+        regions_id,
+        operations_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/regions/{regionsId}/operations/{operationsId}:getIamPolicy",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "regionsId" => URI.encode_www_form(regions_id),
+          "operationsId" => URI.encode_www_form(operations_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Policy{}])
   end
 
   @doc """
@@ -1066,21 +2419,21 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The name of the operation&#39;s parent resource.
   - regions_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :filter (String.t): The standard list filter.
     - :pageToken (String.t): The standard list page token.
     - :pageSize (integer()): The standard list page size.
+    - :filter (String.t): The standard list filter.
 
   ## Returns
 
@@ -1094,22 +2447,28 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.ListOperationsResponse.t()} | {:error, Tesla.Env.t()}
-  def dataproc_projects_regions_operations_list(connection, projects_id, regions_id, opts \\ []) do
-    optional_params = %{
+  def dataproc_projects_regions_operations_list(
+        connection,
+        projects_id,
+        regions_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
       :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :filter => :query,
       :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :filter => :query
     }
 
     request =
@@ -1119,10 +2478,920 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "regionsId" => URI.encode_www_form(regions_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Dataproc.V1.Model.ListOperationsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.ListOperationsResponse{}])
+  end
+
+  @doc """
+  Sets the access control policy on the specified resource. Replaces any existing policy.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
+  - regions_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - operations_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :body (SetIamPolicyRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataproc.V1.Model.Policy{}} on success
+  {:error, info} on failure
+  """
+  @spec dataproc_projects_regions_operations_set_iam_policy(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+  def dataproc_projects_regions_operations_set_iam_policy(
+        connection,
+        projects_id,
+        regions_id,
+        operations_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/regions/{regionsId}/operations/{operationsId}:setIamPolicy",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "regionsId" => URI.encode_www_form(regions_id),
+          "operationsId" => URI.encode_www_form(operations_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Policy{}])
+  end
+
+  @doc """
+  Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a NOT_FOUND error.Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \&quot;fail open\&quot; without warning.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
+  - regions_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - operations_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :body (TestIamPermissionsRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataproc.V1.Model.TestIamPermissionsResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec dataproc_projects_regions_operations_test_iam_permissions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.TestIamPermissionsResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def dataproc_projects_regions_operations_test_iam_permissions(
+        connection,
+        projects_id,
+        regions_id,
+        operations_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/regions/{regionsId}/operations/{operationsId}:testIamPermissions",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "regionsId" => URI.encode_www_form(regions_id),
+          "operationsId" => URI.encode_www_form(operations_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dataproc.V1.Model.TestIamPermissionsResponse{}]
+    )
+  end
+
+  @doc """
+  Creates new workflow template.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;parent&#x60;. Required. The \&quot;resource name\&quot; of the region, as described in https://cloud.google.com/apis/design/resource_names of the form projects/{project_id}/regions/{region}
+  - regions_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :body (WorkflowTemplate): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataproc.V1.Model.WorkflowTemplate{}} on success
+  {:error, info} on failure
+  """
+  @spec dataproc_projects_regions_workflow_templates_create(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.WorkflowTemplate.t()} | {:error, Tesla.Env.t()}
+  def dataproc_projects_regions_workflow_templates_create(
+        connection,
+        projects_id,
+        regions_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/projects/{projectsId}/regions/{regionsId}/workflowTemplates", %{
+        "projectsId" => URI.encode_www_form(projects_id),
+        "regionsId" => URI.encode_www_form(regions_id)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.WorkflowTemplate{}])
+  end
+
+  @doc """
+  Deletes a workflow template. It does not cancel in-progress workflows.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;name&#x60;. Required. The \&quot;resource name\&quot; of the workflow template, as described in https://cloud.google.com/apis/design/resource_names of the form projects/{project_id}/regions/{region}/workflowTemplates/{template_id}
+  - regions_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - workflow_templates_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :version (integer()): Optional. The version of workflow template to delete. If specified, will only delete the template if the current server version matches specified version.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataproc.V1.Model.Empty{}} on success
+  {:error, info} on failure
+  """
+  @spec dataproc_projects_regions_workflow_templates_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+  def dataproc_projects_regions_workflow_templates_delete(
+        connection,
+        projects_id,
+        regions_id,
+        workflow_templates_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :version => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url(
+        "/v1/projects/{projectsId}/regions/{regionsId}/workflowTemplates/{workflowTemplatesId}",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "regionsId" => URI.encode_www_form(regions_id),
+          "workflowTemplatesId" => URI.encode_www_form(workflow_templates_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Empty{}])
+  end
+
+  @doc """
+  Retrieves the latest workflow template.Can retrieve previously instantiated template by specifying optional version parameter.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;name&#x60;. Required. The \&quot;resource name\&quot; of the workflow template, as described in https://cloud.google.com/apis/design/resource_names of the form projects/{project_id}/regions/{region}/workflowTemplates/{template_id}
+  - regions_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - workflow_templates_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :version (integer()): Optional. The version of workflow template to retrieve. Only previously instatiated versions can be retrieved.If unspecified, retrieves the current version.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataproc.V1.Model.WorkflowTemplate{}} on success
+  {:error, info} on failure
+  """
+  @spec dataproc_projects_regions_workflow_templates_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.WorkflowTemplate.t()} | {:error, Tesla.Env.t()}
+  def dataproc_projects_regions_workflow_templates_get(
+        connection,
+        projects_id,
+        regions_id,
+        workflow_templates_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :version => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1/projects/{projectsId}/regions/{regionsId}/workflowTemplates/{workflowTemplatesId}",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "regionsId" => URI.encode_www_form(regions_id),
+          "workflowTemplatesId" => URI.encode_www_form(workflow_templates_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.WorkflowTemplate{}])
+  end
+
+  @doc """
+  Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
+  - regions_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - workflow_templates_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :body (GetIamPolicyRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataproc.V1.Model.Policy{}} on success
+  {:error, info} on failure
+  """
+  @spec dataproc_projects_regions_workflow_templates_get_iam_policy(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+  def dataproc_projects_regions_workflow_templates_get_iam_policy(
+        connection,
+        projects_id,
+        regions_id,
+        workflow_templates_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/regions/{regionsId}/workflowTemplates/{workflowTemplatesId}:getIamPolicy",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "regionsId" => URI.encode_www_form(regions_id),
+          "workflowTemplatesId" => URI.encode_www_form(workflow_templates_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Policy{}])
+  end
+
+  @doc """
+  Instantiates a template and begins execution.The returned Operation can be used to track execution of workflow by polling operations.get. The Operation will complete when entire workflow is finished.The running workflow can be aborted via operations.cancel. This will cause any inflight jobs to be cancelled and workflow-owned clusters to be deleted.The Operation.metadata will be WorkflowMetadata.On successful completion, Operation.response will be Empty.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;name&#x60;. Required. The \&quot;resource name\&quot; of the workflow template, as described in https://cloud.google.com/apis/design/resource_names of the form projects/{project_id}/regions/{region}/workflowTemplates/{template_id}
+  - regions_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - workflow_templates_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :body (InstantiateWorkflowTemplateRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataproc.V1.Model.Operation{}} on success
+  {:error, info} on failure
+  """
+  @spec dataproc_projects_regions_workflow_templates_instantiate(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+  def dataproc_projects_regions_workflow_templates_instantiate(
+        connection,
+        projects_id,
+        regions_id,
+        workflow_templates_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/regions/{regionsId}/workflowTemplates/{workflowTemplatesId}:instantiate",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "regionsId" => URI.encode_www_form(regions_id),
+          "workflowTemplatesId" => URI.encode_www_form(workflow_templates_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Instantiates a template and begins execution.This method is equivalent to executing the sequence CreateWorkflowTemplate, InstantiateWorkflowTemplate, DeleteWorkflowTemplate.The returned Operation can be used to track execution of workflow by polling operations.get. The Operation will complete when entire workflow is finished.The running workflow can be aborted via operations.cancel. This will cause any inflight jobs to be cancelled and workflow-owned clusters to be deleted.The Operation.metadata will be WorkflowMetadata.On successful completion, Operation.response will be Empty.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;parent&#x60;. Required. The \&quot;resource name\&quot; of the workflow template region, as described in https://cloud.google.com/apis/design/resource_names of the form projects/{project_id}/regions/{region}
+  - regions_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :requestId (String.t): Optional. A tag that prevents multiple concurrent workflow instances with the same tag from running. This mitigates risk of concurrent instances started due to retries.It is recommended to always set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The tag must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters.
+    - :body (WorkflowTemplate): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataproc.V1.Model.Operation{}} on success
+  {:error, info} on failure
+  """
+  @spec dataproc_projects_regions_workflow_templates_instantiate_inline(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+  def dataproc_projects_regions_workflow_templates_instantiate_inline(
+        connection,
+        projects_id,
+        regions_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :requestId => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/regions/{regionsId}/workflowTemplates:instantiateInline",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "regionsId" => URI.encode_www_form(regions_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Lists workflows that match the specified filter in the request.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;parent&#x60;. Required. The \&quot;resource name\&quot; of the region, as described in https://cloud.google.com/apis/design/resource_names of the form projects/{project_id}/regions/{region}
+  - regions_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :pageToken (String.t): Optional. The page token, returned by a previous call, to request the next page of results.
+    - :pageSize (integer()): Optional. The maximum number of results to return in each response.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataproc.V1.Model.ListWorkflowTemplatesResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec dataproc_projects_regions_workflow_templates_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.ListWorkflowTemplatesResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def dataproc_projects_regions_workflow_templates_list(
+        connection,
+        projects_id,
+        regions_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :pageToken => :query,
+      :pageSize => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/projects/{projectsId}/regions/{regionsId}/workflowTemplates", %{
+        "projectsId" => URI.encode_www_form(projects_id),
+        "regionsId" => URI.encode_www_form(regions_id)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dataproc.V1.Model.ListWorkflowTemplatesResponse{}]
+    )
+  end
+
+  @doc """
+  Sets the access control policy on the specified resource. Replaces any existing policy.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
+  - regions_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - workflow_templates_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :body (SetIamPolicyRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataproc.V1.Model.Policy{}} on success
+  {:error, info} on failure
+  """
+  @spec dataproc_projects_regions_workflow_templates_set_iam_policy(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+  def dataproc_projects_regions_workflow_templates_set_iam_policy(
+        connection,
+        projects_id,
+        regions_id,
+        workflow_templates_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/regions/{regionsId}/workflowTemplates/{workflowTemplatesId}:setIamPolicy",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "regionsId" => URI.encode_www_form(regions_id),
+          "workflowTemplatesId" => URI.encode_www_form(workflow_templates_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Policy{}])
+  end
+
+  @doc """
+  Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a NOT_FOUND error.Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \&quot;fail open\&quot; without warning.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
+  - regions_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - workflow_templates_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :body (TestIamPermissionsRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataproc.V1.Model.TestIamPermissionsResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec dataproc_projects_regions_workflow_templates_test_iam_permissions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.TestIamPermissionsResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def dataproc_projects_regions_workflow_templates_test_iam_permissions(
+        connection,
+        projects_id,
+        regions_id,
+        workflow_templates_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/regions/{regionsId}/workflowTemplates/{workflowTemplatesId}:testIamPermissions",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "regionsId" => URI.encode_www_form(regions_id),
+          "workflowTemplatesId" => URI.encode_www_form(workflow_templates_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dataproc.V1.Model.TestIamPermissionsResponse{}]
+    )
+  end
+
+  @doc """
+  Updates (replaces) workflow template. The updated template must contain version that matches the current server version.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataproc.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;template.name&#x60;. Output only. The \&quot;resource name\&quot; of the template, as described in https://cloud.google.com/apis/design/resource_names of the form projects/{project_id}/regions/{region}/workflowTemplates/{template_id}
+  - regions_id (String.t): Part of &#x60;template.name&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - workflow_templates_id (String.t): Part of &#x60;template.name&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :body (WorkflowTemplate): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataproc.V1.Model.WorkflowTemplate{}} on success
+  {:error, info} on failure
+  """
+  @spec dataproc_projects_regions_workflow_templates_update(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.WorkflowTemplate.t()} | {:error, Tesla.Env.t()}
+  def dataproc_projects_regions_workflow_templates_update(
+        connection,
+        projects_id,
+        regions_id,
+        workflow_templates_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:put)
+      |> Request.url(
+        "/v1/projects/{projectsId}/regions/{regionsId}/workflowTemplates/{workflowTemplatesId}",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "regionsId" => URI.encode_www_form(regions_id),
+          "workflowTemplatesId" => URI.encode_www_form(workflow_templates_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.WorkflowTemplate{}])
   end
 end

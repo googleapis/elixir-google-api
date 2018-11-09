@@ -32,6 +32,7 @@ defmodule GoogleApi.CivicInfo.V2.Model.VoterInfoResponse do
   - otherElections ([Election]): When there are multiple elections for a voter address, the otherElections field is populated in the API response and there are two possibilities: 1. If the earliest election is not the intended election, specify the election ID of the desired election in a second API request using the electionId field. 2. If these elections occur on the same day, the API doesn?t return any polling location, contest, or election official information to ensure that an additional query is made. For user-facing applications, we recommend displaying these elections to the user to disambiguate. A second API request using the electionId field should be made for the election that is relevant to the user. Defaults to: `null`.
   - pollingLocations ([PollingLocation]): Locations where the voter is eligible to vote on election day. Defaults to: `null`.
   - precinctId (String.t):  Defaults to: `null`.
+  - segments ([StreetSegment]):  Defaults to: `null`.
   - state ([AdministrationRegion]): Local Election Information for the state that the voter votes in. For the US, there will only be one element in this array. Defaults to: `null`.
   """
 
@@ -48,6 +49,7 @@ defmodule GoogleApi.CivicInfo.V2.Model.VoterInfoResponse do
           :otherElections => list(GoogleApi.CivicInfo.V2.Model.Election.t()),
           :pollingLocations => list(GoogleApi.CivicInfo.V2.Model.PollingLocation.t()),
           :precinctId => any(),
+          :segments => list(GoogleApi.CivicInfo.V2.Model.StreetSegment.t()),
           :state => list(GoogleApi.CivicInfo.V2.Model.AdministrationRegion.t())
         }
 
@@ -61,6 +63,7 @@ defmodule GoogleApi.CivicInfo.V2.Model.VoterInfoResponse do
   field(:otherElections, as: GoogleApi.CivicInfo.V2.Model.Election, type: :list)
   field(:pollingLocations, as: GoogleApi.CivicInfo.V2.Model.PollingLocation, type: :list)
   field(:precinctId)
+  field(:segments, as: GoogleApi.CivicInfo.V2.Model.StreetSegment, type: :list)
   field(:state, as: GoogleApi.CivicInfo.V2.Model.AdministrationRegion, type: :list)
 end
 

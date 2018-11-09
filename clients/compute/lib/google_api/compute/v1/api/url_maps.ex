@@ -32,7 +32,7 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - url_map (String.t): Name of the UrlMap resource to delete.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -49,8 +49,8 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
   """
   @spec compute_url_maps_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_url_maps_delete(connection, project, url_map, opts \\ []) do
-    optional_params = %{
+  def compute_url_maps_delete(connection, project, url_map, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -68,11 +68,11 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
         "project" => URI.encode_www_form(project),
         "urlMap" => URI.encode_www_form(url_map)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -83,7 +83,7 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - url_map (String.t): Name of the UrlMap resource to return.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -99,8 +99,8 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
   """
   @spec compute_url_maps_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.UrlMap.t()} | {:error, Tesla.Env.t()}
-  def compute_url_maps_get(connection, project, url_map, opts \\ []) do
-    optional_params = %{
+  def compute_url_maps_get(connection, project, url_map, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -117,11 +117,11 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
         "project" => URI.encode_www_form(project),
         "urlMap" => URI.encode_www_form(url_map)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.UrlMap{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.UrlMap{}])
   end
 
   @doc """
@@ -131,7 +131,7 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -149,8 +149,8 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
   """
   @spec compute_url_maps_insert(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_url_maps_insert(connection, project, opts \\ []) do
-    optional_params = %{
+  def compute_url_maps_insert(connection, project, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -168,11 +168,11 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
       |> Request.url("/{project}/global/urlMaps", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -183,7 +183,7 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - url_map (String.t): Name of the UrlMap scoping this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -201,8 +201,14 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
   """
   @spec compute_url_maps_invalidate_cache(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_url_maps_invalidate_cache(connection, project, url_map, opts \\ []) do
-    optional_params = %{
+  def compute_url_maps_invalidate_cache(
+        connection,
+        project,
+        url_map,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -221,11 +227,11 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
         "project" => URI.encode_www_form(project),
         "urlMap" => URI.encode_www_form(url_map)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -235,7 +241,7 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -255,8 +261,8 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
   """
   @spec compute_url_maps_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.UrlMapList.t()} | {:error, Tesla.Env.t()}
-  def compute_url_maps_list(connection, project, opts \\ []) do
-    optional_params = %{
+  def compute_url_maps_list(connection, project, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -276,11 +282,11 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
       |> Request.url("/{project}/global/urlMaps", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.UrlMapList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.UrlMapList{}])
   end
 
   @doc """
@@ -291,7 +297,7 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - url_map (String.t): Name of the UrlMap resource to patch.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -309,8 +315,8 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
   """
   @spec compute_url_maps_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_url_maps_patch(connection, project, url_map, opts \\ []) do
-    optional_params = %{
+  def compute_url_maps_patch(connection, project, url_map, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -329,11 +335,11 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
         "project" => URI.encode_www_form(project),
         "urlMap" => URI.encode_www_form(url_map)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -344,7 +350,7 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - url_map (String.t): Name of the UrlMap resource to update.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -362,8 +368,8 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
   """
   @spec compute_url_maps_update(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_url_maps_update(connection, project, url_map, opts \\ []) do
-    optional_params = %{
+  def compute_url_maps_update(connection, project, url_map, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -382,11 +388,11 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
         "project" => URI.encode_www_form(project),
         "urlMap" => URI.encode_www_form(url_map)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -397,7 +403,7 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - url_map (String.t): Name of the UrlMap resource to be validated as.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -414,8 +420,8 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
   """
   @spec compute_url_maps_validate(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.UrlMapsValidateResponse.t()} | {:error, Tesla.Env.t()}
-  def compute_url_maps_validate(connection, project, url_map, opts \\ []) do
-    optional_params = %{
+  def compute_url_maps_validate(connection, project, url_map, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -433,10 +439,10 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
         "project" => URI.encode_www_form(project),
         "urlMap" => URI.encode_www_form(url_map)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.UrlMapsValidateResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.UrlMapsValidateResponse{}])
   end
 end

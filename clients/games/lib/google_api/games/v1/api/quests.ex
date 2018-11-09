@@ -31,7 +31,7 @@ defmodule GoogleApi.Games.V1.Api.Quests do
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
   - quest_id (String.t): The ID of the quest.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,8 @@ defmodule GoogleApi.Games.V1.Api.Quests do
   """
   @spec games_quests_accept(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.Quest.t()} | {:error, Tesla.Env.t()}
-  def games_quests_accept(connection, quest_id, opts \\ []) do
-    optional_params = %{
+  def games_quests_accept(connection, quest_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -66,11 +66,11 @@ defmodule GoogleApi.Games.V1.Api.Quests do
       |> Request.url("/quests/{questId}/accept", %{
         "questId" => URI.encode_www_form(quest_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.Quest{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.Quest{}])
   end
 
   @doc """
@@ -80,7 +80,7 @@ defmodule GoogleApi.Games.V1.Api.Quests do
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
   - player_id (String.t): A player ID. A value of me may be used in place of the authenticated player&#39;s ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -99,8 +99,8 @@ defmodule GoogleApi.Games.V1.Api.Quests do
   """
   @spec games_quests_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.QuestListResponse.t()} | {:error, Tesla.Env.t()}
-  def games_quests_list(connection, player_id, opts \\ []) do
-    optional_params = %{
+  def games_quests_list(connection, player_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -119,10 +119,10 @@ defmodule GoogleApi.Games.V1.Api.Quests do
       |> Request.url("/players/{playerId}/quests", %{
         "playerId" => URI.encode_www_form(player_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.QuestListResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.QuestListResponse{}])
   end
 end

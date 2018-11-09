@@ -23,10 +23,10 @@ defmodule GoogleApi.Content.V2.Model.InvoiceSummary do
   ## Attributes
 
   - additionalChargeSummaries ([InvoiceSummaryAdditionalChargeSummary]): Summary of the total amounts of the additional charges. Defaults to: `null`.
-  - customerBalance (Amount): Customer balance on this invoice. A positive amount means the customer is paying, a negative one means the customer is receiving money. Note that it must always be true that merchant_balance + customer_balance + google_balance &#x3D; 0. Defaults to: `null`.
-  - googleBalance (Amount): Google balance on this invoice. A positive amount means Google is paying, a negative one means Google is receiving money. Note that it must always be true that merchant_balance + customer_balance + google_balance &#x3D; 0. Defaults to: `null`.
-  - merchantBalance (Amount): Merchant balance on this invoice. A positive amount means the merchant is paying, a negative one means the merchant is receiving money. Note that it must always be true that merchant_balance + customer_balance + google_balance &#x3D; 0. Defaults to: `null`.
-  - productTotal (Amount): Total price for the product. Defaults to: `null`.
+  - customerBalance (Amount): [required] Customer balance on this invoice. A negative amount means the customer is paying, a positive one means the customer is receiving money. Note: the sum of merchant_balance, customer_balance and google_balance must always be zero.  Furthermore the absolute value of this amount is expected to be equal to the sum of product amount and additional charges, minus promotions. Defaults to: `null`.
+  - googleBalance (Amount): [required] Google balance on this invoice. A negative amount means Google is paying, a positive one means Google is receiving money. Note: the sum of merchant_balance, customer_balance and google_balance must always be zero. Defaults to: `null`.
+  - merchantBalance (Amount): [required] Merchant balance on this invoice. A negative amount means the merchant is paying, a positive one means the merchant is receiving money. Note: the sum of merchant_balance, customer_balance and google_balance must always be zero. Defaults to: `null`.
+  - productTotal (Amount): [required] Total price for the product. Defaults to: `null`.
   - promotionSummaries ([Promotion]): Summary for each promotion. Defaults to: `null`.
   """
 

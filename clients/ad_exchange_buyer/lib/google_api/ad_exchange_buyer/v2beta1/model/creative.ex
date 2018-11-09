@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Creative do
   @moduledoc """
-  A creative and its classification data.  Next ID: 36
+  A creative and its classification data.  Next ID: 38
 
   ## Attributes
 
@@ -34,6 +34,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Creative do
   - creativeId (String.t): The buyer-defined creative ID of this creative. Can be used to filter the response of the creatives.list method. Defaults to: `null`.
   - dealsStatus (String.t): @OutputOnly The top-level deals status of this creative. If disapproved, an entry for &#39;auctionType&#x3D;DIRECT_DEALS&#39; (or &#39;ALL&#39;) in serving_restrictions will also exist. Note that this may be nuanced with other contextual restrictions, in which case, it may be preferable to read from serving_restrictions directly. Can be used to filter the response of the creatives.list method. Defaults to: `null`.
     - Enum - one of [STATUS_UNSPECIFIED, NOT_CHECKED, CONDITIONALLY_APPROVED, APPROVED, DISAPPROVED]
+  - declaredClickThroughUrls ([String.t]): The set of declared destination URLs for the creative. Defaults to: `null`.
   - detectedAdvertiserIds ([String.t]): @OutputOnly Detected advertiser IDs, if any. Defaults to: `null`.
   - detectedDomains ([String.t]): @OutputOnly The detected domains for this creative. Defaults to: `null`.
   - detectedLanguages ([String.t]): @OutputOnly The detected languages for this creative. The order is arbitrary. The codes are 2 or 5 characters and are documented at https://developers.google.com/adwords/api/docs/appendix/languagecodes. Defaults to: `null`.
@@ -66,6 +67,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Creative do
           :corrections => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.Correction.t()),
           :creativeId => any(),
           :dealsStatus => any(),
+          :declaredClickThroughUrls => list(any()),
           :detectedAdvertiserIds => list(any()),
           :detectedDomains => list(any()),
           :detectedLanguages => list(any()),
@@ -94,6 +96,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Creative do
   field(:corrections, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.Correction, type: :list)
   field(:creativeId)
   field(:dealsStatus)
+  field(:declaredClickThroughUrls, type: :list)
   field(:detectedAdvertiserIds, type: :list)
   field(:detectedDomains, type: :list)
   field(:detectedLanguages, type: :list)

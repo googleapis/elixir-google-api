@@ -18,13 +18,13 @@
 
 defmodule GoogleApi.Genomics.V1.Model.ContainerStoppedEvent do
   @moduledoc """
-  This event is generated when a container exits.
+  An event generated when a container exits.
 
   ## Attributes
 
   - actionId (integer()): The numeric ID of the action that started this container. Defaults to: `null`.
   - exitStatus (integer()): The exit status of the container. Defaults to: `null`.
-  - stderr (String.t): The tail end of any content written to standard error by the container. To prevent this from being recorded if the action is known to emit large amounts of debugging noise or sensitive information, set the DISABLE_STANDARD_ERROR_CAPTURE flag.  Note that only a small amount of the end of the stream is captured here. The entire stream is stored in the /google/logs directory mounted into each action, and may be copied off the machine as described elsewhere. Defaults to: `null`.
+  - stderr (String.t): The tail end of any content written to standard error by the container. If the content emits large amounts of debugging noise or contains sensitive information, you can prevent the content from being printed by setting the &#x60;DISABLE_STANDARD_ERROR_CAPTURE&#x60; flag.  Note that only a small amount of the end of the stream is captured here. The entire stream is stored in the &#x60;/google/logs&#x60; directory mounted into each action, and can be copied off the machine as described elsewhere. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

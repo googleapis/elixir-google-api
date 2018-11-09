@@ -18,19 +18,22 @@
 
 defmodule GoogleApi.PubSub.V1.Model.CreateSnapshotRequest do
   @moduledoc """
-  Request for the &#x60;CreateSnapshot&#x60; method.&lt;br&gt;&lt;br&gt; &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy.
+  Request for the &#x60;CreateSnapshot&#x60; method.&lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy.
 
   ## Attributes
 
+  - labels (%{optional(String.t) &#x3D;&gt; String.t}): See &lt;a href&#x3D;\&quot;/pubsub/docs/labels\&quot;&gt; Creating and managing labels&lt;/a&gt;. Defaults to: `null`.
   - subscription (String.t): The subscription whose backlog the snapshot retains. Specifically, the created snapshot is guaranteed to retain:  (a) The existing backlog on the subscription. More precisely, this is      defined as the messages in the subscription&#39;s backlog that are      unacknowledged upon the successful completion of the      &#x60;CreateSnapshot&#x60; request; as well as:  (b) Any messages published to the subscription&#39;s topic following the      successful completion of the CreateSnapshot request. Format is &#x60;projects/{project}/subscriptions/{sub}&#x60;. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :labels => map(),
           :subscription => any()
         }
 
+  field(:labels, type: :map)
   field(:subscription)
 end
 

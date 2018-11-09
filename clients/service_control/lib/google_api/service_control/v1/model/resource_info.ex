@@ -23,6 +23,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.ResourceInfo do
   ## Attributes
 
   - resourceContainer (String.t): The identifier of the parent of this resource instance. Must be in one of the following formats:     - “projects/&lt;project-id or project-number&gt;”     - “folders/&lt;folder-id&gt;”     - “organizations/&lt;organization-id&gt;” Defaults to: `null`.
+  - resourceLocation (String.t): The location of the resource. If not empty, the resource will be checked against location policy. The value must be a valid zone, region or multiregion. For example: \&quot;europe-west4\&quot; or \&quot;northamerica-northeast1-a\&quot; Defaults to: `null`.
   - resourceName (String.t): Name of the resource. This is used for auditing purposes. Defaults to: `null`.
   """
 
@@ -30,10 +31,12 @@ defmodule GoogleApi.ServiceControl.V1.Model.ResourceInfo do
 
   @type t :: %__MODULE__{
           :resourceContainer => any(),
+          :resourceLocation => any(),
           :resourceName => any()
         }
 
   field(:resourceContainer)
+  field(:resourceLocation)
   field(:resourceName)
 end
 

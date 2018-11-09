@@ -18,16 +18,19 @@
 
 defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1PredictionInput do
   @moduledoc """
-  Represents input parameters for a prediction job.
+  Represents input parameters for a prediction job. Next field: 19
 
   ## Attributes
 
+  - accelerator (GoogleCloudMlV1AcceleratorConfig): Optional. The type and number of accelerators to be attached to each machine running the job. Defaults to: `null`.
   - batchSize (String.t): Optional. Number of records per batch, defaults to 64. The service will buffer batch_size number of records in memory before invoking one Tensorflow prediction call internally. So take the record size and memory available into consideration when setting this parameter. Defaults to: `null`.
   - dataFormat (String.t): Required. The format of the input data files. Defaults to: `null`.
-    - Enum - one of [DATA_FORMAT_UNSPECIFIED, JSON, TEXT, TF_RECORD, TF_RECORD_GZIP]
+    - Enum - one of [DATA_FORMAT_UNSPECIFIED, JSON, TEXT, TF_RECORD, TF_RECORD_GZIP, CSV]
   - inputPaths ([String.t]): Required. The Google Cloud Storage location of the input data files. May contain wildcards. Defaults to: `null`.
   - maxWorkerCount (String.t): Optional. The maximum number of workers to be used for parallel processing. Defaults to 10 if not specified. Defaults to: `null`.
   - modelName (String.t): Use this field if you want to use the default version for the specified model. The string must use the following format:  &#x60;\&quot;projects/YOUR_PROJECT/models/YOUR_MODEL\&quot;&#x60; Defaults to: `null`.
+  - outputDataFormat (String.t): Optional. Format of the output data files, defaults to JSON. Defaults to: `null`.
+    - Enum - one of [DATA_FORMAT_UNSPECIFIED, JSON, TEXT, TF_RECORD, TF_RECORD_GZIP, CSV]
   - outputPath (String.t): Required. The output Google Cloud Storage location. Defaults to: `null`.
   - region (String.t): Required. The Google Compute Engine region to run the prediction job in. See the &lt;a href&#x3D;\&quot;/ml-engine/docs/tensorflow/regions\&quot;&gt;available regions&lt;/a&gt; for ML Engine services. Defaults to: `null`.
   - runtimeVersion (String.t): Optional. The Google Cloud ML runtime version to use for this batch prediction. If not set, Google Cloud ML will pick the runtime version used during the CreateVersion request for this model version, or choose the latest stable version when model version information is not available such as when the model is specified by uri. Defaults to: `null`.
@@ -39,11 +42,13 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1PredictionInput do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :accelerator => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1AcceleratorConfig.t(),
           :batchSize => any(),
           :dataFormat => any(),
           :inputPaths => list(any()),
           :maxWorkerCount => any(),
           :modelName => any(),
+          :outputDataFormat => any(),
           :outputPath => any(),
           :region => any(),
           :runtimeVersion => any(),
@@ -52,11 +57,13 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1PredictionInput do
           :versionName => any()
         }
 
+  field(:accelerator, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1AcceleratorConfig)
   field(:batchSize)
   field(:dataFormat)
   field(:inputPaths, type: :list)
   field(:maxWorkerCount)
   field(:modelName)
+  field(:outputDataFormat)
   field(:outputPath)
   field(:region)
   field(:runtimeVersion)

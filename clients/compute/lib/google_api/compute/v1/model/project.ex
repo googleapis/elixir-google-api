@@ -24,6 +24,8 @@ defmodule GoogleApi.Compute.V1.Model.Project do
 
   - commonInstanceMetadata (Metadata): Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information. Defaults to: `null`.
   - creationTimestamp (String.t): [Output Only] Creation timestamp in RFC3339 text format. Defaults to: `null`.
+  - defaultNetworkTier (String.t): This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM. Defaults to: `null`.
+    - Enum - one of [PREMIUM, STANDARD]
   - defaultServiceAccount (String.t): [Output Only] Default service account used by VMs running in this project. Defaults to: `null`.
   - description (String.t): An optional textual description of the resource. Defaults to: `null`.
   - enabledFeatures ([String.t]): Restricted features enabled for use on this project. Defaults to: `null`.
@@ -42,6 +44,7 @@ defmodule GoogleApi.Compute.V1.Model.Project do
   @type t :: %__MODULE__{
           :commonInstanceMetadata => GoogleApi.Compute.V1.Model.Metadata.t(),
           :creationTimestamp => any(),
+          :defaultNetworkTier => any(),
           :defaultServiceAccount => any(),
           :description => any(),
           :enabledFeatures => list(any()),
@@ -56,6 +59,7 @@ defmodule GoogleApi.Compute.V1.Model.Project do
 
   field(:commonInstanceMetadata, as: GoogleApi.Compute.V1.Model.Metadata)
   field(:creationTimestamp)
+  field(:defaultNetworkTier)
   field(:defaultServiceAccount)
   field(:description)
   field(:enabledFeatures, type: :list)

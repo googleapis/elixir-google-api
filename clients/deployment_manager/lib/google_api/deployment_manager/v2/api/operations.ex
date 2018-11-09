@@ -32,7 +32,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Operations do
   - connection (GoogleApi.DeploymentManager.V2.Connection): Connection to server
   - project (String.t): The project ID for this request.
   - operation (String.t): The name of the operation for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,14 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Operations do
   """
   @spec deploymentmanager_operations_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.DeploymentManager.V2.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def deploymentmanager_operations_get(connection, project, operation, opts \\ []) do
-    optional_params = %{
+  def deploymentmanager_operations_get(
+        connection,
+        project,
+        operation,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -66,11 +72,11 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Operations do
         "project" => URI.encode_www_form(project),
         "operation" => URI.encode_www_form(operation)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.DeploymentManager.V2.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.DeploymentManager.V2.Model.Operation{}])
   end
 
   @doc """
@@ -80,7 +86,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Operations do
 
   - connection (GoogleApi.DeploymentManager.V2.Connection): Connection to server
   - project (String.t): The project ID for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -101,8 +107,8 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Operations do
   @spec deploymentmanager_operations_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.DeploymentManager.V2.Model.OperationsListResponse.t()}
           | {:error, Tesla.Env.t()}
-  def deploymentmanager_operations_list(connection, project, opts \\ []) do
-    optional_params = %{
+  def deploymentmanager_operations_list(connection, project, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -122,10 +128,12 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Operations do
       |> Request.url("/{project}/global/operations", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.DeploymentManager.V2.Model.OperationsListResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.DeploymentManager.V2.Model.OperationsListResponse{}]
+    )
   end
 end

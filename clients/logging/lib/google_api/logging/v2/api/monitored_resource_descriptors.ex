@@ -25,17 +25,17 @@ defmodule GoogleApi.Logging.V2.Api.MonitoredResourceDescriptors do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Lists the descriptors for monitored resource types used by Stackdriver Logging.
+  Lists the descriptors for monitored resource types used by Logging.
 
   ## Parameters
 
   - connection (GoogleApi.Logging.V2.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -53,13 +53,13 @@ defmodule GoogleApi.Logging.V2.Api.MonitoredResourceDescriptors do
   @spec logging_monitored_resource_descriptors_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.ListMonitoredResourceDescriptorsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def logging_monitored_resource_descriptors_list(connection, opts \\ []) do
-    optional_params = %{
+  def logging_monitored_resource_descriptors_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :access_token => :query,
       :key => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -74,12 +74,12 @@ defmodule GoogleApi.Logging.V2.Api.MonitoredResourceDescriptors do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2/monitoredResourceDescriptors")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.Logging.V2.Model.ListMonitoredResourceDescriptorsResponse{}
+      opts ++ [struct: %GoogleApi.Logging.V2.Model.ListMonitoredResourceDescriptorsResponse{}]
     )
   end
 end

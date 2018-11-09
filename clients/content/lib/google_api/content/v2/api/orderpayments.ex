@@ -32,7 +32,7 @@ defmodule GoogleApi.Content.V2.Api.Orderpayments do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
   - order_id (String.t): The ID of the order for for which payment authorization is happening.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -55,8 +55,14 @@ defmodule GoogleApi.Content.V2.Api.Orderpayments do
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrderpaymentsNotifyAuthApprovedResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_orderpayments_notifyauthapproved(connection, merchant_id, order_id, opts \\ []) do
-    optional_params = %{
+  def content_orderpayments_notifyauthapproved(
+        connection,
+        merchant_id,
+        order_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -74,12 +80,12 @@ defmodule GoogleApi.Content.V2.Api.Orderpayments do
         "merchantId" => URI.encode_www_form(merchant_id),
         "orderId" => URI.encode_www_form(order_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.Content.V2.Model.OrderpaymentsNotifyAuthApprovedResponse{}
+      opts ++ [struct: %GoogleApi.Content.V2.Model.OrderpaymentsNotifyAuthApprovedResponse{}]
     )
   end
 
@@ -91,7 +97,7 @@ defmodule GoogleApi.Content.V2.Api.Orderpayments do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
   - order_id (String.t): The ID of the order for which payment authorization was declined.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -114,8 +120,14 @@ defmodule GoogleApi.Content.V2.Api.Orderpayments do
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrderpaymentsNotifyAuthDeclinedResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_orderpayments_notifyauthdeclined(connection, merchant_id, order_id, opts \\ []) do
-    optional_params = %{
+  def content_orderpayments_notifyauthdeclined(
+        connection,
+        merchant_id,
+        order_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -133,12 +145,12 @@ defmodule GoogleApi.Content.V2.Api.Orderpayments do
         "merchantId" => URI.encode_www_form(merchant_id),
         "orderId" => URI.encode_www_form(order_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.Content.V2.Model.OrderpaymentsNotifyAuthDeclinedResponse{}
+      opts ++ [struct: %GoogleApi.Content.V2.Model.OrderpaymentsNotifyAuthDeclinedResponse{}]
     )
   end
 
@@ -150,7 +162,7 @@ defmodule GoogleApi.Content.V2.Api.Orderpayments do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
   - order_id (String.t): The ID of the order for which charge is happening.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -168,8 +180,14 @@ defmodule GoogleApi.Content.V2.Api.Orderpayments do
   @spec content_orderpayments_notifycharge(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.OrderpaymentsNotifyChargeResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_orderpayments_notifycharge(connection, merchant_id, order_id, opts \\ []) do
-    optional_params = %{
+  def content_orderpayments_notifycharge(
+        connection,
+        merchant_id,
+        order_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -187,11 +205,13 @@ defmodule GoogleApi.Content.V2.Api.Orderpayments do
         "merchantId" => URI.encode_www_form(merchant_id),
         "orderId" => URI.encode_www_form(order_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.OrderpaymentsNotifyChargeResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Content.V2.Model.OrderpaymentsNotifyChargeResponse{}]
+    )
   end
 
   @doc """
@@ -202,7 +222,7 @@ defmodule GoogleApi.Content.V2.Api.Orderpayments do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
   - order_id (String.t): The ID of the order for which charge is happening.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -220,8 +240,14 @@ defmodule GoogleApi.Content.V2.Api.Orderpayments do
   @spec content_orderpayments_notifyrefund(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.OrderpaymentsNotifyRefundResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_orderpayments_notifyrefund(connection, merchant_id, order_id, opts \\ []) do
-    optional_params = %{
+  def content_orderpayments_notifyrefund(
+        connection,
+        merchant_id,
+        order_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -239,10 +265,12 @@ defmodule GoogleApi.Content.V2.Api.Orderpayments do
         "merchantId" => URI.encode_www_form(merchant_id),
         "orderId" => URI.encode_www_form(order_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.OrderpaymentsNotifyRefundResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Content.V2.Model.OrderpaymentsNotifyRefundResponse{}]
+    )
   end
 end

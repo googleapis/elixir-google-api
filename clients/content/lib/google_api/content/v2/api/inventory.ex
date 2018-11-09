@@ -30,7 +30,7 @@ defmodule GoogleApi.Content.V2.Api.Inventory do
   ## Parameters
 
   - connection (GoogleApi.Content.V2.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -49,8 +49,8 @@ defmodule GoogleApi.Content.V2.Api.Inventory do
   @spec content_inventory_custombatch(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.InventoryCustomBatchResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_inventory_custombatch(connection, opts \\ []) do
-    optional_params = %{
+  def content_inventory_custombatch(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -66,11 +66,13 @@ defmodule GoogleApi.Content.V2.Api.Inventory do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/inventory/batch")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.InventoryCustomBatchResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Content.V2.Model.InventoryCustomBatchResponse{}]
+    )
   end
 
   @doc """
@@ -82,7 +84,7 @@ defmodule GoogleApi.Content.V2.Api.Inventory do
   - merchant_id (String.t): The ID of the account that contains the product. This account cannot be a multi-client account.
   - store_code (String.t): The code of the store for which to update price and availability. Use online to update price and availability of an online product.
   - product_id (String.t): The REST id of the product for which to update price and availability.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -100,8 +102,15 @@ defmodule GoogleApi.Content.V2.Api.Inventory do
   """
   @spec content_inventory_set(Tesla.Env.client(), String.t(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.InventorySetResponse.t()} | {:error, Tesla.Env.t()}
-  def content_inventory_set(connection, merchant_id, store_code, product_id, opts \\ []) do
-    optional_params = %{
+  def content_inventory_set(
+        connection,
+        merchant_id,
+        store_code,
+        product_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -121,10 +130,10 @@ defmodule GoogleApi.Content.V2.Api.Inventory do
         "storeCode" => URI.encode_www_form(store_code),
         "productId" => URI.encode_www_form(product_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.InventorySetResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Content.V2.Model.InventorySetResponse{}])
   end
 end

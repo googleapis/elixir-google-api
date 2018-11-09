@@ -31,7 +31,7 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
 
   - connection (GoogleApi.SiteVerification.V1.Connection): Connection to server
   - id (String.t): The id of a verified site or domain.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -47,8 +47,8 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
   """
   @spec site_verification_web_resource_delete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def site_verification_web_resource_delete(connection, id, opts \\ []) do
-    optional_params = %{
+  def site_verification_web_resource_delete(connection, id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -64,11 +64,11 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
       |> Request.url("/webResource/{id}", %{
         "id" => URI.encode_www_form(id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -78,7 +78,7 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
 
   - connection (GoogleApi.SiteVerification.V1.Connection): Connection to server
   - id (String.t): The id of a verified site or domain.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -95,8 +95,8 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
   @spec site_verification_web_resource_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceResource.t()}
           | {:error, Tesla.Env.t()}
-  def site_verification_web_resource_get(connection, id, opts \\ []) do
-    optional_params = %{
+  def site_verification_web_resource_get(connection, id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -112,12 +112,12 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
       |> Request.url("/webResource/{id}", %{
         "id" => URI.encode_www_form(id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceResource{}
+      opts ++ [struct: %GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceResource{}]
     )
   end
 
@@ -127,7 +127,7 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
   ## Parameters
 
   - connection (GoogleApi.SiteVerification.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -146,8 +146,8 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
           {:ok,
            GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceGettokenResponse.t()}
           | {:error, Tesla.Env.t()}
-  def site_verification_web_resource_get_token(connection, opts \\ []) do
-    optional_params = %{
+  def site_verification_web_resource_get_token(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -162,12 +162,16 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/token")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceGettokenResponse{}
+      opts ++
+        [
+          struct:
+            %GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceGettokenResponse{}
+        ]
     )
   end
 
@@ -178,7 +182,7 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
 
   - connection (GoogleApi.SiteVerification.V1.Connection): Connection to server
   - verification_method (String.t): The method to use for verifying a site or domain.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -196,8 +200,13 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
   @spec site_verification_web_resource_insert(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceResource.t()}
           | {:error, Tesla.Env.t()}
-  def site_verification_web_resource_insert(connection, verification_method, opts \\ []) do
-    optional_params = %{
+  def site_verification_web_resource_insert(
+        connection,
+        verification_method,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -213,12 +222,12 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
       |> Request.method(:post)
       |> Request.url("/webResource")
       |> Request.add_param(:query, :verificationMethod, verification_method)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceResource{}
+      opts ++ [struct: %GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceResource{}]
     )
   end
 
@@ -228,7 +237,7 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
   ## Parameters
 
   - connection (GoogleApi.SiteVerification.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -245,8 +254,8 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
   @spec site_verification_web_resource_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceListResponse.t()}
           | {:error, Tesla.Env.t()}
-  def site_verification_web_resource_list(connection, opts \\ []) do
-    optional_params = %{
+  def site_verification_web_resource_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -260,12 +269,13 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/webResource")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceListResponse{}
+      opts ++
+        [struct: %GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceListResponse{}]
     )
   end
 
@@ -276,7 +286,7 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
 
   - connection (GoogleApi.SiteVerification.V1.Connection): Connection to server
   - id (String.t): The id of a verified site or domain.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -294,8 +304,8 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
   @spec site_verification_web_resource_patch(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceResource.t()}
           | {:error, Tesla.Env.t()}
-  def site_verification_web_resource_patch(connection, id, opts \\ []) do
-    optional_params = %{
+  def site_verification_web_resource_patch(connection, id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -312,12 +322,12 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
       |> Request.url("/webResource/{id}", %{
         "id" => URI.encode_www_form(id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceResource{}
+      opts ++ [struct: %GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceResource{}]
     )
   end
 
@@ -328,7 +338,7 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
 
   - connection (GoogleApi.SiteVerification.V1.Connection): Connection to server
   - id (String.t): The id of a verified site or domain.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -346,8 +356,8 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
   @spec site_verification_web_resource_update(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceResource.t()}
           | {:error, Tesla.Env.t()}
-  def site_verification_web_resource_update(connection, id, opts \\ []) do
-    optional_params = %{
+  def site_verification_web_resource_update(connection, id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -364,12 +374,12 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
       |> Request.url("/webResource/{id}", %{
         "id" => URI.encode_www_form(id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceResource{}
+      opts ++ [struct: %GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceResource{}]
     )
   end
 end

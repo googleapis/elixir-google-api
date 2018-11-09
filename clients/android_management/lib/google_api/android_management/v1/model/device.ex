@@ -36,9 +36,11 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Device do
   - enrollmentTokenName (String.t): If the device was enrolled with an enrollment token, this field contains the name of the token. Defaults to: `null`.
   - hardwareInfo (HardwareInfo): Detailed information about the device hardware. Defaults to: `null`.
   - hardwareStatusSamples ([HardwareStatus]): Hardware status samples in chronological order. This information is only available if hardwareStatusEnabled is true in the device&#39;s policy. Defaults to: `null`.
-  - lastPolicyComplianceReportTime (DateTime.t): The last time the device sent a policy compliance report. Important: This field is deprecated. The timestamp will be on last_status_report_time field, and last_status_report_time will be used for both status report and compliance report. Defaults to: `null`.
+  - lastPolicyComplianceReportTime (DateTime.t): Deprecated. Defaults to: `null`.
   - lastPolicySyncTime (DateTime.t): The last time the device fetched its policy. Defaults to: `null`.
   - lastStatusReportTime (DateTime.t): The last time the device sent a status report. Defaults to: `null`.
+  - managementMode (String.t): The type of management mode Android Device Policy takes on the device. This influences which policy settings are supported. Defaults to: `null`.
+    - Enum - one of [MANAGEMENT_MODE_UNSPECIFIED, DEVICE_OWNER, PROFILE_OWNER]
   - memoryEvents ([MemoryEvent]): Events related to memory and storage measurements in chronological order. This information is only available if memoryInfoEnabled is true in the device&#39;s policy. Defaults to: `null`.
   - memoryInfo (MemoryInfo): Memory information. This information is only available if memoryInfoEnabled is true in the device&#39;s policy. Defaults to: `null`.
   - name (String.t): The name of the device in the form enterprises/{enterpriseId}/devices/{deviceId}. Defaults to: `null`.
@@ -51,6 +53,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Device do
   - softwareInfo (SoftwareInfo): Detailed information about the device software. This information is only available if softwareInfoEnabled is true in the device&#39;s policy. Defaults to: `null`.
   - state (String.t): The state to be applied to the device. This field can be modified by a patch request. Note that when calling enterprises.devices.patch, ACTIVE and DISABLED are the only allowable values. To enter the device into a DELETED state, call enterprises.devices.delete. Defaults to: `null`.
     - Enum - one of [DEVICE_STATE_UNSPECIFIED, ACTIVE, DISABLED, DELETED, PROVISIONING]
+  - user (User): The user who owns the device. Defaults to: `null`.
   - userName (String.t): The resource name of the user that owns this device in the form enterprises/{enterpriseId}/users/{userId}. Defaults to: `null`.
   """
 
@@ -73,6 +76,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Device do
           :lastPolicyComplianceReportTime => DateTime.t(),
           :lastPolicySyncTime => DateTime.t(),
           :lastStatusReportTime => DateTime.t(),
+          :managementMode => any(),
           :memoryEvents => list(GoogleApi.AndroidManagement.V1.Model.MemoryEvent.t()),
           :memoryInfo => GoogleApi.AndroidManagement.V1.Model.MemoryInfo.t(),
           :name => any(),
@@ -86,6 +90,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Device do
           :previousDeviceNames => list(any()),
           :softwareInfo => GoogleApi.AndroidManagement.V1.Model.SoftwareInfo.t(),
           :state => any(),
+          :user => GoogleApi.AndroidManagement.V1.Model.User.t(),
           :userName => any()
         }
 
@@ -117,6 +122,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Device do
   field(:lastPolicyComplianceReportTime, as: DateTime)
   field(:lastPolicySyncTime, as: DateTime)
   field(:lastStatusReportTime, as: DateTime)
+  field(:managementMode)
   field(:memoryEvents, as: GoogleApi.AndroidManagement.V1.Model.MemoryEvent, type: :list)
   field(:memoryInfo, as: GoogleApi.AndroidManagement.V1.Model.MemoryInfo)
   field(:name)
@@ -140,6 +146,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Device do
   field(:previousDeviceNames, type: :list)
   field(:softwareInfo, as: GoogleApi.AndroidManagement.V1.Model.SoftwareInfo)
   field(:state)
+  field(:user, as: GoogleApi.AndroidManagement.V1.Model.User)
   field(:userName)
 end
 

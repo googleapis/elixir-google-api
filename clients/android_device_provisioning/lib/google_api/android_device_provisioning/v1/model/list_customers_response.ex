@@ -23,15 +23,21 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.ListCustomersResponse do
   ## Attributes
 
   - customers ([Company]): List of customers related to this reseller partner. Defaults to: `null`.
+  - nextPageToken (String.t): A token to retrieve the next page of results. Omitted if no further results are available. Defaults to: `null`.
+  - totalSize (integer()): The total count of items in the list irrespective of pagination. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customers => list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Company.t())
+          :customers => list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Company.t()),
+          :nextPageToken => any(),
+          :totalSize => any()
         }
 
   field(:customers, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.Company, type: :list)
+  field(:nextPageToken)
+  field(:totalSize)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.ListCustomersResponse do

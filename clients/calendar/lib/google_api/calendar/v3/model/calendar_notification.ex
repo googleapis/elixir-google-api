@@ -22,8 +22,8 @@ defmodule GoogleApi.Calendar.V3.Model.CalendarNotification do
 
   ## Attributes
 
-  - method (String.t): The method used to deliver the notification. Possible values are:   - \&quot;email\&quot; - Reminders are sent via email.  - \&quot;sms\&quot; - Reminders are sent via SMS. This value is read-only and is ignored on inserts and updates. SMS reminders are only available for G Suite customers. Defaults to: `null`.
-  - type (String.t): The type of notification. Possible values are:   - \&quot;eventCreation\&quot; - Notification sent when a new event is put on the calendar.  - \&quot;eventChange\&quot; - Notification sent when an event is changed.  - \&quot;eventCancellation\&quot; - Notification sent when an event is cancelled.  - \&quot;eventResponse\&quot; - Notification sent when an event is changed.  - \&quot;agenda\&quot; - An agenda with the events of the day (sent out in the morning). Defaults to: `null`.
+  - method (String.t): The method used to deliver the notification. Possible values are:   - \&quot;email\&quot; - Reminders are sent via email.  - \&quot;sms\&quot; - Reminders are sent via SMS. This value is read-only and is ignored on inserts and updates. SMS reminders are only available for G Suite customers.   Required when adding a notification. Defaults to: `null`.
+  - type (String.t): The type of notification. Possible values are:   - \&quot;eventCreation\&quot; - Notification sent when a new event is put on the calendar.  - \&quot;eventChange\&quot; - Notification sent when an event is changed.  - \&quot;eventCancellation\&quot; - Notification sent when an event is cancelled.  - \&quot;eventResponse\&quot; - Notification sent when an attendee responds to the event invitation.  - \&quot;agenda\&quot; - An agenda with the events of the day (sent out in the morning).   Required when adding a notification. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

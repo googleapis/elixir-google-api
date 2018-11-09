@@ -23,7 +23,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobReference do
   ## Attributes
 
   - jobId (String.t): [Required] The ID of the job. The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-). The maximum length is 1,024 characters. Defaults to: `null`.
-  - location (String.t): [Experimental] The geographic location of the job. Required except for US and EU. See details at https://cloud.google.com/bigquery/docs/dataset-locations#specifying_your_location. Defaults to: `null`.
+  - location (String.t): The geographic location of the job. See details at https://cloud.google.com/bigquery/docs/locations#specifying_your_location. Defaults to: `null`.
   - projectId (String.t): [Required] The ID of the project containing this job. Defaults to: `null`.
   """
 

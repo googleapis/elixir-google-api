@@ -25,7 +25,8 @@ defmodule GoogleApi.ServiceControl.V1.Model.RequestMetadata do
   - callerIp (String.t): The IP address of the caller. For caller from internet, this will be public IPv4 or IPv6 address. For caller from a Compute Engine VM with external IP address, this will be the VM&#39;s external IP address. For caller from a Compute Engine VM without external IP address, if the VM is in the same organization (or project) as the accessed resource, &#x60;caller_ip&#x60; will be the VM&#39;s internal IPv4 address, otherwise the &#x60;caller_ip&#x60; will be redacted to \&quot;gce-internal-ip\&quot;. See https://cloud.google.com/compute/docs/vpc/ for more information. Defaults to: `null`.
   - callerNetwork (String.t): The network of the caller. Set only if the network host project is part of the same GCP organization (or project) as the accessed resource. See https://cloud.google.com/compute/docs/vpc/ for more information. This is a scheme-less URI full resource name. For example:      \&quot;//compute.googleapis.com/projects/PROJECT_ID/global/networks/NETWORK_ID\&quot; Defaults to: `null`.
   - callerSuppliedUserAgent (String.t): The user agent of the caller. This information is not authenticated and should be treated accordingly. For example:  +   &#x60;google-api-python-client/1.4.0&#x60;:     The request was made by the Google API client for Python. +   &#x60;Cloud SDK Command Line Tool apitools-client/1.0 gcloud/0.9.62&#x60;:     The request was made by the Google Cloud SDK CLI (gcloud). +   &#x60;AppEngine-Google; (+http://code.google.com/appengine; appid: s~my-project&#x60;:     The request was made from the &#x60;my-project&#x60; App Engine app. NOLINT Defaults to: `null`.
-  - requestAttributes (Request): Request attributes used in IAM condition evaluation. This field contains request attributes like request time and access levels associated with the request.  To get the whole view of the attributes used in IAM condition evaluation, the user must also look into &#x60;AuditLog.authentication_info.resource_attributes&#x60;. Defaults to: `null`.
+  - destinationAttributes (Peer): The destination of a network activity, such as accepting a TCP connection. In a multi hop network activity, the destination represents the receiver of the last hop. Only two fields are used in this message, Peer.port and Peer.ip. These fields are optionally populated by those services utilizing the IAM condition feature. Defaults to: `null`.
+  - requestAttributes (Request): Request attributes used in IAM condition evaluation. This field contains request attributes like request time and access levels associated with the request.   To get the whole view of the attributes used in IAM condition evaluation, the user must also look into &#x60;AuditLog.authentication_info.resource_attributes&#x60;. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -34,12 +35,14 @@ defmodule GoogleApi.ServiceControl.V1.Model.RequestMetadata do
           :callerIp => any(),
           :callerNetwork => any(),
           :callerSuppliedUserAgent => any(),
+          :destinationAttributes => GoogleApi.ServiceControl.V1.Model.Peer.t(),
           :requestAttributes => GoogleApi.ServiceControl.V1.Model.Request.t()
         }
 
   field(:callerIp)
   field(:callerNetwork)
   field(:callerSuppliedUserAgent)
+  field(:destinationAttributes, as: GoogleApi.ServiceControl.V1.Model.Peer)
   field(:requestAttributes, as: GoogleApi.ServiceControl.V1.Model.Request)
 end
 

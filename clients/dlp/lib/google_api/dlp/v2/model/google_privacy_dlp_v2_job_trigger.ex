@@ -25,7 +25,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobTrigger do
   - createTime (DateTime.t): The creation timestamp of a triggeredJob, output only field. Defaults to: `null`.
   - description (String.t): User provided description (max 256 chars) Defaults to: `null`.
   - displayName (String.t): Display name (max 100 chars) Defaults to: `null`.
-  - errors ([GooglePrivacyDlpV2Error]): A stream of errors encountered when the trigger was activated. Repeated errors may result in the JobTrigger automaticaly being paused. Will return the last 100 errors. Whenever the JobTrigger is modified this list will be cleared. Output only field. Defaults to: `null`.
+  - errors ([GooglePrivacyDlpV2Error]): A stream of errors encountered when the trigger was activated. Repeated errors may result in the JobTrigger automatically being paused. Will return the last 100 errors. Whenever the JobTrigger is modified this list will be cleared. Output only field. Defaults to: `null`.
   - inspectJob (GooglePrivacyDlpV2InspectJobConfig):  Defaults to: `null`.
   - lastRunTime (DateTime.t): The timestamp of the last time this trigger executed, output only field. Defaults to: `null`.
   - name (String.t): Unique resource name for the triggeredJob, assigned by the service when the triggeredJob is created, for example &#x60;projects/dlp-test-project/triggeredJobs/53234423&#x60;. Defaults to: `null`.

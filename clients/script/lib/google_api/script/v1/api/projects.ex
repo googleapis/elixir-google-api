@@ -30,18 +30,18 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   ## Parameters
 
   - connection (GoogleApi.Script.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (CreateProjectRequest): 
 
   ## Returns
@@ -51,19 +51,19 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   """
   @spec script_projects_create(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Script.V1.Model.Project.t()} | {:error, Tesla.Env.t()}
-  def script_projects_create(connection, opts \\ []) do
-    optional_params = %{
+  def script_projects_create(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :uploadType => :query,
+      :fields => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
+      :prettyPrint => :query,
       :body => :body
     }
 
@@ -71,11 +71,11 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Script.V1.Model.Project{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Script.V1.Model.Project{}])
   end
 
   @doc """
@@ -85,18 +85,18 @@ defmodule GoogleApi.Script.V1.Api.Projects do
 
   - connection (GoogleApi.Script.V1.Connection): Connection to server
   - script_id (String.t): The script project&#39;s Drive ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (DeploymentConfig): 
 
   ## Returns
@@ -106,19 +106,19 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   """
   @spec script_projects_deployments_create(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Script.V1.Model.Deployment.t()} | {:error, Tesla.Env.t()}
-  def script_projects_deployments_create(connection, script_id, opts \\ []) do
-    optional_params = %{
+  def script_projects_deployments_create(connection, script_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :uploadType => :query,
+      :fields => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
+      :prettyPrint => :query,
       :body => :body
     }
 
@@ -128,11 +128,11 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       |> Request.url("/v1/projects/{scriptId}/deployments", %{
         "scriptId" => URI.encode_www_form(script_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Script.V1.Model.Deployment{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Script.V1.Model.Deployment{}])
   end
 
   @doc """
@@ -143,18 +143,18 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   - connection (GoogleApi.Script.V1.Connection): Connection to server
   - script_id (String.t): The script project&#39;s Drive ID.
   - deployment_id (String.t): The deployment ID to be undeployed.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
 
   ## Returns
 
@@ -163,19 +163,25 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   """
   @spec script_projects_deployments_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Script.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def script_projects_deployments_delete(connection, script_id, deployment_id, opts \\ []) do
-    optional_params = %{
+  def script_projects_deployments_delete(
+        connection,
+        script_id,
+        deployment_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :uploadType => :query,
+      :fields => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query
+      :prettyPrint => :query
     }
 
     request =
@@ -185,11 +191,11 @@ defmodule GoogleApi.Script.V1.Api.Projects do
         "scriptId" => URI.encode_www_form(script_id),
         "deploymentId" => URI.encode_www_form(deployment_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Script.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Script.V1.Model.Empty{}])
   end
 
   @doc """
@@ -200,18 +206,18 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   - connection (GoogleApi.Script.V1.Connection): Connection to server
   - script_id (String.t): The script project&#39;s Drive ID.
   - deployment_id (String.t): The deployment ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
 
   ## Returns
 
@@ -220,19 +226,25 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   """
   @spec script_projects_deployments_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Script.V1.Model.Deployment.t()} | {:error, Tesla.Env.t()}
-  def script_projects_deployments_get(connection, script_id, deployment_id, opts \\ []) do
-    optional_params = %{
+  def script_projects_deployments_get(
+        connection,
+        script_id,
+        deployment_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :uploadType => :query,
+      :fields => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query
+      :prettyPrint => :query
     }
 
     request =
@@ -242,11 +254,11 @@ defmodule GoogleApi.Script.V1.Api.Projects do
         "scriptId" => URI.encode_www_form(script_id),
         "deploymentId" => URI.encode_www_form(deployment_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Script.V1.Model.Deployment{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Script.V1.Model.Deployment{}])
   end
 
   @doc """
@@ -256,18 +268,18 @@ defmodule GoogleApi.Script.V1.Api.Projects do
 
   - connection (GoogleApi.Script.V1.Connection): Connection to server
   - script_id (String.t): The script project&#39;s Drive ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :pageToken (String.t): The token for continuing a previous list request on the next page. This should be set to the value of &#x60;nextPageToken&#x60; from a previous response.
     - :pageSize (integer()): The maximum number of deployments on each returned page. Defaults to 50.
 
@@ -278,19 +290,19 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   """
   @spec script_projects_deployments_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Script.V1.Model.ListDeploymentsResponse.t()} | {:error, Tesla.Env.t()}
-  def script_projects_deployments_list(connection, script_id, opts \\ []) do
-    optional_params = %{
+  def script_projects_deployments_list(connection, script_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :uploadType => :query,
+      :fields => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
+      :prettyPrint => :query,
       :pageToken => :query,
       :pageSize => :query
     }
@@ -301,11 +313,11 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       |> Request.url("/v1/projects/{scriptId}/deployments", %{
         "scriptId" => URI.encode_www_form(script_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Script.V1.Model.ListDeploymentsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Script.V1.Model.ListDeploymentsResponse{}])
   end
 
   @doc """
@@ -316,18 +328,18 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   - connection (GoogleApi.Script.V1.Connection): Connection to server
   - script_id (String.t): The script project&#39;s Drive ID.
   - deployment_id (String.t): The deployment ID for this deployment.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (UpdateDeploymentRequest): 
 
   ## Returns
@@ -337,19 +349,25 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   """
   @spec script_projects_deployments_update(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Script.V1.Model.Deployment.t()} | {:error, Tesla.Env.t()}
-  def script_projects_deployments_update(connection, script_id, deployment_id, opts \\ []) do
-    optional_params = %{
+  def script_projects_deployments_update(
+        connection,
+        script_id,
+        deployment_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :uploadType => :query,
+      :fields => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
+      :prettyPrint => :query,
       :body => :body
     }
 
@@ -360,11 +378,11 @@ defmodule GoogleApi.Script.V1.Api.Projects do
         "scriptId" => URI.encode_www_form(script_id),
         "deploymentId" => URI.encode_www_form(deployment_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Script.V1.Model.Deployment{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Script.V1.Model.Deployment{}])
   end
 
   @doc """
@@ -374,18 +392,18 @@ defmodule GoogleApi.Script.V1.Api.Projects do
 
   - connection (GoogleApi.Script.V1.Connection): Connection to server
   - script_id (String.t): The script project&#39;s Drive ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
 
   ## Returns
 
@@ -394,19 +412,19 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   """
   @spec script_projects_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Script.V1.Model.Project.t()} | {:error, Tesla.Env.t()}
-  def script_projects_get(connection, script_id, opts \\ []) do
-    optional_params = %{
+  def script_projects_get(connection, script_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :uploadType => :query,
+      :fields => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query
+      :prettyPrint => :query
     }
 
     request =
@@ -415,11 +433,11 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       |> Request.url("/v1/projects/{scriptId}", %{
         "scriptId" => URI.encode_www_form(script_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Script.V1.Model.Project{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Script.V1.Model.Project{}])
   end
 
   @doc """
@@ -429,18 +447,18 @@ defmodule GoogleApi.Script.V1.Api.Projects do
 
   - connection (GoogleApi.Script.V1.Connection): Connection to server
   - script_id (String.t): The script project&#39;s Drive ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :versionNumber (integer()): The version number of the project to retrieve. If not provided, the project&#39;s HEAD version is returned.
 
   ## Returns
@@ -450,19 +468,19 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   """
   @spec script_projects_get_content(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Script.V1.Model.Content.t()} | {:error, Tesla.Env.t()}
-  def script_projects_get_content(connection, script_id, opts \\ []) do
-    optional_params = %{
+  def script_projects_get_content(connection, script_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :uploadType => :query,
+      :fields => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
+      :prettyPrint => :query,
       :versionNumber => :query
     }
 
@@ -472,11 +490,11 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       |> Request.url("/v1/projects/{scriptId}/content", %{
         "scriptId" => URI.encode_www_form(script_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Script.V1.Model.Content{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Script.V1.Model.Content{}])
   end
 
   @doc """
@@ -486,18 +504,18 @@ defmodule GoogleApi.Script.V1.Api.Projects do
 
   - connection (GoogleApi.Script.V1.Connection): Connection to server
   - script_id (String.t): Required field indicating the script to get metrics for.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :metricsFilter.deploymentId (String.t): Optional field indicating a specific deployment to retrieve metrics from.
     - :metricsGranularity (String.t): Required field indicating what granularity of metrics are returned.
 
@@ -508,19 +526,19 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   """
   @spec script_projects_get_metrics(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Script.V1.Model.Metrics.t()} | {:error, Tesla.Env.t()}
-  def script_projects_get_metrics(connection, script_id, opts \\ []) do
-    optional_params = %{
+  def script_projects_get_metrics(connection, script_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :uploadType => :query,
+      :fields => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
+      :prettyPrint => :query,
       :"metricsFilter.deploymentId" => :query,
       :metricsGranularity => :query
     }
@@ -531,11 +549,11 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       |> Request.url("/v1/projects/{scriptId}/metrics", %{
         "scriptId" => URI.encode_www_form(script_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Script.V1.Model.Metrics{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Script.V1.Model.Metrics{}])
   end
 
   @doc """
@@ -545,18 +563,18 @@ defmodule GoogleApi.Script.V1.Api.Projects do
 
   - connection (GoogleApi.Script.V1.Connection): Connection to server
   - script_id (String.t): The script project&#39;s Drive ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (Content): 
 
   ## Returns
@@ -566,19 +584,19 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   """
   @spec script_projects_update_content(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Script.V1.Model.Content.t()} | {:error, Tesla.Env.t()}
-  def script_projects_update_content(connection, script_id, opts \\ []) do
-    optional_params = %{
+  def script_projects_update_content(connection, script_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :uploadType => :query,
+      :fields => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
+      :prettyPrint => :query,
       :body => :body
     }
 
@@ -588,11 +606,11 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       |> Request.url("/v1/projects/{scriptId}/content", %{
         "scriptId" => URI.encode_www_form(script_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Script.V1.Model.Content{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Script.V1.Model.Content{}])
   end
 
   @doc """
@@ -602,18 +620,18 @@ defmodule GoogleApi.Script.V1.Api.Projects do
 
   - connection (GoogleApi.Script.V1.Connection): Connection to server
   - script_id (String.t): The script project&#39;s Drive ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (Version): 
 
   ## Returns
@@ -623,19 +641,19 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   """
   @spec script_projects_versions_create(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Script.V1.Model.Version.t()} | {:error, Tesla.Env.t()}
-  def script_projects_versions_create(connection, script_id, opts \\ []) do
-    optional_params = %{
+  def script_projects_versions_create(connection, script_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :uploadType => :query,
+      :fields => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
+      :prettyPrint => :query,
       :body => :body
     }
 
@@ -645,11 +663,11 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       |> Request.url("/v1/projects/{scriptId}/versions", %{
         "scriptId" => URI.encode_www_form(script_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Script.V1.Model.Version{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Script.V1.Model.Version{}])
   end
 
   @doc """
@@ -660,18 +678,18 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   - connection (GoogleApi.Script.V1.Connection): Connection to server
   - script_id (String.t): The script project&#39;s Drive ID.
   - version_number (integer()): The version number.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
 
   ## Returns
 
@@ -680,19 +698,25 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   """
   @spec script_projects_versions_get(Tesla.Env.client(), String.t(), integer(), keyword()) ::
           {:ok, GoogleApi.Script.V1.Model.Version.t()} | {:error, Tesla.Env.t()}
-  def script_projects_versions_get(connection, script_id, version_number, opts \\ []) do
-    optional_params = %{
+  def script_projects_versions_get(
+        connection,
+        script_id,
+        version_number,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :uploadType => :query,
+      :fields => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query
+      :prettyPrint => :query
     }
 
     request =
@@ -702,11 +726,11 @@ defmodule GoogleApi.Script.V1.Api.Projects do
         "scriptId" => URI.encode_www_form(script_id),
         "versionNumber" => version_number
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Script.V1.Model.Version{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Script.V1.Model.Version{}])
   end
 
   @doc """
@@ -716,18 +740,18 @@ defmodule GoogleApi.Script.V1.Api.Projects do
 
   - connection (GoogleApi.Script.V1.Connection): Connection to server
   - script_id (String.t): The script project&#39;s Drive ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :pageToken (String.t): The token for continuing a previous list request on the next page. This should be set to the value of &#x60;nextPageToken&#x60; from a previous response.
     - :pageSize (integer()): The maximum number of versions on each returned page. Defaults to 50.
 
@@ -738,19 +762,19 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   """
   @spec script_projects_versions_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Script.V1.Model.ListVersionsResponse.t()} | {:error, Tesla.Env.t()}
-  def script_projects_versions_list(connection, script_id, opts \\ []) do
-    optional_params = %{
+  def script_projects_versions_list(connection, script_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :uploadType => :query,
+      :fields => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
+      :prettyPrint => :query,
       :pageToken => :query,
       :pageSize => :query
     }
@@ -761,10 +785,10 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       |> Request.url("/v1/projects/{scriptId}/versions", %{
         "scriptId" => URI.encode_www_form(script_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Script.V1.Model.ListVersionsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Script.V1.Model.ListVersionsResponse{}])
   end
 end

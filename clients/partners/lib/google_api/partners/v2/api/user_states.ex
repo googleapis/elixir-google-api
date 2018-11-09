@@ -30,7 +30,11 @@ defmodule GoogleApi.Partners.V2.Api.UserStates do
   ## Parameters
 
   - connection (GoogleApi.Partners.V2.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
@@ -38,10 +42,6 @@ defmodule GoogleApi.Partners.V2.Api.UserStates do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :requestMetadata.userOverrides.userId (String.t): Logged-in user ID to impersonate instead of the user&#39;s ID.
     - :requestMetadata.partnersSessionId (String.t): Google Partners session ID.
     - :requestMetadata.trafficSource.trafficSourceId (String.t): Identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
@@ -57,8 +57,12 @@ defmodule GoogleApi.Partners.V2.Api.UserStates do
   """
   @spec partners_user_states_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Partners.V2.Model.ListUserStatesResponse.t()} | {:error, Tesla.Env.t()}
-  def partners_user_states_list(connection, opts \\ []) do
-    optional_params = %{
+  def partners_user_states_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :access_token => :query,
       :key => :query,
       :upload_protocol => :query,
@@ -66,10 +70,6 @@ defmodule GoogleApi.Partners.V2.Api.UserStates do
       :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :"requestMetadata.userOverrides.userId" => :query,
       :"requestMetadata.partnersSessionId" => :query,
       :"requestMetadata.trafficSource.trafficSourceId" => :query,
@@ -83,10 +83,10 @@ defmodule GoogleApi.Partners.V2.Api.UserStates do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2/userStates")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Partners.V2.Model.ListUserStatesResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Partners.V2.Model.ListUserStatesResponse{}])
   end
 end

@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Genomics.V1.Model.WorkerAssignedEvent do
   @moduledoc """
-  This event is generated once a worker VM has been assigned to run the pipeline.
+  An event generated after a worker VM has been assigned to run the pipeline.
 
   ## Attributes
 

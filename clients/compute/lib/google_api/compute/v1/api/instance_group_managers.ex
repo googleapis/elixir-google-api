@@ -25,7 +25,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Schedules a group action to remove the specified instances from the managed instance group. Abandoning an instance does not delete the instance, but it does remove the instance from any target pools that are applied by the managed instance group. This method reduces the targetSize of the managed instance group by the number of instances that you abandon. This operation is marked as DONE when the action is scheduled even if the instances have not yet been removed from the group. You must separately verify the status of the abandoning action with the listmanagedinstances method.  If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is removed or deleted.  You can specify a maximum of 1000 instances with this method per request.
+  Flags the specified instances to be removed from the managed instance group. Abandoning an instance does not delete the instance, but it does remove the instance from any target pools that are applied by the managed instance group. This method reduces the targetSize of the managed instance group by the number of instances that you abandon. This operation is marked as DONE when the action is scheduled even if the instances have not yet been removed from the group. You must separately verify the status of the abandoning action with the listmanagedinstances method.  If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is removed or deleted.  You can specify a maximum of 1000 instances with this method per request.
 
   ## Parameters
 
@@ -33,7 +33,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone where the managed instance group is located.
   - instance_group_manager (String.t): The name of the managed instance group.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -61,9 +61,10 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
         project,
         zone,
         instance_group_manager,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -86,11 +87,11 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
           "instanceGroupManager" => URI.encode_www_form(instance_group_manager)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -100,7 +101,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -121,8 +122,13 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
   @spec compute_instance_group_managers_aggregated_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.InstanceGroupManagerAggregatedList.t()}
           | {:error, Tesla.Env.t()}
-  def compute_instance_group_managers_aggregated_list(connection, project, opts \\ []) do
-    optional_params = %{
+  def compute_instance_group_managers_aggregated_list(
+        connection,
+        project,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -142,11 +148,13 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
       |> Request.url("/{project}/aggregated/instanceGroupManagers", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.InstanceGroupManagerAggregatedList{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Compute.V1.Model.InstanceGroupManagerAggregatedList{}]
+    )
   end
 
   @doc """
@@ -158,7 +166,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone where the managed instance group is located.
   - instance_group_manager (String.t): The name of the managed instance group to delete.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -185,9 +193,10 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
         project,
         zone,
         instance_group_manager,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -206,15 +215,15 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
         "zone" => URI.encode_www_form(zone),
         "instanceGroupManager" => URI.encode_www_form(instance_group_manager)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
-  Schedules a group action to delete the specified instances in the managed instance group. The instances are also removed from any target pools of which they were a member. This method reduces the targetSize of the managed instance group by the number of instances that you delete. This operation is marked as DONE when the action is scheduled even if the instances are still being deleted. You must separately verify the status of the deleting action with the listmanagedinstances method.  If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is removed or deleted.  You can specify a maximum of 1000 instances with this method per request.
+  Flags the specified instances in the managed instance group for immediate deletion. The instances are also removed from any target pools of which they were a member. This method reduces the targetSize of the managed instance group by the number of instances that you delete. This operation is marked as DONE when the action is scheduled even if the instances are still being deleted. You must separately verify the status of the deleting action with the listmanagedinstances method.  If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is removed or deleted.  You can specify a maximum of 1000 instances with this method per request.
 
   ## Parameters
 
@@ -222,7 +231,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone where the managed instance group is located.
   - instance_group_manager (String.t): The name of the managed instance group.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -250,9 +259,10 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
         project,
         zone,
         instance_group_manager,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -275,11 +285,11 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
           "instanceGroupManager" => URI.encode_www_form(instance_group_manager)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -291,7 +301,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone where the managed instance group is located.
   - instance_group_manager (String.t): The name of the managed instance group.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -317,9 +327,10 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
         project,
         zone,
         instance_group_manager,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -337,22 +348,22 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
         "zone" => URI.encode_www_form(zone),
         "instanceGroupManager" => URI.encode_www_form(instance_group_manager)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.InstanceGroupManager{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.InstanceGroupManager{}])
   end
 
   @doc """
-  Creates a managed instance group using the information that you specify in the request. After the group is created, it schedules an action to create instances in the group using the specified instance template. This operation is marked as DONE when the group is created even if the instances in the group have not yet been created. You must separately verify the status of the individual instances with the listmanagedinstances method.  A managed instance group can have up to 1000 VM instances per group. Please contact Cloud Support if you need an increase in this limit.
+  Creates a managed instance group using the information that you specify in the request. After the group is created, instances in the group are created using the specified instance template. This operation is marked as DONE when the group is created even if the instances in the group have not yet been created. You must separately verify the status of the individual instances with the listmanagedinstances method.  A managed instance group can have up to 1000 VM instances per group. Please contact Cloud Support if you need an increase in this limit.
 
   ## Parameters
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone where you want to create the managed instance group.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -374,8 +385,14 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_instance_group_managers_insert(connection, project, zone, opts \\ []) do
-    optional_params = %{
+  def compute_instance_group_managers_insert(
+        connection,
+        project,
+        zone,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -394,11 +411,11 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
         "project" => URI.encode_www_form(project),
         "zone" => URI.encode_www_form(zone)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -409,7 +426,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone where the managed instance group is located.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -434,8 +451,14 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
           keyword()
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.InstanceGroupManagerList.t()} | {:error, Tesla.Env.t()}
-  def compute_instance_group_managers_list(connection, project, zone, opts \\ []) do
-    optional_params = %{
+  def compute_instance_group_managers_list(
+        connection,
+        project,
+        zone,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -456,11 +479,11 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
         "project" => URI.encode_www_form(project),
         "zone" => URI.encode_www_form(zone)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.InstanceGroupManagerList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.InstanceGroupManagerList{}])
   end
 
   @doc """
@@ -472,7 +495,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone where the managed instance group is located.
   - instance_group_manager (String.t): The name of the managed instance group.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -480,10 +503,10 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :filter (String.t): 
-    - :maxResults (integer()): 
-    - :order_by (String.t): 
-    - :pageToken (String.t): 
+    - :filter (String.t): A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either &#x3D;, !&#x3D;, &gt;, or &lt;.  For example, if you are filtering Compute Engine instances, you can exclude instances named example-instance by specifying name !&#x3D; example-instance.  You can also filter nested fields. For example, you could specify scheduling.automaticRestart &#x3D; false to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.  To filter on multiple expressions, provide each separate expression within parentheses. For example, (scheduling.automaticRestart &#x3D; true) (cpuPlatform &#x3D; \&quot;Intel Skylake\&quot;). By default, each expression is an AND expression. However, you can include AND and OR expressions explicitly. For example, (cpuPlatform &#x3D; \&quot;Intel Skylake\&quot;) OR (cpuPlatform &#x3D; \&quot;Intel Broadwell\&quot;) AND (scheduling.automaticRestart &#x3D; true).
+    - :maxResults (integer()): The maximum number of results per page that should be returned. If the number of available results is larger than maxResults, Compute Engine returns a nextPageToken that can be used to get the next page of results in subsequent list requests. Acceptable values are 0 to 500, inclusive. (Default: 500)
+    - :order_by (String.t): Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name.  You can also sort results in descending order based on the creation timestamp using orderBy&#x3D;\&quot;creationTimestamp desc\&quot;. This sorts results based on the creationTimestamp field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first.  Currently, only sorting by name or creationTimestamp desc is supported.
+    - :pageToken (String.t): Specifies a page token to use. Set pageToken to the nextPageToken returned by a previous list request to get the next page of results.
 
   ## Returns
 
@@ -504,9 +527,10 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
         project,
         zone,
         instance_group_manager,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -531,17 +555,18 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
           "instanceGroupManager" => URI.encode_www_form(instance_group_manager)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.Compute.V1.Model.InstanceGroupManagersListManagedInstancesResponse{}
+      opts ++
+        [struct: %GoogleApi.Compute.V1.Model.InstanceGroupManagersListManagedInstancesResponse{}]
     )
   end
 
   @doc """
-  Schedules a group action to recreate the specified instances in the managed instance group. The instances are deleted and recreated using the current instance template for the managed instance group. This operation is marked as DONE when the action is scheduled even if the instances have not yet been recreated. You must separately verify the status of the recreating action with the listmanagedinstances method.  If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is removed or deleted.  You can specify a maximum of 1000 instances with this method per request.
+  Flags the specified instances in the managed instance group to be immediately recreated. The instances are deleted and recreated using the current instance template for the managed instance group. This operation is marked as DONE when the flag is set even if the instances have not yet been recreated. You must separately verify the status of the recreating action with the listmanagedinstances method.  If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is removed or deleted.  You can specify a maximum of 1000 instances with this method per request.
 
   ## Parameters
 
@@ -549,7 +574,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone where the managed instance group is located.
   - instance_group_manager (String.t): The name of the managed instance group.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -577,9 +602,10 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
         project,
         zone,
         instance_group_manager,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -602,15 +628,15 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
           "instanceGroupManager" => URI.encode_www_form(instance_group_manager)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
-  Resizes the managed instance group. If you increase the size, the group creates new instances using the current instance template. If you decrease the size, the group deletes instances. The resize operation is marked DONE when the resize actions are scheduled even if the group has not yet added or deleted any instances. You must separately verify the status of the creating or deleting actions with the listmanagedinstances method.  If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is removed or deleted.
+  Resizes the managed instance group. If you increase the size, the group creates new instances using the current instance template. If you decrease the size, the group deletes instances. The resize operation is marked DONE when the resize actions are scheduled even if the group has not yet added or deleted any instances. You must separately verify the status of the creating or deleting actions with the listmanagedinstances method.  When resizing down, the instance group arbitrarily chooses the order in which VMs are deleted. The group takes into account some VM attributes when making the selection including:  + The status of the VM instance. + The health of the VM instance. + The instance template version the VM is based on. + For regional managed instance groups, the location of the VM instance.  This list is subject to change.  If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is removed or deleted.
 
   ## Parameters
 
@@ -619,7 +645,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
   - zone (String.t): The name of the zone where the managed instance group is located.
   - instance_group_manager (String.t): The name of the managed instance group.
   - size (integer()): The number of running instances that the managed instance group should maintain at any given time. The group automatically adds or removes instances to maintain the number of instances specified by this parameter.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -648,9 +674,10 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
         zone,
         instance_group_manager,
         size,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -673,11 +700,11 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
         }
       )
       |> Request.add_param(:query, :size, size)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -689,7 +716,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone where the managed instance group is located.
   - instance_group_manager (String.t): The name of the managed instance group.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -717,9 +744,10 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
         project,
         zone,
         instance_group_manager,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -742,11 +770,11 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
           "instanceGroupManager" => URI.encode_www_form(instance_group_manager)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -758,7 +786,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone where the managed instance group is located.
   - instance_group_manager (String.t): The name of the managed instance group.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -786,9 +814,10 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
         project,
         zone,
         instance_group_manager,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -811,10 +840,10 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
           "instanceGroupManager" => URI.encode_www_form(instance_group_manager)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 end

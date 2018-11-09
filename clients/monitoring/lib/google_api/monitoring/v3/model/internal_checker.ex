@@ -18,32 +18,32 @@
 
 defmodule GoogleApi.Monitoring.V3.Model.InternalChecker do
   @moduledoc """
-  Nimbus InternalCheckers.
+  An internal checker allows uptime checks to run on private/internal GCP resources.
 
   ## Attributes
 
-  - checkerId (String.t): The checker ID. Defaults to: `null`.
-  - displayName (String.t): The checker&#39;s human-readable name. Defaults to: `null`.
+  - displayName (String.t): The checker&#39;s human-readable name. The display name should be unique within a Stackdriver Workspace in order to make it easier to identify; however, uniqueness is not enforced. Defaults to: `null`.
   - gcpZone (String.t): The GCP zone the uptime check should egress from. Only respected for internal uptime checks, where internal_network is specified. Defaults to: `null`.
-  - network (String.t): The internal network to perform this uptime check on. Defaults to: `null`.
-  - projectId (String.t): The GCP project ID. Not necessarily the same as the project_id for the config. Defaults to: `null`.
+  - name (String.t): A unique resource name for this InternalChecker. The format is:projects/[PROJECT_ID]/internalCheckers/[INTERNAL_CHECKER_ID].PROJECT_ID is the stackdriver workspace project for the uptime check config associated with the internal checker. Defaults to: `null`.
+  - network (String.t): The GCP VPC network (https://cloud.google.com/vpc/docs/vpc) where the internal resource lives (ex: \&quot;default\&quot;). Defaults to: `null`.
+  - peerProjectId (String.t): The GCP project_id where the internal checker lives. Not necessary the same as the workspace project. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :checkerId => any(),
           :displayName => any(),
           :gcpZone => any(),
+          :name => any(),
           :network => any(),
-          :projectId => any()
+          :peerProjectId => any()
         }
 
-  field(:checkerId)
   field(:displayName)
   field(:gcpZone)
+  field(:name)
   field(:network)
-  field(:projectId)
+  field(:peerProjectId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.InternalChecker do

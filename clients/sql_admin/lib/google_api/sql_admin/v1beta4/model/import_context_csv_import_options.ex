@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.ImportContextCsvImportOptions do
   @moduledoc """
-  Options for importing data as CSV.
+  Options for importing data as CSV. Importing CSV data using the Cloud SQL Admin API is not supported for PostgreSQL instances.
 
   ## Attributes
 

@@ -22,8 +22,8 @@ defmodule GoogleApi.Content.V2.Model.Promotion do
 
   ## Attributes
 
-  - promotionAmount (Amount): Amount of the promotion. The values here are the promotion applied to the unit price pretax and to the total of the tax amounts. Defaults to: `null`.
-  - promotionId (String.t): ID of the promotion. Defaults to: `null`.
+  - promotionAmount (Amount): [required] Amount of the promotion. The values here are the promotion applied to the unit price pretax and to the total of the tax amounts. Defaults to: `null`.
+  - promotionId (String.t): [required] ID of the promotion. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -34,7 +34,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   - zone (String.t): The name of the zone for this request.
   - instance (String.t): The instance name for this request.
   - network_interface (String.t): The name of the network interface to add to this instance.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -64,9 +64,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         zone,
         instance,
         network_interface,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -87,21 +88,21 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "instance" => URI.encode_www_form(instance)
       })
       |> Request.add_param(:query, :networkInterface, network_interface)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
-  Retrieves aggregated list of instances.
+  Retrieves aggregated list of all of the instances in your project across all regions and zones.
 
   ## Parameters
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -121,8 +122,8 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   """
   @spec compute_instances_aggregated_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.InstanceAggregatedList.t()} | {:error, Tesla.Env.t()}
-  def compute_instances_aggregated_list(connection, project, opts \\ []) do
-    optional_params = %{
+  def compute_instances_aggregated_list(connection, project, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -142,11 +143,11 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       |> Request.url("/{project}/aggregated/instances", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.InstanceAggregatedList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.InstanceAggregatedList{}])
   end
 
   @doc """
@@ -158,7 +159,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone for this request.
   - instance (String.t): The instance name for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -182,8 +183,15 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_instances_attach_disk(connection, project, zone, instance, opts \\ []) do
-    optional_params = %{
+  def compute_instances_attach_disk(
+        connection,
+        project,
+        zone,
+        instance,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -204,11 +212,11 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "zone" => URI.encode_www_form(zone),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -220,7 +228,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone for this request.
   - instance (String.t): Name of the instance resource to delete.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -242,8 +250,15 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_instances_delete(connection, project, zone, instance, opts \\ []) do
-    optional_params = %{
+  def compute_instances_delete(
+        connection,
+        project,
+        zone,
+        instance,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -262,11 +277,11 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "zone" => URI.encode_www_form(zone),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -280,7 +295,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   - instance (String.t): The instance name for this request.
   - access_config (String.t): The name of the access config to delete.
   - network_interface (String.t): The name of the network interface.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -311,9 +326,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         instance,
         access_config,
         network_interface,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -334,11 +350,11 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       })
       |> Request.add_param(:query, :accessConfig, access_config)
       |> Request.add_param(:query, :networkInterface, network_interface)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -351,7 +367,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   - zone (String.t): The name of the zone for this request.
   - instance (String.t): Instance name.
   - device_name (String.t): Disk device name to detach.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -374,8 +390,16 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_instances_detach_disk(connection, project, zone, instance, device_name, opts \\ []) do
-    optional_params = %{
+  def compute_instances_detach_disk(
+        connection,
+        project,
+        zone,
+        instance,
+        device_name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -395,11 +419,11 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "instance" => URI.encode_www_form(instance)
       })
       |> Request.add_param(:query, :deviceName, device_name)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -411,7 +435,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone for this request.
   - instance (String.t): Name of the instance resource to return.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -427,8 +451,15 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   """
   @spec compute_instances_get(Tesla.Env.client(), String.t(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Instance.t()} | {:error, Tesla.Env.t()}
-  def compute_instances_get(connection, project, zone, instance, opts \\ []) do
-    optional_params = %{
+  def compute_instances_get(
+        connection,
+        project,
+        zone,
+        instance,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -446,15 +477,15 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "zone" => URI.encode_www_form(zone),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Instance{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Instance{}])
   end
 
   @doc """
-  Returns the specified instance&#39;s serial port output.
+  Returns the last 1 MB of serial port output from the specified instance.
 
   ## Parameters
 
@@ -462,7 +493,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone for this request.
   - instance (String.t): Name of the instance scoping this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -485,8 +516,15 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.SerialPortOutput.t()} | {:error, Tesla.Env.t()}
-  def compute_instances_get_serial_port_output(connection, project, zone, instance, opts \\ []) do
-    optional_params = %{
+  def compute_instances_get_serial_port_output(
+        connection,
+        project,
+        zone,
+        instance,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -506,11 +544,11 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "zone" => URI.encode_www_form(zone),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.SerialPortOutput{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.SerialPortOutput{}])
   end
 
   @doc """
@@ -521,7 +559,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -530,7 +568,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :requestId (String.t): An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.  For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.  The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-    - :sourceInstanceTemplate (String.t): Specifies instance template to create the instance.  This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to an instance template:   - https://www.googleapis.com/compute/v1/projects/project/global/global/instanceTemplates/instanceTemplate  - projects/project/global/global/instanceTemplates/instanceTemplate  - global/instancesTemplates/instanceTemplate
+    - :sourceInstanceTemplate (String.t): Specifies instance template to create the instance.  This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to an instance template:   - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate  - projects/project/global/instanceTemplates/instanceTemplate  - global/instanceTemplates/instanceTemplate
     - :body (Instance): 
 
   ## Returns
@@ -540,8 +578,8 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   """
   @spec compute_instances_insert(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_instances_insert(connection, project, zone, opts \\ []) do
-    optional_params = %{
+  def compute_instances_insert(connection, project, zone, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -561,11 +599,11 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "project" => URI.encode_www_form(project),
         "zone" => URI.encode_www_form(zone)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -576,7 +614,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -596,8 +634,8 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   """
   @spec compute_instances_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.InstanceList.t()} | {:error, Tesla.Env.t()}
-  def compute_instances_list(connection, project, zone, opts \\ []) do
-    optional_params = %{
+  def compute_instances_list(connection, project, zone, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -618,15 +656,15 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "project" => URI.encode_www_form(project),
         "zone" => URI.encode_www_form(zone)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.InstanceList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.InstanceList{}])
   end
 
   @doc """
-  Retrieves the list of referrers to instances contained within the specified zone.
+  Retrieves the list of referrers to instances contained within the specified zone. For more information, read Viewing Referrers to VM Instances.
 
   ## Parameters
 
@@ -634,7 +672,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone for this request.
   - instance (String.t): Name of the target instance scoping this request, or &#39;-&#39; if the request should span over all instances in the container.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -659,8 +697,15 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.InstanceListReferrers.t()} | {:error, Tesla.Env.t()}
-  def compute_instances_list_referrers(connection, project, zone, instance, opts \\ []) do
-    optional_params = %{
+  def compute_instances_list_referrers(
+        connection,
+        project,
+        zone,
+        instance,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -682,11 +727,11 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "zone" => URI.encode_www_form(zone),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.InstanceListReferrers{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.InstanceListReferrers{}])
   end
 
   @doc """
@@ -698,7 +743,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone for this request.
   - instance (String.t): Name of the instance scoping this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -715,8 +760,15 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   """
   @spec compute_instances_reset(Tesla.Env.client(), String.t(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_instances_reset(connection, project, zone, instance, opts \\ []) do
-    optional_params = %{
+  def compute_instances_reset(
+        connection,
+        project,
+        zone,
+        instance,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -735,11 +787,11 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "zone" => URI.encode_www_form(zone),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -751,7 +803,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone for this request.
   - resource (String.t): Name of the resource for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -774,8 +826,15 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_instances_set_deletion_protection(connection, project, zone, resource, opts \\ []) do
-    optional_params = %{
+  def compute_instances_set_deletion_protection(
+        connection,
+        project,
+        zone,
+        resource,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -795,11 +854,11 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "zone" => URI.encode_www_form(zone),
         "resource" => URI.encode_www_form(resource)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -813,7 +872,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   - instance (String.t): The instance name.
   - auto_delete (boolean()): Whether to auto-delete the disk when the instance is deleted.
   - device_name (String.t): The device name of the disk to modify.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -844,9 +903,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         instance,
         auto_delete,
         device_name,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -867,11 +927,11 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       })
       |> Request.add_param(:query, :autoDelete, auto_delete)
       |> Request.add_param(:query, :deviceName, device_name)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -883,7 +943,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone for this request.
   - instance (String.t): Name of the instance scoping this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -906,8 +966,15 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_instances_set_labels(connection, project, zone, instance, opts \\ []) do
-    optional_params = %{
+  def compute_instances_set_labels(
+        connection,
+        project,
+        zone,
+        instance,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -927,11 +994,11 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "zone" => URI.encode_www_form(zone),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -943,7 +1010,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone for this request.
   - instance (String.t): Name of the instance scoping this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -966,8 +1033,15 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_instances_set_machine_resources(connection, project, zone, instance, opts \\ []) do
-    optional_params = %{
+  def compute_instances_set_machine_resources(
+        connection,
+        project,
+        zone,
+        instance,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -987,11 +1061,11 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "zone" => URI.encode_www_form(zone),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1003,7 +1077,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone for this request.
   - instance (String.t): Name of the instance scoping this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1026,8 +1100,15 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_instances_set_machine_type(connection, project, zone, instance, opts \\ []) do
-    optional_params = %{
+  def compute_instances_set_machine_type(
+        connection,
+        project,
+        zone,
+        instance,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1047,11 +1128,11 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "zone" => URI.encode_www_form(zone),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1063,7 +1144,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone for this request.
   - instance (String.t): Name of the instance scoping this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1086,8 +1167,15 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_instances_set_metadata(connection, project, zone, instance, opts \\ []) do
-    optional_params = %{
+  def compute_instances_set_metadata(
+        connection,
+        project,
+        zone,
+        instance,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1107,11 +1195,11 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "zone" => URI.encode_www_form(zone),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1123,7 +1211,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone for this request.
   - instance (String.t): Name of the instance scoping this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1146,8 +1234,15 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_instances_set_min_cpu_platform(connection, project, zone, instance, opts \\ []) do
-    optional_params = %{
+  def compute_instances_set_min_cpu_platform(
+        connection,
+        project,
+        zone,
+        instance,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1167,11 +1262,11 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "zone" => URI.encode_www_form(zone),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1183,7 +1278,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone for this request.
   - instance (String.t): Instance name.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1206,8 +1301,15 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_instances_set_scheduling(connection, project, zone, instance, opts \\ []) do
-    optional_params = %{
+  def compute_instances_set_scheduling(
+        connection,
+        project,
+        zone,
+        instance,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1227,11 +1329,11 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "zone" => URI.encode_www_form(zone),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1243,7 +1345,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone for this request.
   - instance (String.t): Name of the instance resource to start.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1266,8 +1368,15 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_instances_set_service_account(connection, project, zone, instance, opts \\ []) do
-    optional_params = %{
+  def compute_instances_set_service_account(
+        connection,
+        project,
+        zone,
+        instance,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1287,15 +1396,15 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "zone" => URI.encode_www_form(zone),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
-  Sets tags for the specified instance to the data included in the request.
+  Sets network tags for the specified instance to the data included in the request.
 
   ## Parameters
 
@@ -1303,7 +1412,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone for this request.
   - instance (String.t): Name of the instance scoping this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1326,8 +1435,15 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_instances_set_tags(connection, project, zone, instance, opts \\ []) do
-    optional_params = %{
+  def compute_instances_set_tags(
+        connection,
+        project,
+        zone,
+        instance,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1347,11 +1463,74 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "zone" => URI.encode_www_form(zone),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Simulates a maintenance event on the instance.
+
+  ## Parameters
+
+  - connection (GoogleApi.Compute.V1.Connection): Connection to server
+  - project (String.t): Project ID for this request.
+  - zone (String.t): The name of the zone for this request.
+  - instance (String.t): Name of the instance scoping this request.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Compute.V1.Model.Operation{}} on success
+  {:error, info} on failure
+  """
+  @spec compute_instances_simulate_maintenance_event(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+  def compute_instances_simulate_maintenance_event(
+        connection,
+        project,
+        zone,
+        instance,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/{project}/zones/{zone}/instances/{instance}/simulateMaintenanceEvent", %{
+        "project" => URI.encode_www_form(project),
+        "zone" => URI.encode_www_form(zone),
+        "instance" => URI.encode_www_form(instance)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1363,7 +1542,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone for this request.
   - instance (String.t): Name of the instance resource to start.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1380,8 +1559,15 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   """
   @spec compute_instances_start(Tesla.Env.client(), String.t(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_instances_start(connection, project, zone, instance, opts \\ []) do
-    optional_params = %{
+  def compute_instances_start(
+        connection,
+        project,
+        zone,
+        instance,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1400,11 +1586,11 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "zone" => URI.encode_www_form(zone),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1416,7 +1602,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone for this request.
   - instance (String.t): Name of the instance resource to start.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1439,8 +1625,15 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_instances_start_with_encryption_key(connection, project, zone, instance, opts \\ []) do
-    optional_params = %{
+  def compute_instances_start_with_encryption_key(
+        connection,
+        project,
+        zone,
+        instance,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1460,11 +1653,11 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "zone" => URI.encode_www_form(zone),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1476,7 +1669,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone for this request.
   - instance (String.t): Name of the instance resource to stop.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1493,8 +1686,15 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   """
   @spec compute_instances_stop(Tesla.Env.client(), String.t(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_instances_stop(connection, project, zone, instance, opts \\ []) do
-    optional_params = %{
+  def compute_instances_stop(
+        connection,
+        project,
+        zone,
+        instance,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1513,11 +1713,11 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "zone" => URI.encode_www_form(zone),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1530,7 +1730,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   - zone (String.t): The name of the zone for this request.
   - instance (String.t): The instance name for this request.
   - network_interface (String.t): The name of the network interface where the access config is attached.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1560,9 +1760,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         zone,
         instance,
         network_interface,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1583,11 +1784,11 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "instance" => URI.encode_www_form(instance)
       })
       |> Request.add_param(:query, :networkInterface, network_interface)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1600,7 +1801,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   - zone (String.t): The name of the zone for this request.
   - instance (String.t): The instance name for this request.
   - network_interface (String.t): The name of the network interface to update.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1630,9 +1831,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         zone,
         instance,
         network_interface,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1653,10 +1855,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "instance" => URI.encode_www_form(instance)
       })
       |> Request.add_param(:query, :networkInterface, network_interface)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 end

@@ -37,7 +37,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
   - row_count (integer()): The number of conversions to return per call.
   - start_date (integer()): First date (inclusive) on which to retrieve conversions. Format is yyyymmdd.
   - start_row (integer()): The 0-based starting index for retrieving conversions results.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -76,9 +76,10 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
         row_count,
         start_date,
         start_row,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -107,11 +108,11 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
       |> Request.add_param(:query, :rowCount, row_count)
       |> Request.add_param(:query, :startDate, start_date)
       |> Request.add_param(:query, :startRow, start_row)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.DoubleClickSearch.V2.Model.ConversionList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.DoubleClickSearch.V2.Model.ConversionList{}])
   end
 
   @doc """
@@ -120,7 +121,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
   ## Parameters
 
   - connection (GoogleApi.DoubleClickSearch.V2.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -137,8 +138,8 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
   """
   @spec doubleclicksearch_conversion_insert(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.DoubleClickSearch.V2.Model.ConversionList.t()} | {:error, Tesla.Env.t()}
-  def doubleclicksearch_conversion_insert(connection, opts \\ []) do
-    optional_params = %{
+  def doubleclicksearch_conversion_insert(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -153,11 +154,11 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/conversion")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.DoubleClickSearch.V2.Model.ConversionList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.DoubleClickSearch.V2.Model.ConversionList{}])
   end
 
   @doc """
@@ -173,7 +174,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
   - row_count (integer()): The number of conversions to return per call.
   - start_date (integer()): First date (inclusive) on which to retrieve conversions. Format is yyyymmdd.
   - start_row (integer()): The 0-based starting index for retrieving conversions results.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -209,9 +210,10 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
         row_count,
         start_date,
         start_row,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -233,11 +235,11 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
       |> Request.add_param(:query, :rowCount, row_count)
       |> Request.add_param(:query, :startDate, start_date)
       |> Request.add_param(:query, :startRow, start_row)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.DoubleClickSearch.V2.Model.ConversionList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.DoubleClickSearch.V2.Model.ConversionList{}])
   end
 
   @doc """
@@ -246,7 +248,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
   ## Parameters
 
   - connection (GoogleApi.DoubleClickSearch.V2.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -263,8 +265,8 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
   """
   @spec doubleclicksearch_conversion_update(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.DoubleClickSearch.V2.Model.ConversionList.t()} | {:error, Tesla.Env.t()}
-  def doubleclicksearch_conversion_update(connection, opts \\ []) do
-    optional_params = %{
+  def doubleclicksearch_conversion_update(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -279,11 +281,11 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/conversion")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.DoubleClickSearch.V2.Model.ConversionList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.DoubleClickSearch.V2.Model.ConversionList{}])
   end
 
   @doc """
@@ -292,7 +294,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
   ## Parameters
 
   - connection (GoogleApi.DoubleClickSearch.V2.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -310,8 +312,12 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
   @spec doubleclicksearch_conversion_update_availability(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.DoubleClickSearch.V2.Model.UpdateAvailabilityResponse.t()}
           | {:error, Tesla.Env.t()}
-  def doubleclicksearch_conversion_update_availability(connection, opts \\ []) do
-    optional_params = %{
+  def doubleclicksearch_conversion_update_availability(
+        connection,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -326,10 +332,12 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/conversion/updateAvailability")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.DoubleClickSearch.V2.Model.UpdateAvailabilityResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.DoubleClickSearch.V2.Model.UpdateAvailabilityResponse{}]
+    )
   end
 end

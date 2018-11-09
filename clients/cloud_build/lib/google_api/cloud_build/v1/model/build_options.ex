@@ -23,35 +23,51 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildOptions do
   ## Attributes
 
   - diskSizeGb (String.t): Requested disk size for the VM that runs the build. Note that this is *NOT* \&quot;disk free\&quot;; some of the space will be used by the operating system and build utilities. Also note that this is the minimum disk size that will be allocated for the build -- the build may run with a larger disk than requested. At present, the maximum disk size is 1000GB; builds that request more than the maximum are rejected with an error. Defaults to: `null`.
+  - env ([String.t]): A list of global environment variable definitions that will exist for all build steps in this build. If a variable is defined in both globally and in a build step, the variable will use the build step value.  The elements are of the form \&quot;KEY&#x3D;VALUE\&quot; for the environment variable \&quot;KEY\&quot; being given the value \&quot;VALUE\&quot;. Defaults to: `null`.
   - logStreamingOption (String.t): Option to define build log streaming behavior to Google Cloud Storage. Defaults to: `null`.
     - Enum - one of [STREAM_DEFAULT, STREAM_ON, STREAM_OFF]
+  - logging (String.t): Option to specify the logging mode, which determines where the logs are stored. Defaults to: `null`.
+    - Enum - one of [LOGGING_UNSPECIFIED, LEGACY, GCS_ONLY]
   - machineType (String.t): Compute Engine machine type on which to run the build. Defaults to: `null`.
     - Enum - one of [UNSPECIFIED, N1_HIGHCPU_8, N1_HIGHCPU_32]
   - requestedVerifyOption (String.t): Requested verifiability options. Defaults to: `null`.
     - Enum - one of [NOT_VERIFIED, VERIFIED]
+  - secretEnv ([String.t]): A list of global environment variables, which are encrypted using a Cloud Key Management Service crypto key. These values must be specified in the build&#39;s &#x60;Secret&#x60;. These variables will be available to all build steps in this build. Defaults to: `null`.
   - sourceProvenanceHash ([String.t]): Requested hash for SourceProvenance. Defaults to: `null`.
     - Enum - one of 
   - substitutionOption (String.t): Option to specify behavior when there is an error in the substitution checks. Defaults to: `null`.
     - Enum - one of [MUST_MATCH, ALLOW_LOOSE]
+  - volumes ([Volume]): Global list of volumes to mount for ALL build steps  Each volume is created as an empty volume prior to starting the build process. Upon completion of the build, volumes and their contents are discarded. Global volume names and paths cannot conflict with the volumes defined a build step.  Using a global volume in a build with only one step is not valid as it is indicative of a build request with an incorrect configuration. Defaults to: `null`.
+  - workerPool (String.t): Option to specify a &#x60;WorkerPool&#x60; for the build. User specifies the pool with the format \&quot;[WORKERPOOL_PROJECT_ID]/[WORKERPOOL_NAME]\&quot;. This is an experimental field. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :diskSizeGb => any(),
+          :env => list(any()),
           :logStreamingOption => any(),
+          :logging => any(),
           :machineType => any(),
           :requestedVerifyOption => any(),
+          :secretEnv => list(any()),
           :sourceProvenanceHash => list(any()),
-          :substitutionOption => any()
+          :substitutionOption => any(),
+          :volumes => list(GoogleApi.CloudBuild.V1.Model.Volume.t()),
+          :workerPool => any()
         }
 
   field(:diskSizeGb)
+  field(:env, type: :list)
   field(:logStreamingOption)
+  field(:logging)
   field(:machineType)
   field(:requestedVerifyOption)
+  field(:secretEnv, type: :list)
   field(:sourceProvenanceHash, type: :list)
   field(:substitutionOption)
+  field(:volumes, as: GoogleApi.CloudBuild.V1.Model.Volume, type: :list)
+  field(:workerPool)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudBuild.V1.Model.BuildOptions do

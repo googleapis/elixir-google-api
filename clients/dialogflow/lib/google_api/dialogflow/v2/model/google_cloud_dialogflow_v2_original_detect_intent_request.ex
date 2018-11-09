@@ -22,19 +22,22 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2OriginalDetectInt
 
   ## Attributes
 
-  - payload (%{optional(String.t) &#x3D;&gt; String.t}): Optional. This field is set to the value of &#x60;QueryParameters.payload&#x60; field passed in the request. Defaults to: `null`.
+  - payload (%{optional(String.t) &#x3D;&gt; String.t}): Optional. This field is set to the value of the &#x60;QueryParameters.payload&#x60; field passed in the request. Some integrations that query a Dialogflow agent may provide additional information in the payload.  In particular for the Telephony Gateway this field has the form: &lt;pre&gt;{  \&quot;telephony\&quot;: {    \&quot;caller_id\&quot;: \&quot;+18558363987\&quot;  } }&lt;/pre&gt; Note: The caller ID field (&#x60;caller_id&#x60;) will be redacted for Standard Edition agents and populated with the caller ID in [E.164 format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents. Defaults to: `null`.
   - source (String.t): The source of this request, e.g., &#x60;google&#x60;, &#x60;facebook&#x60;, &#x60;slack&#x60;. It is set by Dialogflow-owned servers. Defaults to: `null`.
+  - version (String.t): Optional. The version of the protocol used for this request. This field is AoG-specific. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :payload => map(),
-          :source => any()
+          :source => any(),
+          :version => any()
         }
 
   field(:payload, type: :map)
   field(:source)
+  field(:version)
 end
 
 defimpl Poison.Decoder,

@@ -18,11 +18,11 @@
 
 defmodule GoogleApi.Genomics.V1.Model.FailedEvent do
   @moduledoc """
-  This event is generated when the execution of a pipeline has failed.  Note that other events may continue to occur after this event.
+  An event generated when the execution of a pipeline has failed. Note that other events can continue to occur after this event.
 
   ## Attributes
 
-  - cause (String.t): The human readable description of the cause of the failure. Defaults to: `null`.
+  - cause (String.t): The human-readable description of the cause of the failure. Defaults to: `null`.
   - code (String.t): The Google standard error code that best describes this failure. Defaults to: `null`.
     - Enum - one of [OK, CANCELLED, UNKNOWN, INVALID_ARGUMENT, DEADLINE_EXCEEDED, NOT_FOUND, ALREADY_EXISTS, PERMISSION_DENIED, UNAUTHENTICATED, RESOURCE_EXHAUSTED, FAILED_PRECONDITION, ABORTED, OUT_OF_RANGE, UNIMPLEMENTED, INTERNAL, UNAVAILABLE, DATA_LOSS]
   """

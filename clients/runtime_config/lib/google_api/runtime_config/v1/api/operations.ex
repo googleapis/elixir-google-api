@@ -31,7 +31,10 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
 
   - connection (GoogleApi.RuntimeConfig.V1.Connection): Connection to server
   - operations_id (String.t): Part of &#x60;name&#x60;. The name of the operation resource to be cancelled.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -40,9 +43,6 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (CancelOperationRequest): 
 
   ## Returns
@@ -52,8 +52,16 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
   """
   @spec runtimeconfig_operations_cancel(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.RuntimeConfig.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def runtimeconfig_operations_cancel(connection, operations_id, opts \\ []) do
-    optional_params = %{
+  def runtimeconfig_operations_cancel(
+        connection,
+        operations_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -62,9 +70,6 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
       :alt => :query,
       :access_token => :query,
       :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :body => :body
     }
 
@@ -74,11 +79,11 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
       |> Request.url("/v1/operations/{operationsId}:cancel", %{
         "operationsId" => URI.encode_www_form(operations_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.RuntimeConfig.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.RuntimeConfig.V1.Model.Empty{}])
   end
 
   @doc """
@@ -88,7 +93,10 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
 
   - connection (GoogleApi.RuntimeConfig.V1.Connection): Connection to server
   - operations_id (String.t): Part of &#x60;name&#x60;. The name of the operation resource to be deleted.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -97,9 +105,6 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
 
   ## Returns
 
@@ -108,8 +113,16 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
   """
   @spec runtimeconfig_operations_delete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.RuntimeConfig.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def runtimeconfig_operations_delete(connection, operations_id, opts \\ []) do
-    optional_params = %{
+  def runtimeconfig_operations_delete(
+        connection,
+        operations_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -117,10 +130,7 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
       :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query
+      :key => :query
     }
 
     request =
@@ -129,11 +139,11 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
       |> Request.url("/v1/operations/{operationsId}", %{
         "operationsId" => URI.encode_www_form(operations_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.RuntimeConfig.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.RuntimeConfig.V1.Model.Empty{}])
   end
 
   @doc """
@@ -142,7 +152,10 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
   ## Parameters
 
   - connection (GoogleApi.RuntimeConfig.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -151,12 +164,9 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :pageSize (integer()): The standard list page size.
     - :filter (String.t): The standard list filter.
     - :pageToken (String.t): The standard list page token.
-    - :pageSize (integer()): The standard list page size.
 
   ## Returns
 
@@ -166,8 +176,11 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
   @spec runtimeconfig_operations_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.RuntimeConfig.V1.Model.ListOperationsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def runtimeconfig_operations_list(connection, opts \\ []) do
-    optional_params = %{
+  def runtimeconfig_operations_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -176,22 +189,21 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
       :alt => :query,
       :access_token => :query,
       :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
+      :pageSize => :query,
       :filter => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageToken => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/operations")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.RuntimeConfig.V1.Model.ListOperationsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.RuntimeConfig.V1.Model.ListOperationsResponse{}]
+    )
   end
 end

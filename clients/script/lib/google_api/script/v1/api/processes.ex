@@ -30,29 +30,29 @@ defmodule GoogleApi.Script.V1.Api.Processes do
   ## Parameters
 
   - connection (GoogleApi.Script.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :userProcessFilter.deploymentId (String.t): Optional field used to limit returned processes to those originating from projects with a specific deployment ID.
+    - :userProcessFilter.endTime (DateTime.t): Optional field used to limit returned processes to those that completed on or before the given timestamp.
+    - :pageToken (String.t): The token for continuing a previous list request on the next page. This should be set to the value of &#x60;nextPageToken&#x60; from a previous response.
+    - :pageSize (integer()): The maximum number of returned processes per page of results. Defaults to 50.
+    - :userProcessFilter.startTime (DateTime.t): Optional field used to limit returned processes to those that were started on or after the given timestamp.
+    - :userProcessFilter.userAccessLevels ([String.t]): Optional field used to limit returned processes to those having one of the specified user access levels.
+    - :userProcessFilter.projectName (String.t): Optional field used to limit returned processes to those originating from projects with project names containing a specific string.
     - :userProcessFilter.functionName (String.t): Optional field used to limit returned processes to those originating from a script function with the given function name.
     - :userProcessFilter.scriptId (String.t): Optional field used to limit returned processes to those originating from projects with a specific script ID.
     - :userProcessFilter.types ([String.t]): Optional field used to limit returned processes to those having one of the specified process types.
     - :userProcessFilter.statuses ([String.t]): Optional field used to limit returned processes to those having one of the specified process statuses.
-    - :userProcessFilter.deploymentId (String.t): Optional field used to limit returned processes to those originating from projects with a specific deployment ID.
-    - :pageToken (String.t): The token for continuing a previous list request on the next page. This should be set to the value of &#x60;nextPageToken&#x60; from a previous response.
-    - :userProcessFilter.endTime (DateTime.t): Optional field used to limit returned processes to those that completed on or before the given timestamp.
-    - :pageSize (integer()): The maximum number of returned processes per page of results. Defaults to 50.
-    - :userProcessFilter.startTime (DateTime.t): Optional field used to limit returned processes to those that were started on or after the given timestamp.
-    - :userProcessFilter.projectName (String.t): Optional field used to limit returned processes to those originating from projects with project names containing a specific string.
-    - :userProcessFilter.userAccessLevels ([String.t]): Optional field used to limit returned processes to those having one of the specified user access levels.
 
   ## Returns
 
@@ -61,41 +61,41 @@ defmodule GoogleApi.Script.V1.Api.Processes do
   """
   @spec script_processes_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Script.V1.Model.ListUserProcessesResponse.t()} | {:error, Tesla.Env.t()}
-  def script_processes_list(connection, opts \\ []) do
-    optional_params = %{
+  def script_processes_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :uploadType => :query,
+      :fields => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
+      :prettyPrint => :query,
+      :"userProcessFilter.deploymentId" => :query,
+      :"userProcessFilter.endTime" => :query,
+      :pageToken => :query,
+      :pageSize => :query,
+      :"userProcessFilter.startTime" => :query,
+      :"userProcessFilter.userAccessLevels" => :query,
+      :"userProcessFilter.projectName" => :query,
       :"userProcessFilter.functionName" => :query,
       :"userProcessFilter.scriptId" => :query,
       :"userProcessFilter.types" => :query,
-      :"userProcessFilter.statuses" => :query,
-      :"userProcessFilter.deploymentId" => :query,
-      :pageToken => :query,
-      :"userProcessFilter.endTime" => :query,
-      :pageSize => :query,
-      :"userProcessFilter.startTime" => :query,
-      :"userProcessFilter.projectName" => :query,
-      :"userProcessFilter.userAccessLevels" => :query
+      :"userProcessFilter.statuses" => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/processes")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Script.V1.Model.ListUserProcessesResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Script.V1.Model.ListUserProcessesResponse{}])
   end
 
   @doc """
@@ -104,28 +104,28 @@ defmodule GoogleApi.Script.V1.Api.Processes do
   ## Parameters
 
   - connection (GoogleApi.Script.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :pageToken (String.t): The token for continuing a previous list request on the next page. This should be set to the value of &#x60;nextPageToken&#x60; from a previous response.
-    - :pageSize (integer()): The maximum number of returned processes per page of results. Defaults to 50.
-    - :scriptProcessFilter.endTime (DateTime.t): Optional field used to limit returned processes to those that completed on or before the given timestamp.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :scriptProcessFilter.userAccessLevels ([String.t]): Optional field used to limit returned processes to those having one of the specified user access levels.
     - :scriptProcessFilter.statuses ([String.t]): Optional field used to limit returned processes to those having one of the specified process statuses.
-    - :scriptProcessFilter.startTime (DateTime.t): Optional field used to limit returned processes to those that were started on or after the given timestamp.
     - :scriptProcessFilter.functionName (String.t): Optional field used to limit returned processes to those originating from a script function with the given function name.
+    - :scriptProcessFilter.startTime (DateTime.t): Optional field used to limit returned processes to those that were started on or after the given timestamp.
     - :scriptProcessFilter.deploymentId (String.t): Optional field used to limit returned processes to those originating from projects with a specific deployment ID.
     - :scriptId (String.t): The script ID of the project whose processes are listed.
     - :scriptProcessFilter.types ([String.t]): Optional field used to limit returned processes to those having one of the specified process types.
+    - :pageToken (String.t): The token for continuing a previous list request on the next page. This should be set to the value of &#x60;nextPageToken&#x60; from a previous response.
+    - :pageSize (integer()): The maximum number of returned processes per page of results. Defaults to 50.
+    - :scriptProcessFilter.endTime (DateTime.t): Optional field used to limit returned processes to those that completed on or before the given timestamp.
 
   ## Returns
 
@@ -135,39 +135,39 @@ defmodule GoogleApi.Script.V1.Api.Processes do
   @spec script_processes_list_script_processes(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Script.V1.Model.ListScriptProcessesResponse.t()}
           | {:error, Tesla.Env.t()}
-  def script_processes_list_script_processes(connection, opts \\ []) do
-    optional_params = %{
+  def script_processes_list_script_processes(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :uploadType => :query,
+      :fields => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :pageToken => :query,
-      :pageSize => :query,
-      :"scriptProcessFilter.endTime" => :query,
+      :prettyPrint => :query,
       :"scriptProcessFilter.userAccessLevels" => :query,
       :"scriptProcessFilter.statuses" => :query,
-      :"scriptProcessFilter.startTime" => :query,
       :"scriptProcessFilter.functionName" => :query,
+      :"scriptProcessFilter.startTime" => :query,
       :"scriptProcessFilter.deploymentId" => :query,
       :scriptId => :query,
-      :"scriptProcessFilter.types" => :query
+      :"scriptProcessFilter.types" => :query,
+      :pageToken => :query,
+      :pageSize => :query,
+      :"scriptProcessFilter.endTime" => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/processes:listScriptProcesses")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Script.V1.Model.ListScriptProcessesResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Script.V1.Model.ListScriptProcessesResponse{}])
   end
 end

@@ -31,7 +31,7 @@ defmodule GoogleApi.YouTube.V3.Api.VideoAbuseReportReasons do
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
   - part (String.t): The part parameter specifies the videoCategory resource parts that the API response will include. Supported values are id and snippet.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -49,8 +49,8 @@ defmodule GoogleApi.YouTube.V3.Api.VideoAbuseReportReasons do
   @spec youtube_video_abuse_report_reasons_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.VideoAbuseReportReasonListResponse.t()}
           | {:error, Tesla.Env.t()}
-  def youtube_video_abuse_report_reasons_list(connection, part, opts \\ []) do
-    optional_params = %{
+  def youtube_video_abuse_report_reasons_list(connection, part, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -66,10 +66,12 @@ defmodule GoogleApi.YouTube.V3.Api.VideoAbuseReportReasons do
       |> Request.method(:get)
       |> Request.url("/youtube/v3/videoAbuseReportReasons")
       |> Request.add_param(:query, :part, part)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.VideoAbuseReportReasonListResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.YouTube.V3.Model.VideoAbuseReportReasonListResponse{}]
+    )
   end
 end

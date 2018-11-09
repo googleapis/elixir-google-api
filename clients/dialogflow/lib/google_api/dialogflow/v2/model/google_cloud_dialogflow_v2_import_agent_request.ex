@@ -22,7 +22,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ImportAgentReques
 
   ## Attributes
 
-  - agentContent (binary()): The agent to import.  Example for how to import an agent via the command line: &lt;pre&gt;curl \\   &#39;https://dialogflow.googleapis.com/v2/projects/&amp;lt;project_name&amp;gt;/agent:import\\    -X POST \\    -H &#39;Authorization: Bearer &#39;$(gcloud auth print-access-token) \\    -H &#39;Accept: application/json&#39; \\    -H &#39;Content-Type: application/json&#39; \\    --compressed \\    --data-binary \&quot;{       &#39;agentContent&#39;: &#39;$(cat &amp;lt;agent zip file&amp;gt; | base64 -w 0)&#39;    }\&quot;&lt;/pre&gt; Defaults to: `null`.
+  - agentContent (binary()): The agent to import.  Example for how to import an agent via the command line: &lt;pre&gt;curl \\   &#39;https://dialogflow.googleapis.com/v2/projects/&amp;lt;project_name&amp;gt;/agent:import\\    -X POST \\    -H &#39;Authorization: Bearer &#39;$(gcloud auth application-default    print-access-token) \\    -H &#39;Accept: application/json&#39; \\    -H &#39;Content-Type: application/json&#39; \\    --compressed \\    --data-binary \&quot;{       &#39;agentContent&#39;: &#39;$(cat &amp;lt;agent zip file&amp;gt; | base64 -w 0)&#39;    }\&quot;&lt;/pre&gt; Defaults to: `null`.
   - agentUri (String.t): The URI to a Google Cloud Storage file containing the agent to import. Note: The URI must start with \&quot;gs://\&quot;. Defaults to: `null`.
   """
 

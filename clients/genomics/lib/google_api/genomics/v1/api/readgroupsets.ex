@@ -31,14 +31,14 @@ defmodule GoogleApi.Genomics.V1.Api.Readgroupsets do
 
   - connection (GoogleApi.Genomics.V1.Connection): Connection to server
   - read_group_set_id (String.t): Required. The ID of the read group set over which coverage is requested.
-  - opts (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -58,15 +58,20 @@ defmodule GoogleApi.Genomics.V1.Api.Readgroupsets do
   @spec genomics_readgroupsets_coveragebuckets_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Genomics.V1.Model.ListCoverageBucketsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def genomics_readgroupsets_coveragebuckets_list(connection, read_group_set_id, opts \\ []) do
-    optional_params = %{
-      :access_token => :query,
+  def genomics_readgroupsets_coveragebuckets_list(
+        connection,
+        read_group_set_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -85,11 +90,13 @@ defmodule GoogleApi.Genomics.V1.Api.Readgroupsets do
       |> Request.url("/v1/readgroupsets/{readGroupSetId}/coveragebuckets", %{
         "readGroupSetId" => URI.encode_www_form(read_group_set_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Genomics.V1.Model.ListCoverageBucketsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Genomics.V1.Model.ListCoverageBucketsResponse{}]
+    )
   end
 
   @doc """
@@ -99,14 +106,14 @@ defmodule GoogleApi.Genomics.V1.Api.Readgroupsets do
 
   - connection (GoogleApi.Genomics.V1.Connection): Connection to server
   - read_group_set_id (String.t): The ID of the read group set to be deleted. The caller must have WRITE permissions to the dataset associated with this read group set.
-  - opts (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -119,15 +126,20 @@ defmodule GoogleApi.Genomics.V1.Api.Readgroupsets do
   """
   @spec genomics_readgroupsets_delete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Genomics.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def genomics_readgroupsets_delete(connection, read_group_set_id, opts \\ []) do
-    optional_params = %{
-      :access_token => :query,
+  def genomics_readgroupsets_delete(
+        connection,
+        read_group_set_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -140,11 +152,11 @@ defmodule GoogleApi.Genomics.V1.Api.Readgroupsets do
       |> Request.url("/v1/readgroupsets/{readGroupSetId}", %{
         "readGroupSetId" => URI.encode_www_form(read_group_set_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Genomics.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Genomics.V1.Model.Empty{}])
   end
 
   @doc """
@@ -154,14 +166,14 @@ defmodule GoogleApi.Genomics.V1.Api.Readgroupsets do
 
   - connection (GoogleApi.Genomics.V1.Connection): Connection to server
   - read_group_set_id (String.t): Required. The ID of the read group set to export. The caller must have READ access to this read group set.
-  - opts (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -175,15 +187,20 @@ defmodule GoogleApi.Genomics.V1.Api.Readgroupsets do
   """
   @spec genomics_readgroupsets_export(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Genomics.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def genomics_readgroupsets_export(connection, read_group_set_id, opts \\ []) do
-    optional_params = %{
-      :access_token => :query,
+  def genomics_readgroupsets_export(
+        connection,
+        read_group_set_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -197,11 +214,11 @@ defmodule GoogleApi.Genomics.V1.Api.Readgroupsets do
       |> Request.url("/v1/readgroupsets/{readGroupSetId}:export", %{
         "readGroupSetId" => URI.encode_www_form(read_group_set_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Genomics.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Genomics.V1.Model.Operation{}])
   end
 
   @doc """
@@ -211,14 +228,14 @@ defmodule GoogleApi.Genomics.V1.Api.Readgroupsets do
 
   - connection (GoogleApi.Genomics.V1.Connection): Connection to server
   - read_group_set_id (String.t): The ID of the read group set.
-  - opts (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -231,15 +248,15 @@ defmodule GoogleApi.Genomics.V1.Api.Readgroupsets do
   """
   @spec genomics_readgroupsets_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Genomics.V1.Model.ReadGroupSet.t()} | {:error, Tesla.Env.t()}
-  def genomics_readgroupsets_get(connection, read_group_set_id, opts \\ []) do
-    optional_params = %{
-      :access_token => :query,
+  def genomics_readgroupsets_get(connection, read_group_set_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -252,11 +269,11 @@ defmodule GoogleApi.Genomics.V1.Api.Readgroupsets do
       |> Request.url("/v1/readgroupsets/{readGroupSetId}", %{
         "readGroupSetId" => URI.encode_www_form(read_group_set_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Genomics.V1.Model.ReadGroupSet{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Genomics.V1.Model.ReadGroupSet{}])
   end
 
   @doc """
@@ -265,14 +282,14 @@ defmodule GoogleApi.Genomics.V1.Api.Readgroupsets do
   ## Parameters
 
   - connection (GoogleApi.Genomics.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -286,15 +303,15 @@ defmodule GoogleApi.Genomics.V1.Api.Readgroupsets do
   """
   @spec genomics_readgroupsets_import(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Genomics.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def genomics_readgroupsets_import(connection, opts \\ []) do
-    optional_params = %{
-      :access_token => :query,
+  def genomics_readgroupsets_import(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -306,11 +323,11 @@ defmodule GoogleApi.Genomics.V1.Api.Readgroupsets do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/readgroupsets:import")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Genomics.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Genomics.V1.Model.Operation{}])
   end
 
   @doc """
@@ -320,14 +337,14 @@ defmodule GoogleApi.Genomics.V1.Api.Readgroupsets do
 
   - connection (GoogleApi.Genomics.V1.Connection): Connection to server
   - read_group_set_id (String.t): The ID of the read group set to be updated. The caller must have WRITE permissions to the dataset associated with this read group set.
-  - opts (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -342,15 +359,20 @@ defmodule GoogleApi.Genomics.V1.Api.Readgroupsets do
   """
   @spec genomics_readgroupsets_patch(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Genomics.V1.Model.ReadGroupSet.t()} | {:error, Tesla.Env.t()}
-  def genomics_readgroupsets_patch(connection, read_group_set_id, opts \\ []) do
-    optional_params = %{
-      :access_token => :query,
+  def genomics_readgroupsets_patch(
+        connection,
+        read_group_set_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -365,11 +387,11 @@ defmodule GoogleApi.Genomics.V1.Api.Readgroupsets do
       |> Request.url("/v1/readgroupsets/{readGroupSetId}", %{
         "readGroupSetId" => URI.encode_www_form(read_group_set_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Genomics.V1.Model.ReadGroupSet{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Genomics.V1.Model.ReadGroupSet{}])
   end
 
   @doc """
@@ -378,14 +400,14 @@ defmodule GoogleApi.Genomics.V1.Api.Readgroupsets do
   ## Parameters
 
   - connection (GoogleApi.Genomics.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -400,15 +422,15 @@ defmodule GoogleApi.Genomics.V1.Api.Readgroupsets do
   @spec genomics_readgroupsets_search(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Genomics.V1.Model.SearchReadGroupSetsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def genomics_readgroupsets_search(connection, opts \\ []) do
-    optional_params = %{
-      :access_token => :query,
+  def genomics_readgroupsets_search(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -420,10 +442,12 @@ defmodule GoogleApi.Genomics.V1.Api.Readgroupsets do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/readgroupsets/search")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Genomics.V1.Model.SearchReadGroupSetsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Genomics.V1.Model.SearchReadGroupSetsResponse{}]
+    )
   end
 end

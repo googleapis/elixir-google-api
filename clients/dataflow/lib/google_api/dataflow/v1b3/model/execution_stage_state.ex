@@ -25,7 +25,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ExecutionStageState do
   - currentStateTime (DateTime.t): The time at which the stage transitioned to this state. Defaults to: `null`.
   - executionStageName (String.t): The name of the execution stage. Defaults to: `null`.
   - executionStageState (String.t): Executions stage states allow the same set of values as JobState. Defaults to: `null`.
-    - Enum - one of [JOB_STATE_UNKNOWN, JOB_STATE_STOPPED, JOB_STATE_RUNNING, JOB_STATE_DONE, JOB_STATE_FAILED, JOB_STATE_CANCELLED, JOB_STATE_UPDATED, JOB_STATE_DRAINING, JOB_STATE_DRAINED, JOB_STATE_PENDING, JOB_STATE_CANCELLING]
+    - Enum - one of [JOB_STATE_UNKNOWN, JOB_STATE_STOPPED, JOB_STATE_RUNNING, JOB_STATE_DONE, JOB_STATE_FAILED, JOB_STATE_CANCELLED, JOB_STATE_UPDATED, JOB_STATE_DRAINING, JOB_STATE_DRAINED, JOB_STATE_PENDING, JOB_STATE_CANCELLING, JOB_STATE_QUEUED]
   """
 
   use GoogleApi.Gax.ModelBase

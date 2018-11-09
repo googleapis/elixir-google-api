@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryReturnRefundLi
 
   ## Attributes
 
-  - amountPretax (Price): The amount that is refunded. Optional, but if filled then both amountPretax and amountTax must be set. Defaults to: `null`.
+  - amountPretax (Price): The amount that is refunded. If omitted, refundless return is assumed (same as calling returnLineItem method). Optional, but if filled then both amountPretax and amountTax must be set. Defaults to: `null`.
   - amountTax (Price): Tax amount that correspond to refund amount in amountPretax. Defaults to: `null`.
   - lineItemId (String.t): The ID of the line item to return. Either lineItemId or productId is required. Defaults to: `null`.
   - productId (String.t): The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required. Defaults to: `null`.

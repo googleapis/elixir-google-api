@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Logging.V2.Model.LogExclusion do
   @moduledoc """
-  Specifies a set of log entries that are not to be stored in Stackdriver Logging. If your project receives a large volume of logs, you might be able to use exclusions to reduce your chargeable logs. Exclusions are processed after log sinks, so you can export log entries before they are excluded. Audit log entries and log entries from Amazon Web Services are never excluded.
+  Specifies a set of log entries that are not to be stored in Logging. If your project receives a large volume of logs, you might be able to use exclusions to reduce your chargeable logs. Exclusions are processed after log sinks, so you can export log entries before they are excluded. Audit log entries and log entries from Amazon Web Services are never excluded.
 
   ## Attributes
 

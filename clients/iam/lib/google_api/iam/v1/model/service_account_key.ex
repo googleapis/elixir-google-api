@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.IAM.V1.Model.ServiceAccountKey do
   @moduledoc """
-  Represents a service account key.  A service account has two sets of key-pairs: user-managed, and system-managed.  User-managed key-pairs can be created and deleted by users.  Users are responsible for rotating these keys periodically to ensure security of their service accounts.  Users retain the private key of these key-pairs, and Google retains ONLY the public key.  System-managed key-pairs are managed automatically by Google, and rotated daily without user intervention.  The private key never leaves Google&#39;s servers to maximize security.  Public keys for all service accounts are also published at the OAuth2 Service Account API.
+  Represents a service account key.  A service account has two sets of key-pairs: user-managed, and system-managed.  User-managed key-pairs can be created and deleted by users.  Users are responsible for rotating these keys periodically to ensure security of their service accounts.  Users retain the private key of these key-pairs, and Google retains ONLY the public key.  System-managed keys are automatically rotated by Google, and are used for signing for a maximum of two weeks. The rotation process is probabilistic, and usage of the new key will gradually ramp up and down over the key&#39;s lifetime. We recommend caching the public key set for a service account for no more than 24 hours to ensure you have access to the latest keys.  Public keys for all service accounts are also published at the OAuth2 Service Account API.
 
   ## Attributes
 

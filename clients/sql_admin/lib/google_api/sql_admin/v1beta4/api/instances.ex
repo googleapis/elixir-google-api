@@ -32,7 +32,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
   - project (String.t): Project ID of the project that contains the instance.
   - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,14 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   """
   @spec sql_instances_add_server_ca(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def sql_instances_add_server_ca(connection, project, instance, opts \\ []) do
-    optional_params = %{
+  def sql_instances_add_server_ca(
+        connection,
+        project,
+        instance,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -66,11 +72,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "project" => URI.encode_www_form(project),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}])
   end
 
   @doc """
@@ -81,7 +87,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
   - project (String.t): Project ID of the source as well as the clone Cloud SQL instance.
   - instance (String.t): The ID of the Cloud SQL instance to be cloned (source). This does not include the project ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -98,8 +104,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   """
   @spec sql_instances_clone(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def sql_instances_clone(connection, project, instance, opts \\ []) do
-    optional_params = %{
+  def sql_instances_clone(connection, project, instance, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -117,11 +123,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "project" => URI.encode_www_form(project),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}])
   end
 
   @doc """
@@ -132,7 +138,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
   - project (String.t): Project ID of the project that contains the instance to be deleted.
   - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -148,8 +154,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   """
   @spec sql_instances_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def sql_instances_delete(connection, project, instance, opts \\ []) do
-    optional_params = %{
+  def sql_instances_delete(connection, project, instance, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -166,11 +172,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "project" => URI.encode_www_form(project),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}])
   end
 
   @doc """
@@ -181,7 +187,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
   - project (String.t): ID of the project that contains the instance.
   - instance (String.t): Cloud SQL instance name.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -198,8 +204,14 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   """
   @spec sql_instances_demote_master(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def sql_instances_demote_master(connection, project, instance, opts \\ []) do
-    optional_params = %{
+  def sql_instances_demote_master(
+        connection,
+        project,
+        instance,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -217,22 +229,22 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "project" => URI.encode_www_form(project),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}])
   end
 
   @doc """
-  Exports data from a Cloud SQL instance to a Google Cloud Storage bucket as a MySQL dump file.
+  Exports data from a Cloud SQL instance to a Cloud Storage bucket as a SQL dump or CSV file.
 
   ## Parameters
 
   - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
   - project (String.t): Project ID of the project that contains the instance to be exported.
   - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -249,8 +261,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   """
   @spec sql_instances_export(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def sql_instances_export(connection, project, instance, opts \\ []) do
-    optional_params = %{
+  def sql_instances_export(connection, project, instance, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -268,11 +280,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "project" => URI.encode_www_form(project),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}])
   end
 
   @doc """
@@ -283,7 +295,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
   - project (String.t): ID of the project that contains the read replica.
   - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -300,8 +312,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   """
   @spec sql_instances_failover(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def sql_instances_failover(connection, project, instance, opts \\ []) do
-    optional_params = %{
+  def sql_instances_failover(connection, project, instance, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -319,11 +331,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "project" => URI.encode_www_form(project),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}])
   end
 
   @doc """
@@ -334,7 +346,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
   - project (String.t): Project ID of the project that contains the instance.
   - instance (String.t): Database instance ID. This does not include the project ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -350,8 +362,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   """
   @spec sql_instances_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance.t()} | {:error, Tesla.Env.t()}
-  def sql_instances_get(connection, project, instance, opts \\ []) do
-    optional_params = %{
+  def sql_instances_get(connection, project, instance, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -368,22 +380,22 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "project" => URI.encode_www_form(project),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance{}])
   end
 
   @doc """
-  Imports data into a Cloud SQL instance from a MySQL dump file in Google Cloud Storage.
+  Imports data into a Cloud SQL instance from a SQL dump or CSV file in Cloud Storage.
 
   ## Parameters
 
   - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
   - project (String.t): Project ID of the project that contains the instance.
   - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -400,8 +412,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   """
   @spec sql_instances_import(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def sql_instances_import(connection, project, instance, opts \\ []) do
-    optional_params = %{
+  def sql_instances_import(connection, project, instance, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -419,11 +431,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "project" => URI.encode_www_form(project),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}])
   end
 
   @doc """
@@ -433,7 +445,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
 
   - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
   - project (String.t): Project ID of the project to which the newly created Cloud SQL instances should belong.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -450,8 +462,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   """
   @spec sql_instances_insert(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def sql_instances_insert(connection, project, opts \\ []) do
-    optional_params = %{
+  def sql_instances_insert(connection, project, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -468,11 +480,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       |> Request.url("/projects/{project}/instances", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}])
   end
 
   @doc """
@@ -482,7 +494,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
 
   - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
   - project (String.t): Project ID of the project for which to list Cloud SQL instances.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -502,8 +514,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   @spec sql_instances_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.InstancesListResponse.t()}
           | {:error, Tesla.Env.t()}
-  def sql_instances_list(connection, project, opts \\ []) do
-    optional_params = %{
+  def sql_instances_list(connection, project, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -522,11 +534,13 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       |> Request.url("/projects/{project}/instances", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SQLAdmin.V1beta4.Model.InstancesListResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.SQLAdmin.V1beta4.Model.InstancesListResponse{}]
+    )
   end
 
   @doc """
@@ -537,7 +551,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
   - project (String.t): Project ID of the project that contains the instance.
   - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -554,8 +568,14 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   @spec sql_instances_list_server_cas(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.InstancesListServerCasResponse.t()}
           | {:error, Tesla.Env.t()}
-  def sql_instances_list_server_cas(connection, project, instance, opts \\ []) do
-    optional_params = %{
+  def sql_instances_list_server_cas(
+        connection,
+        project,
+        instance,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -572,11 +592,13 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "project" => URI.encode_www_form(project),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SQLAdmin.V1beta4.Model.InstancesListServerCasResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.SQLAdmin.V1beta4.Model.InstancesListServerCasResponse{}]
+    )
   end
 
   @doc """
@@ -587,7 +609,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
   - project (String.t): Project ID of the project that contains the instance.
   - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -604,8 +626,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   """
   @spec sql_instances_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def sql_instances_patch(connection, project, instance, opts \\ []) do
-    optional_params = %{
+  def sql_instances_patch(connection, project, instance, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -623,11 +645,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "project" => URI.encode_www_form(project),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}])
   end
 
   @doc """
@@ -638,7 +660,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
   - project (String.t): ID of the project that contains the read replica.
   - instance (String.t): Cloud SQL read replica instance name.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -654,8 +676,14 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   """
   @spec sql_instances_promote_replica(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def sql_instances_promote_replica(connection, project, instance, opts \\ []) do
-    optional_params = %{
+  def sql_instances_promote_replica(
+        connection,
+        project,
+        instance,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -672,11 +700,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "project" => URI.encode_www_form(project),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}])
   end
 
   @doc """
@@ -687,7 +715,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
   - project (String.t): Project ID of the project that contains the instance.
   - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -703,8 +731,14 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   """
   @spec sql_instances_reset_ssl_config(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def sql_instances_reset_ssl_config(connection, project, instance, opts \\ []) do
-    optional_params = %{
+  def sql_instances_reset_ssl_config(
+        connection,
+        project,
+        instance,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -721,11 +755,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "project" => URI.encode_www_form(project),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}])
   end
 
   @doc """
@@ -736,7 +770,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
   - project (String.t): Project ID of the project that contains the instance to be restarted.
   - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -752,8 +786,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   """
   @spec sql_instances_restart(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def sql_instances_restart(connection, project, instance, opts \\ []) do
-    optional_params = %{
+  def sql_instances_restart(connection, project, instance, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -770,11 +804,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "project" => URI.encode_www_form(project),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}])
   end
 
   @doc """
@@ -785,7 +819,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
   - project (String.t): Project ID of the project that contains the instance.
   - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -802,8 +836,14 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   """
   @spec sql_instances_restore_backup(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def sql_instances_restore_backup(connection, project, instance, opts \\ []) do
-    optional_params = %{
+  def sql_instances_restore_backup(
+        connection,
+        project,
+        instance,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -821,11 +861,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "project" => URI.encode_www_form(project),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}])
   end
 
   @doc """
@@ -836,7 +876,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
   - project (String.t): Project ID of the project that contains the instance.
   - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -853,8 +893,14 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   """
   @spec sql_instances_rotate_server_ca(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def sql_instances_rotate_server_ca(connection, project, instance, opts \\ []) do
-    optional_params = %{
+  def sql_instances_rotate_server_ca(
+        connection,
+        project,
+        instance,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -872,11 +918,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "project" => URI.encode_www_form(project),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}])
   end
 
   @doc """
@@ -887,7 +933,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
   - project (String.t): ID of the project that contains the read replica.
   - instance (String.t): Cloud SQL read replica instance name.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -903,8 +949,14 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   """
   @spec sql_instances_start_replica(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def sql_instances_start_replica(connection, project, instance, opts \\ []) do
-    optional_params = %{
+  def sql_instances_start_replica(
+        connection,
+        project,
+        instance,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -921,11 +973,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "project" => URI.encode_www_form(project),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}])
   end
 
   @doc """
@@ -936,7 +988,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
   - project (String.t): ID of the project that contains the read replica.
   - instance (String.t): Cloud SQL read replica instance name.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -952,8 +1004,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   """
   @spec sql_instances_stop_replica(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def sql_instances_stop_replica(connection, project, instance, opts \\ []) do
-    optional_params = %{
+  def sql_instances_stop_replica(connection, project, instance, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -970,11 +1022,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "project" => URI.encode_www_form(project),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}])
   end
 
   @doc """
@@ -985,7 +1037,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
   - project (String.t): Project ID of the Cloud SQL project.
   - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1002,8 +1054,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   """
   @spec sql_instances_truncate_log(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def sql_instances_truncate_log(connection, project, instance, opts \\ []) do
-    optional_params = %{
+  def sql_instances_truncate_log(connection, project, instance, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1021,11 +1073,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "project" => URI.encode_www_form(project),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}])
   end
 
   @doc """
@@ -1036,7 +1088,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
   - project (String.t): Project ID of the project that contains the instance.
   - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1053,8 +1105,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   """
   @spec sql_instances_update(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def sql_instances_update(connection, project, instance, opts \\ []) do
-    optional_params = %{
+  def sql_instances_update(connection, project, instance, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1072,10 +1124,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "project" => URI.encode_www_form(project),
         "instance" => URI.encode_www_form(instance)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}])
   end
 end

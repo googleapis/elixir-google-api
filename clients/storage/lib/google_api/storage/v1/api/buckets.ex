@@ -31,7 +31,7 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
 
   - connection (GoogleApi.Storage.V1.Connection): Connection to server
   - bucket (String.t): Name of a bucket.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -50,8 +50,8 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
   """
   @spec storage_buckets_delete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def storage_buckets_delete(connection, bucket, opts \\ []) do
-    optional_params = %{
+  def storage_buckets_delete(connection, bucket, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -70,11 +70,11 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       |> Request.url("/storage/v1/b/{bucket}", %{
         "bucket" => URI.encode_www_form(bucket)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -84,7 +84,7 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
 
   - connection (GoogleApi.Storage.V1.Connection): Connection to server
   - bucket (String.t): Name of a bucket.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -104,8 +104,8 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
   """
   @spec storage_buckets_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Storage.V1.Model.Bucket.t()} | {:error, Tesla.Env.t()}
-  def storage_buckets_get(connection, bucket, opts \\ []) do
-    optional_params = %{
+  def storage_buckets_get(connection, bucket, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -125,11 +125,11 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       |> Request.url("/storage/v1/b/{bucket}", %{
         "bucket" => URI.encode_www_form(bucket)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.Bucket{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Storage.V1.Model.Bucket{}])
   end
 
   @doc """
@@ -139,7 +139,7 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
 
   - connection (GoogleApi.Storage.V1.Connection): Connection to server
   - bucket (String.t): Name of a bucket.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -156,8 +156,8 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
   """
   @spec storage_buckets_get_iam_policy(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Storage.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
-  def storage_buckets_get_iam_policy(connection, bucket, opts \\ []) do
-    optional_params = %{
+  def storage_buckets_get_iam_policy(connection, bucket, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -174,11 +174,11 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       |> Request.url("/storage/v1/b/{bucket}/iam", %{
         "bucket" => URI.encode_www_form(bucket)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.Policy{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Storage.V1.Model.Policy{}])
   end
 
   @doc """
@@ -188,7 +188,7 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
 
   - connection (GoogleApi.Storage.V1.Connection): Connection to server
   - project (String.t): A valid API project identifier.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -209,8 +209,8 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
   """
   @spec storage_buckets_insert(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Storage.V1.Model.Bucket.t()} | {:error, Tesla.Env.t()}
-  def storage_buckets_insert(connection, project, opts \\ []) do
-    optional_params = %{
+  def storage_buckets_insert(connection, project, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -230,11 +230,11 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       |> Request.method(:post)
       |> Request.url("/storage/v1/b")
       |> Request.add_param(:query, :project, project)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.Bucket{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Storage.V1.Model.Bucket{}])
   end
 
   @doc """
@@ -244,7 +244,7 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
 
   - connection (GoogleApi.Storage.V1.Connection): Connection to server
   - project (String.t): A valid API project identifier.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -265,8 +265,8 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
   """
   @spec storage_buckets_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Storage.V1.Model.Buckets.t()} | {:error, Tesla.Env.t()}
-  def storage_buckets_list(connection, project, opts \\ []) do
-    optional_params = %{
+  def storage_buckets_list(connection, project, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -286,11 +286,11 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       |> Request.method(:get)
       |> Request.url("/storage/v1/b")
       |> Request.add_param(:query, :project, project)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.Buckets{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Storage.V1.Model.Buckets{}])
   end
 
   @doc """
@@ -301,7 +301,7 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
   - connection (GoogleApi.Storage.V1.Connection): Connection to server
   - bucket (String.t): Name of a bucket.
   - if_metageneration_match (String.t): Makes the operation conditional on whether bucket&#39;s current metageneration matches the given value.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -326,9 +326,10 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
         connection,
         bucket,
         if_metageneration_match,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -346,21 +347,21 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
         "bucket" => URI.encode_www_form(bucket)
       })
       |> Request.add_param(:query, :ifMetagenerationMatch, if_metageneration_match)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.Bucket{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Storage.V1.Model.Bucket{}])
   end
 
   @doc """
-  Updates a bucket. Changes to the bucket will be readable immediately after writing, but configuration changes may take time to propagate. This method supports patch semantics.
+  Patches a bucket. Changes to the bucket will be readable immediately after writing, but configuration changes may take time to propagate.
 
   ## Parameters
 
   - connection (GoogleApi.Storage.V1.Connection): Connection to server
   - bucket (String.t): Name of a bucket.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -383,8 +384,8 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
   """
   @spec storage_buckets_patch(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Storage.V1.Model.Bucket.t()} | {:error, Tesla.Env.t()}
-  def storage_buckets_patch(connection, bucket, opts \\ []) do
-    optional_params = %{
+  def storage_buckets_patch(connection, bucket, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -407,11 +408,11 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       |> Request.url("/storage/v1/b/{bucket}", %{
         "bucket" => URI.encode_www_form(bucket)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.Bucket{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Storage.V1.Model.Bucket{}])
   end
 
   @doc """
@@ -421,7 +422,7 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
 
   - connection (GoogleApi.Storage.V1.Connection): Connection to server
   - bucket (String.t): Name of a bucket.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -439,8 +440,8 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
   """
   @spec storage_buckets_set_iam_policy(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Storage.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
-  def storage_buckets_set_iam_policy(connection, bucket, opts \\ []) do
-    optional_params = %{
+  def storage_buckets_set_iam_policy(connection, bucket, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -458,11 +459,11 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       |> Request.url("/storage/v1/b/{bucket}/iam", %{
         "bucket" => URI.encode_www_form(bucket)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.Policy{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Storage.V1.Model.Policy{}])
   end
 
   @doc """
@@ -473,7 +474,7 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
   - connection (GoogleApi.Storage.V1.Connection): Connection to server
   - bucket (String.t): Name of a bucket.
   - permissions ([String.t]): Permissions to test.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -496,8 +497,14 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
         ) ::
           {:ok, GoogleApi.Storage.V1.Model.TestIamPermissionsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def storage_buckets_test_iam_permissions(connection, bucket, permissions, opts \\ []) do
-    optional_params = %{
+  def storage_buckets_test_iam_permissions(
+        connection,
+        bucket,
+        permissions,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -515,11 +522,11 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
         "bucket" => URI.encode_www_form(bucket)
       })
       |> Request.add_param(:query, :permissions, permissions)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.TestIamPermissionsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Storage.V1.Model.TestIamPermissionsResponse{}])
   end
 
   @doc """
@@ -529,7 +536,7 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
 
   - connection (GoogleApi.Storage.V1.Connection): Connection to server
   - bucket (String.t): Name of a bucket.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -552,8 +559,8 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
   """
   @spec storage_buckets_update(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Storage.V1.Model.Bucket.t()} | {:error, Tesla.Env.t()}
-  def storage_buckets_update(connection, bucket, opts \\ []) do
-    optional_params = %{
+  def storage_buckets_update(connection, bucket, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -576,10 +583,10 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       |> Request.url("/storage/v1/b/{bucket}", %{
         "bucket" => URI.encode_www_form(bucket)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.Bucket{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Storage.V1.Model.Bucket{}])
   end
 end

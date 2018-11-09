@@ -72,9 +72,13 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   - openNetworkConfiguration (%{optional(String.t) &#x3D;&gt; String.t}): Network configuration for the device. See configure networks for more information. Defaults to: `null`.
   - outgoingBeamDisabled (boolean()): Whether using NFC to beam data from apps is disabled. Defaults to: `null`.
   - outgoingCallsDisabled (boolean()): Whether outgoing calls are disabled. Defaults to: `null`.
-  - passwordRequirements (PasswordRequirements): Password requirements. Defaults to: `null`.
+  - passwordPolicies ([PasswordRequirements]): Password requirement policies. Different policies can be set for work profile or fully managed devices by setting the password_scope field in the policy. Defaults to: `null`.
+  - passwordRequirements (PasswordRequirements): Password requirements. DEPRECATED - Use password_policies Defaults to: `null`.
+  - permissionGrants ([PermissionGrant]): Explicit permission or group grants or denials for all apps. These values override the default_permission_policy. Defaults to: `null`.
   - permittedInputMethods (PackageNameList): If present, only the input methods provided by packages in this list are permitted. If this field is present, but the list is empty, then only system input methods are permitted. Defaults to: `null`.
   - persistentPreferredActivities ([PersistentPreferredActivity]): Default intent handler activities. Defaults to: `null`.
+  - playStoreMode (String.t): This mode controls which apps are available to the user in the Play Store and the behavior on the device when apps are removed from the policy. Defaults to: `null`.
+    - Enum - one of [PLAY_STORE_MODE_UNSPECIFIED, WHITELIST, BLACKLIST]
   - privateKeySelectionEnabled (boolean()): Allows showing UI on a device for a user to choose a private key alias if there are no matching rules in ChoosePrivateKeyRules. For devices below Android P, setting this may leave enterprise keys vulnerable. Defaults to: `null`.
   - recommendedGlobalProxy (ProxyInfo): The network-independent global HTTP proxy. Typically proxies should be configured per-network in open_network_configuration. However for unusual configurations like general internal filtering a global HTTP proxy may be useful. If the proxy is not accessible, network access may break. The global proxy is only a recommendation and some apps may ignore it. Defaults to: `null`.
   - removeUserDisabled (boolean()): Whether removing other users is disabled. Defaults to: `null`.
@@ -127,7 +131,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
           :dataRoamingDisabled => any(),
           :debuggingFeaturesAllowed => any(),
           :defaultPermissionPolicy => any(),
-          :deviceOwnerLockScreenInfo => GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t(),
+          :deviceOwnerLockScreenInfo =>
+            GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t(),
           :encryptionPolicy => any(),
           :ensureVerifyAppsEnabled => any(),
           :factoryResetDisabled => any(),
@@ -150,10 +155,14 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
           :openNetworkConfiguration => map(),
           :outgoingBeamDisabled => any(),
           :outgoingCallsDisabled => any(),
+          :passwordPolicies =>
+            list(GoogleApi.AndroidManagement.V1.Model.PasswordRequirements.t()),
           :passwordRequirements => GoogleApi.AndroidManagement.V1.Model.PasswordRequirements.t(),
+          :permissionGrants => list(GoogleApi.AndroidManagement.V1.Model.PermissionGrant.t()),
           :permittedInputMethods => GoogleApi.AndroidManagement.V1.Model.PackageNameList.t(),
           :persistentPreferredActivities =>
             list(GoogleApi.AndroidManagement.V1.Model.PersistentPreferredActivity.t()),
+          :playStoreMode => any(),
           :privateKeySelectionEnabled => any(),
           :recommendedGlobalProxy => GoogleApi.AndroidManagement.V1.Model.ProxyInfo.t(),
           :removeUserDisabled => any(),
@@ -231,7 +240,15 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   field(:openNetworkConfiguration, type: :map)
   field(:outgoingBeamDisabled)
   field(:outgoingCallsDisabled)
+
+  field(
+    :passwordPolicies,
+    as: GoogleApi.AndroidManagement.V1.Model.PasswordRequirements,
+    type: :list
+  )
+
   field(:passwordRequirements, as: GoogleApi.AndroidManagement.V1.Model.PasswordRequirements)
+  field(:permissionGrants, as: GoogleApi.AndroidManagement.V1.Model.PermissionGrant, type: :list)
   field(:permittedInputMethods, as: GoogleApi.AndroidManagement.V1.Model.PackageNameList)
 
   field(
@@ -240,6 +257,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
     type: :list
   )
 
+  field(:playStoreMode)
   field(:privateKeySelectionEnabled)
   field(:recommendedGlobalProxy, as: GoogleApi.AndroidManagement.V1.Model.ProxyInfo)
   field(:removeUserDisabled)

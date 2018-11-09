@@ -25,7 +25,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.DataSource do
   - parameters ([DataSourceParameter]): Data source parameters. Defaults to: `null`.
   - authorizationType (String.t): Indicates the type of authorization. Defaults to: `null`.
     - Enum - one of [AUTHORIZATION_TYPE_UNSPECIFIED, AUTHORIZATION_CODE, GOOGLE_PLUS_AUTHORIZATION_CODE]
-  - clientId (String.t): Data source client id which should be used to receive refresh token. When not supplied, no offline credentials are populated for data transfer. Defaults to: `null`.
+  - clientId (String.t): Data source client id which should be used to receive refresh token. Defaults to: `null`.
   - dataRefreshType (String.t): Specifies whether the data source supports automatic data refresh for the past few days, and how it&#39;s supported. For some data sources, data might not be complete until a few days later, so it&#39;s useful to refresh data automatically. Defaults to: `null`.
     - Enum - one of [DATA_REFRESH_TYPE_UNSPECIFIED, SLIDING_WINDOW, CUSTOM_SLIDING_WINDOW]
   - dataSourceId (String.t): Data source id. Defaults to: `null`.
@@ -37,7 +37,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.DataSource do
   - manualRunsDisabled (boolean()): Disables backfilling and manual run scheduling for the data source. Defaults to: `null`.
   - minimumScheduleInterval (String.t): The minimum interval for scheduler to schedule runs. Defaults to: `null`.
   - name (String.t): Output only. Data source resource name. Defaults to: `null`.
-  - scopes ([String.t]): Api auth scopes for which refresh token needs to be obtained. Only valid when &#x60;client_id&#x60; is specified. Ignored otherwise. These are scopes needed by a data source to prepare data and ingest them into BigQuery, e.g., https://www.googleapis.com/auth/bigquery Defaults to: `null`.
+  - scopes ([String.t]): Api auth scopes for which refresh token needs to be obtained. These are scopes needed by a data source to prepare data and ingest them into BigQuery, e.g., https://www.googleapis.com/auth/bigquery Defaults to: `null`.
   - supportsCustomSchedule (boolean()): Specifies whether the data source supports a user defined schedule, or operates on the default schedule. When set to &#x60;true&#x60;, user can override default schedule. Defaults to: `null`.
   - supportsMultipleTransfers (boolean()): Deprecated. This field has no effect. Defaults to: `null`.
   - transferType (String.t): Deprecated. This field has no effect. Defaults to: `null`.

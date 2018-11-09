@@ -27,7 +27,7 @@ defmodule GoogleApi.Content.V2.Model.PosSaleResponse do
   - itemId (String.t): A unique identifier for the item. Defaults to: `null`.
   - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;content#posSaleResponse\&quot;. Defaults to: `null`.
   - price (Price): The price of the item. Defaults to: `null`.
-  - quantity (String.t): The relative change of the available quantity. Negative for items sold. Defaults to: `null`.
+  - quantity (String.t): The relative change of the available quantity. Negative for items returned. Defaults to: `null`.
   - saleId (String.t): A unique ID to group items from the same sale event. Defaults to: `null`.
   - storeCode (String.t): The identifier of the merchant&#39;s store. Either a storeCode inserted via the API or the code of the store in Google My Business. Defaults to: `null`.
   - targetCountry (String.t): The CLDR territory code for the item. Defaults to: `null`.

@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
   @moduledoc """
-  Describes a Cloud Function that contains user computation executed in response to an event. It encapsulate function and triggers configurations.
+  Describes a Cloud Function that contains user computation executed in response to an event. It encapsulate function and triggers configurations. LINT.IfChange
 
   ## Attributes
 
@@ -31,7 +31,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
   - labels (%{optional(String.t) &#x3D;&gt; String.t}): Labels associated with this Cloud Function. Defaults to: `null`.
   - maxInstances (integer()): The limit on the maximum number of function instances that may coexist at a given time. This feature is currently in alpha, available only for whitelisted users. Defaults to: `null`.
   - name (String.t): A user-defined name of the function. Function names must be unique globally and match pattern &#x60;projects/*/locations/*/functions/*&#x60; Defaults to: `null`.
-  - network (String.t): The Google Compute Engine network that this function can connect to. Either the fully-qualified URI of the network resource, or the short name of the network must be specified. If the network belongs to another project, the URI of the resource must be specified e.g., &#x60;https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}&#x60;  or &#x60;my-network&#x60;.  See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for more information on connecting Cloud projects.  This feature is currently in alpha, available only for whitelisted users. Defaults to: `null`.
+  - network (String.t): The VPC Network that this cloud function can connect to. It can be either the fully-qualified URI, or the short name of the network resource. If the short network name is used, the network must belong to the same project. Otherwise, it must belong to a project within the same organization. The format of this field is either &#x60;projects/{project}/global/networks/{network}&#x60; or &#x60;{network}&#x60;, where {project} is a project id where the network is defined, and {network} is the short name of the network.  This field is mutually exclusive with &#x60;vpc_connector&#x60; and will be replaced by it.  See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for more information on connecting Cloud projects.  This feature is currently in alpha, available only for whitelisted users. Defaults to: `null`.
   - runtime (String.t): The runtime in which the function is going to run. If empty, defaults to Node.js 6. Defaults to: `null`.
   - serviceAccountEmail (String.t): Output only. The email of the function&#39;s service account. Defaults to: `null`.
   - sourceArchiveUrl (String.t): The Google Cloud Storage URL, starting with gs://, pointing to the zip archive which contains the function. Defaults to: `null`.
@@ -42,6 +42,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
   - timeout (String.t): The function execution timeout. Execution is considered failed and can be terminated if the function is not completed at the end of the timeout period. Defaults to 60 seconds. Defaults to: `null`.
   - updateTime (DateTime.t): Output only. The last update timestamp of a Cloud Function. Defaults to: `null`.
   - versionId (String.t): Output only. The version identifier of the Cloud Function. Each deployment attempt results in a new version of a function being created. Defaults to: `null`.
+  - vpcConnector (String.t): The VPC Network Connector that this cloud function can connect to. It can be either the fully-qualified URI, or the short name of the network connector resource. The format of this field is &#x60;projects/*/locations/*/connectors/*&#x60;  This field is mutually exclusive with &#x60;network&#x60; field and will eventually replace it.  See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for more information on connecting Cloud projects.  This feature is currently in alpha, available only for whitelisted users. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -65,7 +66,8 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
           :status => any(),
           :timeout => any(),
           :updateTime => DateTime.t(),
-          :versionId => any()
+          :versionId => any(),
+          :vpcConnector => any()
         }
 
   field(:availableMemoryMb)
@@ -87,6 +89,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
   field(:timeout)
   field(:updateTime, as: DateTime)
   field(:versionId)
+  field(:vpcConnector)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudFunctions.V1.Model.CloudFunction do

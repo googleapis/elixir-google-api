@@ -32,7 +32,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
   - order_id (String.t): The ID of the order.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -50,8 +50,14 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   @spec content_orders_acknowledge(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersAcknowledgeResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_orders_acknowledge(connection, merchant_id, order_id, opts \\ []) do
-    optional_params = %{
+  def content_orders_acknowledge(
+        connection,
+        merchant_id,
+        order_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -69,11 +75,11 @@ defmodule GoogleApi.Content.V2.Api.Orders do
         "merchantId" => URI.encode_www_form(merchant_id),
         "orderId" => URI.encode_www_form(order_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.OrdersAcknowledgeResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Content.V2.Model.OrdersAcknowledgeResponse{}])
   end
 
   @doc """
@@ -84,7 +90,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
   - order_id (String.t): The ID of the test order to modify.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -101,8 +107,14 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   @spec content_orders_advancetestorder(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersAdvanceTestOrderResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_orders_advancetestorder(connection, merchant_id, order_id, opts \\ []) do
-    optional_params = %{
+  def content_orders_advancetestorder(
+        connection,
+        merchant_id,
+        order_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -119,11 +131,13 @@ defmodule GoogleApi.Content.V2.Api.Orders do
         "merchantId" => URI.encode_www_form(merchant_id),
         "orderId" => URI.encode_www_form(order_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.OrdersAdvanceTestOrderResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Content.V2.Model.OrdersAdvanceTestOrderResponse{}]
+    )
   end
 
   @doc """
@@ -134,7 +148,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
   - order_id (String.t): The ID of the order to cancel.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -151,8 +165,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   """
   @spec content_orders_cancel(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersCancelResponse.t()} | {:error, Tesla.Env.t()}
-  def content_orders_cancel(connection, merchant_id, order_id, opts \\ []) do
-    optional_params = %{
+  def content_orders_cancel(connection, merchant_id, order_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -170,11 +184,11 @@ defmodule GoogleApi.Content.V2.Api.Orders do
         "merchantId" => URI.encode_www_form(merchant_id),
         "orderId" => URI.encode_www_form(order_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.OrdersCancelResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Content.V2.Model.OrdersCancelResponse{}])
   end
 
   @doc """
@@ -185,7 +199,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
   - order_id (String.t): The ID of the order.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -203,8 +217,14 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   @spec content_orders_cancellineitem(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersCancelLineItemResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_orders_cancellineitem(connection, merchant_id, order_id, opts \\ []) do
-    optional_params = %{
+  def content_orders_cancellineitem(
+        connection,
+        merchant_id,
+        order_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -222,11 +242,78 @@ defmodule GoogleApi.Content.V2.Api.Orders do
         "merchantId" => URI.encode_www_form(merchant_id),
         "orderId" => URI.encode_www_form(order_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.OrdersCancelLineItemResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Content.V2.Model.OrdersCancelLineItemResponse{}]
+    )
+  end
+
+  @doc """
+  Sandbox only. Cancels a test order for customer-initiated cancellation.
+
+  ## Parameters
+
+  - connection (GoogleApi.Content.V2.Connection): Connection to server
+  - merchant_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
+  - order_id (String.t): The ID of the test order to cancel.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :body (OrdersCancelTestOrderByCustomerRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Content.V2.Model.OrdersCancelTestOrderByCustomerResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec content_orders_canceltestorderbycustomer(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Content.V2.Model.OrdersCancelTestOrderByCustomerResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def content_orders_canceltestorderbycustomer(
+        connection,
+        merchant_id,
+        order_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/{merchantId}/testorders/{orderId}/cancelByCustomer", %{
+        "merchantId" => URI.encode_www_form(merchant_id),
+        "orderId" => URI.encode_www_form(order_id)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Content.V2.Model.OrdersCancelTestOrderByCustomerResponse{}]
+    )
   end
 
   @doc """
@@ -236,7 +323,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
 
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that should manage the order. This cannot be a multi-client account.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -254,8 +341,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   @spec content_orders_createtestorder(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersCreateTestOrderResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_orders_createtestorder(connection, merchant_id, opts \\ []) do
-    optional_params = %{
+  def content_orders_createtestorder(connection, merchant_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -272,11 +359,73 @@ defmodule GoogleApi.Content.V2.Api.Orders do
       |> Request.url("/{merchantId}/testorders", %{
         "merchantId" => URI.encode_www_form(merchant_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.OrdersCreateTestOrderResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Content.V2.Model.OrdersCreateTestOrderResponse{}]
+    )
+  end
+
+  @doc """
+  Sandbox only. Creates a test return.
+
+  ## Parameters
+
+  - connection (GoogleApi.Content.V2.Connection): Connection to server
+  - merchant_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
+  - order_id (String.t): The ID of the order.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :body (OrdersCreateTestReturnRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Content.V2.Model.OrdersCreateTestReturnResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec content_orders_createtestreturn(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, GoogleApi.Content.V2.Model.OrdersCreateTestReturnResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def content_orders_createtestreturn(
+        connection,
+        merchant_id,
+        order_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/{merchantId}/orders/{orderId}/testreturn", %{
+        "merchantId" => URI.encode_www_form(merchant_id),
+        "orderId" => URI.encode_www_form(order_id)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Content.V2.Model.OrdersCreateTestReturnResponse{}]
+    )
   end
 
   @doc """
@@ -285,7 +434,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   ## Parameters
 
   - connection (GoogleApi.Content.V2.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -303,8 +452,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   @spec content_orders_custombatch(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersCustomBatchResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_orders_custombatch(connection, opts \\ []) do
-    optional_params = %{
+  def content_orders_custombatch(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -319,11 +468,11 @@ defmodule GoogleApi.Content.V2.Api.Orders do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/orders/batch")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.OrdersCustomBatchResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Content.V2.Model.OrdersCustomBatchResponse{}])
   end
 
   @doc """
@@ -334,7 +483,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
   - order_id (String.t): The ID of the order.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -350,8 +499,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   """
   @spec content_orders_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.Order.t()} | {:error, Tesla.Env.t()}
-  def content_orders_get(connection, merchant_id, order_id, opts \\ []) do
-    optional_params = %{
+  def content_orders_get(connection, merchant_id, order_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -368,11 +517,11 @@ defmodule GoogleApi.Content.V2.Api.Orders do
         "merchantId" => URI.encode_www_form(merchant_id),
         "orderId" => URI.encode_www_form(order_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.Order{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Content.V2.Model.Order{}])
   end
 
   @doc """
@@ -383,7 +532,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
   - merchant_order_id (String.t): The merchant order id to be looked for.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -400,8 +549,14 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   @spec content_orders_getbymerchantorderid(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersGetByMerchantOrderIdResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_orders_getbymerchantorderid(connection, merchant_id, merchant_order_id, opts \\ []) do
-    optional_params = %{
+  def content_orders_getbymerchantorderid(
+        connection,
+        merchant_id,
+        merchant_order_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -418,11 +573,13 @@ defmodule GoogleApi.Content.V2.Api.Orders do
         "merchantId" => URI.encode_www_form(merchant_id),
         "merchantOrderId" => URI.encode_www_form(merchant_order_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.OrdersGetByMerchantOrderIdResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Content.V2.Model.OrdersGetByMerchantOrderIdResponse{}]
+    )
   end
 
   @doc """
@@ -433,7 +590,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that should manage the order. This cannot be a multi-client account.
   - template_name (String.t): The name of the template to retrieve.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -441,6 +598,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :country (String.t): The country of the template to retrieve. Defaults to US.
 
   ## Returns
 
@@ -450,15 +608,22 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   @spec content_orders_gettestordertemplate(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersGetTestOrderTemplateResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_orders_gettestordertemplate(connection, merchant_id, template_name, opts \\ []) do
-    optional_params = %{
+  def content_orders_gettestordertemplate(
+        connection,
+        merchant_id,
+        template_name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :userIp => :query,
+      :country => :query
     }
 
     request =
@@ -468,22 +633,24 @@ defmodule GoogleApi.Content.V2.Api.Orders do
         "merchantId" => URI.encode_www_form(merchant_id),
         "templateName" => URI.encode_www_form(template_name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.OrdersGetTestOrderTemplateResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Content.V2.Model.OrdersGetTestOrderTemplateResponse{}]
+    )
   end
 
   @doc """
-  Notifies that item return and refund was handled directly in store.
+  Notifies that item return and refund was handled directly by merchant outside of Google payments processing (e.g. cash refund done in store).
 
   ## Parameters
 
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
   - order_id (String.t): The ID of the order.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -506,8 +673,14 @@ defmodule GoogleApi.Content.V2.Api.Orders do
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersInStoreRefundLineItemResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_orders_instorerefundlineitem(connection, merchant_id, order_id, opts \\ []) do
-    optional_params = %{
+  def content_orders_instorerefundlineitem(
+        connection,
+        merchant_id,
+        order_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -525,11 +698,13 @@ defmodule GoogleApi.Content.V2.Api.Orders do
         "merchantId" => URI.encode_www_form(merchant_id),
         "orderId" => URI.encode_www_form(order_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.OrdersInStoreRefundLineItemResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Content.V2.Model.OrdersInStoreRefundLineItemResponse{}]
+    )
   end
 
   @doc """
@@ -539,7 +714,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
 
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -562,8 +737,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   """
   @spec content_orders_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersListResponse.t()} | {:error, Tesla.Env.t()}
-  def content_orders_list(connection, merchant_id, opts \\ []) do
-    optional_params = %{
+  def content_orders_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -586,22 +761,22 @@ defmodule GoogleApi.Content.V2.Api.Orders do
       |> Request.url("/{merchantId}/orders", %{
         "merchantId" => URI.encode_www_form(merchant_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.OrdersListResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Content.V2.Model.OrdersListResponse{}])
   end
 
   @doc """
-  Refund a portion of the order, up to the full amount paid.
+  Deprecated, please use returnRefundLineItem instead.
 
   ## Parameters
 
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
   - order_id (String.t): The ID of the order to refund.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -618,8 +793,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   """
   @spec content_orders_refund(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersRefundResponse.t()} | {:error, Tesla.Env.t()}
-  def content_orders_refund(connection, merchant_id, order_id, opts \\ []) do
-    optional_params = %{
+  def content_orders_refund(connection, merchant_id, order_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -637,11 +812,11 @@ defmodule GoogleApi.Content.V2.Api.Orders do
         "merchantId" => URI.encode_www_form(merchant_id),
         "orderId" => URI.encode_www_form(order_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.OrdersRefundResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Content.V2.Model.OrdersRefundResponse{}])
   end
 
   @doc """
@@ -652,7 +827,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
   - order_id (String.t): The ID of the order.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -670,8 +845,14 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   @spec content_orders_rejectreturnlineitem(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersRejectReturnLineItemResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_orders_rejectreturnlineitem(connection, merchant_id, order_id, opts \\ []) do
-    optional_params = %{
+  def content_orders_rejectreturnlineitem(
+        connection,
+        merchant_id,
+        order_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -689,11 +870,13 @@ defmodule GoogleApi.Content.V2.Api.Orders do
         "merchantId" => URI.encode_www_form(merchant_id),
         "orderId" => URI.encode_www_form(order_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.OrdersRejectReturnLineItemResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Content.V2.Model.OrdersRejectReturnLineItemResponse{}]
+    )
   end
 
   @doc """
@@ -704,7 +887,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
   - order_id (String.t): The ID of the order.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -722,8 +905,14 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   @spec content_orders_returnlineitem(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersReturnLineItemResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_orders_returnlineitem(connection, merchant_id, order_id, opts \\ []) do
-    optional_params = %{
+  def content_orders_returnlineitem(
+        connection,
+        merchant_id,
+        order_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -741,11 +930,13 @@ defmodule GoogleApi.Content.V2.Api.Orders do
         "merchantId" => URI.encode_www_form(merchant_id),
         "orderId" => URI.encode_www_form(order_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.OrdersReturnLineItemResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Content.V2.Model.OrdersReturnLineItemResponse{}]
+    )
   end
 
   @doc """
@@ -756,7 +947,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
   - order_id (String.t): The ID of the order.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -774,8 +965,14 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   @spec content_orders_returnrefundlineitem(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersReturnRefundLineItemResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_orders_returnrefundlineitem(connection, merchant_id, order_id, opts \\ []) do
-    optional_params = %{
+  def content_orders_returnrefundlineitem(
+        connection,
+        merchant_id,
+        order_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -793,11 +990,13 @@ defmodule GoogleApi.Content.V2.Api.Orders do
         "merchantId" => URI.encode_www_form(merchant_id),
         "orderId" => URI.encode_www_form(order_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.OrdersReturnRefundLineItemResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Content.V2.Model.OrdersReturnRefundLineItemResponse{}]
+    )
   end
 
   @doc """
@@ -808,7 +1007,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
   - order_id (String.t): The ID of the order.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -826,8 +1025,14 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   @spec content_orders_setlineitemmetadata(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersSetLineItemMetadataResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_orders_setlineitemmetadata(connection, merchant_id, order_id, opts \\ []) do
-    optional_params = %{
+  def content_orders_setlineitemmetadata(
+        connection,
+        merchant_id,
+        order_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -845,11 +1050,13 @@ defmodule GoogleApi.Content.V2.Api.Orders do
         "merchantId" => URI.encode_www_form(merchant_id),
         "orderId" => URI.encode_www_form(order_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.OrdersSetLineItemMetadataResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Content.V2.Model.OrdersSetLineItemMetadataResponse{}]
+    )
   end
 
   @doc """
@@ -860,7 +1067,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
   - order_id (String.t): The ID of the order.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -878,8 +1085,14 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   @spec content_orders_shiplineitems(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersShipLineItemsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_orders_shiplineitems(connection, merchant_id, order_id, opts \\ []) do
-    optional_params = %{
+  def content_orders_shiplineitems(
+        connection,
+        merchant_id,
+        order_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -897,11 +1110,13 @@ defmodule GoogleApi.Content.V2.Api.Orders do
         "merchantId" => URI.encode_www_form(merchant_id),
         "orderId" => URI.encode_www_form(order_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.OrdersShipLineItemsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Content.V2.Model.OrdersShipLineItemsResponse{}]
+    )
   end
 
   @doc """
@@ -912,7 +1127,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
   - order_id (String.t): The ID of the order.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -935,8 +1150,14 @@ defmodule GoogleApi.Content.V2.Api.Orders do
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersUpdateLineItemShippingDetailsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_orders_updatelineitemshippingdetails(connection, merchant_id, order_id, opts \\ []) do
-    optional_params = %{
+  def content_orders_updatelineitemshippingdetails(
+        connection,
+        merchant_id,
+        order_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -954,12 +1175,12 @@ defmodule GoogleApi.Content.V2.Api.Orders do
         "merchantId" => URI.encode_www_form(merchant_id),
         "orderId" => URI.encode_www_form(order_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.Content.V2.Model.OrdersUpdateLineItemShippingDetailsResponse{}
+      opts ++ [struct: %GoogleApi.Content.V2.Model.OrdersUpdateLineItemShippingDetailsResponse{}]
     )
   end
 
@@ -971,7 +1192,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
   - order_id (String.t): The ID of the order.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -994,8 +1215,14 @@ defmodule GoogleApi.Content.V2.Api.Orders do
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersUpdateMerchantOrderIdResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_orders_updatemerchantorderid(connection, merchant_id, order_id, opts \\ []) do
-    optional_params = %{
+  def content_orders_updatemerchantorderid(
+        connection,
+        merchant_id,
+        order_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1013,11 +1240,13 @@ defmodule GoogleApi.Content.V2.Api.Orders do
         "merchantId" => URI.encode_www_form(merchant_id),
         "orderId" => URI.encode_www_form(order_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.OrdersUpdateMerchantOrderIdResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Content.V2.Model.OrdersUpdateMerchantOrderIdResponse{}]
+    )
   end
 
   @doc """
@@ -1028,7 +1257,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
   - order_id (String.t): The ID of the order.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1046,8 +1275,14 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   @spec content_orders_updateshipment(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersUpdateShipmentResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_orders_updateshipment(connection, merchant_id, order_id, opts \\ []) do
-    optional_params = %{
+  def content_orders_updateshipment(
+        connection,
+        merchant_id,
+        order_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1065,10 +1300,12 @@ defmodule GoogleApi.Content.V2.Api.Orders do
         "merchantId" => URI.encode_www_form(merchant_id),
         "orderId" => URI.encode_www_form(order_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.OrdersUpdateShipmentResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Content.V2.Model.OrdersUpdateShipmentResponse{}]
+    )
   end
 end

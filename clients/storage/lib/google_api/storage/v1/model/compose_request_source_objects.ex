@@ -23,7 +23,7 @@ defmodule GoogleApi.Storage.V1.Model.ComposeRequestSourceObjects do
   ## Attributes
 
   - generation (String.t): The generation of this object to use as the source. Defaults to: `null`.
-  - name (String.t): The source object&#39;s name. The source object&#39;s bucket is implicitly the destination bucket. Defaults to: `null`.
+  - name (String.t): The source object&#39;s name. All source objects must reside in the same bucket. Defaults to: `null`.
   - objectPreconditions (ComposeRequestObjectPreconditions):  Defaults to: `null`.
   """
 

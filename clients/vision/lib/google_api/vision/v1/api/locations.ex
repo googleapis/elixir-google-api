@@ -31,21 +31,21 @@ defmodule GoogleApi.Vision.V1.Api.Locations do
 
   - connection (GoogleApi.Vision.V1.Connection): Connection to server
   - name (String.t): The name of the operation resource.
-  - opts (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :pageSize (integer()): The standard list page size.
     - :filter (String.t): The standard list filter.
     - :pageToken (String.t): The standard list page token.
-    - :pageSize (integer()): The standard list page size.
 
   ## Returns
 
@@ -54,22 +54,22 @@ defmodule GoogleApi.Vision.V1.Api.Locations do
   """
   @spec vision_locations_operations_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Vision.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def vision_locations_operations_get(connection, name, opts \\ []) do
-    optional_params = %{
-      :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
+  def vision_locations_operations_get(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
+      :key => :query,
+      :access_token => :query,
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :pageSize => :query,
       :filter => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageToken => :query
     }
 
     request =
@@ -78,10 +78,10 @@ defmodule GoogleApi.Vision.V1.Api.Locations do
       |> Request.url("/v1/{+name}", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Vision.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Vision.V1.Model.Operation{}])
   end
 end

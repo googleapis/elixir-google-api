@@ -29,10 +29,12 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1QueryResult 
   - fulfillmentMessages ([GoogleCloudDialogflowV2beta1IntentMessage]): The collection of rich messages to present to the user. Defaults to: `null`.
   - fulfillmentText (String.t): The text to be pronounced to the user or shown on the screen. Defaults to: `null`.
   - intent (GoogleCloudDialogflowV2beta1Intent): The intent that matched the conversational query. Some, not all fields are filled in this message, including but not limited to: &#x60;name&#x60;, &#x60;display_name&#x60; and &#x60;webhook_state&#x60;. Defaults to: `null`.
-  - intentDetectionConfidence (float()): The intent detection confidence. Values range from 0.0 (completely uncertain) to 1.0 (completely certain). Defaults to: `null`.
+  - intentDetectionConfidence (float()): The intent detection confidence. Values range from 0.0 (completely uncertain) to 1.0 (completely certain). If there are &#x60;multiple knowledge_answers&#x60; messages, this value is set to the greatest &#x60;knowledgeAnswers.match_confidence&#x60; value in the list. Defaults to: `null`.
+  - knowledgeAnswers (GoogleCloudDialogflowV2beta1KnowledgeAnswers): The result from Knowledge Connector (if any), ordered by decreasing &#x60;KnowledgeAnswers.match_confidence&#x60;. Defaults to: `null`.
   - languageCode (String.t): The language that was triggered during intent detection. See [Language Support](https://dialogflow.com/docs/reference/language) for a list of the currently supported language codes. Defaults to: `null`.
   - outputContexts ([GoogleCloudDialogflowV2beta1Context]): The collection of output contexts. If applicable, &#x60;output_contexts.parameters&#x60; contains entries with name &#x60;&lt;parameter name&gt;.original&#x60; containing the original parameter values before the query. Defaults to: `null`.
   - queryText (String.t): The original conversational query text: - If natural language text was provided as input, &#x60;query_text&#x60; contains   a copy of the input. - If natural language speech audio was provided as input, &#x60;query_text&#x60;   contains the speech recognition result. If speech recognizer produced   multiple alternatives, a particular one is picked. - If an event was provided as input, &#x60;query_text&#x60; is not set. Defaults to: `null`.
+  - sentimentAnalysisResult (GoogleCloudDialogflowV2beta1SentimentAnalysisResult): The sentiment analysis result, which depends on the &#x60;sentiment_analysis_request_config&#x60; specified in the request. Defaults to: `null`.
   - speechRecognitionConfidence (float()): The Speech recognition confidence between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. The default of 0.0 is a sentinel value indicating that confidence was not set.  This field is not guaranteed to be accurate or set. In particular this field isn&#39;t set for StreamingDetectIntent since the streaming endpoint has separate confidence estimates per portion of the audio in StreamingRecognitionResult. Defaults to: `null`.
   - webhookPayload (%{optional(String.t) &#x3D;&gt; String.t}): If the query was fulfilled by a webhook call, this field is set to the value of the &#x60;payload&#x60; field returned in the webhook response. Defaults to: `null`.
   - webhookSource (String.t): If the query was fulfilled by a webhook call, this field is set to the value of the &#x60;source&#x60; field returned in the webhook response. Defaults to: `null`.
@@ -50,10 +52,14 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1QueryResult 
           :fulfillmentText => any(),
           :intent => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Intent.t(),
           :intentDetectionConfidence => any(),
+          :knowledgeAnswers =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1KnowledgeAnswers.t(),
           :languageCode => any(),
           :outputContexts =>
             list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Context.t()),
           :queryText => any(),
+          :sentimentAnalysisResult =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1SentimentAnalysisResult.t(),
           :speechRecognitionConfidence => any(),
           :webhookPayload => map(),
           :webhookSource => any()
@@ -73,6 +79,12 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1QueryResult 
   field(:fulfillmentText)
   field(:intent, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Intent)
   field(:intentDetectionConfidence)
+
+  field(
+    :knowledgeAnswers,
+    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1KnowledgeAnswers
+  )
+
   field(:languageCode)
 
   field(
@@ -82,6 +94,12 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1QueryResult 
   )
 
   field(:queryText)
+
+  field(
+    :sentimentAnalysisResult,
+    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1SentimentAnalysisResult
+  )
+
   field(:speechRecognitionConfidence)
   field(:webhookPayload, type: :map)
   field(:webhookSource)

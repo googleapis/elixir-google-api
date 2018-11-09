@@ -18,13 +18,14 @@
 
 defmodule GoogleApi.Content.V2.Model.Account do
   @moduledoc """
-  Account data.
+  Account data. After the creation of a new account it may take a few minutes before it is fully operational.
 
   ## Attributes
 
   - adultContent (boolean()): Indicates whether the merchant sells adult content. Defaults to: `null`.
   - adwordsLinks ([AccountAdwordsLink]): List of linked AdWords accounts that are active or pending approval. To create a new link request, add a new link with status active to the list. It will remain in a pending state until approved or rejected either in the AdWords interface or through the  AdWords API. To delete an active link, or to cancel a link request, remove it from the list. Defaults to: `null`.
-  - googleMyBusinessLink (AccountGoogleMyBusinessLink): The GMB account which is linked or in the process of being linked with the Merchant Center accounnt. Defaults to: `null`.
+  - businessInformation (AccountBusinessInformation): The business information of the account. Defaults to: `null`.
+  - googleMyBusinessLink (AccountGoogleMyBusinessLink): The GMB account which is linked or in the process of being linked with the Merchant Center account. Defaults to: `null`.
   - id (String.t): Merchant Center account ID. Defaults to: `null`.
   - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;content#account\&quot;. Defaults to: `null`.
   - name (String.t): Display name for the account. Defaults to: `null`.
@@ -40,6 +41,7 @@ defmodule GoogleApi.Content.V2.Model.Account do
   @type t :: %__MODULE__{
           :adultContent => any(),
           :adwordsLinks => list(GoogleApi.Content.V2.Model.AccountAdwordsLink.t()),
+          :businessInformation => GoogleApi.Content.V2.Model.AccountBusinessInformation.t(),
           :googleMyBusinessLink => GoogleApi.Content.V2.Model.AccountGoogleMyBusinessLink.t(),
           :id => any(),
           :kind => any(),
@@ -53,6 +55,7 @@ defmodule GoogleApi.Content.V2.Model.Account do
 
   field(:adultContent)
   field(:adwordsLinks, as: GoogleApi.Content.V2.Model.AccountAdwordsLink, type: :list)
+  field(:businessInformation, as: GoogleApi.Content.V2.Model.AccountBusinessInformation)
   field(:googleMyBusinessLink, as: GoogleApi.Content.V2.Model.AccountGoogleMyBusinessLink)
   field(:id)
   field(:kind)

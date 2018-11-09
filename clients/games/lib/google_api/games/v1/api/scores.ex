@@ -33,7 +33,7 @@ defmodule GoogleApi.Games.V1.Api.Scores do
   - player_id (String.t): A player ID. A value of me may be used in place of the authenticated player&#39;s ID.
   - leaderboard_id (String.t): The ID of the leaderboard. Can be set to &#39;ALL&#39; to retrieve data for all leaderboards for this application.
   - time_span (String.t): The time span for the scores and ranks you&#39;re requesting.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -54,8 +54,15 @@ defmodule GoogleApi.Games.V1.Api.Scores do
   @spec games_scores_get(Tesla.Env.client(), String.t(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.PlayerLeaderboardScoreListResponse.t()}
           | {:error, Tesla.Env.t()}
-  def games_scores_get(connection, player_id, leaderboard_id, time_span, opts \\ []) do
-    optional_params = %{
+  def games_scores_get(
+        connection,
+        player_id,
+        leaderboard_id,
+        time_span,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -77,11 +84,13 @@ defmodule GoogleApi.Games.V1.Api.Scores do
         "leaderboardId" => URI.encode_www_form(leaderboard_id),
         "timeSpan" => URI.encode_www_form(time_span)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.PlayerLeaderboardScoreListResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Games.V1.Model.PlayerLeaderboardScoreListResponse{}]
+    )
   end
 
   @doc """
@@ -93,7 +102,7 @@ defmodule GoogleApi.Games.V1.Api.Scores do
   - leaderboard_id (String.t): The ID of the leaderboard.
   - collection (String.t): The collection of scores you&#39;re requesting.
   - time_span (String.t): The time span for the scores and ranks you&#39;re requesting.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -112,8 +121,15 @@ defmodule GoogleApi.Games.V1.Api.Scores do
   """
   @spec games_scores_list(Tesla.Env.client(), String.t(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.LeaderboardScores.t()} | {:error, Tesla.Env.t()}
-  def games_scores_list(connection, leaderboard_id, collection, time_span, opts \\ []) do
-    optional_params = %{
+  def games_scores_list(
+        connection,
+        leaderboard_id,
+        collection,
+        time_span,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -134,11 +150,11 @@ defmodule GoogleApi.Games.V1.Api.Scores do
         "collection" => URI.encode_www_form(collection)
       })
       |> Request.add_param(:query, :timeSpan, time_span)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.LeaderboardScores{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.LeaderboardScores{}])
   end
 
   @doc """
@@ -150,7 +166,7 @@ defmodule GoogleApi.Games.V1.Api.Scores do
   - leaderboard_id (String.t): The ID of the leaderboard.
   - collection (String.t): The collection of scores you&#39;re requesting.
   - time_span (String.t): The time span for the scores and ranks you&#39;re requesting.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -176,8 +192,15 @@ defmodule GoogleApi.Games.V1.Api.Scores do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Games.V1.Model.LeaderboardScores.t()} | {:error, Tesla.Env.t()}
-  def games_scores_list_window(connection, leaderboard_id, collection, time_span, opts \\ []) do
-    optional_params = %{
+  def games_scores_list_window(
+        connection,
+        leaderboard_id,
+        collection,
+        time_span,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -200,11 +223,11 @@ defmodule GoogleApi.Games.V1.Api.Scores do
         "collection" => URI.encode_www_form(collection)
       })
       |> Request.add_param(:query, :timeSpan, time_span)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.LeaderboardScores{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.LeaderboardScores{}])
   end
 
   @doc """
@@ -215,7 +238,7 @@ defmodule GoogleApi.Games.V1.Api.Scores do
   - connection (GoogleApi.Games.V1.Connection): Connection to server
   - leaderboard_id (String.t): The ID of the leaderboard.
   - score (String.t): The score you&#39;re submitting. The submitted score is ignored if it is worse than a previously submitted score, where worse depends on the leaderboard sort order. The meaning of the score value depends on the leaderboard format type. For fixed-point, the score represents the raw value. For time, the score represents elapsed time in milliseconds. For currency, the score represents a value in micro units.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -233,8 +256,8 @@ defmodule GoogleApi.Games.V1.Api.Scores do
   """
   @spec games_scores_submit(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.PlayerScoreResponse.t()} | {:error, Tesla.Env.t()}
-  def games_scores_submit(connection, leaderboard_id, score, opts \\ []) do
-    optional_params = %{
+  def games_scores_submit(connection, leaderboard_id, score, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -253,11 +276,11 @@ defmodule GoogleApi.Games.V1.Api.Scores do
         "leaderboardId" => URI.encode_www_form(leaderboard_id)
       })
       |> Request.add_param(:query, :score, score)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.PlayerScoreResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.PlayerScoreResponse{}])
   end
 
   @doc """
@@ -266,7 +289,7 @@ defmodule GoogleApi.Games.V1.Api.Scores do
   ## Parameters
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -284,8 +307,8 @@ defmodule GoogleApi.Games.V1.Api.Scores do
   """
   @spec games_scores_submit_multiple(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.PlayerScoreListResponse.t()} | {:error, Tesla.Env.t()}
-  def games_scores_submit_multiple(connection, opts \\ []) do
-    optional_params = %{
+  def games_scores_submit_multiple(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -301,10 +324,10 @@ defmodule GoogleApi.Games.V1.Api.Scores do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/leaderboards/scores")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.PlayerScoreListResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.PlayerScoreListResponse{}])
   end
 end

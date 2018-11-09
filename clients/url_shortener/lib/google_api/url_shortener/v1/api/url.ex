@@ -31,7 +31,7 @@ defmodule GoogleApi.UrlShortener.V1.Api.Url do
 
   - connection (GoogleApi.UrlShortener.V1.Connection): Connection to server
   - short_url (String.t): The short URL, including the protocol.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,8 @@ defmodule GoogleApi.UrlShortener.V1.Api.Url do
   """
   @spec urlshortener_url_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.UrlShortener.V1.Model.Url.t()} | {:error, Tesla.Env.t()}
-  def urlshortener_url_get(connection, short_url, opts \\ []) do
-    optional_params = %{
+  def urlshortener_url_get(connection, short_url, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -65,11 +65,11 @@ defmodule GoogleApi.UrlShortener.V1.Api.Url do
       |> Request.method(:get)
       |> Request.url("/url")
       |> Request.add_param(:query, :shortUrl, short_url)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.UrlShortener.V1.Model.Url{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.UrlShortener.V1.Model.Url{}])
   end
 
   @doc """
@@ -78,7 +78,7 @@ defmodule GoogleApi.UrlShortener.V1.Api.Url do
   ## Parameters
 
   - connection (GoogleApi.UrlShortener.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -95,8 +95,8 @@ defmodule GoogleApi.UrlShortener.V1.Api.Url do
   """
   @spec urlshortener_url_insert(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.UrlShortener.V1.Model.Url.t()} | {:error, Tesla.Env.t()}
-  def urlshortener_url_insert(connection, opts \\ []) do
-    optional_params = %{
+  def urlshortener_url_insert(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -111,11 +111,11 @@ defmodule GoogleApi.UrlShortener.V1.Api.Url do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/url")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.UrlShortener.V1.Model.Url{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.UrlShortener.V1.Model.Url{}])
   end
 
   @doc """
@@ -124,7 +124,7 @@ defmodule GoogleApi.UrlShortener.V1.Api.Url do
   ## Parameters
 
   - connection (GoogleApi.UrlShortener.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -142,8 +142,8 @@ defmodule GoogleApi.UrlShortener.V1.Api.Url do
   """
   @spec urlshortener_url_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.UrlShortener.V1.Model.UrlHistory.t()} | {:error, Tesla.Env.t()}
-  def urlshortener_url_list(connection, opts \\ []) do
-    optional_params = %{
+  def urlshortener_url_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -159,10 +159,10 @@ defmodule GoogleApi.UrlShortener.V1.Api.Url do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/url/history")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.UrlShortener.V1.Model.UrlHistory{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.UrlShortener.V1.Model.UrlHistory{}])
   end
 end
