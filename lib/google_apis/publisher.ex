@@ -54,7 +54,6 @@ defmodule GoogleApis.Publisher do
   defp do_publish(directory) do
     args = [
       "hex.publish",
-      "--dry-run",
       "--yes"
     ]
     env = [{"HEX_API_KEY", Application.get_env(:google_apis, :hex_api_key)}]
