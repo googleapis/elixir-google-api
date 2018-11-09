@@ -10,11 +10,11 @@ use Mix.Config
 
 # You can configure for your application as:
 #
-#     config :drive_activity_api, key: :value
+#     config :google_play_developer_api, key: :value
 #
 # And access this configuration in your application as:
 #
-#     Application.get_env(:drive_activity_api, :key)
+#     Application.get_env(:google_play_developer_api, :key)
 #
 # Or configure a 3rd-party app:
 #
