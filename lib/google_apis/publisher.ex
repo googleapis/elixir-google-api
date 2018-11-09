@@ -14,6 +14,7 @@
 
 defmodule GoogleApis.Publisher do
   alias GoogleApis.ApiConfig
+  require Logger
 
   def publish(api_config) do
     api_name = ApiConfig.library_name(api_config)
@@ -23,11 +24,11 @@ defmodule GoogleApis.Publisher do
       api_name
     ])
 
-    if should_publish?(directory) do
-      IO.puts "publishing #{api_name}"
+    if api_config.publish && should_publish?(directory) do
+      Logger.info "publishing #{api_name}"
       do_publish(directory)
     else
-      IO.puts "skipping #{api_name}"
+      Logger.info "skipping #{api_name}"
     end
   end
 
@@ -39,6 +40,7 @@ defmodule GoogleApis.Publisher do
     app = Keyword.fetch!(project_info, :app)
     version = Keyword.fetch!(project_info, :version)
 
+    Logger.info "Checking app: #{app} version: #{version}"
     !version_exists?(app, version)
   end
 
