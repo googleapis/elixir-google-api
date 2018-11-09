@@ -17,8 +17,6 @@ defmodule GoogleApi.Gax.Response do
   This module helps decode Tesla responses
   """
 
-  @successful_request_response 200..299
-
   alias GoogleApi.Gax.DataWrapper
 
   @doc """
@@ -44,7 +42,7 @@ defmodule GoogleApi.Gax.Response do
   def decode({:error, reason}, _), do: {:error, reason}
 
   def decode({:ok, %Tesla.Env{status: status} = env}, _)
-      when status not in @successful_request_response do
+      when status < 200 or status >= 300 do
     {:error, env}
   end
 

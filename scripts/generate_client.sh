@@ -1,4 +1,5 @@
-# Copyright 2017 Google Inc.
+#!/usr/bin/env bash
+# Copyright 2018 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,26 +13,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-defmodule Mix.Tasks.GoogleApis.Build do
-  use Mix.Task
+set -eo pipefail
 
-  @shortdoc "Create GoogleApi clients"
+pushd $(dirname "$0")/../
 
-  def run([only]) do
-    only
-    |> GoogleApis.ApiConfig.load()
-    |> builder()
-  end
-  def run(_) do
-    builder(GoogleApis.ApiConfig.load_all())
-  end
+export TEMPLATE=gax
 
-  defp builder(apis) do
-    Enum.each(apis, &build/1)
-  end
+# clean the codegen directory
+# if [ -d .codegen ]; then
+#     rm -rf .codegen
+# fi
+# mkdir -p .codegen
+# export TEMPDIR=$(pwd)/.codegen
 
-  def build(api) do
-    GoogleApis.generate_config(api)
-    GoogleApis.generate_client(api)
-  end
-end
+# install npm dependencies
+npm install
+
+# install dependencies
+mix deps.get
+
+# run generators
+mix google_apis.generate $1
