@@ -31,20 +31,18 @@ defmodule GoogleApi.AdExperienceReport.V1.Api.Sites do
 
   - connection (GoogleApi.AdExperienceReport.V1.Connection): Connection to server
   - sites_id (String.t): Part of &#x60;name&#x60;. The required site name. It should be the site property whose ad experiences may have been reviewed, and it should be URL-encoded. For example, sites/https%3A%2F%2Fwww.google.com. The server will return an error of BAD_REQUEST if this field is not filled in. Note that if the site property is not yet verified in Search Console, the reportUrl field returned by the API will lead to the verification page, prompting the user to go through that process before they can gain access to the Ad Experience Report.
-  - opts (KeywordList): [optional] Optional parameters
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :bearer_token (String.t): OAuth bearer token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
     - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :pp (boolean()): Pretty-print response.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
 
   ## Returns
 
@@ -54,21 +52,19 @@ defmodule GoogleApi.AdExperienceReport.V1.Api.Sites do
   @spec adexperiencereport_sites_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AdExperienceReport.V1.Model.SiteSummaryResponse.t()}
           | {:error, Tesla.Env.t()}
-  def adexperiencereport_sites_get(connection, sites_id, opts \\ []) do
-    optional_params = %{
-      :oauth_token => :query,
-      :bearer_token => :query,
+  def adexperiencereport_sites_get(connection, sites_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :alt => :query,
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
+      :quotaUser => :query,
       :prettyPrint => :query,
       :uploadType => :query,
       :fields => :query,
-      :"$.xgafv" => :query,
       :callback => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
-      :quotaUser => :query,
-      :pp => :query
+      :oauth_token => :query,
+      :"$.xgafv" => :query
     }
 
     request =
@@ -77,10 +73,12 @@ defmodule GoogleApi.AdExperienceReport.V1.Api.Sites do
       |> Request.url("/v1/sites/{sitesId}", %{
         "sitesId" => URI.encode_www_form(sites_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExperienceReport.V1.Model.SiteSummaryResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AdExperienceReport.V1.Model.SiteSummaryResponse{}]
+    )
   end
 end
