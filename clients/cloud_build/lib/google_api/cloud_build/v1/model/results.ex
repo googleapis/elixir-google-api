@@ -24,6 +24,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.Results do
 
   - artifactManifest (String.t): Path to the artifact manifest. Only populated when artifacts are uploaded. Defaults to: `null`.
   - buildStepImages ([String.t]): List of build step digests, in the order corresponding to build step indices. Defaults to: `null`.
+  - buildStepOutputs ([binary()]): List of build step outputs, produced by builder images, in the order corresponding to build step indices.  [Cloud Builders](https://cloud.google.com/cloud-build/docs/cloud-builders) can produce this output by writing to &#x60;$BUILDER_OUTPUT/output&#x60;. Only the first 4KB of data is stored. Defaults to: `null`.
   - images ([BuiltImage]): Container images that were built as a part of the build. Defaults to: `null`.
   - numArtifacts (String.t): Number of artifacts uploaded. Only populated when artifacts are uploaded. Defaults to: `null`.
   """
@@ -33,12 +34,14 @@ defmodule GoogleApi.CloudBuild.V1.Model.Results do
   @type t :: %__MODULE__{
           :artifactManifest => any(),
           :buildStepImages => list(any()),
+          :buildStepOutputs => list(any()),
           :images => list(GoogleApi.CloudBuild.V1.Model.BuiltImage.t()),
           :numArtifacts => any()
         }
 
   field(:artifactManifest)
   field(:buildStepImages, type: :list)
+  field(:buildStepOutputs, type: :list)
   field(:images, as: GoogleApi.CloudBuild.V1.Model.BuiltImage, type: :list)
   field(:numArtifacts)
 end

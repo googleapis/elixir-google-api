@@ -31,7 +31,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Operations do
 
   - connection (GoogleApi.CloudBuild.V1.Connection): Connection to server
   - operations_id (String.t): Part of &#x60;name&#x60;. The name of the operation resource to be cancelled.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
@@ -52,8 +52,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Operations do
   """
   @spec cloudbuild_operations_cancel(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudBuild.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def cloudbuild_operations_cancel(connection, operations_id, opts \\ []) do
-    optional_params = %{
+  def cloudbuild_operations_cancel(connection, operations_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
@@ -74,11 +74,11 @@ defmodule GoogleApi.CloudBuild.V1.Api.Operations do
       |> Request.url("/v1/operations/{operationsId}:cancel", %{
         "operationsId" => URI.encode_www_form(operations_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudBuild.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudBuild.V1.Model.Empty{}])
   end
 
   @doc """
@@ -88,7 +88,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Operations do
 
   - connection (GoogleApi.CloudBuild.V1.Connection): Connection to server
   - operations_id (String.t): Part of &#x60;name&#x60;. The name of the operation resource.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
@@ -108,8 +108,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Operations do
   """
   @spec cloudbuild_operations_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudBuild.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def cloudbuild_operations_get(connection, operations_id, opts \\ []) do
-    optional_params = %{
+  def cloudbuild_operations_get(connection, operations_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
@@ -129,11 +129,11 @@ defmodule GoogleApi.CloudBuild.V1.Api.Operations do
       |> Request.url("/v1/operations/{operationsId}", %{
         "operationsId" => URI.encode_www_form(operations_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudBuild.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudBuild.V1.Model.Operation{}])
   end
 
   @doc """
@@ -142,7 +142,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Operations do
   ## Parameters
 
   - connection (GoogleApi.CloudBuild.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
@@ -166,8 +166,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Operations do
   @spec cloudbuild_operations_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.CloudBuild.V1.Model.ListOperationsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def cloudbuild_operations_list(connection, opts \\ []) do
-    optional_params = %{
+  def cloudbuild_operations_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
@@ -188,10 +188,10 @@ defmodule GoogleApi.CloudBuild.V1.Api.Operations do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/operations")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudBuild.V1.Model.ListOperationsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudBuild.V1.Model.ListOperationsResponse{}])
   end
 end
