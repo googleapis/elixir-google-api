@@ -23,7 +23,7 @@ defmodule GoogleApi.CloudBilling.V1.Model.BillingAccount do
   ## Attributes
 
   - displayName (String.t): The display name given to the billing account, such as &#x60;My Billing Account&#x60;. This name is displayed in the GCP Console. Defaults to: `null`.
-  - masterBillingAccount (String.t): If this account is a [subaccount](https://cloud.google.com/billing/docs/concepts), then this will be the resource name of the master billing account that it is being resold through. Otherwise this will be empty.  &gt; This field is currently in &gt; [Beta](https://cloud.google.com/terms/launch-stages). Defaults to: `null`.
+  - masterBillingAccount (String.t): If this account is a [subaccount](https://cloud.google.com/billing/docs/concepts), then this will be the resource name of the master billing account that it is being resold through. Otherwise this will be empty. Defaults to: `null`.
   - name (String.t): The resource name of the billing account. The resource name has the form &#x60;billingAccounts/{billing_account_id}&#x60;. For example, &#x60;billingAccounts/012345-567890-ABCDEF&#x60; would be the resource name for billing account &#x60;012345-567890-ABCDEF&#x60;. Defaults to: `null`.
   - open (boolean()): True if the billing account is open, and will therefore be charged for any usage on associated projects. False if the billing account is closed, and therefore projects associated with it will be unable to use paid services. Defaults to: `null`.
   """

@@ -31,20 +31,18 @@ defmodule GoogleApi.CloudBilling.V1.Api.Projects do
 
   - connection (GoogleApi.CloudBilling.V1.Connection): Connection to server
   - name (String.t): The resource name of the project for which billing information is retrieved. For example, &#x60;projects/tokyo-rain-123&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :$.xgafv (String.t): V1 error format.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :pp (boolean()): Pretty-print response.
-    - :bearer_token (String.t): OAuth bearer token.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
 
   ## Returns
 
@@ -53,21 +51,19 @@ defmodule GoogleApi.CloudBilling.V1.Api.Projects do
   """
   @spec cloudbilling_projects_get_billing_info(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudBilling.V1.Model.ProjectBillingInfo.t()} | {:error, Tesla.Env.t()}
-  def cloudbilling_projects_get_billing_info(connection, name, opts \\ []) do
-    optional_params = %{
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :"$.xgafv" => :query,
+  def cloudbilling_projects_get_billing_info(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :key => :query,
       :access_token => :query,
+      :upload_protocol => :query,
       :quotaUser => :query,
-      :pp => :query,
-      :bearer_token => :query,
-      :oauth_token => :query
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query
     }
 
     request =
@@ -76,11 +72,11 @@ defmodule GoogleApi.CloudBilling.V1.Api.Projects do
       |> Request.url("/v1/{+name}/billingInfo", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudBilling.V1.Model.ProjectBillingInfo{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudBilling.V1.Model.ProjectBillingInfo{}])
   end
 
   @doc """
@@ -90,20 +86,18 @@ defmodule GoogleApi.CloudBilling.V1.Api.Projects do
 
   - connection (GoogleApi.CloudBilling.V1.Connection): Connection to server
   - name (String.t): The resource name of the project associated with the billing information that you want to update. For example, &#x60;projects/tokyo-rain-123&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :$.xgafv (String.t): V1 error format.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :pp (boolean()): Pretty-print response.
-    - :bearer_token (String.t): OAuth bearer token.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :body (ProjectBillingInfo): 
 
   ## Returns
@@ -113,21 +107,24 @@ defmodule GoogleApi.CloudBilling.V1.Api.Projects do
   """
   @spec cloudbilling_projects_update_billing_info(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudBilling.V1.Model.ProjectBillingInfo.t()} | {:error, Tesla.Env.t()}
-  def cloudbilling_projects_update_billing_info(connection, name, opts \\ []) do
-    optional_params = %{
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :"$.xgafv" => :query,
+  def cloudbilling_projects_update_billing_info(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :key => :query,
       :access_token => :query,
+      :upload_protocol => :query,
       :quotaUser => :query,
-      :pp => :query,
-      :bearer_token => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
+      :callback => :query,
       :oauth_token => :query,
+      :"$.xgafv" => :query,
       :body => :body
     }
 
@@ -137,10 +134,10 @@ defmodule GoogleApi.CloudBilling.V1.Api.Projects do
       |> Request.url("/v1/{+name}/billingInfo", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudBilling.V1.Model.ProjectBillingInfo{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudBilling.V1.Model.ProjectBillingInfo{}])
   end
 end

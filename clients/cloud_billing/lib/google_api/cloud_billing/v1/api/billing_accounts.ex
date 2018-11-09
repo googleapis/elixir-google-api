@@ -25,25 +25,23 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Creates a billing account. This method can only be used to create [billing subaccounts](https://cloud.google.com/billing/docs/concepts) for GCP resellers. When creating a subaccount, the current authenticated user must have the &#x60;billing.accounts.update&#x60; IAM permission on the master account, which is typically given to billing account [administrators](https://cloud.google.com/billing/docs/how-to/billing-access).  &gt; This method is currently in &gt; [Beta](https://cloud.google.com/terms/launch-stages).
+  Creates a billing account. This method can only be used to create [billing subaccounts](https://cloud.google.com/billing/docs/concepts) by GCP resellers. When creating a subaccount, the current authenticated user must have the &#x60;billing.accounts.update&#x60; IAM permission on the master account, which is typically given to billing account [administrators](https://cloud.google.com/billing/docs/how-to/billing-access). This method will return an error if the master account has not been provisioned as a reseller account.
 
   ## Parameters
 
   - connection (GoogleApi.CloudBilling.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :$.xgafv (String.t): V1 error format.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :pp (boolean()): Pretty-print response.
-    - :bearer_token (String.t): OAuth bearer token.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :body (BillingAccount): 
 
   ## Returns
@@ -53,21 +51,19 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
   """
   @spec cloudbilling_billing_accounts_create(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.CloudBilling.V1.Model.BillingAccount.t()} | {:error, Tesla.Env.t()}
-  def cloudbilling_billing_accounts_create(connection, opts \\ []) do
-    optional_params = %{
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :"$.xgafv" => :query,
+  def cloudbilling_billing_accounts_create(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :key => :query,
       :access_token => :query,
+      :upload_protocol => :query,
       :quotaUser => :query,
-      :pp => :query,
-      :bearer_token => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
+      :callback => :query,
       :oauth_token => :query,
+      :"$.xgafv" => :query,
       :body => :body
     }
 
@@ -75,11 +71,11 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/billingAccounts")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudBilling.V1.Model.BillingAccount{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudBilling.V1.Model.BillingAccount{}])
   end
 
   @doc """
@@ -89,20 +85,18 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
 
   - connection (GoogleApi.CloudBilling.V1.Connection): Connection to server
   - name (String.t): The resource name of the billing account to retrieve. For example, &#x60;billingAccounts/012345-567890-ABCDEF&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :$.xgafv (String.t): V1 error format.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :pp (boolean()): Pretty-print response.
-    - :bearer_token (String.t): OAuth bearer token.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
 
   ## Returns
 
@@ -111,21 +105,19 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
   """
   @spec cloudbilling_billing_accounts_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudBilling.V1.Model.BillingAccount.t()} | {:error, Tesla.Env.t()}
-  def cloudbilling_billing_accounts_get(connection, name, opts \\ []) do
-    optional_params = %{
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :"$.xgafv" => :query,
+  def cloudbilling_billing_accounts_get(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :key => :query,
       :access_token => :query,
+      :upload_protocol => :query,
       :quotaUser => :query,
-      :pp => :query,
-      :bearer_token => :query,
-      :oauth_token => :query
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query
     }
 
     request =
@@ -134,34 +126,32 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
       |> Request.url("/v1/{+name}", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudBilling.V1.Model.BillingAccount{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudBilling.V1.Model.BillingAccount{}])
   end
 
   @doc """
-  Gets the access control policy for a billing account. The caller must have the &#x60;billing.accounts.getIamPolicy&#x60; permission on the account, which is often given to billing account [viewers](https://cloud.google.com/billing/docs/how-to/billing-access).  &gt; This method is currently in &gt; [Beta](https://cloud.google.com/terms/launch-stages).
+  Gets the access control policy for a billing account. The caller must have the &#x60;billing.accounts.getIamPolicy&#x60; permission on the account, which is often given to billing account [viewers](https://cloud.google.com/billing/docs/how-to/billing-access).
 
   ## Parameters
 
   - connection (GoogleApi.CloudBilling.V1.Connection): Connection to server
   - resource (String.t): REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :$.xgafv (String.t): V1 error format.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :pp (boolean()): Pretty-print response.
-    - :bearer_token (String.t): OAuth bearer token.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
 
   ## Returns
 
@@ -170,21 +160,24 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
   """
   @spec cloudbilling_billing_accounts_get_iam_policy(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudBilling.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
-  def cloudbilling_billing_accounts_get_iam_policy(connection, resource, opts \\ []) do
-    optional_params = %{
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :"$.xgafv" => :query,
+  def cloudbilling_billing_accounts_get_iam_policy(
+        connection,
+        resource,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :key => :query,
       :access_token => :query,
+      :upload_protocol => :query,
       :quotaUser => :query,
-      :pp => :query,
-      :bearer_token => :query,
-      :oauth_token => :query
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query
     }
 
     request =
@@ -193,11 +186,11 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
       |> Request.url("/v1/{+resource}:getIamPolicy", %{
         "resource" => URI.encode_www_form(resource)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudBilling.V1.Model.Policy{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudBilling.V1.Model.Policy{}])
   end
 
   @doc """
@@ -206,23 +199,21 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
   ## Parameters
 
   - connection (GoogleApi.CloudBilling.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :$.xgafv (String.t): V1 error format.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :pp (boolean()): Pretty-print response.
-    - :bearer_token (String.t): OAuth bearer token.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :filter (String.t): Options for how to filter the returned billing accounts. Currently this only supports filtering for [subaccounts](https://cloud.google.com/billing/docs/concepts) under a single provided reseller billing account. (e.g. \&quot;master_billing_account&#x3D;billingAccounts/012345-678901-ABCDEF\&quot;). Boolean algebra and other fields are not currently supported.  &gt; This field is currently in &gt; [Beta](https://cloud.google.com/terms/launch-stages).
-    - :pageToken (String.t): A token identifying a page of results to return. This should be a &#x60;next_page_token&#x60; value returned from a previous &#x60;ListBillingAccounts&#x60; call. If unspecified, the first page of results is returned.
+    - :$.xgafv (String.t): V1 error format.
     - :pageSize (integer()): Requested page size. The maximum page size is 100; this is also the default.
+    - :filter (String.t): Options for how to filter the returned billing accounts. Currently this only supports filtering for [subaccounts](https://cloud.google.com/billing/docs/concepts) under a single provided reseller billing account. (e.g. \&quot;master_billing_account&#x3D;billingAccounts/012345-678901-ABCDEF\&quot;). Boolean algebra and other fields are not currently supported.
+    - :pageToken (String.t): A token identifying a page of results to return. This should be a &#x60;next_page_token&#x60; value returned from a previous &#x60;ListBillingAccounts&#x60; call. If unspecified, the first page of results is returned.
 
   ## Returns
 
@@ -232,58 +223,56 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
   @spec cloudbilling_billing_accounts_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.CloudBilling.V1.Model.ListBillingAccountsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def cloudbilling_billing_accounts_list(connection, opts \\ []) do
-    optional_params = %{
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :"$.xgafv" => :query,
+  def cloudbilling_billing_accounts_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :key => :query,
       :access_token => :query,
+      :upload_protocol => :query,
       :quotaUser => :query,
-      :pp => :query,
-      :bearer_token => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
+      :callback => :query,
       :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :pageSize => :query,
       :filter => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageToken => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/billingAccounts")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudBilling.V1.Model.ListBillingAccountsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CloudBilling.V1.Model.ListBillingAccountsResponse{}]
+    )
   end
 
   @doc """
-  Updates a billing account&#39;s fields. Currently the only field that can be edited is &#x60;display_name&#x60;. The current authenticated user must have the &#x60;billing.accounts.update&#x60; IAM permission, which is typically given to the [administrator](https://cloud.google.com/billing/docs/how-to/billing-access) of the billing account.  &gt; This method is currently in &gt; [Beta](https://cloud.google.com/terms/launch-stages).
+  Updates a billing account&#39;s fields. Currently the only field that can be edited is &#x60;display_name&#x60;. The current authenticated user must have the &#x60;billing.accounts.update&#x60; IAM permission, which is typically given to the [administrator](https://cloud.google.com/billing/docs/how-to/billing-access) of the billing account.
 
   ## Parameters
 
   - connection (GoogleApi.CloudBilling.V1.Connection): Connection to server
   - name (String.t): The name of the billing account resource to be updated.
-  - opts (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :$.xgafv (String.t): V1 error format.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :pp (boolean()): Pretty-print response.
-    - :bearer_token (String.t): OAuth bearer token.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :updateMask (String.t): The update mask applied to the resource. Only \&quot;display_name\&quot; is currently supported.
     - :body (BillingAccount): 
 
@@ -294,21 +283,19 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
   """
   @spec cloudbilling_billing_accounts_patch(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudBilling.V1.Model.BillingAccount.t()} | {:error, Tesla.Env.t()}
-  def cloudbilling_billing_accounts_patch(connection, name, opts \\ []) do
-    optional_params = %{
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :"$.xgafv" => :query,
+  def cloudbilling_billing_accounts_patch(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :key => :query,
       :access_token => :query,
+      :upload_protocol => :query,
       :quotaUser => :query,
-      :pp => :query,
-      :bearer_token => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
+      :callback => :query,
       :oauth_token => :query,
+      :"$.xgafv" => :query,
       :updateMask => :query,
       :body => :body
     }
@@ -319,11 +306,11 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
       |> Request.url("/v1/{+name}", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudBilling.V1.Model.BillingAccount{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudBilling.V1.Model.BillingAccount{}])
   end
 
   @doc """
@@ -333,20 +320,18 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
 
   - connection (GoogleApi.CloudBilling.V1.Connection): Connection to server
   - name (String.t): The resource name of the billing account associated with the projects that you want to list. For example, &#x60;billingAccounts/012345-567890-ABCDEF&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :$.xgafv (String.t): V1 error format.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :pp (boolean()): Pretty-print response.
-    - :bearer_token (String.t): OAuth bearer token.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :pageToken (String.t): A token identifying a page of results to be returned. This should be a &#x60;next_page_token&#x60; value returned from a previous &#x60;ListProjectBillingInfo&#x60; call. If unspecified, the first page of results is returned.
     - :pageSize (integer()): Requested page size. The maximum page size is 100; this is also the default.
 
@@ -358,21 +343,24 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
   @spec cloudbilling_billing_accounts_projects_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudBilling.V1.Model.ListProjectBillingInfoResponse.t()}
           | {:error, Tesla.Env.t()}
-  def cloudbilling_billing_accounts_projects_list(connection, name, opts \\ []) do
-    optional_params = %{
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :"$.xgafv" => :query,
+  def cloudbilling_billing_accounts_projects_list(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :key => :query,
       :access_token => :query,
+      :upload_protocol => :query,
       :quotaUser => :query,
-      :pp => :query,
-      :bearer_token => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
+      :callback => :query,
       :oauth_token => :query,
+      :"$.xgafv" => :query,
       :pageToken => :query,
       :pageSize => :query
     }
@@ -383,34 +371,34 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
       |> Request.url("/v1/{+name}/projects", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudBilling.V1.Model.ListProjectBillingInfoResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CloudBilling.V1.Model.ListProjectBillingInfoResponse{}]
+    )
   end
 
   @doc """
-  Sets the access control policy for a billing account. Replaces any existing policy. The caller must have the &#x60;billing.accounts.setIamPolicy&#x60; permission on the account, which is often given to billing account [administrators](https://cloud.google.com/billing/docs/how-to/billing-access).  &gt; This method is currently in &gt; [Beta](https://cloud.google.com/terms/launch-stages).
+  Sets the access control policy for a billing account. Replaces any existing policy. The caller must have the &#x60;billing.accounts.setIamPolicy&#x60; permission on the account, which is often given to billing account [administrators](https://cloud.google.com/billing/docs/how-to/billing-access).
 
   ## Parameters
 
   - connection (GoogleApi.CloudBilling.V1.Connection): Connection to server
   - resource (String.t): REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :$.xgafv (String.t): V1 error format.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :pp (boolean()): Pretty-print response.
-    - :bearer_token (String.t): OAuth bearer token.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :body (SetIamPolicyRequest): 
 
   ## Returns
@@ -420,21 +408,24 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
   """
   @spec cloudbilling_billing_accounts_set_iam_policy(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudBilling.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
-  def cloudbilling_billing_accounts_set_iam_policy(connection, resource, opts \\ []) do
-    optional_params = %{
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :"$.xgafv" => :query,
+  def cloudbilling_billing_accounts_set_iam_policy(
+        connection,
+        resource,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :key => :query,
       :access_token => :query,
+      :upload_protocol => :query,
       :quotaUser => :query,
-      :pp => :query,
-      :bearer_token => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
+      :callback => :query,
       :oauth_token => :query,
+      :"$.xgafv" => :query,
       :body => :body
     }
 
@@ -444,34 +435,32 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
       |> Request.url("/v1/{+resource}:setIamPolicy", %{
         "resource" => URI.encode_www_form(resource)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudBilling.V1.Model.Policy{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudBilling.V1.Model.Policy{}])
   end
 
   @doc """
-  Tests the access control policy for a billing account. This method takes the resource and a set of permissions as input and returns the subset of the input permissions that the caller is allowed for that resource.  &gt; This method is currently in &gt; [Beta](https://cloud.google.com/terms/launch-stages).
+  Tests the access control policy for a billing account. This method takes the resource and a set of permissions as input and returns the subset of the input permissions that the caller is allowed for that resource.
 
   ## Parameters
 
   - connection (GoogleApi.CloudBilling.V1.Connection): Connection to server
   - resource (String.t): REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :$.xgafv (String.t): V1 error format.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :pp (boolean()): Pretty-print response.
-    - :bearer_token (String.t): OAuth bearer token.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :body (TestIamPermissionsRequest): 
 
   ## Returns
@@ -486,21 +475,24 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
         ) ::
           {:ok, GoogleApi.CloudBilling.V1.Model.TestIamPermissionsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def cloudbilling_billing_accounts_test_iam_permissions(connection, resource, opts \\ []) do
-    optional_params = %{
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :"$.xgafv" => :query,
+  def cloudbilling_billing_accounts_test_iam_permissions(
+        connection,
+        resource,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :key => :query,
       :access_token => :query,
+      :upload_protocol => :query,
       :quotaUser => :query,
-      :pp => :query,
-      :bearer_token => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
+      :callback => :query,
       :oauth_token => :query,
+      :"$.xgafv" => :query,
       :body => :body
     }
 
@@ -510,10 +502,12 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
       |> Request.url("/v1/{+resource}:testIamPermissions", %{
         "resource" => URI.encode_www_form(resource)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudBilling.V1.Model.TestIamPermissionsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CloudBilling.V1.Model.TestIamPermissionsResponse{}]
+    )
   end
 end
