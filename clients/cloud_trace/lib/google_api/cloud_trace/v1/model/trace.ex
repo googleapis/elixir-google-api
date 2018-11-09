@@ -24,7 +24,7 @@ defmodule GoogleApi.CloudTrace.V1.Model.Trace do
 
   - projectId (String.t): Project ID of the Cloud project where the trace data is stored. Defaults to: `null`.
   - spans ([TraceSpan]): Collection of spans in the trace. Defaults to: `null`.
-  - traceId (String.t): Globally unique identifier for the trace. This identifier is a 128-bit numeric value formatted as a 32-byte hex string. Defaults to: `null`.
+  - traceId (String.t): Globally unique identifier for the trace. This identifier is a 128-bit numeric value formatted as a 32-byte hex string. For example, &#x60;382d4f4c6b7bb2f4a972559d9085001d&#x60;. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
