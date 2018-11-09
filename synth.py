@@ -29,7 +29,7 @@ repository_url = "https://github.com/googleapis/elixir-google-api.git"
 log.debug(f"Cloning {repository_url}.")
 repository = git.clone(repository_url, depth=1)
 
-image = "gcr.io/cloud-devrel-kokoro-resources/elixir16"
+image = "gcr.io/cloud-devrel-public-resources/elixir16"
 generate_command = "scripts/generate_client.sh"
 command = f"docker run --rm -v{repository}:/workspace -v/var/run/docker.sock:/var/run/docker.sock -w /workspace {image} {generate_command}"
 
