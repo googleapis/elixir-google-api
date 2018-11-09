@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V2.Model.AccountsLinkRequest do
 
   ## Attributes
 
-  - action (String.t): Action to perform for this link. Defaults to: `null`.
+  - action (String.t): Action to perform for this link. The \&quot;request\&quot; action is only available to select merchants. Defaults to: `null`.
   - linkType (String.t): Type of the link between the two accounts. Defaults to: `null`.
   - linkedAccountId (String.t): The ID of the linked account. Defaults to: `null`.
   """

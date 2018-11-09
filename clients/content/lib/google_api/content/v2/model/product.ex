@@ -29,7 +29,7 @@ defmodule GoogleApi.Content.V2.Model.Product do
   - adwordsLabels ([String.t]): Similar to adwords_grouping, but only works on CPC. Defaults to: `null`.
   - adwordsRedirect (String.t): Allows advertisers to override the item URL when the product is shown within the context of Product Ads. Defaults to: `null`.
   - ageGroup (String.t): Target age group of the item. Defaults to: `null`.
-  - aspects ([ProductAspect]): Specifies the intended aspects for the product. Defaults to: `null`.
+  - aspects ([ProductAspect]): Deprecated. Do not use. Defaults to: `null`.
   - availability (String.t): Availability status of the item. Defaults to: `null`.
   - availabilityDate (String.t): The day a pre-ordered product becomes available for delivery, in ISO 8601 format. Defaults to: `null`.
   - brand (String.t): Brand of the item. Defaults to: `null`.
@@ -38,8 +38,8 @@ defmodule GoogleApi.Content.V2.Model.Product do
   - condition (String.t): Condition or state of the item. Defaults to: `null`.
   - contentLanguage (String.t): The two-letter ISO 639-1 language code for the item. Defaults to: `null`.
   - costOfGoodsSold (Price): Cost of goods sold. Used for gross profit reporting. Defaults to: `null`.
-  - customAttributes ([ProductCustomAttribute]): A list of custom (merchant-provided) attributes. It can also be used for submitting any attribute of the feed specification in its generic form (e.g., { \&quot;name\&quot;: \&quot;size type\&quot;, \&quot;type\&quot;: \&quot;text\&quot;, \&quot;value\&quot;: \&quot;regular\&quot; }). This is useful for submitting attributes not explicitly exposed by the API. Defaults to: `null`.
-  - customGroups ([ProductCustomGroup]): A list of custom (merchant-provided) custom attribute groups. Defaults to: `null`.
+  - customAttributes ([CustomAttribute]): A list of custom (merchant-provided) attributes. It can also be used for submitting any attribute of the feed specification in its generic form (e.g., { \&quot;name\&quot;: \&quot;size type\&quot;, \&quot;type\&quot;: \&quot;text\&quot;, \&quot;value\&quot;: \&quot;regular\&quot; }). This is useful for submitting attributes not explicitly exposed by the API. Defaults to: `null`.
+  - customGroups ([CustomGroup]): A list of custom (merchant-provided) custom attribute groups. Defaults to: `null`.
   - customLabel0 (String.t): Custom label 0 for custom grouping of items in a Shopping campaign. Defaults to: `null`.
   - customLabel1 (String.t): Custom label 1 for custom grouping of items in a Shopping campaign. Defaults to: `null`.
   - customLabel2 (String.t): Custom label 2 for custom grouping of items in a Shopping campaign. Defaults to: `null`.
@@ -75,14 +75,14 @@ defmodule GoogleApi.Content.V2.Model.Product do
   - mpn (String.t): Manufacturer Part Number (MPN) of the item. Defaults to: `null`.
   - multipack (String.t): The number of identical products in a merchant-defined multipack. Defaults to: `null`.
   - offerId (String.t): A unique identifier for the item. Leading and trailing whitespaces are stripped and multiple whitespaces are replaced by a single whitespace upon submission. Only valid unicode characters are accepted. See the products feed specification for details. Note: Content API methods that operate on products take the REST id of the product, not this identifier. Defaults to: `null`.
-  - onlineOnly (boolean()): Whether an item is available for purchase only online. Defaults to: `null`.
+  - onlineOnly (boolean()): Deprecated. Whether an item is available for purchase only online. Defaults to: `null`.
   - pattern (String.t): The item&#39;s pattern (e.g. polka dots). Defaults to: `null`.
   - price (Price): Price of the item. Defaults to: `null`.
   - productType (String.t): Your category of the item (formatted as in products feed specification). Defaults to: `null`.
   - promotionIds ([String.t]): The unique ID of a promotion. Defaults to: `null`.
   - salePrice (Price): Advertised sale price of the item. Defaults to: `null`.
   - salePriceEffectiveDate (String.t): Date range during which the item is on sale (see products feed specification). Defaults to: `null`.
-  - sellOnGoogleQuantity (String.t): The quantity of the product that is reserved for sell-on-google ads. Defaults to: `null`.
+  - sellOnGoogleQuantity (String.t): The quantity of the product that is available for selling on Google. Supported only for online products. Defaults to: `null`.
   - shipping ([ProductShipping]): Shipping rules. Defaults to: `null`.
   - shippingHeight (ProductShippingDimension): Height of the item for shipping. Defaults to: `null`.
   - shippingLabel (String.t): The shipping label of the product, used to group product in account-level shipping rules. Defaults to: `null`.
@@ -92,12 +92,13 @@ defmodule GoogleApi.Content.V2.Model.Product do
   - sizeSystem (String.t): System in which the size is specified. Recommended for apparel items. Defaults to: `null`.
   - sizeType (String.t): The cut of the item. Recommended for apparel items. Defaults to: `null`.
   - sizes ([String.t]): Size of the item. Defaults to: `null`.
+  - source (String.t): The source of the offer, i.e., how the offer was created. Defaults to: `null`.
   - targetCountry (String.t): The CLDR territory code for the item. Defaults to: `null`.
   - taxes ([ProductTax]): Tax information. Defaults to: `null`.
   - title (String.t): Title of the item. Defaults to: `null`.
   - unitPricingBaseMeasure (ProductUnitPricingBaseMeasure): The preference of the denominator of the unit price. Defaults to: `null`.
   - unitPricingMeasure (ProductUnitPricingMeasure): The measure and dimension of an item. Defaults to: `null`.
-  - validatedDestinations ([String.t]): The read-only list of intended destinations which passed validation. Defaults to: `null`.
+  - validatedDestinations ([String.t]): Deprecated. The read-only list of intended destinations which passed validation. Defaults to: `null`.
   - warnings ([Error]): Read-only warnings. Defaults to: `null`.
   """
 
@@ -120,8 +121,8 @@ defmodule GoogleApi.Content.V2.Model.Product do
           :condition => any(),
           :contentLanguage => any(),
           :costOfGoodsSold => GoogleApi.Content.V2.Model.Price.t(),
-          :customAttributes => list(GoogleApi.Content.V2.Model.ProductCustomAttribute.t()),
-          :customGroups => list(GoogleApi.Content.V2.Model.ProductCustomGroup.t()),
+          :customAttributes => list(GoogleApi.Content.V2.Model.CustomAttribute.t()),
+          :customGroups => list(GoogleApi.Content.V2.Model.CustomGroup.t()),
           :customLabel0 => any(),
           :customLabel1 => any(),
           :customLabel2 => any(),
@@ -174,6 +175,7 @@ defmodule GoogleApi.Content.V2.Model.Product do
           :sizeSystem => any(),
           :sizeType => any(),
           :sizes => list(any()),
+          :source => any(),
           :targetCountry => any(),
           :taxes => list(GoogleApi.Content.V2.Model.ProductTax.t()),
           :title => any(),
@@ -199,8 +201,8 @@ defmodule GoogleApi.Content.V2.Model.Product do
   field(:condition)
   field(:contentLanguage)
   field(:costOfGoodsSold, as: GoogleApi.Content.V2.Model.Price)
-  field(:customAttributes, as: GoogleApi.Content.V2.Model.ProductCustomAttribute, type: :list)
-  field(:customGroups, as: GoogleApi.Content.V2.Model.ProductCustomGroup, type: :list)
+  field(:customAttributes, as: GoogleApi.Content.V2.Model.CustomAttribute, type: :list)
+  field(:customGroups, as: GoogleApi.Content.V2.Model.CustomGroup, type: :list)
   field(:customLabel0)
   field(:customLabel1)
   field(:customLabel2)
@@ -253,6 +255,7 @@ defmodule GoogleApi.Content.V2.Model.Product do
   field(:sizeSystem)
   field(:sizeType)
   field(:sizes, type: :list)
+  field(:source)
   field(:targetCountry)
   field(:taxes, as: GoogleApi.Content.V2.Model.ProductTax, type: :list)
   field(:title)

@@ -29,7 +29,7 @@ defmodule GoogleApi.Content.V2.Api.Datafeedstatuses do
   ## Parameters
 
   - connection (GoogleApi.Content.V2.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -47,8 +47,8 @@ defmodule GoogleApi.Content.V2.Api.Datafeedstatuses do
   @spec content_datafeedstatuses_custombatch(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.DatafeedstatusesCustomBatchResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_datafeedstatuses_custombatch(connection, opts \\ []) do
-    optional_params = %{
+  def content_datafeedstatuses_custombatch(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -63,11 +63,13 @@ defmodule GoogleApi.Content.V2.Api.Datafeedstatuses do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/datafeedstatuses/batch")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.DatafeedstatusesCustomBatchResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Content.V2.Model.DatafeedstatusesCustomBatchResponse{}]
+    )
   end
 
   @doc """
@@ -78,7 +80,7 @@ defmodule GoogleApi.Content.V2.Api.Datafeedstatuses do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the datafeed. This account cannot be a multi-client account.
   - datafeed_id (String.t): The ID of the datafeed.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -96,8 +98,14 @@ defmodule GoogleApi.Content.V2.Api.Datafeedstatuses do
   """
   @spec content_datafeedstatuses_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.DatafeedStatus.t()} | {:error, Tesla.Env.t()}
-  def content_datafeedstatuses_get(connection, merchant_id, datafeed_id, opts \\ []) do
-    optional_params = %{
+  def content_datafeedstatuses_get(
+        connection,
+        merchant_id,
+        datafeed_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -116,11 +124,11 @@ defmodule GoogleApi.Content.V2.Api.Datafeedstatuses do
         "merchantId" => URI.encode_www_form(merchant_id),
         "datafeedId" => URI.encode_www_form(datafeed_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.DatafeedStatus{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Content.V2.Model.DatafeedStatus{}])
   end
 
   @doc """
@@ -130,7 +138,7 @@ defmodule GoogleApi.Content.V2.Api.Datafeedstatuses do
 
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the datafeeds. This account cannot be a multi-client account.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -149,8 +157,8 @@ defmodule GoogleApi.Content.V2.Api.Datafeedstatuses do
   @spec content_datafeedstatuses_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.DatafeedstatusesListResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_datafeedstatuses_list(connection, merchant_id, opts \\ []) do
-    optional_params = %{
+  def content_datafeedstatuses_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -168,10 +176,12 @@ defmodule GoogleApi.Content.V2.Api.Datafeedstatuses do
       |> Request.url("/{merchantId}/datafeedstatuses", %{
         "merchantId" => URI.encode_www_form(merchant_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.DatafeedstatusesListResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Content.V2.Model.DatafeedstatusesListResponse{}]
+    )
   end
 end

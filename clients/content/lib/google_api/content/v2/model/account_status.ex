@@ -26,6 +26,7 @@ defmodule GoogleApi.Content.V2.Model.AccountStatus do
   - accountLevelIssues ([AccountStatusAccountLevelIssue]): A list of account level issues. Defaults to: `null`.
   - dataQualityIssues ([AccountStatusDataQualityIssue]): A list of data quality issues. Defaults to: `null`.
   - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;content#accountStatus\&quot;. Defaults to: `null`.
+  - products ([AccountStatusProducts]): List of product-related data by channel, destination, and country. Data in this field may be delayed by up to 30 minutes. Defaults to: `null`.
   - websiteClaimed (boolean()): Whether the account&#39;s website is claimed or not. Defaults to: `null`.
   """
 
@@ -35,8 +36,10 @@ defmodule GoogleApi.Content.V2.Model.AccountStatus do
           :accountId => any(),
           :accountLevelIssues =>
             list(GoogleApi.Content.V2.Model.AccountStatusAccountLevelIssue.t()),
-          :dataQualityIssues => list(GoogleApi.Content.V2.Model.AccountStatusDataQualityIssue.t()),
+          :dataQualityIssues =>
+            list(GoogleApi.Content.V2.Model.AccountStatusDataQualityIssue.t()),
           :kind => any(),
+          :products => list(GoogleApi.Content.V2.Model.AccountStatusProducts.t()),
           :websiteClaimed => any()
         }
 
@@ -55,6 +58,7 @@ defmodule GoogleApi.Content.V2.Model.AccountStatus do
   )
 
   field(:kind)
+  field(:products, as: GoogleApi.Content.V2.Model.AccountStatusProducts, type: :list)
   field(:websiteClaimed)
 end
 

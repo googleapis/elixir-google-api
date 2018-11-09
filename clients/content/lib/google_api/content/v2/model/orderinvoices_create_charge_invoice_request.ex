@@ -22,11 +22,11 @@ defmodule GoogleApi.Content.V2.Model.OrderinvoicesCreateChargeInvoiceRequest do
 
   ## Attributes
 
-  - invoiceId (String.t): The ID of the invoice. Defaults to: `null`.
-  - invoiceSummary (InvoiceSummary): Invoice summary. Defaults to: `null`.
-  - lineItemInvoices ([ShipmentInvoiceLineItemInvoice]): Invoice details per line item. Defaults to: `null`.
-  - operationId (String.t): The ID of the operation, unique across all operations for a given order. Defaults to: `null`.
-  - shipmentGroupId (String.t): ID of the shipment group. Defaults to: `null`.
+  - invoiceId (String.t): [required] The ID of the invoice. Defaults to: `null`.
+  - invoiceSummary (InvoiceSummary): [required] Invoice summary. Defaults to: `null`.
+  - lineItemInvoices ([ShipmentInvoiceLineItemInvoice]): [required] Invoice details per line item. Defaults to: `null`.
+  - operationId (String.t): [required] The ID of the operation, unique across all operations for a given order. Defaults to: `null`.
+  - shipmentGroupId (String.t): [required] ID of the shipment group. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -34,7 +34,8 @@ defmodule GoogleApi.Content.V2.Model.OrderinvoicesCreateChargeInvoiceRequest do
   @type t :: %__MODULE__{
           :invoiceId => any(),
           :invoiceSummary => GoogleApi.Content.V2.Model.InvoiceSummary.t(),
-          :lineItemInvoices => list(GoogleApi.Content.V2.Model.ShipmentInvoiceLineItemInvoice.t()),
+          :lineItemInvoices =>
+            list(GoogleApi.Content.V2.Model.ShipmentInvoiceLineItemInvoice.t()),
           :operationId => any(),
           :shipmentGroupId => any()
         }

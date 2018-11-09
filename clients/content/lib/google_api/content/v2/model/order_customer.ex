@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V2.Model.OrderCustomer do
 
   ## Attributes
 
-  - email (String.t): Email address that should be used for order related communications. In certain cases this might not be a real users email, but a proxy email. Defaults to: `null`.
+  - email (String.t): Deprecated. Defaults to: `null`.
   - explicitMarketingPreference (boolean()): Deprecated. Please use marketingRightsInfo instead. Defaults to: `null`.
   - fullName (String.t): Full name of the customer. Defaults to: `null`.
   - marketingRightsInfo (OrderCustomerMarketingRightsInfo): Customer&#39;s marketing preferences. Defaults to: `null`.
