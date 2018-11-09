@@ -23,7 +23,9 @@ defmodule Mix.Tasks.GoogleApis.Publish do
     |> publish()
   end
   def run(_) do
-    publish(GoogleApis.ApiConfig.load_all())
+    GoogleApis.ApiConfig.load_all()
+    |> Enum.uniq_by(fn api -> api.name end)
+    |> publish()
   end
 
   defp publish(apis) do

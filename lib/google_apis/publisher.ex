@@ -16,12 +16,40 @@ defmodule GoogleApis.Publisher do
   alias GoogleApis.ApiConfig
 
   def publish(api_config) do
-    IO.inspect api_config
+    api_name = ApiConfig.library_name(api_config)
     directory = Path.join([
       System.cwd(),
       "clients",
-      ApiConfig.library_name(api_config)
+      api_name
     ])
+
+    if should_publish?(directory) do
+      IO.puts "publishing #{api_name}"
+      do_publish(directory)
+    else
+      IO.puts "skipping #{api_name}"
+    end
+  end
+
+  def should_publish?(directory) do
+    mix_exs = Path.join(directory, "mix.exs")
+    {{:module, mod, _, _}, _} = Code.eval_file(mix_exs)
+    project_info = apply(mod, :project, [])
+
+    app = Keyword.fetch!(project_info, :app)
+    version = Keyword.fetch!(project_info, :version)
+
+    !version_exists?(app, version)
+  end
+
+  def version_exists?(app, version) do
+    case Tesla.get("https://hex.pm/packages/#{app}/#{version}") do
+      %{status: 200}  -> true
+      _               -> false
+    end
+  end
+
+  defp do_publish(directory) do
     args = [
       "hex.publish",
       "--dry-run",
