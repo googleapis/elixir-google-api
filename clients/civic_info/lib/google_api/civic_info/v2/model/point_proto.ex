@@ -16,37 +16,40 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defmodule GoogleApi.CivicInfo.V2.Model.PointProto do
   @moduledoc """
-  Represents a location in the source code.
+
 
   ## Attributes
 
-  - column (integer()): Column within a line. The first column in a line as the value &#x60;1&#x60;. Agents that do not support setting breakpoints on specific columns ignore this field. Defaults to: `null`.
-  - line (integer()): Line inside the file. The first line in the file has the value &#x60;1&#x60;. Defaults to: `null`.
-  - path (String.t): Path to the source file within the source context of the target binary. Defaults to: `null`.
+  - latE7 (integer()):  Defaults to: `null`.
+  - lngE7 (integer()):  Defaults to: `null`.
+  - metadata (FieldMetadataProto):  Defaults to: `null`.
+  - temporaryData (MessageSet):  Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :column => any(),
-          :line => any(),
-          :path => any()
+          :latE7 => any(),
+          :lngE7 => any(),
+          :metadata => GoogleApi.CivicInfo.V2.Model.FieldMetadataProto.t(),
+          :temporaryData => GoogleApi.CivicInfo.V2.Model.MessageSet.t()
         }
 
-  field(:column)
-  field(:line)
-  field(:path)
+  field(:latE7)
+  field(:lngE7)
+  field(:metadata, as: GoogleApi.CivicInfo.V2.Model.FieldMetadataProto)
+  field(:temporaryData, as: GoogleApi.CivicInfo.V2.Model.MessageSet)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.PointProto do
   def decode(value, options) do
-    GoogleApi.CloudDebugger.V2.Model.SourceLocation.decode(value, options)
+    GoogleApi.CivicInfo.V2.Model.PointProto.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Encoder, for: GoogleApi.CivicInfo.V2.Model.PointProto do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

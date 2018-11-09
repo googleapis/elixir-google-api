@@ -16,37 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defmodule GoogleApi.AndroidPublisher.V2.Model.Prorate do
   @moduledoc """
-  Represents a location in the source code.
+
 
   ## Attributes
 
-  - column (integer()): Column within a line. The first column in a line as the value &#x60;1&#x60;. Agents that do not support setting breakpoints on specific columns ignore this field. Defaults to: `null`.
-  - line (integer()): Line inside the file. The first line in the file has the value &#x60;1&#x60;. Defaults to: `null`.
-  - path (String.t): Path to the source file within the source context of the target binary. Defaults to: `null`.
+  - defaultPrice (Price): Default price cannot be zero and must be less than the full subscription price. Default price is always in the developer&#39;s Checkout merchant currency. Targeted countries have their prices set automatically based on the default_price. Defaults to: `null`.
+  - start (MonthDay): Defines the first day on which the price takes effect. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :column => any(),
-          :line => any(),
-          :path => any()
+          :defaultPrice => GoogleApi.AndroidPublisher.V2.Model.Price.t(),
+          :start => GoogleApi.AndroidPublisher.V2.Model.MonthDay.t()
         }
 
-  field(:column)
-  field(:line)
-  field(:path)
+  field(:defaultPrice, as: GoogleApi.AndroidPublisher.V2.Model.Price)
+  field(:start, as: GoogleApi.AndroidPublisher.V2.Model.MonthDay)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Decoder, for: GoogleApi.AndroidPublisher.V2.Model.Prorate do
   def decode(value, options) do
-    GoogleApi.CloudDebugger.V2.Model.SourceLocation.decode(value, options)
+    GoogleApi.AndroidPublisher.V2.Model.Prorate.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Encoder, for: GoogleApi.AndroidPublisher.V2.Model.Prorate do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

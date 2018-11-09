@@ -16,37 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defmodule GoogleApi.AndroidPublisher.V2.Model.Comment do
   @moduledoc """
-  Represents a location in the source code.
+
 
   ## Attributes
 
-  - column (integer()): Column within a line. The first column in a line as the value &#x60;1&#x60;. Agents that do not support setting breakpoints on specific columns ignore this field. Defaults to: `null`.
-  - line (integer()): Line inside the file. The first line in the file has the value &#x60;1&#x60;. Defaults to: `null`.
-  - path (String.t): Path to the source file within the source context of the target binary. Defaults to: `null`.
+  - developerComment (DeveloperComment): A comment from a developer. Defaults to: `null`.
+  - userComment (UserComment): A comment from a user. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :column => any(),
-          :line => any(),
-          :path => any()
+          :developerComment => GoogleApi.AndroidPublisher.V2.Model.DeveloperComment.t(),
+          :userComment => GoogleApi.AndroidPublisher.V2.Model.UserComment.t()
         }
 
-  field(:column)
-  field(:line)
-  field(:path)
+  field(:developerComment, as: GoogleApi.AndroidPublisher.V2.Model.DeveloperComment)
+  field(:userComment, as: GoogleApi.AndroidPublisher.V2.Model.UserComment)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Decoder, for: GoogleApi.AndroidPublisher.V2.Model.Comment do
   def decode(value, options) do
-    GoogleApi.CloudDebugger.V2.Model.SourceLocation.decode(value, options)
+    GoogleApi.AndroidPublisher.V2.Model.Comment.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Encoder, for: GoogleApi.AndroidPublisher.V2.Model.Comment do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

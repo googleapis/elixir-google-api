@@ -16,37 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defmodule GoogleApi.AndroidManagement.V1.Model.ManagedConfigurationTemplate do
   @moduledoc """
-  Represents a location in the source code.
+  The managed configurations template for the app, saved from the managed configurations iframe.
 
   ## Attributes
 
-  - column (integer()): Column within a line. The first column in a line as the value &#x60;1&#x60;. Agents that do not support setting breakpoints on specific columns ignore this field. Defaults to: `null`.
-  - line (integer()): Line inside the file. The first line in the file has the value &#x60;1&#x60;. Defaults to: `null`.
-  - path (String.t): Path to the source file within the source context of the target binary. Defaults to: `null`.
+  - configurationVariables (%{optional(String.t) &#x3D;&gt; String.t}): Optional, a map containing &lt;key, value&gt; configuration variables defined for the configuration. Defaults to: `null`.
+  - templateId (String.t): The ID of the managed configurations template. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :column => any(),
-          :line => any(),
-          :path => any()
+          :configurationVariables => map(),
+          :templateId => any()
         }
 
-  field(:column)
-  field(:line)
-  field(:path)
+  field(:configurationVariables, type: :map)
+  field(:templateId)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.ManagedConfigurationTemplate do
   def decode(value, options) do
-    GoogleApi.CloudDebugger.V2.Model.SourceLocation.decode(value, options)
+    GoogleApi.AndroidManagement.V1.Model.ManagedConfigurationTemplate.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Encoder, for: GoogleApi.AndroidManagement.V1.Model.ManagedConfigurationTemplate do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

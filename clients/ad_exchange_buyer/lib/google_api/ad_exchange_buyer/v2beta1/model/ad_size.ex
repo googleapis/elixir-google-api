@@ -16,37 +16,38 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.AdSize do
   @moduledoc """
-  Represents a location in the source code.
+  Represents size of a single ad slot, or a creative.
 
   ## Attributes
 
-  - column (integer()): Column within a line. The first column in a line as the value &#x60;1&#x60;. Agents that do not support setting breakpoints on specific columns ignore this field. Defaults to: `null`.
-  - line (integer()): Line inside the file. The first line in the file has the value &#x60;1&#x60;. Defaults to: `null`.
-  - path (String.t): Path to the source file within the source context of the target binary. Defaults to: `null`.
+  - height (String.t): The height of the ad slot in pixels. This field will be present only when size type is &#x60;PIXEL&#x60;. Defaults to: `null`.
+  - sizeType (String.t): The size type of the ad slot. Defaults to: `null`.
+    - Enum - one of [SIZE_TYPE_UNSPECIFIED, PIXEL, INTERSTITIAL, NATIVE, FLUID]
+  - width (String.t): The width of the ad slot in pixels. This field will be present only when size type is &#x60;PIXEL&#x60;. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :column => any(),
-          :line => any(),
-          :path => any()
+          :height => any(),
+          :sizeType => any(),
+          :width => any()
         }
 
-  field(:column)
-  field(:line)
-  field(:path)
+  field(:height)
+  field(:sizeType)
+  field(:width)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V2beta1.Model.AdSize do
   def decode(value, options) do
-    GoogleApi.CloudDebugger.V2.Model.SourceLocation.decode(value, options)
+    GoogleApi.AdExchangeBuyer.V2beta1.Model.AdSize.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V2beta1.Model.AdSize do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

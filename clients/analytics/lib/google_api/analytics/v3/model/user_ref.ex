@@ -16,37 +16,37 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defmodule GoogleApi.Analytics.V3.Model.UserRef do
   @moduledoc """
-  Represents a location in the source code.
+  JSON template for a user reference.
 
   ## Attributes
 
-  - column (integer()): Column within a line. The first column in a line as the value &#x60;1&#x60;. Agents that do not support setting breakpoints on specific columns ignore this field. Defaults to: `null`.
-  - line (integer()): Line inside the file. The first line in the file has the value &#x60;1&#x60;. Defaults to: `null`.
-  - path (String.t): Path to the source file within the source context of the target binary. Defaults to: `null`.
+  - email (String.t): Email ID of this user. Defaults to: `null`.
+  - id (String.t): User ID. Defaults to: `null`.
+  - kind (String.t):  Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :column => any(),
-          :line => any(),
-          :path => any()
+          :email => any(),
+          :id => any(),
+          :kind => any()
         }
 
-  field(:column)
-  field(:line)
-  field(:path)
+  field(:email)
+  field(:id)
+  field(:kind)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Decoder, for: GoogleApi.Analytics.V3.Model.UserRef do
   def decode(value, options) do
-    GoogleApi.CloudDebugger.V2.Model.SourceLocation.decode(value, options)
+    GoogleApi.Analytics.V3.Model.UserRef.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Encoder, for: GoogleApi.Analytics.V3.Model.UserRef do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

@@ -16,37 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defmodule GoogleApi.Analytics.V3.Model.AccountPermissions do
   @moduledoc """
-  Represents a location in the source code.
+  Permissions the user has for this account.
 
   ## Attributes
 
-  - column (integer()): Column within a line. The first column in a line as the value &#x60;1&#x60;. Agents that do not support setting breakpoints on specific columns ignore this field. Defaults to: `null`.
-  - line (integer()): Line inside the file. The first line in the file has the value &#x60;1&#x60;. Defaults to: `null`.
-  - path (String.t): Path to the source file within the source context of the target binary. Defaults to: `null`.
+  - effective ([String.t]): All the permissions that the user has for this account. These include any implied permissions (e.g., EDIT implies VIEW). Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :column => any(),
-          :line => any(),
-          :path => any()
+          :effective => list(any())
         }
 
-  field(:column)
-  field(:line)
-  field(:path)
+  field(:effective, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Decoder, for: GoogleApi.Analytics.V3.Model.AccountPermissions do
   def decode(value, options) do
-    GoogleApi.CloudDebugger.V2.Model.SourceLocation.decode(value, options)
+    GoogleApi.Analytics.V3.Model.AccountPermissions.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Encoder, for: GoogleApi.Analytics.V3.Model.AccountPermissions do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

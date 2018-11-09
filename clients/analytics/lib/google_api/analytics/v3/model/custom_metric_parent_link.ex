@@ -16,37 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defmodule GoogleApi.Analytics.V3.Model.CustomMetricParentLink do
   @moduledoc """
-  Represents a location in the source code.
+  Parent link for the custom metric. Points to the property to which the custom metric belongs.
 
   ## Attributes
 
-  - column (integer()): Column within a line. The first column in a line as the value &#x60;1&#x60;. Agents that do not support setting breakpoints on specific columns ignore this field. Defaults to: `null`.
-  - line (integer()): Line inside the file. The first line in the file has the value &#x60;1&#x60;. Defaults to: `null`.
-  - path (String.t): Path to the source file within the source context of the target binary. Defaults to: `null`.
+  - href (String.t): Link to the property to which the custom metric belongs. Defaults to: `null`.
+  - type (String.t): Type of the parent link. Set to \&quot;analytics#webproperty\&quot;. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :column => any(),
-          :line => any(),
-          :path => any()
+          :href => any(),
+          :type => any()
         }
 
-  field(:column)
-  field(:line)
-  field(:path)
+  field(:href)
+  field(:type)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Decoder, for: GoogleApi.Analytics.V3.Model.CustomMetricParentLink do
   def decode(value, options) do
-    GoogleApi.CloudDebugger.V2.Model.SourceLocation.decode(value, options)
+    GoogleApi.Analytics.V3.Model.CustomMetricParentLink.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Encoder, for: GoogleApi.Analytics.V3.Model.CustomMetricParentLink do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

@@ -16,37 +16,40 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defmodule GoogleApi.Analytics.V3.Model.GoalEventDetails do
   @moduledoc """
-  Represents a location in the source code.
+  Details for the goal of the type EVENT.
 
   ## Attributes
 
-  - column (integer()): Column within a line. The first column in a line as the value &#x60;1&#x60;. Agents that do not support setting breakpoints on specific columns ignore this field. Defaults to: `null`.
-  - line (integer()): Line inside the file. The first line in the file has the value &#x60;1&#x60;. Defaults to: `null`.
-  - path (String.t): Path to the source file within the source context of the target binary. Defaults to: `null`.
+  - eventConditions ([GoalEventDetailsEventConditions]): List of event conditions. Defaults to: `null`.
+  - useEventValue (boolean()): Determines if the event value should be used as the value for this goal. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :column => any(),
-          :line => any(),
-          :path => any()
+          :eventConditions =>
+            list(GoogleApi.Analytics.V3.Model.GoalEventDetailsEventConditions.t()),
+          :useEventValue => any()
         }
 
-  field(:column)
-  field(:line)
-  field(:path)
+  field(
+    :eventConditions,
+    as: GoogleApi.Analytics.V3.Model.GoalEventDetailsEventConditions,
+    type: :list
+  )
+
+  field(:useEventValue)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Decoder, for: GoogleApi.Analytics.V3.Model.GoalEventDetails do
   def decode(value, options) do
-    GoogleApi.CloudDebugger.V2.Model.SourceLocation.decode(value, options)
+    GoogleApi.Analytics.V3.Model.GoalEventDetails.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Encoder, for: GoogleApi.Analytics.V3.Model.GoalEventDetails do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

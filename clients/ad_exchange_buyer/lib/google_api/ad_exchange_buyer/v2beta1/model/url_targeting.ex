@@ -16,37 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.UrlTargeting do
   @moduledoc """
-  Represents a location in the source code.
+  Represents a list of targeted and excluded URLs (e.g., google.com). For Private Auction and AdX Preferred Deals, URLs are either included or excluded. For Programmatic Guaranteed and Preferred Deals, this doesn&#39;t apply.
 
   ## Attributes
 
-  - column (integer()): Column within a line. The first column in a line as the value &#x60;1&#x60;. Agents that do not support setting breakpoints on specific columns ignore this field. Defaults to: `null`.
-  - line (integer()): Line inside the file. The first line in the file has the value &#x60;1&#x60;. Defaults to: `null`.
-  - path (String.t): Path to the source file within the source context of the target binary. Defaults to: `null`.
+  - excludedUrls ([String.t]): A list of URLs to be excluded. Defaults to: `null`.
+  - targetedUrls ([String.t]): A list of URLs to be included. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :column => any(),
-          :line => any(),
-          :path => any()
+          :excludedUrls => list(any()),
+          :targetedUrls => list(any())
         }
 
-  field(:column)
-  field(:line)
-  field(:path)
+  field(:excludedUrls, type: :list)
+  field(:targetedUrls, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V2beta1.Model.UrlTargeting do
   def decode(value, options) do
-    GoogleApi.CloudDebugger.V2.Model.SourceLocation.decode(value, options)
+    GoogleApi.AdExchangeBuyer.V2beta1.Model.UrlTargeting.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V2beta1.Model.UrlTargeting do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

@@ -16,37 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defmodule GoogleApi.BigQuery.V2.Model.RangePartitioning do
   @moduledoc """
-  Represents a location in the source code.
+
 
   ## Attributes
 
-  - column (integer()): Column within a line. The first column in a line as the value &#x60;1&#x60;. Agents that do not support setting breakpoints on specific columns ignore this field. Defaults to: `null`.
-  - line (integer()): Line inside the file. The first line in the file has the value &#x60;1&#x60;. Defaults to: `null`.
-  - path (String.t): Path to the source file within the source context of the target binary. Defaults to: `null`.
+  - field (String.t): [Experimental] [Required] The table is partitioned by this field. The field must be a top-level NULLABLE/REQUIRED field. The only supported type is INTEGER/INT64. Defaults to: `null`.
+  - range (RangePartitioningRange):  Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :column => any(),
-          :line => any(),
-          :path => any()
+          :field => any(),
+          :range => GoogleApi.BigQuery.V2.Model.RangePartitioningRange.t()
         }
 
-  field(:column)
-  field(:line)
-  field(:path)
+  field(:field)
+  field(:range, as: GoogleApi.BigQuery.V2.Model.RangePartitioningRange)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.RangePartitioning do
   def decode(value, options) do
-    GoogleApi.CloudDebugger.V2.Model.SourceLocation.decode(value, options)
+    GoogleApi.BigQuery.V2.Model.RangePartitioning.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.RangePartitioning do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

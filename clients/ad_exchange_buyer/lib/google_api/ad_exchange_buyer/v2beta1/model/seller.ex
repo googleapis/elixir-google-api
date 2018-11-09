@@ -16,37 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Seller do
   @moduledoc """
-  Represents a location in the source code.
+  Represents a seller of inventory. Each seller is identified by a unique Ad Manager account ID.
 
   ## Attributes
 
-  - column (integer()): Column within a line. The first column in a line as the value &#x60;1&#x60;. Agents that do not support setting breakpoints on specific columns ignore this field. Defaults to: `null`.
-  - line (integer()): Line inside the file. The first line in the file has the value &#x60;1&#x60;. Defaults to: `null`.
-  - path (String.t): Path to the source file within the source context of the target binary. Defaults to: `null`.
+  - accountId (String.t): The unique ID for the seller. The seller fills in this field. The seller account ID is then available to buyer in the product. Defaults to: `null`.
+  - subAccountId (String.t): Optional sub-account ID for the seller. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :column => any(),
-          :line => any(),
-          :path => any()
+          :accountId => any(),
+          :subAccountId => any()
         }
 
-  field(:column)
-  field(:line)
-  field(:path)
+  field(:accountId)
+  field(:subAccountId)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V2beta1.Model.Seller do
   def decode(value, options) do
-    GoogleApi.CloudDebugger.V2.Model.SourceLocation.decode(value, options)
+    GoogleApi.AdExchangeBuyer.V2beta1.Model.Seller.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V2beta1.Model.Seller do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

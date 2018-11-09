@@ -16,37 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defmodule GoogleApi.Classroom.V1.Model.CourseWorkChangesInfo do
   @moduledoc """
-  Represents a location in the source code.
+  Information about a &#x60;Feed&#x60; with a &#x60;feed_type&#x60; of &#x60;COURSE_WORK_CHANGES&#x60;.
 
   ## Attributes
 
-  - column (integer()): Column within a line. The first column in a line as the value &#x60;1&#x60;. Agents that do not support setting breakpoints on specific columns ignore this field. Defaults to: `null`.
-  - line (integer()): Line inside the file. The first line in the file has the value &#x60;1&#x60;. Defaults to: `null`.
-  - path (String.t): Path to the source file within the source context of the target binary. Defaults to: `null`.
+  - courseId (String.t): The &#x60;course_id&#x60; of the course to subscribe to work changes for. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :column => any(),
-          :line => any(),
-          :path => any()
+          :courseId => any()
         }
 
-  field(:column)
-  field(:line)
-  field(:path)
+  field(:courseId)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Decoder, for: GoogleApi.Classroom.V1.Model.CourseWorkChangesInfo do
   def decode(value, options) do
-    GoogleApi.CloudDebugger.V2.Model.SourceLocation.decode(value, options)
+    GoogleApi.Classroom.V1.Model.CourseWorkChangesInfo.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Encoder, for: GoogleApi.Classroom.V1.Model.CourseWorkChangesInfo do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

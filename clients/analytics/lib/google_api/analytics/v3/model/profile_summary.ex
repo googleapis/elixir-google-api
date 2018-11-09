@@ -16,37 +16,43 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defmodule GoogleApi.Analytics.V3.Model.ProfileSummary do
   @moduledoc """
-  Represents a location in the source code.
+  JSON template for an Analytics ProfileSummary. ProfileSummary returns basic information (i.e., summary) for a profile.
 
   ## Attributes
 
-  - column (integer()): Column within a line. The first column in a line as the value &#x60;1&#x60;. Agents that do not support setting breakpoints on specific columns ignore this field. Defaults to: `null`.
-  - line (integer()): Line inside the file. The first line in the file has the value &#x60;1&#x60;. Defaults to: `null`.
-  - path (String.t): Path to the source file within the source context of the target binary. Defaults to: `null`.
+  - id (String.t): View (profile) ID. Defaults to: `null`.
+  - kind (String.t): Resource type for Analytics ProfileSummary. Defaults to: `null`.
+  - name (String.t): View (profile) name. Defaults to: `null`.
+  - starred (boolean()): Indicates whether this view (profile) is starred or not. Defaults to: `null`.
+  - type (String.t): View (Profile) type. Supported types: WEB or APP. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :column => any(),
-          :line => any(),
-          :path => any()
+          :id => any(),
+          :kind => any(),
+          :name => any(),
+          :starred => any(),
+          :type => any()
         }
 
-  field(:column)
-  field(:line)
-  field(:path)
+  field(:id)
+  field(:kind)
+  field(:name)
+  field(:starred)
+  field(:type)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Decoder, for: GoogleApi.Analytics.V3.Model.ProfileSummary do
   def decode(value, options) do
-    GoogleApi.CloudDebugger.V2.Model.SourceLocation.decode(value, options)
+    GoogleApi.Analytics.V3.Model.ProfileSummary.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Encoder, for: GoogleApi.Analytics.V3.Model.ProfileSummary do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

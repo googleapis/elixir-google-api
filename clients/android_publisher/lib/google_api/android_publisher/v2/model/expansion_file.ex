@@ -16,37 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defmodule GoogleApi.AndroidPublisher.V2.Model.ExpansionFile do
   @moduledoc """
-  Represents a location in the source code.
+
 
   ## Attributes
 
-  - column (integer()): Column within a line. The first column in a line as the value &#x60;1&#x60;. Agents that do not support setting breakpoints on specific columns ignore this field. Defaults to: `null`.
-  - line (integer()): Line inside the file. The first line in the file has the value &#x60;1&#x60;. Defaults to: `null`.
-  - path (String.t): Path to the source file within the source context of the target binary. Defaults to: `null`.
+  - fileSize (String.t): If set this field indicates that this APK has an Expansion File uploaded to it: this APK does not reference another APK&#39;s Expansion File. The field&#39;s value is the size of the uploaded Expansion File in bytes. Defaults to: `null`.
+  - referencesVersion (integer()): If set this APK&#39;s Expansion File references another APK&#39;s Expansion File. The file_size field will not be set. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :column => any(),
-          :line => any(),
-          :path => any()
+          :fileSize => any(),
+          :referencesVersion => any()
         }
 
-  field(:column)
-  field(:line)
-  field(:path)
+  field(:fileSize)
+  field(:referencesVersion)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Decoder, for: GoogleApi.AndroidPublisher.V2.Model.ExpansionFile do
   def decode(value, options) do
-    GoogleApi.CloudDebugger.V2.Model.SourceLocation.decode(value, options)
+    GoogleApi.AndroidPublisher.V2.Model.ExpansionFile.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Encoder, for: GoogleApi.AndroidPublisher.V2.Model.ExpansionFile do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

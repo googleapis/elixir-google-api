@@ -16,37 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defmodule GoogleApi.AndroidPublisher.V2.Model.AppEdit do
   @moduledoc """
-  Represents a location in the source code.
+  Represents an edit of an app. An edit allows clients to make multiple changes before committing them in one operation.
 
   ## Attributes
 
-  - column (integer()): Column within a line. The first column in a line as the value &#x60;1&#x60;. Agents that do not support setting breakpoints on specific columns ignore this field. Defaults to: `null`.
-  - line (integer()): Line inside the file. The first line in the file has the value &#x60;1&#x60;. Defaults to: `null`.
-  - path (String.t): Path to the source file within the source context of the target binary. Defaults to: `null`.
+  - expiryTimeSeconds (String.t): The time at which the edit will expire and will be no longer valid for use in any subsequent API calls (encoded as seconds since the Epoch). Defaults to: `null`.
+  - id (String.t): The ID of the edit that can be used in subsequent API calls. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :column => any(),
-          :line => any(),
-          :path => any()
+          :expiryTimeSeconds => any(),
+          :id => any()
         }
 
-  field(:column)
-  field(:line)
-  field(:path)
+  field(:expiryTimeSeconds)
+  field(:id)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Decoder, for: GoogleApi.AndroidPublisher.V2.Model.AppEdit do
   def decode(value, options) do
-    GoogleApi.CloudDebugger.V2.Model.SourceLocation.decode(value, options)
+    GoogleApi.AndroidPublisher.V2.Model.AppEdit.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudDebugger.V2.Model.SourceLocation do
+defimpl Poison.Encoder, for: GoogleApi.AndroidPublisher.V2.Model.AppEdit do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
