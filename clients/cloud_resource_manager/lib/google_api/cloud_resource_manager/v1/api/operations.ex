@@ -31,18 +31,18 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Operations do
 
   - connection (GoogleApi.CloudResourceManager.V1.Connection): Connection to server
   - operations_id (String.t): Part of &#x60;name&#x60;. The name of the operation resource.
-  - opts (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
 
   ## Returns
 
@@ -51,19 +51,24 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Operations do
   """
   @spec cloudresourcemanager_operations_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def cloudresourcemanager_operations_get(connection, operations_id, opts \\ []) do
-    optional_params = %{
-      :alt => :query,
-      :key => :query,
+  def cloudresourcemanager_operations_get(
+        connection,
+        operations_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :access_token => :query,
+      :key => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
+      :prettyPrint => :query,
       :fields => :query,
-      :"$.xgafv" => :query,
+      :uploadType => :query,
+      :callback => :query,
       :oauth_token => :query,
-      :callback => :query
+      :"$.xgafv" => :query,
+      :alt => :query
     }
 
     request =
@@ -72,10 +77,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Operations do
       |> Request.url("/v1/operations/{operationsId}", %{
         "operationsId" => URI.encode_www_form(operations_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudResourceManager.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudResourceManager.V1.Model.Operation{}])
   end
 end
