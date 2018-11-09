@@ -22,8 +22,10 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryOptions do
 
   ## Attributes
 
+  - excludedFields ([GooglePrivacyDlpV2FieldId]): References to fields excluded from scanning. This allows you to skip inspection of entire columns which you know have no findings. Defaults to: `null`.
   - identifyingFields ([GooglePrivacyDlpV2FieldId]): References to fields uniquely identifying rows within the table. Nested fields in the format, like &#x60;person.birthdate.year&#x60;, are allowed. Defaults to: `null`.
-  - rowsLimit (String.t): Max number of rows to scan. If the table has more rows than this value, the rest of the rows are omitted. If not set, or if set to 0, all rows will be scanned. Cannot be used in conjunction with TimespanConfig. Defaults to: `null`.
+  - rowsLimit (String.t): Max number of rows to scan. If the table has more rows than this value, the rest of the rows are omitted. If not set, or if set to 0, all rows will be scanned. Only one of rows_limit and rows_limit_percent can be specified. Cannot be used in conjunction with TimespanConfig. Defaults to: `null`.
+  - rowsLimitPercent (integer()): Max percentage of rows to scan. The rest are omitted. The number of rows scanned is rounded down. Must be between 0 and 100, inclusively. Both 0 and 100 means no limit. Defaults to 0. Only one of rows_limit and rows_limit_percent can be specified. Cannot be used in conjunction with TimespanConfig. Defaults to: `null`.
   - sampleMethod (String.t):  Defaults to: `null`.
     - Enum - one of [SAMPLE_METHOD_UNSPECIFIED, TOP, RANDOM_START]
   - tableReference (GooglePrivacyDlpV2BigQueryTable): Complete BigQuery table reference. Defaults to: `null`.
@@ -32,14 +34,18 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :excludedFields => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t()),
           :identifyingFields => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t()),
           :rowsLimit => any(),
+          :rowsLimitPercent => any(),
           :sampleMethod => any(),
           :tableReference => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable.t()
         }
 
+  field(:excludedFields, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId, type: :list)
   field(:identifyingFields, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId, type: :list)
   field(:rowsLimit)
+  field(:rowsLimitPercent)
   field(:sampleMethod)
   field(:tableReference, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable)
 end

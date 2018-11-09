@@ -22,7 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Regex do
 
   ## Attributes
 
-  - pattern (String.t): Pattern defining the regular expression. Defaults to: `null`.
+  - pattern (String.t): Pattern defining the regular expression. Its syntax (https://github.com/google/re2/wiki/Syntax) can be found under the google/re2 repository on GitHub. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

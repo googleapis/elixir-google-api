@@ -32,7 +32,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StorageConfig do
 
   @type t :: %__MODULE__{
           :bigQueryOptions => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryOptions.t(),
-          :cloudStorageOptions => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageOptions.t(),
+          :cloudStorageOptions =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageOptions.t(),
           :datastoreOptions => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DatastoreOptions.t(),
           :timespanConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TimespanConfig.t()
         }

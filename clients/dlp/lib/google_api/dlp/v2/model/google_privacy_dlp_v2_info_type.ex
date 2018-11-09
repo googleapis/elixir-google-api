@@ -22,7 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType do
 
   ## Attributes
 
-  - name (String.t): Name of the information type. Either a name of your choosing when creating a CustomInfoType, or one of the names listed at https://cloud.google.com/dlp/docs/infotypes-reference when specifying a built-in type. Defaults to: `null`.
+  - name (String.t): Name of the information type. Either a name of your choosing when creating a CustomInfoType, or one of the names listed at https://cloud.google.com/dlp/docs/infotypes-reference when specifying a built-in type. InfoType names should conform to the pattern [a-zA-Z0-9_]{1,64}. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
