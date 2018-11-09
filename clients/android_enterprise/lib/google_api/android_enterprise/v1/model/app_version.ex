@@ -22,7 +22,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AppVersion do
 
   ## Attributes
 
-  - track (String.t): The track that this app was published in. For example if track is \&quot;alpha\&quot;, this is an alpha version of the app. Defaults to: `null`.
+  - isProduction (boolean()): True if this version is a production APK. Defaults to: `null`.
+  - track (String.t): Deprecated, use trackId instead. Defaults to: `null`.
+  - trackId ([String.t]): Track ids that the app version is published in. Replaces the track field (deprecated), but doesn&#39;t include the production track (see isProduction instead). Defaults to: `null`.
   - versionCode (integer()): Unique increasing identifier for the app version. Defaults to: `null`.
   - versionString (String.t): The string used in the Play store by the app developer to identify the version. The string is not necessarily unique or localized (for example, the string could be \&quot;1.4\&quot;). Defaults to: `null`.
   """
@@ -30,12 +32,16 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AppVersion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :isProduction => any(),
           :track => any(),
+          :trackId => list(any()),
           :versionCode => any(),
           :versionString => any()
         }
 
+  field(:isProduction)
   field(:track)
+  field(:trackId, type: :list)
   field(:versionCode)
   field(:versionString)
 end

@@ -22,10 +22,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Product do
 
   ## Attributes
 
+  - appTracks ([TrackInfo]): The tracks visible to the enterprise. Defaults to: `null`.
   - appVersion ([AppVersion]): App versions currently available for this product. Defaults to: `null`.
   - authorName (String.t): The name of the author of the product (for example, the app developer). Defaults to: `null`.
   - availableCountries ([String.t]): The countries which this app is available in. Defaults to: `null`.
-  - availableTracks ([String.t]): The tracks that are visible to the enterprise. Defaults to: `null`.
+  - availableTracks ([String.t]): Deprecated, use appTracks instead. Defaults to: `null`.
   - category (String.t): The app category (e.g. RACING, SOCIAL, etc.) Defaults to: `null`.
   - contentRating (String.t): The content rating for this app. Defaults to: `null`.
   - description (String.t): The localized promotional description, if available. Defaults to: `null`.
@@ -50,6 +51,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Product do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :appTracks => list(GoogleApi.AndroidEnterprise.V1.Model.TrackInfo.t()),
           :appVersion => list(GoogleApi.AndroidEnterprise.V1.Model.AppVersion.t()),
           :authorName => any(),
           :availableCountries => list(any()),
@@ -76,6 +78,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Product do
           :workDetailsUrl => any()
         }
 
+  field(:appTracks, as: GoogleApi.AndroidEnterprise.V1.Model.TrackInfo, type: :list)
   field(:appVersion, as: GoogleApi.AndroidEnterprise.V1.Model.AppVersion, type: :list)
   field(:authorName)
   field(:availableCountries, type: :list)

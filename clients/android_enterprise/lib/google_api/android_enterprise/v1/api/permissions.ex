@@ -31,7 +31,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Permissions do
 
   - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
   - permission_id (String.t): The ID of the permission.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,13 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Permissions do
   """
   @spec androidenterprise_permissions_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.Permission.t()} | {:error, Tesla.Env.t()}
-  def androidenterprise_permissions_get(connection, permission_id, opts \\ []) do
-    optional_params = %{
+  def androidenterprise_permissions_get(
+        connection,
+        permission_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -66,10 +71,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Permissions do
       |> Request.url("/permissions/{permissionId}", %{
         "permissionId" => URI.encode_www_form(permission_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidEnterprise.V1.Model.Permission{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.Permission{}])
   end
 end

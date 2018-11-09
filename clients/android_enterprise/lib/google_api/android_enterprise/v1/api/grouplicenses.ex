@@ -32,7 +32,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Grouplicenses do
   - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
   - enterprise_id (String.t): The ID of the enterprise.
   - group_license_id (String.t): The ID of the product the group license is for, e.g. \&quot;app:com.google.android.gm\&quot;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,14 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Grouplicenses do
   """
   @spec androidenterprise_grouplicenses_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.GroupLicense.t()} | {:error, Tesla.Env.t()}
-  def androidenterprise_grouplicenses_get(connection, enterprise_id, group_license_id, opts \\ []) do
-    optional_params = %{
+  def androidenterprise_grouplicenses_get(
+        connection,
+        enterprise_id,
+        group_license_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -66,11 +72,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Grouplicenses do
         "enterpriseId" => URI.encode_www_form(enterprise_id),
         "groupLicenseId" => URI.encode_www_form(group_license_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidEnterprise.V1.Model.GroupLicense{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.GroupLicense{}])
   end
 
   @doc """
@@ -80,7 +86,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Grouplicenses do
 
   - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
   - enterprise_id (String.t): The ID of the enterprise.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -97,8 +103,13 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Grouplicenses do
   @spec androidenterprise_grouplicenses_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.GroupLicensesListResponse.t()}
           | {:error, Tesla.Env.t()}
-  def androidenterprise_grouplicenses_list(connection, enterprise_id, opts \\ []) do
-    optional_params = %{
+  def androidenterprise_grouplicenses_list(
+        connection,
+        enterprise_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -114,10 +125,12 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Grouplicenses do
       |> Request.url("/enterprises/{enterpriseId}/groupLicenses", %{
         "enterpriseId" => URI.encode_www_form(enterprise_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidEnterprise.V1.Model.GroupLicensesListResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.GroupLicensesListResponse{}]
+    )
   end
 end
