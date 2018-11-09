@@ -16,40 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AdSense.V14.Model.AdCode do
+defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListProductsResponse do
   @moduledoc """
-
+  Response message for listing products visible to the buyer.
 
   ## Attributes
 
-  - adCode (String.t): The Auto ad code snippet. The ad code snippet. Defaults to: `null`.
-  - ampBody (String.t): The AMP Auto ad code snippet that goes in the body of an AMP page. Defaults to: `null`.
-  - ampHead (String.t): The AMP Auto ad code snippet that goes in the head of an AMP page. Defaults to: `null`.
-  - kind (String.t): Kind this is, in this case adsense#adCode. Defaults to: `null`.
+  - nextPageToken (String.t): List pagination support. Defaults to: `null`.
+  - products ([Product]): The list of matching products at their head revision number. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adCode => any(),
-          :ampBody => any(),
-          :ampHead => any(),
-          :kind => any()
+          :nextPageToken => any(),
+          :products => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.Product.t())
         }
 
-  field(:adCode)
-  field(:ampBody)
-  field(:ampHead)
-  field(:kind)
+  field(:nextPageToken)
+  field(:products, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.Product, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AdSense.V14.Model.AdCode do
+defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V2beta1.Model.ListProductsResponse do
   def decode(value, options) do
-    GoogleApi.AdSense.V14.Model.AdCode.decode(value, options)
+    GoogleApi.AdExchangeBuyer.V2beta1.Model.ListProductsResponse.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.AdSense.V14.Model.AdCode do
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V2beta1.Model.ListProductsResponse do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

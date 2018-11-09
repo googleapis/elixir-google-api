@@ -16,40 +16,35 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AdSense.V14.Model.AdCode do
+defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Price do
   @moduledoc """
-
+  Represents a price and a pricing type for a product / deal.
 
   ## Attributes
 
-  - adCode (String.t): The Auto ad code snippet. The ad code snippet. Defaults to: `null`.
-  - ampBody (String.t): The AMP Auto ad code snippet that goes in the body of an AMP page. Defaults to: `null`.
-  - ampHead (String.t): The AMP Auto ad code snippet that goes in the head of an AMP page. Defaults to: `null`.
-  - kind (String.t): Kind this is, in this case adsense#adCode. Defaults to: `null`.
+  - amount (Money): The actual price with currency specified. Defaults to: `null`.
+  - pricingType (String.t): The pricing type for the deal/product. (default: CPM) Defaults to: `null`.
+    - Enum - one of [PRICING_TYPE_UNSPECIFIED, COST_PER_MILLE, COST_PER_DAY]
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adCode => any(),
-          :ampBody => any(),
-          :ampHead => any(),
-          :kind => any()
+          :amount => GoogleApi.AdExchangeBuyer.V2beta1.Model.Money.t(),
+          :pricingType => any()
         }
 
-  field(:adCode)
-  field(:ampBody)
-  field(:ampHead)
-  field(:kind)
+  field(:amount, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.Money)
+  field(:pricingType)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AdSense.V14.Model.AdCode do
+defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V2beta1.Model.Price do
   def decode(value, options) do
-    GoogleApi.AdSense.V14.Model.AdCode.decode(value, options)
+    GoogleApi.AdExchangeBuyer.V2beta1.Model.Price.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.AdSense.V14.Model.AdCode do
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V2beta1.Model.Price do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

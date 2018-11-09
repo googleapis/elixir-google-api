@@ -16,40 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AdSense.V14.Model.AdCode do
+defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.UrlTargeting do
   @moduledoc """
-
+  Represents a list of targeted and excluded URLs (e.g., google.com). For Private Auction and AdX Preferred Deals, URLs are either included or excluded. For Programmatic Guaranteed and Preferred Deals, this doesn&#39;t apply.
 
   ## Attributes
 
-  - adCode (String.t): The Auto ad code snippet. The ad code snippet. Defaults to: `null`.
-  - ampBody (String.t): The AMP Auto ad code snippet that goes in the body of an AMP page. Defaults to: `null`.
-  - ampHead (String.t): The AMP Auto ad code snippet that goes in the head of an AMP page. Defaults to: `null`.
-  - kind (String.t): Kind this is, in this case adsense#adCode. Defaults to: `null`.
+  - excludedUrls ([String.t]): A list of URLs to be excluded. Defaults to: `null`.
+  - targetedUrls ([String.t]): A list of URLs to be included. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adCode => any(),
-          :ampBody => any(),
-          :ampHead => any(),
-          :kind => any()
+          :excludedUrls => list(any()),
+          :targetedUrls => list(any())
         }
 
-  field(:adCode)
-  field(:ampBody)
-  field(:ampHead)
-  field(:kind)
+  field(:excludedUrls, type: :list)
+  field(:targetedUrls, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AdSense.V14.Model.AdCode do
+defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V2beta1.Model.UrlTargeting do
   def decode(value, options) do
-    GoogleApi.AdSense.V14.Model.AdCode.decode(value, options)
+    GoogleApi.AdExchangeBuyer.V2beta1.Model.UrlTargeting.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.AdSense.V14.Model.AdCode do
+defimpl Poison.Encoder, for: GoogleApi.AdExchangeBuyer.V2beta1.Model.UrlTargeting do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
