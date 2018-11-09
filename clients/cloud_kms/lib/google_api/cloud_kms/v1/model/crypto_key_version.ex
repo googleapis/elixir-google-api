@@ -18,32 +18,46 @@
 
 defmodule GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion do
   @moduledoc """
-  A CryptoKeyVersion represents an individual cryptographic key, and the associated key material.  It can be used for cryptographic operations either directly, or via its parent CryptoKey, in which case the server will choose the appropriate version for the operation.  For security reasons, the raw cryptographic key material represented by a CryptoKeyVersion can never be viewed or exported. It can only be used to encrypt or decrypt data when an authorized user or application invokes Cloud KMS.
+  A CryptoKeyVersion represents an individual cryptographic key, and the associated key material.  An ENABLED version can be used for cryptographic operations.  For security reasons, the raw cryptographic key material represented by a CryptoKeyVersion can never be viewed or exported. It can only be used to encrypt, decrypt, or sign data when an authorized user or application invokes Cloud KMS.
 
   ## Attributes
 
+  - algorithm (String.t): Output only. The CryptoKeyVersionAlgorithm that this CryptoKeyVersion supports. Defaults to: `null`.
+    - Enum - one of [CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED, GOOGLE_SYMMETRIC_ENCRYPTION, RSA_SIGN_PSS_2048_SHA256, RSA_SIGN_PSS_3072_SHA256, RSA_SIGN_PSS_4096_SHA256, RSA_SIGN_PSS_4096_SHA512, RSA_SIGN_PKCS1_2048_SHA256, RSA_SIGN_PKCS1_3072_SHA256, RSA_SIGN_PKCS1_4096_SHA256, RSA_SIGN_PKCS1_4096_SHA512, RSA_DECRYPT_OAEP_2048_SHA256, RSA_DECRYPT_OAEP_3072_SHA256, RSA_DECRYPT_OAEP_4096_SHA256, RSA_DECRYPT_OAEP_4096_SHA512, EC_SIGN_P256_SHA256, EC_SIGN_P384_SHA384]
+  - attestation (KeyOperationAttestation): Output only. Statement that was generated and signed by the HSM at key creation time. Use this statement to verify attributes of the key as stored on the HSM, independently of Google. Only provided for key versions with protection_level HSM. Defaults to: `null`.
   - createTime (DateTime.t): Output only. The time at which this CryptoKeyVersion was created. Defaults to: `null`.
   - destroyEventTime (DateTime.t): Output only. The time this CryptoKeyVersion&#39;s key material was destroyed. Only present if state is DESTROYED. Defaults to: `null`.
   - destroyTime (DateTime.t): Output only. The time this CryptoKeyVersion&#39;s key material is scheduled for destruction. Only present if state is DESTROY_SCHEDULED. Defaults to: `null`.
+  - generateTime (DateTime.t): Output only. The time this CryptoKeyVersion&#39;s key material was generated. Defaults to: `null`.
   - name (String.t): Output only. The resource name for this CryptoKeyVersion in the format &#x60;projects/*/locations/*/keyRings/*/cryptoKeys/*/cryptoKeyVersions/*&#x60;. Defaults to: `null`.
+  - protectionLevel (String.t): Output only. The ProtectionLevel describing how crypto operations are performed with this CryptoKeyVersion. Defaults to: `null`.
+    - Enum - one of [PROTECTION_LEVEL_UNSPECIFIED, SOFTWARE, HSM]
   - state (String.t): The current state of the CryptoKeyVersion. Defaults to: `null`.
-    - Enum - one of [CRYPTO_KEY_VERSION_STATE_UNSPECIFIED, ENABLED, DISABLED, DESTROYED, DESTROY_SCHEDULED]
+    - Enum - one of [CRYPTO_KEY_VERSION_STATE_UNSPECIFIED, PENDING_GENERATION, ENABLED, DISABLED, DESTROYED, DESTROY_SCHEDULED]
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :algorithm => any(),
+          :attestation => GoogleApi.CloudKMS.V1.Model.KeyOperationAttestation.t(),
           :createTime => DateTime.t(),
           :destroyEventTime => DateTime.t(),
           :destroyTime => DateTime.t(),
+          :generateTime => DateTime.t(),
           :name => any(),
+          :protectionLevel => any(),
           :state => any()
         }
 
+  field(:algorithm)
+  field(:attestation, as: GoogleApi.CloudKMS.V1.Model.KeyOperationAttestation)
   field(:createTime, as: DateTime)
   field(:destroyEventTime, as: DateTime)
   field(:destroyTime, as: DateTime)
+  field(:generateTime, as: DateTime)
   field(:name)
+  field(:protectionLevel)
   field(:state)
 end
 
