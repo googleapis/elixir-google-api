@@ -33,11 +33,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;name&#x60;. The name of the function to be called.
   - locations_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - functions_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :callback (String.t): JSONP
@@ -45,6 +41,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (CallFunctionRequest): 
 
   ## Returns
@@ -66,13 +66,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
         projects_id,
         locations_id,
         functions_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
       :oauth_token => :query,
       :callback => :query,
@@ -80,6 +77,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :fields => :query,
       :body => :body
     }
 
@@ -94,11 +95,13 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
           "functionsId" => URI.encode_www_form(functions_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudFunctions.V1.Model.CallFunctionResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CloudFunctions.V1.Model.CallFunctionResponse{}]
+    )
   end
 
   @doc """
@@ -109,11 +112,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
   - connection (GoogleApi.CloudFunctions.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;location&#x60;. The project and location in which the function should be created, specified in the format &#x60;projects/*/locations/*&#x60;
   - locations_id (String.t): Part of &#x60;location&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :callback (String.t): JSONP
@@ -121,6 +120,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (CloudFunction): 
 
   ## Returns
@@ -138,13 +141,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
         connection,
         projects_id,
         locations_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
       :oauth_token => :query,
       :callback => :query,
@@ -152,6 +152,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :fields => :query,
       :body => :body
     }
 
@@ -162,11 +166,11 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "locationsId" => URI.encode_www_form(locations_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudFunctions.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudFunctions.V1.Model.Operation{}])
   end
 
   @doc """
@@ -178,11 +182,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;name&#x60;. The name of the function which should be deleted.
   - locations_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - functions_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :callback (String.t): JSONP
@@ -190,6 +190,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
 
   ## Returns
 
@@ -208,20 +212,21 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
         projects_id,
         locations_id,
         functions_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
       :oauth_token => :query,
       :callback => :query,
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :fields => :query
     }
 
     request =
@@ -235,11 +240,11 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
           "functionsId" => URI.encode_www_form(functions_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudFunctions.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudFunctions.V1.Model.Operation{}])
   end
 
   @doc """
@@ -251,11 +256,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;name&#x60;. The name of function for which source code Google Cloud Storage signed URL should be generated.
   - locations_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - functions_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :callback (String.t): JSONP
@@ -263,6 +264,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (GenerateDownloadUrlRequest): 
 
   ## Returns
@@ -284,13 +289,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
         projects_id,
         locations_id,
         functions_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
       :oauth_token => :query,
       :callback => :query,
@@ -298,6 +300,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :fields => :query,
       :body => :body
     }
 
@@ -312,11 +318,13 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
           "functionsId" => URI.encode_www_form(functions_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudFunctions.V1.Model.GenerateDownloadUrlResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CloudFunctions.V1.Model.GenerateDownloadUrlResponse{}]
+    )
   end
 
   @doc """
@@ -327,11 +335,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
   - connection (GoogleApi.CloudFunctions.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;parent&#x60;. The project and location in which the Google Cloud Storage signed URL should be generated, specified in the format &#x60;projects/*/locations/*&#x60;.
   - locations_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :callback (String.t): JSONP
@@ -339,6 +343,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (GenerateUploadUrlRequest): 
 
   ## Returns
@@ -358,13 +366,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
         connection,
         projects_id,
         locations_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
       :oauth_token => :query,
       :callback => :query,
@@ -372,6 +377,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :fields => :query,
       :body => :body
     }
 
@@ -385,11 +394,13 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
           "locationsId" => URI.encode_www_form(locations_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudFunctions.V1.Model.GenerateUploadUrlResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CloudFunctions.V1.Model.GenerateUploadUrlResponse{}]
+    )
   end
 
   @doc """
@@ -401,11 +412,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;name&#x60;. The name of the function which details should be obtained.
   - locations_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - functions_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :callback (String.t): JSONP
@@ -413,6 +420,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
 
   ## Returns
 
@@ -431,20 +442,21 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
         projects_id,
         locations_id,
         functions_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
       :oauth_token => :query,
       :callback => :query,
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :fields => :query
     }
 
     request =
@@ -458,11 +470,85 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
           "functionsId" => URI.encode_www_form(functions_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudFunctions.V1.Model.CloudFunction{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudFunctions.V1.Model.CloudFunction{}])
+  end
+
+  @doc """
+  Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.
+
+  ## Parameters
+
+  - connection (GoogleApi.CloudFunctions.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
+  - locations_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - functions_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
+    - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+
+  ## Returns
+
+  {:ok, %GoogleApi.CloudFunctions.V1.Model.Policy{}} on success
+  {:error, info} on failure
+  """
+  @spec cloudfunctions_projects_locations_functions_get_iam_policy(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.CloudFunctions.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+  def cloudfunctions_projects_locations_functions_get_iam_policy(
+        connection,
+        projects_id,
+        locations_id,
+        functions_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query,
+      :key => :query,
+      :access_token => :query,
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :fields => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/functions/{functionsId}:getIamPolicy",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "locationsId" => URI.encode_www_form(locations_id),
+          "functionsId" => URI.encode_www_form(functions_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudFunctions.V1.Model.Policy{}])
   end
 
   @doc """
@@ -473,11 +559,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
   - connection (GoogleApi.CloudFunctions.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;parent&#x60;. The project and location from which the function should be listed, specified in the format &#x60;projects/*/locations/*&#x60; If you want to list functions in all locations, use \&quot;-\&quot; in place of a location.
   - locations_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :callback (String.t): JSONP
@@ -485,8 +567,12 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): The value returned by the last &#x60;ListFunctionsResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListFunctions&#x60; call, and that the system should return the next page of data.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :pageSize (integer()): Maximum number of functions to return per call.
+    - :pageToken (String.t): The value returned by the last &#x60;ListFunctionsResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListFunctions&#x60; call, and that the system should return the next page of data.
 
   ## Returns
 
@@ -505,13 +591,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
         connection,
         projects_id,
         locations_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
       :oauth_token => :query,
       :callback => :query,
@@ -519,8 +602,12 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :fields => :query,
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -530,11 +617,13 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "locationsId" => URI.encode_www_form(locations_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudFunctions.V1.Model.ListFunctionsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CloudFunctions.V1.Model.ListFunctionsResponse{}]
+    )
   end
 
   @doc """
@@ -546,11 +635,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;function.name&#x60;. A user-defined name of the function. Function names must be unique globally and match pattern &#x60;projects/*/locations/*/functions/*&#x60;
   - locations_id (String.t): Part of &#x60;function.name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - functions_id (String.t): Part of &#x60;function.name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :callback (String.t): JSONP
@@ -558,6 +643,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :updateMask (String.t): Required list of fields to be updated in this request.
     - :body (CloudFunction): 
 
@@ -578,13 +667,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
         projects_id,
         locations_id,
         functions_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
       :oauth_token => :query,
       :callback => :query,
@@ -592,6 +678,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :fields => :query,
       :updateMask => :query,
       :body => :body
     }
@@ -607,11 +697,167 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
           "functionsId" => URI.encode_www_form(functions_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudFunctions.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudFunctions.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Sets the access control policy on the specified resource. Replaces any existing policy.
+
+  ## Parameters
+
+  - connection (GoogleApi.CloudFunctions.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
+  - locations_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - functions_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
+    - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :body (SetIamPolicyRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.CloudFunctions.V1.Model.Policy{}} on success
+  {:error, info} on failure
+  """
+  @spec cloudfunctions_projects_locations_functions_set_iam_policy(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.CloudFunctions.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+  def cloudfunctions_projects_locations_functions_set_iam_policy(
+        connection,
+        projects_id,
+        locations_id,
+        functions_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query,
+      :key => :query,
+      :access_token => :query,
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :fields => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/functions/{functionsId}:setIamPolicy",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "locationsId" => URI.encode_www_form(locations_id),
+          "functionsId" => URI.encode_www_form(functions_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudFunctions.V1.Model.Policy{}])
+  end
+
+  @doc """
+  Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a NOT_FOUND error.  Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \&quot;fail open\&quot; without warning.
+
+  ## Parameters
+
+  - connection (GoogleApi.CloudFunctions.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
+  - locations_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - functions_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
+    - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :body (TestIamPermissionsRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.CloudFunctions.V1.Model.TestIamPermissionsResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec cloudfunctions_projects_locations_functions_test_iam_permissions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.CloudFunctions.V1.Model.TestIamPermissionsResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def cloudfunctions_projects_locations_functions_test_iam_permissions(
+        connection,
+        projects_id,
+        locations_id,
+        functions_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query,
+      :key => :query,
+      :access_token => :query,
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :fields => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/functions/{functionsId}:testIamPermissions",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "locationsId" => URI.encode_www_form(locations_id),
+          "functionsId" => URI.encode_www_form(functions_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CloudFunctions.V1.Model.TestIamPermissionsResponse{}]
+    )
   end
 
   @doc """
@@ -621,11 +867,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
 
   - connection (GoogleApi.CloudFunctions.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The resource that owns the locations collection, if applicable.
-  - opts (KeywordList): [optional] Optional parameters
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :callback (String.t): JSONP
@@ -633,6 +875,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :filter (String.t): The standard list filter.
     - :pageToken (String.t): The standard list page token.
     - :pageSize (integer()): The standard list page size.
@@ -645,12 +891,13 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
   @spec cloudfunctions_projects_locations_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudFunctions.V1.Model.ListLocationsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def cloudfunctions_projects_locations_list(connection, projects_id, opts \\ []) do
-    optional_params = %{
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
+  def cloudfunctions_projects_locations_list(
+        connection,
+        projects_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
       :oauth_token => :query,
       :callback => :query,
@@ -658,6 +905,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :fields => :query,
       :filter => :query,
       :pageToken => :query,
       :pageSize => :query
@@ -669,10 +920,12 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectsId}/locations", %{
         "projectsId" => URI.encode_www_form(projects_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudFunctions.V1.Model.ListLocationsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CloudFunctions.V1.Model.ListLocationsResponse{}]
+    )
   end
 end
