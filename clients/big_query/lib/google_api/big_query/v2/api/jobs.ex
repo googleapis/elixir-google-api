@@ -32,7 +32,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
   - project_id (String.t): [Required] Project ID of the job to cancel
   - job_id (String.t): [Required] Job ID of the job to cancel
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -49,8 +49,8 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   """
   @spec bigquery_jobs_cancel(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.BigQuery.V2.Model.JobCancelResponse.t()} | {:error, Tesla.Env.t()}
-  def bigquery_jobs_cancel(connection, project_id, job_id, opts \\ []) do
-    optional_params = %{
+  def bigquery_jobs_cancel(connection, project_id, job_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -68,11 +68,11 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
         "projectId" => URI.encode_www_form(project_id),
         "jobId" => URI.encode_www_form(job_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.BigQuery.V2.Model.JobCancelResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.BigQuery.V2.Model.JobCancelResponse{}])
   end
 
   @doc """
@@ -83,7 +83,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
   - project_id (String.t): [Required] Project ID of the requested job
   - job_id (String.t): [Required] Job ID of the requested job
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -100,8 +100,8 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   """
   @spec bigquery_jobs_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.BigQuery.V2.Model.Job.t()} | {:error, Tesla.Env.t()}
-  def bigquery_jobs_get(connection, project_id, job_id, opts \\ []) do
-    optional_params = %{
+  def bigquery_jobs_get(connection, project_id, job_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -119,11 +119,11 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
         "projectId" => URI.encode_www_form(project_id),
         "jobId" => URI.encode_www_form(job_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.BigQuery.V2.Model.Job{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.BigQuery.V2.Model.Job{}])
   end
 
   @doc """
@@ -134,7 +134,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
   - project_id (String.t): [Required] Project ID of the query job
   - job_id (String.t): [Required] Job ID of the query job
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -155,8 +155,14 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   """
   @spec bigquery_jobs_get_query_results(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.BigQuery.V2.Model.GetQueryResultsResponse.t()} | {:error, Tesla.Env.t()}
-  def bigquery_jobs_get_query_results(connection, project_id, job_id, opts \\ []) do
-    optional_params = %{
+  def bigquery_jobs_get_query_results(
+        connection,
+        project_id,
+        job_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -178,11 +184,11 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
         "projectId" => URI.encode_www_form(project_id),
         "jobId" => URI.encode_www_form(job_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.BigQuery.V2.Model.GetQueryResultsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.BigQuery.V2.Model.GetQueryResultsResponse{}])
   end
 
   @doc """
@@ -192,7 +198,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
 
   - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
   - project_id (String.t): Project ID of the project that will be billed for the job
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -209,8 +215,8 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   """
   @spec bigquery_jobs_insert(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.BigQuery.V2.Model.Job.t()} | {:error, Tesla.Env.t()}
-  def bigquery_jobs_insert(connection, project_id, opts \\ []) do
-    optional_params = %{
+  def bigquery_jobs_insert(connection, project_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -227,11 +233,11 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
       |> Request.url("/bigquery/v2/projects/{projectId}/jobs", %{
         "projectId" => URI.encode_www_form(project_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.BigQuery.V2.Model.Job{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.BigQuery.V2.Model.Job{}])
   end
 
   @doc """
@@ -242,7 +248,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
   - project_id (String.t): Project ID of the project that will be billed for the job
   - upload_type (String.t): Upload type. Must be \&quot;resumable\&quot;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -259,8 +265,14 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   """
   @spec bigquery_jobs_insert_resumable(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def bigquery_jobs_insert_resumable(connection, project_id, upload_type, opts \\ []) do
-    optional_params = %{
+  def bigquery_jobs_insert_resumable(
+        connection,
+        project_id,
+        upload_type,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -278,11 +290,11 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
         "projectId" => URI.encode_www_form(project_id)
       })
       |> Request.add_param(:query, :uploadType, upload_type)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -295,7 +307,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   - upload_type (String.t): Upload type. Must be \&quot;multipart\&quot;.
   - metadata (Job): Job metadata.
   - data (String.t): The file to upload.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -317,8 +329,16 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.BigQuery.V2.Model.Job.t()} | {:error, Tesla.Env.t()}
-  def bigquery_jobs_insert_simple(connection, project_id, upload_type, metadata, data, opts \\ []) do
-    optional_params = %{
+  def bigquery_jobs_insert_simple(
+        connection,
+        project_id,
+        upload_type,
+        metadata,
+        data,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -337,11 +357,11 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_param(:body, :metadata, metadata)
       |> Request.add_param(:file, :data, data)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.BigQuery.V2.Model.Job{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.BigQuery.V2.Model.Job{}])
   end
 
   @doc """
@@ -351,7 +371,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
 
   - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
   - project_id (String.t): Project ID of the jobs to list
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -374,8 +394,8 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   """
   @spec bigquery_jobs_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.BigQuery.V2.Model.JobList.t()} | {:error, Tesla.Env.t()}
-  def bigquery_jobs_list(connection, project_id, opts \\ []) do
-    optional_params = %{
+  def bigquery_jobs_list(connection, project_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -398,11 +418,11 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
       |> Request.url("/bigquery/v2/projects/{projectId}/jobs", %{
         "projectId" => URI.encode_www_form(project_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.BigQuery.V2.Model.JobList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.BigQuery.V2.Model.JobList{}])
   end
 
   @doc """
@@ -412,7 +432,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
 
   - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
   - project_id (String.t): Project ID of the project billed for the query
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -429,8 +449,8 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   """
   @spec bigquery_jobs_query(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.BigQuery.V2.Model.QueryResponse.t()} | {:error, Tesla.Env.t()}
-  def bigquery_jobs_query(connection, project_id, opts \\ []) do
-    optional_params = %{
+  def bigquery_jobs_query(connection, project_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -447,10 +467,10 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
       |> Request.url("/bigquery/v2/projects/{projectId}/queries", %{
         "projectId" => URI.encode_www_form(project_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.BigQuery.V2.Model.QueryResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.BigQuery.V2.Model.QueryResponse{}])
   end
 end

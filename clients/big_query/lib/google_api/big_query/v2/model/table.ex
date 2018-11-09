@@ -22,11 +22,11 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
 
   ## Attributes
 
-  - clustering (Clustering): [Experimental] Clustering specification for the table. Must be specified with time-based partitioning, data in the table will be first partitioned and subsequently clustered. Defaults to: `null`.
+  - clustering (Clustering): [Experimental] Clustering specification for the table. Must be specified with partitioning, data in the table will be first partitioned and subsequently clustered. Defaults to: `null`.
   - creationTime (String.t): [Output-only] The time when this table was created, in milliseconds since the epoch. Defaults to: `null`.
   - description (String.t): [Optional] A user-friendly description of this table. Defaults to: `null`.
   - encryptionConfiguration (EncryptionConfiguration): Custom encryption configuration (e.g., Cloud KMS keys). Defaults to: `null`.
-  - etag (String.t): [Output-only] A hash of this resource. Defaults to: `null`.
+  - etag (String.t): [Output-only] A hash of the table metadata. Used to ensure there were no concurrent modifications to the resource when attempting an update. Not guaranteed to change when the table contents or the fields numRows, numBytes, numLongTermBytes or lastModifiedTime change. Defaults to: `null`.
   - expirationTime (String.t): [Optional] The time when this table expires, in milliseconds since the epoch. If not present, the table will persist indefinitely. Expired tables will be deleted and their storage reclaimed. The defaultTableExpirationMs property of the encapsulating dataset can be used to set a default expirationTime on newly created tables. Defaults to: `null`.
   - externalDataConfiguration (ExternalDataConfiguration): [Optional] Describes the data format, location, and other properties of a table stored outside of BigQuery. By defining these properties, the data source can then be queried as if it were a standard BigQuery table. Defaults to: `null`.
   - friendlyName (String.t): [Optional] A descriptive name for this table. Defaults to: `null`.
@@ -38,12 +38,15 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
   - model (ModelDefinition): [Output-only, Beta] Present iff this table represents a ML model. Describes the training information for the model, and it is required to run &#39;PREDICT&#39; queries. Defaults to: `null`.
   - numBytes (String.t): [Output-only] The size of this table in bytes, excluding any data in the streaming buffer. Defaults to: `null`.
   - numLongTermBytes (String.t): [Output-only] The number of bytes in the table that are considered \&quot;long-term storage\&quot;. Defaults to: `null`.
+  - numPhysicalBytes (String.t): [Output-only] [Experimental] The physical size of this table in bytes, excluding any data in the streaming buffer. This includes compression and storage used for time travel. Defaults to: `null`.
   - numRows (String.t): [Output-only] The number of rows of data in this table, excluding any data in the streaming buffer. Defaults to: `null`.
+  - rangePartitioning (RangePartitioning): [Experimental] Range partitioning specification for this table. Only one of timePartitioning and rangePartitioning should be specified. Defaults to: `null`.
+  - requirePartitionFilter (boolean()): [Experimental] [Optional] If set to true, queries over this table require a partition filter that can be used for partition elimination to be specified. Defaults to: `null`.
   - schema (TableSchema): [Optional] Describes the schema of this table. Defaults to: `null`.
   - selfLink (String.t): [Output-only] A URL that can be used to access this resource again. Defaults to: `null`.
   - streamingBuffer (Streamingbuffer): [Output-only] Contains information regarding this table&#39;s streaming buffer, if one is present. This field will be absent if the table is not being streamed to or if there is no data in the streaming buffer. Defaults to: `null`.
   - tableReference (TableReference): [Required] Reference describing the ID of this table. Defaults to: `null`.
-  - timePartitioning (TimePartitioning): Time-based partitioning specification for this table. Defaults to: `null`.
+  - timePartitioning (TimePartitioning): Time-based partitioning specification for this table. Only one of timePartitioning and rangePartitioning should be specified. Defaults to: `null`.
   - type (String.t): [Output-only] Describes the table type. The following values are supported: TABLE: A normal BigQuery table. VIEW: A virtual table defined by a SQL query. EXTERNAL: A table that references data stored in an external storage system, such as Google Cloud Storage. The default value is TABLE. Defaults to: `null`.
   - view (ViewDefinition): [Optional] The view definition. Defaults to: `null`.
   """
@@ -67,7 +70,10 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
           :model => GoogleApi.BigQuery.V2.Model.ModelDefinition.t(),
           :numBytes => any(),
           :numLongTermBytes => any(),
+          :numPhysicalBytes => any(),
           :numRows => any(),
+          :rangePartitioning => GoogleApi.BigQuery.V2.Model.RangePartitioning.t(),
+          :requirePartitionFilter => any(),
           :schema => GoogleApi.BigQuery.V2.Model.TableSchema.t(),
           :selfLink => any(),
           :streamingBuffer => GoogleApi.BigQuery.V2.Model.Streamingbuffer.t(),
@@ -93,7 +99,10 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
   field(:model, as: GoogleApi.BigQuery.V2.Model.ModelDefinition)
   field(:numBytes)
   field(:numLongTermBytes)
+  field(:numPhysicalBytes)
   field(:numRows)
+  field(:rangePartitioning, as: GoogleApi.BigQuery.V2.Model.RangePartitioning)
+  field(:requirePartitionFilter)
   field(:schema, as: GoogleApi.BigQuery.V2.Model.TableSchema)
   field(:selfLink)
   field(:streamingBuffer, as: GoogleApi.BigQuery.V2.Model.Streamingbuffer)

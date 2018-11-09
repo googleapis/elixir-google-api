@@ -22,7 +22,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableListTables do
 
   ## Attributes
 
-  - clustering (Clustering): [Experimental] Clustering specification for this table, if configured. Defaults to: `null`.
+  - clustering (Clustering): [Beta] Clustering specification for this table, if configured. Defaults to: `null`.
   - creationTime (String.t): The time when this table was created, in milliseconds since the epoch. Defaults to: `null`.
   - expirationTime (String.t): [Optional] The time when this table expires, in milliseconds since the epoch. If not present, the table will persist indefinitely. Expired tables will be deleted and their storage reclaimed. Defaults to: `null`.
   - friendlyName (String.t): The user-friendly name for this table. Defaults to: `null`.
