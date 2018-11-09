@@ -31,7 +31,10 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
 
   - connection (GoogleApi.Classroom.V1.Connection): Connection to server
   - user_id (String.t): Identifier of the profile to return. The identifier can be one of the following:  * the numeric identifier for the user * the email address of the user * the string literal &#x60;\&quot;me\&quot;&#x60;, indicating the requesting user
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -40,9 +43,6 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
 
   ## Returns
 
@@ -51,8 +51,11 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
   """
   @spec classroom_user_profiles_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Classroom.V1.Model.UserProfile.t()} | {:error, Tesla.Env.t()}
-  def classroom_user_profiles_get(connection, user_id, opts \\ []) do
-    optional_params = %{
+  def classroom_user_profiles_get(connection, user_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -60,10 +63,7 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query
+      :"$.xgafv" => :query
     }
 
     request =
@@ -72,11 +72,11 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       |> Request.url("/v1/userProfiles/{userId}", %{
         "userId" => URI.encode_www_form(user_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Classroom.V1.Model.UserProfile{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Classroom.V1.Model.UserProfile{}])
   end
 
   @doc """
@@ -86,7 +86,10 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
 
   - connection (GoogleApi.Classroom.V1.Connection): Connection to server
   - student_id (String.t): ID of the student (in standard format)
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -95,9 +98,6 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (GuardianInvitation): 
 
   ## Returns
@@ -110,8 +110,16 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Classroom.V1.Model.GuardianInvitation.t()} | {:error, Tesla.Env.t()}
-  def classroom_user_profiles_guardian_invitations_create(connection, student_id, opts \\ []) do
-    optional_params = %{
+  def classroom_user_profiles_guardian_invitations_create(
+        connection,
+        student_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -120,9 +128,6 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -132,11 +137,11 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       |> Request.url("/v1/userProfiles/{studentId}/guardianInvitations", %{
         "studentId" => URI.encode_www_form(student_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Classroom.V1.Model.GuardianInvitation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Classroom.V1.Model.GuardianInvitation{}])
   end
 
   @doc """
@@ -147,7 +152,10 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
   - connection (GoogleApi.Classroom.V1.Connection): Connection to server
   - student_id (String.t): The ID of the student whose guardian invitation is being requested.
   - invitation_id (String.t): The &#x60;id&#x60; field of the &#x60;GuardianInvitation&#x60; being requested.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -156,9 +164,6 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
 
   ## Returns
 
@@ -175,9 +180,13 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
         connection,
         student_id,
         invitation_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -185,10 +194,7 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query
+      :"$.xgafv" => :query
     }
 
     request =
@@ -198,11 +204,11 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
         "studentId" => URI.encode_www_form(student_id),
         "invitationId" => URI.encode_www_form(invitation_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Classroom.V1.Model.GuardianInvitation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Classroom.V1.Model.GuardianInvitation{}])
   end
 
   @doc """
@@ -212,7 +218,10 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
 
   - connection (GoogleApi.Classroom.V1.Connection): Connection to server
   - student_id (String.t): The ID of the student whose guardian invitations are to be returned. The identifier can be one of the following:  * the numeric identifier for the user * the email address of the user * the string literal &#x60;\&quot;me\&quot;&#x60;, indicating the requesting user * the string literal &#x60;\&quot;-\&quot;&#x60;, indicating that results should be returned for   all students that the requesting user is permitted to view guardian   invitations.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -221,9 +230,6 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :pageToken (String.t): nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned.  The list request must be otherwise identical to the one that resulted in this token.
     - :invitedEmailAddress (String.t): If specified, only results with the specified &#x60;invited_email_address&#x60; will be returned.
     - :states ([String.t]): If specified, only results with the specified &#x60;state&#x60; values will be returned. Otherwise, results with a &#x60;state&#x60; of &#x60;PENDING&#x60; will be returned.
@@ -241,8 +247,16 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
         ) ::
           {:ok, GoogleApi.Classroom.V1.Model.ListGuardianInvitationsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def classroom_user_profiles_guardian_invitations_list(connection, student_id, opts \\ []) do
-    optional_params = %{
+  def classroom_user_profiles_guardian_invitations_list(
+        connection,
+        student_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -251,9 +265,6 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :pageToken => :query,
       :invitedEmailAddress => :query,
       :states => :query,
@@ -266,11 +277,13 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       |> Request.url("/v1/userProfiles/{studentId}/guardianInvitations", %{
         "studentId" => URI.encode_www_form(student_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Classroom.V1.Model.ListGuardianInvitationsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Classroom.V1.Model.ListGuardianInvitationsResponse{}]
+    )
   end
 
   @doc """
@@ -281,7 +294,10 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
   - connection (GoogleApi.Classroom.V1.Connection): Connection to server
   - student_id (String.t): The ID of the student whose guardian invitation is to be modified.
   - invitation_id (String.t): The &#x60;id&#x60; field of the &#x60;GuardianInvitation&#x60; to be modified.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -290,9 +306,6 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :updateMask (String.t): Mask that identifies which fields on the course to update. This field is required to do an update. The update will fail if invalid fields are specified. The following fields are valid:  * &#x60;state&#x60;  When set in a query parameter, this field should be specified as  &#x60;updateMask&#x3D;&lt;field1&gt;,&lt;field2&gt;,...&#x60;
     - :body (GuardianInvitation): 
 
@@ -311,9 +324,13 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
         connection,
         student_id,
         invitation_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -322,9 +339,6 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :updateMask => :query,
       :body => :body
     }
@@ -336,11 +350,11 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
         "studentId" => URI.encode_www_form(student_id),
         "invitationId" => URI.encode_www_form(invitation_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Classroom.V1.Model.GuardianInvitation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Classroom.V1.Model.GuardianInvitation{}])
   end
 
   @doc """
@@ -351,7 +365,10 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
   - connection (GoogleApi.Classroom.V1.Connection): Connection to server
   - student_id (String.t): The student whose guardian is to be deleted. One of the following:  * the numeric identifier for the user * the email address of the user * the string literal &#x60;\&quot;me\&quot;&#x60;, indicating the requesting user
   - guardian_id (String.t): The &#x60;id&#x60; field from a &#x60;Guardian&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -360,9 +377,6 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
 
   ## Returns
 
@@ -375,8 +389,17 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def classroom_user_profiles_guardians_delete(connection, student_id, guardian_id, opts \\ []) do
-    optional_params = %{
+  def classroom_user_profiles_guardians_delete(
+        connection,
+        student_id,
+        guardian_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -384,10 +407,7 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query
+      :"$.xgafv" => :query
     }
 
     request =
@@ -397,11 +417,11 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
         "studentId" => URI.encode_www_form(student_id),
         "guardianId" => URI.encode_www_form(guardian_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Classroom.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Classroom.V1.Model.Empty{}])
   end
 
   @doc """
@@ -412,7 +432,10 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
   - connection (GoogleApi.Classroom.V1.Connection): Connection to server
   - student_id (String.t): The student whose guardian is being requested. One of the following:  * the numeric identifier for the user * the email address of the user * the string literal &#x60;\&quot;me\&quot;&#x60;, indicating the requesting user
   - guardian_id (String.t): The &#x60;id&#x60; field from a &#x60;Guardian&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -421,9 +444,6 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
 
   ## Returns
 
@@ -436,8 +456,17 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Classroom.V1.Model.Guardian.t()} | {:error, Tesla.Env.t()}
-  def classroom_user_profiles_guardians_get(connection, student_id, guardian_id, opts \\ []) do
-    optional_params = %{
+  def classroom_user_profiles_guardians_get(
+        connection,
+        student_id,
+        guardian_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -445,10 +474,7 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query
+      :"$.xgafv" => :query
     }
 
     request =
@@ -458,11 +484,11 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
         "studentId" => URI.encode_www_form(student_id),
         "guardianId" => URI.encode_www_form(guardian_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Classroom.V1.Model.Guardian{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Classroom.V1.Model.Guardian{}])
   end
 
   @doc """
@@ -472,7 +498,10 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
 
   - connection (GoogleApi.Classroom.V1.Connection): Connection to server
   - student_id (String.t): Filter results by the student who the guardian is linked to. The identifier can be one of the following:  * the numeric identifier for the user * the email address of the user * the string literal &#x60;\&quot;me\&quot;&#x60;, indicating the requesting user * the string literal &#x60;\&quot;-\&quot;&#x60;, indicating that results should be returned for   all students that the requesting user has access to view.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -481,9 +510,6 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :pageToken (String.t): nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned.  The list request must be otherwise identical to the one that resulted in this token.
     - :invitedEmailAddress (String.t): Filter results by the email address that the original invitation was sent to, resulting in this guardian link. This filter can only be used by domain administrators.
     - :pageSize (integer()): Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum.  The server may return fewer than the specified number of results.
@@ -495,8 +521,16 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
   """
   @spec classroom_user_profiles_guardians_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Classroom.V1.Model.ListGuardiansResponse.t()} | {:error, Tesla.Env.t()}
-  def classroom_user_profiles_guardians_list(connection, student_id, opts \\ []) do
-    optional_params = %{
+  def classroom_user_profiles_guardians_list(
+        connection,
+        student_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -505,9 +539,6 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :pageToken => :query,
       :invitedEmailAddress => :query,
       :pageSize => :query
@@ -519,10 +550,10 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       |> Request.url("/v1/userProfiles/{studentId}/guardians", %{
         "studentId" => URI.encode_www_form(student_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Classroom.V1.Model.ListGuardiansResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Classroom.V1.Model.ListGuardiansResponse{}])
   end
 end
