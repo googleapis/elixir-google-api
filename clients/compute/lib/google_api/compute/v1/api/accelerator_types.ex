@@ -31,7 +31,7 @@ defmodule GoogleApi.Compute.V1.Api.AcceleratorTypes do
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -52,8 +52,13 @@ defmodule GoogleApi.Compute.V1.Api.AcceleratorTypes do
   @spec compute_accelerator_types_aggregated_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.AcceleratorTypeAggregatedList.t()}
           | {:error, Tesla.Env.t()}
-  def compute_accelerator_types_aggregated_list(connection, project, opts \\ []) do
-    optional_params = %{
+  def compute_accelerator_types_aggregated_list(
+        connection,
+        project,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -73,11 +78,13 @@ defmodule GoogleApi.Compute.V1.Api.AcceleratorTypes do
       |> Request.url("/{project}/aggregated/acceleratorTypes", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.AcceleratorTypeAggregatedList{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Compute.V1.Model.AcceleratorTypeAggregatedList{}]
+    )
   end
 
   @doc """
@@ -89,7 +96,7 @@ defmodule GoogleApi.Compute.V1.Api.AcceleratorTypes do
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone for this request.
   - accelerator_type (String.t): Name of the accelerator type to return.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -110,8 +117,15 @@ defmodule GoogleApi.Compute.V1.Api.AcceleratorTypes do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.AcceleratorType.t()} | {:error, Tesla.Env.t()}
-  def compute_accelerator_types_get(connection, project, zone, accelerator_type, opts \\ []) do
-    optional_params = %{
+  def compute_accelerator_types_get(
+        connection,
+        project,
+        zone,
+        accelerator_type,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -129,11 +143,11 @@ defmodule GoogleApi.Compute.V1.Api.AcceleratorTypes do
         "zone" => URI.encode_www_form(zone),
         "acceleratorType" => URI.encode_www_form(accelerator_type)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.AcceleratorType{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.AcceleratorType{}])
   end
 
   @doc """
@@ -144,7 +158,7 @@ defmodule GoogleApi.Compute.V1.Api.AcceleratorTypes do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -164,8 +178,8 @@ defmodule GoogleApi.Compute.V1.Api.AcceleratorTypes do
   """
   @spec compute_accelerator_types_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.AcceleratorTypeList.t()} | {:error, Tesla.Env.t()}
-  def compute_accelerator_types_list(connection, project, zone, opts \\ []) do
-    optional_params = %{
+  def compute_accelerator_types_list(connection, project, zone, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -186,10 +200,10 @@ defmodule GoogleApi.Compute.V1.Api.AcceleratorTypes do
         "project" => URI.encode_www_form(project),
         "zone" => URI.encode_www_form(zone)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.AcceleratorTypeList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.AcceleratorTypeList{}])
   end
 end

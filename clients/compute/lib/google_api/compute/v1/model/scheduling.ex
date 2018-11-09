@@ -23,6 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.Scheduling do
   ## Attributes
 
   - automaticRestart (boolean()): Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted.  By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine. Defaults to: `null`.
+  - nodeAffinities ([SchedulingNodeAffinity]): A set of node affinity and anti-affinity. Defaults to: `null`.
   - onHostMaintenance (String.t): Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options. Defaults to: `null`.
     - Enum - one of [MIGRATE, TERMINATE]
   - preemptible (boolean()): Defines whether the instance is preemptible. This can only be set during instance creation, it cannot be set or changed after the instance has been created. Defaults to: `null`.
@@ -32,11 +33,13 @@ defmodule GoogleApi.Compute.V1.Model.Scheduling do
 
   @type t :: %__MODULE__{
           :automaticRestart => any(),
+          :nodeAffinities => list(GoogleApi.Compute.V1.Model.SchedulingNodeAffinity.t()),
           :onHostMaintenance => any(),
           :preemptible => any()
         }
 
   field(:automaticRestart)
+  field(:nodeAffinities, as: GoogleApi.Compute.V1.Model.SchedulingNodeAffinity, type: :list)
   field(:onHostMaintenance)
   field(:preemptible)
 end

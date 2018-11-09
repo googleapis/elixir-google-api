@@ -22,17 +22,19 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams do
 
   ## Attributes
 
-  - diskName (String.t): Specifies the disk name. If not specified, the default is to use the name of the instance. Defaults to: `null`.
+  - description (String.t): An optional description. Provide this property when creating the disk. Defaults to: `null`.
+  - diskName (String.t): Specifies the disk name. If not specified, the default is to use the name of the instance. If the disk with the instance name exists already in the given zone/region, a new name will be automatically generated. Defaults to: `null`.
   - diskSizeGb (String.t): Specifies the size of the disk in base-2 GB. Defaults to: `null`.
   - diskType (String.t): Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/pd-standard   Other values include pd-ssd and local-ssd. If you define this field, you can provide either the full or partial URL. For example, the following are valid values:   - https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/diskType  - projects/project/zones/zone/diskTypes/diskType  - zones/zone/diskTypes/diskType  Note that for InstanceTemplate, this is the name of the disk type, not URL. Defaults to: `null`.
   - labels (%{optional(String.t) &#x3D;&gt; String.t}): Labels to apply to this disk. These can be later modified by the disks.setLabels method. This field is only applicable for persistent disks. Defaults to: `null`.
-  - sourceImage (String.t): The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or disks.source is required except for local SSD.  To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-8 to use the latest Debian 8 image: projects/debian-cloud/global/images/family/debian-8   Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-8-jessie-vYYYYMMDD   To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image   You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family   If the source image is deleted later, this field will not be set. Defaults to: `null`.
+  - sourceImage (String.t): The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or disks.source is required except for local SSD.  To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9   Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD   To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image   You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family   If the source image is deleted later, this field will not be set. Defaults to: `null`.
   - sourceImageEncryptionKey (CustomerEncryptionKey): The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.  Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :description => any(),
           :diskName => any(),
           :diskSizeGb => any(),
           :diskType => any(),
@@ -41,6 +43,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams do
           :sourceImageEncryptionKey => GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t()
         }
 
+  field(:description)
   field(:diskName)
   field(:diskSizeGb)
   field(:diskType)

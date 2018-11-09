@@ -32,7 +32,7 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - ssl_policy (String.t): Name of the SSL policy to delete. The name must be 1-63 characters long, and comply with RFC1035.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -49,8 +49,14 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
   """
   @spec compute_ssl_policies_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_ssl_policies_delete(connection, project, ssl_policy, opts \\ []) do
-    optional_params = %{
+  def compute_ssl_policies_delete(
+        connection,
+        project,
+        ssl_policy,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -68,11 +74,11 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
         "project" => URI.encode_www_form(project),
         "sslPolicy" => URI.encode_www_form(ssl_policy)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -83,7 +89,7 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - ssl_policy (String.t): Name of the SSL policy to update. The name must be 1-63 characters long, and comply with RFC1035.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -99,8 +105,8 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
   """
   @spec compute_ssl_policies_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.SslPolicy.t()} | {:error, Tesla.Env.t()}
-  def compute_ssl_policies_get(connection, project, ssl_policy, opts \\ []) do
-    optional_params = %{
+  def compute_ssl_policies_get(connection, project, ssl_policy, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -117,11 +123,11 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
         "project" => URI.encode_www_form(project),
         "sslPolicy" => URI.encode_www_form(ssl_policy)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.SslPolicy{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.SslPolicy{}])
   end
 
   @doc """
@@ -131,7 +137,7 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -149,8 +155,8 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
   """
   @spec compute_ssl_policies_insert(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_ssl_policies_insert(connection, project, opts \\ []) do
-    optional_params = %{
+  def compute_ssl_policies_insert(connection, project, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -168,11 +174,11 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
       |> Request.url("/{project}/global/sslPolicies", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -182,7 +188,7 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -202,8 +208,8 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
   """
   @spec compute_ssl_policies_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.SslPoliciesList.t()} | {:error, Tesla.Env.t()}
-  def compute_ssl_policies_list(connection, project, opts \\ []) do
-    optional_params = %{
+  def compute_ssl_policies_list(connection, project, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -223,11 +229,11 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
       |> Request.url("/{project}/global/sslPolicies", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.SslPoliciesList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.SslPoliciesList{}])
   end
 
   @doc """
@@ -237,7 +243,7 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -258,8 +264,13 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
   @spec compute_ssl_policies_list_available_features(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.SslPoliciesListAvailableFeaturesResponse.t()}
           | {:error, Tesla.Env.t()}
-  def compute_ssl_policies_list_available_features(connection, project, opts \\ []) do
-    optional_params = %{
+  def compute_ssl_policies_list_available_features(
+        connection,
+        project,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -279,12 +290,12 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
       |> Request.url("/{project}/global/sslPolicies/listAvailableFeatures", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.Compute.V1.Model.SslPoliciesListAvailableFeaturesResponse{}
+      opts ++ [struct: %GoogleApi.Compute.V1.Model.SslPoliciesListAvailableFeaturesResponse{}]
     )
   end
 
@@ -296,7 +307,7 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - ssl_policy (String.t): Name of the SSL policy to update. The name must be 1-63 characters long, and comply with RFC1035.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -314,8 +325,14 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
   """
   @spec compute_ssl_policies_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_ssl_policies_patch(connection, project, ssl_policy, opts \\ []) do
-    optional_params = %{
+  def compute_ssl_policies_patch(
+        connection,
+        project,
+        ssl_policy,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -334,10 +351,10 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
         "project" => URI.encode_www_form(project),
         "sslPolicy" => URI.encode_www_form(ssl_policy)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 end

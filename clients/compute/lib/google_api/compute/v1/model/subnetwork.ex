@@ -24,7 +24,7 @@ defmodule GoogleApi.Compute.V1.Model.Subnetwork do
 
   - creationTimestamp (String.t): [Output Only] Creation timestamp in RFC3339 text format. Defaults to: `null`.
   - description (String.t): An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time. Defaults to: `null`.
-  - enableFlowLogs (boolean()): Whether to enable flow logging for this subnetwork. Defaults to: `null`.
+  - enableFlowLogs (boolean()): Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging. Defaults to: `null`.
   - fingerprint (binary()): Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork.  To see the latest fingerprint, make a get() request to retrieve a Subnetwork. Defaults to: `null`.
   - gatewayAddress (String.t): [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork. Defaults to: `null`.
   - id (String.t): [Output Only] The unique identifier for the resource. This identifier is defined by the server. Defaults to: `null`.

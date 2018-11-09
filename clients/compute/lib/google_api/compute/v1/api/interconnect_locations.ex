@@ -32,7 +32,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectLocations do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - interconnect_location (String.t): Name of the interconnect location to return.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,14 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectLocations do
   """
   @spec compute_interconnect_locations_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.InterconnectLocation.t()} | {:error, Tesla.Env.t()}
-  def compute_interconnect_locations_get(connection, project, interconnect_location, opts \\ []) do
-    optional_params = %{
+  def compute_interconnect_locations_get(
+        connection,
+        project,
+        interconnect_location,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -66,11 +72,11 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectLocations do
         "project" => URI.encode_www_form(project),
         "interconnectLocation" => URI.encode_www_form(interconnect_location)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.InterconnectLocation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.InterconnectLocation{}])
   end
 
   @doc """
@@ -80,7 +86,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectLocations do
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -100,8 +106,8 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectLocations do
   """
   @spec compute_interconnect_locations_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.InterconnectLocationList.t()} | {:error, Tesla.Env.t()}
-  def compute_interconnect_locations_list(connection, project, opts \\ []) do
-    optional_params = %{
+  def compute_interconnect_locations_list(connection, project, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -121,10 +127,10 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectLocations do
       |> Request.url("/{project}/global/interconnectLocations", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.InterconnectLocationList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.InterconnectLocationList{}])
   end
 end

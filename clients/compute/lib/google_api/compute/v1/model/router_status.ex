@@ -25,6 +25,7 @@ defmodule GoogleApi.Compute.V1.Model.RouterStatus do
   - bestRoutes ([Route]): Best routes for this router&#39;s network. Defaults to: `null`.
   - bestRoutesForRouter ([Route]): Best routes learned by this router. Defaults to: `null`.
   - bgpPeerStatus ([RouterStatusBgpPeerStatus]):  Defaults to: `null`.
+  - natStatus ([RouterStatusNatStatus]):  Defaults to: `null`.
   - network (String.t): URI of the network to which this router belongs. Defaults to: `null`.
   """
 
@@ -34,12 +35,14 @@ defmodule GoogleApi.Compute.V1.Model.RouterStatus do
           :bestRoutes => list(GoogleApi.Compute.V1.Model.Route.t()),
           :bestRoutesForRouter => list(GoogleApi.Compute.V1.Model.Route.t()),
           :bgpPeerStatus => list(GoogleApi.Compute.V1.Model.RouterStatusBgpPeerStatus.t()),
+          :natStatus => list(GoogleApi.Compute.V1.Model.RouterStatusNatStatus.t()),
           :network => any()
         }
 
   field(:bestRoutes, as: GoogleApi.Compute.V1.Model.Route, type: :list)
   field(:bestRoutesForRouter, as: GoogleApi.Compute.V1.Model.Route, type: :list)
   field(:bgpPeerStatus, as: GoogleApi.Compute.V1.Model.RouterStatusBgpPeerStatus, type: :list)
+  field(:natStatus, as: GoogleApi.Compute.V1.Model.RouterStatusNatStatus, type: :list)
   field(:network)
 end
 

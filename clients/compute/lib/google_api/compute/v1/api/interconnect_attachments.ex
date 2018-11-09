@@ -31,7 +31,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -56,8 +56,13 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.InterconnectAttachmentAggregatedList.t()}
           | {:error, Tesla.Env.t()}
-  def compute_interconnect_attachments_aggregated_list(connection, project, opts \\ []) do
-    optional_params = %{
+  def compute_interconnect_attachments_aggregated_list(
+        connection,
+        project,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -77,11 +82,13 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
       |> Request.url("/{project}/aggregated/interconnectAttachments", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.InterconnectAttachmentAggregatedList{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Compute.V1.Model.InterconnectAttachmentAggregatedList{}]
+    )
   end
 
   @doc """
@@ -93,7 +100,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
   - project (String.t): Project ID for this request.
   - region (String.t): Name of the region for this request.
   - interconnect_attachment (String.t): Name of the interconnect attachment to delete.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -120,9 +127,10 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
         project,
         region,
         interconnect_attachment,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -144,11 +152,11 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
           "interconnectAttachment" => URI.encode_www_form(interconnect_attachment)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -160,7 +168,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
   - project (String.t): Project ID for this request.
   - region (String.t): Name of the region for this request.
   - interconnect_attachment (String.t): Name of the interconnect attachment to return.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -187,9 +195,10 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
         project,
         region,
         interconnect_attachment,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -210,11 +219,11 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
           "interconnectAttachment" => URI.encode_www_form(interconnect_attachment)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.InterconnectAttachment{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.InterconnectAttachment{}])
   end
 
   @doc """
@@ -225,7 +234,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - region (String.t): Name of the region for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -247,8 +256,14 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_interconnect_attachments_insert(connection, project, region, opts \\ []) do
-    optional_params = %{
+  def compute_interconnect_attachments_insert(
+        connection,
+        project,
+        region,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -267,11 +282,11 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
         "project" => URI.encode_www_form(project),
         "region" => URI.encode_www_form(region)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -282,7 +297,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - region (String.t): Name of the region for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -308,8 +323,14 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.InterconnectAttachmentList.t()}
           | {:error, Tesla.Env.t()}
-  def compute_interconnect_attachments_list(connection, project, region, opts \\ []) do
-    optional_params = %{
+  def compute_interconnect_attachments_list(
+        connection,
+        project,
+        region,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -330,11 +351,11 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
         "project" => URI.encode_www_form(project),
         "region" => URI.encode_www_form(region)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.InterconnectAttachmentList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.InterconnectAttachmentList{}])
   end
 
   @doc """
@@ -346,7 +367,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
   - project (String.t): Project ID for this request.
   - region (String.t): Name of the region scoping this request.
   - interconnect_attachment (String.t): Name of the interconnect attachment to patch.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -374,9 +395,10 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
         project,
         region,
         interconnect_attachment,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -399,10 +421,10 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
           "interconnectAttachment" => URI.encode_www_form(interconnect_attachment)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 end

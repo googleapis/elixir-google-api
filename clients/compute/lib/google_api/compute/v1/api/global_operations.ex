@@ -31,7 +31,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -51,8 +51,13 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
   """
   @spec compute_global_operations_aggregated_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.OperationAggregatedList.t()} | {:error, Tesla.Env.t()}
-  def compute_global_operations_aggregated_list(connection, project, opts \\ []) do
-    optional_params = %{
+  def compute_global_operations_aggregated_list(
+        connection,
+        project,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -72,11 +77,11 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
       |> Request.url("/{project}/aggregated/operations", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.OperationAggregatedList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.OperationAggregatedList{}])
   end
 
   @doc """
@@ -87,7 +92,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - operation (String.t): Name of the Operations resource to delete.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -103,8 +108,14 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
   """
   @spec compute_global_operations_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def compute_global_operations_delete(connection, project, operation, opts \\ []) do
-    optional_params = %{
+  def compute_global_operations_delete(
+        connection,
+        project,
+        operation,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -121,11 +132,11 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
         "project" => URI.encode_www_form(project),
         "operation" => URI.encode_www_form(operation)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -136,7 +147,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - operation (String.t): Name of the Operations resource to return.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -152,8 +163,14 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
   """
   @spec compute_global_operations_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_global_operations_get(connection, project, operation, opts \\ []) do
-    optional_params = %{
+  def compute_global_operations_get(
+        connection,
+        project,
+        operation,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -170,11 +187,11 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
         "project" => URI.encode_www_form(project),
         "operation" => URI.encode_www_form(operation)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -184,7 +201,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -204,8 +221,8 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
   """
   @spec compute_global_operations_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.OperationList.t()} | {:error, Tesla.Env.t()}
-  def compute_global_operations_list(connection, project, opts \\ []) do
-    optional_params = %{
+  def compute_global_operations_list(connection, project, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -225,10 +242,10 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
       |> Request.url("/{project}/global/operations", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.OperationList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.OperationList{}])
   end
 end

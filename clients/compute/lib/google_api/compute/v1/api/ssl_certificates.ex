@@ -32,7 +32,7 @@ defmodule GoogleApi.Compute.V1.Api.SslCertificates do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - ssl_certificate (String.t): Name of the SslCertificate resource to delete.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -49,8 +49,14 @@ defmodule GoogleApi.Compute.V1.Api.SslCertificates do
   """
   @spec compute_ssl_certificates_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_ssl_certificates_delete(connection, project, ssl_certificate, opts \\ []) do
-    optional_params = %{
+  def compute_ssl_certificates_delete(
+        connection,
+        project,
+        ssl_certificate,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -68,11 +74,11 @@ defmodule GoogleApi.Compute.V1.Api.SslCertificates do
         "project" => URI.encode_www_form(project),
         "sslCertificate" => URI.encode_www_form(ssl_certificate)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -83,7 +89,7 @@ defmodule GoogleApi.Compute.V1.Api.SslCertificates do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - ssl_certificate (String.t): Name of the SslCertificate resource to return.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -99,8 +105,14 @@ defmodule GoogleApi.Compute.V1.Api.SslCertificates do
   """
   @spec compute_ssl_certificates_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.SslCertificate.t()} | {:error, Tesla.Env.t()}
-  def compute_ssl_certificates_get(connection, project, ssl_certificate, opts \\ []) do
-    optional_params = %{
+  def compute_ssl_certificates_get(
+        connection,
+        project,
+        ssl_certificate,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -117,11 +129,11 @@ defmodule GoogleApi.Compute.V1.Api.SslCertificates do
         "project" => URI.encode_www_form(project),
         "sslCertificate" => URI.encode_www_form(ssl_certificate)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.SslCertificate{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.SslCertificate{}])
   end
 
   @doc """
@@ -131,7 +143,7 @@ defmodule GoogleApi.Compute.V1.Api.SslCertificates do
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -149,8 +161,8 @@ defmodule GoogleApi.Compute.V1.Api.SslCertificates do
   """
   @spec compute_ssl_certificates_insert(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_ssl_certificates_insert(connection, project, opts \\ []) do
-    optional_params = %{
+  def compute_ssl_certificates_insert(connection, project, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -168,11 +180,11 @@ defmodule GoogleApi.Compute.V1.Api.SslCertificates do
       |> Request.url("/{project}/global/sslCertificates", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -182,7 +194,7 @@ defmodule GoogleApi.Compute.V1.Api.SslCertificates do
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -202,8 +214,8 @@ defmodule GoogleApi.Compute.V1.Api.SslCertificates do
   """
   @spec compute_ssl_certificates_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.SslCertificateList.t()} | {:error, Tesla.Env.t()}
-  def compute_ssl_certificates_list(connection, project, opts \\ []) do
-    optional_params = %{
+  def compute_ssl_certificates_list(connection, project, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -223,10 +235,10 @@ defmodule GoogleApi.Compute.V1.Api.SslCertificates do
       |> Request.url("/{project}/global/sslCertificates", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.SslCertificateList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.SslCertificateList{}])
   end
 end

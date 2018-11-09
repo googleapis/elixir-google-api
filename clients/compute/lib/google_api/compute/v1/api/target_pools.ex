@@ -33,7 +33,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
   - project (String.t): Project ID for this request.
   - region (String.t): Name of the region scoping this request.
   - target_pool (String.t): Name of the target pool to add a health check to.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -56,8 +56,15 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_target_pools_add_health_check(connection, project, region, target_pool, opts \\ []) do
-    optional_params = %{
+  def compute_target_pools_add_health_check(
+        connection,
+        project,
+        region,
+        target_pool,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -77,11 +84,11 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
         "region" => URI.encode_www_form(region),
         "targetPool" => URI.encode_www_form(target_pool)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -93,7 +100,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
   - project (String.t): Project ID for this request.
   - region (String.t): Name of the region scoping this request.
   - target_pool (String.t): Name of the TargetPool resource to add instances to.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -116,8 +123,15 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_target_pools_add_instance(connection, project, region, target_pool, opts \\ []) do
-    optional_params = %{
+  def compute_target_pools_add_instance(
+        connection,
+        project,
+        region,
+        target_pool,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -137,11 +151,11 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
         "region" => URI.encode_www_form(region),
         "targetPool" => URI.encode_www_form(target_pool)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -151,7 +165,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -171,8 +185,8 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
   """
   @spec compute_target_pools_aggregated_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.TargetPoolAggregatedList.t()} | {:error, Tesla.Env.t()}
-  def compute_target_pools_aggregated_list(connection, project, opts \\ []) do
-    optional_params = %{
+  def compute_target_pools_aggregated_list(connection, project, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -192,11 +206,11 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
       |> Request.url("/{project}/aggregated/targetPools", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.TargetPoolAggregatedList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.TargetPoolAggregatedList{}])
   end
 
   @doc """
@@ -208,7 +222,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
   - project (String.t): Project ID for this request.
   - region (String.t): Name of the region scoping this request.
   - target_pool (String.t): Name of the TargetPool resource to delete.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -230,8 +244,15 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_target_pools_delete(connection, project, region, target_pool, opts \\ []) do
-    optional_params = %{
+  def compute_target_pools_delete(
+        connection,
+        project,
+        region,
+        target_pool,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -250,11 +271,11 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
         "region" => URI.encode_www_form(region),
         "targetPool" => URI.encode_www_form(target_pool)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -266,7 +287,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
   - project (String.t): Project ID for this request.
   - region (String.t): Name of the region scoping this request.
   - target_pool (String.t): Name of the TargetPool resource to return.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -287,8 +308,15 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.TargetPool.t()} | {:error, Tesla.Env.t()}
-  def compute_target_pools_get(connection, project, region, target_pool, opts \\ []) do
-    optional_params = %{
+  def compute_target_pools_get(
+        connection,
+        project,
+        region,
+        target_pool,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -306,11 +334,11 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
         "region" => URI.encode_www_form(region),
         "targetPool" => URI.encode_www_form(target_pool)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.TargetPool{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.TargetPool{}])
   end
 
   @doc """
@@ -322,7 +350,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
   - project (String.t): Project ID for this request.
   - region (String.t): Name of the region scoping this request.
   - target_pool (String.t): Name of the TargetPool resource to which the queried instance belongs.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -345,8 +373,15 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
           keyword()
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.TargetPoolInstanceHealth.t()} | {:error, Tesla.Env.t()}
-  def compute_target_pools_get_health(connection, project, region, target_pool, opts \\ []) do
-    optional_params = %{
+  def compute_target_pools_get_health(
+        connection,
+        project,
+        region,
+        target_pool,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -365,11 +400,11 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
         "region" => URI.encode_www_form(region),
         "targetPool" => URI.encode_www_form(target_pool)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.TargetPoolInstanceHealth{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.TargetPoolInstanceHealth{}])
   end
 
   @doc """
@@ -380,7 +415,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - region (String.t): Name of the region scoping this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -398,8 +433,8 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
   """
   @spec compute_target_pools_insert(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_target_pools_insert(connection, project, region, opts \\ []) do
-    optional_params = %{
+  def compute_target_pools_insert(connection, project, region, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -418,11 +453,11 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
         "project" => URI.encode_www_form(project),
         "region" => URI.encode_www_form(region)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -433,7 +468,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - region (String.t): Name of the region scoping this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -453,8 +488,8 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
   """
   @spec compute_target_pools_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.TargetPoolList.t()} | {:error, Tesla.Env.t()}
-  def compute_target_pools_list(connection, project, region, opts \\ []) do
-    optional_params = %{
+  def compute_target_pools_list(connection, project, region, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -475,11 +510,11 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
         "project" => URI.encode_www_form(project),
         "region" => URI.encode_www_form(region)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.TargetPoolList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.TargetPoolList{}])
   end
 
   @doc """
@@ -491,7 +526,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
   - project (String.t): Project ID for this request.
   - region (String.t): Name of the region for this request.
   - target_pool (String.t): Name of the target pool to remove health checks from.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -519,9 +554,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
         project,
         region,
         target_pool,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -541,11 +577,11 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
         "region" => URI.encode_www_form(region),
         "targetPool" => URI.encode_www_form(target_pool)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -557,7 +593,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
   - project (String.t): Project ID for this request.
   - region (String.t): Name of the region scoping this request.
   - target_pool (String.t): Name of the TargetPool resource to remove instances from.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -580,8 +616,15 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_target_pools_remove_instance(connection, project, region, target_pool, opts \\ []) do
-    optional_params = %{
+  def compute_target_pools_remove_instance(
+        connection,
+        project,
+        region,
+        target_pool,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -601,11 +644,11 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
         "region" => URI.encode_www_form(region),
         "targetPool" => URI.encode_www_form(target_pool)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -617,7 +660,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
   - project (String.t): Project ID for this request.
   - region (String.t): Name of the region scoping this request.
   - target_pool (String.t): Name of the TargetPool resource to set a backup pool for.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -641,8 +684,15 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_target_pools_set_backup(connection, project, region, target_pool, opts \\ []) do
-    optional_params = %{
+  def compute_target_pools_set_backup(
+        connection,
+        project,
+        region,
+        target_pool,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -663,10 +713,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
         "region" => URI.encode_www_form(region),
         "targetPool" => URI.encode_www_form(target_pool)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 end

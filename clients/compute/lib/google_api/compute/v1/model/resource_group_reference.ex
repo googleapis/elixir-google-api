@@ -22,7 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.ResourceGroupReference do
 
   ## Attributes
 
-  - group (String.t): A URI referencing one of the instance groups listed in the backend service. Defaults to: `null`.
+  - group (String.t): A URI referencing one of the instance groups or network endpoint groups listed in the backend service. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

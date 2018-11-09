@@ -23,7 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectLocation do
   ## Attributes
 
   - address (String.t): [Output Only] The postal address of the Point of Presence, each line in the address is separated by a newline character. Defaults to: `null`.
-  - availabilityZone (String.t): [Output Only] Availability zone for this location. Within a metropolitan area (metro), maintenance will not be simultaneously scheduled in more than one availability zone. Example: \&quot;zone1\&quot; or \&quot;zone2\&quot;. Defaults to: `null`.
+  - availabilityZone (String.t): [Output Only] Availability zone for this InterconnectLocation. Within a metropolitan area (metro), maintenance will not be simultaneously scheduled in more than one availability zone. Example: \&quot;zone1\&quot; or \&quot;zone2\&quot;. Defaults to: `null`.
   - city (String.t): [Output Only] Metropolitan area designator that indicates which city an interconnect is located. For example: \&quot;Chicago, IL\&quot;, \&quot;Amsterdam, Netherlands\&quot;. Defaults to: `null`.
   - continent (String.t): [Output Only] Continent for this location. Defaults to: `null`.
     - Enum - one of [AFRICA, ASIA_PAC, C_AFRICA, C_ASIA_PAC, C_EUROPE, C_NORTH_AMERICA, C_SOUTH_AMERICA, EUROPE, NORTH_AMERICA, SOUTH_AMERICA]
