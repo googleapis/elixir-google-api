@@ -32,7 +32,7 @@ defmodule GoogleApi.Books.V1.Api.Bookshelves do
   - connection (GoogleApi.Books.V1.Connection): Connection to server
   - user_id (String.t): ID of user for whom to retrieve bookshelves.
   - shelf (String.t): ID of bookshelf to retrieve.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -49,8 +49,8 @@ defmodule GoogleApi.Books.V1.Api.Bookshelves do
   """
   @spec books_bookshelves_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Bookshelf.t()} | {:error, Tesla.Env.t()}
-  def books_bookshelves_get(connection, user_id, shelf, opts \\ []) do
-    optional_params = %{
+  def books_bookshelves_get(connection, user_id, shelf, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -68,11 +68,11 @@ defmodule GoogleApi.Books.V1.Api.Bookshelves do
         "userId" => URI.encode_www_form(user_id),
         "shelf" => URI.encode_www_form(shelf)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Books.V1.Model.Bookshelf{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Books.V1.Model.Bookshelf{}])
   end
 
   @doc """
@@ -82,7 +82,7 @@ defmodule GoogleApi.Books.V1.Api.Bookshelves do
 
   - connection (GoogleApi.Books.V1.Connection): Connection to server
   - user_id (String.t): ID of user for whom to retrieve bookshelves.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -99,8 +99,8 @@ defmodule GoogleApi.Books.V1.Api.Bookshelves do
   """
   @spec books_bookshelves_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Bookshelves.t()} | {:error, Tesla.Env.t()}
-  def books_bookshelves_list(connection, user_id, opts \\ []) do
-    optional_params = %{
+  def books_bookshelves_list(connection, user_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -117,11 +117,11 @@ defmodule GoogleApi.Books.V1.Api.Bookshelves do
       |> Request.url("/users/{userId}/bookshelves", %{
         "userId" => URI.encode_www_form(user_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Books.V1.Model.Bookshelves{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Books.V1.Model.Bookshelves{}])
   end
 
   @doc """
@@ -132,7 +132,7 @@ defmodule GoogleApi.Books.V1.Api.Bookshelves do
   - connection (GoogleApi.Books.V1.Connection): Connection to server
   - user_id (String.t): ID of user for whom to retrieve bookshelf volumes.
   - shelf (String.t): ID of bookshelf to retrieve volumes.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -152,8 +152,14 @@ defmodule GoogleApi.Books.V1.Api.Bookshelves do
   """
   @spec books_bookshelves_volumes_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Volumes.t()} | {:error, Tesla.Env.t()}
-  def books_bookshelves_volumes_list(connection, user_id, shelf, opts \\ []) do
-    optional_params = %{
+  def books_bookshelves_volumes_list(
+        connection,
+        user_id,
+        shelf,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -174,10 +180,10 @@ defmodule GoogleApi.Books.V1.Api.Bookshelves do
         "userId" => URI.encode_www_form(user_id),
         "shelf" => URI.encode_www_form(shelf)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Books.V1.Model.Volumes{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Books.V1.Model.Volumes{}])
   end
 end

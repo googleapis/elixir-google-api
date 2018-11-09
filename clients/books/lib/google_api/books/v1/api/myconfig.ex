@@ -30,7 +30,7 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
   ## Parameters
 
   - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -46,8 +46,8 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
   """
   @spec books_myconfig_get_user_settings(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Usersettings.t()} | {:error, Tesla.Env.t()}
-  def books_myconfig_get_user_settings(connection, opts \\ []) do
-    optional_params = %{
+  def books_myconfig_get_user_settings(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -61,11 +61,11 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/myconfig/getUserSettings")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Books.V1.Model.Usersettings{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Books.V1.Model.Usersettings{}])
   end
 
   @doc """
@@ -76,7 +76,7 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
   - connection (GoogleApi.Books.V1.Connection): Connection to server
   - volume_ids ([String.t]): The volume(s) to release restrictions for.
   - cpksver (String.t): The device/version ID from which to release the restriction.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -98,8 +98,14 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Books.V1.Model.DownloadAccesses.t()} | {:error, Tesla.Env.t()}
-  def books_myconfig_release_download_access(connection, volume_ids, cpksver, opts \\ []) do
-    optional_params = %{
+  def books_myconfig_release_download_access(
+        connection,
+        volume_ids,
+        cpksver,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -117,11 +123,11 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
       |> Request.url("/myconfig/releaseDownloadAccess")
       |> Request.add_param(:query, :volumeIds, volume_ids)
       |> Request.add_param(:query, :cpksver, cpksver)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Books.V1.Model.DownloadAccesses{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Books.V1.Model.DownloadAccesses{}])
   end
 
   @doc """
@@ -134,7 +140,7 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
   - volume_id (String.t): The volume to request concurrent/download restrictions for.
   - nonce (String.t): The client nonce value.
   - cpksver (String.t): The device/version ID from which to request the restrictions.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -158,8 +164,16 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Books.V1.Model.RequestAccess.t()} | {:error, Tesla.Env.t()}
-  def books_myconfig_request_access(connection, source, volume_id, nonce, cpksver, opts \\ []) do
-    optional_params = %{
+  def books_myconfig_request_access(
+        connection,
+        source,
+        volume_id,
+        nonce,
+        cpksver,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -179,11 +193,11 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
       |> Request.add_param(:query, :volumeId, volume_id)
       |> Request.add_param(:query, :nonce, nonce)
       |> Request.add_param(:query, :cpksver, cpksver)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Books.V1.Model.RequestAccess{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Books.V1.Model.RequestAccess{}])
   end
 
   @doc """
@@ -195,7 +209,7 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
   - source (String.t): String to identify the originator of this request.
   - nonce (String.t): The client nonce value.
   - cpksver (String.t): The device/version ID from which to release the restriction.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -221,8 +235,15 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Books.V1.Model.Volumes.t()} | {:error, Tesla.Env.t()}
-  def books_myconfig_sync_volume_licenses(connection, source, nonce, cpksver, opts \\ []) do
-    optional_params = %{
+  def books_myconfig_sync_volume_licenses(
+        connection,
+        source,
+        nonce,
+        cpksver,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -244,11 +265,11 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
       |> Request.add_param(:query, :source, source)
       |> Request.add_param(:query, :nonce, nonce)
       |> Request.add_param(:query, :cpksver, cpksver)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Books.V1.Model.Volumes{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Books.V1.Model.Volumes{}])
   end
 
   @doc """
@@ -257,7 +278,7 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
   ## Parameters
 
   - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -274,8 +295,8 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
   """
   @spec books_myconfig_update_user_settings(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Usersettings.t()} | {:error, Tesla.Env.t()}
-  def books_myconfig_update_user_settings(connection, opts \\ []) do
-    optional_params = %{
+  def books_myconfig_update_user_settings(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -290,10 +311,10 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/myconfig/updateUserSettings")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Books.V1.Model.Usersettings{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Books.V1.Model.Usersettings{}])
   end
 end
