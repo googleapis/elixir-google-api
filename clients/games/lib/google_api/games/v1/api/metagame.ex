@@ -30,7 +30,7 @@ defmodule GoogleApi.Games.V1.Api.Metagame do
   ## Parameters
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -46,8 +46,8 @@ defmodule GoogleApi.Games.V1.Api.Metagame do
   """
   @spec games_metagame_get_metagame_config(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.MetagameConfig.t()} | {:error, Tesla.Env.t()}
-  def games_metagame_get_metagame_config(connection, opts \\ []) do
-    optional_params = %{
+  def games_metagame_get_metagame_config(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -61,11 +61,11 @@ defmodule GoogleApi.Games.V1.Api.Metagame do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/metagameConfig")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.MetagameConfig{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.MetagameConfig{}])
   end
 
   @doc """
@@ -76,7 +76,7 @@ defmodule GoogleApi.Games.V1.Api.Metagame do
   - connection (GoogleApi.Games.V1.Connection): Connection to server
   - player_id (String.t): A player ID. A value of me may be used in place of the authenticated player&#39;s ID.
   - collection (String.t): The collection of categories for which data will be returned.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -99,8 +99,14 @@ defmodule GoogleApi.Games.V1.Api.Metagame do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Games.V1.Model.CategoryListResponse.t()} | {:error, Tesla.Env.t()}
-  def games_metagame_list_categories_by_player(connection, player_id, collection, opts \\ []) do
-    optional_params = %{
+  def games_metagame_list_categories_by_player(
+        connection,
+        player_id,
+        collection,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -120,10 +126,10 @@ defmodule GoogleApi.Games.V1.Api.Metagame do
         "playerId" => URI.encode_www_form(player_id),
         "collection" => URI.encode_www_form(collection)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.CategoryListResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.CategoryListResponse{}])
   end
 end

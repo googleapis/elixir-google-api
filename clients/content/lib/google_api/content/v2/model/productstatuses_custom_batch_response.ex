@@ -29,7 +29,8 @@ defmodule GoogleApi.Content.V2.Model.ProductstatusesCustomBatchResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entries => list(GoogleApi.Content.V2.Model.ProductstatusesCustomBatchResponseEntry.t()),
+          :entries =>
+            list(GoogleApi.Content.V2.Model.ProductstatusesCustomBatchResponseEntry.t()),
           :kind => any()
         }
 

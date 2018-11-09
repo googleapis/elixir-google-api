@@ -22,7 +22,7 @@ defmodule GoogleApi.AppEngine.V1.Model.AutomaticScaling do
 
   ## Attributes
 
-  - coolDownPeriod (String.t): Amount of time that the Autoscaler (https://cloud.google.com/compute/docs/autoscaler/) should wait between changes to the number of virtual machines. Only applicable in the App Engine flexible environment. Defaults to: `null`.
+  - coolDownPeriod (String.t): The time period that the Autoscaler (https://cloud.google.com/compute/docs/autoscaler/) should wait before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. Only applicable in the App Engine flexible environment. Defaults to: `null`.
   - cpuUtilization (CpuUtilization): Target scaling by CPU usage. Defaults to: `null`.
   - diskUtilization (DiskUtilization): Target scaling by disk usage. Defaults to: `null`.
   - maxConcurrentRequests (integer()): Number of concurrent requests an automatic scaling instance can accept before the scheduler spawns a new instance.Defaults to a runtime-specific value. Defaults to: `null`.

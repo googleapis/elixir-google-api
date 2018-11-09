@@ -28,6 +28,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildTrigger do
   - disabled (boolean()): If true, the trigger will never result in a build. Defaults to: `null`.
   - filename (String.t): Path, from the source root, to a file whose contents is used for the template. Defaults to: `null`.
   - id (String.t): Output only. Unique identifier of the trigger. Defaults to: `null`.
+  - ignoredFiles ([String.t]): ignored_files and included_files are file glob matches using http://godoc/pkg/path/filepath#Match extended with support for \&quot;**\&quot;.  If ignored_files and changed files are both empty, then they are not used to determine whether or not to trigger a build.  If ignored_files is not empty, then we ignore any files that match any of the ignored_file globs. If the change has no files that are outside of the ignored_files globs, then we do not trigger a build. Defaults to: `null`.
+  - includedFiles ([String.t]): If any of the files altered in the commit pass the ignored_files filter and included_files is empty, then as far as this filter is concerned, we should trigger the build.  If any of the files altered in the commit pass the ignored_files filter and included_files is not empty, then we make sure that at least one of those files matches a included_files glob. If not, then we do not trigger a build. Defaults to: `null`.
   - substitutions (%{optional(String.t) &#x3D;&gt; String.t}): Substitutions data for Build resource. Defaults to: `null`.
   - triggerTemplate (RepoSource): Template describing the types of source changes to trigger a build.  Branch and tag names in trigger templates are interpreted as regular expressions. Any branch or tag change that matches that regular expression will trigger a build. Defaults to: `null`.
   """
@@ -41,6 +43,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildTrigger do
           :disabled => any(),
           :filename => any(),
           :id => any(),
+          :ignoredFiles => list(any()),
+          :includedFiles => list(any()),
           :substitutions => map(),
           :triggerTemplate => GoogleApi.CloudBuild.V1.Model.RepoSource.t()
         }
@@ -51,6 +55,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildTrigger do
   field(:disabled)
   field(:filename)
   field(:id)
+  field(:ignoredFiles, type: :list)
+  field(:includedFiles, type: :list)
   field(:substitutions, type: :map)
   field(:triggerTemplate, as: GoogleApi.CloudBuild.V1.Model.RepoSource)
 end

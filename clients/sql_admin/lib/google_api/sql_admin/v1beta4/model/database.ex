@@ -18,13 +18,13 @@
 
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.Database do
   @moduledoc """
-  A database resource inside a Cloud SQL instance.
+  Represents a SQL database on the Cloud SQL instance.
 
   ## Attributes
 
   - charset (String.t): The MySQL charset value. Defaults to: `null`.
   - collation (String.t): The MySQL collation value. Defaults to: `null`.
-  - etag (String.t): HTTP 1.1 Entity tag for the resource. Defaults to: `null`.
+  - etag (String.t): This field is deprecated and will be removed from a future version of the API. Defaults to: `null`.
   - instance (String.t): The name of the Cloud SQL instance. This does not include the project ID. Defaults to: `null`.
   - kind (String.t): This is always sql#database. Defaults to: `null`.
   - name (String.t): The name of the database in the Cloud SQL instance. This does not include the project ID or instance name. Defaults to: `null`.

@@ -25,8 +25,6 @@ defmodule GoogleApi.Script.V1.Model.Deployment do
   - deploymentConfig (DeploymentConfig): The deployment configuration. Defaults to: `null`.
   - deploymentId (String.t): The deployment ID for this deployment. Defaults to: `null`.
   - entryPoints ([EntryPoint]): The deployment&#39;s entry points. Defaults to: `null`.
-  - functionSet (GoogleAppsScriptTypeFunctionSet): Script&#39;s defined set of functions. Defaults to: `null`.
-  - scopeSet (GoogleAppsScriptTypeScopeSet): Set of scopes required by the deployment. Defaults to: `null`.
   - updateTime (DateTime.t): Last modified date time stamp. Defaults to: `null`.
   """
 
@@ -36,16 +34,12 @@ defmodule GoogleApi.Script.V1.Model.Deployment do
           :deploymentConfig => GoogleApi.Script.V1.Model.DeploymentConfig.t(),
           :deploymentId => any(),
           :entryPoints => list(GoogleApi.Script.V1.Model.EntryPoint.t()),
-          :functionSet => GoogleApi.Script.V1.Model.GoogleAppsScriptTypeFunctionSet.t(),
-          :scopeSet => GoogleApi.Script.V1.Model.GoogleAppsScriptTypeScopeSet.t(),
           :updateTime => DateTime.t()
         }
 
   field(:deploymentConfig, as: GoogleApi.Script.V1.Model.DeploymentConfig)
   field(:deploymentId)
   field(:entryPoints, as: GoogleApi.Script.V1.Model.EntryPoint, type: :list)
-  field(:functionSet, as: GoogleApi.Script.V1.Model.GoogleAppsScriptTypeFunctionSet)
-  field(:scopeSet, as: GoogleApi.Script.V1.Model.GoogleAppsScriptTypeScopeSet)
   field(:updateTime, as: DateTime)
 end
 

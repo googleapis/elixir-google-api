@@ -18,12 +18,12 @@
 
 defmodule GoogleApi.PubSub.V1.Model.PubsubMessage do
   @moduledoc """
-  A message data and its attributes. The message payload must not be empty; it must contain either a non-empty data field, or at least one attribute.
+  A message that is published by publishers and consumed by subscribers. The message must contain either a non-empty data field or at least one attribute.
 
   ## Attributes
 
   - attributes (%{optional(String.t) &#x3D;&gt; String.t}): Optional attributes for this message. Defaults to: `null`.
-  - data (binary()): The message payload. Defaults to: `null`.
+  - data (binary()): The message data field. If this field is empty, the message must contain at least one attribute. Defaults to: `null`.
   - messageId (String.t): ID of this message, assigned by the server when the message is published. Guaranteed to be unique within the topic. This value may be read by a subscriber that receives a &#x60;PubsubMessage&#x60; via a &#x60;Pull&#x60; call or a push delivery. It must not be populated by the publisher in a &#x60;Publish&#x60; call. Defaults to: `null`.
   - publishTime (DateTime.t): The time at which the message was published, populated by the server when it receives the &#x60;Publish&#x60; call. It must not be populated by the publisher in a &#x60;Publish&#x60; call. Defaults to: `null`.
   """

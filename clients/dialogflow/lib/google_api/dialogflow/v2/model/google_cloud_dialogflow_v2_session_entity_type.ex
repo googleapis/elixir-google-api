@@ -25,7 +25,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType
   - entities ([GoogleCloudDialogflowV2EntityTypeEntity]): Required. The collection of entities associated with this session entity type. Defaults to: `null`.
   - entityOverrideMode (String.t): Required. Indicates whether the additional data should override or supplement the developer entity type definition. Defaults to: `null`.
     - Enum - one of [ENTITY_OVERRIDE_MODE_UNSPECIFIED, ENTITY_OVERRIDE_MODE_OVERRIDE, ENTITY_OVERRIDE_MODE_SUPPLEMENT]
-  - name (String.t): Required. The unique identifier of this session entity type. Format: &#x60;projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;&#x60;. Defaults to: `null`.
+  - name (String.t): Required. The unique identifier of this session entity type. Format: &#x60;projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;&#x60;.  &#x60;&lt;Entity Type Display Name&gt;&#x60; must be the display name of an existing entity type in the same agent that will be overridden or supplemented. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

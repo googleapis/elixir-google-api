@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DateTime do
   @moduledoc """
-  Message for a date time object.
+  Message for a date time object. e.g. 2018-01-01, 5th August.
 
   ## Attributes
 

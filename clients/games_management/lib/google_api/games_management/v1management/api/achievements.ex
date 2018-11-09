@@ -31,7 +31,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Achievements do
 
   - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
   - achievement_id (String.t): The ID of the achievement used by this method.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,13 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Achievements do
   @spec games_management_achievements_reset(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.GamesManagement.V1management.Model.AchievementResetResponse.t()}
           | {:error, Tesla.Env.t()}
-  def games_management_achievements_reset(connection, achievement_id, opts \\ []) do
-    optional_params = %{
+  def games_management_achievements_reset(
+        connection,
+        achievement_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -65,12 +70,12 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Achievements do
       |> Request.url("/achievements/{achievementId}/reset", %{
         "achievementId" => URI.encode_www_form(achievement_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.GamesManagement.V1management.Model.AchievementResetResponse{}
+      opts ++ [struct: %GoogleApi.GamesManagement.V1management.Model.AchievementResetResponse{}]
     )
   end
 
@@ -80,7 +85,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Achievements do
   ## Parameters
 
   - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -97,8 +102,8 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Achievements do
   @spec games_management_achievements_reset_all(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.GamesManagement.V1management.Model.AchievementResetAllResponse.t()}
           | {:error, Tesla.Env.t()}
-  def games_management_achievements_reset_all(connection, opts \\ []) do
-    optional_params = %{
+  def games_management_achievements_reset_all(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -112,12 +117,13 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Achievements do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/achievements/reset")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.GamesManagement.V1management.Model.AchievementResetAllResponse{}
+      opts ++
+        [struct: %GoogleApi.GamesManagement.V1management.Model.AchievementResetAllResponse{}]
     )
   end
 
@@ -127,7 +133,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Achievements do
   ## Parameters
 
   - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -143,8 +149,12 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Achievements do
   """
   @spec games_management_achievements_reset_all_for_all_players(Tesla.Env.client(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def games_management_achievements_reset_all_for_all_players(connection, opts \\ []) do
-    optional_params = %{
+  def games_management_achievements_reset_all_for_all_players(
+        connection,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -158,11 +168,11 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Achievements do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/achievements/resetAllForAllPlayers")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -172,7 +182,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Achievements do
 
   - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
   - achievement_id (String.t): The ID of the achievement used by this method.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -191,8 +201,13 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Achievements do
           String.t(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
-  def games_management_achievements_reset_for_all_players(connection, achievement_id, opts \\ []) do
-    optional_params = %{
+  def games_management_achievements_reset_for_all_players(
+        connection,
+        achievement_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -208,11 +223,11 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Achievements do
       |> Request.url("/achievements/{achievementId}/resetForAllPlayers", %{
         "achievementId" => URI.encode_www_form(achievement_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -221,7 +236,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Achievements do
   ## Parameters
 
   - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -240,8 +255,12 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Achievements do
           Tesla.Env.client(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
-  def games_management_achievements_reset_multiple_for_all_players(connection, opts \\ []) do
-    optional_params = %{
+  def games_management_achievements_reset_multiple_for_all_players(
+        connection,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -256,10 +275,10 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Achievements do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/achievements/resetMultipleForAllPlayers")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 end

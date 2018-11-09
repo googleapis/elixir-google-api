@@ -23,24 +23,24 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent do
   ## Attributes
 
   - parameters ([GoogleCloudDialogflowV2IntentParameter]): Optional. The collection of parameters associated with the intent. Defaults to: `null`.
-  - action (String.t): Optional. The name of the action associated with the intent. Defaults to: `null`.
+  - action (String.t): Optional. The name of the action associated with the intent. Note: The action name must not contain whitespaces. Defaults to: `null`.
   - defaultResponsePlatforms ([String.t]): Optional. The list of platforms for which the first response will be taken from among the messages assigned to the DEFAULT_PLATFORM. Defaults to: `null`.
     - Enum - one of 
   - displayName (String.t): Required. The name of this intent. Defaults to: `null`.
   - events ([String.t]): Optional. The collection of event names that trigger the intent. If the collection of input contexts is not empty, all of the contexts must be present in the active user session for an event to trigger this intent. Defaults to: `null`.
-  - followupIntentInfo ([GoogleCloudDialogflowV2IntentFollowupIntentInfo]): Optional. Collection of information about all followup intents that have name of this intent as a root_name. Defaults to: `null`.
+  - followupIntentInfo ([GoogleCloudDialogflowV2IntentFollowupIntentInfo]): Read-only. Information about all followup intents that have this intent as a direct or indirect parent. We populate this field only in the output. Defaults to: `null`.
   - inputContextNames ([String.t]): Optional. The list of context names required for this intent to be triggered. Format: &#x60;projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;&#x60;. Defaults to: `null`.
   - isFallback (boolean()): Optional. Indicates whether this is a fallback intent. Defaults to: `null`.
   - messages ([GoogleCloudDialogflowV2IntentMessage]): Optional. The collection of rich messages corresponding to the &#x60;Response&#x60; field in the Dialogflow console. Defaults to: `null`.
   - mlDisabled (boolean()): Optional. Indicates whether Machine Learning is disabled for the intent. Note: If &#x60;ml_diabled&#x60; setting is set to true, then this intent is not taken into account during inference in &#x60;ML ONLY&#x60; match mode. Also, auto-markup in the UI is turned off. Defaults to: `null`.
   - name (String.t): Required for all methods except &#x60;create&#x60; (&#x60;create&#x60; populates the name automatically. The unique identifier of this intent. Format: &#x60;projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;&#x60;. Defaults to: `null`.
   - outputContexts ([GoogleCloudDialogflowV2Context]): Optional. The collection of contexts that are activated when the intent is matched. Context messages in this collection should not set the parameters field. Setting the &#x60;lifespan_count&#x60; to 0 will reset the context when the intent is matched. Format: &#x60;projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;&#x60;. Defaults to: `null`.
-  - parentFollowupIntentName (String.t): The unique identifier of the parent intent in the chain of followup intents. It identifies the parent followup intent. Format: &#x60;projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;&#x60;. Defaults to: `null`.
+  - parentFollowupIntentName (String.t): Read-only after creation. The unique identifier of the parent intent in the chain of followup intents. You can set this field when creating an intent, for example with CreateIntent or BatchUpdateIntents, in order to make this intent a followup intent.  It identifies the parent followup intent. Format: &#x60;projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;&#x60;. Defaults to: `null`.
   - priority (integer()): Optional. The priority of this intent. Higher numbers represent higher priorities. Zero or negative numbers mean that the intent is disabled. Defaults to: `null`.
   - resetContexts (boolean()): Optional. Indicates whether to delete all contexts in the current session when this intent is matched. Defaults to: `null`.
-  - rootFollowupIntentName (String.t): The unique identifier of the root intent in the chain of followup intents. It identifies the correct followup intents chain for this intent. Format: &#x60;projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;&#x60;. Defaults to: `null`.
+  - rootFollowupIntentName (String.t): Read-only. The unique identifier of the root intent in the chain of followup intents. It identifies the correct followup intents chain for this intent. We populate this field only in the output.  Format: &#x60;projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;&#x60;. Defaults to: `null`.
   - trainingPhrases ([GoogleCloudDialogflowV2IntentTrainingPhrase]): Optional. The collection of examples/templates that the agent is trained on. Defaults to: `null`.
-  - webhookState (String.t): Required. Indicates whether webhooks are enabled for the intent. Defaults to: `null`.
+  - webhookState (String.t): Optional. Indicates whether webhooks are enabled for the intent. Defaults to: `null`.
     - Enum - one of [WEBHOOK_STATE_UNSPECIFIED, WEBHOOK_STATE_ENABLED, WEBHOOK_STATE_ENABLED_FOR_SLOT_FILLING]
   """
 

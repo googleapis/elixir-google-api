@@ -24,6 +24,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1Model do
 
   - defaultVersion (GoogleCloudMlV1Version): Output only. The default version of the model. This version will be used to handle prediction requests that do not specify a version.  You can change the default version by calling [projects.methods.versions.setDefault](/ml-engine/reference/rest/v1/projects.models.versions/setDefault). Defaults to: `null`.
   - description (String.t): Optional. The description specified for the model when it was created. Defaults to: `null`.
+  - etag (binary()): &#x60;etag&#x60; is used for optimistic concurrency control as a way to help prevent simultaneous updates of a model from overwriting each other. It is strongly suggested that systems make use of the &#x60;etag&#x60; in the read-modify-write cycle to perform model updates in order to avoid race conditions: An &#x60;etag&#x60; is returned in the response to &#x60;GetModel&#x60;, and systems are expected to put that etag in the request to &#x60;UpdateModel&#x60; to ensure that their change will be applied to the model as intended. Defaults to: `null`.
+  - labels (%{optional(String.t) &#x3D;&gt; String.t}): Optional. One or more labels that you can add, to organize your models. Each label is a key-value pair, where both the key and the value are arbitrary strings that you supply. For more information, see the documentation on &lt;a href&#x3D;\&quot;/ml-engine/docs/tensorflow/resource-labels\&quot;&gt;using labels&lt;/a&gt;. Defaults to: `null`.
   - name (String.t): Required. The name specified for the model when it was created.  The model name must be unique within the project it is created in. Defaults to: `null`.
   - onlinePredictionLogging (boolean()): Optional. If true, enables StackDriver Logging for online prediction. Default is false. Defaults to: `null`.
   - regions ([String.t]): Optional. The list of regions where the model is going to be deployed. Currently only one region per model is supported. Defaults to &#39;us-central1&#39; if nothing is set. See the &lt;a href&#x3D;\&quot;/ml-engine/docs/tensorflow/regions\&quot;&gt;available regions&lt;/a&gt; for ML Engine services. Note: *   No matter where a model is deployed, it can always be accessed by     users from anywhere, both for online and batch prediction. *   The region for a batch prediction job is set by the region field when     submitting the batch prediction job and does not take its value from     this field. Defaults to: `null`.
@@ -34,6 +36,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1Model do
   @type t :: %__MODULE__{
           :defaultVersion => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1Version.t(),
           :description => any(),
+          :etag => any(),
+          :labels => map(),
           :name => any(),
           :onlinePredictionLogging => any(),
           :regions => list(any())
@@ -41,6 +45,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1Model do
 
   field(:defaultVersion, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1Version)
   field(:description)
+  field(:etag)
+  field(:labels, type: :map)
   field(:name)
   field(:onlinePredictionLogging)
   field(:regions, type: :list)

@@ -30,7 +30,7 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
   ## Parameters
 
   - connection (GoogleApi.Content.V2.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -49,8 +49,8 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
   @spec content_shippingsettings_custombatch(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.ShippingsettingsCustomBatchResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_shippingsettings_custombatch(connection, opts \\ []) do
-    optional_params = %{
+  def content_shippingsettings_custombatch(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -66,11 +66,13 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/shippingsettings/batch")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.ShippingsettingsCustomBatchResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Content.V2.Model.ShippingsettingsCustomBatchResponse{}]
+    )
   end
 
   @doc """
@@ -81,7 +83,7 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
   - account_id (String.t): The ID of the account for which to get/update shipping settings.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -97,8 +99,14 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
   """
   @spec content_shippingsettings_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.ShippingSettings.t()} | {:error, Tesla.Env.t()}
-  def content_shippingsettings_get(connection, merchant_id, account_id, opts \\ []) do
-    optional_params = %{
+  def content_shippingsettings_get(
+        connection,
+        merchant_id,
+        account_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -115,11 +123,11 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
         "merchantId" => URI.encode_www_form(merchant_id),
         "accountId" => URI.encode_www_form(account_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.ShippingSettings{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Content.V2.Model.ShippingSettings{}])
   end
 
   @doc """
@@ -129,7 +137,7 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
 
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account for which to retrieve the supported carriers.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -146,8 +154,13 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
   @spec content_shippingsettings_getsupportedcarriers(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.ShippingsettingsGetSupportedCarriersResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_shippingsettings_getsupportedcarriers(connection, merchant_id, opts \\ []) do
-    optional_params = %{
+  def content_shippingsettings_getsupportedcarriers(
+        connection,
+        merchant_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -163,12 +176,12 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
       |> Request.url("/{merchantId}/supportedCarriers", %{
         "merchantId" => URI.encode_www_form(merchant_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.Content.V2.Model.ShippingsettingsGetSupportedCarriersResponse{}
+      opts ++ [struct: %GoogleApi.Content.V2.Model.ShippingsettingsGetSupportedCarriersResponse{}]
     )
   end
 
@@ -179,7 +192,7 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
 
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account for which to retrieve the supported holidays.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -196,8 +209,13 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
   @spec content_shippingsettings_getsupportedholidays(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.ShippingsettingsGetSupportedHolidaysResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_shippingsettings_getsupportedholidays(connection, merchant_id, opts \\ []) do
-    optional_params = %{
+  def content_shippingsettings_getsupportedholidays(
+        connection,
+        merchant_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -213,12 +231,12 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
       |> Request.url("/{merchantId}/supportedHolidays", %{
         "merchantId" => URI.encode_www_form(merchant_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.Content.V2.Model.ShippingsettingsGetSupportedHolidaysResponse{}
+      opts ++ [struct: %GoogleApi.Content.V2.Model.ShippingsettingsGetSupportedHolidaysResponse{}]
     )
   end
 
@@ -229,7 +247,7 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
 
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the managing account. This must be a multi-client account.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -248,8 +266,8 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
   @spec content_shippingsettings_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.ShippingsettingsListResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_shippingsettings_list(connection, merchant_id, opts \\ []) do
-    optional_params = %{
+  def content_shippingsettings_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -267,11 +285,13 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
       |> Request.url("/{merchantId}/shippingsettings", %{
         "merchantId" => URI.encode_www_form(merchant_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.ShippingsettingsListResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Content.V2.Model.ShippingsettingsListResponse{}]
+    )
   end
 
   @doc """
@@ -282,7 +302,7 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
   - account_id (String.t): The ID of the account for which to get/update shipping settings.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -300,8 +320,14 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
   """
   @spec content_shippingsettings_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.ShippingSettings.t()} | {:error, Tesla.Env.t()}
-  def content_shippingsettings_patch(connection, merchant_id, account_id, opts \\ []) do
-    optional_params = %{
+  def content_shippingsettings_patch(
+        connection,
+        merchant_id,
+        account_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -320,11 +346,11 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
         "merchantId" => URI.encode_www_form(merchant_id),
         "accountId" => URI.encode_www_form(account_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.ShippingSettings{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Content.V2.Model.ShippingSettings{}])
   end
 
   @doc """
@@ -335,7 +361,7 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
   - account_id (String.t): The ID of the account for which to get/update shipping settings.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -353,8 +379,14 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
   """
   @spec content_shippingsettings_update(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.ShippingSettings.t()} | {:error, Tesla.Env.t()}
-  def content_shippingsettings_update(connection, merchant_id, account_id, opts \\ []) do
-    optional_params = %{
+  def content_shippingsettings_update(
+        connection,
+        merchant_id,
+        account_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -373,10 +405,10 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
         "merchantId" => URI.encode_www_form(merchant_id),
         "accountId" => URI.encode_www_form(account_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.ShippingSettings{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Content.V2.Model.ShippingSettings{}])
   end
 end

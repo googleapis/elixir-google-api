@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V2.Model.TestOrderCustomer do
 
   ## Attributes
 
-  - email (String.t): Email address of the customer. Defaults to: `null`.
+  - email (String.t): Deprecated. Defaults to: `null`.
   - explicitMarketingPreference (boolean()): Deprecated. Please use marketingRightsInfo instead. Defaults to: `null`.
   - fullName (String.t): Full name of the customer. Defaults to: `null`.
   - marketingRightsInfo (TestOrderCustomerMarketingRightsInfo): Customer&#39;s marketing preferences. Defaults to: `null`.

@@ -30,7 +30,9 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1AnnotateImageRespo
   - imagePropertiesAnnotation (GoogleCloudVisionV1p2beta1ImageProperties): If present, image properties were extracted successfully. Defaults to: `null`.
   - labelAnnotations ([GoogleCloudVisionV1p2beta1EntityAnnotation]): If present, label detection has completed successfully. Defaults to: `null`.
   - landmarkAnnotations ([GoogleCloudVisionV1p2beta1EntityAnnotation]): If present, landmark detection has completed successfully. Defaults to: `null`.
+  - localizedObjectAnnotations ([GoogleCloudVisionV1p2beta1LocalizedObjectAnnotation]): If present, localized object detection has completed successfully. This will be sorted descending by confidence score. Defaults to: `null`.
   - logoAnnotations ([GoogleCloudVisionV1p2beta1EntityAnnotation]): If present, logo detection has completed successfully. Defaults to: `null`.
+  - productSearchResults (GoogleCloudVisionV1p2beta1ProductSearchResults): If present, product search has completed successfully. Defaults to: `null`.
   - safeSearchAnnotation (GoogleCloudVisionV1p2beta1SafeSearchAnnotation): If present, safe-search annotation has completed successfully. Defaults to: `null`.
   - textAnnotations ([GoogleCloudVisionV1p2beta1EntityAnnotation]): If present, text (OCR) detection has completed successfully. Defaults to: `null`.
   - webDetection (GoogleCloudVisionV1p2beta1WebDetection): If present, web detection has completed successfully. Defaults to: `null`.
@@ -54,8 +56,14 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1AnnotateImageRespo
             list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1EntityAnnotation.t()),
           :landmarkAnnotations =>
             list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1EntityAnnotation.t()),
+          :localizedObjectAnnotations =>
+            list(
+              GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1LocalizedObjectAnnotation.t()
+            ),
           :logoAnnotations =>
             list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1EntityAnnotation.t()),
+          :productSearchResults =>
+            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1ProductSearchResults.t(),
           :safeSearchAnnotation =>
             GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1SafeSearchAnnotation.t(),
           :textAnnotations =>
@@ -101,9 +109,20 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1AnnotateImageRespo
   )
 
   field(
+    :localizedObjectAnnotations,
+    as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1LocalizedObjectAnnotation,
+    type: :list
+  )
+
+  field(
     :logoAnnotations,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1EntityAnnotation,
     type: :list
+  )
+
+  field(
+    :productSearchResults,
+    as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1ProductSearchResults
   )
 
   field(

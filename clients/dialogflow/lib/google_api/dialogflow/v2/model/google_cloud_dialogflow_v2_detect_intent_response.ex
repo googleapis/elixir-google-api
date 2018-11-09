@@ -22,9 +22,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DetectIntentRespo
 
   ## Attributes
 
-  - queryResult (GoogleCloudDialogflowV2QueryResult): The results of the conversational query or event processing. Defaults to: `null`.
+  - queryResult (GoogleCloudDialogflowV2QueryResult): The selected results of the conversational query or event processing. See &#x60;alternative_query_results&#x60; for additional potential results. Defaults to: `null`.
   - responseId (String.t): The unique identifier of the response. It can be used to locate a response in the training example set or for reporting issues. Defaults to: `null`.
-  - webhookStatus (GoogleRpcStatus): Specifies the status of the webhook request. &#x60;webhook_status&#x60; is never populated in webhook requests. Defaults to: `null`.
+  - webhookStatus (GoogleRpcStatus): Specifies the status of the webhook request. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

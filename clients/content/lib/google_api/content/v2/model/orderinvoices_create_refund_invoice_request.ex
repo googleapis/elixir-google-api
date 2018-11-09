@@ -22,8 +22,8 @@ defmodule GoogleApi.Content.V2.Model.OrderinvoicesCreateRefundInvoiceRequest do
 
   ## Attributes
 
-  - invoiceId (String.t): The ID of the invoice. Defaults to: `null`.
-  - operationId (String.t): The ID of the operation, unique across all operations for a given order. Defaults to: `null`.
+  - invoiceId (String.t): [required] The ID of the invoice. Defaults to: `null`.
+  - operationId (String.t): [required] The ID of the operation, unique across all operations for a given order. Defaults to: `null`.
   - refundOnlyOption (OrderinvoicesCustomBatchRequestEntryCreateRefundInvoiceRefundOption): Option to create a refund-only invoice. Exactly one of refundOnlyOption or returnOption must be provided. Defaults to: `null`.
   - returnOption (OrderinvoicesCustomBatchRequestEntryCreateRefundInvoiceReturnOption): Option to create an invoice for a refund and mark all items within the invoice as returned. Exactly one of refundOnlyOption or returnOption must be provided. Defaults to: `null`.
   - shipmentInvoices ([ShipmentInvoice]): Invoice details for different shipment groups. Defaults to: `null`.

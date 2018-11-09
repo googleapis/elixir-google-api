@@ -33,7 +33,7 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
   - product_id (String.t): Name for product
   - sku_id (String.t): Name for sku
   - user_id (String.t): email id or unique Id of the user
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -54,8 +54,15 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
           String.t(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
-  def licensing_license_assignments_delete(connection, product_id, sku_id, user_id, opts \\ []) do
-    optional_params = %{
+  def licensing_license_assignments_delete(
+        connection,
+        product_id,
+        sku_id,
+        user_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -73,11 +80,11 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
         "skuId" => URI.encode_www_form(sku_id),
         "userId" => URI.encode_www_form(user_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -89,7 +96,7 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
   - product_id (String.t): Name for product
   - sku_id (String.t): Name for sku
   - user_id (String.t): email id or unique Id of the user
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -110,8 +117,15 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Licensing.V1.Model.LicenseAssignment.t()} | {:error, Tesla.Env.t()}
-  def licensing_license_assignments_get(connection, product_id, sku_id, user_id, opts \\ []) do
-    optional_params = %{
+  def licensing_license_assignments_get(
+        connection,
+        product_id,
+        sku_id,
+        user_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -129,11 +143,11 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
         "skuId" => URI.encode_www_form(sku_id),
         "userId" => URI.encode_www_form(user_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Licensing.V1.Model.LicenseAssignment{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Licensing.V1.Model.LicenseAssignment{}])
   end
 
   @doc """
@@ -144,7 +158,7 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
   - connection (GoogleApi.Licensing.V1.Connection): Connection to server
   - product_id (String.t): Name for product
   - sku_id (String.t): Name for sku
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -165,8 +179,14 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Licensing.V1.Model.LicenseAssignment.t()} | {:error, Tesla.Env.t()}
-  def licensing_license_assignments_insert(connection, product_id, sku_id, opts \\ []) do
-    optional_params = %{
+  def licensing_license_assignments_insert(
+        connection,
+        product_id,
+        sku_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -184,11 +204,11 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
         "productId" => URI.encode_www_form(product_id),
         "skuId" => URI.encode_www_form(sku_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Licensing.V1.Model.LicenseAssignment{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Licensing.V1.Model.LicenseAssignment{}])
   end
 
   @doc """
@@ -199,7 +219,7 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
   - connection (GoogleApi.Licensing.V1.Connection): Connection to server
   - product_id (String.t): Name for product
   - customer_id (String.t): CustomerId represents the customer for whom licenseassignments are queried
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -226,9 +246,10 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
         connection,
         product_id,
         customer_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -247,11 +268,11 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
         "productId" => URI.encode_www_form(product_id)
       })
       |> Request.add_param(:query, :customerId, customer_id)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Licensing.V1.Model.LicenseAssignmentList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Licensing.V1.Model.LicenseAssignmentList{}])
   end
 
   @doc """
@@ -263,7 +284,7 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
   - product_id (String.t): Name for product
   - sku_id (String.t): Name for sku
   - customer_id (String.t): CustomerId represents the customer for whom licenseassignments are queried
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -292,9 +313,10 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
         product_id,
         sku_id,
         customer_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -314,11 +336,11 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
         "skuId" => URI.encode_www_form(sku_id)
       })
       |> Request.add_param(:query, :customerId, customer_id)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Licensing.V1.Model.LicenseAssignmentList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Licensing.V1.Model.LicenseAssignmentList{}])
   end
 
   @doc """
@@ -330,7 +352,7 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
   - product_id (String.t): Name for product
   - sku_id (String.t): Name for sku for which license would be revoked
   - user_id (String.t): email id or unique Id of the user
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -352,8 +374,15 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Licensing.V1.Model.LicenseAssignment.t()} | {:error, Tesla.Env.t()}
-  def licensing_license_assignments_patch(connection, product_id, sku_id, user_id, opts \\ []) do
-    optional_params = %{
+  def licensing_license_assignments_patch(
+        connection,
+        product_id,
+        sku_id,
+        user_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -372,11 +401,11 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
         "skuId" => URI.encode_www_form(sku_id),
         "userId" => URI.encode_www_form(user_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Licensing.V1.Model.LicenseAssignment{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Licensing.V1.Model.LicenseAssignment{}])
   end
 
   @doc """
@@ -388,7 +417,7 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
   - product_id (String.t): Name for product
   - sku_id (String.t): Name for sku for which license would be revoked
   - user_id (String.t): email id or unique Id of the user
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -410,8 +439,15 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Licensing.V1.Model.LicenseAssignment.t()} | {:error, Tesla.Env.t()}
-  def licensing_license_assignments_update(connection, product_id, sku_id, user_id, opts \\ []) do
-    optional_params = %{
+  def licensing_license_assignments_update(
+        connection,
+        product_id,
+        sku_id,
+        user_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -430,10 +466,10 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
         "skuId" => URI.encode_www_form(sku_id),
         "userId" => URI.encode_www_form(user_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Licensing.V1.Model.LicenseAssignment{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Licensing.V1.Model.LicenseAssignment{}])
   end
 end

@@ -25,14 +25,14 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Adds the given Signed URL Key to the backend bucket.
+  Adds a key for validating requests with signed URLs for this backend bucket.
 
   ## Parameters
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - backend_bucket (String.t): Name of the BackendBucket resource to which the Signed URL Key should be added. The name should conform to RFC1035.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -54,8 +54,14 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_backend_buckets_add_signed_url_key(connection, project, backend_bucket, opts \\ []) do
-    optional_params = %{
+  def compute_backend_buckets_add_signed_url_key(
+        connection,
+        project,
+        backend_bucket,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -74,11 +80,11 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
         "project" => URI.encode_www_form(project),
         "backendBucket" => URI.encode_www_form(backend_bucket)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -89,7 +95,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - backend_bucket (String.t): Name of the BackendBucket resource to delete.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -106,8 +112,14 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
   """
   @spec compute_backend_buckets_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_backend_buckets_delete(connection, project, backend_bucket, opts \\ []) do
-    optional_params = %{
+  def compute_backend_buckets_delete(
+        connection,
+        project,
+        backend_bucket,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -125,15 +137,15 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
         "project" => URI.encode_www_form(project),
         "backendBucket" => URI.encode_www_form(backend_bucket)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
-  Deletes the given Signed URL Key from the backend bucket.
+  Deletes a key for validating requests with signed URLs for this backend bucket.
 
   ## Parameters
 
@@ -141,7 +153,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
   - project (String.t): Project ID for this request.
   - backend_bucket (String.t): Name of the BackendBucket resource to which the Signed URL Key should be added. The name should conform to RFC1035.
   - key_name (String.t): The name of the Signed URL Key to delete.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -168,9 +180,10 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
         project,
         backend_bucket,
         key_name,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -189,11 +202,11 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
         "backendBucket" => URI.encode_www_form(backend_bucket)
       })
       |> Request.add_param(:query, :keyName, key_name)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -204,7 +217,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - backend_bucket (String.t): Name of the BackendBucket resource to return.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -220,8 +233,14 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
   """
   @spec compute_backend_buckets_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.BackendBucket.t()} | {:error, Tesla.Env.t()}
-  def compute_backend_buckets_get(connection, project, backend_bucket, opts \\ []) do
-    optional_params = %{
+  def compute_backend_buckets_get(
+        connection,
+        project,
+        backend_bucket,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -238,11 +257,11 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
         "project" => URI.encode_www_form(project),
         "backendBucket" => URI.encode_www_form(backend_bucket)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.BackendBucket{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.BackendBucket{}])
   end
 
   @doc """
@@ -252,7 +271,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -270,8 +289,8 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
   """
   @spec compute_backend_buckets_insert(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_backend_buckets_insert(connection, project, opts \\ []) do
-    optional_params = %{
+  def compute_backend_buckets_insert(connection, project, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -289,11 +308,11 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
       |> Request.url("/{project}/global/backendBuckets", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -303,7 +322,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -323,8 +342,8 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
   """
   @spec compute_backend_buckets_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.BackendBucketList.t()} | {:error, Tesla.Env.t()}
-  def compute_backend_buckets_list(connection, project, opts \\ []) do
-    optional_params = %{
+  def compute_backend_buckets_list(connection, project, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -344,11 +363,11 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
       |> Request.url("/{project}/global/backendBuckets", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.BackendBucketList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.BackendBucketList{}])
   end
 
   @doc """
@@ -359,7 +378,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - backend_bucket (String.t): Name of the BackendBucket resource to patch.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -377,8 +396,14 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
   """
   @spec compute_backend_buckets_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_backend_buckets_patch(connection, project, backend_bucket, opts \\ []) do
-    optional_params = %{
+  def compute_backend_buckets_patch(
+        connection,
+        project,
+        backend_bucket,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -397,11 +422,11 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
         "project" => URI.encode_www_form(project),
         "backendBucket" => URI.encode_www_form(backend_bucket)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -412,7 +437,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - backend_bucket (String.t): Name of the BackendBucket resource to update.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -430,8 +455,14 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
   """
   @spec compute_backend_buckets_update(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_backend_buckets_update(connection, project, backend_bucket, opts \\ []) do
-    optional_params = %{
+  def compute_backend_buckets_update(
+        connection,
+        project,
+        backend_bucket,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -450,10 +481,10 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
         "project" => URI.encode_www_form(project),
         "backendBucket" => URI.encode_www_form(backend_bucket)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 end

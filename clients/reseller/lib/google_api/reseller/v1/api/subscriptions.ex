@@ -32,7 +32,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
   - connection (GoogleApi.Reseller.V1.Connection): Connection to server
   - customer_id (String.t): Either the customer&#39;s primary domain name or the customer&#39;s unique identifier. If using the domain name, we do not recommend using a customerId as a key for persistent data. If the domain name for a customerId is changed, the Google system automatically updates.
   - subscription_id (String.t): This is a required property. The subscriptionId is the subscription identifier and is unique for each customer. Since a subscriptionId changes when a subscription is updated, we recommend to not use this ID as a key for persistent data. And the subscriptionId can be found using the retrieve all reseller subscriptions method.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,14 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
   """
   @spec reseller_subscriptions_activate(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Reseller.V1.Model.Subscription.t()} | {:error, Tesla.Env.t()}
-  def reseller_subscriptions_activate(connection, customer_id, subscription_id, opts \\ []) do
-    optional_params = %{
+  def reseller_subscriptions_activate(
+        connection,
+        customer_id,
+        subscription_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -66,11 +72,11 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
         "customerId" => URI.encode_www_form(customer_id),
         "subscriptionId" => URI.encode_www_form(subscription_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Reseller.V1.Model.Subscription{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Reseller.V1.Model.Subscription{}])
   end
 
   @doc """
@@ -81,7 +87,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
   - connection (GoogleApi.Reseller.V1.Connection): Connection to server
   - customer_id (String.t): Either the customer&#39;s primary domain name or the customer&#39;s unique identifier. If using the domain name, we do not recommend using a customerId as a key for persistent data. If the domain name for a customerId is changed, the Google system automatically updates.
   - subscription_id (String.t): This is a required property. The subscriptionId is the subscription identifier and is unique for each customer. Since a subscriptionId changes when a subscription is updated, we recommend to not use this ID as a key for persistent data. And the subscriptionId can be found using the retrieve all reseller subscriptions method.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -98,8 +104,14 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
   """
   @spec reseller_subscriptions_change_plan(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Reseller.V1.Model.Subscription.t()} | {:error, Tesla.Env.t()}
-  def reseller_subscriptions_change_plan(connection, customer_id, subscription_id, opts \\ []) do
-    optional_params = %{
+  def reseller_subscriptions_change_plan(
+        connection,
+        customer_id,
+        subscription_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -117,11 +129,11 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
         "customerId" => URI.encode_www_form(customer_id),
         "subscriptionId" => URI.encode_www_form(subscription_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Reseller.V1.Model.Subscription{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Reseller.V1.Model.Subscription{}])
   end
 
   @doc """
@@ -132,7 +144,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
   - connection (GoogleApi.Reseller.V1.Connection): Connection to server
   - customer_id (String.t): Either the customer&#39;s primary domain name or the customer&#39;s unique identifier. If using the domain name, we do not recommend using a customerId as a key for persistent data. If the domain name for a customerId is changed, the Google system automatically updates.
   - subscription_id (String.t): This is a required property. The subscriptionId is the subscription identifier and is unique for each customer. Since a subscriptionId changes when a subscription is updated, we recommend to not use this ID as a key for persistent data. And the subscriptionId can be found using the retrieve all reseller subscriptions method.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -157,9 +169,10 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
         connection,
         customer_id,
         subscription_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -180,11 +193,11 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
           "subscriptionId" => URI.encode_www_form(subscription_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Reseller.V1.Model.Subscription{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Reseller.V1.Model.Subscription{}])
   end
 
   @doc """
@@ -195,7 +208,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
   - connection (GoogleApi.Reseller.V1.Connection): Connection to server
   - customer_id (String.t): Either the customer&#39;s primary domain name or the customer&#39;s unique identifier. If using the domain name, we do not recommend using a customerId as a key for persistent data. If the domain name for a customerId is changed, the Google system automatically updates.
   - subscription_id (String.t): This is a required property. The subscriptionId is the subscription identifier and is unique for each customer. Since a subscriptionId changes when a subscription is updated, we recommend to not use this ID as a key for persistent data. And the subscriptionId can be found using the retrieve all reseller subscriptions method.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -212,8 +225,14 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
   """
   @spec reseller_subscriptions_change_seats(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Reseller.V1.Model.Subscription.t()} | {:error, Tesla.Env.t()}
-  def reseller_subscriptions_change_seats(connection, customer_id, subscription_id, opts \\ []) do
-    optional_params = %{
+  def reseller_subscriptions_change_seats(
+        connection,
+        customer_id,
+        subscription_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -231,11 +250,11 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
         "customerId" => URI.encode_www_form(customer_id),
         "subscriptionId" => URI.encode_www_form(subscription_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Reseller.V1.Model.Subscription{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Reseller.V1.Model.Subscription{}])
   end
 
   @doc """
@@ -247,7 +266,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
   - customer_id (String.t): Either the customer&#39;s primary domain name or the customer&#39;s unique identifier. If using the domain name, we do not recommend using a customerId as a key for persistent data. If the domain name for a customerId is changed, the Google system automatically updates.
   - subscription_id (String.t): This is a required property. The subscriptionId is the subscription identifier and is unique for each customer. Since a subscriptionId changes when a subscription is updated, we recommend to not use this ID as a key for persistent data. And the subscriptionId can be found using the retrieve all reseller subscriptions method.
   - deletion_type (String.t): The deletionType query string enables the cancellation, downgrade, or suspension of a subscription.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -273,9 +292,10 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
         customer_id,
         subscription_id,
         deletion_type,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -293,11 +313,11 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
         "subscriptionId" => URI.encode_www_form(subscription_id)
       })
       |> Request.add_param(:query, :deletionType, deletion_type)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -308,7 +328,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
   - connection (GoogleApi.Reseller.V1.Connection): Connection to server
   - customer_id (String.t): Either the customer&#39;s primary domain name or the customer&#39;s unique identifier. If using the domain name, we do not recommend using a customerId as a key for persistent data. If the domain name for a customerId is changed, the Google system automatically updates.
   - subscription_id (String.t): This is a required property. The subscriptionId is the subscription identifier and is unique for each customer. Since a subscriptionId changes when a subscription is updated, we recommend to not use this ID as a key for persistent data. And the subscriptionId can be found using the retrieve all reseller subscriptions method.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -324,8 +344,14 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
   """
   @spec reseller_subscriptions_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Reseller.V1.Model.Subscription.t()} | {:error, Tesla.Env.t()}
-  def reseller_subscriptions_get(connection, customer_id, subscription_id, opts \\ []) do
-    optional_params = %{
+  def reseller_subscriptions_get(
+        connection,
+        customer_id,
+        subscription_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -342,11 +368,11 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
         "customerId" => URI.encode_www_form(customer_id),
         "subscriptionId" => URI.encode_www_form(subscription_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Reseller.V1.Model.Subscription{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Reseller.V1.Model.Subscription{}])
   end
 
   @doc """
@@ -356,7 +382,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
 
   - connection (GoogleApi.Reseller.V1.Connection): Connection to server
   - customer_id (String.t): Either the customer&#39;s primary domain name or the customer&#39;s unique identifier. If using the domain name, we do not recommend using a customerId as a key for persistent data. If the domain name for a customerId is changed, the Google system automatically updates.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -374,8 +400,8 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
   """
   @spec reseller_subscriptions_insert(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Reseller.V1.Model.Subscription.t()} | {:error, Tesla.Env.t()}
-  def reseller_subscriptions_insert(connection, customer_id, opts \\ []) do
-    optional_params = %{
+  def reseller_subscriptions_insert(connection, customer_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -393,11 +419,11 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
       |> Request.url("/customers/{customerId}/subscriptions", %{
         "customerId" => URI.encode_www_form(customer_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Reseller.V1.Model.Subscription{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Reseller.V1.Model.Subscription{}])
   end
 
   @doc """
@@ -406,7 +432,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
   ## Parameters
 
   - connection (GoogleApi.Reseller.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -427,8 +453,8 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
   """
   @spec reseller_subscriptions_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Reseller.V1.Model.Subscriptions.t()} | {:error, Tesla.Env.t()}
-  def reseller_subscriptions_list(connection, opts \\ []) do
-    optional_params = %{
+  def reseller_subscriptions_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -447,11 +473,11 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/subscriptions")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Reseller.V1.Model.Subscriptions{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Reseller.V1.Model.Subscriptions{}])
   end
 
   @doc """
@@ -462,7 +488,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
   - connection (GoogleApi.Reseller.V1.Connection): Connection to server
   - customer_id (String.t): Either the customer&#39;s primary domain name or the customer&#39;s unique identifier. If using the domain name, we do not recommend using a customerId as a key for persistent data. If the domain name for a customerId is changed, the Google system automatically updates.
   - subscription_id (String.t): This is a required property. The subscriptionId is the subscription identifier and is unique for each customer. Since a subscriptionId changes when a subscription is updated, we recommend to not use this ID as a key for persistent data. And the subscriptionId can be found using the retrieve all reseller subscriptions method.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -486,9 +512,10 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
         connection,
         customer_id,
         subscription_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -505,11 +532,11 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
         "customerId" => URI.encode_www_form(customer_id),
         "subscriptionId" => URI.encode_www_form(subscription_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Reseller.V1.Model.Subscription{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Reseller.V1.Model.Subscription{}])
   end
 
   @doc """
@@ -520,7 +547,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
   - connection (GoogleApi.Reseller.V1.Connection): Connection to server
   - customer_id (String.t): Either the customer&#39;s primary domain name or the customer&#39;s unique identifier. If using the domain name, we do not recommend using a customerId as a key for persistent data. If the domain name for a customerId is changed, the Google system automatically updates.
   - subscription_id (String.t): This is a required property. The subscriptionId is the subscription identifier and is unique for each customer. Since a subscriptionId changes when a subscription is updated, we recommend to not use this ID as a key for persistent data. And the subscriptionId can be found using the retrieve all reseller subscriptions method.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -536,8 +563,14 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
   """
   @spec reseller_subscriptions_suspend(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Reseller.V1.Model.Subscription.t()} | {:error, Tesla.Env.t()}
-  def reseller_subscriptions_suspend(connection, customer_id, subscription_id, opts \\ []) do
-    optional_params = %{
+  def reseller_subscriptions_suspend(
+        connection,
+        customer_id,
+        subscription_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -554,10 +587,10 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
         "customerId" => URI.encode_www_form(customer_id),
         "subscriptionId" => URI.encode_www_form(subscription_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Reseller.V1.Model.Subscription{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Reseller.V1.Model.Subscription{}])
   end
 end

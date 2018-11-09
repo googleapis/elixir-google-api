@@ -30,6 +30,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.SoftwareInfo do
   - bootloaderVersion (String.t): The system bootloader version number, e.g. 0.6.7. Defaults to: `null`.
   - deviceBuildSignature (String.t): SHA-256 hash of android.content.pm.Signature (https://developer.android.com/reference/android/content/pm/Signature.html) associated with the system package, which can be used to verify that the system build hasn&#39;t been modified. Defaults to: `null`.
   - deviceKernelVersion (String.t): Kernel version, for example, 2.6.32.9-g103d848. Defaults to: `null`.
+  - primaryLanguageCode (String.t): An IETF BCP 47 language code for the primary locale on the device. Defaults to: `null`.
   - securityPatchLevel (String.t): Security patch level, e.g. 2016-05-01. Defaults to: `null`.
   """
 
@@ -44,6 +45,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.SoftwareInfo do
           :bootloaderVersion => any(),
           :deviceBuildSignature => any(),
           :deviceKernelVersion => any(),
+          :primaryLanguageCode => any(),
           :securityPatchLevel => any()
         }
 
@@ -55,6 +57,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.SoftwareInfo do
   field(:bootloaderVersion)
   field(:deviceBuildSignature)
   field(:deviceKernelVersion)
+  field(:primaryLanguageCode)
   field(:securityPatchLevel)
 end
 

@@ -25,20 +25,20 @@ defmodule GoogleApi.Genomics.V1.Api.Operations do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. Clients may use Operations.GetOperation or Operations.ListOperations to check whether the cancellation succeeded or the operation completed despite cancellation.
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. Clients may use Operations.GetOperation or Operations.ListOperations to check whether the cancellation succeeded or the operation completed despite cancellation. Authorization requires the following [Google IAM](https://cloud.google.com/iam) permission&amp;#58;  * &#x60;genomics.operations.cancel&#x60;
 
   ## Parameters
 
   - connection (GoogleApi.Genomics.V1.Connection): Connection to server
   - name (String.t): The name of the operation resource to be cancelled.
-  - opts (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -52,15 +52,15 @@ defmodule GoogleApi.Genomics.V1.Api.Operations do
   """
   @spec genomics_operations_cancel(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Genomics.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def genomics_operations_cancel(connection, name, opts \\ []) do
-    optional_params = %{
-      :access_token => :query,
+  def genomics_operations_cancel(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -74,35 +74,35 @@ defmodule GoogleApi.Genomics.V1.Api.Operations do
       |> Request.url("/v1/{+name}:cancel", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Genomics.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Genomics.V1.Model.Empty{}])
   end
 
   @doc """
-  Gets the latest state of a long-running operation.  Clients can use this method to poll the operation result at intervals as recommended by the API service.
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service. Authorization requires the following [Google IAM](https://cloud.google.com/iam) permission&amp;#58;  * &#x60;genomics.operations.get&#x60;
 
   ## Parameters
 
   - connection (GoogleApi.Genomics.V1.Connection): Connection to server
   - name (String.t): The name of the operation resource.
-  - opts (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :pageSize (integer()): The maximum number of results to return. If unspecified, defaults to 256. The maximum value is 2048.
-    - :filter (String.t): A string for filtering Operations. In v2alpha1, the following filter fields are supported&amp;#58;  * createTime&amp;#58; The time this job was created * events&amp;#58; The set of event (names) that have occurred while running   the pipeline.  The &amp;#58; operator can be used to determine if a   particular event has occurred. * error&amp;#58; If the pipeline is running, this value is NULL.  Once the   pipeline finishes, the value is the standard Google error code. * labels.key or labels.\&quot;key with space\&quot; where key is a label key.  In v1 and v1alpha2, the following filter fields are supported&amp;#58;  * projectId&amp;#58; Required. Corresponds to   OperationMetadata.projectId. * createTime&amp;#58; The time this job was created, in seconds from the   [epoch](http://en.wikipedia.org/wiki/Unix_time). Can use &#x60;&gt;&#x3D;&#x60; and/or &#x60;&lt;&#x3D;&#x60;   operators. * status&amp;#58; Can be &#x60;RUNNING&#x60;, &#x60;SUCCESS&#x60;, &#x60;FAILURE&#x60;, or &#x60;CANCELED&#x60;. Only   one status may be specified. * labels.key where key is a label key.  Examples&amp;#58;  * &#x60;projectId &#x3D; my-project AND createTime &gt;&#x3D; 1432140000&#x60; * &#x60;projectId &#x3D; my-project AND createTime &gt;&#x3D; 1432140000 AND createTime &lt;&#x3D; 1432150000 AND status &#x3D; RUNNING&#x60; * &#x60;projectId &#x3D; my-project AND labels.color &#x3D; *&#x60; * &#x60;projectId &#x3D; my-project AND labels.color &#x3D; red&#x60;
     - :pageToken (String.t): The standard list page token.
+    - :pageSize (integer()): The maximum number of results to return. If unspecified, defaults to 256. The maximum value is 2048.
+    - :filter (String.t): A string for filtering Operations. In v2alpha1, the following filter fields are supported&amp;#58;  * createTime&amp;#58; The time this job was created * events&amp;#58; The set of event (names) that have occurred while running   the pipeline.  The &amp;#58; operator can be used to determine if a   particular event has occurred. * error&amp;#58; If the pipeline is running, this value is NULL.  Once the   pipeline finishes, the value is the standard Google error code. * labels.key or labels.\&quot;key with space\&quot; where key is a label key. * done&amp;#58; If the pipeline is running, this value is false. Once the   pipeline finishes, the value is true.  In v1 and v1alpha2, the following filter fields are supported&amp;#58;  * projectId&amp;#58; Required. Corresponds to   OperationMetadata.projectId. * createTime&amp;#58; The time this job was created, in seconds from the   [epoch](http://en.wikipedia.org/wiki/Unix_time). Can use &#x60;&gt;&#x3D;&#x60; and/or &#x60;&lt;&#x3D;&#x60;   operators. * status&amp;#58; Can be &#x60;RUNNING&#x60;, &#x60;SUCCESS&#x60;, &#x60;FAILURE&#x60;, or &#x60;CANCELED&#x60;. Only   one status may be specified. * labels.key where key is a label key.  Examples&amp;#58;  * &#x60;projectId &#x3D; my-project AND createTime &gt;&#x3D; 1432140000&#x60; * &#x60;projectId &#x3D; my-project AND createTime &gt;&#x3D; 1432140000 AND createTime &lt;&#x3D; 1432150000 AND status &#x3D; RUNNING&#x60; * &#x60;projectId &#x3D; my-project AND labels.color &#x3D; *&#x60; * &#x60;projectId &#x3D; my-project AND labels.color &#x3D; red&#x60;
 
   ## Returns
 
@@ -111,22 +111,22 @@ defmodule GoogleApi.Genomics.V1.Api.Operations do
   """
   @spec genomics_operations_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Genomics.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def genomics_operations_get(connection, name, opts \\ []) do
-    optional_params = %{
-      :access_token => :query,
+  def genomics_operations_get(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
+      :pageToken => :query,
       :pageSize => :query,
-      :filter => :query,
-      :pageToken => :query
+      :filter => :query
     }
 
     request =
@@ -135,10 +135,10 @@ defmodule GoogleApi.Genomics.V1.Api.Operations do
       |> Request.url("/v1/{+name}", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Genomics.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Genomics.V1.Model.Operation{}])
   end
 end

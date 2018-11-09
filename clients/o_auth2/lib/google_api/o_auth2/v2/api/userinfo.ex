@@ -29,7 +29,7 @@ defmodule GoogleApi.OAuth2.V2.Api.Userinfo do
   ## Parameters
 
   - connection (GoogleApi.OAuth2.V2.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -45,8 +45,8 @@ defmodule GoogleApi.OAuth2.V2.Api.Userinfo do
   """
   @spec oauth2_userinfo_get(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.OAuth2.V2.Model.Userinfoplus.t()} | {:error, Tesla.Env.t()}
-  def oauth2_userinfo_get(connection, opts \\ []) do
-    optional_params = %{
+  def oauth2_userinfo_get(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -60,11 +60,11 @@ defmodule GoogleApi.OAuth2.V2.Api.Userinfo do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/oauth2/v2/userinfo")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.OAuth2.V2.Model.Userinfoplus{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.OAuth2.V2.Model.Userinfoplus{}])
   end
 
   @doc """
@@ -72,7 +72,7 @@ defmodule GoogleApi.OAuth2.V2.Api.Userinfo do
   ## Parameters
 
   - connection (GoogleApi.OAuth2.V2.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -88,8 +88,8 @@ defmodule GoogleApi.OAuth2.V2.Api.Userinfo do
   """
   @spec oauth2_userinfo_v2_me_get(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.OAuth2.V2.Model.Userinfoplus.t()} | {:error, Tesla.Env.t()}
-  def oauth2_userinfo_v2_me_get(connection, opts \\ []) do
-    optional_params = %{
+  def oauth2_userinfo_v2_me_get(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -103,10 +103,10 @@ defmodule GoogleApi.OAuth2.V2.Api.Userinfo do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/userinfo/v2/me")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.OAuth2.V2.Model.Userinfoplus{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.OAuth2.V2.Model.Userinfoplus{}])
   end
 end

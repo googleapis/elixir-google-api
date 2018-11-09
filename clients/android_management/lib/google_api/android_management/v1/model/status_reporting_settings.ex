@@ -26,7 +26,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.StatusReportingSettings do
   - deviceSettingsEnabled (boolean()): Whether device settings reporting is enabled. Defaults to: `null`.
   - displayInfoEnabled (boolean()): Whether displays reporting is enabled. Defaults to: `null`.
   - hardwareStatusEnabled (boolean()): Whether hardware status reporting is enabled. Defaults to: `null`.
-  - memoryInfoEnabled (boolean()): Whether memory info reporting is enabled. Defaults to: `null`.
+  - memoryInfoEnabled (boolean()): Whether memory reporting is enabled. Defaults to: `null`.
   - networkInfoEnabled (boolean()): Whether network info reporting is enabled. Defaults to: `null`.
   - powerManagementEventsEnabled (boolean()): Whether power management event reporting is enabled. Defaults to: `null`.
   - softwareInfoEnabled (boolean()): Whether software info reporting is enabled. Defaults to: `null`.

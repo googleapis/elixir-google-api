@@ -25,6 +25,8 @@ defmodule GoogleApi.CivicInfo.V2.Model.PollingLocation do
   - address (SimpleAddressType): The address of the location. Defaults to: `null`.
   - endDate (String.t): The last date that this early vote site or drop off location may be used. This field is not populated for polling locations. Defaults to: `null`.
   - id (String.t): An ID for this object. IDs may change in future requests and should not be cached. Access to this field requires special access that can be requested from the Request more link on the Quotas page. Defaults to: `null`.
+  - latitude (float()): Latitude of the location, in degrees north of the equator. Only some locations -- generally, ballot drop boxes for vote-by-mail elections -- will have this set; for others, use a geocoding service like the Google Maps API to resolve the address to a geographic point. Defaults to: `null`.
+  - longitude (float()): Longitude of the location, in degrees east of the Prime Meridian. Only some locations -- generally, ballot drop boxes for vote-by-mail elections -- will have this set; for others, use a geocoding service like the Google Maps API to resolve the address to a geographic point. Defaults to: `null`.
   - name (String.t): The name of the early vote site or drop off location. This field is not populated for polling locations. Defaults to: `null`.
   - notes (String.t): Notes about this location (e.g. accessibility ramp or entrance to use). Defaults to: `null`.
   - pollingHours (String.t): A description of when this location is open. Defaults to: `null`.
@@ -39,6 +41,8 @@ defmodule GoogleApi.CivicInfo.V2.Model.PollingLocation do
           :address => GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t(),
           :endDate => any(),
           :id => any(),
+          :latitude => any(),
+          :longitude => any(),
           :name => any(),
           :notes => any(),
           :pollingHours => any(),
@@ -50,6 +54,8 @@ defmodule GoogleApi.CivicInfo.V2.Model.PollingLocation do
   field(:address, as: GoogleApi.CivicInfo.V2.Model.SimpleAddressType)
   field(:endDate)
   field(:id)
+  field(:latitude)
+  field(:longitude)
   field(:name)
   field(:notes)
   field(:pollingHours)

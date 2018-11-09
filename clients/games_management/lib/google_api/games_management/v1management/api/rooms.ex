@@ -30,7 +30,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Rooms do
   ## Parameters
 
   - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -46,8 +46,8 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Rooms do
   """
   @spec games_management_rooms_reset(Tesla.Env.client(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def games_management_rooms_reset(connection, opts \\ []) do
-    optional_params = %{
+  def games_management_rooms_reset(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -61,11 +61,11 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Rooms do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/rooms/reset")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -74,7 +74,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Rooms do
   ## Parameters
 
   - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -90,8 +90,8 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Rooms do
   """
   @spec games_management_rooms_reset_for_all_players(Tesla.Env.client(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def games_management_rooms_reset_for_all_players(connection, opts \\ []) do
-    optional_params = %{
+  def games_management_rooms_reset_for_all_players(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -105,10 +105,10 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Rooms do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/rooms/resetForAllPlayers")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 end

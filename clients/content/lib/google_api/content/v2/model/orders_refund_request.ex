@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V2.Model.OrdersRefundRequest do
 
   ## Attributes
 
-  - amount (Price): The amount that is refunded. Defaults to: `null`.
+  - amount (Price): Deprecated. Please use amountPretax and amountTax instead. Defaults to: `null`.
   - amountPretax (Price): The amount that is refunded. Either amount or amountPretax and amountTax should be filled. Defaults to: `null`.
   - amountTax (Price): Tax amount that correspond to refund amount in amountPretax. Defaults to: `null`.
   - operationId (String.t): The ID of the operation. Unique across all operations for a given order. Defaults to: `null`.

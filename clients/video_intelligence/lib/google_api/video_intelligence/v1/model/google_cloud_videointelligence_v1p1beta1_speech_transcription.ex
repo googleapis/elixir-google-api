@@ -23,6 +23,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1b
   ## Attributes
 
   - alternatives ([GoogleCloudVideointelligenceV1p1beta1SpeechRecognitionAlternative]): May contain one or more recognition hypotheses (up to the maximum specified in &#x60;max_alternatives&#x60;).  These alternatives are ordered in terms of accuracy, with the top (first) alternative being the most probable, as ranked by the recognizer. Defaults to: `null`.
+  - languageCode (String.t): Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the language in this result. This language code was detected to have the most likelihood of being spoken in the audio. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,7 +32,8 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1b
           :alternatives =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1SpeechRecognitionAlternative.t()
-            )
+            ),
+          :languageCode => any()
         }
 
   field(
@@ -40,6 +42,8 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1b
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1SpeechRecognitionAlternative,
     type: :list
   )
+
+  field(:languageCode)
 end
 
 defimpl Poison.Decoder,

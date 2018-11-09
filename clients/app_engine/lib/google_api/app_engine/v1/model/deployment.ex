@@ -22,7 +22,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Deployment do
 
   ## Attributes
 
-  - cloudBuildOptions (CloudBuildOptions): Options for any Google Cloud Container Builder builds created as a part of this deployment.Note that this is orthogonal to the build parameter, where the deployment depends on an already existing cloud build. These options will only be used if a new build is created, such as when deploying to the App Engine flexible environment using files or zip. Defaults to: `null`.
+  - cloudBuildOptions (CloudBuildOptions): Options for any Google Cloud Build builds created as a part of this deployment.Note that this is orthogonal to the build parameter, where the deployment depends on an already existing cloud build. These options will only be used if a new build is created, such as when deploying to the App Engine flexible environment using files or zip. Defaults to: `null`.
   - container (ContainerInfo): The Docker image for the container that runs the version. Only applicable for instances running in the App Engine flexible environment. Defaults to: `null`.
   - files (%{optional(String.t) &#x3D;&gt; FileInfo}): Manifest of the files stored in Google Cloud Storage that are included as part of this version. All files must be readable using the credentials supplied with this call. Defaults to: `null`.
   - zip (ZipInfo): The zip file for this deployment, if this is a zip deployment. Defaults to: `null`.

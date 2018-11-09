@@ -31,7 +31,7 @@ defmodule GoogleApi.Plus.V1.Api.Comments do
 
   - connection (GoogleApi.Plus.V1.Connection): Connection to server
   - comment_id (String.t): The ID of the comment to get.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -47,8 +47,8 @@ defmodule GoogleApi.Plus.V1.Api.Comments do
   """
   @spec plus_comments_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Plus.V1.Model.Comment.t()} | {:error, Tesla.Env.t()}
-  def plus_comments_get(connection, comment_id, opts \\ []) do
-    optional_params = %{
+  def plus_comments_get(connection, comment_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -64,11 +64,11 @@ defmodule GoogleApi.Plus.V1.Api.Comments do
       |> Request.url("/comments/{commentId}", %{
         "commentId" => URI.encode_www_form(comment_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Plus.V1.Model.Comment{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Plus.V1.Model.Comment{}])
   end
 
   @doc """
@@ -78,7 +78,7 @@ defmodule GoogleApi.Plus.V1.Api.Comments do
 
   - connection (GoogleApi.Plus.V1.Connection): Connection to server
   - activity_id (String.t): The ID of the activity to get comments for.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -97,8 +97,8 @@ defmodule GoogleApi.Plus.V1.Api.Comments do
   """
   @spec plus_comments_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Plus.V1.Model.CommentFeed.t()} | {:error, Tesla.Env.t()}
-  def plus_comments_list(connection, activity_id, opts \\ []) do
-    optional_params = %{
+  def plus_comments_list(connection, activity_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -117,10 +117,10 @@ defmodule GoogleApi.Plus.V1.Api.Comments do
       |> Request.url("/activities/{activityId}/comments", %{
         "activityId" => URI.encode_www_form(activity_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Plus.V1.Model.CommentFeed{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Plus.V1.Model.CommentFeed{}])
   end
 end

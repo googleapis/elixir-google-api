@@ -35,7 +35,7 @@ defmodule GoogleApi.Content.V2.Model.Order do
   - paymentMethod (OrderPaymentMethod): The details of the payment method. Defaults to: `null`.
   - paymentStatus (String.t): The status of the payment. Defaults to: `null`.
   - placedDate (String.t): The date when the order was placed, in ISO 8601 format. Defaults to: `null`.
-  - promotions ([OrderPromotion]): The details of the merchant provided promotions applied to the order. More details about the program are here. Defaults to: `null`.
+  - promotions ([OrderLegacyPromotion]): Deprecated. The details of the merchant provided promotions applied to the order. More details about the program are here. Defaults to: `null`.
   - refunds ([OrderRefund]): Refunds for the order. Defaults to: `null`.
   - shipments ([OrderShipment]): Shipments of the order. Defaults to: `null`.
   - shippingCost (Price): The total cost of shipping for all items. Defaults to: `null`.
@@ -60,7 +60,7 @@ defmodule GoogleApi.Content.V2.Model.Order do
           :paymentMethod => GoogleApi.Content.V2.Model.OrderPaymentMethod.t(),
           :paymentStatus => any(),
           :placedDate => any(),
-          :promotions => list(GoogleApi.Content.V2.Model.OrderPromotion.t()),
+          :promotions => list(GoogleApi.Content.V2.Model.OrderLegacyPromotion.t()),
           :refunds => list(GoogleApi.Content.V2.Model.OrderRefund.t()),
           :shipments => list(GoogleApi.Content.V2.Model.OrderShipment.t()),
           :shippingCost => GoogleApi.Content.V2.Model.Price.t(),
@@ -82,7 +82,7 @@ defmodule GoogleApi.Content.V2.Model.Order do
   field(:paymentMethod, as: GoogleApi.Content.V2.Model.OrderPaymentMethod)
   field(:paymentStatus)
   field(:placedDate)
-  field(:promotions, as: GoogleApi.Content.V2.Model.OrderPromotion, type: :list)
+  field(:promotions, as: GoogleApi.Content.V2.Model.OrderLegacyPromotion, type: :list)
   field(:refunds, as: GoogleApi.Content.V2.Model.OrderRefund, type: :list)
   field(:shipments, as: GoogleApi.Content.V2.Model.OrderShipment, type: :list)
   field(:shippingCost, as: GoogleApi.Content.V2.Model.Price)

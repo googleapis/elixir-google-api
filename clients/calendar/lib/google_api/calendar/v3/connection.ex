@@ -23,10 +23,16 @@ defmodule GoogleApi.Calendar.V3.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # Manage your calendars
+      # See, edit, share, and permanently delete all the calendars you can access using Google Calendar
       "https://www.googleapis.com/auth/calendar",
+      # View and edit events on all your calendars
+      "https://www.googleapis.com/auth/calendar.events",
+      # View events on all your calendars
+      "https://www.googleapis.com/auth/calendar.events.readonly",
       # View your calendars
-      "https://www.googleapis.com/auth/calendar.readonly"
+      "https://www.googleapis.com/auth/calendar.readonly",
+      # View your Calendar settings
+      "https://www.googleapis.com/auth/calendar.settings.readonly"
     ],
     otp_app: :google_api_calendar,
     base_url: "https://www.googleapis.com/calendar/v3"

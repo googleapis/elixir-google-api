@@ -31,18 +31,18 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Operations do
 
   - connection (GoogleApi.ServiceManagement.V1.Connection): Connection to server
   - name (String.t): The name of the operation resource.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
 
   ## Returns
 
@@ -51,19 +51,19 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Operations do
   """
   @spec servicemanagement_operations_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def servicemanagement_operations_get(connection, name, opts \\ []) do
-    optional_params = %{
+  def servicemanagement_operations_get(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query
     }
 
     request =
@@ -72,11 +72,11 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Operations do
       |> Request.url("/v1/{+name}", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ServiceManagement.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ServiceManagement.V1.Model.Operation{}])
   end
 
   @doc """
@@ -85,18 +85,18 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Operations do
   ## Parameters
 
   - connection (GoogleApi.ServiceManagement.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :filter (String.t): A string for filtering Operations.   The following filter fields are supported&amp;#58;    * serviceName&amp;#58; Required. Only &#x60;&#x3D;&#x60; operator is allowed.   * startTime&amp;#58; The time this job was started, in ISO 8601 format.     Allowed operators are &#x60;&gt;&#x3D;&#x60;,  &#x60;&gt;&#x60;, &#x60;&lt;&#x3D;&#x60;, and &#x60;&lt;&#x60;.   * status&amp;#58; Can be &#x60;done&#x60;, &#x60;in_progress&#x60;, or &#x60;failed&#x60;. Allowed     operators are &#x60;&#x3D;&#x60;, and &#x60;!&#x3D;&#x60;.    Filter expression supports conjunction (AND) and disjunction (OR)   logical operators. However, the serviceName restriction must be at the   top-level and can only be combined with other restrictions via the AND   logical operator.    Examples&amp;#58;    * &#x60;serviceName&#x3D;{some-service}.googleapis.com&#x60;   * &#x60;serviceName&#x3D;{some-service}.googleapis.com AND startTime&gt;&#x3D;\&quot;2017-02-01\&quot;&#x60;   * &#x60;serviceName&#x3D;{some-service}.googleapis.com AND status&#x3D;done&#x60;   * &#x60;serviceName&#x3D;{some-service}.googleapis.com AND (status&#x3D;done OR startTime&gt;&#x3D;\&quot;2017-02-01\&quot;)&#x60;
     - :name (String.t): Not used.
     - :pageToken (String.t): The standard list page token.
@@ -110,19 +110,19 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Operations do
   @spec servicemanagement_operations_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.ListOperationsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def servicemanagement_operations_list(connection, opts \\ []) do
-    optional_params = %{
+  def servicemanagement_operations_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :filter => :query,
       :name => :query,
       :pageToken => :query,
@@ -133,10 +133,12 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Operations do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/operations")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ServiceManagement.V1.Model.ListOperationsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.ServiceManagement.V1.Model.ListOperationsResponse{}]
+    )
   end
 end

@@ -22,6 +22,7 @@ defmodule GoogleApi.CloudDebugger.V2.Model.SourceLocation do
 
   ## Attributes
 
+  - column (integer()): Column within a line. The first column in a line as the value &#x60;1&#x60;. Agents that do not support setting breakpoints on specific columns ignore this field. Defaults to: `null`.
   - line (integer()): Line inside the file. The first line in the file has the value &#x60;1&#x60;. Defaults to: `null`.
   - path (String.t): Path to the source file within the source context of the target binary. Defaults to: `null`.
   """
@@ -29,10 +30,12 @@ defmodule GoogleApi.CloudDebugger.V2.Model.SourceLocation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :column => any(),
           :line => any(),
           :path => any()
         }
 
+  field(:column)
   field(:line)
   field(:path)
 end

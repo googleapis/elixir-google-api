@@ -24,10 +24,13 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CustomInfoType do
 
   - detectionRules ([GooglePrivacyDlpV2DetectionRule]): Set of detection rules to apply to all findings of this CustomInfoType. Rules are applied in order that they are specified. Not supported for the &#x60;surrogate_type&#x60; CustomInfoType. Defaults to: `null`.
   - dictionary (GooglePrivacyDlpV2Dictionary): A list of phrases to detect as a CustomInfoType. Defaults to: `null`.
-  - infoType (GooglePrivacyDlpV2InfoType): All CustomInfoTypes must have a name that does not conflict with built-in InfoTypes or other CustomInfoTypes. Defaults to: `null`.
+  - exclusionType (String.t): If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding to be returned. It still can be used for rules matching. Defaults to: `null`.
+    - Enum - one of [EXCLUSION_TYPE_UNSPECIFIED, EXCLUSION_TYPE_EXCLUDE]
+  - infoType (GooglePrivacyDlpV2InfoType): CustomInfoType can either be a new infoType, or an extension of built-in infoType, when the name matches one of existing infoTypes and that infoType is specified in &#x60;InspectContent.info_types&#x60; field. Specifying the latter adds findings to the one detected by the system. If built-in info type is not specified in &#x60;InspectContent.info_types&#x60; list then the name is treated as a custom info type. Defaults to: `null`.
   - likelihood (String.t): Likelihood to return for this CustomInfoType. This base value can be altered by a detection rule if the finding meets the criteria specified by the rule. Defaults to &#x60;VERY_LIKELY&#x60; if not specified. Defaults to: `null`.
     - Enum - one of [LIKELIHOOD_UNSPECIFIED, VERY_UNLIKELY, UNLIKELY, POSSIBLE, LIKELY, VERY_LIKELY]
   - regex (GooglePrivacyDlpV2Regex): Regular expression based CustomInfoType. Defaults to: `null`.
+  - storedType (GooglePrivacyDlpV2StoredType): Load an existing &#x60;StoredInfoType&#x60; resource for use in &#x60;InspectDataSource&#x60;. Not currently supported in &#x60;InspectContent&#x60;. Defaults to: `null`.
   - surrogateType (GooglePrivacyDlpV2SurrogateType): Message for detecting output from deidentification transformations that support reversing. Defaults to: `null`.
   """
 
@@ -36,17 +39,21 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CustomInfoType do
   @type t :: %__MODULE__{
           :detectionRules => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DetectionRule.t()),
           :dictionary => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Dictionary.t(),
+          :exclusionType => any(),
           :infoType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t(),
           :likelihood => any(),
           :regex => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Regex.t(),
+          :storedType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredType.t(),
           :surrogateType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SurrogateType.t()
         }
 
   field(:detectionRules, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DetectionRule, type: :list)
   field(:dictionary, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Dictionary)
+  field(:exclusionType)
   field(:infoType, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType)
   field(:likelihood)
   field(:regex, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Regex)
+  field(:storedType, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredType)
   field(:surrogateType, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SurrogateType)
 end
 

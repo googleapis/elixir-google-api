@@ -33,6 +33,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Creative do
   - buyerCreativeId (String.t): A buyer-specific id identifying the creative in this ad. Defaults to: `null`.
   - clickThroughUrl ([String.t]): The set of destination urls for the snippet. Defaults to: `null`.
   - corrections ([CreativeCorrections]): Shows any corrections that were applied to this creative. Read-only. This field should not be set in requests. Defaults to: `null`.
+  - creativeStatusIdentityType (String.t): Creative status identity type that the creative item applies to. Ad Exchange real-time bidding is migrating to the sizeless creative verification. Originally, Ad Exchange assigned creative verification status to a unique combination of a buyer creative ID and creative dimensions. Post-migration, a single verification status will be assigned at the buyer creative ID level. This field allows to distinguish whether a given creative status applies to a unique combination of a buyer creative ID and creative dimensions, or to a buyer creative ID as a whole. Defaults to: `null`.
   - dealsStatus (String.t): Top-level deals status. Read-only. This field should not be set in requests. If disapproved, an entry for auctionType&#x3D;DIRECT_DEALS (or ALL) in servingRestrictions will also exist. Note that this may be nuanced with other contextual restrictions, in which case it may be preferable to read from servingRestrictions directly. Defaults to: `null`.
   - detectedDomains ([String.t]): Detected domains for this creative. Read-only. This field should not be set in requests. Defaults to: `null`.
   - filteringReasons (CreativeFilteringReasons):  Defaults to: `null`.
@@ -67,6 +68,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Creative do
           :buyerCreativeId => any(),
           :clickThroughUrl => list(any()),
           :corrections => list(GoogleApi.AdExchangeBuyer.V14.Model.CreativeCorrections.t()),
+          :creativeStatusIdentityType => any(),
           :dealsStatus => any(),
           :detectedDomains => list(any()),
           :filteringReasons => GoogleApi.AdExchangeBuyer.V14.Model.CreativeFilteringReasons.t(),
@@ -99,6 +101,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Creative do
   field(:buyerCreativeId)
   field(:clickThroughUrl, type: :list)
   field(:corrections, as: GoogleApi.AdExchangeBuyer.V14.Model.CreativeCorrections, type: :list)
+  field(:creativeStatusIdentityType)
   field(:dealsStatus)
   field(:detectedDomains, type: :list)
   field(:filteringReasons, as: GoogleApi.AdExchangeBuyer.V14.Model.CreativeFilteringReasons)

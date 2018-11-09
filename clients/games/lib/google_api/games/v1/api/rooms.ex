@@ -30,7 +30,7 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
   ## Parameters
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,8 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
   """
   @spec games_rooms_create(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.Room.t()} | {:error, Tesla.Env.t()}
-  def games_rooms_create(connection, opts \\ []) do
-    optional_params = %{
+  def games_rooms_create(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -65,11 +65,11 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/rooms/create")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.Room{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.Room{}])
   end
 
   @doc """
@@ -79,7 +79,7 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
   - room_id (String.t): The ID of the room.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -96,8 +96,8 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
   """
   @spec games_rooms_decline(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.Room.t()} | {:error, Tesla.Env.t()}
-  def games_rooms_decline(connection, room_id, opts \\ []) do
-    optional_params = %{
+  def games_rooms_decline(connection, room_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -114,11 +114,11 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
       |> Request.url("/rooms/{roomId}/decline", %{
         "roomId" => URI.encode_www_form(room_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.Room{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.Room{}])
   end
 
   @doc """
@@ -128,7 +128,7 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
   - room_id (String.t): The ID of the room.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -144,8 +144,8 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
   """
   @spec games_rooms_dismiss(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def games_rooms_dismiss(connection, room_id, opts \\ []) do
-    optional_params = %{
+  def games_rooms_dismiss(connection, room_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -161,11 +161,11 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
       |> Request.url("/rooms/{roomId}/dismiss", %{
         "roomId" => URI.encode_www_form(room_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -175,7 +175,7 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
   - room_id (String.t): The ID of the room.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -192,8 +192,8 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
   """
   @spec games_rooms_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.Room.t()} | {:error, Tesla.Env.t()}
-  def games_rooms_get(connection, room_id, opts \\ []) do
-    optional_params = %{
+  def games_rooms_get(connection, room_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -210,11 +210,11 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
       |> Request.url("/rooms/{roomId}", %{
         "roomId" => URI.encode_www_form(room_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.Room{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.Room{}])
   end
 
   @doc """
@@ -224,7 +224,7 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
   - room_id (String.t): The ID of the room.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -242,8 +242,8 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
   """
   @spec games_rooms_join(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.Room.t()} | {:error, Tesla.Env.t()}
-  def games_rooms_join(connection, room_id, opts \\ []) do
-    optional_params = %{
+  def games_rooms_join(connection, room_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -261,11 +261,11 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
       |> Request.url("/rooms/{roomId}/join", %{
         "roomId" => URI.encode_www_form(room_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.Room{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.Room{}])
   end
 
   @doc """
@@ -275,7 +275,7 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
   - room_id (String.t): The ID of the room.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -293,8 +293,8 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
   """
   @spec games_rooms_leave(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.Room.t()} | {:error, Tesla.Env.t()}
-  def games_rooms_leave(connection, room_id, opts \\ []) do
-    optional_params = %{
+  def games_rooms_leave(connection, room_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -312,11 +312,11 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
       |> Request.url("/rooms/{roomId}/leave", %{
         "roomId" => URI.encode_www_form(room_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.Room{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.Room{}])
   end
 
   @doc """
@@ -325,7 +325,7 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
   ## Parameters
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -344,8 +344,8 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
   """
   @spec games_rooms_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.RoomList.t()} | {:error, Tesla.Env.t()}
-  def games_rooms_list(connection, opts \\ []) do
-    optional_params = %{
+  def games_rooms_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -362,11 +362,11 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/rooms")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.RoomList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.RoomList{}])
   end
 
   @doc """
@@ -376,7 +376,7 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
   - room_id (String.t): The ID of the room.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -394,8 +394,8 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
   """
   @spec games_rooms_report_status(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.RoomStatus.t()} | {:error, Tesla.Env.t()}
-  def games_rooms_report_status(connection, room_id, opts \\ []) do
-    optional_params = %{
+  def games_rooms_report_status(connection, room_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -413,10 +413,10 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
       |> Request.url("/rooms/{roomId}/reportstatus", %{
         "roomId" => URI.encode_www_form(room_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.RoomStatus{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.RoomStatus{}])
   end
 end

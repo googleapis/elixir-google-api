@@ -18,11 +18,12 @@
 
 defmodule GoogleApi.PubSub.V1.Model.Snapshot do
   @moduledoc """
-  A snapshot resource.&lt;br&gt;&lt;br&gt; &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy.
+  A snapshot resource. Snapshots are used in &lt;a href&#x3D;\&quot;/pubsub/docs/replay-overview\&quot;&gt;Seek&lt;/a&gt; operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot.&lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy.
 
   ## Attributes
 
   - expireTime (DateTime.t): The snapshot is guaranteed to exist up until this time. A newly-created snapshot expires no later than 7 days from the time of its creation. Its exact lifetime is determined at creation by the existing backlog in the source subscription. Specifically, the lifetime of the snapshot is &#x60;7 days - (age of oldest unacked message in the subscription)&#x60;. For example, consider a subscription whose oldest unacked message is 3 days old. If a snapshot is created from this subscription, the snapshot -- which will always capture this 3-day-old backlog as long as the snapshot exists -- will expire in 4 days. The service will refuse to create a snapshot that would expire in less than 1 hour after creation. Defaults to: `null`.
+  - labels (%{optional(String.t) &#x3D;&gt; String.t}): See &lt;a href&#x3D;\&quot;/pubsub/docs/labels\&quot;&gt; Creating and managing labels&lt;/a&gt;. Defaults to: `null`.
   - name (String.t): The name of the snapshot. Defaults to: `null`.
   - topic (String.t): The name of the topic from which this snapshot is retaining messages. Defaults to: `null`.
   """
@@ -31,11 +32,13 @@ defmodule GoogleApi.PubSub.V1.Model.Snapshot do
 
   @type t :: %__MODULE__{
           :expireTime => DateTime.t(),
+          :labels => map(),
           :name => any(),
           :topic => any()
         }
 
   field(:expireTime, as: DateTime)
+  field(:labels, type: :map)
   field(:name)
   field(:topic)
 end

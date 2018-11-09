@@ -24,7 +24,7 @@ defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchResponseEntry do
 
   - batchId (integer()): The ID of the request entry this entry responds to. Defaults to: `null`.
   - errors (Errors): A list of errors defined if and only if the request failed. Defaults to: `null`.
-  - executionStatus (String.t): The status of the execution. Only defined if the method is not get or getByMerchantOrderId and if the request was successful. Defaults to: `null`.
+  - executionStatus (String.t): The status of the execution. Only defined if   - the request was successful; and  - the method is not get, getByMerchantOrderId, or one of the test methods. Defaults to: `null`.
   - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;content#ordersCustomBatchResponseEntry\&quot;. Defaults to: `null`.
   - order (Order): The retrieved order. Only defined if the method is get and if the request was successful. Defaults to: `null`.
   """

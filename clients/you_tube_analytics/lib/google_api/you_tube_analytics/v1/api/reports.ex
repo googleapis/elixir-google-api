@@ -34,7 +34,7 @@ defmodule GoogleApi.YouTubeAnalytics.V1.Api.Reports do
   - start_date (String.t): The start date for fetching YouTube Analytics data. The value should be in YYYY-MM-DD format.
   - end_date (String.t): The end date for fetching YouTube Analytics data. The value should be in YYYY-MM-DD format.
   - metrics (String.t): A comma-separated list of YouTube Analytics metrics, such as views or likes,dislikes. See the Available Reports document for a list of the reports that you can retrieve and the metrics available in each report, and see the Metrics document for definitions of those metrics.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -63,8 +63,16 @@ defmodule GoogleApi.YouTubeAnalytics.V1.Api.Reports do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.YouTubeAnalytics.V1.Model.ResultTable.t()} | {:error, Tesla.Env.t()}
-  def youtube_analytics_reports_query(connection, ids, start_date, end_date, metrics, opts \\ []) do
-    optional_params = %{
+  def youtube_analytics_reports_query(
+        connection,
+        ids,
+        start_date,
+        end_date,
+        metrics,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -89,10 +97,10 @@ defmodule GoogleApi.YouTubeAnalytics.V1.Api.Reports do
       |> Request.add_param(:query, :"start-date", start_date)
       |> Request.add_param(:query, :"end-date", end_date)
       |> Request.add_param(:query, :metrics, metrics)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.YouTubeAnalytics.V1.Model.ResultTable{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTubeAnalytics.V1.Model.ResultTable{}])
   end
 end

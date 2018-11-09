@@ -23,7 +23,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.ListEnvironmentsResponse do
   ## Attributes
 
   - environments ([Environment]): The list of environments returned by a ListEnvironmentsRequest. Defaults to: `null`.
-  - nextPageToken (String.t): The page token used to query for the next page if one exists Defaults to: `null`.
+  - nextPageToken (String.t): The page token used to query for the next page if one exists. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

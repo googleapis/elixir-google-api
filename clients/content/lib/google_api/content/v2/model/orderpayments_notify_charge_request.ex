@@ -23,18 +23,21 @@ defmodule GoogleApi.Content.V2.Model.OrderpaymentsNotifyChargeRequest do
   ## Attributes
 
   - chargeState (String.t): Whether charge was successful. Defaults to: `null`.
-  - invoiceId (String.t): Invoice ID from orderInvoice service that corresponds to the charge. Defaults to: `null`.
+  - invoiceId (String.t): Deprecated. Please use invoiceIds instead. Defaults to: `null`.
+  - invoiceIds ([String.t]): Invoice IDs from the orderinvoices service that correspond to the charge. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :chargeState => any(),
-          :invoiceId => any()
+          :invoiceId => any(),
+          :invoiceIds => list(any())
         }
 
   field(:chargeState)
   field(:invoiceId)
+  field(:invoiceIds, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrderpaymentsNotifyChargeRequest do

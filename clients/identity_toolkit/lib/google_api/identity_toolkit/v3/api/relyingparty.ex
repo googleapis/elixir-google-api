@@ -30,7 +30,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   ## Parameters
 
   - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   @spec identitytoolkit_relyingparty_create_auth_uri(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.CreateAuthUriResponse.t()}
           | {:error, Tesla.Env.t()}
-  def identitytoolkit_relyingparty_create_auth_uri(connection, opts \\ []) do
-    optional_params = %{
+  def identitytoolkit_relyingparty_create_auth_uri(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -64,11 +64,13 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/createAuthUri")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IdentityToolkit.V3.Model.CreateAuthUriResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.IdentityToolkit.V3.Model.CreateAuthUriResponse{}]
+    )
   end
 
   @doc """
@@ -77,7 +79,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   ## Parameters
 
   - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -95,8 +97,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   @spec identitytoolkit_relyingparty_delete_account(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.DeleteAccountResponse.t()}
           | {:error, Tesla.Env.t()}
-  def identitytoolkit_relyingparty_delete_account(connection, opts \\ []) do
-    optional_params = %{
+  def identitytoolkit_relyingparty_delete_account(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -111,11 +113,13 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/deleteAccount")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IdentityToolkit.V3.Model.DeleteAccountResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.IdentityToolkit.V3.Model.DeleteAccountResponse{}]
+    )
   end
 
   @doc """
@@ -124,7 +128,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   ## Parameters
 
   - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -142,8 +146,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   @spec identitytoolkit_relyingparty_download_account(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.DownloadAccountResponse.t()}
           | {:error, Tesla.Env.t()}
-  def identitytoolkit_relyingparty_download_account(connection, opts \\ []) do
-    optional_params = %{
+  def identitytoolkit_relyingparty_download_account(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -158,11 +162,13 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/downloadAccount")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IdentityToolkit.V3.Model.DownloadAccountResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.IdentityToolkit.V3.Model.DownloadAccountResponse{}]
+    )
   end
 
   @doc """
@@ -171,7 +177,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   ## Parameters
 
   - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -189,8 +195,12 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   @spec identitytoolkit_relyingparty_email_link_signin(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.EmailLinkSigninResponse.t()}
           | {:error, Tesla.Env.t()}
-  def identitytoolkit_relyingparty_email_link_signin(connection, opts \\ []) do
-    optional_params = %{
+  def identitytoolkit_relyingparty_email_link_signin(
+        connection,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -205,11 +215,13 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/emailLinkSignin")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IdentityToolkit.V3.Model.EmailLinkSigninResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.IdentityToolkit.V3.Model.EmailLinkSigninResponse{}]
+    )
   end
 
   @doc """
@@ -218,7 +230,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   ## Parameters
 
   - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -236,8 +248,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   @spec identitytoolkit_relyingparty_get_account_info(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.GetAccountInfoResponse.t()}
           | {:error, Tesla.Env.t()}
-  def identitytoolkit_relyingparty_get_account_info(connection, opts \\ []) do
-    optional_params = %{
+  def identitytoolkit_relyingparty_get_account_info(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -252,11 +264,13 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/getAccountInfo")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IdentityToolkit.V3.Model.GetAccountInfoResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.IdentityToolkit.V3.Model.GetAccountInfoResponse{}]
+    )
   end
 
   @doc """
@@ -265,7 +279,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   ## Parameters
 
   - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -283,8 +297,12 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   @spec identitytoolkit_relyingparty_get_oob_confirmation_code(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.GetOobConfirmationCodeResponse.t()}
           | {:error, Tesla.Env.t()}
-  def identitytoolkit_relyingparty_get_oob_confirmation_code(connection, opts \\ []) do
-    optional_params = %{
+  def identitytoolkit_relyingparty_get_oob_confirmation_code(
+        connection,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -299,12 +317,12 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/getOobConfirmationCode")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.IdentityToolkit.V3.Model.GetOobConfirmationCodeResponse{}
+      opts ++ [struct: %GoogleApi.IdentityToolkit.V3.Model.GetOobConfirmationCodeResponse{}]
     )
   end
 
@@ -314,7 +332,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   ## Parameters
 
   - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -334,8 +352,12 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
           {:ok,
            GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyGetProjectConfigResponse.t()}
           | {:error, Tesla.Env.t()}
-  def identitytoolkit_relyingparty_get_project_config(connection, opts \\ []) do
-    optional_params = %{
+  def identitytoolkit_relyingparty_get_project_config(
+        connection,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -351,13 +373,16 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/getProjectConfig")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct:
-        %GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyGetProjectConfigResponse{}
+      opts ++
+        [
+          struct:
+            %GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyGetProjectConfigResponse{}
+        ]
     )
   end
 
@@ -367,7 +392,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   ## Parameters
 
   - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -385,8 +410,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
           {:ok,
            GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyGetPublicKeysResponse.t()}
           | {:error, Tesla.Env.t()}
-  def identitytoolkit_relyingparty_get_public_keys(connection, opts \\ []) do
-    optional_params = %{
+  def identitytoolkit_relyingparty_get_public_keys(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -400,13 +425,16 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/publicKeys")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct:
-        %GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyGetPublicKeysResponse{}
+      opts ++
+        [
+          struct:
+            %GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyGetPublicKeysResponse{}
+        ]
     )
   end
 
@@ -416,7 +444,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   ## Parameters
 
   - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -433,8 +461,12 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   @spec identitytoolkit_relyingparty_get_recaptcha_param(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.GetRecaptchaParamResponse.t()}
           | {:error, Tesla.Env.t()}
-  def identitytoolkit_relyingparty_get_recaptcha_param(connection, opts \\ []) do
-    optional_params = %{
+  def identitytoolkit_relyingparty_get_recaptcha_param(
+        connection,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -448,11 +480,13 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/getRecaptchaParam")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IdentityToolkit.V3.Model.GetRecaptchaParamResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.IdentityToolkit.V3.Model.GetRecaptchaParamResponse{}]
+    )
   end
 
   @doc """
@@ -461,7 +495,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   ## Parameters
 
   - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -479,8 +513,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   @spec identitytoolkit_relyingparty_reset_password(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.ResetPasswordResponse.t()}
           | {:error, Tesla.Env.t()}
-  def identitytoolkit_relyingparty_reset_password(connection, opts \\ []) do
-    optional_params = %{
+  def identitytoolkit_relyingparty_reset_password(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -495,11 +529,13 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/resetPassword")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IdentityToolkit.V3.Model.ResetPasswordResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.IdentityToolkit.V3.Model.ResetPasswordResponse{}]
+    )
   end
 
   @doc """
@@ -508,7 +544,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   ## Parameters
 
   - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -527,8 +563,12 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
           {:ok,
            GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySendVerificationCodeResponse.t()}
           | {:error, Tesla.Env.t()}
-  def identitytoolkit_relyingparty_send_verification_code(connection, opts \\ []) do
-    optional_params = %{
+  def identitytoolkit_relyingparty_send_verification_code(
+        connection,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -543,13 +583,16 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/sendVerificationCode")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct:
-        %GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySendVerificationCodeResponse{}
+      opts ++
+        [
+          struct:
+            %GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySendVerificationCodeResponse{}
+        ]
     )
   end
 
@@ -559,7 +602,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   ## Parameters
 
   - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -577,8 +620,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   @spec identitytoolkit_relyingparty_set_account_info(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.SetAccountInfoResponse.t()}
           | {:error, Tesla.Env.t()}
-  def identitytoolkit_relyingparty_set_account_info(connection, opts \\ []) do
-    optional_params = %{
+  def identitytoolkit_relyingparty_set_account_info(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -593,11 +636,13 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/setAccountInfo")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IdentityToolkit.V3.Model.SetAccountInfoResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.IdentityToolkit.V3.Model.SetAccountInfoResponse{}]
+    )
   end
 
   @doc """
@@ -606,7 +651,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   ## Parameters
 
   - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -625,8 +670,12 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
           {:ok,
            GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySetProjectConfigResponse.t()}
           | {:error, Tesla.Env.t()}
-  def identitytoolkit_relyingparty_set_project_config(connection, opts \\ []) do
-    optional_params = %{
+  def identitytoolkit_relyingparty_set_project_config(
+        connection,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -641,13 +690,16 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/setProjectConfig")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct:
-        %GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySetProjectConfigResponse{}
+      opts ++
+        [
+          struct:
+            %GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySetProjectConfigResponse{}
+        ]
     )
   end
 
@@ -657,7 +709,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   ## Parameters
 
   - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -676,8 +728,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
           {:ok,
            GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySignOutUserResponse.t()}
           | {:error, Tesla.Env.t()}
-  def identitytoolkit_relyingparty_sign_out_user(connection, opts \\ []) do
-    optional_params = %{
+  def identitytoolkit_relyingparty_sign_out_user(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -692,12 +744,16 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/signOutUser")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySignOutUserResponse{}
+      opts ++
+        [
+          struct:
+            %GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySignOutUserResponse{}
+        ]
     )
   end
 
@@ -707,7 +763,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   ## Parameters
 
   - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -725,8 +781,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   @spec identitytoolkit_relyingparty_signup_new_user(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.SignupNewUserResponse.t()}
           | {:error, Tesla.Env.t()}
-  def identitytoolkit_relyingparty_signup_new_user(connection, opts \\ []) do
-    optional_params = %{
+  def identitytoolkit_relyingparty_signup_new_user(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -741,11 +797,13 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/signupNewUser")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IdentityToolkit.V3.Model.SignupNewUserResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.IdentityToolkit.V3.Model.SignupNewUserResponse{}]
+    )
   end
 
   @doc """
@@ -754,7 +812,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   ## Parameters
 
   - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -772,8 +830,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   @spec identitytoolkit_relyingparty_upload_account(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.UploadAccountResponse.t()}
           | {:error, Tesla.Env.t()}
-  def identitytoolkit_relyingparty_upload_account(connection, opts \\ []) do
-    optional_params = %{
+  def identitytoolkit_relyingparty_upload_account(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -788,11 +846,13 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/uploadAccount")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IdentityToolkit.V3.Model.UploadAccountResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.IdentityToolkit.V3.Model.UploadAccountResponse{}]
+    )
   end
 
   @doc """
@@ -801,7 +861,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   ## Parameters
 
   - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -819,8 +879,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   @spec identitytoolkit_relyingparty_verify_assertion(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.VerifyAssertionResponse.t()}
           | {:error, Tesla.Env.t()}
-  def identitytoolkit_relyingparty_verify_assertion(connection, opts \\ []) do
-    optional_params = %{
+  def identitytoolkit_relyingparty_verify_assertion(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -835,11 +895,13 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/verifyAssertion")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IdentityToolkit.V3.Model.VerifyAssertionResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.IdentityToolkit.V3.Model.VerifyAssertionResponse{}]
+    )
   end
 
   @doc """
@@ -848,7 +910,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   ## Parameters
 
   - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -866,8 +928,12 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   @spec identitytoolkit_relyingparty_verify_custom_token(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.VerifyCustomTokenResponse.t()}
           | {:error, Tesla.Env.t()}
-  def identitytoolkit_relyingparty_verify_custom_token(connection, opts \\ []) do
-    optional_params = %{
+  def identitytoolkit_relyingparty_verify_custom_token(
+        connection,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -882,11 +948,13 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/verifyCustomToken")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IdentityToolkit.V3.Model.VerifyCustomTokenResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.IdentityToolkit.V3.Model.VerifyCustomTokenResponse{}]
+    )
   end
 
   @doc """
@@ -895,7 +963,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   ## Parameters
 
   - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -913,8 +981,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   @spec identitytoolkit_relyingparty_verify_password(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.VerifyPasswordResponse.t()}
           | {:error, Tesla.Env.t()}
-  def identitytoolkit_relyingparty_verify_password(connection, opts \\ []) do
-    optional_params = %{
+  def identitytoolkit_relyingparty_verify_password(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -929,11 +997,13 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/verifyPassword")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.IdentityToolkit.V3.Model.VerifyPasswordResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.IdentityToolkit.V3.Model.VerifyPasswordResponse{}]
+    )
   end
 
   @doc """
@@ -942,7 +1012,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   ## Parameters
 
   - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -961,8 +1031,12 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
           {:ok,
            GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyPhoneNumberResponse.t()}
           | {:error, Tesla.Env.t()}
-  def identitytoolkit_relyingparty_verify_phone_number(connection, opts \\ []) do
-    optional_params = %{
+  def identitytoolkit_relyingparty_verify_phone_number(
+        connection,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -977,13 +1051,16 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/verifyPhoneNumber")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct:
-        %GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyPhoneNumberResponse{}
+      opts ++
+        [
+          struct:
+            %GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyPhoneNumberResponse{}
+        ]
     )
   end
 end

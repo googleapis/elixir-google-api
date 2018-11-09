@@ -31,7 +31,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Urlcrawlerrorscounts do
 
   - connection (GoogleApi.Webmaster.V3.Connection): Connection to server
   - site_url (String.t): The site&#39;s URL, including protocol. For example: http://www.example.com/
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -51,8 +51,13 @@ defmodule GoogleApi.Webmaster.V3.Api.Urlcrawlerrorscounts do
   @spec webmasters_urlcrawlerrorscounts_query(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Webmaster.V3.Model.UrlCrawlErrorsCountsQueryResponse.t()}
           | {:error, Tesla.Env.t()}
-  def webmasters_urlcrawlerrorscounts_query(connection, site_url, opts \\ []) do
-    optional_params = %{
+  def webmasters_urlcrawlerrorscounts_query(
+        connection,
+        site_url,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -71,10 +76,12 @@ defmodule GoogleApi.Webmaster.V3.Api.Urlcrawlerrorscounts do
       |> Request.url("/sites/{siteUrl}/urlCrawlErrorsCounts/query", %{
         "siteUrl" => URI.encode_www_form(site_url)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Webmaster.V3.Model.UrlCrawlErrorsCountsQueryResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Webmaster.V3.Model.UrlCrawlErrorsCountsQueryResponse{}]
+    )
   end
 end

@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Client do
   @moduledoc """
-  A client resource represents a client buyer&amp;mdash;an agency, a brand, or an advertiser customer of the sponsor buyer. Users associated with the client buyer have restricted access to the Ad Exchange Marketplace and certain other sections of the Ad Exchange Buyer UI based on the role granted to the client buyer. All fields are required unless otherwise specified.
+  A client resource represents a client buyer&amp;mdash;an agency, a brand, or an advertiser customer of the sponsor buyer. Users associated with the client buyer have restricted access to the Marketplace and certain other sections of the Authorized Buyers UI based on the role granted to the client buyer. All fields are required unless otherwise specified.
 
   ## Attributes
 

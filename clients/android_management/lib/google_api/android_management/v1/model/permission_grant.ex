@@ -22,7 +22,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PermissionGrant do
 
   ## Attributes
 
-  - permission (String.t): The android permission or group, e.g. android.permission.READ_CALENDAR or android.permission_group.CALENDAR. Defaults to: `null`.
+  - permission (String.t): The Android permission or group, e.g. android.permission.READ_CALENDAR or android.permission_group.CALENDAR. Defaults to: `null`.
   - policy (String.t): The policy for granting the permission. Defaults to: `null`.
     - Enum - one of [PERMISSION_POLICY_UNSPECIFIED, PROMPT, GRANT, DENY]
   """

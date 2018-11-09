@@ -26,7 +26,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByOwnerRequest
   - limit (String.t): Required. The maximum number of devices to show in a page of results. Must be between 1 and 100 inclusive. Defaults to: `null`.
   - pageToken (String.t): A token specifying which result page to return. Defaults to: `null`.
   - sectionType (String.t): Required. The section type of the device&#39;s provisioning record. Defaults to: `null`.
-    - Enum - one of [SECTION_TYPE_UNSPECIFIED, SECTION_TYPE_ZERO_TOUCH]
+    - Enum - one of [SECTION_TYPE_UNSPECIFIED, SECTION_TYPE_SIM_LOCK, SECTION_TYPE_ZERO_TOUCH]
   """
 
   use GoogleApi.Gax.ModelBase

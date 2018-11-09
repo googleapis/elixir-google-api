@@ -31,7 +31,7 @@ defmodule GoogleApi.Compute.V1.Api.VpnTunnels do
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -51,8 +51,8 @@ defmodule GoogleApi.Compute.V1.Api.VpnTunnels do
   """
   @spec compute_vpn_tunnels_aggregated_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.VpnTunnelAggregatedList.t()} | {:error, Tesla.Env.t()}
-  def compute_vpn_tunnels_aggregated_list(connection, project, opts \\ []) do
-    optional_params = %{
+  def compute_vpn_tunnels_aggregated_list(connection, project, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -72,11 +72,11 @@ defmodule GoogleApi.Compute.V1.Api.VpnTunnels do
       |> Request.url("/{project}/aggregated/vpnTunnels", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.VpnTunnelAggregatedList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.VpnTunnelAggregatedList{}])
   end
 
   @doc """
@@ -88,7 +88,7 @@ defmodule GoogleApi.Compute.V1.Api.VpnTunnels do
   - project (String.t): Project ID for this request.
   - region (String.t): Name of the region for this request.
   - vpn_tunnel (String.t): Name of the VpnTunnel resource to delete.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -110,8 +110,15 @@ defmodule GoogleApi.Compute.V1.Api.VpnTunnels do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_vpn_tunnels_delete(connection, project, region, vpn_tunnel, opts \\ []) do
-    optional_params = %{
+  def compute_vpn_tunnels_delete(
+        connection,
+        project,
+        region,
+        vpn_tunnel,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -130,11 +137,11 @@ defmodule GoogleApi.Compute.V1.Api.VpnTunnels do
         "region" => URI.encode_www_form(region),
         "vpnTunnel" => URI.encode_www_form(vpn_tunnel)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -146,7 +153,7 @@ defmodule GoogleApi.Compute.V1.Api.VpnTunnels do
   - project (String.t): Project ID for this request.
   - region (String.t): Name of the region for this request.
   - vpn_tunnel (String.t): Name of the VpnTunnel resource to return.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -162,8 +169,15 @@ defmodule GoogleApi.Compute.V1.Api.VpnTunnels do
   """
   @spec compute_vpn_tunnels_get(Tesla.Env.client(), String.t(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.VpnTunnel.t()} | {:error, Tesla.Env.t()}
-  def compute_vpn_tunnels_get(connection, project, region, vpn_tunnel, opts \\ []) do
-    optional_params = %{
+  def compute_vpn_tunnels_get(
+        connection,
+        project,
+        region,
+        vpn_tunnel,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -181,11 +195,11 @@ defmodule GoogleApi.Compute.V1.Api.VpnTunnels do
         "region" => URI.encode_www_form(region),
         "vpnTunnel" => URI.encode_www_form(vpn_tunnel)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.VpnTunnel{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.VpnTunnel{}])
   end
 
   @doc """
@@ -196,7 +210,7 @@ defmodule GoogleApi.Compute.V1.Api.VpnTunnels do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - region (String.t): Name of the region for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -214,8 +228,8 @@ defmodule GoogleApi.Compute.V1.Api.VpnTunnels do
   """
   @spec compute_vpn_tunnels_insert(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_vpn_tunnels_insert(connection, project, region, opts \\ []) do
-    optional_params = %{
+  def compute_vpn_tunnels_insert(connection, project, region, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -234,11 +248,11 @@ defmodule GoogleApi.Compute.V1.Api.VpnTunnels do
         "project" => URI.encode_www_form(project),
         "region" => URI.encode_www_form(region)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -249,7 +263,7 @@ defmodule GoogleApi.Compute.V1.Api.VpnTunnels do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - region (String.t): Name of the region for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -269,8 +283,8 @@ defmodule GoogleApi.Compute.V1.Api.VpnTunnels do
   """
   @spec compute_vpn_tunnels_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.VpnTunnelList.t()} | {:error, Tesla.Env.t()}
-  def compute_vpn_tunnels_list(connection, project, region, opts \\ []) do
-    optional_params = %{
+  def compute_vpn_tunnels_list(connection, project, region, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -291,10 +305,10 @@ defmodule GoogleApi.Compute.V1.Api.VpnTunnels do
         "project" => URI.encode_www_form(project),
         "region" => URI.encode_www_form(region)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.VpnTunnelList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.VpnTunnelList{}])
   end
 end

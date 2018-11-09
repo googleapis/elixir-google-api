@@ -26,6 +26,7 @@ defmodule GoogleApi.Content.V2.Model.OrderLineItemProduct do
   - channel (String.t): The item&#39;s channel (online or local). Defaults to: `null`.
   - condition (String.t): Condition or state of the item. Defaults to: `null`.
   - contentLanguage (String.t): The two-letter ISO 639-1 language code for the item. Defaults to: `null`.
+  - fees ([OrderLineItemProductFee]): Associated fees at order creation time. Defaults to: `null`.
   - gtin (String.t): Global Trade Item Number (GTIN) of the item. Defaults to: `null`.
   - id (String.t): The REST id of the product. Defaults to: `null`.
   - imageLink (String.t): URL of an image of the item. Defaults to: `null`.
@@ -46,6 +47,7 @@ defmodule GoogleApi.Content.V2.Model.OrderLineItemProduct do
           :channel => any(),
           :condition => any(),
           :contentLanguage => any(),
+          :fees => list(GoogleApi.Content.V2.Model.OrderLineItemProductFee.t()),
           :gtin => any(),
           :id => any(),
           :imageLink => any(),
@@ -64,6 +66,7 @@ defmodule GoogleApi.Content.V2.Model.OrderLineItemProduct do
   field(:channel)
   field(:condition)
   field(:contentLanguage)
+  field(:fees, as: GoogleApi.Content.V2.Model.OrderLineItemProductFee, type: :list)
   field(:gtin)
   field(:id)
   field(:imageLink)

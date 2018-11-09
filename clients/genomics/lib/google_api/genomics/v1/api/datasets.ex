@@ -30,14 +30,14 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
   ## Parameters
 
   - connection (GoogleApi.Genomics.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -51,15 +51,15 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
   """
   @spec genomics_datasets_create(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Genomics.V1.Model.Dataset.t()} | {:error, Tesla.Env.t()}
-  def genomics_datasets_create(connection, opts \\ []) do
-    optional_params = %{
-      :access_token => :query,
+  def genomics_datasets_create(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -71,11 +71,11 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/datasets")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Genomics.V1.Model.Dataset{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Genomics.V1.Model.Dataset{}])
   end
 
   @doc """
@@ -85,14 +85,14 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
 
   - connection (GoogleApi.Genomics.V1.Connection): Connection to server
   - dataset_id (String.t): The ID of the dataset to be deleted.
-  - opts (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -105,15 +105,15 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
   """
   @spec genomics_datasets_delete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Genomics.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def genomics_datasets_delete(connection, dataset_id, opts \\ []) do
-    optional_params = %{
-      :access_token => :query,
+  def genomics_datasets_delete(connection, dataset_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -126,11 +126,11 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
       |> Request.url("/v1/datasets/{datasetId}", %{
         "datasetId" => URI.encode_www_form(dataset_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Genomics.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Genomics.V1.Model.Empty{}])
   end
 
   @doc """
@@ -140,14 +140,14 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
 
   - connection (GoogleApi.Genomics.V1.Connection): Connection to server
   - dataset_id (String.t): The ID of the dataset.
-  - opts (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -160,15 +160,15 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
   """
   @spec genomics_datasets_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Genomics.V1.Model.Dataset.t()} | {:error, Tesla.Env.t()}
-  def genomics_datasets_get(connection, dataset_id, opts \\ []) do
-    optional_params = %{
-      :access_token => :query,
+  def genomics_datasets_get(connection, dataset_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -181,11 +181,11 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
       |> Request.url("/v1/datasets/{datasetId}", %{
         "datasetId" => URI.encode_www_form(dataset_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Genomics.V1.Model.Dataset{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Genomics.V1.Model.Dataset{}])
   end
 
   @doc """
@@ -195,14 +195,14 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
 
   - connection (GoogleApi.Genomics.V1.Connection): Connection to server
   - resource (String.t): REQUIRED: The resource for which policy is being specified. Format is &#x60;datasets/&lt;dataset ID&gt;&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -216,15 +216,15 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
   """
   @spec genomics_datasets_get_iam_policy(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Genomics.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
-  def genomics_datasets_get_iam_policy(connection, resource, opts \\ []) do
-    optional_params = %{
-      :access_token => :query,
+  def genomics_datasets_get_iam_policy(connection, resource, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -238,11 +238,11 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
       |> Request.url("/v1/{+resource}:getIamPolicy", %{
         "resource" => URI.encode_www_form(resource)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Genomics.V1.Model.Policy{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Genomics.V1.Model.Policy{}])
   end
 
   @doc """
@@ -251,14 +251,14 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
   ## Parameters
 
   - connection (GoogleApi.Genomics.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -274,15 +274,15 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
   """
   @spec genomics_datasets_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Genomics.V1.Model.ListDatasetsResponse.t()} | {:error, Tesla.Env.t()}
-  def genomics_datasets_list(connection, opts \\ []) do
-    optional_params = %{
-      :access_token => :query,
+  def genomics_datasets_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -296,11 +296,11 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/datasets")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Genomics.V1.Model.ListDatasetsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Genomics.V1.Model.ListDatasetsResponse{}])
   end
 
   @doc """
@@ -310,14 +310,14 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
 
   - connection (GoogleApi.Genomics.V1.Connection): Connection to server
   - dataset_id (String.t): The ID of the dataset to be updated.
-  - opts (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -332,15 +332,15 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
   """
   @spec genomics_datasets_patch(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Genomics.V1.Model.Dataset.t()} | {:error, Tesla.Env.t()}
-  def genomics_datasets_patch(connection, dataset_id, opts \\ []) do
-    optional_params = %{
-      :access_token => :query,
+  def genomics_datasets_patch(connection, dataset_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -355,11 +355,11 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
       |> Request.url("/v1/datasets/{datasetId}", %{
         "datasetId" => URI.encode_www_form(dataset_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Genomics.V1.Model.Dataset{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Genomics.V1.Model.Dataset{}])
   end
 
   @doc """
@@ -369,14 +369,14 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
 
   - connection (GoogleApi.Genomics.V1.Connection): Connection to server
   - resource (String.t): REQUIRED: The resource for which policy is being specified. Format is &#x60;datasets/&lt;dataset ID&gt;&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -390,15 +390,15 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
   """
   @spec genomics_datasets_set_iam_policy(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Genomics.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
-  def genomics_datasets_set_iam_policy(connection, resource, opts \\ []) do
-    optional_params = %{
-      :access_token => :query,
+  def genomics_datasets_set_iam_policy(connection, resource, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -412,11 +412,11 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
       |> Request.url("/v1/{+resource}:setIamPolicy", %{
         "resource" => URI.encode_www_form(resource)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Genomics.V1.Model.Policy{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Genomics.V1.Model.Policy{}])
   end
 
   @doc """
@@ -426,14 +426,14 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
 
   - connection (GoogleApi.Genomics.V1.Connection): Connection to server
   - resource (String.t): REQUIRED: The resource for which policy is being specified. Format is &#x60;datasets/&lt;dataset ID&gt;&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -448,15 +448,20 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
   @spec genomics_datasets_test_iam_permissions(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Genomics.V1.Model.TestIamPermissionsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def genomics_datasets_test_iam_permissions(connection, resource, opts \\ []) do
-    optional_params = %{
-      :access_token => :query,
+  def genomics_datasets_test_iam_permissions(
+        connection,
+        resource,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -470,11 +475,13 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
       |> Request.url("/v1/{+resource}:testIamPermissions", %{
         "resource" => URI.encode_www_form(resource)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Genomics.V1.Model.TestIamPermissionsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Genomics.V1.Model.TestIamPermissionsResponse{}]
+    )
   end
 
   @doc """
@@ -484,14 +491,14 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
 
   - connection (GoogleApi.Genomics.V1.Connection): Connection to server
   - dataset_id (String.t): The ID of the dataset to be undeleted.
-  - opts (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -505,15 +512,15 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
   """
   @spec genomics_datasets_undelete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Genomics.V1.Model.Dataset.t()} | {:error, Tesla.Env.t()}
-  def genomics_datasets_undelete(connection, dataset_id, opts \\ []) do
-    optional_params = %{
-      :access_token => :query,
+  def genomics_datasets_undelete(connection, dataset_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -527,10 +534,10 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
       |> Request.url("/v1/datasets/{datasetId}:undelete", %{
         "datasetId" => URI.encode_www_form(dataset_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Genomics.V1.Model.Dataset{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Genomics.V1.Model.Dataset{}])
   end
 end

@@ -32,7 +32,7 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
   - id (String.t): The id parameter specifies the unique ID of the broadcast that is being bound to a video stream.
   - part (String.t): The part parameter specifies a comma-separated list of one or more liveBroadcast resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, contentDetails, and status.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -51,8 +51,8 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
   """
   @spec youtube_live_broadcasts_bind(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.LiveBroadcast.t()} | {:error, Tesla.Env.t()}
-  def youtube_live_broadcasts_bind(connection, id, part, opts \\ []) do
-    optional_params = %{
+  def youtube_live_broadcasts_bind(connection, id, part, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -71,11 +71,11 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
       |> Request.url("/youtube/v3/liveBroadcasts/bind")
       |> Request.add_param(:query, :id, id)
       |> Request.add_param(:query, :part, part)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.LiveBroadcast{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTube.V3.Model.LiveBroadcast{}])
   end
 
   @doc """
@@ -86,7 +86,7 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
   - id (String.t): The id parameter specifies the YouTube live broadcast ID that uniquely identifies the broadcast in which the slate is being updated.
   - part (String.t): The part parameter specifies a comma-separated list of one or more liveBroadcast resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, contentDetails, and status.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -107,8 +107,8 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
   """
   @spec youtube_live_broadcasts_control(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.LiveBroadcast.t()} | {:error, Tesla.Env.t()}
-  def youtube_live_broadcasts_control(connection, id, part, opts \\ []) do
-    optional_params = %{
+  def youtube_live_broadcasts_control(connection, id, part, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -129,11 +129,11 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
       |> Request.url("/youtube/v3/liveBroadcasts/control")
       |> Request.add_param(:query, :id, id)
       |> Request.add_param(:query, :part, part)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.LiveBroadcast{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTube.V3.Model.LiveBroadcast{}])
   end
 
   @doc """
@@ -143,7 +143,7 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
   - id (String.t): The id parameter specifies the YouTube live broadcast ID for the resource that is being deleted.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -161,8 +161,8 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
   """
   @spec youtube_live_broadcasts_delete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def youtube_live_broadcasts_delete(connection, id, opts \\ []) do
-    optional_params = %{
+  def youtube_live_broadcasts_delete(connection, id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -179,11 +179,11 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
       |> Request.method(:delete)
       |> Request.url("/youtube/v3/liveBroadcasts")
       |> Request.add_param(:query, :id, id)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -193,7 +193,7 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
   - part (String.t): The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.  The part properties that you can include in the parameter value are id, snippet, contentDetails, and status.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -212,8 +212,8 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
   """
   @spec youtube_live_broadcasts_insert(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.LiveBroadcast.t()} | {:error, Tesla.Env.t()}
-  def youtube_live_broadcasts_insert(connection, part, opts \\ []) do
-    optional_params = %{
+  def youtube_live_broadcasts_insert(connection, part, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -231,11 +231,11 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
       |> Request.method(:post)
       |> Request.url("/youtube/v3/liveBroadcasts")
       |> Request.add_param(:query, :part, part)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.LiveBroadcast{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTube.V3.Model.LiveBroadcast{}])
   end
 
   @doc """
@@ -245,7 +245,7 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
   - part (String.t): The part parameter specifies a comma-separated list of one or more liveBroadcast resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, contentDetails, and status.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -270,8 +270,8 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
   @spec youtube_live_broadcasts_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.LiveBroadcastListResponse.t()}
           | {:error, Tesla.Env.t()}
-  def youtube_live_broadcasts_list(connection, part, opts \\ []) do
-    optional_params = %{
+  def youtube_live_broadcasts_list(connection, part, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -294,11 +294,11 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
       |> Request.method(:get)
       |> Request.url("/youtube/v3/liveBroadcasts")
       |> Request.add_param(:query, :part, part)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.LiveBroadcastListResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTube.V3.Model.LiveBroadcastListResponse{}])
   end
 
   @doc """
@@ -310,7 +310,7 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
   - broadcast_status (String.t): The broadcastStatus parameter identifies the state to which the broadcast is changing. Note that to transition a broadcast to either the testing or live state, the status.streamStatus must be active for the stream that the broadcast is bound to.
   - id (String.t): The id parameter specifies the unique ID of the broadcast that is transitioning to another status.
   - part (String.t): The part parameter specifies a comma-separated list of one or more liveBroadcast resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, contentDetails, and status.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -333,8 +333,15 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.YouTube.V3.Model.LiveBroadcast.t()} | {:error, Tesla.Env.t()}
-  def youtube_live_broadcasts_transition(connection, broadcast_status, id, part, opts \\ []) do
-    optional_params = %{
+  def youtube_live_broadcasts_transition(
+        connection,
+        broadcast_status,
+        id,
+        part,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -353,11 +360,11 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
       |> Request.add_param(:query, :broadcastStatus, broadcast_status)
       |> Request.add_param(:query, :id, id)
       |> Request.add_param(:query, :part, part)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.LiveBroadcast{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTube.V3.Model.LiveBroadcast{}])
   end
 
   @doc """
@@ -367,7 +374,7 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
   - part (String.t): The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.  The part properties that you can include in the parameter value are id, snippet, contentDetails, and status.  Note that this method will override the existing values for all of the mutable properties that are contained in any parts that the parameter value specifies. For example, a broadcast&#39;s privacy status is defined in the status part. As such, if your request is updating a private or unlisted broadcast, and the request&#39;s part parameter value includes the status part, the broadcast&#39;s privacy setting will be updated to whatever value the request body specifies. If the request body does not specify a value, the existing privacy setting will be removed and the broadcast will revert to the default privacy setting.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -386,8 +393,8 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
   """
   @spec youtube_live_broadcasts_update(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.LiveBroadcast.t()} | {:error, Tesla.Env.t()}
-  def youtube_live_broadcasts_update(connection, part, opts \\ []) do
-    optional_params = %{
+  def youtube_live_broadcasts_update(connection, part, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -405,10 +412,10 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
       |> Request.method(:put)
       |> Request.url("/youtube/v3/liveBroadcasts")
       |> Request.add_param(:query, :part, part)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.LiveBroadcast{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTube.V3.Model.LiveBroadcast{}])
   end
 end

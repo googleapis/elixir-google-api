@@ -24,17 +24,23 @@ defmodule GoogleApi.Spanner.V1.Model.ResultSetStats do
 
   - queryPlan (QueryPlan): QueryPlan for the query associated with this result. Defaults to: `null`.
   - queryStats (%{optional(String.t) &#x3D;&gt; String.t}): Aggregated statistics from the execution of the query. Only present when the query is profiled. For example, a query could return the statistics as follows:      {       \&quot;rows_returned\&quot;: \&quot;3\&quot;,       \&quot;elapsed_time\&quot;: \&quot;1.22 secs\&quot;,       \&quot;cpu_time\&quot;: \&quot;1.19 secs\&quot;     } Defaults to: `null`.
+  - rowCountExact (String.t): Standard DML returns an exact count of rows that were modified. Defaults to: `null`.
+  - rowCountLowerBound (String.t): Partitioned DML does not offer exactly-once semantics, so it returns a lower bound of the rows modified. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :queryPlan => GoogleApi.Spanner.V1.Model.QueryPlan.t(),
-          :queryStats => map()
+          :queryStats => map(),
+          :rowCountExact => any(),
+          :rowCountLowerBound => any()
         }
 
   field(:queryPlan, as: GoogleApi.Spanner.V1.Model.QueryPlan)
   field(:queryStats, type: :map)
+  field(:rowCountExact)
+  field(:rowCountLowerBound)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.ResultSetStats do

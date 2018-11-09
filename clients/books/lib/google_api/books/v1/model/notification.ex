@@ -28,6 +28,7 @@ defmodule GoogleApi.Books.V1.Model.Notification do
   - doc_type (String.t):  Defaults to: `null`.
   - dont_show_notification (boolean()):  Defaults to: `null`.
   - iconUrl (String.t):  Defaults to: `null`.
+  - is_document_mature (boolean()):  Defaults to: `null`.
   - kind (String.t): Resource type. Defaults to: `null`.
   - notificationGroup (String.t):  Defaults to: `null`.
   - notification_type (String.t):  Defaults to: `null`.
@@ -47,6 +48,7 @@ defmodule GoogleApi.Books.V1.Model.Notification do
           :doc_type => any(),
           :dont_show_notification => any(),
           :iconUrl => any(),
+          :is_document_mature => any(),
           :kind => any(),
           :notificationGroup => any(),
           :notification_type => any(),
@@ -63,6 +65,7 @@ defmodule GoogleApi.Books.V1.Model.Notification do
   field(:doc_type)
   field(:dont_show_notification)
   field(:iconUrl)
+  field(:is_document_mature)
   field(:kind)
   field(:notificationGroup)
   field(:notification_type)

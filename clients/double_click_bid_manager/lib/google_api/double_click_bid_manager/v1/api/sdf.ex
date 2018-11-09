@@ -30,7 +30,7 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Api.Sdf do
   ## Parameters
 
   - connection (GoogleApi.DoubleClickBidManager.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,8 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Api.Sdf do
   @spec doubleclickbidmanager_sdf_download(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.DoubleClickBidManager.V1.Model.DownloadResponse.t()}
           | {:error, Tesla.Env.t()}
-  def doubleclickbidmanager_sdf_download(connection, opts \\ []) do
-    optional_params = %{
+  def doubleclickbidmanager_sdf_download(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -64,10 +64,12 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Api.Sdf do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/sdf/download")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.DoubleClickBidManager.V1.Model.DownloadResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.DoubleClickBidManager.V1.Model.DownloadResponse{}]
+    )
   end
 end

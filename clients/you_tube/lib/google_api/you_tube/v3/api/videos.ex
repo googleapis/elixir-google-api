@@ -31,7 +31,7 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
   - id (String.t): The id parameter specifies the YouTube video ID for the resource that is being deleted. In a video resource, the id property specifies the video&#39;s ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,8 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
   """
   @spec youtube_videos_delete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def youtube_videos_delete(connection, id, opts \\ []) do
-    optional_params = %{
+  def youtube_videos_delete(connection, id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -65,11 +65,11 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
       |> Request.method(:delete)
       |> Request.url("/youtube/v3/videos")
       |> Request.add_param(:query, :id, id)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -79,7 +79,7 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
   - id (String.t): The id parameter specifies a comma-separated list of the YouTube video ID(s) for the resource(s) for which you are retrieving rating data. In a video resource, the id property specifies the video&#39;s ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -96,8 +96,8 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
   """
   @spec youtube_videos_get_rating(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.VideoGetRatingResponse.t()} | {:error, Tesla.Env.t()}
-  def youtube_videos_get_rating(connection, id, opts \\ []) do
-    optional_params = %{
+  def youtube_videos_get_rating(connection, id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -113,11 +113,11 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
       |> Request.method(:get)
       |> Request.url("/youtube/v3/videos/getRating")
       |> Request.add_param(:query, :id, id)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.VideoGetRatingResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTube.V3.Model.VideoGetRatingResponse{}])
   end
 
   @doc """
@@ -127,7 +127,7 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
   - part (String.t): The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.  Note that not all parts contain properties that can be set when inserting or updating a video. For example, the statistics object encapsulates statistics that YouTube calculates for a video and does not contain values that you can set or modify. If the parameter value specifies a part that does not contain mutable values, that part will still be included in the API response.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -149,8 +149,8 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
   """
   @spec youtube_videos_insert(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.Video.t()} | {:error, Tesla.Env.t()}
-  def youtube_videos_insert(connection, part, opts \\ []) do
-    optional_params = %{
+  def youtube_videos_insert(connection, part, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -171,11 +171,11 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
       |> Request.method(:post)
       |> Request.url("/youtube/v3/videos")
       |> Request.add_param(:query, :part, part)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.Video{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTube.V3.Model.Video{}])
   end
 
   @doc """
@@ -186,7 +186,7 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
   - part (String.t): The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.  Note that not all parts contain properties that can be set when inserting or updating a video. For example, the statistics object encapsulates statistics that YouTube calculates for a video and does not contain values that you can set or modify. If the parameter value specifies a part that does not contain mutable values, that part will still be included in the API response.
   - upload_type (String.t): Upload type. Must be \&quot;resumable\&quot;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -208,8 +208,14 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
   """
   @spec youtube_videos_insert_resumable(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def youtube_videos_insert_resumable(connection, part, upload_type, opts \\ []) do
-    optional_params = %{
+  def youtube_videos_insert_resumable(
+        connection,
+        part,
+        upload_type,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -231,11 +237,11 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
       |> Request.url("/resumable/upload/youtube/v3/videos")
       |> Request.add_param(:query, :part, part)
       |> Request.add_param(:query, :uploadType, upload_type)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -248,7 +254,7 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
   - upload_type (String.t): Upload type. Must be \&quot;multipart\&quot;.
   - metadata (Video): Video metadata.
   - data (String.t): The file to upload.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -275,8 +281,16 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.YouTube.V3.Model.Video.t()} | {:error, Tesla.Env.t()}
-  def youtube_videos_insert_simple(connection, part, upload_type, metadata, data, opts \\ []) do
-    optional_params = %{
+  def youtube_videos_insert_simple(
+        connection,
+        part,
+        upload_type,
+        metadata,
+        data,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -299,11 +313,11 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_param(:body, :metadata, metadata)
       |> Request.add_param(:file, :data, data)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.Video{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTube.V3.Model.Video{}])
   end
 
   @doc """
@@ -313,7 +327,7 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
   - part (String.t): The part parameter specifies a comma-separated list of one or more video resource properties that the API response will include.  If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a video resource, the snippet property contains the channelId, title, description, tags, and categoryId properties. As such, if you set part&#x3D;snippet, the API response will contain all of those properties.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -341,8 +355,8 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
   """
   @spec youtube_videos_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.VideoListResponse.t()} | {:error, Tesla.Env.t()}
-  def youtube_videos_list(connection, part, opts \\ []) do
-    optional_params = %{
+  def youtube_videos_list(connection, part, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -369,11 +383,11 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
       |> Request.method(:get)
       |> Request.url("/youtube/v3/videos")
       |> Request.add_param(:query, :part, part)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.VideoListResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTube.V3.Model.VideoListResponse{}])
   end
 
   @doc """
@@ -384,7 +398,7 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
   - id (String.t): The id parameter specifies the YouTube video ID of the video that is being rated or having its rating removed.
   - rating (String.t): Specifies the rating to record.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -400,8 +414,8 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
   """
   @spec youtube_videos_rate(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def youtube_videos_rate(connection, id, rating, opts \\ []) do
-    optional_params = %{
+  def youtube_videos_rate(connection, id, rating, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -417,11 +431,11 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
       |> Request.url("/youtube/v3/videos/rate")
       |> Request.add_param(:query, :id, id)
       |> Request.add_param(:query, :rating, rating)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -430,7 +444,7 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
   ## Parameters
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -448,8 +462,8 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
   """
   @spec youtube_videos_report_abuse(Tesla.Env.client(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def youtube_videos_report_abuse(connection, opts \\ []) do
-    optional_params = %{
+  def youtube_videos_report_abuse(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -465,11 +479,11 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/youtube/v3/videos/reportAbuse")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -479,7 +493,7 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
   - part (String.t): The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.  Note that this method will override the existing values for all of the mutable properties that are contained in any parts that the parameter value specifies. For example, a video&#39;s privacy setting is contained in the status part. As such, if your request is updating a private video, and the request&#39;s part parameter value includes the status part, the video&#39;s privacy setting will be updated to whatever value the request body specifies. If the request body does not specify a value, the existing privacy setting will be removed and the video will revert to the default privacy setting.  In addition, not all parts contain properties that can be set when inserting or updating a video. For example, the statistics object encapsulates statistics that YouTube calculates for a video and does not contain values that you can set or modify. If the parameter value specifies a part that does not contain mutable values, that part will still be included in the API response.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -497,8 +511,8 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
   """
   @spec youtube_videos_update(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.Video.t()} | {:error, Tesla.Env.t()}
-  def youtube_videos_update(connection, part, opts \\ []) do
-    optional_params = %{
+  def youtube_videos_update(connection, part, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -515,10 +529,10 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
       |> Request.method(:put)
       |> Request.url("/youtube/v3/videos")
       |> Request.add_param(:query, :part, part)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.Video{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTube.V3.Model.Video{}])
   end
 end

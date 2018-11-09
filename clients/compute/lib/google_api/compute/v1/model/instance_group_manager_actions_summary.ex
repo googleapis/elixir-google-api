@@ -30,6 +30,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerActionsSummary do
   - recreating (integer()): [Output Only] The number of instances in the managed instance group that are scheduled to be recreated or are currently being being recreated. Recreating an instance deletes the existing root persistent disk and creates a new disk from the image that is defined in the instance template. Defaults to: `null`.
   - refreshing (integer()): [Output Only] The number of instances in the managed instance group that are being reconfigured with properties that do not require a restart or a recreate action. For example, setting or removing target pools for the instance. Defaults to: `null`.
   - restarting (integer()): [Output Only] The number of instances in the managed instance group that are scheduled to be restarted or are currently being restarted. Defaults to: `null`.
+  - verifying (integer()): [Output Only] The number of instances in the managed instance group that are being verified. See the managedInstances[].currentAction property in the listManagedInstances method documentation. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -42,7 +43,8 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerActionsSummary do
           :none => any(),
           :recreating => any(),
           :refreshing => any(),
-          :restarting => any()
+          :restarting => any(),
+          :verifying => any()
         }
 
   field(:abandoning)
@@ -53,6 +55,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerActionsSummary do
   field(:recreating)
   field(:refreshing)
   field(:restarting)
+  field(:verifying)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.InstanceGroupManagerActionsSummary do

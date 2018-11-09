@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Genomics.V1.Model.PullStartedEvent do
   @moduledoc """
-  This event is generated when the worker starts pulling an image.
+  An event generated when the worker starts pulling an image.
 
   ## Attributes
 

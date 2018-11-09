@@ -22,7 +22,8 @@ defmodule GoogleApi.Content.V2.Model.OrderpaymentsNotifyRefundRequest do
 
   ## Attributes
 
-  - invoiceId (String.t): Invoice ID from orderInvoice service that corresponds to the charge. Defaults to: `null`.
+  - invoiceId (String.t): Deprecated. Please use invoiceIds instead. Defaults to: `null`.
+  - invoiceIds ([String.t]): Invoice IDs from the orderinvoices service that correspond to the refund. Defaults to: `null`.
   - refundState (String.t): Whether refund was successful. Defaults to: `null`.
   """
 
@@ -30,10 +31,12 @@ defmodule GoogleApi.Content.V2.Model.OrderpaymentsNotifyRefundRequest do
 
   @type t :: %__MODULE__{
           :invoiceId => any(),
+          :invoiceIds => list(any()),
           :refundState => any()
         }
 
   field(:invoiceId)
+  field(:invoiceIds, type: :list)
   field(:refundState)
 end
 

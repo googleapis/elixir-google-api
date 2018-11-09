@@ -29,7 +29,7 @@ defmodule GoogleApi.Content.V2.Api.Accountstatuses do
   ## Parameters
 
   - connection (GoogleApi.Content.V2.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -47,8 +47,8 @@ defmodule GoogleApi.Content.V2.Api.Accountstatuses do
   @spec content_accountstatuses_custombatch(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.AccountstatusesCustomBatchResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_accountstatuses_custombatch(connection, opts \\ []) do
-    optional_params = %{
+  def content_accountstatuses_custombatch(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -63,11 +63,13 @@ defmodule GoogleApi.Content.V2.Api.Accountstatuses do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/accountstatuses/batch")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.AccountstatusesCustomBatchResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Content.V2.Model.AccountstatusesCustomBatchResponse{}]
+    )
   end
 
   @doc """
@@ -78,7 +80,7 @@ defmodule GoogleApi.Content.V2.Api.Accountstatuses do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
   - account_id (String.t): The ID of the account.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -95,8 +97,14 @@ defmodule GoogleApi.Content.V2.Api.Accountstatuses do
   """
   @spec content_accountstatuses_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.AccountStatus.t()} | {:error, Tesla.Env.t()}
-  def content_accountstatuses_get(connection, merchant_id, account_id, opts \\ []) do
-    optional_params = %{
+  def content_accountstatuses_get(
+        connection,
+        merchant_id,
+        account_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -114,11 +122,11 @@ defmodule GoogleApi.Content.V2.Api.Accountstatuses do
         "merchantId" => URI.encode_www_form(merchant_id),
         "accountId" => URI.encode_www_form(account_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.AccountStatus{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Content.V2.Model.AccountStatus{}])
   end
 
   @doc """
@@ -128,7 +136,7 @@ defmodule GoogleApi.Content.V2.Api.Accountstatuses do
 
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the managing account. This must be a multi-client account.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -148,8 +156,8 @@ defmodule GoogleApi.Content.V2.Api.Accountstatuses do
   @spec content_accountstatuses_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.AccountstatusesListResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_accountstatuses_list(connection, merchant_id, opts \\ []) do
-    optional_params = %{
+  def content_accountstatuses_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -168,10 +176,12 @@ defmodule GoogleApi.Content.V2.Api.Accountstatuses do
       |> Request.url("/{merchantId}/accountstatuses", %{
         "merchantId" => URI.encode_www_form(merchant_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.AccountstatusesListResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Content.V2.Model.AccountstatusesListResponse{}]
+    )
   end
 end

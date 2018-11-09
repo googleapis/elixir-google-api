@@ -22,38 +22,47 @@ defmodule GoogleApi.ServiceControl.V1.Model.LogEntry do
 
   ## Attributes
 
+  - httpRequest (HttpRequest): Optional. Information about the HTTP request associated with this log entry, if applicable. Defaults to: `null`.
   - insertId (String.t): A unique ID for the log entry used for deduplication. If omitted, the implementation will generate one based on operation_id. Defaults to: `null`.
   - labels (%{optional(String.t) &#x3D;&gt; String.t}): A set of user-defined (key, value) data that provides additional information about the log entry. Defaults to: `null`.
   - name (String.t): Required. The log to which this log entry belongs. Examples: &#x60;\&quot;syslog\&quot;&#x60;, &#x60;\&quot;book_log\&quot;&#x60;. Defaults to: `null`.
+  - operation (LogEntryOperation): Optional. Information about an operation associated with the log entry, if applicable. Defaults to: `null`.
   - protoPayload (%{optional(String.t) &#x3D;&gt; String.t}): The log entry payload, represented as a protocol buffer that is expressed as a JSON object. The only accepted type currently is AuditLog. Defaults to: `null`.
   - severity (String.t): The severity of the log entry. The default value is &#x60;LogSeverity.DEFAULT&#x60;. Defaults to: `null`.
     - Enum - one of [DEFAULT, DEBUG, INFO, NOTICE, WARNING, ERROR, CRITICAL, ALERT, EMERGENCY]
   - structPayload (%{optional(String.t) &#x3D;&gt; String.t}): The log entry payload, represented as a structure that is expressed as a JSON object. Defaults to: `null`.
   - textPayload (String.t): The log entry payload, represented as a Unicode string (UTF-8). Defaults to: `null`.
   - timestamp (DateTime.t): The time the event described by the log entry occurred. If omitted, defaults to operation start time. Defaults to: `null`.
+  - trace (String.t): Optional. Resource name of the trace associated with the log entry, if any. If this field contains a relative resource name, you can assume the name is relative to &#x60;//tracing.googleapis.com&#x60;. Example: &#x60;projects/my-projectid/traces/06796866738c859f2f19b7cfb3214824&#x60; Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :httpRequest => GoogleApi.ServiceControl.V1.Model.HttpRequest.t(),
           :insertId => any(),
           :labels => map(),
           :name => any(),
+          :operation => GoogleApi.ServiceControl.V1.Model.LogEntryOperation.t(),
           :protoPayload => map(),
           :severity => any(),
           :structPayload => map(),
           :textPayload => any(),
-          :timestamp => DateTime.t()
+          :timestamp => DateTime.t(),
+          :trace => any()
         }
 
+  field(:httpRequest, as: GoogleApi.ServiceControl.V1.Model.HttpRequest)
   field(:insertId)
   field(:labels, type: :map)
   field(:name)
+  field(:operation, as: GoogleApi.ServiceControl.V1.Model.LogEntryOperation)
   field(:protoPayload, type: :map)
   field(:severity)
   field(:structPayload, type: :map)
   field(:textPayload)
   field(:timestamp, as: DateTime)
+  field(:trace)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.LogEntry do

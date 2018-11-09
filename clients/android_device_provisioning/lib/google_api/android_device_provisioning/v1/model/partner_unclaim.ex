@@ -25,7 +25,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerUnclaim do
   - deviceId (String.t): Device ID of the device. Defaults to: `null`.
   - deviceIdentifier (DeviceIdentifier): Device identifier of the device. Defaults to: `null`.
   - sectionType (String.t): Required. The section type of the device&#39;s provisioning record. Defaults to: `null`.
-    - Enum - one of [SECTION_TYPE_UNSPECIFIED, SECTION_TYPE_ZERO_TOUCH]
+    - Enum - one of [SECTION_TYPE_UNSPECIFIED, SECTION_TYPE_SIM_LOCK, SECTION_TYPE_ZERO_TOUCH]
   """
 
   use GoogleApi.Gax.ModelBase

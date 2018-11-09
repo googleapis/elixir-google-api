@@ -32,7 +32,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
   - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
   - account_id (String.t): The account id to delete the pretargeting config for.
   - config_id (String.t): The specific id of the configuration to delete.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -52,8 +52,14 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
           String.t(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
-  def adexchangebuyer_pretargeting_config_delete(connection, account_id, config_id, opts \\ []) do
-    optional_params = %{
+  def adexchangebuyer_pretargeting_config_delete(
+        connection,
+        account_id,
+        config_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -70,11 +76,11 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
         "accountId" => URI.encode_www_form(account_id),
         "configId" => URI.encode_www_form(config_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -85,7 +91,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
   - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
   - account_id (String.t): The account id to get the pretargeting config for.
   - config_id (String.t): The specific id of the configuration to retrieve.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -107,8 +113,14 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig.t()}
           | {:error, Tesla.Env.t()}
-  def adexchangebuyer_pretargeting_config_get(connection, account_id, config_id, opts \\ []) do
-    optional_params = %{
+  def adexchangebuyer_pretargeting_config_get(
+        connection,
+        account_id,
+        config_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -125,11 +137,13 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
         "accountId" => URI.encode_www_form(account_id),
         "configId" => URI.encode_www_form(config_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig{}]
+    )
   end
 
   @doc """
@@ -139,7 +153,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
 
   - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
   - account_id (String.t): The account id to insert the pretargeting config for.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -157,8 +171,13 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
   @spec adexchangebuyer_pretargeting_config_insert(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig.t()}
           | {:error, Tesla.Env.t()}
-  def adexchangebuyer_pretargeting_config_insert(connection, account_id, opts \\ []) do
-    optional_params = %{
+  def adexchangebuyer_pretargeting_config_insert(
+        connection,
+        account_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -175,11 +194,13 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
       |> Request.url("/pretargetingconfigs/{accountId}", %{
         "accountId" => URI.encode_www_form(account_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig{}]
+    )
   end
 
   @doc """
@@ -189,7 +210,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
 
   - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
   - account_id (String.t): The account id to get the pretargeting configs for.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -206,8 +227,13 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
   @spec adexchangebuyer_pretargeting_config_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigList.t()}
           | {:error, Tesla.Env.t()}
-  def adexchangebuyer_pretargeting_config_list(connection, account_id, opts \\ []) do
-    optional_params = %{
+  def adexchangebuyer_pretargeting_config_list(
+        connection,
+        account_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -223,11 +249,13 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
       |> Request.url("/pretargetingconfigs/{accountId}", %{
         "accountId" => URI.encode_www_form(account_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigList{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigList{}]
+    )
   end
 
   @doc """
@@ -238,7 +266,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
   - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
   - account_id (String.t): The account id to update the pretargeting config for.
   - config_id (String.t): The specific id of the configuration to update.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -261,8 +289,14 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig.t()}
           | {:error, Tesla.Env.t()}
-  def adexchangebuyer_pretargeting_config_patch(connection, account_id, config_id, opts \\ []) do
-    optional_params = %{
+  def adexchangebuyer_pretargeting_config_patch(
+        connection,
+        account_id,
+        config_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -280,11 +314,13 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
         "accountId" => URI.encode_www_form(account_id),
         "configId" => URI.encode_www_form(config_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig{}]
+    )
   end
 
   @doc """
@@ -295,7 +331,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
   - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
   - account_id (String.t): The account id to update the pretargeting config for.
   - config_id (String.t): The specific id of the configuration to update.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -318,8 +354,14 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig.t()}
           | {:error, Tesla.Env.t()}
-  def adexchangebuyer_pretargeting_config_update(connection, account_id, config_id, opts \\ []) do
-    optional_params = %{
+  def adexchangebuyer_pretargeting_config_update(
+        connection,
+        account_id,
+        config_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -337,10 +379,12 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
         "accountId" => URI.encode_www_form(account_id),
         "configId" => URI.encode_www_form(config_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig{}]
+    )
   end
 end

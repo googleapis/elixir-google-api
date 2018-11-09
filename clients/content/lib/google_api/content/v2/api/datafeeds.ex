@@ -29,7 +29,7 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
   ## Parameters
 
   - connection (GoogleApi.Content.V2.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,8 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
   @spec content_datafeeds_custombatch(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.DatafeedsCustomBatchResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_datafeeds_custombatch(connection, opts \\ []) do
-    optional_params = %{
+  def content_datafeeds_custombatch(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -65,11 +65,13 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/datafeeds/batch")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.DatafeedsCustomBatchResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Content.V2.Model.DatafeedsCustomBatchResponse{}]
+    )
   end
 
   @doc """
@@ -80,7 +82,7 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the datafeed. This account cannot be a multi-client account.
   - datafeed_id (String.t): The ID of the datafeed.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -97,8 +99,14 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
   """
   @spec content_datafeeds_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def content_datafeeds_delete(connection, merchant_id, datafeed_id, opts \\ []) do
-    optional_params = %{
+  def content_datafeeds_delete(
+        connection,
+        merchant_id,
+        datafeed_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -116,11 +124,11 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
         "merchantId" => URI.encode_www_form(merchant_id),
         "datafeedId" => URI.encode_www_form(datafeed_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -131,7 +139,7 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the datafeed. This account cannot be a multi-client account.
   - datafeed_id (String.t): The ID of the datafeed to be fetched.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -149,8 +157,14 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
   @spec content_datafeeds_fetchnow(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.DatafeedsFetchNowResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_datafeeds_fetchnow(connection, merchant_id, datafeed_id, opts \\ []) do
-    optional_params = %{
+  def content_datafeeds_fetchnow(
+        connection,
+        merchant_id,
+        datafeed_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -168,11 +182,11 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
         "merchantId" => URI.encode_www_form(merchant_id),
         "datafeedId" => URI.encode_www_form(datafeed_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.DatafeedsFetchNowResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Content.V2.Model.DatafeedsFetchNowResponse{}])
   end
 
   @doc """
@@ -183,7 +197,7 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the datafeed. This account cannot be a multi-client account.
   - datafeed_id (String.t): The ID of the datafeed.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -199,8 +213,14 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
   """
   @spec content_datafeeds_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.Datafeed.t()} | {:error, Tesla.Env.t()}
-  def content_datafeeds_get(connection, merchant_id, datafeed_id, opts \\ []) do
-    optional_params = %{
+  def content_datafeeds_get(
+        connection,
+        merchant_id,
+        datafeed_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -217,11 +237,11 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
         "merchantId" => URI.encode_www_form(merchant_id),
         "datafeedId" => URI.encode_www_form(datafeed_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.Datafeed{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Content.V2.Model.Datafeed{}])
   end
 
   @doc """
@@ -231,7 +251,7 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
 
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the datafeed. This account cannot be a multi-client account.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -249,8 +269,8 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
   """
   @spec content_datafeeds_insert(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.Datafeed.t()} | {:error, Tesla.Env.t()}
-  def content_datafeeds_insert(connection, merchant_id, opts \\ []) do
-    optional_params = %{
+  def content_datafeeds_insert(connection, merchant_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -268,11 +288,11 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
       |> Request.url("/{merchantId}/datafeeds", %{
         "merchantId" => URI.encode_www_form(merchant_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.Datafeed{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Content.V2.Model.Datafeed{}])
   end
 
   @doc """
@@ -282,7 +302,7 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
 
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the datafeeds. This account cannot be a multi-client account.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -300,8 +320,8 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
   """
   @spec content_datafeeds_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.DatafeedsListResponse.t()} | {:error, Tesla.Env.t()}
-  def content_datafeeds_list(connection, merchant_id, opts \\ []) do
-    optional_params = %{
+  def content_datafeeds_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -319,11 +339,11 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
       |> Request.url("/{merchantId}/datafeeds", %{
         "merchantId" => URI.encode_www_form(merchant_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.DatafeedsListResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Content.V2.Model.DatafeedsListResponse{}])
   end
 
   @doc """
@@ -334,7 +354,7 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the datafeed. This account cannot be a multi-client account.
   - datafeed_id (String.t): The ID of the datafeed.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -352,8 +372,14 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
   """
   @spec content_datafeeds_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.Datafeed.t()} | {:error, Tesla.Env.t()}
-  def content_datafeeds_patch(connection, merchant_id, datafeed_id, opts \\ []) do
-    optional_params = %{
+  def content_datafeeds_patch(
+        connection,
+        merchant_id,
+        datafeed_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -372,11 +398,11 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
         "merchantId" => URI.encode_www_form(merchant_id),
         "datafeedId" => URI.encode_www_form(datafeed_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.Datafeed{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Content.V2.Model.Datafeed{}])
   end
 
   @doc """
@@ -387,7 +413,7 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the datafeed. This account cannot be a multi-client account.
   - datafeed_id (String.t): The ID of the datafeed.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -405,8 +431,14 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
   """
   @spec content_datafeeds_update(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.Datafeed.t()} | {:error, Tesla.Env.t()}
-  def content_datafeeds_update(connection, merchant_id, datafeed_id, opts \\ []) do
-    optional_params = %{
+  def content_datafeeds_update(
+        connection,
+        merchant_id,
+        datafeed_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -425,10 +457,10 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
         "merchantId" => URI.encode_www_form(merchant_id),
         "datafeedId" => URI.encode_www_form(datafeed_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.Datafeed{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Content.V2.Model.Datafeed{}])
   end
 end

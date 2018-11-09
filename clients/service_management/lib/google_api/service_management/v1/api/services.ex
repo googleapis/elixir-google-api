@@ -31,18 +31,18 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
 
   - connection (GoogleApi.ServiceManagement.V1.Connection): Connection to server
   - service_name (String.t): The name of the service.  See the [overview](/service-management/overview) for naming requirements.  For example: &#x60;example.googleapis.com&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (Service): 
 
   ## Returns
@@ -52,19 +52,24 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   """
   @spec servicemanagement_services_configs_create(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.Service.t()} | {:error, Tesla.Env.t()}
-  def servicemanagement_services_configs_create(connection, service_name, opts \\ []) do
-    optional_params = %{
+  def servicemanagement_services_configs_create(
+        connection,
+        service_name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -74,11 +79,11 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       |> Request.url("/v1/services/{serviceName}/configs", %{
         "serviceName" => URI.encode_www_form(service_name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ServiceManagement.V1.Model.Service{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ServiceManagement.V1.Model.Service{}])
   end
 
   @doc """
@@ -88,19 +93,19 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
 
   - connection (GoogleApi.ServiceManagement.V1.Connection): Connection to server
   - service_name (String.t): The name of the service.  See the [overview](/service-management/overview) for naming requirements.  For example: &#x60;example.googleapis.com&#x60;.
-  - config_id (String.t): The id of the service configuration resource.
-  - opts (KeywordList): [optional] Optional parameters
+  - config_id (String.t): The id of the service configuration resource.  This field must be specified for the server to return all fields, including &#x60;SourceInfo&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :view (String.t): Specifies which parts of the Service Config should be returned in the response.
 
   ## Returns
@@ -114,19 +119,25 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.ServiceManagement.V1.Model.Service.t()} | {:error, Tesla.Env.t()}
-  def servicemanagement_services_configs_get(connection, service_name, config_id, opts \\ []) do
-    optional_params = %{
+  def servicemanagement_services_configs_get(
+        connection,
+        service_name,
+        config_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :view => :query
     }
 
@@ -137,11 +148,11 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         "serviceName" => URI.encode_www_form(service_name),
         "configId" => URI.encode_www_form(config_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ServiceManagement.V1.Model.Service{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ServiceManagement.V1.Model.Service{}])
   end
 
   @doc """
@@ -151,18 +162,18 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
 
   - connection (GoogleApi.ServiceManagement.V1.Connection): Connection to server
   - service_name (String.t): The name of the service.  See the [overview](/service-management/overview) for naming requirements.  For example: &#x60;example.googleapis.com&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :pageToken (String.t): The token of the page to retrieve.
     - :pageSize (integer()): The max number of items to include in the response list.
 
@@ -174,19 +185,24 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   @spec servicemanagement_services_configs_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.ListServiceConfigsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def servicemanagement_services_configs_list(connection, service_name, opts \\ []) do
-    optional_params = %{
+  def servicemanagement_services_configs_list(
+        connection,
+        service_name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :pageToken => :query,
       :pageSize => :query
     }
@@ -197,11 +213,13 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       |> Request.url("/v1/services/{serviceName}/configs", %{
         "serviceName" => URI.encode_www_form(service_name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ServiceManagement.V1.Model.ListServiceConfigsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.ServiceManagement.V1.Model.ListServiceConfigsResponse{}]
+    )
   end
 
   @doc """
@@ -211,18 +229,18 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
 
   - connection (GoogleApi.ServiceManagement.V1.Connection): Connection to server
   - service_name (String.t): The name of the service.  See the [overview](/service-management/overview) for naming requirements.  For example: &#x60;example.googleapis.com&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (SubmitConfigSourceRequest): 
 
   ## Returns
@@ -232,19 +250,24 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   """
   @spec servicemanagement_services_configs_submit(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def servicemanagement_services_configs_submit(connection, service_name, opts \\ []) do
-    optional_params = %{
+  def servicemanagement_services_configs_submit(
+        connection,
+        service_name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -254,11 +277,11 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       |> Request.url("/v1/services/{serviceName}/configs:submit", %{
         "serviceName" => URI.encode_www_form(service_name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ServiceManagement.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ServiceManagement.V1.Model.Operation{}])
   end
 
   @doc """
@@ -268,18 +291,18 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
 
   - connection (GoogleApi.ServiceManagement.V1.Connection): Connection to server
   - resource (String.t): REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (GetIamPolicyRequest): 
 
   ## Returns
@@ -292,19 +315,24 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.ServiceManagement.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
-  def servicemanagement_services_consumers_get_iam_policy(connection, resource, opts \\ []) do
-    optional_params = %{
+  def servicemanagement_services_consumers_get_iam_policy(
+        connection,
+        resource,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -314,11 +342,11 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       |> Request.url("/v1/{+resource}:getIamPolicy", %{
         "resource" => URI.encode_www_form(resource)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ServiceManagement.V1.Model.Policy{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ServiceManagement.V1.Model.Policy{}])
   end
 
   @doc """
@@ -328,18 +356,18 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
 
   - connection (GoogleApi.ServiceManagement.V1.Connection): Connection to server
   - resource (String.t): REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (SetIamPolicyRequest): 
 
   ## Returns
@@ -352,19 +380,24 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.ServiceManagement.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
-  def servicemanagement_services_consumers_set_iam_policy(connection, resource, opts \\ []) do
-    optional_params = %{
+  def servicemanagement_services_consumers_set_iam_policy(
+        connection,
+        resource,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -374,11 +407,11 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       |> Request.url("/v1/{+resource}:setIamPolicy", %{
         "resource" => URI.encode_www_form(resource)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ServiceManagement.V1.Model.Policy{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ServiceManagement.V1.Model.Policy{}])
   end
 
   @doc """
@@ -388,18 +421,18 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
 
   - connection (GoogleApi.ServiceManagement.V1.Connection): Connection to server
   - resource (String.t): REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (TestIamPermissionsRequest): 
 
   ## Returns
@@ -414,19 +447,24 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.TestIamPermissionsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def servicemanagement_services_consumers_test_iam_permissions(connection, resource, opts \\ []) do
-    optional_params = %{
+  def servicemanagement_services_consumers_test_iam_permissions(
+        connection,
+        resource,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -436,11 +474,13 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       |> Request.url("/v1/{+resource}:testIamPermissions", %{
         "resource" => URI.encode_www_form(resource)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ServiceManagement.V1.Model.TestIamPermissionsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.ServiceManagement.V1.Model.TestIamPermissionsResponse{}]
+    )
   end
 
   @doc """
@@ -449,18 +489,18 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   ## Parameters
 
   - connection (GoogleApi.ServiceManagement.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (ManagedService): 
 
   ## Returns
@@ -470,19 +510,19 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   """
   @spec servicemanagement_services_create(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def servicemanagement_services_create(connection, opts \\ []) do
-    optional_params = %{
+  def servicemanagement_services_create(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -490,11 +530,11 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/services")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ServiceManagement.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ServiceManagement.V1.Model.Operation{}])
   end
 
   @doc """
@@ -504,18 +544,18 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
 
   - connection (GoogleApi.ServiceManagement.V1.Connection): Connection to server
   - service_name (String.t): The name of the service.  See the [overview](/service-management/overview) for naming requirements.  For example: &#x60;example.googleapis.com&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
 
   ## Returns
 
@@ -524,19 +564,24 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   """
   @spec servicemanagement_services_delete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def servicemanagement_services_delete(connection, service_name, opts \\ []) do
-    optional_params = %{
+  def servicemanagement_services_delete(
+        connection,
+        service_name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query
     }
 
     request =
@@ -545,11 +590,11 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       |> Request.url("/v1/services/{serviceName}", %{
         "serviceName" => URI.encode_www_form(service_name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ServiceManagement.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ServiceManagement.V1.Model.Operation{}])
   end
 
   @doc """
@@ -559,18 +604,18 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
 
   - connection (GoogleApi.ServiceManagement.V1.Connection): Connection to server
   - service_name (String.t): Name of the service to disable. Specifying an unknown service name will cause the request to fail.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (DisableServiceRequest): 
 
   ## Returns
@@ -580,19 +625,24 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   """
   @spec servicemanagement_services_disable(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def servicemanagement_services_disable(connection, service_name, opts \\ []) do
-    optional_params = %{
+  def servicemanagement_services_disable(
+        connection,
+        service_name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -602,11 +652,11 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       |> Request.url("/v1/services/{serviceName}:disable", %{
         "serviceName" => URI.encode_www_form(service_name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ServiceManagement.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ServiceManagement.V1.Model.Operation{}])
   end
 
   @doc """
@@ -616,18 +666,18 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
 
   - connection (GoogleApi.ServiceManagement.V1.Connection): Connection to server
   - service_name (String.t): Name of the service to enable. Specifying an unknown service name will cause the request to fail.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (EnableServiceRequest): 
 
   ## Returns
@@ -637,19 +687,24 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   """
   @spec servicemanagement_services_enable(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def servicemanagement_services_enable(connection, service_name, opts \\ []) do
-    optional_params = %{
+  def servicemanagement_services_enable(
+        connection,
+        service_name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -659,11 +714,11 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       |> Request.url("/v1/services/{serviceName}:enable", %{
         "serviceName" => URI.encode_www_form(service_name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ServiceManagement.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ServiceManagement.V1.Model.Operation{}])
   end
 
   @doc """
@@ -672,18 +727,18 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   ## Parameters
 
   - connection (GoogleApi.ServiceManagement.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (GenerateConfigReportRequest): 
 
   ## Returns
@@ -694,19 +749,23 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   @spec servicemanagement_services_generate_config_report(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.GenerateConfigReportResponse.t()}
           | {:error, Tesla.Env.t()}
-  def servicemanagement_services_generate_config_report(connection, opts \\ []) do
-    optional_params = %{
+  def servicemanagement_services_generate_config_report(
+        connection,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -714,12 +773,12 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/services:generateConfigReport")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.ServiceManagement.V1.Model.GenerateConfigReportResponse{}
+      opts ++ [struct: %GoogleApi.ServiceManagement.V1.Model.GenerateConfigReportResponse{}]
     )
   end
 
@@ -730,18 +789,18 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
 
   - connection (GoogleApi.ServiceManagement.V1.Connection): Connection to server
   - service_name (String.t): The name of the service.  See the &#x60;ServiceManager&#x60; overview for naming requirements.  For example: &#x60;example.googleapis.com&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
 
   ## Returns
 
@@ -750,19 +809,19 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   """
   @spec servicemanagement_services_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.ManagedService.t()} | {:error, Tesla.Env.t()}
-  def servicemanagement_services_get(connection, service_name, opts \\ []) do
-    optional_params = %{
+  def servicemanagement_services_get(connection, service_name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query
     }
 
     request =
@@ -771,11 +830,11 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       |> Request.url("/v1/services/{serviceName}", %{
         "serviceName" => URI.encode_www_form(service_name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ServiceManagement.V1.Model.ManagedService{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ServiceManagement.V1.Model.ManagedService{}])
   end
 
   @doc """
@@ -785,20 +844,20 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
 
   - connection (GoogleApi.ServiceManagement.V1.Connection): Connection to server
   - service_name (String.t): The name of the service.  See the [overview](/service-management/overview) for naming requirements.  For example: &#x60;example.googleapis.com&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :configId (String.t): The id of the service configuration resource.  This field must be specified for the server to return all fields, including &#x60;SourceInfo&#x60;.
     - :view (String.t): Specifies which parts of the Service Config should be returned in the response.
-    - :configId (String.t): The id of the service configuration resource.
 
   ## Returns
 
@@ -807,21 +866,26 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   """
   @spec servicemanagement_services_get_config(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.Service.t()} | {:error, Tesla.Env.t()}
-  def servicemanagement_services_get_config(connection, service_name, opts \\ []) do
-    optional_params = %{
+  def servicemanagement_services_get_config(
+        connection,
+        service_name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
-      :view => :query,
-      :configId => :query
+      :configId => :query,
+      :view => :query
     }
 
     request =
@@ -830,11 +894,11 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       |> Request.url("/v1/services/{serviceName}/config", %{
         "serviceName" => URI.encode_www_form(service_name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ServiceManagement.V1.Model.Service{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ServiceManagement.V1.Model.Service{}])
   end
 
   @doc """
@@ -843,22 +907,22 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   ## Parameters
 
   - connection (GoogleApi.ServiceManagement.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :consumerId (String.t): Include services consumed by the specified consumer.  The Google Service Management implementation accepts the following forms: - project:&lt;project_id&gt;
     - :pageToken (String.t): Token identifying which result to start with; returned by a previous list call.
     - :pageSize (integer()): Requested size of the next page of data.
     - :producerProjectId (String.t): Include services produced by the specified project.
+    - :consumerId (String.t): Include services consumed by the specified consumer.  The Google Service Management implementation accepts the following forms: - project:&lt;project_id&gt;
 
   ## Returns
 
@@ -868,34 +932,36 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   @spec servicemanagement_services_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.ListServicesResponse.t()}
           | {:error, Tesla.Env.t()}
-  def servicemanagement_services_list(connection, opts \\ []) do
-    optional_params = %{
+  def servicemanagement_services_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
-      :consumerId => :query,
       :pageToken => :query,
       :pageSize => :query,
-      :producerProjectId => :query
+      :producerProjectId => :query,
+      :consumerId => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/services")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ServiceManagement.V1.Model.ListServicesResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.ServiceManagement.V1.Model.ListServicesResponse{}]
+    )
   end
 
   @doc """
@@ -905,18 +971,18 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
 
   - connection (GoogleApi.ServiceManagement.V1.Connection): Connection to server
   - service_name (String.t): The name of the service.  See the [overview](/service-management/overview) for naming requirements.  For example: &#x60;example.googleapis.com&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (Rollout): 
 
   ## Returns
@@ -926,19 +992,24 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   """
   @spec servicemanagement_services_rollouts_create(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def servicemanagement_services_rollouts_create(connection, service_name, opts \\ []) do
-    optional_params = %{
+  def servicemanagement_services_rollouts_create(
+        connection,
+        service_name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -948,11 +1019,11 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       |> Request.url("/v1/services/{serviceName}/rollouts", %{
         "serviceName" => URI.encode_www_form(service_name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ServiceManagement.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ServiceManagement.V1.Model.Operation{}])
   end
 
   @doc """
@@ -963,18 +1034,18 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   - connection (GoogleApi.ServiceManagement.V1.Connection): Connection to server
   - service_name (String.t): The name of the service.  See the [overview](/service-management/overview) for naming requirements.  For example: &#x60;example.googleapis.com&#x60;.
   - rollout_id (String.t): The id of the rollout resource.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
 
   ## Returns
 
@@ -987,19 +1058,25 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.ServiceManagement.V1.Model.Rollout.t()} | {:error, Tesla.Env.t()}
-  def servicemanagement_services_rollouts_get(connection, service_name, rollout_id, opts \\ []) do
-    optional_params = %{
+  def servicemanagement_services_rollouts_get(
+        connection,
+        service_name,
+        rollout_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query
     }
 
     request =
@@ -1009,11 +1086,11 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         "serviceName" => URI.encode_www_form(service_name),
         "rolloutId" => URI.encode_www_form(rollout_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ServiceManagement.V1.Model.Rollout{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ServiceManagement.V1.Model.Rollout{}])
   end
 
   @doc """
@@ -1023,21 +1100,21 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
 
   - connection (GoogleApi.ServiceManagement.V1.Connection): Connection to server
   - service_name (String.t): The name of the service.  See the [overview](/service-management/overview) for naming requirements.  For example: &#x60;example.googleapis.com&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :filter (String.t): Use &#x60;filter&#x60; to return subset of rollouts. The following filters are supported:   -- To limit the results to only those in      [status](google.api.servicemanagement.v1.RolloutStatus) &#39;SUCCESS&#39;,      use filter&#x3D;&#39;status&#x3D;SUCCESS&#39;   -- To limit the results to those in      [status](google.api.servicemanagement.v1.RolloutStatus) &#39;CANCELLED&#39;      or &#39;FAILED&#39;, use filter&#x3D;&#39;status&#x3D;CANCELLED OR status&#x3D;FAILED&#39;
     - :pageToken (String.t): The token of the page to retrieve.
     - :pageSize (integer()): The max number of items to include in the response list.
+    - :filter (String.t): Use &#x60;filter&#x60; to return subset of rollouts. The following filters are supported:   -- To limit the results to only those in      [status](google.api.servicemanagement.v1.RolloutStatus) &#39;SUCCESS&#39;,      use filter&#x3D;&#39;status&#x3D;SUCCESS&#39;   -- To limit the results to those in      [status](google.api.servicemanagement.v1.RolloutStatus) &#39;CANCELLED&#39;      or &#39;FAILED&#39;, use filter&#x3D;&#39;status&#x3D;CANCELLED OR status&#x3D;FAILED&#39;
 
   ## Returns
 
@@ -1047,22 +1124,27 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   @spec servicemanagement_services_rollouts_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.ListServiceRolloutsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def servicemanagement_services_rollouts_list(connection, service_name, opts \\ []) do
-    optional_params = %{
+  def servicemanagement_services_rollouts_list(
+        connection,
+        service_name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
-      :filter => :query,
       :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :filter => :query
     }
 
     request =
@@ -1071,12 +1153,12 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       |> Request.url("/v1/services/{serviceName}/rollouts", %{
         "serviceName" => URI.encode_www_form(service_name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.ServiceManagement.V1.Model.ListServiceRolloutsResponse{}
+      opts ++ [struct: %GoogleApi.ServiceManagement.V1.Model.ListServiceRolloutsResponse{}]
     )
   end
 
@@ -1087,18 +1169,18 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
 
   - connection (GoogleApi.ServiceManagement.V1.Connection): Connection to server
   - service_name (String.t): The name of the service. See the [overview](/service-management/overview) for naming requirements. For example: &#x60;example.googleapis.com&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
 
   ## Returns
 
@@ -1107,19 +1189,24 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   """
   @spec servicemanagement_services_undelete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def servicemanagement_services_undelete(connection, service_name, opts \\ []) do
-    optional_params = %{
+  def servicemanagement_services_undelete(
+        connection,
+        service_name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query
     }
 
     request =
@@ -1128,10 +1215,10 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       |> Request.url("/v1/services/{serviceName}:undelete", %{
         "serviceName" => URI.encode_www_form(service_name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ServiceManagement.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ServiceManagement.V1.Model.Operation{}])
   end
 end

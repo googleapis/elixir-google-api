@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.PubSub.V1.Model.SeekResponse do
   @moduledoc """
-
+  Response for the &#x60;Seek&#x60; method (this response is empty).
 
   ## Attributes
 

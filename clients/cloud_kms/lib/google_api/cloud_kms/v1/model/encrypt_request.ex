@@ -22,8 +22,8 @@ defmodule GoogleApi.CloudKMS.V1.Model.EncryptRequest do
 
   ## Attributes
 
-  - additionalAuthenticatedData (binary()): Optional data that, if specified, must also be provided during decryption through DecryptRequest.additional_authenticated_data.  Must be no larger than 64KiB. Defaults to: `null`.
-  - plaintext (binary()): Required. The data to encrypt. Must be no larger than 64KiB. Defaults to: `null`.
+  - additionalAuthenticatedData (binary()): Optional data that, if specified, must also be provided during decryption through DecryptRequest.additional_authenticated_data.  The maximum size depends on the key version&#39;s protection_level. For SOFTWARE keys, the AAD must be no larger than 64KiB. For HSM keys, the combined length of the plaintext and additional_authenticated_data fields must be no larger than 8KiB. Defaults to: `null`.
+  - plaintext (binary()): Required. The data to encrypt. Must be no larger than 64KiB.  The maximum size depends on the key version&#39;s protection_level. For SOFTWARE keys, the plaintext must be no larger than 64KiB. For HSM keys, the combined length of the plaintext and additional_authenticated_data fields must be no larger than 8KiB. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

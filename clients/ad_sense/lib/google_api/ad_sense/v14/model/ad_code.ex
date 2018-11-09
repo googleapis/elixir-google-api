@@ -22,7 +22,9 @@ defmodule GoogleApi.AdSense.V14.Model.AdCode do
 
   ## Attributes
 
-  - adCode (String.t): The ad code snippet. Defaults to: `null`.
+  - adCode (String.t): The Auto ad code snippet. The ad code snippet. Defaults to: `null`.
+  - ampBody (String.t): The AMP Auto ad code snippet that goes in the body of an AMP page. Defaults to: `null`.
+  - ampHead (String.t): The AMP Auto ad code snippet that goes in the head of an AMP page. Defaults to: `null`.
   - kind (String.t): Kind this is, in this case adsense#adCode. Defaults to: `null`.
   """
 
@@ -30,10 +32,14 @@ defmodule GoogleApi.AdSense.V14.Model.AdCode do
 
   @type t :: %__MODULE__{
           :adCode => any(),
+          :ampBody => any(),
+          :ampHead => any(),
           :kind => any()
         }
 
   field(:adCode)
+  field(:ampBody)
+  field(:ampHead)
   field(:kind)
 end
 

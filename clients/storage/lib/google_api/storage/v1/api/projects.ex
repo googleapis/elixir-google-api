@@ -31,7 +31,7 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
 
   - connection (GoogleApi.Storage.V1.Connection): Connection to server
   - project_id (String.t): Project ID
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,13 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
   """
   @spec storage_projects_service_account_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Storage.V1.Model.ServiceAccount.t()} | {:error, Tesla.Env.t()}
-  def storage_projects_service_account_get(connection, project_id, opts \\ []) do
-    optional_params = %{
+  def storage_projects_service_account_get(
+        connection,
+        project_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -66,10 +71,10 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
       |> Request.url("/storage/v1/projects/{projectId}/serviceAccount", %{
         "projectId" => URI.encode_www_form(project_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.ServiceAccount{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Storage.V1.Model.ServiceAccount{}])
   end
 end

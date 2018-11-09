@@ -18,11 +18,11 @@
 
 defmodule GoogleApi.Monitoring.V3.Model.ContentMatcher do
   @moduledoc """
-  Used to perform string matching. Currently, this matches on the exact content. In the future, it can be expanded to allow for regular expressions and more complex matching.
+  Used to perform string matching. It allows substring and regular expressions, together with their negations.
 
   ## Attributes
 
-  - content (String.t): String content to match (max 1024 bytes) Defaults to: `null`.
+  - content (String.t): String or regex content to match (max 1024 bytes) Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

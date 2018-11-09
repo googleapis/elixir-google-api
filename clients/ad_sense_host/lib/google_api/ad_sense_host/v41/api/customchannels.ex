@@ -32,7 +32,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Customchannels do
   - connection (GoogleApi.AdSenseHost.V41.Connection): Connection to server
   - ad_client_id (String.t): Ad client from which to delete the custom channel.
   - custom_channel_id (String.t): Custom channel to delete.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,14 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Customchannels do
   """
   @spec adsensehost_customchannels_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.CustomChannel.t()} | {:error, Tesla.Env.t()}
-  def adsensehost_customchannels_delete(connection, ad_client_id, custom_channel_id, opts \\ []) do
-    optional_params = %{
+  def adsensehost_customchannels_delete(
+        connection,
+        ad_client_id,
+        custom_channel_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -66,11 +72,11 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Customchannels do
         "adClientId" => URI.encode_www_form(ad_client_id),
         "customChannelId" => URI.encode_www_form(custom_channel_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdSenseHost.V41.Model.CustomChannel{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdSenseHost.V41.Model.CustomChannel{}])
   end
 
   @doc """
@@ -81,7 +87,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Customchannels do
   - connection (GoogleApi.AdSenseHost.V41.Connection): Connection to server
   - ad_client_id (String.t): Ad client from which to get the custom channel.
   - custom_channel_id (String.t): Custom channel to get.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -97,8 +103,14 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Customchannels do
   """
   @spec adsensehost_customchannels_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.CustomChannel.t()} | {:error, Tesla.Env.t()}
-  def adsensehost_customchannels_get(connection, ad_client_id, custom_channel_id, opts \\ []) do
-    optional_params = %{
+  def adsensehost_customchannels_get(
+        connection,
+        ad_client_id,
+        custom_channel_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -115,11 +127,11 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Customchannels do
         "adClientId" => URI.encode_www_form(ad_client_id),
         "customChannelId" => URI.encode_www_form(custom_channel_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdSenseHost.V41.Model.CustomChannel{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdSenseHost.V41.Model.CustomChannel{}])
   end
 
   @doc """
@@ -129,7 +141,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Customchannels do
 
   - connection (GoogleApi.AdSenseHost.V41.Connection): Connection to server
   - ad_client_id (String.t): Ad client to which the new custom channel will be added.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -146,8 +158,13 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Customchannels do
   """
   @spec adsensehost_customchannels_insert(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.CustomChannel.t()} | {:error, Tesla.Env.t()}
-  def adsensehost_customchannels_insert(connection, ad_client_id, opts \\ []) do
-    optional_params = %{
+  def adsensehost_customchannels_insert(
+        connection,
+        ad_client_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -164,11 +181,11 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Customchannels do
       |> Request.url("/adclients/{adClientId}/customchannels", %{
         "adClientId" => URI.encode_www_form(ad_client_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdSenseHost.V41.Model.CustomChannel{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdSenseHost.V41.Model.CustomChannel{}])
   end
 
   @doc """
@@ -178,7 +195,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Customchannels do
 
   - connection (GoogleApi.AdSenseHost.V41.Connection): Connection to server
   - ad_client_id (String.t): Ad client for which to list custom channels.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -196,8 +213,8 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Customchannels do
   """
   @spec adsensehost_customchannels_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.CustomChannels.t()} | {:error, Tesla.Env.t()}
-  def adsensehost_customchannels_list(connection, ad_client_id, opts \\ []) do
-    optional_params = %{
+  def adsensehost_customchannels_list(connection, ad_client_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -215,11 +232,11 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Customchannels do
       |> Request.url("/adclients/{adClientId}/customchannels", %{
         "adClientId" => URI.encode_www_form(ad_client_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdSenseHost.V41.Model.CustomChannels{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdSenseHost.V41.Model.CustomChannels{}])
   end
 
   @doc """
@@ -230,7 +247,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Customchannels do
   - connection (GoogleApi.AdSenseHost.V41.Connection): Connection to server
   - ad_client_id (String.t): Ad client in which the custom channel will be updated.
   - custom_channel_id (String.t): Custom channel to get.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -247,8 +264,14 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Customchannels do
   """
   @spec adsensehost_customchannels_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.CustomChannel.t()} | {:error, Tesla.Env.t()}
-  def adsensehost_customchannels_patch(connection, ad_client_id, custom_channel_id, opts \\ []) do
-    optional_params = %{
+  def adsensehost_customchannels_patch(
+        connection,
+        ad_client_id,
+        custom_channel_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -266,11 +289,11 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Customchannels do
         "adClientId" => URI.encode_www_form(ad_client_id)
       })
       |> Request.add_param(:query, :customChannelId, custom_channel_id)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdSenseHost.V41.Model.CustomChannel{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdSenseHost.V41.Model.CustomChannel{}])
   end
 
   @doc """
@@ -280,7 +303,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Customchannels do
 
   - connection (GoogleApi.AdSenseHost.V41.Connection): Connection to server
   - ad_client_id (String.t): Ad client in which the custom channel will be updated.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -297,8 +320,13 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Customchannels do
   """
   @spec adsensehost_customchannels_update(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.CustomChannel.t()} | {:error, Tesla.Env.t()}
-  def adsensehost_customchannels_update(connection, ad_client_id, opts \\ []) do
-    optional_params = %{
+  def adsensehost_customchannels_update(
+        connection,
+        ad_client_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -315,10 +343,10 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Customchannels do
       |> Request.url("/adclients/{adClientId}/customchannels", %{
         "adClientId" => URI.encode_www_form(ad_client_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdSenseHost.V41.Model.CustomChannel{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdSenseHost.V41.Model.CustomChannel{}])
   end
 end

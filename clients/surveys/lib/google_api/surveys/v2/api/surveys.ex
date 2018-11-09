@@ -31,7 +31,7 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
 
   - connection (GoogleApi.Surveys.V2.Connection): Connection to server
   - survey_url_id (String.t): External URL ID for the survey.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -47,8 +47,8 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
   """
   @spec surveys_surveys_delete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Surveys.V2.Model.SurveysDeleteResponse.t()} | {:error, Tesla.Env.t()}
-  def surveys_surveys_delete(connection, survey_url_id, opts \\ []) do
-    optional_params = %{
+  def surveys_surveys_delete(connection, survey_url_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -64,11 +64,11 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
       |> Request.url("/surveys/{surveyUrlId}", %{
         "surveyUrlId" => URI.encode_www_form(survey_url_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Surveys.V2.Model.SurveysDeleteResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Surveys.V2.Model.SurveysDeleteResponse{}])
   end
 
   @doc """
@@ -78,7 +78,7 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
 
   - connection (GoogleApi.Surveys.V2.Connection): Connection to server
   - survey_url_id (String.t): External URL ID for the survey.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -94,8 +94,8 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
   """
   @spec surveys_surveys_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Surveys.V2.Model.Survey.t()} | {:error, Tesla.Env.t()}
-  def surveys_surveys_get(connection, survey_url_id, opts \\ []) do
-    optional_params = %{
+  def surveys_surveys_get(connection, survey_url_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -111,11 +111,11 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
       |> Request.url("/surveys/{surveyUrlId}", %{
         "surveyUrlId" => URI.encode_www_form(survey_url_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Surveys.V2.Model.Survey{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Surveys.V2.Model.Survey{}])
   end
 
   @doc """
@@ -124,7 +124,7 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
   ## Parameters
 
   - connection (GoogleApi.Surveys.V2.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -141,8 +141,8 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
   """
   @spec surveys_surveys_insert(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Surveys.V2.Model.Survey.t()} | {:error, Tesla.Env.t()}
-  def surveys_surveys_insert(connection, opts \\ []) do
-    optional_params = %{
+  def surveys_surveys_insert(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -157,11 +157,11 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/surveys")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Surveys.V2.Model.Survey{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Surveys.V2.Model.Survey{}])
   end
 
   @doc """
@@ -170,7 +170,7 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
   ## Parameters
 
   - connection (GoogleApi.Surveys.V2.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -189,8 +189,8 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
   """
   @spec surveys_surveys_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Surveys.V2.Model.SurveysListResponse.t()} | {:error, Tesla.Env.t()}
-  def surveys_surveys_list(connection, opts \\ []) do
-    optional_params = %{
+  def surveys_surveys_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -207,11 +207,11 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/surveys")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Surveys.V2.Model.SurveysListResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Surveys.V2.Model.SurveysListResponse{}])
   end
 
   @doc """
@@ -221,7 +221,7 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
 
   - connection (GoogleApi.Surveys.V2.Connection): Connection to server
   - resource_id (String.t): 
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -238,8 +238,8 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
   """
   @spec surveys_surveys_start(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Surveys.V2.Model.SurveysStartResponse.t()} | {:error, Tesla.Env.t()}
-  def surveys_surveys_start(connection, resource_id, opts \\ []) do
-    optional_params = %{
+  def surveys_surveys_start(connection, resource_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -256,11 +256,11 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
       |> Request.url("/surveys/{resourceId}/start", %{
         "resourceId" => URI.encode_www_form(resource_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Surveys.V2.Model.SurveysStartResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Surveys.V2.Model.SurveysStartResponse{}])
   end
 
   @doc """
@@ -270,7 +270,7 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
 
   - connection (GoogleApi.Surveys.V2.Connection): Connection to server
   - resource_id (String.t): 
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -286,8 +286,8 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
   """
   @spec surveys_surveys_stop(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Surveys.V2.Model.SurveysStopResponse.t()} | {:error, Tesla.Env.t()}
-  def surveys_surveys_stop(connection, resource_id, opts \\ []) do
-    optional_params = %{
+  def surveys_surveys_stop(connection, resource_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -303,11 +303,11 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
       |> Request.url("/surveys/{resourceId}/stop", %{
         "resourceId" => URI.encode_www_form(resource_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Surveys.V2.Model.SurveysStopResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Surveys.V2.Model.SurveysStopResponse{}])
   end
 
   @doc """
@@ -317,7 +317,7 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
 
   - connection (GoogleApi.Surveys.V2.Connection): Connection to server
   - survey_url_id (String.t): External URL ID for the survey.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -334,8 +334,8 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
   """
   @spec surveys_surveys_update(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Surveys.V2.Model.Survey.t()} | {:error, Tesla.Env.t()}
-  def surveys_surveys_update(connection, survey_url_id, opts \\ []) do
-    optional_params = %{
+  def surveys_surveys_update(connection, survey_url_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -352,10 +352,10 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
       |> Request.url("/surveys/{surveyUrlId}", %{
         "surveyUrlId" => URI.encode_www_form(survey_url_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Surveys.V2.Model.Survey{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Surveys.V2.Model.Survey{}])
   end
 end

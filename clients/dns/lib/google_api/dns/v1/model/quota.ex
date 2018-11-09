@@ -22,7 +22,6 @@ defmodule GoogleApi.DNS.V1.Model.Quota do
 
   ## Attributes
 
-  - blackHoleHidesSystemZones (boolean()): Whether a black hole zone should suppress system zones for this project. Defaults to: `null`.
   - dnsKeysPerManagedZone (integer()): Maximum allowed number of DnsKeys per ManagedZone. Defaults to: `null`.
   - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;dns#quota\&quot;. Defaults to: `null`.
   - managedZones (integer()): Maximum allowed number of managed zones in the project. Defaults to: `null`.
@@ -37,7 +36,6 @@ defmodule GoogleApi.DNS.V1.Model.Quota do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :blackHoleHidesSystemZones => any(),
           :dnsKeysPerManagedZone => any(),
           :kind => any(),
           :managedZones => any(),
@@ -49,7 +47,6 @@ defmodule GoogleApi.DNS.V1.Model.Quota do
           :whitelistedKeySpecs => list(GoogleApi.DNS.V1.Model.DnsKeySpec.t())
         }
 
-  field(:blackHoleHidesSystemZones)
   field(:dnsKeysPerManagedZone)
   field(:kind)
   field(:managedZones)

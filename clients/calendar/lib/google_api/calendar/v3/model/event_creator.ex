@@ -24,7 +24,7 @@ defmodule GoogleApi.Calendar.V3.Model.EventCreator do
 
   - displayName (String.t): The creator&#39;s name, if available. Defaults to: `null`.
   - email (String.t): The creator&#39;s email address, if available. Defaults to: `null`.
-  - id (String.t): The creator&#39;s Profile ID, if available. It corresponds to theid field in the People collection of the Google+ API Defaults to: `null`.
+  - id (String.t): The creator&#39;s Profile ID, if available. It corresponds to the id field in the People collection of the Google+ API Defaults to: `null`.
   - self (boolean()): Whether the creator corresponds to the calendar on which this copy of the event appears. Read-only. The default is False. Defaults to: `null`.
   """
 

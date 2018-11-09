@@ -42,6 +42,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   - protocol (String.t): The protocol this BackendService uses to communicate with backends.  Possible values are HTTP, HTTPS, TCP, and SSL. The default is HTTP.  For internal load balancing, the possible values are TCP and UDP, and the default is TCP. Defaults to: `null`.
     - Enum - one of [HTTP, HTTPS, SSL, TCP, UDP]
   - region (String.t): [Output Only] URL of the region where the regional backend service resides. This field is not applicable to global backend services. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. Defaults to: `null`.
+  - securityPolicy (String.t): [Output Only] The resource URL for the security policy associated with this backend service. Defaults to: `null`.
   - selfLink (String.t): [Output Only] Server-defined URL for the resource. Defaults to: `null`.
   - sessionAffinity (String.t): Type of session affinity to use. The default is NONE.  When the load balancing scheme is EXTERNAL, can be NONE, CLIENT_IP, or GENERATED_COOKIE.  When the load balancing scheme is INTERNAL, can be NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.  When the protocol is UDP, this field is not used. Defaults to: `null`.
     - Enum - one of [CLIENT_IP, CLIENT_IP_PORT_PROTO, CLIENT_IP_PROTO, GENERATED_COOKIE, NONE]
@@ -69,6 +70,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
           :portName => any(),
           :protocol => any(),
           :region => any(),
+          :securityPolicy => any(),
           :selfLink => any(),
           :sessionAffinity => any(),
           :timeoutSec => any()
@@ -92,6 +94,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   field(:portName)
   field(:protocol)
   field(:region)
+  field(:securityPolicy)
   field(:selfLink)
   field(:sessionAffinity)
   field(:timeoutSec)

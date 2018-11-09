@@ -24,7 +24,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.IpConfiguration do
 
   - authorizedNetworks ([AclEntry]): The list of external networks that are allowed to connect to the instance using the IP. In CIDR notation, also known as &#39;slash&#39; notation (e.g. 192.168.100.0/24). Defaults to: `null`.
   - ipv4Enabled (boolean()): Whether the instance should be assigned an IP address or not. Defaults to: `null`.
-  - privateNetwork (String.t): Reserved for future use. Defaults to: `null`.
+  - privateNetwork (String.t): The resource link for the VPC network from which the Cloud SQL instance is accessible for private IP. For example, /projects/myProject/global/networks/default. This setting can be updated, but it cannot be removed after it is set. Defaults to: `null`.
   - requireSsl (boolean()): Whether SSL connections over IP should be enforced or not. Defaults to: `null`.
   """
 

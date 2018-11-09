@@ -23,7 +23,7 @@ defmodule GoogleApi.Calendar.V3.Model.EventAttachment do
   ## Attributes
 
   - fileId (String.t): ID of the attached file. Read-only. For Google Drive files, this is the ID of the corresponding Files resource entry in the Drive API. Defaults to: `null`.
-  - fileUrl (String.t): URL link to the attachment. For adding Google Drive file attachments use the same format as in alternateLink property of the Files resource in the Drive API. Defaults to: `null`.
+  - fileUrl (String.t): URL link to the attachment. For adding Google Drive file attachments use the same format as in alternateLink property of the Files resource in the Drive API. Required when adding an attachment. Defaults to: `null`.
   - iconLink (String.t): URL link to the attachment&#39;s icon. Read-only. Defaults to: `null`.
   - mimeType (String.t): Internet media type (MIME type) of the attachment. Defaults to: `null`.
   - title (String.t): Attachment title. Defaults to: `null`.

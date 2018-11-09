@@ -23,17 +23,20 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductPolicy do
   ## Attributes
 
   - productId (String.t): The ID of the product. For example, \&quot;app:com.google.android.gm\&quot;. Defaults to: `null`.
-  - tracks ([String.t]): Grants visibility to the specified track(s) of the product to the device. The track available to the device is based on the following order of preference: alpha, beta, production. For example, if an app has a prod version, a beta version and an alpha version and the enterprise has been granted visibility to both the alpha and beta tracks, if tracks is {\&quot;beta\&quot;, \&quot;production\&quot;} then the beta version of the app is made available to the device. If there are no app versions in the specified track adding the \&quot;alpha\&quot; and \&quot;beta\&quot; values to the list of tracks will have no effect. Note that the enterprise requires access to alpha and/or beta tracks before users can be granted visibility to apps in those tracks.  The allowed sets are: {} (considered equivalent to {\&quot;production\&quot;}) {\&quot;production\&quot;} {\&quot;beta\&quot;, \&quot;production\&quot;} {\&quot;alpha\&quot;, \&quot;beta\&quot;, \&quot;production\&quot;} The order of elements is not relevant. Any other set of tracks will be rejected with an error. Defaults to: `null`.
+  - trackIds ([String.t]): Grants the device visibility to the specified product release track(s), identified by trackIds. The list of release tracks of a product can be obtained by calling Products.Get. Defaults to: `null`.
+  - tracks ([String.t]): Deprecated. Use trackIds instead. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :productId => any(),
+          :trackIds => list(any()),
           :tracks => list(any())
         }
 
   field(:productId)
+  field(:trackIds, type: :list)
   field(:tracks, type: :list)
 end
 

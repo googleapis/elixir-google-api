@@ -31,7 +31,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Quests do
 
   - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
   - quest_id (String.t): The ID of the quest.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -47,8 +47,8 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Quests do
   """
   @spec games_management_quests_reset(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def games_management_quests_reset(connection, quest_id, opts \\ []) do
-    optional_params = %{
+  def games_management_quests_reset(connection, quest_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -64,11 +64,11 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Quests do
       |> Request.url("/quests/{questId}/reset", %{
         "questId" => URI.encode_www_form(quest_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -77,7 +77,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Quests do
   ## Parameters
 
   - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -93,8 +93,8 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Quests do
   """
   @spec games_management_quests_reset_all(Tesla.Env.client(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def games_management_quests_reset_all(connection, opts \\ []) do
-    optional_params = %{
+  def games_management_quests_reset_all(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -108,11 +108,11 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Quests do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/quests/reset")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -121,7 +121,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Quests do
   ## Parameters
 
   - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -137,8 +137,12 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Quests do
   """
   @spec games_management_quests_reset_all_for_all_players(Tesla.Env.client(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def games_management_quests_reset_all_for_all_players(connection, opts \\ []) do
-    optional_params = %{
+  def games_management_quests_reset_all_for_all_players(
+        connection,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -152,11 +156,11 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Quests do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/quests/resetAllForAllPlayers")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -166,7 +170,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Quests do
 
   - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
   - quest_id (String.t): The ID of the quest.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -182,8 +186,13 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Quests do
   """
   @spec games_management_quests_reset_for_all_players(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def games_management_quests_reset_for_all_players(connection, quest_id, opts \\ []) do
-    optional_params = %{
+  def games_management_quests_reset_for_all_players(
+        connection,
+        quest_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -199,11 +208,11 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Quests do
       |> Request.url("/quests/{questId}/resetForAllPlayers", %{
         "questId" => URI.encode_www_form(quest_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -212,7 +221,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Quests do
   ## Parameters
 
   - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -229,8 +238,12 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Quests do
   """
   @spec games_management_quests_reset_multiple_for_all_players(Tesla.Env.client(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def games_management_quests_reset_multiple_for_all_players(connection, opts \\ []) do
-    optional_params = %{
+  def games_management_quests_reset_multiple_for_all_players(
+        connection,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -245,10 +258,10 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Quests do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/quests/resetMultipleForAllPlayers")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 end

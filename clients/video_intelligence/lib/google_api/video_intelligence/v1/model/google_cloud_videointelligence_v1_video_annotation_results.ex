@@ -29,6 +29,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1Vid
   - segmentLabelAnnotations ([GoogleCloudVideointelligenceV1LabelAnnotation]): Label annotations on video level or user specified segment level. There is exactly one element for each unique label. Defaults to: `null`.
   - shotAnnotations ([GoogleCloudVideointelligenceV1VideoSegment]): Shot annotations. Each shot is represented as a video segment. Defaults to: `null`.
   - shotLabelAnnotations ([GoogleCloudVideointelligenceV1LabelAnnotation]): Label annotations on shot level. There is exactly one element for each unique label. Defaults to: `null`.
+  - speechTranscriptions ([GoogleCloudVideointelligenceV1SpeechTranscription]): Speech transcription. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -53,6 +54,10 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1Vid
           :shotLabelAnnotations =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1LabelAnnotation.t()
+            ),
+          :speechTranscriptions =>
+            list(
+              GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1SpeechTranscription.t()
             )
         }
 
@@ -87,6 +92,12 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1Vid
   field(
     :shotLabelAnnotations,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1LabelAnnotation,
+    type: :list
+  )
+
+  field(
+    :speechTranscriptions,
+    as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1SpeechTranscription,
     type: :list
   )
 end

@@ -31,14 +31,14 @@ defmodule GoogleApi.Genomics.V1.Api.Referencesets do
 
   - connection (GoogleApi.Genomics.V1.Connection): Connection to server
   - reference_set_id (String.t): The ID of the reference set.
-  - opts (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -51,15 +51,15 @@ defmodule GoogleApi.Genomics.V1.Api.Referencesets do
   """
   @spec genomics_referencesets_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Genomics.V1.Model.ReferenceSet.t()} | {:error, Tesla.Env.t()}
-  def genomics_referencesets_get(connection, reference_set_id, opts \\ []) do
-    optional_params = %{
-      :access_token => :query,
+  def genomics_referencesets_get(connection, reference_set_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -72,11 +72,11 @@ defmodule GoogleApi.Genomics.V1.Api.Referencesets do
       |> Request.url("/v1/referencesets/{referenceSetId}", %{
         "referenceSetId" => URI.encode_www_form(reference_set_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Genomics.V1.Model.ReferenceSet{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Genomics.V1.Model.ReferenceSet{}])
   end
 
   @doc """
@@ -85,14 +85,14 @@ defmodule GoogleApi.Genomics.V1.Api.Referencesets do
   ## Parameters
 
   - connection (GoogleApi.Genomics.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -107,15 +107,15 @@ defmodule GoogleApi.Genomics.V1.Api.Referencesets do
   @spec genomics_referencesets_search(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Genomics.V1.Model.SearchReferenceSetsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def genomics_referencesets_search(connection, opts \\ []) do
-    optional_params = %{
-      :access_token => :query,
+  def genomics_referencesets_search(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -127,10 +127,12 @@ defmodule GoogleApi.Genomics.V1.Api.Referencesets do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/referencesets/search")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Genomics.V1.Model.SearchReferenceSetsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Genomics.V1.Model.SearchReferenceSetsResponse{}]
+    )
   end
 end

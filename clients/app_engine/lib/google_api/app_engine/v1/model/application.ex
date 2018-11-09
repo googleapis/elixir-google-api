@@ -27,7 +27,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Application do
   - defaultBucket (String.t): Google Cloud Storage bucket that can be used by this application to store content.@OutputOnly Defaults to: `null`.
   - defaultCookieExpiration (String.t): Cookie expiration policy for this application. Defaults to: `null`.
   - defaultHostname (String.t): Hostname used to reach this application, as resolved by App Engine.@OutputOnly Defaults to: `null`.
-  - dispatchRules ([UrlDispatchRule]): HTTP path dispatch rules for requests to the application that do not explicitly target a service or version. Rules are order-dependent. Up to 20 dispatch rules can be supported.@OutputOnly Defaults to: `null`.
+  - dispatchRules ([UrlDispatchRule]): HTTP path dispatch rules for requests to the application that do not explicitly target a service or version. Rules are order-dependent. Up to 20 dispatch rules can be supported. Defaults to: `null`.
   - featureSettings (FeatureSettings): The feature specific settings to be used in the application. Defaults to: `null`.
   - gcrDomain (String.t): The Google Container Registry domain used for storing managed build docker images for this application. Defaults to: `null`.
   - iap (IdentityAwareProxy):  Defaults to: `null`.

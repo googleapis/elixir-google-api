@@ -34,7 +34,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
   - layer_id (String.t): The ID for the layer to get the annotations.
   - annotation_data_id (String.t): The ID of the annotation data to retrieve.
   - content_version (String.t): The content version for the volume you are trying to retrieve.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -68,9 +68,10 @@ defmodule GoogleApi.Books.V1.Api.Layers do
         layer_id,
         annotation_data_id,
         content_version,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -95,11 +96,11 @@ defmodule GoogleApi.Books.V1.Api.Layers do
         "annotationDataId" => URI.encode_www_form(annotation_data_id)
       })
       |> Request.add_param(:query, :contentVersion, content_version)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Books.V1.Model.Annotationdata{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Books.V1.Model.Annotationdata{}])
   end
 
   @doc """
@@ -111,7 +112,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
   - volume_id (String.t): The volume to retrieve annotation data for.
   - layer_id (String.t): The ID for the layer to get the annotation data.
   - content_version (String.t): The content version for the requested volume.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -147,9 +148,10 @@ defmodule GoogleApi.Books.V1.Api.Layers do
         volume_id,
         layer_id,
         content_version,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -177,11 +179,11 @@ defmodule GoogleApi.Books.V1.Api.Layers do
         "layerId" => URI.encode_www_form(layer_id)
       })
       |> Request.add_param(:query, :contentVersion, content_version)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Books.V1.Model.Annotationsdata{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Books.V1.Model.Annotationsdata{}])
   end
 
   @doc """
@@ -192,7 +194,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
   - connection (GoogleApi.Books.V1.Connection): Connection to server
   - volume_id (String.t): The volume to retrieve layers for.
   - summary_id (String.t): The ID for the layer to get the summary for.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -210,8 +212,8 @@ defmodule GoogleApi.Books.V1.Api.Layers do
   """
   @spec books_layers_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Layersummary.t()} | {:error, Tesla.Env.t()}
-  def books_layers_get(connection, volume_id, summary_id, opts \\ []) do
-    optional_params = %{
+  def books_layers_get(connection, volume_id, summary_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -230,11 +232,11 @@ defmodule GoogleApi.Books.V1.Api.Layers do
         "volumeId" => URI.encode_www_form(volume_id),
         "summaryId" => URI.encode_www_form(summary_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Books.V1.Model.Layersummary{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Books.V1.Model.Layersummary{}])
   end
 
   @doc """
@@ -244,7 +246,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
 
   - connection (GoogleApi.Books.V1.Connection): Connection to server
   - volume_id (String.t): The volume to retrieve layers for.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -264,8 +266,8 @@ defmodule GoogleApi.Books.V1.Api.Layers do
   """
   @spec books_layers_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Layersummaries.t()} | {:error, Tesla.Env.t()}
-  def books_layers_list(connection, volume_id, opts \\ []) do
-    optional_params = %{
+  def books_layers_list(connection, volume_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -285,11 +287,11 @@ defmodule GoogleApi.Books.V1.Api.Layers do
       |> Request.url("/volumes/{volumeId}/layersummary", %{
         "volumeId" => URI.encode_www_form(volume_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Books.V1.Model.Layersummaries{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Books.V1.Model.Layersummaries{}])
   end
 
   @doc """
@@ -301,7 +303,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
   - volume_id (String.t): The volume to retrieve annotations for.
   - layer_id (String.t): The ID for the layer to get the annotations.
   - annotation_id (String.t): The ID of the volume annotation to retrieve.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -329,9 +331,10 @@ defmodule GoogleApi.Books.V1.Api.Layers do
         volume_id,
         layer_id,
         annotation_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -351,11 +354,11 @@ defmodule GoogleApi.Books.V1.Api.Layers do
         "layerId" => URI.encode_www_form(layer_id),
         "annotationId" => URI.encode_www_form(annotation_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Books.V1.Model.Volumeannotation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Books.V1.Model.Volumeannotation{}])
   end
 
   @doc """
@@ -367,7 +370,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
   - volume_id (String.t): The volume to retrieve annotations for.
   - layer_id (String.t): The ID for the layer to get the annotations.
   - content_version (String.t): The content version for the requested volume.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -405,9 +408,10 @@ defmodule GoogleApi.Books.V1.Api.Layers do
         volume_id,
         layer_id,
         content_version,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -437,10 +441,10 @@ defmodule GoogleApi.Books.V1.Api.Layers do
         "layerId" => URI.encode_www_form(layer_id)
       })
       |> Request.add_param(:query, :contentVersion, content_version)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Books.V1.Model.Volumeannotations{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Books.V1.Model.Volumeannotations{}])
   end
 end

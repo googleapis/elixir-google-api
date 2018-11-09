@@ -30,7 +30,11 @@ defmodule GoogleApi.Partners.V2.Api.Offers do
   ## Parameters
 
   - connection (GoogleApi.Partners.V2.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
@@ -38,19 +42,15 @@ defmodule GoogleApi.Partners.V2.Api.Offers do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :requestMetadata.userOverrides.userId (String.t): Logged-in user ID to impersonate instead of the user&#39;s ID.
     - :requestMetadata.partnersSessionId (String.t): Google Partners session ID.
+    - :requestMetadata.userOverrides.userId (String.t): Logged-in user ID to impersonate instead of the user&#39;s ID.
     - :pageToken (String.t): Token to retrieve a specific page.
     - :pageSize (integer()): Maximum number of rows to return per page.
     - :requestMetadata.trafficSource.trafficSourceId (String.t): Identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
     - :requestMetadata.locale (String.t): Locale to use for the current request.
     - :requestMetadata.userOverrides.ipAddress (String.t): IP address to use instead of the user&#39;s geo-located IP address.
-    - :requestMetadata.experimentIds ([String.t]): Experiment IDs the current request belongs to.
     - :entireCompany (boolean()): if true, show history for the entire company.  Requires user to be admin.
+    - :requestMetadata.experimentIds ([String.t]): Experiment IDs the current request belongs to.
     - :orderBy (String.t): Comma-separated list of fields to order by, e.g.: \&quot;foo,bar,baz\&quot;. Use \&quot;foo desc\&quot; to sort descending. List of valid field names is: name, offer_code, expiration_time, status,     last_modified_time, sender_name, creation_time, country_code,     offer_type.
     - :requestMetadata.trafficSource.trafficSubId (String.t): Second level identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
 
@@ -62,8 +62,12 @@ defmodule GoogleApi.Partners.V2.Api.Offers do
   @spec partners_offers_history_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Partners.V2.Model.ListOffersHistoryResponse.t()}
           | {:error, Tesla.Env.t()}
-  def partners_offers_history_list(connection, opts \\ []) do
-    optional_params = %{
+  def partners_offers_history_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :access_token => :query,
       :key => :query,
       :upload_protocol => :query,
@@ -71,19 +75,15 @@ defmodule GoogleApi.Partners.V2.Api.Offers do
       :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :"requestMetadata.userOverrides.userId" => :query,
       :"requestMetadata.partnersSessionId" => :query,
+      :"requestMetadata.userOverrides.userId" => :query,
       :pageToken => :query,
       :pageSize => :query,
       :"requestMetadata.trafficSource.trafficSourceId" => :query,
       :"requestMetadata.locale" => :query,
       :"requestMetadata.userOverrides.ipAddress" => :query,
-      :"requestMetadata.experimentIds" => :query,
       :entireCompany => :query,
+      :"requestMetadata.experimentIds" => :query,
       :orderBy => :query,
       :"requestMetadata.trafficSource.trafficSubId" => :query
     }
@@ -92,11 +92,11 @@ defmodule GoogleApi.Partners.V2.Api.Offers do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2/offers/history")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Partners.V2.Model.ListOffersHistoryResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Partners.V2.Model.ListOffersHistoryResponse{}])
   end
 
   @doc """
@@ -105,7 +105,11 @@ defmodule GoogleApi.Partners.V2.Api.Offers do
   ## Parameters
 
   - connection (GoogleApi.Partners.V2.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
@@ -113,17 +117,13 @@ defmodule GoogleApi.Partners.V2.Api.Offers do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :requestMetadata.experimentIds ([String.t]): Experiment IDs the current request belongs to.
-    - :requestMetadata.trafficSource.trafficSubId (String.t): Second level identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
-    - :requestMetadata.partnersSessionId (String.t): Google Partners session ID.
     - :requestMetadata.userOverrides.userId (String.t): Logged-in user ID to impersonate instead of the user&#39;s ID.
+    - :requestMetadata.partnersSessionId (String.t): Google Partners session ID.
     - :requestMetadata.trafficSource.trafficSourceId (String.t): Identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
     - :requestMetadata.locale (String.t): Locale to use for the current request.
     - :requestMetadata.userOverrides.ipAddress (String.t): IP address to use instead of the user&#39;s geo-located IP address.
+    - :requestMetadata.experimentIds ([String.t]): Experiment IDs the current request belongs to.
+    - :requestMetadata.trafficSource.trafficSubId (String.t): Second level identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
 
   ## Returns
 
@@ -132,8 +132,12 @@ defmodule GoogleApi.Partners.V2.Api.Offers do
   """
   @spec partners_offers_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Partners.V2.Model.ListOffersResponse.t()} | {:error, Tesla.Env.t()}
-  def partners_offers_list(connection, opts \\ []) do
-    optional_params = %{
+  def partners_offers_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :access_token => :query,
       :key => :query,
       :upload_protocol => :query,
@@ -141,27 +145,23 @@ defmodule GoogleApi.Partners.V2.Api.Offers do
       :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :"requestMetadata.experimentIds" => :query,
-      :"requestMetadata.trafficSource.trafficSubId" => :query,
-      :"requestMetadata.partnersSessionId" => :query,
       :"requestMetadata.userOverrides.userId" => :query,
+      :"requestMetadata.partnersSessionId" => :query,
       :"requestMetadata.trafficSource.trafficSourceId" => :query,
       :"requestMetadata.locale" => :query,
-      :"requestMetadata.userOverrides.ipAddress" => :query
+      :"requestMetadata.userOverrides.ipAddress" => :query,
+      :"requestMetadata.experimentIds" => :query,
+      :"requestMetadata.trafficSource.trafficSubId" => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2/offers")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Partners.V2.Model.ListOffersResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Partners.V2.Model.ListOffersResponse{}])
   end
 end

@@ -31,7 +31,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - parent (String.t): GTM Account&#39;s API relative path. Example: accounts/{account_id}.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,8 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   """
   @spec tagmanager_accounts_containers_create(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.TagManager.V2.Model.Container.t()} | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_create(connection, parent, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_containers_create(connection, parent, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -66,11 +66,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+parent}/containers", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.Container{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.Container{}])
   end
 
   @doc """
@@ -80,7 +80,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - parent (String.t): GTM Container&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -100,8 +100,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.TagManager.V2.Model.Environment.t()} | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_environments_create(connection, parent, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_containers_environments_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -118,11 +123,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+parent}/environments", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.Environment{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.Environment{}])
   end
 
   @doc """
@@ -132,7 +137,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - parent (String.t): GTM Container&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -154,8 +159,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         ) ::
           {:ok, GoogleApi.TagManager.V2.Model.ListEnvironmentsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_environments_list(connection, parent, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_containers_environments_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -172,11 +182,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+parent}/environments", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.ListEnvironmentsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.TagManager.V2.Model.ListEnvironmentsResponse{}]
+    )
   end
 
   @doc """
@@ -186,7 +198,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - path (String.t): GTM Environment&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/environments/{environment_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -207,8 +219,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.TagManager.V2.Model.Environment.t()} | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_environments_patch(connection, path, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_containers_environments_patch(
+        connection,
+        path,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -226,11 +243,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+path}", %{
         "path" => URI.encode_www_form(path)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.Environment{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.Environment{}])
   end
 
   @doc """
@@ -240,7 +257,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - path (String.t): GTM Environment&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/environments/{environment_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -260,8 +277,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.TagManager.V2.Model.Environment.t()} | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_environments_reauthorize(connection, path, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_containers_environments_reauthorize(
+        connection,
+        path,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -278,11 +300,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+path}:reauthorize", %{
         "path" => URI.encode_www_form(path)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.Environment{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.Environment{}])
   end
 
   @doc """
@@ -292,7 +314,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - parent (String.t): GTM Accounts&#39;s API relative path. Example: accounts/{account_id}.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -310,8 +332,8 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   @spec tagmanager_accounts_containers_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.TagManager.V2.Model.ListContainersResponse.t()}
           | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_list(connection, parent, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_containers_list(connection, parent, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -328,11 +350,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+parent}/containers", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.ListContainersResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.ListContainersResponse{}])
   end
 
   @doc """
@@ -342,7 +364,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - parent (String.t): GTM Container&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -363,8 +385,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         ) ::
           {:ok, GoogleApi.TagManager.V2.Model.ContainerVersionHeader.t()}
           | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_version_headers_latest(connection, parent, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_containers_version_headers_latest(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -380,11 +407,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+parent}/version_headers:latest", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.ContainerVersionHeader{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.ContainerVersionHeader{}])
   end
 
   @doc """
@@ -394,7 +421,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - parent (String.t): GTM Container&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -417,8 +444,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         ) ::
           {:ok, GoogleApi.TagManager.V2.Model.ListContainerVersionsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_version_headers_list(connection, parent, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_containers_version_headers_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -436,11 +468,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+parent}/version_headers", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.ListContainerVersionsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.TagManager.V2.Model.ListContainerVersionsResponse{}]
+    )
   end
 
   @doc """
@@ -450,7 +484,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - parent (String.t): GTM Container&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -466,8 +500,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   """
   @spec tagmanager_accounts_containers_versions_live(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.TagManager.V2.Model.ContainerVersion.t()} | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_versions_live(connection, parent, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_containers_versions_live(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -483,11 +522,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+parent}/versions:live", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.ContainerVersion{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.ContainerVersion{}])
   end
 
   @doc """
@@ -497,7 +536,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - path (String.t): GTM ContainerVersion&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/versions/{version_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -515,8 +554,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   @spec tagmanager_accounts_containers_versions_publish(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.TagManager.V2.Model.PublishContainerVersionResponse.t()}
           | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_versions_publish(connection, path, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_containers_versions_publish(
+        connection,
+        path,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -533,11 +577,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+path}:publish", %{
         "path" => URI.encode_www_form(path)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.PublishContainerVersionResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.TagManager.V2.Model.PublishContainerVersionResponse{}]
+    )
   end
 
   @doc """
@@ -547,7 +593,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - path (String.t): GTM ContainerVersion&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/versions/{version_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -566,8 +612,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.TagManager.V2.Model.ContainerVersion.t()} | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_versions_set_latest(connection, path, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_containers_versions_set_latest(
+        connection,
+        path,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -583,11 +634,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+path}:set_latest", %{
         "path" => URI.encode_www_form(path)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.ContainerVersion{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.ContainerVersion{}])
   end
 
   @doc """
@@ -597,7 +648,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - path (String.t): GTM ContainerVersion&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/versions/{version_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -616,8 +667,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.TagManager.V2.Model.ContainerVersion.t()} | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_versions_undelete(connection, path, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_containers_versions_undelete(
+        connection,
+        path,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -633,11 +689,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+path}:undelete", %{
         "path" => URI.encode_www_form(path)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.ContainerVersion{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.ContainerVersion{}])
   end
 
   @doc """
@@ -647,7 +703,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - parent (String.t): GTM Workspace&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -672,9 +728,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   def tagmanager_accounts_containers_workspaces_built_in_variables_create(
         connection,
         parent,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -691,11 +748,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+parent}/built_in_variables", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.CreateBuiltInVariableResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.TagManager.V2.Model.CreateBuiltInVariableResponse{}]
+    )
   end
 
   @doc """
@@ -705,7 +764,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - parent (String.t): GTM Workspace&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -730,9 +789,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   def tagmanager_accounts_containers_workspaces_built_in_variables_list(
         connection,
         parent,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -749,12 +809,12 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+parent}/built_in_variables", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.TagManager.V2.Model.ListEnabledBuiltInVariablesResponse{}
+      opts ++ [struct: %GoogleApi.TagManager.V2.Model.ListEnabledBuiltInVariablesResponse{}]
     )
   end
 
@@ -765,7 +825,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - path (String.t): GTM BuiltInVariable&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/built_in_variables
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -790,9 +850,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   def tagmanager_accounts_containers_workspaces_built_in_variables_revert(
         connection,
         path,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -809,11 +870,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+path}/built_in_variables:revert", %{
         "path" => URI.encode_www_form(path)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.RevertBuiltInVariableResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.TagManager.V2.Model.RevertBuiltInVariableResponse{}]
+    )
   end
 
   @doc """
@@ -823,7 +886,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - parent (String.t): GTM parent Container&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -843,8 +906,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.TagManager.V2.Model.Workspace.t()} | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_workspaces_create(connection, parent, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_containers_workspaces_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -861,11 +929,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+parent}/workspaces", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.Workspace{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.Workspace{}])
   end
 
   @doc """
@@ -875,7 +943,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - path (String.t): GTM Workspace&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -897,8 +965,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         ) ::
           {:ok, GoogleApi.TagManager.V2.Model.CreateContainerVersionResponse.t()}
           | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_workspaces_create_version(connection, path, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_containers_workspaces_create_version(
+        connection,
+        path,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -915,11 +988,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+path}:create_version", %{
         "path" => URI.encode_www_form(path)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.CreateContainerVersionResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.TagManager.V2.Model.CreateContainerVersionResponse{}]
+    )
   end
 
   @doc """
@@ -929,7 +1004,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - parent (String.t): GTM Workspace&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -949,8 +1024,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.TagManager.V2.Model.Folder.t()} | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_workspaces_folders_create(connection, parent, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_containers_workspaces_folders_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -967,11 +1047,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+parent}/folders", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.Folder{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.Folder{}])
   end
 
   @doc """
@@ -981,7 +1061,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - path (String.t): GTM Folder&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/folders/{folder_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1001,8 +1081,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.TagManager.V2.Model.FolderEntities.t()} | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_workspaces_folders_entities(connection, path, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_containers_workspaces_folders_entities(
+        connection,
+        path,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1019,11 +1104,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+path}:entities", %{
         "path" => URI.encode_www_form(path)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.FolderEntities{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.FolderEntities{}])
   end
 
   @doc """
@@ -1033,7 +1118,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - parent (String.t): GTM Workspace&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1054,8 +1139,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           keyword()
         ) ::
           {:ok, GoogleApi.TagManager.V2.Model.ListFoldersResponse.t()} | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_workspaces_folders_list(connection, parent, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_containers_workspaces_folders_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1072,11 +1162,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+parent}/folders", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.ListFoldersResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.ListFoldersResponse{}])
   end
 
   @doc """
@@ -1086,7 +1176,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - path (String.t): GTM Folder&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/folders/{folder_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1112,9 +1202,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   def tagmanager_accounts_containers_workspaces_folders_move_entities_to_folder(
         connection,
         path,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1134,11 +1225,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+path}:move_entities_to_folder", %{
         "path" => URI.encode_www_form(path)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -1148,7 +1239,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - path (String.t): GTM Workspace&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1169,8 +1260,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         ) ::
           {:ok, GoogleApi.TagManager.V2.Model.GetWorkspaceStatusResponse.t()}
           | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_workspaces_get_status(connection, path, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_containers_workspaces_get_status(
+        connection,
+        path,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1186,11 +1282,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+path}/status", %{
         "path" => URI.encode_www_form(path)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.GetWorkspaceStatusResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.TagManager.V2.Model.GetWorkspaceStatusResponse{}]
+    )
   end
 
   @doc """
@@ -1200,7 +1298,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - parent (String.t): GTM parent Container&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1218,8 +1316,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   @spec tagmanager_accounts_containers_workspaces_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.TagManager.V2.Model.ListWorkspacesResponse.t()}
           | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_workspaces_list(connection, parent, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_containers_workspaces_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1236,11 +1339,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+parent}/workspaces", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.ListWorkspacesResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.ListWorkspacesResponse{}])
   end
 
   @doc """
@@ -1250,7 +1353,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - parent (String.t): GTM Workspace&#39;s API relative path. Example: accounts/{aid}/containers/{cid}/workspace/{wid}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1270,8 +1373,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.TagManager.V2.Model.WorkspaceProposal.t()} | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_workspaces_proposal_create(connection, parent, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_containers_workspaces_proposal_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1288,11 +1396,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+parent}/proposal", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.WorkspaceProposal{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.WorkspaceProposal{}])
   end
 
   @doc """
@@ -1302,7 +1410,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - path (String.t): GTM Workspace&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1322,8 +1430,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           keyword()
         ) ::
           {:ok, GoogleApi.TagManager.V2.Model.QuickPreviewResponse.t()} | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_workspaces_quick_preview(connection, path, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_containers_workspaces_quick_preview(
+        connection,
+        path,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1339,11 +1452,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+path}:quick_preview", %{
         "path" => URI.encode_www_form(path)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.QuickPreviewResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.QuickPreviewResponse{}])
   end
 
   @doc """
@@ -1353,7 +1466,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - path (String.t): GTM Workspace&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1374,8 +1487,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_workspaces_resolve_conflict(connection, path, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_containers_workspaces_resolve_conflict(
+        connection,
+        path,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1393,11 +1511,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+path}:resolve_conflict", %{
         "path" => URI.encode_www_form(path)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -1407,7 +1525,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - path (String.t): GTM Workspace&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1423,8 +1541,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   """
   @spec tagmanager_accounts_containers_workspaces_sync(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.TagManager.V2.Model.SyncWorkspaceResponse.t()} | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_workspaces_sync(connection, path, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_containers_workspaces_sync(
+        connection,
+        path,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1440,11 +1563,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+path}:sync", %{
         "path" => URI.encode_www_form(path)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.SyncWorkspaceResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.SyncWorkspaceResponse{}])
   end
 
   @doc """
@@ -1454,7 +1577,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - parent (String.t): GTM Workspace&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1474,8 +1597,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.TagManager.V2.Model.Tag.t()} | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_workspaces_tags_create(connection, parent, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_containers_workspaces_tags_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1492,11 +1620,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+parent}/tags", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.Tag{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.Tag{}])
   end
 
   @doc """
@@ -1506,7 +1634,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - parent (String.t): GTM Workspace&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1526,8 +1654,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.TagManager.V2.Model.ListTagsResponse.t()} | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_workspaces_tags_list(connection, parent, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_containers_workspaces_tags_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1544,11 +1677,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+parent}/tags", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.ListTagsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.ListTagsResponse{}])
   end
 
   @doc """
@@ -1558,7 +1691,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - parent (String.t): GTM Workspaces&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1578,8 +1711,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.TagManager.V2.Model.Trigger.t()} | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_workspaces_triggers_create(connection, parent, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_containers_workspaces_triggers_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1596,11 +1734,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+parent}/triggers", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.Trigger{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.Trigger{}])
   end
 
   @doc """
@@ -1610,7 +1748,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - parent (String.t): GTM Workspaces&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1631,8 +1769,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           keyword()
         ) ::
           {:ok, GoogleApi.TagManager.V2.Model.ListTriggersResponse.t()} | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_workspaces_triggers_list(connection, parent, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_containers_workspaces_triggers_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1649,11 +1792,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+parent}/triggers", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.ListTriggersResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.ListTriggersResponse{}])
   end
 
   @doc """
@@ -1663,7 +1806,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - parent (String.t): GTM Workspace&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1683,8 +1826,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.TagManager.V2.Model.Variable.t()} | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_workspaces_variables_create(connection, parent, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_containers_workspaces_variables_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1701,11 +1849,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+parent}/variables", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.Variable{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.Variable{}])
   end
 
   @doc """
@@ -1715,7 +1863,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - parent (String.t): GTM Workspace&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1736,8 +1884,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           keyword()
         ) ::
           {:ok, GoogleApi.TagManager.V2.Model.ListVariablesResponse.t()} | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_workspaces_variables_list(connection, parent, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_containers_workspaces_variables_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1754,11 +1907,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+parent}/variables", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.ListVariablesResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.ListVariablesResponse{}])
   end
 
   @doc """
@@ -1768,7 +1921,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - path (String.t): GTM Variable&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/variables/{variable_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1790,8 +1943,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         ) ::
           {:ok, GoogleApi.TagManager.V2.Model.RevertVariableResponse.t()}
           | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_workspaces_variables_revert(connection, path, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_containers_workspaces_variables_revert(
+        connection,
+        path,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1808,11 +1966,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+path}:revert", %{
         "path" => URI.encode_www_form(path)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.RevertVariableResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.RevertVariableResponse{}])
   end
 
   @doc """
@@ -1821,7 +1979,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1838,8 +1996,8 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   """
   @spec tagmanager_accounts_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.TagManager.V2.Model.ListAccountsResponse.t()} | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_list(connection, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1854,11 +2012,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/accounts")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.ListAccountsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.ListAccountsResponse{}])
   end
 
   @doc """
@@ -1868,7 +2026,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - parent (String.t): GTM Account&#39;s API relative path. Example: accounts/{account_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1885,8 +2043,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   """
   @spec tagmanager_accounts_user_permissions_create(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.TagManager.V2.Model.UserPermission.t()} | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_user_permissions_create(connection, parent, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_user_permissions_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1903,11 +2066,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+parent}/user_permissions", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.UserPermission{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.UserPermission{}])
   end
 
   @doc """
@@ -1917,7 +2080,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - path (String.t): GTM UserPermission&#39;s API relative path. Example: accounts/{account_id}/user_permissions/{user_permission_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1934,8 +2097,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   """
   @spec tagmanager_accounts_user_permissions_delete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_user_permissions_delete(connection, path, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_user_permissions_delete(
+        connection,
+        path,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1952,11 +2120,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+path}", %{
         "path" => URI.encode_www_form(path)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -1966,7 +2134,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - path (String.t): GTM UserPermission&#39;s API relative path. Example: accounts/{account_id}/user_permissions/{user_permission_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1983,8 +2151,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   """
   @spec tagmanager_accounts_user_permissions_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.TagManager.V2.Model.UserPermission.t()} | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_user_permissions_get(connection, path, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_user_permissions_get(
+        connection,
+        path,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -2001,11 +2174,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+path}", %{
         "path" => URI.encode_www_form(path)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.UserPermission{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.UserPermission{}])
   end
 
   @doc """
@@ -2015,7 +2188,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - parent (String.t): GTM Accounts&#39;s API relative path. Example: accounts/{account_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -2033,8 +2206,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   @spec tagmanager_accounts_user_permissions_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.TagManager.V2.Model.ListUserPermissionsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_user_permissions_list(connection, parent, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_user_permissions_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -2051,11 +2229,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+parent}/user_permissions", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.ListUserPermissionsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.TagManager.V2.Model.ListUserPermissionsResponse{}]
+    )
   end
 
   @doc """
@@ -2065,7 +2245,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
   - path (String.t): GTM UserPermission&#39;s API relative path. Example: accounts/{account_id}/user_permissions/{user_permission_id}
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -2083,8 +2263,13 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   """
   @spec tagmanager_accounts_user_permissions_update(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.TagManager.V2.Model.UserPermission.t()} | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_user_permissions_update(connection, path, opts \\ []) do
-    optional_params = %{
+  def tagmanager_accounts_user_permissions_update(
+        connection,
+        path,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -2102,10 +2287,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.url("/{+path}", %{
         "path" => URI.encode_www_form(path)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.TagManager.V2.Model.UserPermission{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.UserPermission{}])
   end
 end

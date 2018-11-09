@@ -24,7 +24,7 @@ defmodule GoogleApi.Firestore.V1beta1.Model.FieldFilter do
 
   - field (FieldReference): The field to filter by. Defaults to: `null`.
   - op (String.t): The operator to filter by. Defaults to: `null`.
-    - Enum - one of [OPERATOR_UNSPECIFIED, LESS_THAN, LESS_THAN_OR_EQUAL, GREATER_THAN, GREATER_THAN_OR_EQUAL, EQUAL]
+    - Enum - one of [OPERATOR_UNSPECIFIED, LESS_THAN, LESS_THAN_OR_EQUAL, GREATER_THAN, GREATER_THAN_OR_EQUAL, EQUAL, ARRAY_CONTAINS]
   - value (Value): The value to compare to. Defaults to: `null`.
   """
 

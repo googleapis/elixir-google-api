@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Script.V1.Model.GoogleAppsScriptTypeProcess do
   @moduledoc """
-  Representation of a single script process execution that was started from the script editor, a trigger, an application, or using the Apps Script API. This is distinct from the &#x60;Operation&#x60; resource, which only represents exeuctions started via the Apps Script API.
+  Representation of a single script process execution that was started from the script editor, a trigger, an application, or using the Apps Script API. This is distinct from the &#x60;Operation&#x60; resource, which only represents executions started via the Apps Script API.
 
   ## Attributes
 

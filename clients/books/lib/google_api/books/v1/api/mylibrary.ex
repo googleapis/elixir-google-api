@@ -31,7 +31,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
 
   - connection (GoogleApi.Books.V1.Connection): Connection to server
   - annotation_id (String.t): The ID for the annotation to delete.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,13 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   """
   @spec books_mylibrary_annotations_delete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def books_mylibrary_annotations_delete(connection, annotation_id, opts \\ []) do
-    optional_params = %{
+  def books_mylibrary_annotations_delete(
+        connection,
+        annotation_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -66,11 +71,11 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       |> Request.url("/mylibrary/annotations/{annotationId}", %{
         "annotationId" => URI.encode_www_form(annotation_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -79,7 +84,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   ## Parameters
 
   - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -100,8 +105,8 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   """
   @spec books_mylibrary_annotations_insert(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Annotation.t()} | {:error, Tesla.Env.t()}
-  def books_mylibrary_annotations_insert(connection, opts \\ []) do
-    optional_params = %{
+  def books_mylibrary_annotations_insert(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -120,11 +125,11 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/mylibrary/annotations")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Books.V1.Model.Annotation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Books.V1.Model.Annotation{}])
   end
 
   @doc """
@@ -133,7 +138,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   ## Parameters
 
   - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -159,8 +164,8 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   """
   @spec books_mylibrary_annotations_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Annotations.t()} | {:error, Tesla.Env.t()}
-  def books_mylibrary_annotations_list(connection, opts \\ []) do
-    optional_params = %{
+  def books_mylibrary_annotations_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -184,11 +189,11 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/mylibrary/annotations")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Books.V1.Model.Annotations{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Books.V1.Model.Annotations{}])
   end
 
   @doc """
@@ -199,7 +204,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   - connection (GoogleApi.Books.V1.Connection): Connection to server
   - layer_ids ([String.t]): Array of layer IDs to get the summary for.
   - volume_id (String.t): Volume id to get the summary for.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -219,8 +224,14 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Books.V1.Model.AnnotationsSummary.t()} | {:error, Tesla.Env.t()}
-  def books_mylibrary_annotations_summary(connection, layer_ids, volume_id, opts \\ []) do
-    optional_params = %{
+  def books_mylibrary_annotations_summary(
+        connection,
+        layer_ids,
+        volume_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -236,11 +247,11 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       |> Request.url("/mylibrary/annotations/summary")
       |> Request.add_param(:query, :layerIds, layer_ids)
       |> Request.add_param(:query, :volumeId, volume_id)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Books.V1.Model.AnnotationsSummary{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Books.V1.Model.AnnotationsSummary{}])
   end
 
   @doc """
@@ -250,7 +261,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
 
   - connection (GoogleApi.Books.V1.Connection): Connection to server
   - annotation_id (String.t): The ID for the annotation to update.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -268,8 +279,13 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   """
   @spec books_mylibrary_annotations_update(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Annotation.t()} | {:error, Tesla.Env.t()}
-  def books_mylibrary_annotations_update(connection, annotation_id, opts \\ []) do
-    optional_params = %{
+  def books_mylibrary_annotations_update(
+        connection,
+        annotation_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -287,11 +303,11 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       |> Request.url("/mylibrary/annotations/{annotationId}", %{
         "annotationId" => URI.encode_www_form(annotation_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Books.V1.Model.Annotation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Books.V1.Model.Annotation{}])
   end
 
   @doc """
@@ -302,7 +318,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   - connection (GoogleApi.Books.V1.Connection): Connection to server
   - shelf (String.t): ID of bookshelf to which to add a volume.
   - volume_id (String.t): ID of volume to add.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -324,8 +340,14 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
           String.t(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
-  def books_mylibrary_bookshelves_add_volume(connection, shelf, volume_id, opts \\ []) do
-    optional_params = %{
+  def books_mylibrary_bookshelves_add_volume(
+        connection,
+        shelf,
+        volume_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -344,11 +366,11 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
         "shelf" => URI.encode_www_form(shelf)
       })
       |> Request.add_param(:query, :volumeId, volume_id)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -358,7 +380,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
 
   - connection (GoogleApi.Books.V1.Connection): Connection to server
   - shelf (String.t): ID of bookshelf from which to remove a volume.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -375,8 +397,13 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   """
   @spec books_mylibrary_bookshelves_clear_volumes(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def books_mylibrary_bookshelves_clear_volumes(connection, shelf, opts \\ []) do
-    optional_params = %{
+  def books_mylibrary_bookshelves_clear_volumes(
+        connection,
+        shelf,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -393,11 +420,11 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       |> Request.url("/mylibrary/bookshelves/{shelf}/clearVolumes", %{
         "shelf" => URI.encode_www_form(shelf)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -407,7 +434,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
 
   - connection (GoogleApi.Books.V1.Connection): Connection to server
   - shelf (String.t): ID of bookshelf to retrieve.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -424,8 +451,8 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   """
   @spec books_mylibrary_bookshelves_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Bookshelf.t()} | {:error, Tesla.Env.t()}
-  def books_mylibrary_bookshelves_get(connection, shelf, opts \\ []) do
-    optional_params = %{
+  def books_mylibrary_bookshelves_get(connection, shelf, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -442,11 +469,11 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       |> Request.url("/mylibrary/bookshelves/{shelf}", %{
         "shelf" => URI.encode_www_form(shelf)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Books.V1.Model.Bookshelf{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Books.V1.Model.Bookshelf{}])
   end
 
   @doc """
@@ -455,7 +482,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   ## Parameters
 
   - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -472,8 +499,8 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   """
   @spec books_mylibrary_bookshelves_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Bookshelves.t()} | {:error, Tesla.Env.t()}
-  def books_mylibrary_bookshelves_list(connection, opts \\ []) do
-    optional_params = %{
+  def books_mylibrary_bookshelves_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -488,11 +515,11 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/mylibrary/bookshelves")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Books.V1.Model.Bookshelves{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Books.V1.Model.Bookshelves{}])
   end
 
   @doc """
@@ -504,7 +531,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   - shelf (String.t): ID of bookshelf with the volume.
   - volume_id (String.t): ID of volume to move.
   - volume_position (integer()): Position on shelf to move the item (0 puts the item before the current first item, 1 puts it between the first and the second and so on.)
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -531,9 +558,10 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
         shelf,
         volume_id,
         volume_position,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -552,11 +580,11 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       })
       |> Request.add_param(:query, :volumeId, volume_id)
       |> Request.add_param(:query, :volumePosition, volume_position)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -567,7 +595,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   - connection (GoogleApi.Books.V1.Connection): Connection to server
   - shelf (String.t): ID of bookshelf from which to remove a volume.
   - volume_id (String.t): ID of volume to remove.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -589,8 +617,14 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
           String.t(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
-  def books_mylibrary_bookshelves_remove_volume(connection, shelf, volume_id, opts \\ []) do
-    optional_params = %{
+  def books_mylibrary_bookshelves_remove_volume(
+        connection,
+        shelf,
+        volume_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -609,11 +643,11 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
         "shelf" => URI.encode_www_form(shelf)
       })
       |> Request.add_param(:query, :volumeId, volume_id)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -623,7 +657,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
 
   - connection (GoogleApi.Books.V1.Connection): Connection to server
   - shelf (String.t): The bookshelf ID or name retrieve volumes for.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -646,8 +680,13 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   """
   @spec books_mylibrary_bookshelves_volumes_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Volumes.t()} | {:error, Tesla.Env.t()}
-  def books_mylibrary_bookshelves_volumes_list(connection, shelf, opts \\ []) do
-    optional_params = %{
+  def books_mylibrary_bookshelves_volumes_list(
+        connection,
+        shelf,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -670,11 +709,11 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       |> Request.url("/mylibrary/bookshelves/{shelf}/volumes", %{
         "shelf" => URI.encode_www_form(shelf)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Books.V1.Model.Volumes{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Books.V1.Model.Volumes{}])
   end
 
   @doc """
@@ -684,7 +723,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
 
   - connection (GoogleApi.Books.V1.Connection): Connection to server
   - volume_id (String.t): ID of volume for which to retrieve a reading position.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -702,8 +741,13 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   """
   @spec books_mylibrary_readingpositions_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.ReadingPosition.t()} | {:error, Tesla.Env.t()}
-  def books_mylibrary_readingpositions_get(connection, volume_id, opts \\ []) do
-    optional_params = %{
+  def books_mylibrary_readingpositions_get(
+        connection,
+        volume_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -721,11 +765,11 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       |> Request.url("/mylibrary/readingpositions/{volumeId}", %{
         "volumeId" => URI.encode_www_form(volume_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Books.V1.Model.ReadingPosition{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Books.V1.Model.ReadingPosition{}])
   end
 
   @doc """
@@ -737,7 +781,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   - volume_id (String.t): ID of volume for which to update the reading position.
   - timestamp (String.t): RFC 3339 UTC format timestamp associated with this reading position.
   - position (String.t): Position string for the new volume reading position.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -767,9 +811,10 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
         volume_id,
         timestamp,
         position,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -791,10 +836,10 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       })
       |> Request.add_param(:query, :timestamp, timestamp)
       |> Request.add_param(:query, :position, position)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 end

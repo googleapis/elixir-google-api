@@ -25,14 +25,14 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Adds the given Signed URL Key to the specified backend service.
+  Adds a key for validating requests with signed URLs for this backend service.
 
   ## Parameters
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - backend_service (String.t): Name of the BackendService resource to which the Signed URL Key should be added. The name should conform to RFC1035.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -58,9 +58,10 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
         connection,
         project,
         backend_service,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -79,11 +80,11 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
         "project" => URI.encode_www_form(project),
         "backendService" => URI.encode_www_form(backend_service)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -93,7 +94,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Name of the project scoping this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -114,8 +115,13 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   @spec compute_backend_services_aggregated_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.BackendServiceAggregatedList.t()}
           | {:error, Tesla.Env.t()}
-  def compute_backend_services_aggregated_list(connection, project, opts \\ []) do
-    optional_params = %{
+  def compute_backend_services_aggregated_list(
+        connection,
+        project,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -135,11 +141,13 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
       |> Request.url("/{project}/aggregated/backendServices", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.BackendServiceAggregatedList{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Compute.V1.Model.BackendServiceAggregatedList{}]
+    )
   end
 
   @doc """
@@ -150,7 +158,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - backend_service (String.t): Name of the BackendService resource to delete.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -167,8 +175,14 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   """
   @spec compute_backend_services_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_backend_services_delete(connection, project, backend_service, opts \\ []) do
-    optional_params = %{
+  def compute_backend_services_delete(
+        connection,
+        project,
+        backend_service,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -186,15 +200,15 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
         "project" => URI.encode_www_form(project),
         "backendService" => URI.encode_www_form(backend_service)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
-  Deletes the given Signed URL Key from the specified backend service.
+  Deletes a key for validating requests with signed URLs for this backend service.
 
   ## Parameters
 
@@ -202,7 +216,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   - project (String.t): Project ID for this request.
   - backend_service (String.t): Name of the BackendService resource to which the Signed URL Key should be added. The name should conform to RFC1035.
   - key_name (String.t): The name of the Signed URL Key to delete.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -229,9 +243,10 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
         project,
         backend_service,
         key_name,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -250,11 +265,11 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
         "backendService" => URI.encode_www_form(backend_service)
       })
       |> Request.add_param(:query, :keyName, key_name)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -265,7 +280,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - backend_service (String.t): Name of the BackendService resource to return.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -281,8 +296,14 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   """
   @spec compute_backend_services_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.BackendService.t()} | {:error, Tesla.Env.t()}
-  def compute_backend_services_get(connection, project, backend_service, opts \\ []) do
-    optional_params = %{
+  def compute_backend_services_get(
+        connection,
+        project,
+        backend_service,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -299,11 +320,11 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
         "project" => URI.encode_www_form(project),
         "backendService" => URI.encode_www_form(backend_service)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.BackendService{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.BackendService{}])
   end
 
   @doc """
@@ -314,7 +335,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): 
   - backend_service (String.t): Name of the BackendService resource to which the queried instance belongs.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -332,8 +353,14 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   @spec compute_backend_services_get_health(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.BackendServiceGroupHealth.t()}
           | {:error, Tesla.Env.t()}
-  def compute_backend_services_get_health(connection, project, backend_service, opts \\ []) do
-    optional_params = %{
+  def compute_backend_services_get_health(
+        connection,
+        project,
+        backend_service,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -351,11 +378,11 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
         "project" => URI.encode_www_form(project),
         "backendService" => URI.encode_www_form(backend_service)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.BackendServiceGroupHealth{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.BackendServiceGroupHealth{}])
   end
 
   @doc """
@@ -365,7 +392,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -383,8 +410,8 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   """
   @spec compute_backend_services_insert(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_backend_services_insert(connection, project, opts \\ []) do
-    optional_params = %{
+  def compute_backend_services_insert(connection, project, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -402,11 +429,11 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
       |> Request.url("/{project}/global/backendServices", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -416,7 +443,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -436,8 +463,8 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   """
   @spec compute_backend_services_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.BackendServiceList.t()} | {:error, Tesla.Env.t()}
-  def compute_backend_services_list(connection, project, opts \\ []) do
-    optional_params = %{
+  def compute_backend_services_list(connection, project, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -457,11 +484,11 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
       |> Request.url("/{project}/global/backendServices", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.BackendServiceList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.BackendServiceList{}])
   end
 
   @doc """
@@ -472,7 +499,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - backend_service (String.t): Name of the BackendService resource to patch.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -490,8 +517,14 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   """
   @spec compute_backend_services_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_backend_services_patch(connection, project, backend_service, opts \\ []) do
-    optional_params = %{
+  def compute_backend_services_patch(
+        connection,
+        project,
+        backend_service,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -510,11 +543,74 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
         "project" => URI.encode_www_form(project),
         "backendService" => URI.encode_www_form(backend_service)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Sets the security policy for the specified backend service.
+
+  ## Parameters
+
+  - connection (GoogleApi.Compute.V1.Connection): Connection to server
+  - project (String.t): Project ID for this request.
+  - backend_service (String.t): Name of the BackendService resource to which the security policy should be set. The name should conform to RFC1035.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :requestId (String.t): An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.  For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.  The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+    - :body (SecurityPolicyReference): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Compute.V1.Model.Operation{}} on success
+  {:error, info} on failure
+  """
+  @spec compute_backend_services_set_security_policy(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+  def compute_backend_services_set_security_policy(
+        connection,
+        project,
+        backend_service,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query,
+      :requestId => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/{project}/global/backendServices/{backendService}/setSecurityPolicy", %{
+        "project" => URI.encode_www_form(project),
+        "backendService" => URI.encode_www_form(backend_service)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -525,7 +621,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - backend_service (String.t): Name of the BackendService resource to update.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -543,8 +639,14 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   """
   @spec compute_backend_services_update(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_backend_services_update(connection, project, backend_service, opts \\ []) do
-    optional_params = %{
+  def compute_backend_services_update(
+        connection,
+        project,
+        backend_service,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -563,10 +665,10 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
         "project" => URI.encode_www_form(project),
         "backendService" => URI.encode_www_form(backend_service)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 end

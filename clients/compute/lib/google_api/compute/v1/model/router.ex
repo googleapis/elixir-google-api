@@ -30,6 +30,7 @@ defmodule GoogleApi.Compute.V1.Model.Router do
   - interfaces ([RouterInterface]): Router interfaces. Each interface requires either one linked resource (e.g. linkedVpnTunnel), or IP address and IP address range (e.g. ipRange), or both. Defaults to: `null`.
   - kind (String.t): [Output Only] Type of resource. Always compute#router for routers. Defaults to: `null`.
   - name (String.t): Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression &#x60;[a-z]([-a-z0-9]*[a-z0-9])?&#x60; which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. Defaults to: `null`.
+  - nats ([RouterNat]): A list of Nat services created in this router. Defaults to: `null`.
   - network (String.t): URI of the network to which this router belongs. Defaults to: `null`.
   - region (String.t): [Output Only] URI of the region where the router resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. Defaults to: `null`.
   - selfLink (String.t): [Output Only] Server-defined URL for the resource. Defaults to: `null`.
@@ -46,6 +47,7 @@ defmodule GoogleApi.Compute.V1.Model.Router do
           :interfaces => list(GoogleApi.Compute.V1.Model.RouterInterface.t()),
           :kind => any(),
           :name => any(),
+          :nats => list(GoogleApi.Compute.V1.Model.RouterNat.t()),
           :network => any(),
           :region => any(),
           :selfLink => any()
@@ -59,6 +61,7 @@ defmodule GoogleApi.Compute.V1.Model.Router do
   field(:interfaces, as: GoogleApi.Compute.V1.Model.RouterInterface, type: :list)
   field(:kind)
   field(:name)
+  field(:nats, as: GoogleApi.Compute.V1.Model.RouterNat, type: :list)
   field(:network)
   field(:region)
   field(:selfLink)

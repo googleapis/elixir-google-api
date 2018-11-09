@@ -24,7 +24,7 @@ defmodule GoogleApi.Calendar.V3.Model.EventOrganizer do
 
   - displayName (String.t): The organizer&#39;s name, if available. Defaults to: `null`.
   - email (String.t): The organizer&#39;s email address, if available. It must be a valid email address as per RFC5322. Defaults to: `null`.
-  - id (String.t): The organizer&#39;s Profile ID, if available. It corresponds to theid field in the People collection of the Google+ API Defaults to: `null`.
+  - id (String.t): The organizer&#39;s Profile ID, if available. It corresponds to the id field in the People collection of the Google+ API Defaults to: `null`.
   - self (boolean()): Whether the organizer corresponds to the calendar on which this copy of the event appears. Read-only. The default is False. Defaults to: `null`.
   """
 

@@ -31,7 +31,7 @@ defmodule GoogleApi.Games.V1.Api.Applications do
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
   - application_id (String.t): The application ID from the Google Play developer console.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -49,8 +49,8 @@ defmodule GoogleApi.Games.V1.Api.Applications do
   """
   @spec games_applications_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.Application.t()} | {:error, Tesla.Env.t()}
-  def games_applications_get(connection, application_id, opts \\ []) do
-    optional_params = %{
+  def games_applications_get(connection, application_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -68,11 +68,11 @@ defmodule GoogleApi.Games.V1.Api.Applications do
       |> Request.url("/applications/{applicationId}", %{
         "applicationId" => URI.encode_www_form(application_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.Application{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.Application{}])
   end
 
   @doc """
@@ -81,7 +81,7 @@ defmodule GoogleApi.Games.V1.Api.Applications do
   ## Parameters
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -89,6 +89,7 @@ defmodule GoogleApi.Games.V1.Api.Applications do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :builtinGameId (String.t): Override used only by built-in games in Play Games application.
 
   ## Returns
 
@@ -97,26 +98,27 @@ defmodule GoogleApi.Games.V1.Api.Applications do
   """
   @spec games_applications_played(Tesla.Env.client(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def games_applications_played(connection, opts \\ []) do
-    optional_params = %{
+  def games_applications_played(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :userIp => :query,
+      :builtinGameId => :query
     }
 
     request =
       Request.new()
       |> Request.method(:post)
       |> Request.url("/applications/played")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -126,7 +128,7 @@ defmodule GoogleApi.Games.V1.Api.Applications do
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
   - application_id (String.t): The application ID from the Google Play developer console.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -142,8 +144,8 @@ defmodule GoogleApi.Games.V1.Api.Applications do
   """
   @spec games_applications_verify(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.ApplicationVerifyResponse.t()} | {:error, Tesla.Env.t()}
-  def games_applications_verify(connection, application_id, opts \\ []) do
-    optional_params = %{
+  def games_applications_verify(connection, application_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -159,10 +161,10 @@ defmodule GoogleApi.Games.V1.Api.Applications do
       |> Request.url("/applications/{applicationId}/verify", %{
         "applicationId" => URI.encode_www_form(application_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.ApplicationVerifyResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.ApplicationVerifyResponse{}])
   end
 end

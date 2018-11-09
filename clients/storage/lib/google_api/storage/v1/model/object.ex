@@ -37,7 +37,7 @@ defmodule GoogleApi.Storage.V1.Model.Object do
   - generation (String.t): The content generation of this object. Used for object versioning. Defaults to: `null`.
   - id (String.t): The ID of the object, including the bucket name, object name, and generation number. Defaults to: `null`.
   - kind (String.t): The kind of item this is. For objects, this is always storage#object. Defaults to: `null`.
-  - kmsKeyName (String.t): Cloud KMS Key used to encrypt this object, if the object is encrypted by such a key. Limited availability; usable only by enabled projects. Defaults to: `null`.
+  - kmsKeyName (String.t): Cloud KMS Key used to encrypt this object, if the object is encrypted by such a key. Defaults to: `null`.
   - md5Hash (String.t): MD5 hash of the data; encoded using base64. For more information about using the MD5 hash, see Hashes and ETags: Best Practices. Defaults to: `null`.
   - mediaLink (String.t): Media download link. Defaults to: `null`.
   - metadata (%{optional(String.t) &#x3D;&gt; String.t}): User-provided metadata, in key/value pairs. Defaults to: `null`.

@@ -23,18 +23,21 @@ defmodule GoogleApi.Classroom.V1.Model.Feed do
   ## Attributes
 
   - courseRosterChangesInfo (CourseRosterChangesInfo): Information about a &#x60;Feed&#x60; with a &#x60;feed_type&#x60; of &#x60;COURSE_ROSTER_CHANGES&#x60;. This field must be specified if &#x60;feed_type&#x60; is &#x60;COURSE_ROSTER_CHANGES&#x60;. Defaults to: `null`.
+  - courseWorkChangesInfo (CourseWorkChangesInfo): Information about a &#x60;Feed&#x60; with a &#x60;feed_type&#x60; of &#x60;COURSE_WORK_CHANGES&#x60;. This field must be specified if &#x60;feed_type&#x60; is &#x60;COURSE_WORK_CHANGES&#x60;. Defaults to: `null`.
   - feedType (String.t): The type of feed. Defaults to: `null`.
-    - Enum - one of [FEED_TYPE_UNSPECIFIED, DOMAIN_ROSTER_CHANGES, COURSE_ROSTER_CHANGES]
+    - Enum - one of [FEED_TYPE_UNSPECIFIED, DOMAIN_ROSTER_CHANGES, COURSE_ROSTER_CHANGES, COURSE_WORK_CHANGES]
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :courseRosterChangesInfo => GoogleApi.Classroom.V1.Model.CourseRosterChangesInfo.t(),
+          :courseWorkChangesInfo => GoogleApi.Classroom.V1.Model.CourseWorkChangesInfo.t(),
           :feedType => any()
         }
 
   field(:courseRosterChangesInfo, as: GoogleApi.Classroom.V1.Model.CourseRosterChangesInfo)
+  field(:courseWorkChangesInfo, as: GoogleApi.Classroom.V1.Model.CourseWorkChangesInfo)
   field(:feedType)
 end
 

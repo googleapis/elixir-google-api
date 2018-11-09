@@ -30,20 +30,18 @@ defmodule GoogleApi.AnalyticsReporting.V4.Api.Reports do
   ## Parameters
 
   - connection (GoogleApi.AnalyticsReporting.V4.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :callback (String.t): JSONP
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :pp (boolean()): Pretty-print response.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :bearer_token (String.t): OAuth bearer token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :body (GetReportsRequest): 
 
   ## Returns
@@ -54,21 +52,19 @@ defmodule GoogleApi.AnalyticsReporting.V4.Api.Reports do
   @spec analyticsreporting_reports_batch_get(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.AnalyticsReporting.V4.Model.GetReportsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def analyticsreporting_reports_batch_get(connection, opts \\ []) do
-    optional_params = %{
-      :"$.xgafv" => :query,
-      :callback => :query,
+  def analyticsreporting_reports_batch_get(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
-      :access_token => :query,
       :key => :query,
-      :quotaUser => :query,
-      :pp => :query,
-      :oauth_token => :query,
-      :bearer_token => :query,
+      :access_token => :query,
       :upload_protocol => :query,
+      :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
       :uploadType => :query,
+      :fields => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
       :body => :body
     }
 
@@ -76,10 +72,12 @@ defmodule GoogleApi.AnalyticsReporting.V4.Api.Reports do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v4/reports:batchGet")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AnalyticsReporting.V4.Model.GetReportsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AnalyticsReporting.V4.Model.GetReportsResponse{}]
+    )
   end
 end

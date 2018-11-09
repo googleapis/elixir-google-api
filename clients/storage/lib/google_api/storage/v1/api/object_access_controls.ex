@@ -33,7 +33,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
   - bucket (String.t): Name of a bucket.
   - object (String.t): Name of the object. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
   - entity (String.t): The entity holding the permission. Can be user-userId, user-emailAddress, group-groupId, group-emailAddress, allUsers, or allAuthenticatedUsers.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -56,8 +56,15 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
           String.t(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
-  def storage_object_access_controls_delete(connection, bucket, object, entity, opts \\ []) do
-    optional_params = %{
+  def storage_object_access_controls_delete(
+        connection,
+        bucket,
+        object,
+        entity,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -77,11 +84,11 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
         "object" => URI.encode_www_form(object),
         "entity" => URI.encode_www_form(entity)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -93,7 +100,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
   - bucket (String.t): Name of a bucket.
   - object (String.t): Name of the object. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
   - entity (String.t): The entity holding the permission. Can be user-userId, user-emailAddress, group-groupId, group-emailAddress, allUsers, or allAuthenticatedUsers.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -116,8 +123,15 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Storage.V1.Model.ObjectAccessControl.t()} | {:error, Tesla.Env.t()}
-  def storage_object_access_controls_get(connection, bucket, object, entity, opts \\ []) do
-    optional_params = %{
+  def storage_object_access_controls_get(
+        connection,
+        bucket,
+        object,
+        entity,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -137,11 +151,11 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
         "object" => URI.encode_www_form(object),
         "entity" => URI.encode_www_form(entity)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.ObjectAccessControl{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Storage.V1.Model.ObjectAccessControl{}])
   end
 
   @doc """
@@ -152,7 +166,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
   - connection (GoogleApi.Storage.V1.Connection): Connection to server
   - bucket (String.t): Name of a bucket.
   - object (String.t): Name of the object. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -175,8 +189,14 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Storage.V1.Model.ObjectAccessControl.t()} | {:error, Tesla.Env.t()}
-  def storage_object_access_controls_insert(connection, bucket, object, opts \\ []) do
-    optional_params = %{
+  def storage_object_access_controls_insert(
+        connection,
+        bucket,
+        object,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -196,11 +216,11 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
         "bucket" => URI.encode_www_form(bucket),
         "object" => URI.encode_www_form(object)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.ObjectAccessControl{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Storage.V1.Model.ObjectAccessControl{}])
   end
 
   @doc """
@@ -211,7 +231,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
   - connection (GoogleApi.Storage.V1.Connection): Connection to server
   - bucket (String.t): Name of a bucket.
   - object (String.t): Name of the object. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -229,8 +249,14 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
   """
   @spec storage_object_access_controls_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Storage.V1.Model.ObjectAccessControls.t()} | {:error, Tesla.Env.t()}
-  def storage_object_access_controls_list(connection, bucket, object, opts \\ []) do
-    optional_params = %{
+  def storage_object_access_controls_list(
+        connection,
+        bucket,
+        object,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -249,11 +275,11 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
         "bucket" => URI.encode_www_form(bucket),
         "object" => URI.encode_www_form(object)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.ObjectAccessControls{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Storage.V1.Model.ObjectAccessControls{}])
   end
 
   @doc """
@@ -265,7 +291,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
   - bucket (String.t): Name of a bucket.
   - object (String.t): Name of the object. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
   - entity (String.t): The entity holding the permission. Can be user-userId, user-emailAddress, group-groupId, group-emailAddress, allUsers, or allAuthenticatedUsers.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -289,8 +315,15 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Storage.V1.Model.ObjectAccessControl.t()} | {:error, Tesla.Env.t()}
-  def storage_object_access_controls_patch(connection, bucket, object, entity, opts \\ []) do
-    optional_params = %{
+  def storage_object_access_controls_patch(
+        connection,
+        bucket,
+        object,
+        entity,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -311,11 +344,11 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
         "object" => URI.encode_www_form(object),
         "entity" => URI.encode_www_form(entity)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.ObjectAccessControl{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Storage.V1.Model.ObjectAccessControl{}])
   end
 
   @doc """
@@ -327,7 +360,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
   - bucket (String.t): Name of a bucket.
   - object (String.t): Name of the object. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
   - entity (String.t): The entity holding the permission. Can be user-userId, user-emailAddress, group-groupId, group-emailAddress, allUsers, or allAuthenticatedUsers.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -351,8 +384,15 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Storage.V1.Model.ObjectAccessControl.t()} | {:error, Tesla.Env.t()}
-  def storage_object_access_controls_update(connection, bucket, object, entity, opts \\ []) do
-    optional_params = %{
+  def storage_object_access_controls_update(
+        connection,
+        bucket,
+        object,
+        entity,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -373,10 +413,10 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
         "object" => URI.encode_www_form(object),
         "entity" => URI.encode_www_form(entity)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Storage.V1.Model.ObjectAccessControl{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Storage.V1.Model.ObjectAccessControl{}])
   end
 end

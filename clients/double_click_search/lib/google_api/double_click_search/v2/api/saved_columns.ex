@@ -32,7 +32,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.SavedColumns do
   - connection (GoogleApi.DoubleClickSearch.V2.Connection): Connection to server
   - agency_id (String.t): DS ID of the agency.
   - advertiser_id (String.t): DS ID of the advertiser.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -54,8 +54,14 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.SavedColumns do
         ) ::
           {:ok, GoogleApi.DoubleClickSearch.V2.Model.SavedColumnList.t()}
           | {:error, Tesla.Env.t()}
-  def doubleclicksearch_saved_columns_list(connection, agency_id, advertiser_id, opts \\ []) do
-    optional_params = %{
+  def doubleclicksearch_saved_columns_list(
+        connection,
+        agency_id,
+        advertiser_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -72,10 +78,10 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.SavedColumns do
         "agencyId" => URI.encode_www_form(agency_id),
         "advertiserId" => URI.encode_www_form(advertiser_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.DoubleClickSearch.V2.Model.SavedColumnList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.DoubleClickSearch.V2.Model.SavedColumnList{}])
   end
 end

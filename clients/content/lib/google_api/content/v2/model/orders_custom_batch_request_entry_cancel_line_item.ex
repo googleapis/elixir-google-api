@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryCancelLineItem
 
   ## Attributes
 
-  - amount (Price): Amount to refund for the cancelation. Optional. If not set, Google will calculate the default based on the price and tax of the items involved. The amount must not be larger than the net amount left on the order. Defaults to: `null`.
+  - amount (Price): Deprecated. Please use amountPretax and amountTax instead. Defaults to: `null`.
   - amountPretax (Price): Amount to refund for the cancelation. Optional. If not set, Google will calculate the default based on the price and tax of the items involved. The amount must not be larger than the net amount left on the order. Defaults to: `null`.
   - amountTax (Price): Tax amount that correspond to cancellation amount in amountPretax. Defaults to: `null`.
   - lineItemId (String.t): The ID of the line item to cancel. Either lineItemId or productId is required. Defaults to: `null`.

@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Genomics.V1.Model.UnexpectedExitStatusEvent do
   @moduledoc """
-  This event is generated when the execution of a container results in a non-zero exit status that was not otherwise ignored.  Execution will continue, but only actions that are flagged as ALWAYS_RUN will be executed: other actions will be skipped.
+  An event generated when the execution of a container results in a non-zero exit status that was not otherwise ignored. Execution will continue, but only actions that are flagged as &#x60;ALWAYS_RUN&#x60; will be executed. Other actions will be skipped.
 
   ## Attributes
 

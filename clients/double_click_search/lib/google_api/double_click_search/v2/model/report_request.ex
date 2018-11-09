@@ -31,7 +31,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.ReportRequest do
   - orderBy ([ReportRequestOrderBy]): Synchronous report only. A list of columns and directions defining sorting to be performed on the report rows. The maximum number of orderings per request is 300. Defaults to: `null`.
   - reportScope (ReportRequestReportScope):  Defaults to: `null`.
   - reportType (String.t): Determines the type of rows that are returned in the report. For example, if you specify reportType: keyword, each row in the report will contain data about a keyword. See the Types of Reports reference for the columns that are available for each type. Defaults to: `null`.
-  - rowCount (integer()): Synchronous report only. The maxinum number of rows to return; additional rows are dropped. Acceptable values are 0 to 10000, inclusive. Defaults to 10000. Defaults to: `10000`.
+  - rowCount (integer()): Synchronous report only. The maximum number of rows to return; additional rows are dropped. Acceptable values are 0 to 10000, inclusive. Defaults to 10000. Defaults to: `10000`.
   - startRow (integer()): Synchronous report only. Zero-based index of the first row to return. Acceptable values are 0 to 50000, inclusive. Defaults to 0. Defaults to: `0`.
   - statisticsCurrency (String.t): Specifies the currency in which monetary will be returned. Possible values are: usd, agency (valid if the report is scoped to agency or lower), advertiser (valid if the report is scoped to * advertiser or lower), or account (valid if the report is scoped to engine account or lower). Defaults to: `null`.
   - timeRange (ReportRequestTimeRange):  Defaults to: `null`.

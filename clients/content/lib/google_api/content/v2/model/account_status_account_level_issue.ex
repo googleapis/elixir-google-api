@@ -25,6 +25,7 @@ defmodule GoogleApi.Content.V2.Model.AccountStatusAccountLevelIssue do
   - country (String.t): Country for which this issue is reported. Defaults to: `null`.
   - destination (String.t): The destination the issue applies to. Defaults to: `null`.
   - detail (String.t): Additional details about the issue. Defaults to: `null`.
+  - documentation (String.t): The URL of a web page to help resolving this issue. Defaults to: `null`.
   - id (String.t): Issue identifier. Defaults to: `null`.
   - severity (String.t): Severity of the issue. Defaults to: `null`.
   - title (String.t): Short description of the issue. Defaults to: `null`.
@@ -36,6 +37,7 @@ defmodule GoogleApi.Content.V2.Model.AccountStatusAccountLevelIssue do
           :country => any(),
           :destination => any(),
           :detail => any(),
+          :documentation => any(),
           :id => any(),
           :severity => any(),
           :title => any()
@@ -44,6 +46,7 @@ defmodule GoogleApi.Content.V2.Model.AccountStatusAccountLevelIssue do
   field(:country)
   field(:destination)
   field(:detail)
+  field(:documentation)
   field(:id)
   field(:severity)
   field(:title)

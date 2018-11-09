@@ -30,7 +30,9 @@ defmodule GoogleApi.Vision.V1.Model.AnnotateImageResponse do
   - imagePropertiesAnnotation (ImageProperties): If present, image properties were extracted successfully. Defaults to: `null`.
   - labelAnnotations ([EntityAnnotation]): If present, label detection has completed successfully. Defaults to: `null`.
   - landmarkAnnotations ([EntityAnnotation]): If present, landmark detection has completed successfully. Defaults to: `null`.
+  - localizedObjectAnnotations ([LocalizedObjectAnnotation]): If present, localized object detection has completed successfully. This will be sorted descending by confidence score. Defaults to: `null`.
   - logoAnnotations ([EntityAnnotation]): If present, logo detection has completed successfully. Defaults to: `null`.
+  - productSearchResults (ProductSearchResults): If present, product search has completed successfully. Defaults to: `null`.
   - safeSearchAnnotation (SafeSearchAnnotation): If present, safe-search annotation has completed successfully. Defaults to: `null`.
   - textAnnotations ([EntityAnnotation]): If present, text (OCR) detection has completed successfully. Defaults to: `null`.
   - webDetection (WebDetection): If present, web detection has completed successfully. Defaults to: `null`.
@@ -47,7 +49,10 @@ defmodule GoogleApi.Vision.V1.Model.AnnotateImageResponse do
           :imagePropertiesAnnotation => GoogleApi.Vision.V1.Model.ImageProperties.t(),
           :labelAnnotations => list(GoogleApi.Vision.V1.Model.EntityAnnotation.t()),
           :landmarkAnnotations => list(GoogleApi.Vision.V1.Model.EntityAnnotation.t()),
+          :localizedObjectAnnotations =>
+            list(GoogleApi.Vision.V1.Model.LocalizedObjectAnnotation.t()),
           :logoAnnotations => list(GoogleApi.Vision.V1.Model.EntityAnnotation.t()),
+          :productSearchResults => GoogleApi.Vision.V1.Model.ProductSearchResults.t(),
           :safeSearchAnnotation => GoogleApi.Vision.V1.Model.SafeSearchAnnotation.t(),
           :textAnnotations => list(GoogleApi.Vision.V1.Model.EntityAnnotation.t()),
           :webDetection => GoogleApi.Vision.V1.Model.WebDetection.t()
@@ -61,7 +66,15 @@ defmodule GoogleApi.Vision.V1.Model.AnnotateImageResponse do
   field(:imagePropertiesAnnotation, as: GoogleApi.Vision.V1.Model.ImageProperties)
   field(:labelAnnotations, as: GoogleApi.Vision.V1.Model.EntityAnnotation, type: :list)
   field(:landmarkAnnotations, as: GoogleApi.Vision.V1.Model.EntityAnnotation, type: :list)
+
+  field(
+    :localizedObjectAnnotations,
+    as: GoogleApi.Vision.V1.Model.LocalizedObjectAnnotation,
+    type: :list
+  )
+
   field(:logoAnnotations, as: GoogleApi.Vision.V1.Model.EntityAnnotation, type: :list)
+  field(:productSearchResults, as: GoogleApi.Vision.V1.Model.ProductSearchResults)
   field(:safeSearchAnnotation, as: GoogleApi.Vision.V1.Model.SafeSearchAnnotation)
   field(:textAnnotations, as: GoogleApi.Vision.V1.Model.EntityAnnotation, type: :list)
   field(:webDetection, as: GoogleApi.Vision.V1.Model.WebDetection)

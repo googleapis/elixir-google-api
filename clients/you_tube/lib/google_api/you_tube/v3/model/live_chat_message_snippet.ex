@@ -46,7 +46,8 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet do
   @type t :: %__MODULE__{
           :authorChannelId => any(),
           :displayMessage => any(),
-          :fanFundingEventDetails => GoogleApi.YouTube.V3.Model.LiveChatFanFundingEventDetails.t(),
+          :fanFundingEventDetails =>
+            GoogleApi.YouTube.V3.Model.LiveChatFanFundingEventDetails.t(),
           :hasDisplayContent => any(),
           :liveChatId => any(),
           :messageDeletedDetails => GoogleApi.YouTube.V3.Model.LiveChatMessageDeletedDetails.t(),

@@ -32,7 +32,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Players do
   - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
   - application_id (String.t): The application ID from the Google Play developer console.
   - player_id (String.t): A player ID. A value of me may be used in place of the authenticated player&#39;s ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,14 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Players do
   """
   @spec games_management_players_hide(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def games_management_players_hide(connection, application_id, player_id, opts \\ []) do
-    optional_params = %{
+  def games_management_players_hide(
+        connection,
+        application_id,
+        player_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -66,11 +72,11 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Players do
         "applicationId" => URI.encode_www_form(application_id),
         "playerId" => URI.encode_www_form(player_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -81,7 +87,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Players do
   - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
   - application_id (String.t): The application ID from the Google Play developer console.
   - player_id (String.t): A player ID. A value of me may be used in place of the authenticated player&#39;s ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -97,8 +103,14 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Players do
   """
   @spec games_management_players_unhide(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def games_management_players_unhide(connection, application_id, player_id, opts \\ []) do
-    optional_params = %{
+  def games_management_players_unhide(
+        connection,
+        application_id,
+        player_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -115,10 +127,10 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Players do
         "applicationId" => URI.encode_www_form(application_id),
         "playerId" => URI.encode_www_form(player_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 end

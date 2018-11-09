@@ -23,8 +23,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContext do
   ## Attributes
 
   - csvExportOptions (ExportContextCsvExportOptions):  Defaults to: `null`.
-  - databases ([String.t]): Databases (for example, guestbook) from which the export is made. If fileType is SQL and no database is specified, all databases are exported. If fileType is CSV, you can optionally specify at most one database to export. If csvExportOptions.selectQuery also specifies the database, this field will be ignored. Defaults to: `null`.
-  - fileType (String.t): The file type for the specified uri. SQL: The file contains SQL statements. CSV: The file contains CSV data. Defaults to: `null`.
+  - databases ([String.t]): Databases to be exported. MySQL instances: If fileType is SQL and no database is specified, all databases are exported, except for the mysql system database. If fileType is CSV, you can specify one database, either by using this property or by using the csvExportOptions.selectQuery property, which takes precedence over this property. PostgreSQL instances: If fileType is SQL, you must specify one database to be exported. A fileType of CSV is not supported for PostgreSQL instances. Defaults to: `null`.
+  - fileType (String.t): The file type for the specified uri. SQL: The file contains SQL statements. CSV: The file contains CSV data. CSV is not supported for PostgreSQL instances. Defaults to: `null`.
   - kind (String.t): This is always sql#exportContext. Defaults to: `null`.
   - sqlExportOptions (ExportContextSqlExportOptions):  Defaults to: `null`.
   - uri (String.t): The path to the file in Google Cloud Storage where the export will be stored. The URI is in the form gs://bucketName/fileName. If the file already exists, the requests succeeds, but the operation fails. If fileType is SQL and the filename ends with .gz, the contents are compressed. Defaults to: `null`.

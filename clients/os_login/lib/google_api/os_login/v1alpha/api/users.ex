@@ -31,18 +31,21 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
 
   - connection (GoogleApi.OSLogin.V1alpha.Connection): Connection to server
   - name (String.t): The unique ID for the user in format &#x60;users/{user}&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :operatingSystemType (String.t): The type of operating system associated with the account.
+    - :projectId (String.t): The project ID of the Google Cloud Platform project.
+    - :systemId (String.t): A system ID for filtering the results of the request.
 
   ## Returns
 
@@ -51,19 +54,22 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
   """
   @spec oslogin_users_get_login_profile(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.OSLogin.V1alpha.Model.LoginProfile.t()} | {:error, Tesla.Env.t()}
-  def oslogin_users_get_login_profile(connection, name, opts \\ []) do
-    optional_params = %{
-      :access_token => :query,
-      :key => :query,
+  def oslogin_users_get_login_profile(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
+      :quotaUser => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
-      :alt => :query
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query,
+      :key => :query,
+      :access_token => :query,
+      :operatingSystemType => :query,
+      :projectId => :query,
+      :systemId => :query
     }
 
     request =
@@ -72,11 +78,11 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
       |> Request.url("/v1alpha/{+name}/loginProfile", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.OSLogin.V1alpha.Model.LoginProfile{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.OSLogin.V1alpha.Model.LoginProfile{}])
   end
 
   @doc """
@@ -86,18 +92,18 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
 
   - connection (GoogleApi.OSLogin.V1alpha.Connection): Connection to server
   - parent (String.t): The unique ID for the user in format &#x60;users/{user}&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :projectId (String.t): The project ID of the Google Cloud Platform project.
     - :body (SshPublicKey): 
 
@@ -109,19 +115,19 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
   @spec oslogin_users_import_ssh_public_key(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.OSLogin.V1alpha.Model.ImportSshPublicKeyResponse.t()}
           | {:error, Tesla.Env.t()}
-  def oslogin_users_import_ssh_public_key(connection, parent, opts \\ []) do
-    optional_params = %{
-      :access_token => :query,
-      :key => :query,
+  def oslogin_users_import_ssh_public_key(connection, parent, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
+      :quotaUser => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
+      :key => :query,
+      :access_token => :query,
       :projectId => :query,
       :body => :body
     }
@@ -132,11 +138,13 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
       |> Request.url("/v1alpha/{+parent}:importSshPublicKey", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.OSLogin.V1alpha.Model.ImportSshPublicKeyResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.OSLogin.V1alpha.Model.ImportSshPublicKeyResponse{}]
+    )
   end
 
   @doc """
@@ -146,18 +154,18 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
 
   - connection (GoogleApi.OSLogin.V1alpha.Connection): Connection to server
   - name (String.t): A reference to the POSIX account to update. POSIX accounts are identified by the project ID they are associated with. A reference to the POSIX account is in format &#x60;users/{user}/projects/{project}&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :operatingSystemType (String.t): The type of operating system associated with the account.
 
   ## Returns
@@ -167,19 +175,19 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
   """
   @spec oslogin_users_projects_delete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.OSLogin.V1alpha.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def oslogin_users_projects_delete(connection, name, opts \\ []) do
-    optional_params = %{
-      :access_token => :query,
-      :key => :query,
+  def oslogin_users_projects_delete(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
+      :quotaUser => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
+      :key => :query,
+      :access_token => :query,
       :operatingSystemType => :query
     }
 
@@ -189,11 +197,11 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
       |> Request.url("/v1alpha/{+name}", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.OSLogin.V1alpha.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.OSLogin.V1alpha.Model.Empty{}])
   end
 
   @doc """
@@ -203,18 +211,18 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
 
   - connection (GoogleApi.OSLogin.V1alpha.Connection): Connection to server
   - name (String.t): The fingerprint of the public key to retrieve. Public keys are identified by their SHA-256 fingerprint. The fingerprint of the public key is in format &#x60;users/{user}/sshPublicKeys/{fingerprint}&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
 
   ## Returns
 
@@ -223,19 +231,19 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
   """
   @spec oslogin_users_ssh_public_keys_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.OSLogin.V1alpha.Model.SshPublicKey.t()} | {:error, Tesla.Env.t()}
-  def oslogin_users_ssh_public_keys_get(connection, name, opts \\ []) do
-    optional_params = %{
-      :access_token => :query,
-      :key => :query,
+  def oslogin_users_ssh_public_keys_get(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
+      :quotaUser => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
-      :alt => :query
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query,
+      :key => :query,
+      :access_token => :query
     }
 
     request =
@@ -244,11 +252,11 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
       |> Request.url("/v1alpha/{+name}", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.OSLogin.V1alpha.Model.SshPublicKey{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.OSLogin.V1alpha.Model.SshPublicKey{}])
   end
 
   @doc """
@@ -258,18 +266,18 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
 
   - connection (GoogleApi.OSLogin.V1alpha.Connection): Connection to server
   - name (String.t): The fingerprint of the public key to update. Public keys are identified by their SHA-256 fingerprint. The fingerprint of the public key is in format &#x60;users/{user}/sshPublicKeys/{fingerprint}&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :updateMask (String.t): Mask to control which fields get updated. Updates all if not present.
     - :body (SshPublicKey): 
 
@@ -280,19 +288,19 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
   """
   @spec oslogin_users_ssh_public_keys_patch(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.OSLogin.V1alpha.Model.SshPublicKey.t()} | {:error, Tesla.Env.t()}
-  def oslogin_users_ssh_public_keys_patch(connection, name, opts \\ []) do
-    optional_params = %{
-      :access_token => :query,
-      :key => :query,
+  def oslogin_users_ssh_public_keys_patch(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
+      :quotaUser => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
+      :key => :query,
+      :access_token => :query,
       :updateMask => :query,
       :body => :body
     }
@@ -303,10 +311,10 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
       |> Request.url("/v1alpha/{+name}", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.OSLogin.V1alpha.Model.SshPublicKey{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.OSLogin.V1alpha.Model.SshPublicKey{}])
   end
 end
