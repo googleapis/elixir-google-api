@@ -22,7 +22,6 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PublisherProfileApiProto do
 
   ## Attributes
 
-  - accountId (String.t): Deprecated: use the seller.account_id. The account id of the seller. Defaults to: `null`.
   - audience (String.t): Publisher provided info on its audience. Defaults to: `null`.
   - buyerPitchStatement (String.t): A pitch statement for the buyer Defaults to: `null`.
   - directContact (String.t): Direct contact for the publisher profile. Defaults to: `null`.
@@ -50,7 +49,6 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PublisherProfileApiProto do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => any(),
           :audience => any(),
           :buyerPitchStatement => any(),
           :directContact => any(),
@@ -76,7 +74,6 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PublisherProfileApiProto do
           :topHeadlines => list(any())
         }
 
-  field(:accountId)
   field(:audience)
   field(:buyerPitchStatement)
   field(:directContact)

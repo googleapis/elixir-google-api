@@ -33,7 +33,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PerformanceReport do
   - account_id (String.t): The account id to get the reports.
   - end_date_time (String.t): The end time of the report in ISO 8601 timestamp format using UTC.
   - start_date_time (String.t): The start time of the report in ISO 8601 timestamp format using UTC.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -63,9 +63,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PerformanceReport do
         account_id,
         end_date_time,
         start_date_time,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -84,10 +85,12 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PerformanceReport do
       |> Request.add_param(:query, :accountId, account_id)
       |> Request.add_param(:query, :endDateTime, end_date_time)
       |> Request.add_param(:query, :startDateTime, start_date_time)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V14.Model.PerformanceReportList{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AdExchangeBuyer.V14.Model.PerformanceReportList{}]
+    )
   end
 end

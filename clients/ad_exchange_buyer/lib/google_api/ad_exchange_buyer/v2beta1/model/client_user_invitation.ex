@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ClientUserInvitation do
   @moduledoc """
-  An invitation for a new client user to get access to the Ad Exchange Buyer UI. All fields are required unless otherwise specified.
+  An invitation for a new client user to get access to the Authorized Buyers UI. All fields are required unless otherwise specified.
 
   ## Attributes
 

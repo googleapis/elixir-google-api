@@ -33,7 +33,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
   - account_id (integer()): The id for the account that will serve this creative.
   - buyer_creative_id (String.t): The buyer-specific id for this creative.
   - deal_id (String.t): The id of the deal id to associate with this creative.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -59,9 +59,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
         account_id,
         buyer_creative_id,
         deal_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -79,11 +80,11 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
         "buyerCreativeId" => URI.encode_www_form(buyer_creative_id),
         "dealId" => URI.encode_www_form(deal_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -94,7 +95,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
   - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
   - account_id (integer()): The id for the account that will serve this creative.
   - buyer_creative_id (String.t): The buyer-specific id for this creative.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -110,8 +111,14 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
   """
   @spec adexchangebuyer_creatives_get(Tesla.Env.client(), integer(), String.t(), keyword()) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Creative.t()} | {:error, Tesla.Env.t()}
-  def adexchangebuyer_creatives_get(connection, account_id, buyer_creative_id, opts \\ []) do
-    optional_params = %{
+  def adexchangebuyer_creatives_get(
+        connection,
+        account_id,
+        buyer_creative_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -128,11 +135,11 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
         "accountId" => account_id,
         "buyerCreativeId" => URI.encode_www_form(buyer_creative_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V14.Model.Creative{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V14.Model.Creative{}])
   end
 
   @doc """
@@ -141,7 +148,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
   ## Parameters
 
   - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -158,8 +165,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
   """
   @spec adexchangebuyer_creatives_insert(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Creative.t()} | {:error, Tesla.Env.t()}
-  def adexchangebuyer_creatives_insert(connection, opts \\ []) do
-    optional_params = %{
+  def adexchangebuyer_creatives_insert(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -174,11 +181,11 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/creatives")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V14.Model.Creative{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V14.Model.Creative{}])
   end
 
   @doc """
@@ -187,7 +194,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
   ## Parameters
 
   - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -209,8 +216,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
   """
   @spec adexchangebuyer_creatives_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.CreativesList.t()} | {:error, Tesla.Env.t()}
-  def adexchangebuyer_creatives_list(connection, opts \\ []) do
-    optional_params = %{
+  def adexchangebuyer_creatives_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -230,11 +237,11 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/creatives")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V14.Model.CreativesList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V14.Model.CreativesList{}])
   end
 
   @doc """
@@ -245,7 +252,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
   - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
   - account_id (integer()): The id for the account that will serve this creative.
   - buyer_creative_id (String.t): The buyer-specific id for this creative.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -261,8 +268,14 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
   """
   @spec adexchangebuyer_creatives_list_deals(Tesla.Env.client(), integer(), String.t(), keyword()) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.CreativeDealIds.t()} | {:error, Tesla.Env.t()}
-  def adexchangebuyer_creatives_list_deals(connection, account_id, buyer_creative_id, opts \\ []) do
-    optional_params = %{
+  def adexchangebuyer_creatives_list_deals(
+        connection,
+        account_id,
+        buyer_creative_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -279,11 +292,11 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
         "accountId" => account_id,
         "buyerCreativeId" => URI.encode_www_form(buyer_creative_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdExchangeBuyer.V14.Model.CreativeDealIds{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdExchangeBuyer.V14.Model.CreativeDealIds{}])
   end
 
   @doc """
@@ -295,7 +308,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
   - account_id (integer()): The id for the account that will serve this creative.
   - buyer_creative_id (String.t): The buyer-specific id for this creative.
   - deal_id (String.t): The id of the deal id to disassociate with this creative.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -321,9 +334,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
         account_id,
         buyer_creative_id,
         deal_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -341,10 +355,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
         "buyerCreativeId" => URI.encode_www_form(buyer_creative_id),
         "dealId" => URI.encode_www_form(deal_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 end

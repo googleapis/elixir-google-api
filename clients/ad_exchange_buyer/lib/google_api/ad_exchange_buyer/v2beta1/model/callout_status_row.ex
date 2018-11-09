@@ -22,7 +22,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.CalloutStatusRow do
 
   ## Attributes
 
-  - calloutStatusId (integer()): The ID of the callout status. See [callout-status-codes](https://developers.google.com/ad-exchange/rtb/downloads/callout-status-codes). Defaults to: `null`.
+  - calloutStatusId (integer()): The ID of the callout status. See [callout-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/callout-status-codes). Defaults to: `null`.
   - impressionCount (MetricValue): The number of impressions for which there was a bid request or bid response with the specified callout status. Defaults to: `null`.
   - rowDimensions (RowDimensions): The values of all dimensions associated with metric values in this row. Defaults to: `null`.
   """

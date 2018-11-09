@@ -18,24 +18,26 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet do
   @moduledoc """
-  A set of filters that is applied to a request for data. Within a filter set, an AND operation is performed across the filters represented by each field. An OR operation is performed across the filters represented by the multiple values of a repeated field. E.g. \&quot;format&#x3D;VIDEO AND deal_id&#x3D;12 AND (seller_network_id&#x3D;34 OR seller_network_id&#x3D;56)\&quot;
+  A set of filters that is applied to a request for data. Within a filter set, an AND operation is performed across the filters represented by each field. An OR operation is performed across the filters represented by the multiple values of a repeated field, e.g., \&quot;format&#x3D;VIDEO AND deal_id&#x3D;12 AND (seller_network_id&#x3D;34 OR seller_network_id&#x3D;56)\&quot;.
 
   ## Attributes
 
   - absoluteDateRange (AbsoluteDateRange): An absolute date range, defined by a start date and an end date. Interpreted relative to Pacific time zone. Defaults to: `null`.
-  - creativeId (String.t): The ID of the creative on which to filter; optional. This field may be set only for a filter set that accesses account-level troubleshooting data, i.e. one whose name matches the &#x60;bidders/*/accounts/*/filterSets/*&#x60; pattern. Defaults to: `null`.
-  - dealId (String.t): The ID of the deal on which to filter; optional. This field may be set only for a filter set that accesses account-level troubleshooting data, i.e. one whose name matches the &#x60;bidders/*/accounts/*/filterSets/*&#x60; pattern. Defaults to: `null`.
+  - breakdownDimensions ([String.t]): The set of dimensions along which to break down the response; may be empty. If multiple dimensions are requested, the breakdown is along the Cartesian product of the requested dimensions. Defaults to: `null`.
+    - Enum - one of 
+  - creativeId (String.t): The ID of the creative on which to filter; optional. This field may be set only for a filter set that accesses account-level troubleshooting data, i.e., one whose name matches the &#x60;bidders/*/accounts/*/filterSets/*&#x60; pattern. Defaults to: `null`.
+  - dealId (String.t): The ID of the deal on which to filter; optional. This field may be set only for a filter set that accesses account-level troubleshooting data, i.e., one whose name matches the &#x60;bidders/*/accounts/*/filterSets/*&#x60; pattern. Defaults to: `null`.
   - environment (String.t): The environment on which to filter; optional. Defaults to: `null`.
     - Enum - one of [ENVIRONMENT_UNSPECIFIED, WEB, APP]
-  - formats ([String.t]): The list of formats on which to filter; may be empty. The filters represented by multiple formats are ORed together (i.e. if non-empty, results must match any one of the formats). Defaults to: `null`.
+  - formats ([String.t]): The list of formats on which to filter; may be empty. The filters represented by multiple formats are ORed together (i.e., if non-empty, results must match any one of the formats). Defaults to: `null`.
     - Enum - one of 
   - name (String.t): A user-defined name of the filter set. Filter set names must be unique globally and match one of the patterns:  - &#x60;bidders/*/filterSets/*&#x60; (for accessing bidder-level troubleshooting data) - &#x60;bidders/*/accounts/*/filterSets/*&#x60; (for accessing account-level troubleshooting data)  This field is required in create operations. Defaults to: `null`.
-  - platforms ([String.t]): The list of platforms on which to filter; may be empty. The filters represented by multiple platforms are ORed together (i.e. if non-empty, results must match any one of the platforms). Defaults to: `null`.
+  - platforms ([String.t]): The list of platforms on which to filter; may be empty. The filters represented by multiple platforms are ORed together (i.e., if non-empty, results must match any one of the platforms). Defaults to: `null`.
     - Enum - one of 
-  - publisherIdentifiers ([String.t]): For Exchange Bidding buyers only. The list of publisher identifiers on which to filter; may be empty. The filters represented by multiple publisher identifiers are ORed together. Defaults to: `null`.
+  - publisherIdentifiers ([String.t]): For Open Bidding partners only. The list of publisher identifiers on which to filter; may be empty. The filters represented by multiple publisher identifiers are ORed together. Defaults to: `null`.
   - realtimeTimeRange (RealtimeTimeRange): An open-ended realtime time range, defined by the aggregation start timestamp. Defaults to: `null`.
   - relativeDateRange (RelativeDateRange): A relative date range, defined by an offset from today and a duration. Interpreted relative to Pacific time zone. Defaults to: `null`.
-  - sellerNetworkIds ([integer()]): For Ad Exchange buyers only. The list of IDs of the seller (publisher) networks on which to filter; may be empty. The filters represented by multiple seller network IDs are ORed together (i.e. if non-empty, results must match any one of the publisher networks). See [seller-network-ids](https://developers.google.com/ad-exchange/rtb/downloads/seller-network-ids) file for the set of existing seller network IDs. Defaults to: `null`.
+  - sellerNetworkIds ([integer()]): For Authorized Buyers only. The list of IDs of the seller (publisher) networks on which to filter; may be empty. The filters represented by multiple seller network IDs are ORed together (i.e., if non-empty, results must match any one of the publisher networks). See [seller-network-ids](https://developers.google.com/authorized-buyers/rtb/downloads/seller-network-ids) file for the set of existing seller network IDs. Defaults to: `null`.
   - timeSeriesGranularity (String.t): The granularity of time intervals if a time series breakdown is desired; optional. Defaults to: `null`.
     - Enum - one of [TIME_SERIES_GRANULARITY_UNSPECIFIED, HOURLY, DAILY]
   """
@@ -44,6 +46,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet do
 
   @type t :: %__MODULE__{
           :absoluteDateRange => GoogleApi.AdExchangeBuyer.V2beta1.Model.AbsoluteDateRange.t(),
+          :breakdownDimensions => list(any()),
           :creativeId => any(),
           :dealId => any(),
           :environment => any(),
@@ -58,6 +61,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet do
         }
 
   field(:absoluteDateRange, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.AbsoluteDateRange)
+  field(:breakdownDimensions, type: :list)
   field(:creativeId)
   field(:dealId)
   field(:environment)
