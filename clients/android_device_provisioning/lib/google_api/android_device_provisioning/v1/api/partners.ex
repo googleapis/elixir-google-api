@@ -25,24 +25,24 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Creates a customer for zero-touch enrollment. After the method returns successfully, admin and owner roles can manage devices and EMM configs by calling API methods or using their zero-touch enrollment portal. The API doesn&#39;t notify the customer that they have access.
+  Creates a customer for zero-touch enrollment. After the method returns successfully, admin and owner roles can manage devices and EMM configs by calling API methods or using their zero-touch enrollment portal. The customer receives an email that welcomes them to zero-touch enrollment and explains how to sign into the portal.
 
   ## Parameters
 
   - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
   - parent (String.t): Required. The parent resource ID in the format &#x60;partners/[PARTNER_ID]&#x60; that identifies the reseller.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (CreateCustomerRequest): 
 
   ## Returns
@@ -57,19 +57,24 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
         ) ::
           {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Company.t()}
           | {:error, Tesla.Env.t()}
-  def androiddeviceprovisioning_partners_customers_create(connection, parent, opts \\ []) do
-    optional_params = %{
+  def androiddeviceprovisioning_partners_customers_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -79,11 +84,11 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
       |> Request.url("/v1/{+parent}/customers", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.Company{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.Company{}])
   end
 
   @doc """
@@ -93,18 +98,20 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
 
   - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
   - partner_id (String.t): Required. The ID of the reseller partner.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :pageToken (String.t): A token identifying a page of results returned by the server.
+    - :pageSize (integer()): The maximum number of results to be returned. If not specified or 0, all the records are returned.
 
   ## Returns
 
@@ -118,19 +125,26 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
         ) ::
           {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.ListCustomersResponse.t()}
           | {:error, Tesla.Env.t()}
-  def androiddeviceprovisioning_partners_customers_list(connection, partner_id, opts \\ []) do
-    optional_params = %{
+  def androiddeviceprovisioning_partners_customers_list(
+        connection,
+        partner_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query
+      :pageToken => :query,
+      :pageSize => :query
     }
 
     request =
@@ -139,12 +153,12 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
       |> Request.url("/v1/partners/{+partnerId}/customers", %{
         "partnerId" => URI.encode_www_form(partner_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.ListCustomersResponse{}
+      opts ++ [struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.ListCustomersResponse{}]
     )
   end
 
@@ -155,18 +169,18 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
 
   - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
   - partner_id (String.t): Required. The ID of the reseller partner.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (ClaimDeviceRequest): 
 
   ## Returns
@@ -181,19 +195,24 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
         ) ::
           {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.ClaimDeviceResponse.t()}
           | {:error, Tesla.Env.t()}
-  def androiddeviceprovisioning_partners_devices_claim(connection, partner_id, opts \\ []) do
-    optional_params = %{
+  def androiddeviceprovisioning_partners_devices_claim(
+        connection,
+        partner_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -203,12 +222,12 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
       |> Request.url("/v1/partners/{+partnerId}/devices:claim", %{
         "partnerId" => URI.encode_www_form(partner_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.ClaimDeviceResponse{}
+      opts ++ [struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.ClaimDeviceResponse{}]
     )
   end
 
@@ -219,18 +238,18 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
 
   - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
   - partner_id (String.t): Required. The ID of the reseller partner.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (ClaimDevicesRequest): 
 
   ## Returns
@@ -245,19 +264,24 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
         ) ::
           {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation.t()}
           | {:error, Tesla.Env.t()}
-  def androiddeviceprovisioning_partners_devices_claim_async(connection, partner_id, opts \\ []) do
-    optional_params = %{
+  def androiddeviceprovisioning_partners_devices_claim_async(
+        connection,
+        partner_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -267,11 +291,13 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
       |> Request.url("/v1/partners/{+partnerId}/devices:claimAsync", %{
         "partnerId" => URI.encode_www_form(partner_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation{}]
+    )
   end
 
   @doc """
@@ -281,18 +307,18 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
 
   - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
   - partner_id (String.t): Required. The ID of the reseller partner.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (FindDevicesByDeviceIdentifierRequest): 
 
   ## Returns
@@ -311,20 +337,21 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
   def androiddeviceprovisioning_partners_devices_find_by_identifier(
         connection,
         partner_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -334,13 +361,16 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
       |> Request.url("/v1/partners/{+partnerId}/devices:findByIdentifier", %{
         "partnerId" => URI.encode_www_form(partner_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct:
-        %GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse{}
+      opts ++
+        [
+          struct:
+            %GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse{}
+        ]
     )
   end
 
@@ -351,18 +381,18 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
 
   - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
   - partner_id (String.t): Required. The ID of the reseller partner.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (FindDevicesByOwnerRequest): 
 
   ## Returns
@@ -377,19 +407,24 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
         ) ::
           {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByOwnerResponse.t()}
           | {:error, Tesla.Env.t()}
-  def androiddeviceprovisioning_partners_devices_find_by_owner(connection, partner_id, opts \\ []) do
-    optional_params = %{
+  def androiddeviceprovisioning_partners_devices_find_by_owner(
+        connection,
+        partner_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -399,12 +434,12 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
       |> Request.url("/v1/partners/{+partnerId}/devices:findByOwner", %{
         "partnerId" => URI.encode_www_form(partner_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByOwnerResponse{}
+      opts ++ [struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByOwnerResponse{}]
     )
   end
 
@@ -416,18 +451,18 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
   - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
   - metadata_owner_id (String.t): Required. The owner of the newly set metadata. Set this to the partner ID.
   - device_id (String.t): Required. The ID of the reseller partner.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (UpdateDeviceMetadataRequest): 
 
   ## Returns
@@ -447,20 +482,21 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
         connection,
         metadata_owner_id,
         device_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -471,11 +507,13 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
         "metadataOwnerId" => URI.encode_www_form(metadata_owner_id),
         "deviceId" => URI.encode_www_form(device_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata{}]
+    )
   end
 
   @doc """
@@ -485,18 +523,18 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
 
   - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
   - partner_id (String.t): Required. The ID of the reseller partner.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (UnclaimDeviceRequest): 
 
   ## Returns
@@ -510,19 +548,24 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def androiddeviceprovisioning_partners_devices_unclaim(connection, partner_id, opts \\ []) do
-    optional_params = %{
+  def androiddeviceprovisioning_partners_devices_unclaim(
+        connection,
+        partner_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -532,11 +575,11 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
       |> Request.url("/v1/partners/{+partnerId}/devices:unclaim", %{
         "partnerId" => URI.encode_www_form(partner_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.Empty{}])
   end
 
   @doc """
@@ -546,18 +589,18 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
 
   - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
   - partner_id (String.t): Required. The reseller partner ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (UnclaimDevicesRequest): 
 
   ## Returns
@@ -572,19 +615,24 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
         ) ::
           {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation.t()}
           | {:error, Tesla.Env.t()}
-  def androiddeviceprovisioning_partners_devices_unclaim_async(connection, partner_id, opts \\ []) do
-    optional_params = %{
+  def androiddeviceprovisioning_partners_devices_unclaim_async(
+        connection,
+        partner_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -594,11 +642,13 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
       |> Request.url("/v1/partners/{+partnerId}/devices:unclaimAsync", %{
         "partnerId" => URI.encode_www_form(partner_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation{}]
+    )
   end
 
   @doc """
@@ -608,18 +658,18 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
 
   - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
   - partner_id (String.t): Required. The reseller partner ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (UpdateDeviceMetadataInBatchRequest): 
 
   ## Returns
@@ -637,20 +687,21 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
   def androiddeviceprovisioning_partners_devices_update_metadata_async(
         connection,
         partner_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -660,10 +711,151 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
       |> Request.url("/v1/partners/{+partnerId}/devices:updateMetadataAsync", %{
         "partnerId" => URI.encode_www_form(partner_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation{}]
+    )
+  end
+
+  @doc """
+  Lists the customers of the vendor.
+
+  ## Parameters
+
+  - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
+  - parent (String.t): Required. The resource name in the format &#x60;partners/[PARTNER_ID]/vendors/[VENDOR_ID]&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :pageToken (String.t): A token identifying a page of results returned by the server.
+    - :pageSize (integer()): The maximum number of results to be returned.
+
+  ## Returns
+
+  {:ok, %GoogleApi.AndroidDeviceProvisioning.V1.Model.ListVendorCustomersResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec androiddeviceprovisioning_partners_vendors_customers_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.ListVendorCustomersResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def androiddeviceprovisioning_partners_vendors_customers_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :pageToken => :query,
+      :pageSize => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+parent}/customers", %{
+        "parent" => URI.encode_www_form(parent)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.ListVendorCustomersResponse{}]
+    )
+  end
+
+  @doc """
+  Lists the vendors of the partner.
+
+  ## Parameters
+
+  - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
+  - parent (String.t): Required. The resource name in the format &#x60;partners/[PARTNER_ID]&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :pageToken (String.t): A token identifying a page of results returned by the server.
+    - :pageSize (integer()): The maximum number of results to be returned.
+
+  ## Returns
+
+  {:ok, %GoogleApi.AndroidDeviceProvisioning.V1.Model.ListVendorsResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec androiddeviceprovisioning_partners_vendors_list(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.ListVendorsResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def androiddeviceprovisioning_partners_vendors_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :pageToken => :query,
+      :pageSize => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+parent}/vendors", %{
+        "parent" => URI.encode_www_form(parent)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.ListVendorsResponse{}]
+    )
   end
 end
