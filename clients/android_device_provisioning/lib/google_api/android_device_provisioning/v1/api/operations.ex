@@ -16,21 +16,26 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Logging.V2.Api.MonitoredResourceDescriptors do
+defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Operations do
   @moduledoc """
-  API calls for all endpoints tagged `MonitoredResourceDescriptors`.
+  API calls for all endpoints tagged `Operations`.
   """
 
-  alias GoogleApi.Logging.V2.Connection
+  alias GoogleApi.AndroidDeviceProvisioning.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Lists the descriptors for monitored resource types used by Logging.
+  Gets the latest state of a long-running operation.  Clients can use this method to poll the operation result at intervals as recommended by the API service.
 
   ## Parameters
 
-  - connection (GoogleApi.Logging.V2.Connection): Connection to server
+  - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
+  - name (String.t): The name of the operation resource.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
@@ -38,48 +43,47 @@ defmodule GoogleApi.Logging.V2.Api.MonitoredResourceDescriptors do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :pageToken (String.t): Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
-    - :pageSize (integer()): Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of nextPageToken in the response indicates that more results might be available.
 
   ## Returns
 
-  {:ok, %GoogleApi.Logging.V2.Model.ListMonitoredResourceDescriptorsResponse{}} on success
+  {:ok, %GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation{}} on success
   {:error, info} on failure
   """
-  @spec logging_monitored_resource_descriptors_list(Tesla.Env.client(), keyword()) ::
-          {:ok, GoogleApi.Logging.V2.Model.ListMonitoredResourceDescriptorsResponse.t()}
+  @spec androiddeviceprovisioning_operations_get(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation.t()}
           | {:error, Tesla.Env.t()}
-  def logging_monitored_resource_descriptors_list(connection, optional_params \\ [], opts \\ []) do
+  def androiddeviceprovisioning_operations_get(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
       :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :fields => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/monitoredResourceDescriptors")
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode_www_form(name)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.Logging.V2.Model.ListMonitoredResourceDescriptorsResponse{}]
+      opts ++ [struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation{}]
     )
   end
 end
