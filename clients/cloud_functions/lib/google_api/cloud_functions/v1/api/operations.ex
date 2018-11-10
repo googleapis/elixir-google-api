@@ -32,6 +32,8 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Operations do
   - connection (GoogleApi.CloudFunctions.V1.Connection): Connection to server
   - operations_id (String.t): Part of &#x60;name&#x60;. The name of the operation resource.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :callback (String.t): JSONP
@@ -41,8 +43,6 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Operations do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -53,6 +53,8 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Operations do
           {:ok, GoogleApi.CloudFunctions.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def cloudfunctions_operations_get(connection, operations_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :uploadType => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
       :oauth_token => :query,
       :callback => :query,
@@ -61,9 +63,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Operations do
       :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
-      :quotaUser => :query,
-      :fields => :query,
-      :uploadType => :query
+      :quotaUser => :query
     }
 
     request =
@@ -86,6 +86,8 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Operations do
 
   - connection (GoogleApi.CloudFunctions.V1.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :callback (String.t): JSONP
@@ -95,12 +97,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Operations do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :filter (String.t): The standard list filter.
     - :name (String.t): The name of the operation&#39;s parent resource.
     - :pageToken (String.t): The standard list page token.
     - :pageSize (integer()): The standard list page size.
+    - :filter (String.t): The standard list filter.
 
   ## Returns
 
@@ -112,6 +112,8 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Operations do
           | {:error, Tesla.Env.t()}
   def cloudfunctions_operations_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :uploadType => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
       :oauth_token => :query,
       :callback => :query,
@@ -121,12 +123,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Operations do
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :filter => :query,
       :name => :query,
       :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :filter => :query
     }
 
     request =
