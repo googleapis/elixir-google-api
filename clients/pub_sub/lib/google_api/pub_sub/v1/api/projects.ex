@@ -33,6 +33,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;name&#x60;. Optional user-provided name for this snapshot. If the name is not provided in the request, the server will assign a random name for this snapshot on the same project as the subscription. Note that for REST API requests, you must specify a name.  See the &lt;a href&#x3D;\&quot;/pubsub/docs/admin#resource_names\&quot;&gt;resource name rules&lt;/a&gt;. Format is &#x60;projects/{project}/snapshots/{snap}&#x60;.
   - snapshots_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -41,9 +44,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :body (CreateSnapshotRequest): 
 
   ## Returns
@@ -61,6 +61,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -69,9 +72,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :body => :body
     }
 
@@ -98,6 +98,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;snapshot&#x60;. The name of the snapshot to delete. Format is &#x60;projects/{project}/snapshots/{snap}&#x60;.
   - snapshots_id (String.t): Part of &#x60;snapshot&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -106,9 +109,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
 
   ## Returns
 
@@ -125,6 +125,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -132,10 +135,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :callback => :query,
       :alt => :query,
       :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query
+      :access_token => :query
     }
 
     request =
@@ -161,6 +161,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;snapshot&#x60;. The name of the snapshot to get. Format is &#x60;projects/{project}/snapshots/{snap}&#x60;.
   - snapshots_id (String.t): Part of &#x60;snapshot&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -169,9 +172,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
 
   ## Returns
 
@@ -188,6 +188,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -195,10 +198,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :callback => :query,
       :alt => :query,
       :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query
+      :access_token => :query
     }
 
     request =
@@ -224,6 +224,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   - snapshots_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -232,9 +235,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
 
   ## Returns
 
@@ -255,6 +255,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -262,10 +265,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :callback => :query,
       :alt => :query,
       :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query
+      :access_token => :query
     }
 
     request =
@@ -290,6 +290,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;project&#x60;. The name of the project in which to list snapshots. Format is &#x60;projects/{project-id}&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -298,9 +301,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :pageToken (String.t): The value returned by the last &#x60;ListSnapshotsResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListSnapshots&#x60; call, and that the system should return the next page of data.
     - :pageSize (integer()): Maximum number of snapshots to return.
 
@@ -313,6 +313,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           {:ok, GoogleApi.PubSub.V1.Model.ListSnapshotsResponse.t()} | {:error, Tesla.Env.t()}
   def pubsub_projects_snapshots_list(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -321,9 +324,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :pageToken => :query,
       :pageSize => :query
     }
@@ -350,6 +350,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;snapshot.name&#x60;. The name of the snapshot.
   - snapshots_id (String.t): Part of &#x60;snapshot.name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -358,9 +361,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :body (UpdateSnapshotRequest): 
 
   ## Returns
@@ -378,6 +378,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -386,9 +389,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :body => :body
     }
 
@@ -415,6 +415,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   - snapshots_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -423,9 +426,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :body (SetIamPolicyRequest): 
 
   ## Returns
@@ -447,6 +447,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -455,9 +458,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :body => :body
     }
 
@@ -484,6 +484,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   - snapshots_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -492,9 +495,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :body (TestIamPermissionsRequest): 
 
   ## Returns
@@ -518,6 +518,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -526,9 +529,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :body => :body
     }
 
@@ -555,6 +555,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;subscription&#x60;. The subscription whose message is being acknowledged. Format is &#x60;projects/{project}/subscriptions/{sub}&#x60;.
   - subscriptions_id (String.t): Part of &#x60;subscription&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -563,9 +566,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :body (AcknowledgeRequest): 
 
   ## Returns
@@ -587,6 +587,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -595,9 +598,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :body => :body
     }
 
@@ -624,6 +624,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;name&#x60;. The name of the subscription. It must have the format &#x60;\&quot;projects/{project}/subscriptions/{subscription}\&quot;&#x60;. &#x60;{subscription}&#x60; must start with a letter, and contain only letters (&#x60;[A-Za-z]&#x60;), numbers (&#x60;[0-9]&#x60;), dashes (&#x60;-&#x60;), underscores (&#x60;_&#x60;), periods (&#x60;.&#x60;), tildes (&#x60;~&#x60;), plus (&#x60;+&#x60;) or percent signs (&#x60;%&#x60;). It must be between 3 and 255 characters in length, and it must not start with &#x60;\&quot;goog\&quot;&#x60;.
   - subscriptions_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -632,9 +635,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :body (Subscription): 
 
   ## Returns
@@ -656,6 +656,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -664,9 +667,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :body => :body
     }
 
@@ -693,6 +693,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;subscription&#x60;. The subscription to delete. Format is &#x60;projects/{project}/subscriptions/{sub}&#x60;.
   - subscriptions_id (String.t): Part of &#x60;subscription&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -701,9 +704,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
 
   ## Returns
 
@@ -724,6 +724,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -731,10 +734,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :callback => :query,
       :alt => :query,
       :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query
+      :access_token => :query
     }
 
     request =
@@ -760,6 +760,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;subscription&#x60;. The name of the subscription to get. Format is &#x60;projects/{project}/subscriptions/{sub}&#x60;.
   - subscriptions_id (String.t): Part of &#x60;subscription&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -768,9 +771,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
 
   ## Returns
 
@@ -787,6 +787,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -794,10 +797,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :callback => :query,
       :alt => :query,
       :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query
+      :access_token => :query
     }
 
     request =
@@ -823,6 +823,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   - subscriptions_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -831,9 +834,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
 
   ## Returns
 
@@ -854,6 +854,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -861,10 +864,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :callback => :query,
       :alt => :query,
       :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query
+      :access_token => :query
     }
 
     request =
@@ -889,6 +889,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;project&#x60;. The name of the project in which to list subscriptions. Format is &#x60;projects/{project-id}&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -897,9 +900,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :pageToken (String.t): The value returned by the last &#x60;ListSubscriptionsResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListSubscriptions&#x60; call, and that the system should return the next page of data.
     - :pageSize (integer()): Maximum number of subscriptions to return.
 
@@ -917,6 +917,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -925,9 +928,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :pageToken => :query,
       :pageSize => :query
     }
@@ -954,6 +954,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;subscription&#x60;. The name of the subscription. Format is &#x60;projects/{project}/subscriptions/{sub}&#x60;.
   - subscriptions_id (String.t): Part of &#x60;subscription&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -962,9 +965,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :body (ModifyAckDeadlineRequest): 
 
   ## Returns
@@ -986,6 +986,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -994,9 +997,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :body => :body
     }
 
@@ -1026,6 +1026,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;subscription&#x60;. The name of the subscription. Format is &#x60;projects/{project}/subscriptions/{sub}&#x60;.
   - subscriptions_id (String.t): Part of &#x60;subscription&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -1034,9 +1037,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :body (ModifyPushConfigRequest): 
 
   ## Returns
@@ -1058,6 +1058,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -1066,9 +1069,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :body => :body
     }
 
@@ -1098,6 +1098,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;subscription.name&#x60;. The name of the subscription. It must have the format &#x60;\&quot;projects/{project}/subscriptions/{subscription}\&quot;&#x60;. &#x60;{subscription}&#x60; must start with a letter, and contain only letters (&#x60;[A-Za-z]&#x60;), numbers (&#x60;[0-9]&#x60;), dashes (&#x60;-&#x60;), underscores (&#x60;_&#x60;), periods (&#x60;.&#x60;), tildes (&#x60;~&#x60;), plus (&#x60;+&#x60;) or percent signs (&#x60;%&#x60;). It must be between 3 and 255 characters in length, and it must not start with &#x60;\&quot;goog\&quot;&#x60;.
   - subscriptions_id (String.t): Part of &#x60;subscription.name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -1106,9 +1109,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :body (UpdateSubscriptionRequest): 
 
   ## Returns
@@ -1126,6 +1126,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -1134,9 +1137,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :body => :body
     }
 
@@ -1163,6 +1163,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;subscription&#x60;. The subscription from which messages should be pulled. Format is &#x60;projects/{project}/subscriptions/{sub}&#x60;.
   - subscriptions_id (String.t): Part of &#x60;subscription&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -1171,9 +1174,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :body (PullRequest): 
 
   ## Returns
@@ -1191,6 +1191,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -1199,9 +1202,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :body => :body
     }
 
@@ -1228,6 +1228,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;subscription&#x60;. The subscription to affect.
   - subscriptions_id (String.t): Part of &#x60;subscription&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -1236,9 +1239,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :body (SeekRequest): 
 
   ## Returns
@@ -1256,6 +1256,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -1264,9 +1267,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :body => :body
     }
 
@@ -1293,6 +1293,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   - subscriptions_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -1301,9 +1304,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :body (SetIamPolicyRequest): 
 
   ## Returns
@@ -1325,6 +1325,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -1333,9 +1336,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :body => :body
     }
 
@@ -1362,6 +1362,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   - subscriptions_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -1370,9 +1373,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :body (TestIamPermissionsRequest): 
 
   ## Returns
@@ -1396,6 +1396,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -1404,9 +1407,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :body => :body
     }
 
@@ -1436,6 +1436,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;name&#x60;. The name of the topic. It must have the format &#x60;\&quot;projects/{project}/topics/{topic}\&quot;&#x60;. &#x60;{topic}&#x60; must start with a letter, and contain only letters (&#x60;[A-Za-z]&#x60;), numbers (&#x60;[0-9]&#x60;), dashes (&#x60;-&#x60;), underscores (&#x60;_&#x60;), periods (&#x60;.&#x60;), tildes (&#x60;~&#x60;), plus (&#x60;+&#x60;) or percent signs (&#x60;%&#x60;). It must be between 3 and 255 characters in length, and it must not start with &#x60;\&quot;goog\&quot;&#x60;.
   - topics_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -1444,9 +1447,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :body (Topic): 
 
   ## Returns
@@ -1464,6 +1464,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -1472,9 +1475,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :body => :body
     }
 
@@ -1501,6 +1501,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;topic&#x60;. Name of the topic to delete. Format is &#x60;projects/{project}/topics/{topic}&#x60;.
   - topics_id (String.t): Part of &#x60;topic&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -1509,9 +1512,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
 
   ## Returns
 
@@ -1528,6 +1528,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -1535,10 +1538,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :callback => :query,
       :alt => :query,
       :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query
+      :access_token => :query
     }
 
     request =
@@ -1564,6 +1564,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;topic&#x60;. The name of the topic to get. Format is &#x60;projects/{project}/topics/{topic}&#x60;.
   - topics_id (String.t): Part of &#x60;topic&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -1572,9 +1575,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
 
   ## Returns
 
@@ -1591,6 +1591,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -1598,10 +1601,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :callback => :query,
       :alt => :query,
       :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query
+      :access_token => :query
     }
 
     request =
@@ -1627,6 +1627,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   - topics_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -1635,9 +1638,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
 
   ## Returns
 
@@ -1658,6 +1658,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -1665,10 +1668,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :callback => :query,
       :alt => :query,
       :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query
+      :access_token => :query
     }
 
     request =
@@ -1693,6 +1693,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;project&#x60;. The name of the project in which to list topics. Format is &#x60;projects/{project-id}&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -1701,9 +1704,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :pageToken (String.t): The value returned by the last &#x60;ListTopicsResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListTopics&#x60; call, and that the system should return the next page of data.
     - :pageSize (integer()): Maximum number of topics to return.
 
@@ -1716,6 +1716,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           {:ok, GoogleApi.PubSub.V1.Model.ListTopicsResponse.t()} | {:error, Tesla.Env.t()}
   def pubsub_projects_topics_list(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -1724,9 +1727,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :pageToken => :query,
       :pageSize => :query
     }
@@ -1753,6 +1753,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;topic.name&#x60;. The name of the topic. It must have the format &#x60;\&quot;projects/{project}/topics/{topic}\&quot;&#x60;. &#x60;{topic}&#x60; must start with a letter, and contain only letters (&#x60;[A-Za-z]&#x60;), numbers (&#x60;[0-9]&#x60;), dashes (&#x60;-&#x60;), underscores (&#x60;_&#x60;), periods (&#x60;.&#x60;), tildes (&#x60;~&#x60;), plus (&#x60;+&#x60;) or percent signs (&#x60;%&#x60;). It must be between 3 and 255 characters in length, and it must not start with &#x60;\&quot;goog\&quot;&#x60;.
   - topics_id (String.t): Part of &#x60;topic.name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -1761,9 +1764,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :body (UpdateTopicRequest): 
 
   ## Returns
@@ -1781,6 +1781,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -1789,9 +1792,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :body => :body
     }
 
@@ -1818,6 +1818,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;topic&#x60;. The messages in the request will be published on this topic. Format is &#x60;projects/{project}/topics/{topic}&#x60;.
   - topics_id (String.t): Part of &#x60;topic&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -1826,9 +1829,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :body (PublishRequest): 
 
   ## Returns
@@ -1846,6 +1846,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -1854,9 +1857,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :body => :body
     }
 
@@ -1883,6 +1883,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   - topics_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -1891,9 +1894,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :body (SetIamPolicyRequest): 
 
   ## Returns
@@ -1915,6 +1915,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -1923,9 +1926,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :body => :body
     }
 
@@ -1952,6 +1952,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;topic&#x60;. The name of the topic that snapshots are attached to. Format is &#x60;projects/{project}/topics/{topic}&#x60;.
   - topics_id (String.t): Part of &#x60;topic&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -1960,11 +1963,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :pageToken (String.t): The value returned by the last &#x60;ListTopicSnapshotsResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListTopicSnapshots&#x60; call, and that the system should return the next page of data.
     - :pageSize (integer()): Maximum number of snapshot names to return.
+    - :pageToken (String.t): The value returned by the last &#x60;ListTopicSnapshotsResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListTopicSnapshots&#x60; call, and that the system should return the next page of data.
 
   ## Returns
 
@@ -1987,6 +1987,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -1995,11 +1998,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -2025,6 +2025,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;topic&#x60;. The name of the topic that subscriptions are attached to. Format is &#x60;projects/{project}/topics/{topic}&#x60;.
   - topics_id (String.t): Part of &#x60;topic&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -2033,9 +2036,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :pageToken (String.t): The value returned by the last &#x60;ListTopicSubscriptionsResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListTopicSubscriptions&#x60; call, and that the system should return the next page of data.
     - :pageSize (integer()): Maximum number of subscription names to return.
 
@@ -2060,6 +2060,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -2068,9 +2071,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :pageToken => :query,
       :pageSize => :query
     }
@@ -2100,6 +2100,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   - topics_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
@@ -2108,9 +2111,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :body (TestIamPermissionsRequest): 
 
   ## Returns
@@ -2134,6 +2134,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :"$.xgafv" => :query,
@@ -2142,9 +2145,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :body => :body
     }
 
