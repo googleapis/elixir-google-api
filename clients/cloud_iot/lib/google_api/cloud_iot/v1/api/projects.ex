@@ -33,17 +33,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;parent&#x60;. The project and cloud region where this device registry must be created. For example, &#x60;projects/example-project/locations/us-central1&#x60;.
   - locations_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (DeviceRegistry): 
 
   ## Returns
@@ -65,17 +65,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -103,17 +103,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   - locations_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - registries_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
 
   ## Returns
 
@@ -136,17 +136,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query
     }
 
     request =
@@ -178,17 +178,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   - registries_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - devices_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :numVersions (integer()): The number of versions to list. Versions are listed in decreasing order of the version number. The maximum number of versions retained is 10. If this value is zero, it will return all the versions available.
 
   ## Returns
@@ -216,17 +216,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :numVersions => :query
     }
 
@@ -261,17 +261,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   - locations_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
   - registries_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (Device): 
 
   ## Returns
@@ -295,17 +295,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -338,17 +338,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   - registries_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - devices_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
 
   ## Returns
 
@@ -373,17 +373,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query
     }
 
     request =
@@ -416,17 +416,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   - registries_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - devices_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :fieldMask (String.t): The fields of the &#x60;Device&#x60; resource to be returned in the response. If the field mask is unset or empty, all fields are returned.
 
   ## Returns
@@ -452,17 +452,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :fieldMask => :query
     }
 
@@ -495,20 +495,20 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   - locations_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
   - registries_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :deviceNumIds ([String.t]): A list of device numeric IDs. If empty, this field is ignored. Maximum IDs: 10,000.
-    - :pageToken (String.t): The value returned by the last &#x60;ListDevicesResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListDevices&#x60; call and the system should return the next page of data.
     - :fieldMask (String.t): The fields of the &#x60;Device&#x60; resource to be returned in the response. The fields &#x60;id&#x60; and &#x60;num_id&#x60; are always returned, along with any other fields specified.
+    - :pageToken (String.t): The value returned by the last &#x60;ListDevicesResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListDevices&#x60; call and the system should return the next page of data.
     - :pageSize (integer()): The maximum number of devices to return in the response. If this value is zero, the service will select a default size. A call may return fewer objects than requested. A non-empty &#x60;next_page_token&#x60; in the response indicates that more data is available.
     - :deviceIds ([String.t]): A list of device string IDs. For example, &#x60;[&#39;device0&#39;, &#39;device12&#39;]&#x60;. If empty, this field is ignored. Maximum IDs: 10,000
 
@@ -533,20 +533,20 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :deviceNumIds => :query,
-      :pageToken => :query,
       :fieldMask => :query,
+      :pageToken => :query,
       :pageSize => :query,
       :deviceIds => :query
     }
@@ -580,17 +580,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   - registries_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - devices_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (ModifyCloudToDeviceConfigRequest): 
 
   ## Returns
@@ -616,17 +616,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -660,17 +660,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   - registries_id (String.t): Part of &#x60;device.name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - devices_id (String.t): Part of &#x60;device.name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :updateMask (String.t): Only updates the &#x60;device&#x60; fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: &#x60;credentials&#x60;, &#x60;blocked&#x60;, and &#x60;metadata&#x60;
     - :body (Device): 
 
@@ -697,17 +697,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :updateMask => :query,
       :body => :body
     }
@@ -742,17 +742,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   - registries_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - devices_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (SendCommandToDeviceRequest): 
 
   ## Returns
@@ -780,17 +780,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -826,17 +826,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   - registries_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - devices_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :numStates (integer()): The number of states to list. States are listed in descending order of update time. The maximum number of states retained is 10. If this value is zero, it will return all the states available.
 
   ## Returns
@@ -864,17 +864,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :numStates => :query
     }
 
@@ -907,17 +907,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   - locations_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - registries_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
 
   ## Returns
 
@@ -940,17 +940,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query
     }
 
     request =
@@ -981,17 +981,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   - locations_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - registries_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (GetIamPolicyRequest): 
 
   ## Returns
@@ -1015,17 +1015,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -1059,17 +1059,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   - groups_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - devices_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :numVersions (integer()): The number of versions to list. Versions are listed in decreasing order of the version number. The maximum number of versions retained is 10. If this value is zero, it will return all the versions available.
 
   ## Returns
@@ -1099,17 +1099,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :numVersions => :query
     }
 
@@ -1147,17 +1147,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   - groups_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - devices_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :fieldMask (String.t): The fields of the &#x60;Device&#x60; resource to be returned in the response. If the field mask is unset or empty, all fields are returned.
 
   ## Returns
@@ -1185,17 +1185,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :fieldMask => :query
     }
 
@@ -1230,20 +1230,20 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   - registries_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
   - groups_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :deviceNumIds ([String.t]): A list of device numeric IDs. If empty, this field is ignored. Maximum IDs: 10,000.
-    - :pageToken (String.t): The value returned by the last &#x60;ListDevicesResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListDevices&#x60; call and the system should return the next page of data.
     - :fieldMask (String.t): The fields of the &#x60;Device&#x60; resource to be returned in the response. The fields &#x60;id&#x60; and &#x60;num_id&#x60; are always returned, along with any other fields specified.
+    - :pageToken (String.t): The value returned by the last &#x60;ListDevicesResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListDevices&#x60; call and the system should return the next page of data.
     - :pageSize (integer()): The maximum number of devices to return in the response. If this value is zero, the service will select a default size. A call may return fewer objects than requested. A non-empty &#x60;next_page_token&#x60; in the response indicates that more data is available.
     - :deviceIds ([String.t]): A list of device string IDs. For example, &#x60;[&#39;device0&#39;, &#39;device12&#39;]&#x60;. If empty, this field is ignored. Maximum IDs: 10,000
 
@@ -1270,20 +1270,20 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :deviceNumIds => :query,
-      :pageToken => :query,
       :fieldMask => :query,
+      :pageToken => :query,
       :pageSize => :query,
       :deviceIds => :query
     }
@@ -1319,17 +1319,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   - groups_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - devices_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (ModifyCloudToDeviceConfigRequest): 
 
   ## Returns
@@ -1357,17 +1357,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -1403,17 +1403,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   - groups_id (String.t): Part of &#x60;device.name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - devices_id (String.t): Part of &#x60;device.name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :updateMask (String.t): Only updates the &#x60;device&#x60; fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: &#x60;credentials&#x60;, &#x60;blocked&#x60;, and &#x60;metadata&#x60;
     - :body (Device): 
 
@@ -1442,17 +1442,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :updateMask => :query,
       :body => :body
     }
@@ -1489,17 +1489,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   - groups_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - devices_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (SendCommandToDeviceRequest): 
 
   ## Returns
@@ -1529,17 +1529,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -1577,17 +1577,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   - groups_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - devices_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :numStates (integer()): The number of states to list. States are listed in descending order of update time. The maximum number of states retained is 10. If this value is zero, it will return all the states available.
 
   ## Returns
@@ -1617,17 +1617,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :numStates => :query
     }
 
@@ -1662,17 +1662,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   - registries_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - groups_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (GetIamPolicyRequest): 
 
   ## Returns
@@ -1698,17 +1698,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -1742,17 +1742,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   - registries_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - groups_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (SetIamPolicyRequest): 
 
   ## Returns
@@ -1778,17 +1778,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -1822,17 +1822,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   - registries_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - groups_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (TestIamPermissionsRequest): 
 
   ## Returns
@@ -1860,17 +1860,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -1904,19 +1904,19 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;parent&#x60;. The project and cloud region path. For example, &#x60;projects/example-project/locations/us-central1&#x60;.
   - locations_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :pageSize (integer()): The maximum number of registries to return in the response. If this value is zero, the service will select a default size. A call may return fewer objects than requested. A non-empty &#x60;next_page_token&#x60; in the response indicates that more data is available.
     - :pageToken (String.t): The value returned by the last &#x60;ListDeviceRegistriesResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListDeviceRegistries&#x60; call and the system should return the next page of data.
+    - :pageSize (integer()): The maximum number of registries to return in the response. If this value is zero, the service will select a default size. A call may return fewer objects than requested. A non-empty &#x60;next_page_token&#x60; in the response indicates that more data is available.
 
   ## Returns
 
@@ -1939,19 +1939,19 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
-      :pageSize => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :pageSize => :query
     }
 
     request =
@@ -1980,17 +1980,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   - locations_id (String.t): Part of &#x60;deviceRegistry.name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - registries_id (String.t): Part of &#x60;deviceRegistry.name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :updateMask (String.t): Only updates the &#x60;device_registry&#x60; fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: &#x60;event_notification_config&#x60;, &#x60;http_config&#x60;, &#x60;mqtt_config&#x60;, and &#x60;state_notification_config&#x60;.
     - :body (DeviceRegistry): 
 
@@ -2015,17 +2015,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :updateMask => :query,
       :body => :body
     }
@@ -2058,17 +2058,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   - locations_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - registries_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (SetIamPolicyRequest): 
 
   ## Returns
@@ -2092,17 +2092,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -2134,17 +2134,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   - locations_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - registries_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (TestIamPermissionsRequest): 
 
   ## Returns
@@ -2170,17 +2170,17 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
