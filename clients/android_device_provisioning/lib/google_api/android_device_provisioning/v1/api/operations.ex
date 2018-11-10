@@ -16,65 +16,74 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Genomics.V1.Api.Reads do
+defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Operations do
   @moduledoc """
-  API calls for all endpoints tagged `Reads`.
+  API calls for all endpoints tagged `Operations`.
   """
 
-  alias GoogleApi.Genomics.V1.Connection
+  alias GoogleApi.AndroidDeviceProvisioning.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Gets a list of reads for one or more read group sets.  Reads search operates over a genomic coordinate space of reference sequence &amp; position defined over the reference sequences to which the requested read group sets are aligned.  If a target positional range is specified, search returns all reads whose alignment to the reference genome overlap the range. A query which specifies only read group set IDs yields all reads in those read group sets, including unmapped reads.  All reads returned (including reads on subsequent pages) are ordered by genomic coordinate (by reference sequence, then position). Reads with equivalent genomic coordinates are returned in an unspecified order. This order is consistent, such that two queries for the same content (regardless of page size) yield reads in the same order across their respective streams of paginated responses.  Implements [GlobalAllianceApi.searchReads](https://github.com/ga4gh/schemas/blob/v0.5.1/src/main/resources/avro/readmethods.avdl#L85).
+  Gets the latest state of a long-running operation.  Clients can use this method to poll the operation result at intervals as recommended by the API service.
 
   ## Parameters
 
-  - connection (GoogleApi.Genomics.V1.Connection): Connection to server
+  - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
+  - name (String.t): The name of the operation resource.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :body (SearchReadsRequest): 
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
 
   ## Returns
 
-  {:ok, %GoogleApi.Genomics.V1.Model.SearchReadsResponse{}} on success
+  {:ok, %GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation{}} on success
   {:error, info} on failure
   """
-  @spec genomics_reads_search(Tesla.Env.client(), keyword()) ::
-          {:ok, GoogleApi.Genomics.V1.Model.SearchReadsResponse.t()} | {:error, Tesla.Env.t()}
-  def genomics_reads_search(connection, optional_params \\ [], opts \\ []) do
+  @spec androiddeviceprovisioning_operations_get(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation.t()}
+          | {:error, Tesla.Env.t()}
+  def androiddeviceprovisioning_operations_get(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
-      :fields => :query,
-      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
-      :access_token => :query,
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
-      :body => :body
+      :uploadType => :query,
+      :fields => :query
     }
 
     request =
       Request.new()
-      |> Request.method(:post)
-      |> Request.url("/v1/reads/search")
+      |> Request.method(:get)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode_www_form(name)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.Genomics.V1.Model.SearchReadsResponse{}])
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation{}]
+    )
   end
 end

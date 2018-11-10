@@ -32,17 +32,17 @@ defmodule GoogleApi.Genomics.V1.Api.References do
   - connection (GoogleApi.Genomics.V1.Connection): Connection to server
   - reference_id (String.t): The ID of the reference.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :pageSize (integer()): The maximum number of bases to return in a single page. If unspecified, defaults to 200Kbp (kilo base pairs). The maximum value is 10Mbp (mega base pairs).
     - :start (String.t): The start position (0-based) of this query. Defaults to 0.
     - :end (String.t): The end position (0-based, exclusive) of this query. Defaults to the length of this reference.
@@ -57,17 +57,17 @@ defmodule GoogleApi.Genomics.V1.Api.References do
           {:ok, GoogleApi.Genomics.V1.Model.ListBasesResponse.t()} | {:error, Tesla.Env.t()}
   def genomics_references_bases_list(connection, reference_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
       :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :pageSize => :query,
       :start => :query,
       :end => :query,
@@ -95,17 +95,17 @@ defmodule GoogleApi.Genomics.V1.Api.References do
   - connection (GoogleApi.Genomics.V1.Connection): Connection to server
   - reference_id (String.t): The ID of the reference.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
 
   ## Returns
 
@@ -116,17 +116,17 @@ defmodule GoogleApi.Genomics.V1.Api.References do
           {:ok, GoogleApi.Genomics.V1.Model.Reference.t()} | {:error, Tesla.Env.t()}
   def genomics_references_get(connection, reference_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
       :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query
     }
 
     request =
@@ -149,17 +149,17 @@ defmodule GoogleApi.Genomics.V1.Api.References do
 
   - connection (GoogleApi.Genomics.V1.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (SearchReferencesRequest): 
 
   ## Returns
@@ -172,17 +172,17 @@ defmodule GoogleApi.Genomics.V1.Api.References do
           | {:error, Tesla.Env.t()}
   def genomics_references_search(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
       :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :body => :body
     }
 

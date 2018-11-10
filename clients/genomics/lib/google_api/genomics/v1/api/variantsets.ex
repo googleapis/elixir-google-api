@@ -31,17 +31,17 @@ defmodule GoogleApi.Genomics.V1.Api.Variantsets do
 
   - connection (GoogleApi.Genomics.V1.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (VariantSet): 
 
   ## Returns
@@ -53,17 +53,17 @@ defmodule GoogleApi.Genomics.V1.Api.Variantsets do
           {:ok, GoogleApi.Genomics.V1.Model.VariantSet.t()} | {:error, Tesla.Env.t()}
   def genomics_variantsets_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
       :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :body => :body
     }
 
@@ -86,17 +86,17 @@ defmodule GoogleApi.Genomics.V1.Api.Variantsets do
   - connection (GoogleApi.Genomics.V1.Connection): Connection to server
   - variant_set_id (String.t): The ID of the variant set to be deleted.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
 
   ## Returns
 
@@ -107,17 +107,17 @@ defmodule GoogleApi.Genomics.V1.Api.Variantsets do
           {:ok, GoogleApi.Genomics.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def genomics_variantsets_delete(connection, variant_set_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
       :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query
     }
 
     request =
@@ -141,17 +141,17 @@ defmodule GoogleApi.Genomics.V1.Api.Variantsets do
   - connection (GoogleApi.Genomics.V1.Connection): Connection to server
   - variant_set_id (String.t): Required. The ID of the variant set that contains variant data which should be exported. The caller must have READ access to this variant set.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (ExportVariantSetRequest): 
 
   ## Returns
@@ -163,17 +163,17 @@ defmodule GoogleApi.Genomics.V1.Api.Variantsets do
           {:ok, GoogleApi.Genomics.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def genomics_variantsets_export(connection, variant_set_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
       :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :body => :body
     }
 
@@ -198,17 +198,17 @@ defmodule GoogleApi.Genomics.V1.Api.Variantsets do
   - connection (GoogleApi.Genomics.V1.Connection): Connection to server
   - variant_set_id (String.t): Required. The ID of the variant set.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
 
   ## Returns
 
@@ -219,17 +219,17 @@ defmodule GoogleApi.Genomics.V1.Api.Variantsets do
           {:ok, GoogleApi.Genomics.V1.Model.VariantSet.t()} | {:error, Tesla.Env.t()}
   def genomics_variantsets_get(connection, variant_set_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
       :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query
     }
 
     request =
@@ -253,17 +253,17 @@ defmodule GoogleApi.Genomics.V1.Api.Variantsets do
   - connection (GoogleApi.Genomics.V1.Connection): Connection to server
   - variant_set_id (String.t): The ID of the variant to be updated (must already exist).
   - optional_params (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :updateMask (String.t): An optional mask specifying which fields to update. Supported fields:  * metadata. * name. * description.  Leaving &#x60;updateMask&#x60; unset is equivalent to specifying all mutable fields.
     - :body (VariantSet): 
 
@@ -276,17 +276,17 @@ defmodule GoogleApi.Genomics.V1.Api.Variantsets do
           {:ok, GoogleApi.Genomics.V1.Model.VariantSet.t()} | {:error, Tesla.Env.t()}
   def genomics_variantsets_patch(connection, variant_set_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
       :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :updateMask => :query,
       :body => :body
     }
@@ -311,17 +311,17 @@ defmodule GoogleApi.Genomics.V1.Api.Variantsets do
 
   - connection (GoogleApi.Genomics.V1.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (SearchVariantSetsRequest): 
 
   ## Returns
@@ -334,17 +334,17 @@ defmodule GoogleApi.Genomics.V1.Api.Variantsets do
           | {:error, Tesla.Env.t()}
   def genomics_variantsets_search(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
       :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :body => :body
     }
 
