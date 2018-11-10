@@ -16,65 +16,74 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Partners.V2.Api.UserEvents do
+defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Operations do
   @moduledoc """
-  API calls for all endpoints tagged `UserEvents`.
+  API calls for all endpoints tagged `Operations`.
   """
 
-  alias GoogleApi.Partners.V2.Connection
+  alias GoogleApi.AndroidDeviceProvisioning.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Logs a user event.
+  Gets the latest state of a long-running operation.  Clients can use this method to poll the operation result at intervals as recommended by the API service.
 
   ## Parameters
 
-  - connection (GoogleApi.Partners.V2.Connection): Connection to server
+  - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
+  - name (String.t): The name of the operation resource.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :body (LogUserEventRequest): 
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
 
   ## Returns
 
-  {:ok, %GoogleApi.Partners.V2.Model.LogUserEventResponse{}} on success
+  {:ok, %GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation{}} on success
   {:error, info} on failure
   """
-  @spec partners_user_events_log(Tesla.Env.client(), keyword()) ::
-          {:ok, GoogleApi.Partners.V2.Model.LogUserEventResponse.t()} | {:error, Tesla.Env.t()}
-  def partners_user_events_log(connection, optional_params \\ [], opts \\ []) do
+  @spec androiddeviceprovisioning_operations_get(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation.t()}
+          | {:error, Tesla.Env.t()}
+  def androiddeviceprovisioning_operations_get(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
-      :fields => :query,
-      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
-      :access_token => :query,
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
-      :body => :body
+      :uploadType => :query,
+      :fields => :query
     }
 
     request =
       Request.new()
-      |> Request.method(:post)
-      |> Request.url("/v2/userEvents:log")
+      |> Request.method(:get)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode_www_form(name)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.Partners.V2.Model.LogUserEventResponse{}])
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation{}]
+    )
   end
 end

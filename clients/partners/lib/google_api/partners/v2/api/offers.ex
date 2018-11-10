@@ -31,6 +31,8 @@ defmodule GoogleApi.Partners.V2.Api.Offers do
 
   - connection (GoogleApi.Partners.V2.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -40,19 +42,17 @@ defmodule GoogleApi.Partners.V2.Api.Offers do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :requestMetadata.partnersSessionId (String.t): Google Partners session ID.
     - :requestMetadata.userOverrides.userId (String.t): Logged-in user ID to impersonate instead of the user&#39;s ID.
+    - :requestMetadata.partnersSessionId (String.t): Google Partners session ID.
     - :pageToken (String.t): Token to retrieve a specific page.
     - :pageSize (integer()): Maximum number of rows to return per page.
     - :requestMetadata.trafficSource.trafficSourceId (String.t): Identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
     - :requestMetadata.locale (String.t): Locale to use for the current request.
     - :requestMetadata.userOverrides.ipAddress (String.t): IP address to use instead of the user&#39;s geo-located IP address.
-    - :entireCompany (boolean()): if true, show history for the entire company.  Requires user to be admin.
     - :requestMetadata.experimentIds ([String.t]): Experiment IDs the current request belongs to.
-    - :orderBy (String.t): Comma-separated list of fields to order by, e.g.: \&quot;foo,bar,baz\&quot;. Use \&quot;foo desc\&quot; to sort descending. List of valid field names is: name, offer_code, expiration_time, status,     last_modified_time, sender_name, creation_time, country_code,     offer_type.
+    - :entireCompany (boolean()): if true, show history for the entire company.  Requires user to be admin.
     - :requestMetadata.trafficSource.trafficSubId (String.t): Second level identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
+    - :orderBy (String.t): Comma-separated list of fields to order by, e.g.: \&quot;foo,bar,baz\&quot;. Use \&quot;foo desc\&quot; to sort descending. List of valid field names is: name, offer_code, expiration_time, status,     last_modified_time, sender_name, creation_time, country_code,     offer_type.
 
   ## Returns
 
@@ -64,6 +64,8 @@ defmodule GoogleApi.Partners.V2.Api.Offers do
           | {:error, Tesla.Env.t()}
   def partners_offers_history_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -73,19 +75,17 @@ defmodule GoogleApi.Partners.V2.Api.Offers do
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :"requestMetadata.partnersSessionId" => :query,
       :"requestMetadata.userOverrides.userId" => :query,
+      :"requestMetadata.partnersSessionId" => :query,
       :pageToken => :query,
       :pageSize => :query,
       :"requestMetadata.trafficSource.trafficSourceId" => :query,
       :"requestMetadata.locale" => :query,
       :"requestMetadata.userOverrides.ipAddress" => :query,
-      :entireCompany => :query,
       :"requestMetadata.experimentIds" => :query,
-      :orderBy => :query,
-      :"requestMetadata.trafficSource.trafficSubId" => :query
+      :entireCompany => :query,
+      :"requestMetadata.trafficSource.trafficSubId" => :query,
+      :orderBy => :query
     }
 
     request =
@@ -106,6 +106,8 @@ defmodule GoogleApi.Partners.V2.Api.Offers do
 
   - connection (GoogleApi.Partners.V2.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -115,8 +117,6 @@ defmodule GoogleApi.Partners.V2.Api.Offers do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :requestMetadata.userOverrides.userId (String.t): Logged-in user ID to impersonate instead of the user&#39;s ID.
     - :requestMetadata.partnersSessionId (String.t): Google Partners session ID.
     - :requestMetadata.trafficSource.trafficSourceId (String.t): Identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
@@ -134,6 +134,8 @@ defmodule GoogleApi.Partners.V2.Api.Offers do
           {:ok, GoogleApi.Partners.V2.Model.ListOffersResponse.t()} | {:error, Tesla.Env.t()}
   def partners_offers_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -143,8 +145,6 @@ defmodule GoogleApi.Partners.V2.Api.Offers do
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
       :"requestMetadata.userOverrides.userId" => :query,
       :"requestMetadata.partnersSessionId" => :query,
       :"requestMetadata.trafficSource.trafficSourceId" => :query,

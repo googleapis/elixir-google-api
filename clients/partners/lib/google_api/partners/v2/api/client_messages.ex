@@ -31,6 +31,8 @@ defmodule GoogleApi.Partners.V2.Api.ClientMessages do
 
   - connection (GoogleApi.Partners.V2.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -40,8 +42,6 @@ defmodule GoogleApi.Partners.V2.Api.ClientMessages do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (LogMessageRequest): 
 
   ## Returns
@@ -53,6 +53,8 @@ defmodule GoogleApi.Partners.V2.Api.ClientMessages do
           {:ok, GoogleApi.Partners.V2.Model.LogMessageResponse.t()} | {:error, Tesla.Env.t()}
   def partners_client_messages_log(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :fields => :query,
+      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -62,8 +64,6 @@ defmodule GoogleApi.Partners.V2.Api.ClientMessages do
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
       :body => :body
     }
 
