@@ -385,8 +385,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :pageToken (String.t): A token specifying which result page to return.
     - :pageSize (String.t): The maximum number of devices to show in a page of results. Must be between 1 and 100 inclusive.
+    - :pageToken (String.t): A token specifying which result page to return.
 
   ## Returns
 
@@ -418,8 +418,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
       :prettyPrint => :query,
       :uploadType => :query,
       :fields => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =

@@ -110,8 +110,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :pageSize (integer()): The maximum number of results to be returned. If not specified or 0, all the records are returned.
     - :pageToken (String.t): A token identifying a page of results returned by the server.
+    - :pageSize (integer()): The maximum number of results to be returned. If not specified or 0, all the records are returned.
 
   ## Returns
 
@@ -143,8 +143,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
       :prettyPrint => :query,
       :uploadType => :query,
       :fields => :query,
-      :pageSize => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :pageSize => :query
     }
 
     request =
@@ -441,66 +441,6 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     |> Response.decode(
       opts ++ [struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByOwnerResponse{}]
     )
-  end
-
-  @doc """
-  Gets a device.
-
-  ## Parameters
-
-  - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
-  - name (String.t): Required. The device API resource name in the format &#x60;partners/[PARTNER_ID]/devices/[DEVICE_ID]&#x60;.
-  - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-
-  ## Returns
-
-  {:ok, %GoogleApi.AndroidDeviceProvisioning.V1.Model.Device{}} on success
-  {:error, info} on failure
-  """
-  @spec androiddeviceprovisioning_partners_devices_get(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Device.t()} | {:error, Tesla.Env.t()}
-  def androiddeviceprovisioning_partners_devices_get(
-        connection,
-        name,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:get)
-      |> Request.url("/v1/{+name}", %{
-        "name" => URI.encode_www_form(name)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.Device{}])
   end
 
   @doc """
@@ -871,8 +811,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :pageSize (integer()): The maximum number of results to be returned.
     - :pageToken (String.t): A token identifying a page of results returned by the server.
+    - :pageSize (integer()): The maximum number of results to be returned.
 
   ## Returns
 
@@ -900,8 +840,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
       :prettyPrint => :query,
       :uploadType => :query,
       :fields => :query,
-      :pageSize => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :pageSize => :query
     }
 
     request =
