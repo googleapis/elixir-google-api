@@ -33,16 +33,16 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
   - operations_id (String.t): Part of &#x60;name&#x60;. The name of the operation resource to be cancelled.
   - optional_params (KeywordList): [optional] Optional parameters
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :body (CancelOperationRequest): 
 
   ## Returns
@@ -60,16 +60,16 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
       ) do
     optional_params_config = %{
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
-      :access_token => :query,
       :key => :query,
+      :access_token => :query,
       :body => :body
     }
 
@@ -95,16 +95,16 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
   - operations_id (String.t): Part of &#x60;name&#x60;. The name of the operation resource to be deleted.
   - optional_params (KeywordList): [optional] Optional parameters
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
 
   ## Returns
 
@@ -121,16 +121,16 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
       ) do
     optional_params_config = %{
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query
+      :key => :query,
+      :access_token => :query
     }
 
     request =
@@ -154,19 +154,19 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
   - connection (GoogleApi.RuntimeConfig.V1.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :pageToken (String.t): The standard list page token.
     - :pageSize (integer()): The standard list page size.
     - :filter (String.t): The standard list filter.
-    - :pageToken (String.t): The standard list page token.
 
   ## Returns
 
@@ -179,19 +179,19 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
   def runtimeconfig_operations_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :prettyPrint => :query,
       :uploadType => :query,
+      :fields => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
-      :access_token => :query,
       :key => :query,
+      :access_token => :query,
+      :pageToken => :query,
       :pageSize => :query,
-      :filter => :query,
-      :pageToken => :query
+      :filter => :query
     }
 
     request =
