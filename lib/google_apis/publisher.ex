@@ -29,6 +29,7 @@ defmodule GoogleApis.Publisher do
       do_publish(directory)
     else
       Logger.info "skipping #{api_name}"
+      {:ok, "skipped"}
     end
   end
 
@@ -53,11 +54,18 @@ defmodule GoogleApis.Publisher do
 
   defp do_publish(directory) do
     args = [
+      "do",
+      "deps.get,",
       "hex.publish",
       "--yes"
     ]
     env = [{"HEX_API_KEY", Application.get_env(:google_apis, :hex_api_key)}]
-    System.cmd("mix", ["deps.get"], cd: directory, env: env)
-    System.cmd("mix", args, cd: directory, env: env)
+    case System.cmd("mix", args, cd: directory, env: env, stderr_to_stdout: true) do
+      {output, 0}         -> {:ok, output}
+      {output, exit_code} ->
+        Logger.error "Failed with exit code #{exit_code}"
+        Logger.error output
+        {:error, output}
+    end
   end
 end
