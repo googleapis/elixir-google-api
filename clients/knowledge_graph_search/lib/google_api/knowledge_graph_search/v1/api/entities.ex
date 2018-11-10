@@ -31,6 +31,9 @@ defmodule GoogleApi.KnowledgeGraphSearch.V1.Api.Entities do
 
   - connection (GoogleApi.KnowledgeGraphSearch.V1.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -39,16 +42,13 @@ defmodule GoogleApi.KnowledgeGraphSearch.V1.Api.Entities do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :prefix (boolean()): Enables prefix match against names and aliases of entities
-    - :query (String.t): The literal query string for search.
-    - :types ([String.t]): Restricts returned entities with these types, e.g. Person (as defined in http://schema.org/Person). If multiple types are specified, returned entities will contain one or more of these types.
     - :indent (boolean()): Enables indenting of json results.
     - :languages ([String.t]): The list of language codes (defined in ISO 693) to run the query with, e.g. &#39;en&#39;.
     - :ids ([String.t]): The list of entity id to be used for search instead of query string. To specify multiple ids in the HTTP request, repeat the parameter in the URL as in ...?ids&#x3D;A&amp;ids&#x3D;B
     - :limit (integer()): Limits the number of entities to be returned.
+    - :prefix (boolean()): Enables prefix match against names and aliases of entities
+    - :query (String.t): The literal query string for search.
+    - :types ([String.t]): Restricts returned entities with these types, e.g. Person (as defined in http://schema.org/Person). If multiple types are specified, returned entities will contain one or more of these types.
 
   ## Returns
 
@@ -60,6 +60,9 @@ defmodule GoogleApi.KnowledgeGraphSearch.V1.Api.Entities do
           | {:error, Tesla.Env.t()}
   def kgsearch_entities_search(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -68,16 +71,13 @@ defmodule GoogleApi.KnowledgeGraphSearch.V1.Api.Entities do
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
-      :prefix => :query,
-      :query => :query,
-      :types => :query,
       :indent => :query,
       :languages => :query,
       :ids => :query,
-      :limit => :query
+      :limit => :query,
+      :prefix => :query,
+      :query => :query,
+      :types => :query
     }
 
     request =
