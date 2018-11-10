@@ -32,17 +32,17 @@ defmodule GoogleApi.ServiceBroker.V1.Api.V1 do
   - connection (GoogleApi.ServiceBroker.V1.Connection): Connection to server
   - v1_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
 
   ## Returns
 
@@ -53,17 +53,17 @@ defmodule GoogleApi.ServiceBroker.V1.Api.V1 do
           {:ok, GoogleApi.ServiceBroker.V1.Model.GoogleIamV1Policy.t()} | {:error, Tesla.Env.t()}
   def servicebroker_get_iam_policy(connection, v1_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query,
+      :key => :query,
+      :access_token => :query
     }
 
     request =
@@ -87,17 +87,17 @@ defmodule GoogleApi.ServiceBroker.V1.Api.V1 do
   - connection (GoogleApi.ServiceBroker.V1.Connection): Connection to server
   - v1_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :body (GoogleIamV1SetIamPolicyRequest): 
 
   ## Returns
@@ -109,17 +109,17 @@ defmodule GoogleApi.ServiceBroker.V1.Api.V1 do
           {:ok, GoogleApi.ServiceBroker.V1.Model.GoogleIamV1Policy.t()} | {:error, Tesla.Env.t()}
   def servicebroker_set_iam_policy(connection, v1_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
+      :key => :query,
+      :access_token => :query,
       :body => :body
     }
 
@@ -144,17 +144,17 @@ defmodule GoogleApi.ServiceBroker.V1.Api.V1 do
   - connection (GoogleApi.ServiceBroker.V1.Connection): Connection to server
   - v1_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :body (GoogleIamV1TestIamPermissionsRequest): 
 
   ## Returns
@@ -167,17 +167,17 @@ defmodule GoogleApi.ServiceBroker.V1.Api.V1 do
           | {:error, Tesla.Env.t()}
   def servicebroker_test_iam_permissions(connection, v1_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
+      :key => :query,
+      :access_token => :query,
       :body => :body
     }
 
