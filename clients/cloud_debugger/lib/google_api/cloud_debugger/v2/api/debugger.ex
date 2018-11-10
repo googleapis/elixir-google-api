@@ -33,17 +33,17 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
   - debuggee_id (String.t): ID of the debuggee whose breakpoint to delete.
   - breakpoint_id (String.t): ID of the breakpoint to delete.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :clientVersion (String.t): The client version making the call. Schema: &#x60;domain/type/version&#x60; (e.g., &#x60;google.com/intellij/v1&#x60;).
 
   ## Returns
@@ -65,17 +65,17 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
         opts \\ []
       ) do
     optional_params_config = %{
-      :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :fields => :query,
-      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
+      :key => :query,
+      :access_token => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
       :clientVersion => :query
     }
 
@@ -102,17 +102,17 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
   - debuggee_id (String.t): ID of the debuggee whose breakpoint to get.
   - breakpoint_id (String.t): ID of the breakpoint to get.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :clientVersion (String.t): The client version making the call. Schema: &#x60;domain/type/version&#x60; (e.g., &#x60;google.com/intellij/v1&#x60;).
 
   ## Returns
@@ -136,17 +136,17 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
         opts \\ []
       ) do
     optional_params_config = %{
-      :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :fields => :query,
-      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
+      :key => :query,
+      :access_token => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
       :clientVersion => :query
     }
 
@@ -174,23 +174,23 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
   - connection (GoogleApi.CloudDebugger.V2.Connection): Connection to server
   - debuggee_id (String.t): ID of the debuggee whose breakpoints to list.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :stripResults (boolean()): This field is deprecated. The following fields are always stripped out of the result: &#x60;stack_frames&#x60;, &#x60;evaluated_expressions&#x60; and &#x60;variable_table&#x60;.
     - :waitToken (String.t): A wait token that, if specified, blocks the call until the breakpoints list has changed, or a server selected timeout has expired.  The value should be set from the last response. The error code &#x60;google.rpc.Code.ABORTED&#x60; (RPC) is returned on wait timeout, which should be called again with the same &#x60;wait_token&#x60;.
     - :clientVersion (String.t): The client version making the call. Schema: &#x60;domain/type/version&#x60; (e.g., &#x60;google.com/intellij/v1&#x60;).
     - :action.value (String.t): Only breakpoints with the specified action will pass the filter.
-    - :includeInactive (boolean()): When set to &#x60;true&#x60;, the response includes active and inactive breakpoints. Otherwise, it includes only active breakpoints.
     - :includeAllUsers (boolean()): When set to &#x60;true&#x60;, the response includes the list of breakpoints set by any user. Otherwise, it includes only breakpoints set by the caller.
-    - :stripResults (boolean()): This field is deprecated. The following fields are always stripped out of the result: &#x60;stack_frames&#x60;, &#x60;evaluated_expressions&#x60; and &#x60;variable_table&#x60;.
+    - :includeInactive (boolean()): When set to &#x60;true&#x60;, the response includes active and inactive breakpoints. Otherwise, it includes only active breakpoints.
 
   ## Returns
 
@@ -211,23 +211,23 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
         opts \\ []
       ) do
     optional_params_config = %{
-      :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :fields => :query,
-      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
+      :key => :query,
+      :access_token => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
+      :stripResults => :query,
       :waitToken => :query,
       :clientVersion => :query,
       :"action.value" => :query,
-      :includeInactive => :query,
       :includeAllUsers => :query,
-      :stripResults => :query
+      :includeInactive => :query
     }
 
     request =
@@ -253,17 +253,17 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
   - connection (GoogleApi.CloudDebugger.V2.Connection): Connection to server
   - debuggee_id (String.t): ID of the debuggee where the breakpoint is to be set.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :clientVersion (String.t): The client version making the call. Schema: &#x60;domain/type/version&#x60; (e.g., &#x60;google.com/intellij/v1&#x60;).
     - :body (Breakpoint): 
 
@@ -286,17 +286,17 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
         opts \\ []
       ) do
     optional_params_config = %{
-      :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :fields => :query,
-      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
+      :key => :query,
+      :access_token => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
       :clientVersion => :query,
       :body => :body
     }
@@ -323,20 +323,20 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
 
   - connection (GoogleApi.CloudDebugger.V2.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :clientVersion (String.t): The client version making the call. Schema: &#x60;domain/type/version&#x60; (e.g., &#x60;google.com/intellij/v1&#x60;).
     - :includeInactive (boolean()): When set to &#x60;true&#x60;, the result includes all debuggees. Otherwise, the result includes only debuggees that are active.
     - :project (String.t): Project number of a Google Cloud project whose debuggees to list.
-    - :clientVersion (String.t): The client version making the call. Schema: &#x60;domain/type/version&#x60; (e.g., &#x60;google.com/intellij/v1&#x60;).
 
   ## Returns
 
@@ -348,20 +348,20 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
           | {:error, Tesla.Env.t()}
   def clouddebugger_debugger_debuggees_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :fields => :query,
-      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
+      :key => :query,
+      :access_token => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query,
+      :clientVersion => :query,
       :includeInactive => :query,
-      :project => :query,
-      :clientVersion => :query
+      :project => :query
     }
 
     request =
