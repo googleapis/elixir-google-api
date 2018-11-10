@@ -32,17 +32,17 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.EncodedUpdates do
   - connection (GoogleApi.SafeBrowsing.V4.Connection): Connection to server
   - encoded_request (binary()): A serialized FetchThreatListUpdatesRequest proto.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :clientId (String.t): A client ID that uniquely identifies the client implementation of the Safe Browsing API.
     - :clientVersion (String.t): The version of the client implementation.
 
@@ -61,17 +61,17 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.EncodedUpdates do
         opts \\ []
       ) do
     optional_params_config = %{
+      :access_token => :query,
+      :key => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :clientId => :query,
       :clientVersion => :query
     }
