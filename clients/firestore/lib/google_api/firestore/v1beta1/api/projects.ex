@@ -32,17 +32,17 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   - connection (GoogleApi.Firestore.V1beta1.Connection): Connection to server
   - database (String.t): The database name. In the format: &#x60;projects/{project_id}/databases/{database_id}&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :body (BatchGetDocumentsRequest): 
 
   ## Returns
@@ -64,17 +64,17 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -101,17 +101,17 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   - connection (GoogleApi.Firestore.V1beta1.Connection): Connection to server
   - database (String.t): The database name. In the format: &#x60;projects/{project_id}/databases/{database_id}&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :body (BeginTransactionRequest): 
 
   ## Returns
@@ -133,17 +133,17 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -170,17 +170,17 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   - connection (GoogleApi.Firestore.V1beta1.Connection): Connection to server
   - database (String.t): The database name. In the format: &#x60;projects/{project_id}/databases/{database_id}&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :body (CommitRequest): 
 
   ## Returns
@@ -197,17 +197,17 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -233,19 +233,19 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   - parent (String.t): The parent resource. For example: &#x60;projects/{project_id}/databases/{database_id}/documents&#x60; or &#x60;projects/{project_id}/databases/{database_id}/documents/chatrooms/{chatroom_id}&#x60;
   - collection_id (String.t): The collection ID, relative to &#x60;parent&#x60;, to list. For example: &#x60;chatrooms&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :documentId (String.t): The client-assigned document ID to use for this document.  Optional. If not specified, an ID will be assigned by the service.
     - :mask.fieldPaths ([String.t]): The list of field paths in the mask. See Document.fields for a field path syntax reference.
+    - :documentId (String.t): The client-assigned document ID to use for this document.  Optional. If not specified, an ID will be assigned by the service.
     - :body (Document): 
 
   ## Returns
@@ -267,19 +267,19 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :documentId => :query,
       :"mask.fieldPaths" => :query,
+      :documentId => :query,
       :body => :body
     }
 
@@ -306,17 +306,17 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   - parent (String.t): The parent resource name. In the format: &#x60;projects/{project_id}/databases/{database_id}/documents&#x60; or &#x60;projects/{project_id}/databases/{database_id}/documents/{document_path}&#x60;. For example: &#x60;projects/my-project/databases/my-database/documents&#x60; or &#x60;projects/my-project/databases/my-database/documents/chatrooms/my-chatroom&#x60;
   - collection_id (String.t): The collection ID, relative to &#x60;parent&#x60;, to list. For example: &#x60;chatrooms&#x60; or &#x60;messages&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :mask.fieldPaths ([String.t]): The list of field paths in the mask. See Document.fields for a field path syntax reference.
     - :pageToken (String.t): The &#x60;next_page_token&#x60; value returned from a previous List request, if any.
     - :pageSize (integer()): The maximum number of documents to return.
@@ -346,17 +346,17 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :"mask.fieldPaths" => :query,
       :pageToken => :query,
       :pageSize => :query,
@@ -390,17 +390,17 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   - connection (GoogleApi.Firestore.V1beta1.Connection): Connection to server
   - parent (String.t): The parent document. In the format: &#x60;projects/{project_id}/databases/{database_id}/documents/{document_path}&#x60;. For example: &#x60;projects/my-project/databases/my-database/documents/chatrooms/my-chatroom&#x60;
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :body (ListCollectionIdsRequest): 
 
   ## Returns
@@ -422,17 +422,17 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -459,17 +459,17 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   - connection (GoogleApi.Firestore.V1beta1.Connection): Connection to server
   - database (String.t): The database name. In the format: &#x60;projects/{project_id}/databases/{database_id}&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :body (ListenRequest): 
 
   ## Returns
@@ -486,17 +486,17 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -521,21 +521,21 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   - connection (GoogleApi.Firestore.V1beta1.Connection): Connection to server
   - name (String.t): The resource name of the document, for example &#x60;projects/{project_id}/databases/{database_id}/documents/{document_path}&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
+    - :currentDocument.updateTime (DateTime.t): When set, the target document must exist and have been last updated at that time.
     - :currentDocument.exists (boolean()): When set to &#x60;true&#x60;, the target document must exist. When set to &#x60;false&#x60;, the target document must not exist.
     - :updateMask.fieldPaths ([String.t]): The list of field paths in the mask. See Document.fields for a field path syntax reference.
     - :mask.fieldPaths ([String.t]): The list of field paths in the mask. See Document.fields for a field path syntax reference.
-    - :currentDocument.updateTime (DateTime.t): When set, the target document must exist and have been last updated at that time.
     - :body (Document): 
 
   ## Returns
@@ -552,21 +552,21 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
+      :"currentDocument.updateTime" => :query,
       :"currentDocument.exists" => :query,
       :"updateMask.fieldPaths" => :query,
       :"mask.fieldPaths" => :query,
-      :"currentDocument.updateTime" => :query,
       :body => :body
     }
 
@@ -591,17 +591,17 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   - connection (GoogleApi.Firestore.V1beta1.Connection): Connection to server
   - database (String.t): The database name. In the format: &#x60;projects/{project_id}/databases/{database_id}&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :body (RollbackRequest): 
 
   ## Returns
@@ -618,17 +618,17 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -653,17 +653,17 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   - connection (GoogleApi.Firestore.V1beta1.Connection): Connection to server
   - parent (String.t): The parent resource name. In the format: &#x60;projects/{project_id}/databases/{database_id}/documents&#x60; or &#x60;projects/{project_id}/databases/{database_id}/documents/{document_path}&#x60;. For example: &#x60;projects/my-project/databases/my-database/documents&#x60; or &#x60;projects/my-project/databases/my-database/documents/chatrooms/my-chatroom&#x60;
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :body (RunQueryRequest): 
 
   ## Returns
@@ -684,17 +684,17 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -719,17 +719,17 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   - connection (GoogleApi.Firestore.V1beta1.Connection): Connection to server
   - database (String.t): The database name. In the format: &#x60;projects/{project_id}/databases/{database_id}&#x60;. This is only required in the first message.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :body (WriteRequest): 
 
   ## Returns
@@ -746,17 +746,17 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -781,17 +781,17 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   - connection (GoogleApi.Firestore.V1beta1.Connection): Connection to server
   - name (String.t): Database to export. Should be of the form: &#x60;projects/{project_id}/databases/{database_id}&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :body (GoogleFirestoreAdminV1beta1ExportDocumentsRequest): 
 
   ## Returns
@@ -809,17 +809,17 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -846,17 +846,17 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   - connection (GoogleApi.Firestore.V1beta1.Connection): Connection to server
   - name (String.t): Database to import into. Should be of the form: &#x60;projects/{project_id}/databases/{database_id}&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :body (GoogleFirestoreAdminV1beta1ImportDocumentsRequest): 
 
   ## Returns
@@ -874,17 +874,17 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -911,17 +911,17 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   - connection (GoogleApi.Firestore.V1beta1.Connection): Connection to server
   - parent (String.t): The name of the database this index will apply to. For example: &#x60;projects/{project_id}/databases/{database_id}&#x60;
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :body (GoogleFirestoreAdminV1beta1Index): 
 
   ## Returns
@@ -939,17 +939,17 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -976,17 +976,17 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   - connection (GoogleApi.Firestore.V1beta1.Connection): Connection to server
   - name (String.t): The index name. For example: &#x60;projects/{project_id}/databases/{database_id}/indexes/{index_id}&#x60;
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :currentDocument.exists (boolean()): When set to &#x60;true&#x60;, the target document must exist. When set to &#x60;false&#x60;, the target document must not exist.
     - :currentDocument.updateTime (DateTime.t): When set, the target document must exist and have been last updated at that time.
 
@@ -1004,17 +1004,17 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :"currentDocument.exists" => :query,
       :"currentDocument.updateTime" => :query
     }
@@ -1040,17 +1040,17 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   - connection (GoogleApi.Firestore.V1beta1.Connection): Connection to server
   - name (String.t): The name of the index. For example: &#x60;projects/{project_id}/databases/{database_id}/indexes/{index_id}&#x60;
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :mask.fieldPaths ([String.t]): The list of field paths in the mask. See Document.fields for a field path syntax reference.
     - :readTime (DateTime.t): Reads the version of the document at the given time. This may not be older than 60 seconds.
     - :transaction (binary()): Reads the document in a transaction.
@@ -1070,17 +1070,17 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :"mask.fieldPaths" => :query,
       :readTime => :query,
       :transaction => :query
@@ -1109,20 +1109,20 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   - connection (GoogleApi.Firestore.V1beta1.Connection): Connection to server
   - parent (String.t): The database name. For example: &#x60;projects/{project_id}/databases/{database_id}&#x60;
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
+    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :filter (String.t): 
     - :pageToken (String.t): The standard List page token.
     - :pageSize (integer()): The standard List page size.
+    - :filter (String.t): 
 
   ## Returns
 
@@ -1140,20 +1140,20 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
+      :alt => :query,
       :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :filter => :query,
       :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :filter => :query
     }
 
     request =
