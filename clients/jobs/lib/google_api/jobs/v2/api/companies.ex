@@ -31,17 +31,17 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
 
   - connection (GoogleApi.Jobs.V2.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (Company): 
 
   ## Returns
@@ -53,17 +53,17 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
           {:ok, GoogleApi.Jobs.V2.Model.Company.t()} | {:error, Tesla.Env.t()}
   def jobs_companies_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
+      :access_token => :query,
+      :key => :query,
       :body => :body
     }
 
@@ -79,6 +79,118 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
   end
 
   @doc """
+  Deletes the specified company.
+
+  ## Parameters
+
+  - connection (GoogleApi.Jobs.V2.Connection): Connection to server
+  - name (String.t): Required.  The resource name of the company to be deleted, such as, \&quot;companies/0000aaaa-1111-bbbb-2222-cccc3333dddd\&quot;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :disableFastProcess (boolean()): Deprecated. This field is not working anymore.  Optional.  If set to true, this call waits for all processing steps to complete before the job is cleaned up. Otherwise, the call returns while some steps are still taking place asynchronously, hence faster.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Jobs.V2.Model.Empty{}} on success
+  {:error, info} on failure
+  """
+  @spec jobs_companies_delete(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.Jobs.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
+  def jobs_companies_delete(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :disableFastProcess => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode_www_form(name)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Jobs.V2.Model.Empty{}])
+  end
+
+  @doc """
+  Retrieves the specified company.
+
+  ## Parameters
+
+  - connection (GoogleApi.Jobs.V2.Connection): Connection to server
+  - name (String.t): Required.  Resource name of the company to retrieve, such as \&quot;companies/0000aaaa-1111-bbbb-2222-cccc3333dddd\&quot;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Jobs.V2.Model.Company{}} on success
+  {:error, info} on failure
+  """
+  @spec jobs_companies_get(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.Jobs.V2.Model.Company.t()} | {:error, Tesla.Env.t()}
+  def jobs_companies_get(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode_www_form(name)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Jobs.V2.Model.Company{}])
+  end
+
+  @doc """
   Deprecated. Use ListJobs instead.  Lists all jobs associated with a company.
 
   ## Parameters
@@ -86,22 +198,22 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
   - connection (GoogleApi.Jobs.V2.Connection): Connection to server
   - company_name (String.t): Required.  The resource name of the company that owns the jobs to be listed, such as, \&quot;companies/0000aaaa-1111-bbbb-2222-cccc3333dddd\&quot;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :idsOnly (boolean()): Optional.  If set to &#x60;true&#x60;, only job ID, job requisition ID and language code will be returned.  A typical use is to synchronize job repositories.  Defaults to false.
-    - :pageSize (integer()): Optional.  The maximum number of jobs to be returned per page of results.  If ids_only is set to true, the maximum allowed page size is 1000. Otherwise, the maximum allowed page size is 100.  Default is 100 if empty or a number &lt; 1 is specified.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :jobRequisitionId (String.t): Optional.  The requisition ID, also known as posting ID, assigned by the company to the job.  The maximum number of allowable characters is 225.
     - :includeJobsCount (boolean()): Deprecated. Please DO NOT use this field except for small companies. Suggest counting jobs page by page instead.  Optional.  Set to true if the total number of open jobs is to be returned.  Defaults to false.
     - :pageToken (String.t): Optional.  The starting point of a query result.
+    - :idsOnly (boolean()): Optional.  If set to &#x60;true&#x60;, only job ID, job requisition ID and language code will be returned.  A typical use is to synchronize job repositories.  Defaults to false.
+    - :pageSize (integer()): Optional.  The maximum number of jobs to be returned per page of results.  If ids_only is set to true, the maximum allowed page size is 1000. Otherwise, the maximum allowed page size is 100.  Default is 100 if empty or a number &lt; 1 is specified.
 
   ## Returns
 
@@ -112,22 +224,22 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
           {:ok, GoogleApi.Jobs.V2.Model.ListCompanyJobsResponse.t()} | {:error, Tesla.Env.t()}
   def jobs_companies_jobs_list(connection, company_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
-      :idsOnly => :query,
-      :pageSize => :query,
+      :access_token => :query,
+      :key => :query,
       :jobRequisitionId => :query,
       :includeJobsCount => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :idsOnly => :query,
+      :pageSize => :query
     }
 
     request =
@@ -150,17 +262,17 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
 
   - connection (GoogleApi.Jobs.V2.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :mustHaveOpenJobs (boolean()): Optional.  Set to true if the companies request must have open jobs.  Defaults to false.  If true, at most page_size of companies are fetched, among which only those with open jobs are returned.
     - :pageToken (String.t): Optional.  The starting indicator from which to return results.
     - :pageSize (integer()): Optional.  The maximum number of companies to be returned, at most 100. Default is 100 if a non-positive number is provided.
@@ -174,17 +286,17 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
           {:ok, GoogleApi.Jobs.V2.Model.ListCompaniesResponse.t()} | {:error, Tesla.Env.t()}
   def jobs_companies_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
+      :access_token => :query,
+      :key => :query,
       :mustHaveOpenJobs => :query,
       :pageToken => :query,
       :pageSize => :query
@@ -199,5 +311,64 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Jobs.V2.Model.ListCompaniesResponse{}])
+  end
+
+  @doc """
+  Updates the specified company. Company names can&#39;t be updated. To update a company name, delete the company and all jobs associated with it, and only then re-create them.
+
+  ## Parameters
+
+  - connection (GoogleApi.Jobs.V2.Connection): Connection to server
+  - name (String.t): Required during company update.  The resource name for a company. This is generated by the service when a company is created, for example, \&quot;companies/0000aaaa-1111-bbbb-2222-cccc3333dddd\&quot;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :updateCompanyFields (String.t): Optional but strongly recommended to be provided for the best service experience.  If update_company_fields is provided, only the specified fields in company are updated. Otherwise all the fields are updated.  A field mask to specify the company fields to update. Valid values are:  * displayName * website * imageUrl * companySize * distributorBillingCompanyId * companyInfoSources * careerPageLink * hiringAgency * hqLocation * eeoText * keywordSearchableCustomAttributes * title (deprecated) * keywordSearchableCustomFields (deprecated)
+    - :body (Company): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Jobs.V2.Model.Company{}} on success
+  {:error, info} on failure
+  """
+  @spec jobs_companies_patch(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.Jobs.V2.Model.Company.t()} | {:error, Tesla.Env.t()}
+  def jobs_companies_patch(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :updateCompanyFields => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode_www_form(name)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Jobs.V2.Model.Company{}])
   end
 end
