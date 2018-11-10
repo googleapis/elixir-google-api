@@ -32,6 +32,9 @@ defmodule GoogleApi.CloudShell.V1.Api.Operations do
   - connection (GoogleApi.CloudShell.V1.Connection): Connection to server
   - name (String.t): The name of the operation resource to be cancelled.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
@@ -40,9 +43,6 @@ defmodule GoogleApi.CloudShell.V1.Api.Operations do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
     - :body (CancelOperationRequest): 
 
   ## Returns
@@ -54,6 +54,9 @@ defmodule GoogleApi.CloudShell.V1.Api.Operations do
           {:ok, GoogleApi.CloudShell.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def cloudshell_operations_cancel(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :alt => :query,
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
@@ -62,9 +65,6 @@ defmodule GoogleApi.CloudShell.V1.Api.Operations do
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
-      :access_token => :query,
       :body => :body
     }
 
@@ -89,6 +89,9 @@ defmodule GoogleApi.CloudShell.V1.Api.Operations do
   - connection (GoogleApi.CloudShell.V1.Connection): Connection to server
   - name (String.t): The name of the operation resource to be deleted.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
@@ -97,9 +100,6 @@ defmodule GoogleApi.CloudShell.V1.Api.Operations do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
 
   ## Returns
 
@@ -110,6 +110,9 @@ defmodule GoogleApi.CloudShell.V1.Api.Operations do
           {:ok, GoogleApi.CloudShell.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def cloudshell_operations_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :alt => :query,
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
@@ -117,10 +120,7 @@ defmodule GoogleApi.CloudShell.V1.Api.Operations do
       :fields => :query,
       :callback => :query,
       :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
-      :access_token => :query
+      :"$.xgafv" => :query
     }
 
     request =
@@ -144,6 +144,9 @@ defmodule GoogleApi.CloudShell.V1.Api.Operations do
   - connection (GoogleApi.CloudShell.V1.Connection): Connection to server
   - name (String.t): The name of the operation resource.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
@@ -152,9 +155,6 @@ defmodule GoogleApi.CloudShell.V1.Api.Operations do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
     - :pageToken (String.t): The standard list page token.
     - :pageSize (integer()): The standard list page size.
     - :filter (String.t): The standard list filter.
@@ -168,6 +168,9 @@ defmodule GoogleApi.CloudShell.V1.Api.Operations do
           {:ok, GoogleApi.CloudShell.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def cloudshell_operations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :alt => :query,
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
@@ -176,9 +179,6 @@ defmodule GoogleApi.CloudShell.V1.Api.Operations do
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
-      :access_token => :query,
       :pageToken => :query,
       :pageSize => :query,
       :filter => :query
