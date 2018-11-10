@@ -33,9 +33,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;name&#x60;. Resource name for the location.
   - locations_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -44,6 +41,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
 
   ## Returns
 
@@ -60,9 +60,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -70,7 +67,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
-      :"$.xgafv" => :query
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query
     }
 
     request =
@@ -96,9 +96,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;parent&#x60;. Required. The resource name of the location associated with the KeyRings, in the format &#x60;projects/*/locations/*&#x60;.
   - locations_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -107,6 +104,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :keyRingId (String.t): Required. It must be unique within a location and match the regular expression &#x60;[a-zA-Z0-9_-]{1,63}&#x60;
     - :body (KeyRing): 
 
@@ -129,9 +129,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -140,6 +137,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
       :keyRingId => :query,
       :body => :body
     }
@@ -168,9 +168,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   - locations_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
   - key_rings_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -179,6 +176,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :cryptoKeyId (String.t): Required. It must be unique within a KeyRing and match the regular expression &#x60;[a-zA-Z0-9_-]{1,63}&#x60;
     - :body (CryptoKey): 
 
@@ -203,9 +203,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -214,6 +211,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
       :cryptoKeyId => :query,
       :body => :body
     }
@@ -248,9 +248,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   - crypto_keys_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - crypto_key_versions_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -259,6 +256,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (AsymmetricDecryptRequest): 
 
   ## Returns
@@ -288,9 +288,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -299,6 +296,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
       :body => :body
     }
 
@@ -334,9 +334,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   - crypto_keys_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - crypto_key_versions_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -345,6 +342,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (AsymmetricSignRequest): 
 
   ## Returns
@@ -373,9 +373,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -384,6 +381,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
       :body => :body
     }
 
@@ -418,9 +418,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   - key_rings_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
   - crypto_keys_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -429,6 +426,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (CryptoKeyVersion): 
 
   ## Returns
@@ -454,9 +454,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -465,6 +462,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
       :body => :body
     }
 
@@ -499,9 +499,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   - crypto_keys_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - crypto_key_versions_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -510,6 +507,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (DestroyCryptoKeyVersionRequest): 
 
   ## Returns
@@ -537,9 +537,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -548,6 +545,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
       :body => :body
     }
 
@@ -583,9 +583,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   - crypto_keys_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - crypto_key_versions_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -594,6 +591,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
 
   ## Returns
 
@@ -620,9 +620,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -630,7 +627,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
-      :"$.xgafv" => :query
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query
     }
 
     request =
@@ -665,9 +665,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   - crypto_keys_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - crypto_key_versions_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -676,6 +673,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
 
   ## Returns
 
@@ -702,9 +702,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -712,7 +709,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
-      :"$.xgafv" => :query
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query
     }
 
     request =
@@ -746,9 +746,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   - key_rings_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
   - crypto_keys_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -757,6 +754,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :pageToken (String.t): Optional pagination token, returned earlier via ListCryptoKeyVersionsResponse.next_page_token.
     - :pageSize (integer()): Optional limit on the number of CryptoKeyVersions to include in the response. Further CryptoKeyVersions can subsequently be obtained by including the ListCryptoKeyVersionsResponse.next_page_token in a subsequent request. If unspecified, the server will pick an appropriate default.
     - :view (String.t): The fields to include in the response.
@@ -786,9 +786,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -797,6 +794,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
       :pageToken => :query,
       :pageSize => :query,
       :view => :query
@@ -835,9 +835,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   - crypto_keys_id (String.t): Part of &#x60;cryptoKeyVersion.name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - crypto_key_versions_id (String.t): Part of &#x60;cryptoKeyVersion.name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -846,6 +843,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :updateMask (String.t): Required list of fields to be updated in this request.
     - :body (CryptoKeyVersion): 
 
@@ -874,9 +874,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -885,6 +882,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
       :updateMask => :query,
       :body => :body
     }
@@ -921,9 +921,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   - crypto_keys_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - crypto_key_versions_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -932,6 +929,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (RestoreCryptoKeyVersionRequest): 
 
   ## Returns
@@ -959,9 +959,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -970,6 +967,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
       :body => :body
     }
 
@@ -1004,9 +1004,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   - key_rings_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - crypto_keys_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -1015,6 +1012,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (DecryptRequest): 
 
   ## Returns
@@ -1040,9 +1040,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -1051,6 +1048,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
       :body => :body
     }
 
@@ -1084,9 +1084,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   - key_rings_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - crypto_keys_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -1095,6 +1092,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (EncryptRequest): 
 
   ## Returns
@@ -1120,9 +1120,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -1131,6 +1128,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
       :body => :body
     }
 
@@ -1164,9 +1164,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   - key_rings_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - crypto_keys_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -1175,6 +1172,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
 
   ## Returns
 
@@ -1199,9 +1199,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -1209,7 +1206,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
-      :"$.xgafv" => :query
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query
     }
 
     request =
@@ -1242,9 +1242,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   - key_rings_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - crypto_keys_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -1253,6 +1250,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
 
   ## Returns
 
@@ -1277,9 +1277,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -1287,7 +1284,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
-      :"$.xgafv" => :query
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query
     }
 
     request =
@@ -1319,9 +1319,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   - locations_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
   - key_rings_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -1330,6 +1327,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :pageSize (integer()): Optional limit on the number of CryptoKeys to include in the response.  Further CryptoKeys can subsequently be obtained by including the ListCryptoKeysResponse.next_page_token in a subsequent request.  If unspecified, the server will pick an appropriate default.
     - :versionView (String.t): The fields of the primary version to include in the response.
     - :pageToken (String.t): Optional pagination token, returned earlier via ListCryptoKeysResponse.next_page_token.
@@ -1356,9 +1356,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -1367,6 +1364,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
       :pageSize => :query,
       :versionView => :query,
       :pageToken => :query
@@ -1401,9 +1401,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   - key_rings_id (String.t): Part of &#x60;cryptoKey.name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - crypto_keys_id (String.t): Part of &#x60;cryptoKey.name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -1412,6 +1409,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :updateMask (String.t): Required list of fields to be updated in this request.
     - :body (CryptoKey): 
 
@@ -1438,9 +1438,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -1449,6 +1446,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
       :updateMask => :query,
       :body => :body
     }
@@ -1483,9 +1483,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   - key_rings_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - crypto_keys_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -1494,6 +1491,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (SetIamPolicyRequest): 
 
   ## Returns
@@ -1519,9 +1519,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -1530,6 +1527,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
       :body => :body
     }
 
@@ -1563,9 +1563,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   - key_rings_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - crypto_keys_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -1574,6 +1571,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (TestIamPermissionsRequest): 
 
   ## Returns
@@ -1601,9 +1601,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -1612,6 +1609,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
       :body => :body
     }
 
@@ -1647,9 +1647,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   - key_rings_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - crypto_keys_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -1658,6 +1655,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (UpdateCryptoKeyPrimaryVersionRequest): 
 
   ## Returns
@@ -1683,9 +1683,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -1694,6 +1691,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
       :body => :body
     }
 
@@ -1726,9 +1726,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   - locations_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - key_rings_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -1737,6 +1734,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
 
   ## Returns
 
@@ -1759,9 +1759,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -1769,7 +1766,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
-      :"$.xgafv" => :query
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query
     }
 
     request =
@@ -1797,9 +1797,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   - locations_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - key_rings_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -1808,6 +1805,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
 
   ## Returns
 
@@ -1830,9 +1830,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -1840,7 +1837,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
-      :"$.xgafv" => :query
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query
     }
 
     request =
@@ -1870,9 +1870,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   - projects_id (String.t): Part of &#x60;parent&#x60;. Required. The resource name of the location associated with the KeyRings, in the format &#x60;projects/*/locations/*&#x60;.
   - locations_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -1881,8 +1878,11 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :pageToken (String.t): Optional pagination token, returned earlier via ListKeyRingsResponse.next_page_token.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :pageSize (integer()): Optional limit on the number of KeyRings to include in the response.  Further KeyRings can subsequently be obtained by including the ListKeyRingsResponse.next_page_token in a subsequent request.  If unspecified, the server will pick an appropriate default.
+    - :pageToken (String.t): Optional pagination token, returned earlier via ListKeyRingsResponse.next_page_token.
 
   ## Returns
 
@@ -1903,9 +1903,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -1914,8 +1911,11 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -1942,9 +1942,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   - locations_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - key_rings_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -1953,6 +1950,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (SetIamPolicyRequest): 
 
   ## Returns
@@ -1976,9 +1976,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -1987,6 +1984,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
       :body => :body
     }
 
@@ -2018,9 +2018,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   - locations_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - key_rings_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -2029,6 +2026,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (TestIamPermissionsRequest): 
 
   ## Returns
@@ -2054,9 +2054,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -2065,6 +2062,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
       :body => :body
     }
 
@@ -2096,9 +2096,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The resource that owns the locations collection, if applicable.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -2107,6 +2104,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :filter (String.t): The standard list filter.
     - :pageToken (String.t): The standard list page token.
     - :pageSize (integer()): The standard list page size.
@@ -2120,9 +2120,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           {:ok, GoogleApi.CloudKMS.V1.Model.ListLocationsResponse.t()} | {:error, Tesla.Env.t()}
   def cloudkms_projects_locations_list(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -2131,6 +2128,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
       :filter => :query,
       :pageToken => :query,
       :pageSize => :query
