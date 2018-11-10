@@ -32,17 +32,17 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
   - connection (GoogleApi.CloudErrorReporting.V1beta1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;projectName&#x60;. [Required] The resource name of the Google Cloud Platform project. Written as &#x60;projects/&#x60; plus the [Google Cloud Platform project ID](https://support.google.com/cloud/answer/6158840). Example: &#x60;projects/my-project-123&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
 
   ## Returns
 
@@ -59,17 +59,17 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query
     }
 
     request =
@@ -95,23 +95,23 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
   - connection (GoogleApi.CloudErrorReporting.V1beta1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;projectName&#x60;. [Required] The resource name of the Google Cloud Platform project. Written as &#x60;projects/&#x60; plus the [Google Cloud Platform project ID](https://support.google.com/cloud/answer/6158840). Example: &#x60;projects/my-project-123&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :serviceFilter.version (String.t): [Optional] The exact value to match against [&#x60;ServiceContext.version&#x60;](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.version).
     - :serviceFilter.resourceType (String.t): [Optional] The exact value to match against [&#x60;ServiceContext.resource_type&#x60;](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.resource_type).
     - :timeRange.period (String.t): Restricts the query to the specified time range.
     - :groupId (String.t): [Required] The group for which events shall be returned.
-    - :pageToken (String.t): [Optional] A &#x60;next_page_token&#x60; provided by a previous response.
     - :serviceFilter.service (String.t): [Optional] The exact value to match against [&#x60;ServiceContext.service&#x60;](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.service).
+    - :pageToken (String.t): [Optional] A &#x60;next_page_token&#x60; provided by a previous response.
     - :pageSize (integer()): [Optional] The maximum number of results to return per response.
 
   ## Returns
@@ -129,23 +129,23 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :"serviceFilter.version" => :query,
       :"serviceFilter.resourceType" => :query,
       :"timeRange.period" => :query,
       :groupId => :query,
-      :pageToken => :query,
       :"serviceFilter.service" => :query,
+      :pageToken => :query,
       :pageSize => :query
     }
 
@@ -172,17 +172,17 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
   - connection (GoogleApi.CloudErrorReporting.V1beta1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;projectName&#x60;. [Required] The resource name of the Google Cloud Platform project. Written as &#x60;projects/&#x60; plus the [Google Cloud Platform project ID](https://support.google.com/cloud/answer/6158840). Example: &#x60;projects/my-project-123&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (ReportedErrorEvent): 
 
   ## Returns
@@ -200,17 +200,17 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :body => :body
     }
 
@@ -237,23 +237,23 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
   - connection (GoogleApi.CloudErrorReporting.V1beta1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;projectName&#x60;. [Required] The resource name of the Google Cloud Platform project. Written as &lt;code&gt;projects/&lt;/code&gt; plus the &lt;a href&#x3D;\&quot;https://support.google.com/cloud/answer/6158840\&quot;&gt;Google Cloud Platform project ID&lt;/a&gt;.  Example: &lt;code&gt;projects/my-project-123&lt;/code&gt;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :alignment (String.t): [Optional] The alignment of the timed counts to be returned. Default is &#x60;ALIGNMENT_EQUAL_AT_END&#x60;.
     - :groupId ([String.t]): [Optional] List all &lt;code&gt;ErrorGroupStats&lt;/code&gt; with these IDs.
     - :serviceFilter.service (String.t): [Optional] The exact value to match against [&#x60;ServiceContext.service&#x60;](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.service).
     - :pageSize (integer()): [Optional] The maximum number of results to return per response. Default is 20.
-    - :serviceFilter.version (String.t): [Optional] The exact value to match against [&#x60;ServiceContext.version&#x60;](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.version).
     - :order (String.t): [Optional] The sort order in which the results are returned. Default is &#x60;COUNT_DESC&#x60;.
+    - :serviceFilter.version (String.t): [Optional] The exact value to match against [&#x60;ServiceContext.version&#x60;](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.version).
     - :serviceFilter.resourceType (String.t): [Optional] The exact value to match against [&#x60;ServiceContext.resource_type&#x60;](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.resource_type).
     - :alignmentTime (DateTime.t): [Optional] Time where the timed counts shall be aligned if rounded alignment is chosen. Default is 00:00 UTC.
     - :timedCountDuration (String.t): [Optional] The preferred duration for a single returned &#x60;TimedCount&#x60;. If not set, no timed counts are returned.
@@ -275,23 +275,23 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :alignment => :query,
       :groupId => :query,
       :"serviceFilter.service" => :query,
       :pageSize => :query,
-      :"serviceFilter.version" => :query,
       :order => :query,
+      :"serviceFilter.version" => :query,
       :"serviceFilter.resourceType" => :query,
       :alignmentTime => :query,
       :timedCountDuration => :query,
@@ -323,17 +323,17 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
   - projects_id (String.t): Part of &#x60;groupName&#x60;. [Required] The group resource name. Written as &lt;code&gt;projects/&lt;var&gt;projectID&lt;/var&gt;/groups/&lt;var&gt;group_name&lt;/var&gt;&lt;/code&gt;. Call &lt;a href&#x3D;\&quot;/error-reporting/reference/rest/v1beta1/projects.groupStats/list\&quot;&gt; &lt;code&gt;groupStats.list&lt;/code&gt;&lt;/a&gt; to return a list of groups belonging to this project.  Example: &lt;code&gt;projects/my-project-123/groups/my-group&lt;/code&gt;
   - groups_id (String.t): Part of &#x60;groupName&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
 
   ## Returns
 
@@ -356,17 +356,17 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query
+      :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query
     }
 
     request =
@@ -394,17 +394,17 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
   - projects_id (String.t): Part of &#x60;group.name&#x60;. The group resource name. Example: &lt;code&gt;projects/my-project-123/groups/my-groupid&lt;/code&gt;
   - groups_id (String.t): Part of &#x60;group.name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
+    - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (ErrorGroup): 
 
   ## Returns
@@ -428,17 +428,17 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
       :alt => :query,
+      :access_token => :query,
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :body => :body
     }
 
