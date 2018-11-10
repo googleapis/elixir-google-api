@@ -100,11 +100,11 @@ defmodule GoogleApi.CloudBilling.V1.Api.Services do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :currencyCode (String.t): The ISO 4217 currency code for the pricing info in the response proto. Will use the conversion rate as of start_time. Optional. If not specified USD will be used.
     - :endTime (DateTime.t): Optional exclusive end time of the time range for which the pricing versions will be returned. Timestamps in the future are not allowed. The time range has to be within a single calendar month in America/Los_Angeles timezone. Time range as a whole is optional. If not specified, the latest pricing will be returned (up to 12 hours old at most).
     - :pageToken (String.t): A token identifying a page of results to return. This should be a &#x60;next_page_token&#x60; value returned from a previous &#x60;ListSkus&#x60; call. If unspecified, the first page of results is returned.
     - :startTime (DateTime.t): Optional inclusive start time of the time range for which the pricing versions will be returned. Timestamps in the future are not allowed. The time range has to be within a single calendar month in America/Los_Angeles timezone. Time range as a whole is optional. If not specified, the latest pricing will be returned (up to 12 hours old at most).
     - :pageSize (integer()): Requested page size. Defaults to 5000.
+    - :currencyCode (String.t): The ISO 4217 currency code for the pricing info in the response proto. Will use the conversion rate as of start_time. Optional. If not specified USD will be used.
 
   ## Returns
 
@@ -126,11 +126,11 @@ defmodule GoogleApi.CloudBilling.V1.Api.Services do
       :alt => :query,
       :access_token => :query,
       :key => :query,
-      :currencyCode => :query,
       :endTime => :query,
       :pageToken => :query,
       :startTime => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :currencyCode => :query
     }
 
     request =
