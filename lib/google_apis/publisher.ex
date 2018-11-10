@@ -61,7 +61,9 @@ defmodule GoogleApis.Publisher do
     ]
     env = [{"HEX_API_KEY", Application.get_env(:google_apis, :hex_api_key)}]
     case System.cmd("mix", args, cd: directory, env: env, stderr_to_stdout: true) do
-      {output, 0}         -> {:ok, output}
+      {output, 0} ->
+        Logger.info output
+        {:ok, output}
       {output, exit_code} ->
         Logger.error "Failed with exit code #{exit_code}"
         Logger.error output
