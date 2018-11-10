@@ -16,70 +16,74 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Monitoring.V3.Api.UptimeCheckIps do
+defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Operations do
   @moduledoc """
-  API calls for all endpoints tagged `UptimeCheckIps`.
+  API calls for all endpoints tagged `Operations`.
   """
 
-  alias GoogleApi.Monitoring.V3.Connection
+  alias GoogleApi.AndroidDeviceProvisioning.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Returns the list of IPs that checkers run from
+  Gets the latest state of a long-running operation.  Clients can use this method to poll the operation result at intervals as recommended by the API service.
 
   ## Parameters
 
-  - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
+  - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
+  - name (String.t): The name of the operation resource.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :pageToken (String.t): If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return more results from the previous method call. NOTE: this field is not yet implemented
-    - :pageSize (integer()): The maximum number of results to return in a single response. The server may further constrain the maximum number of results returned in a single page. If the page_size is &lt;&#x3D;0, the server will decide the number of results to be returned. NOTE: this field is not yet implemented
+    - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
 
   ## Returns
 
-  {:ok, %GoogleApi.Monitoring.V3.Model.ListUptimeCheckIpsResponse{}} on success
+  {:ok, %GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation{}} on success
   {:error, info} on failure
   """
-  @spec monitoring_uptime_check_ips_list(Tesla.Env.client(), keyword()) ::
-          {:ok, GoogleApi.Monitoring.V3.Model.ListUptimeCheckIpsResponse.t()}
+  @spec androiddeviceprovisioning_operations_get(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation.t()}
           | {:error, Tesla.Env.t()}
-  def monitoring_uptime_check_ips_list(connection, optional_params \\ [], opts \\ []) do
+  def androiddeviceprovisioning_operations_get(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :fields => :query,
-      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :alt => :query,
+      :key => :query,
+      :access_token => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :uploadType => :query,
+      :fields => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v3/uptimeCheckIps")
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode_www_form(name)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.Monitoring.V3.Model.ListUptimeCheckIpsResponse{}]
+      opts ++ [struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation{}]
     )
   end
 end
