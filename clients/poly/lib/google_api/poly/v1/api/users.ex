@@ -32,17 +32,17 @@ defmodule GoogleApi.Poly.V1.Api.Users do
   - connection (GoogleApi.Poly.V1.Connection): Connection to server
   - name (String.t): A valid user id. Currently, only the special value &#39;me&#39;, representing the currently-authenticated user is supported. To use &#39;me&#39;, you must pass an OAuth token with the request.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :pageToken (String.t): Specifies a continuation token from a previous search whose results were split into multiple pages. To get the next page, submit the same request specifying the value from next_page_token.
     - :pageSize (integer()): The maximum number of assets to be returned. This value must be between &#x60;1&#x60; and &#x60;100&#x60;. Defaults to &#x60;20&#x60;.
     - :visibility (String.t): The visibility of the assets to be returned. Defaults to VISIBILITY_UNSPECIFIED which returns all assets.
@@ -58,17 +58,17 @@ defmodule GoogleApi.Poly.V1.Api.Users do
           {:ok, GoogleApi.Poly.V1.Model.ListUserAssetsResponse.t()} | {:error, Tesla.Env.t()}
   def poly_users_assets_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :quotaUser => :query,
+      :key => :query,
+      :access_token => :query,
+      :upload_protocol => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
       :pageToken => :query,
       :pageSize => :query,
       :visibility => :query,
@@ -97,21 +97,21 @@ defmodule GoogleApi.Poly.V1.Api.Users do
   - connection (GoogleApi.Poly.V1.Connection): Connection to server
   - name (String.t): A valid user id. Currently, only the special value &#39;me&#39;, representing the currently-authenticated user is supported. To use &#39;me&#39;, you must pass an OAuth token with the request.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :pageSize (integer()): The maximum number of assets to be returned. This value must be between &#x60;1&#x60; and &#x60;100&#x60;. Defaults to &#x60;20&#x60;.
-    - :format (String.t): Return only assets with the matching format. Acceptable values are: &#x60;BLOCKS&#x60;, &#x60;FBX&#x60;, &#x60;GLTF&#x60;, &#x60;GLTF2&#x60;, &#x60;OBJ&#x60;, &#x60;TILT&#x60;.
     - :orderBy (String.t): Specifies an ordering for assets. Acceptable values are: &#x60;BEST&#x60;, &#x60;NEWEST&#x60;, &#x60;OLDEST&#x60;, &#39;LIKED_TIME&#39;. Defaults to &#x60;LIKED_TIME&#x60;, which ranks assets based on how recently they were liked.
     - :pageToken (String.t): Specifies a continuation token from a previous search whose results were split into multiple pages. To get the next page, submit the same request specifying the value from next_page_token.
+    - :pageSize (integer()): The maximum number of assets to be returned. This value must be between &#x60;1&#x60; and &#x60;100&#x60;. Defaults to &#x60;20&#x60;.
+    - :format (String.t): Return only assets with the matching format. Acceptable values are: &#x60;BLOCKS&#x60;, &#x60;FBX&#x60;, &#x60;GLTF&#x60;, &#x60;GLTF2&#x60;, &#x60;OBJ&#x60;, &#x60;TILT&#x60;.
 
   ## Returns
 
@@ -122,21 +122,21 @@ defmodule GoogleApi.Poly.V1.Api.Users do
           {:ok, GoogleApi.Poly.V1.Model.ListLikedAssetsResponse.t()} | {:error, Tesla.Env.t()}
   def poly_users_likedassets_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :quotaUser => :query,
+      :key => :query,
+      :access_token => :query,
+      :upload_protocol => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :alt => :query,
-      :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :pageSize => :query,
-      :format => :query,
       :orderBy => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :pageSize => :query,
+      :format => :query
     }
 
     request =
