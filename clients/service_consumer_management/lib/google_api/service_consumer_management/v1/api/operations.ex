@@ -33,16 +33,16 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Operations do
   - name (String.t): The name of the operation resource to be cancelled.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
     - :body (CancelOperationRequest): 
 
   ## Returns
@@ -60,16 +60,16 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Operations do
       ) do
     optional_params_config = %{
       :alt => :query,
-      :access_token => :query,
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
+      :quotaUser => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
       :body => :body
     }
 
@@ -95,16 +95,16 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Operations do
   - name (String.t): The name of the operation resource to be deleted.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
 
   ## Returns
 
@@ -121,16 +121,16 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Operations do
       ) do
     optional_params_config = %{
       :alt => :query,
-      :access_token => :query,
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
+      :quotaUser => :query,
       :uploadType => :query,
-      :callback => :query,
+      :fields => :query,
+      :"$.xgafv" => :query,
       :oauth_token => :query,
-      :"$.xgafv" => :query
+      :callback => :query
     }
 
     request =
@@ -155,19 +155,19 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Operations do
   - name (String.t): The name of the operation resource.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :callback (String.t): JSONP
+    - :pageSize (integer()): The standard list page size.
     - :filter (String.t): The standard list filter.
     - :pageToken (String.t): The standard list page token.
-    - :pageSize (integer()): The standard list page size.
 
   ## Returns
 
@@ -185,19 +185,19 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Operations do
       ) do
     optional_params_config = %{
       :alt => :query,
-      :access_token => :query,
       :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
-      :quotaUser => :query,
       :prettyPrint => :query,
-      :fields => :query,
+      :quotaUser => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+      :fields => :query,
       :"$.xgafv" => :query,
+      :oauth_token => :query,
+      :callback => :query,
+      :pageSize => :query,
       :filter => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageToken => :query
     }
 
     request =
