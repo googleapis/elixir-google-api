@@ -31,6 +31,9 @@ defmodule GoogleApi.Speech.V1.Api.Speech do
 
   - connection (GoogleApi.Speech.V1.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -39,9 +42,6 @@ defmodule GoogleApi.Speech.V1.Api.Speech do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (LongRunningRecognizeRequest): 
 
   ## Returns
@@ -53,6 +53,9 @@ defmodule GoogleApi.Speech.V1.Api.Speech do
           {:ok, GoogleApi.Speech.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def speech_speech_longrunningrecognize(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -61,9 +64,6 @@ defmodule GoogleApi.Speech.V1.Api.Speech do
       :alt => :query,
       :access_token => :query,
       :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :body => :body
     }
 
@@ -85,6 +85,9 @@ defmodule GoogleApi.Speech.V1.Api.Speech do
 
   - connection (GoogleApi.Speech.V1.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -93,9 +96,6 @@ defmodule GoogleApi.Speech.V1.Api.Speech do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (RecognizeRequest): 
 
   ## Returns
@@ -107,6 +107,9 @@ defmodule GoogleApi.Speech.V1.Api.Speech do
           {:ok, GoogleApi.Speech.V1.Model.RecognizeResponse.t()} | {:error, Tesla.Env.t()}
   def speech_speech_recognize(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :upload_protocol => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -115,9 +118,6 @@ defmodule GoogleApi.Speech.V1.Api.Speech do
       :alt => :query,
       :access_token => :query,
       :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :body => :body
     }
 
