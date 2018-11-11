@@ -32,8 +32,6 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   - connection (GoogleApi.TPU.V1.Connection): Connection to server
   - parent (String.t): The parent resource name.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -43,6 +41,8 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :pageToken (String.t): The next_page_token value returned from a previous List request, if any.
     - :orderBy (String.t): Sort results.
     - :pageSize (integer()): The maximum number of items to return.
@@ -62,8 +62,6 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :fields => :query,
-      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -73,6 +71,8 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
       :pageToken => :query,
       :orderBy => :query,
       :pageSize => :query,
@@ -100,8 +100,6 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   - connection (GoogleApi.TPU.V1.Connection): Connection to server
   - name (String.t): The resource that owns the locations collection, if applicable.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -111,9 +109,11 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :filter (String.t): The standard list filter.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :pageToken (String.t): The standard list page token.
     - :pageSize (integer()): The standard list page size.
+    - :filter (String.t): The standard list filter.
 
   ## Returns
 
@@ -124,8 +124,6 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
           {:ok, GoogleApi.TPU.V1.Model.ListLocationsResponse.t()} | {:error, Tesla.Env.t()}
   def tpu_projects_locations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :fields => :query,
-      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -135,9 +133,11 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
-      :filter => :query,
+      :fields => :query,
+      :uploadType => :query,
       :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :filter => :query
     }
 
     request =
@@ -161,8 +161,6 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   - connection (GoogleApi.TPU.V1.Connection): Connection to server
   - parent (String.t): The parent resource name.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -172,6 +170,8 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :nodeId (String.t): The unqualified resource name.
     - :body (Node): 
 
@@ -184,8 +184,6 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
           {:ok, GoogleApi.TPU.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def tpu_projects_locations_nodes_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :fields => :query,
-      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -195,6 +193,8 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
       :nodeId => :query,
       :body => :body
     }
@@ -220,8 +220,6 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   - connection (GoogleApi.TPU.V1.Connection): Connection to server
   - name (String.t): The resource name.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -231,6 +229,8 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -241,8 +241,6 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
           {:ok, GoogleApi.TPU.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def tpu_projects_locations_nodes_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :fields => :query,
-      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -251,7 +249,9 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
       :key => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
-      :prettyPrint => :query
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query
     }
 
     request =
@@ -275,8 +275,6 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   - connection (GoogleApi.TPU.V1.Connection): Connection to server
   - name (String.t): The resource name.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -286,6 +284,8 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -296,8 +296,6 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
           {:ok, GoogleApi.TPU.V1.Model.Node.t()} | {:error, Tesla.Env.t()}
   def tpu_projects_locations_nodes_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :fields => :query,
-      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -306,7 +304,9 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
       :key => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
-      :prettyPrint => :query
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query
     }
 
     request =
@@ -330,8 +330,6 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   - connection (GoogleApi.TPU.V1.Connection): Connection to server
   - parent (String.t): The parent resource name.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -341,6 +339,8 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :pageToken (String.t): The next_page_token value returned from a previous List request, if any.
     - :pageSize (integer()): The maximum number of items to return.
 
@@ -353,8 +353,6 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
           {:ok, GoogleApi.TPU.V1.Model.ListNodesResponse.t()} | {:error, Tesla.Env.t()}
   def tpu_projects_locations_nodes_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :fields => :query,
-      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -364,6 +362,8 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
       :pageToken => :query,
       :pageSize => :query
     }
@@ -389,8 +389,6 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   - connection (GoogleApi.TPU.V1.Connection): Connection to server
   - name (String.t): The resource name.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -400,6 +398,8 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (ReimageNodeRequest): 
 
   ## Returns
@@ -411,8 +411,6 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
           {:ok, GoogleApi.TPU.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def tpu_projects_locations_nodes_reimage(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :fields => :query,
-      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -422,6 +420,8 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -446,8 +446,6 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   - connection (GoogleApi.TPU.V1.Connection): Connection to server
   - name (String.t): The resource name.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -457,6 +455,8 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (StartNodeRequest): 
 
   ## Returns
@@ -468,8 +468,6 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
           {:ok, GoogleApi.TPU.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def tpu_projects_locations_nodes_start(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :fields => :query,
-      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -479,6 +477,8 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -503,8 +503,6 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   - connection (GoogleApi.TPU.V1.Connection): Connection to server
   - name (String.t): The resource name.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -514,6 +512,8 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (StopNodeRequest): 
 
   ## Returns
@@ -525,8 +525,6 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
           {:ok, GoogleApi.TPU.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def tpu_projects_locations_nodes_stop(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :fields => :query,
-      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -536,6 +534,8 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -560,8 +560,6 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   - connection (GoogleApi.TPU.V1.Connection): Connection to server
   - name (String.t): The name of the operation resource to be cancelled.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -571,6 +569,8 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -586,8 +586,6 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :fields => :query,
-      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -596,7 +594,9 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
       :key => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
-      :prettyPrint => :query
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query
     }
 
     request =
@@ -620,8 +620,6 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   - connection (GoogleApi.TPU.V1.Connection): Connection to server
   - name (String.t): The name of the operation&#39;s parent resource.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -631,9 +629,11 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :filter (String.t): The standard list filter.
     - :pageToken (String.t): The standard list page token.
     - :pageSize (integer()): The standard list page size.
-    - :filter (String.t): The standard list filter.
 
   ## Returns
 
@@ -644,8 +644,6 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
           {:ok, GoogleApi.TPU.V1.Model.ListOperationsResponse.t()} | {:error, Tesla.Env.t()}
   def tpu_projects_locations_operations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :fields => :query,
-      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -655,9 +653,11 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :filter => :query,
       :pageToken => :query,
-      :pageSize => :query,
-      :filter => :query
+      :pageSize => :query
     }
 
     request =
@@ -681,8 +681,6 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   - connection (GoogleApi.TPU.V1.Connection): Connection to server
   - parent (String.t): The parent resource name.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
@@ -692,10 +690,12 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :pageSize (integer()): The maximum number of items to return.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :filter (String.t): List filter.
     - :pageToken (String.t): The next_page_token value returned from a previous List request, if any.
     - :orderBy (String.t): Sort results.
+    - :pageSize (integer()): The maximum number of items to return.
 
   ## Returns
 
@@ -712,8 +712,6 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :fields => :query,
-      :uploadType => :query,
       :callback => :query,
       :oauth_token => :query,
       :"$.xgafv" => :query,
@@ -723,10 +721,12 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
-      :pageSize => :query,
+      :fields => :query,
+      :uploadType => :query,
       :filter => :query,
       :pageToken => :query,
-      :orderBy => :query
+      :orderBy => :query,
+      :pageSize => :query
     }
 
     request =
