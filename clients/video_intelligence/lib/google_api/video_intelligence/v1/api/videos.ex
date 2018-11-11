@@ -31,8 +31,8 @@ defmodule GoogleApi.VideoIntelligence.V1.Api.Videos do
 
   - connection (GoogleApi.VideoIntelligence.V1.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :$.xgafv (String.t): V1 error format.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :callback (String.t): JSONP
@@ -54,8 +54,8 @@ defmodule GoogleApi.VideoIntelligence.V1.Api.Videos do
           | {:error, Tesla.Env.t()}
   def videointelligence_videos_annotate(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :uploadType => :query,
       :fields => :query,
+      :uploadType => :query,
       :"$.xgafv" => :query,
       :oauth_token => :query,
       :callback => :query,
