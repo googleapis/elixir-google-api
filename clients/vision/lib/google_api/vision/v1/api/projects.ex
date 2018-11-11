@@ -34,15 +34,15 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   - optional_params (KeywordList): [optional] Optional parameters
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (AddProductToProductSetRequest): 
 
   ## Returns
@@ -64,15 +64,15 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
     optional_params_config = %{
       :fields => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
       :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
       :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :key => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :body => :body
     }
 
@@ -99,15 +99,15 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   - optional_params (KeywordList): [optional] Optional parameters
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :productSetId (String.t): A user-supplied resource id for this ProductSet. If set, the server will attempt to use this value as the resource id. If it is already in use, an error is returned with code ALREADY_EXISTS. Must be at most 128 characters long. It cannot contain the character &#x60;/&#x60;.
     - :body (ProductSet): 
 
@@ -127,15 +127,15 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
     optional_params_config = %{
       :fields => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
       :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
       :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :key => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :productSetId => :query,
       :body => :body
     }
@@ -163,15 +163,15 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   - optional_params (KeywordList): [optional] Optional parameters
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (ImportProductSetsRequest): 
 
   ## Returns
@@ -190,15 +190,15 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
     optional_params_config = %{
       :fields => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
       :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
       :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :key => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :body => :body
     }
 
@@ -225,15 +225,15 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   - optional_params (KeywordList): [optional] Optional parameters
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :pageToken (String.t): The next_page_token returned from a previous List request, if any.
     - :pageSize (integer()): The maximum number of items to return. Default 10, maximum 100.
 
@@ -253,15 +253,15 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
     optional_params_config = %{
       :fields => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
       :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
       :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :key => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :pageToken => :query,
       :pageSize => :query
     }
@@ -289,15 +289,15 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   - optional_params (KeywordList): [optional] Optional parameters
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :pageToken (String.t): The next_page_token returned from a previous List request, if any.
     - :pageSize (integer()): The maximum number of items to return. Default 10, maximum 100.
 
@@ -322,15 +322,15 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
     optional_params_config = %{
       :fields => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
       :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
       :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :key => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :pageToken => :query,
       :pageSize => :query
     }
@@ -360,15 +360,15 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   - optional_params (KeywordList): [optional] Optional parameters
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (RemoveProductFromProductSetRequest): 
 
   ## Returns
@@ -390,15 +390,15 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
     optional_params_config = %{
       :fields => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
       :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
       :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :key => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :body => :body
     }
 
@@ -425,15 +425,15 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   - optional_params (KeywordList): [optional] Optional parameters
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :productId (String.t): A user-supplied resource id for this Product. If set, the server will attempt to use this value as the resource id. If it is already in use, an error is returned with code ALREADY_EXISTS. Must be at most 128 characters long. It cannot contain the character &#x60;/&#x60;.
     - :body (Product): 
 
@@ -453,15 +453,15 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
     optional_params_config = %{
       :fields => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
       :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
       :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :key => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :productId => :query,
       :body => :body
     }
@@ -489,17 +489,17 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   - optional_params (KeywordList): [optional] Optional parameters
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :pageToken (String.t): The next_page_token returned from a previous List request, if any.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :pageSize (integer()): The maximum number of items to return. Default 10, maximum 100.
+    - :pageToken (String.t): The next_page_token returned from a previous List request, if any.
 
   ## Returns
 
@@ -517,17 +517,17 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
     optional_params_config = %{
       :fields => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
       :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
       :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :key => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :prettyPrint => :query,
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -553,15 +553,15 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   - optional_params (KeywordList): [optional] Optional parameters
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :updateMask (String.t): The FieldMask that specifies which fields to update. If update_mask isn&#39;t specified, all mutable fields are to be updated. Valid mask paths include &#x60;product_labels&#x60;, &#x60;display_name&#x60;, and &#x60;description&#x60;.
     - :body (Product): 
 
@@ -581,15 +581,15 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
     optional_params_config = %{
       :fields => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
       :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
       :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :key => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :updateMask => :query,
       :body => :body
     }
@@ -617,15 +617,15 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   - optional_params (KeywordList): [optional] Optional parameters
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :referenceImageId (String.t): A user-supplied resource id for the ReferenceImage to be added. If set, the server will attempt to use this value as the resource id. If it is already in use, an error is returned with code ALREADY_EXISTS. Must be at most 128 characters long. It cannot contain the character &#x60;/&#x60;.
     - :body (ReferenceImage): 
 
@@ -648,15 +648,15 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
     optional_params_config = %{
       :fields => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
       :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
       :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :key => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :referenceImageId => :query,
       :body => :body
     }
@@ -684,17 +684,17 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   - optional_params (KeywordList): [optional] Optional parameters
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :pageToken (String.t): A token identifying a page of results to be returned. This is the value of &#x60;nextPageToken&#x60; returned in a previous reference image list request.  Defaults to the first page if not specified.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :pageSize (integer()): The maximum number of items to return. Default 10, maximum 100.
+    - :pageToken (String.t): A token identifying a page of results to be returned. This is the value of &#x60;nextPageToken&#x60; returned in a previous reference image list request.  Defaults to the first page if not specified.
 
   ## Returns
 
@@ -717,17 +717,17 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
     optional_params_config = %{
       :fields => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
       :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
       :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :key => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :prettyPrint => :query,
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
