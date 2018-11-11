@@ -33,6 +33,9 @@ defmodule GoogleApi.Testing.V1.Api.Projects do
   - project_id (String.t): Cloud project that owns the test.
   - test_matrix_id (String.t): Test matrix that will be canceled.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -41,9 +44,6 @@ defmodule GoogleApi.Testing.V1.Api.Projects do
     - :$.xgafv (String.t): V1 error format.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
 
   ## Returns
 
@@ -65,6 +65,9 @@ defmodule GoogleApi.Testing.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :alt => :query,
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -72,10 +75,7 @@ defmodule GoogleApi.Testing.V1.Api.Projects do
       :fields => :query,
       :"$.xgafv" => :query,
       :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
-      :access_token => :query
+      :callback => :query
     }
 
     request =
@@ -100,6 +100,9 @@ defmodule GoogleApi.Testing.V1.Api.Projects do
   - connection (GoogleApi.Testing.V1.Connection): Connection to server
   - project_id (String.t): The GCE project under which this job will run.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -108,9 +111,6 @@ defmodule GoogleApi.Testing.V1.Api.Projects do
     - :$.xgafv (String.t): V1 error format.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
     - :requestId (String.t): A string id used to detect duplicated requests. Ids are automatically scoped to a project, so users should ensure the ID is unique per-project. A UUID is recommended.  Optional, but strongly recommended.
     - :body (TestMatrix): 
 
@@ -128,6 +128,9 @@ defmodule GoogleApi.Testing.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :alt => :query,
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -136,9 +139,6 @@ defmodule GoogleApi.Testing.V1.Api.Projects do
       :"$.xgafv" => :query,
       :oauth_token => :query,
       :callback => :query,
-      :alt => :query,
-      :key => :query,
-      :access_token => :query,
       :requestId => :query,
       :body => :body
     }
@@ -165,6 +165,9 @@ defmodule GoogleApi.Testing.V1.Api.Projects do
   - project_id (String.t): Cloud project that owns the test matrix.
   - test_matrix_id (String.t): Unique test matrix id which was assigned by the service.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
@@ -173,9 +176,6 @@ defmodule GoogleApi.Testing.V1.Api.Projects do
     - :$.xgafv (String.t): V1 error format.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
 
   ## Returns
 
@@ -192,6 +192,9 @@ defmodule GoogleApi.Testing.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
+      :alt => :query,
+      :key => :query,
+      :access_token => :query,
       :upload_protocol => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
@@ -199,10 +202,7 @@ defmodule GoogleApi.Testing.V1.Api.Projects do
       :fields => :query,
       :"$.xgafv" => :query,
       :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
-      :access_token => :query
+      :callback => :query
     }
 
     request =
