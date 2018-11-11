@@ -32,9 +32,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   - connection (GoogleApi.Vault.V1.Connection): Connection to server
   - matter_id (String.t): The matter ID.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -43,6 +40,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (AddMatterPermissionsRequest): 
 
   ## Returns
@@ -54,9 +54,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
           {:ok, GoogleApi.Vault.V1.Model.MatterPermission.t()} | {:error, Tesla.Env.t()}
   def vault_matters_add_permissions(connection, matter_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -65,6 +62,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :alt => :query,
       :access_token => :query,
       :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :body => :body
     }
 
@@ -89,9 +89,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   - connection (GoogleApi.Vault.V1.Connection): Connection to server
   - matter_id (String.t): The matter ID.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -100,6 +97,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (CloseMatterRequest): 
 
   ## Returns
@@ -111,9 +111,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
           {:ok, GoogleApi.Vault.V1.Model.CloseMatterResponse.t()} | {:error, Tesla.Env.t()}
   def vault_matters_close(connection, matter_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -122,6 +119,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :alt => :query,
       :access_token => :query,
       :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :body => :body
     }
 
@@ -145,9 +145,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
 
   - connection (GoogleApi.Vault.V1.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -156,6 +153,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (Matter): 
 
   ## Returns
@@ -167,9 +167,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
           {:ok, GoogleApi.Vault.V1.Model.Matter.t()} | {:error, Tesla.Env.t()}
   def vault_matters_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -178,6 +175,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :alt => :query,
       :access_token => :query,
       :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :body => :body
     }
 
@@ -200,9 +200,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   - connection (GoogleApi.Vault.V1.Connection): Connection to server
   - matter_id (String.t): The matter ID
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -211,6 +208,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
 
   ## Returns
 
@@ -221,9 +221,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
           {:ok, GoogleApi.Vault.V1.Model.Matter.t()} | {:error, Tesla.Env.t()}
   def vault_matters_delete(connection, matter_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -231,7 +228,10 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
-      :key => :query
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query
     }
 
     request =
@@ -255,9 +255,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   - connection (GoogleApi.Vault.V1.Connection): Connection to server
   - matter_id (String.t): The matter ID.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -266,6 +263,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (Export): 
 
   ## Returns
@@ -277,9 +277,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
           {:ok, GoogleApi.Vault.V1.Model.Export.t()} | {:error, Tesla.Env.t()}
   def vault_matters_exports_create(connection, matter_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -288,6 +285,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :alt => :query,
       :access_token => :query,
       :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :body => :body
     }
 
@@ -313,9 +313,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   - matter_id (String.t): The matter ID.
   - export_id (String.t): The export ID.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -324,6 +321,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
 
   ## Returns
 
@@ -340,9 +340,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -350,7 +347,10 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
-      :key => :query
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query
     }
 
     request =
@@ -376,9 +376,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   - matter_id (String.t): The matter ID.
   - export_id (String.t): The export ID.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -387,6 +384,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
 
   ## Returns
 
@@ -403,9 +403,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -413,7 +410,10 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
-      :key => :query
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query
     }
 
     request =
@@ -438,9 +438,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   - connection (GoogleApi.Vault.V1.Connection): Connection to server
   - matter_id (String.t): The matter ID.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -449,6 +446,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :pageToken (String.t): The pagination token as returned in the response.
     - :pageSize (integer()): The number of exports to return in the response.
 
@@ -461,9 +461,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
           {:ok, GoogleApi.Vault.V1.Model.ListExportsResponse.t()} | {:error, Tesla.Env.t()}
   def vault_matters_exports_list(connection, matter_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -472,6 +469,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :alt => :query,
       :access_token => :query,
       :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :pageToken => :query,
       :pageSize => :query
     }
@@ -497,9 +497,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   - connection (GoogleApi.Vault.V1.Connection): Connection to server
   - matter_id (String.t): The matter ID.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -508,6 +505,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :view (String.t): Specifies which parts of the Matter to return in the response.
 
   ## Returns
@@ -519,9 +519,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
           {:ok, GoogleApi.Vault.V1.Model.Matter.t()} | {:error, Tesla.Env.t()}
   def vault_matters_get(connection, matter_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -530,6 +527,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :alt => :query,
       :access_token => :query,
       :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :view => :query
     }
 
@@ -555,9 +555,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   - matter_id (String.t): The matter ID.
   - hold_id (String.t): The hold ID.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -566,6 +563,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (HeldAccount): 
 
   ## Returns
@@ -583,9 +583,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -594,6 +591,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :alt => :query,
       :access_token => :query,
       :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :body => :body
     }
 
@@ -621,9 +621,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   - hold_id (String.t): The hold ID.
   - account_id (String.t): The ID of the account to remove from the hold.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -632,6 +629,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
 
   ## Returns
 
@@ -654,9 +654,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -664,7 +661,10 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
-      :key => :query
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query
     }
 
     request =
@@ -691,9 +691,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   - matter_id (String.t): The matter ID.
   - hold_id (String.t): The hold ID.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -702,6 +699,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
 
   ## Returns
 
@@ -718,9 +718,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -728,7 +725,10 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
-      :key => :query
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query
     }
 
     request =
@@ -754,9 +754,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   - matter_id (String.t): The matter ID.
   - hold_id (String.t): The hold ID.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -765,6 +762,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (AddHeldAccountsRequest): 
 
   ## Returns
@@ -786,9 +786,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -797,6 +794,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :alt => :query,
       :access_token => :query,
       :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :body => :body
     }
 
@@ -822,9 +822,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   - connection (GoogleApi.Vault.V1.Connection): Connection to server
   - matter_id (String.t): The matter ID.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -833,6 +830,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (Hold): 
 
   ## Returns
@@ -844,9 +844,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
           {:ok, GoogleApi.Vault.V1.Model.Hold.t()} | {:error, Tesla.Env.t()}
   def vault_matters_holds_create(connection, matter_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -855,6 +852,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :alt => :query,
       :access_token => :query,
       :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :body => :body
     }
 
@@ -880,9 +880,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   - matter_id (String.t): The matter ID.
   - hold_id (String.t): The hold ID.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -891,6 +888,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
 
   ## Returns
 
@@ -907,9 +907,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -917,7 +914,10 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
-      :key => :query
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query
     }
 
     request =
@@ -943,9 +943,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   - matter_id (String.t): The matter ID.
   - hold_id (String.t): The hold ID.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -954,6 +951,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :view (String.t): Specifies which parts of the Hold to return.
 
   ## Returns
@@ -965,9 +965,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
           {:ok, GoogleApi.Vault.V1.Model.Hold.t()} | {:error, Tesla.Env.t()}
   def vault_matters_holds_get(connection, matter_id, hold_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -976,6 +973,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :alt => :query,
       :access_token => :query,
       :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :view => :query
     }
 
@@ -1001,9 +1001,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   - connection (GoogleApi.Vault.V1.Connection): Connection to server
   - matter_id (String.t): The matter ID.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -1012,9 +1009,12 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :pageToken (String.t): The pagination token as returned in the response. An empty token means start from the beginning.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :pageSize (integer()): The number of holds to return in the response, between 0 and 100 inclusive. Leaving this empty, or as 0, is the same as page_size &#x3D; 100.
     - :view (String.t): Specifies which parts of the Hold to return.
+    - :pageToken (String.t): The pagination token as returned in the response. An empty token means start from the beginning.
 
   ## Returns
 
@@ -1025,9 +1025,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
           {:ok, GoogleApi.Vault.V1.Model.ListHoldsResponse.t()} | {:error, Tesla.Env.t()}
   def vault_matters_holds_list(connection, matter_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -1036,9 +1033,12 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :alt => :query,
       :access_token => :query,
       :key => :query,
-      :pageToken => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :pageSize => :query,
-      :view => :query
+      :view => :query,
+      :pageToken => :query
     }
 
     request =
@@ -1063,9 +1063,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   - matter_id (String.t): The matter ID.
   - hold_id (String.t): The hold ID.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -1074,6 +1071,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (RemoveHeldAccountsRequest): 
 
   ## Returns
@@ -1096,9 +1096,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -1107,6 +1104,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :alt => :query,
       :access_token => :query,
       :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :body => :body
     }
 
@@ -1133,9 +1133,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   - matter_id (String.t): The matter ID.
   - hold_id (String.t): The ID of the hold.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -1144,6 +1141,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (Hold): 
 
   ## Returns
@@ -1161,9 +1161,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -1172,6 +1169,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :alt => :query,
       :access_token => :query,
       :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :body => :body
     }
 
@@ -1196,9 +1196,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
 
   - connection (GoogleApi.Vault.V1.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -1207,6 +1204,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :state (String.t): If set, list only matters with that specific state. The default is listing matters of all states.
     - :pageToken (String.t): The pagination token as returned in the response.
     - :pageSize (integer()): The number of matters to return in the response. Default and maximum are 100.
@@ -1221,9 +1221,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
           {:ok, GoogleApi.Vault.V1.Model.ListMattersResponse.t()} | {:error, Tesla.Env.t()}
   def vault_matters_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -1232,6 +1229,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :alt => :query,
       :access_token => :query,
       :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :state => :query,
       :pageToken => :query,
       :pageSize => :query,
@@ -1257,9 +1257,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   - connection (GoogleApi.Vault.V1.Connection): Connection to server
   - matter_id (String.t): The matter ID.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -1268,6 +1265,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (RemoveMatterPermissionsRequest): 
 
   ## Returns
@@ -1279,9 +1279,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
           {:ok, GoogleApi.Vault.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def vault_matters_remove_permissions(connection, matter_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -1290,6 +1287,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :alt => :query,
       :access_token => :query,
       :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :body => :body
     }
 
@@ -1314,9 +1314,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   - connection (GoogleApi.Vault.V1.Connection): Connection to server
   - matter_id (String.t): The matter ID.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -1325,6 +1322,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (ReopenMatterRequest): 
 
   ## Returns
@@ -1336,9 +1336,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
           {:ok, GoogleApi.Vault.V1.Model.ReopenMatterResponse.t()} | {:error, Tesla.Env.t()}
   def vault_matters_reopen(connection, matter_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -1347,6 +1344,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :alt => :query,
       :access_token => :query,
       :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :body => :body
     }
 
@@ -1371,9 +1371,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   - connection (GoogleApi.Vault.V1.Connection): Connection to server
   - matter_id (String.t): The matter id of the parent matter for which the saved query is to be created.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -1382,6 +1379,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (SavedQuery): 
 
   ## Returns
@@ -1393,9 +1393,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
           {:ok, GoogleApi.Vault.V1.Model.SavedQuery.t()} | {:error, Tesla.Env.t()}
   def vault_matters_saved_queries_create(connection, matter_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -1404,6 +1401,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :alt => :query,
       :access_token => :query,
       :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :body => :body
     }
 
@@ -1429,9 +1429,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   - matter_id (String.t): The matter id of the parent matter for which the saved query is to be deleted.
   - saved_query_id (String.t): Id of the saved query to be deleted.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -1440,6 +1437,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
 
   ## Returns
 
@@ -1456,9 +1456,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -1466,7 +1463,10 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
-      :key => :query
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query
     }
 
     request =
@@ -1492,9 +1492,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   - matter_id (String.t): The matter id of the parent matter for which the saved query is to be retrieved.
   - saved_query_id (String.t): Id of the saved query to be retrieved.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -1503,6 +1500,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
 
   ## Returns
 
@@ -1519,9 +1519,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -1529,7 +1526,10 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
-      :key => :query
+      :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query
     }
 
     request =
@@ -1554,9 +1554,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   - connection (GoogleApi.Vault.V1.Connection): Connection to server
   - matter_id (String.t): The matter id of the parent matter for which the saved queries are to be retrieved.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -1565,8 +1562,11 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :pageToken (String.t): The pagination token as returned in the previous response. An empty token means start from the beginning.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :pageSize (integer()): The maximum number of saved queries to return.
+    - :pageToken (String.t): The pagination token as returned in the previous response. An empty token means start from the beginning.
 
   ## Returns
 
@@ -1577,9 +1577,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
           {:ok, GoogleApi.Vault.V1.Model.ListSavedQueriesResponse.t()} | {:error, Tesla.Env.t()}
   def vault_matters_saved_queries_list(connection, matter_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -1588,8 +1585,11 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :alt => :query,
       :access_token => :query,
       :key => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -1613,9 +1613,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   - connection (GoogleApi.Vault.V1.Connection): Connection to server
   - matter_id (String.t): The matter ID.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -1624,6 +1621,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (UndeleteMatterRequest): 
 
   ## Returns
@@ -1635,9 +1635,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
           {:ok, GoogleApi.Vault.V1.Model.Matter.t()} | {:error, Tesla.Env.t()}
   def vault_matters_undelete(connection, matter_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -1646,6 +1643,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :alt => :query,
       :access_token => :query,
       :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :body => :body
     }
 
@@ -1670,9 +1670,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   - connection (GoogleApi.Vault.V1.Connection): Connection to server
   - matter_id (String.t): The matter ID.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -1681,6 +1678,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :body (Matter): 
 
   ## Returns
@@ -1692,9 +1692,6 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
           {:ok, GoogleApi.Vault.V1.Model.Matter.t()} | {:error, Tesla.Env.t()}
   def vault_matters_update(connection, matter_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -1703,6 +1700,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :alt => :query,
       :access_token => :query,
       :key => :query,
+      :upload_protocol => :query,
+      :quotaUser => :query,
+      :prettyPrint => :query,
       :body => :body
     }
 
