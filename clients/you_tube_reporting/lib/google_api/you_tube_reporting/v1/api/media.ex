@@ -32,7 +32,6 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Media do
   - connection (GoogleApi.YouTubeReporting.V1.Connection): Connection to server
   - resource_name (String.t): Name of the media that is being downloaded.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
@@ -43,6 +42,7 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Media do
     - :$.xgafv (String.t): V1 error format.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :callback (String.t): JSONP
+    - :alt (String.t): Data format for response.
 
   ## Returns
 
@@ -58,7 +58,6 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Media do
         opts \\ []
       ) do
     optional_params_config = %{
-      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
@@ -68,7 +67,8 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Media do
       :fields => :query,
       :"$.xgafv" => :query,
       :oauth_token => :query,
-      :callback => :query
+      :callback => :query,
+      :alt => :query
     }
 
     request =

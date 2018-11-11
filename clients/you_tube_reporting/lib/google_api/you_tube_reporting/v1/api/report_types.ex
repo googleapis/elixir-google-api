@@ -31,7 +31,6 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.ReportTypes do
 
   - connection (GoogleApi.YouTubeReporting.V1.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
@@ -42,10 +41,11 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.ReportTypes do
     - :$.xgafv (String.t): V1 error format.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :callback (String.t): JSONP
+    - :alt (String.t): Data format for response.
+    - :onBehalfOfContentOwner (String.t): The content owner&#39;s external ID on which behalf the user is acting on. If not set, the user is acting for himself (his own channel).
     - :pageToken (String.t): A token identifying a page of results the server should return. Typically, this is the value of ListReportTypesResponse.next_page_token returned in response to the previous call to the &#x60;ListReportTypes&#x60; method.
     - :includeSystemManaged (boolean()): If set to true, also system-managed report types will be returned; otherwise only the report types that can be used to create new reporting jobs will be returned.
     - :pageSize (integer()): Requested page size. Server may return fewer report types than requested. If unspecified, server will pick an appropriate default.
-    - :onBehalfOfContentOwner (String.t): The content owner&#39;s external ID on which behalf the user is acting on. If not set, the user is acting for himself (his own channel).
 
   ## Returns
 
@@ -57,7 +57,6 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.ReportTypes do
           | {:error, Tesla.Env.t()}
   def youtubereporting_report_types_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :alt => :query,
       :key => :query,
       :access_token => :query,
       :upload_protocol => :query,
@@ -68,10 +67,11 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.ReportTypes do
       :"$.xgafv" => :query,
       :oauth_token => :query,
       :callback => :query,
+      :alt => :query,
+      :onBehalfOfContentOwner => :query,
       :pageToken => :query,
       :includeSystemManaged => :query,
-      :pageSize => :query,
-      :onBehalfOfContentOwner => :query
+      :pageSize => :query
     }
 
     request =
