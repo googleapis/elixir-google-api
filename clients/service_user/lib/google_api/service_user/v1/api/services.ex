@@ -42,8 +42,8 @@ defmodule GoogleApi.ServiceUser.V1.Api.Services do
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :callback (String.t): JSONP
     - :alt (String.t): Data format for response.
-    - :pageToken (String.t): Token identifying which result to start with; returned by a previous list call.
     - :pageSize (integer()): Requested size of the next page of data.
+    - :pageToken (String.t): Token identifying which result to start with; returned by a previous list call.
 
   ## Returns
 
@@ -66,8 +66,8 @@ defmodule GoogleApi.ServiceUser.V1.Api.Services do
       :oauth_token => :query,
       :callback => :query,
       :alt => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
