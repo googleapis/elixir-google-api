@@ -25,11 +25,15 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.Photo do
   - captureTime (DateTime.t): Absolute time when the photo was captured. When the photo has no exif timestamp, this is used to set a timestamp in the photo metadata. Defaults to: `null`.
   - connections ([Connection]): Connections to other photos. A connection represents the link from this photo to another photo. Defaults to: `null`.
   - downloadUrl (String.t): Output only. The download URL for the photo bytes. This field is set only when GetPhotoRequest.view is set to PhotoView.INCLUDE_DOWNLOAD_URL. Defaults to: `null`.
+  - mapsPublishStatus (String.t): Output only. Status in Google Maps, whether this photo was published, or rejected for a possibly specified reason. Defaults to: `null`.
+    - Enum - one of [UNSPECIFIED_MAPS_PUBLISH_STATUS, PUBLISHED, REJECTED_UNKNOWN]
   - photoId (PhotoId): Required when updating a photo. Output only when creating a photo. Identifier for the photo, which is unique among all photos in Google. Defaults to: `null`.
   - places ([Place]): Places where this photo belongs. Defaults to: `null`.
   - pose (Pose): Pose of the photo. Defaults to: `null`.
   - shareLink (String.t): Output only. The share link for the photo. Defaults to: `null`.
   - thumbnailUrl (String.t): Output only. The thumbnail URL for showing a preview of the given photo. Defaults to: `null`.
+  - transferStatus (String.t): Output only. Status of rights transfer on this photo. Defaults to: `null`.
+    - Enum - one of [TRANSFER_STATUS_UNKNOWN, NEVER_TRANSFERRED, PENDING, COMPLETED, REJECTED, EXPIRED, CANCELLED, RECEIVED_VIA_TRANSFER]
   - uploadReference (UploadRef): Required when creating a photo. Input only. The resource URL where the photo bytes are uploaded to. Defaults to: `null`.
   - viewCount (String.t): Output only. View count of the photo. Defaults to: `null`.
   """
@@ -40,11 +44,13 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.Photo do
           :captureTime => DateTime.t(),
           :connections => list(GoogleApi.StreetViewPublish.V1.Model.Connection.t()),
           :downloadUrl => any(),
+          :mapsPublishStatus => any(),
           :photoId => GoogleApi.StreetViewPublish.V1.Model.PhotoId.t(),
           :places => list(GoogleApi.StreetViewPublish.V1.Model.Place.t()),
           :pose => GoogleApi.StreetViewPublish.V1.Model.Pose.t(),
           :shareLink => any(),
           :thumbnailUrl => any(),
+          :transferStatus => any(),
           :uploadReference => GoogleApi.StreetViewPublish.V1.Model.UploadRef.t(),
           :viewCount => any()
         }
@@ -52,11 +58,13 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.Photo do
   field(:captureTime, as: DateTime)
   field(:connections, as: GoogleApi.StreetViewPublish.V1.Model.Connection, type: :list)
   field(:downloadUrl)
+  field(:mapsPublishStatus)
   field(:photoId, as: GoogleApi.StreetViewPublish.V1.Model.PhotoId)
   field(:places, as: GoogleApi.StreetViewPublish.V1.Model.Place, type: :list)
   field(:pose, as: GoogleApi.StreetViewPublish.V1.Model.Pose)
   field(:shareLink)
   field(:thumbnailUrl)
+  field(:transferStatus)
   field(:uploadReference, as: GoogleApi.StreetViewPublish.V1.Model.UploadRef)
   field(:viewCount)
 end

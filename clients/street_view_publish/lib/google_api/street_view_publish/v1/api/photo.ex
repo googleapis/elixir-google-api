@@ -31,17 +31,17 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
 
   - connection (GoogleApi.StreetViewPublish.V1.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :body (Photo): 
 
   ## Returns
@@ -53,17 +53,17 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
           {:ok, GoogleApi.StreetViewPublish.V1.Model.Photo.t()} | {:error, Tesla.Env.t()}
   def streetviewpublish_photo_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
       :key => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
       :body => :body
     }
 
@@ -86,17 +86,17 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
   - connection (GoogleApi.StreetViewPublish.V1.Connection): Connection to server
   - photo_id (String.t): Required. ID of the Photo.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
 
   ## Returns
 
@@ -107,17 +107,17 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
           {:ok, GoogleApi.StreetViewPublish.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def streetviewpublish_photo_delete(connection, photo_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
       :key => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
-      :prettyPrint => :query
+      :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query
     }
 
     request =
@@ -141,19 +141,19 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
   - connection (GoogleApi.StreetViewPublish.V1.Connection): Connection to server
   - photo_id (String.t): Required. ID of the Photo.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :languageCode (String.t): The BCP-47 language code, such as \&quot;en-US\&quot; or \&quot;sr-Latn\&quot;. For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. If language_code is unspecified, the user&#39;s language preference for Google services will be used.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :view (String.t): Specifies if a download URL for the photo bytes should be returned in the Photo response.
+    - :languageCode (String.t): The BCP-47 language code, such as \&quot;en-US\&quot; or \&quot;sr-Latn\&quot;. For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. If language_code is unspecified, the user&#39;s language preference for Google services will be used.
 
   ## Returns
 
@@ -164,19 +164,19 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
           {:ok, GoogleApi.StreetViewPublish.V1.Model.Photo.t()} | {:error, Tesla.Env.t()}
   def streetviewpublish_photo_get(connection, photo_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
       :key => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
-      :languageCode => :query,
-      :view => :query
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
+      :view => :query,
+      :languageCode => :query
     }
 
     request =
@@ -199,17 +199,17 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
 
   - connection (GoogleApi.StreetViewPublish.V1.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :body (Empty): 
 
   ## Returns
@@ -221,17 +221,17 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
           {:ok, GoogleApi.StreetViewPublish.V1.Model.UploadRef.t()} | {:error, Tesla.Env.t()}
   def streetviewpublish_photo_start_upload(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
       :key => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
       :body => :body
     }
 
@@ -254,17 +254,17 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
   - connection (GoogleApi.StreetViewPublish.V1.Connection): Connection to server
   - id (String.t): Required. A unique identifier for a photo.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
     - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :callback (String.t): JSONP
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :$.xgafv (String.t): V1 error format.
     - :updateMask (String.t): Mask that identifies fields on the photo metadata to update. If not present, the old Photo metadata will be entirely replaced with the new Photo metadata in this request. The update fails if invalid fields are specified. Multiple fields can be specified in a comma-delimited list.  The following fields are valid:  * &#x60;pose.heading&#x60; * &#x60;pose.latLngPair&#x60; * &#x60;pose.pitch&#x60; * &#x60;pose.roll&#x60; * &#x60;pose.level&#x60; * &#x60;pose.altitude&#x60; * &#x60;connections&#x60; * &#x60;places&#x60;   &lt;aside class&#x3D;\&quot;note\&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Repeated fields in updateMask mean the entire set of repeated values will be replaced with the new contents. For example, if updateMask contains &#x60;connections&#x60; and &#x60;UpdatePhotoRequest.photo.connections&#x60; is empty, all connections will be removed.&lt;/aside&gt;
     - :body (Photo): 
 
@@ -277,17 +277,17 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
           {:ok, GoogleApi.StreetViewPublish.V1.Model.Photo.t()} | {:error, Tesla.Env.t()}
   def streetviewpublish_photo_update(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
       :alt => :query,
       :access_token => :query,
       :key => :query,
       :upload_protocol => :query,
       :quotaUser => :query,
       :prettyPrint => :query,
+      :fields => :query,
+      :uploadType => :query,
+      :callback => :query,
+      :oauth_token => :query,
+      :"$.xgafv" => :query,
       :updateMask => :query,
       :body => :body
     }
