@@ -34,8 +34,8 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -56,8 +56,8 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
       :access_token => :query,
       :key => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -89,8 +89,8 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -111,8 +111,8 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
       :access_token => :query,
       :key => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -145,8 +145,8 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -170,8 +170,8 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
       :access_token => :query,
       :key => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
@@ -207,8 +207,8 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
     - :access_token (String.t): OAuth access token.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :callback (String.t): JSONP
@@ -229,8 +229,8 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
       :access_token => :query,
       :key => :query,
       :upload_protocol => :query,
-      :prettyPrint => :query,
       :quotaUser => :query,
+      :prettyPrint => :query,
       :fields => :query,
       :uploadType => :query,
       :callback => :query,
