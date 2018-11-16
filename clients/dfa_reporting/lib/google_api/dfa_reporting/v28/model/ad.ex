@@ -124,7 +124,8 @@ defmodule GoogleApi.DFAReporting.V28.Model.Ad do
   field(:campaignIdDimensionValue, as: GoogleApi.DFAReporting.V28.Model.DimensionValue)
   field(:clickThroughUrl, as: GoogleApi.DFAReporting.V28.Model.ClickThroughUrl)
 
-  field(:clickThroughUrlSuffixProperties,
+  field(
+    :clickThroughUrlSuffixProperties,
     as: GoogleApi.DFAReporting.V28.Model.ClickThroughUrlSuffixProperties
   )
 
@@ -132,7 +133,8 @@ defmodule GoogleApi.DFAReporting.V28.Model.Ad do
   field(:compatibility)
   field(:createInfo, as: GoogleApi.DFAReporting.V28.Model.LastModifiedInfo)
 
-  field(:creativeGroupAssignments,
+  field(
+    :creativeGroupAssignments,
     as: GoogleApi.DFAReporting.V28.Model.CreativeGroupAssignment,
     type: :list
   )
@@ -140,7 +142,8 @@ defmodule GoogleApi.DFAReporting.V28.Model.Ad do
   field(:creativeRotation, as: GoogleApi.DFAReporting.V28.Model.CreativeRotation)
   field(:dayPartTargeting, as: GoogleApi.DFAReporting.V28.Model.DayPartTargeting)
 
-  field(:defaultClickThroughEventTagProperties,
+  field(
+    :defaultClickThroughEventTagProperties,
     as: GoogleApi.DFAReporting.V28.Model.DefaultClickThroughEventTagProperties
   )
 
@@ -152,7 +155,8 @@ defmodule GoogleApi.DFAReporting.V28.Model.Ad do
   field(:id)
   field(:idDimensionValue, as: GoogleApi.DFAReporting.V28.Model.DimensionValue)
 
-  field(:keyValueTargetingExpression,
+  field(
+    :keyValueTargetingExpression,
     as: GoogleApi.DFAReporting.V28.Model.KeyValueTargetingExpression
   )
 
@@ -161,7 +165,8 @@ defmodule GoogleApi.DFAReporting.V28.Model.Ad do
   field(:lastModifiedInfo, as: GoogleApi.DFAReporting.V28.Model.LastModifiedInfo)
   field(:name)
 
-  field(:placementAssignments,
+  field(
+    :placementAssignments,
     as: GoogleApi.DFAReporting.V28.Model.PlacementAssignment,
     type: :list
   )

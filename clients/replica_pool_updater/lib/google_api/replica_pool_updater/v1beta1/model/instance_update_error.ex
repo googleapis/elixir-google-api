@@ -32,7 +32,8 @@ defmodule GoogleApi.ReplicaPoolUpdater.V1beta1.Model.InstanceUpdateError do
             list(GoogleApi.ReplicaPoolUpdater.V1beta1.Model.InstanceUpdateErrorErrors.t())
         }
 
-  field(:errors,
+  field(
+    :errors,
     as: GoogleApi.ReplicaPoolUpdater.V1beta1.Model.InstanceUpdateErrorErrors,
     type: :list
   )

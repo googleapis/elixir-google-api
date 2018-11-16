@@ -36,7 +36,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettingsList
 
   field(:kind)
 
-  field(:managedConfigurationsSettings,
+  field(
+    :managedConfigurationsSettings,
     as: GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettings,
     type: :list
   )

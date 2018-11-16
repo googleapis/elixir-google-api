@@ -41,7 +41,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ComplianceRule do
   field(:apiLevelCondition, as: GoogleApi.AndroidManagement.V1.Model.ApiLevelCondition)
   field(:disableApps)
 
-  field(:nonComplianceDetailCondition,
+  field(
+    :nonComplianceDetailCondition,
     as: GoogleApi.AndroidManagement.V1.Model.NonComplianceDetailCondition
   )
 

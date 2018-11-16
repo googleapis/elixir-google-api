@@ -33,7 +33,8 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectAttachmentsScopedList do
           :warning => GoogleApi.Compute.V1.Model.InterconnectAttachmentsScopedListWarning.t()
         }
 
-  field(:interconnectAttachments,
+  field(
+    :interconnectAttachments,
     as: GoogleApi.Compute.V1.Model.InterconnectAttachment,
     type: :list
   )

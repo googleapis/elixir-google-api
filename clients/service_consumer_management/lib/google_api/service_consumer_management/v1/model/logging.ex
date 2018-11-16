@@ -35,12 +35,14 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.Logging do
             list(GoogleApi.ServiceConsumerManagement.V1.Model.LoggingDestination.t())
         }
 
-  field(:consumerDestinations,
+  field(
+    :consumerDestinations,
     as: GoogleApi.ServiceConsumerManagement.V1.Model.LoggingDestination,
     type: :list
   )
 
-  field(:producerDestinations,
+  field(
+    :producerDestinations,
     as: GoogleApi.ServiceConsumerManagement.V1.Model.LoggingDestination,
     type: :list
   )

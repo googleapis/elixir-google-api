@@ -80,7 +80,8 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationQuery do
   field(:createDisposition)
   field(:defaultDataset, as: GoogleApi.BigQuery.V2.Model.DatasetReference)
 
-  field(:destinationEncryptionConfiguration,
+  field(
+    :destinationEncryptionConfiguration,
     as: GoogleApi.BigQuery.V2.Model.EncryptionConfiguration
   )
 
@@ -100,7 +101,8 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationQuery do
   field(:useLegacySql)
   field(:useQueryCache)
 
-  field(:userDefinedFunctionResources,
+  field(
+    :userDefinedFunctionResources,
     as: GoogleApi.BigQuery.V2.Model.UserDefinedFunctionResource,
     type: :list
   )

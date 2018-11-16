@@ -32,7 +32,8 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Model.ListFindingTypeStatsRespons
             list(GoogleApi.WebSecurityScanner.V1alpha.Model.FindingTypeStats.t())
         }
 
-  field(:findingTypeStats,
+  field(
+    :findingTypeStats,
     as: GoogleApi.WebSecurityScanner.V1alpha.Model.FindingTypeStats,
     type: :list
   )

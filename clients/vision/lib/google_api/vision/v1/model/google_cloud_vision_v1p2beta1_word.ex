@@ -41,7 +41,8 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1Word do
   field(:boundingBox, as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1BoundingPoly)
   field(:confidence)
 
-  field(:property,
+  field(
+    :property,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1TextAnnotationTextProperty
   )
 

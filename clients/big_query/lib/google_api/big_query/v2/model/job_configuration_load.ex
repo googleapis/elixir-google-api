@@ -89,7 +89,8 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
   field(:clustering, as: GoogleApi.BigQuery.V2.Model.Clustering)
   field(:createDisposition)
 
-  field(:destinationEncryptionConfiguration,
+  field(
+    :destinationEncryptionConfiguration,
     as: GoogleApi.BigQuery.V2.Model.EncryptionConfiguration
   )
 

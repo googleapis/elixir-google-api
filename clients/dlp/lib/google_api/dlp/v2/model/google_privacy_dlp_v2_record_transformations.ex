@@ -35,12 +35,14 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordTransformations do
             list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordSuppression.t())
         }
 
-  field(:fieldTransformations,
+  field(
+    :fieldTransformations,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldTransformation,
     type: :list
   )
 
-  field(:recordSuppressions,
+  field(
+    :recordSuppressions,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordSuppression,
     type: :list
   )

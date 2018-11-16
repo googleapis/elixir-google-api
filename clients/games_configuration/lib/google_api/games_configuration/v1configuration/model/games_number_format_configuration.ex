@@ -42,7 +42,8 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Model.GamesNumberFormatCo
   field(:numDecimalPlaces)
   field(:numberFormatType)
 
-  field(:suffix,
+  field(
+    :suffix,
     as: GoogleApi.GamesConfiguration.V1configuration.Model.GamesNumberAffixConfiguration
   )
 end

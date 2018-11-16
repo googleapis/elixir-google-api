@@ -70,7 +70,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1QueryResult 
   field(:allRequiredParamsPresent)
   field(:diagnosticInfo, type: :map)
 
-  field(:fulfillmentMessages,
+  field(
+    :fulfillmentMessages,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessage,
     type: :list
   )
@@ -79,20 +80,23 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1QueryResult 
   field(:intent, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Intent)
   field(:intentDetectionConfidence)
 
-  field(:knowledgeAnswers,
+  field(
+    :knowledgeAnswers,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1KnowledgeAnswers
   )
 
   field(:languageCode)
 
-  field(:outputContexts,
+  field(
+    :outputContexts,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Context,
     type: :list
   )
 
   field(:queryText)
 
-  field(:sentimentAnalysisResult,
+  field(
+    :sentimentAnalysisResult,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1SentimentAnalysisResult
   )
 

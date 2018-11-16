@@ -32,7 +32,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KMapEstimationResult do
             list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KMapEstimationHistogramBucket.t())
         }
 
-  field(:kMapEstimationHistogram,
+  field(
+    :kMapEstimationHistogram,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KMapEstimationHistogramBucket,
     type: :list
   )

@@ -32,7 +32,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.UpdateDeviceMetadataInBat
             list(GoogleApi.AndroidDeviceProvisioning.V1.Model.UpdateMetadataArguments.t())
         }
 
-  field(:updates,
+  field(
+    :updates,
     as: GoogleApi.AndroidDeviceProvisioning.V1.Model.UpdateMetadataArguments,
     type: :list
   )

@@ -32,7 +32,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1SentimentAna
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Sentiment.t()
         }
 
-  field(:queryTextSentiment,
+  field(
+    :queryTextSentiment,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Sentiment
   )
 end

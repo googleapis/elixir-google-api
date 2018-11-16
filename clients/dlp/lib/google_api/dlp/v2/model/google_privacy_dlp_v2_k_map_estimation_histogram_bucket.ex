@@ -43,7 +43,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KMapEstimationHistogramBucket
   field(:bucketSize)
   field(:bucketValueCount)
 
-  field(:bucketValues,
+  field(
+    :bucketValues,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KMapEstimationQuasiIdValues,
     type: :list
   )

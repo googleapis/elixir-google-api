@@ -35,7 +35,11 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListStoredInfoTypesResponse d
 
   field(:nextPageToken)
 
-  field(:storedInfoTypes, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoType, type: :list)
+  field(
+    :storedInfoTypes,
+    as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoType,
+    type: :list
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListStoredInfoTypesResponse do

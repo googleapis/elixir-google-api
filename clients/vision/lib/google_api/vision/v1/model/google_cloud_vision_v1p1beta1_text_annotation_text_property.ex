@@ -37,11 +37,13 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1TextAnnotationText
             )
         }
 
-  field(:detectedBreak,
+  field(
+    :detectedBreak,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1TextAnnotationDetectedBreak
   )
 
-  field(:detectedLanguages,
+  field(
+    :detectedLanguages,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1TextAnnotationDetectedLanguage,
     type: :list
   )

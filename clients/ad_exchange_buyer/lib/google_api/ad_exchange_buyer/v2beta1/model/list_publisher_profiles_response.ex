@@ -35,7 +35,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListPublisherProfilesResponse 
 
   field(:nextPageToken)
 
-  field(:publisherProfiles,
+  field(
+    :publisherProfiles,
     as: GoogleApi.AdExchangeBuyer.V2beta1.Model.PublisherProfile,
     type: :list
   )

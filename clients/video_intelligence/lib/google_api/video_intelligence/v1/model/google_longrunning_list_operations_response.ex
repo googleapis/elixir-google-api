@@ -35,7 +35,8 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleLongrunningListOperationsRe
 
   field(:nextPageToken)
 
-  field(:operations,
+  field(
+    :operations,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleLongrunningOperation,
     type: :list
   )

@@ -39,7 +39,8 @@ defmodule GoogleApi.DFAReporting.V28.Model.TargetableRemarketingListsListRespons
   field(:kind)
   field(:nextPageToken)
 
-  field(:targetableRemarketingLists,
+  field(
+    :targetableRemarketingLists,
     as: GoogleApi.DFAReporting.V28.Model.TargetableRemarketingList,
     type: :list
   )

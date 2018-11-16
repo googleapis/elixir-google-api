@@ -45,7 +45,8 @@ defmodule GoogleApi.PageSpeedOnline.V2.Model.ResultFormattedResultsRuleResults d
   field(:ruleImpact)
   field(:summary, as: GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2)
 
-  field(:urlBlocks,
+  field(
+    :urlBlocks,
     as: GoogleApi.PageSpeedOnline.V2.Model.ResultFormattedResultsUrlBlocks,
     type: :list
   )

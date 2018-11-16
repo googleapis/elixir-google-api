@@ -50,8 +50,7 @@ defmodule GoogleApi.DFAReporting.V28.Model.TargetingTemplate do
             GoogleApi.DFAReporting.V28.Model.KeyValueTargetingExpression.t(),
           :kind => any(),
           :languageTargeting => GoogleApi.DFAReporting.V28.Model.LanguageTargeting.t(),
-          :listTargetingExpression =>
-            GoogleApi.DFAReporting.V28.Model.ListTargetingExpression.t(),
+          :listTargetingExpression => GoogleApi.DFAReporting.V28.Model.ListTargetingExpression.t(),
           :name => any(),
           :subaccountId => any(),
           :technologyTargeting => GoogleApi.DFAReporting.V28.Model.TechnologyTargeting.t()
@@ -64,7 +63,8 @@ defmodule GoogleApi.DFAReporting.V28.Model.TargetingTemplate do
   field(:geoTargeting, as: GoogleApi.DFAReporting.V28.Model.GeoTargeting)
   field(:id)
 
-  field(:keyValueTargetingExpression,
+  field(
+    :keyValueTargetingExpression,
     as: GoogleApi.DFAReporting.V28.Model.KeyValueTargetingExpression
   )
 

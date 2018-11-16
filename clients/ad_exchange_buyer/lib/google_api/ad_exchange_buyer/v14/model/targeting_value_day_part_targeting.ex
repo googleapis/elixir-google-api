@@ -34,7 +34,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDayPartTargeting do
           :timeZoneType => any()
         }
 
-  field(:dayParts,
+  field(
+    :dayParts,
     as: GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDayPartTargetingDayPart,
     type: :list
   )

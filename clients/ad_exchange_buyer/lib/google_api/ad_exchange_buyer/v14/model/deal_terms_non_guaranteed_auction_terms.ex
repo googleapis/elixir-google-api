@@ -35,7 +35,11 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.DealTermsNonGuaranteedAuctionTerms
 
   field(:autoOptimizePrivateAuction)
 
-  field(:reservePricePerBuyers, as: GoogleApi.AdExchangeBuyer.V14.Model.PricePerBuyer, type: :list)
+  field(
+    :reservePricePerBuyers,
+    as: GoogleApi.AdExchangeBuyer.V14.Model.PricePerBuyer,
+    type: :list
+  )
 end
 
 defimpl Poison.Decoder,

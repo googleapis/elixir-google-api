@@ -38,8 +38,7 @@ defmodule GoogleApi.DFAReporting.V28.Model.ReportPathToConversionCriteria do
   @type t :: %__MODULE__{
           :activityFilters => list(GoogleApi.DFAReporting.V28.Model.DimensionValue.t()),
           :conversionDimensions => list(GoogleApi.DFAReporting.V28.Model.SortedDimension.t()),
-          :customFloodlightVariables =>
-            list(GoogleApi.DFAReporting.V28.Model.SortedDimension.t()),
+          :customFloodlightVariables => list(GoogleApi.DFAReporting.V28.Model.SortedDimension.t()),
           :customRichMediaEvents => list(GoogleApi.DFAReporting.V28.Model.DimensionValue.t()),
           :dateRange => GoogleApi.DFAReporting.V28.Model.DateRange.t(),
           :floodlightConfigId => GoogleApi.DFAReporting.V28.Model.DimensionValue.t(),
@@ -52,7 +51,8 @@ defmodule GoogleApi.DFAReporting.V28.Model.ReportPathToConversionCriteria do
   field(:activityFilters, as: GoogleApi.DFAReporting.V28.Model.DimensionValue, type: :list)
   field(:conversionDimensions, as: GoogleApi.DFAReporting.V28.Model.SortedDimension, type: :list)
 
-  field(:customFloodlightVariables,
+  field(
+    :customFloodlightVariables,
     as: GoogleApi.DFAReporting.V28.Model.SortedDimension,
     type: :list
   )
@@ -62,12 +62,14 @@ defmodule GoogleApi.DFAReporting.V28.Model.ReportPathToConversionCriteria do
   field(:floodlightConfigId, as: GoogleApi.DFAReporting.V28.Model.DimensionValue)
   field(:metricNames, type: :list)
 
-  field(:perInteractionDimensions,
+  field(
+    :perInteractionDimensions,
     as: GoogleApi.DFAReporting.V28.Model.SortedDimension,
     type: :list
   )
 
-  field(:reportProperties,
+  field(
+    :reportProperties,
     as: GoogleApi.DFAReporting.V28.Model.ReportPathToConversionCriteriaReportProperties
   )
 end

@@ -31,7 +31,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ReportWorkItemStatusResponse do
           :workItemServiceStates => list(GoogleApi.Dataflow.V1b3.Model.WorkItemServiceState.t())
         }
 
-  field(:workItemServiceStates,
+  field(
+    :workItemServiceStates,
     as: GoogleApi.Dataflow.V1b3.Model.WorkItemServiceState,
     type: :list
   )

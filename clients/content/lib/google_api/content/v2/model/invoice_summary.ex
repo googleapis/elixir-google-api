@@ -42,7 +42,8 @@ defmodule GoogleApi.Content.V2.Model.InvoiceSummary do
           :promotionSummaries => list(GoogleApi.Content.V2.Model.Promotion.t())
         }
 
-  field(:additionalChargeSummaries,
+  field(
+    :additionalChargeSummaries,
     as: GoogleApi.Content.V2.Model.InvoiceSummaryAdditionalChargeSummary,
     type: :list
   )

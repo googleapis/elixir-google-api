@@ -52,7 +52,8 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   field(:desiredImageType)
   field(:desiredLocations, type: :list)
 
-  field(:desiredMasterAuthorizedNetworksConfig,
+  field(
+    :desiredMasterAuthorizedNetworksConfig,
     as: GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig
   )
 

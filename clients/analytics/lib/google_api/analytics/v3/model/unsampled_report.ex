@@ -71,7 +71,8 @@ defmodule GoogleApi.Analytics.V3.Model.UnsampledReport do
 
   field(:accountId)
 
-  field(:cloudStorageDownloadDetails,
+  field(
+    :cloudStorageDownloadDetails,
     as: GoogleApi.Analytics.V3.Model.UnsampledReportCloudStorageDownloadDetails
   )
 
@@ -79,7 +80,8 @@ defmodule GoogleApi.Analytics.V3.Model.UnsampledReport do
   field(:dimensions)
   field(:downloadType)
 
-  field(:driveDownloadDetails,
+  field(
+    :driveDownloadDetails,
     as: GoogleApi.Analytics.V3.Model.UnsampledReportDriveDownloadDetails
   )
 

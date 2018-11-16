@@ -33,7 +33,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.DateRangeValues do
           :values => list(any())
         }
 
-  field(:pivotValueRegions,
+  field(
+    :pivotValueRegions,
     as: GoogleApi.AnalyticsReporting.V4.Model.PivotValueRegion,
     type: :list
   )

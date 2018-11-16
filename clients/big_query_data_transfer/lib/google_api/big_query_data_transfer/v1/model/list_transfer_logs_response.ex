@@ -35,7 +35,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferLogsResponse do
 
   field(:nextPageToken)
 
-  field(:transferMessages,
+  field(
+    :transferMessages,
     as: GoogleApi.BigQueryDataTransfer.V1.Model.TransferMessage,
     type: :list
   )

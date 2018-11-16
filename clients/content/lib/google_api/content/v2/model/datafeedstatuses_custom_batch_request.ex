@@ -31,7 +31,8 @@ defmodule GoogleApi.Content.V2.Model.DatafeedstatusesCustomBatchRequest do
           :entries => list(GoogleApi.Content.V2.Model.DatafeedstatusesCustomBatchRequestEntry.t())
         }
 
-  field(:entries,
+  field(
+    :entries,
     as: GoogleApi.Content.V2.Model.DatafeedstatusesCustomBatchRequestEntry,
     type: :list
   )

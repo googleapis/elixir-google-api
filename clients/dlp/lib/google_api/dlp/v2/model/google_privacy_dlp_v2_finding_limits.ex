@@ -36,7 +36,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FindingLimits do
           :maxFindingsPerRequest => any()
         }
 
-  field(:maxFindingsPerInfoType,
+  field(
+    :maxFindingsPerInfoType,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeLimit,
     type: :list
   )

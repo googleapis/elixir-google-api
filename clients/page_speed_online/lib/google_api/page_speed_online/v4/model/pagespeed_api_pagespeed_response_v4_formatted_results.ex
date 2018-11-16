@@ -35,7 +35,8 @@ defmodule GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiPagespeedResponseV4Form
 
   field(:locale)
 
-  field(:ruleResults,
+  field(
+    :ruleResults,
     as:
       GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiPagespeedResponseV4FormattedResultsRuleResults,
     type: :map

@@ -59,19 +59,23 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.DealTerms do
   field(:estimatedGrossSpend, as: GoogleApi.AdExchangeBuyer.V14.Model.Price)
   field(:estimatedImpressionsPerDay)
 
-  field(:guaranteedFixedPriceTerms,
+  field(
+    :guaranteedFixedPriceTerms,
     as: GoogleApi.AdExchangeBuyer.V14.Model.DealTermsGuaranteedFixedPriceTerms
   )
 
-  field(:nonGuaranteedAuctionTerms,
+  field(
+    :nonGuaranteedAuctionTerms,
     as: GoogleApi.AdExchangeBuyer.V14.Model.DealTermsNonGuaranteedAuctionTerms
   )
 
-  field(:nonGuaranteedFixedPriceTerms,
+  field(
+    :nonGuaranteedFixedPriceTerms,
     as: GoogleApi.AdExchangeBuyer.V14.Model.DealTermsNonGuaranteedFixedPriceTerms
   )
 
-  field(:rubiconNonGuaranteedTerms,
+  field(
+    :rubiconNonGuaranteedTerms,
     as: GoogleApi.AdExchangeBuyer.V14.Model.DealTermsRubiconNonGuaranteedTerms
   )
 

@@ -32,7 +32,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LDiversityResult do
             list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LDiversityHistogramBucket.t())
         }
 
-  field(:sensitiveValueFrequencyHistogramBuckets,
+  field(
+    :sensitiveValueFrequencyHistogramBuckets,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LDiversityHistogramBucket,
     type: :list
   )

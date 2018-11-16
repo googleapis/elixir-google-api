@@ -38,7 +38,8 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup do
   field(:groupId)
   field(:name)
 
-  field(:trackingIssues,
+  field(
+    :trackingIssues,
     as: GoogleApi.CloudErrorReporting.V1beta1.Model.TrackingIssue,
     type: :list
   )

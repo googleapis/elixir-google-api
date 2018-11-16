@@ -78,7 +78,8 @@ defmodule GoogleApi.Content.V2.Model.OrderLineItemProduct do
   field(:targetCountry)
   field(:title)
 
-  field(:variantAttributes,
+  field(
+    :variantAttributes,
     as: GoogleApi.Content.V2.Model.OrderLineItemProductVariantAttribute,
     type: :list
   )

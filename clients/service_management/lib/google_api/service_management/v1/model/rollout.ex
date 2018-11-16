@@ -37,8 +37,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.Rollout do
   @type t :: %__MODULE__{
           :createTime => DateTime.t(),
           :createdBy => any(),
-          :deleteServiceStrategy =>
-            GoogleApi.ServiceManagement.V1.Model.DeleteServiceStrategy.t(),
+          :deleteServiceStrategy => GoogleApi.ServiceManagement.V1.Model.DeleteServiceStrategy.t(),
           :rolloutId => any(),
           :serviceName => any(),
           :status => any(),

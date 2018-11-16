@@ -115,7 +115,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Creative do
   field(:restrictedCategories, type: :list)
   field(:sensitiveCategories, type: :list)
 
-  field(:servingRestrictions,
+  field(
+    :servingRestrictions,
     as: GoogleApi.AdExchangeBuyer.V14.Model.CreativeServingRestrictions,
     type: :list
   )

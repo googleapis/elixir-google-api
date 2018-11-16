@@ -53,7 +53,8 @@ defmodule GoogleApi.YouTube.V3.Model.VideoProcessingDetails do
   field(:processingFailureReason)
   field(:processingIssuesAvailability)
 
-  field(:processingProgress,
+  field(
+    :processingProgress,
     as: GoogleApi.YouTube.V3.Model.VideoProcessingDetailsProcessingProgress
   )
 

@@ -32,7 +32,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityTypeBatch d
             list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityType.t())
         }
 
-  field(:entityTypes,
+  field(
+    :entityTypes,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityType,
     type: :list
   )

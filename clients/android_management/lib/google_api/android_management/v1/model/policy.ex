@@ -131,8 +131,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
           :dataRoamingDisabled => any(),
           :debuggingFeaturesAllowed => any(),
           :defaultPermissionPolicy => any(),
-          :deviceOwnerLockScreenInfo =>
-            GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t(),
+          :deviceOwnerLockScreenInfo => GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t(),
           :encryptionPolicy => any(),
           :ensureVerifyAppsEnabled => any(),
           :factoryResetDisabled => any(),
@@ -155,8 +154,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
           :openNetworkConfiguration => map(),
           :outgoingBeamDisabled => any(),
           :outgoingCallsDisabled => any(),
-          :passwordPolicies =>
-            list(GoogleApi.AndroidManagement.V1.Model.PasswordRequirements.t()),
+          :passwordPolicies => list(GoogleApi.AndroidManagement.V1.Model.PasswordRequirements.t()),
           :passwordRequirements => GoogleApi.AndroidManagement.V1.Model.PasswordRequirements.t(),
           :permissionGrants => list(GoogleApi.AndroidManagement.V1.Model.PermissionGrant.t()),
           :permittedInputMethods => GoogleApi.AndroidManagement.V1.Model.PackageNameList.t(),
@@ -205,7 +203,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   field(:cameraDisabled)
   field(:cellBroadcastsConfigDisabled)
 
-  field(:choosePrivateKeyRules,
+  field(
+    :choosePrivateKeyRules,
     as: GoogleApi.AndroidManagement.V1.Model.ChoosePrivateKeyRule,
     type: :list
   )
@@ -240,7 +239,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   field(:outgoingBeamDisabled)
   field(:outgoingCallsDisabled)
 
-  field(:passwordPolicies,
+  field(
+    :passwordPolicies,
     as: GoogleApi.AndroidManagement.V1.Model.PasswordRequirements,
     type: :list
   )
@@ -249,7 +249,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   field(:permissionGrants, as: GoogleApi.AndroidManagement.V1.Model.PermissionGrant, type: :list)
   field(:permittedInputMethods, as: GoogleApi.AndroidManagement.V1.Model.PackageNameList)
 
-  field(:persistentPreferredActivities,
+  field(
+    :persistentPreferredActivities,
     as: GoogleApi.AndroidManagement.V1.Model.PersistentPreferredActivity,
     type: :list
   )
@@ -268,7 +269,10 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   field(:smsDisabled)
   field(:statusBarDisabled)
 
-  field(:statusReportingSettings, as: GoogleApi.AndroidManagement.V1.Model.StatusReportingSettings)
+  field(
+    :statusReportingSettings,
+    as: GoogleApi.AndroidManagement.V1.Model.StatusReportingSettings
+  )
 
   field(:stayOnPluggedModes, type: :list)
   field(:systemUpdate, as: GoogleApi.AndroidManagement.V1.Model.SystemUpdate)

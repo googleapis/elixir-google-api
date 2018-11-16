@@ -36,7 +36,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchema do
 
   field(:kind)
 
-  field(:restrictions,
+  field(
+    :restrictions,
     as: GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestriction,
     type: :list
   )

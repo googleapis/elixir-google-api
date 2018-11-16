@@ -34,7 +34,8 @@ defmodule GoogleApi.Analytics.V3.Model.GoalEventDetails do
           :useEventValue => any()
         }
 
-  field(:eventConditions,
+  field(
+    :eventConditions,
     as: GoogleApi.Analytics.V3.Model.GoalEventDetailsEventConditions,
     type: :list
   )

@@ -184,7 +184,8 @@ defmodule GoogleApi.DFAReporting.V28.Model.Creative do
   field(:compatibility, type: :list)
   field(:convertFlashToHtml5)
 
-  field(:counterCustomEvents,
+  field(
+    :counterCustomEvents,
     as: GoogleApi.DFAReporting.V28.Model.CreativeCustomEvent,
     type: :list
   )
@@ -192,7 +193,8 @@ defmodule GoogleApi.DFAReporting.V28.Model.Creative do
   field(:creativeAssetSelection, as: GoogleApi.DFAReporting.V28.Model.CreativeAssetSelection)
   field(:creativeAssets, as: GoogleApi.DFAReporting.V28.Model.CreativeAsset, type: :list)
 
-  field(:creativeFieldAssignments,
+  field(
+    :creativeFieldAssignments,
     as: GoogleApi.DFAReporting.V28.Model.CreativeFieldAssignment,
     type: :list
   )

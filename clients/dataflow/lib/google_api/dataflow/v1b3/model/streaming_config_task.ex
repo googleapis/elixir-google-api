@@ -38,7 +38,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StreamingConfigTask do
           :windmillServicePort => any()
         }
 
-  field(:streamingComputationConfigs,
+  field(
+    :streamingComputationConfigs,
     as: GoogleApi.Dataflow.V1b3.Model.StreamingComputationConfig,
     type: :list
   )

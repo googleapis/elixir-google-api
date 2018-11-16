@@ -105,7 +105,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Deal do
   field(:programmaticCreativeSource)
   field(:proposalId)
 
-  field(:sellerContacts,
+  field(
+    :sellerContacts,
     as: GoogleApi.AdExchangeBuyer.V2beta1.Model.ContactInformation,
     type: :list
   )
@@ -113,7 +114,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Deal do
   field(:syndicationProduct)
   field(:targeting, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.MarketplaceTargeting)
 
-  field(:targetingCriterion,
+  field(
+    :targetingCriterion,
     as: GoogleApi.AdExchangeBuyer.V2beta1.Model.TargetingCriteria,
     type: :list
   )

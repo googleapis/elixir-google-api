@@ -36,7 +36,8 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfigur
           :nextPageToken => any()
         }
 
-  field(:items,
+  field(
+    :items,
     as: GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfiguration,
     type: :list
   )

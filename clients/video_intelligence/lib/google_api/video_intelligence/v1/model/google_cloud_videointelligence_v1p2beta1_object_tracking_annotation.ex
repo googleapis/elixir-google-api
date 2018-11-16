@@ -44,17 +44,20 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2b
 
   field(:confidence)
 
-  field(:entity,
+  field(
+    :entity,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1Entity
   )
 
-  field(:frames,
+  field(
+    :frames,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1ObjectTrackingFrame,
     type: :list
   )
 
-  field(:segment,
+  field(
+    :segment,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1VideoSegment
   )
 end

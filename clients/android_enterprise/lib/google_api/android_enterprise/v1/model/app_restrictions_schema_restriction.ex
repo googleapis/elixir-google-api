@@ -47,7 +47,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestriction 
           :title => any()
         }
 
-  field(:defaultValue,
+  field(
+    :defaultValue,
     as: GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestrictionRestrictionValue
   )
 
@@ -56,7 +57,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestriction 
   field(:entryValue, type: :list)
   field(:key)
 
-  field(:nestedRestriction,
+  field(
+    :nestedRestriction,
     as: GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestriction,
     type: :list
   )

@@ -47,13 +47,17 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.TenantProjectConfig do
   field(:folder)
   field(:labels, type: :map)
 
-  field(:serviceAccountConfig,
+  field(
+    :serviceAccountConfig,
     as: GoogleApi.ServiceConsumerManagement.V1.Model.ServiceAccountConfig
   )
 
   field(:services, type: :list)
 
-  field(:tenantProjectPolicy, as: GoogleApi.ServiceConsumerManagement.V1.Model.TenantProjectPolicy)
+  field(
+    :tenantProjectPolicy,
+    as: GoogleApi.ServiceConsumerManagement.V1.Model.TenantProjectPolicy
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceConsumerManagement.V1.Model.TenantProjectConfig do

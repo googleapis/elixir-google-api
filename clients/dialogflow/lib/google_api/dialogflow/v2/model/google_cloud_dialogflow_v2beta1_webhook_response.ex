@@ -48,18 +48,21 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1WebhookRespo
 
   field(:endInteraction)
 
-  field(:followupEventInput,
+  field(
+    :followupEventInput,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1EventInput
   )
 
-  field(:fulfillmentMessages,
+  field(
+    :fulfillmentMessages,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessage,
     type: :list
   )
 
   field(:fulfillmentText)
 
-  field(:outputContexts,
+  field(
+    :outputContexts,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Context,
     type: :list
   )

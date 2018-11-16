@@ -36,7 +36,8 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBund
 
   field(:kind)
 
-  field(:translations,
+  field(
+    :translations,
     as: GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedString,
     type: :list
   )

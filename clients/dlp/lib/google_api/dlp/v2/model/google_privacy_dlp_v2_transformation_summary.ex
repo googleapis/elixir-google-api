@@ -46,7 +46,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransformationSummary do
 
   field(:field, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId)
 
-  field(:fieldTransformations,
+  field(
+    :fieldTransformations,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldTransformation,
     type: :list
   )

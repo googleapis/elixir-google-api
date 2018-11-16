@@ -36,7 +36,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListNonBillableWinningBidsResp
 
   field(:nextPageToken)
 
-  field(:nonBillableWinningBidStatusRows,
+  field(
+    :nonBillableWinningBidStatusRows,
     as: GoogleApi.AdExchangeBuyer.V2beta1.Model.NonBillableWinningBidStatusRow,
     type: :list
   )

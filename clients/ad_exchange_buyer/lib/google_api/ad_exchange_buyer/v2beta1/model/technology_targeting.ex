@@ -41,7 +41,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.TechnologyTargeting do
   field(:deviceCapabilityTargeting, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting)
   field(:deviceCategoryTargeting, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting)
 
-  field(:operatingSystemTargeting,
+  field(
+    :operatingSystemTargeting,
     as: GoogleApi.AdExchangeBuyer.V2beta1.Model.OperatingSystemTargeting
   )
 end

@@ -61,7 +61,10 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1TrainingInput do
 
   field(:args, type: :list)
 
-  field(:hyperparameters, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1HyperparameterSpec)
+  field(
+    :hyperparameters,
+    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1HyperparameterSpec
+  )
 
   field(:jobDir)
   field(:masterType)

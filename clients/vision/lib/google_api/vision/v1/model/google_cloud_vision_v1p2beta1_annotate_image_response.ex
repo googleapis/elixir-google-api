@@ -73,54 +73,65 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1AnnotateImageRespo
 
   field(:context, as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1ImageAnnotationContext)
 
-  field(:cropHintsAnnotation,
+  field(
+    :cropHintsAnnotation,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1CropHintsAnnotation
   )
 
   field(:error, as: GoogleApi.Vision.V1.Model.Status)
 
-  field(:faceAnnotations,
+  field(
+    :faceAnnotations,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1FaceAnnotation,
     type: :list
   )
 
-  field(:fullTextAnnotation,
+  field(
+    :fullTextAnnotation,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1TextAnnotation
   )
 
-  field(:imagePropertiesAnnotation,
+  field(
+    :imagePropertiesAnnotation,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1ImageProperties
   )
 
-  field(:labelAnnotations,
+  field(
+    :labelAnnotations,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1EntityAnnotation,
     type: :list
   )
 
-  field(:landmarkAnnotations,
+  field(
+    :landmarkAnnotations,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1EntityAnnotation,
     type: :list
   )
 
-  field(:localizedObjectAnnotations,
+  field(
+    :localizedObjectAnnotations,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1LocalizedObjectAnnotation,
     type: :list
   )
 
-  field(:logoAnnotations,
+  field(
+    :logoAnnotations,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1EntityAnnotation,
     type: :list
   )
 
-  field(:productSearchResults,
+  field(
+    :productSearchResults,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1ProductSearchResults
   )
 
-  field(:safeSearchAnnotation,
+  field(
+    :safeSearchAnnotation,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1SafeSearchAnnotation
   )
 
-  field(:textAnnotations,
+  field(
+    :textAnnotations,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1EntityAnnotation,
     type: :list
   )

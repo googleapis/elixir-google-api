@@ -39,8 +39,7 @@ defmodule GoogleApi.Content.V2.Model.ProductStatus do
 
   @type t :: %__MODULE__{
           :creationDate => any(),
-          :dataQualityIssues =>
-            list(GoogleApi.Content.V2.Model.ProductStatusDataQualityIssue.t()),
+          :dataQualityIssues => list(GoogleApi.Content.V2.Model.ProductStatusDataQualityIssue.t()),
           :destinationStatuses =>
             list(GoogleApi.Content.V2.Model.ProductStatusDestinationStatus.t()),
           :googleExpirationDate => any(),
@@ -55,12 +54,14 @@ defmodule GoogleApi.Content.V2.Model.ProductStatus do
 
   field(:creationDate)
 
-  field(:dataQualityIssues,
+  field(
+    :dataQualityIssues,
     as: GoogleApi.Content.V2.Model.ProductStatusDataQualityIssue,
     type: :list
   )
 
-  field(:destinationStatuses,
+  field(
+    :destinationStatuses,
     as: GoogleApi.Content.V2.Model.ProductStatusDestinationStatus,
     type: :list
   )

@@ -44,7 +44,8 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfigur
   field(:kind)
   field(:name, as: GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle)
 
-  field(:scoreFormat,
+  field(
+    :scoreFormat,
     as: GoogleApi.GamesConfiguration.V1configuration.Model.GamesNumberFormatConfiguration
   )
 

@@ -48,7 +48,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ManagedProperty do
   field(:valueBool)
   field(:valueBundle, as: GoogleApi.AndroidEnterprise.V1.Model.ManagedPropertyBundle)
 
-  field(:valueBundleArray,
+  field(
+    :valueBundleArray,
     as: GoogleApi.AndroidEnterprise.V1.Model.ManagedPropertyBundle,
     type: :list
   )

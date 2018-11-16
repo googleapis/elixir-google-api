@@ -32,7 +32,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.OrFiltersForSegment do
             list(GoogleApi.AnalyticsReporting.V4.Model.SegmentFilterClause.t())
         }
 
-  field(:segmentFilterClauses,
+  field(
+    :segmentFilterClauses,
     as: GoogleApi.AnalyticsReporting.V4.Model.SegmentFilterClause,
     type: :list
   )

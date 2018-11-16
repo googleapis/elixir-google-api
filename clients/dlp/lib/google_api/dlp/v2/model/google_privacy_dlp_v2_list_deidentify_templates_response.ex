@@ -34,7 +34,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListDeidentifyTemplatesRespon
           :nextPageToken => any()
         }
 
-  field(:deidentifyTemplates,
+  field(
+    :deidentifyTemplates,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate,
     type: :list
   )

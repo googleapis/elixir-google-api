@@ -90,7 +90,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig do
   field(:configName)
   field(:creativeType, type: :list)
 
-  field(:dimensions,
+  field(
+    :dimensions,
     as: GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigDimensions,
     type: :list
   )
@@ -98,7 +99,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig do
   field(:excludedContentLabels, type: :list)
   field(:excludedGeoCriteriaIds, type: :list)
 
-  field(:excludedPlacements,
+  field(
+    :excludedPlacements,
     as: GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigExcludedPlacements,
     type: :list
   )
@@ -114,7 +116,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig do
   field(:mobileDevices, type: :list)
   field(:mobileOperatingSystemVersions, type: :list)
 
-  field(:placements,
+  field(
+    :placements,
     as: GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigExcludedPlacements,
     type: :list
   )
@@ -126,7 +129,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig do
   field(:vendorTypes, type: :list)
   field(:verticals, type: :list)
 
-  field(:videoPlayerSizes,
+  field(
+    :videoPlayerSizes,
     as: GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigVideoPlayerSizes,
     type: :list
   )

@@ -36,8 +36,7 @@ defmodule GoogleApi.Content.V2.Model.AccountStatus do
           :accountId => any(),
           :accountLevelIssues =>
             list(GoogleApi.Content.V2.Model.AccountStatusAccountLevelIssue.t()),
-          :dataQualityIssues =>
-            list(GoogleApi.Content.V2.Model.AccountStatusDataQualityIssue.t()),
+          :dataQualityIssues => list(GoogleApi.Content.V2.Model.AccountStatusDataQualityIssue.t()),
           :kind => any(),
           :products => list(GoogleApi.Content.V2.Model.AccountStatusProducts.t()),
           :websiteClaimed => any()
@@ -45,12 +44,14 @@ defmodule GoogleApi.Content.V2.Model.AccountStatus do
 
   field(:accountId)
 
-  field(:accountLevelIssues,
+  field(
+    :accountLevelIssues,
     as: GoogleApi.Content.V2.Model.AccountStatusAccountLevelIssue,
     type: :list
   )
 
-  field(:dataQualityIssues,
+  field(
+    :dataQualityIssues,
     as: GoogleApi.Content.V2.Model.AccountStatusDataQualityIssue,
     type: :list
   )

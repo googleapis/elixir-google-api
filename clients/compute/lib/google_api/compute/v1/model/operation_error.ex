@@ -31,7 +31,8 @@ defmodule GoogleApi.Compute.V1.Model.OperationError do
           :errors => list(GoogleApi.Compute.V1.Model.ManagedInstanceLastAttemptErrorsErrors.t())
         }
 
-  field(:errors,
+  field(
+    :errors,
     as: GoogleApi.Compute.V1.Model.ManagedInstanceLastAttemptErrorsErrors,
     type: :list
   )

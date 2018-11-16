@@ -31,7 +31,8 @@ defmodule GoogleApi.Content.V2.Model.AccountstatusesCustomBatchRequest do
           :entries => list(GoogleApi.Content.V2.Model.AccountstatusesCustomBatchRequestEntry.t())
         }
 
-  field(:entries,
+  field(
+    :entries,
     as: GoogleApi.Content.V2.Model.AccountstatusesCustomBatchRequestEntry,
     type: :list
   )

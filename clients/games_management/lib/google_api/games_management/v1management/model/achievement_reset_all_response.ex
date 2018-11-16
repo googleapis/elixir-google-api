@@ -36,7 +36,8 @@ defmodule GoogleApi.GamesManagement.V1management.Model.AchievementResetAllRespon
 
   field(:kind)
 
-  field(:results,
+  field(
+    :results,
     as: GoogleApi.GamesManagement.V1management.Model.AchievementResetResponse,
     type: :list
   )

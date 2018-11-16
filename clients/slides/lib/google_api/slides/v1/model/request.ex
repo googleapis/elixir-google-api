@@ -141,9 +141,13 @@ defmodule GoogleApi.Slides.V1.Model.Request do
   field(:mergeTableCells, as: GoogleApi.Slides.V1.Model.MergeTableCellsRequest)
   field(:refreshSheetsChart, as: GoogleApi.Slides.V1.Model.RefreshSheetsChartRequest)
 
-  field(:replaceAllShapesWithImage, as: GoogleApi.Slides.V1.Model.ReplaceAllShapesWithImageRequest)
+  field(
+    :replaceAllShapesWithImage,
+    as: GoogleApi.Slides.V1.Model.ReplaceAllShapesWithImageRequest
+  )
 
-  field(:replaceAllShapesWithSheetsChart,
+  field(
+    :replaceAllShapesWithSheetsChart,
     as: GoogleApi.Slides.V1.Model.ReplaceAllShapesWithSheetsChartRequest
   )
 
@@ -155,7 +159,8 @@ defmodule GoogleApi.Slides.V1.Model.Request do
   field(:updateLineProperties, as: GoogleApi.Slides.V1.Model.UpdateLinePropertiesRequest)
   field(:updatePageElementAltText, as: GoogleApi.Slides.V1.Model.UpdatePageElementAltTextRequest)
 
-  field(:updatePageElementTransform,
+  field(
+    :updatePageElementTransform,
     as: GoogleApi.Slides.V1.Model.UpdatePageElementTransformRequest
   )
 
@@ -165,13 +170,18 @@ defmodule GoogleApi.Slides.V1.Model.Request do
   field(:updateShapeProperties, as: GoogleApi.Slides.V1.Model.UpdateShapePropertiesRequest)
   field(:updateSlidesPosition, as: GoogleApi.Slides.V1.Model.UpdateSlidesPositionRequest)
 
-  field(:updateTableBorderProperties,
+  field(
+    :updateTableBorderProperties,
     as: GoogleApi.Slides.V1.Model.UpdateTableBorderPropertiesRequest
   )
 
-  field(:updateTableCellProperties, as: GoogleApi.Slides.V1.Model.UpdateTableCellPropertiesRequest)
+  field(
+    :updateTableCellProperties,
+    as: GoogleApi.Slides.V1.Model.UpdateTableCellPropertiesRequest
+  )
 
-  field(:updateTableColumnProperties,
+  field(
+    :updateTableColumnProperties,
     as: GoogleApi.Slides.V1.Model.UpdateTableColumnPropertiesRequest
   )
 

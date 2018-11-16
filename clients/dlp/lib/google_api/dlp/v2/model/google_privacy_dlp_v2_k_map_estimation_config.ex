@@ -35,7 +35,11 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KMapEstimationConfig do
           :regionCode => any()
         }
 
-  field(:auxiliaryTables, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2AuxiliaryTable, type: :list)
+  field(
+    :auxiliaryTables,
+    as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2AuxiliaryTable,
+    type: :list
+  )
 
   field(:quasiIds, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TaggedField, type: :list)
   field(:regionCode)

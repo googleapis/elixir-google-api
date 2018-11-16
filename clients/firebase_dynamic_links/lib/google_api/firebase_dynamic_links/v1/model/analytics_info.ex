@@ -36,7 +36,8 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.AnalyticsInfo do
 
   field(:googlePlayAnalytics, as: GoogleApi.FirebaseDynamicLinks.V1.Model.GooglePlayAnalytics)
 
-  field(:itunesConnectAnalytics,
+  field(
+    :itunesConnectAnalytics,
     as: GoogleApi.FirebaseDynamicLinks.V1.Model.ITunesConnectAnalytics
   )
 end

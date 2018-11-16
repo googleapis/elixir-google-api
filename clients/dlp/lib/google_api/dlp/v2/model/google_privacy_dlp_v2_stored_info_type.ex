@@ -39,7 +39,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoType do
   field(:currentVersion, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoTypeVersion)
   field(:name)
 
-  field(:pendingVersions,
+  field(
+    :pendingVersions,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoTypeVersion,
     type: :list
   )

@@ -42,7 +42,10 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfigur
           :sortRank => any()
         }
 
-  field(:description, as: GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle)
+  field(
+    :description,
+    as: GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle
+  )
 
   field(:iconUrl)
   field(:kind)

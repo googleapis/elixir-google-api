@@ -31,14 +31,14 @@ defmodule GoogleApi.Content.V2.Model.ShipmentInvoice do
 
   @type t :: %__MODULE__{
           :invoiceSummary => GoogleApi.Content.V2.Model.InvoiceSummary.t(),
-          :lineItemInvoices =>
-            list(GoogleApi.Content.V2.Model.ShipmentInvoiceLineItemInvoice.t()),
+          :lineItemInvoices => list(GoogleApi.Content.V2.Model.ShipmentInvoiceLineItemInvoice.t()),
           :shipmentGroupId => any()
         }
 
   field(:invoiceSummary, as: GoogleApi.Content.V2.Model.InvoiceSummary)
 
-  field(:lineItemInvoices,
+  field(
+    :lineItemInvoices,
     as: GoogleApi.Content.V2.Model.ShipmentInvoiceLineItemInvoice,
     type: :list
   )

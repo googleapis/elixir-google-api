@@ -40,11 +40,13 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkerMessageResponse do
 
   field(:workerHealthReportResponse, as: GoogleApi.Dataflow.V1b3.Model.WorkerHealthReportResponse)
 
-  field(:workerMetricsResponse,
+  field(
+    :workerMetricsResponse,
     as: GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReportResponse
   )
 
-  field(:workerShutdownNoticeResponse,
+  field(
+    :workerShutdownNoticeResponse,
     as: GoogleApi.Dataflow.V1b3.Model.WorkerShutdownNoticeResponse
   )
 end

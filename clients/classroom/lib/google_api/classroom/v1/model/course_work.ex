@@ -63,8 +63,7 @@ defmodule GoogleApi.Classroom.V1.Model.CourseWork do
           :dueDate => any(),
           :dueTime => GoogleApi.Classroom.V1.Model.TimeOfDay.t(),
           :id => any(),
-          :individualStudentsOptions =>
-            GoogleApi.Classroom.V1.Model.IndividualStudentsOptions.t(),
+          :individualStudentsOptions => GoogleApi.Classroom.V1.Model.IndividualStudentsOptions.t(),
           :materials => list(GoogleApi.Classroom.V1.Model.Material.t()),
           :maxPoints => any(),
           :multipleChoiceQuestion => GoogleApi.Classroom.V1.Model.MultipleChoiceQuestion.t(),

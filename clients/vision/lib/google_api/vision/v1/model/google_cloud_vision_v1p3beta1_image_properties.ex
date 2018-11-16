@@ -32,7 +32,8 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1ImageProperties do
             GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1DominantColorsAnnotation.t()
         }
 
-  field(:dominantColors,
+  field(
+    :dominantColors,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1DominantColorsAnnotation
   )
 end

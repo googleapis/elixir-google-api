@@ -50,7 +50,8 @@ defmodule GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse do
   field(:averages, type: :list)
   field(:endDate)
 
-  field(:headers,
+  field(
+    :headers,
     as: GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponseHeaders,
     type: :list
   )

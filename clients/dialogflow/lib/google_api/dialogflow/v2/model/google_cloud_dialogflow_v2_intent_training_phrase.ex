@@ -43,7 +43,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentTrainingPhr
 
   field(:name)
 
-  field(:parts,
+  field(
+    :parts,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentTrainingPhrasePart,
     type: :list
   )

@@ -31,7 +31,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.SendWorkerMessagesResponse do
           :workerMessageResponses => list(GoogleApi.Dataflow.V1b3.Model.WorkerMessageResponse.t())
         }
 
-  field(:workerMessageResponses,
+  field(
+    :workerMessageResponses,
     as: GoogleApi.Dataflow.V1b3.Model.WorkerMessageResponse,
     type: :list
   )

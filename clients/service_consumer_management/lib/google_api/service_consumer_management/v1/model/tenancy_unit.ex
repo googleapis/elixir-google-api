@@ -45,7 +45,8 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.TenancyUnit do
   field(:name)
   field(:service)
 
-  field(:tenantResources,
+  field(
+    :tenantResources,
     as: GoogleApi.ServiceConsumerManagement.V1.Model.TenantResource,
     type: :list
   )

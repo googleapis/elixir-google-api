@@ -82,7 +82,8 @@ defmodule GoogleApi.Calendar.V3.Model.CalendarListEntry do
   field(:kind)
   field(:location)
 
-  field(:notificationSettings,
+  field(
+    :notificationSettings,
     as: GoogleApi.Calendar.V3.Model.CalendarListEntryNotificationSettings
   )
 

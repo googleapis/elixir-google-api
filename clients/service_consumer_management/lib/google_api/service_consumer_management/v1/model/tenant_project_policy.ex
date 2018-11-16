@@ -31,7 +31,8 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.TenantProjectPolicy do
           :policyBindings => list(GoogleApi.ServiceConsumerManagement.V1.Model.PolicyBinding.t())
         }
 
-  field(:policyBindings,
+  field(
+    :policyBindings,
     as: GoogleApi.ServiceConsumerManagement.V1.Model.PolicyBinding,
     type: :list
   )

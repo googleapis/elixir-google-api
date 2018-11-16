@@ -34,8 +34,7 @@ defmodule GoogleApi.Content.V2.Model.OrderinvoicesCreateChargeInvoiceRequest do
   @type t :: %__MODULE__{
           :invoiceId => any(),
           :invoiceSummary => GoogleApi.Content.V2.Model.InvoiceSummary.t(),
-          :lineItemInvoices =>
-            list(GoogleApi.Content.V2.Model.ShipmentInvoiceLineItemInvoice.t()),
+          :lineItemInvoices => list(GoogleApi.Content.V2.Model.ShipmentInvoiceLineItemInvoice.t()),
           :operationId => any(),
           :shipmentGroupId => any()
         }
@@ -43,7 +42,8 @@ defmodule GoogleApi.Content.V2.Model.OrderinvoicesCreateChargeInvoiceRequest do
   field(:invoiceId)
   field(:invoiceSummary, as: GoogleApi.Content.V2.Model.InvoiceSummary)
 
-  field(:lineItemInvoices,
+  field(
+    :lineItemInvoices,
     as: GoogleApi.Content.V2.Model.ShipmentInvoiceLineItemInvoice,
     type: :list
   )

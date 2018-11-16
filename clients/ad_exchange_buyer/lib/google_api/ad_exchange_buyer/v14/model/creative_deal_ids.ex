@@ -34,7 +34,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeDealIds do
           :kind => any()
         }
 
-  field(:dealStatuses,
+  field(
+    :dealStatuses,
     as: GoogleApi.AdExchangeBuyer.V14.Model.CreativeDealIdsDealStatuses,
     type: :list
   )

@@ -65,11 +65,13 @@ defmodule GoogleApi.Slides.V1.Model.Response do
   field(:duplicateObject, as: GoogleApi.Slides.V1.Model.DuplicateObjectResponse)
   field(:groupObjects, as: GoogleApi.Slides.V1.Model.GroupObjectsResponse)
 
-  field(:replaceAllShapesWithImage,
+  field(
+    :replaceAllShapesWithImage,
     as: GoogleApi.Slides.V1.Model.ReplaceAllShapesWithImageResponse
   )
 
-  field(:replaceAllShapesWithSheetsChart,
+  field(
+    :replaceAllShapesWithSheetsChart,
     as: GoogleApi.Slides.V1.Model.ReplaceAllShapesWithSheetsChartResponse
   )
 

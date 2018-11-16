@@ -32,7 +32,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.MobileApplicationTargeting do
             GoogleApi.AdExchangeBuyer.V2beta1.Model.FirstPartyMobileApplicationTargeting.t()
         }
 
-  field(:firstPartyTargeting,
+  field(
+    :firstPartyTargeting,
     as: GoogleApi.AdExchangeBuyer.V2beta1.Model.FirstPartyMobileApplicationTargeting
   )
 end

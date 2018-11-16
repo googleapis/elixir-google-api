@@ -59,7 +59,8 @@ defmodule GoogleApi.GamesManagement.V1management.Model.Player do
   field(:bannerUrlPortrait)
   field(:displayName)
 
-  field(:experienceInfo,
+  field(
+    :experienceInfo,
     as: GoogleApi.GamesManagement.V1management.Model.GamesPlayerExperienceInfoResource
   )
 

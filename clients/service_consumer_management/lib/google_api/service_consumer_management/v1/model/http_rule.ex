@@ -49,7 +49,8 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.HttpRule do
           :selector => any()
         }
 
-  field(:additionalBindings,
+  field(
+    :additionalBindings,
     as: GoogleApi.ServiceConsumerManagement.V1.Model.HttpRule,
     type: :list
   )

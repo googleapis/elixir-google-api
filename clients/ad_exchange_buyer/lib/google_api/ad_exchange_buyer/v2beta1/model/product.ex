@@ -46,8 +46,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Product do
           :availableEndTime => DateTime.t(),
           :availableStartTime => DateTime.t(),
           :createTime => DateTime.t(),
-          :creatorContacts =>
-            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ContactInformation.t()),
+          :creatorContacts => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ContactInformation.t()),
           :displayName => any(),
           :hasCreatorSignedOff => any(),
           :productId => any(),
@@ -66,7 +65,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Product do
   field(:availableStartTime, as: DateTime)
   field(:createTime, as: DateTime)
 
-  field(:creatorContacts,
+  field(
+    :creatorContacts,
     as: GoogleApi.AdExchangeBuyer.V2beta1.Model.ContactInformation,
     type: :list
   )
@@ -79,7 +79,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Product do
   field(:seller, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.Seller)
   field(:syndicationProduct)
 
-  field(:targetingCriterion,
+  field(
+    :targetingCriterion,
     as: GoogleApi.AdExchangeBuyer.V2beta1.Model.TargetingCriteria,
     type: :list
   )

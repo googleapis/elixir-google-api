@@ -34,7 +34,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.MetricHeader do
           :pivotHeaders => list(GoogleApi.AnalyticsReporting.V4.Model.PivotHeader.t())
         }
 
-  field(:metricHeaderEntries,
+  field(
+    :metricHeaderEntries,
     as: GoogleApi.AnalyticsReporting.V4.Model.MetricHeaderEntry,
     type: :list
   )

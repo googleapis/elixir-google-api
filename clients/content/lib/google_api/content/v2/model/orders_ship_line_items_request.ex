@@ -52,7 +52,8 @@ defmodule GoogleApi.Content.V2.Model.OrdersShipLineItemsRequest do
   field(:shipmentGroupId)
   field(:shipmentId)
 
-  field(:shipmentInfos,
+  field(
+    :shipmentInfos,
     as: GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryShipLineItemsShipmentInfo,
     type: :list
   )

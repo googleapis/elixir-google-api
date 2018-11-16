@@ -32,7 +32,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KAnonymityResult do
             list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KAnonymityHistogramBucket.t())
         }
 
-  field(:equivalenceClassHistogramBuckets,
+  field(
+    :equivalenceClassHistogramBuckets,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KAnonymityHistogramBucket,
     type: :list
   )

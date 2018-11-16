@@ -39,7 +39,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.DeliveryControl do
   field(:creativeBlockingLevel)
   field(:deliveryRateType)
 
-  field(:frequencyCaps,
+  field(
+    :frequencyCaps,
     as: GoogleApi.AdExchangeBuyer.V14.Model.DeliveryControlFrequencyCap,
     type: :list
   )

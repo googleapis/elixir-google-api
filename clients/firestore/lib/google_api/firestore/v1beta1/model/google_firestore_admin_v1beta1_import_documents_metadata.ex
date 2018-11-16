@@ -52,7 +52,8 @@ defmodule GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1ImportDoc
   field(:operationState)
   field(:progressBytes, as: GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1Progress)
 
-  field(:progressDocuments,
+  field(
+    :progressDocuments,
     as: GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1Progress
   )
 

@@ -40,7 +40,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.AndroidTest do
 
   field(:androidAppInfo, as: GoogleApi.ToolResults.V1beta3.Model.AndroidAppInfo)
 
-  field(:androidInstrumentationTest,
+  field(
+    :androidInstrumentationTest,
     as: GoogleApi.ToolResults.V1beta3.Model.AndroidInstrumentationTest
   )
 

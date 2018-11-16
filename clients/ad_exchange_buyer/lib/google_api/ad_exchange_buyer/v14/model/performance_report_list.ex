@@ -35,7 +35,11 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PerformanceReportList do
 
   field(:kind)
 
-  field(:performanceReport, as: GoogleApi.AdExchangeBuyer.V14.Model.PerformanceReport, type: :list)
+  field(
+    :performanceReport,
+    as: GoogleApi.AdExchangeBuyer.V14.Model.PerformanceReport,
+    type: :list
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V14.Model.PerformanceReportList do

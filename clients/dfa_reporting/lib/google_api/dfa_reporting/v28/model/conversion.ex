@@ -59,7 +59,8 @@ defmodule GoogleApi.DFAReporting.V28.Model.Conversion do
 
   field(:childDirectedTreatment)
 
-  field(:customVariables,
+  field(
+    :customVariables,
     as: GoogleApi.DFAReporting.V28.Model.CustomFloodlightVariable,
     type: :list
   )

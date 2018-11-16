@@ -33,7 +33,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListClientUserInvitationsRespo
           :nextPageToken => any()
         }
 
-  field(:invitations,
+  field(
+    :invitations,
     as: GoogleApi.AdExchangeBuyer.V2beta1.Model.ClientUserInvitation,
     type: :list
   )

@@ -45,7 +45,8 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1Product do
   field(:name)
   field(:productCategory)
 
-  field(:productLabels,
+  field(
+    :productLabels,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1ProductKeyValue,
     type: :list
   )

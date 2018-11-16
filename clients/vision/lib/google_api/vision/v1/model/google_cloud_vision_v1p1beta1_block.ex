@@ -45,12 +45,14 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1Block do
   field(:boundingBox, as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1BoundingPoly)
   field(:confidence)
 
-  field(:paragraphs,
+  field(
+    :paragraphs,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1Paragraph,
     type: :list
   )
 
-  field(:property,
+  field(
+    :property,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1TextAnnotationTextProperty
   )
 end

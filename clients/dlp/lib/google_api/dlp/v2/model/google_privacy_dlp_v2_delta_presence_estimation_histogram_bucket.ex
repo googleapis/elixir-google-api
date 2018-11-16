@@ -45,7 +45,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeltaPresenceEstimationHistog
   field(:bucketSize)
   field(:bucketValueCount)
 
-  field(:bucketValues,
+  field(
+    :bucketValues,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeltaPresenceEstimationQuasiIdValues,
     type: :list
   )

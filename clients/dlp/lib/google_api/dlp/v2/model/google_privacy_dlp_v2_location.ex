@@ -38,7 +38,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Location do
   field(:byteRange, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Range)
   field(:codepointRange, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Range)
 
-  field(:contentLocations,
+  field(
+    :contentLocations,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentLocation,
     type: :list
   )

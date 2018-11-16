@@ -41,7 +41,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceLabel do
   field(:accountId)
   field(:createTimeMs)
 
-  field(:deprecatedMarketplaceDealParty,
+  field(
+    :deprecatedMarketplaceDealParty,
     as: GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDealParty
   )
 

@@ -36,7 +36,8 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.ListGroupStatsResponse do
           :timeRangeBegin => DateTime.t()
         }
 
-  field(:errorGroupStats,
+  field(
+    :errorGroupStats,
     as: GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroupStats,
     type: :list
   )

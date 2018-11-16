@@ -38,7 +38,8 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1ProductSearchResul
 
   field(:boundingPoly, as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1BoundingPoly)
 
-  field(:results,
+  field(
+    :results,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1ProductSearchResultsResult,
     type: :list
   )

@@ -39,7 +39,8 @@ defmodule GoogleApi.BigQuery.V2.Model.ViewDefinition do
   field(:query)
   field(:useLegacySql)
 
-  field(:userDefinedFunctionResources,
+  field(
+    :userDefinedFunctionResources,
     as: GoogleApi.BigQuery.V2.Model.UserDefinedFunctionResource,
     type: :list
   )

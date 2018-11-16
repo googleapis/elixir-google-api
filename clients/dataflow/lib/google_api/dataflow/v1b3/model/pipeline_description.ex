@@ -31,19 +31,20 @@ defmodule GoogleApi.Dataflow.V1b3.Model.PipelineDescription do
 
   @type t :: %__MODULE__{
           :displayData => list(GoogleApi.Dataflow.V1b3.Model.DisplayData.t()),
-          :executionPipelineStage =>
-            list(GoogleApi.Dataflow.V1b3.Model.ExecutionStageSummary.t()),
+          :executionPipelineStage => list(GoogleApi.Dataflow.V1b3.Model.ExecutionStageSummary.t()),
           :originalPipelineTransform => list(GoogleApi.Dataflow.V1b3.Model.TransformSummary.t())
         }
 
   field(:displayData, as: GoogleApi.Dataflow.V1b3.Model.DisplayData, type: :list)
 
-  field(:executionPipelineStage,
+  field(
+    :executionPipelineStage,
     as: GoogleApi.Dataflow.V1b3.Model.ExecutionStageSummary,
     type: :list
   )
 
-  field(:originalPipelineTransform,
+  field(
+    :originalPipelineTransform,
     as: GoogleApi.Dataflow.V1b3.Model.TransformSummary,
     type: :list
   )

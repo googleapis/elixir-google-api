@@ -42,12 +42,14 @@ defmodule GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2Args do
 
   field(:key)
 
-  field(:rects,
+  field(
+    :rects,
     as: GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2Rects,
     type: :list
   )
 
-  field(:secondary_rects,
+  field(
+    :secondary_rects,
     as: GoogleApi.PageSpeedOnline.V2.Model.PagespeedApiFormatStringV2Rects,
     type: :list
   )

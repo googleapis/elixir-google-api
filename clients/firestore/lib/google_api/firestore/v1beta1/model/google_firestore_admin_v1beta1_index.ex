@@ -41,7 +41,8 @@ defmodule GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1Index do
 
   field(:collectionId)
 
-  field(:fields,
+  field(
+    :fields,
     as: GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1IndexField,
     type: :list
   )

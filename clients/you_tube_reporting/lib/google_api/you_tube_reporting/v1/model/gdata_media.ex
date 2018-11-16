@@ -73,8 +73,7 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.GdataMedia do
             GoogleApi.YouTubeReporting.V1.Model.GdataDiffDownloadResponse.t(),
           :diffUploadRequest => GoogleApi.YouTubeReporting.V1.Model.GdataDiffUploadRequest.t(),
           :diffUploadResponse => GoogleApi.YouTubeReporting.V1.Model.GdataDiffUploadResponse.t(),
-          :diffVersionResponse =>
-            GoogleApi.YouTubeReporting.V1.Model.GdataDiffVersionResponse.t(),
+          :diffVersionResponse => GoogleApi.YouTubeReporting.V1.Model.GdataDiffVersionResponse.t(),
           :downloadParameters => GoogleApi.YouTubeReporting.V1.Model.GdataDownloadParameters.t(),
           :filename => any(),
           :hash => any(),
@@ -103,7 +102,10 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.GdataMedia do
   field(:cosmoBinaryReference)
   field(:crc32cHash)
 
-  field(:diffChecksumsResponse, as: GoogleApi.YouTubeReporting.V1.Model.GdataDiffChecksumsResponse)
+  field(
+    :diffChecksumsResponse,
+    as: GoogleApi.YouTubeReporting.V1.Model.GdataDiffChecksumsResponse
+  )
 
   field(:diffDownloadResponse, as: GoogleApi.YouTubeReporting.V1.Model.GdataDiffDownloadResponse)
   field(:diffUploadRequest, as: GoogleApi.YouTubeReporting.V1.Model.GdataDiffUploadRequest)

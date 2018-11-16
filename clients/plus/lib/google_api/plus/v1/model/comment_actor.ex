@@ -42,7 +42,10 @@ defmodule GoogleApi.Plus.V1.Model.CommentActor do
           :verification => GoogleApi.Plus.V1.Model.ActivityActorVerification.t()
         }
 
-  field(:clientSpecificActorInfo, as: GoogleApi.Plus.V1.Model.ActivityActorClientSpecificActorInfo)
+  field(
+    :clientSpecificActorInfo,
+    as: GoogleApi.Plus.V1.Model.ActivityActorClientSpecificActorInfo
+  )
 
   field(:displayName)
   field(:id)

@@ -38,7 +38,8 @@ defmodule GoogleApi.Script.V1.Model.ExecutionError do
   field(:errorMessage)
   field(:errorType)
 
-  field(:scriptStackTraceElements,
+  field(
+    :scriptStackTraceElements,
     as: GoogleApi.Script.V1.Model.ScriptStackTraceElement,
     type: :list
   )

@@ -49,7 +49,8 @@ defmodule GoogleApi.CloudIot.V1.Model.DeviceRegistry do
 
   field(:credentials, as: GoogleApi.CloudIot.V1.Model.RegistryCredential, type: :list)
 
-  field(:eventNotificationConfigs,
+  field(
+    :eventNotificationConfigs,
     as: GoogleApi.CloudIot.V1.Model.EventNotificationConfig,
     type: :list
   )

@@ -33,8 +33,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1Lab
   @type t :: %__MODULE__{
           :categoryEntities =>
             list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1Entity.t()),
-          :entity =>
-            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1Entity.t(),
+          :entity => GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1Entity.t(),
           :frames =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1LabelFrame.t()
@@ -45,19 +44,22 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1Lab
             )
         }
 
-  field(:categoryEntities,
+  field(
+    :categoryEntities,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1Entity,
     type: :list
   )
 
   field(:entity, as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1Entity)
 
-  field(:frames,
+  field(
+    :frames,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1LabelFrame,
     type: :list
   )
 
-  field(:segments,
+  field(
+    :segments,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1LabelSegment,
     type: :list
   )

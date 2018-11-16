@@ -31,7 +31,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListConfiguration
           :configurations => list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Configuration.t())
         }
 
-  field(:configurations,
+  field(
+    :configurations,
     as: GoogleApi.AndroidDeviceProvisioning.V1.Model.Configuration,
     type: :list
   )

@@ -72,7 +72,8 @@ defmodule GoogleApi.DFAReporting.V28.Model.Report do
   field(:accountId)
   field(:criteria, as: GoogleApi.DFAReporting.V28.Model.ReportCriteria)
 
-  field(:crossDimensionReachCriteria,
+  field(
+    :crossDimensionReachCriteria,
     as: GoogleApi.DFAReporting.V28.Model.ReportCrossDimensionReachCriteria
   )
 
@@ -87,7 +88,8 @@ defmodule GoogleApi.DFAReporting.V28.Model.Report do
   field(:name)
   field(:ownerProfileId)
 
-  field(:pathToConversionCriteria,
+  field(
+    :pathToConversionCriteria,
     as: GoogleApi.DFAReporting.V28.Model.ReportPathToConversionCriteria
   )
 

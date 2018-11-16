@@ -34,7 +34,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListBidResponsesWithoutBidsRes
           :nextPageToken => any()
         }
 
-  field(:bidResponseWithoutBidsStatusRows,
+  field(
+    :bidResponseWithoutBidsStatusRows,
     as: GoogleApi.AdExchangeBuyer.V2beta1.Model.BidResponseWithoutBidsStatusRow,
     type: :list
   )

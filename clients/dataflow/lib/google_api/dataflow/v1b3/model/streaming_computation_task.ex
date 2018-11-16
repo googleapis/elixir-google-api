@@ -31,13 +31,13 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StreamingComputationTask do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :computationRanges =>
-            list(GoogleApi.Dataflow.V1b3.Model.StreamingComputationRanges.t()),
+          :computationRanges => list(GoogleApi.Dataflow.V1b3.Model.StreamingComputationRanges.t()),
           :dataDisks => list(GoogleApi.Dataflow.V1b3.Model.MountedDataDisk.t()),
           :taskType => any()
         }
 
-  field(:computationRanges,
+  field(
+    :computationRanges,
     as: GoogleApi.Dataflow.V1b3.Model.StreamingComputationRanges,
     type: :list
   )

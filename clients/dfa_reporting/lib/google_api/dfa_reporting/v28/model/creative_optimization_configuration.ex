@@ -42,7 +42,8 @@ defmodule GoogleApi.DFAReporting.V28.Model.CreativeOptimizationConfiguration do
   field(:id)
   field(:name)
 
-  field(:optimizationActivitys,
+  field(
+    :optimizationActivitys,
     as: GoogleApi.DFAReporting.V28.Model.OptimizationActivity,
     type: :list
   )

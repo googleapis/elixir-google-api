@@ -65,7 +65,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.SetAccountInfoResponse do
   field(:passwordHash)
   field(:photoUrl)
 
-  field(:providerUserInfo,
+  field(
+    :providerUserInfo,
     as: GoogleApi.IdentityToolkit.V3.Model.SetAccountInfoResponseProviderUserInfo,
     type: :list
   )

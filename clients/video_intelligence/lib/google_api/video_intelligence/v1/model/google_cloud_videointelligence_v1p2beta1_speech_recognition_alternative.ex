@@ -41,7 +41,8 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2b
   field(:confidence)
   field(:transcript)
 
-  field(:words,
+  field(
+    :words,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1WordInfo,
     type: :list
   )

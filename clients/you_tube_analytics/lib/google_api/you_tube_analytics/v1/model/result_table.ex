@@ -30,13 +30,13 @@ defmodule GoogleApi.YouTubeAnalytics.V1.Model.ResultTable do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columnHeaders =>
-            list(GoogleApi.YouTubeAnalytics.V1.Model.ResultTableColumnHeaders.t()),
+          :columnHeaders => list(GoogleApi.YouTubeAnalytics.V1.Model.ResultTableColumnHeaders.t()),
           :kind => any(),
           :rows => list()
         }
 
-  field(:columnHeaders,
+  field(
+    :columnHeaders,
     as: GoogleApi.YouTubeAnalytics.V1.Model.ResultTableColumnHeaders,
     type: :list
   )

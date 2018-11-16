@@ -36,7 +36,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListSessionEntity
 
   field(:nextPageToken)
 
-  field(:sessionEntityTypes,
+  field(
+    :sessionEntityTypes,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType,
     type: :list
   )

@@ -87,7 +87,10 @@ defmodule GoogleApi.Books.V1.Model.VolumeUserInfo do
   field(:review, as: GoogleApi.Books.V1.Model.Review)
   field(:updated, as: DateTime)
 
-  field(:userUploadedVolumeInfo, as: GoogleApi.Books.V1.Model.VolumeUserInfoUserUploadedVolumeInfo)
+  field(
+    :userUploadedVolumeInfo,
+    as: GoogleApi.Books.V1.Model.VolumeUserInfoUserUploadedVolumeInfo
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Books.V1.Model.VolumeUserInfo do

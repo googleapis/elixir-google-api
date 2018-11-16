@@ -41,7 +41,8 @@ defmodule GoogleApi.Compute.V1.Model.UsableSubnetwork do
   field(:ipCidrRange)
   field(:network)
 
-  field(:secondaryIpRanges,
+  field(
+    :secondaryIpRanges,
     as: GoogleApi.Compute.V1.Model.UsableSubnetworkSecondaryRange,
     type: :list
   )

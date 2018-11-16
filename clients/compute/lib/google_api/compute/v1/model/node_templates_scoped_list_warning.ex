@@ -38,7 +38,8 @@ defmodule GoogleApi.Compute.V1.Model.NodeTemplatesScopedListWarning do
 
   field(:code)
 
-  field(:data,
+  field(
+    :data,
     as: GoogleApi.Compute.V1.Model.AcceleratorTypeAggregatedListWarningData,
     type: :list
   )

@@ -32,7 +32,8 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.BatchUpdatePhotosRequest do
             list(GoogleApi.StreetViewPublish.V1.Model.UpdatePhotoRequest.t())
         }
 
-  field(:updatePhotoRequests,
+  field(
+    :updatePhotoRequests,
     as: GoogleApi.StreetViewPublish.V1.Model.UpdatePhotoRequest,
     type: :list
   )

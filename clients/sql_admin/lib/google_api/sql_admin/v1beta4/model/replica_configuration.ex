@@ -39,7 +39,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ReplicaConfiguration do
   field(:failoverTarget)
   field(:kind)
 
-  field(:mysqlReplicaConfiguration, as: GoogleApi.SQLAdmin.V1beta4.Model.MySqlReplicaConfiguration)
+  field(
+    :mysqlReplicaConfiguration,
+    as: GoogleApi.SQLAdmin.V1beta4.Model.MySqlReplicaConfiguration
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.ReplicaConfiguration do

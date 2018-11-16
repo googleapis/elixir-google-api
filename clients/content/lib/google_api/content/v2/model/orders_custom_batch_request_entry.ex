@@ -75,11 +75,13 @@ defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntry do
   field(:batchId)
   field(:cancel, as: GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryCancel)
 
-  field(:cancelLineItem,
+  field(
+    :cancelLineItem,
     as: GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryCancelLineItem
   )
 
-  field(:inStoreRefundLineItem,
+  field(
+    :inStoreRefundLineItem,
     as: GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryInStoreRefundLineItem
   )
 
@@ -90,29 +92,35 @@ defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntry do
   field(:orderId)
   field(:refund, as: GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryRefund)
 
-  field(:rejectReturnLineItem,
+  field(
+    :rejectReturnLineItem,
     as: GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryRejectReturnLineItem
   )
 
-  field(:returnLineItem,
+  field(
+    :returnLineItem,
     as: GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryReturnLineItem
   )
 
-  field(:returnRefundLineItem,
+  field(
+    :returnRefundLineItem,
     as: GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryReturnRefundLineItem
   )
 
-  field(:setLineItemMetadata,
+  field(
+    :setLineItemMetadata,
     as: GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntrySetLineItemMetadata
   )
 
   field(:shipLineItems, as: GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryShipLineItems)
 
-  field(:updateLineItemShippingDetails,
+  field(
+    :updateLineItemShippingDetails,
     as: GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryUpdateLineItemShippingDetails
   )
 
-  field(:updateShipment,
+  field(
+    :updateShipment,
     as: GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryUpdateShipment
   )
 end

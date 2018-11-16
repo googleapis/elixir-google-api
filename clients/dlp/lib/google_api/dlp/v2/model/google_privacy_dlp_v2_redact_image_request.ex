@@ -40,7 +40,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RedactImageRequest do
 
   field(:byteItem, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ByteContentItem)
 
-  field(:imageRedactionConfigs,
+  field(
+    :imageRedactionConfigs,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ImageRedactionConfig,
     type: :list
   )

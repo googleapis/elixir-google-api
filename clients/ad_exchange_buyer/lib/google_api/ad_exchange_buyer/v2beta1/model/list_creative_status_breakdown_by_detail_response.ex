@@ -39,7 +39,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListCreativeStatusBreakdownByD
 
   field(:detailType)
 
-  field(:filteredBidDetailRows,
+  field(
+    :filteredBidDetailRows,
     as: GoogleApi.AdExchangeBuyer.V2beta1.Model.FilteredBidDetailRow,
     type: :list
   )

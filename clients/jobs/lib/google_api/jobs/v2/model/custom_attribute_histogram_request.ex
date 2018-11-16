@@ -31,8 +31,7 @@ defmodule GoogleApi.Jobs.V2.Model.CustomAttributeHistogramRequest do
 
   @type t :: %__MODULE__{
           :key => any(),
-          :longValueHistogramBucketingOption =>
-            GoogleApi.Jobs.V2.Model.NumericBucketingOption.t(),
+          :longValueHistogramBucketingOption => GoogleApi.Jobs.V2.Model.NumericBucketingOption.t(),
           :stringValueHistogram => any()
         }
 

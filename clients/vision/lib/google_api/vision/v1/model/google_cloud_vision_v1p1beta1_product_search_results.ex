@@ -43,12 +43,14 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1ProductSearchResul
 
   field(:indexTime, as: DateTime)
 
-  field(:productGroupedResults,
+  field(
+    :productGroupedResults,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1ProductSearchResultsGroupedResult,
     type: :list
   )
 
-  field(:results,
+  field(
+    :results,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1ProductSearchResultsResult,
     type: :list
   )

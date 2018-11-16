@@ -37,12 +37,14 @@ defmodule GoogleApi.Jobs.V2.Model.HistogramResults do
           :simpleHistogramResults => list(GoogleApi.Jobs.V2.Model.HistogramResult.t())
         }
 
-  field(:compensationHistogramResults,
+  field(
+    :compensationHistogramResults,
     as: GoogleApi.Jobs.V2.Model.CompensationHistogramResult,
     type: :list
   )
 
-  field(:customAttributeHistogramResults,
+  field(
+    :customAttributeHistogramResults,
     as: GoogleApi.Jobs.V2.Model.CustomAttributeHistogramResult,
     type: :list
   )
