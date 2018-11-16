@@ -491,8 +491,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): Optional. The page token, returned by a previous call, to request the next page of results.
     - :pageSize (integer()): Optional. The maximum number of results to return in each response.
+    - :pageToken (String.t): Optional. The page token, returned by a previous call, to request the next page of results.
 
   ## Returns
 
@@ -526,8 +526,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -1167,9 +1167,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): Optional. The standard List page token.
-    - :pageSize (integer()): Optional. The standard List page size.
     - :filter (String.t): Optional. A filter constraining the clusters to list. Filters are case-sensitive and have the following syntax:field &#x3D; value AND field &#x3D; value ...where field is one of status.state, clusterName, or labels.[KEY], and [KEY] is a label key. value can be * to match all values. status.state can be one of the following: ACTIVE, INACTIVE, CREATING, RUNNING, ERROR, DELETING, or UPDATING. ACTIVE contains the CREATING, UPDATING, and RUNNING states. INACTIVE contains the DELETING and ERROR states. clusterName is the name of the cluster provided at creation time. Only the logical AND operator is supported; space-separated items are treated as having an implicit AND operator.Example filter:status.state &#x3D; ACTIVE AND clusterName &#x3D; mycluster AND labels.env &#x3D; staging AND labels.starred &#x3D; *
+    - :pageSize (integer()): Optional. The standard List page size.
+    - :pageToken (String.t): Optional. The standard List page token.
 
   ## Returns
 
@@ -1201,9 +1201,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
+      :filter => :query,
       :pageSize => :query,
-      :filter => :query
+      :pageToken => :query
     }
 
     request =
@@ -1241,9 +1241,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :updateMask (String.t): Required. Specifies the path, relative to Cluster, of the field to update. For example, to change the number of workers in a cluster to 5, the update_mask parameter would be specified as config.worker_config.num_instances, and the PATCH request body would specify the new value, as follows: {   \&quot;config\&quot;:{     \&quot;workerConfig\&quot;:{       \&quot;numInstances\&quot;:\&quot;5\&quot;     }   } } Similarly, to change the number of preemptible workers in a cluster to 5, the update_mask parameter would be config.secondary_worker_config.num_instances, and the PATCH request body would be set as follows: {   \&quot;config\&quot;:{     \&quot;secondaryWorkerConfig\&quot;:{       \&quot;numInstances\&quot;:\&quot;5\&quot;     }   } } &lt;strong&gt;Note:&lt;/strong&gt; Currently, only the following fields can be updated:&lt;table&gt;  &lt;tbody&gt;  &lt;tr&gt;  &lt;td&gt;&lt;strong&gt;Mask&lt;/strong&gt;&lt;/td&gt;  &lt;td&gt;&lt;strong&gt;Purpose&lt;/strong&gt;&lt;/td&gt;  &lt;/tr&gt;  &lt;tr&gt;  &lt;td&gt;&lt;strong&gt;&lt;em&gt;labels&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;  &lt;td&gt;Update labels&lt;/td&gt;  &lt;/tr&gt;  &lt;tr&gt;  &lt;td&gt;&lt;strong&gt;&lt;em&gt;config.worker_config.num_instances&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;  &lt;td&gt;Resize primary worker group&lt;/td&gt;  &lt;/tr&gt;  &lt;tr&gt;  &lt;td&gt;&lt;strong&gt;&lt;em&gt;config.secondary_worker_config.num_instances&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;  &lt;td&gt;Resize secondary worker group&lt;/td&gt;  &lt;/tr&gt;  &lt;/tbody&gt;  &lt;/table&gt;
     - :gracefulDecommissionTimeout (String.t): Optional. Timeout for graceful YARN decomissioning. Graceful decommissioning allows removing nodes from the cluster without interrupting jobs in progress. Timeout specifies how long to wait for jobs in progress to finish before forcefully removing nodes (and potentially interrupting jobs). Default timeout is 0 (for forceful decommission), and the maximum allowed timeout is 1 day.Only supported on Dataproc image versions 1.2 and higher.
     - :requestId (String.t): Optional. A unique id used to identify the request. If the server receives two UpdateClusterRequest requests with the same id, then the second request will be ignored and the first google.longrunning.Operation created and stored in the backend is returned.It is recommended to always set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters.
+    - :updateMask (String.t): Required. Specifies the path, relative to Cluster, of the field to update. For example, to change the number of workers in a cluster to 5, the update_mask parameter would be specified as config.worker_config.num_instances, and the PATCH request body would specify the new value, as follows: {   \&quot;config\&quot;:{     \&quot;workerConfig\&quot;:{       \&quot;numInstances\&quot;:\&quot;5\&quot;     }   } } Similarly, to change the number of preemptible workers in a cluster to 5, the update_mask parameter would be config.secondary_worker_config.num_instances, and the PATCH request body would be set as follows: {   \&quot;config\&quot;:{     \&quot;secondaryWorkerConfig\&quot;:{       \&quot;numInstances\&quot;:\&quot;5\&quot;     }   } } &lt;strong&gt;Note:&lt;/strong&gt; Currently, only the following fields can be updated:&lt;table&gt;  &lt;tbody&gt;  &lt;tr&gt;  &lt;td&gt;&lt;strong&gt;Mask&lt;/strong&gt;&lt;/td&gt;  &lt;td&gt;&lt;strong&gt;Purpose&lt;/strong&gt;&lt;/td&gt;  &lt;/tr&gt;  &lt;tr&gt;  &lt;td&gt;&lt;strong&gt;&lt;em&gt;labels&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;  &lt;td&gt;Update labels&lt;/td&gt;  &lt;/tr&gt;  &lt;tr&gt;  &lt;td&gt;&lt;strong&gt;&lt;em&gt;config.worker_config.num_instances&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;  &lt;td&gt;Resize primary worker group&lt;/td&gt;  &lt;/tr&gt;  &lt;tr&gt;  &lt;td&gt;&lt;strong&gt;&lt;em&gt;config.secondary_worker_config.num_instances&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;  &lt;td&gt;Resize secondary worker group&lt;/td&gt;  &lt;/tr&gt;  &lt;/tbody&gt;  &lt;/table&gt;
     - :body (Cluster): 
 
   ## Returns
@@ -1278,9 +1278,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :updateMask => :query,
       :gracefulDecommissionTimeout => :query,
       :requestId => :query,
+      :updateMask => :query,
       :body => :body
     }
 
@@ -1766,11 +1766,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :clusterName (String.t): Optional. If set, the returned jobs list includes only jobs that were submitted to the named cluster.
     - :filter (String.t): Optional. A filter constraining the jobs to list. Filters are case-sensitive and have the following syntax:field &#x3D; value AND field &#x3D; value ...where field is status.state or labels.[KEY], and [KEY] is a label key. value can be * to match all values. status.state can be either ACTIVE or NON_ACTIVE. Only the logical AND operator is supported; space-separated items are treated as having an implicit AND operator.Example filter:status.state &#x3D; ACTIVE AND labels.env &#x3D; staging AND labels.starred &#x3D; *
     - :jobStateMatcher (String.t): Optional. Specifies enumerated categories of jobs to list. (default &#x3D; match ALL jobs).If filter is provided, jobStateMatcher will be ignored.
-    - :pageToken (String.t): Optional. The page token, returned by a previous call, to request the next page of results.
     - :pageSize (integer()): Optional. The number of results to return in each response.
-    - :clusterName (String.t): Optional. If set, the returned jobs list includes only jobs that were submitted to the named cluster.
+    - :pageToken (String.t): Optional. The page token, returned by a previous call, to request the next page of results.
 
   ## Returns
 
@@ -1798,11 +1798,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
+      :clusterName => :query,
       :filter => :query,
       :jobStateMatcher => :query,
-      :pageToken => :query,
       :pageSize => :query,
-      :clusterName => :query
+      :pageToken => :query
     }
 
     request =
@@ -2431,8 +2431,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageSize (integer()): The standard list page size.
     - :filter (String.t): The standard list filter.
+    - :pageSize (integer()): The standard list page size.
     - :pageToken (String.t): The standard list page token.
 
   ## Returns
@@ -2466,8 +2466,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageSize => :query,
       :filter => :query,
+      :pageSize => :query,
       :pageToken => :query
     }
 

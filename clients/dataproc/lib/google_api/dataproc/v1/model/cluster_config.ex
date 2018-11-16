@@ -38,7 +38,8 @@ defmodule GoogleApi.Dataproc.V1.Model.ClusterConfig do
           :configBucket => any(),
           :encryptionConfig => GoogleApi.Dataproc.V1.Model.EncryptionConfig.t(),
           :gceClusterConfig => GoogleApi.Dataproc.V1.Model.GceClusterConfig.t(),
-          :initializationActions => list(GoogleApi.Dataproc.V1.Model.NodeInitializationAction.t()),
+          :initializationActions =>
+            list(GoogleApi.Dataproc.V1.Model.NodeInitializationAction.t()),
           :masterConfig => GoogleApi.Dataproc.V1.Model.InstanceGroupConfig.t(),
           :secondaryWorkerConfig => GoogleApi.Dataproc.V1.Model.InstanceGroupConfig.t(),
           :softwareConfig => GoogleApi.Dataproc.V1.Model.SoftwareConfig.t(),
