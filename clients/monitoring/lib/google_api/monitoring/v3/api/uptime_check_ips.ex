@@ -42,8 +42,8 @@ defmodule GoogleApi.Monitoring.V3.Api.UptimeCheckIps do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return more results from the previous method call. NOTE: this field is not yet implemented
     - :pageSize (integer()): The maximum number of results to return in a single response. The server may further constrain the maximum number of results returned in a single page. If the page_size is &lt;&#x3D;0, the server will decide the number of results to be returned. NOTE: this field is not yet implemented
+    - :pageToken (String.t): If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return more results from the previous method call. NOTE: this field is not yet implemented
 
   ## Returns
 
@@ -66,8 +66,8 @@ defmodule GoogleApi.Monitoring.V3.Api.UptimeCheckIps do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =

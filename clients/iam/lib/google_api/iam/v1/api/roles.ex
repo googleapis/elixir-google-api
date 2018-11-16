@@ -97,11 +97,11 @@ defmodule GoogleApi.IAM.V1.Api.Roles do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :showDeleted (boolean()): Include Roles that have been deleted.
-    - :pageToken (String.t): Optional pagination token returned in an earlier ListRolesResponse.
     - :pageSize (integer()): Optional limit on the number of roles to include in the response.
-    - :view (String.t): Optional view for the returned Role objects.
+    - :pageToken (String.t): Optional pagination token returned in an earlier ListRolesResponse.
     - :parent (String.t): The resource name of the parent resource in one of the following formats: &#x60;&#x60; (empty string) -- this refers to curated roles. &#x60;organizations/{ORGANIZATION_ID}&#x60; &#x60;projects/{PROJECT_ID}&#x60;
+    - :showDeleted (boolean()): Include Roles that have been deleted.
+    - :view (String.t): Optional view for the returned Role objects.
 
   ## Returns
 
@@ -123,11 +123,11 @@ defmodule GoogleApi.IAM.V1.Api.Roles do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :showDeleted => :query,
-      :pageToken => :query,
       :pageSize => :query,
-      :view => :query,
-      :parent => :query
+      :pageToken => :query,
+      :parent => :query,
+      :showDeleted => :query,
+      :view => :query
     }
 
     request =
