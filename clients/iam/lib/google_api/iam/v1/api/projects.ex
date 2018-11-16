@@ -223,9 +223,9 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :pageSize (integer()): Optional limit on the number of roles to include in the response.
-    - :view (String.t): Optional view for the returned Role objects.
-    - :showDeleted (boolean()): Include Roles that have been deleted.
     - :pageToken (String.t): Optional pagination token returned in an earlier ListRolesResponse.
+    - :showDeleted (boolean()): Include Roles that have been deleted.
+    - :view (String.t): Optional view for the returned Role objects.
 
   ## Returns
 
@@ -248,9 +248,9 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       :upload_protocol => :query,
       :uploadType => :query,
       :pageSize => :query,
-      :view => :query,
+      :pageToken => :query,
       :showDeleted => :query,
-      :pageToken => :query
+      :view => :query
     }
 
     request =
