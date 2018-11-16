@@ -42,7 +42,8 @@ defmodule GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiPagespeedResponseV4Load
 
   field(
     :metrics,
-    as: GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiPagespeedResponseV4LoadingExperienceMetrics,
+    as:
+      GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiPagespeedResponseV4LoadingExperienceMetrics,
     type: :map
   )
 
