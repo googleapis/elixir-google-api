@@ -176,8 +176,8 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :include ([String.t]): The information to be included in the response. Only sections listed here will be returned.
-    - :pageToken (String.t): The token returned by the previous request.
     - :pageSize (integer()): Maximum number of product statuses to return in the response, used for paging.
+    - :pageToken (String.t): The token returned by the previous request.
 
   ## Returns
 
@@ -201,8 +201,8 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
       :upload_protocol => :query,
       :uploadType => :query,
       :include => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
