@@ -262,9 +262,9 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :courseId (String.t): Restricts returned invitations to those for a course with the specified identifier.
-    - :userId (String.t): Restricts returned invitations to those for a specific user. The identifier can be one of the following:  * the numeric identifier for the user * the email address of the user * the string literal &#x60;\&quot;me\&quot;&#x60;, indicating the requesting user
-    - :pageToken (String.t): nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned.  The list request must be otherwise identical to the one that resulted in this token.
     - :pageSize (integer()): Maximum number of items to return. Zero means no maximum.  The server may return fewer than the specified number of results.
+    - :pageToken (String.t): nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned.  The list request must be otherwise identical to the one that resulted in this token.
+    - :userId (String.t): Restricts returned invitations to those for a specific user. The identifier can be one of the following:  * the numeric identifier for the user * the email address of the user * the string literal &#x60;\&quot;me\&quot;&#x60;, indicating the requesting user
 
   ## Returns
 
@@ -288,9 +288,9 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
       :upload_protocol => :query,
       :uploadType => :query,
       :courseId => :query,
-      :userId => :query,
+      :pageSize => :query,
       :pageToken => :query,
-      :pageSize => :query
+      :userId => :query
     }
 
     request =
