@@ -71,7 +71,8 @@ defmodule GoogleApi.Books.V1.Model.VolumeVolumeInfo do
           :mainCategory => any(),
           :maturityRating => any(),
           :pageCount => any(),
-          :panelizationSummary => GoogleApi.Books.V1.Model.VolumeVolumeInfoPanelizationSummary.t(),
+          :panelizationSummary =>
+            GoogleApi.Books.V1.Model.VolumeVolumeInfoPanelizationSummary.t(),
           :previewLink => any(),
           :printType => any(),
           :printedPageCount => any(),
