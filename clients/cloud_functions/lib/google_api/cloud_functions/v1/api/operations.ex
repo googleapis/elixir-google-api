@@ -99,8 +99,8 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Operations do
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :filter (String.t): The standard list filter.
     - :name (String.t): The name of the operation&#39;s parent resource.
-    - :pageToken (String.t): The standard list page token.
     - :pageSize (integer()): The standard list page size.
+    - :pageToken (String.t): The standard list page token.
 
   ## Returns
 
@@ -125,8 +125,8 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Operations do
       :uploadType => :query,
       :filter => :query,
       :name => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
