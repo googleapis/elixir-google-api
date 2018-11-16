@@ -43,10 +43,10 @@ defmodule GoogleApi.Genomics.V1.Api.References do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of &#x60;nextPageToken&#x60; from the previous response.
-    - :pageSize (integer()): The maximum number of bases to return in a single page. If unspecified, defaults to 200Kbp (kilo base pairs). The maximum value is 10Mbp (mega base pairs).
-    - :start (String.t): The start position (0-based) of this query. Defaults to 0.
     - :end (String.t): The end position (0-based, exclusive) of this query. Defaults to the length of this reference.
+    - :pageSize (integer()): The maximum number of bases to return in a single page. If unspecified, defaults to 200Kbp (kilo base pairs). The maximum value is 10Mbp (mega base pairs).
+    - :pageToken (String.t): The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of &#x60;nextPageToken&#x60; from the previous response.
+    - :start (String.t): The start position (0-based) of this query. Defaults to 0.
 
   ## Returns
 
@@ -68,10 +68,10 @@ defmodule GoogleApi.Genomics.V1.Api.References do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
+      :end => :query,
       :pageSize => :query,
-      :start => :query,
-      :end => :query
+      :pageToken => :query,
+      :start => :query
     }
 
     request =
