@@ -37,8 +37,7 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.SegmentSequenceStep do
 
   field(:matchType)
 
-  field(
-    :orFiltersForSegment,
+  field(:orFiltersForSegment,
     as: GoogleApi.AnalyticsReporting.V4.Model.OrFiltersForSegment,
     type: :list
   )

@@ -34,8 +34,7 @@ defmodule GoogleApi.Content.V2.Model.ProductstatusesCustomBatchResponse do
           :kind => any()
         }
 
-  field(
-    :entries,
+  field(:entries,
     as: GoogleApi.Content.V2.Model.ProductstatusesCustomBatchResponseEntry,
     type: :list
   )

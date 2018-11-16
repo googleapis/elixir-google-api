@@ -35,15 +35,11 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyConfig do
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordTransformations.t()
         }
 
-  field(
-    :infoTypeTransformations,
+  field(:infoTypeTransformations,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeTransformations
   )
 
-  field(
-    :recordTransformations,
-    as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordTransformations
-  )
+  field(:recordTransformations, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordTransformations)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyConfig do

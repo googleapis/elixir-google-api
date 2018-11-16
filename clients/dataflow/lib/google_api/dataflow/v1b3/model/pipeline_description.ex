@@ -38,14 +38,12 @@ defmodule GoogleApi.Dataflow.V1b3.Model.PipelineDescription do
 
   field(:displayData, as: GoogleApi.Dataflow.V1b3.Model.DisplayData, type: :list)
 
-  field(
-    :executionPipelineStage,
+  field(:executionPipelineStage,
     as: GoogleApi.Dataflow.V1b3.Model.ExecutionStageSummary,
     type: :list
   )
 
-  field(
-    :originalPipelineTransform,
+  field(:originalPipelineTransform,
     as: GoogleApi.Dataflow.V1b3.Model.TransformSummary,
     type: :list
   )

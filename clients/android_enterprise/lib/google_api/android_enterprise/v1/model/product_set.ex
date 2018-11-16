@@ -41,8 +41,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductSet do
   field(:productId, type: :list)
   field(:productSetBehavior)
 
-  field(
-    :productVisibility,
+  field(:productVisibility,
     as: GoogleApi.AndroidEnterprise.V1.Model.ProductVisibility,
     type: :list
   )

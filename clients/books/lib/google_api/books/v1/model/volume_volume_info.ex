@@ -96,8 +96,7 @@ defmodule GoogleApi.Books.V1.Model.VolumeVolumeInfo do
   field(:dimensions, as: GoogleApi.Books.V1.Model.VolumeVolumeInfoDimensions)
   field(:imageLinks, as: GoogleApi.Books.V1.Model.VolumeVolumeInfoImageLinks)
 
-  field(
-    :industryIdentifiers,
+  field(:industryIdentifiers,
     as: GoogleApi.Books.V1.Model.VolumeVolumeInfoIndustryIdentifiers,
     type: :list
   )

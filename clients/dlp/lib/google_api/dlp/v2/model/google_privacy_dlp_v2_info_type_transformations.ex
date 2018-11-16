@@ -32,8 +32,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeTransformations do
             list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeTransformation.t())
         }
 
-  field(
-    :transformations,
+  field(:transformations,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeTransformation,
     type: :list
   )

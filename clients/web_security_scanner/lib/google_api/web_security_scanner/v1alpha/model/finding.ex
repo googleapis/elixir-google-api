@@ -75,10 +75,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Model.Finding do
   field(:violatingResource, as: GoogleApi.WebSecurityScanner.V1alpha.Model.ViolatingResource)
   field(:vulnerableHeaders, as: GoogleApi.WebSecurityScanner.V1alpha.Model.VulnerableHeaders)
 
-  field(
-    :vulnerableParameters,
-    as: GoogleApi.WebSecurityScanner.V1alpha.Model.VulnerableParameters
-  )
+  field(:vulnerableParameters, as: GoogleApi.WebSecurityScanner.V1alpha.Model.VulnerableParameters)
 
   field(:xss, as: GoogleApi.WebSecurityScanner.V1alpha.Model.Xss)
 end

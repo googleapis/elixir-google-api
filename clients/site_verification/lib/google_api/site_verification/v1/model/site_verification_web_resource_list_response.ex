@@ -32,8 +32,7 @@ defmodule GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceListRes
             list(GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceResource.t())
         }
 
-  field(
-    :items,
+  field(:items,
     as: GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceResource,
     type: :list
   )

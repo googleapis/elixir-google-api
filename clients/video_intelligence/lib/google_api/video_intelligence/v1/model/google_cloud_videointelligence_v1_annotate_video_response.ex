@@ -34,8 +34,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1Ann
             )
         }
 
-  field(
-    :annotationResults,
+  field(:annotationResults,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1VideoAnnotationResults,
     type: :list
   )

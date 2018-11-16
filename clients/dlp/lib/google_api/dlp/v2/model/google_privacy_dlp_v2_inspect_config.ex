@@ -49,11 +49,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectConfig do
 
   field(:contentOptions, type: :list)
 
-  field(
-    :customInfoTypes,
-    as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CustomInfoType,
-    type: :list
-  )
+  field(:customInfoTypes, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CustomInfoType, type: :list)
 
   field(:excludeInfoTypes)
   field(:includeQuote)

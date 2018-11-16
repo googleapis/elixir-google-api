@@ -82,8 +82,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.UserInfo do
   field(:phoneNumber)
   field(:photoUrl)
 
-  field(
-    :providerUserInfo,
+  field(:providerUserInfo,
     as: GoogleApi.IdentityToolkit.V3.Model.UserInfoProviderUserInfo,
     type: :list
   )

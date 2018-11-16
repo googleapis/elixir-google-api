@@ -34,8 +34,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListEntityTypesRe
           :nextPageToken => any()
         }
 
-  field(
-    :entityTypes,
+  field(:entityTypes,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityType,
     type: :list
   )

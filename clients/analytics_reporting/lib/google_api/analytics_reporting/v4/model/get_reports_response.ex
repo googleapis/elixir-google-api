@@ -39,8 +39,7 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.GetReportsResponse do
   field(:queryCost)
   field(:reports, as: GoogleApi.AnalyticsReporting.V4.Model.Report, type: :list)
 
-  field(
-    :resourceQuotasRemaining,
+  field(:resourceQuotasRemaining,
     as: GoogleApi.AnalyticsReporting.V4.Model.ResourceQuotasRemaining
   )
 end

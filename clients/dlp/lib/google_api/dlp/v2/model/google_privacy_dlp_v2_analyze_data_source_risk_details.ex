@@ -49,13 +49,11 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2AnalyzeDataSourceRiskDetails 
           :requestedSourceTable => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable.t()
         }
 
-  field(
-    :categoricalStatsResult,
+  field(:categoricalStatsResult,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CategoricalStatsResult
   )
 
-  field(
-    :deltaPresenceEstimationResult,
+  field(:deltaPresenceEstimationResult,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeltaPresenceEstimationResult
   )
 

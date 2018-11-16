@@ -39,8 +39,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.TestExecutionStep do
 
   field(:testIssues, as: GoogleApi.ToolResults.V1beta3.Model.TestIssue, type: :list)
 
-  field(
-    :testSuiteOverviews,
+  field(:testSuiteOverviews,
     as: GoogleApi.ToolResults.V1beta3.Model.TestSuiteOverview,
     type: :list
   )

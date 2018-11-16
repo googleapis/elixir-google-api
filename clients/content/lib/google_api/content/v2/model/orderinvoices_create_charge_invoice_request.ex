@@ -43,8 +43,7 @@ defmodule GoogleApi.Content.V2.Model.OrderinvoicesCreateChargeInvoiceRequest do
   field(:invoiceId)
   field(:invoiceSummary, as: GoogleApi.Content.V2.Model.InvoiceSummary)
 
-  field(
-    :lineItemInvoices,
+  field(:lineItemInvoices,
     as: GoogleApi.Content.V2.Model.ShipmentInvoiceLineItemInvoice,
     type: :list
   )

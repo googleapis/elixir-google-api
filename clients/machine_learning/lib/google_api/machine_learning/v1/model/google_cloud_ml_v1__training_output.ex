@@ -42,8 +42,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1TrainingOutput do
   field(:consumedMLUnits)
   field(:isHyperparameterTuningJob)
 
-  field(
-    :trials,
+  field(:trials,
     as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1HyperparameterOutput,
     type: :list
   )

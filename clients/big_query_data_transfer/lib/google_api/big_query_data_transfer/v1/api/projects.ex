@@ -32,17 +32,17 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
   - name (String.t): The data source in the form: &#x60;projects/{project_id}/dataSources/{data_source_id}&#x60;
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (CheckValidCredsRequest): 
 
   ## Returns
@@ -64,17 +64,17 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -101,19 +101,19 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
   - parent (String.t): The BigQuery project id for which data sources should be returned. Must be in the form: &#x60;projects/{project_id}&#x60;
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :pageToken (String.t): Pagination token, which can be used to request a specific page of &#x60;ListDataSourcesRequest&#x60; list results. For multiple-page results, &#x60;ListDataSourcesResponse&#x60; outputs a &#x60;next_page&#x60; token, which can be used as the &#x60;page_token&#x60; value to request the next page of list results.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :pageSize (integer()): Page size. The default page size is the maximum value of 1000 results.
+    - :pageToken (String.t): Pagination token, which can be used to request a specific page of &#x60;ListDataSourcesRequest&#x60; list results. For multiple-page results, &#x60;ListDataSourcesResponse&#x60; outputs a &#x60;next_page&#x60; token, which can be used as the &#x60;page_token&#x60; value to request the next page of list results.
 
   ## Returns
 
@@ -130,19 +130,19 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -168,20 +168,20 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
   - name (String.t): The resource that owns the locations collection, if applicable.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :filter (String.t): The standard list filter.
     - :pageToken (String.t): The standard list page token.
     - :pageSize (integer()): The standard list page size.
-    - :filter (String.t): The standard list filter.
 
   ## Returns
 
@@ -198,20 +198,20 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :filter => :query,
       :pageToken => :query,
-      :pageSize => :query,
-      :filter => :query
+      :pageSize => :query
     }
 
     request =
@@ -237,17 +237,17 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
   - parent (String.t): The BigQuery project id where the transfer configuration should be created. Must be in the format projects/{project_id}/locations/{location_id} If specified location and location of the destination bigquery dataset do not match - the request will fail.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :authorizationCode (String.t): Optional OAuth2 authorization code to use with this transfer configuration. This is required if new credentials are needed, as indicated by &#x60;CheckValidCreds&#x60;. In order to obtain authorization_code, please make a request to https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id&#x3D;&lt;datatransferapiclientid&gt;&amp;scope&#x3D;&lt;data_source_scopes&gt;&amp;redirect_uri&#x3D;&lt;redirect_uri&gt;  * client_id should be OAuth client_id of BigQuery DTS API for the given   data source returned by ListDataSources method. * data_source_scopes are the scopes returned by ListDataSources method. * redirect_uri is an optional parameter. If not specified, then   authorization code is posted to the opener of authorization flow window.   Otherwise it will be sent to the redirect uri. A special value of   urn:ietf:wg:oauth:2.0:oob means that authorization code should be   returned in the title bar of the browser, with the page text prompting   the user to copy the code and paste it in the application.
     - :body (TransferConfig): 
 
@@ -270,17 +270,17 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :authorizationCode => :query,
       :body => :body
     }
@@ -308,20 +308,20 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
   - parent (String.t): The BigQuery project id for which data sources should be returned: &#x60;projects/{project_id}&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :dataSourceIds ([String.t]): When specified, only configurations of requested data sources are returned.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :pageToken (String.t): Pagination token, which can be used to request a specific page of &#x60;ListTransfersRequest&#x60; list results. For multiple-page results, &#x60;ListTransfersResponse&#x60; outputs a &#x60;next_page&#x60; token, which can be used as the &#x60;page_token&#x60; value to request the next page of list results.
     - :pageSize (integer()): Page size. The default page size is the maximum value of 1000 results.
+    - :dataSourceIds ([String.t]): When specified, only configurations of requested data sources are returned.
 
   ## Returns
 
@@ -342,20 +342,20 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :dataSourceIds => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :dataSourceIds => :query
     }
 
     request =
@@ -381,17 +381,17 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
   - name (String.t): The resource name of the transfer config. Transfer config names have the form of &#x60;projects/{project_id}/location/{region}/transferConfigs/{config_id}&#x60;. The name is automatically generated based on the config_id specified in CreateTransferConfigRequest along with project_id and region. If config_id is not provided, usually a uuid, even though it is not guaranteed or required, will be generated for config_id.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :updateMask (String.t): Required list of fields to be updated in this request.
     - :authorizationCode (String.t): Optional OAuth2 authorization code to use with this transfer configuration. If it is provided, the transfer configuration will be associated with the authorizing user. In order to obtain authorization_code, please make a request to https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id&#x3D;&lt;datatransferapiclientid&gt;&amp;scope&#x3D;&lt;data_source_scopes&gt;&amp;redirect_uri&#x3D;&lt;redirect_uri&gt;  * client_id should be OAuth client_id of BigQuery DTS API for the given   data source returned by ListDataSources method. * data_source_scopes are the scopes returned by ListDataSources method. * redirect_uri is an optional parameter. If not specified, then   authorization code is posted to the opener of authorization flow window.   Otherwise it will be sent to the redirect uri. A special value of   urn:ietf:wg:oauth:2.0:oob means that authorization code should be   returned in the title bar of the browser, with the page text prompting   the user to copy the code and paste it in the application.
     - :body (TransferConfig): 
@@ -415,17 +415,17 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :updateMask => :query,
       :authorizationCode => :query,
       :body => :body
@@ -454,17 +454,17 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
   - name (String.t): The field will contain name of the resource requested, for example: &#x60;projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}&#x60;
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -483,17 +483,17 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :access_token => :query
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -517,17 +517,17 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
   - name (String.t): The field will contain name of the resource requested, for example: &#x60;projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}&#x60;
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -547,17 +547,17 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :access_token => :query
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -581,17 +581,17 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
   - parent (String.t): Name of transfer configuration for which transfer runs should be retrieved. Format of transfer configuration resource name is: &#x60;projects/{project_id}/transferConfigs/{config_id}&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :pageToken (String.t): Pagination token, which can be used to request a specific page of &#x60;ListTransferRunsRequest&#x60; list results. For multiple-page results, &#x60;ListTransferRunsResponse&#x60; outputs a &#x60;next_page&#x60; token, which can be used as the &#x60;page_token&#x60; value to request the next page of list results.
     - :states ([String.t]): When specified, only transfer runs with requested states are returned.
     - :pageSize (integer()): Page size. The default page size is the maximum value of 1000 results.
@@ -616,17 +616,17 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :pageToken => :query,
       :states => :query,
       :pageSize => :query,
@@ -656,20 +656,20 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
   - parent (String.t): Transfer run name in the form: &#x60;projects/{project_id}/transferConfigs/{config_Id}/runs/{run_id}&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :pageToken (String.t): Pagination token, which can be used to request a specific page of &#x60;ListTransferLogsRequest&#x60; list results. For multiple-page results, &#x60;ListTransferLogsResponse&#x60; outputs a &#x60;next_page&#x60; token, which can be used as the &#x60;page_token&#x60; value to request the next page of list results.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :pageSize (integer()): Page size. The default page size is the maximum value of 1000 results.
     - :messageTypes ([String.t]): Message types to return. If not populated - INFO, WARNING and ERROR messages are returned.
+    - :pageToken (String.t): Pagination token, which can be used to request a specific page of &#x60;ListTransferLogsRequest&#x60; list results. For multiple-page results, &#x60;ListTransferLogsResponse&#x60; outputs a &#x60;next_page&#x60; token, which can be used as the &#x60;page_token&#x60; value to request the next page of list results.
 
   ## Returns
 
@@ -690,20 +690,20 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :pageToken => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :pageSize => :query,
-      :messageTypes => :query
+      :messageTypes => :query,
+      :pageToken => :query
     }
 
     request =
@@ -729,17 +729,17 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
   - parent (String.t): Transfer configuration name in the form: &#x60;projects/{project_id}/transferConfigs/{config_id}&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (ScheduleTransferRunsRequest): 
 
   ## Returns
@@ -761,17 +761,17 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 

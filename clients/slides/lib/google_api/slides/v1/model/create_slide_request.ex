@@ -41,8 +41,7 @@ defmodule GoogleApi.Slides.V1.Model.CreateSlideRequest do
   field(:insertionIndex)
   field(:objectId)
 
-  field(
-    :placeholderIdMappings,
+  field(:placeholderIdMappings,
     as: GoogleApi.Slides.V1.Model.LayoutPlaceholderIdMapping,
     type: :list
   )

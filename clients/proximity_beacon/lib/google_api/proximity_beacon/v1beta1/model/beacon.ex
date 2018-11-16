@@ -58,8 +58,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Model.Beacon do
   field(:beaconName)
   field(:description)
 
-  field(
-    :ephemeralIdRegistration,
+  field(:ephemeralIdRegistration,
     as: GoogleApi.ProximityBeacon.V1beta1.Model.EphemeralIdRegistration
   )
 

@@ -22,7 +22,7 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1Paragraph do
 
   ## Attributes
 
-  - boundingBox (GoogleCloudVisionV1p2beta1BoundingPoly): The bounding box for the paragraph. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the &#39;natural&#39; orientation. For example:   * when the text is horizontal it might look like:      0----1      |    |      3----2   * when it&#39;s rotated 180 degrees around the top-left corner it becomes:      2----3      |    |      1----0   and the vertice order will still be (0, 1, 2, 3). Defaults to: `null`.
+  - boundingBox (GoogleCloudVisionV1p2beta1BoundingPoly): The bounding box for the paragraph. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the &#39;natural&#39; orientation. For example:   * when the text is horizontal it might look like:      0----1      |    |      3----2   * when it&#39;s rotated 180 degrees around the top-left corner it becomes:      2----3      |    |      1----0   and the vertex order will still be (0, 1, 2, 3). Defaults to: `null`.
   - confidence (float()): Confidence of the OCR results for the paragraph. Range [0, 1]. Defaults to: `null`.
   - property (GoogleCloudVisionV1p2beta1TextAnnotationTextProperty): Additional information detected for the paragraph. Defaults to: `null`.
   - words ([GoogleCloudVisionV1p2beta1Word]): List of words in this paragraph. Defaults to: `null`.
@@ -41,8 +41,7 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1Paragraph do
   field(:boundingBox, as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1BoundingPoly)
   field(:confidence)
 
-  field(
-    :property,
+  field(:property,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1TextAnnotationTextProperty
   )
 

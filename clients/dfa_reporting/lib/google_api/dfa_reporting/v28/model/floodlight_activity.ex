@@ -98,8 +98,7 @@ defmodule GoogleApi.DFAReporting.V28.Model.FloodlightActivity do
   field(:cacheBustingType)
   field(:countingMethod)
 
-  field(
-    :defaultTags,
+  field(:defaultTags,
     as: GoogleApi.DFAReporting.V28.Model.FloodlightActivityDynamicTag,
     type: :list
   )
@@ -111,8 +110,7 @@ defmodule GoogleApi.DFAReporting.V28.Model.FloodlightActivity do
   field(:floodlightActivityGroupType)
   field(:floodlightConfigurationId)
 
-  field(
-    :floodlightConfigurationIdDimensionValue,
+  field(:floodlightConfigurationIdDimensionValue,
     as: GoogleApi.DFAReporting.V28.Model.DimensionValue
   )
 
@@ -124,8 +122,7 @@ defmodule GoogleApi.DFAReporting.V28.Model.FloodlightActivity do
   field(:name)
   field(:notes)
 
-  field(
-    :publisherTags,
+  field(:publisherTags,
     as: GoogleApi.DFAReporting.V28.Model.FloodlightActivityPublisherDynamicTag,
     type: :list
   )

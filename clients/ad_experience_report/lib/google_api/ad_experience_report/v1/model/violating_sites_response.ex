@@ -31,8 +31,7 @@ defmodule GoogleApi.AdExperienceReport.V1.Model.ViolatingSitesResponse do
           :violatingSites => list(GoogleApi.AdExperienceReport.V1.Model.SiteSummaryResponse.t())
         }
 
-  field(
-    :violatingSites,
+  field(:violatingSites,
     as: GoogleApi.AdExperienceReport.V1.Model.SiteSummaryResponse,
     type: :list
   )

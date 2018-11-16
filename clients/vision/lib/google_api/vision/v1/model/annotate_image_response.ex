@@ -67,8 +67,7 @@ defmodule GoogleApi.Vision.V1.Model.AnnotateImageResponse do
   field(:labelAnnotations, as: GoogleApi.Vision.V1.Model.EntityAnnotation, type: :list)
   field(:landmarkAnnotations, as: GoogleApi.Vision.V1.Model.EntityAnnotation, type: :list)
 
-  field(
-    :localizedObjectAnnotations,
+  field(:localizedObjectAnnotations,
     as: GoogleApi.Vision.V1.Model.LocalizedObjectAnnotation,
     type: :list
   )

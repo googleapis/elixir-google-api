@@ -36,8 +36,7 @@ defmodule GoogleApi.Content.V2.Model.PosDataProviders do
 
   field(:country)
 
-  field(
-    :posDataProviders,
+  field(:posDataProviders,
     as: GoogleApi.Content.V2.Model.PosDataProvidersPosDataProvider,
     type: :list
   )

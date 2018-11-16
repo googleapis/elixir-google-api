@@ -34,8 +34,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListDealAssociationsResponse d
           :nextPageToken => any()
         }
 
-  field(
-    :associations,
+  field(:associations,
     as: GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeDealAssociation,
     type: :list
   )

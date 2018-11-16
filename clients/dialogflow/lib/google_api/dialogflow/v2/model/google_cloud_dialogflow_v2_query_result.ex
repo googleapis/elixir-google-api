@@ -64,8 +64,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryResult do
   field(:allRequiredParamsPresent)
   field(:diagnosticInfo, type: :map)
 
-  field(
-    :fulfillmentMessages,
+  field(:fulfillmentMessages,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessage,
     type: :list
   )
@@ -75,8 +74,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryResult do
   field(:intentDetectionConfidence)
   field(:languageCode)
 
-  field(
-    :outputContexts,
+  field(:outputContexts,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context,
     type: :list
   )

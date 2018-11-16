@@ -31,17 +31,17 @@ defmodule GoogleApi.Indexing.V3.Api.UrlNotifications do
 
   - connection (GoogleApi.Indexing.V3.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :url (String.t): URL that is being queried.
 
   ## Returns
@@ -53,17 +53,17 @@ defmodule GoogleApi.Indexing.V3.Api.UrlNotifications do
           {:ok, GoogleApi.Indexing.V3.Model.UrlNotificationMetadata.t()} | {:error, Tesla.Env.t()}
   def indexing_url_notifications_get_metadata(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
+      :uploadType => :query,
       :url => :query
     }
 
@@ -85,17 +85,17 @@ defmodule GoogleApi.Indexing.V3.Api.UrlNotifications do
 
   - connection (GoogleApi.Indexing.V3.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (UrlNotification): 
 
   ## Returns
@@ -108,17 +108,17 @@ defmodule GoogleApi.Indexing.V3.Api.UrlNotifications do
           | {:error, Tesla.Env.t()}
   def indexing_url_notifications_publish(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 

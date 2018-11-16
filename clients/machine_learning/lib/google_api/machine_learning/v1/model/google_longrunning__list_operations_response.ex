@@ -35,8 +35,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleLongrunningListOperationsResp
 
   field(:nextPageToken)
 
-  field(
-    :operations,
+  field(:operations,
     as: GoogleApi.MachineLearning.V1.Model.GoogleLongrunningOperation,
     type: :list
   )

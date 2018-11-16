@@ -80,8 +80,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Intent do
           :webhookState => any()
         }
 
-  field(
-    :parameters,
+  field(:parameters,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentParameter,
     type: :list
   )
@@ -92,8 +91,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Intent do
   field(:endInteraction)
   field(:events, type: :list)
 
-  field(
-    :followupIntentInfo,
+  field(:followupIntentInfo,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentFollowupIntentInfo,
     type: :list
   )
@@ -101,8 +99,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Intent do
   field(:inputContextNames, type: :list)
   field(:isFallback)
 
-  field(
-    :messages,
+  field(:messages,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessage,
     type: :list
   )
@@ -111,8 +108,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Intent do
   field(:mlEnabled)
   field(:name)
 
-  field(
-    :outputContexts,
+  field(:outputContexts,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Context,
     type: :list
   )
@@ -122,8 +118,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Intent do
   field(:resetContexts)
   field(:rootFollowupIntentName)
 
-  field(
-    :trainingPhrases,
+  field(:trainingPhrases,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentTrainingPhrase,
     type: :list
   )

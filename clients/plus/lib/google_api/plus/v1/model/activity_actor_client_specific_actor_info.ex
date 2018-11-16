@@ -32,8 +32,7 @@ defmodule GoogleApi.Plus.V1.Model.ActivityActorClientSpecificActorInfo do
             GoogleApi.Plus.V1.Model.ActivityActorClientSpecificActorInfoYoutubeActorInfo.t()
         }
 
-  field(
-    :youtubeActorInfo,
+  field(:youtubeActorInfo,
     as: GoogleApi.Plus.V1.Model.ActivityActorClientSpecificActorInfoYoutubeActorInfo
   )
 end

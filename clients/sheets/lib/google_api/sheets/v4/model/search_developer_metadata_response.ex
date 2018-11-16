@@ -32,8 +32,7 @@ defmodule GoogleApi.Sheets.V4.Model.SearchDeveloperMetadataResponse do
             list(GoogleApi.Sheets.V4.Model.MatchedDeveloperMetadata.t())
         }
 
-  field(
-    :matchedDeveloperMetadata,
+  field(:matchedDeveloperMetadata,
     as: GoogleApi.Sheets.V4.Model.MatchedDeveloperMetadata,
     type: :list
   )

@@ -38,8 +38,7 @@ defmodule GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiPagespeedResponseV4Form
 
   field(:header, as: GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiFormatStringV4)
 
-  field(
-    :urls,
+  field(:urls,
     as: GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiPagespeedResponseV4FormattedResultsUrls,
     type: :list
   )

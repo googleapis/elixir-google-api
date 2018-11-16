@@ -50,8 +50,7 @@ defmodule GoogleApi.Dataproc.V1.Model.ClusterConfig do
   field(:encryptionConfig, as: GoogleApi.Dataproc.V1.Model.EncryptionConfig)
   field(:gceClusterConfig, as: GoogleApi.Dataproc.V1.Model.GceClusterConfig)
 
-  field(
-    :initializationActions,
+  field(:initializationActions,
     as: GoogleApi.Dataproc.V1.Model.NodeInitializationAction,
     type: :list
   )

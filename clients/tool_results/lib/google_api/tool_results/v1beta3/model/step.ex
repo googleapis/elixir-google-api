@@ -64,8 +64,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.Step do
   field(:description)
   field(:deviceUsageDuration, as: GoogleApi.ToolResults.V1beta3.Model.Duration)
 
-  field(
-    :dimensionValue,
+  field(:dimensionValue,
     as: GoogleApi.ToolResults.V1beta3.Model.StepDimensionValueEntry,
     type: :list
   )

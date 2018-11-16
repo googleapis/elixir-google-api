@@ -48,8 +48,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroupStats do
           :timedCounts => list(GoogleApi.CloudErrorReporting.V1beta1.Model.TimedCount.t())
         }
 
-  field(
-    :affectedServices,
+  field(:affectedServices,
     as: GoogleApi.CloudErrorReporting.V1beta1.Model.ServiceContext,
     type: :list
   )

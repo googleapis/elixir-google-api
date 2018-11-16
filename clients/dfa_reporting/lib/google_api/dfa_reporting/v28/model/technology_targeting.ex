@@ -46,8 +46,7 @@ defmodule GoogleApi.DFAReporting.V28.Model.TechnologyTargeting do
   field(:connectionTypes, as: GoogleApi.DFAReporting.V28.Model.ConnectionType, type: :list)
   field(:mobileCarriers, as: GoogleApi.DFAReporting.V28.Model.MobileCarrier, type: :list)
 
-  field(
-    :operatingSystemVersions,
+  field(:operatingSystemVersions,
     as: GoogleApi.DFAReporting.V28.Model.OperatingSystemVersion,
     type: :list
   )

@@ -35,14 +35,12 @@ defmodule GoogleApi.ServiceManagement.V1.Model.Monitoring do
             list(GoogleApi.ServiceManagement.V1.Model.MonitoringDestination.t())
         }
 
-  field(
-    :consumerDestinations,
+  field(:consumerDestinations,
     as: GoogleApi.ServiceManagement.V1.Model.MonitoringDestination,
     type: :list
   )
 
-  field(
-    :producerDestinations,
+  field(:producerDestinations,
     as: GoogleApi.ServiceManagement.V1.Model.MonitoringDestination,
     type: :list
   )

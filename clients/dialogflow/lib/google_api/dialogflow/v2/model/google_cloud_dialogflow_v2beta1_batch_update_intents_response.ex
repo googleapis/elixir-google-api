@@ -31,8 +31,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1BatchUpdateI
           :intents => list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Intent.t())
         }
 
-  field(
-    :intents,
+  field(:intents,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Intent,
     type: :list
   )

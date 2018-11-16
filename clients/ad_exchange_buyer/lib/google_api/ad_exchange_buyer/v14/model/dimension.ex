@@ -36,8 +36,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Dimension do
 
   field(:dimensionType)
 
-  field(
-    :dimensionValues,
+  field(:dimensionValues,
     as: GoogleApi.AdExchangeBuyer.V14.Model.DimensionDimensionValue,
     type: :list
   )

@@ -47,18 +47,15 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.TargetingValue do
 
   field(:creativeSizeValue, as: GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueCreativeSize)
 
-  field(
-    :dayPartTargetingValue,
+  field(:dayPartTargetingValue,
     as: GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDayPartTargeting
   )
 
-  field(
-    :demogAgeCriteriaValue,
+  field(:demogAgeCriteriaValue,
     as: GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDemogAgeCriteria
   )
 
-  field(
-    :demogGenderCriteriaValue,
+  field(:demogGenderCriteriaValue,
     as: GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDemogGenderCriteria
   )
 

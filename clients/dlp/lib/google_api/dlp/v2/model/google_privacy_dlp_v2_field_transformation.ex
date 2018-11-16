@@ -42,13 +42,11 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldTransformation do
   field(:condition, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordCondition)
   field(:fields, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId, type: :list)
 
-  field(
-    :infoTypeTransformations,
+  field(:infoTypeTransformations,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeTransformations
   )
 
-  field(
-    :primitiveTransformation,
+  field(:primitiveTransformation,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrimitiveTransformation
   )
 end

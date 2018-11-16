@@ -82,8 +82,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
   field(:queryPlan, as: GoogleApi.BigQuery.V2.Model.ExplainQueryStage, type: :list)
   field(:referencedTables, as: GoogleApi.BigQuery.V2.Model.TableReference, type: :list)
 
-  field(
-    :reservationUsage,
+  field(:reservationUsage,
     as: GoogleApi.BigQuery.V2.Model.JobStatistics2ReservationUsage,
     type: :list
   )

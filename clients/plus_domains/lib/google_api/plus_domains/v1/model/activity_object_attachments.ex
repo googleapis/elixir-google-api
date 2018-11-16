@@ -58,8 +58,7 @@ defmodule GoogleApi.PlusDomains.V1.Model.ActivityObjectAttachments do
   field(:image, as: GoogleApi.PlusDomains.V1.Model.ActivityObjectImage)
   field(:objectType)
 
-  field(
-    :previewThumbnails,
+  field(:previewThumbnails,
     as: GoogleApi.PlusDomains.V1.Model.ActivityObjectPreviewThumbnails,
     type: :list
   )

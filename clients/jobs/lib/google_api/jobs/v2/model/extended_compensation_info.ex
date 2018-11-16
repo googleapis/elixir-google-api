@@ -43,23 +43,20 @@ defmodule GoogleApi.Jobs.V2.Model.ExtendedCompensationInfo do
           :entries => list(GoogleApi.Jobs.V2.Model.ExtendedCompensationInfoCompensationEntry.t())
         }
 
-  field(
-    :annualizedBaseCompensationRange,
+  field(:annualizedBaseCompensationRange,
     as: GoogleApi.Jobs.V2.Model.ExtendedCompensationInfoCompensationRange
   )
 
   field(:annualizedBaseCompensationUnspecified)
 
-  field(
-    :annualizedTotalCompensationRange,
+  field(:annualizedTotalCompensationRange,
     as: GoogleApi.Jobs.V2.Model.ExtendedCompensationInfoCompensationRange
   )
 
   field(:annualizedTotalCompensationUnspecified)
   field(:currency)
 
-  field(
-    :entries,
+  field(:entries,
     as: GoogleApi.Jobs.V2.Model.ExtendedCompensationInfoCompensationEntry,
     type: :list
   )

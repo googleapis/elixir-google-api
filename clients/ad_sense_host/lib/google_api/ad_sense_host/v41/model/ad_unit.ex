@@ -52,8 +52,7 @@ defmodule GoogleApi.AdSenseHost.V41.Model.AdUnit do
   field(:id)
   field(:kind)
 
-  field(
-    :mobileContentAdsSettings,
+  field(:mobileContentAdsSettings,
     as: GoogleApi.AdSenseHost.V41.Model.AdUnitMobileContentAdsSettings
   )
 

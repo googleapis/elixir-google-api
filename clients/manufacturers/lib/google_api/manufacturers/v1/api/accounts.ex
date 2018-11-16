@@ -33,17 +33,17 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
   - parent (String.t): Parent ID in the format &#x60;accounts/{account_id}&#x60;.  &#x60;account_id&#x60; - The ID of the Manufacturer Center account.
   - name (String.t): Name in the format &#x60;{target_country}:{content_language}:{product_id}&#x60;.  &#x60;target_country&#x60;   - The target country of the product as a CLDR territory                      code (for example, US).  &#x60;content_language&#x60; - The content language of the product as a two-letter                      ISO 639-1 language code (for example, en).  &#x60;product_id&#x60;     -   The ID of the product. For more information, see                      https://support.google.com/manufacturers/answer/6124116#id.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
 
   ## Returns
 
@@ -64,17 +64,17 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
-      :access_token => :query
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -100,17 +100,17 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
   - parent (String.t): Parent ID in the format &#x60;accounts/{account_id}&#x60;.  &#x60;account_id&#x60; - The ID of the Manufacturer Center account.
   - name (String.t): Name in the format &#x60;{target_country}:{content_language}:{product_id}&#x60;.  &#x60;target_country&#x60;   - The target country of the product as a CLDR territory                      code (for example, US).  &#x60;content_language&#x60; - The content language of the product as a two-letter                      ISO 639-1 language code (for example, en).  &#x60;product_id&#x60;     -   The ID of the product. For more information, see                      https://support.google.com/manufacturers/answer/6124116#id.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
     - :include ([String.t]): The information to be included in the response. Only sections listed here will be returned.
 
   ## Returns
@@ -128,17 +128,17 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
-      :access_token => :query,
       :include => :query
     }
 
@@ -164,17 +164,17 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
   - connection (GoogleApi.Manufacturers.V1.Connection): Connection to server
   - parent (String.t): Parent ID in the format &#x60;accounts/{account_id}&#x60;.  &#x60;account_id&#x60; - The ID of the Manufacturer Center account.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
     - :include ([String.t]): The information to be included in the response. Only sections listed here will be returned.
     - :pageToken (String.t): The token returned by the previous request.
     - :pageSize (integer()): Maximum number of product statuses to return in the response, used for paging.
@@ -189,17 +189,17 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
           | {:error, Tesla.Env.t()}
   def manufacturers_accounts_products_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :upload_protocol => :query,
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
-      :access_token => :query,
       :include => :query,
       :pageToken => :query,
       :pageSize => :query
@@ -227,17 +227,17 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
   - parent (String.t): Parent ID in the format &#x60;accounts/{account_id}&#x60;.  &#x60;account_id&#x60; - The ID of the Manufacturer Center account.
   - name (String.t): Name in the format &#x60;{target_country}:{content_language}:{product_id}&#x60;.  &#x60;target_country&#x60;   - The target country of the product as a CLDR territory                      code (for example, US).  &#x60;content_language&#x60; - The content language of the product as a two-letter                      ISO 639-1 language code (for example, en).  &#x60;product_id&#x60;     -   The ID of the product. For more information, see                      https://support.google.com/manufacturers/answer/6124116#id.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
     - :body (Attributes): 
 
   ## Returns
@@ -259,17 +259,17 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
-      :access_token => :query,
       :body => :body
     }
 

@@ -49,8 +49,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfigur
 
   field(:achievementType)
 
-  field(
-    :draft,
+  field(:draft,
     as: GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfigurationDetail
   )
 
@@ -58,8 +57,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfigur
   field(:initialState)
   field(:kind)
 
-  field(
-    :published,
+  field(:published,
     as: GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfigurationDetail
   )
 

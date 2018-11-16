@@ -45,8 +45,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityType do
   field(:autoExpansionMode)
   field(:displayName)
 
-  field(
-    :entities,
+  field(:entities,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityTypeEntity,
     type: :list
   )

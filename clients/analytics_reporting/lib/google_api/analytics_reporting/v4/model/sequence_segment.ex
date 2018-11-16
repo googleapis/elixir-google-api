@@ -36,8 +36,7 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.SequenceSegment do
 
   field(:firstStepShouldMatchFirstHit)
 
-  field(
-    :segmentSequenceSteps,
+  field(:segmentSequenceSteps,
     as: GoogleApi.AnalyticsReporting.V4.Model.SegmentSequenceStep,
     type: :list
   )

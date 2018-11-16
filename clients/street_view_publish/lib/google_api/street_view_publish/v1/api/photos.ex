@@ -31,17 +31,17 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photos do
 
   - connection (GoogleApi.StreetViewPublish.V1.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (BatchDeletePhotosRequest): 
 
   ## Returns
@@ -54,17 +54,17 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photos do
           | {:error, Tesla.Env.t()}
   def streetviewpublish_photos_batch_delete(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -88,20 +88,20 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photos do
 
   - connection (GoogleApi.StreetViewPublish.V1.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :view (String.t): Specifies if a download URL for the photo bytes should be returned in the Photo response.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :languageCode (String.t): The BCP-47 language code, such as \&quot;en-US\&quot; or \&quot;sr-Latn\&quot;. For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. If language_code is unspecified, the user&#39;s language preference for Google services will be used.
     - :photoIds ([String.t]): Required. IDs of the Photos. For HTTP GET requests, the URL query parameter should be &#x60;photoIds&#x3D;&lt;id1&gt;&amp;photoIds&#x3D;&lt;id2&gt;&amp;...&#x60;.
+    - :view (String.t): Specifies if a download URL for the photo bytes should be returned in the Photo response.
 
   ## Returns
 
@@ -113,20 +113,20 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photos do
           | {:error, Tesla.Env.t()}
   def streetviewpublish_photos_batch_get(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :view => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :languageCode => :query,
-      :photoIds => :query
+      :photoIds => :query,
+      :view => :query
     }
 
     request =
@@ -149,17 +149,17 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photos do
 
   - connection (GoogleApi.StreetViewPublish.V1.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (BatchUpdatePhotosRequest): 
 
   ## Returns
@@ -172,17 +172,17 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photos do
           | {:error, Tesla.Env.t()}
   def streetviewpublish_photos_batch_update(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -206,17 +206,17 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photos do
 
   - connection (GoogleApi.StreetViewPublish.V1.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :filter (String.t): The filter expression. For example: &#x60;placeId&#x3D;ChIJj61dQgK6j4AR4GeTYWZsKWw&#x60;.  The only filter supported at the moment is &#x60;placeId&#x60;.
     - :languageCode (String.t): The BCP-47 language code, such as \&quot;en-US\&quot; or \&quot;sr-Latn\&quot;. For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. If language_code is unspecified, the user&#39;s language preference for Google services will be used.
     - :pageToken (String.t): The nextPageToken value returned from a previous ListPhotos request, if any.
@@ -233,17 +233,17 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photos do
           | {:error, Tesla.Env.t()}
   def streetviewpublish_photos_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :filter => :query,
       :languageCode => :query,
       :pageToken => :query,

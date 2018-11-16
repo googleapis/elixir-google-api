@@ -104,8 +104,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.Service do
   field(:logs, as: GoogleApi.ServiceConsumerManagement.V1.Model.LogDescriptor, type: :list)
   field(:metrics, as: GoogleApi.ServiceConsumerManagement.V1.Model.MetricDescriptor, type: :list)
 
-  field(
-    :monitoredResources,
+  field(:monitoredResources,
     as: GoogleApi.ServiceConsumerManagement.V1.Model.MonitoredResourceDescriptor,
     type: :list
   )

@@ -40,8 +40,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.DealTermsGuaranteedFixedPriceTerms
           :minimumDailyLooks => any()
         }
 
-  field(
-    :billingInfo,
+  field(:billingInfo,
     as: GoogleApi.AdExchangeBuyer.V14.Model.DealTermsGuaranteedFixedPriceTermsBillingInfo
   )
 

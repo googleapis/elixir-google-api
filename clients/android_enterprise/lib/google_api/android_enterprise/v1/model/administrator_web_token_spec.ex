@@ -51,13 +51,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpec do
   field(:permission, type: :list)
   field(:playSearch, as: GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecPlaySearch)
 
-  field(
-    :privateApps,
+  field(:privateApps,
     as: GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecPrivateApps
   )
 
-  field(
-    :storeBuilder,
+  field(:storeBuilder,
     as: GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecStoreBuilder
   )
 

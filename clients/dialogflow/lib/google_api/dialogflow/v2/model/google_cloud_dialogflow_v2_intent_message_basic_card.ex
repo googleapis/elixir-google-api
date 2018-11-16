@@ -42,8 +42,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageBasi
           :title => any()
         }
 
-  field(
-    :buttons,
+  field(:buttons,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageBasicCardButton,
     type: :list
   )

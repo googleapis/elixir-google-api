@@ -91,8 +91,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PublisherProfileApiProto do
   field(:publisherDomains, type: :list)
   field(:publisherProfileId)
 
-  field(
-    :publisherProvidedForecast,
+  field(:publisherProvidedForecast,
     as: GoogleApi.AdExchangeBuyer.V14.Model.PublisherProvidedForecast
   )
 

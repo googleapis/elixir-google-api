@@ -40,8 +40,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeRestrictions do
 
   field(:creativeFormat)
 
-  field(
-    :creativeSpecifications,
+  field(:creativeSpecifications,
     as: GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeSpecification,
     type: :list
   )

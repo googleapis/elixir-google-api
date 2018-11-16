@@ -48,11 +48,7 @@ defmodule GoogleApi.YouTube.V3.Model.VideoSuggestions do
   field(:processingHints, type: :list)
   field(:processingWarnings, type: :list)
 
-  field(
-    :tagSuggestions,
-    as: GoogleApi.YouTube.V3.Model.VideoSuggestionsTagSuggestion,
-    type: :list
-  )
+  field(:tagSuggestions, as: GoogleApi.YouTube.V3.Model.VideoSuggestionsTagSuggestion, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoSuggestions do

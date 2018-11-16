@@ -31,8 +31,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKeysListResponse do
           :serviceAccountKey => list(GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKey.t())
         }
 
-  field(
-    :serviceAccountKey,
+  field(:serviceAccountKey,
     as: GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKey,
     type: :list
   )

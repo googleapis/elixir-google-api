@@ -43,8 +43,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LDiversityHistogramBucket do
   field(:bucketSize)
   field(:bucketValueCount)
 
-  field(
-    :bucketValues,
+  field(:bucketValues,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LDiversityEquivalenceClass,
     type: :list
   )

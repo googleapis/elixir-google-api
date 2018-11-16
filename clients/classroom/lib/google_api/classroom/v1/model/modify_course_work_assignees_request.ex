@@ -37,8 +37,7 @@ defmodule GoogleApi.Classroom.V1.Model.ModifyCourseWorkAssigneesRequest do
 
   field(:assigneeMode)
 
-  field(
-    :modifyIndividualStudentsOptions,
+  field(:modifyIndividualStudentsOptions,
     as: GoogleApi.Classroom.V1.Model.ModifyIndividualStudentsOptions
   )
 end

@@ -47,38 +47,32 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1WebDetection do
             list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1WebDetectionWebEntity.t())
         }
 
-  field(
-    :bestGuessLabels,
+  field(:bestGuessLabels,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1WebDetectionWebLabel,
     type: :list
   )
 
-  field(
-    :fullMatchingImages,
+  field(:fullMatchingImages,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1WebDetectionWebImage,
     type: :list
   )
 
-  field(
-    :pagesWithMatchingImages,
+  field(:pagesWithMatchingImages,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1WebDetectionWebPage,
     type: :list
   )
 
-  field(
-    :partialMatchingImages,
+  field(:partialMatchingImages,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1WebDetectionWebImage,
     type: :list
   )
 
-  field(
-    :visuallySimilarImages,
+  field(:visuallySimilarImages,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1WebDetectionWebImage,
     type: :list
   )
 
-  field(
-    :webEntities,
+  field(:webEntities,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1WebDetectionWebEntity,
     type: :list
   )

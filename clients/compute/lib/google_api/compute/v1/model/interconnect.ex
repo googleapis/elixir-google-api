@@ -83,8 +83,7 @@ defmodule GoogleApi.Compute.V1.Model.Interconnect do
   field(:customerName)
   field(:description)
 
-  field(
-    :expectedOutages,
+  field(:expectedOutages,
     as: GoogleApi.Compute.V1.Model.InterconnectOutageNotification,
     type: :list
   )

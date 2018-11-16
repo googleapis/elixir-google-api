@@ -60,8 +60,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy do
   field(:lockTaskAllowed)
   field(:managedConfiguration, type: :map)
 
-  field(
-    :managedConfigurationTemplate,
+  field(:managedConfigurationTemplate,
     as: GoogleApi.AndroidManagement.V1.Model.ManagedConfigurationTemplate
   )
 

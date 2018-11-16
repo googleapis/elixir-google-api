@@ -24,6 +24,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Job do
 
   - clientRequestId (String.t): The client&#39;s unique identifier of the job, re-used across retried attempts. If this field is set, the service will ensure its uniqueness. The request to create a job will fail if the service has knowledge of a previously submitted job with the same client&#39;s ID and job name. The caller may use this field to ensure idempotence of job creation across retried attempts to create a job. By default, the field is empty and, in that case, the service ignores it. Defaults to: `null`.
   - createTime (DateTime.t): The timestamp when the job was initially created. Immutable and set by the Cloud Dataflow service. Defaults to: `null`.
+  - createdFromSnapshotId (String.t): If this is specified, the job&#39;s initial state is populated from the given snapshot. Defaults to: `null`.
   - currentState (String.t): The current state of the job.  Jobs are created in the &#x60;JOB_STATE_STOPPED&#x60; state unless otherwise specified.  A job in the &#x60;JOB_STATE_RUNNING&#x60; state may asynchronously enter a terminal state. After a job has reached a terminal state, no further state updates may be made.  This field may be mutated by the Cloud Dataflow service; callers cannot mutate it. Defaults to: `null`.
     - Enum - one of [JOB_STATE_UNKNOWN, JOB_STATE_STOPPED, JOB_STATE_RUNNING, JOB_STATE_DONE, JOB_STATE_FAILED, JOB_STATE_CANCELLED, JOB_STATE_UPDATED, JOB_STATE_DRAINING, JOB_STATE_DRAINED, JOB_STATE_PENDING, JOB_STATE_CANCELLING, JOB_STATE_QUEUED]
   - currentStateTime (DateTime.t): The timestamp associated with the current state. Defaults to: `null`.
@@ -42,7 +43,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Job do
     - Enum - one of [JOB_STATE_UNKNOWN, JOB_STATE_STOPPED, JOB_STATE_RUNNING, JOB_STATE_DONE, JOB_STATE_FAILED, JOB_STATE_CANCELLED, JOB_STATE_UPDATED, JOB_STATE_DRAINING, JOB_STATE_DRAINED, JOB_STATE_PENDING, JOB_STATE_CANCELLING, JOB_STATE_QUEUED]
   - stageStates ([ExecutionStageState]): This field may be mutated by the Cloud Dataflow service; callers cannot mutate it. Defaults to: `null`.
   - startTime (DateTime.t): The timestamp when the job was started (transitioned to JOB_STATE_PENDING). Flexible resource scheduling jobs are started with some delay after job creation, so start_time is unset before start and is updated when the job is started by the Cloud Dataflow service. For other jobs, start_time always equals to create_time and is immutable and set by the Cloud Dataflow service. Defaults to: `null`.
-  - steps ([Step]): The top-level steps that constitute the entire job. Defaults to: `null`.
+  - steps ([Step]): Exactly one of step or steps_location should be specified.  The top-level steps that constitute the entire job. Defaults to: `null`.
+  - stepsLocation (String.t): The GCS location where the steps are stored. Defaults to: `null`.
   - tempFiles ([String.t]): A set of files the system should be aware of that are used for temporary storage. These temporary files will be removed on job completion. No duplicates are allowed. No file patterns are supported.  The supported files are:  Google Cloud Storage:     storage.googleapis.com/{bucket}/{object}    bucket.storage.googleapis.com/{object} Defaults to: `null`.
   - transformNameMapping (%{optional(String.t) &#x3D;&gt; String.t}): The map of transform name prefixes of the job to be replaced to the corresponding name prefixes of the new job. Defaults to: `null`.
   - type (String.t): The type of Cloud Dataflow job. Defaults to: `null`.
@@ -54,6 +56,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Job do
   @type t :: %__MODULE__{
           :clientRequestId => any(),
           :createTime => DateTime.t(),
+          :createdFromSnapshotId => any(),
           :currentState => any(),
           :currentStateTime => DateTime.t(),
           :environment => GoogleApi.Dataflow.V1b3.Model.Environment.t(),
@@ -71,6 +74,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Job do
           :stageStates => list(GoogleApi.Dataflow.V1b3.Model.ExecutionStageState.t()),
           :startTime => DateTime.t(),
           :steps => list(GoogleApi.Dataflow.V1b3.Model.Step.t()),
+          :stepsLocation => any(),
           :tempFiles => list(any()),
           :transformNameMapping => map(),
           :type => any()
@@ -78,6 +82,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Job do
 
   field(:clientRequestId)
   field(:createTime, as: DateTime)
+  field(:createdFromSnapshotId)
   field(:currentState)
   field(:currentStateTime, as: DateTime)
   field(:environment, as: GoogleApi.Dataflow.V1b3.Model.Environment)
@@ -95,6 +100,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Job do
   field(:stageStates, as: GoogleApi.Dataflow.V1b3.Model.ExecutionStageState, type: :list)
   field(:startTime, as: DateTime)
   field(:steps, as: GoogleApi.Dataflow.V1b3.Model.Step, type: :list)
+  field(:stepsLocation)
   field(:tempFiles, type: :list)
   field(:transformNameMapping, type: :map)
   field(:type)

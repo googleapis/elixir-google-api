@@ -32,22 +32,22 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
   - project_id (String.t): The project which owns the jobs.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :view (String.t): Level of information requested in response. Default is &#x60;JOB_VIEW_SUMMARY&#x60;.
     - :filter (String.t): The kind of filter to use.
     - :location (String.t): The location that contains this job.
     - :pageToken (String.t): Set this to the &#39;next_page_token&#39; field of a previous response to request additional results in a long list.
     - :pageSize (integer()): If there are many jobs, limit response to at most this many. The actual number of jobs returned will be the lesser of max_responses and an unspecified server-defined limit.
-    - :view (String.t): Level of information requested in response. Default is &#x60;JOB_VIEW_SUMMARY&#x60;.
 
   ## Returns
 
@@ -58,22 +58,22 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           {:ok, GoogleApi.Dataflow.V1b3.Model.ListJobsResponse.t()} | {:error, Tesla.Env.t()}
   def dataflow_projects_jobs_aggregated(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :view => :query,
       :filter => :query,
       :location => :query,
       :pageToken => :query,
-      :pageSize => :query,
-      :view => :query
+      :pageSize => :query
     }
 
     request =
@@ -97,20 +97,20 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
   - project_id (String.t): The ID of the Cloud Platform project that the job belongs to.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :view (String.t): The level of information requested in response.
     - :location (String.t): The location that contains this job.
     - :replaceJobId (String.t): Deprecated. This field is now in the Job message.
-    - :view (String.t): The level of information requested in response.
     - :body (Job): 
 
   ## Returns
@@ -122,20 +122,20 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()} | {:error, Tesla.Env.t()}
   def dataflow_projects_jobs_create(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :view => :query,
       :location => :query,
       :replaceJobId => :query,
-      :view => :query,
       :body => :body
     }
 
@@ -161,17 +161,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   - project_id (String.t): The project id.
   - job_id (String.t): The job id.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (GetDebugConfigRequest): 
 
   ## Returns
@@ -195,17 +195,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -232,17 +232,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   - project_id (String.t): The project id.
   - job_id (String.t): The job id.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (SendDebugCaptureRequest): 
 
   ## Returns
@@ -266,17 +266,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -305,17 +305,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   - project_id (String.t): The ID of the Cloud Platform project that the job belongs to.
   - job_id (String.t): The job ID.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :view (String.t): The level of information requested in response.
     - :location (String.t): The location that contains this job.
 
@@ -334,17 +334,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :view => :query,
       :location => :query
     }
@@ -372,17 +372,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   - project_id (String.t): A project id.
   - job_id (String.t): The job to get messages for.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :location (String.t): The location which contains the job specified by job_id.
     - :startTime (DateTime.t): Return only metric data that has changed since this time. Default is to return all information about all metrics for the job.
 
@@ -401,17 +401,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :location => :query,
       :startTime => :query
     }
@@ -438,22 +438,22 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
   - project_id (String.t): The project which owns the jobs.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :pageSize (integer()): If there are many jobs, limit response to at most this many. The actual number of jobs returned will be the lesser of max_responses and an unspecified server-defined limit.
-    - :view (String.t): Level of information requested in response. Default is &#x60;JOB_VIEW_SUMMARY&#x60;.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :filter (String.t): The kind of filter to use.
     - :location (String.t): The location that contains this job.
     - :pageToken (String.t): Set this to the &#39;next_page_token&#39; field of a previous response to request additional results in a long list.
+    - :pageSize (integer()): If there are many jobs, limit response to at most this many. The actual number of jobs returned will be the lesser of max_responses and an unspecified server-defined limit.
+    - :view (String.t): Level of information requested in response. Default is &#x60;JOB_VIEW_SUMMARY&#x60;.
 
   ## Returns
 
@@ -464,22 +464,22 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           {:ok, GoogleApi.Dataflow.V1b3.Model.ListJobsResponse.t()} | {:error, Tesla.Env.t()}
   def dataflow_projects_jobs_list(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
-      :pageSize => :query,
-      :view => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :filter => :query,
       :location => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :pageSize => :query,
+      :view => :query
     }
 
     request =
@@ -504,17 +504,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   - project_id (String.t): A project id.
   - job_id (String.t): The job to get messages about.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :location (String.t): The location which contains the job specified by job_id.
     - :endTime (DateTime.t): Return only messages with timestamps &lt; end_time. The default is now (i.e. return up to the latest messages available).
     - :startTime (DateTime.t): If specified, return only messages with timestamps &gt;&#x3D; start_time. The default is the job creation time (i.e. beginning of messages).
@@ -543,17 +543,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :location => :query,
       :endTime => :query,
       :startTime => :query,
@@ -577,6 +577,71 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
+  Snapshot the state of a streaming job.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
+  - project_id (String.t): The project which owns the job to be snapshotted.
+  - job_id (String.t): The job to be snapshotted.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :body (SnapshotJobRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataflow.V1b3.Model.Snapshot{}} on success
+  {:error, info} on failure
+  """
+  @spec dataflow_projects_jobs_snapshot(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.Snapshot.t()} | {:error, Tesla.Env.t()}
+  def dataflow_projects_jobs_snapshot(
+        connection,
+        project_id,
+        job_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1b3/projects/{projectId}/jobs/{jobId}:snapshot", %{
+        "projectId" => URI.encode_www_form(project_id),
+        "jobId" => URI.encode_www_form(job_id)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.Snapshot{}])
+  end
+
+  @doc """
   Updates the state of an existing Cloud Dataflow job.
 
   ## Parameters
@@ -585,17 +650,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   - project_id (String.t): The ID of the Cloud Platform project that the job belongs to.
   - job_id (String.t): The job ID.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :location (String.t): The location that contains this job.
     - :body (Job): 
 
@@ -614,17 +679,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :location => :query,
       :body => :body
     }
@@ -652,17 +717,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   - project_id (String.t): Identifies the project this worker belongs to.
   - job_id (String.t): Identifies the workflow job this worker belongs to.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (LeaseWorkItemRequest): 
 
   ## Returns
@@ -685,17 +750,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -722,17 +787,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   - project_id (String.t): The project which owns the WorkItem&#39;s job.
   - job_id (String.t): The job which the WorkItem is part of.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (ReportWorkItemStatusRequest): 
 
   ## Returns
@@ -756,17 +821,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -795,19 +860,19 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   - project_id (String.t): The ID of the Cloud Platform project that the job belongs to.
   - location (String.t): The location that contains this job.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :view (String.t): The level of information requested in response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :replaceJobId (String.t): Deprecated. This field is now in the Job message.
+    - :view (String.t): The level of information requested in response.
     - :body (Job): 
 
   ## Returns
@@ -829,19 +894,19 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
-      :view => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :replaceJobId => :query,
+      :view => :query,
       :body => :body
     }
 
@@ -869,17 +934,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   - location (String.t): The location which contains the job specified by job_id.
   - job_id (String.t): The job id.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (GetDebugConfigRequest): 
 
   ## Returns
@@ -905,17 +970,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -947,17 +1012,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   - location (String.t): The location which contains the job specified by job_id.
   - job_id (String.t): The job id.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (SendDebugCaptureRequest): 
 
   ## Returns
@@ -983,17 +1048,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -1027,17 +1092,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   - location (String.t): The location that contains this job.
   - job_id (String.t): The job ID.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :view (String.t): The level of information requested in response.
 
   ## Returns
@@ -1061,17 +1126,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :view => :query
     }
 
@@ -1100,17 +1165,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   - location (String.t): The location which contains the job specified by job_id.
   - job_id (String.t): The job to get messages for.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :startTime (DateTime.t): Return only metric data that has changed since this time. Default is to return all information about all metrics for the job.
 
   ## Returns
@@ -1134,17 +1199,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :startTime => :query
     }
 
@@ -1172,17 +1237,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   - project_id (String.t): The project which owns the jobs.
   - location (String.t): The location that contains this job.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :filter (String.t): The kind of filter to use.
     - :pageToken (String.t): Set this to the &#39;next_page_token&#39; field of a previous response to request additional results in a long list.
     - :pageSize (integer()): If there are many jobs, limit response to at most this many. The actual number of jobs returned will be the lesser of max_responses and an unspecified server-defined limit.
@@ -1207,17 +1272,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :filter => :query,
       :pageToken => :query,
       :pageSize => :query,
@@ -1248,20 +1313,20 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   - location (String.t): The location which contains the job specified by job_id.
   - job_id (String.t): The job to get messages about.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :endTime (DateTime.t): Return only messages with timestamps &lt; end_time. The default is now (i.e. return up to the latest messages available).
-    - :startTime (DateTime.t): If specified, return only messages with timestamps &gt;&#x3D; start_time. The default is the job creation time (i.e. beginning of messages).
     - :pageToken (String.t): If supplied, this should be the value of next_page_token returned by an earlier call. This will cause the next page of results to be returned.
+    - :startTime (DateTime.t): If specified, return only messages with timestamps &gt;&#x3D; start_time. The default is the job creation time (i.e. beginning of messages).
     - :pageSize (integer()): If specified, determines the maximum number of messages to return.  If unspecified, the service may choose an appropriate default, or may return an arbitrarily large number of results.
     - :minimumImportance (String.t): Filter to only get messages with importance &gt;&#x3D; level
 
@@ -1288,20 +1353,20 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :endTime => :query,
-      :startTime => :query,
       :pageToken => :query,
+      :startTime => :query,
       :pageSize => :query,
       :minimumImportance => :query
     }
@@ -1322,6 +1387,79 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
+  Snapshot the state of a streaming job.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
+  - project_id (String.t): The project which owns the job to be snapshotted.
+  - location (String.t): The location that contains this job.
+  - job_id (String.t): The job to be snapshotted.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :body (SnapshotJobRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataflow.V1b3.Model.Snapshot{}} on success
+  {:error, info} on failure
+  """
+  @spec dataflow_projects_locations_jobs_snapshot(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Dataflow.V1b3.Model.Snapshot.t()} | {:error, Tesla.Env.t()}
+  def dataflow_projects_locations_jobs_snapshot(
+        connection,
+        project_id,
+        location,
+        job_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}:snapshot", %{
+        "projectId" => URI.encode_www_form(project_id),
+        "location" => URI.encode_www_form(location),
+        "jobId" => URI.encode_www_form(job_id)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.Snapshot{}])
+  end
+
+  @doc """
   Updates the state of an existing Cloud Dataflow job.
 
   ## Parameters
@@ -1331,17 +1469,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   - location (String.t): The location that contains this job.
   - job_id (String.t): The job ID.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (Job): 
 
   ## Returns
@@ -1365,17 +1503,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -1404,17 +1542,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   - location (String.t): The location which contains the WorkItem&#39;s job.
   - job_id (String.t): Identifies the workflow job this worker belongs to.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (LeaseWorkItemRequest): 
 
   ## Returns
@@ -1439,17 +1577,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -1481,17 +1619,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   - location (String.t): The location which contains the WorkItem&#39;s job.
   - job_id (String.t): The job which the WorkItem is part of.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (ReportWorkItemStatusRequest): 
 
   ## Returns
@@ -1517,17 +1655,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -1560,17 +1698,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   - project_id (String.t): Required. The ID of the Cloud Platform project that the job belongs to.
   - location (String.t): The location to which to direct the request.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (CreateJobFromTemplateRequest): 
 
   ## Returns
@@ -1592,17 +1730,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -1629,19 +1767,19 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   - project_id (String.t): Required. The ID of the Cloud Platform project that the job belongs to.
   - location (String.t): The location to which to direct the request.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :view (String.t): The view to retrieve. Defaults to METADATA_ONLY.
-    - :gcsPath (String.t): Required. A Cloud Storage path to the template from which to create the job. Must be a valid Cloud Storage URL, beginning with &#x60;gs://&#x60;.
+    - :gcsPath (String.t): Required. A Cloud Storage path to the template from which to create the job. Must be valid Cloud Storage URL, beginning with &#39;gs://&#39;.
 
   ## Returns
 
@@ -1663,17 +1801,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :view => :query,
       :gcsPath => :query
     }
@@ -1701,19 +1839,21 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   - project_id (String.t): Required. The ID of the Cloud Platform project that the job belongs to.
   - location (String.t): The location to which to direct the request.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :validateOnly (boolean()): If true, the request is validated but not actually executed. Defaults to false.
-    - :gcsPath (String.t): Required. A Cloud Storage path to the template from which to create the job. Must be valid Cloud Storage URL, beginning with &#39;gs://&#39;.
+    - :gcsPath (String.t): A Cloud Storage path to the template from which to create the job. Must be valid Cloud Storage URL, beginning with &#39;gs://&#39;.
+    - :dynamicTemplate.gcsPath (String.t): Path to dynamic template spec file on GCS. The file must be a Json serialized DynamicTemplateFieSpec object.
+    - :dynamicTemplate.stagingLocation (String.t): Cloud Storage path for staging dependencies. Must be a valid Cloud Storage URL, beginning with &#x60;gs://&#x60;.
     - :body (LaunchTemplateParameters): 
 
   ## Returns
@@ -1737,19 +1877,21 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :validateOnly => :query,
       :gcsPath => :query,
+      :"dynamicTemplate.gcsPath" => :query,
+      :"dynamicTemplate.stagingLocation" => :query,
       :body => :body
     }
 
@@ -1776,17 +1918,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   - project_id (String.t): The project to send the WorkerMessages to.
   - location (String.t): The location which contains the job
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (SendWorkerMessagesRequest): 
 
   ## Returns
@@ -1810,17 +1952,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -1848,17 +1990,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
   - project_id (String.t): Required. The ID of the Cloud Platform project that the job belongs to.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (CreateJobFromTemplateRequest): 
 
   ## Returns
@@ -1875,17 +2017,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -1910,20 +2052,20 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
   - project_id (String.t): Required. The ID of the Cloud Platform project that the job belongs to.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :location (String.t): The location to which to direct the request.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :view (String.t): The view to retrieve. Defaults to METADATA_ONLY.
-    - :gcsPath (String.t): Required. A Cloud Storage path to the template from which to create the job. Must be a valid Cloud Storage URL, beginning with &#x60;gs://&#x60;.
+    - :gcsPath (String.t): Required. A Cloud Storage path to the template from which to create the job. Must be valid Cloud Storage URL, beginning with &#39;gs://&#39;.
+    - :location (String.t): The location to which to direct the request.
 
   ## Returns
 
@@ -1934,20 +2076,20 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           {:ok, GoogleApi.Dataflow.V1b3.Model.GetTemplateResponse.t()} | {:error, Tesla.Env.t()}
   def dataflow_projects_templates_get(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
-      :location => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :view => :query,
-      :gcsPath => :query
+      :gcsPath => :query,
+      :location => :query
     }
 
     request =
@@ -1971,20 +2113,22 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
   - project_id (String.t): Required. The ID of the Cloud Platform project that the job belongs to.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :location (String.t): The location to which to direct the request.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :validateOnly (boolean()): If true, the request is validated but not actually executed. Defaults to false.
-    - :gcsPath (String.t): Required. A Cloud Storage path to the template from which to create the job. Must be valid Cloud Storage URL, beginning with &#39;gs://&#39;.
+    - :gcsPath (String.t): A Cloud Storage path to the template from which to create the job. Must be valid Cloud Storage URL, beginning with &#39;gs://&#39;.
+    - :location (String.t): The location to which to direct the request.
+    - :dynamicTemplate.gcsPath (String.t): Path to dynamic template spec file on GCS. The file must be a Json serialized DynamicTemplateFieSpec object.
+    - :dynamicTemplate.stagingLocation (String.t): Cloud Storage path for staging dependencies. Must be a valid Cloud Storage URL, beginning with &#x60;gs://&#x60;.
     - :body (LaunchTemplateParameters): 
 
   ## Returns
@@ -2002,20 +2146,22 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
-      :location => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :validateOnly => :query,
       :gcsPath => :query,
+      :location => :query,
+      :"dynamicTemplate.gcsPath" => :query,
+      :"dynamicTemplate.stagingLocation" => :query,
       :body => :body
     }
 
@@ -2040,17 +2186,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
   - project_id (String.t): The project to send the WorkerMessages to.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (SendWorkerMessagesRequest): 
 
   ## Returns
@@ -2063,17 +2209,17 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           | {:error, Tesla.Env.t()}
   def dataflow_projects_worker_messages(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 

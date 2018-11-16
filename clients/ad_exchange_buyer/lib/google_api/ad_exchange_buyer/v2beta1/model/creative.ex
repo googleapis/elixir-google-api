@@ -109,8 +109,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Creative do
   field(:openAuctionStatus)
   field(:restrictedCategories, type: :list)
 
-  field(
-    :servingRestrictions,
+  field(:servingRestrictions,
     as: GoogleApi.AdExchangeBuyer.V2beta1.Model.ServingRestriction,
     type: :list
   )

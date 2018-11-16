@@ -36,8 +36,7 @@ defmodule GoogleApi.YouTube.V3.Model.VideoAbuseReportReasonSnippet do
 
   field(:label)
 
-  field(
-    :secondaryReasons,
+  field(:secondaryReasons,
     as: GoogleApi.YouTube.V3.Model.VideoAbuseReportSecondaryReason,
     type: :list
   )

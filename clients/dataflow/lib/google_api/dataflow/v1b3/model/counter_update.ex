@@ -75,8 +75,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.CounterUpdate do
   field(:shortId)
   field(:stringList, as: GoogleApi.Dataflow.V1b3.Model.StringList)
 
-  field(
-    :structuredNameAndMetadata,
+  field(:structuredNameAndMetadata,
     as: GoogleApi.Dataflow.V1b3.Model.CounterStructuredNameAndMetadata
   )
 end

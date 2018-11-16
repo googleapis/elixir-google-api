@@ -35,8 +35,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeltaPresenceEstimationConfig
           :regionCode => any()
         }
 
-  field(
-    :auxiliaryTables,
+  field(:auxiliaryTables,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StatisticalTable,
     type: :list
   )

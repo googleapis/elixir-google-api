@@ -32,7 +32,7 @@ defmodule GoogleApi.CloudDebugger.V2.Model.Debuggee do
   - project (String.t): Project the debuggee is associated with. Use project number or id when registering a Google Cloud Platform project. Defaults to: `null`.
   - sourceContexts ([SourceContext]): References to the locations and revisions of the source code used in the deployed application. Defaults to: `null`.
   - status (StatusMessage): Human readable message to be displayed to the user about this debuggee. Absence of this field indicates no status. The message can be either informational or an error status. Defaults to: `null`.
-  - uniquifier (String.t): Uniquifier to further distiguish the application. It is possible that different applications might have identical values in the debuggee message, thus, incorrectly identified as a single application by the Controller service. This field adds salt to further distiguish the application. Agents should consider seeding this field with value that identifies the code, binary, configuration and environment. Defaults to: `null`.
+  - uniquifier (String.t): Uniquifier to further distinguish the application. It is possible that different applications might have identical values in the debuggee message, thus, incorrectly identified as a single application by the Controller service. This field adds salt to further distinguish the application. Agents should consider seeding this field with value that identifies the code, binary, configuration and environment. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -54,8 +54,7 @@ defmodule GoogleApi.CloudDebugger.V2.Model.Debuggee do
   field(:agentVersion)
   field(:description)
 
-  field(
-    :extSourceContexts,
+  field(:extSourceContexts,
     as: GoogleApi.CloudDebugger.V2.Model.ExtendedSourceContext,
     type: :list
   )

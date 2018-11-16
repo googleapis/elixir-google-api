@@ -168,8 +168,7 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
   field(:cutPaste, as: GoogleApi.Sheets.V4.Model.CutPasteRequest)
   field(:deleteBanding, as: GoogleApi.Sheets.V4.Model.DeleteBandingRequest)
 
-  field(
-    :deleteConditionalFormatRule,
+  field(:deleteConditionalFormatRule,
     as: GoogleApi.Sheets.V4.Model.DeleteConditionalFormatRuleRequest
   )
 
@@ -202,21 +201,16 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
   field(:updateCells, as: GoogleApi.Sheets.V4.Model.UpdateCellsRequest)
   field(:updateChartSpec, as: GoogleApi.Sheets.V4.Model.UpdateChartSpecRequest)
 
-  field(
-    :updateConditionalFormatRule,
+  field(:updateConditionalFormatRule,
     as: GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRuleRequest
   )
 
   field(:updateDeveloperMetadata, as: GoogleApi.Sheets.V4.Model.UpdateDeveloperMetadataRequest)
   field(:updateDimensionGroup, as: GoogleApi.Sheets.V4.Model.UpdateDimensionGroupRequest)
 
-  field(
-    :updateDimensionProperties,
-    as: GoogleApi.Sheets.V4.Model.UpdateDimensionPropertiesRequest
-  )
+  field(:updateDimensionProperties, as: GoogleApi.Sheets.V4.Model.UpdateDimensionPropertiesRequest)
 
-  field(
-    :updateEmbeddedObjectPosition,
+  field(:updateEmbeddedObjectPosition,
     as: GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionRequest
   )
 
@@ -225,8 +219,7 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
   field(:updateProtectedRange, as: GoogleApi.Sheets.V4.Model.UpdateProtectedRangeRequest)
   field(:updateSheetProperties, as: GoogleApi.Sheets.V4.Model.UpdateSheetPropertiesRequest)
 
-  field(
-    :updateSpreadsheetProperties,
+  field(:updateSpreadsheetProperties,
     as: GoogleApi.Sheets.V4.Model.UpdateSpreadsheetPropertiesRequest
   )
 end

@@ -34,8 +34,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListImpressionMetricsResponse 
           :nextPageToken => any()
         }
 
-  field(
-    :impressionMetricsRows,
+  field(:impressionMetricsRows,
     as: GoogleApi.AdExchangeBuyer.V2beta1.Model.ImpressionMetricsRow,
     type: :list
   )

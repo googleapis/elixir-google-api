@@ -62,14 +62,12 @@ defmodule GoogleApi.DFAReporting.V28.Model.CreativeAssignment do
   field(:applyEventTags)
   field(:clickThroughUrl, as: GoogleApi.DFAReporting.V28.Model.ClickThroughUrl)
 
-  field(
-    :companionCreativeOverrides,
+  field(:companionCreativeOverrides,
     as: GoogleApi.DFAReporting.V28.Model.CompanionClickThroughOverride,
     type: :list
   )
 
-  field(
-    :creativeGroupAssignments,
+  field(:creativeGroupAssignments,
     as: GoogleApi.DFAReporting.V28.Model.CreativeGroupAssignment,
     type: :list
   )
@@ -78,8 +76,7 @@ defmodule GoogleApi.DFAReporting.V28.Model.CreativeAssignment do
   field(:creativeIdDimensionValue, as: GoogleApi.DFAReporting.V28.Model.DimensionValue)
   field(:endTime, as: DateTime)
 
-  field(
-    :richMediaExitOverrides,
+  field(:richMediaExitOverrides,
     as: GoogleApi.DFAReporting.V28.Model.RichMediaExitOverride,
     type: :list
   )

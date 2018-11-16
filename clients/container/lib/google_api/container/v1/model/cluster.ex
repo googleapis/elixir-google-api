@@ -129,8 +129,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   field(:maintenancePolicy, as: GoogleApi.Container.V1.Model.MaintenancePolicy)
   field(:masterAuth, as: GoogleApi.Container.V1.Model.MasterAuth)
 
-  field(
-    :masterAuthorizedNetworksConfig,
+  field(:masterAuthorizedNetworksConfig,
     as: GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig
   )
 

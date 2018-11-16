@@ -38,8 +38,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2WebhookRequest do
           :session => any()
         }
 
-  field(
-    :originalDetectIntentRequest,
+  field(:originalDetectIntentRequest,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2OriginalDetectIntentRequest
   )
 

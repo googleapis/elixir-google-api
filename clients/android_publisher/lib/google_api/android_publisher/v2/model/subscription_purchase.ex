@@ -75,8 +75,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.SubscriptionPurchase do
   field(:autoRenewing)
   field(:cancelReason)
 
-  field(
-    :cancelSurveyResult,
+  field(:cancelSurveyResult,
     as: GoogleApi.AndroidPublisher.V2.Model.SubscriptionCancelSurveyResult
   )
 

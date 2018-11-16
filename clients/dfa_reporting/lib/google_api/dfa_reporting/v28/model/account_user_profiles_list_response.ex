@@ -35,11 +35,7 @@ defmodule GoogleApi.DFAReporting.V28.Model.AccountUserProfilesListResponse do
           :nextPageToken => any()
         }
 
-  field(
-    :accountUserProfiles,
-    as: GoogleApi.DFAReporting.V28.Model.AccountUserProfile,
-    type: :list
-  )
+  field(:accountUserProfiles, as: GoogleApi.DFAReporting.V28.Model.AccountUserProfile, type: :list)
 
   field(:kind)
   field(:nextPageToken)

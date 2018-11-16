@@ -40,8 +40,7 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.Pivot do
           :startGroup => any()
         }
 
-  field(
-    :dimensionFilterClauses,
+  field(:dimensionFilterClauses,
     as: GoogleApi.AnalyticsReporting.V4.Model.DimensionFilterClause,
     type: :list
   )

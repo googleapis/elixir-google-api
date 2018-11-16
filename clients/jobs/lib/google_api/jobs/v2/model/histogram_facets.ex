@@ -38,14 +38,12 @@ defmodule GoogleApi.Jobs.V2.Model.HistogramFacets do
           :simpleHistogramFacets => list(any())
         }
 
-  field(
-    :compensationHistogramFacets,
+  field(:compensationHistogramFacets,
     as: GoogleApi.Jobs.V2.Model.CompensationHistogramRequest,
     type: :list
   )
 
-  field(
-    :customAttributeHistogramFacets,
+  field(:customAttributeHistogramFacets,
     as: GoogleApi.Jobs.V2.Model.CustomAttributeHistogramRequest,
     type: :list
   )

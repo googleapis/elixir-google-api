@@ -32,17 +32,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
   - account_id (String.t): Unique numerical account ID for the buyer of which the client buyer is a customer; the sponsor buyer to create a client for. (required)
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (Client): 
 
   ## Returns
@@ -59,17 +59,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -95,17 +95,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - account_id (String.t): Numerical account ID of the client&#39;s sponsor buyer. (required)
   - client_account_id (String.t): Numerical account ID of the client buyer to retrieve. (required)
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -126,17 +126,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -162,17 +162,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - account_id (String.t): Numerical account ID of the client&#39;s sponsor buyer. (required)
   - client_account_id (String.t): Numerical account ID of the client buyer that the user should be associated with. (required)
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (ClientUserInvitation): 
 
   ## Returns
@@ -196,17 +196,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -236,17 +236,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - client_account_id (String.t): Numerical account ID of the client buyer that the user invitation to be retrieved is associated with. (required)
   - invitation_id (String.t): Numerical identifier of the user invitation to retrieve. (required)
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -271,17 +271,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -313,19 +313,19 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - account_id (String.t): Numerical account ID of the client&#39;s sponsor buyer. (required)
   - client_account_id (String.t): Numerical account ID of the client buyer to list invitations for. (required) You must either specify a string representation of a numerical account identifier or the &#x60;-&#x60; character to list all the invitations for all the clients of a given sponsor buyer.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :pageSize (integer()): Requested page size. Server may return fewer clients than requested. If unspecified, server will pick an appropriate default.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :pageToken (String.t): A token identifying a page of results the server should return. Typically, this is the value of ListClientUserInvitationsResponse.nextPageToken returned from the previous call to the clients.invitations.list method.
+    - :pageSize (integer()): Requested page size. Server may return fewer clients than requested. If unspecified, server will pick an appropriate default.
 
   ## Returns
 
@@ -348,19 +348,19 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
-      :pageSize => :query,
-      :pageToken => :query
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :pageToken => :query,
+      :pageSize => :query
     }
 
     request =
@@ -388,20 +388,20 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
   - account_id (String.t): Unique numerical account ID of the sponsor buyer to list the clients for.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :pageSize (integer()): Requested page size. The server may return fewer clients than requested. If unspecified, the server will pick an appropriate default.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :pageToken (String.t): A token identifying a page of results the server should return. Typically, this is the value of ListClientsResponse.nextPageToken returned from the previous call to the accounts.clients.list method.
     - :partnerClientId (String.t): Optional unique identifier (from the standpoint of an Ad Exchange sponsor buyer partner) of the client to return. If specified, at most one client will be returned in the response.
+    - :pageSize (integer()): Requested page size. The server may return fewer clients than requested. If unspecified, the server will pick an appropriate default.
 
   ## Returns
 
@@ -418,20 +418,20 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
-      :pageSize => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :pageToken => :query,
-      :partnerClientId => :query
+      :partnerClientId => :query,
+      :pageSize => :query
     }
 
     request =
@@ -458,17 +458,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - account_id (String.t): Unique numerical account ID for the buyer of which the client buyer is a customer; the sponsor buyer to update a client for. (required)
   - client_account_id (String.t): Unique numerical account ID of the client to update. (required)
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (Client): 
 
   ## Returns
@@ -490,17 +490,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -528,17 +528,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - client_account_id (String.t): Numerical account ID of the client buyer that the user to be retrieved is associated with. (required)
   - user_id (String.t): Numerical identifier of the user to retrieve. (required)
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -562,17 +562,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -599,19 +599,19 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - account_id (String.t): Numerical account ID of the sponsor buyer of the client to list users for. (required)
   - client_account_id (String.t): The account ID of the client buyer to list users for. (required) You must specify either a string representation of a numerical account identifier or the &#x60;-&#x60; character to list all the client users for all the clients of a given sponsor buyer.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :pageSize (integer()): Requested page size. The server may return fewer clients than requested. If unspecified, the server will pick an appropriate default.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :pageToken (String.t): A token identifying a page of results the server should return. Typically, this is the value of ListClientUsersResponse.nextPageToken returned from the previous call to the accounts.clients.users.list method.
+    - :pageSize (integer()): Requested page size. The server may return fewer clients than requested. If unspecified, the server will pick an appropriate default.
 
   ## Returns
 
@@ -634,19 +634,19 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
-      :pageSize => :query,
-      :pageToken => :query
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :pageToken => :query,
+      :pageSize => :query
     }
 
     request =
@@ -675,17 +675,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - client_account_id (String.t): Numerical account ID of the client buyer that the user to be retrieved is associated with. (required)
   - user_id (String.t): Numerical identifier of the user to retrieve. (required)
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (ClientUser): 
 
   ## Returns
@@ -710,17 +710,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -747,17 +747,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
   - account_id (String.t): The account that this creative belongs to. Can be used to filter the response of the creatives.list method.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :duplicateIdMode (String.t): Indicates if multiple creatives can share an ID or not. Default is NO_DUPLICATES (one ID per creative).
     - :body (Creative): 
 
@@ -775,17 +775,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :duplicateIdMode => :query,
       :body => :body
     }
@@ -812,17 +812,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - account_id (String.t): The account the creative belongs to.
   - creative_id (String.t): The ID of the creative associated with the deal.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (AddDealAssociationRequest): 
 
   ## Returns
@@ -844,17 +844,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -884,20 +884,20 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - account_id (String.t): The account to list the associations from. Specify \&quot;-\&quot; to list all creatives the current user has access to.
   - creative_id (String.t): The creative ID to list the associations from. Specify \&quot;-\&quot; to list all creatives under the above account.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :pageToken (String.t): A token identifying a page of results the server should return. Typically, this is the value of ListDealAssociationsResponse.next_page_token returned from the previous call to &#39;ListDealAssociations&#39; method.
     - :pageSize (integer()): Requested page size. Server may return fewer associations than requested. If unspecified, server will pick an appropriate default.
     - :query (String.t): An optional query string to filter deal associations. If no filter is specified, all associations will be returned. Supported queries are: &lt;ul&gt; &lt;li&gt;accountId&#x3D;&lt;i&gt;account_id_string&lt;/i&gt; &lt;li&gt;creativeId&#x3D;&lt;i&gt;creative_id_string&lt;/i&gt; &lt;li&gt;dealsId&#x3D;&lt;i&gt;deals_id_string&lt;/i&gt; &lt;li&gt;dealsStatus:{approved, conditionally_approved, disapproved,                   not_checked} &lt;li&gt;openAuctionStatus:{approved, conditionally_approved, disapproved,                          not_checked} &lt;/ul&gt; Example: &#39;dealsId&#x3D;12345 AND dealsStatus:disapproved&#39;
-    - :pageToken (String.t): A token identifying a page of results the server should return. Typically, this is the value of ListDealAssociationsResponse.next_page_token returned from the previous call to &#39;ListDealAssociations&#39; method.
 
   ## Returns
 
@@ -920,20 +920,20 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :pageToken => :query,
       :pageSize => :query,
-      :query => :query,
-      :pageToken => :query
+      :query => :query
     }
 
     request =
@@ -961,17 +961,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - account_id (String.t): The account the creative belongs to.
   - creative_id (String.t): The ID of the creative associated with the deal.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (RemoveDealAssociationRequest): 
 
   ## Returns
@@ -993,17 +993,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -1033,17 +1033,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - account_id (String.t): The account the creative belongs to.
   - creative_id (String.t): The ID of the creative to retrieve.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -1064,17 +1064,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -1099,20 +1099,20 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
   - account_id (String.t): The account to list the creatives from. Specify \&quot;-\&quot; to list all creatives the current user has access to.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :pageToken (String.t): A token identifying a page of results the server should return. Typically, this is the value of ListCreativesResponse.next_page_token returned from the previous call to &#39;ListCreatives&#39; method.
     - :pageSize (integer()): Requested page size. The server may return fewer creatives than requested (due to timeout constraint) even if more are available via another call. If unspecified, server will pick an appropriate default. Acceptable values are 1 to 1000, inclusive.
     - :query (String.t): An optional query string to filter creatives. If no filter is specified, all active creatives will be returned. &lt;p&gt;Supported queries are: &lt;ul&gt; &lt;li&gt;accountId&#x3D;&lt;i&gt;account_id_string&lt;/i&gt; &lt;li&gt;creativeId&#x3D;&lt;i&gt;creative_id_string&lt;/i&gt; &lt;li&gt;dealsStatus: {approved, conditionally_approved, disapproved,                    not_checked} &lt;li&gt;openAuctionStatus: {approved, conditionally_approved, disapproved,                           not_checked} &lt;li&gt;attribute: {a numeric attribute from the list of attributes} &lt;li&gt;disapprovalReason: {a reason from DisapprovalReason} &lt;/ul&gt; Example: &#39;accountId&#x3D;12345 AND (dealsStatus:disapproved AND disapprovalReason:unacceptable_content) OR attribute:47&#39;
-    - :pageToken (String.t): A token identifying a page of results the server should return. Typically, this is the value of ListCreativesResponse.next_page_token returned from the previous call to &#39;ListCreatives&#39; method.
 
   ## Returns
 
@@ -1129,20 +1129,20 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :pageToken => :query,
       :pageSize => :query,
-      :query => :query,
-      :pageToken => :query
+      :query => :query
     }
 
     request =
@@ -1169,17 +1169,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - account_id (String.t): The account of the creative to stop notifications for.
   - creative_id (String.t): The creative ID of the creative to stop notifications for. Specify \&quot;-\&quot; to specify stopping account level notifications.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (StopWatchingCreativeRequest): 
 
   ## Returns
@@ -1201,17 +1201,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -1238,17 +1238,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - account_id (String.t): The account that this creative belongs to. Can be used to filter the response of the creatives.list method.
   - creative_id (String.t): The buyer-defined creative ID of this creative. Can be used to filter the response of the creatives.list method.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (Creative): 
 
   ## Returns
@@ -1270,17 +1270,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -1307,17 +1307,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - account_id (String.t): The account of the creative to watch.
   - creative_id (String.t): The creative ID to watch for status changes. Specify \&quot;-\&quot; to watch all creatives under the above account. If both creative-level and account-level notifications are sent, only a single notification will be sent to the creative-level notification topic.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (WatchCreativeRequest): 
 
   ## Returns
@@ -1339,17 +1339,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -1375,21 +1375,21 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
   - account_id (String.t): Account ID of the buyer.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :pageSize (integer()): Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :filterSyntax (String.t): Syntax the filter is written in. Current implementation defaults to PQL but in the future it will be LIST_FILTER.
     - :filter (String.t): An optional PQL filter query used to query for proposals.  Nested repeated fields, such as proposal.deals.targetingCriterion, cannot be filtered.
     - :pageToken (String.t): The page token as returned from ListProposalsResponse.
+    - :pageSize (integer()): Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
 
   ## Returns
 
@@ -1410,21 +1410,21 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
-      :pageSize => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :filterSyntax => :query,
       :filter => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :pageSize => :query
     }
 
     request =
@@ -1451,17 +1451,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - account_id (String.t): Account ID of the buyer.
   - product_id (String.t): The ID for the product to get the head revision for.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -1482,17 +1482,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -1517,17 +1517,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
   - account_id (String.t): Account ID of the buyer.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :filter (String.t): An optional PQL query used to query for products. See https://developers.google.com/ad-manager/docs/pqlreference for documentation about PQL and examples.  Nested repeated fields, such as product.targetingCriterion.inclusions, cannot be filtered.
     - :pageToken (String.t): The page token as returned from ListProductsResponse.
     - :pageSize (integer()): Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
@@ -1547,17 +1547,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :filter => :query,
       :pageToken => :query,
       :pageSize => :query
@@ -1587,17 +1587,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - account_id (String.t): Account ID of the buyer.
   - proposal_id (String.t): The ID of the proposal to accept.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (AcceptProposalRequest): 
 
   ## Returns
@@ -1619,17 +1619,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -1656,17 +1656,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - account_id (String.t): Account ID of the buyer.
   - proposal_id (String.t): The ID of the proposal to attach the note to.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (AddNoteRequest): 
 
   ## Returns
@@ -1688,17 +1688,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -1725,17 +1725,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - account_id (String.t): Account ID of the buyer.
   - proposal_id (String.t): The ID of the proposal to cancel negotiation for.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (CancelNegotiationRequest): 
 
   ## Returns
@@ -1757,17 +1757,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -1794,17 +1794,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - account_id (String.t): Account ID of the buyer.
   - proposal_id (String.t): The ID of the proposal to mark as setup completed.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (CompleteSetupRequest): 
 
   ## Returns
@@ -1826,17 +1826,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -1862,17 +1862,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
   - account_id (String.t): Account ID of the buyer.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (Proposal): 
 
   ## Returns
@@ -1889,17 +1889,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -1925,17 +1925,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - account_id (String.t): Account ID of the buyer.
   - proposal_id (String.t): The unique ID of the proposal
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -1956,17 +1956,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -1991,21 +1991,21 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
   - account_id (String.t): Account ID of the buyer.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :pageSize (integer()): Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
-    - :filterSyntax (String.t): Syntax the filter is written in. Current implementation defaults to PQL but in the future it will be LIST_FILTER.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :filter (String.t): An optional PQL filter query used to query for proposals.  Nested repeated fields, such as proposal.deals.targetingCriterion, cannot be filtered.
     - :pageToken (String.t): The page token as returned from ListProposalsResponse.
+    - :pageSize (integer()): Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+    - :filterSyntax (String.t): Syntax the filter is written in. Current implementation defaults to PQL but in the future it will be LIST_FILTER.
 
   ## Returns
 
@@ -2022,21 +2022,21 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
-      :pageSize => :query,
-      :filterSyntax => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :filter => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :pageSize => :query,
+      :filterSyntax => :query
     }
 
     request =
@@ -2063,17 +2063,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - account_id (String.t): Account ID of the buyer.
   - proposal_id (String.t): The ID of the proposal to pause.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (PauseProposalRequest): 
 
   ## Returns
@@ -2095,17 +2095,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -2132,17 +2132,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - account_id (String.t): Account ID of the buyer.
   - proposal_id (String.t): The ID of the proposal to resume.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (ResumeProposalRequest): 
 
   ## Returns
@@ -2164,17 +2164,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -2201,17 +2201,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - account_id (String.t): Account ID of the buyer.
   - proposal_id (String.t): The unique ID of the proposal.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (Proposal): 
 
   ## Returns
@@ -2233,17 +2233,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -2270,17 +2270,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - account_id (String.t): Account ID of the buyer.
   - publisher_profile_id (String.t): The id for the publisher profile to get.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -2303,17 +2303,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -2340,17 +2340,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
   - account_id (String.t): Account ID of the buyer.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :pageToken (String.t): The page token as return from ListPublisherProfilesResponse.
     - :pageSize (integer()): Specify the number of results to include per page.
 
@@ -2373,17 +2373,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         opts \\ []
       ) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :pageToken => :query,
       :pageSize => :query
     }

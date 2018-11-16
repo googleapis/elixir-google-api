@@ -32,8 +32,7 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.SimpleSegment do
             list(GoogleApi.AnalyticsReporting.V4.Model.OrFiltersForSegment.t())
         }
 
-  field(
-    :orFiltersForSegment,
+  field(:orFiltersForSegment,
     as: GoogleApi.AnalyticsReporting.V4.Model.OrFiltersForSegment,
     type: :list
   )

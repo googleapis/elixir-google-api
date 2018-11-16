@@ -49,8 +49,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1Ann
   field(:locationId)
   field(:outputUri)
 
-  field(
-    :videoContext,
+  field(:videoContext,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1VideoContext
   )
 end

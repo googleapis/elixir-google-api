@@ -34,8 +34,7 @@ defmodule GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1ListIndex
           :nextPageToken => any()
         }
 
-  field(
-    :indexes,
+  field(:indexes,
     as: GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1Index,
     type: :list
   )

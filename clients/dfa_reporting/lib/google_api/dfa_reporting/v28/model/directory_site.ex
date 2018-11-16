@@ -62,8 +62,7 @@ defmodule GoogleApi.DFAReporting.V28.Model.DirectorySite do
 
   field(:active)
 
-  field(
-    :contactAssignments,
+  field(:contactAssignments,
     as: GoogleApi.DFAReporting.V28.Model.DirectorySiteContactAssignment,
     type: :list
   )

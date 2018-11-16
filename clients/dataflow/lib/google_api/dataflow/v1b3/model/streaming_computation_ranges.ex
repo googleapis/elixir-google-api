@@ -35,8 +35,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StreamingComputationRanges do
 
   field(:computationId)
 
-  field(
-    :rangeAssignments,
+  field(:rangeAssignments,
     as: GoogleApi.Dataflow.V1b3.Model.KeyRangeDataDiskAssignment,
     type: :list
   )

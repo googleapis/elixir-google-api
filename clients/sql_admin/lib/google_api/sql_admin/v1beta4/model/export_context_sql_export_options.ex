@@ -36,8 +36,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptions do
           :tables => list(any())
         }
 
-  field(
-    :mysqlExportOptions,
+  field(:mysqlExportOptions,
     as: GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptionsMysqlExportOptions
   )
 

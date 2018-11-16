@@ -37,8 +37,7 @@ defmodule GoogleApi.Content.V2.Model.UnitInvoice do
           :unitPriceTaxes => list(GoogleApi.Content.V2.Model.UnitInvoiceTaxLine.t())
         }
 
-  field(
-    :additionalCharges,
+  field(:additionalCharges,
     as: GoogleApi.Content.V2.Model.UnitInvoiceAdditionalCharge,
     type: :list
   )

@@ -32,24 +32,24 @@ defmodule GoogleApi.People.V1.Api.People do
   - connection (GoogleApi.People.V1.Connection): Connection to server
   - people_id (String.t): Part of &#x60;resourceName&#x60;. The resource name to return connections for. Only &#x60;people/me&#x60; is valid.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :sortOrder (String.t): The order in which the connections should be sorted. Defaults to &#x60;LAST_MODIFIED_ASCENDING&#x60;.
+    - :requestSyncToken (boolean()): Whether the response should include a sync token, which can be used to get all changes since the last request. For subsequent sync requests use the &#x60;sync_token&#x60; param instead. Initial sync requests that specify &#x60;request_sync_token&#x60; have an additional rate limit.
+    - :pageToken (String.t): The token of the page to be returned.
     - :pageSize (integer()): The number of connections to include in the response. Valid values are between 1 and 2000, inclusive. Defaults to 100.
     - :requestMask.includeField (String.t): **Required.** Comma-separated list of person fields to be included in the response. Each path should start with &#x60;person.&#x60;: for example, &#x60;person.names&#x60; or &#x60;person.photos&#x60;.
     - :syncToken (String.t): A sync token returned by a previous call to &#x60;people.connections.list&#x60;. Only resources changed since the sync token was created will be returned. Sync requests that specify &#x60;sync_token&#x60; have an additional rate limit.
     - :personFields (String.t): **Required.** A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are:  * addresses * ageRanges * biographies * birthdays * braggingRights * coverPhotos * emailAddresses * events * genders * imClients * interests * locales * memberships * metadata * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * relationshipInterests * relationshipStatuses * residences * sipAddresses * skills * taglines * urls * userDefined
-    - :sortOrder (String.t): The order in which the connections should be sorted. Defaults to &#x60;LAST_MODIFIED_ASCENDING&#x60;.
-    - :requestSyncToken (boolean()): Whether the response should include a sync token, which can be used to get all changes since the last request. For subsequent sync requests use the &#x60;sync_token&#x60; param instead. Initial sync requests that specify &#x60;request_sync_token&#x60; have an additional rate limit.
-    - :pageToken (String.t): The token of the page to be returned.
 
   ## Returns
 
@@ -60,24 +60,24 @@ defmodule GoogleApi.People.V1.Api.People do
           {:ok, GoogleApi.People.V1.Model.ListConnectionsResponse.t()} | {:error, Tesla.Env.t()}
   def people_people_connections_list(connection, people_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :sortOrder => :query,
+      :requestSyncToken => :query,
+      :pageToken => :query,
       :pageSize => :query,
       :"requestMask.includeField" => :query,
       :syncToken => :query,
-      :personFields => :query,
-      :sortOrder => :query,
-      :requestSyncToken => :query,
-      :pageToken => :query
+      :personFields => :query
     }
 
     request =
@@ -100,17 +100,17 @@ defmodule GoogleApi.People.V1.Api.People do
 
   - connection (GoogleApi.People.V1.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :parent (String.t): The resource name of the owning person resource.
     - :body (Person): 
 
@@ -123,17 +123,17 @@ defmodule GoogleApi.People.V1.Api.People do
           {:ok, GoogleApi.People.V1.Model.Person.t()} | {:error, Tesla.Env.t()}
   def people_people_create_contact(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :parent => :query,
       :body => :body
     }
@@ -157,17 +157,17 @@ defmodule GoogleApi.People.V1.Api.People do
   - connection (GoogleApi.People.V1.Connection): Connection to server
   - people_id (String.t): Part of &#x60;resourceName&#x60;. The resource name of the contact to delete.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -178,17 +178,17 @@ defmodule GoogleApi.People.V1.Api.People do
           {:ok, GoogleApi.People.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def people_people_delete_contact(connection, people_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :access_token => :query
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -212,19 +212,19 @@ defmodule GoogleApi.People.V1.Api.People do
   - connection (GoogleApi.People.V1.Connection): Connection to server
   - people_id (String.t): Part of &#x60;resourceName&#x60;. The resource name of the person to provide information about.  - To get information about the authenticated user, specify &#x60;people/me&#x60;. - To get information about a google account, specify  &#x60;people/&#x60;&lt;var&gt;account_id&lt;/var&gt;. - To get information about a contact, specify the resource name that   identifies the contact as returned by [&#x60;people.connections.list&#x60;](/people/api/rest/v1/people.connections/list).
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :personFields (String.t): **Required.** A field mask to restrict which fields on the person are returned. Multiple fields can be specified by separating them with commas. Valid values are:  * addresses * ageRanges * biographies * birthdays * braggingRights * coverPhotos * emailAddresses * events * genders * imClients * interests * locales * memberships * metadata * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * relationshipInterests * relationshipStatuses * residences * sipAddresses * skills * taglines * urls * userDefined
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :requestMask.includeField (String.t): **Required.** Comma-separated list of person fields to be included in the response. Each path should start with &#x60;person.&#x60;: for example, &#x60;person.names&#x60; or &#x60;person.photos&#x60;.
+    - :personFields (String.t): **Required.** A field mask to restrict which fields on the person are returned. Multiple fields can be specified by separating them with commas. Valid values are:  * addresses * ageRanges * biographies * birthdays * braggingRights * coverPhotos * emailAddresses * events * genders * imClients * interests * locales * memberships * metadata * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * relationshipInterests * relationshipStatuses * residences * sipAddresses * skills * taglines * urls * userDefined
 
   ## Returns
 
@@ -235,19 +235,19 @@ defmodule GoogleApi.People.V1.Api.People do
           {:ok, GoogleApi.People.V1.Model.Person.t()} | {:error, Tesla.Env.t()}
   def people_people_get(connection, people_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :personFields => :query,
-      :"requestMask.includeField" => :query
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :"requestMask.includeField" => :query,
+      :personFields => :query
     }
 
     request =
@@ -270,17 +270,17 @@ defmodule GoogleApi.People.V1.Api.People do
 
   - connection (GoogleApi.People.V1.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :personFields (String.t): **Required.** A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are:  * addresses * ageRanges * biographies * birthdays * braggingRights * coverPhotos * emailAddresses * events * genders * imClients * interests * locales * memberships * metadata * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * relationshipInterests * relationshipStatuses * residences * sipAddresses * skills * taglines * urls * userDefined
     - :requestMask.includeField (String.t): **Required.** Comma-separated list of person fields to be included in the response. Each path should start with &#x60;person.&#x60;: for example, &#x60;person.names&#x60; or &#x60;person.photos&#x60;.
     - :resourceNames ([String.t]): The resource names of the people to provide information about.  - To get information about the authenticated user, specify &#x60;people/me&#x60;. - To get information about a google account, specify   &#x60;people/&#x60;&lt;var&gt;account_id&lt;/var&gt;. - To get information about a contact, specify the resource name that   identifies the contact as returned by [&#x60;people.connections.list&#x60;](/people/api/rest/v1/people.connections/list).  You can include up to 50 resource names in one request.
@@ -294,17 +294,17 @@ defmodule GoogleApi.People.V1.Api.People do
           {:ok, GoogleApi.People.V1.Model.GetPeopleResponse.t()} | {:error, Tesla.Env.t()}
   def people_people_get_batch_get(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :personFields => :query,
       :"requestMask.includeField" => :query,
       :resourceNames => :query
@@ -329,17 +329,17 @@ defmodule GoogleApi.People.V1.Api.People do
   - connection (GoogleApi.People.V1.Connection): Connection to server
   - people_id (String.t): Part of &#x60;person.resourceName&#x60;. The resource name for the person, assigned by the server. An ASCII string with a max length of 27 characters, in the form of &#x60;people/&#x60;&lt;var&gt;person_id&lt;/var&gt;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :updatePersonFields (String.t): **Required.** A field mask to restrict which fields on the person are updated. Multiple fields can be specified by separating them with commas. All updated fields will be replaced. Valid values are:  * addresses * biographies * birthdays * emailAddresses * events * genders * imClients * interests * locales * names * nicknames * occupations * organizations * phoneNumbers * relations * residences * sipAddresses * urls * userDefined
     - :body (Person): 
 
@@ -352,17 +352,17 @@ defmodule GoogleApi.People.V1.Api.People do
           {:ok, GoogleApi.People.V1.Model.Person.t()} | {:error, Tesla.Env.t()}
   def people_people_update_contact(connection, people_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :updatePersonFields => :query,
       :body => :body
     }

@@ -42,8 +42,7 @@ defmodule GoogleApi.PlusDomains.V1.Model.ActivityObjectActor do
           :verification => GoogleApi.PlusDomains.V1.Model.ActivityActorVerification.t()
         }
 
-  field(
-    :clientSpecificActorInfo,
+  field(:clientSpecificActorInfo,
     as: GoogleApi.PlusDomains.V1.Model.ActivityActorClientSpecificActorInfo
   )
 

@@ -33,8 +33,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1Location do
           :name => any()
         }
 
-  field(
-    :capabilities,
+  field(:capabilities,
     as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1Capability,
     type: :list
   )

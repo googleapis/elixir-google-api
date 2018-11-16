@@ -46,31 +46,26 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1Vid
             GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1SpeechTranscriptionConfig.t()
         }
 
-  field(
-    :explicitContentDetectionConfig,
+  field(:explicitContentDetectionConfig,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1ExplicitContentDetectionConfig
   )
 
-  field(
-    :labelDetectionConfig,
+  field(:labelDetectionConfig,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1LabelDetectionConfig
   )
 
-  field(
-    :segments,
+  field(:segments,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1VideoSegment,
     type: :list
   )
 
-  field(
-    :shotChangeDetectionConfig,
+  field(:shotChangeDetectionConfig,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1ShotChangeDetectionConfig
   )
 
-  field(
-    :speechTranscriptionConfig,
+  field(:speechTranscriptionConfig,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1SpeechTranscriptionConfig
   )

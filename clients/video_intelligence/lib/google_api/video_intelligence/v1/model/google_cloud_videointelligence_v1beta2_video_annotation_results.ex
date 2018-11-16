@@ -63,40 +63,34 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
 
   field(:error, as: GoogleApi.VideoIntelligence.V1.Model.GoogleRpcStatus)
 
-  field(
-    :explicitAnnotation,
+  field(:explicitAnnotation,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2ExplicitContentAnnotation
   )
 
-  field(
-    :frameLabelAnnotations,
+  field(:frameLabelAnnotations,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2LabelAnnotation,
     type: :list
   )
 
   field(:inputUri)
 
-  field(
-    :segmentLabelAnnotations,
+  field(:segmentLabelAnnotations,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2LabelAnnotation,
     type: :list
   )
 
-  field(
-    :shotAnnotations,
+  field(:shotAnnotations,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2VideoSegment,
     type: :list
   )
 
-  field(
-    :shotLabelAnnotations,
+  field(:shotLabelAnnotations,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2LabelAnnotation,
     type: :list
   )
 
-  field(
-    :speechTranscriptions,
+  field(:speechTranscriptions,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2SpeechTranscription,
     type: :list

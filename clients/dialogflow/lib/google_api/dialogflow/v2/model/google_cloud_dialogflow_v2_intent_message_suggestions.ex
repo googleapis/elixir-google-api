@@ -32,8 +32,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageSugg
             list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageSuggestion.t())
         }
 
-  field(
-    :suggestions,
+  field(:suggestions,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageSuggestion,
     type: :list
   )

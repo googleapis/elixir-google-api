@@ -49,8 +49,7 @@ defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Index do
   field(:kind)
   field(:projectId)
 
-  field(
-    :properties,
+  field(:properties,
     as: GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1IndexedProperty,
     type: :list
   )

@@ -57,8 +57,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Enterprise do
   field(:pubsubTopic)
   field(:signinDetails, as: GoogleApi.AndroidManagement.V1.Model.SigninDetail, type: :list)
 
-  field(
-    :termsAndConditions,
+  field(:termsAndConditions,
     as: GoogleApi.AndroidManagement.V1.Model.TermsAndConditions,
     type: :list
   )

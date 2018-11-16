@@ -32,8 +32,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CategoricalStatsResult do
             list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CategoricalStatsHistogramBucket.t())
         }
 
-  field(
-    :valueFrequencyHistogramBuckets,
+  field(:valueFrequencyHistogramBuckets,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CategoricalStatsHistogramBucket,
     type: :list
   )

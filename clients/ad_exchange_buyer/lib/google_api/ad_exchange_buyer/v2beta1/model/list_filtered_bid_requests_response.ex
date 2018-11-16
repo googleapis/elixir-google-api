@@ -34,8 +34,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListFilteredBidRequestsRespons
           :nextPageToken => any()
         }
 
-  field(
-    :calloutStatusRows,
+  field(:calloutStatusRows,
     as: GoogleApi.AdExchangeBuyer.V2beta1.Model.CalloutStatusRow,
     type: :list
   )

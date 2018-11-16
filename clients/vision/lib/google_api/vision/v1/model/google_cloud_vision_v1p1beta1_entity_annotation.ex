@@ -53,19 +53,14 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1EntityAnnotation d
   field(:description)
   field(:locale)
 
-  field(
-    :locations,
+  field(:locations,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1LocationInfo,
     type: :list
   )
 
   field(:mid)
 
-  field(
-    :properties,
-    as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1Property,
-    type: :list
-  )
+  field(:properties, as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1Property, type: :list)
 
   field(:score)
   field(:topicality)

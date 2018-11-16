@@ -39,8 +39,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoTypeConfig do
   field(:description)
   field(:displayName)
 
-  field(
-    :largeCustomDictionary,
+  field(:largeCustomDictionary,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LargeCustomDictionaryConfig
   )
 end

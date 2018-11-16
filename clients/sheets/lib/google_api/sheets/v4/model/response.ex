@@ -78,8 +78,7 @@ defmodule GoogleApi.Sheets.V4.Model.Response do
   field(:addSheet, as: GoogleApi.Sheets.V4.Model.AddSheetResponse)
   field(:createDeveloperMetadata, as: GoogleApi.Sheets.V4.Model.CreateDeveloperMetadataResponse)
 
-  field(
-    :deleteConditionalFormatRule,
+  field(:deleteConditionalFormatRule,
     as: GoogleApi.Sheets.V4.Model.DeleteConditionalFormatRuleResponse
   )
 
@@ -89,15 +88,13 @@ defmodule GoogleApi.Sheets.V4.Model.Response do
   field(:duplicateSheet, as: GoogleApi.Sheets.V4.Model.DuplicateSheetResponse)
   field(:findReplace, as: GoogleApi.Sheets.V4.Model.FindReplaceResponse)
 
-  field(
-    :updateConditionalFormatRule,
+  field(:updateConditionalFormatRule,
     as: GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRuleResponse
   )
 
   field(:updateDeveloperMetadata, as: GoogleApi.Sheets.V4.Model.UpdateDeveloperMetadataResponse)
 
-  field(
-    :updateEmbeddedObjectPosition,
+  field(:updateEmbeddedObjectPosition,
     as: GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionResponse
   )
 end

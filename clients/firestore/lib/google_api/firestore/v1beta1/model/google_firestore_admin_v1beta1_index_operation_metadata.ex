@@ -45,8 +45,7 @@ defmodule GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1IndexOper
 
   field(:cancelled)
 
-  field(
-    :documentProgress,
+  field(:documentProgress,
     as: GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1Progress
   )
 

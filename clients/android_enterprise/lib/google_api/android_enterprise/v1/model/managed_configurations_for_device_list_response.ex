@@ -36,8 +36,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsForDeviceLis
 
   field(:kind)
 
-  field(
-    :managedConfigurationForDevice,
+  field(:managedConfigurationForDevice,
     as: GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration,
     type: :list
   )

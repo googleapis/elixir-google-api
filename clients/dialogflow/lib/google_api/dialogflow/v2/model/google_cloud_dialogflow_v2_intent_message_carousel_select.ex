@@ -34,8 +34,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageCaro
             )
         }
 
-  field(
-    :items,
+  field(:items,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageCarouselSelectItem,
     type: :list
   )

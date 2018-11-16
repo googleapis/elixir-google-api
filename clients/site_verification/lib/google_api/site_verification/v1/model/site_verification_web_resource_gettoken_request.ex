@@ -34,8 +34,7 @@ defmodule GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceGettoke
           :verificationMethod => any()
         }
 
-  field(
-    :site,
+  field(:site,
     as: GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceGettokenRequestSite
   )
 

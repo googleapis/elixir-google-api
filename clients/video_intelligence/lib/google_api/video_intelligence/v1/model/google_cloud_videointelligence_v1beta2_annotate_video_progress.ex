@@ -34,8 +34,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
             )
         }
 
-  field(
-    :annotationProgress,
+  field(:annotationProgress,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2VideoAnnotationProgress,
     type: :list

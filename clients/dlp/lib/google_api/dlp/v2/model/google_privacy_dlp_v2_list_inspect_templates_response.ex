@@ -33,8 +33,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListInspectTemplatesResponse 
           :nextPageToken => any()
         }
 
-  field(
-    :inspectTemplates,
+  field(:inspectTemplates,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate,
     type: :list
   )

@@ -34,8 +34,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeltaPresenceEstimationResult
             )
         }
 
-  field(
-    :deltaPresenceEstimationHistogram,
+  field(:deltaPresenceEstimationHistogram,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeltaPresenceEstimationHistogramBucket,
     type: :list
   )

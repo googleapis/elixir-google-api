@@ -44,14 +44,12 @@ defmodule GoogleApi.Content.V2.Model.OrderinvoicesCreateRefundInvoiceRequest do
   field(:invoiceId)
   field(:operationId)
 
-  field(
-    :refundOnlyOption,
+  field(:refundOnlyOption,
     as:
       GoogleApi.Content.V2.Model.OrderinvoicesCustomBatchRequestEntryCreateRefundInvoiceRefundOption
   )
 
-  field(
-    :returnOption,
+  field(:returnOption,
     as:
       GoogleApi.Content.V2.Model.OrderinvoicesCustomBatchRequestEntryCreateRefundInvoiceReturnOption
   )

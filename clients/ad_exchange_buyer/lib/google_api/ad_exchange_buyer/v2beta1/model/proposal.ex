@@ -71,8 +71,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal do
   field(:billedBuyer, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.Buyer)
   field(:buyer, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.Buyer)
 
-  field(
-    :buyerContacts,
+  field(:buyerContacts,
     as: GoogleApi.AdExchangeBuyer.V2beta1.Model.ContactInformation,
     type: :list
   )
@@ -91,8 +90,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal do
   field(:proposalState)
   field(:seller, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.Seller)
 
-  field(
-    :sellerContacts,
+  field(:sellerContacts,
     as: GoogleApi.AdExchangeBuyer.V2beta1.Model.ContactInformation,
     type: :list
   )

@@ -36,8 +36,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterConfiguration do
 
   field(:kind)
 
-  field(
-    :mysqlReplicaConfiguration,
+  field(:mysqlReplicaConfiguration,
     as: GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterMySqlReplicaConfiguration
   )
 end

@@ -34,8 +34,7 @@ defmodule GoogleApi.TagManager.V2.Model.ListContainerVersionsResponse do
           :nextPageToken => any()
         }
 
-  field(
-    :containerVersionHeader,
+  field(:containerVersionHeader,
     as: GoogleApi.TagManager.V2.Model.ContainerVersionHeader,
     type: :list
   )

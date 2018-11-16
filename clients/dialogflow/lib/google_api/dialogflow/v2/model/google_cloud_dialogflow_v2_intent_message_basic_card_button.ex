@@ -34,8 +34,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageBasi
           :title => any()
         }
 
-  field(
-    :openUriAction,
+  field(:openUriAction,
     as:
       GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageBasicCardButtonOpenUriAction
   )

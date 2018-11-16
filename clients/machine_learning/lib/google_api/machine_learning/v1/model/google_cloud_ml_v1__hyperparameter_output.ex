@@ -43,15 +43,13 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1HyperparameterOutput
           :trialId => any()
         }
 
-  field(
-    :allMetrics,
+  field(:allMetrics,
     as:
       GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1HyperparameterOutputHyperparameterMetric,
     type: :list
   )
 
-  field(
-    :finalMetric,
+  field(:finalMetric,
     as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1HyperparameterOutputHyperparameterMetric
   )
 

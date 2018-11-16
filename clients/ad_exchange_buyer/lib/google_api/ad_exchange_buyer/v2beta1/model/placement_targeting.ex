@@ -34,8 +34,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.PlacementTargeting do
           :urlTargeting => GoogleApi.AdExchangeBuyer.V2beta1.Model.UrlTargeting.t()
         }
 
-  field(
-    :mobileApplicationTargeting,
+  field(:mobileApplicationTargeting,
     as: GoogleApi.AdExchangeBuyer.V2beta1.Model.MobileApplicationTargeting
   )
 

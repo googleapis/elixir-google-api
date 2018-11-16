@@ -36,8 +36,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageList
           :title => any()
         }
 
-  field(
-    :items,
+  field(:items,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageListSelectItem,
     type: :list
   )

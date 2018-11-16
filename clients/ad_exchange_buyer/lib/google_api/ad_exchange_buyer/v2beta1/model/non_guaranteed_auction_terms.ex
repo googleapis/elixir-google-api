@@ -36,8 +36,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.NonGuaranteedAuctionTerms do
 
   field(:autoOptimizePrivateAuction)
 
-  field(
-    :reservePricesPerBuyer,
+  field(:reservePricesPerBuyer,
     as: GoogleApi.AdExchangeBuyer.V2beta1.Model.PricePerBuyer,
     type: :list
   )

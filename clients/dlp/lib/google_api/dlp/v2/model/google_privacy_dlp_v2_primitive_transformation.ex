@@ -57,23 +57,20 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrimitiveTransformation do
   field(:characterMaskConfig, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CharacterMaskConfig)
   field(:cryptoHashConfig, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoHashConfig)
 
-  field(
-    :cryptoReplaceFfxFpeConfig,
+  field(:cryptoReplaceFfxFpeConfig,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoReplaceFfxFpeConfig
   )
 
   field(:dateShiftConfig, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DateShiftConfig)
 
-  field(
-    :fixedSizeBucketingConfig,
+  field(:fixedSizeBucketingConfig,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FixedSizeBucketingConfig
   )
 
   field(:redactConfig, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RedactConfig)
   field(:replaceConfig, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ReplaceValueConfig)
 
-  field(
-    :replaceWithInfoTypeConfig,
+  field(:replaceWithInfoTypeConfig,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ReplaceWithInfoTypeConfig
   )
 

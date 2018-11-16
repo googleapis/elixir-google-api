@@ -65,8 +65,7 @@ defmodule GoogleApi.Content.V2.Model.Account do
   field(:users, as: GoogleApi.Content.V2.Model.AccountUser, type: :list)
   field(:websiteUrl)
 
-  field(
-    :youtubeChannelLinks,
+  field(:youtubeChannelLinks,
     as: GoogleApi.Content.V2.Model.AccountYouTubeChannelLink,
     type: :list
   )

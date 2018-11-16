@@ -34,8 +34,7 @@ defmodule GoogleApi.Content.V2.Model.OrdersCreateTestReturnRequest do
             )
         }
 
-  field(
-    :items,
+  field(:items,
     as: GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryCreateTestReturnReturnItem,
     type: :list
   )

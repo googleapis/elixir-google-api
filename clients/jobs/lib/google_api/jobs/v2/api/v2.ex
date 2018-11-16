@@ -31,23 +31,23 @@ defmodule GoogleApi.Jobs.V2.Api.V2 do
 
   - connection (GoogleApi.Jobs.V2.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
     - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :companyName (String.t): Optional.  If provided, restricts completion to the specified company.
+    - :scope (String.t): Optional.  The scope of the completion. The defaults is CompletionScope.PUBLIC.
     - :pageSize (integer()): Required.  Completion result count. The maximum allowed page size is 10.
     - :query (String.t): Required.  The query used to generate suggestions.
     - :languageCode (String.t): Required.  The language of the query. This is the BCP-47 language code, such as \&quot;en-US\&quot; or \&quot;sr-Latn\&quot;. For more information, see [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).  For CompletionType.JOB_TITLE type, only open jobs with same language_code are returned.  For CompletionType.COMPANY_NAME type, only companies having open jobs with same language_code are returned.  For CompletionType.COMBINED type, only open jobs with same language_code or companies having open jobs with same language_code are returned.
     - :type (String.t): Optional.  The completion topic. The default is CompletionType.COMBINED.
-    - :companyName (String.t): Optional.  If provided, restricts completion to the specified company.
-    - :scope (String.t): Optional.  The scope of the completion. The defaults is CompletionScope.PUBLIC.
 
   ## Returns
 
@@ -58,23 +58,23 @@ defmodule GoogleApi.Jobs.V2.Api.V2 do
           {:ok, GoogleApi.Jobs.V2.Model.CompleteQueryResponse.t()} | {:error, Tesla.Env.t()}
   def jobs_complete(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :companyName => :query,
+      :scope => :query,
       :pageSize => :query,
       :query => :query,
       :languageCode => :query,
-      :type => :query,
-      :companyName => :query,
-      :scope => :query
+      :type => :query
     }
 
     request =

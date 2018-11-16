@@ -65,8 +65,7 @@ defmodule GoogleApi.Drive.V3.Model.Permission do
   field(:photoLink)
   field(:role)
 
-  field(
-    :teamDrivePermissionDetails,
+  field(:teamDrivePermissionDetails,
     as: GoogleApi.Drive.V3.Model.PermissionTeamDrivePermissionDetails,
     type: :list
   )

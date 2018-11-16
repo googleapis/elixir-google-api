@@ -41,16 +41,14 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1WebDetectionWebPag
           :url => any()
         }
 
-  field(
-    :fullMatchingImages,
+  field(:fullMatchingImages,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1WebDetectionWebImage,
     type: :list
   )
 
   field(:pageTitle)
 
-  field(
-    :partialMatchingImages,
+  field(:partialMatchingImages,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1WebDetectionWebImage,
     type: :list
   )

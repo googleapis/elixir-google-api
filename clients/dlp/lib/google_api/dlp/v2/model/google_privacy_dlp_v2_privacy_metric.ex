@@ -45,13 +45,11 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrivacyMetric do
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2NumericalStatsConfig.t()
         }
 
-  field(
-    :categoricalStatsConfig,
+  field(:categoricalStatsConfig,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CategoricalStatsConfig
   )
 
-  field(
-    :deltaPresenceEstimationConfig,
+  field(:deltaPresenceEstimationConfig,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeltaPresenceEstimationConfig
   )
 

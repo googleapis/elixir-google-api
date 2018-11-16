@@ -47,8 +47,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryParameters d
   field(:payload, type: :map)
   field(:resetContexts)
 
-  field(
-    :sessionEntityTypes,
+  field(:sessionEntityTypes,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType,
     type: :list
   )

@@ -73,8 +73,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.ExternallyHostedApk do
   field(:packageName)
   field(:usesFeatures, type: :list)
 
-  field(
-    :usesPermissions,
+  field(:usesPermissions,
     as: GoogleApi.AndroidPublisher.V2.Model.ExternallyHostedApkUsesPermission,
     type: :list
   )

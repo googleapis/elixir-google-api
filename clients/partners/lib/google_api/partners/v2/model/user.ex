@@ -56,8 +56,7 @@ defmodule GoogleApi.Partners.V2.Model.User do
 
   field(:afaInfoShared)
 
-  field(
-    :availableAdwordsManagerAccounts,
+  field(:availableAdwordsManagerAccounts,
     as: GoogleApi.Partners.V2.Model.AdWordsManagerAccountInfo,
     type: :list
   )

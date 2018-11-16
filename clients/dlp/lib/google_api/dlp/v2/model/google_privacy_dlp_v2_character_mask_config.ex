@@ -37,8 +37,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CharacterMaskConfig do
           :reverseOrder => any()
         }
 
-  field(
-    :charactersToIgnore,
+  field(:charactersToIgnore,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CharsToIgnore,
     type: :list
   )

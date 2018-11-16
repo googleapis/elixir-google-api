@@ -42,8 +42,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.MarketplaceTargeting do
 
   field(:geoTargeting, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting)
 
-  field(
-    :inventorySizeTargeting,
+  field(:inventorySizeTargeting,
     as: GoogleApi.AdExchangeBuyer.V2beta1.Model.InventorySizeTargeting
   )
 

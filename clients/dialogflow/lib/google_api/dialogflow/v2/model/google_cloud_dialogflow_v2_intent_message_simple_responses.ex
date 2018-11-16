@@ -34,8 +34,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageSimp
             )
         }
 
-  field(
-    :simpleResponses,
+  field(:simpleResponses,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageSimpleResponse,
     type: :list
   )

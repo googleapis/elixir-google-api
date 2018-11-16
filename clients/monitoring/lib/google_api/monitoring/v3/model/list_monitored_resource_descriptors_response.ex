@@ -36,8 +36,7 @@ defmodule GoogleApi.Monitoring.V3.Model.ListMonitoredResourceDescriptorsResponse
 
   field(:nextPageToken)
 
-  field(
-    :resourceDescriptors,
+  field(:resourceDescriptors,
     as: GoogleApi.Monitoring.V3.Model.MonitoredResourceDescriptor,
     type: :list
   )

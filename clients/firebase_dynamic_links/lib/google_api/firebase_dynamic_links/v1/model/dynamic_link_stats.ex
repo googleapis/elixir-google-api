@@ -32,8 +32,7 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkStats do
             list(GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkEventStat.t())
         }
 
-  field(
-    :linkEventStats,
+  field(:linkEventStats,
     as: GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkEventStat,
     type: :list
   )

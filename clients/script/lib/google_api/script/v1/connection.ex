@@ -23,11 +23,11 @@ defmodule GoogleApi.Script.V1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # Read, send, delete, and manage your email
+      # Read, compose, send, and permanently delete all your email from Gmail
       "https://mail.google.com/",
-      # Manage your calendars
+      # See, edit, share, and permanently delete all the calendars you can access using Google Calendar
       "https://www.google.com/calendar/feeds",
-      # Manage your contacts
+      # See, edit, download, and permanently delete your contacts
       "https://www.google.com/m8/feeds",
       # View and manage the provisioning of groups on your domain
       "https://www.googleapis.com/auth/admin.directory.group",
@@ -35,7 +35,7 @@ defmodule GoogleApi.Script.V1.Connection do
       "https://www.googleapis.com/auth/admin.directory.user",
       # View and manage your Google Docs documents
       "https://www.googleapis.com/auth/documents",
-      # View and manage the files in your Google Drive
+      # See, edit, create, and delete all of your Google Drive files
       "https://www.googleapis.com/auth/drive",
       # View and manage your forms in Google Drive
       "https://www.googleapis.com/auth/forms",
@@ -43,7 +43,19 @@ defmodule GoogleApi.Script.V1.Connection do
       "https://www.googleapis.com/auth/forms.currentonly",
       # View and manage your Google Groups
       "https://www.googleapis.com/auth/groups",
-      # View and manage your spreadsheets in Google Drive
+      # Create and update Google Apps Script deployments
+      "https://www.googleapis.com/auth/script.deployments",
+      # View Google Apps Script deployments
+      "https://www.googleapis.com/auth/script.deployments.readonly",
+      # View Google Apps Script project&#39;s metrics
+      "https://www.googleapis.com/auth/script.metrics",
+      # View Google Apps Script processes
+      "https://www.googleapis.com/auth/script.processes",
+      # Create and update Google Apps Script projects
+      "https://www.googleapis.com/auth/script.projects",
+      # View Google Apps Script projects
+      "https://www.googleapis.com/auth/script.projects.readonly",
+      # See, edit, create, and delete your spreadsheets in Google Drive
       "https://www.googleapis.com/auth/spreadsheets",
       # View your email address
       "https://www.googleapis.com/auth/userinfo.email"

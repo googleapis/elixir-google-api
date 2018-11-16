@@ -64,8 +64,7 @@ defmodule GoogleApi.DFAReporting.V28.Model.TargetingTemplate do
   field(:geoTargeting, as: GoogleApi.DFAReporting.V28.Model.GeoTargeting)
   field(:id)
 
-  field(
-    :keyValueTargetingExpression,
+  field(:keyValueTargetingExpression,
     as: GoogleApi.DFAReporting.V28.Model.KeyValueTargetingExpression
   )
 

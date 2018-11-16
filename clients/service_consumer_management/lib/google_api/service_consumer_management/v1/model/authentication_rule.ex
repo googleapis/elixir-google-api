@@ -40,8 +40,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.AuthenticationRule do
   field(:allowWithoutCredential)
   field(:oauth, as: GoogleApi.ServiceConsumerManagement.V1.Model.OAuthRequirements)
 
-  field(
-    :requirements,
+  field(:requirements,
     as: GoogleApi.ServiceConsumerManagement.V1.Model.AuthRequirement,
     type: :list
   )

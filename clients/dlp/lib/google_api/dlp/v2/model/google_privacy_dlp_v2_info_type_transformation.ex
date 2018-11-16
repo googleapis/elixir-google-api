@@ -36,8 +36,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeTransformation do
 
   field(:infoTypes, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType, type: :list)
 
-  field(
-    :primitiveTransformation,
+  field(:primitiveTransformation,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrimitiveTransformation
   )
 end

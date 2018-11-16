@@ -47,16 +47,14 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfigur
           :token => any()
         }
 
-  field(
-    :draft,
+  field(:draft,
     as: GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfigurationDetail
   )
 
   field(:id)
   field(:kind)
 
-  field(
-    :published,
+  field(:published,
     as: GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfigurationDetail
   )
 

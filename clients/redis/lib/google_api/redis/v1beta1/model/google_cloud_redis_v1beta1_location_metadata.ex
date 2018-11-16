@@ -31,8 +31,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.GoogleCloudRedisV1beta1LocationMetadata 
           :availableZones => map()
         }
 
-  field(
-    :availableZones,
+  field(:availableZones,
     as: GoogleApi.Redis.V1beta1.Model.GoogleCloudRedisV1beta1ZoneMetadata,
     type: :map
   )

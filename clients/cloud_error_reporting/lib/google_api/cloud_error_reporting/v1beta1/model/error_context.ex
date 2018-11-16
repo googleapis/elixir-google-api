@@ -41,8 +41,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorContext do
   field(:httpRequest, as: GoogleApi.CloudErrorReporting.V1beta1.Model.HttpRequestContext)
   field(:reportLocation, as: GoogleApi.CloudErrorReporting.V1beta1.Model.SourceLocation)
 
-  field(
-    :sourceReferences,
+  field(:sourceReferences,
     as: GoogleApi.CloudErrorReporting.V1beta1.Model.SourceReference,
     type: :list
   )

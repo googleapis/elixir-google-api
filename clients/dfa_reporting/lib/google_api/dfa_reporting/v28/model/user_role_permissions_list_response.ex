@@ -35,11 +35,7 @@ defmodule GoogleApi.DFAReporting.V28.Model.UserRolePermissionsListResponse do
 
   field(:kind)
 
-  field(
-    :userRolePermissions,
-    as: GoogleApi.DFAReporting.V28.Model.UserRolePermission,
-    type: :list
-  )
+  field(:userRolePermissions, as: GoogleApi.DFAReporting.V28.Model.UserRolePermission, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DFAReporting.V28.Model.UserRolePermissionsListResponse do

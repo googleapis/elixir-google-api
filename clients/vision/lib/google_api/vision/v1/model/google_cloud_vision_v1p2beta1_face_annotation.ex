@@ -76,8 +76,7 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1FaceAnnotation do
   field(:joyLikelihood)
   field(:landmarkingConfidence)
 
-  field(
-    :landmarks,
+  field(:landmarks,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1FaceAnnotationLandmark,
     type: :list
   )

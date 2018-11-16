@@ -22,7 +22,7 @@ defmodule GoogleApi.PubSub.V1.Model.CreateSnapshotRequest do
 
   ## Attributes
 
-  - labels (%{optional(String.t) &#x3D;&gt; String.t}): See &lt;a href&#x3D;\&quot;/pubsub/docs/labels\&quot;&gt; Creating and managing labels&lt;/a&gt;. Defaults to: `null`.
+  - labels (%{optional(String.t) &#x3D;&gt; String.t}): See &lt;a href&#x3D;\&quot;https://cloud.google.com/pubsub/docs/labels\&quot;&gt; Creating and managing labels&lt;/a&gt;. Defaults to: `null`.
   - subscription (String.t): The subscription whose backlog the snapshot retains. Specifically, the created snapshot is guaranteed to retain:  (a) The existing backlog on the subscription. More precisely, this is      defined as the messages in the subscription&#39;s backlog that are      unacknowledged upon the successful completion of the      &#x60;CreateSnapshot&#x60; request; as well as:  (b) Any messages published to the subscription&#39;s topic following the      successful completion of the CreateSnapshot request. Format is &#x60;projects/{project}/subscriptions/{sub}&#x60;. Defaults to: `null`.
   """
 

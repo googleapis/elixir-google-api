@@ -34,8 +34,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1KnowledgeAns
             )
         }
 
-  field(
-    :answers,
+  field(:answers,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1KnowledgeAnswersAnswer,
     type: :list
   )

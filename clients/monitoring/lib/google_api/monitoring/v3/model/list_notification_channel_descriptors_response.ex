@@ -34,8 +34,7 @@ defmodule GoogleApi.Monitoring.V3.Model.ListNotificationChannelDescriptorsRespon
           :nextPageToken => any()
         }
 
-  field(
-    :channelDescriptors,
+  field(:channelDescriptors,
     as: GoogleApi.Monitoring.V3.Model.NotificationChannelDescriptor,
     type: :list
   )

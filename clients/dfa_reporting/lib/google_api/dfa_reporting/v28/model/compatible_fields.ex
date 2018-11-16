@@ -45,25 +45,21 @@ defmodule GoogleApi.DFAReporting.V28.Model.CompatibleFields do
           :reportCompatibleFields => GoogleApi.DFAReporting.V28.Model.ReportCompatibleFields.t()
         }
 
-  field(
-    :crossDimensionReachReportCompatibleFields,
+  field(:crossDimensionReachReportCompatibleFields,
     as: GoogleApi.DFAReporting.V28.Model.CrossDimensionReachReportCompatibleFields
   )
 
-  field(
-    :floodlightReportCompatibleFields,
+  field(:floodlightReportCompatibleFields,
     as: GoogleApi.DFAReporting.V28.Model.FloodlightReportCompatibleFields
   )
 
   field(:kind)
 
-  field(
-    :pathToConversionReportCompatibleFields,
+  field(:pathToConversionReportCompatibleFields,
     as: GoogleApi.DFAReporting.V28.Model.PathToConversionReportCompatibleFields
   )
 
-  field(
-    :reachReportCompatibleFields,
+  field(:reachReportCompatibleFields,
     as: GoogleApi.DFAReporting.V28.Model.ReachReportCompatibleFields
   )
 

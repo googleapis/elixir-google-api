@@ -34,8 +34,7 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1AnnotateFileRespon
           :inputConfig => GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1InputConfig.t()
         }
 
-  field(
-    :responses,
+  field(:responses,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1AnnotateImageResponse,
     type: :list
   )

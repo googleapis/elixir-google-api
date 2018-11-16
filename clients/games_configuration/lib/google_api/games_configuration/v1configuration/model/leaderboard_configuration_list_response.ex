@@ -36,8 +36,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfigur
           :nextPageToken => any()
         }
 
-  field(
-    :items,
+  field(:items,
     as: GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfiguration,
     type: :list
   )

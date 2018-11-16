@@ -36,8 +36,7 @@ defmodule GoogleApi.DFAReporting.V28.Model.DirectorySiteContactsListResponse do
           :nextPageToken => any()
         }
 
-  field(
-    :directorySiteContacts,
+  field(:directorySiteContacts,
     as: GoogleApi.DFAReporting.V28.Model.DirectorySiteContact,
     type: :list
   )

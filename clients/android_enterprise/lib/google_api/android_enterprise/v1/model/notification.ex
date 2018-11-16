@@ -51,8 +51,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Notification do
           :timestampMillis => any()
         }
 
-  field(
-    :appRestrictionsSchemaChangeEvent,
+  field(:appRestrictionsSchemaChangeEvent,
     as: GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaChangeEvent
   )
 
@@ -64,8 +63,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Notification do
   field(:notificationType)
   field(:productApprovalEvent, as: GoogleApi.AndroidEnterprise.V1.Model.ProductApprovalEvent)
 
-  field(
-    :productAvailabilityChangeEvent,
+  field(:productAvailabilityChangeEvent,
     as: GoogleApi.AndroidEnterprise.V1.Model.ProductAvailabilityChangeEvent
   )
 
