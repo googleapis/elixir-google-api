@@ -106,13 +106,13 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :serviceFilter.service (String.t): [Optional] The exact value to match against [&#x60;ServiceContext.service&#x60;](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.service).
-    - :pageToken (String.t): [Optional] A &#x60;next_page_token&#x60; provided by a previous response.
     - :pageSize (integer()): [Optional] The maximum number of results to return per response.
     - :serviceFilter.version (String.t): [Optional] The exact value to match against [&#x60;ServiceContext.version&#x60;](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.version).
     - :serviceFilter.resourceType (String.t): [Optional] The exact value to match against [&#x60;ServiceContext.resource_type&#x60;](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.resource_type).
     - :timeRange.period (String.t): Restricts the query to the specified time range.
     - :groupId (String.t): [Required] The group for which events shall be returned.
+    - :pageToken (String.t): [Optional] A &#x60;next_page_token&#x60; provided by a previous response.
+    - :serviceFilter.service (String.t): [Optional] The exact value to match against [&#x60;ServiceContext.service&#x60;](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.service).
 
   ## Returns
 
@@ -140,13 +140,13 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :"serviceFilter.service" => :query,
-      :pageToken => :query,
       :pageSize => :query,
       :"serviceFilter.version" => :query,
       :"serviceFilter.resourceType" => :query,
       :"timeRange.period" => :query,
-      :groupId => :query
+      :groupId => :query,
+      :pageToken => :query,
+      :"serviceFilter.service" => :query
     }
 
     request =
@@ -248,17 +248,17 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :timeRange.period (String.t): Restricts the query to the specified time range.
     - :alignment (String.t): [Optional] The alignment of the timed counts to be returned. Default is &#x60;ALIGNMENT_EQUAL_AT_END&#x60;.
     - :groupId ([String.t]): [Optional] List all &lt;code&gt;ErrorGroupStats&lt;/code&gt; with these IDs.
     - :serviceFilter.service (String.t): [Optional] The exact value to match against [&#x60;ServiceContext.service&#x60;](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.service).
     - :pageSize (integer()): [Optional] The maximum number of results to return per response. Default is 20.
-    - :order (String.t): [Optional] The sort order in which the results are returned. Default is &#x60;COUNT_DESC&#x60;.
     - :serviceFilter.version (String.t): [Optional] The exact value to match against [&#x60;ServiceContext.version&#x60;](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.version).
+    - :order (String.t): [Optional] The sort order in which the results are returned. Default is &#x60;COUNT_DESC&#x60;.
     - :alignmentTime (DateTime.t): [Optional] Time where the timed counts shall be aligned if rounded alignment is chosen. Default is 00:00 UTC.
     - :serviceFilter.resourceType (String.t): [Optional] The exact value to match against [&#x60;ServiceContext.resource_type&#x60;](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.resource_type).
     - :timedCountDuration (String.t): [Optional] The preferred duration for a single returned &#x60;TimedCount&#x60;. If not set, no timed counts are returned.
     - :pageToken (String.t): [Optional] A &#x60;next_page_token&#x60; provided by a previous response. To view additional results, pass this token along with the identical query parameters as the first request.
+    - :timeRange.period (String.t): Restricts the query to the specified time range.
 
   ## Returns
 
@@ -286,17 +286,17 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :"timeRange.period" => :query,
       :alignment => :query,
       :groupId => :query,
       :"serviceFilter.service" => :query,
       :pageSize => :query,
-      :order => :query,
       :"serviceFilter.version" => :query,
+      :order => :query,
       :alignmentTime => :query,
       :"serviceFilter.resourceType" => :query,
       :timedCountDuration => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :"timeRange.period" => :query
     }
 
     request =
