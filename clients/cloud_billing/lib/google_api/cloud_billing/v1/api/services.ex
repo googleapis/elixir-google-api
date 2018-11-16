@@ -100,11 +100,11 @@ defmodule GoogleApi.CloudBilling.V1.Api.Services do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :endTime (DateTime.t): Optional exclusive end time of the time range for which the pricing versions will be returned. Timestamps in the future are not allowed. The time range has to be within a single calendar month in America/Los_Angeles timezone. Time range as a whole is optional. If not specified, the latest pricing will be returned (up to 12 hours old at most).
     - :pageToken (String.t): A token identifying a page of results to return. This should be a &#x60;next_page_token&#x60; value returned from a previous &#x60;ListSkus&#x60; call. If unspecified, the first page of results is returned.
     - :startTime (DateTime.t): Optional inclusive start time of the time range for which the pricing versions will be returned. Timestamps in the future are not allowed. The time range has to be within a single calendar month in America/Los_Angeles timezone. Time range as a whole is optional. If not specified, the latest pricing will be returned (up to 12 hours old at most).
     - :pageSize (integer()): Requested page size. Defaults to 5000.
     - :currencyCode (String.t): The ISO 4217 currency code for the pricing info in the response proto. Will use the conversion rate as of start_time. Optional. If not specified USD will be used.
-    - :endTime (DateTime.t): Optional exclusive end time of the time range for which the pricing versions will be returned. Timestamps in the future are not allowed. The time range has to be within a single calendar month in America/Los_Angeles timezone. Time range as a whole is optional. If not specified, the latest pricing will be returned (up to 12 hours old at most).
 
   ## Returns
 
@@ -126,11 +126,11 @@ defmodule GoogleApi.CloudBilling.V1.Api.Services do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
+      :endTime => :query,
       :pageToken => :query,
       :startTime => :query,
       :pageSize => :query,
-      :currencyCode => :query,
-      :endTime => :query
+      :currencyCode => :query
     }
 
     request =
