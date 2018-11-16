@@ -42,13 +42,13 @@ defmodule GoogleApi.KnowledgeGraphSearch.V1.Api.Entities do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :query (String.t): The literal query string for search.
-    - :types ([String.t]): Restricts returned entities with these types, e.g. Person (as defined in http://schema.org/Person). If multiple types are specified, returned entities will contain one or more of these types.
+    - :ids ([String.t]): The list of entity id to be used for search instead of query string. To specify multiple ids in the HTTP request, repeat the parameter in the URL as in ...?ids&#x3D;A&amp;ids&#x3D;B
     - :indent (boolean()): Enables indenting of json results.
     - :languages ([String.t]): The list of language codes (defined in ISO 693) to run the query with, e.g. &#39;en&#39;.
-    - :ids ([String.t]): The list of entity id to be used for search instead of query string. To specify multiple ids in the HTTP request, repeat the parameter in the URL as in ...?ids&#x3D;A&amp;ids&#x3D;B
     - :limit (integer()): Limits the number of entities to be returned.
     - :prefix (boolean()): Enables prefix match against names and aliases of entities
+    - :query (String.t): The literal query string for search.
+    - :types ([String.t]): Restricts returned entities with these types, e.g. Person (as defined in http://schema.org/Person). If multiple types are specified, returned entities will contain one or more of these types.
 
   ## Returns
 
@@ -71,13 +71,13 @@ defmodule GoogleApi.KnowledgeGraphSearch.V1.Api.Entities do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :query => :query,
-      :types => :query,
+      :ids => :query,
       :indent => :query,
       :languages => :query,
-      :ids => :query,
       :limit => :query,
-      :prefix => :query
+      :prefix => :query,
+      :query => :query,
+      :types => :query
     }
 
     request =
