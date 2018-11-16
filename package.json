@@ -2,7 +2,7 @@
   "repository": {},
   "dependencies": {
     "api-spec-converter": "^2.5.0",
-    "google-discovery-to-swagger": "git+https://github.com/chingor13/google-discovery-to-swagger.git#media-upload"
+    "google-discovery-to-swagger": "git+https://github.com/chingor13/google-discovery-to-swagger.git#param-order"
   },
   "scripts": {
     "api-spec-converter": "./node_modules/.bin/api-spec-converter"
