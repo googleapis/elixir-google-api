@@ -44,8 +44,8 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :languageCode (String.t): The preferred language for localized application info, as a BCP47 tag (e.g. \&quot;en-US\&quot;, \&quot;de\&quot;). If not specified the default language of the application will be used.
+    - :filter (String.t): The standard list filter.
     - :pageToken (String.t): The standard list page token.
-    - :pageSize (integer()): The standard list page size.
 
   ## Returns
 
@@ -73,8 +73,8 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
       :upload_protocol => :query,
       :uploadType => :query,
       :languageCode => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :filter => :query,
+      :pageToken => :query
     }
 
     request =
@@ -108,9 +108,9 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :projectId (String.t): The ID of the Google Cloud Platform project which will own the enterprise.
     - :enterpriseToken (String.t): The enterprise token appended to the callback URL.
     - :signupUrlName (String.t): The name of the SignupUrl used to sign up for the enterprise.
-    - :projectId (String.t): The ID of the Google Cloud Platform project which will own the enterprise.
     - :body (Enterprise): 
 
   ## Returns
@@ -133,9 +133,9 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
+      :projectId => :query,
       :enterpriseToken => :query,
       :signupUrlName => :query,
-      :projectId => :query,
       :body => :body
     }
 
