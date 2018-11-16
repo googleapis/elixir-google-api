@@ -180,8 +180,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :filter (String.t): The standard list filter.
-    - :pageToken (String.t): The standard list page token.
     - :pageSize (integer()): The standard list page size.
+    - :pageToken (String.t): The standard list page token.
 
   ## Returns
 
@@ -210,8 +210,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       :upload_protocol => :query,
       :uploadType => :query,
       :filter => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -319,9 +319,9 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): Pagination token, which can be used to request a specific page of &#x60;ListTransfersRequest&#x60; list results. For multiple-page results, &#x60;ListTransfersResponse&#x60; outputs a &#x60;next_page&#x60; token, which can be used as the &#x60;page_token&#x60; value to request the next page of list results.
-    - :pageSize (integer()): Page size. The default page size is the maximum value of 1000 results.
     - :dataSourceIds ([String.t]): When specified, only configurations of requested data sources are returned.
+    - :pageSize (integer()): Page size. The default page size is the maximum value of 1000 results.
+    - :pageToken (String.t): Pagination token, which can be used to request a specific page of &#x60;ListTransfersRequest&#x60; list results. For multiple-page results, &#x60;ListTransfersResponse&#x60; outputs a &#x60;next_page&#x60; token, which can be used as the &#x60;page_token&#x60; value to request the next page of list results.
 
   ## Returns
 
@@ -353,9 +353,9 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
+      :dataSourceIds => :query,
       :pageSize => :query,
-      :dataSourceIds => :query
+      :pageToken => :query
     }
 
     request =
@@ -392,8 +392,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :updateMask (String.t): Required list of fields to be updated in this request.
     - :authorizationCode (String.t): Optional OAuth2 authorization code to use with this transfer configuration. If it is provided, the transfer configuration will be associated with the authorizing user. In order to obtain authorization_code, please make a request to https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id&#x3D;&lt;datatransferapiclientid&gt;&amp;scope&#x3D;&lt;data_source_scopes&gt;&amp;redirect_uri&#x3D;&lt;redirect_uri&gt;  * client_id should be OAuth client_id of BigQuery DTS API for the given   data source returned by ListDataSources method. * data_source_scopes are the scopes returned by ListDataSources method. * redirect_uri is an optional parameter. If not specified, then   authorization code is posted to the opener of authorization flow window.   Otherwise it will be sent to the redirect uri. A special value of   urn:ietf:wg:oauth:2.0:oob means that authorization code should be   returned in the title bar of the browser, with the page text prompting   the user to copy the code and paste it in the application.
+    - :updateMask (String.t): Required list of fields to be updated in this request.
     - :body (TransferConfig): 
 
   ## Returns
@@ -426,8 +426,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :updateMask => :query,
       :authorizationCode => :query,
+      :updateMask => :query,
       :body => :body
     }
 
@@ -592,10 +592,10 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): Pagination token, which can be used to request a specific page of &#x60;ListTransferRunsRequest&#x60; list results. For multiple-page results, &#x60;ListTransferRunsResponse&#x60; outputs a &#x60;next_page&#x60; token, which can be used as the &#x60;page_token&#x60; value to request the next page of list results.
-    - :states ([String.t]): When specified, only transfer runs with requested states are returned.
     - :pageSize (integer()): Page size. The default page size is the maximum value of 1000 results.
+    - :pageToken (String.t): Pagination token, which can be used to request a specific page of &#x60;ListTransferRunsRequest&#x60; list results. For multiple-page results, &#x60;ListTransferRunsResponse&#x60; outputs a &#x60;next_page&#x60; token, which can be used as the &#x60;page_token&#x60; value to request the next page of list results.
     - :runAttempt (String.t): Indicates how run attempts are to be pulled.
+    - :states ([String.t]): When specified, only transfer runs with requested states are returned.
 
   ## Returns
 
@@ -627,10 +627,10 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
-      :states => :query,
       :pageSize => :query,
-      :runAttempt => :query
+      :pageToken => :query,
+      :runAttempt => :query,
+      :states => :query
     }
 
     request =
@@ -667,8 +667,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageSize (integer()): Page size. The default page size is the maximum value of 1000 results.
     - :messageTypes ([String.t]): Message types to return. If not populated - INFO, WARNING and ERROR messages are returned.
+    - :pageSize (integer()): Page size. The default page size is the maximum value of 1000 results.
     - :pageToken (String.t): Pagination token, which can be used to request a specific page of &#x60;ListTransferLogsRequest&#x60; list results. For multiple-page results, &#x60;ListTransferLogsResponse&#x60; outputs a &#x60;next_page&#x60; token, which can be used as the &#x60;page_token&#x60; value to request the next page of list results.
 
   ## Returns
@@ -701,8 +701,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageSize => :query,
       :messageTypes => :query,
+      :pageSize => :query,
       :pageToken => :query
     }
 
