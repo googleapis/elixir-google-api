@@ -820,10 +820,10 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :orderBy (String.t): Optional sort ordering for results. A comma-separated list of fields with an optional sort direction keyword. Supported fields are &#x60;updateTime&#x60; and &#x60;dueDate&#x60;. Supported direction keywords are &#x60;asc&#x60; and &#x60;desc&#x60;. If not specified, &#x60;updateTime desc&#x60; is the default behavior. Examples: &#x60;dueDate asc,updateTime desc&#x60;, &#x60;updateTime,dueDate desc&#x60;
-    - :pageToken (String.t): nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned.  The list request must be otherwise identical to the one that resulted in this token.
     - :pageSize (integer()): Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum.  The server may return fewer than the specified number of results.
     - :courseWorkStates ([String.t]): Restriction on the work status to return. Only courseWork that matches is returned. If unspecified, items with a work status of &#x60;PUBLISHED&#x60; is returned.
+    - :orderBy (String.t): Optional sort ordering for results. A comma-separated list of fields with an optional sort direction keyword. Supported fields are &#x60;updateTime&#x60; and &#x60;dueDate&#x60;. Supported direction keywords are &#x60;asc&#x60; and &#x60;desc&#x60;. If not specified, &#x60;updateTime desc&#x60; is the default behavior. Examples: &#x60;dueDate asc,updateTime desc&#x60;, &#x60;updateTime,dueDate desc&#x60;
+    - :pageToken (String.t): nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned.  The list request must be otherwise identical to the one that resulted in this token.
 
   ## Returns
 
@@ -845,10 +845,10 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :orderBy => :query,
-      :pageToken => :query,
       :pageSize => :query,
-      :courseWorkStates => :query
+      :courseWorkStates => :query,
+      :orderBy => :query,
+      :pageToken => :query
     }
 
     request =
@@ -1097,8 +1097,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
     - :userId (String.t): Optional argument to restrict returned student work to those owned by the student with the specified identifier. The identifier can be one of the following:  * the numeric identifier for the user * the email address of the user * the string literal &#x60;\&quot;me\&quot;&#x60;, indicating the requesting user
     - :late (String.t): Requested lateness value. If specified, returned student submissions are restricted by the requested value. If unspecified, submissions are returned regardless of &#x60;late&#x60; value.
     - :pageToken (String.t): nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned.  The list request must be otherwise identical to the one that resulted in this token.
-    - :pageSize (integer()): Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum.  The server may return fewer than the specified number of results.
     - :states ([String.t]): Requested submission states. If specified, returned student submissions match one of the specified submission states.
+    - :pageSize (integer()): Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum.  The server may return fewer than the specified number of results.
 
   ## Returns
 
@@ -1135,8 +1135,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       :userId => :query,
       :late => :query,
       :pageToken => :query,
-      :pageSize => :query,
-      :states => :query
+      :states => :query,
+      :pageSize => :query
     }
 
     request =
@@ -1719,11 +1719,11 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :studentId (String.t): Restricts returned courses to those having a student with the specified identifier. The identifier can be one of the following:  * the numeric identifier for the user * the email address of the user * the string literal &#x60;\&quot;me\&quot;&#x60;, indicating the requesting user
     - :pageToken (String.t): nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned.  The list request must be otherwise identical to the one that resulted in this token.
     - :pageSize (integer()): Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum.  The server may return fewer than the specified number of results.
     - :teacherId (String.t): Restricts returned courses to those having a teacher with the specified identifier. The identifier can be one of the following:  * the numeric identifier for the user * the email address of the user * the string literal &#x60;\&quot;me\&quot;&#x60;, indicating the requesting user
     - :courseStates ([String.t]): Restricts returned courses to those in one of the specified states The default value is ACTIVE, ARCHIVED, PROVISIONED, DECLINED.
-    - :studentId (String.t): Restricts returned courses to those having a student with the specified identifier. The identifier can be one of the following:  * the numeric identifier for the user * the email address of the user * the string literal &#x60;\&quot;me\&quot;&#x60;, indicating the requesting user
 
   ## Returns
 
@@ -1745,11 +1745,11 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
+      :studentId => :query,
       :pageToken => :query,
       :pageSize => :query,
       :teacherId => :query,
-      :courseStates => :query,
-      :studentId => :query
+      :courseStates => :query
     }
 
     request =
