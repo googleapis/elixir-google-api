@@ -131,7 +131,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
           :dataRoamingDisabled => any(),
           :debuggingFeaturesAllowed => any(),
           :defaultPermissionPolicy => any(),
-          :deviceOwnerLockScreenInfo => GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t(),
+          :deviceOwnerLockScreenInfo =>
+            GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t(),
           :encryptionPolicy => any(),
           :ensureVerifyAppsEnabled => any(),
           :factoryResetDisabled => any(),
@@ -154,7 +155,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
           :openNetworkConfiguration => map(),
           :outgoingBeamDisabled => any(),
           :outgoingCallsDisabled => any(),
-          :passwordPolicies => list(GoogleApi.AndroidManagement.V1.Model.PasswordRequirements.t()),
+          :passwordPolicies =>
+            list(GoogleApi.AndroidManagement.V1.Model.PasswordRequirements.t()),
           :passwordRequirements => GoogleApi.AndroidManagement.V1.Model.PasswordRequirements.t(),
           :permissionGrants => list(GoogleApi.AndroidManagement.V1.Model.PermissionGrant.t()),
           :permittedInputMethods => GoogleApi.AndroidManagement.V1.Model.PackageNameList.t(),
