@@ -45,8 +45,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
   @type t :: %__MODULE__{
           :basicCard =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageBasicCard.t(),
-          :card =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageCard.t(),
+          :card => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageCard.t(),
           :carouselSelect =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageCarouselSelect.t(),
           :image =>

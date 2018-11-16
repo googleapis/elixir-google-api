@@ -33,16 +33,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   - parent (String.t): Required. The name of the project for which a list of supported instance configurations is requested. Values are of the form &#x60;projects/&lt;project&gt;&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :pageToken (String.t): If non-empty, &#x60;page_token&#x60; should contain a next_page_token from a previous ListInstanceConfigsResponse.
     - :pageSize (integer()): Number of instance configurations to be returned in the response. If 0 or less, defaults to the server&#39;s maximum allowed page size.
 
@@ -62,16 +62,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
       :pageToken => :query,
       :pageSize => :query
     }
@@ -100,16 +100,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   - parent (String.t): Required. The name of the project in which to create the instance. Values are of the form &#x60;projects/&lt;project&gt;&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (CreateInstanceRequest): 
 
   ## Returns
@@ -122,16 +122,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   def spanner_projects_instances_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
       :body => :body
     }
 
@@ -157,16 +157,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   - parent (String.t): Required. The name of the instance that will serve the new database. Values are of the form &#x60;projects/&lt;project&gt;/instances/&lt;instance&gt;&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (CreateDatabaseRequest): 
 
   ## Returns
@@ -184,16 +184,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
       :body => :body
     }
 
@@ -219,16 +219,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   - database (String.t): Required. The database to be dropped.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
 
   ## Returns
 
@@ -248,16 +248,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -282,16 +282,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   - database (String.t): Required. The database whose schema we wish to get.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
 
   ## Returns
 
@@ -308,16 +308,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -342,16 +342,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   - resource (String.t): REQUIRED: The Cloud Spanner resource for which the policy is being retrieved. The format is &#x60;projects/&lt;project ID&gt;/instances/&lt;instance ID&gt;&#x60; for instance resources and &#x60;projects/&lt;project ID&gt;/instances/&lt;instance ID&gt;/databases/&lt;database ID&gt;&#x60; for database resources.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (GetIamPolicyRequest): 
 
   ## Returns
@@ -372,16 +372,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
       :body => :body
     }
 
@@ -407,16 +407,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   - parent (String.t): Required. The instance whose databases should be listed. Values are of the form &#x60;projects/&lt;project&gt;/instances/&lt;instance&gt;&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :pageToken (String.t): If non-empty, &#x60;page_token&#x60; should contain a next_page_token from a previous ListDatabasesResponse.
     - :pageSize (integer()): Number of databases to be returned in the response. If 0 or less, defaults to the server&#39;s maximum allowed page size.
 
@@ -435,16 +435,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
       :pageToken => :query,
       :pageSize => :query
     }
@@ -471,16 +471,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   - session (String.t): Required. The session in which the transaction runs.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (BeginTransactionRequest): 
 
   ## Returns
@@ -501,16 +501,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
       :body => :body
     }
 
@@ -536,16 +536,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   - session (String.t): Required. The session in which the transaction to be committed is running.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (CommitRequest): 
 
   ## Returns
@@ -566,16 +566,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
       :body => :body
     }
 
@@ -601,16 +601,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   - database (String.t): Required. The database in which the new session is created.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (CreateSessionRequest): 
 
   ## Returns
@@ -631,16 +631,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
       :body => :body
     }
 
@@ -666,16 +666,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   - session (String.t): Required. The session in which the SQL query should be performed.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (ExecuteSqlRequest): 
 
   ## Returns
@@ -696,16 +696,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
       :body => :body
     }
 
@@ -731,16 +731,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   - session (String.t): Required. The session in which the SQL query should be performed.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (ExecuteSqlRequest): 
 
   ## Returns
@@ -761,16 +761,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
       :body => :body
     }
 
@@ -796,16 +796,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   - database (String.t): Required. The database in which to list sessions.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :pageToken (String.t): If non-empty, &#x60;page_token&#x60; should contain a next_page_token from a previous ListSessionsResponse.
     - :pageSize (integer()): Number of sessions to be returned in the response. If 0 or less, defaults to the server&#39;s maximum allowed page size.
     - :filter (String.t): An expression for filtering the results of the request. Filter rules are case insensitive. The fields eligible for filtering are:    * &#x60;labels.key&#x60; where key is the name of a label  Some examples of using filters are:    * &#x60;labels.env:*&#x60; --&gt; The session has the label \&quot;env\&quot;.   * &#x60;labels.env:dev&#x60; --&gt; The session has the label \&quot;env\&quot; and the value of                        the label contains the string \&quot;dev\&quot;.
@@ -828,16 +828,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
       :pageToken => :query,
       :pageSize => :query,
       :filter => :query
@@ -865,16 +865,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   - session (String.t): Required. The session used to create the partitions.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (PartitionQueryRequest): 
 
   ## Returns
@@ -895,16 +895,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
       :body => :body
     }
 
@@ -930,16 +930,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   - session (String.t): Required. The session used to create the partitions.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (PartitionReadRequest): 
 
   ## Returns
@@ -960,16 +960,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
       :body => :body
     }
 
@@ -995,16 +995,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   - session (String.t): Required. The session in which the read should be performed.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (ReadRequest): 
 
   ## Returns
@@ -1025,16 +1025,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
       :body => :body
     }
 
@@ -1060,16 +1060,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   - session (String.t): Required. The session in which the transaction to roll back is running.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (RollbackRequest): 
 
   ## Returns
@@ -1090,16 +1090,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
       :body => :body
     }
 
@@ -1125,16 +1125,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   - session (String.t): Required. The session in which the read should be performed.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (ReadRequest): 
 
   ## Returns
@@ -1155,16 +1155,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
       :body => :body
     }
 
@@ -1190,16 +1190,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   - resource (String.t): REQUIRED: The Cloud Spanner resource for which the policy is being set. The format is &#x60;projects/&lt;project ID&gt;/instances/&lt;instance ID&gt;&#x60; for instance resources and &#x60;projects/&lt;project ID&gt;/instances/&lt;instance ID&gt;/databases/&lt;database ID&gt;&#x60; for databases resources.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (SetIamPolicyRequest): 
 
   ## Returns
@@ -1220,16 +1220,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
       :body => :body
     }
 
@@ -1255,16 +1255,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   - resource (String.t): REQUIRED: The Cloud Spanner resource for which permissions are being tested. The format is &#x60;projects/&lt;project ID&gt;/instances/&lt;instance ID&gt;&#x60; for instance resources and &#x60;projects/&lt;project ID&gt;/instances/&lt;instance ID&gt;/databases/&lt;database ID&gt;&#x60; for database resources.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (TestIamPermissionsRequest): 
 
   ## Returns
@@ -1287,16 +1287,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
       :body => :body
     }
 
@@ -1322,16 +1322,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   - database (String.t): Required. The database to update.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (UpdateDatabaseDdlRequest): 
 
   ## Returns
@@ -1349,16 +1349,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
       :body => :body
     }
 
@@ -1384,16 +1384,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   - parent (String.t): Required. The name of the project for which a list of instances is requested. Values are of the form &#x60;projects/&lt;project&gt;&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :pageToken (String.t): If non-empty, &#x60;page_token&#x60; should contain a next_page_token from a previous ListInstancesResponse.
     - :pageSize (integer()): Number of instances to be returned in the response. If 0 or less, defaults to the server&#39;s maximum allowed page size.
     - :filter (String.t): An expression for filtering the results of the request. Filter rules are case insensitive. The fields eligible for filtering are:    * &#x60;name&#x60;   * &#x60;display_name&#x60;   * &#x60;labels.key&#x60; where key is the name of a label  Some examples of using filters are:    * &#x60;name:*&#x60; --&gt; The instance has a name.   * &#x60;name:Howl&#x60; --&gt; The instance&#39;s name contains the string \&quot;howl\&quot;.   * &#x60;name:HOWL&#x60; --&gt; Equivalent to above.   * &#x60;NAME:howl&#x60; --&gt; Equivalent to above.   * &#x60;labels.env:*&#x60; --&gt; The instance has the label \&quot;env\&quot;.   * &#x60;labels.env:dev&#x60; --&gt; The instance has the label \&quot;env\&quot; and the value of                        the label contains the string \&quot;dev\&quot;.   * &#x60;name:howl labels.env:dev&#x60; --&gt; The instance&#39;s name contains \&quot;howl\&quot; and                                  it has the label \&quot;env\&quot; with its value                                  containing \&quot;dev\&quot;.
@@ -1408,16 +1408,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   def spanner_projects_instances_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
       :pageToken => :query,
       :pageSize => :query,
       :filter => :query
@@ -1445,16 +1445,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   - name (String.t): The name of the operation resource to be cancelled.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
 
   ## Returns
 
@@ -1471,16 +1471,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -1505,16 +1505,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   - name (String.t): The name of the operation resource to be deleted.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
 
   ## Returns
 
@@ -1531,16 +1531,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -1565,19 +1565,19 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   - name (String.t): The name of the operation resource.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :filter (String.t): The standard list filter.
     - :pageToken (String.t): The standard list page token.
     - :pageSize (integer()): The standard list page size.
+    - :filter (String.t): The standard list filter.
 
   ## Returns
 
@@ -1594,19 +1594,19 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
-      :filter => :query,
       :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :filter => :query
     }
 
     request =
@@ -1631,16 +1631,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   - name (String.t): Required. A unique identifier for the instance, which cannot be changed after the instance is created. Values are of the form &#x60;projects/&lt;project&gt;/instances/a-z*[a-z0-9]&#x60;. The final segment of the name must be between 6 and 30 characters in length.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (UpdateInstanceRequest): 
 
   ## Returns
@@ -1653,16 +1653,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   def spanner_projects_instances_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
       :body => :body
     }
 

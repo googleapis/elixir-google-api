@@ -33,23 +33,23 @@ defmodule GoogleApi.Translate.V2.Api.Translations do
   - q ([String.t]): The input text to translate. Repeat this parameter to perform translation operations on multiple text inputs.
   - target (String.t): The language to use for translation of the input text, set to one of the language codes listed in Language Support.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :pp (boolean()): Pretty-print response.
+    - :alt (String.t): Data format for response.
     - :bearer_token (String.t): OAuth bearer token.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :cid ([String.t]): The customization id for translate
-    - :format (String.t): The format of the source text, in either HTML (default) or plain-text. A value of \&quot;html\&quot; indicates HTML and a value of \&quot;text\&quot; indicates plain-text.
+    - :pp (boolean()): Pretty-print response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :model (String.t): The &#x60;model&#x60; type requested for this translation. Valid values are listed in public documentation.
     - :source (String.t): The language of the source text, set to one of the language codes listed in Language Support. If the source language is not specified, the API will attempt to identify the source language automatically and return it within the response.
+    - :cid ([String.t]): The customization id for translate
+    - :format (String.t): The format of the source text, in either HTML (default) or plain-text. A value of \&quot;html\&quot; indicates HTML and a value of \&quot;text\&quot; indicates plain-text.
 
   ## Returns
 
@@ -61,23 +61,23 @@ defmodule GoogleApi.Translate.V2.Api.Translations do
           | {:error, Tesla.Env.t()}
   def language_translations_list(connection, q, target, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
       :"$.xgafv" => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :quotaUser => :query,
-      :pp => :query,
+      :alt => :query,
       :bearer_token => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
       :oauth_token => :query,
-      :cid => :query,
-      :format => :query,
+      :pp => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :model => :query,
-      :source => :query
+      :source => :query,
+      :cid => :query,
+      :format => :query
     }
 
     request =
@@ -103,19 +103,19 @@ defmodule GoogleApi.Translate.V2.Api.Translations do
 
   - connection (GoogleApi.Translate.V2.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :$.xgafv (String.t): V1 error format.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-    - :pp (boolean()): Pretty-print response.
+    - :alt (String.t): Data format for response.
     - :bearer_token (String.t): OAuth bearer token.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :pp (boolean()): Pretty-print response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (TranslateTextRequest): 
 
   ## Returns
@@ -128,19 +128,19 @@ defmodule GoogleApi.Translate.V2.Api.Translations do
           | {:error, Tesla.Env.t()}
   def language_translations_translate(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
       :"$.xgafv" => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :quotaUser => :query,
-      :pp => :query,
+      :alt => :query,
       :bearer_token => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
       :oauth_token => :query,
+      :pp => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 

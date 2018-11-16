@@ -22,7 +22,7 @@ defmodule GoogleApi.Fitness.V1.Model.DataPoint do
 
   ## Attributes
 
-  - computationTimeMillis (String.t): Used for version checking during transformation; that is, a datapoint can only replace another datapoint that has an older computation time stamp. Defaults to: `null`.
+  - computationTimeMillis (String.t): DO NOT USE THIS FIELD. It is ignored, and not stored. Defaults to: `null`.
   - dataTypeName (String.t): The data type defining the format of the values in this data point. Defaults to: `null`.
   - endTimeNanos (String.t): The end time of the interval represented by this data point, in nanoseconds since epoch. Defaults to: `null`.
   - modifiedTimeMillis (String.t): Indicates the last time this data point was modified. Useful only in contexts where we are listing the data changes, rather than representing the current state of the data. Defaults to: `null`.

@@ -33,8 +33,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1Lab
   @type t :: %__MODULE__{
           :categoryEntities =>
             list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1Entity.t()),
-          :entity =>
-            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1Entity.t(),
+          :entity => GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1Entity.t(),
           :frames =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1LabelFrame.t()

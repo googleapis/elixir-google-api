@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.PubSub.V1.Model.PubsubMessage do
   @moduledoc """
-  A message that is published by publishers and consumed by subscribers. The message must contain either a non-empty data field or at least one attribute.
+  A message that is published by publishers and consumed by subscribers. The message must contain either a non-empty data field or at least one attribute. Note that client libraries represent this object differently depending on the language. See the corresponding &lt;a href&#x3D;\&quot;https://cloud.google.com/pubsub/docs/reference/libraries\&quot;&gt;client library documentation&lt;/a&gt; for more information. See &lt;a href&#x3D;\&quot;https://cloud.google.com/pubsub/quotas\&quot;&gt;Quotas and limits&lt;/a&gt; for more information about message limits.
 
   ## Attributes
 

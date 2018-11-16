@@ -45,8 +45,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1HyperparameterOutput
 
   field(
     :allMetrics,
-    as:
-      GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1HyperparameterOutputHyperparameterMetric,
+    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1HyperparameterOutputHyperparameterMetric,
     type: :list
   )
 

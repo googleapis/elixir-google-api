@@ -42,8 +42,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DlpJob do
           :createTime => DateTime.t(),
           :endTime => DateTime.t(),
           :errors => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Error.t()),
-          :inspectDetails =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectDataSourceDetails.t(),
+          :inspectDetails => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectDataSourceDetails.t(),
           :jobTriggerName => any(),
           :name => any(),
           :riskDetails =>

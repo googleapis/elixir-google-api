@@ -32,17 +32,17 @@ defmodule GoogleApi.Poly.V1.Api.Assets do
   - connection (GoogleApi.Poly.V1.Connection): Connection to server
   - name (String.t): Required. An asset&#39;s name in the form &#x60;assets/{ASSET_ID}&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -53,17 +53,17 @@ defmodule GoogleApi.Poly.V1.Api.Assets do
           {:ok, GoogleApi.Poly.V1.Model.Asset.t()} | {:error, Tesla.Env.t()}
   def poly_assets_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -86,25 +86,25 @@ defmodule GoogleApi.Poly.V1.Api.Assets do
 
   - connection (GoogleApi.Poly.V1.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :curated (boolean()): Return only assets that have been curated by the Poly team.
-    - :category (String.t): Filter assets based on the specified category. Supported values are: &#x60;animals&#x60;, &#x60;architecture&#x60;, &#x60;art&#x60;, &#x60;food&#x60;, &#x60;nature&#x60;, &#x60;objects&#x60;, &#x60;people&#x60;, &#x60;scenes&#x60;, &#x60;technology&#x60;, and &#x60;transport&#x60;.
-    - :maxComplexity (String.t): Returns assets that are of the specified complexity or less. Defaults to COMPLEX. For example, a request for MEDIUM assets also includes SIMPLE assets.
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :pageToken (String.t): Specifies a continuation token from a previous search whose results were split into multiple pages. To get the next page, submit the same request specifying the value from next_page_token.
+    - :maxComplexity (String.t): Returns assets that are of the specified complexity or less. Defaults to COMPLEX. For example, a request for MEDIUM assets also includes SIMPLE assets.
     - :pageSize (integer()): The maximum number of assets to be returned. This value must be between &#x60;1&#x60; and &#x60;100&#x60;. Defaults to &#x60;20&#x60;.
     - :keywords (String.t): One or more search terms to be matched against all text that Poly has indexed for assets, which includes display_name, description, and tags. Multiple keywords should be separated by spaces.
     - :orderBy (String.t): Specifies an ordering for assets. Acceptable values are: &#x60;BEST&#x60;, &#x60;NEWEST&#x60;, &#x60;OLDEST&#x60;. Defaults to &#x60;BEST&#x60;, which ranks assets based on a combination of popularity and other features.
     - :format (String.t): Return only assets with the matching format. Acceptable values are: &#x60;BLOCKS&#x60;, &#x60;FBX&#x60;, &#x60;GLTF&#x60;, &#x60;GLTF2&#x60;, &#x60;OBJ&#x60;, &#x60;TILT&#x60;.
+    - :curated (boolean()): Return only assets that have been curated by the Poly team.
+    - :category (String.t): Filter assets based on the specified category. Supported values are: &#x60;animals&#x60;, &#x60;architecture&#x60;, &#x60;art&#x60;, &#x60;food&#x60;, &#x60;nature&#x60;, &#x60;objects&#x60;, &#x60;people&#x60;, &#x60;scenes&#x60;, &#x60;technology&#x60;, and &#x60;transport&#x60;.
 
   ## Returns
 
@@ -115,25 +115,25 @@ defmodule GoogleApi.Poly.V1.Api.Assets do
           {:ok, GoogleApi.Poly.V1.Model.ListAssetsResponse.t()} | {:error, Tesla.Env.t()}
   def poly_assets_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
       :upload_protocol => :query,
-      :curated => :query,
-      :category => :query,
-      :maxComplexity => :query,
+      :uploadType => :query,
       :pageToken => :query,
+      :maxComplexity => :query,
       :pageSize => :query,
       :keywords => :query,
       :orderBy => :query,
-      :format => :query
+      :format => :query,
+      :curated => :query,
+      :category => :query
     }
 
     request =

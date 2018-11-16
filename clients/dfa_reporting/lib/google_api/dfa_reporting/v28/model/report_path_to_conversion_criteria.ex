@@ -38,8 +38,7 @@ defmodule GoogleApi.DFAReporting.V28.Model.ReportPathToConversionCriteria do
   @type t :: %__MODULE__{
           :activityFilters => list(GoogleApi.DFAReporting.V28.Model.DimensionValue.t()),
           :conversionDimensions => list(GoogleApi.DFAReporting.V28.Model.SortedDimension.t()),
-          :customFloodlightVariables =>
-            list(GoogleApi.DFAReporting.V28.Model.SortedDimension.t()),
+          :customFloodlightVariables => list(GoogleApi.DFAReporting.V28.Model.SortedDimension.t()),
           :customRichMediaEvents => list(GoogleApi.DFAReporting.V28.Model.DimensionValue.t()),
           :dateRange => GoogleApi.DFAReporting.V28.Model.DateRange.t(),
           :floodlightConfigId => GoogleApi.DFAReporting.V28.Model.DimensionValue.t(),

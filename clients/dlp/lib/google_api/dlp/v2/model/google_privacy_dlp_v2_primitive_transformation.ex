@@ -38,8 +38,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrimitiveTransformation do
 
   @type t :: %__MODULE__{
           :bucketingConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BucketingConfig.t(),
-          :characterMaskConfig =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CharacterMaskConfig.t(),
+          :characterMaskConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CharacterMaskConfig.t(),
           :cryptoHashConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoHashConfig.t(),
           :cryptoReplaceFfxFpeConfig =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoReplaceFfxFpeConfig.t(),

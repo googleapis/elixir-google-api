@@ -33,16 +33,16 @@ defmodule GoogleApi.IAM.V1.Api.Roles do
   - roles_id (String.t): Part of &#x60;name&#x60;. The resource name of the role in one of the following formats: &#x60;roles/{ROLE_NAME}&#x60; &#x60;organizations/{ORGANIZATION_ID}/roles/{ROLE_NAME}&#x60; &#x60;projects/{PROJECT_ID}/roles/{ROLE_NAME}&#x60;
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
 
   ## Returns
 
@@ -54,16 +54,16 @@ defmodule GoogleApi.IAM.V1.Api.Roles do
   def iam_roles_get(connection, roles_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -87,21 +87,21 @@ defmodule GoogleApi.IAM.V1.Api.Roles do
   - connection (GoogleApi.IAM.V1.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :parent (String.t): The resource name of the parent resource in one of the following formats: &#x60;&#x60; (empty string) -- this refers to curated roles. &#x60;organizations/{ORGANIZATION_ID}&#x60; &#x60;projects/{PROJECT_ID}&#x60;
     - :showDeleted (boolean()): Include Roles that have been deleted.
     - :pageToken (String.t): Optional pagination token returned in an earlier ListRolesResponse.
     - :pageSize (integer()): Optional limit on the number of roles to include in the response.
     - :view (String.t): Optional view for the returned Role objects.
+    - :parent (String.t): The resource name of the parent resource in one of the following formats: &#x60;&#x60; (empty string) -- this refers to curated roles. &#x60;organizations/{ORGANIZATION_ID}&#x60; &#x60;projects/{PROJECT_ID}&#x60;
 
   ## Returns
 
@@ -113,21 +113,21 @@ defmodule GoogleApi.IAM.V1.Api.Roles do
   def iam_roles_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
-      :parent => :query,
       :showDeleted => :query,
       :pageToken => :query,
       :pageSize => :query,
-      :view => :query
+      :view => :query,
+      :parent => :query
     }
 
     request =
@@ -149,16 +149,16 @@ defmodule GoogleApi.IAM.V1.Api.Roles do
   - connection (GoogleApi.IAM.V1.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :body (QueryGrantableRolesRequest): 
 
   ## Returns
@@ -171,16 +171,16 @@ defmodule GoogleApi.IAM.V1.Api.Roles do
   def iam_roles_query_grantable_roles(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
       :body => :body
     }
 

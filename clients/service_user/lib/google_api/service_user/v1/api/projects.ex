@@ -32,17 +32,17 @@ defmodule GoogleApi.ServiceUser.V1.Api.Projects do
   - connection (GoogleApi.ServiceUser.V1.Connection): Connection to server
   - name (String.t): Name of the consumer and the service to disable for that consumer.  The Service User implementation accepts the following forms for consumer: - \&quot;project:&lt;project_id&gt;\&quot;  A valid path would be: - projects/my-project/services/servicemanagement.googleapis.com
   - optional_params (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (DisableServiceRequest): 
 
   ## Returns
@@ -54,17 +54,17 @@ defmodule GoogleApi.ServiceUser.V1.Api.Projects do
           {:ok, GoogleApi.ServiceUser.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def serviceuser_projects_services_disable(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :key => :query,
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -89,17 +89,17 @@ defmodule GoogleApi.ServiceUser.V1.Api.Projects do
   - connection (GoogleApi.ServiceUser.V1.Connection): Connection to server
   - name (String.t): Name of the consumer and the service to enable for that consumer.  A valid path would be: - projects/my-project/services/servicemanagement.googleapis.com
   - optional_params (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (EnableServiceRequest): 
 
   ## Returns
@@ -111,17 +111,17 @@ defmodule GoogleApi.ServiceUser.V1.Api.Projects do
           {:ok, GoogleApi.ServiceUser.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def serviceuser_projects_services_enable(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :key => :query,
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -146,19 +146,19 @@ defmodule GoogleApi.ServiceUser.V1.Api.Projects do
   - connection (GoogleApi.ServiceUser.V1.Connection): Connection to server
   - parent (String.t): List enabled services for the specified parent.  An example valid parent would be: - projects/my-project
   - optional_params (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :pageToken (String.t): Token identifying which result to start with; returned by a previous list call.
     - :pageSize (integer()): Requested size of the next page of data.
+    - :pageToken (String.t): Token identifying which result to start with; returned by a previous list call.
 
   ## Returns
 
@@ -170,19 +170,19 @@ defmodule GoogleApi.ServiceUser.V1.Api.Projects do
           | {:error, Tesla.Env.t()}
   def serviceuser_projects_services_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :key => :query,
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =

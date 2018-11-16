@@ -36,8 +36,7 @@ defmodule GoogleApi.Content.V2.Model.AccountStatus do
           :accountId => any(),
           :accountLevelIssues =>
             list(GoogleApi.Content.V2.Model.AccountStatusAccountLevelIssue.t()),
-          :dataQualityIssues =>
-            list(GoogleApi.Content.V2.Model.AccountStatusDataQualityIssue.t()),
+          :dataQualityIssues => list(GoogleApi.Content.V2.Model.AccountStatusDataQualityIssue.t()),
           :kind => any(),
           :products => list(GoogleApi.Content.V2.Model.AccountStatusProducts.t()),
           :websiteClaimed => any()

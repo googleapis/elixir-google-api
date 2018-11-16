@@ -72,8 +72,7 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectAttachment do
           :operationalStatus => any(),
           :pairingKey => any(),
           :partnerAsn => any(),
-          :partnerMetadata =>
-            GoogleApi.Compute.V1.Model.InterconnectAttachmentPartnerMetadata.t(),
+          :partnerMetadata => GoogleApi.Compute.V1.Model.InterconnectAttachmentPartnerMetadata.t(),
           :privateInterconnectInfo =>
             GoogleApi.Compute.V1.Model.InterconnectAttachmentPrivateInfo.t(),
           :region => any(),

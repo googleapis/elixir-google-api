@@ -36,8 +36,7 @@ defmodule GoogleApi.Webmaster.V3.Model.SearchAnalyticsQueryRequest do
 
   @type t :: %__MODULE__{
           :aggregationType => any(),
-          :dimensionFilterGroups =>
-            list(GoogleApi.Webmaster.V3.Model.ApiDimensionFilterGroup.t()),
+          :dimensionFilterGroups => list(GoogleApi.Webmaster.V3.Model.ApiDimensionFilterGroup.t()),
           :dimensions => list(any()),
           :endDate => any(),
           :rowLimit => any(),

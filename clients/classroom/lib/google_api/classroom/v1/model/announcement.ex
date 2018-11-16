@@ -47,8 +47,7 @@ defmodule GoogleApi.Classroom.V1.Model.Announcement do
           :creationTime => DateTime.t(),
           :creatorUserId => any(),
           :id => any(),
-          :individualStudentsOptions =>
-            GoogleApi.Classroom.V1.Model.IndividualStudentsOptions.t(),
+          :individualStudentsOptions => GoogleApi.Classroom.V1.Model.IndividualStudentsOptions.t(),
           :materials => list(GoogleApi.Classroom.V1.Model.Material.t()),
           :scheduledTime => DateTime.t(),
           :state => any(),

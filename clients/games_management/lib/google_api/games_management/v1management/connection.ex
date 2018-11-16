@@ -24,9 +24,7 @@ defmodule GoogleApi.GamesManagement.V1management.Connection do
   use GoogleApi.Gax.Connection,
     scopes: [
       # Share your Google+ profile information and view and manage your game activity
-      "https://www.googleapis.com/auth/games",
-      # Know the list of people in your circles, your age range, and language
-      "https://www.googleapis.com/auth/plus.login"
+      "https://www.googleapis.com/auth/games"
     ],
     otp_app: :google_api_games_management,
     base_url: "https://www.googleapis.com/games/v1management"

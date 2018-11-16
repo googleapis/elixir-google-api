@@ -57,8 +57,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
           :currentDiskSize => any(),
           :databaseVersion => any(),
           :etag => any(),
-          :failoverReplica =>
-            GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstanceFailoverReplica.t(),
+          :failoverReplica => GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstanceFailoverReplica.t(),
           :gceZone => any(),
           :instanceType => any(),
           :ipAddresses => list(GoogleApi.SQLAdmin.V1beta4.Model.IpMapping.t()),
@@ -67,8 +66,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
           :masterInstanceName => any(),
           :maxDiskSize => any(),
           :name => any(),
-          :onPremisesConfiguration =>
-            GoogleApi.SQLAdmin.V1beta4.Model.OnPremisesConfiguration.t(),
+          :onPremisesConfiguration => GoogleApi.SQLAdmin.V1beta4.Model.OnPremisesConfiguration.t(),
           :project => any(),
           :region => any(),
           :replicaConfiguration => GoogleApi.SQLAdmin.V1beta4.Model.ReplicaConfiguration.t(),

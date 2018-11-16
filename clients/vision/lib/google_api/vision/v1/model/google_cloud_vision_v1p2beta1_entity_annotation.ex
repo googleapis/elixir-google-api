@@ -40,8 +40,7 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1EntityAnnotation d
           :confidence => any(),
           :description => any(),
           :locale => any(),
-          :locations =>
-            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1LocationInfo.t()),
+          :locations => list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1LocationInfo.t()),
           :mid => any(),
           :properties => list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1Property.t()),
           :score => any(),

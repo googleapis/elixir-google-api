@@ -22,14 +22,23 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1BoundingPoly do
 
   ## Attributes
 
+  - normalizedVertices ([GoogleCloudVisionV1p1beta1NormalizedVertex]): The bounding polygon normalized vertices. Defaults to: `null`.
   - vertices ([GoogleCloudVisionV1p1beta1Vertex]): The bounding polygon vertices. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :normalizedVertices =>
+            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1NormalizedVertex.t()),
           :vertices => list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1Vertex.t())
         }
+
+  field(
+    :normalizedVertices,
+    as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1NormalizedVertex,
+    type: :list
+  )
 
   field(:vertices, as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1Vertex, type: :list)
 end

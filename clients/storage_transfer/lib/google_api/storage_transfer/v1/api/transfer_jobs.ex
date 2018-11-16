@@ -31,17 +31,17 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
 
   - connection (GoogleApi.StorageTransfer.V1.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :body (TransferJob): 
 
   ## Returns
@@ -53,17 +53,17 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
           {:ok, GoogleApi.StorageTransfer.V1.Model.TransferJob.t()} | {:error, Tesla.Env.t()}
   def storagetransfer_transfer_jobs_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -86,17 +86,17 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
   - connection (GoogleApi.StorageTransfer.V1.Connection): Connection to server
   - job_name (String.t): The job to get. Required.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :projectId (String.t): The ID of the Google Cloud Platform Console project that owns the job. Required.
 
   ## Returns
@@ -108,17 +108,17 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
           {:ok, GoogleApi.StorageTransfer.V1.Model.TransferJob.t()} | {:error, Tesla.Env.t()}
   def storagetransfer_transfer_jobs_get(connection, job_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :projectId => :query
     }
 
@@ -142,20 +142,20 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
 
   - connection (GoogleApi.StorageTransfer.V1.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :filter (String.t): A list of query parameters specified as JSON text in the form of {\&quot;project_id\&quot;:\&quot;my_project_id\&quot;, \&quot;job_names\&quot;:[\&quot;jobid1\&quot;,\&quot;jobid2\&quot;,...], \&quot;job_statuses\&quot;:[\&quot;status1\&quot;,\&quot;status2\&quot;,...]}. Since &#x60;job_names&#x60; and &#x60;job_statuses&#x60; support multiple values, their values must be specified with array notation. &#x60;project_id&#x60; is required. &#x60;job_names&#x60; and &#x60;job_statuses&#x60; are optional.  The valid values for &#x60;job_statuses&#x60; are case-insensitive: &#x60;ENABLED&#x60;, &#x60;DISABLED&#x60;, and &#x60;DELETED&#x60;.
     - :pageToken (String.t): The list page token.
     - :pageSize (integer()): The list page size. The max allowed value is 256.
+    - :filter (String.t): A list of query parameters specified as JSON text in the form of {\&quot;project_id\&quot;:\&quot;my_project_id\&quot;, \&quot;job_names\&quot;:[\&quot;jobid1\&quot;,\&quot;jobid2\&quot;,...], \&quot;job_statuses\&quot;:[\&quot;status1\&quot;,\&quot;status2\&quot;,...]}. Since &#x60;job_names&#x60; and &#x60;job_statuses&#x60; support multiple values, their values must be specified with array notation. &#x60;project_id&#x60; is required. &#x60;job_names&#x60; and &#x60;job_statuses&#x60; are optional.  The valid values for &#x60;job_statuses&#x60; are case-insensitive: &#x60;ENABLED&#x60;, &#x60;DISABLED&#x60;, and &#x60;DELETED&#x60;.
 
   ## Returns
 
@@ -167,20 +167,20 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
           | {:error, Tesla.Env.t()}
   def storagetransfer_transfer_jobs_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :filter => :query,
       :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :filter => :query
     }
 
     request =
@@ -204,17 +204,17 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
   - connection (GoogleApi.StorageTransfer.V1.Connection): Connection to server
   - job_name (String.t): The name of job to update. Required.
   - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :body (UpdateTransferJobRequest): 
 
   ## Returns
@@ -226,17 +226,17 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
           {:ok, GoogleApi.StorageTransfer.V1.Model.TransferJob.t()} | {:error, Tesla.Env.t()}
   def storagetransfer_transfer_jobs_patch(connection, job_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :body => :body
     }
 

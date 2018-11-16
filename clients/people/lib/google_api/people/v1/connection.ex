@@ -23,9 +23,9 @@ defmodule GoogleApi.People.V1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # Manage your contacts
+      # See, edit, download, and permanently delete your contacts
       "https://www.googleapis.com/auth/contacts",
-      # View your contacts
+      # See and download your contacts
       "https://www.googleapis.com/auth/contacts.readonly",
       # Know the list of people in your circles, your age range, and language
       "https://www.googleapis.com/auth/plus.login",

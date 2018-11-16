@@ -98,14 +98,12 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
           :autoResizeDimensions => GoogleApi.Sheets.V4.Model.AutoResizeDimensionsRequest.t(),
           :clearBasicFilter => GoogleApi.Sheets.V4.Model.ClearBasicFilterRequest.t(),
           :copyPaste => GoogleApi.Sheets.V4.Model.CopyPasteRequest.t(),
-          :createDeveloperMetadata =>
-            GoogleApi.Sheets.V4.Model.CreateDeveloperMetadataRequest.t(),
+          :createDeveloperMetadata => GoogleApi.Sheets.V4.Model.CreateDeveloperMetadataRequest.t(),
           :cutPaste => GoogleApi.Sheets.V4.Model.CutPasteRequest.t(),
           :deleteBanding => GoogleApi.Sheets.V4.Model.DeleteBandingRequest.t(),
           :deleteConditionalFormatRule =>
             GoogleApi.Sheets.V4.Model.DeleteConditionalFormatRuleRequest.t(),
-          :deleteDeveloperMetadata =>
-            GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataRequest.t(),
+          :deleteDeveloperMetadata => GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataRequest.t(),
           :deleteDimension => GoogleApi.Sheets.V4.Model.DeleteDimensionRequest.t(),
           :deleteDimensionGroup => GoogleApi.Sheets.V4.Model.DeleteDimensionGroupRequest.t(),
           :deleteEmbeddedObject => GoogleApi.Sheets.V4.Model.DeleteEmbeddedObjectRequest.t(),
@@ -135,8 +133,7 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
           :updateChartSpec => GoogleApi.Sheets.V4.Model.UpdateChartSpecRequest.t(),
           :updateConditionalFormatRule =>
             GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRuleRequest.t(),
-          :updateDeveloperMetadata =>
-            GoogleApi.Sheets.V4.Model.UpdateDeveloperMetadataRequest.t(),
+          :updateDeveloperMetadata => GoogleApi.Sheets.V4.Model.UpdateDeveloperMetadataRequest.t(),
           :updateDimensionGroup => GoogleApi.Sheets.V4.Model.UpdateDimensionGroupRequest.t(),
           :updateDimensionProperties =>
             GoogleApi.Sheets.V4.Model.UpdateDimensionPropertiesRequest.t(),

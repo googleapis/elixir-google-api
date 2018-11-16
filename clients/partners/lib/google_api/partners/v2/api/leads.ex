@@ -31,20 +31,17 @@ defmodule GoogleApi.Partners.V2.Api.Leads do
 
   - connection (GoogleApi.Partners.V2.Connection): Connection to server
   - optional_params (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :requestMetadata.experimentIds ([String.t]): Experiment IDs the current request belongs to.
-    - :requestMetadata.trafficSource.trafficSubId (String.t): Second level identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
-    - :orderBy (String.t): How to order Leads. Currently, only &#x60;create_time&#x60; and &#x60;create_time desc&#x60; are supported
     - :requestMetadata.userOverrides.userId (String.t): Logged-in user ID to impersonate instead of the user&#39;s ID.
     - :requestMetadata.partnersSessionId (String.t): Google Partners session ID.
     - :pageToken (String.t): A token identifying a page of results that the server returns. Typically, this is the value of &#x60;ListLeadsResponse.next_page_token&#x60; returned from the previous call to ListLeads.
@@ -52,6 +49,9 @@ defmodule GoogleApi.Partners.V2.Api.Leads do
     - :requestMetadata.trafficSource.trafficSourceId (String.t): Identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
     - :requestMetadata.locale (String.t): Locale to use for the current request.
     - :requestMetadata.userOverrides.ipAddress (String.t): IP address to use instead of the user&#39;s geo-located IP address.
+    - :requestMetadata.experimentIds ([String.t]): Experiment IDs the current request belongs to.
+    - :requestMetadata.trafficSource.trafficSubId (String.t): Second level identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
+    - :orderBy (String.t): How to order Leads. Currently, only &#x60;create_time&#x60; and &#x60;create_time desc&#x60; are supported
 
   ## Returns
 
@@ -62,27 +62,27 @@ defmodule GoogleApi.Partners.V2.Api.Leads do
           {:ok, GoogleApi.Partners.V2.Model.ListLeadsResponse.t()} | {:error, Tesla.Env.t()}
   def partners_leads_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
       :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"requestMetadata.experimentIds" => :query,
-      :"requestMetadata.trafficSource.trafficSubId" => :query,
-      :orderBy => :query,
       :"requestMetadata.userOverrides.userId" => :query,
       :"requestMetadata.partnersSessionId" => :query,
       :pageToken => :query,
       :pageSize => :query,
       :"requestMetadata.trafficSource.trafficSourceId" => :query,
       :"requestMetadata.locale" => :query,
-      :"requestMetadata.userOverrides.ipAddress" => :query
+      :"requestMetadata.userOverrides.ipAddress" => :query,
+      :"requestMetadata.experimentIds" => :query,
+      :"requestMetadata.trafficSource.trafficSubId" => :query,
+      :orderBy => :query
     }
 
     request =
