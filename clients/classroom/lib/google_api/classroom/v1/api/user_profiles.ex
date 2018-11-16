@@ -230,10 +230,10 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned.  The list request must be otherwise identical to the one that resulted in this token.
     - :invitedEmailAddress (String.t): If specified, only results with the specified &#x60;invited_email_address&#x60; will be returned.
-    - :states ([String.t]): If specified, only results with the specified &#x60;state&#x60; values will be returned. Otherwise, results with a &#x60;state&#x60; of &#x60;PENDING&#x60; will be returned.
     - :pageSize (integer()): Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum.  The server may return fewer than the specified number of results.
+    - :pageToken (String.t): nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned.  The list request must be otherwise identical to the one that resulted in this token.
+    - :states ([String.t]): If specified, only results with the specified &#x60;state&#x60; values will be returned. Otherwise, results with a &#x60;state&#x60; of &#x60;PENDING&#x60; will be returned.
 
   ## Returns
 
@@ -265,10 +265,10 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
       :invitedEmailAddress => :query,
-      :states => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query,
+      :states => :query
     }
 
     request =
@@ -510,9 +510,9 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned.  The list request must be otherwise identical to the one that resulted in this token.
     - :invitedEmailAddress (String.t): Filter results by the email address that the original invitation was sent to, resulting in this guardian link. This filter can only be used by domain administrators.
     - :pageSize (integer()): Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum.  The server may return fewer than the specified number of results.
+    - :pageToken (String.t): nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned.  The list request must be otherwise identical to the one that resulted in this token.
 
   ## Returns
 
@@ -539,9 +539,9 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
       :invitedEmailAddress => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
