@@ -528,8 +528,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageSize (integer()): The maximum number of Projects to return in the response. The server can return fewer Projects than requested. If unspecified, server picks an appropriate default.  Optional.
     - :filter (String.t): An expression for filtering the results of the request.  Filter rules are case insensitive. The fields eligible for filtering are:  + &#x60;name&#x60; + &#x60;id&#x60; + &lt;code&gt;labels.&lt;em&gt;key&lt;/em&gt;&lt;/code&gt; where *key* is the name of a label  Some examples of using labels as filters:  |Filter|Description| |------|-----------| |name:how*|The project&#39;s name starts with \&quot;how\&quot;.| |name:Howl|The project&#39;s name is &#x60;Howl&#x60; or &#x60;howl&#x60;.| |name:HOWL|Equivalent to above.| |NAME:howl|Equivalent to above.| |labels.color:*|The project has the label &#x60;color&#x60;.| |labels.color:red|The project&#39;s label &#x60;color&#x60; has the value &#x60;red&#x60;.| |labels.color:red&amp;nbsp;labels.size:big|The project&#39;s label &#x60;color&#x60; has the value &#x60;red&#x60; and its label &#x60;size&#x60; has the value &#x60;big&#x60;.  If you specify a filter that has both &#x60;parent.type&#x60; and &#x60;parent.id&#x60;, then the &#x60;resourcemanager.projects.list&#x60; permission is checked on the parent. If the user has this permission, all projects under the parent will be returned after remaining filters have been applied. If the user lacks this permission, then all projects for which the user has the &#x60;resourcemanager.projects.get&#x60; permission will be returned after remaining filters have been applied. If no filter is specified, the call will return projects for which the user has &#x60;resourcemanager.projects.get&#x60; permissions.  Optional.
+    - :pageSize (integer()): The maximum number of Projects to return in the response. The server can return fewer Projects than requested. If unspecified, server picks an appropriate default.  Optional.
     - :pageToken (String.t): A pagination token returned from a previous call to ListProjects that indicates from where listing should continue.  Optional.
 
   ## Returns
@@ -553,8 +553,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageSize => :query,
       :filter => :query,
+      :pageSize => :query,
       :pageToken => :query
     }
 
