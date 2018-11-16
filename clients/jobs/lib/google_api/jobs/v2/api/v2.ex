@@ -43,10 +43,10 @@ defmodule GoogleApi.Jobs.V2.Api.V2 do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :companyName (String.t): Optional.  If provided, restricts completion to the specified company.
-    - :scope (String.t): Optional.  The scope of the completion. The defaults is CompletionScope.PUBLIC.
+    - :languageCode (String.t): Required.  The language of the query. This is the BCP-47 language code, such as \&quot;en-US\&quot; or \&quot;sr-Latn\&quot;. For more information, see [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).  For CompletionType.JOB_TITLE type, only open jobs with same language_code are returned.  For CompletionType.COMPANY_NAME type, only companies having open jobs with same language_code are returned.  For CompletionType.COMBINED type, only open jobs with same language_code or companies having open jobs with same language_code are returned.
     - :pageSize (integer()): Required.  Completion result count. The maximum allowed page size is 10.
     - :query (String.t): Required.  The query used to generate suggestions.
-    - :languageCode (String.t): Required.  The language of the query. This is the BCP-47 language code, such as \&quot;en-US\&quot; or \&quot;sr-Latn\&quot;. For more information, see [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).  For CompletionType.JOB_TITLE type, only open jobs with same language_code are returned.  For CompletionType.COMPANY_NAME type, only companies having open jobs with same language_code are returned.  For CompletionType.COMBINED type, only open jobs with same language_code or companies having open jobs with same language_code are returned.
+    - :scope (String.t): Optional.  The scope of the completion. The defaults is CompletionScope.PUBLIC.
     - :type (String.t): Optional.  The completion topic. The default is CompletionType.COMBINED.
 
   ## Returns
@@ -70,10 +70,10 @@ defmodule GoogleApi.Jobs.V2.Api.V2 do
       :upload_protocol => :query,
       :uploadType => :query,
       :companyName => :query,
-      :scope => :query,
+      :languageCode => :query,
       :pageSize => :query,
       :query => :query,
-      :languageCode => :query,
+      :scope => :query,
       :type => :query
     }
 
