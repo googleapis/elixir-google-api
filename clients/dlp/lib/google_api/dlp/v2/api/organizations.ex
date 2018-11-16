@@ -108,9 +108,9 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): Optional page token to continue retrieval. Comes from previous call to &#x60;ListDeidentifyTemplates&#x60;.
     - :orderBy (String.t): Optional comma separated list of fields to order by, followed by &#x60;asc&#x60; or &#x60;desc&#x60; postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant.  Example: &#x60;name asc,update_time, create_time desc&#x60;  Supported fields are:  - &#x60;create_time&#x60;: corresponds to time the template was created. - &#x60;update_time&#x60;: corresponds to time the template was last updated. - &#x60;name&#x60;: corresponds to template&#39;s name. - &#x60;display_name&#x60;: corresponds to template&#39;s display name.
     - :pageSize (integer()): Optional size of the page, can be limited by server. If zero server returns a page of max size 100.
+    - :pageToken (String.t): Optional page token to continue retrieval. Comes from previous call to &#x60;ListDeidentifyTemplates&#x60;.
 
   ## Returns
 
@@ -138,9 +138,9 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
       :orderBy => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -361,9 +361,9 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): Optional page token to continue retrieval. Comes from previous call to &#x60;ListInspectTemplates&#x60;.
     - :orderBy (String.t): Optional comma separated list of fields to order by, followed by &#x60;asc&#x60; or &#x60;desc&#x60; postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant.  Example: &#x60;name asc,update_time, create_time desc&#x60;  Supported fields are:  - &#x60;create_time&#x60;: corresponds to time the template was created. - &#x60;update_time&#x60;: corresponds to time the template was last updated. - &#x60;name&#x60;: corresponds to template&#39;s name. - &#x60;display_name&#x60;: corresponds to template&#39;s display name.
     - :pageSize (integer()): Optional size of the page, can be limited by server. If zero server returns a page of max size 100.
+    - :pageToken (String.t): Optional page token to continue retrieval. Comes from previous call to &#x60;ListInspectTemplates&#x60;.
 
   ## Returns
 
@@ -391,9 +391,9 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
       :orderBy => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -560,9 +560,9 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): Optional page token to continue retrieval. Comes from previous call to &#x60;ListStoredInfoTypes&#x60;.
     - :orderBy (String.t): Optional comma separated list of fields to order by, followed by &#x60;asc&#x60; or &#x60;desc&#x60; postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant.  Example: &#x60;name asc, display_name, create_time desc&#x60;  Supported fields are:  - &#x60;create_time&#x60;: corresponds to time the most recent version of the resource was created. - &#x60;state&#x60;: corresponds to the state of the resource. - &#x60;name&#x60;: corresponds to resource name. - &#x60;display_name&#x60;: corresponds to info type&#39;s display name.
     - :pageSize (integer()): Optional size of the page, can be limited by server. If zero server returns a page of max size 100.
+    - :pageToken (String.t): Optional page token to continue retrieval. Comes from previous call to &#x60;ListStoredInfoTypes&#x60;.
 
   ## Returns
 
@@ -590,9 +590,9 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
       :orderBy => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =

@@ -31,7 +31,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LargeCustomDictionaryConfig d
 
   @type t :: %__MODULE__{
           :bigQueryField => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryField.t(),
-          :cloudStorageFileSet => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageFileSet.t(),
+          :cloudStorageFileSet =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageFileSet.t(),
           :outputPath => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStoragePath.t()
         }
 
