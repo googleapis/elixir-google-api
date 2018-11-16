@@ -50,14 +50,14 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.CheckValidCredsResponse{}} on success
   {:error, info} on failure
   """
-  @spec bigquerydatatransfer_projects_data_sources_check_valid_creds(
+  @spec bigquerydatatransfer_projects_locations_data_sources_check_valid_creds(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.CheckValidCredsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def bigquerydatatransfer_projects_data_sources_check_valid_creds(
+  def bigquerydatatransfer_projects_locations_data_sources_check_valid_creds(
         connection,
         name,
         optional_params \\ [],
@@ -120,10 +120,14 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ListDataSourcesResponse{}} on success
   {:error, info} on failure
   """
-  @spec bigquerydatatransfer_projects_data_sources_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec bigquerydatatransfer_projects_locations_data_sources_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ListDataSourcesResponse.t()}
           | {:error, Tesla.Env.t()}
-  def bigquerydatatransfer_projects_data_sources_list(
+  def bigquerydatatransfer_projects_locations_data_sources_list(
         connection,
         parent,
         optional_params \\ [],
@@ -256,14 +260,14 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig{}} on success
   {:error, info} on failure
   """
-  @spec bigquerydatatransfer_projects_transfer_configs_create(
+  @spec bigquerydatatransfer_projects_locations_transfer_configs_create(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t()}
           | {:error, Tesla.Env.t()}
-  def bigquerydatatransfer_projects_transfer_configs_create(
+  def bigquerydatatransfer_projects_locations_transfer_configs_create(
         connection,
         parent,
         optional_params \\ [],
@@ -328,14 +332,14 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferConfigsResponse{}} on success
   {:error, info} on failure
   """
-  @spec bigquerydatatransfer_projects_transfer_configs_list(
+  @spec bigquerydatatransfer_projects_locations_transfer_configs_list(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferConfigsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def bigquerydatatransfer_projects_transfer_configs_list(
+  def bigquerydatatransfer_projects_locations_transfer_configs_list(
         connection,
         parent,
         optional_params \\ [],
@@ -392,8 +396,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :updateMask (String.t): Required list of fields to be updated in this request.
     - :authorizationCode (String.t): Optional OAuth2 authorization code to use with this transfer configuration. If it is provided, the transfer configuration will be associated with the authorizing user. In order to obtain authorization_code, please make a request to https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id&#x3D;&lt;datatransferapiclientid&gt;&amp;scope&#x3D;&lt;data_source_scopes&gt;&amp;redirect_uri&#x3D;&lt;redirect_uri&gt;  * client_id should be OAuth client_id of BigQuery DTS API for the given   data source returned by ListDataSources method. * data_source_scopes are the scopes returned by ListDataSources method. * redirect_uri is an optional parameter. If not specified, then   authorization code is posted to the opener of authorization flow window.   Otherwise it will be sent to the redirect uri. A special value of   urn:ietf:wg:oauth:2.0:oob means that authorization code should be   returned in the title bar of the browser, with the page text prompting   the user to copy the code and paste it in the application.
+    - :updateMask (String.t): Required list of fields to be updated in this request.
     - :body (TransferConfig): 
 
   ## Returns
@@ -401,14 +405,14 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig{}} on success
   {:error, info} on failure
   """
-  @spec bigquerydatatransfer_projects_transfer_configs_patch(
+  @spec bigquerydatatransfer_projects_locations_transfer_configs_patch(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t()}
           | {:error, Tesla.Env.t()}
-  def bigquerydatatransfer_projects_transfer_configs_patch(
+  def bigquerydatatransfer_projects_locations_transfer_configs_patch(
         connection,
         name,
         optional_params \\ [],
@@ -426,8 +430,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :updateMask => :query,
       :authorizationCode => :query,
+      :updateMask => :query,
       :body => :body
     }
 
@@ -471,12 +475,12 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.Empty{}} on success
   {:error, info} on failure
   """
-  @spec bigquerydatatransfer_projects_transfer_configs_runs_delete(
+  @spec bigquerydatatransfer_projects_locations_transfer_configs_runs_delete(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def bigquerydatatransfer_projects_transfer_configs_runs_delete(
+  def bigquerydatatransfer_projects_locations_transfer_configs_runs_delete(
         connection,
         name,
         optional_params \\ [],
@@ -534,13 +538,13 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun{}} on success
   {:error, info} on failure
   """
-  @spec bigquerydatatransfer_projects_transfer_configs_runs_get(
+  @spec bigquerydatatransfer_projects_locations_transfer_configs_runs_get(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun.t()} | {:error, Tesla.Env.t()}
-  def bigquerydatatransfer_projects_transfer_configs_runs_get(
+  def bigquerydatatransfer_projects_locations_transfer_configs_runs_get(
         connection,
         name,
         optional_params \\ [],
@@ -592,24 +596,24 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :runAttempt (String.t): Indicates how run attempts are to be pulled.
     - :pageToken (String.t): Pagination token, which can be used to request a specific page of &#x60;ListTransferRunsRequest&#x60; list results. For multiple-page results, &#x60;ListTransferRunsResponse&#x60; outputs a &#x60;next_page&#x60; token, which can be used as the &#x60;page_token&#x60; value to request the next page of list results.
     - :states ([String.t]): When specified, only transfer runs with requested states are returned.
     - :pageSize (integer()): Page size. The default page size is the maximum value of 1000 results.
-    - :runAttempt (String.t): Indicates how run attempts are to be pulled.
 
   ## Returns
 
   {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferRunsResponse{}} on success
   {:error, info} on failure
   """
-  @spec bigquerydatatransfer_projects_transfer_configs_runs_list(
+  @spec bigquerydatatransfer_projects_locations_transfer_configs_runs_list(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferRunsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def bigquerydatatransfer_projects_transfer_configs_runs_list(
+  def bigquerydatatransfer_projects_locations_transfer_configs_runs_list(
         connection,
         parent,
         optional_params \\ [],
@@ -627,10 +631,10 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
+      :runAttempt => :query,
       :pageToken => :query,
       :states => :query,
-      :pageSize => :query,
-      :runAttempt => :query
+      :pageSize => :query
     }
 
     request =
@@ -676,14 +680,14 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferLogsResponse{}} on success
   {:error, info} on failure
   """
-  @spec bigquerydatatransfer_projects_transfer_configs_runs_transfer_logs_list(
+  @spec bigquerydatatransfer_projects_locations_transfer_configs_runs_transfer_logs_list(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferLogsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def bigquerydatatransfer_projects_transfer_configs_runs_transfer_logs_list(
+  def bigquerydatatransfer_projects_locations_transfer_configs_runs_transfer_logs_list(
         connection,
         parent,
         optional_params \\ [],
@@ -747,14 +751,14 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleTransferRunsResponse{}} on success
   {:error, info} on failure
   """
-  @spec bigquerydatatransfer_projects_transfer_configs_schedule_runs(
+  @spec bigquerydatatransfer_projects_locations_transfer_configs_schedule_runs(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleTransferRunsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def bigquerydatatransfer_projects_transfer_configs_schedule_runs(
+  def bigquerydatatransfer_projects_locations_transfer_configs_schedule_runs(
         connection,
         parent,
         optional_params \\ [],
