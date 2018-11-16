@@ -110,8 +110,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): A token identifying a page of results returned by the server.
     - :pageSize (integer()): The maximum number of results to be returned. If not specified or 0, all the records are returned.
+    - :pageToken (String.t): A token identifying a page of results returned by the server.
 
   ## Returns
 
@@ -143,8 +143,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -811,8 +811,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): A token identifying a page of results returned by the server.
     - :pageSize (integer()): The maximum number of results to be returned.
+    - :pageToken (String.t): A token identifying a page of results returned by the server.
 
   ## Returns
 
@@ -840,8 +840,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
