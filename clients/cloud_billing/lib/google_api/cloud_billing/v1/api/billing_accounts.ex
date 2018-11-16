@@ -212,8 +212,8 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :filter (String.t): Options for how to filter the returned billing accounts. Currently this only supports filtering for [subaccounts](https://cloud.google.com/billing/docs/concepts) under a single provided reseller billing account. (e.g. \&quot;master_billing_account&#x3D;billingAccounts/012345-678901-ABCDEF\&quot;). Boolean algebra and other fields are not currently supported.
-    - :pageToken (String.t): A token identifying a page of results to return. This should be a &#x60;next_page_token&#x60; value returned from a previous &#x60;ListBillingAccounts&#x60; call. If unspecified, the first page of results is returned.
     - :pageSize (integer()): Requested page size. The maximum page size is 100; this is also the default.
+    - :pageToken (String.t): A token identifying a page of results to return. This should be a &#x60;next_page_token&#x60; value returned from a previous &#x60;ListBillingAccounts&#x60; call. If unspecified, the first page of results is returned.
 
   ## Returns
 
@@ -237,8 +237,8 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
       :upload_protocol => :query,
       :uploadType => :query,
       :filter => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -332,8 +332,8 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): A token identifying a page of results to be returned. This should be a &#x60;next_page_token&#x60; value returned from a previous &#x60;ListProjectBillingInfo&#x60; call. If unspecified, the first page of results is returned.
     - :pageSize (integer()): Requested page size. The maximum page size is 100; this is also the default.
+    - :pageToken (String.t): A token identifying a page of results to be returned. This should be a &#x60;next_page_token&#x60; value returned from a previous &#x60;ListProjectBillingInfo&#x60; call. If unspecified, the first page of results is returned.
 
   ## Returns
 
@@ -361,8 +361,8 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
