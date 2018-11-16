@@ -185,12 +185,12 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :stripResults (boolean()): This field is deprecated. The following fields are always stripped out of the result: &#x60;stack_frames&#x60;, &#x60;evaluated_expressions&#x60; and &#x60;variable_table&#x60;.
-    - :waitToken (String.t): A wait token that, if specified, blocks the call until the breakpoints list has changed, or a server selected timeout has expired.  The value should be set from the last response. The error code &#x60;google.rpc.Code.ABORTED&#x60; (RPC) is returned on wait timeout, which should be called again with the same &#x60;wait_token&#x60;.
-    - :action.value (String.t): Only breakpoints with the specified action will pass the filter.
     - :clientVersion (String.t): The client version making the call. Schema: &#x60;domain/type/version&#x60; (e.g., &#x60;google.com/intellij/v1&#x60;).
+    - :action.value (String.t): Only breakpoints with the specified action will pass the filter.
     - :includeAllUsers (boolean()): When set to &#x60;true&#x60;, the response includes the list of breakpoints set by any user. Otherwise, it includes only breakpoints set by the caller.
     - :includeInactive (boolean()): When set to &#x60;true&#x60;, the response includes active and inactive breakpoints. Otherwise, it includes only active breakpoints.
+    - :stripResults (boolean()): This field is deprecated. The following fields are always stripped out of the result: &#x60;stack_frames&#x60;, &#x60;evaluated_expressions&#x60; and &#x60;variable_table&#x60;.
+    - :waitToken (String.t): A wait token that, if specified, blocks the call until the breakpoints list has changed, or a server selected timeout has expired.  The value should be set from the last response. The error code &#x60;google.rpc.Code.ABORTED&#x60; (RPC) is returned on wait timeout, which should be called again with the same &#x60;wait_token&#x60;.
 
   ## Returns
 
@@ -222,12 +222,12 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :stripResults => :query,
-      :waitToken => :query,
-      :"action.value" => :query,
       :clientVersion => :query,
+      :"action.value" => :query,
       :includeAllUsers => :query,
-      :includeInactive => :query
+      :includeInactive => :query,
+      :stripResults => :query,
+      :waitToken => :query
     }
 
     request =
@@ -334,9 +334,9 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :project (String.t): Project number of a Google Cloud project whose debuggees to list.
     - :clientVersion (String.t): The client version making the call. Schema: &#x60;domain/type/version&#x60; (e.g., &#x60;google.com/intellij/v1&#x60;).
     - :includeInactive (boolean()): When set to &#x60;true&#x60;, the result includes all debuggees. Otherwise, the result includes only debuggees that are active.
-    - :project (String.t): Project number of a Google Cloud project whose debuggees to list.
 
   ## Returns
 
@@ -359,9 +359,9 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
+      :project => :query,
       :clientVersion => :query,
-      :includeInactive => :query,
-      :project => :query
+      :includeInactive => :query
     }
 
     request =
