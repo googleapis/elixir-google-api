@@ -506,11 +506,11 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :deviceIds ([String.t]): A list of device string IDs. For example, &#x60;[&#39;device0&#39;, &#39;device12&#39;]&#x60;. If empty, this field is ignored. Maximum IDs: 10,000
     - :deviceNumIds ([String.t]): A list of device numeric IDs. If empty, this field is ignored. Maximum IDs: 10,000.
-    - :pageToken (String.t): The value returned by the last &#x60;ListDevicesResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListDevices&#x60; call and the system should return the next page of data.
     - :fieldMask (String.t): The fields of the &#x60;Device&#x60; resource to be returned in the response. The fields &#x60;id&#x60; and &#x60;num_id&#x60; are always returned, along with any other fields specified.
     - :pageSize (integer()): The maximum number of devices to return in the response. If this value is zero, the service will select a default size. A call may return fewer objects than requested. A non-empty &#x60;next_page_token&#x60; in the response indicates that more data is available.
-    - :deviceIds ([String.t]): A list of device string IDs. For example, &#x60;[&#39;device0&#39;, &#39;device12&#39;]&#x60;. If empty, this field is ignored. Maximum IDs: 10,000
+    - :pageToken (String.t): The value returned by the last &#x60;ListDevicesResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListDevices&#x60; call and the system should return the next page of data.
 
   ## Returns
 
@@ -544,11 +544,11 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
+      :deviceIds => :query,
       :deviceNumIds => :query,
-      :pageToken => :query,
       :fieldMask => :query,
       :pageSize => :query,
-      :deviceIds => :query
+      :pageToken => :query
     }
 
     request =
@@ -1241,11 +1241,11 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): The value returned by the last &#x60;ListDevicesResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListDevices&#x60; call and the system should return the next page of data.
-    - :fieldMask (String.t): The fields of the &#x60;Device&#x60; resource to be returned in the response. The fields &#x60;id&#x60; and &#x60;num_id&#x60; are always returned, along with any other fields specified.
-    - :pageSize (integer()): The maximum number of devices to return in the response. If this value is zero, the service will select a default size. A call may return fewer objects than requested. A non-empty &#x60;next_page_token&#x60; in the response indicates that more data is available.
     - :deviceIds ([String.t]): A list of device string IDs. For example, &#x60;[&#39;device0&#39;, &#39;device12&#39;]&#x60;. If empty, this field is ignored. Maximum IDs: 10,000
     - :deviceNumIds ([String.t]): A list of device numeric IDs. If empty, this field is ignored. Maximum IDs: 10,000.
+    - :fieldMask (String.t): The fields of the &#x60;Device&#x60; resource to be returned in the response. The fields &#x60;id&#x60; and &#x60;num_id&#x60; are always returned, along with any other fields specified.
+    - :pageSize (integer()): The maximum number of devices to return in the response. If this value is zero, the service will select a default size. A call may return fewer objects than requested. A non-empty &#x60;next_page_token&#x60; in the response indicates that more data is available.
+    - :pageToken (String.t): The value returned by the last &#x60;ListDevicesResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListDevices&#x60; call and the system should return the next page of data.
 
   ## Returns
 
@@ -1281,11 +1281,11 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
+      :deviceIds => :query,
+      :deviceNumIds => :query,
       :fieldMask => :query,
       :pageSize => :query,
-      :deviceIds => :query,
-      :deviceNumIds => :query
+      :pageToken => :query
     }
 
     request =
@@ -1915,8 +1915,8 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): The value returned by the last &#x60;ListDeviceRegistriesResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListDeviceRegistries&#x60; call and the system should return the next page of data.
     - :pageSize (integer()): The maximum number of registries to return in the response. If this value is zero, the service will select a default size. A call may return fewer objects than requested. A non-empty &#x60;next_page_token&#x60; in the response indicates that more data is available.
+    - :pageToken (String.t): The value returned by the last &#x60;ListDeviceRegistriesResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListDeviceRegistries&#x60; call and the system should return the next page of data.
 
   ## Returns
 
@@ -1950,8 +1950,8 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
