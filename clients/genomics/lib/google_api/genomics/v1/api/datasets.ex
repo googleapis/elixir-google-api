@@ -264,8 +264,8 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :pageSize (integer()): The maximum number of results to return in a single page. If unspecified, defaults to 50. The maximum value is 1024.
-    - :projectId (String.t): Required. The Google Cloud project ID to list datasets for.
     - :pageToken (String.t): The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of &#x60;nextPageToken&#x60; from the previous response.
+    - :projectId (String.t): Required. The Google Cloud project ID to list datasets for.
 
   ## Returns
 
@@ -288,8 +288,8 @@ defmodule GoogleApi.Genomics.V1.Api.Datasets do
       :upload_protocol => :query,
       :uploadType => :query,
       :pageSize => :query,
-      :projectId => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :projectId => :query
     }
 
     request =

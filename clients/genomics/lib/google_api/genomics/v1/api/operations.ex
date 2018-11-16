@@ -101,8 +101,8 @@ defmodule GoogleApi.Genomics.V1.Api.Operations do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :filter (String.t): A string for filtering Operations. In v2alpha1, the following filter fields are supported&amp;#58;  * createTime&amp;#58; The time this job was created * events&amp;#58; The set of event (names) that have occurred while running   the pipeline.  The &amp;#58; operator can be used to determine if a   particular event has occurred. * error&amp;#58; If the pipeline is running, this value is NULL.  Once the   pipeline finishes, the value is the standard Google error code. * labels.key or labels.\&quot;key with space\&quot; where key is a label key. * done&amp;#58; If the pipeline is running, this value is false. Once the   pipeline finishes, the value is true.  In v1 and v1alpha2, the following filter fields are supported&amp;#58;  * projectId&amp;#58; Required. Corresponds to   OperationMetadata.projectId. * createTime&amp;#58; The time this job was created, in seconds from the   [epoch](http://en.wikipedia.org/wiki/Unix_time). Can use &#x60;&gt;&#x3D;&#x60; and/or &#x60;&lt;&#x3D;&#x60;   operators. * status&amp;#58; Can be &#x60;RUNNING&#x60;, &#x60;SUCCESS&#x60;, &#x60;FAILURE&#x60;, or &#x60;CANCELED&#x60;. Only   one status may be specified. * labels.key where key is a label key.  Examples&amp;#58;  * &#x60;projectId &#x3D; my-project AND createTime &gt;&#x3D; 1432140000&#x60; * &#x60;projectId &#x3D; my-project AND createTime &gt;&#x3D; 1432140000 AND createTime &lt;&#x3D; 1432150000 AND status &#x3D; RUNNING&#x60; * &#x60;projectId &#x3D; my-project AND labels.color &#x3D; *&#x60; * &#x60;projectId &#x3D; my-project AND labels.color &#x3D; red&#x60;
-    - :pageToken (String.t): The standard list page token.
     - :pageSize (integer()): The maximum number of results to return. If unspecified, defaults to 256. The maximum value is 2048.
+    - :pageToken (String.t): The standard list page token.
 
   ## Returns
 
@@ -125,8 +125,8 @@ defmodule GoogleApi.Genomics.V1.Api.Operations do
       :upload_protocol => :query,
       :uploadType => :query,
       :filter => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =

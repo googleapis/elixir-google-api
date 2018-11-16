@@ -43,12 +43,12 @@ defmodule GoogleApi.Genomics.V1.Api.Readgroupsets do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of &#x60;nextPageToken&#x60; from the previous response.
+    - :end (String.t): The end position of the range on the reference, 0-based exclusive. If specified, &#x60;referenceName&#x60; must also be specified. If unset or 0, defaults to the length of the reference.
     - :pageSize (integer()): The maximum number of results to return in a single page. If unspecified, defaults to 1024. The maximum value is 2048.
+    - :pageToken (String.t): The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of &#x60;nextPageToken&#x60; from the previous response.
+    - :referenceName (String.t): The name of the reference to query, within the reference set associated with this query. Optional.
     - :start (String.t): The start position of the range on the reference, 0-based inclusive. If specified, &#x60;referenceName&#x60; must also be specified. Defaults to 0.
     - :targetBucketWidth (String.t): The desired width of each reported coverage bucket in base pairs. This will be rounded down to the nearest precomputed bucket width; the value of which is returned as &#x60;bucketWidth&#x60; in the response. Defaults to infinity (each bucket spans an entire reference sequence) or the length of the target range, if specified. The smallest precomputed &#x60;bucketWidth&#x60; is currently 2048 base pairs; this is subject to change.
-    - :referenceName (String.t): The name of the reference to query, within the reference set associated with this query. Optional.
-    - :end (String.t): The end position of the range on the reference, 0-based exclusive. If specified, &#x60;referenceName&#x60; must also be specified. If unset or 0, defaults to the length of the reference.
 
   ## Returns
 
@@ -76,12 +76,12 @@ defmodule GoogleApi.Genomics.V1.Api.Readgroupsets do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
+      :end => :query,
       :pageSize => :query,
-      :start => :query,
-      :targetBucketWidth => :query,
+      :pageToken => :query,
       :referenceName => :query,
-      :end => :query
+      :start => :query,
+      :targetBucketWidth => :query
     }
 
     request =
