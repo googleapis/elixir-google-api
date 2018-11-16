@@ -43,8 +43,8 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Api.V1 do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :sdkVersion (String.t): Google SDK version. Version takes the form \&quot;$major.$minor.$patch\&quot;
     - :durationDays (String.t): The span of time requested in days.
+    - :sdkVersion (String.t): Google SDK version. Version takes the form \&quot;$major.$minor.$patch\&quot;
 
   ## Returns
 
@@ -72,8 +72,8 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Api.V1 do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :sdkVersion => :query,
-      :durationDays => :query
+      :durationDays => :query,
+      :sdkVersion => :query
     }
 
     request =
