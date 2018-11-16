@@ -275,8 +275,8 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageSize (integer()): Page size to load. Maximum of 100. Defaults to 10. Note: &#x60;page_size&#x60; is just a hint and the service may choose to load fewer than &#x60;page_size&#x60; results due to the size of the output. To traverse all of the releases, the caller should iterate until the &#x60;page_token&#x60; on the response is empty.
     - :filter (String.t): &#x60;Release&#x60; filter. The list method supports filters with restrictions on the &#x60;Release.name&#x60;, &#x60;Release.ruleset_name&#x60;, and &#x60;Release.test_suite_name&#x60;.  Example 1: A filter of &#39;name&#x3D;prod*&#39; might return &#x60;Release&#x60;s with names within &#39;projects/foo&#39; prefixed with &#39;prod&#39;:  Name                          | Ruleset Name ------------------------------|------------- projects/foo/releases/prod    | projects/foo/rulesets/uuid1234 projects/foo/releases/prod/v1 | projects/foo/rulesets/uuid1234 projects/foo/releases/prod/v2 | projects/foo/rulesets/uuid8888  Example 2: A filter of &#x60;name&#x3D;prod* ruleset_name&#x3D;uuid1234&#x60; would return only &#x60;Release&#x60; instances for &#39;projects/foo&#39; with names prefixed with &#39;prod&#39; referring to the same &#x60;Ruleset&#x60; name of &#39;uuid1234&#39;:  Name                          | Ruleset Name ------------------------------|------------- projects/foo/releases/prod    | projects/foo/rulesets/1234 projects/foo/releases/prod/v1 | projects/foo/rulesets/1234  In the examples, the filter parameters refer to the search filters are relative to the project. Fully qualified prefixed may also be used. e.g. &#x60;test_suite_name&#x3D;projects/foo/testsuites/uuid1&#x60;
+    - :pageSize (integer()): Page size to load. Maximum of 100. Defaults to 10. Note: &#x60;page_size&#x60; is just a hint and the service may choose to load fewer than &#x60;page_size&#x60; results due to the size of the output. To traverse all of the releases, the caller should iterate until the &#x60;page_token&#x60; on the response is empty.
     - :pageToken (String.t): Next page token for the next batch of &#x60;Release&#x60; instances.
 
   ## Returns
@@ -300,8 +300,8 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageSize => :query,
       :filter => :query,
+      :pageSize => :query,
       :pageToken => :query
     }
 
@@ -451,9 +451,9 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): Next page token for loading the next batch of &#x60;Ruleset&#x60; instances.
-    - :pageSize (integer()): Page size to load. Maximum of 100. Defaults to 10. Note: &#x60;page_size&#x60; is just a hint and the service may choose to load less than &#x60;page_size&#x60; due to the size of the output. To traverse all of the releases, caller should iterate until the &#x60;page_token&#x60; is empty.
     - :filter (String.t): &#x60;Ruleset&#x60; filter. The list method supports filters with restrictions on &#x60;Ruleset.name&#x60;.  Filters on &#x60;Ruleset.create_time&#x60; should use the &#x60;date&#x60; function which parses strings that conform to the RFC 3339 date/time specifications.  Example: &#x60;create_time &gt; date(\&quot;2017-01-01\&quot;) AND name&#x3D;UUID-*&#x60;
+    - :pageSize (integer()): Page size to load. Maximum of 100. Defaults to 10. Note: &#x60;page_size&#x60; is just a hint and the service may choose to load less than &#x60;page_size&#x60; due to the size of the output. To traverse all of the releases, caller should iterate until the &#x60;page_token&#x60; is empty.
+    - :pageToken (String.t): Next page token for loading the next batch of &#x60;Ruleset&#x60; instances.
 
   ## Returns
 
@@ -476,9 +476,9 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
+      :filter => :query,
       :pageSize => :query,
-      :filter => :query
+      :pageToken => :query
     }
 
     request =
