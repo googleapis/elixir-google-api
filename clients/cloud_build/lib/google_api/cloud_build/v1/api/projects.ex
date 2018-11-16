@@ -228,9 +228,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :filter (String.t): The raw filter text to constrain the results.
     - :pageToken (String.t): Token to provide to skip to a particular spot in the list.
     - :pageSize (integer()): Number of results to return in the list.
-    - :filter (String.t): The raw filter text to constrain the results.
 
   ## Returns
 
@@ -252,9 +252,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
+      :filter => :query,
       :pageToken => :query,
-      :pageSize => :query,
-      :filter => :query
+      :pageSize => :query
     }
 
     request =
