@@ -86,4 +86,8 @@ defmodule GoogleApis do
     ["clients/#{name}/lib/**/*.{ex,exs}"]
     |> Mix.Tasks.Format.run
   end
+
+  def publish(api_config) do
+    GoogleApis.Publisher.publish(api_config)
+  end
 end

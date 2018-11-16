@@ -9,7 +9,7 @@ by adding `google_api_books` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_books, "~> 0.0.1"}]
+  [{:google_api_books, "~> 0.2.0"}]
 end
 ```
 

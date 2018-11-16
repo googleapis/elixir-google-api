@@ -697,11 +697,13 @@
   {
     "version": "v1",
     "name": "TestClient",
-    "url": ""
+    "url": "",
+    "publish": false
   },
   {
     "version": "v2",
     "name": "TestClient",
-    "url": ""
+    "url": "",
+    "publish": false
   }
 ]
