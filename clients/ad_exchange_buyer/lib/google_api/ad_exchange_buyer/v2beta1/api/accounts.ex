@@ -399,9 +399,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :pageSize (integer()): Requested page size. The server may return fewer clients than requested. If unspecified, the server will pick an appropriate default.
     - :pageToken (String.t): A token identifying a page of results the server should return. Typically, this is the value of ListClientsResponse.nextPageToken returned from the previous call to the accounts.clients.list method.
     - :partnerClientId (String.t): Optional unique identifier (from the standpoint of an Ad Exchange sponsor buyer partner) of the client to return. If specified, at most one client will be returned in the response.
-    - :pageSize (integer()): Requested page size. The server may return fewer clients than requested. If unspecified, the server will pick an appropriate default.
 
   ## Returns
 
@@ -429,9 +429,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
+      :pageSize => :query,
       :pageToken => :query,
-      :partnerClientId => :query,
-      :pageSize => :query
+      :partnerClientId => :query
     }
 
     request =
@@ -895,9 +895,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :query (String.t): An optional query string to filter deal associations. If no filter is specified, all associations will be returned. Supported queries are: &lt;ul&gt; &lt;li&gt;accountId&#x3D;&lt;i&gt;account_id_string&lt;/i&gt; &lt;li&gt;creativeId&#x3D;&lt;i&gt;creative_id_string&lt;/i&gt; &lt;li&gt;dealsId&#x3D;&lt;i&gt;deals_id_string&lt;/i&gt; &lt;li&gt;dealsStatus:{approved, conditionally_approved, disapproved,                   not_checked} &lt;li&gt;openAuctionStatus:{approved, conditionally_approved, disapproved,                          not_checked} &lt;/ul&gt; Example: &#39;dealsId&#x3D;12345 AND dealsStatus:disapproved&#39;
     - :pageToken (String.t): A token identifying a page of results the server should return. Typically, this is the value of ListDealAssociationsResponse.next_page_token returned from the previous call to &#39;ListDealAssociations&#39; method.
     - :pageSize (integer()): Requested page size. Server may return fewer associations than requested. If unspecified, server will pick an appropriate default.
-    - :query (String.t): An optional query string to filter deal associations. If no filter is specified, all associations will be returned. Supported queries are: &lt;ul&gt; &lt;li&gt;accountId&#x3D;&lt;i&gt;account_id_string&lt;/i&gt; &lt;li&gt;creativeId&#x3D;&lt;i&gt;creative_id_string&lt;/i&gt; &lt;li&gt;dealsId&#x3D;&lt;i&gt;deals_id_string&lt;/i&gt; &lt;li&gt;dealsStatus:{approved, conditionally_approved, disapproved,                   not_checked} &lt;li&gt;openAuctionStatus:{approved, conditionally_approved, disapproved,                          not_checked} &lt;/ul&gt; Example: &#39;dealsId&#x3D;12345 AND dealsStatus:disapproved&#39;
 
   ## Returns
 
@@ -931,9 +931,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
+      :query => :query,
       :pageToken => :query,
-      :pageSize => :query,
-      :query => :query
+      :pageSize => :query
     }
 
     request =
@@ -1110,9 +1110,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): A token identifying a page of results the server should return. Typically, this is the value of ListCreativesResponse.next_page_token returned from the previous call to &#39;ListCreatives&#39; method.
     - :pageSize (integer()): Requested page size. The server may return fewer creatives than requested (due to timeout constraint) even if more are available via another call. If unspecified, server will pick an appropriate default. Acceptable values are 1 to 1000, inclusive.
     - :query (String.t): An optional query string to filter creatives. If no filter is specified, all active creatives will be returned. &lt;p&gt;Supported queries are: &lt;ul&gt; &lt;li&gt;accountId&#x3D;&lt;i&gt;account_id_string&lt;/i&gt; &lt;li&gt;creativeId&#x3D;&lt;i&gt;creative_id_string&lt;/i&gt; &lt;li&gt;dealsStatus: {approved, conditionally_approved, disapproved,                    not_checked} &lt;li&gt;openAuctionStatus: {approved, conditionally_approved, disapproved,                           not_checked} &lt;li&gt;attribute: {a numeric attribute from the list of attributes} &lt;li&gt;disapprovalReason: {a reason from DisapprovalReason} &lt;/ul&gt; Example: &#39;accountId&#x3D;12345 AND (dealsStatus:disapproved AND disapprovalReason:unacceptable_content) OR attribute:47&#39;
+    - :pageToken (String.t): A token identifying a page of results the server should return. Typically, this is the value of ListCreativesResponse.next_page_token returned from the previous call to &#39;ListCreatives&#39; method.
 
   ## Returns
 
@@ -1140,9 +1140,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
       :pageSize => :query,
-      :query => :query
+      :query => :query,
+      :pageToken => :query
     }
 
     request =
@@ -1528,9 +1528,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :filter (String.t): An optional PQL query used to query for products. See https://developers.google.com/ad-manager/docs/pqlreference for documentation about PQL and examples.  Nested repeated fields, such as product.targetingCriterion.inclusions, cannot be filtered.
     - :pageToken (String.t): The page token as returned from ListProductsResponse.
     - :pageSize (integer()): Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+    - :filter (String.t): An optional PQL query used to query for products. See https://developers.google.com/ad-manager/docs/pqlreference for documentation about PQL and examples.  Nested repeated fields, such as product.targetingCriterion.inclusions, cannot be filtered.
 
   ## Returns
 
@@ -1558,9 +1558,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :filter => :query,
       :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :filter => :query
     }
 
     request =

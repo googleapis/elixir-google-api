@@ -46,7 +46,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Product do
           :availableEndTime => DateTime.t(),
           :availableStartTime => DateTime.t(),
           :createTime => DateTime.t(),
-          :creatorContacts => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ContactInformation.t()),
+          :creatorContacts =>
+            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ContactInformation.t()),
           :displayName => any(),
           :hasCreatorSignedOff => any(),
           :productId => any(),

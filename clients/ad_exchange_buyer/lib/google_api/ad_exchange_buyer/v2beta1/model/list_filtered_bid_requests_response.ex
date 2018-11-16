@@ -29,7 +29,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListFilteredBidRequestsRespons
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :calloutStatusRows => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.CalloutStatusRow.t()),
+          :calloutStatusRows =>
+            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.CalloutStatusRow.t()),
           :nextPageToken => any()
         }
 
