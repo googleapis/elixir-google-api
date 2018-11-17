@@ -37,7 +37,8 @@ defmodule GoogleApi.Testing.V1.Model.TestSpecification do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :androidInstrumentationTest => GoogleApi.Testing.V1.Model.AndroidInstrumentationTest.t(),
+          :androidInstrumentationTest =>
+            GoogleApi.Testing.V1.Model.AndroidInstrumentationTest.t(),
           :androidRoboTest => GoogleApi.Testing.V1.Model.AndroidRoboTest.t(),
           :androidTestLoop => GoogleApi.Testing.V1.Model.AndroidTestLoop.t(),
           :autoGoogleLogin => any(),
