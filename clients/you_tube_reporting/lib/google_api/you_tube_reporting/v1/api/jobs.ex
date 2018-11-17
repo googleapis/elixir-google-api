@@ -212,10 +212,10 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Jobs do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): A token identifying a page of results the server should return. Typically, this is the value of ListReportTypesResponse.next_page_token returned in response to the previous call to the &#x60;ListJobs&#x60; method.
     - :includeSystemManaged (boolean()): If set to true, also system-managed jobs will be returned; otherwise only user-created jobs will be returned. System-managed jobs can neither be modified nor deleted.
-    - :pageSize (integer()): Requested page size. Server may return fewer jobs than requested. If unspecified, server will pick an appropriate default.
     - :onBehalfOfContentOwner (String.t): The content owner&#39;s external ID on which behalf the user is acting on. If not set, the user is acting for himself (his own channel).
+    - :pageSize (integer()): Requested page size. Server may return fewer jobs than requested. If unspecified, server will pick an appropriate default.
+    - :pageToken (String.t): A token identifying a page of results the server should return. Typically, this is the value of ListReportTypesResponse.next_page_token returned in response to the previous call to the &#x60;ListJobs&#x60; method.
 
   ## Returns
 
@@ -238,10 +238,10 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Jobs do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
       :includeSystemManaged => :query,
+      :onBehalfOfContentOwner => :query,
       :pageSize => :query,
-      :onBehalfOfContentOwner => :query
+      :pageToken => :query
     }
 
     request =
@@ -339,12 +339,12 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Jobs do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :onBehalfOfContentOwner (String.t): The content owner&#39;s external ID on which behalf the user is acting on. If not set, the user is acting for himself (his own channel).
-    - :startTimeBefore (DateTime.t): If set, only reports whose start time is smaller than the specified date/time are returned.
     - :createdAfter (DateTime.t): If set, only reports created after the specified date/time are returned.
-    - :startTimeAtOrAfter (DateTime.t): If set, only reports whose start time is greater than or equal the specified date/time are returned.
-    - :pageToken (String.t): A token identifying a page of results the server should return. Typically, this is the value of ListReportsResponse.next_page_token returned in response to the previous call to the &#x60;ListReports&#x60; method.
+    - :onBehalfOfContentOwner (String.t): The content owner&#39;s external ID on which behalf the user is acting on. If not set, the user is acting for himself (his own channel).
     - :pageSize (integer()): Requested page size. Server may return fewer report types than requested. If unspecified, server will pick an appropriate default.
+    - :pageToken (String.t): A token identifying a page of results the server should return. Typically, this is the value of ListReportsResponse.next_page_token returned in response to the previous call to the &#x60;ListReports&#x60; method.
+    - :startTimeAtOrAfter (DateTime.t): If set, only reports whose start time is greater than or equal the specified date/time are returned.
+    - :startTimeBefore (DateTime.t): If set, only reports whose start time is smaller than the specified date/time are returned.
 
   ## Returns
 
@@ -367,12 +367,12 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Jobs do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :onBehalfOfContentOwner => :query,
-      :startTimeBefore => :query,
       :createdAfter => :query,
-      :startTimeAtOrAfter => :query,
+      :onBehalfOfContentOwner => :query,
+      :pageSize => :query,
       :pageToken => :query,
-      :pageSize => :query
+      :startTimeAtOrAfter => :query,
+      :startTimeBefore => :query
     }
 
     request =
