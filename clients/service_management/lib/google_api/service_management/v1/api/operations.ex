@@ -99,8 +99,8 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Operations do
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :filter (String.t): A string for filtering Operations.   The following filter fields are supported&amp;#58;    * serviceName&amp;#58; Required. Only &#x60;&#x3D;&#x60; operator is allowed.   * startTime&amp;#58; The time this job was started, in ISO 8601 format.     Allowed operators are &#x60;&gt;&#x3D;&#x60;,  &#x60;&gt;&#x60;, &#x60;&lt;&#x3D;&#x60;, and &#x60;&lt;&#x60;.   * status&amp;#58; Can be &#x60;done&#x60;, &#x60;in_progress&#x60;, or &#x60;failed&#x60;. Allowed     operators are &#x60;&#x3D;&#x60;, and &#x60;!&#x3D;&#x60;.    Filter expression supports conjunction (AND) and disjunction (OR)   logical operators. However, the serviceName restriction must be at the   top-level and can only be combined with other restrictions via the AND   logical operator.    Examples&amp;#58;    * &#x60;serviceName&#x3D;{some-service}.googleapis.com&#x60;   * &#x60;serviceName&#x3D;{some-service}.googleapis.com AND startTime&gt;&#x3D;\&quot;2017-02-01\&quot;&#x60;   * &#x60;serviceName&#x3D;{some-service}.googleapis.com AND status&#x3D;done&#x60;   * &#x60;serviceName&#x3D;{some-service}.googleapis.com AND (status&#x3D;done OR startTime&gt;&#x3D;\&quot;2017-02-01\&quot;)&#x60;
     - :name (String.t): Not used.
-    - :pageToken (String.t): The standard list page token.
     - :pageSize (integer()): The maximum number of operations to return. If unspecified, defaults to 50. The maximum value is 100.
+    - :pageToken (String.t): The standard list page token.
 
   ## Returns
 
@@ -125,8 +125,8 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Operations do
       :uploadType => :query,
       :filter => :query,
       :name => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
