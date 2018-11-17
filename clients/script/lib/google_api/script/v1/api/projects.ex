@@ -280,8 +280,8 @@ defmodule GoogleApi.Script.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): The token for continuing a previous list request on the next page. This should be set to the value of &#x60;nextPageToken&#x60; from a previous response.
     - :pageSize (integer()): The maximum number of deployments on each returned page. Defaults to 50.
+    - :pageToken (String.t): The token for continuing a previous list request on the next page. This should be set to the value of &#x60;nextPageToken&#x60; from a previous response.
 
   ## Returns
 
@@ -303,8 +303,8 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -516,8 +516,8 @@ defmodule GoogleApi.Script.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :metricsGranularity (String.t): Required field indicating what granularity of metrics are returned.
     - :metricsFilter.deploymentId (String.t): Optional field indicating a specific deployment to retrieve metrics from.
+    - :metricsGranularity (String.t): Required field indicating what granularity of metrics are returned.
 
   ## Returns
 
@@ -539,8 +539,8 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :metricsGranularity => :query,
-      :"metricsFilter.deploymentId" => :query
+      :"metricsFilter.deploymentId" => :query,
+      :metricsGranularity => :query
     }
 
     request =
@@ -752,8 +752,8 @@ defmodule GoogleApi.Script.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): The token for continuing a previous list request on the next page. This should be set to the value of &#x60;nextPageToken&#x60; from a previous response.
     - :pageSize (integer()): The maximum number of versions on each returned page. Defaults to 50.
+    - :pageToken (String.t): The token for continuing a previous list request on the next page. This should be set to the value of &#x60;nextPageToken&#x60; from a previous response.
 
   ## Returns
 
@@ -775,8 +775,8 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
