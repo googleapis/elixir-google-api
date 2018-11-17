@@ -29,6 +29,7 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
   - defaultObjectAcl ([ObjectAccessControl]): Default access controls to apply to new objects when no ACL is provided. Defaults to: `null`.
   - encryption (BucketEncryption):  Defaults to: `null`.
   - etag (String.t): HTTP 1.1 Entity tag for the bucket. Defaults to: `null`.
+  - iamConfiguration (BucketIamConfiguration):  Defaults to: `null`.
   - id (String.t): The ID of the bucket. For buckets, the id and name properties are the same. Defaults to: `null`.
   - kind (String.t): The kind of item this is. For buckets, this is always storage#bucket. Defaults to: `null`.
   - labels (%{optional(String.t) &#x3D;&gt; String.t}): User-provided labels, in key/value pairs. Defaults to: `null`.
@@ -58,6 +59,7 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
           :defaultObjectAcl => list(GoogleApi.Storage.V1.Model.ObjectAccessControl.t()),
           :encryption => GoogleApi.Storage.V1.Model.BucketEncryption.t(),
           :etag => any(),
+          :iamConfiguration => GoogleApi.Storage.V1.Model.BucketIamConfiguration.t(),
           :id => any(),
           :kind => any(),
           :labels => map(),
@@ -84,6 +86,7 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
   field(:defaultObjectAcl, as: GoogleApi.Storage.V1.Model.ObjectAccessControl, type: :list)
   field(:encryption, as: GoogleApi.Storage.V1.Model.BucketEncryption)
   field(:etag)
+  field(:iamConfiguration, as: GoogleApi.Storage.V1.Model.BucketIamConfiguration)
   field(:id)
   field(:kind)
   field(:labels, type: :map)
