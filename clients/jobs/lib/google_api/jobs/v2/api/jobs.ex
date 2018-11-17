@@ -370,9 +370,9 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageSize (integer()): Optional.  The maximum number of jobs to be returned per page of results.  If ids_only is set to true, the maximum allowed page size is 1000. Otherwise, the maximum allowed page size is 100.  Default is 100 if empty or a number &lt; 1 is specified.
-    - :idsOnly (boolean()): Optional.  If set to &#x60;true&#x60;, only Job.name, Job.requisition_id and Job.language_code will be returned.  A typical use case is to synchronize job repositories.  Defaults to false.
     - :filter (String.t): Required.  The filter string specifies the jobs to be enumerated.  Supported operator: &#x3D;, AND  The fields eligible for filtering are:  * &#x60;companyName&#x60; (Required) * &#x60;requisitionId&#x60; (Optional)  Sample Query:  * companyName &#x3D; \&quot;companies/123\&quot; * companyName &#x3D; \&quot;companies/123\&quot; AND requisitionId &#x3D; \&quot;req-1\&quot;
+    - :idsOnly (boolean()): Optional.  If set to &#x60;true&#x60;, only Job.name, Job.requisition_id and Job.language_code will be returned.  A typical use case is to synchronize job repositories.  Defaults to false.
+    - :pageSize (integer()): Optional.  The maximum number of jobs to be returned per page of results.  If ids_only is set to true, the maximum allowed page size is 1000. Otherwise, the maximum allowed page size is 100.  Default is 100 if empty or a number &lt; 1 is specified.
     - :pageToken (String.t): Optional.  The starting point of a query result.
 
   ## Returns
@@ -395,9 +395,9 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageSize => :query,
-      :idsOnly => :query,
       :filter => :query,
+      :idsOnly => :query,
+      :pageSize => :query,
       :pageToken => :query
     }
 

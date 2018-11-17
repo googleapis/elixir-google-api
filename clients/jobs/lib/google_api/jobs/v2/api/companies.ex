@@ -97,11 +97,11 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :includeJobsCount (boolean()): Deprecated. Please DO NOT use this field except for small companies. Suggest counting jobs page by page instead.  Optional.  Set to true if the total number of open jobs is to be returned.  Defaults to false.
-    - :pageToken (String.t): Optional.  The starting point of a query result.
     - :idsOnly (boolean()): Optional.  If set to &#x60;true&#x60;, only job ID, job requisition ID and language code will be returned.  A typical use is to synchronize job repositories.  Defaults to false.
-    - :pageSize (integer()): Optional.  The maximum number of jobs to be returned per page of results.  If ids_only is set to true, the maximum allowed page size is 1000. Otherwise, the maximum allowed page size is 100.  Default is 100 if empty or a number &lt; 1 is specified.
+    - :includeJobsCount (boolean()): Deprecated. Please DO NOT use this field except for small companies. Suggest counting jobs page by page instead.  Optional.  Set to true if the total number of open jobs is to be returned.  Defaults to false.
     - :jobRequisitionId (String.t): Optional.  The requisition ID, also known as posting ID, assigned by the company to the job.  The maximum number of allowable characters is 225.
+    - :pageSize (integer()): Optional.  The maximum number of jobs to be returned per page of results.  If ids_only is set to true, the maximum allowed page size is 1000. Otherwise, the maximum allowed page size is 100.  Default is 100 if empty or a number &lt; 1 is specified.
+    - :pageToken (String.t): Optional.  The starting point of a query result.
 
   ## Returns
 
@@ -123,11 +123,11 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :includeJobsCount => :query,
-      :pageToken => :query,
       :idsOnly => :query,
+      :includeJobsCount => :query,
+      :jobRequisitionId => :query,
       :pageSize => :query,
-      :jobRequisitionId => :query
+      :pageToken => :query
     }
 
     request =
@@ -162,8 +162,8 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :mustHaveOpenJobs (boolean()): Optional.  Set to true if the companies request must have open jobs.  Defaults to false.  If true, at most page_size of companies are fetched, among which only those with open jobs are returned.
-    - :pageToken (String.t): Optional.  The starting indicator from which to return results.
     - :pageSize (integer()): Optional.  The maximum number of companies to be returned, at most 100. Default is 100 if a non-positive number is provided.
+    - :pageToken (String.t): Optional.  The starting indicator from which to return results.
 
   ## Returns
 
@@ -186,8 +186,8 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
       :upload_protocol => :query,
       :uploadType => :query,
       :mustHaveOpenJobs => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
