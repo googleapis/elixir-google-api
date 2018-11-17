@@ -325,8 +325,8 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): Resume listing repositories where a prior ListReposResponse left off. This is an opaque token that must be obtained from a recent, prior ListReposResponse&#39;s next_page_token field.
     - :pageSize (integer()): Maximum number of repositories to return; between 1 and 500. If not set or zero, defaults to 100 at the server.
+    - :pageToken (String.t): Resume listing repositories where a prior ListReposResponse left off. This is an opaque token that must be obtained from a recent, prior ListReposResponse&#39;s next_page_token field.
 
   ## Returns
 
@@ -348,8 +348,8 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
