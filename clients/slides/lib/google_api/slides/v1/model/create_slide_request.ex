@@ -33,7 +33,8 @@ defmodule GoogleApi.Slides.V1.Model.CreateSlideRequest do
   @type t :: %__MODULE__{
           :insertionIndex => any(),
           :objectId => any(),
-          :placeholderIdMappings => list(GoogleApi.Slides.V1.Model.LayoutPlaceholderIdMapping.t()),
+          :placeholderIdMappings =>
+            list(GoogleApi.Slides.V1.Model.LayoutPlaceholderIdMapping.t()),
           :slideLayoutReference => GoogleApi.Slides.V1.Model.LayoutReference.t()
         }
 
