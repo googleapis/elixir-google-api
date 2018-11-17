@@ -42,13 +42,13 @@ defmodule GoogleApi.Partners.V2.Api.UserStates do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :requestMetadata.partnersSessionId (String.t): Google Partners session ID.
-    - :requestMetadata.userOverrides.userId (String.t): Logged-in user ID to impersonate instead of the user&#39;s ID.
-    - :requestMetadata.trafficSource.trafficSourceId (String.t): Identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
-    - :requestMetadata.locale (String.t): Locale to use for the current request.
-    - :requestMetadata.userOverrides.ipAddress (String.t): IP address to use instead of the user&#39;s geo-located IP address.
     - :requestMetadata.experimentIds ([String.t]): Experiment IDs the current request belongs to.
+    - :requestMetadata.locale (String.t): Locale to use for the current request.
+    - :requestMetadata.partnersSessionId (String.t): Google Partners session ID.
+    - :requestMetadata.trafficSource.trafficSourceId (String.t): Identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
     - :requestMetadata.trafficSource.trafficSubId (String.t): Second level identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
+    - :requestMetadata.userOverrides.ipAddress (String.t): IP address to use instead of the user&#39;s geo-located IP address.
+    - :requestMetadata.userOverrides.userId (String.t): Logged-in user ID to impersonate instead of the user&#39;s ID.
 
   ## Returns
 
@@ -70,13 +70,13 @@ defmodule GoogleApi.Partners.V2.Api.UserStates do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :"requestMetadata.partnersSessionId" => :query,
-      :"requestMetadata.userOverrides.userId" => :query,
-      :"requestMetadata.trafficSource.trafficSourceId" => :query,
-      :"requestMetadata.locale" => :query,
-      :"requestMetadata.userOverrides.ipAddress" => :query,
       :"requestMetadata.experimentIds" => :query,
-      :"requestMetadata.trafficSource.trafficSubId" => :query
+      :"requestMetadata.locale" => :query,
+      :"requestMetadata.partnersSessionId" => :query,
+      :"requestMetadata.trafficSource.trafficSourceId" => :query,
+      :"requestMetadata.trafficSource.trafficSubId" => :query,
+      :"requestMetadata.userOverrides.ipAddress" => :query,
+      :"requestMetadata.userOverrides.userId" => :query
     }
 
     request =
