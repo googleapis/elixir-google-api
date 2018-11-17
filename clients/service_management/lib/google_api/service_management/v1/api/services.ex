@@ -174,8 +174,8 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): The token of the page to retrieve.
     - :pageSize (integer()): The max number of items to include in the response list.
+    - :pageToken (String.t): The token of the page to retrieve.
 
   ## Returns
 
@@ -203,8 +203,8 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -920,8 +920,8 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :consumerId (String.t): Include services consumed by the specified consumer.  The Google Service Management implementation accepts the following forms: - project:&lt;project_id&gt;
-    - :pageToken (String.t): Token identifying which result to start with; returned by a previous list call.
     - :pageSize (integer()): Requested size of the next page of data.
+    - :pageToken (String.t): Token identifying which result to start with; returned by a previous list call.
     - :producerProjectId (String.t): Include services produced by the specified project.
 
   ## Returns
@@ -946,8 +946,8 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       :upload_protocol => :query,
       :uploadType => :query,
       :consumerId => :query,
-      :pageToken => :query,
       :pageSize => :query,
+      :pageToken => :query,
       :producerProjectId => :query
     }
 
@@ -1113,8 +1113,8 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :filter (String.t): Use &#x60;filter&#x60; to return subset of rollouts. The following filters are supported:   -- To limit the results to only those in      [status](google.api.servicemanagement.v1.RolloutStatus) &#39;SUCCESS&#39;,      use filter&#x3D;&#39;status&#x3D;SUCCESS&#39;   -- To limit the results to those in      [status](google.api.servicemanagement.v1.RolloutStatus) &#39;CANCELLED&#39;      or &#39;FAILED&#39;, use filter&#x3D;&#39;status&#x3D;CANCELLED OR status&#x3D;FAILED&#39;
-    - :pageToken (String.t): The token of the page to retrieve.
     - :pageSize (integer()): The max number of items to include in the response list.
+    - :pageToken (String.t): The token of the page to retrieve.
 
   ## Returns
 
@@ -1143,8 +1143,8 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       :upload_protocol => :query,
       :uploadType => :query,
       :filter => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
