@@ -449,8 +449,8 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): The pagination token as returned in the response.
     - :pageSize (integer()): The number of exports to return in the response.
+    - :pageToken (String.t): The pagination token as returned in the response.
 
   ## Returns
 
@@ -472,8 +472,8 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -1012,8 +1012,8 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): The pagination token as returned in the response. An empty token means start from the beginning.
     - :pageSize (integer()): The number of holds to return in the response, between 0 and 100 inclusive. Leaving this empty, or as 0, is the same as page_size &#x3D; 100.
+    - :pageToken (String.t): The pagination token as returned in the response. An empty token means start from the beginning.
     - :view (String.t): Specifies which parts of the Hold to return.
 
   ## Returns
@@ -1036,8 +1036,8 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
       :pageSize => :query,
+      :pageToken => :query,
       :view => :query
     }
 
@@ -1207,9 +1207,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :state (String.t): If set, list only matters with that specific state. The default is listing matters of all states.
-    - :pageToken (String.t): The pagination token as returned in the response.
     - :pageSize (integer()): The number of matters to return in the response. Default and maximum are 100.
+    - :pageToken (String.t): The pagination token as returned in the response.
+    - :state (String.t): If set, list only matters with that specific state. The default is listing matters of all states.
     - :view (String.t): Specifies which parts of the matter to return in response.
 
   ## Returns
@@ -1232,9 +1232,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :state => :query,
-      :pageToken => :query,
       :pageSize => :query,
+      :pageToken => :query,
+      :state => :query,
       :view => :query
     }
 
@@ -1565,8 +1565,8 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): The pagination token as returned in the previous response. An empty token means start from the beginning.
     - :pageSize (integer()): The maximum number of saved queries to return.
+    - :pageToken (String.t): The pagination token as returned in the previous response. An empty token means start from the beginning.
 
   ## Returns
 
@@ -1588,8 +1588,8 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
