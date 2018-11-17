@@ -1704,8 +1704,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): The value returned by the last &#x60;ListTopicsResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListTopics&#x60; call, and that the system should return the next page of data.
     - :pageSize (integer()): Maximum number of topics to return.
+    - :pageToken (String.t): The value returned by the last &#x60;ListTopicsResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListTopics&#x60; call, and that the system should return the next page of data.
 
   ## Returns
 
@@ -1727,8 +1727,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -1963,8 +1963,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): The value returned by the last &#x60;ListTopicSnapshotsResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListTopicSnapshots&#x60; call, and that the system should return the next page of data.
     - :pageSize (integer()): Maximum number of snapshot names to return.
+    - :pageToken (String.t): The value returned by the last &#x60;ListTopicSnapshotsResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListTopicSnapshots&#x60; call, and that the system should return the next page of data.
 
   ## Returns
 
@@ -1998,8 +1998,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -2036,8 +2036,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): The value returned by the last &#x60;ListTopicSubscriptionsResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListTopicSubscriptions&#x60; call, and that the system should return the next page of data.
     - :pageSize (integer()): Maximum number of subscription names to return.
+    - :pageToken (String.t): The value returned by the last &#x60;ListTopicSubscriptionsResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListTopicSubscriptions&#x60; call, and that the system should return the next page of data.
 
   ## Returns
 
@@ -2071,8 +2071,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
