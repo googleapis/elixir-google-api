@@ -166,8 +166,8 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Operations do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :filter (String.t): The standard list filter.
-    - :pageToken (String.t): The standard list page token.
     - :pageSize (integer()): The standard list page size.
+    - :pageToken (String.t): The standard list page token.
 
   ## Returns
 
@@ -196,8 +196,8 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Operations do
       :upload_protocol => :query,
       :uploadType => :query,
       :filter => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
