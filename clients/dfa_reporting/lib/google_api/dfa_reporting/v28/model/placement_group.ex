@@ -76,7 +76,8 @@ defmodule GoogleApi.DFAReporting.V28.Model.PlacementGroup do
           :placementStrategyId => any(),
           :pricingSchedule => GoogleApi.DFAReporting.V28.Model.PricingSchedule.t(),
           :primaryPlacementId => any(),
-          :primaryPlacementIdDimensionValue => GoogleApi.DFAReporting.V28.Model.DimensionValue.t(),
+          :primaryPlacementIdDimensionValue =>
+            GoogleApi.DFAReporting.V28.Model.DimensionValue.t(),
           :siteId => any(),
           :siteIdDimensionValue => GoogleApi.DFAReporting.V28.Model.DimensionValue.t(),
           :subaccountId => any()

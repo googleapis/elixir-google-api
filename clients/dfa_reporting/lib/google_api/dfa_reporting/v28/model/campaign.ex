@@ -56,7 +56,8 @@ defmodule GoogleApi.DFAReporting.V28.Model.Campaign do
 
   @type t :: %__MODULE__{
           :accountId => any(),
-          :adBlockingConfiguration => GoogleApi.DFAReporting.V28.Model.AdBlockingConfiguration.t(),
+          :adBlockingConfiguration =>
+            GoogleApi.DFAReporting.V28.Model.AdBlockingConfiguration.t(),
           :additionalCreativeOptimizationConfigurations =>
             list(GoogleApi.DFAReporting.V28.Model.CreativeOptimizationConfiguration.t()),
           :advertiserGroupId => any(),
