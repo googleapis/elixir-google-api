@@ -42,8 +42,8 @@ defmodule GoogleApi.DLP.V2.Api.InfoTypes do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :languageCode (String.t): Optional BCP-47 language code for localized infoType friendly names. If omitted, or if localized strings are not available, en-US strings will be returned.
     - :filter (String.t): Optional filter to only return infoTypes supported by certain parts of the API. Defaults to supported_by&#x3D;INSPECT.
+    - :languageCode (String.t): Optional BCP-47 language code for localized infoType friendly names. If omitted, or if localized strings are not available, en-US strings will be returned.
 
   ## Returns
 
@@ -66,8 +66,8 @@ defmodule GoogleApi.DLP.V2.Api.InfoTypes do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :languageCode => :query,
-      :filter => :query
+      :filter => :query,
+      :languageCode => :query
     }
 
     request =
