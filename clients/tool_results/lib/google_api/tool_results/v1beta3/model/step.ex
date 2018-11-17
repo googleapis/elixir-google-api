@@ -46,7 +46,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.Step do
           :creationTime => GoogleApi.ToolResults.V1beta3.Model.Timestamp.t(),
           :description => any(),
           :deviceUsageDuration => GoogleApi.ToolResults.V1beta3.Model.Duration.t(),
-          :dimensionValue => list(GoogleApi.ToolResults.V1beta3.Model.StepDimensionValueEntry.t()),
+          :dimensionValue =>
+            list(GoogleApi.ToolResults.V1beta3.Model.StepDimensionValueEntry.t()),
           :hasImages => any(),
           :labels => list(GoogleApi.ToolResults.V1beta3.Model.StepLabelsEntry.t()),
           :name => any(),
