@@ -300,8 +300,8 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :projectId (String.t): The project id to list beacon attachments under. This field can be used when \&quot;*\&quot; is specified to mean all attachment namespaces. Projects may have multiple attachments with multiple namespaces. If \&quot;*\&quot; is specified and the projectId string is empty, then the project making the request is used. Optional.
     - :namespacedType (String.t): Specifies the namespace and type of attachment to include in response in &lt;var&gt;namespace/type&lt;/var&gt; format. Accepts &#x60;*/*&#x60; to specify \&quot;all types in all namespaces\&quot;.
+    - :projectId (String.t): The project id to list beacon attachments under. This field can be used when \&quot;*\&quot; is specified to mean all attachment namespaces. Projects may have multiple attachments with multiple namespaces. If \&quot;*\&quot; is specified and the projectId string is empty, then the project making the request is used. Optional.
 
   ## Returns
 
@@ -329,8 +329,8 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :projectId => :query,
-      :namespacedType => :query
+      :namespacedType => :query,
+      :projectId => :query
     }
 
     request =
@@ -548,9 +548,9 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): Requests results that occur after the &#x60;page_token&#x60;, obtained from the response to a previous request. Optional.
-    - :pageSize (integer()): Specifies the maximum number of results to return. Defaults to 10. Maximum 1000. Optional.
     - :alertFilter (String.t): Requests only beacons that have the given alert. For example, to find beacons that have low batteries use &#x60;alert_filter&#x3D;LOW_BATTERY&#x60;.
+    - :pageSize (integer()): Specifies the maximum number of results to return. Defaults to 10. Maximum 1000. Optional.
+    - :pageToken (String.t): Requests results that occur after the &#x60;page_token&#x60;, obtained from the response to a previous request. Optional.
     - :projectId (String.t): Requests only diagnostic records for the given project id. If not set, then the project making the request will be used for looking up diagnostic records. Optional.
 
   ## Returns
@@ -579,9 +579,9 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
-      :pageSize => :query,
       :alertFilter => :query,
+      :pageSize => :query,
+      :pageToken => :query,
       :projectId => :query
     }
 
@@ -675,10 +675,10 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): A pagination token obtained from a previous request to list beacons.
-    - :q (String.t): Filter query string that supports the following field filters:  * **description:&#x60;\&quot;&lt;string&gt;\&quot;&#x60;**   For example: **description:\&quot;Room 3\&quot;**   Returns beacons whose description matches tokens in the string \&quot;Room 3\&quot;   (not necessarily that exact string).   The string must be double-quoted. * **status:&#x60;&lt;enum&gt;&#x60;**   For example: **status:active**   Returns beacons whose status matches the given value. Values must be   one of the Beacon.Status enum values (case insensitive). Accepts   multiple filters which will be combined with OR logic. * **stability:&#x60;&lt;enum&gt;&#x60;**   For example: **stability:mobile**   Returns beacons whose expected stability matches the given value.   Values must be one of the Beacon.Stability enum values (case   insensitive). Accepts multiple filters which will be combined with   OR logic. * **place\\_id:&#x60;\&quot;&lt;string&gt;\&quot;&#x60;**   For example: **place\\_id:\&quot;ChIJVSZzVR8FdkgRXGmmm6SslKw&#x3D;\&quot;**   Returns beacons explicitly registered at the given place, expressed as   a Place ID obtained from [Google Places API](/places/place-id). Does not   match places inside the given place. Does not consider the beacon&#39;s   actual location (which may be different from its registered place).   Accepts multiple filters that will be combined with OR logic. The place   ID must be double-quoted. * **registration\\_time&#x60;[&lt;|&gt;|&lt;&#x3D;|&gt;&#x3D;]&lt;integer&gt;&#x60;**   For example: **registration\\_time&gt;&#x3D;1433116800**   Returns beacons whose registration time matches the given filter.   Supports the operators: &lt;, &gt;, &lt;&#x3D;, and &gt;&#x3D;. Timestamp must be expressed as   an integer number of seconds since midnight January 1, 1970 UTC. Accepts   at most two filters that will be combined with AND logic, to support   \&quot;between\&quot; semantics. If more than two are supplied, the latter ones are   ignored. * **lat:&#x60;&lt;double&gt; lng:&lt;double&gt; radius:&lt;integer&gt;&#x60;**   For example: **lat:51.1232343 lng:-1.093852 radius:1000**   Returns beacons whose registered location is within the given circle.   When any of these fields are given, all are required. Latitude and   longitude must be decimal degrees between -90.0 and 90.0 and between   -180.0 and 180.0 respectively. Radius must be an integer number of   meters between 10 and 1,000,000 (1000 km). * **property:&#x60;\&quot;&lt;string&gt;&#x3D;&lt;string&gt;\&quot;&#x60;**   For example: **property:\&quot;battery-type&#x3D;CR2032\&quot;**   Returns beacons which have a property of the given name and value.   Supports multiple filters which will be combined with OR logic.   The entire name&#x3D;value string must be double-quoted as one string. * **attachment\\_type:&#x60;\&quot;&lt;string&gt;\&quot;&#x60;**   For example: **attachment_type:\&quot;my-namespace/my-type\&quot;**   Returns beacons having at least one attachment of the given namespaced   type. Supports \&quot;any within this namespace\&quot; via the partial wildcard   syntax: \&quot;my-namespace/*\&quot;. Supports multiple filters which will be   combined with OR logic. The string must be double-quoted. * **indoor\\_level:&#x60;\&quot;&lt;string&gt;\&quot;&#x60;**   For example: **indoor\\_level:\&quot;1\&quot;**   Returns beacons which are located on the given indoor level. Accepts   multiple filters that will be combined with OR logic.  Multiple filters on the same field are combined with OR logic (except registration_time which is combined with AND logic). Multiple filters on different fields are combined with AND logic. Filters should be separated by spaces.  As with any HTTP query string parameter, the whole filter expression must be URL-encoded.  Example REST request: &#x60;GET /v1beta1/beacons?q&#x3D;status:active%20lat:51.123%20lng:-1.095%20radius:1000&#x60;
     - :pageSize (integer()): The maximum number of records to return for this request, up to a server-defined upper limit.
+    - :pageToken (String.t): A pagination token obtained from a previous request to list beacons.
     - :projectId (String.t): The project id to list beacons under. If not present then the project credential that made the request is used as the project. Optional.
+    - :q (String.t): Filter query string that supports the following field filters:  * **description:&#x60;\&quot;&lt;string&gt;\&quot;&#x60;**   For example: **description:\&quot;Room 3\&quot;**   Returns beacons whose description matches tokens in the string \&quot;Room 3\&quot;   (not necessarily that exact string).   The string must be double-quoted. * **status:&#x60;&lt;enum&gt;&#x60;**   For example: **status:active**   Returns beacons whose status matches the given value. Values must be   one of the Beacon.Status enum values (case insensitive). Accepts   multiple filters which will be combined with OR logic. * **stability:&#x60;&lt;enum&gt;&#x60;**   For example: **stability:mobile**   Returns beacons whose expected stability matches the given value.   Values must be one of the Beacon.Stability enum values (case   insensitive). Accepts multiple filters which will be combined with   OR logic. * **place\\_id:&#x60;\&quot;&lt;string&gt;\&quot;&#x60;**   For example: **place\\_id:\&quot;ChIJVSZzVR8FdkgRXGmmm6SslKw&#x3D;\&quot;**   Returns beacons explicitly registered at the given place, expressed as   a Place ID obtained from [Google Places API](/places/place-id). Does not   match places inside the given place. Does not consider the beacon&#39;s   actual location (which may be different from its registered place).   Accepts multiple filters that will be combined with OR logic. The place   ID must be double-quoted. * **registration\\_time&#x60;[&lt;|&gt;|&lt;&#x3D;|&gt;&#x3D;]&lt;integer&gt;&#x60;**   For example: **registration\\_time&gt;&#x3D;1433116800**   Returns beacons whose registration time matches the given filter.   Supports the operators: &lt;, &gt;, &lt;&#x3D;, and &gt;&#x3D;. Timestamp must be expressed as   an integer number of seconds since midnight January 1, 1970 UTC. Accepts   at most two filters that will be combined with AND logic, to support   \&quot;between\&quot; semantics. If more than two are supplied, the latter ones are   ignored. * **lat:&#x60;&lt;double&gt; lng:&lt;double&gt; radius:&lt;integer&gt;&#x60;**   For example: **lat:51.1232343 lng:-1.093852 radius:1000**   Returns beacons whose registered location is within the given circle.   When any of these fields are given, all are required. Latitude and   longitude must be decimal degrees between -90.0 and 90.0 and between   -180.0 and 180.0 respectively. Radius must be an integer number of   meters between 10 and 1,000,000 (1000 km). * **property:&#x60;\&quot;&lt;string&gt;&#x3D;&lt;string&gt;\&quot;&#x60;**   For example: **property:\&quot;battery-type&#x3D;CR2032\&quot;**   Returns beacons which have a property of the given name and value.   Supports multiple filters which will be combined with OR logic.   The entire name&#x3D;value string must be double-quoted as one string. * **attachment\\_type:&#x60;\&quot;&lt;string&gt;\&quot;&#x60;**   For example: **attachment_type:\&quot;my-namespace/my-type\&quot;**   Returns beacons having at least one attachment of the given namespaced   type. Supports \&quot;any within this namespace\&quot; via the partial wildcard   syntax: \&quot;my-namespace/*\&quot;. Supports multiple filters which will be   combined with OR logic. The string must be double-quoted. * **indoor\\_level:&#x60;\&quot;&lt;string&gt;\&quot;&#x60;**   For example: **indoor\\_level:\&quot;1\&quot;**   Returns beacons which are located on the given indoor level. Accepts   multiple filters that will be combined with OR logic.  Multiple filters on the same field are combined with OR logic (except registration_time which is combined with AND logic). Multiple filters on different fields are combined with AND logic. Filters should be separated by spaces.  As with any HTTP query string parameter, the whole filter expression must be URL-encoded.  Example REST request: &#x60;GET /v1beta1/beacons?q&#x3D;status:active%20lat:51.123%20lng:-1.095%20radius:1000&#x60;
 
   ## Returns
 
@@ -701,10 +701,10 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
-      :q => :query,
       :pageSize => :query,
-      :projectId => :query
+      :pageToken => :query,
+      :projectId => :query,
+      :q => :query
     }
 
     request =
