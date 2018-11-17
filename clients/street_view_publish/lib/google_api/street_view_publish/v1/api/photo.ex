@@ -152,8 +152,8 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :view (String.t): Specifies if a download URL for the photo bytes should be returned in the Photo response.
     - :languageCode (String.t): The BCP-47 language code, such as \&quot;en-US\&quot; or \&quot;sr-Latn\&quot;. For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. If language_code is unspecified, the user&#39;s language preference for Google services will be used.
+    - :view (String.t): Specifies if a download URL for the photo bytes should be returned in the Photo response.
 
   ## Returns
 
@@ -175,8 +175,8 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :view => :query,
-      :languageCode => :query
+      :languageCode => :query,
+      :view => :query
     }
 
     request =
