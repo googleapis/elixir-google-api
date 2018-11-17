@@ -219,8 +219,8 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photos do
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :filter (String.t): The filter expression. For example: &#x60;placeId&#x3D;ChIJj61dQgK6j4AR4GeTYWZsKWw&#x60;.  The only filter supported at the moment is &#x60;placeId&#x60;.
     - :languageCode (String.t): The BCP-47 language code, such as \&quot;en-US\&quot; or \&quot;sr-Latn\&quot;. For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. If language_code is unspecified, the user&#39;s language preference for Google services will be used.
-    - :pageToken (String.t): The nextPageToken value returned from a previous ListPhotos request, if any.
     - :pageSize (integer()): The maximum number of photos to return. &#x60;pageSize&#x60; must be non-negative. If &#x60;pageSize&#x60; is zero or is not provided, the default page size of 100 will be used. The number of photos returned in the response may be less than &#x60;pageSize&#x60; if the number of photos that belong to the user is less than &#x60;pageSize&#x60;.
+    - :pageToken (String.t): The nextPageToken value returned from a previous ListPhotos request, if any.
     - :view (String.t): Specifies if a download URL for the photos bytes should be returned in the Photos response.
 
   ## Returns
@@ -246,8 +246,8 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photos do
       :uploadType => :query,
       :filter => :query,
       :languageCode => :query,
-      :pageToken => :query,
       :pageSize => :query,
+      :pageToken => :query,
       :view => :query
     }
 
