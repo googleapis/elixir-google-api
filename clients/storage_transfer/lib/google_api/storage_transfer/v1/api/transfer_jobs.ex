@@ -153,9 +153,9 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): The list page token.
-    - :pageSize (integer()): The list page size. The max allowed value is 256.
     - :filter (String.t): A list of query parameters specified as JSON text in the form of {\&quot;project_id\&quot;:\&quot;my_project_id\&quot;, \&quot;job_names\&quot;:[\&quot;jobid1\&quot;,\&quot;jobid2\&quot;,...], \&quot;job_statuses\&quot;:[\&quot;status1\&quot;,\&quot;status2\&quot;,...]}. Since &#x60;job_names&#x60; and &#x60;job_statuses&#x60; support multiple values, their values must be specified with array notation. &#x60;project_id&#x60; is required. &#x60;job_names&#x60; and &#x60;job_statuses&#x60; are optional.  The valid values for &#x60;job_statuses&#x60; are case-insensitive: &#x60;ENABLED&#x60;, &#x60;DISABLED&#x60;, and &#x60;DELETED&#x60;.
+    - :pageSize (integer()): The list page size. The max allowed value is 256.
+    - :pageToken (String.t): The list page token.
 
   ## Returns
 
@@ -178,9 +178,9 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
+      :filter => :query,
       :pageSize => :query,
-      :filter => :query
+      :pageToken => :query
     }
 
     request =

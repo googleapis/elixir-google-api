@@ -164,8 +164,8 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :filter (String.t): A list of query parameters specified as JSON text in the form of {\\\&quot;project_id\\\&quot; : \\\&quot;my_project_id\\\&quot;, \\\&quot;job_names\\\&quot; : [\\\&quot;jobid1\\\&quot;, \\\&quot;jobid2\\\&quot;,...], \\\&quot;operation_names\\\&quot; : [\\\&quot;opid1\\\&quot;, \\\&quot;opid2\\\&quot;,...], \\\&quot;transfer_statuses\\\&quot;:[\\\&quot;status1\\\&quot;, \\\&quot;status2\\\&quot;,...]}. Since &#x60;job_names&#x60;, &#x60;operation_names&#x60;, and &#x60;transfer_statuses&#x60; support multiple values, they must be specified with array notation. &#x60;job_names&#x60;, &#x60;operation_names&#x60;, and &#x60;transfer_statuses&#x60; are optional.
-    - :pageToken (String.t): The list page token.
     - :pageSize (integer()): The list page size. The max allowed value is 256.
+    - :pageToken (String.t): The list page token.
 
   ## Returns
 
@@ -194,8 +194,8 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
       :upload_protocol => :query,
       :uploadType => :query,
       :filter => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
