@@ -234,8 +234,8 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): The next_page_token returned from a previous List request, if any.
     - :pageSize (integer()): The maximum number of items to return. Default 10, maximum 100.
+    - :pageToken (String.t): The next_page_token returned from a previous List request, if any.
 
   ## Returns
 
@@ -262,8 +262,8 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -277,70 +277,6 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Vision.V1.Model.ListProductSetsResponse{}])
-  end
-
-  @doc """
-  Makes changes to a ProductSet resource. Only display_name can be updated currently.  Possible errors:  * Returns NOT_FOUND if the ProductSet does not exist. * Returns INVALID_ARGUMENT if display_name is present in update_mask but   missing from the request or longer than 4096 characters.
-
-  ## Parameters
-
-  - connection (GoogleApi.Vision.V1.Connection): Connection to server
-  - name (String.t): The resource name of the ProductSet.  Format is: &#x60;projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID&#x60;.  This field is ignored when creating a ProductSet.
-  - optional_params (KeywordList): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :updateMask (String.t): The FieldMask that specifies which fields to update. If update_mask isn&#39;t specified, all mutable fields are to be updated. Valid mask path is &#x60;display_name&#x60;.
-    - :body (ProductSet): 
-
-  ## Returns
-
-  {:ok, %GoogleApi.Vision.V1.Model.ProductSet{}} on success
-  {:error, info} on failure
-  """
-  @spec vision_projects_locations_product_sets_patch(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Vision.V1.Model.ProductSet.t()} | {:error, Tesla.Env.t()}
-  def vision_projects_locations_product_sets_patch(
-        connection,
-        name,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :upload_protocol => :query,
-      :uploadType => :query,
-      :updateMask => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:patch)
-      |> Request.url("/v1/{+name}", %{
-        "name" => URI.encode_www_form(name)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.Vision.V1.Model.ProductSet{}])
   end
 
   @doc """
@@ -362,8 +298,8 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): The next_page_token returned from a previous List request, if any.
     - :pageSize (integer()): The maximum number of items to return. Default 10, maximum 100.
+    - :pageToken (String.t): The next_page_token returned from a previous List request, if any.
 
   ## Returns
 
@@ -395,8 +331,8 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -562,8 +498,8 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): The next_page_token returned from a previous List request, if any.
     - :pageSize (integer()): The maximum number of items to return. Default 10, maximum 100.
+    - :pageToken (String.t): The next_page_token returned from a previous List request, if any.
 
   ## Returns
 
@@ -590,8 +526,8 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -605,6 +541,70 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Vision.V1.Model.ListProductsResponse{}])
+  end
+
+  @doc """
+  Makes changes to a Product resource. Only the &#x60;display_name&#x60;, &#x60;description&#x60;, and &#x60;labels&#x60; fields can be updated right now.  If labels are updated, the change will not be reflected in queries until the next index time.  Possible errors:  * Returns NOT_FOUND if the Product does not exist. * Returns INVALID_ARGUMENT if display_name is present in update_mask but is   missing from the request or longer than 4096 characters. * Returns INVALID_ARGUMENT if description is present in update_mask but is   longer than 4096 characters. * Returns INVALID_ARGUMENT if product_category is present in update_mask.
+
+  ## Parameters
+
+  - connection (GoogleApi.Vision.V1.Connection): Connection to server
+  - name (String.t): The resource name of the product.  Format is: &#x60;projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID&#x60;.  This field is ignored when creating a product.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :updateMask (String.t): The FieldMask that specifies which fields to update. If update_mask isn&#39;t specified, all mutable fields are to be updated. Valid mask paths include &#x60;product_labels&#x60;, &#x60;display_name&#x60;, and &#x60;description&#x60;.
+    - :body (Product): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Vision.V1.Model.Product{}} on success
+  {:error, info} on failure
+  """
+  @spec vision_projects_locations_products_patch(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.Vision.V1.Model.Product.t()} | {:error, Tesla.Env.t()}
+  def vision_projects_locations_products_patch(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :updateMask => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode_www_form(name)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Vision.V1.Model.Product{}])
   end
 
   @doc """
@@ -675,6 +675,138 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   end
 
   @doc """
+  Permanently deletes a reference image.  The image metadata will be deleted right away, but search queries against ProductSets containing the image may still work until all related caches are refreshed.  The actual image files are not deleted from Google Cloud Storage.  Possible errors:  * Returns NOT_FOUND if the reference image does not exist.
+
+  ## Parameters
+
+  - connection (GoogleApi.Vision.V1.Connection): Connection to server
+  - name (String.t): The resource name of the reference image to delete.  Format is:  &#x60;projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID&#x60;
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+
+  ## Returns
+
+  {:ok, %GoogleApi.Vision.V1.Model.Empty{}} on success
+  {:error, info} on failure
+  """
+  @spec vision_projects_locations_products_reference_images_delete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Vision.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+  def vision_projects_locations_products_reference_images_delete(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode_www_form(name)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Vision.V1.Model.Empty{}])
+  end
+
+  @doc """
+  Gets information associated with a ReferenceImage.  Possible errors:  * Returns NOT_FOUND if the specified image does not exist.
+
+  ## Parameters
+
+  - connection (GoogleApi.Vision.V1.Connection): Connection to server
+  - name (String.t): The resource name of the ReferenceImage to get.  Format is:  &#x60;projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :filter (String.t): The standard list filter.
+    - :pageSize (integer()): The standard list page size.
+    - :pageToken (String.t): The standard list page token.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Vision.V1.Model.ReferenceImage{}} on success
+  {:error, info} on failure
+  """
+  @spec vision_projects_locations_products_reference_images_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Vision.V1.Model.ReferenceImage.t()} | {:error, Tesla.Env.t()}
+  def vision_projects_locations_products_reference_images_get(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :filter => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode_www_form(name)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Vision.V1.Model.ReferenceImage{}])
+  end
+
+  @doc """
   Lists reference images.  Possible errors:  * Returns NOT_FOUND if the parent product does not exist. * Returns INVALID_ARGUMENT if the page_size is greater than 100, or less   than 1.
 
   ## Parameters
@@ -693,8 +825,8 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): A token identifying a page of results to be returned. This is the value of &#x60;nextPageToken&#x60; returned in a previous reference image list request.  Defaults to the first page if not specified.
     - :pageSize (integer()): The maximum number of items to return. Default 10, maximum 100.
+    - :pageToken (String.t): A token identifying a page of results to be returned. This is the value of &#x60;nextPageToken&#x60; returned in a previous reference image list request.  Defaults to the first page if not specified.
 
   ## Returns
 
@@ -726,8 +858,8 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
