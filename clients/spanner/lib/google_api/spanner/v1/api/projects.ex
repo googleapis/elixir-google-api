@@ -25,6 +25,67 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
+  Gets information about a particular instance configuration.
+
+  ## Parameters
+
+  - connection (GoogleApi.Spanner.V1.Connection): Connection to server
+  - name (String.t): Required. The name of the requested instance configuration. Values are of the form &#x60;projects/&lt;project&gt;/instanceConfigs/&lt;config&gt;&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :filter (String.t): The standard list filter.
+    - :pageSize (integer()): The standard list page size.
+    - :pageToken (String.t): The standard list page token.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Spanner.V1.Model.InstanceConfig{}} on success
+  {:error, info} on failure
+  """
+  @spec spanner_projects_instance_configs_get(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.Spanner.V1.Model.InstanceConfig.t()} | {:error, Tesla.Env.t()}
+  def spanner_projects_instance_configs_get(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :filter => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode_www_form(name)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Spanner.V1.Model.InstanceConfig{}])
+  end
+
+  @doc """
   Lists the supported instance configurations for a given project.
 
   ## Parameters
@@ -43,8 +104,8 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): If non-empty, &#x60;page_token&#x60; should contain a next_page_token from a previous ListInstanceConfigsResponse.
     - :pageSize (integer()): Number of instance configurations to be returned in the response. If 0 or less, defaults to the server&#39;s maximum allowed page size.
+    - :pageToken (String.t): If non-empty, &#x60;page_token&#x60; should contain a next_page_token from a previous ListInstanceConfigsResponse.
 
   ## Returns
 
@@ -72,8 +133,8 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -417,8 +478,8 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): If non-empty, &#x60;page_token&#x60; should contain a next_page_token from a previous ListDatabasesResponse.
     - :pageSize (integer()): Number of databases to be returned in the response. If 0 or less, defaults to the server&#39;s maximum allowed page size.
+    - :pageToken (String.t): If non-empty, &#x60;page_token&#x60; should contain a next_page_token from a previous ListDatabasesResponse.
 
   ## Returns
 
@@ -445,8 +506,8 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -806,9 +867,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): If non-empty, &#x60;page_token&#x60; should contain a next_page_token from a previous ListSessionsResponse.
-    - :pageSize (integer()): Number of sessions to be returned in the response. If 0 or less, defaults to the server&#39;s maximum allowed page size.
     - :filter (String.t): An expression for filtering the results of the request. Filter rules are case insensitive. The fields eligible for filtering are:    * &#x60;labels.key&#x60; where key is the name of a label  Some examples of using filters are:    * &#x60;labels.env:*&#x60; --&gt; The session has the label \&quot;env\&quot;.   * &#x60;labels.env:dev&#x60; --&gt; The session has the label \&quot;env\&quot; and the value of                        the label contains the string \&quot;dev\&quot;.
+    - :pageSize (integer()): Number of sessions to be returned in the response. If 0 or less, defaults to the server&#39;s maximum allowed page size.
+    - :pageToken (String.t): If non-empty, &#x60;page_token&#x60; should contain a next_page_token from a previous ListSessionsResponse.
 
   ## Returns
 
@@ -838,9 +899,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
+      :filter => :query,
       :pageSize => :query,
-      :filter => :query
+      :pageToken => :query
     }
 
     request =
@@ -1394,9 +1455,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): If non-empty, &#x60;page_token&#x60; should contain a next_page_token from a previous ListInstancesResponse.
-    - :pageSize (integer()): Number of instances to be returned in the response. If 0 or less, defaults to the server&#39;s maximum allowed page size.
     - :filter (String.t): An expression for filtering the results of the request. Filter rules are case insensitive. The fields eligible for filtering are:    * &#x60;name&#x60;   * &#x60;display_name&#x60;   * &#x60;labels.key&#x60; where key is the name of a label  Some examples of using filters are:    * &#x60;name:*&#x60; --&gt; The instance has a name.   * &#x60;name:Howl&#x60; --&gt; The instance&#39;s name contains the string \&quot;howl\&quot;.   * &#x60;name:HOWL&#x60; --&gt; Equivalent to above.   * &#x60;NAME:howl&#x60; --&gt; Equivalent to above.   * &#x60;labels.env:*&#x60; --&gt; The instance has the label \&quot;env\&quot;.   * &#x60;labels.env:dev&#x60; --&gt; The instance has the label \&quot;env\&quot; and the value of                        the label contains the string \&quot;dev\&quot;.   * &#x60;name:howl labels.env:dev&#x60; --&gt; The instance&#39;s name contains \&quot;howl\&quot; and                                  it has the label \&quot;env\&quot; with its value                                  containing \&quot;dev\&quot;.
+    - :pageSize (integer()): Number of instances to be returned in the response. If 0 or less, defaults to the server&#39;s maximum allowed page size.
+    - :pageToken (String.t): If non-empty, &#x60;page_token&#x60; should contain a next_page_token from a previous ListInstancesResponse.
 
   ## Returns
 
@@ -1418,9 +1479,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
+      :filter => :query,
       :pageSize => :query,
-      :filter => :query
+      :pageToken => :query
     }
 
     request =
@@ -1554,72 +1615,6 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Spanner.V1.Model.Empty{}])
-  end
-
-  @doc """
-  Gets the latest state of a long-running operation.  Clients can use this method to poll the operation result at intervals as recommended by the API service.
-
-  ## Parameters
-
-  - connection (GoogleApi.Spanner.V1.Connection): Connection to server
-  - name (String.t): The name of the operation resource.
-  - optional_params (KeywordList): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): The standard list page token.
-    - :pageSize (integer()): The standard list page size.
-    - :filter (String.t): The standard list filter.
-
-  ## Returns
-
-  {:ok, %GoogleApi.Spanner.V1.Model.Operation{}} on success
-  {:error, info} on failure
-  """
-  @spec spanner_projects_instances_operations_get(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def spanner_projects_instances_operations_get(
-        connection,
-        name,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :upload_protocol => :query,
-      :uploadType => :query,
-      :pageToken => :query,
-      :pageSize => :query,
-      :filter => :query
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:get)
-      |> Request.url("/v1/{+name}", %{
-        "name" => URI.encode_www_form(name)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.Spanner.V1.Model.Operation{}])
   end
 
   @doc """
