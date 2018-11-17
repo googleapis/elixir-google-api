@@ -294,8 +294,8 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :ranges ([String.t]): The ranges to retrieve from the spreadsheet.
     - :includeGridData (boolean()): True if grid data should be returned. This parameter is ignored if a field mask was set in the request.
+    - :ranges ([String.t]): The ranges to retrieve from the spreadsheet.
 
   ## Returns
 
@@ -317,8 +317,8 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :ranges => :query,
-      :includeGridData => :query
+      :includeGridData => :query,
+      :ranges => :query
     }
 
     request =
@@ -482,10 +482,10 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :includeValuesInResponse (boolean()): Determines if the update response should include the values of the cells that were appended. By default, responses do not include the updated values.
-    - :responseValueRenderOption (String.t): Determines how values in the response should be rendered. The default render option is ValueRenderOption.FORMATTED_VALUE.
     - :insertDataOption (String.t): How the input data should be inserted.
-    - :valueInputOption (String.t): How the input data should be interpreted.
     - :responseDateTimeRenderOption (String.t): Determines how dates, times, and durations in the response should be rendered. This is ignored if response_value_render_option is FORMATTED_VALUE. The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER].
+    - :responseValueRenderOption (String.t): Determines how values in the response should be rendered. The default render option is ValueRenderOption.FORMATTED_VALUE.
+    - :valueInputOption (String.t): How the input data should be interpreted.
     - :body (ValueRange): 
 
   ## Returns
@@ -515,10 +515,10 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       :upload_protocol => :query,
       :uploadType => :query,
       :includeValuesInResponse => :query,
-      :responseValueRenderOption => :query,
       :insertDataOption => :query,
-      :valueInputOption => :query,
       :responseDateTimeRenderOption => :query,
+      :responseValueRenderOption => :query,
+      :valueInputOption => :query,
       :body => :body
     }
 
@@ -686,10 +686,10 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :valueRenderOption (String.t): How values should be represented in the output. The default render option is ValueRenderOption.FORMATTED_VALUE.
     - :dateTimeRenderOption (String.t): How dates, times, and durations should be represented in the output. This is ignored if value_render_option is FORMATTED_VALUE. The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER].
-    - :ranges ([String.t]): The A1 notation of the values to retrieve.
     - :majorDimension (String.t): The major dimension that results should use.  For example, if the spreadsheet data is: &#x60;A1&#x3D;1,B1&#x3D;2,A2&#x3D;3,B2&#x3D;4&#x60;, then requesting &#x60;range&#x3D;A1:B2,majorDimension&#x3D;ROWS&#x60; will return &#x60;[[1,2],[3,4]]&#x60;, whereas requesting &#x60;range&#x3D;A1:B2,majorDimension&#x3D;COLUMNS&#x60; will return &#x60;[[1,3],[2,4]]&#x60;.
+    - :ranges ([String.t]): The A1 notation of the values to retrieve.
+    - :valueRenderOption (String.t): How values should be represented in the output. The default render option is ValueRenderOption.FORMATTED_VALUE.
 
   ## Returns
 
@@ -716,10 +716,10 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :valueRenderOption => :query,
       :dateTimeRenderOption => :query,
+      :majorDimension => :query,
       :ranges => :query,
-      :majorDimension => :query
+      :valueRenderOption => :query
     }
 
     request =
@@ -1020,9 +1020,9 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :valueRenderOption (String.t): How values should be represented in the output. The default render option is ValueRenderOption.FORMATTED_VALUE.
     - :dateTimeRenderOption (String.t): How dates, times, and durations should be represented in the output. This is ignored if value_render_option is FORMATTED_VALUE. The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER].
     - :majorDimension (String.t): The major dimension that results should use.  For example, if the spreadsheet data is: &#x60;A1&#x3D;1,B1&#x3D;2,A2&#x3D;3,B2&#x3D;4&#x60;, then requesting &#x60;range&#x3D;A1:B2,majorDimension&#x3D;ROWS&#x60; will return &#x60;[[1,2],[3,4]]&#x60;, whereas requesting &#x60;range&#x3D;A1:B2,majorDimension&#x3D;COLUMNS&#x60; will return &#x60;[[1,3],[2,4]]&#x60;.
+    - :valueRenderOption (String.t): How values should be represented in the output. The default render option is ValueRenderOption.FORMATTED_VALUE.
 
   ## Returns
 
@@ -1050,9 +1050,9 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :valueRenderOption => :query,
       :dateTimeRenderOption => :query,
-      :majorDimension => :query
+      :majorDimension => :query,
+      :valueRenderOption => :query
     }
 
     request =
@@ -1090,9 +1090,9 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :includeValuesInResponse (boolean()): Determines if the update response should include the values of the cells that were updated. By default, responses do not include the updated values. If the range to write was larger than than the range actually written, the response will include all values in the requested range (excluding trailing empty rows and columns).
+    - :responseDateTimeRenderOption (String.t): Determines how dates, times, and durations in the response should be rendered. This is ignored if response_value_render_option is FORMATTED_VALUE. The default dateTime render option is DateTimeRenderOption.SERIAL_NUMBER.
     - :responseValueRenderOption (String.t): Determines how values in the response should be rendered. The default render option is ValueRenderOption.FORMATTED_VALUE.
     - :valueInputOption (String.t): How the input data should be interpreted.
-    - :responseDateTimeRenderOption (String.t): Determines how dates, times, and durations in the response should be rendered. This is ignored if response_value_render_option is FORMATTED_VALUE. The default dateTime render option is DateTimeRenderOption.SERIAL_NUMBER.
     - :body (ValueRange): 
 
   ## Returns
@@ -1122,9 +1122,9 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       :upload_protocol => :query,
       :uploadType => :query,
       :includeValuesInResponse => :query,
+      :responseDateTimeRenderOption => :query,
       :responseValueRenderOption => :query,
       :valueInputOption => :query,
-      :responseDateTimeRenderOption => :query,
       :body => :body
     }
 
