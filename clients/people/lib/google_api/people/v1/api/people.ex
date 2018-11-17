@@ -43,13 +43,13 @@ defmodule GoogleApi.People.V1.Api.People do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :sortOrder (String.t): The order in which the connections should be sorted. Defaults to &#x60;LAST_MODIFIED_ASCENDING&#x60;.
-    - :requestSyncToken (boolean()): Whether the response should include a sync token, which can be used to get all changes since the last request. For subsequent sync requests use the &#x60;sync_token&#x60; param instead. Initial sync requests that specify &#x60;request_sync_token&#x60; have an additional rate limit.
-    - :pageToken (String.t): The token of the page to be returned.
     - :pageSize (integer()): The number of connections to include in the response. Valid values are between 1 and 2000, inclusive. Defaults to 100.
-    - :requestMask.includeField (String.t): **Required.** Comma-separated list of person fields to be included in the response. Each path should start with &#x60;person.&#x60;: for example, &#x60;person.names&#x60; or &#x60;person.photos&#x60;.
-    - :syncToken (String.t): A sync token returned by a previous call to &#x60;people.connections.list&#x60;. Only resources changed since the sync token was created will be returned. Sync requests that specify &#x60;sync_token&#x60; have an additional rate limit.
+    - :pageToken (String.t): The token of the page to be returned.
     - :personFields (String.t): **Required.** A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are:  * addresses * ageRanges * biographies * birthdays * braggingRights * coverPhotos * emailAddresses * events * genders * imClients * interests * locales * memberships * metadata * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * relationshipInterests * relationshipStatuses * residences * sipAddresses * skills * taglines * urls * userDefined
+    - :requestMask.includeField (String.t): **Required.** Comma-separated list of person fields to be included in the response. Each path should start with &#x60;person.&#x60;: for example, &#x60;person.names&#x60; or &#x60;person.photos&#x60;.
+    - :requestSyncToken (boolean()): Whether the response should include a sync token, which can be used to get all changes since the last request. For subsequent sync requests use the &#x60;sync_token&#x60; param instead. Initial sync requests that specify &#x60;request_sync_token&#x60; have an additional rate limit.
+    - :sortOrder (String.t): The order in which the connections should be sorted. Defaults to &#x60;LAST_MODIFIED_ASCENDING&#x60;.
+    - :syncToken (String.t): A sync token returned by a previous call to &#x60;people.connections.list&#x60;. Only resources changed since the sync token was created will be returned. Sync requests that specify &#x60;sync_token&#x60; have an additional rate limit.
 
   ## Returns
 
@@ -71,13 +71,13 @@ defmodule GoogleApi.People.V1.Api.People do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :sortOrder => :query,
-      :requestSyncToken => :query,
-      :pageToken => :query,
       :pageSize => :query,
+      :pageToken => :query,
+      :personFields => :query,
       :"requestMask.includeField" => :query,
-      :syncToken => :query,
-      :personFields => :query
+      :requestSyncToken => :query,
+      :sortOrder => :query,
+      :syncToken => :query
     }
 
     request =
@@ -223,8 +223,8 @@ defmodule GoogleApi.People.V1.Api.People do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :requestMask.includeField (String.t): **Required.** Comma-separated list of person fields to be included in the response. Each path should start with &#x60;person.&#x60;: for example, &#x60;person.names&#x60; or &#x60;person.photos&#x60;.
     - :personFields (String.t): **Required.** A field mask to restrict which fields on the person are returned. Multiple fields can be specified by separating them with commas. Valid values are:  * addresses * ageRanges * biographies * birthdays * braggingRights * coverPhotos * emailAddresses * events * genders * imClients * interests * locales * memberships * metadata * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * relationshipInterests * relationshipStatuses * residences * sipAddresses * skills * taglines * urls * userDefined
+    - :requestMask.includeField (String.t): **Required.** Comma-separated list of person fields to be included in the response. Each path should start with &#x60;person.&#x60;: for example, &#x60;person.names&#x60; or &#x60;person.photos&#x60;.
 
   ## Returns
 
@@ -246,8 +246,8 @@ defmodule GoogleApi.People.V1.Api.People do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :"requestMask.includeField" => :query,
-      :personFields => :query
+      :personFields => :query,
+      :"requestMask.includeField" => :query
     }
 
     request =
