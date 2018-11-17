@@ -42,17 +42,17 @@ defmodule GoogleApi.Partners.V2.Api.Offers do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :requestMetadata.partnersSessionId (String.t): Google Partners session ID.
-    - :requestMetadata.userOverrides.userId (String.t): Logged-in user ID to impersonate instead of the user&#39;s ID.
-    - :pageToken (String.t): Token to retrieve a specific page.
-    - :pageSize (integer()): Maximum number of rows to return per page.
-    - :requestMetadata.trafficSource.trafficSourceId (String.t): Identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
-    - :requestMetadata.locale (String.t): Locale to use for the current request.
-    - :requestMetadata.userOverrides.ipAddress (String.t): IP address to use instead of the user&#39;s geo-located IP address.
     - :entireCompany (boolean()): if true, show history for the entire company.  Requires user to be admin.
-    - :requestMetadata.experimentIds ([String.t]): Experiment IDs the current request belongs to.
     - :orderBy (String.t): Comma-separated list of fields to order by, e.g.: \&quot;foo,bar,baz\&quot;. Use \&quot;foo desc\&quot; to sort descending. List of valid field names is: name, offer_code, expiration_time, status,     last_modified_time, sender_name, creation_time, country_code,     offer_type.
+    - :pageSize (integer()): Maximum number of rows to return per page.
+    - :pageToken (String.t): Token to retrieve a specific page.
+    - :requestMetadata.experimentIds ([String.t]): Experiment IDs the current request belongs to.
+    - :requestMetadata.locale (String.t): Locale to use for the current request.
+    - :requestMetadata.partnersSessionId (String.t): Google Partners session ID.
+    - :requestMetadata.trafficSource.trafficSourceId (String.t): Identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
     - :requestMetadata.trafficSource.trafficSubId (String.t): Second level identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
+    - :requestMetadata.userOverrides.ipAddress (String.t): IP address to use instead of the user&#39;s geo-located IP address.
+    - :requestMetadata.userOverrides.userId (String.t): Logged-in user ID to impersonate instead of the user&#39;s ID.
 
   ## Returns
 
@@ -75,17 +75,17 @@ defmodule GoogleApi.Partners.V2.Api.Offers do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :"requestMetadata.partnersSessionId" => :query,
-      :"requestMetadata.userOverrides.userId" => :query,
-      :pageToken => :query,
-      :pageSize => :query,
-      :"requestMetadata.trafficSource.trafficSourceId" => :query,
-      :"requestMetadata.locale" => :query,
-      :"requestMetadata.userOverrides.ipAddress" => :query,
       :entireCompany => :query,
-      :"requestMetadata.experimentIds" => :query,
       :orderBy => :query,
-      :"requestMetadata.trafficSource.trafficSubId" => :query
+      :pageSize => :query,
+      :pageToken => :query,
+      :"requestMetadata.experimentIds" => :query,
+      :"requestMetadata.locale" => :query,
+      :"requestMetadata.partnersSessionId" => :query,
+      :"requestMetadata.trafficSource.trafficSourceId" => :query,
+      :"requestMetadata.trafficSource.trafficSubId" => :query,
+      :"requestMetadata.userOverrides.ipAddress" => :query,
+      :"requestMetadata.userOverrides.userId" => :query
     }
 
     request =
@@ -118,12 +118,12 @@ defmodule GoogleApi.Partners.V2.Api.Offers do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :requestMetadata.experimentIds ([String.t]): Experiment IDs the current request belongs to.
-    - :requestMetadata.trafficSource.trafficSubId (String.t): Second level identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
-    - :requestMetadata.userOverrides.userId (String.t): Logged-in user ID to impersonate instead of the user&#39;s ID.
+    - :requestMetadata.locale (String.t): Locale to use for the current request.
     - :requestMetadata.partnersSessionId (String.t): Google Partners session ID.
     - :requestMetadata.trafficSource.trafficSourceId (String.t): Identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
-    - :requestMetadata.locale (String.t): Locale to use for the current request.
+    - :requestMetadata.trafficSource.trafficSubId (String.t): Second level identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
     - :requestMetadata.userOverrides.ipAddress (String.t): IP address to use instead of the user&#39;s geo-located IP address.
+    - :requestMetadata.userOverrides.userId (String.t): Logged-in user ID to impersonate instead of the user&#39;s ID.
 
   ## Returns
 
@@ -146,12 +146,12 @@ defmodule GoogleApi.Partners.V2.Api.Offers do
       :upload_protocol => :query,
       :uploadType => :query,
       :"requestMetadata.experimentIds" => :query,
-      :"requestMetadata.trafficSource.trafficSubId" => :query,
-      :"requestMetadata.userOverrides.userId" => :query,
+      :"requestMetadata.locale" => :query,
       :"requestMetadata.partnersSessionId" => :query,
       :"requestMetadata.trafficSource.trafficSourceId" => :query,
-      :"requestMetadata.locale" => :query,
-      :"requestMetadata.userOverrides.ipAddress" => :query
+      :"requestMetadata.trafficSource.trafficSubId" => :query,
+      :"requestMetadata.userOverrides.ipAddress" => :query,
+      :"requestMetadata.userOverrides.userId" => :query
     }
 
     request =

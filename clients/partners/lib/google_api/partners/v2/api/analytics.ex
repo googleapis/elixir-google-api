@@ -42,15 +42,15 @@ defmodule GoogleApi.Partners.V2.Api.Analytics do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :requestMetadata.trafficSource.trafficSubId (String.t): Second level identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
-    - :requestMetadata.partnersSessionId (String.t): Google Partners session ID.
-    - :requestMetadata.userOverrides.userId (String.t): Logged-in user ID to impersonate instead of the user&#39;s ID.
-    - :pageToken (String.t): A token identifying a page of results that the server returns. Typically, this is the value of &#x60;ListAnalyticsResponse.next_page_token&#x60; returned from the previous call to ListAnalytics. Will be a date string in &#x60;YYYY-MM-DD&#x60; format representing the end date of the date range of results to return. If unspecified or set to \&quot;\&quot;, default value is the current date.
     - :pageSize (integer()): Requested page size. Server may return fewer analytics than requested. If unspecified or set to 0, default value is 30. Specifies the number of days in the date range when querying analytics. The &#x60;page_token&#x60; represents the end date of the date range and the start date is calculated using the &#x60;page_size&#x60; as the number of days BEFORE the end date. Must be a non-negative integer.
-    - :requestMetadata.trafficSource.trafficSourceId (String.t): Identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
-    - :requestMetadata.locale (String.t): Locale to use for the current request.
-    - :requestMetadata.userOverrides.ipAddress (String.t): IP address to use instead of the user&#39;s geo-located IP address.
+    - :pageToken (String.t): A token identifying a page of results that the server returns. Typically, this is the value of &#x60;ListAnalyticsResponse.next_page_token&#x60; returned from the previous call to ListAnalytics. Will be a date string in &#x60;YYYY-MM-DD&#x60; format representing the end date of the date range of results to return. If unspecified or set to \&quot;\&quot;, default value is the current date.
     - :requestMetadata.experimentIds ([String.t]): Experiment IDs the current request belongs to.
+    - :requestMetadata.locale (String.t): Locale to use for the current request.
+    - :requestMetadata.partnersSessionId (String.t): Google Partners session ID.
+    - :requestMetadata.trafficSource.trafficSourceId (String.t): Identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
+    - :requestMetadata.trafficSource.trafficSubId (String.t): Second level identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
+    - :requestMetadata.userOverrides.ipAddress (String.t): IP address to use instead of the user&#39;s geo-located IP address.
+    - :requestMetadata.userOverrides.userId (String.t): Logged-in user ID to impersonate instead of the user&#39;s ID.
 
   ## Returns
 
@@ -72,15 +72,15 @@ defmodule GoogleApi.Partners.V2.Api.Analytics do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :"requestMetadata.trafficSource.trafficSubId" => :query,
-      :"requestMetadata.partnersSessionId" => :query,
-      :"requestMetadata.userOverrides.userId" => :query,
-      :pageToken => :query,
       :pageSize => :query,
-      :"requestMetadata.trafficSource.trafficSourceId" => :query,
+      :pageToken => :query,
+      :"requestMetadata.experimentIds" => :query,
       :"requestMetadata.locale" => :query,
+      :"requestMetadata.partnersSessionId" => :query,
+      :"requestMetadata.trafficSource.trafficSourceId" => :query,
+      :"requestMetadata.trafficSource.trafficSubId" => :query,
       :"requestMetadata.userOverrides.ipAddress" => :query,
-      :"requestMetadata.experimentIds" => :query
+      :"requestMetadata.userOverrides.userId" => :query
     }
 
     request =
