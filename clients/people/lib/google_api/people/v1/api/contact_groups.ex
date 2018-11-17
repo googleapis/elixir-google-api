@@ -275,8 +275,8 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :pageSize (integer()): The maximum number of resources to return.
-    - :syncToken (String.t): A sync token, returned by a previous call to &#x60;contactgroups.list&#x60;. Only resources changed since the sync token was created will be returned.
     - :pageToken (String.t): The next_page_token value returned from a previous call to [ListContactGroups](/people/api/rest/v1/contactgroups/list). Requests the next page of resources.
+    - :syncToken (String.t): A sync token, returned by a previous call to &#x60;contactgroups.list&#x60;. Only resources changed since the sync token was created will be returned.
 
   ## Returns
 
@@ -299,8 +299,8 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
       :upload_protocol => :query,
       :uploadType => :query,
       :pageSize => :query,
-      :syncToken => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :syncToken => :query
     }
 
     request =
