@@ -42,10 +42,10 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.ReportTypes do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :onBehalfOfContentOwner (String.t): The content owner&#39;s external ID on which behalf the user is acting on. If not set, the user is acting for himself (his own channel).
-    - :pageToken (String.t): A token identifying a page of results the server should return. Typically, this is the value of ListReportTypesResponse.next_page_token returned in response to the previous call to the &#x60;ListReportTypes&#x60; method.
     - :includeSystemManaged (boolean()): If set to true, also system-managed report types will be returned; otherwise only the report types that can be used to create new reporting jobs will be returned.
+    - :onBehalfOfContentOwner (String.t): The content owner&#39;s external ID on which behalf the user is acting on. If not set, the user is acting for himself (his own channel).
     - :pageSize (integer()): Requested page size. Server may return fewer report types than requested. If unspecified, server will pick an appropriate default.
+    - :pageToken (String.t): A token identifying a page of results the server should return. Typically, this is the value of ListReportTypesResponse.next_page_token returned in response to the previous call to the &#x60;ListReportTypes&#x60; method.
 
   ## Returns
 
@@ -68,10 +68,10 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.ReportTypes do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
-      :onBehalfOfContentOwner => :query,
-      :pageToken => :query,
       :includeSystemManaged => :query,
-      :pageSize => :query
+      :onBehalfOfContentOwner => :query,
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
