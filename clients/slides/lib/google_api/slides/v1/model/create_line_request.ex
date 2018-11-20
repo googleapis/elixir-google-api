@@ -22,6 +22,8 @@ defmodule GoogleApi.Slides.V1.Model.CreateLineRequest do
 
   ## Attributes
 
+  - category (String.t): The category of line to be created.  The exact line type created is determined based on the category and how it&#39;s routed to connect to other page elements.  If you specify both a &#x60;category&#x60; and a &#x60;line_category&#x60;, the &#x60;category&#x60; takes precedence.  If you do not specify a value for &#x60;category&#x60;, but specify a value for &#x60;line_category&#x60;, then the specified &#x60;line_category&#x60; value is used.  If you do not specify either, then STRAIGHT is used. Defaults to: `null`.
+    - Enum - one of [LINE_CATEGORY_UNSPECIFIED, STRAIGHT, BENT, CURVED]
   - elementProperties (PageElementProperties): The element properties for the line. Defaults to: `null`.
   - lineCategory (String.t): The category of line to be created. Defaults to: `null`.
     - Enum - one of [STRAIGHT, BENT, CURVED]
@@ -31,11 +33,13 @@ defmodule GoogleApi.Slides.V1.Model.CreateLineRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :category => any(),
           :elementProperties => GoogleApi.Slides.V1.Model.PageElementProperties.t(),
           :lineCategory => any(),
           :objectId => any()
         }
 
+  field(:category)
   field(:elementProperties, as: GoogleApi.Slides.V1.Model.PageElementProperties)
   field(:lineCategory)
   field(:objectId)
