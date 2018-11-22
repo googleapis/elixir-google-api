@@ -80,7 +80,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
   end
 
   @doc """
-  Generates an authentication token which the device policy client can use to provision the given EMM-managed user account on a device. The generated token is single-use and expires after a few minutes.  This call only works with EMM-managed accounts.
+  Generates an authentication token which the device policy client can use to provision the given EMM-managed user account on a device. The generated token is single-use and expires after a few minutes.  You can provision a maximum of 10 devices per user.  This call only works with EMM-managed accounts.
 
   ## Parameters
 
